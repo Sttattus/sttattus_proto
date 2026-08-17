@@ -6880,3 +6880,364 @@ export class GetCrossPillarGateResponse extends Message$1<GetCrossPillarGateResp
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.DatingPhoto
+ */
+export class DatingPhoto extends Message$1<DatingPhoto> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string url = 2;
+   */
+  url = "";
+
+  /**
+   * @generated from field: int32 order_index = 3;
+   */
+  orderIndex = 0;
+
+  /**
+   * @generated from field: bool is_primary = 4;
+   */
+  isPrimary = false;
+
+  constructor(data?: PartialMessage<DatingPhoto>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DatingPhoto";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "order_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "is_primary", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingPhoto {
+    return new DatingPhoto().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DatingPhoto {
+    return new DatingPhoto().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DatingPhoto {
+    return new DatingPhoto().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DatingPhoto | PlainMessage<DatingPhoto> | undefined, b: DatingPhoto | PlainMessage<DatingPhoto> | undefined): boolean {
+    return proto3.util.equals(DatingPhoto, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AddDatingPhotoRequest
+ */
+export class AddDatingPhotoRequest extends Message$1<AddDatingPhotoRequest> {
+  /**
+   * A media_assets row already marked processed. The server resolves it to a
+   * URL itself rather than trusting a client-supplied one.
+   *
+   * @generated from field: string media_asset_id = 1;
+   */
+  mediaAssetId = "";
+
+  constructor(data?: PartialMessage<AddDatingPhotoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AddDatingPhotoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddDatingPhotoRequest {
+    return new AddDatingPhotoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddDatingPhotoRequest {
+    return new AddDatingPhotoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddDatingPhotoRequest {
+    return new AddDatingPhotoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AddDatingPhotoRequest | PlainMessage<AddDatingPhotoRequest> | undefined, b: AddDatingPhotoRequest | PlainMessage<AddDatingPhotoRequest> | undefined): boolean {
+    return proto3.util.equals(AddDatingPhotoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AddDatingPhotoResponse
+ */
+export class AddDatingPhotoResponse extends Message$1<AddDatingPhotoResponse> {
+  /**
+   * The whole list, ordered, so a client never has to guess where the new
+   * photo landed or re-fetch to find out.
+   *
+   * @generated from field: repeated sttattus.dating.v1.DatingPhoto photos = 1;
+   */
+  photos: DatingPhoto[] = [];
+
+  constructor(data?: PartialMessage<AddDatingPhotoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AddDatingPhotoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photos", kind: "message", T: DatingPhoto, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddDatingPhotoResponse {
+    return new AddDatingPhotoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddDatingPhotoResponse {
+    return new AddDatingPhotoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddDatingPhotoResponse {
+    return new AddDatingPhotoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AddDatingPhotoResponse | PlainMessage<AddDatingPhotoResponse> | undefined, b: AddDatingPhotoResponse | PlainMessage<AddDatingPhotoResponse> | undefined): boolean {
+    return proto3.util.equals(AddDatingPhotoResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RemoveDatingPhotoRequest
+ */
+export class RemoveDatingPhotoRequest extends Message$1<RemoveDatingPhotoRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<RemoveDatingPhotoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RemoveDatingPhotoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveDatingPhotoRequest {
+    return new RemoveDatingPhotoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveDatingPhotoRequest {
+    return new RemoveDatingPhotoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveDatingPhotoRequest {
+    return new RemoveDatingPhotoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveDatingPhotoRequest | PlainMessage<RemoveDatingPhotoRequest> | undefined, b: RemoveDatingPhotoRequest | PlainMessage<RemoveDatingPhotoRequest> | undefined): boolean {
+    return proto3.util.equals(RemoveDatingPhotoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RemoveDatingPhotoResponse
+ */
+export class RemoveDatingPhotoResponse extends Message$1<RemoveDatingPhotoResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.DatingPhoto photos = 1;
+   */
+  photos: DatingPhoto[] = [];
+
+  constructor(data?: PartialMessage<RemoveDatingPhotoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RemoveDatingPhotoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photos", kind: "message", T: DatingPhoto, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveDatingPhotoResponse {
+    return new RemoveDatingPhotoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveDatingPhotoResponse {
+    return new RemoveDatingPhotoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveDatingPhotoResponse {
+    return new RemoveDatingPhotoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveDatingPhotoResponse | PlainMessage<RemoveDatingPhotoResponse> | undefined, b: RemoveDatingPhotoResponse | PlainMessage<RemoveDatingPhotoResponse> | undefined): boolean {
+    return proto3.util.equals(RemoveDatingPhotoResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReorderDatingPhotosRequest
+ */
+export class ReorderDatingPhotosRequest extends Message$1<ReorderDatingPhotosRequest> {
+  /**
+   * Every photo id the member owns, in the order they want. A partial list is
+   * rejected: silently keeping the omitted ones somewhere would make the
+   * resulting order depend on what the client forgot to send.
+   *
+   * @generated from field: repeated string photo_ids = 1;
+   */
+  photoIds: string[] = [];
+
+  constructor(data?: PartialMessage<ReorderDatingPhotosRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReorderDatingPhotosRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photo_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReorderDatingPhotosRequest {
+    return new ReorderDatingPhotosRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReorderDatingPhotosRequest {
+    return new ReorderDatingPhotosRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReorderDatingPhotosRequest {
+    return new ReorderDatingPhotosRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReorderDatingPhotosRequest | PlainMessage<ReorderDatingPhotosRequest> | undefined, b: ReorderDatingPhotosRequest | PlainMessage<ReorderDatingPhotosRequest> | undefined): boolean {
+    return proto3.util.equals(ReorderDatingPhotosRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReorderDatingPhotosResponse
+ */
+export class ReorderDatingPhotosResponse extends Message$1<ReorderDatingPhotosResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.DatingPhoto photos = 1;
+   */
+  photos: DatingPhoto[] = [];
+
+  constructor(data?: PartialMessage<ReorderDatingPhotosResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReorderDatingPhotosResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photos", kind: "message", T: DatingPhoto, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReorderDatingPhotosResponse {
+    return new ReorderDatingPhotosResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReorderDatingPhotosResponse {
+    return new ReorderDatingPhotosResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReorderDatingPhotosResponse {
+    return new ReorderDatingPhotosResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReorderDatingPhotosResponse | PlainMessage<ReorderDatingPhotosResponse> | undefined, b: ReorderDatingPhotosResponse | PlainMessage<ReorderDatingPhotosResponse> | undefined): boolean {
+    return proto3.util.equals(ReorderDatingPhotosResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SetPrimaryDatingPhotoRequest
+ */
+export class SetPrimaryDatingPhotoRequest extends Message$1<SetPrimaryDatingPhotoRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<SetPrimaryDatingPhotoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SetPrimaryDatingPhotoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPrimaryDatingPhotoRequest {
+    return new SetPrimaryDatingPhotoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPrimaryDatingPhotoRequest {
+    return new SetPrimaryDatingPhotoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPrimaryDatingPhotoRequest {
+    return new SetPrimaryDatingPhotoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetPrimaryDatingPhotoRequest | PlainMessage<SetPrimaryDatingPhotoRequest> | undefined, b: SetPrimaryDatingPhotoRequest | PlainMessage<SetPrimaryDatingPhotoRequest> | undefined): boolean {
+    return proto3.util.equals(SetPrimaryDatingPhotoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SetPrimaryDatingPhotoResponse
+ */
+export class SetPrimaryDatingPhotoResponse extends Message$1<SetPrimaryDatingPhotoResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.DatingPhoto photos = 1;
+   */
+  photos: DatingPhoto[] = [];
+
+  constructor(data?: PartialMessage<SetPrimaryDatingPhotoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SetPrimaryDatingPhotoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "photos", kind: "message", T: DatingPhoto, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPrimaryDatingPhotoResponse {
+    return new SetPrimaryDatingPhotoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPrimaryDatingPhotoResponse {
+    return new SetPrimaryDatingPhotoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPrimaryDatingPhotoResponse {
+    return new SetPrimaryDatingPhotoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetPrimaryDatingPhotoResponse | PlainMessage<SetPrimaryDatingPhotoResponse> | undefined, b: SetPrimaryDatingPhotoResponse | PlainMessage<SetPrimaryDatingPhotoResponse> | undefined): boolean {
+    return proto3.util.equals(SetPrimaryDatingPhotoResponse, a, b);
+  }
+}
+

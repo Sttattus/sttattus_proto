@@ -878,4 +878,63 @@ service DatingService {
   // A9P4 — Category-leading
   rpc GenerateAtlasYearbook(GenerateAtlasYearbookRequest) returns (GenerateAtlasYearbookResponse);
   rpc CheckInEvent(CheckInEventRequest) returns (CheckInEventResponse);
+
+  // A9P6 — Dating photos.
+  //
+  // atlas_dating_photos had a read path (DatingProfile.photo_urls) and no way
+  // to write one: no RPC, and nothing in members/ either. A dating profile
+  // that cannot gain a photo is the gap these close.
+  //
+  // Bytes go through MediaService.RequestUpload / MarkProcessed as everywhere
+  // else, so an uploaded photo is screened by the Gemini image classifier
+  // before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
+  // never the image.
+  rpc AddDatingPhoto(AddDatingPhotoRequest) returns (AddDatingPhotoResponse);
+  rpc RemoveDatingPhoto(RemoveDatingPhotoRequest) returns (RemoveDatingPhotoResponse);
+  rpc ReorderDatingPhotos(ReorderDatingPhotosRequest) returns (ReorderDatingPhotosResponse);
+  rpc SetPrimaryDatingPhoto(SetPrimaryDatingPhotoRequest) returns (SetPrimaryDatingPhotoResponse);
+}
+
+// --- A9P6 dating photos ---
+
+message DatingPhoto {
+  string id = 1;
+  string url = 2;
+  int32 order_index = 3;
+  bool is_primary = 4;
+}
+
+message AddDatingPhotoRequest {
+  // A media_assets row already marked processed. The server resolves it to a
+  // URL itself rather than trusting a client-supplied one.
+  string media_asset_id = 1;
+}
+message AddDatingPhotoResponse {
+  // The whole list, ordered, so a client never has to guess where the new
+  // photo landed or re-fetch to find out.
+  repeated DatingPhoto photos = 1;
+}
+
+message RemoveDatingPhotoRequest {
+  string id = 1;
+}
+message RemoveDatingPhotoResponse {
+  repeated DatingPhoto photos = 1;
+}
+
+message ReorderDatingPhotosRequest {
+  // Every photo id the member owns, in the order they want. A partial list is
+  // rejected: silently keeping the omitted ones somewhere would make the
+  // resulting order depend on what the client forgot to send.
+  repeated string photo_ids = 1;
+}
+message ReorderDatingPhotosResponse {
+  repeated DatingPhoto photos = 1;
+}
+
+message SetPrimaryDatingPhotoRequest {
+  string id = 1;
+}
+message SetPrimaryDatingPhotoResponse {
+  repeated DatingPhoto photos = 1;
 }

@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -19,8 +20,20 @@ const EmbeddingInput$json = {
   '1': 'EmbeddingInput',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'intellectual_pace', '3': 2, '4': 1, '5': 5, '10': 'intellectualPace'},
-    {'1': 'emotional_granularity', '3': 3, '4': 1, '5': 5, '10': 'emotionalGranularity'},
+    {
+      '1': 'intellectual_pace',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'intellectualPace'
+    },
+    {
+      '1': 'emotional_granularity',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'emotionalGranularity'
+    },
     {'1': 'physical_drive', '3': 4, '4': 1, '5': 5, '10': 'physicalDrive'},
     {'1': 'social_battery', '3': 5, '4': 1, '5': 5, '10': 'socialBattery'},
     {'1': 'vault_rank', '3': 6, '4': 1, '5': 1, '10': 'vaultRank'},
@@ -44,7 +57,14 @@ final $typed_data.Uint8List embeddingInputDescriptor = $convert.base64Decode(
 const ComputeEmbeddingRequest$json = {
   '1': 'ComputeEmbeddingRequest',
   '2': [
-    {'1': 'input', '3': 1, '4': 1, '5': 11, '6': '.sttattus.atlas.v1.EmbeddingInput', '10': 'input'},
+    {
+      '1': 'input',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.atlas.v1.EmbeddingInput',
+      '10': 'input'
+    },
     {'1': 'engine_version', '3': 2, '4': 1, '5': 5, '10': 'engineVersion'},
   ],
 };
@@ -65,9 +85,10 @@ const ComputeEmbeddingResponse$json = {
 };
 
 /// Descriptor for `ComputeEmbeddingResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List computeEmbeddingResponseDescriptor = $convert.base64Decode(
-    'ChhDb21wdXRlRW1iZWRkaW5nUmVzcG9uc2USHAoJZW1iZWRkaW5nGAEgAygBUgllbWJlZGRpbm'
-    'cSJQoOZW5naW5lX3ZlcnNpb24YAiABKAVSDWVuZ2luZVZlcnNpb24=');
+final $typed_data.Uint8List computeEmbeddingResponseDescriptor =
+    $convert.base64Decode(
+        'ChhDb21wdXRlRW1iZWRkaW5nUmVzcG9uc2USHAoJZW1iZWRkaW5nGAEgAygBUgllbWJlZGRpbm'
+        'cSJQoOZW5naW5lX3ZlcnNpb24YAiABKAVSDWVuZ2luZVZlcnNpb24=');
 
 @$core.Deprecated('Use projectionPointDescriptor instead')
 const ProjectionPoint$json = {
@@ -87,7 +108,14 @@ final $typed_data.Uint8List projectionPointDescriptor = $convert.base64Decode(
 const ProjectUmapRequest$json = {
   '1': 'ProjectUmapRequest',
   '2': [
-    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.sttattus.atlas.v1.ProjectionPoint', '10': 'points'},
+    {
+      '1': 'points',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.atlas.v1.ProjectionPoint',
+      '10': 'points'
+    },
   ],
 };
 
@@ -116,7 +144,14 @@ final $typed_data.Uint8List projected3DDescriptor = $convert.base64Decode(
 const ProjectUmapResponse$json = {
   '1': 'ProjectUmapResponse',
   '2': [
-    {'1': 'points', '3': 1, '4': 3, '5': 11, '6': '.sttattus.atlas.v1.Projected3D', '10': 'points'},
+    {
+      '1': 'points',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.atlas.v1.Projected3D',
+      '10': 'points'
+    },
   ],
 };
 
@@ -146,7 +181,13 @@ final $typed_data.Uint8List compareEmbeddingsRequestDescriptor = $convert.base64
 const CompareEmbeddingsResponse$json = {
   '1': 'CompareEmbeddingsResponse',
   '2': [
-    {'1': 'cosine_similarity', '3': 1, '4': 1, '5': 1, '10': 'cosineSimilarity'},
+    {
+      '1': 'cosine_similarity',
+      '3': 1,
+      '4': 1,
+      '5': 1,
+      '10': 'cosineSimilarity'
+    },
     {'1': 'per_axis_delta', '3': 2, '4': 3, '5': 1, '10': 'perAxisDelta'},
   ],
 };
@@ -155,4 +196,3 @@ const CompareEmbeddingsResponse$json = {
 final $typed_data.Uint8List compareEmbeddingsResponseDescriptor = $convert.base64Decode(
     'ChlDb21wYXJlRW1iZWRkaW5nc1Jlc3BvbnNlEisKEWNvc2luZV9zaW1pbGFyaXR5GAEgASgBUh'
     'Bjb3NpbmVTaW1pbGFyaXR5EiQKDnBlcl9heGlzX2RlbHRhGAIgAygBUgxwZXJBeGlzRGVsdGE=');
-

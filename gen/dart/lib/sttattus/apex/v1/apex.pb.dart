@@ -8,14 +8,15 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $1;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
 import 'apex.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -46,24 +47,34 @@ class Biomarker extends $pb.GeneratedMessage {
 
   Biomarker._();
 
-  factory Biomarker.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Biomarker.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Biomarker.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Biomarker.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Biomarker', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Biomarker',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'code')
-    ..e<BiomarkerCategory>(3, _omitFieldNames ? '' : 'category', $pb.PbFieldType.OE, defaultOrMaker: BiomarkerCategory.BIOMARKER_CATEGORY_UNSPECIFIED, valueOf: BiomarkerCategory.valueOf, enumValues: BiomarkerCategory.values)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
+    ..aE<BiomarkerCategory>(3, _omitFieldNames ? '' : 'category',
+        enumValues: BiomarkerCategory.values)
+    ..aD(4, _omitFieldNames ? '' : 'value')
     ..aOS(5, _omitFieldNames ? '' : 'unit')
     ..aOB(6, _omitFieldNames ? '' : 'verified')
-    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'recordedAt', subBuilder: $1.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'recordedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Biomarker clone() => Biomarker()..mergeFromMessage(this);
+  Biomarker clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Biomarker copyWith(void Function(Biomarker) updates) => super.copyWith((message) => updates(message as Biomarker)) as Biomarker;
+  Biomarker copyWith(void Function(Biomarker) updates) =>
+      super.copyWith((message) => updates(message as Biomarker)) as Biomarker;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -72,9 +83,9 @@ class Biomarker extends $pb.GeneratedMessage {
   static Biomarker create() => Biomarker._();
   @$core.override
   Biomarker createEmptyInstance() => create();
-  static $pb.PbList<Biomarker> createRepeated() => $pb.PbList<Biomarker>();
   @$core.pragma('dart2js:noInline')
-  static Biomarker getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Biomarker>(create);
+  static Biomarker getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Biomarker>(create);
   static Biomarker? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -163,31 +174,44 @@ class LabReport extends $pb.GeneratedMessage {
     if (adminNote != null) result.adminNote = adminNote;
     if (reportDate != null) result.reportDate = reportDate;
     if (submittedAt != null) result.submittedAt = submittedAt;
-    if (extractedMarkers != null) result.extractedMarkers.addAll(extractedMarkers);
+    if (extractedMarkers != null)
+      result.extractedMarkers.addAll(extractedMarkers);
     return result;
   }
 
   LabReport._();
 
-  factory LabReport.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LabReport.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LabReport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LabReport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LabReport', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LabReport',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'fileUrl')
     ..aOS(3, _omitFieldNames ? '' : 'clinicName')
-    ..e<VerificationStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: VerificationStatus.VERIFICATION_STATUS_UNSPECIFIED, valueOf: VerificationStatus.valueOf, enumValues: VerificationStatus.values)
+    ..aE<VerificationStatus>(4, _omitFieldNames ? '' : 'status',
+        enumValues: VerificationStatus.values)
     ..aOS(5, _omitFieldNames ? '' : 'adminNote')
-    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'reportDate', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'submittedAt', subBuilder: $1.Timestamp.create)
-    ..pc<Biomarker>(8, _omitFieldNames ? '' : 'extractedMarkers', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'reportDate',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'submittedAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<Biomarker>(8, _omitFieldNames ? '' : 'extractedMarkers',
+        subBuilder: Biomarker.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabReport clone() => LabReport()..mergeFromMessage(this);
+  LabReport clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabReport copyWith(void Function(LabReport) updates) => super.copyWith((message) => updates(message as LabReport)) as LabReport;
+  LabReport copyWith(void Function(LabReport) updates) =>
+      super.copyWith((message) => updates(message as LabReport)) as LabReport;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -196,9 +220,9 @@ class LabReport extends $pb.GeneratedMessage {
   static LabReport create() => LabReport._();
   @$core.override
   LabReport createEmptyInstance() => create();
-  static $pb.PbList<LabReport> createRepeated() => $pb.PbList<LabReport>();
   @$core.pragma('dart2js:noInline')
-  static LabReport getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LabReport>(create);
+  static LabReport getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LabReport>(create);
   static LabReport? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -284,18 +308,28 @@ class SyncVitalsRequest extends $pb.GeneratedMessage {
 
   SyncVitalsRequest._();
 
-  factory SyncVitalsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SyncVitalsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SyncVitalsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncVitalsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncVitalsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<Biomarker>(1, _omitFieldNames ? '' : 'metrics', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncVitalsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<Biomarker>(1, _omitFieldNames ? '' : 'metrics',
+        subBuilder: Biomarker.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncVitalsRequest clone() => SyncVitalsRequest()..mergeFromMessage(this);
+  SyncVitalsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncVitalsRequest copyWith(void Function(SyncVitalsRequest) updates) => super.copyWith((message) => updates(message as SyncVitalsRequest)) as SyncVitalsRequest;
+  SyncVitalsRequest copyWith(void Function(SyncVitalsRequest) updates) =>
+      super.copyWith((message) => updates(message as SyncVitalsRequest))
+          as SyncVitalsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -304,9 +338,9 @@ class SyncVitalsRequest extends $pb.GeneratedMessage {
   static SyncVitalsRequest create() => SyncVitalsRequest._();
   @$core.override
   SyncVitalsRequest createEmptyInstance() => create();
-  static $pb.PbList<SyncVitalsRequest> createRepeated() => $pb.PbList<SyncVitalsRequest>();
   @$core.pragma('dart2js:noInline')
-  static SyncVitalsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncVitalsRequest>(create);
+  static SyncVitalsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncVitalsRequest>(create);
   static SyncVitalsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -326,19 +360,28 @@ class SyncVitalsResponse extends $pb.GeneratedMessage {
 
   SyncVitalsResponse._();
 
-  factory SyncVitalsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SyncVitalsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SyncVitalsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncVitalsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncVitalsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'biologicalAge', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'currentApexScore', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncVitalsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'biologicalAge')
+    ..aD(2, _omitFieldNames ? '' : 'currentApexScore')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncVitalsResponse clone() => SyncVitalsResponse()..mergeFromMessage(this);
+  SyncVitalsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncVitalsResponse copyWith(void Function(SyncVitalsResponse) updates) => super.copyWith((message) => updates(message as SyncVitalsResponse)) as SyncVitalsResponse;
+  SyncVitalsResponse copyWith(void Function(SyncVitalsResponse) updates) =>
+      super.copyWith((message) => updates(message as SyncVitalsResponse))
+          as SyncVitalsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -347,9 +390,9 @@ class SyncVitalsResponse extends $pb.GeneratedMessage {
   static SyncVitalsResponse create() => SyncVitalsResponse._();
   @$core.override
   SyncVitalsResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncVitalsResponse> createRepeated() => $pb.PbList<SyncVitalsResponse>();
   @$core.pragma('dart2js:noInline')
-  static SyncVitalsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncVitalsResponse>(create);
+  static SyncVitalsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncVitalsResponse>(create);
   static SyncVitalsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -386,20 +429,31 @@ class SubmitLabReportRequest extends $pb.GeneratedMessage {
 
   SubmitLabReportRequest._();
 
-  factory SubmitLabReportRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitLabReportRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SubmitLabReportRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitLabReportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitLabReportRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitLabReportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fileUrl')
     ..aOS(2, _omitFieldNames ? '' : 'clinicName')
-    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'reportDate', subBuilder: $1.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'reportDate',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitLabReportRequest clone() => SubmitLabReportRequest()..mergeFromMessage(this);
+  SubmitLabReportRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitLabReportRequest copyWith(void Function(SubmitLabReportRequest) updates) => super.copyWith((message) => updates(message as SubmitLabReportRequest)) as SubmitLabReportRequest;
+  SubmitLabReportRequest copyWith(
+          void Function(SubmitLabReportRequest) updates) =>
+      super.copyWith((message) => updates(message as SubmitLabReportRequest))
+          as SubmitLabReportRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -408,9 +462,9 @@ class SubmitLabReportRequest extends $pb.GeneratedMessage {
   static SubmitLabReportRequest create() => SubmitLabReportRequest._();
   @$core.override
   SubmitLabReportRequest createEmptyInstance() => create();
-  static $pb.PbList<SubmitLabReportRequest> createRepeated() => $pb.PbList<SubmitLabReportRequest>();
   @$core.pragma('dart2js:noInline')
-  static SubmitLabReportRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitLabReportRequest>(create);
+  static SubmitLabReportRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitLabReportRequest>(create);
   static SubmitLabReportRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -454,18 +508,29 @@ class SubmitLabReportResponse extends $pb.GeneratedMessage {
 
   SubmitLabReportResponse._();
 
-  factory SubmitLabReportResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitLabReportResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SubmitLabReportResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitLabReportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitLabReportResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<LabReport>(1, _omitFieldNames ? '' : 'report', subBuilder: LabReport.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitLabReportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<LabReport>(1, _omitFieldNames ? '' : 'report',
+        subBuilder: LabReport.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitLabReportResponse clone() => SubmitLabReportResponse()..mergeFromMessage(this);
+  SubmitLabReportResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitLabReportResponse copyWith(void Function(SubmitLabReportResponse) updates) => super.copyWith((message) => updates(message as SubmitLabReportResponse)) as SubmitLabReportResponse;
+  SubmitLabReportResponse copyWith(
+          void Function(SubmitLabReportResponse) updates) =>
+      super.copyWith((message) => updates(message as SubmitLabReportResponse))
+          as SubmitLabReportResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -474,9 +539,9 @@ class SubmitLabReportResponse extends $pb.GeneratedMessage {
   static SubmitLabReportResponse create() => SubmitLabReportResponse._();
   @$core.override
   SubmitLabReportResponse createEmptyInstance() => create();
-  static $pb.PbList<SubmitLabReportResponse> createRepeated() => $pb.PbList<SubmitLabReportResponse>();
   @$core.pragma('dart2js:noInline')
-  static SubmitLabReportResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitLabReportResponse>(create);
+  static SubmitLabReportResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitLabReportResponse>(create);
   static SubmitLabReportResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -496,17 +561,27 @@ class ListLabReportsRequest extends $pb.GeneratedMessage {
 
   ListLabReportsRequest._();
 
-  factory ListLabReportsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLabReportsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLabReportsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLabReportsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLabReportsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLabReportsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabReportsRequest clone() => ListLabReportsRequest()..mergeFromMessage(this);
+  ListLabReportsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabReportsRequest copyWith(void Function(ListLabReportsRequest) updates) => super.copyWith((message) => updates(message as ListLabReportsRequest)) as ListLabReportsRequest;
+  ListLabReportsRequest copyWith(
+          void Function(ListLabReportsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListLabReportsRequest))
+          as ListLabReportsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -515,9 +590,9 @@ class ListLabReportsRequest extends $pb.GeneratedMessage {
   static ListLabReportsRequest create() => ListLabReportsRequest._();
   @$core.override
   ListLabReportsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListLabReportsRequest> createRepeated() => $pb.PbList<ListLabReportsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListLabReportsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLabReportsRequest>(create);
+  static ListLabReportsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLabReportsRequest>(create);
   static ListLabReportsRequest? _defaultInstance;
 }
 
@@ -532,18 +607,29 @@ class ListLabReportsResponse extends $pb.GeneratedMessage {
 
   ListLabReportsResponse._();
 
-  factory ListLabReportsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLabReportsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLabReportsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLabReportsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLabReportsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<LabReport>(1, _omitFieldNames ? '' : 'reports', $pb.PbFieldType.PM, subBuilder: LabReport.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLabReportsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<LabReport>(1, _omitFieldNames ? '' : 'reports',
+        subBuilder: LabReport.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabReportsResponse clone() => ListLabReportsResponse()..mergeFromMessage(this);
+  ListLabReportsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabReportsResponse copyWith(void Function(ListLabReportsResponse) updates) => super.copyWith((message) => updates(message as ListLabReportsResponse)) as ListLabReportsResponse;
+  ListLabReportsResponse copyWith(
+          void Function(ListLabReportsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListLabReportsResponse))
+          as ListLabReportsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -552,9 +638,9 @@ class ListLabReportsResponse extends $pb.GeneratedMessage {
   static ListLabReportsResponse create() => ListLabReportsResponse._();
   @$core.override
   ListLabReportsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListLabReportsResponse> createRepeated() => $pb.PbList<ListLabReportsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListLabReportsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLabReportsResponse>(create);
+  static ListLabReportsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLabReportsResponse>(create);
   static ListLabReportsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -578,21 +664,33 @@ class AdminVerifyLabRequest extends $pb.GeneratedMessage {
 
   AdminVerifyLabRequest._();
 
-  factory AdminVerifyLabRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AdminVerifyLabRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AdminVerifyLabRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminVerifyLabRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdminVerifyLabRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminVerifyLabRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reportId')
-    ..e<VerificationStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: VerificationStatus.VERIFICATION_STATUS_UNSPECIFIED, valueOf: VerificationStatus.valueOf, enumValues: VerificationStatus.values)
+    ..aE<VerificationStatus>(2, _omitFieldNames ? '' : 'status',
+        enumValues: VerificationStatus.values)
     ..aOS(3, _omitFieldNames ? '' : 'adminNote')
-    ..pc<Biomarker>(4, _omitFieldNames ? '' : 'verifiedMarkers', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
-    ..hasRequiredFields = false
-  ;
+    ..pPM<Biomarker>(4, _omitFieldNames ? '' : 'verifiedMarkers',
+        subBuilder: Biomarker.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AdminVerifyLabRequest clone() => AdminVerifyLabRequest()..mergeFromMessage(this);
+  AdminVerifyLabRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AdminVerifyLabRequest copyWith(void Function(AdminVerifyLabRequest) updates) => super.copyWith((message) => updates(message as AdminVerifyLabRequest)) as AdminVerifyLabRequest;
+  AdminVerifyLabRequest copyWith(
+          void Function(AdminVerifyLabRequest) updates) =>
+      super.copyWith((message) => updates(message as AdminVerifyLabRequest))
+          as AdminVerifyLabRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -601,9 +699,9 @@ class AdminVerifyLabRequest extends $pb.GeneratedMessage {
   static AdminVerifyLabRequest create() => AdminVerifyLabRequest._();
   @$core.override
   AdminVerifyLabRequest createEmptyInstance() => create();
-  static $pb.PbList<AdminVerifyLabRequest> createRepeated() => $pb.PbList<AdminVerifyLabRequest>();
   @$core.pragma('dart2js:noInline')
-  static AdminVerifyLabRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AdminVerifyLabRequest>(create);
+  static AdminVerifyLabRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdminVerifyLabRequest>(create);
   static AdminVerifyLabRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -648,18 +746,29 @@ class AdminVerifyLabResponse extends $pb.GeneratedMessage {
 
   AdminVerifyLabResponse._();
 
-  factory AdminVerifyLabResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AdminVerifyLabResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AdminVerifyLabResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminVerifyLabResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AdminVerifyLabResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<LabReport>(1, _omitFieldNames ? '' : 'report', subBuilder: LabReport.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminVerifyLabResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<LabReport>(1, _omitFieldNames ? '' : 'report',
+        subBuilder: LabReport.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AdminVerifyLabResponse clone() => AdminVerifyLabResponse()..mergeFromMessage(this);
+  AdminVerifyLabResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AdminVerifyLabResponse copyWith(void Function(AdminVerifyLabResponse) updates) => super.copyWith((message) => updates(message as AdminVerifyLabResponse)) as AdminVerifyLabResponse;
+  AdminVerifyLabResponse copyWith(
+          void Function(AdminVerifyLabResponse) updates) =>
+      super.copyWith((message) => updates(message as AdminVerifyLabResponse))
+          as AdminVerifyLabResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -668,9 +777,9 @@ class AdminVerifyLabResponse extends $pb.GeneratedMessage {
   static AdminVerifyLabResponse create() => AdminVerifyLabResponse._();
   @$core.override
   AdminVerifyLabResponse createEmptyInstance() => create();
-  static $pb.PbList<AdminVerifyLabResponse> createRepeated() => $pb.PbList<AdminVerifyLabResponse>();
   @$core.pragma('dart2js:noInline')
-  static AdminVerifyLabResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AdminVerifyLabResponse>(create);
+  static AdminVerifyLabResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdminVerifyLabResponse>(create);
   static AdminVerifyLabResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -692,17 +801,26 @@ class ListMyVitalsRequest extends $pb.GeneratedMessage {
 
   ListMyVitalsRequest._();
 
-  factory ListMyVitalsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyVitalsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyVitalsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyVitalsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVitalsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyVitalsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyVitalsRequest clone() => ListMyVitalsRequest()..mergeFromMessage(this);
+  ListMyVitalsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyVitalsRequest copyWith(void Function(ListMyVitalsRequest) updates) => super.copyWith((message) => updates(message as ListMyVitalsRequest)) as ListMyVitalsRequest;
+  ListMyVitalsRequest copyWith(void Function(ListMyVitalsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyVitalsRequest))
+          as ListMyVitalsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -711,9 +829,9 @@ class ListMyVitalsRequest extends $pb.GeneratedMessage {
   static ListMyVitalsRequest create() => ListMyVitalsRequest._();
   @$core.override
   ListMyVitalsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyVitalsRequest> createRepeated() => $pb.PbList<ListMyVitalsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyVitalsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVitalsRequest>(create);
+  static ListMyVitalsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyVitalsRequest>(create);
   static ListMyVitalsRequest? _defaultInstance;
 }
 
@@ -728,18 +846,28 @@ class ListMyVitalsResponse extends $pb.GeneratedMessage {
 
   ListMyVitalsResponse._();
 
-  factory ListMyVitalsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyVitalsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyVitalsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyVitalsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyVitalsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<Biomarker>(1, _omitFieldNames ? '' : 'vitals', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyVitalsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<Biomarker>(1, _omitFieldNames ? '' : 'vitals',
+        subBuilder: Biomarker.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyVitalsResponse clone() => ListMyVitalsResponse()..mergeFromMessage(this);
+  ListMyVitalsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyVitalsResponse copyWith(void Function(ListMyVitalsResponse) updates) => super.copyWith((message) => updates(message as ListMyVitalsResponse)) as ListMyVitalsResponse;
+  ListMyVitalsResponse copyWith(void Function(ListMyVitalsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMyVitalsResponse))
+          as ListMyVitalsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -748,9 +876,9 @@ class ListMyVitalsResponse extends $pb.GeneratedMessage {
   static ListMyVitalsResponse create() => ListMyVitalsResponse._();
   @$core.override
   ListMyVitalsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyVitalsResponse> createRepeated() => $pb.PbList<ListMyVitalsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyVitalsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyVitalsResponse>(create);
+  static ListMyVitalsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyVitalsResponse>(create);
   static ListMyVitalsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -765,17 +893,26 @@ class GetApexAgeRequest extends $pb.GeneratedMessage {
 
   GetApexAgeRequest._();
 
-  factory GetApexAgeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexAgeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexAgeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexAgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexAgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexAgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexAgeRequest clone() => GetApexAgeRequest()..mergeFromMessage(this);
+  GetApexAgeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexAgeRequest copyWith(void Function(GetApexAgeRequest) updates) => super.copyWith((message) => updates(message as GetApexAgeRequest)) as GetApexAgeRequest;
+  GetApexAgeRequest copyWith(void Function(GetApexAgeRequest) updates) =>
+      super.copyWith((message) => updates(message as GetApexAgeRequest))
+          as GetApexAgeRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -784,9 +921,9 @@ class GetApexAgeRequest extends $pb.GeneratedMessage {
   static GetApexAgeRequest create() => GetApexAgeRequest._();
   @$core.override
   GetApexAgeRequest createEmptyInstance() => create();
-  static $pb.PbList<GetApexAgeRequest> createRepeated() => $pb.PbList<GetApexAgeRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetApexAgeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexAgeRequest>(create);
+  static GetApexAgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexAgeRequest>(create);
   static GetApexAgeRequest? _defaultInstance;
 }
 
@@ -804,7 +941,8 @@ class GetApexAgeResponse extends $pb.GeneratedMessage {
     final result = create();
     if (biologicalAge != null) result.biologicalAge = biologicalAge;
     if (bioRank != null) result.bioRank = bioRank;
-    if (chronologicalAgePresent != null) result.chronologicalAgePresent = chronologicalAgePresent;
+    if (chronologicalAgePresent != null)
+      result.chronologicalAgePresent = chronologicalAgePresent;
     if (chronologicalAge != null) result.chronologicalAge = chronologicalAge;
     if (systemScores != null) result.systemScores.addEntries(systemScores);
     if (method != null) result.method = method;
@@ -815,25 +953,38 @@ class GetApexAgeResponse extends $pb.GeneratedMessage {
 
   GetApexAgeResponse._();
 
-  factory GetApexAgeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexAgeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexAgeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexAgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexAgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'biologicalAge', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'bioRank', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexAgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'biologicalAge')
+    ..aD(2, _omitFieldNames ? '' : 'bioRank')
     ..aOB(3, _omitFieldNames ? '' : 'chronologicalAgePresent')
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'chronologicalAge', $pb.PbFieldType.OD)
-    ..m<$core.String, $core.double>(5, _omitFieldNames ? '' : 'systemScores', entryClassName: 'GetApexAgeResponse.SystemScoresEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OD, packageName: const $pb.PackageName('sttattus.apex.v1'))
+    ..aD(4, _omitFieldNames ? '' : 'chronologicalAge')
+    ..m<$core.String, $core.double>(5, _omitFieldNames ? '' : 'systemScores',
+        entryClassName: 'GetApexAgeResponse.SystemScoresEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OD,
+        packageName: const $pb.PackageName('sttattus.apex.v1'))
     ..aOS(6, _omitFieldNames ? '' : 'method')
     ..pPS(7, _omitFieldNames ? '' : 'markersUsed')
     ..pPS(8, _omitFieldNames ? '' : 'markersMissing')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexAgeResponse clone() => GetApexAgeResponse()..mergeFromMessage(this);
+  GetApexAgeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexAgeResponse copyWith(void Function(GetApexAgeResponse) updates) => super.copyWith((message) => updates(message as GetApexAgeResponse)) as GetApexAgeResponse;
+  GetApexAgeResponse copyWith(void Function(GetApexAgeResponse) updates) =>
+      super.copyWith((message) => updates(message as GetApexAgeResponse))
+          as GetApexAgeResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -842,9 +993,9 @@ class GetApexAgeResponse extends $pb.GeneratedMessage {
   static GetApexAgeResponse create() => GetApexAgeResponse._();
   @$core.override
   GetApexAgeResponse createEmptyInstance() => create();
-  static $pb.PbList<GetApexAgeResponse> createRepeated() => $pb.PbList<GetApexAgeResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetApexAgeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexAgeResponse>(create);
+  static GetApexAgeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexAgeResponse>(create);
   static GetApexAgeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -919,7 +1070,8 @@ class ApexProfile extends $pb.GeneratedMessage {
     $core.String? chronotype,
   }) {
     final result = create();
-    if (dateOfBirthPresent != null) result.dateOfBirthPresent = dateOfBirthPresent;
+    if (dateOfBirthPresent != null)
+      result.dateOfBirthPresent = dateOfBirthPresent;
     if (dateOfBirth != null) result.dateOfBirth = dateOfBirth;
     if (biologicalSex != null) result.biologicalSex = biologicalSex;
     if (chronotype != null) result.chronotype = chronotype;
@@ -928,21 +1080,30 @@ class ApexProfile extends $pb.GeneratedMessage {
 
   ApexProfile._();
 
-  factory ApexProfile.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexProfile.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexProfile.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexProfile.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProfile', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexProfile',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'dateOfBirthPresent')
     ..aOS(2, _omitFieldNames ? '' : 'dateOfBirth')
     ..aOS(3, _omitFieldNames ? '' : 'biologicalSex')
     ..aOS(4, _omitFieldNames ? '' : 'chronotype')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProfile clone() => ApexProfile()..mergeFromMessage(this);
+  ApexProfile clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProfile copyWith(void Function(ApexProfile) updates) => super.copyWith((message) => updates(message as ApexProfile)) as ApexProfile;
+  ApexProfile copyWith(void Function(ApexProfile) updates) =>
+      super.copyWith((message) => updates(message as ApexProfile))
+          as ApexProfile;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -951,9 +1112,9 @@ class ApexProfile extends $pb.GeneratedMessage {
   static ApexProfile create() => ApexProfile._();
   @$core.override
   ApexProfile createEmptyInstance() => create();
-  static $pb.PbList<ApexProfile> createRepeated() => $pb.PbList<ApexProfile>();
   @$core.pragma('dart2js:noInline')
-  static ApexProfile getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProfile>(create);
+  static ApexProfile getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexProfile>(create);
   static ApexProfile? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -998,17 +1159,27 @@ class GetMyApexProfileRequest extends $pb.GeneratedMessage {
 
   GetMyApexProfileRequest._();
 
-  factory GetMyApexProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetMyApexProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetMyApexProfileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMyApexProfileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyApexProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMyApexProfileRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetMyApexProfileRequest clone() => GetMyApexProfileRequest()..mergeFromMessage(this);
+  GetMyApexProfileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetMyApexProfileRequest copyWith(void Function(GetMyApexProfileRequest) updates) => super.copyWith((message) => updates(message as GetMyApexProfileRequest)) as GetMyApexProfileRequest;
+  GetMyApexProfileRequest copyWith(
+          void Function(GetMyApexProfileRequest) updates) =>
+      super.copyWith((message) => updates(message as GetMyApexProfileRequest))
+          as GetMyApexProfileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1017,9 +1188,9 @@ class GetMyApexProfileRequest extends $pb.GeneratedMessage {
   static GetMyApexProfileRequest create() => GetMyApexProfileRequest._();
   @$core.override
   GetMyApexProfileRequest createEmptyInstance() => create();
-  static $pb.PbList<GetMyApexProfileRequest> createRepeated() => $pb.PbList<GetMyApexProfileRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetMyApexProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileRequest>(create);
+  static GetMyApexProfileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileRequest>(create);
   static GetMyApexProfileRequest? _defaultInstance;
 }
 
@@ -1034,18 +1205,29 @@ class GetMyApexProfileResponse extends $pb.GeneratedMessage {
 
   GetMyApexProfileResponse._();
 
-  factory GetMyApexProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetMyApexProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetMyApexProfileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMyApexProfileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMyApexProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMyApexProfileResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetMyApexProfileResponse clone() => GetMyApexProfileResponse()..mergeFromMessage(this);
+  GetMyApexProfileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetMyApexProfileResponse copyWith(void Function(GetMyApexProfileResponse) updates) => super.copyWith((message) => updates(message as GetMyApexProfileResponse)) as GetMyApexProfileResponse;
+  GetMyApexProfileResponse copyWith(
+          void Function(GetMyApexProfileResponse) updates) =>
+      super.copyWith((message) => updates(message as GetMyApexProfileResponse))
+          as GetMyApexProfileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1054,9 +1236,9 @@ class GetMyApexProfileResponse extends $pb.GeneratedMessage {
   static GetMyApexProfileResponse create() => GetMyApexProfileResponse._();
   @$core.override
   GetMyApexProfileResponse createEmptyInstance() => create();
-  static $pb.PbList<GetMyApexProfileResponse> createRepeated() => $pb.PbList<GetMyApexProfileResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetMyApexProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileResponse>(create);
+  static GetMyApexProfileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMyApexProfileResponse>(create);
   static GetMyApexProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1082,18 +1264,30 @@ class UpdateMyApexProfileRequest extends $pb.GeneratedMessage {
 
   UpdateMyApexProfileRequest._();
 
-  factory UpdateMyApexProfileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateMyApexProfileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateMyApexProfileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateMyApexProfileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyApexProfileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateMyApexProfileRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateMyApexProfileRequest clone() => UpdateMyApexProfileRequest()..mergeFromMessage(this);
+  UpdateMyApexProfileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateMyApexProfileRequest copyWith(void Function(UpdateMyApexProfileRequest) updates) => super.copyWith((message) => updates(message as UpdateMyApexProfileRequest)) as UpdateMyApexProfileRequest;
+  UpdateMyApexProfileRequest copyWith(
+          void Function(UpdateMyApexProfileRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateMyApexProfileRequest))
+          as UpdateMyApexProfileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1102,9 +1296,9 @@ class UpdateMyApexProfileRequest extends $pb.GeneratedMessage {
   static UpdateMyApexProfileRequest create() => UpdateMyApexProfileRequest._();
   @$core.override
   UpdateMyApexProfileRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateMyApexProfileRequest> createRepeated() => $pb.PbList<UpdateMyApexProfileRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateMyApexProfileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileRequest>(create);
+  static UpdateMyApexProfileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileRequest>(create);
   static UpdateMyApexProfileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1130,29 +1324,42 @@ class UpdateMyApexProfileResponse extends $pb.GeneratedMessage {
 
   UpdateMyApexProfileResponse._();
 
-  factory UpdateMyApexProfileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateMyApexProfileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateMyApexProfileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateMyApexProfileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateMyApexProfileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile', subBuilder: ApexProfile.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateMyApexProfileResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: ApexProfile.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateMyApexProfileResponse clone() => UpdateMyApexProfileResponse()..mergeFromMessage(this);
+  UpdateMyApexProfileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateMyApexProfileResponse copyWith(void Function(UpdateMyApexProfileResponse) updates) => super.copyWith((message) => updates(message as UpdateMyApexProfileResponse)) as UpdateMyApexProfileResponse;
+  UpdateMyApexProfileResponse copyWith(
+          void Function(UpdateMyApexProfileResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateMyApexProfileResponse))
+          as UpdateMyApexProfileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateMyApexProfileResponse create() => UpdateMyApexProfileResponse._();
+  static UpdateMyApexProfileResponse create() =>
+      UpdateMyApexProfileResponse._();
   @$core.override
   UpdateMyApexProfileResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateMyApexProfileResponse> createRepeated() => $pb.PbList<UpdateMyApexProfileResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateMyApexProfileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileResponse>(create);
+  static UpdateMyApexProfileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateMyApexProfileResponse>(create);
   static UpdateMyApexProfileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1192,7 +1399,8 @@ class BiomarkerRef extends $pb.GeneratedMessage {
     if (labBandPresent != null) result.labBandPresent = labBandPresent;
     if (labLow != null) result.labLow = labLow;
     if (labHigh != null) result.labHigh = labHigh;
-    if (optimalBandPresent != null) result.optimalBandPresent = optimalBandPresent;
+    if (optimalBandPresent != null)
+      result.optimalBandPresent = optimalBandPresent;
     if (optimalLow != null) result.optimalLow = optimalLow;
     if (optimalHigh != null) result.optimalHigh = optimalHigh;
     if (direction != null) result.direction = direction;
@@ -1202,29 +1410,38 @@ class BiomarkerRef extends $pb.GeneratedMessage {
 
   BiomarkerRef._();
 
-  factory BiomarkerRef.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory BiomarkerRef.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory BiomarkerRef.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory BiomarkerRef.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'BiomarkerRef', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'BiomarkerRef',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
     ..aOS(2, _omitFieldNames ? '' : 'displayName')
     ..aOS(3, _omitFieldNames ? '' : 'unit')
     ..aOS(4, _omitFieldNames ? '' : 'sexAtBirth')
     ..aOB(5, _omitFieldNames ? '' : 'labBandPresent')
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'labLow', $pb.PbFieldType.OD)
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'labHigh', $pb.PbFieldType.OD)
+    ..aD(6, _omitFieldNames ? '' : 'labLow')
+    ..aD(7, _omitFieldNames ? '' : 'labHigh')
     ..aOB(8, _omitFieldNames ? '' : 'optimalBandPresent')
-    ..a<$core.double>(9, _omitFieldNames ? '' : 'optimalLow', $pb.PbFieldType.OD)
-    ..a<$core.double>(10, _omitFieldNames ? '' : 'optimalHigh', $pb.PbFieldType.OD)
+    ..aD(9, _omitFieldNames ? '' : 'optimalLow')
+    ..aD(10, _omitFieldNames ? '' : 'optimalHigh')
     ..aOS(11, _omitFieldNames ? '' : 'direction')
     ..aOS(12, _omitFieldNames ? '' : 'sourceNote')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BiomarkerRef clone() => BiomarkerRef()..mergeFromMessage(this);
+  BiomarkerRef clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BiomarkerRef copyWith(void Function(BiomarkerRef) updates) => super.copyWith((message) => updates(message as BiomarkerRef)) as BiomarkerRef;
+  BiomarkerRef copyWith(void Function(BiomarkerRef) updates) =>
+      super.copyWith((message) => updates(message as BiomarkerRef))
+          as BiomarkerRef;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1233,9 +1450,9 @@ class BiomarkerRef extends $pb.GeneratedMessage {
   static BiomarkerRef create() => BiomarkerRef._();
   @$core.override
   BiomarkerRef createEmptyInstance() => create();
-  static $pb.PbList<BiomarkerRef> createRepeated() => $pb.PbList<BiomarkerRef>();
   @$core.pragma('dart2js:noInline')
-  static BiomarkerRef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BiomarkerRef>(create);
+  static BiomarkerRef getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<BiomarkerRef>(create);
   static BiomarkerRef? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1352,17 +1569,27 @@ class ListBiomarkerRefsRequest extends $pb.GeneratedMessage {
 
   ListBiomarkerRefsRequest._();
 
-  factory ListBiomarkerRefsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListBiomarkerRefsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListBiomarkerRefsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListBiomarkerRefsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBiomarkerRefsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListBiomarkerRefsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListBiomarkerRefsRequest clone() => ListBiomarkerRefsRequest()..mergeFromMessage(this);
+  ListBiomarkerRefsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListBiomarkerRefsRequest copyWith(void Function(ListBiomarkerRefsRequest) updates) => super.copyWith((message) => updates(message as ListBiomarkerRefsRequest)) as ListBiomarkerRefsRequest;
+  ListBiomarkerRefsRequest copyWith(
+          void Function(ListBiomarkerRefsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListBiomarkerRefsRequest))
+          as ListBiomarkerRefsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1371,9 +1598,9 @@ class ListBiomarkerRefsRequest extends $pb.GeneratedMessage {
   static ListBiomarkerRefsRequest create() => ListBiomarkerRefsRequest._();
   @$core.override
   ListBiomarkerRefsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListBiomarkerRefsRequest> createRepeated() => $pb.PbList<ListBiomarkerRefsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListBiomarkerRefsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsRequest>(create);
+  static ListBiomarkerRefsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsRequest>(create);
   static ListBiomarkerRefsRequest? _defaultInstance;
 }
 
@@ -1388,18 +1615,29 @@ class ListBiomarkerRefsResponse extends $pb.GeneratedMessage {
 
   ListBiomarkerRefsResponse._();
 
-  factory ListBiomarkerRefsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListBiomarkerRefsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListBiomarkerRefsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListBiomarkerRefsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListBiomarkerRefsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<BiomarkerRef>(1, _omitFieldNames ? '' : 'refs', $pb.PbFieldType.PM, subBuilder: BiomarkerRef.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListBiomarkerRefsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<BiomarkerRef>(1, _omitFieldNames ? '' : 'refs',
+        subBuilder: BiomarkerRef.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListBiomarkerRefsResponse clone() => ListBiomarkerRefsResponse()..mergeFromMessage(this);
+  ListBiomarkerRefsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListBiomarkerRefsResponse copyWith(void Function(ListBiomarkerRefsResponse) updates) => super.copyWith((message) => updates(message as ListBiomarkerRefsResponse)) as ListBiomarkerRefsResponse;
+  ListBiomarkerRefsResponse copyWith(
+          void Function(ListBiomarkerRefsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListBiomarkerRefsResponse))
+          as ListBiomarkerRefsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1408,9 +1646,9 @@ class ListBiomarkerRefsResponse extends $pb.GeneratedMessage {
   static ListBiomarkerRefsResponse create() => ListBiomarkerRefsResponse._();
   @$core.override
   ListBiomarkerRefsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListBiomarkerRefsResponse> createRepeated() => $pb.PbList<ListBiomarkerRefsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListBiomarkerRefsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsResponse>(create);
+  static ListBiomarkerRefsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListBiomarkerRefsResponse>(create);
   static ListBiomarkerRefsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1431,30 +1669,42 @@ class ListMyBiomarkerHistoryRequest extends $pb.GeneratedMessage {
 
   ListMyBiomarkerHistoryRequest._();
 
-  factory ListMyBiomarkerHistoryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyBiomarkerHistoryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyBiomarkerHistoryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyBiomarkerHistoryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBiomarkerHistoryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyBiomarkerHistoryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'days')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyBiomarkerHistoryRequest clone() => ListMyBiomarkerHistoryRequest()..mergeFromMessage(this);
+  ListMyBiomarkerHistoryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyBiomarkerHistoryRequest copyWith(void Function(ListMyBiomarkerHistoryRequest) updates) => super.copyWith((message) => updates(message as ListMyBiomarkerHistoryRequest)) as ListMyBiomarkerHistoryRequest;
+  ListMyBiomarkerHistoryRequest copyWith(
+          void Function(ListMyBiomarkerHistoryRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyBiomarkerHistoryRequest))
+          as ListMyBiomarkerHistoryRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyBiomarkerHistoryRequest create() => ListMyBiomarkerHistoryRequest._();
+  static ListMyBiomarkerHistoryRequest create() =>
+      ListMyBiomarkerHistoryRequest._();
   @$core.override
   ListMyBiomarkerHistoryRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyBiomarkerHistoryRequest> createRepeated() => $pb.PbList<ListMyBiomarkerHistoryRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyBiomarkerHistoryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryRequest>(create);
+  static ListMyBiomarkerHistoryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryRequest>(create);
   static ListMyBiomarkerHistoryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1489,30 +1739,43 @@ class ListMyBiomarkerHistoryResponse extends $pb.GeneratedMessage {
 
   ListMyBiomarkerHistoryResponse._();
 
-  factory ListMyBiomarkerHistoryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyBiomarkerHistoryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyBiomarkerHistoryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyBiomarkerHistoryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyBiomarkerHistoryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyBiomarkerHistoryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
-    ..pc<Biomarker>(2, _omitFieldNames ? '' : 'points', $pb.PbFieldType.PM, subBuilder: Biomarker.create)
-    ..hasRequiredFields = false
-  ;
+    ..pPM<Biomarker>(2, _omitFieldNames ? '' : 'points',
+        subBuilder: Biomarker.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyBiomarkerHistoryResponse clone() => ListMyBiomarkerHistoryResponse()..mergeFromMessage(this);
+  ListMyBiomarkerHistoryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyBiomarkerHistoryResponse copyWith(void Function(ListMyBiomarkerHistoryResponse) updates) => super.copyWith((message) => updates(message as ListMyBiomarkerHistoryResponse)) as ListMyBiomarkerHistoryResponse;
+  ListMyBiomarkerHistoryResponse copyWith(
+          void Function(ListMyBiomarkerHistoryResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyBiomarkerHistoryResponse))
+          as ListMyBiomarkerHistoryResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyBiomarkerHistoryResponse create() => ListMyBiomarkerHistoryResponse._();
+  static ListMyBiomarkerHistoryResponse create() =>
+      ListMyBiomarkerHistoryResponse._();
   @$core.override
   ListMyBiomarkerHistoryResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyBiomarkerHistoryResponse> createRepeated() => $pb.PbList<ListMyBiomarkerHistoryResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyBiomarkerHistoryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryResponse>(create);
+  static ListMyBiomarkerHistoryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyBiomarkerHistoryResponse>(create);
   static ListMyBiomarkerHistoryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1546,19 +1809,28 @@ class GetHrvWindowRequest extends $pb.GeneratedMessage {
 
   GetHrvWindowRequest._();
 
-  factory GetHrvWindowRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetHrvWindowRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetHrvWindowRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetHrvWindowRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetHrvWindowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetHrvWindowRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'startUnix')
     ..aInt64(2, _omitFieldNames ? '' : 'endUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetHrvWindowRequest clone() => GetHrvWindowRequest()..mergeFromMessage(this);
+  GetHrvWindowRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetHrvWindowRequest copyWith(void Function(GetHrvWindowRequest) updates) => super.copyWith((message) => updates(message as GetHrvWindowRequest)) as GetHrvWindowRequest;
+  GetHrvWindowRequest copyWith(void Function(GetHrvWindowRequest) updates) =>
+      super.copyWith((message) => updates(message as GetHrvWindowRequest))
+          as GetHrvWindowRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1567,9 +1839,9 @@ class GetHrvWindowRequest extends $pb.GeneratedMessage {
   static GetHrvWindowRequest create() => GetHrvWindowRequest._();
   @$core.override
   GetHrvWindowRequest createEmptyInstance() => create();
-  static $pb.PbList<GetHrvWindowRequest> createRepeated() => $pb.PbList<GetHrvWindowRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetHrvWindowRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetHrvWindowRequest>(create);
+  static GetHrvWindowRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetHrvWindowRequest>(create);
   static GetHrvWindowRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1612,23 +1884,32 @@ class GetHrvWindowResponse extends $pb.GeneratedMessage {
 
   GetHrvWindowResponse._();
 
-  factory GetHrvWindowResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetHrvWindowResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetHrvWindowResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetHrvWindowResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetHrvWindowResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetHrvWindowResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'present')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'windowMean', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'baselineMean', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'delta', $pb.PbFieldType.OD)
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'windowCount', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'baselineCount', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'windowMean')
+    ..aD(3, _omitFieldNames ? '' : 'baselineMean')
+    ..aD(4, _omitFieldNames ? '' : 'delta')
+    ..aI(5, _omitFieldNames ? '' : 'windowCount')
+    ..aI(6, _omitFieldNames ? '' : 'baselineCount')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetHrvWindowResponse clone() => GetHrvWindowResponse()..mergeFromMessage(this);
+  GetHrvWindowResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetHrvWindowResponse copyWith(void Function(GetHrvWindowResponse) updates) => super.copyWith((message) => updates(message as GetHrvWindowResponse)) as GetHrvWindowResponse;
+  GetHrvWindowResponse copyWith(void Function(GetHrvWindowResponse) updates) =>
+      super.copyWith((message) => updates(message as GetHrvWindowResponse))
+          as GetHrvWindowResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1637,9 +1918,9 @@ class GetHrvWindowResponse extends $pb.GeneratedMessage {
   static GetHrvWindowResponse create() => GetHrvWindowResponse._();
   @$core.override
   GetHrvWindowResponse createEmptyInstance() => create();
-  static $pb.PbList<GetHrvWindowResponse> createRepeated() => $pb.PbList<GetHrvWindowResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetHrvWindowResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetHrvWindowResponse>(create);
+  static GetHrvWindowResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetHrvWindowResponse>(create);
   static GetHrvWindowResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1728,10 +2009,18 @@ class ApexProtocol extends $pb.GeneratedMessage {
 
   ApexProtocol._();
 
-  factory ApexProtocol.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexProtocol.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexProtocol.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexProtocol.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocol', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexProtocol',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'title')
@@ -1739,17 +2028,18 @@ class ApexProtocol extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'author')
     ..aOS(6, _omitFieldNames ? '' : 'summary')
     ..aOS(7, _omitFieldNames ? '' : 'description')
-    ..a<$core.int>(8, _omitFieldNames ? '' : 'durationWeeks', $pb.PbFieldType.O3)
-    ..a<$core.int>(9, _omitFieldNames ? '' : 'minutesPerDay', $pb.PbFieldType.O3)
+    ..aI(8, _omitFieldNames ? '' : 'durationWeeks')
+    ..aI(9, _omitFieldNames ? '' : 'minutesPerDay')
     ..aOS(10, _omitFieldNames ? '' : 'imageUrl')
     ..aOB(11, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocol clone() => ApexProtocol()..mergeFromMessage(this);
+  ApexProtocol clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocol copyWith(void Function(ApexProtocol) updates) => super.copyWith((message) => updates(message as ApexProtocol)) as ApexProtocol;
+  ApexProtocol copyWith(void Function(ApexProtocol) updates) =>
+      super.copyWith((message) => updates(message as ApexProtocol))
+          as ApexProtocol;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1758,9 +2048,9 @@ class ApexProtocol extends $pb.GeneratedMessage {
   static ApexProtocol create() => ApexProtocol._();
   @$core.override
   ApexProtocol createEmptyInstance() => create();
-  static $pb.PbList<ApexProtocol> createRepeated() => $pb.PbList<ApexProtocol>();
   @$core.pragma('dart2js:noInline')
-  static ApexProtocol getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocol>(create);
+  static ApexProtocol getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexProtocol>(create);
   static ApexProtocol? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1882,22 +2172,33 @@ class ApexProtocolEnrolment extends $pb.GeneratedMessage {
 
   ApexProtocolEnrolment._();
 
-  factory ApexProtocolEnrolment.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexProtocolEnrolment.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexProtocolEnrolment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexProtocolEnrolment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocolEnrolment', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexProtocolEnrolment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<ApexProtocol>(2, _omitFieldNames ? '' : 'protocol', subBuilder: ApexProtocol.create)
+    ..aOM<ApexProtocol>(2, _omitFieldNames ? '' : 'protocol',
+        subBuilder: ApexProtocol.create)
     ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aInt64(4, _omitFieldNames ? '' : 'startedAtUnix')
     ..aInt64(5, _omitFieldNames ? '' : 'finishedAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocolEnrolment clone() => ApexProtocolEnrolment()..mergeFromMessage(this);
+  ApexProtocolEnrolment clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocolEnrolment copyWith(void Function(ApexProtocolEnrolment) updates) => super.copyWith((message) => updates(message as ApexProtocolEnrolment)) as ApexProtocolEnrolment;
+  ApexProtocolEnrolment copyWith(
+          void Function(ApexProtocolEnrolment) updates) =>
+      super.copyWith((message) => updates(message as ApexProtocolEnrolment))
+          as ApexProtocolEnrolment;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1906,9 +2207,9 @@ class ApexProtocolEnrolment extends $pb.GeneratedMessage {
   static ApexProtocolEnrolment create() => ApexProtocolEnrolment._();
   @$core.override
   ApexProtocolEnrolment createEmptyInstance() => create();
-  static $pb.PbList<ApexProtocolEnrolment> createRepeated() => $pb.PbList<ApexProtocolEnrolment>();
   @$core.pragma('dart2js:noInline')
-  static ApexProtocolEnrolment getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocolEnrolment>(create);
+  static ApexProtocolEnrolment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexProtocolEnrolment>(create);
   static ApexProtocolEnrolment? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1980,23 +2281,33 @@ class ApexProtocolAdherence extends $pb.GeneratedMessage {
 
   ApexProtocolAdherence._();
 
-  factory ApexProtocolAdherence.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexProtocolAdherence.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexProtocolAdherence.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexProtocolAdherence.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexProtocolAdherence', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexProtocolAdherence',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'enrolmentId')
     ..aOS(3, _omitFieldNames ? '' : 'forDate')
     ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aOS(5, _omitFieldNames ? '' : 'note')
     ..aInt64(6, _omitFieldNames ? '' : 'createdAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocolAdherence clone() => ApexProtocolAdherence()..mergeFromMessage(this);
+  ApexProtocolAdherence clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexProtocolAdherence copyWith(void Function(ApexProtocolAdherence) updates) => super.copyWith((message) => updates(message as ApexProtocolAdherence)) as ApexProtocolAdherence;
+  ApexProtocolAdherence copyWith(
+          void Function(ApexProtocolAdherence) updates) =>
+      super.copyWith((message) => updates(message as ApexProtocolAdherence))
+          as ApexProtocolAdherence;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2005,9 +2316,9 @@ class ApexProtocolAdherence extends $pb.GeneratedMessage {
   static ApexProtocolAdherence create() => ApexProtocolAdherence._();
   @$core.override
   ApexProtocolAdherence createEmptyInstance() => create();
-  static $pb.PbList<ApexProtocolAdherence> createRepeated() => $pb.PbList<ApexProtocolAdherence>();
   @$core.pragma('dart2js:noInline')
-  static ApexProtocolAdherence getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexProtocolAdherence>(create);
+  static ApexProtocolAdherence getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexProtocolAdherence>(create);
   static ApexProtocolAdherence? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2078,19 +2389,29 @@ class ListApexProtocolsRequest extends $pb.GeneratedMessage {
 
   ListApexProtocolsRequest._();
 
-  factory ListApexProtocolsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListApexProtocolsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListApexProtocolsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListApexProtocolsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexProtocolsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListApexProtocolsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'category')
     ..aOB(2, _omitFieldNames ? '' : 'includeSovereign')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexProtocolsRequest clone() => ListApexProtocolsRequest()..mergeFromMessage(this);
+  ListApexProtocolsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexProtocolsRequest copyWith(void Function(ListApexProtocolsRequest) updates) => super.copyWith((message) => updates(message as ListApexProtocolsRequest)) as ListApexProtocolsRequest;
+  ListApexProtocolsRequest copyWith(
+          void Function(ListApexProtocolsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListApexProtocolsRequest))
+          as ListApexProtocolsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2099,9 +2420,9 @@ class ListApexProtocolsRequest extends $pb.GeneratedMessage {
   static ListApexProtocolsRequest create() => ListApexProtocolsRequest._();
   @$core.override
   ListApexProtocolsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListApexProtocolsRequest> createRepeated() => $pb.PbList<ListApexProtocolsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListApexProtocolsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsRequest>(create);
+  static ListApexProtocolsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsRequest>(create);
   static ListApexProtocolsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2134,18 +2455,29 @@ class ListApexProtocolsResponse extends $pb.GeneratedMessage {
 
   ListApexProtocolsResponse._();
 
-  factory ListApexProtocolsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListApexProtocolsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListApexProtocolsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListApexProtocolsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexProtocolsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ApexProtocol>(1, _omitFieldNames ? '' : 'protocols', $pb.PbFieldType.PM, subBuilder: ApexProtocol.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListApexProtocolsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ApexProtocol>(1, _omitFieldNames ? '' : 'protocols',
+        subBuilder: ApexProtocol.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexProtocolsResponse clone() => ListApexProtocolsResponse()..mergeFromMessage(this);
+  ListApexProtocolsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexProtocolsResponse copyWith(void Function(ListApexProtocolsResponse) updates) => super.copyWith((message) => updates(message as ListApexProtocolsResponse)) as ListApexProtocolsResponse;
+  ListApexProtocolsResponse copyWith(
+          void Function(ListApexProtocolsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListApexProtocolsResponse))
+          as ListApexProtocolsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2154,9 +2486,9 @@ class ListApexProtocolsResponse extends $pb.GeneratedMessage {
   static ListApexProtocolsResponse create() => ListApexProtocolsResponse._();
   @$core.override
   ListApexProtocolsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListApexProtocolsResponse> createRepeated() => $pb.PbList<ListApexProtocolsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListApexProtocolsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsResponse>(create);
+  static ListApexProtocolsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListApexProtocolsResponse>(create);
   static ListApexProtocolsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2174,18 +2506,28 @@ class GetApexProtocolRequest extends $pb.GeneratedMessage {
 
   GetApexProtocolRequest._();
 
-  factory GetApexProtocolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexProtocolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexProtocolRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexProtocolRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexProtocolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexProtocolRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'slug')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexProtocolRequest clone() => GetApexProtocolRequest()..mergeFromMessage(this);
+  GetApexProtocolRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexProtocolRequest copyWith(void Function(GetApexProtocolRequest) updates) => super.copyWith((message) => updates(message as GetApexProtocolRequest)) as GetApexProtocolRequest;
+  GetApexProtocolRequest copyWith(
+          void Function(GetApexProtocolRequest) updates) =>
+      super.copyWith((message) => updates(message as GetApexProtocolRequest))
+          as GetApexProtocolRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2194,9 +2536,9 @@ class GetApexProtocolRequest extends $pb.GeneratedMessage {
   static GetApexProtocolRequest create() => GetApexProtocolRequest._();
   @$core.override
   GetApexProtocolRequest createEmptyInstance() => create();
-  static $pb.PbList<GetApexProtocolRequest> createRepeated() => $pb.PbList<GetApexProtocolRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetApexProtocolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexProtocolRequest>(create);
+  static GetApexProtocolRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexProtocolRequest>(create);
   static GetApexProtocolRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2220,18 +2562,29 @@ class GetApexProtocolResponse extends $pb.GeneratedMessage {
 
   GetApexProtocolResponse._();
 
-  factory GetApexProtocolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexProtocolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexProtocolResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexProtocolResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexProtocolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProtocol>(1, _omitFieldNames ? '' : 'protocol', subBuilder: ApexProtocol.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexProtocolResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProtocol>(1, _omitFieldNames ? '' : 'protocol',
+        subBuilder: ApexProtocol.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexProtocolResponse clone() => GetApexProtocolResponse()..mergeFromMessage(this);
+  GetApexProtocolResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexProtocolResponse copyWith(void Function(GetApexProtocolResponse) updates) => super.copyWith((message) => updates(message as GetApexProtocolResponse)) as GetApexProtocolResponse;
+  GetApexProtocolResponse copyWith(
+          void Function(GetApexProtocolResponse) updates) =>
+      super.copyWith((message) => updates(message as GetApexProtocolResponse))
+          as GetApexProtocolResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2240,9 +2593,9 @@ class GetApexProtocolResponse extends $pb.GeneratedMessage {
   static GetApexProtocolResponse create() => GetApexProtocolResponse._();
   @$core.override
   GetApexProtocolResponse createEmptyInstance() => create();
-  static $pb.PbList<GetApexProtocolResponse> createRepeated() => $pb.PbList<GetApexProtocolResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetApexProtocolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexProtocolResponse>(create);
+  static GetApexProtocolResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexProtocolResponse>(create);
   static GetApexProtocolResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2268,18 +2621,29 @@ class EnrolInApexProtocolRequest extends $pb.GeneratedMessage {
 
   EnrolInApexProtocolRequest._();
 
-  factory EnrolInApexProtocolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory EnrolInApexProtocolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory EnrolInApexProtocolRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EnrolInApexProtocolRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInApexProtocolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EnrolInApexProtocolRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'protocolId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EnrolInApexProtocolRequest clone() => EnrolInApexProtocolRequest()..mergeFromMessage(this);
+  EnrolInApexProtocolRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EnrolInApexProtocolRequest copyWith(void Function(EnrolInApexProtocolRequest) updates) => super.copyWith((message) => updates(message as EnrolInApexProtocolRequest)) as EnrolInApexProtocolRequest;
+  EnrolInApexProtocolRequest copyWith(
+          void Function(EnrolInApexProtocolRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as EnrolInApexProtocolRequest))
+          as EnrolInApexProtocolRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2288,9 +2652,9 @@ class EnrolInApexProtocolRequest extends $pb.GeneratedMessage {
   static EnrolInApexProtocolRequest create() => EnrolInApexProtocolRequest._();
   @$core.override
   EnrolInApexProtocolRequest createEmptyInstance() => create();
-  static $pb.PbList<EnrolInApexProtocolRequest> createRepeated() => $pb.PbList<EnrolInApexProtocolRequest>();
   @$core.pragma('dart2js:noInline')
-  static EnrolInApexProtocolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolRequest>(create);
+  static EnrolInApexProtocolRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolRequest>(create);
   static EnrolInApexProtocolRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2314,29 +2678,42 @@ class EnrolInApexProtocolResponse extends $pb.GeneratedMessage {
 
   EnrolInApexProtocolResponse._();
 
-  factory EnrolInApexProtocolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory EnrolInApexProtocolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory EnrolInApexProtocolResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EnrolInApexProtocolResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnrolInApexProtocolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ApexProtocolEnrolment.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EnrolInApexProtocolResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment',
+        subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EnrolInApexProtocolResponse clone() => EnrolInApexProtocolResponse()..mergeFromMessage(this);
+  EnrolInApexProtocolResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EnrolInApexProtocolResponse copyWith(void Function(EnrolInApexProtocolResponse) updates) => super.copyWith((message) => updates(message as EnrolInApexProtocolResponse)) as EnrolInApexProtocolResponse;
+  EnrolInApexProtocolResponse copyWith(
+          void Function(EnrolInApexProtocolResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as EnrolInApexProtocolResponse))
+          as EnrolInApexProtocolResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static EnrolInApexProtocolResponse create() => EnrolInApexProtocolResponse._();
+  static EnrolInApexProtocolResponse create() =>
+      EnrolInApexProtocolResponse._();
   @$core.override
   EnrolInApexProtocolResponse createEmptyInstance() => create();
-  static $pb.PbList<EnrolInApexProtocolResponse> createRepeated() => $pb.PbList<EnrolInApexProtocolResponse>();
   @$core.pragma('dart2js:noInline')
-  static EnrolInApexProtocolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolResponse>(create);
+  static EnrolInApexProtocolResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EnrolInApexProtocolResponse>(create);
   static EnrolInApexProtocolResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2356,28 +2733,42 @@ class ListMyApexProtocolEnrolmentsRequest extends $pb.GeneratedMessage {
 
   ListMyApexProtocolEnrolmentsRequest._();
 
-  factory ListMyApexProtocolEnrolmentsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexProtocolEnrolmentsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexProtocolEnrolmentsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolEnrolmentsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolEnrolmentsRequest clone() => ListMyApexProtocolEnrolmentsRequest()..mergeFromMessage(this);
+  ListMyApexProtocolEnrolmentsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolEnrolmentsRequest copyWith(void Function(ListMyApexProtocolEnrolmentsRequest) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolEnrolmentsRequest)) as ListMyApexProtocolEnrolmentsRequest;
+  ListMyApexProtocolEnrolmentsRequest copyWith(
+          void Function(ListMyApexProtocolEnrolmentsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexProtocolEnrolmentsRequest))
+          as ListMyApexProtocolEnrolmentsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolEnrolmentsRequest create() => ListMyApexProtocolEnrolmentsRequest._();
+  static ListMyApexProtocolEnrolmentsRequest create() =>
+      ListMyApexProtocolEnrolmentsRequest._();
   @$core.override
   ListMyApexProtocolEnrolmentsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexProtocolEnrolmentsRequest> createRepeated() => $pb.PbList<ListMyApexProtocolEnrolmentsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolEnrolmentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolEnrolmentsRequest>(create);
+  static ListMyApexProtocolEnrolmentsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyApexProtocolEnrolmentsRequest>(create);
   static ListMyApexProtocolEnrolmentsRequest? _defaultInstance;
 }
 
@@ -2392,29 +2783,44 @@ class ListMyApexProtocolEnrolmentsResponse extends $pb.GeneratedMessage {
 
   ListMyApexProtocolEnrolmentsResponse._();
 
-  factory ListMyApexProtocolEnrolmentsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexProtocolEnrolmentsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexProtocolEnrolmentsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolEnrolmentsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolments', $pb.PbFieldType.PM, subBuilder: ApexProtocolEnrolment.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexProtocolEnrolmentsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolments',
+        subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolEnrolmentsResponse clone() => ListMyApexProtocolEnrolmentsResponse()..mergeFromMessage(this);
+  ListMyApexProtocolEnrolmentsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolEnrolmentsResponse copyWith(void Function(ListMyApexProtocolEnrolmentsResponse) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolEnrolmentsResponse)) as ListMyApexProtocolEnrolmentsResponse;
+  ListMyApexProtocolEnrolmentsResponse copyWith(
+          void Function(ListMyApexProtocolEnrolmentsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexProtocolEnrolmentsResponse))
+          as ListMyApexProtocolEnrolmentsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolEnrolmentsResponse create() => ListMyApexProtocolEnrolmentsResponse._();
+  static ListMyApexProtocolEnrolmentsResponse create() =>
+      ListMyApexProtocolEnrolmentsResponse._();
   @$core.override
   ListMyApexProtocolEnrolmentsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexProtocolEnrolmentsResponse> createRepeated() => $pb.PbList<ListMyApexProtocolEnrolmentsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolEnrolmentsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolEnrolmentsResponse>(create);
+  static ListMyApexProtocolEnrolmentsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyApexProtocolEnrolmentsResponse>(create);
   static ListMyApexProtocolEnrolmentsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2434,30 +2840,44 @@ class UpdateApexProtocolEnrolmentRequest extends $pb.GeneratedMessage {
 
   UpdateApexProtocolEnrolmentRequest._();
 
-  factory UpdateApexProtocolEnrolmentRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateApexProtocolEnrolmentRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateApexProtocolEnrolmentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateApexProtocolEnrolmentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
     ..aOS(2, _omitFieldNames ? '' : 'status')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateApexProtocolEnrolmentRequest clone() => UpdateApexProtocolEnrolmentRequest()..mergeFromMessage(this);
+  UpdateApexProtocolEnrolmentRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateApexProtocolEnrolmentRequest copyWith(void Function(UpdateApexProtocolEnrolmentRequest) updates) => super.copyWith((message) => updates(message as UpdateApexProtocolEnrolmentRequest)) as UpdateApexProtocolEnrolmentRequest;
+  UpdateApexProtocolEnrolmentRequest copyWith(
+          void Function(UpdateApexProtocolEnrolmentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateApexProtocolEnrolmentRequest))
+          as UpdateApexProtocolEnrolmentRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateApexProtocolEnrolmentRequest create() => UpdateApexProtocolEnrolmentRequest._();
+  static UpdateApexProtocolEnrolmentRequest create() =>
+      UpdateApexProtocolEnrolmentRequest._();
   @$core.override
   UpdateApexProtocolEnrolmentRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateApexProtocolEnrolmentRequest> createRepeated() => $pb.PbList<UpdateApexProtocolEnrolmentRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateApexProtocolEnrolmentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateApexProtocolEnrolmentRequest>(create);
+  static UpdateApexProtocolEnrolmentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateApexProtocolEnrolmentRequest>(
+          create);
   static UpdateApexProtocolEnrolmentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2490,29 +2910,44 @@ class UpdateApexProtocolEnrolmentResponse extends $pb.GeneratedMessage {
 
   UpdateApexProtocolEnrolmentResponse._();
 
-  factory UpdateApexProtocolEnrolmentResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateApexProtocolEnrolmentResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateApexProtocolEnrolmentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateApexProtocolEnrolmentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment', subBuilder: ApexProtocolEnrolment.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateApexProtocolEnrolmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProtocolEnrolment>(1, _omitFieldNames ? '' : 'enrolment',
+        subBuilder: ApexProtocolEnrolment.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateApexProtocolEnrolmentResponse clone() => UpdateApexProtocolEnrolmentResponse()..mergeFromMessage(this);
+  UpdateApexProtocolEnrolmentResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateApexProtocolEnrolmentResponse copyWith(void Function(UpdateApexProtocolEnrolmentResponse) updates) => super.copyWith((message) => updates(message as UpdateApexProtocolEnrolmentResponse)) as UpdateApexProtocolEnrolmentResponse;
+  UpdateApexProtocolEnrolmentResponse copyWith(
+          void Function(UpdateApexProtocolEnrolmentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateApexProtocolEnrolmentResponse))
+          as UpdateApexProtocolEnrolmentResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdateApexProtocolEnrolmentResponse create() => UpdateApexProtocolEnrolmentResponse._();
+  static UpdateApexProtocolEnrolmentResponse create() =>
+      UpdateApexProtocolEnrolmentResponse._();
   @$core.override
   UpdateApexProtocolEnrolmentResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateApexProtocolEnrolmentResponse> createRepeated() => $pb.PbList<UpdateApexProtocolEnrolmentResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateApexProtocolEnrolmentResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateApexProtocolEnrolmentResponse>(create);
+  static UpdateApexProtocolEnrolmentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateApexProtocolEnrolmentResponse>(create);
   static UpdateApexProtocolEnrolmentResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2544,32 +2979,46 @@ class RecordApexProtocolAdherenceRequest extends $pb.GeneratedMessage {
 
   RecordApexProtocolAdherenceRequest._();
 
-  factory RecordApexProtocolAdherenceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecordApexProtocolAdherenceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecordApexProtocolAdherenceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordApexProtocolAdherenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordApexProtocolAdherenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordApexProtocolAdherenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
     ..aOS(2, _omitFieldNames ? '' : 'forDate')
     ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aOS(4, _omitFieldNames ? '' : 'note')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecordApexProtocolAdherenceRequest clone() => RecordApexProtocolAdherenceRequest()..mergeFromMessage(this);
+  RecordApexProtocolAdherenceRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecordApexProtocolAdherenceRequest copyWith(void Function(RecordApexProtocolAdherenceRequest) updates) => super.copyWith((message) => updates(message as RecordApexProtocolAdherenceRequest)) as RecordApexProtocolAdherenceRequest;
+  RecordApexProtocolAdherenceRequest copyWith(
+          void Function(RecordApexProtocolAdherenceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordApexProtocolAdherenceRequest))
+          as RecordApexProtocolAdherenceRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RecordApexProtocolAdherenceRequest create() => RecordApexProtocolAdherenceRequest._();
+  static RecordApexProtocolAdherenceRequest create() =>
+      RecordApexProtocolAdherenceRequest._();
   @$core.override
   RecordApexProtocolAdherenceRequest createEmptyInstance() => create();
-  static $pb.PbList<RecordApexProtocolAdherenceRequest> createRepeated() => $pb.PbList<RecordApexProtocolAdherenceRequest>();
   @$core.pragma('dart2js:noInline')
-  static RecordApexProtocolAdherenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordApexProtocolAdherenceRequest>(create);
+  static RecordApexProtocolAdherenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordApexProtocolAdherenceRequest>(
+          create);
   static RecordApexProtocolAdherenceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2620,29 +3069,44 @@ class RecordApexProtocolAdherenceResponse extends $pb.GeneratedMessage {
 
   RecordApexProtocolAdherenceResponse._();
 
-  factory RecordApexProtocolAdherenceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecordApexProtocolAdherenceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecordApexProtocolAdherenceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordApexProtocolAdherenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecordApexProtocolAdherenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'adherence', subBuilder: ApexProtocolAdherence.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordApexProtocolAdherenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'adherence',
+        subBuilder: ApexProtocolAdherence.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecordApexProtocolAdherenceResponse clone() => RecordApexProtocolAdherenceResponse()..mergeFromMessage(this);
+  RecordApexProtocolAdherenceResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecordApexProtocolAdherenceResponse copyWith(void Function(RecordApexProtocolAdherenceResponse) updates) => super.copyWith((message) => updates(message as RecordApexProtocolAdherenceResponse)) as RecordApexProtocolAdherenceResponse;
+  RecordApexProtocolAdherenceResponse copyWith(
+          void Function(RecordApexProtocolAdherenceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordApexProtocolAdherenceResponse))
+          as RecordApexProtocolAdherenceResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RecordApexProtocolAdherenceResponse create() => RecordApexProtocolAdherenceResponse._();
+  static RecordApexProtocolAdherenceResponse create() =>
+      RecordApexProtocolAdherenceResponse._();
   @$core.override
   RecordApexProtocolAdherenceResponse createEmptyInstance() => create();
-  static $pb.PbList<RecordApexProtocolAdherenceResponse> createRepeated() => $pb.PbList<RecordApexProtocolAdherenceResponse>();
   @$core.pragma('dart2js:noInline')
-  static RecordApexProtocolAdherenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecordApexProtocolAdherenceResponse>(create);
+  static RecordApexProtocolAdherenceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordApexProtocolAdherenceResponse>(create);
   static RecordApexProtocolAdherenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2670,30 +3134,44 @@ class ListMyApexProtocolAdherenceRequest extends $pb.GeneratedMessage {
 
   ListMyApexProtocolAdherenceRequest._();
 
-  factory ListMyApexProtocolAdherenceRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexProtocolAdherenceRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexProtocolAdherenceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolAdherenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolAdherenceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexProtocolAdherenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'enrolmentId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'days')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolAdherenceRequest clone() => ListMyApexProtocolAdherenceRequest()..mergeFromMessage(this);
+  ListMyApexProtocolAdherenceRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolAdherenceRequest copyWith(void Function(ListMyApexProtocolAdherenceRequest) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolAdherenceRequest)) as ListMyApexProtocolAdherenceRequest;
+  ListMyApexProtocolAdherenceRequest copyWith(
+          void Function(ListMyApexProtocolAdherenceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexProtocolAdherenceRequest))
+          as ListMyApexProtocolAdherenceRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolAdherenceRequest create() => ListMyApexProtocolAdherenceRequest._();
+  static ListMyApexProtocolAdherenceRequest create() =>
+      ListMyApexProtocolAdherenceRequest._();
   @$core.override
   ListMyApexProtocolAdherenceRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexProtocolAdherenceRequest> createRepeated() => $pb.PbList<ListMyApexProtocolAdherenceRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolAdherenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolAdherenceRequest>(create);
+  static ListMyApexProtocolAdherenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolAdherenceRequest>(
+          create);
   static ListMyApexProtocolAdherenceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2726,29 +3204,44 @@ class ListMyApexProtocolAdherenceResponse extends $pb.GeneratedMessage {
 
   ListMyApexProtocolAdherenceResponse._();
 
-  factory ListMyApexProtocolAdherenceResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexProtocolAdherenceResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexProtocolAdherenceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexProtocolAdherenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexProtocolAdherenceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: ApexProtocolAdherence.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexProtocolAdherenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ApexProtocolAdherence>(1, _omitFieldNames ? '' : 'entries',
+        subBuilder: ApexProtocolAdherence.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolAdherenceResponse clone() => ListMyApexProtocolAdherenceResponse()..mergeFromMessage(this);
+  ListMyApexProtocolAdherenceResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexProtocolAdherenceResponse copyWith(void Function(ListMyApexProtocolAdherenceResponse) updates) => super.copyWith((message) => updates(message as ListMyApexProtocolAdherenceResponse)) as ListMyApexProtocolAdherenceResponse;
+  ListMyApexProtocolAdherenceResponse copyWith(
+          void Function(ListMyApexProtocolAdherenceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexProtocolAdherenceResponse))
+          as ListMyApexProtocolAdherenceResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolAdherenceResponse create() => ListMyApexProtocolAdherenceResponse._();
+  static ListMyApexProtocolAdherenceResponse create() =>
+      ListMyApexProtocolAdherenceResponse._();
   @$core.override
   ListMyApexProtocolAdherenceResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexProtocolAdherenceResponse> createRepeated() => $pb.PbList<ListMyApexProtocolAdherenceResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexProtocolAdherenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexProtocolAdherenceResponse>(create);
+  static ListMyApexProtocolAdherenceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyApexProtocolAdherenceResponse>(create);
   static ListMyApexProtocolAdherenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2786,10 +3279,18 @@ class ApexClinic extends $pb.GeneratedMessage {
 
   ApexClinic._();
 
-  factory ApexClinic.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexClinic.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexClinic.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexClinic.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexClinic', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexClinic',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'name')
@@ -2801,13 +3302,13 @@ class ApexClinic extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'websiteUrl')
     ..aOS(10, _omitFieldNames ? '' : 'imageUrl')
     ..aOB(11, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexClinic clone() => ApexClinic()..mergeFromMessage(this);
+  ApexClinic clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexClinic copyWith(void Function(ApexClinic) updates) => super.copyWith((message) => updates(message as ApexClinic)) as ApexClinic;
+  ApexClinic copyWith(void Function(ApexClinic) updates) =>
+      super.copyWith((message) => updates(message as ApexClinic)) as ApexClinic;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2816,9 +3317,9 @@ class ApexClinic extends $pb.GeneratedMessage {
   static ApexClinic create() => ApexClinic._();
   @$core.override
   ApexClinic createEmptyInstance() => create();
-  static $pb.PbList<ApexClinic> createRepeated() => $pb.PbList<ApexClinic>();
   @$core.pragma('dart2js:noInline')
-  static ApexClinic getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexClinic>(create);
+  static ApexClinic getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexClinic>(create);
   static ApexClinic? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2942,23 +3443,34 @@ class ApexClinicIntroRequest extends $pb.GeneratedMessage {
 
   ApexClinicIntroRequest._();
 
-  factory ApexClinicIntroRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApexClinicIntroRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApexClinicIntroRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApexClinicIntroRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApexClinicIntroRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApexClinicIntroRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<ApexClinic>(2, _omitFieldNames ? '' : 'clinic', subBuilder: ApexClinic.create)
+    ..aOM<ApexClinic>(2, _omitFieldNames ? '' : 'clinic',
+        subBuilder: ApexClinic.create)
     ..aOS(3, _omitFieldNames ? '' : 'note')
     ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aInt64(5, _omitFieldNames ? '' : 'requestedAtUnix')
     ..aInt64(6, _omitFieldNames ? '' : 'decidedAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexClinicIntroRequest clone() => ApexClinicIntroRequest()..mergeFromMessage(this);
+  ApexClinicIntroRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApexClinicIntroRequest copyWith(void Function(ApexClinicIntroRequest) updates) => super.copyWith((message) => updates(message as ApexClinicIntroRequest)) as ApexClinicIntroRequest;
+  ApexClinicIntroRequest copyWith(
+          void Function(ApexClinicIntroRequest) updates) =>
+      super.copyWith((message) => updates(message as ApexClinicIntroRequest))
+          as ApexClinicIntroRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2967,9 +3479,9 @@ class ApexClinicIntroRequest extends $pb.GeneratedMessage {
   static ApexClinicIntroRequest create() => ApexClinicIntroRequest._();
   @$core.override
   ApexClinicIntroRequest createEmptyInstance() => create();
-  static $pb.PbList<ApexClinicIntroRequest> createRepeated() => $pb.PbList<ApexClinicIntroRequest>();
   @$core.pragma('dart2js:noInline')
-  static ApexClinicIntroRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApexClinicIntroRequest>(create);
+  static ApexClinicIntroRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApexClinicIntroRequest>(create);
   static ApexClinicIntroRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3040,18 +3552,28 @@ class ListApexClinicsRequest extends $pb.GeneratedMessage {
 
   ListApexClinicsRequest._();
 
-  factory ListApexClinicsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListApexClinicsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListApexClinicsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListApexClinicsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexClinicsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListApexClinicsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'country')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexClinicsRequest clone() => ListApexClinicsRequest()..mergeFromMessage(this);
+  ListApexClinicsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexClinicsRequest copyWith(void Function(ListApexClinicsRequest) updates) => super.copyWith((message) => updates(message as ListApexClinicsRequest)) as ListApexClinicsRequest;
+  ListApexClinicsRequest copyWith(
+          void Function(ListApexClinicsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListApexClinicsRequest))
+          as ListApexClinicsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3060,9 +3582,9 @@ class ListApexClinicsRequest extends $pb.GeneratedMessage {
   static ListApexClinicsRequest create() => ListApexClinicsRequest._();
   @$core.override
   ListApexClinicsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListApexClinicsRequest> createRepeated() => $pb.PbList<ListApexClinicsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListApexClinicsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexClinicsRequest>(create);
+  static ListApexClinicsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListApexClinicsRequest>(create);
   static ListApexClinicsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3086,18 +3608,29 @@ class ListApexClinicsResponse extends $pb.GeneratedMessage {
 
   ListApexClinicsResponse._();
 
-  factory ListApexClinicsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListApexClinicsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListApexClinicsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListApexClinicsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListApexClinicsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ApexClinic>(1, _omitFieldNames ? '' : 'clinics', $pb.PbFieldType.PM, subBuilder: ApexClinic.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListApexClinicsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ApexClinic>(1, _omitFieldNames ? '' : 'clinics',
+        subBuilder: ApexClinic.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexClinicsResponse clone() => ListApexClinicsResponse()..mergeFromMessage(this);
+  ListApexClinicsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListApexClinicsResponse copyWith(void Function(ListApexClinicsResponse) updates) => super.copyWith((message) => updates(message as ListApexClinicsResponse)) as ListApexClinicsResponse;
+  ListApexClinicsResponse copyWith(
+          void Function(ListApexClinicsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListApexClinicsResponse))
+          as ListApexClinicsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3106,9 +3639,9 @@ class ListApexClinicsResponse extends $pb.GeneratedMessage {
   static ListApexClinicsResponse create() => ListApexClinicsResponse._();
   @$core.override
   ListApexClinicsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListApexClinicsResponse> createRepeated() => $pb.PbList<ListApexClinicsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListApexClinicsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListApexClinicsResponse>(create);
+  static ListApexClinicsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListApexClinicsResponse>(create);
   static ListApexClinicsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3126,18 +3659,27 @@ class GetApexClinicRequest extends $pb.GeneratedMessage {
 
   GetApexClinicRequest._();
 
-  factory GetApexClinicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexClinicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexClinicRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexClinicRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexClinicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexClinicRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'slug')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexClinicRequest clone() => GetApexClinicRequest()..mergeFromMessage(this);
+  GetApexClinicRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexClinicRequest copyWith(void Function(GetApexClinicRequest) updates) => super.copyWith((message) => updates(message as GetApexClinicRequest)) as GetApexClinicRequest;
+  GetApexClinicRequest copyWith(void Function(GetApexClinicRequest) updates) =>
+      super.copyWith((message) => updates(message as GetApexClinicRequest))
+          as GetApexClinicRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3146,9 +3688,9 @@ class GetApexClinicRequest extends $pb.GeneratedMessage {
   static GetApexClinicRequest create() => GetApexClinicRequest._();
   @$core.override
   GetApexClinicRequest createEmptyInstance() => create();
-  static $pb.PbList<GetApexClinicRequest> createRepeated() => $pb.PbList<GetApexClinicRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetApexClinicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexClinicRequest>(create);
+  static GetApexClinicRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexClinicRequest>(create);
   static GetApexClinicRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3172,18 +3714,29 @@ class GetApexClinicResponse extends $pb.GeneratedMessage {
 
   GetApexClinicResponse._();
 
-  factory GetApexClinicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetApexClinicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetApexClinicResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetApexClinicResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetApexClinicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexClinic>(1, _omitFieldNames ? '' : 'clinic', subBuilder: ApexClinic.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetApexClinicResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexClinic>(1, _omitFieldNames ? '' : 'clinic',
+        subBuilder: ApexClinic.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexClinicResponse clone() => GetApexClinicResponse()..mergeFromMessage(this);
+  GetApexClinicResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetApexClinicResponse copyWith(void Function(GetApexClinicResponse) updates) => super.copyWith((message) => updates(message as GetApexClinicResponse)) as GetApexClinicResponse;
+  GetApexClinicResponse copyWith(
+          void Function(GetApexClinicResponse) updates) =>
+      super.copyWith((message) => updates(message as GetApexClinicResponse))
+          as GetApexClinicResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3192,9 +3745,9 @@ class GetApexClinicResponse extends $pb.GeneratedMessage {
   static GetApexClinicResponse create() => GetApexClinicResponse._();
   @$core.override
   GetApexClinicResponse createEmptyInstance() => create();
-  static $pb.PbList<GetApexClinicResponse> createRepeated() => $pb.PbList<GetApexClinicResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetApexClinicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetApexClinicResponse>(create);
+  static GetApexClinicResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetApexClinicResponse>(create);
   static GetApexClinicResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3222,30 +3775,42 @@ class RequestApexClinicIntroRequest extends $pb.GeneratedMessage {
 
   RequestApexClinicIntroRequest._();
 
-  factory RequestApexClinicIntroRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RequestApexClinicIntroRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RequestApexClinicIntroRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestApexClinicIntroRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestApexClinicIntroRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestApexClinicIntroRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'clinicId')
     ..aOS(2, _omitFieldNames ? '' : 'note')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RequestApexClinicIntroRequest clone() => RequestApexClinicIntroRequest()..mergeFromMessage(this);
+  RequestApexClinicIntroRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RequestApexClinicIntroRequest copyWith(void Function(RequestApexClinicIntroRequest) updates) => super.copyWith((message) => updates(message as RequestApexClinicIntroRequest)) as RequestApexClinicIntroRequest;
+  RequestApexClinicIntroRequest copyWith(
+          void Function(RequestApexClinicIntroRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RequestApexClinicIntroRequest))
+          as RequestApexClinicIntroRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RequestApexClinicIntroRequest create() => RequestApexClinicIntroRequest._();
+  static RequestApexClinicIntroRequest create() =>
+      RequestApexClinicIntroRequest._();
   @$core.override
   RequestApexClinicIntroRequest createEmptyInstance() => create();
-  static $pb.PbList<RequestApexClinicIntroRequest> createRepeated() => $pb.PbList<RequestApexClinicIntroRequest>();
   @$core.pragma('dart2js:noInline')
-  static RequestApexClinicIntroRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroRequest>(create);
+  static RequestApexClinicIntroRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroRequest>(create);
   static RequestApexClinicIntroRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3278,29 +3843,42 @@ class RequestApexClinicIntroResponse extends $pb.GeneratedMessage {
 
   RequestApexClinicIntroResponse._();
 
-  factory RequestApexClinicIntroResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RequestApexClinicIntroResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RequestApexClinicIntroResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestApexClinicIntroResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RequestApexClinicIntroResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'request', subBuilder: ApexClinicIntroRequest.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestApexClinicIntroResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'request',
+        subBuilder: ApexClinicIntroRequest.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RequestApexClinicIntroResponse clone() => RequestApexClinicIntroResponse()..mergeFromMessage(this);
+  RequestApexClinicIntroResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RequestApexClinicIntroResponse copyWith(void Function(RequestApexClinicIntroResponse) updates) => super.copyWith((message) => updates(message as RequestApexClinicIntroResponse)) as RequestApexClinicIntroResponse;
+  RequestApexClinicIntroResponse copyWith(
+          void Function(RequestApexClinicIntroResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RequestApexClinicIntroResponse))
+          as RequestApexClinicIntroResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RequestApexClinicIntroResponse create() => RequestApexClinicIntroResponse._();
+  static RequestApexClinicIntroResponse create() =>
+      RequestApexClinicIntroResponse._();
   @$core.override
   RequestApexClinicIntroResponse createEmptyInstance() => create();
-  static $pb.PbList<RequestApexClinicIntroResponse> createRepeated() => $pb.PbList<RequestApexClinicIntroResponse>();
   @$core.pragma('dart2js:noInline')
-  static RequestApexClinicIntroResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroResponse>(create);
+  static RequestApexClinicIntroResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestApexClinicIntroResponse>(create);
   static RequestApexClinicIntroResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3320,28 +3898,42 @@ class ListMyApexClinicIntroRequestsRequest extends $pb.GeneratedMessage {
 
   ListMyApexClinicIntroRequestsRequest._();
 
-  factory ListMyApexClinicIntroRequestsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexClinicIntroRequestsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexClinicIntroRequestsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexClinicIntroRequestsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexClinicIntroRequestsRequest clone() => ListMyApexClinicIntroRequestsRequest()..mergeFromMessage(this);
+  ListMyApexClinicIntroRequestsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexClinicIntroRequestsRequest copyWith(void Function(ListMyApexClinicIntroRequestsRequest) updates) => super.copyWith((message) => updates(message as ListMyApexClinicIntroRequestsRequest)) as ListMyApexClinicIntroRequestsRequest;
+  ListMyApexClinicIntroRequestsRequest copyWith(
+          void Function(ListMyApexClinicIntroRequestsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexClinicIntroRequestsRequest))
+          as ListMyApexClinicIntroRequestsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexClinicIntroRequestsRequest create() => ListMyApexClinicIntroRequestsRequest._();
+  static ListMyApexClinicIntroRequestsRequest create() =>
+      ListMyApexClinicIntroRequestsRequest._();
   @$core.override
   ListMyApexClinicIntroRequestsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexClinicIntroRequestsRequest> createRepeated() => $pb.PbList<ListMyApexClinicIntroRequestsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexClinicIntroRequestsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexClinicIntroRequestsRequest>(create);
+  static ListMyApexClinicIntroRequestsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyApexClinicIntroRequestsRequest>(create);
   static ListMyApexClinicIntroRequestsRequest? _defaultInstance;
 }
 
@@ -3356,29 +3948,44 @@ class ListMyApexClinicIntroRequestsResponse extends $pb.GeneratedMessage {
 
   ListMyApexClinicIntroRequestsResponse._();
 
-  factory ListMyApexClinicIntroRequestsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyApexClinicIntroRequestsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyApexClinicIntroRequestsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyApexClinicIntroRequestsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'requests', $pb.PbFieldType.PM, subBuilder: ApexClinicIntroRequest.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyApexClinicIntroRequestsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ApexClinicIntroRequest>(1, _omitFieldNames ? '' : 'requests',
+        subBuilder: ApexClinicIntroRequest.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexClinicIntroRequestsResponse clone() => ListMyApexClinicIntroRequestsResponse()..mergeFromMessage(this);
+  ListMyApexClinicIntroRequestsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyApexClinicIntroRequestsResponse copyWith(void Function(ListMyApexClinicIntroRequestsResponse) updates) => super.copyWith((message) => updates(message as ListMyApexClinicIntroRequestsResponse)) as ListMyApexClinicIntroRequestsResponse;
+  ListMyApexClinicIntroRequestsResponse copyWith(
+          void Function(ListMyApexClinicIntroRequestsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyApexClinicIntroRequestsResponse))
+          as ListMyApexClinicIntroRequestsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyApexClinicIntroRequestsResponse create() => ListMyApexClinicIntroRequestsResponse._();
+  static ListMyApexClinicIntroRequestsResponse create() =>
+      ListMyApexClinicIntroRequestsResponse._();
   @$core.override
   ListMyApexClinicIntroRequestsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyApexClinicIntroRequestsResponse> createRepeated() => $pb.PbList<ListMyApexClinicIntroRequestsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyApexClinicIntroRequestsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyApexClinicIntroRequestsResponse>(create);
+  static ListMyApexClinicIntroRequestsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyApexClinicIntroRequestsResponse>(create);
   static ListMyApexClinicIntroRequestsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3410,25 +4017,33 @@ class Supplement extends $pb.GeneratedMessage {
 
   Supplement._();
 
-  factory Supplement.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Supplement.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Supplement.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Supplement.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Supplement', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Supplement',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'category')
     ..aOS(5, _omitFieldNames ? '' : 'description')
     ..aOS(6, _omitFieldNames ? '' : 'evidenceRating')
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'defaultDoseMg', $pb.PbFieldType.OD)
+    ..aD(7, _omitFieldNames ? '' : 'defaultDoseMg')
     ..aOB(8, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Supplement clone() => Supplement()..mergeFromMessage(this);
+  Supplement clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Supplement copyWith(void Function(Supplement) updates) => super.copyWith((message) => updates(message as Supplement)) as Supplement;
+  Supplement copyWith(void Function(Supplement) updates) =>
+      super.copyWith((message) => updates(message as Supplement)) as Supplement;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3437,9 +4052,9 @@ class Supplement extends $pb.GeneratedMessage {
   static Supplement create() => Supplement._();
   @$core.override
   Supplement createEmptyInstance() => create();
-  static $pb.PbList<Supplement> createRepeated() => $pb.PbList<Supplement>();
   @$core.pragma('dart2js:noInline')
-  static Supplement getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Supplement>(create);
+  static Supplement getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Supplement>(create);
   static Supplement? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3536,23 +4151,33 @@ class UserSupplement extends $pb.GeneratedMessage {
 
   UserSupplement._();
 
-  factory UserSupplement.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UserSupplement.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UserSupplement.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UserSupplement.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserSupplement', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UserSupplement',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<Supplement>(2, _omitFieldNames ? '' : 'supplement', subBuilder: Supplement.create)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'doseMg', $pb.PbFieldType.OD)
+    ..aOM<Supplement>(2, _omitFieldNames ? '' : 'supplement',
+        subBuilder: Supplement.create)
+    ..aD(3, _omitFieldNames ? '' : 'doseMg')
     ..aOS(4, _omitFieldNames ? '' : 'schedule')
     ..aInt64(5, _omitFieldNames ? '' : 'startedAtUnix')
     ..aOB(6, _omitFieldNames ? '' : 'active')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserSupplement clone() => UserSupplement()..mergeFromMessage(this);
+  UserSupplement clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserSupplement copyWith(void Function(UserSupplement) updates) => super.copyWith((message) => updates(message as UserSupplement)) as UserSupplement;
+  UserSupplement copyWith(void Function(UserSupplement) updates) =>
+      super.copyWith((message) => updates(message as UserSupplement))
+          as UserSupplement;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3561,9 +4186,9 @@ class UserSupplement extends $pb.GeneratedMessage {
   static UserSupplement create() => UserSupplement._();
   @$core.override
   UserSupplement createEmptyInstance() => create();
-  static $pb.PbList<UserSupplement> createRepeated() => $pb.PbList<UserSupplement>();
   @$core.pragma('dart2js:noInline')
-  static UserSupplement getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserSupplement>(create);
+  static UserSupplement getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UserSupplement>(create);
   static UserSupplement? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3640,21 +4265,31 @@ class SupplementInteraction extends $pb.GeneratedMessage {
 
   SupplementInteraction._();
 
-  factory SupplementInteraction.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SupplementInteraction.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SupplementInteraction.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SupplementInteraction.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SupplementInteraction', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SupplementInteraction',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aSlug')
     ..aOS(2, _omitFieldNames ? '' : 'bSlug')
     ..aOS(3, _omitFieldNames ? '' : 'severity')
     ..aOS(4, _omitFieldNames ? '' : 'note')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SupplementInteraction clone() => SupplementInteraction()..mergeFromMessage(this);
+  SupplementInteraction clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SupplementInteraction copyWith(void Function(SupplementInteraction) updates) => super.copyWith((message) => updates(message as SupplementInteraction)) as SupplementInteraction;
+  SupplementInteraction copyWith(
+          void Function(SupplementInteraction) updates) =>
+      super.copyWith((message) => updates(message as SupplementInteraction))
+          as SupplementInteraction;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3663,9 +4298,9 @@ class SupplementInteraction extends $pb.GeneratedMessage {
   static SupplementInteraction create() => SupplementInteraction._();
   @$core.override
   SupplementInteraction createEmptyInstance() => create();
-  static $pb.PbList<SupplementInteraction> createRepeated() => $pb.PbList<SupplementInteraction>();
   @$core.pragma('dart2js:noInline')
-  static SupplementInteraction getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SupplementInteraction>(create);
+  static SupplementInteraction getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SupplementInteraction>(create);
   static SupplementInteraction? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3716,18 +4351,28 @@ class ListSupplementsRequest extends $pb.GeneratedMessage {
 
   ListSupplementsRequest._();
 
-  factory ListSupplementsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListSupplementsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListSupplementsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSupplementsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupplementsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSupplementsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'category')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementsRequest clone() => ListSupplementsRequest()..mergeFromMessage(this);
+  ListSupplementsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementsRequest copyWith(void Function(ListSupplementsRequest) updates) => super.copyWith((message) => updates(message as ListSupplementsRequest)) as ListSupplementsRequest;
+  ListSupplementsRequest copyWith(
+          void Function(ListSupplementsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListSupplementsRequest))
+          as ListSupplementsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3736,9 +4381,9 @@ class ListSupplementsRequest extends $pb.GeneratedMessage {
   static ListSupplementsRequest create() => ListSupplementsRequest._();
   @$core.override
   ListSupplementsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListSupplementsRequest> createRepeated() => $pb.PbList<ListSupplementsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListSupplementsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupplementsRequest>(create);
+  static ListSupplementsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSupplementsRequest>(create);
   static ListSupplementsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3762,18 +4407,29 @@ class ListSupplementsResponse extends $pb.GeneratedMessage {
 
   ListSupplementsResponse._();
 
-  factory ListSupplementsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListSupplementsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListSupplementsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSupplementsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupplementsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<Supplement>(1, _omitFieldNames ? '' : 'supplements', $pb.PbFieldType.PM, subBuilder: Supplement.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSupplementsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<Supplement>(1, _omitFieldNames ? '' : 'supplements',
+        subBuilder: Supplement.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementsResponse clone() => ListSupplementsResponse()..mergeFromMessage(this);
+  ListSupplementsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementsResponse copyWith(void Function(ListSupplementsResponse) updates) => super.copyWith((message) => updates(message as ListSupplementsResponse)) as ListSupplementsResponse;
+  ListSupplementsResponse copyWith(
+          void Function(ListSupplementsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListSupplementsResponse))
+          as ListSupplementsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3782,9 +4438,9 @@ class ListSupplementsResponse extends $pb.GeneratedMessage {
   static ListSupplementsResponse create() => ListSupplementsResponse._();
   @$core.override
   ListSupplementsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListSupplementsResponse> createRepeated() => $pb.PbList<ListSupplementsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListSupplementsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupplementsResponse>(create);
+  static ListSupplementsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSupplementsResponse>(create);
   static ListSupplementsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3796,17 +4452,27 @@ class ListMySupplementsRequest extends $pb.GeneratedMessage {
 
   ListMySupplementsRequest._();
 
-  factory ListMySupplementsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMySupplementsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMySupplementsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMySupplementsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMySupplementsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMySupplementsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMySupplementsRequest clone() => ListMySupplementsRequest()..mergeFromMessage(this);
+  ListMySupplementsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMySupplementsRequest copyWith(void Function(ListMySupplementsRequest) updates) => super.copyWith((message) => updates(message as ListMySupplementsRequest)) as ListMySupplementsRequest;
+  ListMySupplementsRequest copyWith(
+          void Function(ListMySupplementsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMySupplementsRequest))
+          as ListMySupplementsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3815,9 +4481,9 @@ class ListMySupplementsRequest extends $pb.GeneratedMessage {
   static ListMySupplementsRequest create() => ListMySupplementsRequest._();
   @$core.override
   ListMySupplementsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMySupplementsRequest> createRepeated() => $pb.PbList<ListMySupplementsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMySupplementsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMySupplementsRequest>(create);
+  static ListMySupplementsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMySupplementsRequest>(create);
   static ListMySupplementsRequest? _defaultInstance;
 }
 
@@ -3832,18 +4498,29 @@ class ListMySupplementsResponse extends $pb.GeneratedMessage {
 
   ListMySupplementsResponse._();
 
-  factory ListMySupplementsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMySupplementsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMySupplementsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMySupplementsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMySupplementsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<UserSupplement>(1, _omitFieldNames ? '' : 'stack', $pb.PbFieldType.PM, subBuilder: UserSupplement.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMySupplementsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<UserSupplement>(1, _omitFieldNames ? '' : 'stack',
+        subBuilder: UserSupplement.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMySupplementsResponse clone() => ListMySupplementsResponse()..mergeFromMessage(this);
+  ListMySupplementsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMySupplementsResponse copyWith(void Function(ListMySupplementsResponse) updates) => super.copyWith((message) => updates(message as ListMySupplementsResponse)) as ListMySupplementsResponse;
+  ListMySupplementsResponse copyWith(
+          void Function(ListMySupplementsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMySupplementsResponse))
+          as ListMySupplementsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3852,9 +4529,9 @@ class ListMySupplementsResponse extends $pb.GeneratedMessage {
   static ListMySupplementsResponse create() => ListMySupplementsResponse._();
   @$core.override
   ListMySupplementsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMySupplementsResponse> createRepeated() => $pb.PbList<ListMySupplementsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMySupplementsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMySupplementsResponse>(create);
+  static ListMySupplementsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMySupplementsResponse>(create);
   static ListMySupplementsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3876,20 +4553,29 @@ class AddSupplementRequest extends $pb.GeneratedMessage {
 
   AddSupplementRequest._();
 
-  factory AddSupplementRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AddSupplementRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AddSupplementRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AddSupplementRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddSupplementRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AddSupplementRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'supplementId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'doseMg', $pb.PbFieldType.OD)
+    ..aD(2, _omitFieldNames ? '' : 'doseMg')
     ..aOS(3, _omitFieldNames ? '' : 'schedule')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddSupplementRequest clone() => AddSupplementRequest()..mergeFromMessage(this);
+  AddSupplementRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddSupplementRequest copyWith(void Function(AddSupplementRequest) updates) => super.copyWith((message) => updates(message as AddSupplementRequest)) as AddSupplementRequest;
+  AddSupplementRequest copyWith(void Function(AddSupplementRequest) updates) =>
+      super.copyWith((message) => updates(message as AddSupplementRequest))
+          as AddSupplementRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3898,9 +4584,9 @@ class AddSupplementRequest extends $pb.GeneratedMessage {
   static AddSupplementRequest create() => AddSupplementRequest._();
   @$core.override
   AddSupplementRequest createEmptyInstance() => create();
-  static $pb.PbList<AddSupplementRequest> createRepeated() => $pb.PbList<AddSupplementRequest>();
   @$core.pragma('dart2js:noInline')
-  static AddSupplementRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddSupplementRequest>(create);
+  static AddSupplementRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AddSupplementRequest>(create);
   static AddSupplementRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3944,19 +4630,31 @@ class AddSupplementResponse extends $pb.GeneratedMessage {
 
   AddSupplementResponse._();
 
-  factory AddSupplementResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AddSupplementResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AddSupplementResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AddSupplementResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddSupplementResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<UserSupplement>(1, _omitFieldNames ? '' : 'entry', subBuilder: UserSupplement.create)
-    ..pc<SupplementInteraction>(2, _omitFieldNames ? '' : 'warnings', $pb.PbFieldType.PM, subBuilder: SupplementInteraction.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AddSupplementResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<UserSupplement>(1, _omitFieldNames ? '' : 'entry',
+        subBuilder: UserSupplement.create)
+    ..pPM<SupplementInteraction>(2, _omitFieldNames ? '' : 'warnings',
+        subBuilder: SupplementInteraction.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddSupplementResponse clone() => AddSupplementResponse()..mergeFromMessage(this);
+  AddSupplementResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddSupplementResponse copyWith(void Function(AddSupplementResponse) updates) => super.copyWith((message) => updates(message as AddSupplementResponse)) as AddSupplementResponse;
+  AddSupplementResponse copyWith(
+          void Function(AddSupplementResponse) updates) =>
+      super.copyWith((message) => updates(message as AddSupplementResponse))
+          as AddSupplementResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -3965,9 +4663,9 @@ class AddSupplementResponse extends $pb.GeneratedMessage {
   static AddSupplementResponse create() => AddSupplementResponse._();
   @$core.override
   AddSupplementResponse createEmptyInstance() => create();
-  static $pb.PbList<AddSupplementResponse> createRepeated() => $pb.PbList<AddSupplementResponse>();
   @$core.pragma('dart2js:noInline')
-  static AddSupplementResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddSupplementResponse>(create);
+  static AddSupplementResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AddSupplementResponse>(create);
   static AddSupplementResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3996,18 +4694,28 @@ class RemoveSupplementRequest extends $pb.GeneratedMessage {
 
   RemoveSupplementRequest._();
 
-  factory RemoveSupplementRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RemoveSupplementRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RemoveSupplementRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveSupplementRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSupplementRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveSupplementRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userSupplementId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemoveSupplementRequest clone() => RemoveSupplementRequest()..mergeFromMessage(this);
+  RemoveSupplementRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemoveSupplementRequest copyWith(void Function(RemoveSupplementRequest) updates) => super.copyWith((message) => updates(message as RemoveSupplementRequest)) as RemoveSupplementRequest;
+  RemoveSupplementRequest copyWith(
+          void Function(RemoveSupplementRequest) updates) =>
+      super.copyWith((message) => updates(message as RemoveSupplementRequest))
+          as RemoveSupplementRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4016,9 +4724,9 @@ class RemoveSupplementRequest extends $pb.GeneratedMessage {
   static RemoveSupplementRequest create() => RemoveSupplementRequest._();
   @$core.override
   RemoveSupplementRequest createEmptyInstance() => create();
-  static $pb.PbList<RemoveSupplementRequest> createRepeated() => $pb.PbList<RemoveSupplementRequest>();
   @$core.pragma('dart2js:noInline')
-  static RemoveSupplementRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSupplementRequest>(create);
+  static RemoveSupplementRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveSupplementRequest>(create);
   static RemoveSupplementRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4036,17 +4744,27 @@ class RemoveSupplementResponse extends $pb.GeneratedMessage {
 
   RemoveSupplementResponse._();
 
-  factory RemoveSupplementResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RemoveSupplementResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RemoveSupplementResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveSupplementResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSupplementResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveSupplementResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemoveSupplementResponse clone() => RemoveSupplementResponse()..mergeFromMessage(this);
+  RemoveSupplementResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemoveSupplementResponse copyWith(void Function(RemoveSupplementResponse) updates) => super.copyWith((message) => updates(message as RemoveSupplementResponse)) as RemoveSupplementResponse;
+  RemoveSupplementResponse copyWith(
+          void Function(RemoveSupplementResponse) updates) =>
+      super.copyWith((message) => updates(message as RemoveSupplementResponse))
+          as RemoveSupplementResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4055,9 +4773,9 @@ class RemoveSupplementResponse extends $pb.GeneratedMessage {
   static RemoveSupplementResponse create() => RemoveSupplementResponse._();
   @$core.override
   RemoveSupplementResponse createEmptyInstance() => create();
-  static $pb.PbList<RemoveSupplementResponse> createRepeated() => $pb.PbList<RemoveSupplementResponse>();
   @$core.pragma('dart2js:noInline')
-  static RemoveSupplementResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSupplementResponse>(create);
+  static RemoveSupplementResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveSupplementResponse>(create);
   static RemoveSupplementResponse? _defaultInstance;
 }
 
@@ -4072,29 +4790,43 @@ class ListSupplementInteractionsRequest extends $pb.GeneratedMessage {
 
   ListSupplementInteractionsRequest._();
 
-  factory ListSupplementInteractionsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListSupplementInteractionsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListSupplementInteractionsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSupplementInteractionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupplementInteractionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSupplementInteractionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'slug')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementInteractionsRequest clone() => ListSupplementInteractionsRequest()..mergeFromMessage(this);
+  ListSupplementInteractionsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementInteractionsRequest copyWith(void Function(ListSupplementInteractionsRequest) updates) => super.copyWith((message) => updates(message as ListSupplementInteractionsRequest)) as ListSupplementInteractionsRequest;
+  ListSupplementInteractionsRequest copyWith(
+          void Function(ListSupplementInteractionsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListSupplementInteractionsRequest))
+          as ListSupplementInteractionsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListSupplementInteractionsRequest create() => ListSupplementInteractionsRequest._();
+  static ListSupplementInteractionsRequest create() =>
+      ListSupplementInteractionsRequest._();
   @$core.override
   ListSupplementInteractionsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListSupplementInteractionsRequest> createRepeated() => $pb.PbList<ListSupplementInteractionsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListSupplementInteractionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupplementInteractionsRequest>(create);
+  static ListSupplementInteractionsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSupplementInteractionsRequest>(
+          create);
   static ListSupplementInteractionsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4118,29 +4850,44 @@ class ListSupplementInteractionsResponse extends $pb.GeneratedMessage {
 
   ListSupplementInteractionsResponse._();
 
-  factory ListSupplementInteractionsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListSupplementInteractionsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListSupplementInteractionsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSupplementInteractionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSupplementInteractionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<SupplementInteraction>(1, _omitFieldNames ? '' : 'interactions', $pb.PbFieldType.PM, subBuilder: SupplementInteraction.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSupplementInteractionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<SupplementInteraction>(1, _omitFieldNames ? '' : 'interactions',
+        subBuilder: SupplementInteraction.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementInteractionsResponse clone() => ListSupplementInteractionsResponse()..mergeFromMessage(this);
+  ListSupplementInteractionsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSupplementInteractionsResponse copyWith(void Function(ListSupplementInteractionsResponse) updates) => super.copyWith((message) => updates(message as ListSupplementInteractionsResponse)) as ListSupplementInteractionsResponse;
+  ListSupplementInteractionsResponse copyWith(
+          void Function(ListSupplementInteractionsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListSupplementInteractionsResponse))
+          as ListSupplementInteractionsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListSupplementInteractionsResponse create() => ListSupplementInteractionsResponse._();
+  static ListSupplementInteractionsResponse create() =>
+      ListSupplementInteractionsResponse._();
   @$core.override
   ListSupplementInteractionsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListSupplementInteractionsResponse> createRepeated() => $pb.PbList<ListSupplementInteractionsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListSupplementInteractionsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSupplementInteractionsResponse>(create);
+  static ListSupplementInteractionsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSupplementInteractionsResponse>(
+          create);
   static ListSupplementInteractionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4164,21 +4911,30 @@ class GlucoseReading extends $pb.GeneratedMessage {
 
   GlucoseReading._();
 
-  factory GlucoseReading.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GlucoseReading.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GlucoseReading.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GlucoseReading.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GlucoseReading', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GlucoseReading',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'valueMgDl', $pb.PbFieldType.OD)
+    ..aD(2, _omitFieldNames ? '' : 'valueMgDl')
     ..aInt64(3, _omitFieldNames ? '' : 'recordedAtUnix')
     ..aOS(4, _omitFieldNames ? '' : 'source')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GlucoseReading clone() => GlucoseReading()..mergeFromMessage(this);
+  GlucoseReading clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GlucoseReading copyWith(void Function(GlucoseReading) updates) => super.copyWith((message) => updates(message as GlucoseReading)) as GlucoseReading;
+  GlucoseReading copyWith(void Function(GlucoseReading) updates) =>
+      super.copyWith((message) => updates(message as GlucoseReading))
+          as GlucoseReading;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4187,9 +4943,9 @@ class GlucoseReading extends $pb.GeneratedMessage {
   static GlucoseReading create() => GlucoseReading._();
   @$core.override
   GlucoseReading createEmptyInstance() => create();
-  static $pb.PbList<GlucoseReading> createRepeated() => $pb.PbList<GlucoseReading>();
   @$core.pragma('dart2js:noInline')
-  static GlucoseReading getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GlucoseReading>(create);
+  static GlucoseReading getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GlucoseReading>(create);
   static GlucoseReading? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4240,18 +4996,27 @@ class ListMyGlucoseRequest extends $pb.GeneratedMessage {
 
   ListMyGlucoseRequest._();
 
-  factory ListMyGlucoseRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyGlucoseRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyGlucoseRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyGlucoseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyGlucoseRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'hours', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyGlucoseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'hours')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyGlucoseRequest clone() => ListMyGlucoseRequest()..mergeFromMessage(this);
+  ListMyGlucoseRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyGlucoseRequest copyWith(void Function(ListMyGlucoseRequest) updates) => super.copyWith((message) => updates(message as ListMyGlucoseRequest)) as ListMyGlucoseRequest;
+  ListMyGlucoseRequest copyWith(void Function(ListMyGlucoseRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyGlucoseRequest))
+          as ListMyGlucoseRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4260,9 +5025,9 @@ class ListMyGlucoseRequest extends $pb.GeneratedMessage {
   static ListMyGlucoseRequest create() => ListMyGlucoseRequest._();
   @$core.override
   ListMyGlucoseRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyGlucoseRequest> createRepeated() => $pb.PbList<ListMyGlucoseRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyGlucoseRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyGlucoseRequest>(create);
+  static ListMyGlucoseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyGlucoseRequest>(create);
   static ListMyGlucoseRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4290,20 +5055,31 @@ class ListMyGlucoseResponse extends $pb.GeneratedMessage {
 
   ListMyGlucoseResponse._();
 
-  factory ListMyGlucoseResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyGlucoseResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyGlucoseResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyGlucoseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyGlucoseResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<GlucoseReading>(1, _omitFieldNames ? '' : 'readings', $pb.PbFieldType.PM, subBuilder: GlucoseReading.create)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'meanMgDl', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'timeInRangePct', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyGlucoseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<GlucoseReading>(1, _omitFieldNames ? '' : 'readings',
+        subBuilder: GlucoseReading.create)
+    ..aD(2, _omitFieldNames ? '' : 'meanMgDl')
+    ..aD(3, _omitFieldNames ? '' : 'timeInRangePct')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyGlucoseResponse clone() => ListMyGlucoseResponse()..mergeFromMessage(this);
+  ListMyGlucoseResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyGlucoseResponse copyWith(void Function(ListMyGlucoseResponse) updates) => super.copyWith((message) => updates(message as ListMyGlucoseResponse)) as ListMyGlucoseResponse;
+  ListMyGlucoseResponse copyWith(
+          void Function(ListMyGlucoseResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMyGlucoseResponse))
+          as ListMyGlucoseResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4312,9 +5088,9 @@ class ListMyGlucoseResponse extends $pb.GeneratedMessage {
   static ListMyGlucoseResponse create() => ListMyGlucoseResponse._();
   @$core.override
   ListMyGlucoseResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyGlucoseResponse> createRepeated() => $pb.PbList<ListMyGlucoseResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyGlucoseResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyGlucoseResponse>(create);
+  static ListMyGlucoseResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyGlucoseResponse>(create);
   static ListMyGlucoseResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4354,31 +5130,43 @@ class IngestGlucoseReadingRequest extends $pb.GeneratedMessage {
 
   IngestGlucoseReadingRequest._();
 
-  factory IngestGlucoseReadingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory IngestGlucoseReadingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory IngestGlucoseReadingRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IngestGlucoseReadingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IngestGlucoseReadingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'valueMgDl', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IngestGlucoseReadingRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'valueMgDl')
     ..aInt64(2, _omitFieldNames ? '' : 'recordedAtUnix')
     ..aOS(3, _omitFieldNames ? '' : 'source')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  IngestGlucoseReadingRequest clone() => IngestGlucoseReadingRequest()..mergeFromMessage(this);
+  IngestGlucoseReadingRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  IngestGlucoseReadingRequest copyWith(void Function(IngestGlucoseReadingRequest) updates) => super.copyWith((message) => updates(message as IngestGlucoseReadingRequest)) as IngestGlucoseReadingRequest;
+  IngestGlucoseReadingRequest copyWith(
+          void Function(IngestGlucoseReadingRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as IngestGlucoseReadingRequest))
+          as IngestGlucoseReadingRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static IngestGlucoseReadingRequest create() => IngestGlucoseReadingRequest._();
+  static IngestGlucoseReadingRequest create() =>
+      IngestGlucoseReadingRequest._();
   @$core.override
   IngestGlucoseReadingRequest createEmptyInstance() => create();
-  static $pb.PbList<IngestGlucoseReadingRequest> createRepeated() => $pb.PbList<IngestGlucoseReadingRequest>();
   @$core.pragma('dart2js:noInline')
-  static IngestGlucoseReadingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IngestGlucoseReadingRequest>(create);
+  static IngestGlucoseReadingRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IngestGlucoseReadingRequest>(create);
   static IngestGlucoseReadingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4420,29 +5208,42 @@ class IngestGlucoseReadingResponse extends $pb.GeneratedMessage {
 
   IngestGlucoseReadingResponse._();
 
-  factory IngestGlucoseReadingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory IngestGlucoseReadingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory IngestGlucoseReadingResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IngestGlucoseReadingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IngestGlucoseReadingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<GlucoseReading>(1, _omitFieldNames ? '' : 'reading', subBuilder: GlucoseReading.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IngestGlucoseReadingResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<GlucoseReading>(1, _omitFieldNames ? '' : 'reading',
+        subBuilder: GlucoseReading.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  IngestGlucoseReadingResponse clone() => IngestGlucoseReadingResponse()..mergeFromMessage(this);
+  IngestGlucoseReadingResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  IngestGlucoseReadingResponse copyWith(void Function(IngestGlucoseReadingResponse) updates) => super.copyWith((message) => updates(message as IngestGlucoseReadingResponse)) as IngestGlucoseReadingResponse;
+  IngestGlucoseReadingResponse copyWith(
+          void Function(IngestGlucoseReadingResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as IngestGlucoseReadingResponse))
+          as IngestGlucoseReadingResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static IngestGlucoseReadingResponse create() => IngestGlucoseReadingResponse._();
+  static IngestGlucoseReadingResponse create() =>
+      IngestGlucoseReadingResponse._();
   @$core.override
   IngestGlucoseReadingResponse createEmptyInstance() => create();
-  static $pb.PbList<IngestGlucoseReadingResponse> createRepeated() => $pb.PbList<IngestGlucoseReadingResponse>();
   @$core.pragma('dart2js:noInline')
-  static IngestGlucoseReadingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IngestGlucoseReadingResponse>(create);
+  static IngestGlucoseReadingResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IngestGlucoseReadingResponse>(create);
   static IngestGlucoseReadingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4470,7 +5271,8 @@ class CycleStatus extends $pb.GeneratedMessage {
     if (present != null) result.present = present;
     if (phase != null) result.phase = phase;
     if (cycleDay != null) result.cycleDay = cycleDay;
-    if (nextPeriodEstimate != null) result.nextPeriodEstimate = nextPeriodEstimate;
+    if (nextPeriodEstimate != null)
+      result.nextPeriodEstimate = nextPeriodEstimate;
     if (lastPeriodStart != null) result.lastPeriodStart = lastPeriodStart;
     if (averageCycleDays != null) result.averageCycleDays = averageCycleDays;
     return result;
@@ -4478,23 +5280,32 @@ class CycleStatus extends $pb.GeneratedMessage {
 
   CycleStatus._();
 
-  factory CycleStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CycleStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CycleStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CycleStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CycleStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CycleStatus',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'present')
     ..aOS(2, _omitFieldNames ? '' : 'phase')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'cycleDay', $pb.PbFieldType.O3)
+    ..aI(3, _omitFieldNames ? '' : 'cycleDay')
     ..aOS(4, _omitFieldNames ? '' : 'nextPeriodEstimate')
     ..aOS(5, _omitFieldNames ? '' : 'lastPeriodStart')
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'averageCycleDays', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(6, _omitFieldNames ? '' : 'averageCycleDays')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CycleStatus clone() => CycleStatus()..mergeFromMessage(this);
+  CycleStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CycleStatus copyWith(void Function(CycleStatus) updates) => super.copyWith((message) => updates(message as CycleStatus)) as CycleStatus;
+  CycleStatus copyWith(void Function(CycleStatus) updates) =>
+      super.copyWith((message) => updates(message as CycleStatus))
+          as CycleStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4503,9 +5314,9 @@ class CycleStatus extends $pb.GeneratedMessage {
   static CycleStatus create() => CycleStatus._();
   @$core.override
   CycleStatus createEmptyInstance() => create();
-  static $pb.PbList<CycleStatus> createRepeated() => $pb.PbList<CycleStatus>();
   @$core.pragma('dart2js:noInline')
-  static CycleStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CycleStatus>(create);
+  static CycleStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CycleStatus>(create);
   static CycleStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4580,21 +5391,30 @@ class CycleSymptom extends $pb.GeneratedMessage {
 
   CycleSymptom._();
 
-  factory CycleSymptom.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CycleSymptom.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CycleSymptom.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CycleSymptom.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CycleSymptom', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CycleSymptom',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'recordedOn')
     ..aOS(3, _omitFieldNames ? '' : 'kind')
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'intensity', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(4, _omitFieldNames ? '' : 'intensity')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CycleSymptom clone() => CycleSymptom()..mergeFromMessage(this);
+  CycleSymptom clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CycleSymptom copyWith(void Function(CycleSymptom) updates) => super.copyWith((message) => updates(message as CycleSymptom)) as CycleSymptom;
+  CycleSymptom copyWith(void Function(CycleSymptom) updates) =>
+      super.copyWith((message) => updates(message as CycleSymptom))
+          as CycleSymptom;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4603,9 +5423,9 @@ class CycleSymptom extends $pb.GeneratedMessage {
   static CycleSymptom create() => CycleSymptom._();
   @$core.override
   CycleSymptom createEmptyInstance() => create();
-  static $pb.PbList<CycleSymptom> createRepeated() => $pb.PbList<CycleSymptom>();
   @$core.pragma('dart2js:noInline')
-  static CycleSymptom getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CycleSymptom>(create);
+  static CycleSymptom getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CycleSymptom>(create);
   static CycleSymptom? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4650,17 +5470,27 @@ class GetCycleStatusRequest extends $pb.GeneratedMessage {
 
   GetCycleStatusRequest._();
 
-  factory GetCycleStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetCycleStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetCycleStatusRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCycleStatusRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCycleStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCycleStatusRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCycleStatusRequest clone() => GetCycleStatusRequest()..mergeFromMessage(this);
+  GetCycleStatusRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCycleStatusRequest copyWith(void Function(GetCycleStatusRequest) updates) => super.copyWith((message) => updates(message as GetCycleStatusRequest)) as GetCycleStatusRequest;
+  GetCycleStatusRequest copyWith(
+          void Function(GetCycleStatusRequest) updates) =>
+      super.copyWith((message) => updates(message as GetCycleStatusRequest))
+          as GetCycleStatusRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4669,9 +5499,9 @@ class GetCycleStatusRequest extends $pb.GeneratedMessage {
   static GetCycleStatusRequest create() => GetCycleStatusRequest._();
   @$core.override
   GetCycleStatusRequest createEmptyInstance() => create();
-  static $pb.PbList<GetCycleStatusRequest> createRepeated() => $pb.PbList<GetCycleStatusRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetCycleStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCycleStatusRequest>(create);
+  static GetCycleStatusRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCycleStatusRequest>(create);
   static GetCycleStatusRequest? _defaultInstance;
 }
 
@@ -4686,18 +5516,29 @@ class GetCycleStatusResponse extends $pb.GeneratedMessage {
 
   GetCycleStatusResponse._();
 
-  factory GetCycleStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetCycleStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetCycleStatusResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCycleStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetCycleStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<CycleStatus>(1, _omitFieldNames ? '' : 'status', subBuilder: CycleStatus.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCycleStatusResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<CycleStatus>(1, _omitFieldNames ? '' : 'status',
+        subBuilder: CycleStatus.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCycleStatusResponse clone() => GetCycleStatusResponse()..mergeFromMessage(this);
+  GetCycleStatusResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetCycleStatusResponse copyWith(void Function(GetCycleStatusResponse) updates) => super.copyWith((message) => updates(message as GetCycleStatusResponse)) as GetCycleStatusResponse;
+  GetCycleStatusResponse copyWith(
+          void Function(GetCycleStatusResponse) updates) =>
+      super.copyWith((message) => updates(message as GetCycleStatusResponse))
+          as GetCycleStatusResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4706,9 +5547,9 @@ class GetCycleStatusResponse extends $pb.GeneratedMessage {
   static GetCycleStatusResponse create() => GetCycleStatusResponse._();
   @$core.override
   GetCycleStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<GetCycleStatusResponse> createRepeated() => $pb.PbList<GetCycleStatusResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetCycleStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetCycleStatusResponse>(create);
+  static GetCycleStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCycleStatusResponse>(create);
   static GetCycleStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4738,20 +5579,29 @@ class LogPeriodRequest extends $pb.GeneratedMessage {
 
   LogPeriodRequest._();
 
-  factory LogPeriodRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LogPeriodRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LogPeriodRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogPeriodRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogPeriodRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogPeriodRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'startedOn')
     ..aOS(2, _omitFieldNames ? '' : 'endedOn')
     ..aOS(3, _omitFieldNames ? '' : 'flow')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogPeriodRequest clone() => LogPeriodRequest()..mergeFromMessage(this);
+  LogPeriodRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogPeriodRequest copyWith(void Function(LogPeriodRequest) updates) => super.copyWith((message) => updates(message as LogPeriodRequest)) as LogPeriodRequest;
+  LogPeriodRequest copyWith(void Function(LogPeriodRequest) updates) =>
+      super.copyWith((message) => updates(message as LogPeriodRequest))
+          as LogPeriodRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4760,9 +5610,9 @@ class LogPeriodRequest extends $pb.GeneratedMessage {
   static LogPeriodRequest create() => LogPeriodRequest._();
   @$core.override
   LogPeriodRequest createEmptyInstance() => create();
-  static $pb.PbList<LogPeriodRequest> createRepeated() => $pb.PbList<LogPeriodRequest>();
   @$core.pragma('dart2js:noInline')
-  static LogPeriodRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogPeriodRequest>(create);
+  static LogPeriodRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogPeriodRequest>(create);
   static LogPeriodRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4804,18 +5654,28 @@ class LogPeriodResponse extends $pb.GeneratedMessage {
 
   LogPeriodResponse._();
 
-  factory LogPeriodResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LogPeriodResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LogPeriodResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogPeriodResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogPeriodResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<CycleStatus>(1, _omitFieldNames ? '' : 'status', subBuilder: CycleStatus.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogPeriodResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<CycleStatus>(1, _omitFieldNames ? '' : 'status',
+        subBuilder: CycleStatus.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogPeriodResponse clone() => LogPeriodResponse()..mergeFromMessage(this);
+  LogPeriodResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogPeriodResponse copyWith(void Function(LogPeriodResponse) updates) => super.copyWith((message) => updates(message as LogPeriodResponse)) as LogPeriodResponse;
+  LogPeriodResponse copyWith(void Function(LogPeriodResponse) updates) =>
+      super.copyWith((message) => updates(message as LogPeriodResponse))
+          as LogPeriodResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4824,9 +5684,9 @@ class LogPeriodResponse extends $pb.GeneratedMessage {
   static LogPeriodResponse create() => LogPeriodResponse._();
   @$core.override
   LogPeriodResponse createEmptyInstance() => create();
-  static $pb.PbList<LogPeriodResponse> createRepeated() => $pb.PbList<LogPeriodResponse>();
   @$core.pragma('dart2js:noInline')
-  static LogPeriodResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogPeriodResponse>(create);
+  static LogPeriodResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogPeriodResponse>(create);
   static LogPeriodResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4856,20 +5716,30 @@ class LogCycleSymptomRequest extends $pb.GeneratedMessage {
 
   LogCycleSymptomRequest._();
 
-  factory LogCycleSymptomRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LogCycleSymptomRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LogCycleSymptomRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogCycleSymptomRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogCycleSymptomRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogCycleSymptomRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'recordedOn')
     ..aOS(2, _omitFieldNames ? '' : 'kind')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'intensity', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(3, _omitFieldNames ? '' : 'intensity')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogCycleSymptomRequest clone() => LogCycleSymptomRequest()..mergeFromMessage(this);
+  LogCycleSymptomRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogCycleSymptomRequest copyWith(void Function(LogCycleSymptomRequest) updates) => super.copyWith((message) => updates(message as LogCycleSymptomRequest)) as LogCycleSymptomRequest;
+  LogCycleSymptomRequest copyWith(
+          void Function(LogCycleSymptomRequest) updates) =>
+      super.copyWith((message) => updates(message as LogCycleSymptomRequest))
+          as LogCycleSymptomRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4878,9 +5748,9 @@ class LogCycleSymptomRequest extends $pb.GeneratedMessage {
   static LogCycleSymptomRequest create() => LogCycleSymptomRequest._();
   @$core.override
   LogCycleSymptomRequest createEmptyInstance() => create();
-  static $pb.PbList<LogCycleSymptomRequest> createRepeated() => $pb.PbList<LogCycleSymptomRequest>();
   @$core.pragma('dart2js:noInline')
-  static LogCycleSymptomRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogCycleSymptomRequest>(create);
+  static LogCycleSymptomRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogCycleSymptomRequest>(create);
   static LogCycleSymptomRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4922,18 +5792,29 @@ class LogCycleSymptomResponse extends $pb.GeneratedMessage {
 
   LogCycleSymptomResponse._();
 
-  factory LogCycleSymptomResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LogCycleSymptomResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LogCycleSymptomResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogCycleSymptomResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LogCycleSymptomResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<CycleSymptom>(1, _omitFieldNames ? '' : 'symptom', subBuilder: CycleSymptom.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogCycleSymptomResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<CycleSymptom>(1, _omitFieldNames ? '' : 'symptom',
+        subBuilder: CycleSymptom.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogCycleSymptomResponse clone() => LogCycleSymptomResponse()..mergeFromMessage(this);
+  LogCycleSymptomResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogCycleSymptomResponse copyWith(void Function(LogCycleSymptomResponse) updates) => super.copyWith((message) => updates(message as LogCycleSymptomResponse)) as LogCycleSymptomResponse;
+  LogCycleSymptomResponse copyWith(
+          void Function(LogCycleSymptomResponse) updates) =>
+      super.copyWith((message) => updates(message as LogCycleSymptomResponse))
+          as LogCycleSymptomResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4942,9 +5823,9 @@ class LogCycleSymptomResponse extends $pb.GeneratedMessage {
   static LogCycleSymptomResponse create() => LogCycleSymptomResponse._();
   @$core.override
   LogCycleSymptomResponse createEmptyInstance() => create();
-  static $pb.PbList<LogCycleSymptomResponse> createRepeated() => $pb.PbList<LogCycleSymptomResponse>();
   @$core.pragma('dart2js:noInline')
-  static LogCycleSymptomResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogCycleSymptomResponse>(create);
+  static LogCycleSymptomResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogCycleSymptomResponse>(create);
   static LogCycleSymptomResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -4970,18 +5851,29 @@ class ListMyCycleSymptomsRequest extends $pb.GeneratedMessage {
 
   ListMyCycleSymptomsRequest._();
 
-  factory ListMyCycleSymptomsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyCycleSymptomsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyCycleSymptomsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyCycleSymptomsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCycleSymptomsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'days', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyCycleSymptomsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'days')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyCycleSymptomsRequest clone() => ListMyCycleSymptomsRequest()..mergeFromMessage(this);
+  ListMyCycleSymptomsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyCycleSymptomsRequest copyWith(void Function(ListMyCycleSymptomsRequest) updates) => super.copyWith((message) => updates(message as ListMyCycleSymptomsRequest)) as ListMyCycleSymptomsRequest;
+  ListMyCycleSymptomsRequest copyWith(
+          void Function(ListMyCycleSymptomsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyCycleSymptomsRequest))
+          as ListMyCycleSymptomsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -4990,9 +5882,9 @@ class ListMyCycleSymptomsRequest extends $pb.GeneratedMessage {
   static ListMyCycleSymptomsRequest create() => ListMyCycleSymptomsRequest._();
   @$core.override
   ListMyCycleSymptomsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyCycleSymptomsRequest> createRepeated() => $pb.PbList<ListMyCycleSymptomsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyCycleSymptomsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCycleSymptomsRequest>(create);
+  static ListMyCycleSymptomsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyCycleSymptomsRequest>(create);
   static ListMyCycleSymptomsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5016,29 +5908,42 @@ class ListMyCycleSymptomsResponse extends $pb.GeneratedMessage {
 
   ListMyCycleSymptomsResponse._();
 
-  factory ListMyCycleSymptomsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyCycleSymptomsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyCycleSymptomsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyCycleSymptomsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyCycleSymptomsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<CycleSymptom>(1, _omitFieldNames ? '' : 'symptoms', $pb.PbFieldType.PM, subBuilder: CycleSymptom.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyCycleSymptomsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<CycleSymptom>(1, _omitFieldNames ? '' : 'symptoms',
+        subBuilder: CycleSymptom.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyCycleSymptomsResponse clone() => ListMyCycleSymptomsResponse()..mergeFromMessage(this);
+  ListMyCycleSymptomsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyCycleSymptomsResponse copyWith(void Function(ListMyCycleSymptomsResponse) updates) => super.copyWith((message) => updates(message as ListMyCycleSymptomsResponse)) as ListMyCycleSymptomsResponse;
+  ListMyCycleSymptomsResponse copyWith(
+          void Function(ListMyCycleSymptomsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyCycleSymptomsResponse))
+          as ListMyCycleSymptomsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyCycleSymptomsResponse create() => ListMyCycleSymptomsResponse._();
+  static ListMyCycleSymptomsResponse create() =>
+      ListMyCycleSymptomsResponse._();
   @$core.override
   ListMyCycleSymptomsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyCycleSymptomsResponse> createRepeated() => $pb.PbList<ListMyCycleSymptomsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyCycleSymptomsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyCycleSymptomsResponse>(create);
+  static ListMyCycleSymptomsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyCycleSymptomsResponse>(create);
   static ListMyCycleSymptomsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5060,19 +5965,28 @@ class MarkerOverride extends $pb.GeneratedMessage {
 
   MarkerOverride._();
 
-  factory MarkerOverride.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory MarkerOverride.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory MarkerOverride.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MarkerOverride.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MarkerOverride', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MarkerOverride',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  MarkerOverride clone() => MarkerOverride()..mergeFromMessage(this);
+  MarkerOverride clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  MarkerOverride copyWith(void Function(MarkerOverride) updates) => super.copyWith((message) => updates(message as MarkerOverride)) as MarkerOverride;
+  MarkerOverride copyWith(void Function(MarkerOverride) updates) =>
+      super.copyWith((message) => updates(message as MarkerOverride))
+          as MarkerOverride;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5081,9 +5995,9 @@ class MarkerOverride extends $pb.GeneratedMessage {
   static MarkerOverride create() => MarkerOverride._();
   @$core.override
   MarkerOverride createEmptyInstance() => create();
-  static $pb.PbList<MarkerOverride> createRepeated() => $pb.PbList<MarkerOverride>();
   @$core.pragma('dart2js:noInline')
-  static MarkerOverride getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MarkerOverride>(create);
+  static MarkerOverride getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MarkerOverride>(create);
   static MarkerOverride? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5116,18 +6030,29 @@ class SimulateApexAgeRequest extends $pb.GeneratedMessage {
 
   SimulateApexAgeRequest._();
 
-  factory SimulateApexAgeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimulateApexAgeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimulateApexAgeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateApexAgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimulateApexAgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<MarkerOverride>(1, _omitFieldNames ? '' : 'overrides', $pb.PbFieldType.PM, subBuilder: MarkerOverride.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateApexAgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<MarkerOverride>(1, _omitFieldNames ? '' : 'overrides',
+        subBuilder: MarkerOverride.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimulateApexAgeRequest clone() => SimulateApexAgeRequest()..mergeFromMessage(this);
+  SimulateApexAgeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimulateApexAgeRequest copyWith(void Function(SimulateApexAgeRequest) updates) => super.copyWith((message) => updates(message as SimulateApexAgeRequest)) as SimulateApexAgeRequest;
+  SimulateApexAgeRequest copyWith(
+          void Function(SimulateApexAgeRequest) updates) =>
+      super.copyWith((message) => updates(message as SimulateApexAgeRequest))
+          as SimulateApexAgeRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5136,9 +6061,9 @@ class SimulateApexAgeRequest extends $pb.GeneratedMessage {
   static SimulateApexAgeRequest create() => SimulateApexAgeRequest._();
   @$core.override
   SimulateApexAgeRequest createEmptyInstance() => create();
-  static $pb.PbList<SimulateApexAgeRequest> createRepeated() => $pb.PbList<SimulateApexAgeRequest>();
   @$core.pragma('dart2js:noInline')
-  static SimulateApexAgeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimulateApexAgeRequest>(create);
+  static SimulateApexAgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimulateApexAgeRequest>(create);
   static SimulateApexAgeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5162,21 +6087,31 @@ class SimulateApexAgeResponse extends $pb.GeneratedMessage {
 
   SimulateApexAgeResponse._();
 
-  factory SimulateApexAgeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimulateApexAgeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimulateApexAgeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateApexAgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimulateApexAgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'currentApexAge', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'projectedApexAge', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'deltaYears', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateApexAgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'currentApexAge')
+    ..aD(2, _omitFieldNames ? '' : 'projectedApexAge')
+    ..aD(3, _omitFieldNames ? '' : 'deltaYears')
     ..aOS(4, _omitFieldNames ? '' : 'method')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimulateApexAgeResponse clone() => SimulateApexAgeResponse()..mergeFromMessage(this);
+  SimulateApexAgeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimulateApexAgeResponse copyWith(void Function(SimulateApexAgeResponse) updates) => super.copyWith((message) => updates(message as SimulateApexAgeResponse)) as SimulateApexAgeResponse;
+  SimulateApexAgeResponse copyWith(
+          void Function(SimulateApexAgeResponse) updates) =>
+      super.copyWith((message) => updates(message as SimulateApexAgeResponse))
+          as SimulateApexAgeResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5185,9 +6120,9 @@ class SimulateApexAgeResponse extends $pb.GeneratedMessage {
   static SimulateApexAgeResponse create() => SimulateApexAgeResponse._();
   @$core.override
   SimulateApexAgeResponse createEmptyInstance() => create();
-  static $pb.PbList<SimulateApexAgeResponse> createRepeated() => $pb.PbList<SimulateApexAgeResponse>();
   @$core.pragma('dart2js:noInline')
-  static SimulateApexAgeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimulateApexAgeResponse>(create);
+  static SimulateApexAgeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimulateApexAgeResponse>(create);
   static SimulateApexAgeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5248,23 +6183,33 @@ class ReadinessSnapshot extends $pb.GeneratedMessage {
 
   ReadinessSnapshot._();
 
-  factory ReadinessSnapshot.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ReadinessSnapshot.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ReadinessSnapshot.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReadinessSnapshot.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadinessSnapshot', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'readiness0100', $pb.PbFieldType.OD, protoName: 'readiness_0_100')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReadinessSnapshot',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'readiness0100',
+        protoName: 'readiness_0_100')
     ..aOS(2, _omitFieldNames ? '' : 'verdict')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'hrvDeltaMs', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'rhrDeltaBpm', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'sleepScore', $pb.PbFieldType.OD)
+    ..aD(3, _omitFieldNames ? '' : 'hrvDeltaMs')
+    ..aD(4, _omitFieldNames ? '' : 'rhrDeltaBpm')
+    ..aD(5, _omitFieldNames ? '' : 'sleepScore')
     ..aOS(6, _omitFieldNames ? '' : 'recommendation')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReadinessSnapshot clone() => ReadinessSnapshot()..mergeFromMessage(this);
+  ReadinessSnapshot clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReadinessSnapshot copyWith(void Function(ReadinessSnapshot) updates) => super.copyWith((message) => updates(message as ReadinessSnapshot)) as ReadinessSnapshot;
+  ReadinessSnapshot copyWith(void Function(ReadinessSnapshot) updates) =>
+      super.copyWith((message) => updates(message as ReadinessSnapshot))
+          as ReadinessSnapshot;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5273,9 +6218,9 @@ class ReadinessSnapshot extends $pb.GeneratedMessage {
   static ReadinessSnapshot create() => ReadinessSnapshot._();
   @$core.override
   ReadinessSnapshot createEmptyInstance() => create();
-  static $pb.PbList<ReadinessSnapshot> createRepeated() => $pb.PbList<ReadinessSnapshot>();
   @$core.pragma('dart2js:noInline')
-  static ReadinessSnapshot getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReadinessSnapshot>(create);
+  static ReadinessSnapshot getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReadinessSnapshot>(create);
   static ReadinessSnapshot? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5338,17 +6283,26 @@ class GetReadinessRequest extends $pb.GeneratedMessage {
 
   GetReadinessRequest._();
 
-  factory GetReadinessRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetReadinessRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetReadinessRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetReadinessRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadinessRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetReadinessRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetReadinessRequest clone() => GetReadinessRequest()..mergeFromMessage(this);
+  GetReadinessRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetReadinessRequest copyWith(void Function(GetReadinessRequest) updates) => super.copyWith((message) => updates(message as GetReadinessRequest)) as GetReadinessRequest;
+  GetReadinessRequest copyWith(void Function(GetReadinessRequest) updates) =>
+      super.copyWith((message) => updates(message as GetReadinessRequest))
+          as GetReadinessRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5357,9 +6311,9 @@ class GetReadinessRequest extends $pb.GeneratedMessage {
   static GetReadinessRequest create() => GetReadinessRequest._();
   @$core.override
   GetReadinessRequest createEmptyInstance() => create();
-  static $pb.PbList<GetReadinessRequest> createRepeated() => $pb.PbList<GetReadinessRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetReadinessRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadinessRequest>(create);
+  static GetReadinessRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetReadinessRequest>(create);
   static GetReadinessRequest? _defaultInstance;
 }
 
@@ -5374,18 +6328,28 @@ class GetReadinessResponse extends $pb.GeneratedMessage {
 
   GetReadinessResponse._();
 
-  factory GetReadinessResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetReadinessResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetReadinessResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetReadinessResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetReadinessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ReadinessSnapshot>(1, _omitFieldNames ? '' : 'snapshot', subBuilder: ReadinessSnapshot.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetReadinessResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ReadinessSnapshot>(1, _omitFieldNames ? '' : 'snapshot',
+        subBuilder: ReadinessSnapshot.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetReadinessResponse clone() => GetReadinessResponse()..mergeFromMessage(this);
+  GetReadinessResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetReadinessResponse copyWith(void Function(GetReadinessResponse) updates) => super.copyWith((message) => updates(message as GetReadinessResponse)) as GetReadinessResponse;
+  GetReadinessResponse copyWith(void Function(GetReadinessResponse) updates) =>
+      super.copyWith((message) => updates(message as GetReadinessResponse))
+          as GetReadinessResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5394,9 +6358,9 @@ class GetReadinessResponse extends $pb.GeneratedMessage {
   static GetReadinessResponse create() => GetReadinessResponse._();
   @$core.override
   GetReadinessResponse createEmptyInstance() => create();
-  static $pb.PbList<GetReadinessResponse> createRepeated() => $pb.PbList<GetReadinessResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetReadinessResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetReadinessResponse>(create);
+  static GetReadinessResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetReadinessResponse>(create);
   static GetReadinessResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5434,24 +6398,33 @@ class ConciergeThread extends $pb.GeneratedMessage {
 
   ConciergeThread._();
 
-  factory ConciergeThread.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ConciergeThread.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ConciergeThread.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConciergeThread.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConciergeThread', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConciergeThread',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'subject')
     ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aInt64(4, _omitFieldNames ? '' : 'slaDueAtUnix')
     ..aInt64(5, _omitFieldNames ? '' : 'createdAtUnix')
     ..aInt64(6, _omitFieldNames ? '' : 'updatedAtUnix')
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'messageCount', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(7, _omitFieldNames ? '' : 'messageCount')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ConciergeThread clone() => ConciergeThread()..mergeFromMessage(this);
+  ConciergeThread clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ConciergeThread copyWith(void Function(ConciergeThread) updates) => super.copyWith((message) => updates(message as ConciergeThread)) as ConciergeThread;
+  ConciergeThread copyWith(void Function(ConciergeThread) updates) =>
+      super.copyWith((message) => updates(message as ConciergeThread))
+          as ConciergeThread;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5460,9 +6433,9 @@ class ConciergeThread extends $pb.GeneratedMessage {
   static ConciergeThread create() => ConciergeThread._();
   @$core.override
   ConciergeThread createEmptyInstance() => create();
-  static $pb.PbList<ConciergeThread> createRepeated() => $pb.PbList<ConciergeThread>();
   @$core.pragma('dart2js:noInline')
-  static ConciergeThread getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConciergeThread>(create);
+  static ConciergeThread getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ConciergeThread>(create);
   static ConciergeThread? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5548,22 +6521,31 @@ class ConciergeMessage extends $pb.GeneratedMessage {
 
   ConciergeMessage._();
 
-  factory ConciergeMessage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ConciergeMessage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ConciergeMessage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConciergeMessage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ConciergeMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConciergeMessage',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'threadId')
     ..aOS(3, _omitFieldNames ? '' : 'senderRole')
     ..aOS(4, _omitFieldNames ? '' : 'body')
     ..aInt64(5, _omitFieldNames ? '' : 'createdAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ConciergeMessage clone() => ConciergeMessage()..mergeFromMessage(this);
+  ConciergeMessage clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ConciergeMessage copyWith(void Function(ConciergeMessage) updates) => super.copyWith((message) => updates(message as ConciergeMessage)) as ConciergeMessage;
+  ConciergeMessage copyWith(void Function(ConciergeMessage) updates) =>
+      super.copyWith((message) => updates(message as ConciergeMessage))
+          as ConciergeMessage;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5572,9 +6554,9 @@ class ConciergeMessage extends $pb.GeneratedMessage {
   static ConciergeMessage create() => ConciergeMessage._();
   @$core.override
   ConciergeMessage createEmptyInstance() => create();
-  static $pb.PbList<ConciergeMessage> createRepeated() => $pb.PbList<ConciergeMessage>();
   @$core.pragma('dart2js:noInline')
-  static ConciergeMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConciergeMessage>(create);
+  static ConciergeMessage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ConciergeMessage>(create);
   static ConciergeMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5636,30 +6618,42 @@ class StartConciergeThreadRequest extends $pb.GeneratedMessage {
 
   StartConciergeThreadRequest._();
 
-  factory StartConciergeThreadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StartConciergeThreadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StartConciergeThreadRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StartConciergeThreadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartConciergeThreadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StartConciergeThreadRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'subject')
     ..aOS(2, _omitFieldNames ? '' : 'openingMessage')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StartConciergeThreadRequest clone() => StartConciergeThreadRequest()..mergeFromMessage(this);
+  StartConciergeThreadRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StartConciergeThreadRequest copyWith(void Function(StartConciergeThreadRequest) updates) => super.copyWith((message) => updates(message as StartConciergeThreadRequest)) as StartConciergeThreadRequest;
+  StartConciergeThreadRequest copyWith(
+          void Function(StartConciergeThreadRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as StartConciergeThreadRequest))
+          as StartConciergeThreadRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static StartConciergeThreadRequest create() => StartConciergeThreadRequest._();
+  static StartConciergeThreadRequest create() =>
+      StartConciergeThreadRequest._();
   @$core.override
   StartConciergeThreadRequest createEmptyInstance() => create();
-  static $pb.PbList<StartConciergeThreadRequest> createRepeated() => $pb.PbList<StartConciergeThreadRequest>();
   @$core.pragma('dart2js:noInline')
-  static StartConciergeThreadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartConciergeThreadRequest>(create);
+  static StartConciergeThreadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StartConciergeThreadRequest>(create);
   static StartConciergeThreadRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5692,29 +6686,42 @@ class StartConciergeThreadResponse extends $pb.GeneratedMessage {
 
   StartConciergeThreadResponse._();
 
-  factory StartConciergeThreadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StartConciergeThreadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StartConciergeThreadResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StartConciergeThreadResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StartConciergeThreadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ConciergeThread>(1, _omitFieldNames ? '' : 'thread', subBuilder: ConciergeThread.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StartConciergeThreadResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ConciergeThread>(1, _omitFieldNames ? '' : 'thread',
+        subBuilder: ConciergeThread.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StartConciergeThreadResponse clone() => StartConciergeThreadResponse()..mergeFromMessage(this);
+  StartConciergeThreadResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StartConciergeThreadResponse copyWith(void Function(StartConciergeThreadResponse) updates) => super.copyWith((message) => updates(message as StartConciergeThreadResponse)) as StartConciergeThreadResponse;
+  StartConciergeThreadResponse copyWith(
+          void Function(StartConciergeThreadResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as StartConciergeThreadResponse))
+          as StartConciergeThreadResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static StartConciergeThreadResponse create() => StartConciergeThreadResponse._();
+  static StartConciergeThreadResponse create() =>
+      StartConciergeThreadResponse._();
   @$core.override
   StartConciergeThreadResponse createEmptyInstance() => create();
-  static $pb.PbList<StartConciergeThreadResponse> createRepeated() => $pb.PbList<StartConciergeThreadResponse>();
   @$core.pragma('dart2js:noInline')
-  static StartConciergeThreadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StartConciergeThreadResponse>(create);
+  static StartConciergeThreadResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StartConciergeThreadResponse>(create);
   static StartConciergeThreadResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5734,28 +6741,40 @@ class ListMyConciergeThreadsRequest extends $pb.GeneratedMessage {
 
   ListMyConciergeThreadsRequest._();
 
-  factory ListMyConciergeThreadsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyConciergeThreadsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyConciergeThreadsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyConciergeThreadsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyConciergeThreadsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyConciergeThreadsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyConciergeThreadsRequest clone() => ListMyConciergeThreadsRequest()..mergeFromMessage(this);
+  ListMyConciergeThreadsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyConciergeThreadsRequest copyWith(void Function(ListMyConciergeThreadsRequest) updates) => super.copyWith((message) => updates(message as ListMyConciergeThreadsRequest)) as ListMyConciergeThreadsRequest;
+  ListMyConciergeThreadsRequest copyWith(
+          void Function(ListMyConciergeThreadsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyConciergeThreadsRequest))
+          as ListMyConciergeThreadsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyConciergeThreadsRequest create() => ListMyConciergeThreadsRequest._();
+  static ListMyConciergeThreadsRequest create() =>
+      ListMyConciergeThreadsRequest._();
   @$core.override
   ListMyConciergeThreadsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyConciergeThreadsRequest> createRepeated() => $pb.PbList<ListMyConciergeThreadsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyConciergeThreadsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyConciergeThreadsRequest>(create);
+  static ListMyConciergeThreadsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyConciergeThreadsRequest>(create);
   static ListMyConciergeThreadsRequest? _defaultInstance;
 }
 
@@ -5770,29 +6789,42 @@ class ListMyConciergeThreadsResponse extends $pb.GeneratedMessage {
 
   ListMyConciergeThreadsResponse._();
 
-  factory ListMyConciergeThreadsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyConciergeThreadsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyConciergeThreadsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyConciergeThreadsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyConciergeThreadsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ConciergeThread>(1, _omitFieldNames ? '' : 'threads', $pb.PbFieldType.PM, subBuilder: ConciergeThread.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyConciergeThreadsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ConciergeThread>(1, _omitFieldNames ? '' : 'threads',
+        subBuilder: ConciergeThread.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyConciergeThreadsResponse clone() => ListMyConciergeThreadsResponse()..mergeFromMessage(this);
+  ListMyConciergeThreadsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyConciergeThreadsResponse copyWith(void Function(ListMyConciergeThreadsResponse) updates) => super.copyWith((message) => updates(message as ListMyConciergeThreadsResponse)) as ListMyConciergeThreadsResponse;
+  ListMyConciergeThreadsResponse copyWith(
+          void Function(ListMyConciergeThreadsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyConciergeThreadsResponse))
+          as ListMyConciergeThreadsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyConciergeThreadsResponse create() => ListMyConciergeThreadsResponse._();
+  static ListMyConciergeThreadsResponse create() =>
+      ListMyConciergeThreadsResponse._();
   @$core.override
   ListMyConciergeThreadsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyConciergeThreadsResponse> createRepeated() => $pb.PbList<ListMyConciergeThreadsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyConciergeThreadsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyConciergeThreadsResponse>(create);
+  static ListMyConciergeThreadsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyConciergeThreadsResponse>(create);
   static ListMyConciergeThreadsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5810,18 +6842,28 @@ class GetConciergeThreadRequest extends $pb.GeneratedMessage {
 
   GetConciergeThreadRequest._();
 
-  factory GetConciergeThreadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetConciergeThreadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetConciergeThreadRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetConciergeThreadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConciergeThreadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetConciergeThreadRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'threadId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConciergeThreadRequest clone() => GetConciergeThreadRequest()..mergeFromMessage(this);
+  GetConciergeThreadRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConciergeThreadRequest copyWith(void Function(GetConciergeThreadRequest) updates) => super.copyWith((message) => updates(message as GetConciergeThreadRequest)) as GetConciergeThreadRequest;
+  GetConciergeThreadRequest copyWith(
+          void Function(GetConciergeThreadRequest) updates) =>
+      super.copyWith((message) => updates(message as GetConciergeThreadRequest))
+          as GetConciergeThreadRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5830,9 +6872,9 @@ class GetConciergeThreadRequest extends $pb.GeneratedMessage {
   static GetConciergeThreadRequest create() => GetConciergeThreadRequest._();
   @$core.override
   GetConciergeThreadRequest createEmptyInstance() => create();
-  static $pb.PbList<GetConciergeThreadRequest> createRepeated() => $pb.PbList<GetConciergeThreadRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetConciergeThreadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetConciergeThreadRequest>(create);
+  static GetConciergeThreadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetConciergeThreadRequest>(create);
   static GetConciergeThreadRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5858,19 +6900,32 @@ class GetConciergeThreadResponse extends $pb.GeneratedMessage {
 
   GetConciergeThreadResponse._();
 
-  factory GetConciergeThreadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetConciergeThreadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetConciergeThreadResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetConciergeThreadResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConciergeThreadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ConciergeThread>(1, _omitFieldNames ? '' : 'thread', subBuilder: ConciergeThread.create)
-    ..pc<ConciergeMessage>(2, _omitFieldNames ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: ConciergeMessage.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetConciergeThreadResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ConciergeThread>(1, _omitFieldNames ? '' : 'thread',
+        subBuilder: ConciergeThread.create)
+    ..pPM<ConciergeMessage>(2, _omitFieldNames ? '' : 'messages',
+        subBuilder: ConciergeMessage.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConciergeThreadResponse clone() => GetConciergeThreadResponse()..mergeFromMessage(this);
+  GetConciergeThreadResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConciergeThreadResponse copyWith(void Function(GetConciergeThreadResponse) updates) => super.copyWith((message) => updates(message as GetConciergeThreadResponse)) as GetConciergeThreadResponse;
+  GetConciergeThreadResponse copyWith(
+          void Function(GetConciergeThreadResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetConciergeThreadResponse))
+          as GetConciergeThreadResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -5879,9 +6934,9 @@ class GetConciergeThreadResponse extends $pb.GeneratedMessage {
   static GetConciergeThreadResponse create() => GetConciergeThreadResponse._();
   @$core.override
   GetConciergeThreadResponse createEmptyInstance() => create();
-  static $pb.PbList<GetConciergeThreadResponse> createRepeated() => $pb.PbList<GetConciergeThreadResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetConciergeThreadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetConciergeThreadResponse>(create);
+  static GetConciergeThreadResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetConciergeThreadResponse>(create);
   static GetConciergeThreadResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5912,30 +6967,42 @@ class PostConciergeMessageRequest extends $pb.GeneratedMessage {
 
   PostConciergeMessageRequest._();
 
-  factory PostConciergeMessageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PostConciergeMessageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PostConciergeMessageRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostConciergeMessageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostConciergeMessageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostConciergeMessageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'threadId')
     ..aOS(2, _omitFieldNames ? '' : 'body')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PostConciergeMessageRequest clone() => PostConciergeMessageRequest()..mergeFromMessage(this);
+  PostConciergeMessageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PostConciergeMessageRequest copyWith(void Function(PostConciergeMessageRequest) updates) => super.copyWith((message) => updates(message as PostConciergeMessageRequest)) as PostConciergeMessageRequest;
+  PostConciergeMessageRequest copyWith(
+          void Function(PostConciergeMessageRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PostConciergeMessageRequest))
+          as PostConciergeMessageRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PostConciergeMessageRequest create() => PostConciergeMessageRequest._();
+  static PostConciergeMessageRequest create() =>
+      PostConciergeMessageRequest._();
   @$core.override
   PostConciergeMessageRequest createEmptyInstance() => create();
-  static $pb.PbList<PostConciergeMessageRequest> createRepeated() => $pb.PbList<PostConciergeMessageRequest>();
   @$core.pragma('dart2js:noInline')
-  static PostConciergeMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageRequest>(create);
+  static PostConciergeMessageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageRequest>(create);
   static PostConciergeMessageRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -5968,29 +7035,42 @@ class PostConciergeMessageResponse extends $pb.GeneratedMessage {
 
   PostConciergeMessageResponse._();
 
-  factory PostConciergeMessageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PostConciergeMessageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PostConciergeMessageResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostConciergeMessageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PostConciergeMessageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ConciergeMessage>(1, _omitFieldNames ? '' : 'message', subBuilder: ConciergeMessage.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostConciergeMessageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ConciergeMessage>(1, _omitFieldNames ? '' : 'message',
+        subBuilder: ConciergeMessage.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PostConciergeMessageResponse clone() => PostConciergeMessageResponse()..mergeFromMessage(this);
+  PostConciergeMessageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PostConciergeMessageResponse copyWith(void Function(PostConciergeMessageResponse) updates) => super.copyWith((message) => updates(message as PostConciergeMessageResponse)) as PostConciergeMessageResponse;
+  PostConciergeMessageResponse copyWith(
+          void Function(PostConciergeMessageResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as PostConciergeMessageResponse))
+          as PostConciergeMessageResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PostConciergeMessageResponse create() => PostConciergeMessageResponse._();
+  static PostConciergeMessageResponse create() =>
+      PostConciergeMessageResponse._();
   @$core.override
   PostConciergeMessageResponse createEmptyInstance() => create();
-  static $pb.PbList<PostConciergeMessageResponse> createRepeated() => $pb.PbList<PostConciergeMessageResponse>();
   @$core.pragma('dart2js:noInline')
-  static PostConciergeMessageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageResponse>(create);
+  static PostConciergeMessageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostConciergeMessageResponse>(create);
   static PostConciergeMessageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6026,23 +7106,32 @@ class AnthologyAuthor extends $pb.GeneratedMessage {
 
   AnthologyAuthor._();
 
-  factory AnthologyAuthor.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AnthologyAuthor.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AnthologyAuthor.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnthologyAuthor.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnthologyAuthor', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnthologyAuthor',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'credentials')
     ..aOS(5, _omitFieldNames ? '' : 'bioUrl')
     ..aOS(6, _omitFieldNames ? '' : 'avatarUrl')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AnthologyAuthor clone() => AnthologyAuthor()..mergeFromMessage(this);
+  AnthologyAuthor clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AnthologyAuthor copyWith(void Function(AnthologyAuthor) updates) => super.copyWith((message) => updates(message as AnthologyAuthor)) as AnthologyAuthor;
+  AnthologyAuthor copyWith(void Function(AnthologyAuthor) updates) =>
+      super.copyWith((message) => updates(message as AnthologyAuthor))
+          as AnthologyAuthor;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6051,9 +7140,9 @@ class AnthologyAuthor extends $pb.GeneratedMessage {
   static AnthologyAuthor create() => AnthologyAuthor._();
   @$core.override
   AnthologyAuthor createEmptyInstance() => create();
-  static $pb.PbList<AnthologyAuthor> createRepeated() => $pb.PbList<AnthologyAuthor>();
   @$core.pragma('dart2js:noInline')
-  static AnthologyAuthor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnthologyAuthor>(create);
+  static AnthologyAuthor getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnthologyAuthor>(create);
   static AnthologyAuthor? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6138,26 +7227,36 @@ class AnthologyArticle extends $pb.GeneratedMessage {
 
   AnthologyArticle._();
 
-  factory AnthologyArticle.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AnthologyArticle.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AnthologyArticle.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnthologyArticle.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnthologyArticle', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnthologyArticle',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
-    ..aOM<AnthologyAuthor>(3, _omitFieldNames ? '' : 'author', subBuilder: AnthologyAuthor.create)
+    ..aOM<AnthologyAuthor>(3, _omitFieldNames ? '' : 'author',
+        subBuilder: AnthologyAuthor.create)
     ..aOS(4, _omitFieldNames ? '' : 'title')
     ..aOS(5, _omitFieldNames ? '' : 'dek')
     ..aOS(6, _omitFieldNames ? '' : 'body')
     ..aOS(7, _omitFieldNames ? '' : 'heroUrl')
     ..aInt64(8, _omitFieldNames ? '' : 'publishedAtUnix')
     ..aOB(9, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AnthologyArticle clone() => AnthologyArticle()..mergeFromMessage(this);
+  AnthologyArticle clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AnthologyArticle copyWith(void Function(AnthologyArticle) updates) => super.copyWith((message) => updates(message as AnthologyArticle)) as AnthologyArticle;
+  AnthologyArticle copyWith(void Function(AnthologyArticle) updates) =>
+      super.copyWith((message) => updates(message as AnthologyArticle))
+          as AnthologyArticle;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6166,9 +7265,9 @@ class AnthologyArticle extends $pb.GeneratedMessage {
   static AnthologyArticle create() => AnthologyArticle._();
   @$core.override
   AnthologyArticle createEmptyInstance() => create();
-  static $pb.PbList<AnthologyArticle> createRepeated() => $pb.PbList<AnthologyArticle>();
   @$core.pragma('dart2js:noInline')
-  static AnthologyArticle getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnthologyArticle>(create);
+  static AnthologyArticle getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnthologyArticle>(create);
   static AnthologyArticle? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6260,28 +7359,40 @@ class ListAnthologyArticlesRequest extends $pb.GeneratedMessage {
 
   ListAnthologyArticlesRequest._();
 
-  factory ListAnthologyArticlesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListAnthologyArticlesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListAnthologyArticlesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAnthologyArticlesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAnthologyArticlesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAnthologyArticlesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAnthologyArticlesRequest clone() => ListAnthologyArticlesRequest()..mergeFromMessage(this);
+  ListAnthologyArticlesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAnthologyArticlesRequest copyWith(void Function(ListAnthologyArticlesRequest) updates) => super.copyWith((message) => updates(message as ListAnthologyArticlesRequest)) as ListAnthologyArticlesRequest;
+  ListAnthologyArticlesRequest copyWith(
+          void Function(ListAnthologyArticlesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListAnthologyArticlesRequest))
+          as ListAnthologyArticlesRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListAnthologyArticlesRequest create() => ListAnthologyArticlesRequest._();
+  static ListAnthologyArticlesRequest create() =>
+      ListAnthologyArticlesRequest._();
   @$core.override
   ListAnthologyArticlesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListAnthologyArticlesRequest> createRepeated() => $pb.PbList<ListAnthologyArticlesRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListAnthologyArticlesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesRequest>(create);
+  static ListAnthologyArticlesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesRequest>(create);
   static ListAnthologyArticlesRequest? _defaultInstance;
 }
 
@@ -6296,29 +7407,42 @@ class ListAnthologyArticlesResponse extends $pb.GeneratedMessage {
 
   ListAnthologyArticlesResponse._();
 
-  factory ListAnthologyArticlesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListAnthologyArticlesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListAnthologyArticlesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAnthologyArticlesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAnthologyArticlesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<AnthologyArticle>(1, _omitFieldNames ? '' : 'articles', $pb.PbFieldType.PM, subBuilder: AnthologyArticle.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAnthologyArticlesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<AnthologyArticle>(1, _omitFieldNames ? '' : 'articles',
+        subBuilder: AnthologyArticle.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAnthologyArticlesResponse clone() => ListAnthologyArticlesResponse()..mergeFromMessage(this);
+  ListAnthologyArticlesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAnthologyArticlesResponse copyWith(void Function(ListAnthologyArticlesResponse) updates) => super.copyWith((message) => updates(message as ListAnthologyArticlesResponse)) as ListAnthologyArticlesResponse;
+  ListAnthologyArticlesResponse copyWith(
+          void Function(ListAnthologyArticlesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListAnthologyArticlesResponse))
+          as ListAnthologyArticlesResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListAnthologyArticlesResponse create() => ListAnthologyArticlesResponse._();
+  static ListAnthologyArticlesResponse create() =>
+      ListAnthologyArticlesResponse._();
   @$core.override
   ListAnthologyArticlesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListAnthologyArticlesResponse> createRepeated() => $pb.PbList<ListAnthologyArticlesResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListAnthologyArticlesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesResponse>(create);
+  static ListAnthologyArticlesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAnthologyArticlesResponse>(create);
   static ListAnthologyArticlesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6336,18 +7460,29 @@ class GetAnthologyArticleRequest extends $pb.GeneratedMessage {
 
   GetAnthologyArticleRequest._();
 
-  factory GetAnthologyArticleRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetAnthologyArticleRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetAnthologyArticleRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnthologyArticleRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAnthologyArticleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnthologyArticleRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'slug')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAnthologyArticleRequest clone() => GetAnthologyArticleRequest()..mergeFromMessage(this);
+  GetAnthologyArticleRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAnthologyArticleRequest copyWith(void Function(GetAnthologyArticleRequest) updates) => super.copyWith((message) => updates(message as GetAnthologyArticleRequest)) as GetAnthologyArticleRequest;
+  GetAnthologyArticleRequest copyWith(
+          void Function(GetAnthologyArticleRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetAnthologyArticleRequest))
+          as GetAnthologyArticleRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6356,9 +7491,9 @@ class GetAnthologyArticleRequest extends $pb.GeneratedMessage {
   static GetAnthologyArticleRequest create() => GetAnthologyArticleRequest._();
   @$core.override
   GetAnthologyArticleRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAnthologyArticleRequest> createRepeated() => $pb.PbList<GetAnthologyArticleRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetAnthologyArticleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleRequest>(create);
+  static GetAnthologyArticleRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleRequest>(create);
   static GetAnthologyArticleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6382,29 +7517,42 @@ class GetAnthologyArticleResponse extends $pb.GeneratedMessage {
 
   GetAnthologyArticleResponse._();
 
-  factory GetAnthologyArticleResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetAnthologyArticleResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetAnthologyArticleResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnthologyArticleResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAnthologyArticleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<AnthologyArticle>(1, _omitFieldNames ? '' : 'article', subBuilder: AnthologyArticle.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnthologyArticleResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnthologyArticle>(1, _omitFieldNames ? '' : 'article',
+        subBuilder: AnthologyArticle.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAnthologyArticleResponse clone() => GetAnthologyArticleResponse()..mergeFromMessage(this);
+  GetAnthologyArticleResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAnthologyArticleResponse copyWith(void Function(GetAnthologyArticleResponse) updates) => super.copyWith((message) => updates(message as GetAnthologyArticleResponse)) as GetAnthologyArticleResponse;
+  GetAnthologyArticleResponse copyWith(
+          void Function(GetAnthologyArticleResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetAnthologyArticleResponse))
+          as GetAnthologyArticleResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetAnthologyArticleResponse create() => GetAnthologyArticleResponse._();
+  static GetAnthologyArticleResponse create() =>
+      GetAnthologyArticleResponse._();
   @$core.override
   GetAnthologyArticleResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAnthologyArticleResponse> createRepeated() => $pb.PbList<GetAnthologyArticleResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetAnthologyArticleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleResponse>(create);
+  static GetAnthologyArticleResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAnthologyArticleResponse>(create);
   static GetAnthologyArticleResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6446,26 +7594,35 @@ class PharmacologyEntry extends $pb.GeneratedMessage {
 
   PharmacologyEntry._();
 
-  factory PharmacologyEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PharmacologyEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PharmacologyEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PharmacologyEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PharmacologyEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PharmacologyEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'drugName')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'doseMg', $pb.PbFieldType.OD)
+    ..aD(3, _omitFieldNames ? '' : 'doseMg')
     ..aOS(4, _omitFieldNames ? '' : 'schedule')
     ..aOS(5, _omitFieldNames ? '' : 'kind')
     ..aOS(6, _omitFieldNames ? '' : 'evidenceRating')
     ..aOS(7, _omitFieldNames ? '' : 'notes')
     ..aOS(8, _omitFieldNames ? '' : 'startedOn')
     ..aOB(9, _omitFieldNames ? '' : 'active')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PharmacologyEntry clone() => PharmacologyEntry()..mergeFromMessage(this);
+  PharmacologyEntry clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PharmacologyEntry copyWith(void Function(PharmacologyEntry) updates) => super.copyWith((message) => updates(message as PharmacologyEntry)) as PharmacologyEntry;
+  PharmacologyEntry copyWith(void Function(PharmacologyEntry) updates) =>
+      super.copyWith((message) => updates(message as PharmacologyEntry))
+          as PharmacologyEntry;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6474,9 +7631,9 @@ class PharmacologyEntry extends $pb.GeneratedMessage {
   static PharmacologyEntry create() => PharmacologyEntry._();
   @$core.override
   PharmacologyEntry createEmptyInstance() => create();
-  static $pb.PbList<PharmacologyEntry> createRepeated() => $pb.PbList<PharmacologyEntry>();
   @$core.pragma('dart2js:noInline')
-  static PharmacologyEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PharmacologyEntry>(create);
+  static PharmacologyEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PharmacologyEntry>(create);
   static PharmacologyEntry? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6566,17 +7723,27 @@ class ListMyPharmacologyRequest extends $pb.GeneratedMessage {
 
   ListMyPharmacologyRequest._();
 
-  factory ListMyPharmacologyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyPharmacologyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyPharmacologyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyPharmacologyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPharmacologyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyPharmacologyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyPharmacologyRequest clone() => ListMyPharmacologyRequest()..mergeFromMessage(this);
+  ListMyPharmacologyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyPharmacologyRequest copyWith(void Function(ListMyPharmacologyRequest) updates) => super.copyWith((message) => updates(message as ListMyPharmacologyRequest)) as ListMyPharmacologyRequest;
+  ListMyPharmacologyRequest copyWith(
+          void Function(ListMyPharmacologyRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyPharmacologyRequest))
+          as ListMyPharmacologyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6585,9 +7752,9 @@ class ListMyPharmacologyRequest extends $pb.GeneratedMessage {
   static ListMyPharmacologyRequest create() => ListMyPharmacologyRequest._();
   @$core.override
   ListMyPharmacologyRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyPharmacologyRequest> createRepeated() => $pb.PbList<ListMyPharmacologyRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyPharmacologyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPharmacologyRequest>(create);
+  static ListMyPharmacologyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyPharmacologyRequest>(create);
   static ListMyPharmacologyRequest? _defaultInstance;
 }
 
@@ -6602,18 +7769,30 @@ class ListMyPharmacologyResponse extends $pb.GeneratedMessage {
 
   ListMyPharmacologyResponse._();
 
-  factory ListMyPharmacologyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyPharmacologyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyPharmacologyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyPharmacologyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyPharmacologyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<PharmacologyEntry>(1, _omitFieldNames ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: PharmacologyEntry.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyPharmacologyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<PharmacologyEntry>(1, _omitFieldNames ? '' : 'entries',
+        subBuilder: PharmacologyEntry.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyPharmacologyResponse clone() => ListMyPharmacologyResponse()..mergeFromMessage(this);
+  ListMyPharmacologyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyPharmacologyResponse copyWith(void Function(ListMyPharmacologyResponse) updates) => super.copyWith((message) => updates(message as ListMyPharmacologyResponse)) as ListMyPharmacologyResponse;
+  ListMyPharmacologyResponse copyWith(
+          void Function(ListMyPharmacologyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyPharmacologyResponse))
+          as ListMyPharmacologyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6622,9 +7801,9 @@ class ListMyPharmacologyResponse extends $pb.GeneratedMessage {
   static ListMyPharmacologyResponse create() => ListMyPharmacologyResponse._();
   @$core.override
   ListMyPharmacologyResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyPharmacologyResponse> createRepeated() => $pb.PbList<ListMyPharmacologyResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyPharmacologyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyPharmacologyResponse>(create);
+  static ListMyPharmacologyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyPharmacologyResponse>(create);
   static ListMyPharmacologyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6654,24 +7833,34 @@ class AddPharmacologyRequest extends $pb.GeneratedMessage {
 
   AddPharmacologyRequest._();
 
-  factory AddPharmacologyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AddPharmacologyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AddPharmacologyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AddPharmacologyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddPharmacologyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AddPharmacologyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'drugName')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'doseMg', $pb.PbFieldType.OD)
+    ..aD(2, _omitFieldNames ? '' : 'doseMg')
     ..aOS(3, _omitFieldNames ? '' : 'schedule')
     ..aOS(4, _omitFieldNames ? '' : 'kind')
     ..aOS(5, _omitFieldNames ? '' : 'evidenceRating')
     ..aOS(6, _omitFieldNames ? '' : 'notes')
     ..aOS(7, _omitFieldNames ? '' : 'startedOn')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddPharmacologyRequest clone() => AddPharmacologyRequest()..mergeFromMessage(this);
+  AddPharmacologyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddPharmacologyRequest copyWith(void Function(AddPharmacologyRequest) updates) => super.copyWith((message) => updates(message as AddPharmacologyRequest)) as AddPharmacologyRequest;
+  AddPharmacologyRequest copyWith(
+          void Function(AddPharmacologyRequest) updates) =>
+      super.copyWith((message) => updates(message as AddPharmacologyRequest))
+          as AddPharmacologyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6680,9 +7869,9 @@ class AddPharmacologyRequest extends $pb.GeneratedMessage {
   static AddPharmacologyRequest create() => AddPharmacologyRequest._();
   @$core.override
   AddPharmacologyRequest createEmptyInstance() => create();
-  static $pb.PbList<AddPharmacologyRequest> createRepeated() => $pb.PbList<AddPharmacologyRequest>();
   @$core.pragma('dart2js:noInline')
-  static AddPharmacologyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddPharmacologyRequest>(create);
+  static AddPharmacologyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AddPharmacologyRequest>(create);
   static AddPharmacologyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6760,18 +7949,29 @@ class AddPharmacologyResponse extends $pb.GeneratedMessage {
 
   AddPharmacologyResponse._();
 
-  factory AddPharmacologyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AddPharmacologyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AddPharmacologyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AddPharmacologyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddPharmacologyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<PharmacologyEntry>(1, _omitFieldNames ? '' : 'entry', subBuilder: PharmacologyEntry.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AddPharmacologyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<PharmacologyEntry>(1, _omitFieldNames ? '' : 'entry',
+        subBuilder: PharmacologyEntry.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddPharmacologyResponse clone() => AddPharmacologyResponse()..mergeFromMessage(this);
+  AddPharmacologyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AddPharmacologyResponse copyWith(void Function(AddPharmacologyResponse) updates) => super.copyWith((message) => updates(message as AddPharmacologyResponse)) as AddPharmacologyResponse;
+  AddPharmacologyResponse copyWith(
+          void Function(AddPharmacologyResponse) updates) =>
+      super.copyWith((message) => updates(message as AddPharmacologyResponse))
+          as AddPharmacologyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6780,9 +7980,9 @@ class AddPharmacologyResponse extends $pb.GeneratedMessage {
   static AddPharmacologyResponse create() => AddPharmacologyResponse._();
   @$core.override
   AddPharmacologyResponse createEmptyInstance() => create();
-  static $pb.PbList<AddPharmacologyResponse> createRepeated() => $pb.PbList<AddPharmacologyResponse>();
   @$core.pragma('dart2js:noInline')
-  static AddPharmacologyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddPharmacologyResponse>(create);
+  static AddPharmacologyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AddPharmacologyResponse>(create);
   static AddPharmacologyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6808,18 +8008,28 @@ class RemovePharmacologyRequest extends $pb.GeneratedMessage {
 
   RemovePharmacologyRequest._();
 
-  factory RemovePharmacologyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RemovePharmacologyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RemovePharmacologyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemovePharmacologyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemovePharmacologyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemovePharmacologyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'entryId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemovePharmacologyRequest clone() => RemovePharmacologyRequest()..mergeFromMessage(this);
+  RemovePharmacologyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemovePharmacologyRequest copyWith(void Function(RemovePharmacologyRequest) updates) => super.copyWith((message) => updates(message as RemovePharmacologyRequest)) as RemovePharmacologyRequest;
+  RemovePharmacologyRequest copyWith(
+          void Function(RemovePharmacologyRequest) updates) =>
+      super.copyWith((message) => updates(message as RemovePharmacologyRequest))
+          as RemovePharmacologyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6828,9 +8038,9 @@ class RemovePharmacologyRequest extends $pb.GeneratedMessage {
   static RemovePharmacologyRequest create() => RemovePharmacologyRequest._();
   @$core.override
   RemovePharmacologyRequest createEmptyInstance() => create();
-  static $pb.PbList<RemovePharmacologyRequest> createRepeated() => $pb.PbList<RemovePharmacologyRequest>();
   @$core.pragma('dart2js:noInline')
-  static RemovePharmacologyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemovePharmacologyRequest>(create);
+  static RemovePharmacologyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemovePharmacologyRequest>(create);
   static RemovePharmacologyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6848,17 +8058,28 @@ class RemovePharmacologyResponse extends $pb.GeneratedMessage {
 
   RemovePharmacologyResponse._();
 
-  factory RemovePharmacologyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RemovePharmacologyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RemovePharmacologyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemovePharmacologyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemovePharmacologyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemovePharmacologyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemovePharmacologyResponse clone() => RemovePharmacologyResponse()..mergeFromMessage(this);
+  RemovePharmacologyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RemovePharmacologyResponse copyWith(void Function(RemovePharmacologyResponse) updates) => super.copyWith((message) => updates(message as RemovePharmacologyResponse)) as RemovePharmacologyResponse;
+  RemovePharmacologyResponse copyWith(
+          void Function(RemovePharmacologyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RemovePharmacologyResponse))
+          as RemovePharmacologyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6867,9 +8088,9 @@ class RemovePharmacologyResponse extends $pb.GeneratedMessage {
   static RemovePharmacologyResponse create() => RemovePharmacologyResponse._();
   @$core.override
   RemovePharmacologyResponse createEmptyInstance() => create();
-  static $pb.PbList<RemovePharmacologyResponse> createRepeated() => $pb.PbList<RemovePharmacologyResponse>();
   @$core.pragma('dart2js:noInline')
-  static RemovePharmacologyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemovePharmacologyResponse>(create);
+  static RemovePharmacologyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemovePharmacologyResponse>(create);
   static RemovePharmacologyResponse? _defaultInstance;
 }
 
@@ -6894,23 +8115,31 @@ class DnaUpload extends $pb.GeneratedMessage {
 
   DnaUpload._();
 
-  factory DnaUpload.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory DnaUpload.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory DnaUpload.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DnaUpload.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DnaUpload', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DnaUpload',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'source')
     ..aOS(3, _omitFieldNames ? '' : 'status')
     ..aOS(4, _omitFieldNames ? '' : 'sha256')
     ..aInt64(5, _omitFieldNames ? '' : 'parsedAtUnix')
     ..aInt64(6, _omitFieldNames ? '' : 'createdAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DnaUpload clone() => DnaUpload()..mergeFromMessage(this);
+  DnaUpload clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DnaUpload copyWith(void Function(DnaUpload) updates) => super.copyWith((message) => updates(message as DnaUpload)) as DnaUpload;
+  DnaUpload copyWith(void Function(DnaUpload) updates) =>
+      super.copyWith((message) => updates(message as DnaUpload)) as DnaUpload;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -6919,9 +8148,9 @@ class DnaUpload extends $pb.GeneratedMessage {
   static DnaUpload create() => DnaUpload._();
   @$core.override
   DnaUpload createEmptyInstance() => create();
-  static $pb.PbList<DnaUpload> createRepeated() => $pb.PbList<DnaUpload>();
   @$core.pragma('dart2js:noInline')
-  static DnaUpload getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DnaUpload>(create);
+  static DnaUpload getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DnaUpload>(create);
   static DnaUpload? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -6996,21 +8225,29 @@ class SnpEntry extends $pb.GeneratedMessage {
 
   SnpEntry._();
 
-  factory SnpEntry.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SnpEntry.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SnpEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SnpEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SnpEntry', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SnpEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'rsid')
     ..aOS(2, _omitFieldNames ? '' : 'genotype')
     ..aOS(3, _omitFieldNames ? '' : 'interpretation')
     ..aOS(4, _omitFieldNames ? '' : 'evidence')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SnpEntry clone() => SnpEntry()..mergeFromMessage(this);
+  SnpEntry clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SnpEntry copyWith(void Function(SnpEntry) updates) => super.copyWith((message) => updates(message as SnpEntry)) as SnpEntry;
+  SnpEntry copyWith(void Function(SnpEntry) updates) =>
+      super.copyWith((message) => updates(message as SnpEntry)) as SnpEntry;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7019,9 +8256,9 @@ class SnpEntry extends $pb.GeneratedMessage {
   static SnpEntry create() => SnpEntry._();
   @$core.override
   SnpEntry createEmptyInstance() => create();
-  static $pb.PbList<SnpEntry> createRepeated() => $pb.PbList<SnpEntry>();
   @$core.pragma('dart2js:noInline')
-  static SnpEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SnpEntry>(create);
+  static SnpEntry getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SnpEntry>(create);
   static SnpEntry? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7074,19 +8311,29 @@ class RegisterDnaUploadRequest extends $pb.GeneratedMessage {
 
   RegisterDnaUploadRequest._();
 
-  factory RegisterDnaUploadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RegisterDnaUploadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RegisterDnaUploadRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterDnaUploadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDnaUploadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterDnaUploadRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
     ..aOS(2, _omitFieldNames ? '' : 'source')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RegisterDnaUploadRequest clone() => RegisterDnaUploadRequest()..mergeFromMessage(this);
+  RegisterDnaUploadRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RegisterDnaUploadRequest copyWith(void Function(RegisterDnaUploadRequest) updates) => super.copyWith((message) => updates(message as RegisterDnaUploadRequest)) as RegisterDnaUploadRequest;
+  RegisterDnaUploadRequest copyWith(
+          void Function(RegisterDnaUploadRequest) updates) =>
+      super.copyWith((message) => updates(message as RegisterDnaUploadRequest))
+          as RegisterDnaUploadRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7095,9 +8342,9 @@ class RegisterDnaUploadRequest extends $pb.GeneratedMessage {
   static RegisterDnaUploadRequest create() => RegisterDnaUploadRequest._();
   @$core.override
   RegisterDnaUploadRequest createEmptyInstance() => create();
-  static $pb.PbList<RegisterDnaUploadRequest> createRepeated() => $pb.PbList<RegisterDnaUploadRequest>();
   @$core.pragma('dart2js:noInline')
-  static RegisterDnaUploadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterDnaUploadRequest>(create);
+  static RegisterDnaUploadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterDnaUploadRequest>(create);
   static RegisterDnaUploadRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7130,18 +8377,29 @@ class RegisterDnaUploadResponse extends $pb.GeneratedMessage {
 
   RegisterDnaUploadResponse._();
 
-  factory RegisterDnaUploadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RegisterDnaUploadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RegisterDnaUploadResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterDnaUploadResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDnaUploadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<DnaUpload>(1, _omitFieldNames ? '' : 'upload', subBuilder: DnaUpload.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterDnaUploadResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<DnaUpload>(1, _omitFieldNames ? '' : 'upload',
+        subBuilder: DnaUpload.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RegisterDnaUploadResponse clone() => RegisterDnaUploadResponse()..mergeFromMessage(this);
+  RegisterDnaUploadResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RegisterDnaUploadResponse copyWith(void Function(RegisterDnaUploadResponse) updates) => super.copyWith((message) => updates(message as RegisterDnaUploadResponse)) as RegisterDnaUploadResponse;
+  RegisterDnaUploadResponse copyWith(
+          void Function(RegisterDnaUploadResponse) updates) =>
+      super.copyWith((message) => updates(message as RegisterDnaUploadResponse))
+          as RegisterDnaUploadResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7150,9 +8408,9 @@ class RegisterDnaUploadResponse extends $pb.GeneratedMessage {
   static RegisterDnaUploadResponse create() => RegisterDnaUploadResponse._();
   @$core.override
   RegisterDnaUploadResponse createEmptyInstance() => create();
-  static $pb.PbList<RegisterDnaUploadResponse> createRepeated() => $pb.PbList<RegisterDnaUploadResponse>();
   @$core.pragma('dart2js:noInline')
-  static RegisterDnaUploadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterDnaUploadResponse>(create);
+  static RegisterDnaUploadResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterDnaUploadResponse>(create);
   static RegisterDnaUploadResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7172,17 +8430,27 @@ class ListMyDnaUploadsRequest extends $pb.GeneratedMessage {
 
   ListMyDnaUploadsRequest._();
 
-  factory ListMyDnaUploadsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyDnaUploadsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyDnaUploadsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyDnaUploadsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDnaUploadsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyDnaUploadsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaUploadsRequest clone() => ListMyDnaUploadsRequest()..mergeFromMessage(this);
+  ListMyDnaUploadsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaUploadsRequest copyWith(void Function(ListMyDnaUploadsRequest) updates) => super.copyWith((message) => updates(message as ListMyDnaUploadsRequest)) as ListMyDnaUploadsRequest;
+  ListMyDnaUploadsRequest copyWith(
+          void Function(ListMyDnaUploadsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyDnaUploadsRequest))
+          as ListMyDnaUploadsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7191,9 +8459,9 @@ class ListMyDnaUploadsRequest extends $pb.GeneratedMessage {
   static ListMyDnaUploadsRequest create() => ListMyDnaUploadsRequest._();
   @$core.override
   ListMyDnaUploadsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyDnaUploadsRequest> createRepeated() => $pb.PbList<ListMyDnaUploadsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyDnaUploadsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDnaUploadsRequest>(create);
+  static ListMyDnaUploadsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyDnaUploadsRequest>(create);
   static ListMyDnaUploadsRequest? _defaultInstance;
 }
 
@@ -7208,18 +8476,29 @@ class ListMyDnaUploadsResponse extends $pb.GeneratedMessage {
 
   ListMyDnaUploadsResponse._();
 
-  factory ListMyDnaUploadsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyDnaUploadsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyDnaUploadsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyDnaUploadsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDnaUploadsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<DnaUpload>(1, _omitFieldNames ? '' : 'uploads', $pb.PbFieldType.PM, subBuilder: DnaUpload.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyDnaUploadsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<DnaUpload>(1, _omitFieldNames ? '' : 'uploads',
+        subBuilder: DnaUpload.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaUploadsResponse clone() => ListMyDnaUploadsResponse()..mergeFromMessage(this);
+  ListMyDnaUploadsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaUploadsResponse copyWith(void Function(ListMyDnaUploadsResponse) updates) => super.copyWith((message) => updates(message as ListMyDnaUploadsResponse)) as ListMyDnaUploadsResponse;
+  ListMyDnaUploadsResponse copyWith(
+          void Function(ListMyDnaUploadsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMyDnaUploadsResponse))
+          as ListMyDnaUploadsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7228,9 +8507,9 @@ class ListMyDnaUploadsResponse extends $pb.GeneratedMessage {
   static ListMyDnaUploadsResponse create() => ListMyDnaUploadsResponse._();
   @$core.override
   ListMyDnaUploadsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyDnaUploadsResponse> createRepeated() => $pb.PbList<ListMyDnaUploadsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyDnaUploadsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDnaUploadsResponse>(create);
+  static ListMyDnaUploadsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyDnaUploadsResponse>(create);
   static ListMyDnaUploadsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7242,17 +8521,26 @@ class ListMyDnaSnpsRequest extends $pb.GeneratedMessage {
 
   ListMyDnaSnpsRequest._();
 
-  factory ListMyDnaSnpsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyDnaSnpsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyDnaSnpsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyDnaSnpsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDnaSnpsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyDnaSnpsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaSnpsRequest clone() => ListMyDnaSnpsRequest()..mergeFromMessage(this);
+  ListMyDnaSnpsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaSnpsRequest copyWith(void Function(ListMyDnaSnpsRequest) updates) => super.copyWith((message) => updates(message as ListMyDnaSnpsRequest)) as ListMyDnaSnpsRequest;
+  ListMyDnaSnpsRequest copyWith(void Function(ListMyDnaSnpsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyDnaSnpsRequest))
+          as ListMyDnaSnpsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7261,9 +8549,9 @@ class ListMyDnaSnpsRequest extends $pb.GeneratedMessage {
   static ListMyDnaSnpsRequest create() => ListMyDnaSnpsRequest._();
   @$core.override
   ListMyDnaSnpsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyDnaSnpsRequest> createRepeated() => $pb.PbList<ListMyDnaSnpsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyDnaSnpsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDnaSnpsRequest>(create);
+  static ListMyDnaSnpsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyDnaSnpsRequest>(create);
   static ListMyDnaSnpsRequest? _defaultInstance;
 }
 
@@ -7278,18 +8566,29 @@ class ListMyDnaSnpsResponse extends $pb.GeneratedMessage {
 
   ListMyDnaSnpsResponse._();
 
-  factory ListMyDnaSnpsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyDnaSnpsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyDnaSnpsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyDnaSnpsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyDnaSnpsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<SnpEntry>(1, _omitFieldNames ? '' : 'snps', $pb.PbFieldType.PM, subBuilder: SnpEntry.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyDnaSnpsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<SnpEntry>(1, _omitFieldNames ? '' : 'snps',
+        subBuilder: SnpEntry.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaSnpsResponse clone() => ListMyDnaSnpsResponse()..mergeFromMessage(this);
+  ListMyDnaSnpsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyDnaSnpsResponse copyWith(void Function(ListMyDnaSnpsResponse) updates) => super.copyWith((message) => updates(message as ListMyDnaSnpsResponse)) as ListMyDnaSnpsResponse;
+  ListMyDnaSnpsResponse copyWith(
+          void Function(ListMyDnaSnpsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMyDnaSnpsResponse))
+          as ListMyDnaSnpsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7298,9 +8597,9 @@ class ListMyDnaSnpsResponse extends $pb.GeneratedMessage {
   static ListMyDnaSnpsResponse create() => ListMyDnaSnpsResponse._();
   @$core.override
   ListMyDnaSnpsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyDnaSnpsResponse> createRepeated() => $pb.PbList<ListMyDnaSnpsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyDnaSnpsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyDnaSnpsResponse>(create);
+  static ListMyDnaSnpsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyDnaSnpsResponse>(create);
   static ListMyDnaSnpsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7334,26 +8633,34 @@ class LabPartner extends $pb.GeneratedMessage {
 
   LabPartner._();
 
-  factory LabPartner.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LabPartner.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LabPartner.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LabPartner.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LabPartner', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LabPartner',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'referralUrl')
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'memberDiscountPct', $pb.PbFieldType.O3)
+    ..aI(6, _omitFieldNames ? '' : 'memberDiscountPct')
     ..aOS(7, _omitFieldNames ? '' : 'panelSummary')
     ..aOS(8, _omitFieldNames ? '' : 'heroUrl')
     ..aOB(9, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabPartner clone() => LabPartner()..mergeFromMessage(this);
+  LabPartner clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabPartner copyWith(void Function(LabPartner) updates) => super.copyWith((message) => updates(message as LabPartner)) as LabPartner;
+  LabPartner copyWith(void Function(LabPartner) updates) =>
+      super.copyWith((message) => updates(message as LabPartner)) as LabPartner;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7362,9 +8669,9 @@ class LabPartner extends $pb.GeneratedMessage {
   static LabPartner create() => LabPartner._();
   @$core.override
   LabPartner createEmptyInstance() => create();
-  static $pb.PbList<LabPartner> createRepeated() => $pb.PbList<LabPartner>();
   @$core.pragma('dart2js:noInline')
-  static LabPartner getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LabPartner>(create);
+  static LabPartner getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LabPartner>(create);
   static LabPartner? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7460,18 +8767,28 @@ class ListLabPartnersRequest extends $pb.GeneratedMessage {
 
   ListLabPartnersRequest._();
 
-  factory ListLabPartnersRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLabPartnersRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLabPartnersRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLabPartnersRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLabPartnersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLabPartnersRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'region')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabPartnersRequest clone() => ListLabPartnersRequest()..mergeFromMessage(this);
+  ListLabPartnersRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabPartnersRequest copyWith(void Function(ListLabPartnersRequest) updates) => super.copyWith((message) => updates(message as ListLabPartnersRequest)) as ListLabPartnersRequest;
+  ListLabPartnersRequest copyWith(
+          void Function(ListLabPartnersRequest) updates) =>
+      super.copyWith((message) => updates(message as ListLabPartnersRequest))
+          as ListLabPartnersRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7480,9 +8797,9 @@ class ListLabPartnersRequest extends $pb.GeneratedMessage {
   static ListLabPartnersRequest create() => ListLabPartnersRequest._();
   @$core.override
   ListLabPartnersRequest createEmptyInstance() => create();
-  static $pb.PbList<ListLabPartnersRequest> createRepeated() => $pb.PbList<ListLabPartnersRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListLabPartnersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLabPartnersRequest>(create);
+  static ListLabPartnersRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLabPartnersRequest>(create);
   static ListLabPartnersRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7506,18 +8823,29 @@ class ListLabPartnersResponse extends $pb.GeneratedMessage {
 
   ListLabPartnersResponse._();
 
-  factory ListLabPartnersResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLabPartnersResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLabPartnersResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLabPartnersResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLabPartnersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<LabPartner>(1, _omitFieldNames ? '' : 'partners', $pb.PbFieldType.PM, subBuilder: LabPartner.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLabPartnersResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<LabPartner>(1, _omitFieldNames ? '' : 'partners',
+        subBuilder: LabPartner.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabPartnersResponse clone() => ListLabPartnersResponse()..mergeFromMessage(this);
+  ListLabPartnersResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLabPartnersResponse copyWith(void Function(ListLabPartnersResponse) updates) => super.copyWith((message) => updates(message as ListLabPartnersResponse)) as ListLabPartnersResponse;
+  ListLabPartnersResponse copyWith(
+          void Function(ListLabPartnersResponse) updates) =>
+      super.copyWith((message) => updates(message as ListLabPartnersResponse))
+          as ListLabPartnersResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7526,9 +8854,9 @@ class ListLabPartnersResponse extends $pb.GeneratedMessage {
   static ListLabPartnersResponse create() => ListLabPartnersResponse._();
   @$core.override
   ListLabPartnersResponse createEmptyInstance() => create();
-  static $pb.PbList<ListLabPartnersResponse> createRepeated() => $pb.PbList<ListLabPartnersResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListLabPartnersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLabPartnersResponse>(create);
+  static ListLabPartnersResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLabPartnersResponse>(create);
   static ListLabPartnersResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7550,20 +8878,29 @@ class LabMarkerValue extends $pb.GeneratedMessage {
 
   LabMarkerValue._();
 
-  factory LabMarkerValue.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LabMarkerValue.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LabMarkerValue.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LabMarkerValue.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LabMarkerValue', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LabMarkerValue',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
+    ..aD(2, _omitFieldNames ? '' : 'value')
     ..aOS(3, _omitFieldNames ? '' : 'unit')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabMarkerValue clone() => LabMarkerValue()..mergeFromMessage(this);
+  LabMarkerValue clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LabMarkerValue copyWith(void Function(LabMarkerValue) updates) => super.copyWith((message) => updates(message as LabMarkerValue)) as LabMarkerValue;
+  LabMarkerValue copyWith(void Function(LabMarkerValue) updates) =>
+      super.copyWith((message) => updates(message as LabMarkerValue))
+          as LabMarkerValue;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7572,9 +8909,9 @@ class LabMarkerValue extends $pb.GeneratedMessage {
   static LabMarkerValue create() => LabMarkerValue._();
   @$core.override
   LabMarkerValue createEmptyInstance() => create();
-  static $pb.PbList<LabMarkerValue> createRepeated() => $pb.PbList<LabMarkerValue>();
   @$core.pragma('dart2js:noInline')
-  static LabMarkerValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LabMarkerValue>(create);
+  static LabMarkerValue getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LabMarkerValue>(create);
   static LabMarkerValue? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7620,20 +8957,31 @@ class ExtractLabMarkersRequest extends $pb.GeneratedMessage {
 
   ExtractLabMarkersRequest._();
 
-  factory ExtractLabMarkersRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ExtractLabMarkersRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ExtractLabMarkersRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExtractLabMarkersRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtractLabMarkersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtractLabMarkersRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reportId')
-    ..pc<LabMarkerValue>(2, _omitFieldNames ? '' : 'markers', $pb.PbFieldType.PM, subBuilder: LabMarkerValue.create)
+    ..pPM<LabMarkerValue>(2, _omitFieldNames ? '' : 'markers',
+        subBuilder: LabMarkerValue.create)
     ..aInt64(3, _omitFieldNames ? '' : 'recordedAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ExtractLabMarkersRequest clone() => ExtractLabMarkersRequest()..mergeFromMessage(this);
+  ExtractLabMarkersRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ExtractLabMarkersRequest copyWith(void Function(ExtractLabMarkersRequest) updates) => super.copyWith((message) => updates(message as ExtractLabMarkersRequest)) as ExtractLabMarkersRequest;
+  ExtractLabMarkersRequest copyWith(
+          void Function(ExtractLabMarkersRequest) updates) =>
+      super.copyWith((message) => updates(message as ExtractLabMarkersRequest))
+          as ExtractLabMarkersRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7642,9 +8990,9 @@ class ExtractLabMarkersRequest extends $pb.GeneratedMessage {
   static ExtractLabMarkersRequest create() => ExtractLabMarkersRequest._();
   @$core.override
   ExtractLabMarkersRequest createEmptyInstance() => create();
-  static $pb.PbList<ExtractLabMarkersRequest> createRepeated() => $pb.PbList<ExtractLabMarkersRequest>();
   @$core.pragma('dart2js:noInline')
-  static ExtractLabMarkersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtractLabMarkersRequest>(create);
+  static ExtractLabMarkersRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtractLabMarkersRequest>(create);
   static ExtractLabMarkersRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7680,18 +9028,28 @@ class ExtractLabMarkersResponse extends $pb.GeneratedMessage {
 
   ExtractLabMarkersResponse._();
 
-  factory ExtractLabMarkersResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ExtractLabMarkersResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ExtractLabMarkersResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExtractLabMarkersResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExtractLabMarkersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'inserted', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExtractLabMarkersResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'inserted')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ExtractLabMarkersResponse clone() => ExtractLabMarkersResponse()..mergeFromMessage(this);
+  ExtractLabMarkersResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ExtractLabMarkersResponse copyWith(void Function(ExtractLabMarkersResponse) updates) => super.copyWith((message) => updates(message as ExtractLabMarkersResponse)) as ExtractLabMarkersResponse;
+  ExtractLabMarkersResponse copyWith(
+          void Function(ExtractLabMarkersResponse) updates) =>
+      super.copyWith((message) => updates(message as ExtractLabMarkersResponse))
+          as ExtractLabMarkersResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7700,9 +9058,9 @@ class ExtractLabMarkersResponse extends $pb.GeneratedMessage {
   static ExtractLabMarkersResponse create() => ExtractLabMarkersResponse._();
   @$core.override
   ExtractLabMarkersResponse createEmptyInstance() => create();
-  static $pb.PbList<ExtractLabMarkersResponse> createRepeated() => $pb.PbList<ExtractLabMarkersResponse>();
   @$core.pragma('dart2js:noInline')
-  static ExtractLabMarkersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExtractLabMarkersResponse>(create);
+  static ExtractLabMarkersResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExtractLabMarkersResponse>(create);
   static ExtractLabMarkersResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7736,23 +9094,32 @@ class ClinicianShare extends $pb.GeneratedMessage {
 
   ClinicianShare._();
 
-  factory ClinicianShare.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ClinicianShare.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ClinicianShare.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ClinicianShare.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClinicianShare', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ClinicianShare',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
     ..aOS(2, _omitFieldNames ? '' : 'shareUrl')
     ..aOS(3, _omitFieldNames ? '' : 'scope')
     ..aInt64(4, _omitFieldNames ? '' : 'createdAtUnix')
     ..aInt64(5, _omitFieldNames ? '' : 'expiresAtUnix')
     ..aOB(6, _omitFieldNames ? '' : 'revoked')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ClinicianShare clone() => ClinicianShare()..mergeFromMessage(this);
+  ClinicianShare clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ClinicianShare copyWith(void Function(ClinicianShare) updates) => super.copyWith((message) => updates(message as ClinicianShare)) as ClinicianShare;
+  ClinicianShare copyWith(void Function(ClinicianShare) updates) =>
+      super.copyWith((message) => updates(message as ClinicianShare))
+          as ClinicianShare;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -7761,9 +9128,9 @@ class ClinicianShare extends $pb.GeneratedMessage {
   static ClinicianShare create() => ClinicianShare._();
   @$core.override
   ClinicianShare createEmptyInstance() => create();
-  static $pb.PbList<ClinicianShare> createRepeated() => $pb.PbList<ClinicianShare>();
   @$core.pragma('dart2js:noInline')
-  static ClinicianShare getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClinicianShare>(create);
+  static ClinicianShare getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ClinicianShare>(create);
   static ClinicianShare? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7834,30 +9201,42 @@ class CreateClinicianShareRequest extends $pb.GeneratedMessage {
 
   CreateClinicianShareRequest._();
 
-  factory CreateClinicianShareRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateClinicianShareRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateClinicianShareRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateClinicianShareRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateClinicianShareRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'ttlDays', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateClinicianShareRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'ttlDays')
     ..aOS(2, _omitFieldNames ? '' : 'scope')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateClinicianShareRequest clone() => CreateClinicianShareRequest()..mergeFromMessage(this);
+  CreateClinicianShareRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateClinicianShareRequest copyWith(void Function(CreateClinicianShareRequest) updates) => super.copyWith((message) => updates(message as CreateClinicianShareRequest)) as CreateClinicianShareRequest;
+  CreateClinicianShareRequest copyWith(
+          void Function(CreateClinicianShareRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateClinicianShareRequest))
+          as CreateClinicianShareRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateClinicianShareRequest create() => CreateClinicianShareRequest._();
+  static CreateClinicianShareRequest create() =>
+      CreateClinicianShareRequest._();
   @$core.override
   CreateClinicianShareRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateClinicianShareRequest> createRepeated() => $pb.PbList<CreateClinicianShareRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateClinicianShareRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateClinicianShareRequest>(create);
+  static CreateClinicianShareRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateClinicianShareRequest>(create);
   static CreateClinicianShareRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7890,29 +9269,42 @@ class CreateClinicianShareResponse extends $pb.GeneratedMessage {
 
   CreateClinicianShareResponse._();
 
-  factory CreateClinicianShareResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateClinicianShareResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateClinicianShareResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateClinicianShareResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateClinicianShareResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ClinicianShare>(1, _omitFieldNames ? '' : 'share', subBuilder: ClinicianShare.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateClinicianShareResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ClinicianShare>(1, _omitFieldNames ? '' : 'share',
+        subBuilder: ClinicianShare.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateClinicianShareResponse clone() => CreateClinicianShareResponse()..mergeFromMessage(this);
+  CreateClinicianShareResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateClinicianShareResponse copyWith(void Function(CreateClinicianShareResponse) updates) => super.copyWith((message) => updates(message as CreateClinicianShareResponse)) as CreateClinicianShareResponse;
+  CreateClinicianShareResponse copyWith(
+          void Function(CreateClinicianShareResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateClinicianShareResponse))
+          as CreateClinicianShareResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateClinicianShareResponse create() => CreateClinicianShareResponse._();
+  static CreateClinicianShareResponse create() =>
+      CreateClinicianShareResponse._();
   @$core.override
   CreateClinicianShareResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateClinicianShareResponse> createRepeated() => $pb.PbList<CreateClinicianShareResponse>();
   @$core.pragma('dart2js:noInline')
-  static CreateClinicianShareResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateClinicianShareResponse>(create);
+  static CreateClinicianShareResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateClinicianShareResponse>(create);
   static CreateClinicianShareResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -7932,28 +9324,40 @@ class ListMyClinicianSharesRequest extends $pb.GeneratedMessage {
 
   ListMyClinicianSharesRequest._();
 
-  factory ListMyClinicianSharesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyClinicianSharesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyClinicianSharesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyClinicianSharesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyClinicianSharesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyClinicianSharesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyClinicianSharesRequest clone() => ListMyClinicianSharesRequest()..mergeFromMessage(this);
+  ListMyClinicianSharesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyClinicianSharesRequest copyWith(void Function(ListMyClinicianSharesRequest) updates) => super.copyWith((message) => updates(message as ListMyClinicianSharesRequest)) as ListMyClinicianSharesRequest;
+  ListMyClinicianSharesRequest copyWith(
+          void Function(ListMyClinicianSharesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyClinicianSharesRequest))
+          as ListMyClinicianSharesRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyClinicianSharesRequest create() => ListMyClinicianSharesRequest._();
+  static ListMyClinicianSharesRequest create() =>
+      ListMyClinicianSharesRequest._();
   @$core.override
   ListMyClinicianSharesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyClinicianSharesRequest> createRepeated() => $pb.PbList<ListMyClinicianSharesRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyClinicianSharesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyClinicianSharesRequest>(create);
+  static ListMyClinicianSharesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyClinicianSharesRequest>(create);
   static ListMyClinicianSharesRequest? _defaultInstance;
 }
 
@@ -7968,29 +9372,42 @@ class ListMyClinicianSharesResponse extends $pb.GeneratedMessage {
 
   ListMyClinicianSharesResponse._();
 
-  factory ListMyClinicianSharesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyClinicianSharesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyClinicianSharesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyClinicianSharesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyClinicianSharesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ClinicianShare>(1, _omitFieldNames ? '' : 'shares', $pb.PbFieldType.PM, subBuilder: ClinicianShare.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyClinicianSharesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ClinicianShare>(1, _omitFieldNames ? '' : 'shares',
+        subBuilder: ClinicianShare.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyClinicianSharesResponse clone() => ListMyClinicianSharesResponse()..mergeFromMessage(this);
+  ListMyClinicianSharesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyClinicianSharesResponse copyWith(void Function(ListMyClinicianSharesResponse) updates) => super.copyWith((message) => updates(message as ListMyClinicianSharesResponse)) as ListMyClinicianSharesResponse;
+  ListMyClinicianSharesResponse copyWith(
+          void Function(ListMyClinicianSharesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyClinicianSharesResponse))
+          as ListMyClinicianSharesResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyClinicianSharesResponse create() => ListMyClinicianSharesResponse._();
+  static ListMyClinicianSharesResponse create() =>
+      ListMyClinicianSharesResponse._();
   @$core.override
   ListMyClinicianSharesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyClinicianSharesResponse> createRepeated() => $pb.PbList<ListMyClinicianSharesResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyClinicianSharesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyClinicianSharesResponse>(create);
+  static ListMyClinicianSharesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyClinicianSharesResponse>(create);
   static ListMyClinicianSharesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8008,29 +9425,41 @@ class RevokeClinicianShareRequest extends $pb.GeneratedMessage {
 
   RevokeClinicianShareRequest._();
 
-  factory RevokeClinicianShareRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RevokeClinicianShareRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RevokeClinicianShareRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeClinicianShareRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RevokeClinicianShareRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeClinicianShareRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RevokeClinicianShareRequest clone() => RevokeClinicianShareRequest()..mergeFromMessage(this);
+  RevokeClinicianShareRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RevokeClinicianShareRequest copyWith(void Function(RevokeClinicianShareRequest) updates) => super.copyWith((message) => updates(message as RevokeClinicianShareRequest)) as RevokeClinicianShareRequest;
+  RevokeClinicianShareRequest copyWith(
+          void Function(RevokeClinicianShareRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeClinicianShareRequest))
+          as RevokeClinicianShareRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RevokeClinicianShareRequest create() => RevokeClinicianShareRequest._();
+  static RevokeClinicianShareRequest create() =>
+      RevokeClinicianShareRequest._();
   @$core.override
   RevokeClinicianShareRequest createEmptyInstance() => create();
-  static $pb.PbList<RevokeClinicianShareRequest> createRepeated() => $pb.PbList<RevokeClinicianShareRequest>();
   @$core.pragma('dart2js:noInline')
-  static RevokeClinicianShareRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RevokeClinicianShareRequest>(create);
+  static RevokeClinicianShareRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeClinicianShareRequest>(create);
   static RevokeClinicianShareRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8048,28 +9477,40 @@ class RevokeClinicianShareResponse extends $pb.GeneratedMessage {
 
   RevokeClinicianShareResponse._();
 
-  factory RevokeClinicianShareResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RevokeClinicianShareResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RevokeClinicianShareResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeClinicianShareResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RevokeClinicianShareResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeClinicianShareResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RevokeClinicianShareResponse clone() => RevokeClinicianShareResponse()..mergeFromMessage(this);
+  RevokeClinicianShareResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RevokeClinicianShareResponse copyWith(void Function(RevokeClinicianShareResponse) updates) => super.copyWith((message) => updates(message as RevokeClinicianShareResponse)) as RevokeClinicianShareResponse;
+  RevokeClinicianShareResponse copyWith(
+          void Function(RevokeClinicianShareResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeClinicianShareResponse))
+          as RevokeClinicianShareResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RevokeClinicianShareResponse create() => RevokeClinicianShareResponse._();
+  static RevokeClinicianShareResponse create() =>
+      RevokeClinicianShareResponse._();
   @$core.override
   RevokeClinicianShareResponse createEmptyInstance() => create();
-  static $pb.PbList<RevokeClinicianShareResponse> createRepeated() => $pb.PbList<RevokeClinicianShareResponse>();
   @$core.pragma('dart2js:noInline')
-  static RevokeClinicianShareResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RevokeClinicianShareResponse>(create);
+  static RevokeClinicianShareResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeClinicianShareResponse>(create);
   static RevokeClinicianShareResponse? _defaultInstance;
 }
 
@@ -8092,22 +9533,30 @@ class JetLagStep extends $pb.GeneratedMessage {
 
   JetLagStep._();
 
-  factory JetLagStep.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory JetLagStep.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory JetLagStep.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JetLagStep.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JetLagStep', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'dayOffset', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JetLagStep',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'dayOffset')
     ..aOS(2, _omitFieldNames ? '' : 'lightAction')
     ..aOS(3, _omitFieldNames ? '' : 'melatoninAction')
     ..aOS(4, _omitFieldNames ? '' : 'mealAction')
     ..aOS(5, _omitFieldNames ? '' : 'notes')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  JetLagStep clone() => JetLagStep()..mergeFromMessage(this);
+  JetLagStep clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  JetLagStep copyWith(void Function(JetLagStep) updates) => super.copyWith((message) => updates(message as JetLagStep)) as JetLagStep;
+  JetLagStep copyWith(void Function(JetLagStep) updates) =>
+      super.copyWith((message) => updates(message as JetLagStep)) as JetLagStep;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8116,9 +9565,9 @@ class JetLagStep extends $pb.GeneratedMessage {
   static JetLagStep create() => JetLagStep._();
   @$core.override
   JetLagStep createEmptyInstance() => create();
-  static $pb.PbList<JetLagStep> createRepeated() => $pb.PbList<JetLagStep>();
   @$core.pragma('dart2js:noInline')
-  static JetLagStep getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JetLagStep>(create);
+  static JetLagStep getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JetLagStep>(create);
   static JetLagStep? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8182,20 +9631,30 @@ class GetJetLagProtocolRequest extends $pb.GeneratedMessage {
 
   GetJetLagProtocolRequest._();
 
-  factory GetJetLagProtocolRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetJetLagProtocolRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetJetLagProtocolRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetJetLagProtocolRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetJetLagProtocolRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'originTzOffsetMin', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'destTzOffsetMin', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetJetLagProtocolRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'originTzOffsetMin')
+    ..aI(2, _omitFieldNames ? '' : 'destTzOffsetMin')
     ..aInt64(3, _omitFieldNames ? '' : 'travelAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetJetLagProtocolRequest clone() => GetJetLagProtocolRequest()..mergeFromMessage(this);
+  GetJetLagProtocolRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetJetLagProtocolRequest copyWith(void Function(GetJetLagProtocolRequest) updates) => super.copyWith((message) => updates(message as GetJetLagProtocolRequest)) as GetJetLagProtocolRequest;
+  GetJetLagProtocolRequest copyWith(
+          void Function(GetJetLagProtocolRequest) updates) =>
+      super.copyWith((message) => updates(message as GetJetLagProtocolRequest))
+          as GetJetLagProtocolRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8204,9 +9663,9 @@ class GetJetLagProtocolRequest extends $pb.GeneratedMessage {
   static GetJetLagProtocolRequest create() => GetJetLagProtocolRequest._();
   @$core.override
   GetJetLagProtocolRequest createEmptyInstance() => create();
-  static $pb.PbList<GetJetLagProtocolRequest> createRepeated() => $pb.PbList<GetJetLagProtocolRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetJetLagProtocolRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetJetLagProtocolRequest>(create);
+  static GetJetLagProtocolRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetJetLagProtocolRequest>(create);
   static GetJetLagProtocolRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8245,7 +9704,8 @@ class GetJetLagProtocolResponse extends $pb.GeneratedMessage {
     $core.String? summary,
   }) {
     final result = create();
-    if (timezoneShiftHours != null) result.timezoneShiftHours = timezoneShiftHours;
+    if (timezoneShiftHours != null)
+      result.timezoneShiftHours = timezoneShiftHours;
     if (direction != null) result.direction = direction;
     if (steps != null) result.steps.addAll(steps);
     if (summary != null) result.summary = summary;
@@ -8254,21 +9714,32 @@ class GetJetLagProtocolResponse extends $pb.GeneratedMessage {
 
   GetJetLagProtocolResponse._();
 
-  factory GetJetLagProtocolResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetJetLagProtocolResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetJetLagProtocolResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetJetLagProtocolResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetJetLagProtocolResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'timezoneShiftHours', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetJetLagProtocolResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'timezoneShiftHours')
     ..aOS(2, _omitFieldNames ? '' : 'direction')
-    ..pc<JetLagStep>(3, _omitFieldNames ? '' : 'steps', $pb.PbFieldType.PM, subBuilder: JetLagStep.create)
+    ..pPM<JetLagStep>(3, _omitFieldNames ? '' : 'steps',
+        subBuilder: JetLagStep.create)
     ..aOS(4, _omitFieldNames ? '' : 'summary')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetJetLagProtocolResponse clone() => GetJetLagProtocolResponse()..mergeFromMessage(this);
+  GetJetLagProtocolResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetJetLagProtocolResponse copyWith(void Function(GetJetLagProtocolResponse) updates) => super.copyWith((message) => updates(message as GetJetLagProtocolResponse)) as GetJetLagProtocolResponse;
+  GetJetLagProtocolResponse copyWith(
+          void Function(GetJetLagProtocolResponse) updates) =>
+      super.copyWith((message) => updates(message as GetJetLagProtocolResponse))
+          as GetJetLagProtocolResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8277,9 +9748,9 @@ class GetJetLagProtocolResponse extends $pb.GeneratedMessage {
   static GetJetLagProtocolResponse create() => GetJetLagProtocolResponse._();
   @$core.override
   GetJetLagProtocolResponse createEmptyInstance() => create();
-  static $pb.PbList<GetJetLagProtocolResponse> createRepeated() => $pb.PbList<GetJetLagProtocolResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetJetLagProtocolResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetJetLagProtocolResponse>(create);
+  static GetJetLagProtocolResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetJetLagProtocolResponse>(create);
   static GetJetLagProtocolResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8324,29 +9795,41 @@ class GenerateHealthAlmanacRequest extends $pb.GeneratedMessage {
 
   GenerateHealthAlmanacRequest._();
 
-  factory GenerateHealthAlmanacRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GenerateHealthAlmanacRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GenerateHealthAlmanacRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateHealthAlmanacRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateHealthAlmanacRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateHealthAlmanacRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'year')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GenerateHealthAlmanacRequest clone() => GenerateHealthAlmanacRequest()..mergeFromMessage(this);
+  GenerateHealthAlmanacRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GenerateHealthAlmanacRequest copyWith(void Function(GenerateHealthAlmanacRequest) updates) => super.copyWith((message) => updates(message as GenerateHealthAlmanacRequest)) as GenerateHealthAlmanacRequest;
+  GenerateHealthAlmanacRequest copyWith(
+          void Function(GenerateHealthAlmanacRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateHealthAlmanacRequest))
+          as GenerateHealthAlmanacRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GenerateHealthAlmanacRequest create() => GenerateHealthAlmanacRequest._();
+  static GenerateHealthAlmanacRequest create() =>
+      GenerateHealthAlmanacRequest._();
   @$core.override
   GenerateHealthAlmanacRequest createEmptyInstance() => create();
-  static $pb.PbList<GenerateHealthAlmanacRequest> createRepeated() => $pb.PbList<GenerateHealthAlmanacRequest>();
   @$core.pragma('dart2js:noInline')
-  static GenerateHealthAlmanacRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateHealthAlmanacRequest>(create);
+  static GenerateHealthAlmanacRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateHealthAlmanacRequest>(create);
   static GenerateHealthAlmanacRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8376,32 +9859,44 @@ class GenerateHealthAlmanacResponse extends $pb.GeneratedMessage {
 
   GenerateHealthAlmanacResponse._();
 
-  factory GenerateHealthAlmanacResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GenerateHealthAlmanacResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GenerateHealthAlmanacResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateHealthAlmanacResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateHealthAlmanacResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateHealthAlmanacResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
     ..aOS(2, _omitFieldNames ? '' : 'publicUrl')
     ..aInt64(3, _omitFieldNames ? '' : 'generatedAtUnix')
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'pageCount', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(4, _omitFieldNames ? '' : 'pageCount')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GenerateHealthAlmanacResponse clone() => GenerateHealthAlmanacResponse()..mergeFromMessage(this);
+  GenerateHealthAlmanacResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GenerateHealthAlmanacResponse copyWith(void Function(GenerateHealthAlmanacResponse) updates) => super.copyWith((message) => updates(message as GenerateHealthAlmanacResponse)) as GenerateHealthAlmanacResponse;
+  GenerateHealthAlmanacResponse copyWith(
+          void Function(GenerateHealthAlmanacResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateHealthAlmanacResponse))
+          as GenerateHealthAlmanacResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GenerateHealthAlmanacResponse create() => GenerateHealthAlmanacResponse._();
+  static GenerateHealthAlmanacResponse create() =>
+      GenerateHealthAlmanacResponse._();
   @$core.override
   GenerateHealthAlmanacResponse createEmptyInstance() => create();
-  static $pb.PbList<GenerateHealthAlmanacResponse> createRepeated() => $pb.PbList<GenerateHealthAlmanacResponse>();
   @$core.pragma('dart2js:noInline')
-  static GenerateHealthAlmanacResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateHealthAlmanacResponse>(create);
+  static GenerateHealthAlmanacResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateHealthAlmanacResponse>(create);
   static GenerateHealthAlmanacResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8470,27 +9965,36 @@ class ImagingStudy extends $pb.GeneratedMessage {
 
   ImagingStudy._();
 
-  factory ImagingStudy.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ImagingStudy.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ImagingStudy.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImagingStudy.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ImagingStudy', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImagingStudy',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'modality')
     ..aOS(3, _omitFieldNames ? '' : 'provider')
     ..aOS(4, _omitFieldNames ? '' : 'performedOn')
     ..aOS(5, _omitFieldNames ? '' : 'findingsText')
     ..aOS(6, _omitFieldNames ? '' : 'headlineMetric')
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'headlineValue', $pb.PbFieldType.OD)
+    ..aD(7, _omitFieldNames ? '' : 'headlineValue')
     ..aOS(8, _omitFieldNames ? '' : 'headlineUnit')
     ..aOS(9, _omitFieldNames ? '' : 'mediaAssetId')
     ..aInt64(10, _omitFieldNames ? '' : 'createdAtUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ImagingStudy clone() => ImagingStudy()..mergeFromMessage(this);
+  ImagingStudy clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ImagingStudy copyWith(void Function(ImagingStudy) updates) => super.copyWith((message) => updates(message as ImagingStudy)) as ImagingStudy;
+  ImagingStudy copyWith(void Function(ImagingStudy) updates) =>
+      super.copyWith((message) => updates(message as ImagingStudy))
+          as ImagingStudy;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8499,9 +10003,9 @@ class ImagingStudy extends $pb.GeneratedMessage {
   static ImagingStudy create() => ImagingStudy._();
   @$core.override
   ImagingStudy createEmptyInstance() => create();
-  static $pb.PbList<ImagingStudy> createRepeated() => $pb.PbList<ImagingStudy>();
   @$core.pragma('dart2js:noInline')
-  static ImagingStudy getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ImagingStudy>(create);
+  static ImagingStudy getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImagingStudy>(create);
   static ImagingStudy? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8620,25 +10124,35 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
 
   SubmitImagingStudyRequest._();
 
-  factory SubmitImagingStudyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitImagingStudyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SubmitImagingStudyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitImagingStudyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitImagingStudyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitImagingStudyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'modality')
     ..aOS(2, _omitFieldNames ? '' : 'provider')
     ..aOS(3, _omitFieldNames ? '' : 'performedOn')
     ..aOS(4, _omitFieldNames ? '' : 'findingsText')
     ..aOS(5, _omitFieldNames ? '' : 'headlineMetric')
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'headlineValue', $pb.PbFieldType.OD)
+    ..aD(6, _omitFieldNames ? '' : 'headlineValue')
     ..aOS(7, _omitFieldNames ? '' : 'headlineUnit')
     ..aOS(8, _omitFieldNames ? '' : 'mediaAssetId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitImagingStudyRequest clone() => SubmitImagingStudyRequest()..mergeFromMessage(this);
+  SubmitImagingStudyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitImagingStudyRequest copyWith(void Function(SubmitImagingStudyRequest) updates) => super.copyWith((message) => updates(message as SubmitImagingStudyRequest)) as SubmitImagingStudyRequest;
+  SubmitImagingStudyRequest copyWith(
+          void Function(SubmitImagingStudyRequest) updates) =>
+      super.copyWith((message) => updates(message as SubmitImagingStudyRequest))
+          as SubmitImagingStudyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8647,9 +10161,9 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
   static SubmitImagingStudyRequest create() => SubmitImagingStudyRequest._();
   @$core.override
   SubmitImagingStudyRequest createEmptyInstance() => create();
-  static $pb.PbList<SubmitImagingStudyRequest> createRepeated() => $pb.PbList<SubmitImagingStudyRequest>();
   @$core.pragma('dart2js:noInline')
-  static SubmitImagingStudyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitImagingStudyRequest>(create);
+  static SubmitImagingStudyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitImagingStudyRequest>(create);
   static SubmitImagingStudyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8736,18 +10250,30 @@ class SubmitImagingStudyResponse extends $pb.GeneratedMessage {
 
   SubmitImagingStudyResponse._();
 
-  factory SubmitImagingStudyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SubmitImagingStudyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SubmitImagingStudyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitImagingStudyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubmitImagingStudyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<ImagingStudy>(1, _omitFieldNames ? '' : 'study', subBuilder: ImagingStudy.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitImagingStudyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<ImagingStudy>(1, _omitFieldNames ? '' : 'study',
+        subBuilder: ImagingStudy.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitImagingStudyResponse clone() => SubmitImagingStudyResponse()..mergeFromMessage(this);
+  SubmitImagingStudyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubmitImagingStudyResponse copyWith(void Function(SubmitImagingStudyResponse) updates) => super.copyWith((message) => updates(message as SubmitImagingStudyResponse)) as SubmitImagingStudyResponse;
+  SubmitImagingStudyResponse copyWith(
+          void Function(SubmitImagingStudyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitImagingStudyResponse))
+          as SubmitImagingStudyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8756,9 +10282,9 @@ class SubmitImagingStudyResponse extends $pb.GeneratedMessage {
   static SubmitImagingStudyResponse create() => SubmitImagingStudyResponse._();
   @$core.override
   SubmitImagingStudyResponse createEmptyInstance() => create();
-  static $pb.PbList<SubmitImagingStudyResponse> createRepeated() => $pb.PbList<SubmitImagingStudyResponse>();
   @$core.pragma('dart2js:noInline')
-  static SubmitImagingStudyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubmitImagingStudyResponse>(create);
+  static SubmitImagingStudyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitImagingStudyResponse>(create);
   static SubmitImagingStudyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8778,28 +10304,40 @@ class ListMyImagingStudiesRequest extends $pb.GeneratedMessage {
 
   ListMyImagingStudiesRequest._();
 
-  factory ListMyImagingStudiesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyImagingStudiesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyImagingStudiesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyImagingStudiesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyImagingStudiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyImagingStudiesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyImagingStudiesRequest clone() => ListMyImagingStudiesRequest()..mergeFromMessage(this);
+  ListMyImagingStudiesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyImagingStudiesRequest copyWith(void Function(ListMyImagingStudiesRequest) updates) => super.copyWith((message) => updates(message as ListMyImagingStudiesRequest)) as ListMyImagingStudiesRequest;
+  ListMyImagingStudiesRequest copyWith(
+          void Function(ListMyImagingStudiesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyImagingStudiesRequest))
+          as ListMyImagingStudiesRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyImagingStudiesRequest create() => ListMyImagingStudiesRequest._();
+  static ListMyImagingStudiesRequest create() =>
+      ListMyImagingStudiesRequest._();
   @$core.override
   ListMyImagingStudiesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyImagingStudiesRequest> createRepeated() => $pb.PbList<ListMyImagingStudiesRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyImagingStudiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyImagingStudiesRequest>(create);
+  static ListMyImagingStudiesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyImagingStudiesRequest>(create);
   static ListMyImagingStudiesRequest? _defaultInstance;
 }
 
@@ -8814,29 +10352,42 @@ class ListMyImagingStudiesResponse extends $pb.GeneratedMessage {
 
   ListMyImagingStudiesResponse._();
 
-  factory ListMyImagingStudiesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyImagingStudiesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyImagingStudiesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyImagingStudiesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyImagingStudiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<ImagingStudy>(1, _omitFieldNames ? '' : 'studies', $pb.PbFieldType.PM, subBuilder: ImagingStudy.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyImagingStudiesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<ImagingStudy>(1, _omitFieldNames ? '' : 'studies',
+        subBuilder: ImagingStudy.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyImagingStudiesResponse clone() => ListMyImagingStudiesResponse()..mergeFromMessage(this);
+  ListMyImagingStudiesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyImagingStudiesResponse copyWith(void Function(ListMyImagingStudiesResponse) updates) => super.copyWith((message) => updates(message as ListMyImagingStudiesResponse)) as ListMyImagingStudiesResponse;
+  ListMyImagingStudiesResponse copyWith(
+          void Function(ListMyImagingStudiesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyImagingStudiesResponse))
+          as ListMyImagingStudiesResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyImagingStudiesResponse create() => ListMyImagingStudiesResponse._();
+  static ListMyImagingStudiesResponse create() =>
+      ListMyImagingStudiesResponse._();
   @$core.override
   ListMyImagingStudiesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyImagingStudiesResponse> createRepeated() => $pb.PbList<ListMyImagingStudiesResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyImagingStudiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyImagingStudiesResponse>(create);
+  static ListMyImagingStudiesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyImagingStudiesResponse>(create);
   static ListMyImagingStudiesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -8870,10 +10421,18 @@ class Lounge extends $pb.GeneratedMessage {
 
   Lounge._();
 
-  factory Lounge.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Lounge.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Lounge.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Lounge.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Lounge', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Lounge',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'slug')
     ..aOS(3, _omitFieldNames ? '' : 'name')
@@ -8883,13 +10442,13 @@ class Lounge extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'amenities')
     ..aOS(8, _omitFieldNames ? '' : 'heroUrl')
     ..aOB(9, _omitFieldNames ? '' : 'sovereignOnly')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Lounge clone() => Lounge()..mergeFromMessage(this);
+  Lounge clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Lounge copyWith(void Function(Lounge) updates) => super.copyWith((message) => updates(message as Lounge)) as Lounge;
+  Lounge copyWith(void Function(Lounge) updates) =>
+      super.copyWith((message) => updates(message as Lounge)) as Lounge;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -8898,9 +10457,9 @@ class Lounge extends $pb.GeneratedMessage {
   static Lounge create() => Lounge._();
   @$core.override
   Lounge createEmptyInstance() => create();
-  static $pb.PbList<Lounge> createRepeated() => $pb.PbList<Lounge>();
   @$core.pragma('dart2js:noInline')
-  static Lounge getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Lounge>(create);
+  static Lounge getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Lounge>(create);
   static Lounge? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9004,22 +10563,31 @@ class LoungeBooking extends $pb.GeneratedMessage {
 
   LoungeBooking._();
 
-  factory LoungeBooking.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LoungeBooking.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LoungeBooking.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoungeBooking.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoungeBooking', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoungeBooking',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<Lounge>(2, _omitFieldNames ? '' : 'lounge', subBuilder: Lounge.create)
     ..aOS(3, _omitFieldNames ? '' : 'amenity')
     ..aInt64(4, _omitFieldNames ? '' : 'scheduledForUnix')
     ..aOS(5, _omitFieldNames ? '' : 'status')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoungeBooking clone() => LoungeBooking()..mergeFromMessage(this);
+  LoungeBooking clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoungeBooking copyWith(void Function(LoungeBooking) updates) => super.copyWith((message) => updates(message as LoungeBooking)) as LoungeBooking;
+  LoungeBooking copyWith(void Function(LoungeBooking) updates) =>
+      super.copyWith((message) => updates(message as LoungeBooking))
+          as LoungeBooking;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9028,9 +10596,9 @@ class LoungeBooking extends $pb.GeneratedMessage {
   static LoungeBooking create() => LoungeBooking._();
   @$core.override
   LoungeBooking createEmptyInstance() => create();
-  static $pb.PbList<LoungeBooking> createRepeated() => $pb.PbList<LoungeBooking>();
   @$core.pragma('dart2js:noInline')
-  static LoungeBooking getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoungeBooking>(create);
+  static LoungeBooking getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoungeBooking>(create);
   static LoungeBooking? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9092,18 +10660,27 @@ class ListLoungesRequest extends $pb.GeneratedMessage {
 
   ListLoungesRequest._();
 
-  factory ListLoungesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLoungesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLoungesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLoungesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLoungesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLoungesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'region')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLoungesRequest clone() => ListLoungesRequest()..mergeFromMessage(this);
+  ListLoungesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLoungesRequest copyWith(void Function(ListLoungesRequest) updates) => super.copyWith((message) => updates(message as ListLoungesRequest)) as ListLoungesRequest;
+  ListLoungesRequest copyWith(void Function(ListLoungesRequest) updates) =>
+      super.copyWith((message) => updates(message as ListLoungesRequest))
+          as ListLoungesRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9112,9 +10689,9 @@ class ListLoungesRequest extends $pb.GeneratedMessage {
   static ListLoungesRequest create() => ListLoungesRequest._();
   @$core.override
   ListLoungesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListLoungesRequest> createRepeated() => $pb.PbList<ListLoungesRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListLoungesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLoungesRequest>(create);
+  static ListLoungesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLoungesRequest>(create);
   static ListLoungesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9138,18 +10715,28 @@ class ListLoungesResponse extends $pb.GeneratedMessage {
 
   ListLoungesResponse._();
 
-  factory ListLoungesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListLoungesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListLoungesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLoungesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListLoungesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<Lounge>(1, _omitFieldNames ? '' : 'lounges', $pb.PbFieldType.PM, subBuilder: Lounge.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLoungesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<Lounge>(1, _omitFieldNames ? '' : 'lounges',
+        subBuilder: Lounge.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLoungesResponse clone() => ListLoungesResponse()..mergeFromMessage(this);
+  ListLoungesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListLoungesResponse copyWith(void Function(ListLoungesResponse) updates) => super.copyWith((message) => updates(message as ListLoungesResponse)) as ListLoungesResponse;
+  ListLoungesResponse copyWith(void Function(ListLoungesResponse) updates) =>
+      super.copyWith((message) => updates(message as ListLoungesResponse))
+          as ListLoungesResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9158,9 +10745,9 @@ class ListLoungesResponse extends $pb.GeneratedMessage {
   static ListLoungesResponse create() => ListLoungesResponse._();
   @$core.override
   ListLoungesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListLoungesResponse> createRepeated() => $pb.PbList<ListLoungesResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListLoungesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListLoungesResponse>(create);
+  static ListLoungesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLoungesResponse>(create);
   static ListLoungesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9172,28 +10759,40 @@ class ListMyLoungeBookingsRequest extends $pb.GeneratedMessage {
 
   ListMyLoungeBookingsRequest._();
 
-  factory ListMyLoungeBookingsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyLoungeBookingsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyLoungeBookingsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyLoungeBookingsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLoungeBookingsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyLoungeBookingsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyLoungeBookingsRequest clone() => ListMyLoungeBookingsRequest()..mergeFromMessage(this);
+  ListMyLoungeBookingsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyLoungeBookingsRequest copyWith(void Function(ListMyLoungeBookingsRequest) updates) => super.copyWith((message) => updates(message as ListMyLoungeBookingsRequest)) as ListMyLoungeBookingsRequest;
+  ListMyLoungeBookingsRequest copyWith(
+          void Function(ListMyLoungeBookingsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyLoungeBookingsRequest))
+          as ListMyLoungeBookingsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyLoungeBookingsRequest create() => ListMyLoungeBookingsRequest._();
+  static ListMyLoungeBookingsRequest create() =>
+      ListMyLoungeBookingsRequest._();
   @$core.override
   ListMyLoungeBookingsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListMyLoungeBookingsRequest> createRepeated() => $pb.PbList<ListMyLoungeBookingsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListMyLoungeBookingsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyLoungeBookingsRequest>(create);
+  static ListMyLoungeBookingsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyLoungeBookingsRequest>(create);
   static ListMyLoungeBookingsRequest? _defaultInstance;
 }
 
@@ -9208,29 +10807,42 @@ class ListMyLoungeBookingsResponse extends $pb.GeneratedMessage {
 
   ListMyLoungeBookingsResponse._();
 
-  factory ListMyLoungeBookingsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ListMyLoungeBookingsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ListMyLoungeBookingsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyLoungeBookingsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListMyLoungeBookingsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<LoungeBooking>(1, _omitFieldNames ? '' : 'bookings', $pb.PbFieldType.PM, subBuilder: LoungeBooking.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyLoungeBookingsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<LoungeBooking>(1, _omitFieldNames ? '' : 'bookings',
+        subBuilder: LoungeBooking.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyLoungeBookingsResponse clone() => ListMyLoungeBookingsResponse()..mergeFromMessage(this);
+  ListMyLoungeBookingsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListMyLoungeBookingsResponse copyWith(void Function(ListMyLoungeBookingsResponse) updates) => super.copyWith((message) => updates(message as ListMyLoungeBookingsResponse)) as ListMyLoungeBookingsResponse;
+  ListMyLoungeBookingsResponse copyWith(
+          void Function(ListMyLoungeBookingsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyLoungeBookingsResponse))
+          as ListMyLoungeBookingsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListMyLoungeBookingsResponse create() => ListMyLoungeBookingsResponse._();
+  static ListMyLoungeBookingsResponse create() =>
+      ListMyLoungeBookingsResponse._();
   @$core.override
   ListMyLoungeBookingsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListMyLoungeBookingsResponse> createRepeated() => $pb.PbList<ListMyLoungeBookingsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListMyLoungeBookingsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListMyLoungeBookingsResponse>(create);
+  static ListMyLoungeBookingsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyLoungeBookingsResponse>(create);
   static ListMyLoungeBookingsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9252,20 +10864,31 @@ class CreateLoungeBookingRequest extends $pb.GeneratedMessage {
 
   CreateLoungeBookingRequest._();
 
-  factory CreateLoungeBookingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateLoungeBookingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateLoungeBookingRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateLoungeBookingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLoungeBookingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateLoungeBookingRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'loungeId')
     ..aOS(2, _omitFieldNames ? '' : 'amenity')
     ..aInt64(3, _omitFieldNames ? '' : 'scheduledForUnix')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateLoungeBookingRequest clone() => CreateLoungeBookingRequest()..mergeFromMessage(this);
+  CreateLoungeBookingRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateLoungeBookingRequest copyWith(void Function(CreateLoungeBookingRequest) updates) => super.copyWith((message) => updates(message as CreateLoungeBookingRequest)) as CreateLoungeBookingRequest;
+  CreateLoungeBookingRequest copyWith(
+          void Function(CreateLoungeBookingRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateLoungeBookingRequest))
+          as CreateLoungeBookingRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9274,9 +10897,9 @@ class CreateLoungeBookingRequest extends $pb.GeneratedMessage {
   static CreateLoungeBookingRequest create() => CreateLoungeBookingRequest._();
   @$core.override
   CreateLoungeBookingRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateLoungeBookingRequest> createRepeated() => $pb.PbList<CreateLoungeBookingRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateLoungeBookingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLoungeBookingRequest>(create);
+  static CreateLoungeBookingRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateLoungeBookingRequest>(create);
   static CreateLoungeBookingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9318,29 +10941,42 @@ class CreateLoungeBookingResponse extends $pb.GeneratedMessage {
 
   CreateLoungeBookingResponse._();
 
-  factory CreateLoungeBookingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CreateLoungeBookingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CreateLoungeBookingResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateLoungeBookingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateLoungeBookingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..aOM<LoungeBooking>(1, _omitFieldNames ? '' : 'booking', subBuilder: LoungeBooking.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateLoungeBookingResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..aOM<LoungeBooking>(1, _omitFieldNames ? '' : 'booking',
+        subBuilder: LoungeBooking.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateLoungeBookingResponse clone() => CreateLoungeBookingResponse()..mergeFromMessage(this);
+  CreateLoungeBookingResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateLoungeBookingResponse copyWith(void Function(CreateLoungeBookingResponse) updates) => super.copyWith((message) => updates(message as CreateLoungeBookingResponse)) as CreateLoungeBookingResponse;
+  CreateLoungeBookingResponse copyWith(
+          void Function(CreateLoungeBookingResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateLoungeBookingResponse))
+          as CreateLoungeBookingResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateLoungeBookingResponse create() => CreateLoungeBookingResponse._();
+  static CreateLoungeBookingResponse create() =>
+      CreateLoungeBookingResponse._();
   @$core.override
   CreateLoungeBookingResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateLoungeBookingResponse> createRepeated() => $pb.PbList<CreateLoungeBookingResponse>();
   @$core.pragma('dart2js:noInline')
-  static CreateLoungeBookingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateLoungeBookingResponse>(create);
+  static CreateLoungeBookingResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateLoungeBookingResponse>(create);
   static CreateLoungeBookingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9366,18 +11002,29 @@ class CancelLoungeBookingRequest extends $pb.GeneratedMessage {
 
   CancelLoungeBookingRequest._();
 
-  factory CancelLoungeBookingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CancelLoungeBookingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CancelLoungeBookingRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelLoungeBookingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelLoungeBookingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelLoungeBookingRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'bookingId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CancelLoungeBookingRequest clone() => CancelLoungeBookingRequest()..mergeFromMessage(this);
+  CancelLoungeBookingRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CancelLoungeBookingRequest copyWith(void Function(CancelLoungeBookingRequest) updates) => super.copyWith((message) => updates(message as CancelLoungeBookingRequest)) as CancelLoungeBookingRequest;
+  CancelLoungeBookingRequest copyWith(
+          void Function(CancelLoungeBookingRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CancelLoungeBookingRequest))
+          as CancelLoungeBookingRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9386,9 +11033,9 @@ class CancelLoungeBookingRequest extends $pb.GeneratedMessage {
   static CancelLoungeBookingRequest create() => CancelLoungeBookingRequest._();
   @$core.override
   CancelLoungeBookingRequest createEmptyInstance() => create();
-  static $pb.PbList<CancelLoungeBookingRequest> createRepeated() => $pb.PbList<CancelLoungeBookingRequest>();
   @$core.pragma('dart2js:noInline')
-  static CancelLoungeBookingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelLoungeBookingRequest>(create);
+  static CancelLoungeBookingRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelLoungeBookingRequest>(create);
   static CancelLoungeBookingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9406,28 +11053,40 @@ class CancelLoungeBookingResponse extends $pb.GeneratedMessage {
 
   CancelLoungeBookingResponse._();
 
-  factory CancelLoungeBookingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CancelLoungeBookingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CancelLoungeBookingResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelLoungeBookingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelLoungeBookingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelLoungeBookingResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CancelLoungeBookingResponse clone() => CancelLoungeBookingResponse()..mergeFromMessage(this);
+  CancelLoungeBookingResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CancelLoungeBookingResponse copyWith(void Function(CancelLoungeBookingResponse) updates) => super.copyWith((message) => updates(message as CancelLoungeBookingResponse)) as CancelLoungeBookingResponse;
+  CancelLoungeBookingResponse copyWith(
+          void Function(CancelLoungeBookingResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CancelLoungeBookingResponse))
+          as CancelLoungeBookingResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CancelLoungeBookingResponse create() => CancelLoungeBookingResponse._();
+  static CancelLoungeBookingResponse create() =>
+      CancelLoungeBookingResponse._();
   @$core.override
   CancelLoungeBookingResponse createEmptyInstance() => create();
-  static $pb.PbList<CancelLoungeBookingResponse> createRepeated() => $pb.PbList<CancelLoungeBookingResponse>();
   @$core.pragma('dart2js:noInline')
-  static CancelLoungeBookingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelLoungeBookingResponse>(create);
+  static CancelLoungeBookingResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelLoungeBookingResponse>(create);
   static CancelLoungeBookingResponse? _defaultInstance;
 }
 
@@ -9444,19 +11103,29 @@ class ParseLabReportTextRequest extends $pb.GeneratedMessage {
 
   ParseLabReportTextRequest._();
 
-  factory ParseLabReportTextRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ParseLabReportTextRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ParseLabReportTextRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ParseLabReportTextRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ParseLabReportTextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ParseLabReportTextRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reportId')
     ..aOS(2, _omitFieldNames ? '' : 'text')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseLabReportTextRequest clone() => ParseLabReportTextRequest()..mergeFromMessage(this);
+  ParseLabReportTextRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseLabReportTextRequest copyWith(void Function(ParseLabReportTextRequest) updates) => super.copyWith((message) => updates(message as ParseLabReportTextRequest)) as ParseLabReportTextRequest;
+  ParseLabReportTextRequest copyWith(
+          void Function(ParseLabReportTextRequest) updates) =>
+      super.copyWith((message) => updates(message as ParseLabReportTextRequest))
+          as ParseLabReportTextRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9465,9 +11134,9 @@ class ParseLabReportTextRequest extends $pb.GeneratedMessage {
   static ParseLabReportTextRequest create() => ParseLabReportTextRequest._();
   @$core.override
   ParseLabReportTextRequest createEmptyInstance() => create();
-  static $pb.PbList<ParseLabReportTextRequest> createRepeated() => $pb.PbList<ParseLabReportTextRequest>();
   @$core.pragma('dart2js:noInline')
-  static ParseLabReportTextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParseLabReportTextRequest>(create);
+  static ParseLabReportTextRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ParseLabReportTextRequest>(create);
   static ParseLabReportTextRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -9500,18 +11169,30 @@ class ParseLabReportTextResponse extends $pb.GeneratedMessage {
 
   ParseLabReportTextResponse._();
 
-  factory ParseLabReportTextResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ParseLabReportTextResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ParseLabReportTextResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ParseLabReportTextResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ParseLabReportTextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'), createEmptyInstance: create)
-    ..pc<LabMarkerValue>(1, _omitFieldNames ? '' : 'extracted', $pb.PbFieldType.PM, subBuilder: LabMarkerValue.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ParseLabReportTextResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.apex.v1'),
+      createEmptyInstance: create)
+    ..pPM<LabMarkerValue>(1, _omitFieldNames ? '' : 'extracted',
+        subBuilder: LabMarkerValue.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseLabReportTextResponse clone() => ParseLabReportTextResponse()..mergeFromMessage(this);
+  ParseLabReportTextResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseLabReportTextResponse copyWith(void Function(ParseLabReportTextResponse) updates) => super.copyWith((message) => updates(message as ParseLabReportTextResponse)) as ParseLabReportTextResponse;
+  ParseLabReportTextResponse copyWith(
+          void Function(ParseLabReportTextResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ParseLabReportTextResponse))
+          as ParseLabReportTextResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -9520,15 +11201,16 @@ class ParseLabReportTextResponse extends $pb.GeneratedMessage {
   static ParseLabReportTextResponse create() => ParseLabReportTextResponse._();
   @$core.override
   ParseLabReportTextResponse createEmptyInstance() => create();
-  static $pb.PbList<ParseLabReportTextResponse> createRepeated() => $pb.PbList<ParseLabReportTextResponse>();
   @$core.pragma('dart2js:noInline')
-  static ParseLabReportTextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParseLabReportTextResponse>(create);
+  static ParseLabReportTextResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ParseLabReportTextResponse>(create);
   static ParseLabReportTextResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $pb.PbList<LabMarkerValue> get extracted => $_getList(0);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

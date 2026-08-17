@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -33,21 +33,31 @@ class VerifySignatureRequest extends $pb.GeneratedMessage {
 
   VerifySignatureRequest._();
 
-  factory VerifySignatureRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory VerifySignatureRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory VerifySignatureRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifySignatureRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifySignatureRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifySignatureRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'address')
     ..aOS(2, _omitFieldNames ? '' : 'challenge')
     ..aOS(3, _omitFieldNames ? '' : 'signature')
     ..aOS(4, _omitFieldNames ? '' : 'chain')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifySignatureRequest clone() => VerifySignatureRequest()..mergeFromMessage(this);
+  VerifySignatureRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifySignatureRequest copyWith(void Function(VerifySignatureRequest) updates) => super.copyWith((message) => updates(message as VerifySignatureRequest)) as VerifySignatureRequest;
+  VerifySignatureRequest copyWith(
+          void Function(VerifySignatureRequest) updates) =>
+      super.copyWith((message) => updates(message as VerifySignatureRequest))
+          as VerifySignatureRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -56,9 +66,9 @@ class VerifySignatureRequest extends $pb.GeneratedMessage {
   static VerifySignatureRequest create() => VerifySignatureRequest._();
   @$core.override
   VerifySignatureRequest createEmptyInstance() => create();
-  static $pb.PbList<VerifySignatureRequest> createRepeated() => $pb.PbList<VerifySignatureRequest>();
   @$core.pragma('dart2js:noInline')
-  static VerifySignatureRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifySignatureRequest>(create);
+  static VerifySignatureRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VerifySignatureRequest>(create);
   static VerifySignatureRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -109,18 +119,28 @@ class VerifySignatureResponse extends $pb.GeneratedMessage {
 
   VerifySignatureResponse._();
 
-  factory VerifySignatureResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory VerifySignatureResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory VerifySignatureResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifySignatureResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifySignatureResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifySignatureResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'valid')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifySignatureResponse clone() => VerifySignatureResponse()..mergeFromMessage(this);
+  VerifySignatureResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifySignatureResponse copyWith(void Function(VerifySignatureResponse) updates) => super.copyWith((message) => updates(message as VerifySignatureResponse)) as VerifySignatureResponse;
+  VerifySignatureResponse copyWith(
+          void Function(VerifySignatureResponse) updates) =>
+      super.copyWith((message) => updates(message as VerifySignatureResponse))
+          as VerifySignatureResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -129,9 +149,9 @@ class VerifySignatureResponse extends $pb.GeneratedMessage {
   static VerifySignatureResponse create() => VerifySignatureResponse._();
   @$core.override
   VerifySignatureResponse createEmptyInstance() => create();
-  static $pb.PbList<VerifySignatureResponse> createRepeated() => $pb.PbList<VerifySignatureResponse>();
   @$core.pragma('dart2js:noInline')
-  static VerifySignatureResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifySignatureResponse>(create);
+  static VerifySignatureResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VerifySignatureResponse>(create);
   static VerifySignatureResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -157,19 +177,29 @@ class GetWalletValueRequest extends $pb.GeneratedMessage {
 
   GetWalletValueRequest._();
 
-  factory GetWalletValueRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetWalletValueRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetWalletValueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWalletValueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWalletValueRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWalletValueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'address')
     ..aOS(2, _omitFieldNames ? '' : 'chain')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetWalletValueRequest clone() => GetWalletValueRequest()..mergeFromMessage(this);
+  GetWalletValueRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetWalletValueRequest copyWith(void Function(GetWalletValueRequest) updates) => super.copyWith((message) => updates(message as GetWalletValueRequest)) as GetWalletValueRequest;
+  GetWalletValueRequest copyWith(
+          void Function(GetWalletValueRequest) updates) =>
+      super.copyWith((message) => updates(message as GetWalletValueRequest))
+          as GetWalletValueRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -178,9 +208,9 @@ class GetWalletValueRequest extends $pb.GeneratedMessage {
   static GetWalletValueRequest create() => GetWalletValueRequest._();
   @$core.override
   GetWalletValueRequest createEmptyInstance() => create();
-  static $pb.PbList<GetWalletValueRequest> createRepeated() => $pb.PbList<GetWalletValueRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetWalletValueRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWalletValueRequest>(create);
+  static GetWalletValueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetWalletValueRequest>(create);
   static GetWalletValueRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -215,19 +245,33 @@ class GetWalletValueResponse extends $pb.GeneratedMessage {
 
   GetWalletValueResponse._();
 
-  factory GetWalletValueResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetWalletValueResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetWalletValueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWalletValueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetWalletValueResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'totalValueUsd', $pb.PbFieldType.OD)
-    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'metadata', entryClassName: 'GetWalletValueResponse.MetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('sttattus.vault.v1'))
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWalletValueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'totalValueUsd')
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'metadata',
+        entryClassName: 'GetWalletValueResponse.MetadataEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('sttattus.vault.v1'))
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetWalletValueResponse clone() => GetWalletValueResponse()..mergeFromMessage(this);
+  GetWalletValueResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetWalletValueResponse copyWith(void Function(GetWalletValueResponse) updates) => super.copyWith((message) => updates(message as GetWalletValueResponse)) as GetWalletValueResponse;
+  GetWalletValueResponse copyWith(
+          void Function(GetWalletValueResponse) updates) =>
+      super.copyWith((message) => updates(message as GetWalletValueResponse))
+          as GetWalletValueResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -236,9 +280,9 @@ class GetWalletValueResponse extends $pb.GeneratedMessage {
   static GetWalletValueResponse create() => GetWalletValueResponse._();
   @$core.override
   GetWalletValueResponse createEmptyInstance() => create();
-  static $pb.PbList<GetWalletValueResponse> createRepeated() => $pb.PbList<GetWalletValueResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetWalletValueResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetWalletValueResponse>(create);
+  static GetWalletValueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetWalletValueResponse>(create);
   static GetWalletValueResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -254,6 +298,7 @@ class GetWalletValueResponse extends $pb.GeneratedMessage {
   $pb.PbMap<$core.String, $core.String> get metadata => $_getMap(1);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

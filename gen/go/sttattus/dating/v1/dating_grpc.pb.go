@@ -80,6 +80,10 @@ const (
 	DatingService_RevokeProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
 	DatingService_GenerateAtlasYearbook_FullMethodName      = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
 	DatingService_CheckInEvent_FullMethodName               = "/sttattus.dating.v1.DatingService/CheckInEvent"
+	DatingService_AddDatingPhoto_FullMethodName             = "/sttattus.dating.v1.DatingService/AddDatingPhoto"
+	DatingService_RemoveDatingPhoto_FullMethodName          = "/sttattus.dating.v1.DatingService/RemoveDatingPhoto"
+	DatingService_ReorderDatingPhotos_FullMethodName        = "/sttattus.dating.v1.DatingService/ReorderDatingPhotos"
+	DatingService_SetPrimaryDatingPhoto_FullMethodName      = "/sttattus.dating.v1.DatingService/SetPrimaryDatingPhoto"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -159,6 +163,20 @@ type DatingServiceClient interface {
 	// A9P4 — Category-leading
 	GenerateAtlasYearbook(ctx context.Context, in *GenerateAtlasYearbookRequest, opts ...grpc.CallOption) (*GenerateAtlasYearbookResponse, error)
 	CheckInEvent(ctx context.Context, in *CheckInEventRequest, opts ...grpc.CallOption) (*CheckInEventResponse, error)
+	// A9P6 — Dating photos.
+	//
+	// atlas_dating_photos had a read path (DatingProfile.photo_urls) and no way
+	// to write one: no RPC, and nothing in members/ either. A dating profile
+	// that cannot gain a photo is the gap these close.
+	//
+	// Bytes go through MediaService.RequestUpload / MarkProcessed as everywhere
+	// else, so an uploaded photo is screened by the Gemini image classifier
+	// before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
+	// never the image.
+	AddDatingPhoto(ctx context.Context, in *AddDatingPhotoRequest, opts ...grpc.CallOption) (*AddDatingPhotoResponse, error)
+	RemoveDatingPhoto(ctx context.Context, in *RemoveDatingPhotoRequest, opts ...grpc.CallOption) (*RemoveDatingPhotoResponse, error)
+	ReorderDatingPhotos(ctx context.Context, in *ReorderDatingPhotosRequest, opts ...grpc.CallOption) (*ReorderDatingPhotosResponse, error)
+	SetPrimaryDatingPhoto(ctx context.Context, in *SetPrimaryDatingPhotoRequest, opts ...grpc.CallOption) (*SetPrimaryDatingPhotoResponse, error)
 }
 
 type datingServiceClient struct {
@@ -797,6 +815,46 @@ func (c *datingServiceClient) CheckInEvent(ctx context.Context, in *CheckInEvent
 	return out, nil
 }
 
+func (c *datingServiceClient) AddDatingPhoto(ctx context.Context, in *AddDatingPhotoRequest, opts ...grpc.CallOption) (*AddDatingPhotoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddDatingPhotoResponse)
+	err := c.cc.Invoke(ctx, DatingService_AddDatingPhoto_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RemoveDatingPhoto(ctx context.Context, in *RemoveDatingPhotoRequest, opts ...grpc.CallOption) (*RemoveDatingPhotoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveDatingPhotoResponse)
+	err := c.cc.Invoke(ctx, DatingService_RemoveDatingPhoto_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ReorderDatingPhotos(ctx context.Context, in *ReorderDatingPhotosRequest, opts ...grpc.CallOption) (*ReorderDatingPhotosResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReorderDatingPhotosResponse)
+	err := c.cc.Invoke(ctx, DatingService_ReorderDatingPhotos_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) SetPrimaryDatingPhoto(ctx context.Context, in *SetPrimaryDatingPhotoRequest, opts ...grpc.CallOption) (*SetPrimaryDatingPhotoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetPrimaryDatingPhotoResponse)
+	err := c.cc.Invoke(ctx, DatingService_SetPrimaryDatingPhoto_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -874,6 +932,20 @@ type DatingServiceServer interface {
 	// A9P4 — Category-leading
 	GenerateAtlasYearbook(context.Context, *GenerateAtlasYearbookRequest) (*GenerateAtlasYearbookResponse, error)
 	CheckInEvent(context.Context, *CheckInEventRequest) (*CheckInEventResponse, error)
+	// A9P6 — Dating photos.
+	//
+	// atlas_dating_photos had a read path (DatingProfile.photo_urls) and no way
+	// to write one: no RPC, and nothing in members/ either. A dating profile
+	// that cannot gain a photo is the gap these close.
+	//
+	// Bytes go through MediaService.RequestUpload / MarkProcessed as everywhere
+	// else, so an uploaded photo is screened by the Gemini image classifier
+	// before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
+	// never the image.
+	AddDatingPhoto(context.Context, *AddDatingPhotoRequest) (*AddDatingPhotoResponse, error)
+	RemoveDatingPhoto(context.Context, *RemoveDatingPhotoRequest) (*RemoveDatingPhotoResponse, error)
+	ReorderDatingPhotos(context.Context, *ReorderDatingPhotosRequest) (*ReorderDatingPhotosResponse, error)
+	SetPrimaryDatingPhoto(context.Context, *SetPrimaryDatingPhotoRequest) (*SetPrimaryDatingPhotoResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -1066,6 +1138,18 @@ func (UnimplementedDatingServiceServer) GenerateAtlasYearbook(context.Context, *
 }
 func (UnimplementedDatingServiceServer) CheckInEvent(context.Context, *CheckInEventRequest) (*CheckInEventResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CheckInEvent not implemented")
+}
+func (UnimplementedDatingServiceServer) AddDatingPhoto(context.Context, *AddDatingPhotoRequest) (*AddDatingPhotoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddDatingPhoto not implemented")
+}
+func (UnimplementedDatingServiceServer) RemoveDatingPhoto(context.Context, *RemoveDatingPhotoRequest) (*RemoveDatingPhotoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveDatingPhoto not implemented")
+}
+func (UnimplementedDatingServiceServer) ReorderDatingPhotos(context.Context, *ReorderDatingPhotosRequest) (*ReorderDatingPhotosResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReorderDatingPhotos not implemented")
+}
+func (UnimplementedDatingServiceServer) SetPrimaryDatingPhoto(context.Context, *SetPrimaryDatingPhotoRequest) (*SetPrimaryDatingPhotoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetPrimaryDatingPhoto not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -2172,6 +2256,78 @@ func _DatingService_CheckInEvent_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_AddDatingPhoto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddDatingPhotoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AddDatingPhoto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AddDatingPhoto_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AddDatingPhoto(ctx, req.(*AddDatingPhotoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RemoveDatingPhoto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveDatingPhotoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RemoveDatingPhoto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RemoveDatingPhoto_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RemoveDatingPhoto(ctx, req.(*RemoveDatingPhotoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ReorderDatingPhotos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReorderDatingPhotosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ReorderDatingPhotos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ReorderDatingPhotos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ReorderDatingPhotos(ctx, req.(*ReorderDatingPhotosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_SetPrimaryDatingPhoto_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetPrimaryDatingPhotoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).SetPrimaryDatingPhoto(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_SetPrimaryDatingPhoto_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).SetPrimaryDatingPhoto(ctx, req.(*SetPrimaryDatingPhotoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2414,6 +2570,22 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckInEvent",
 			Handler:    _DatingService_CheckInEvent_Handler,
+		},
+		{
+			MethodName: "AddDatingPhoto",
+			Handler:    _DatingService_AddDatingPhoto_Handler,
+		},
+		{
+			MethodName: "RemoveDatingPhoto",
+			Handler:    _DatingService_RemoveDatingPhoto_Handler,
+		},
+		{
+			MethodName: "ReorderDatingPhotos",
+			Handler:    _DatingService_ReorderDatingPhotos_Handler,
+		},
+		{
+			MethodName: "SetPrimaryDatingPhoto",
+			Handler:    _DatingService_SetPrimaryDatingPhoto_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
