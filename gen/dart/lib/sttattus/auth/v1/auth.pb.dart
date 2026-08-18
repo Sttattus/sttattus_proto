@@ -1434,6 +1434,150 @@ class LogoutRequest extends $pb.GeneratedMessage {
   void clearRefreshToken() => $_clearField(1);
 }
 
+/// ===== ExchangeOAuthHandoff =====
+/// Redeems the single-use code a completed browser sign-in deep-links back into
+/// the app.
+///
+/// This exists because the alternative — putting the token pair in the deep-link
+/// URL — hands the session to anything that can register the same custom scheme,
+/// and to whatever logs that URL. The code is 256 bits of randomness, single-use,
+/// and valid for two minutes; it is spent here over TLS instead.
+///
+/// Unauthenticated by necessity: this is how a signed-out member obtains a
+/// token. Safe for the same reason Login is — possession of a secret this server
+/// issued after verifying an identity with the provider.
+class ExchangeOAuthHandoffRequest extends $pb.GeneratedMessage {
+  factory ExchangeOAuthHandoffRequest({
+    $core.String? code,
+    AppCode? appCode,
+  }) {
+    final result = create();
+    if (code != null) result.code = code;
+    if (appCode != null) result.appCode = appCode;
+    return result;
+  }
+
+  ExchangeOAuthHandoffRequest._();
+
+  factory ExchangeOAuthHandoffRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExchangeOAuthHandoffRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExchangeOAuthHandoffRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..e<AppCode>(2, _omitFieldNames ? '' : 'appCode', $pb.PbFieldType.OE, defaultOrMaker: AppCode.APP_CODE_UNSPECIFIED, valueOf: AppCode.valueOf, enumValues: AppCode.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExchangeOAuthHandoffRequest clone() => ExchangeOAuthHandoffRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExchangeOAuthHandoffRequest copyWith(void Function(ExchangeOAuthHandoffRequest) updates) => super.copyWith((message) => updates(message as ExchangeOAuthHandoffRequest)) as ExchangeOAuthHandoffRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExchangeOAuthHandoffRequest create() => ExchangeOAuthHandoffRequest._();
+  @$core.override
+  ExchangeOAuthHandoffRequest createEmptyInstance() => create();
+  static $pb.PbList<ExchangeOAuthHandoffRequest> createRepeated() => $pb.PbList<ExchangeOAuthHandoffRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ExchangeOAuthHandoffRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExchangeOAuthHandoffRequest>(create);
+  static ExchangeOAuthHandoffRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  AppCode get appCode => $_getN(1);
+  @$pb.TagNumber(2)
+  set appCode(AppCode value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAppCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppCode() => $_clearField(2);
+}
+
+class ExchangeOAuthHandoffResponse extends $pb.GeneratedMessage {
+  factory ExchangeOAuthHandoffResponse({
+    $core.String? userId,
+    TokenPair? tokens,
+    ProfileHint? profile,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  ExchangeOAuthHandoffResponse._();
+
+  factory ExchangeOAuthHandoffResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ExchangeOAuthHandoffResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExchangeOAuthHandoffResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens', subBuilder: TokenPair.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile', subBuilder: ProfileHint.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExchangeOAuthHandoffResponse clone() => ExchangeOAuthHandoffResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExchangeOAuthHandoffResponse copyWith(void Function(ExchangeOAuthHandoffResponse) updates) => super.copyWith((message) => updates(message as ExchangeOAuthHandoffResponse)) as ExchangeOAuthHandoffResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExchangeOAuthHandoffResponse create() => ExchangeOAuthHandoffResponse._();
+  @$core.override
+  ExchangeOAuthHandoffResponse createEmptyInstance() => create();
+  static $pb.PbList<ExchangeOAuthHandoffResponse> createRepeated() => $pb.PbList<ExchangeOAuthHandoffResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ExchangeOAuthHandoffResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExchangeOAuthHandoffResponse>(create);
+  static ExchangeOAuthHandoffResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  TokenPair get tokens => $_getN(1);
+  @$pb.TagNumber(2)
+  set tokens(TokenPair value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTokens() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTokens() => $_clearField(2);
+  @$pb.TagNumber(2)
+  TokenPair ensureTokens() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+}
+
 class LogoutResponse extends $pb.GeneratedMessage {
   factory LogoutResponse() => create();
 

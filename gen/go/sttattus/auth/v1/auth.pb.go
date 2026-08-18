@@ -1414,6 +1414,130 @@ func (x *LogoutRequest) GetRefreshToken() string {
 	return ""
 }
 
+// ===== ExchangeOAuthHandoff =====
+// Redeems the single-use code a completed browser sign-in deep-links back into
+// the app.
+//
+// This exists because the alternative — putting the token pair in the deep-link
+// URL — hands the session to anything that can register the same custom scheme,
+// and to whatever logs that URL. The code is 256 bits of randomness, single-use,
+// and valid for two minutes; it is spent here over TLS instead.
+//
+// Unauthenticated by necessity: this is how a signed-out member obtains a
+// token. Safe for the same reason Login is — possession of a secret this server
+// issued after verifying an identity with the provider.
+type ExchangeOAuthHandoffRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          string                 `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+	AppCode       AppCode                `protobuf:"varint,2,opt,name=app_code,json=appCode,proto3,enum=sttattus.auth.v1.AppCode" json:"app_code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExchangeOAuthHandoffRequest) Reset() {
+	*x = ExchangeOAuthHandoffRequest{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExchangeOAuthHandoffRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExchangeOAuthHandoffRequest) ProtoMessage() {}
+
+func (x *ExchangeOAuthHandoffRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExchangeOAuthHandoffRequest.ProtoReflect.Descriptor instead.
+func (*ExchangeOAuthHandoffRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ExchangeOAuthHandoffRequest) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *ExchangeOAuthHandoffRequest) GetAppCode() AppCode {
+	if x != nil {
+		return x.AppCode
+	}
+	return AppCode_APP_CODE_UNSPECIFIED
+}
+
+type ExchangeOAuthHandoffResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Tokens        *TokenPair             `protobuf:"bytes,2,opt,name=tokens,proto3" json:"tokens,omitempty"`
+	Profile       *ProfileHint           `protobuf:"bytes,3,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExchangeOAuthHandoffResponse) Reset() {
+	*x = ExchangeOAuthHandoffResponse{}
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExchangeOAuthHandoffResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExchangeOAuthHandoffResponse) ProtoMessage() {}
+
+func (x *ExchangeOAuthHandoffResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExchangeOAuthHandoffResponse.ProtoReflect.Descriptor instead.
+func (*ExchangeOAuthHandoffResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ExchangeOAuthHandoffResponse) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ExchangeOAuthHandoffResponse) GetTokens() *TokenPair {
+	if x != nil {
+		return x.Tokens
+	}
+	return nil
+}
+
+func (x *ExchangeOAuthHandoffResponse) GetProfile() *ProfileHint {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
 type LogoutResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -1422,7 +1546,7 @@ type LogoutResponse struct {
 
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1434,7 +1558,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[23]
+	mi := &file_sttattus_auth_v1_auth_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1447,7 +1571,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{23}
+	return file_sttattus_auth_v1_auth_proto_rawDescGZIP(), []int{25}
 }
 
 var File_sttattus_auth_v1_auth_proto protoreflect.FileDescriptor
@@ -1530,7 +1654,14 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x0fRefreshResponse\x123\n" +
 	"\x06tokens\x18\x01 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\"4\n" +
 	"\rLogoutRequest\x12#\n" +
-	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"\x10\n" +
+	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"g\n" +
+	"\x1bExchangeOAuthHandoffRequest\x12\x12\n" +
+	"\x04code\x18\x01 \x01(\tR\x04code\x124\n" +
+	"\bapp_code\x18\x02 \x01(\x0e2\x19.sttattus.auth.v1.AppCodeR\aappCode\"\xa5\x01\n" +
+	"\x1cExchangeOAuthHandoffResponse\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
+	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
+	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\"\x10\n" +
 	"\x0eLogoutResponse*\x9a\x02\n" +
 	"\aAppCode\x12\x18\n" +
 	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x12\n" +
@@ -1551,12 +1682,13 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x19AUTH_PROVIDER_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14AUTH_PROVIDER_GOOGLE\x10\x01\x12\x1a\n" +
 	"\x16AUTH_PROVIDER_FACEBOOK\x10\x02\x12\x18\n" +
-	"\x14AUTH_PROVIDER_GITHUB\x10\x032\xcb\a\n" +
+	"\x14AUTH_PROVIDER_GITHUB\x10\x032\xc2\b\n" +
 	"\vAuthService\x12Q\n" +
 	"\bRegister\x12!.sttattus.auth.v1.RegisterRequest\x1a\".sttattus.auth.v1.RegisterResponse\x12H\n" +
 	"\x05Login\x12\x1e.sttattus.auth.v1.LoginRequest\x1a\x1f.sttattus.auth.v1.LoginResponse\x12W\n" +
 	"\n" +
-	"OAuthLogin\x12#.sttattus.auth.v1.OAuthLoginRequest\x1a$.sttattus.auth.v1.OAuthLoginResponse\x12W\n" +
+	"OAuthLogin\x12#.sttattus.auth.v1.OAuthLoginRequest\x1a$.sttattus.auth.v1.OAuthLoginResponse\x12u\n" +
+	"\x14ExchangeOAuthHandoff\x12-.sttattus.auth.v1.ExchangeOAuthHandoffRequest\x1a..sttattus.auth.v1.ExchangeOAuthHandoffResponse\x12W\n" +
 	"\n" +
 	"CheckEmail\x12#.sttattus.auth.v1.CheckEmailRequest\x1a$.sttattus.auth.v1.CheckEmailResponse\x12N\n" +
 	"\aLinkApp\x12 .sttattus.auth.v1.LinkAppRequest\x1a!.sttattus.auth.v1.LinkAppResponse\x12]\n" +
@@ -1580,34 +1712,36 @@ func file_sttattus_auth_v1_auth_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_auth_v1_auth_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_sttattus_auth_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
 var file_sttattus_auth_v1_auth_proto_goTypes = []any{
-	(AppCode)(0),                   // 0: sttattus.auth.v1.AppCode
-	(AuthProvider)(0),              // 1: sttattus.auth.v1.AuthProvider
-	(*TokenPair)(nil),              // 2: sttattus.auth.v1.TokenPair
-	(*ProfileHint)(nil),            // 3: sttattus.auth.v1.ProfileHint
-	(*RegisterRequest)(nil),        // 4: sttattus.auth.v1.RegisterRequest
-	(*RegisterResponse)(nil),       // 5: sttattus.auth.v1.RegisterResponse
-	(*LoginRequest)(nil),           // 6: sttattus.auth.v1.LoginRequest
-	(*LoginResponse)(nil),          // 7: sttattus.auth.v1.LoginResponse
-	(*OAuthLoginRequest)(nil),      // 8: sttattus.auth.v1.OAuthLoginRequest
-	(*OAuthLoginResponse)(nil),     // 9: sttattus.auth.v1.OAuthLoginResponse
-	(*CheckEmailRequest)(nil),      // 10: sttattus.auth.v1.CheckEmailRequest
-	(*CheckEmailResponse)(nil),     // 11: sttattus.auth.v1.CheckEmailResponse
-	(*LinkAppRequest)(nil),         // 12: sttattus.auth.v1.LinkAppRequest
-	(*LinkAppResponse)(nil),        // 13: sttattus.auth.v1.LinkAppResponse
-	(*LinkProviderRequest)(nil),    // 14: sttattus.auth.v1.LinkProviderRequest
-	(*LinkProviderResponse)(nil),   // 15: sttattus.auth.v1.LinkProviderResponse
-	(*SetPasswordRequest)(nil),     // 16: sttattus.auth.v1.SetPasswordRequest
-	(*SetPasswordResponse)(nil),    // 17: sttattus.auth.v1.SetPasswordResponse
-	(*ForgotPasswordRequest)(nil),  // 18: sttattus.auth.v1.ForgotPasswordRequest
-	(*ForgotPasswordResponse)(nil), // 19: sttattus.auth.v1.ForgotPasswordResponse
-	(*ResetPasswordRequest)(nil),   // 20: sttattus.auth.v1.ResetPasswordRequest
-	(*ResetPasswordResponse)(nil),  // 21: sttattus.auth.v1.ResetPasswordResponse
-	(*RefreshRequest)(nil),         // 22: sttattus.auth.v1.RefreshRequest
-	(*RefreshResponse)(nil),        // 23: sttattus.auth.v1.RefreshResponse
-	(*LogoutRequest)(nil),          // 24: sttattus.auth.v1.LogoutRequest
-	(*LogoutResponse)(nil),         // 25: sttattus.auth.v1.LogoutResponse
+	(AppCode)(0),                         // 0: sttattus.auth.v1.AppCode
+	(AuthProvider)(0),                    // 1: sttattus.auth.v1.AuthProvider
+	(*TokenPair)(nil),                    // 2: sttattus.auth.v1.TokenPair
+	(*ProfileHint)(nil),                  // 3: sttattus.auth.v1.ProfileHint
+	(*RegisterRequest)(nil),              // 4: sttattus.auth.v1.RegisterRequest
+	(*RegisterResponse)(nil),             // 5: sttattus.auth.v1.RegisterResponse
+	(*LoginRequest)(nil),                 // 6: sttattus.auth.v1.LoginRequest
+	(*LoginResponse)(nil),                // 7: sttattus.auth.v1.LoginResponse
+	(*OAuthLoginRequest)(nil),            // 8: sttattus.auth.v1.OAuthLoginRequest
+	(*OAuthLoginResponse)(nil),           // 9: sttattus.auth.v1.OAuthLoginResponse
+	(*CheckEmailRequest)(nil),            // 10: sttattus.auth.v1.CheckEmailRequest
+	(*CheckEmailResponse)(nil),           // 11: sttattus.auth.v1.CheckEmailResponse
+	(*LinkAppRequest)(nil),               // 12: sttattus.auth.v1.LinkAppRequest
+	(*LinkAppResponse)(nil),              // 13: sttattus.auth.v1.LinkAppResponse
+	(*LinkProviderRequest)(nil),          // 14: sttattus.auth.v1.LinkProviderRequest
+	(*LinkProviderResponse)(nil),         // 15: sttattus.auth.v1.LinkProviderResponse
+	(*SetPasswordRequest)(nil),           // 16: sttattus.auth.v1.SetPasswordRequest
+	(*SetPasswordResponse)(nil),          // 17: sttattus.auth.v1.SetPasswordResponse
+	(*ForgotPasswordRequest)(nil),        // 18: sttattus.auth.v1.ForgotPasswordRequest
+	(*ForgotPasswordResponse)(nil),       // 19: sttattus.auth.v1.ForgotPasswordResponse
+	(*ResetPasswordRequest)(nil),         // 20: sttattus.auth.v1.ResetPasswordRequest
+	(*ResetPasswordResponse)(nil),        // 21: sttattus.auth.v1.ResetPasswordResponse
+	(*RefreshRequest)(nil),               // 22: sttattus.auth.v1.RefreshRequest
+	(*RefreshResponse)(nil),              // 23: sttattus.auth.v1.RefreshResponse
+	(*LogoutRequest)(nil),                // 24: sttattus.auth.v1.LogoutRequest
+	(*ExchangeOAuthHandoffRequest)(nil),  // 25: sttattus.auth.v1.ExchangeOAuthHandoffRequest
+	(*ExchangeOAuthHandoffResponse)(nil), // 26: sttattus.auth.v1.ExchangeOAuthHandoffResponse
+	(*LogoutResponse)(nil),               // 27: sttattus.auth.v1.LogoutResponse
 }
 var file_sttattus_auth_v1_auth_proto_depIdxs = []int32{
 	0,  // 0: sttattus.auth.v1.ProfileHint.linked_apps:type_name -> sttattus.auth.v1.AppCode
@@ -1630,33 +1764,38 @@ var file_sttattus_auth_v1_auth_proto_depIdxs = []int32{
 	3,  // 17: sttattus.auth.v1.LinkAppResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
 	1,  // 18: sttattus.auth.v1.LinkProviderRequest.provider:type_name -> sttattus.auth.v1.AuthProvider
 	2,  // 19: sttattus.auth.v1.RefreshResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
-	4,  // 20: sttattus.auth.v1.AuthService.Register:input_type -> sttattus.auth.v1.RegisterRequest
-	6,  // 21: sttattus.auth.v1.AuthService.Login:input_type -> sttattus.auth.v1.LoginRequest
-	8,  // 22: sttattus.auth.v1.AuthService.OAuthLogin:input_type -> sttattus.auth.v1.OAuthLoginRequest
-	10, // 23: sttattus.auth.v1.AuthService.CheckEmail:input_type -> sttattus.auth.v1.CheckEmailRequest
-	12, // 24: sttattus.auth.v1.AuthService.LinkApp:input_type -> sttattus.auth.v1.LinkAppRequest
-	14, // 25: sttattus.auth.v1.AuthService.LinkProvider:input_type -> sttattus.auth.v1.LinkProviderRequest
-	16, // 26: sttattus.auth.v1.AuthService.SetPassword:input_type -> sttattus.auth.v1.SetPasswordRequest
-	18, // 27: sttattus.auth.v1.AuthService.ForgotPassword:input_type -> sttattus.auth.v1.ForgotPasswordRequest
-	20, // 28: sttattus.auth.v1.AuthService.ResetPassword:input_type -> sttattus.auth.v1.ResetPasswordRequest
-	22, // 29: sttattus.auth.v1.AuthService.Refresh:input_type -> sttattus.auth.v1.RefreshRequest
-	24, // 30: sttattus.auth.v1.AuthService.Logout:input_type -> sttattus.auth.v1.LogoutRequest
-	5,  // 31: sttattus.auth.v1.AuthService.Register:output_type -> sttattus.auth.v1.RegisterResponse
-	7,  // 32: sttattus.auth.v1.AuthService.Login:output_type -> sttattus.auth.v1.LoginResponse
-	9,  // 33: sttattus.auth.v1.AuthService.OAuthLogin:output_type -> sttattus.auth.v1.OAuthLoginResponse
-	11, // 34: sttattus.auth.v1.AuthService.CheckEmail:output_type -> sttattus.auth.v1.CheckEmailResponse
-	13, // 35: sttattus.auth.v1.AuthService.LinkApp:output_type -> sttattus.auth.v1.LinkAppResponse
-	15, // 36: sttattus.auth.v1.AuthService.LinkProvider:output_type -> sttattus.auth.v1.LinkProviderResponse
-	17, // 37: sttattus.auth.v1.AuthService.SetPassword:output_type -> sttattus.auth.v1.SetPasswordResponse
-	19, // 38: sttattus.auth.v1.AuthService.ForgotPassword:output_type -> sttattus.auth.v1.ForgotPasswordResponse
-	21, // 39: sttattus.auth.v1.AuthService.ResetPassword:output_type -> sttattus.auth.v1.ResetPasswordResponse
-	23, // 40: sttattus.auth.v1.AuthService.Refresh:output_type -> sttattus.auth.v1.RefreshResponse
-	25, // 41: sttattus.auth.v1.AuthService.Logout:output_type -> sttattus.auth.v1.LogoutResponse
-	31, // [31:42] is the sub-list for method output_type
-	20, // [20:31] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	0,  // 20: sttattus.auth.v1.ExchangeOAuthHandoffRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	2,  // 21: sttattus.auth.v1.ExchangeOAuthHandoffResponse.tokens:type_name -> sttattus.auth.v1.TokenPair
+	3,  // 22: sttattus.auth.v1.ExchangeOAuthHandoffResponse.profile:type_name -> sttattus.auth.v1.ProfileHint
+	4,  // 23: sttattus.auth.v1.AuthService.Register:input_type -> sttattus.auth.v1.RegisterRequest
+	6,  // 24: sttattus.auth.v1.AuthService.Login:input_type -> sttattus.auth.v1.LoginRequest
+	8,  // 25: sttattus.auth.v1.AuthService.OAuthLogin:input_type -> sttattus.auth.v1.OAuthLoginRequest
+	25, // 26: sttattus.auth.v1.AuthService.ExchangeOAuthHandoff:input_type -> sttattus.auth.v1.ExchangeOAuthHandoffRequest
+	10, // 27: sttattus.auth.v1.AuthService.CheckEmail:input_type -> sttattus.auth.v1.CheckEmailRequest
+	12, // 28: sttattus.auth.v1.AuthService.LinkApp:input_type -> sttattus.auth.v1.LinkAppRequest
+	14, // 29: sttattus.auth.v1.AuthService.LinkProvider:input_type -> sttattus.auth.v1.LinkProviderRequest
+	16, // 30: sttattus.auth.v1.AuthService.SetPassword:input_type -> sttattus.auth.v1.SetPasswordRequest
+	18, // 31: sttattus.auth.v1.AuthService.ForgotPassword:input_type -> sttattus.auth.v1.ForgotPasswordRequest
+	20, // 32: sttattus.auth.v1.AuthService.ResetPassword:input_type -> sttattus.auth.v1.ResetPasswordRequest
+	22, // 33: sttattus.auth.v1.AuthService.Refresh:input_type -> sttattus.auth.v1.RefreshRequest
+	24, // 34: sttattus.auth.v1.AuthService.Logout:input_type -> sttattus.auth.v1.LogoutRequest
+	5,  // 35: sttattus.auth.v1.AuthService.Register:output_type -> sttattus.auth.v1.RegisterResponse
+	7,  // 36: sttattus.auth.v1.AuthService.Login:output_type -> sttattus.auth.v1.LoginResponse
+	9,  // 37: sttattus.auth.v1.AuthService.OAuthLogin:output_type -> sttattus.auth.v1.OAuthLoginResponse
+	26, // 38: sttattus.auth.v1.AuthService.ExchangeOAuthHandoff:output_type -> sttattus.auth.v1.ExchangeOAuthHandoffResponse
+	11, // 39: sttattus.auth.v1.AuthService.CheckEmail:output_type -> sttattus.auth.v1.CheckEmailResponse
+	13, // 40: sttattus.auth.v1.AuthService.LinkApp:output_type -> sttattus.auth.v1.LinkAppResponse
+	15, // 41: sttattus.auth.v1.AuthService.LinkProvider:output_type -> sttattus.auth.v1.LinkProviderResponse
+	17, // 42: sttattus.auth.v1.AuthService.SetPassword:output_type -> sttattus.auth.v1.SetPasswordResponse
+	19, // 43: sttattus.auth.v1.AuthService.ForgotPassword:output_type -> sttattus.auth.v1.ForgotPasswordResponse
+	21, // 44: sttattus.auth.v1.AuthService.ResetPassword:output_type -> sttattus.auth.v1.ResetPasswordResponse
+	23, // 45: sttattus.auth.v1.AuthService.Refresh:output_type -> sttattus.auth.v1.RefreshResponse
+	27, // 46: sttattus.auth.v1.AuthService.Logout:output_type -> sttattus.auth.v1.LogoutResponse
+	35, // [35:47] is the sub-list for method output_type
+	23, // [23:35] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_auth_v1_auth_proto_init() }
@@ -1670,7 +1809,7 @@ func file_sttattus_auth_v1_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_auth_v1_auth_proto_rawDesc), len(file_sttattus_auth_v1_auth_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   24,
+			NumMessages:   26,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

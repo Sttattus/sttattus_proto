@@ -390,6 +390,36 @@ const LogoutRequest$json = {
 final $typed_data.Uint8List logoutRequestDescriptor = $convert.base64Decode(
     'Cg1Mb2dvdXRSZXF1ZXN0EiMKDXJlZnJlc2hfdG9rZW4YASABKAlSDHJlZnJlc2hUb2tlbg==');
 
+@$core.Deprecated('Use exchangeOAuthHandoffRequestDescriptor instead')
+const ExchangeOAuthHandoffRequest$json = {
+  '1': 'ExchangeOAuthHandoffRequest',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'app_code', '3': 2, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+  ],
+};
+
+/// Descriptor for `ExchangeOAuthHandoffRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exchangeOAuthHandoffRequestDescriptor = $convert.base64Decode(
+    'ChtFeGNoYW5nZU9BdXRoSGFuZG9mZlJlcXVlc3QSEgoEY29kZRgBIAEoCVIEY29kZRI0CghhcH'
+    'BfY29kZRgCIAEoDjIZLnN0dGF0dHVzLmF1dGgudjEuQXBwQ29kZVIHYXBwQ29kZQ==');
+
+@$core.Deprecated('Use exchangeOAuthHandoffResponseDescriptor instead')
+const ExchangeOAuthHandoffResponse$json = {
+  '1': 'ExchangeOAuthHandoffResponse',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
+    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+  ],
+};
+
+/// Descriptor for `ExchangeOAuthHandoffResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exchangeOAuthHandoffResponseDescriptor = $convert.base64Decode(
+    'ChxFeGNoYW5nZU9BdXRoSGFuZG9mZlJlc3BvbnNlEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZB'
+    'IzCgZ0b2tlbnMYAiABKAsyGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5zEjcK'
+    'B3Byb2ZpbGUYAyABKAsyHS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ugdwcm9maWxl');
+
 @$core.Deprecated('Use logoutResponseDescriptor instead')
 const LogoutResponse$json = {
   '1': 'LogoutResponse',

@@ -40,8 +40,15 @@ class AuthServiceClient extends $grpc.Client {
     return $createUnaryCall(_$login, request, options: options);
   }
 
+  /// OAuthLogin is the legacy id_token shape. It never verified anything and
+  /// cannot serve GitHub, which issues no id_token at all. Superseded by the
+  /// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
   $grpc.ResponseFuture<$0.OAuthLoginResponse> oAuthLogin($0.OAuthLoginRequest request, {$grpc.CallOptions? options,}) {
     return $createUnaryCall(_$oAuthLogin, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExchangeOAuthHandoffResponse> exchangeOAuthHandoff($0.ExchangeOAuthHandoffRequest request, {$grpc.CallOptions? options,}) {
+    return $createUnaryCall(_$exchangeOAuthHandoff, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.CheckEmailResponse> checkEmail($0.CheckEmailRequest request, {$grpc.CallOptions? options,}) {
@@ -90,6 +97,10 @@ class AuthServiceClient extends $grpc.Client {
       '/sttattus.auth.v1.AuthService/OAuthLogin',
       ($0.OAuthLoginRequest value) => value.writeToBuffer(),
       $0.OAuthLoginResponse.fromBuffer);
+  static final _$exchangeOAuthHandoff = $grpc.ClientMethod<$0.ExchangeOAuthHandoffRequest, $0.ExchangeOAuthHandoffResponse>(
+      '/sttattus.auth.v1.AuthService/ExchangeOAuthHandoff',
+      ($0.ExchangeOAuthHandoffRequest value) => value.writeToBuffer(),
+      $0.ExchangeOAuthHandoffResponse.fromBuffer);
   static final _$checkEmail = $grpc.ClientMethod<$0.CheckEmailRequest, $0.CheckEmailResponse>(
       '/sttattus.auth.v1.AuthService/CheckEmail',
       ($0.CheckEmailRequest value) => value.writeToBuffer(),
@@ -150,6 +161,13 @@ abstract class AuthServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.OAuthLoginRequest.fromBuffer(value),
         ($0.OAuthLoginResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExchangeOAuthHandoffRequest, $0.ExchangeOAuthHandoffResponse>(
+        'ExchangeOAuthHandoff',
+        exchangeOAuthHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExchangeOAuthHandoffRequest.fromBuffer(value),
+        ($0.ExchangeOAuthHandoffResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CheckEmailRequest, $0.CheckEmailResponse>(
         'CheckEmail',
         checkEmail_Pre,
@@ -225,6 +243,12 @@ abstract class AuthServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.OAuthLoginResponse> oAuthLogin($grpc.ServiceCall call, $0.OAuthLoginRequest request);
+
+  $async.Future<$0.ExchangeOAuthHandoffResponse> exchangeOAuthHandoff_Pre($grpc.ServiceCall $call, $async.Future<$0.ExchangeOAuthHandoffRequest> $request) async {
+    return exchangeOAuthHandoff($call, await $request);
+  }
+
+  $async.Future<$0.ExchangeOAuthHandoffResponse> exchangeOAuthHandoff($grpc.ServiceCall call, $0.ExchangeOAuthHandoffRequest request);
 
   $async.Future<$0.CheckEmailResponse> checkEmail_Pre($grpc.ServiceCall $call, $async.Future<$0.CheckEmailRequest> $request) async {
     return checkEmail($call, await $request);

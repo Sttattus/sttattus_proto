@@ -1189,6 +1189,111 @@ export class LogoutRequest extends Message<LogoutRequest> {
 }
 
 /**
+ * ===== ExchangeOAuthHandoff =====
+ * Redeems the single-use code a completed browser sign-in deep-links back into
+ * the app.
+ * 
+ * This exists because the alternative — putting the token pair in the deep-link
+ * URL — hands the session to anything that can register the same custom scheme,
+ * and to whatever logs that URL. The code is 256 bits of randomness, single-use,
+ * and valid for two minutes; it is spent here over TLS instead.
+ * 
+ * Unauthenticated by necessity: this is how a signed-out member obtains a
+ * token. Safe for the same reason Login is — possession of a secret this server
+ * issued after verifying an identity with the provider.
+ *
+ * @generated from message sttattus.auth.v1.ExchangeOAuthHandoffRequest
+ */
+export class ExchangeOAuthHandoffRequest extends Message<ExchangeOAuthHandoffRequest> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: sttattus.auth.v1.AppCode app_code = 2;
+   */
+  appCode = AppCode.UNSPECIFIED;
+
+  constructor(data?: PartialMessage<ExchangeOAuthHandoffRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ExchangeOAuthHandoffRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "app_code", kind: "enum", T: proto3.getEnumType(AppCode) },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExchangeOAuthHandoffRequest {
+    return new ExchangeOAuthHandoffRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExchangeOAuthHandoffRequest {
+    return new ExchangeOAuthHandoffRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExchangeOAuthHandoffRequest {
+    return new ExchangeOAuthHandoffRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExchangeOAuthHandoffRequest | PlainMessage<ExchangeOAuthHandoffRequest> | undefined, b: ExchangeOAuthHandoffRequest | PlainMessage<ExchangeOAuthHandoffRequest> | undefined): boolean {
+    return proto3.util.equals(ExchangeOAuthHandoffRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.ExchangeOAuthHandoffResponse
+ */
+export class ExchangeOAuthHandoffResponse extends Message<ExchangeOAuthHandoffResponse> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: sttattus.auth.v1.TokenPair tokens = 2;
+   */
+  tokens?: TokenPair;
+
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
+  constructor(data?: PartialMessage<ExchangeOAuthHandoffResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.ExchangeOAuthHandoffResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "tokens", kind: "message", T: TokenPair },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExchangeOAuthHandoffResponse {
+    return new ExchangeOAuthHandoffResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExchangeOAuthHandoffResponse {
+    return new ExchangeOAuthHandoffResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExchangeOAuthHandoffResponse {
+    return new ExchangeOAuthHandoffResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExchangeOAuthHandoffResponse | PlainMessage<ExchangeOAuthHandoffResponse> | undefined, b: ExchangeOAuthHandoffResponse | PlainMessage<ExchangeOAuthHandoffResponse> | undefined): boolean {
+    return proto3.util.equals(ExchangeOAuthHandoffResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.auth.v1.LogoutResponse
  */
 export class LogoutResponse extends Message<LogoutResponse> {

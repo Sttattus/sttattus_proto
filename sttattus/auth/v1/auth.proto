@@ -170,12 +170,38 @@ message LogoutRequest {
   string refresh_token = 1;
 }
 
+// ===== ExchangeOAuthHandoff =====
+// Redeems the single-use code a completed browser sign-in deep-links back into
+// the app.
+//
+// This exists because the alternative — putting the token pair in the deep-link
+// URL — hands the session to anything that can register the same custom scheme,
+// and to whatever logs that URL. The code is 256 bits of randomness, single-use,
+// and valid for two minutes; it is spent here over TLS instead.
+//
+// Unauthenticated by necessity: this is how a signed-out member obtains a
+// token. Safe for the same reason Login is — possession of a secret this server
+// issued after verifying an identity with the provider.
+message ExchangeOAuthHandoffRequest {
+  string code = 1;
+  AppCode app_code = 2;
+}
+message ExchangeOAuthHandoffResponse {
+  string user_id = 1;
+  TokenPair tokens = 2;
+  ProfileHint profile = 3;
+}
+
 message LogoutResponse {}
 
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
+  // OAuthLogin is the legacy id_token shape. It never verified anything and
+  // cannot serve GitHub, which issues no id_token at all. Superseded by the
+  // browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
   rpc OAuthLogin(OAuthLoginRequest) returns (OAuthLoginResponse);
+  rpc ExchangeOAuthHandoff(ExchangeOAuthHandoffRequest) returns (ExchangeOAuthHandoffResponse);
   rpc CheckEmail(CheckEmailRequest) returns (CheckEmailResponse);
   rpc LinkApp(LinkAppRequest) returns (LinkAppResponse);
   rpc LinkProvider(LinkProviderRequest) returns (LinkProviderResponse);

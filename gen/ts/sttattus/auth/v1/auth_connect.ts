@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CheckEmailRequest, CheckEmailResponse, ForgotPasswordRequest, ForgotPasswordResponse, LinkAppRequest, LinkAppResponse, LinkProviderRequest, LinkProviderResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, OAuthLoginRequest, OAuthLoginResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, SetPasswordRequest, SetPasswordResponse } from "./auth_pb.js";
+import { CheckEmailRequest, CheckEmailResponse, ExchangeOAuthHandoffRequest, ExchangeOAuthHandoffResponse, ForgotPasswordRequest, ForgotPasswordResponse, LinkAppRequest, LinkAppResponse, LinkProviderRequest, LinkProviderResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, OAuthLoginRequest, OAuthLoginResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, SetPasswordRequest, SetPasswordResponse } from "./auth_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -31,12 +31,25 @@ export const AuthService = {
       kind: MethodKind.Unary,
     },
     /**
+     * OAuthLogin is the legacy id_token shape. It never verified anything and
+     * cannot serve GitHub, which issues no id_token at all. Superseded by the
+     * browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
+     *
      * @generated from rpc sttattus.auth.v1.AuthService.OAuthLogin
      */
     oAuthLogin: {
       name: "OAuthLogin",
       I: OAuthLoginRequest,
       O: OAuthLoginResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.ExchangeOAuthHandoff
+     */
+    exchangeOAuthHandoff: {
+      name: "ExchangeOAuthHandoff",
+      I: ExchangeOAuthHandoffRequest,
+      O: ExchangeOAuthHandoffResponse,
       kind: MethodKind.Unary,
     },
     /**

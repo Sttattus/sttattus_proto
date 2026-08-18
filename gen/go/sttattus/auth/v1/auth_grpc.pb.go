@@ -19,17 +19,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AuthService_Register_FullMethodName       = "/sttattus.auth.v1.AuthService/Register"
-	AuthService_Login_FullMethodName          = "/sttattus.auth.v1.AuthService/Login"
-	AuthService_OAuthLogin_FullMethodName     = "/sttattus.auth.v1.AuthService/OAuthLogin"
-	AuthService_CheckEmail_FullMethodName     = "/sttattus.auth.v1.AuthService/CheckEmail"
-	AuthService_LinkApp_FullMethodName        = "/sttattus.auth.v1.AuthService/LinkApp"
-	AuthService_LinkProvider_FullMethodName   = "/sttattus.auth.v1.AuthService/LinkProvider"
-	AuthService_SetPassword_FullMethodName    = "/sttattus.auth.v1.AuthService/SetPassword"
-	AuthService_ForgotPassword_FullMethodName = "/sttattus.auth.v1.AuthService/ForgotPassword"
-	AuthService_ResetPassword_FullMethodName  = "/sttattus.auth.v1.AuthService/ResetPassword"
-	AuthService_Refresh_FullMethodName        = "/sttattus.auth.v1.AuthService/Refresh"
-	AuthService_Logout_FullMethodName         = "/sttattus.auth.v1.AuthService/Logout"
+	AuthService_Register_FullMethodName             = "/sttattus.auth.v1.AuthService/Register"
+	AuthService_Login_FullMethodName                = "/sttattus.auth.v1.AuthService/Login"
+	AuthService_OAuthLogin_FullMethodName           = "/sttattus.auth.v1.AuthService/OAuthLogin"
+	AuthService_ExchangeOAuthHandoff_FullMethodName = "/sttattus.auth.v1.AuthService/ExchangeOAuthHandoff"
+	AuthService_CheckEmail_FullMethodName           = "/sttattus.auth.v1.AuthService/CheckEmail"
+	AuthService_LinkApp_FullMethodName              = "/sttattus.auth.v1.AuthService/LinkApp"
+	AuthService_LinkProvider_FullMethodName         = "/sttattus.auth.v1.AuthService/LinkProvider"
+	AuthService_SetPassword_FullMethodName          = "/sttattus.auth.v1.AuthService/SetPassword"
+	AuthService_ForgotPassword_FullMethodName       = "/sttattus.auth.v1.AuthService/ForgotPassword"
+	AuthService_ResetPassword_FullMethodName        = "/sttattus.auth.v1.AuthService/ResetPassword"
+	AuthService_Refresh_FullMethodName              = "/sttattus.auth.v1.AuthService/Refresh"
+	AuthService_Logout_FullMethodName               = "/sttattus.auth.v1.AuthService/Logout"
 )
 
 // AuthServiceClient is the client API for AuthService service.
@@ -38,7 +39,11 @@ const (
 type AuthServiceClient interface {
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	// OAuthLogin is the legacy id_token shape. It never verified anything and
+	// cannot serve GitHub, which issues no id_token at all. Superseded by the
+	// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
 	OAuthLogin(ctx context.Context, in *OAuthLoginRequest, opts ...grpc.CallOption) (*OAuthLoginResponse, error)
+	ExchangeOAuthHandoff(ctx context.Context, in *ExchangeOAuthHandoffRequest, opts ...grpc.CallOption) (*ExchangeOAuthHandoffResponse, error)
 	CheckEmail(ctx context.Context, in *CheckEmailRequest, opts ...grpc.CallOption) (*CheckEmailResponse, error)
 	LinkApp(ctx context.Context, in *LinkAppRequest, opts ...grpc.CallOption) (*LinkAppResponse, error)
 	LinkProvider(ctx context.Context, in *LinkProviderRequest, opts ...grpc.CallOption) (*LinkProviderResponse, error)
@@ -81,6 +86,16 @@ func (c *authServiceClient) OAuthLogin(ctx context.Context, in *OAuthLoginReques
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(OAuthLoginResponse)
 	err := c.cc.Invoke(ctx, AuthService_OAuthLogin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) ExchangeOAuthHandoff(ctx context.Context, in *ExchangeOAuthHandoffRequest, opts ...grpc.CallOption) (*ExchangeOAuthHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExchangeOAuthHandoffResponse)
+	err := c.cc.Invoke(ctx, AuthService_ExchangeOAuthHandoff_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -173,7 +188,11 @@ func (c *authServiceClient) Logout(ctx context.Context, in *LogoutRequest, opts 
 type AuthServiceServer interface {
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	// OAuthLogin is the legacy id_token shape. It never verified anything and
+	// cannot serve GitHub, which issues no id_token at all. Superseded by the
+	// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
 	OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error)
+	ExchangeOAuthHandoff(context.Context, *ExchangeOAuthHandoffRequest) (*ExchangeOAuthHandoffResponse, error)
 	CheckEmail(context.Context, *CheckEmailRequest) (*CheckEmailResponse, error)
 	LinkApp(context.Context, *LinkAppRequest) (*LinkAppResponse, error)
 	LinkProvider(context.Context, *LinkProviderRequest) (*LinkProviderResponse, error)
@@ -200,6 +219,9 @@ func (UnimplementedAuthServiceServer) Login(context.Context, *LoginRequest) (*Lo
 }
 func (UnimplementedAuthServiceServer) OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method OAuthLogin not implemented")
+}
+func (UnimplementedAuthServiceServer) ExchangeOAuthHandoff(context.Context, *ExchangeOAuthHandoffRequest) (*ExchangeOAuthHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExchangeOAuthHandoff not implemented")
 }
 func (UnimplementedAuthServiceServer) CheckEmail(context.Context, *CheckEmailRequest) (*CheckEmailResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CheckEmail not implemented")
@@ -296,6 +318,24 @@ func _AuthService_OAuthLogin_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthServiceServer).OAuthLogin(ctx, req.(*OAuthLoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_ExchangeOAuthHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExchangeOAuthHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).ExchangeOAuthHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_ExchangeOAuthHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).ExchangeOAuthHandoff(ctx, req.(*ExchangeOAuthHandoffRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -462,6 +502,10 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "OAuthLogin",
 			Handler:    _AuthService_OAuthLogin_Handler,
+		},
+		{
+			MethodName: "ExchangeOAuthHandoff",
+			Handler:    _AuthService_ExchangeOAuthHandoff_Handler,
 		},
 		{
 			MethodName: "CheckEmail",
