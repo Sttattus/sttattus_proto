@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -56,13 +57,41 @@ const LegalAsset$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'category', '3': 3, '4': 1, '5': 14, '6': '.sttattus.legacy.v1.AssetCategory', '10': 'category'},
+    {
+      '1': 'category',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.legacy.v1.AssetCategory',
+      '10': 'category'
+    },
     {'1': 'valuation_usd', '3': 4, '4': 1, '5': 1, '10': 'valuationUsd'},
     {'1': 'jurisdiction', '3': 5, '4': 1, '5': 9, '10': 'jurisdiction'},
-    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.sttattus.legacy.v1.VerificationStatus', '10': 'status'},
+    {
+      '1': 'status',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.legacy.v1.VerificationStatus',
+      '10': 'status'
+    },
     {'1': 'content_hash', '3': 7, '4': 1, '5': 9, '10': 'contentHash'},
-    {'1': 'filed_at', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'filedAt'},
-    {'1': 'expires_at', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expiresAt'},
+    {
+      '1': 'filed_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'filedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
   ],
 };
 
@@ -84,8 +113,20 @@ const HeritageStats$json = {
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     {'1': 'influence_rank', '3': 2, '4': 1, '5': 1, '10': 'influenceRank'},
     {'1': 'rank_label', '3': 3, '4': 1, '5': 9, '10': 'rankLabel'},
-    {'1': 'verified_assets_count', '3': 4, '4': 1, '5': 5, '10': 'verifiedAssetsCount'},
-    {'1': 'total_ip_valuation', '3': 5, '4': 1, '5': 1, '10': 'totalIpValuation'},
+    {
+      '1': 'verified_assets_count',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'verifiedAssetsCount'
+    },
+    {
+      '1': 'total_ip_valuation',
+      '3': 5,
+      '4': 1,
+      '5': 1,
+      '10': 'totalIpValuation'
+    },
   ],
 };
 
@@ -101,7 +142,14 @@ const StoreDocumentRequest$json = {
   '1': 'StoreDocumentRequest',
   '2': [
     {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'category', '3': 2, '4': 1, '5': 14, '6': '.sttattus.legacy.v1.AssetCategory', '10': 'category'},
+    {
+      '1': 'category',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.legacy.v1.AssetCategory',
+      '10': 'category'
+    },
     {'1': 'jurisdiction', '3': 3, '4': 1, '5': 9, '10': 'jurisdiction'},
     {'1': 'valuation_usd', '3': 4, '4': 1, '5': 1, '10': 'valuationUsd'},
     {'1': 'encrypted_blob', '3': 5, '4': 1, '5': 12, '10': 'encryptedBlob'},
@@ -119,8 +167,22 @@ final $typed_data.Uint8List storeDocumentRequestDescriptor = $convert.base64Deco
 const StoreDocumentResponse$json = {
   '1': 'StoreDocumentResponse',
   '2': [
-    {'1': 'asset', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.LegalAsset', '10': 'asset'},
-    {'1': 'stats', '3': 2, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.HeritageStats', '10': 'stats'},
+    {
+      '1': 'asset',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegalAsset',
+      '10': 'asset'
+    },
+    {
+      '1': 'stats',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.HeritageStats',
+      '10': 'stats'
+    },
   ],
 };
 
@@ -139,21 +201,30 @@ const GetHeritageStatsRequest$json = {
 };
 
 /// Descriptor for `GetHeritageStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getHeritageStatsRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRIZXJpdGFnZVN0YXRzUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
+final $typed_data.Uint8List getHeritageStatsRequestDescriptor =
+    $convert.base64Decode(
+        'ChdHZXRIZXJpdGFnZVN0YXRzUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQ=');
 
 @$core.Deprecated('Use getHeritageStatsResponseDescriptor instead')
 const GetHeritageStatsResponse$json = {
   '1': 'GetHeritageStatsResponse',
   '2': [
-    {'1': 'stats', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.HeritageStats', '10': 'stats'},
+    {
+      '1': 'stats',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.HeritageStats',
+      '10': 'stats'
+    },
   ],
 };
 
 /// Descriptor for `GetHeritageStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getHeritageStatsResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRIZXJpdGFnZVN0YXRzUmVzcG9uc2USNwoFc3RhdHMYASABKAsyIS5zdHRhdHR1cy5sZW'
-    'dhY3kudjEuSGVyaXRhZ2VTdGF0c1IFc3RhdHM=');
+final $typed_data.Uint8List getHeritageStatsResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRIZXJpdGFnZVN0YXRzUmVzcG9uc2USNwoFc3RhdHMYASABKAsyIS5zdHRhdHR1cy5sZW'
+        'dhY3kudjEuSGVyaXRhZ2VTdGF0c1IFc3RhdHM=');
 
 @$core.Deprecated('Use listAssetsRequestDescriptor instead')
 const ListAssetsRequest$json = {
@@ -171,7 +242,14 @@ final $typed_data.Uint8List listAssetsRequestDescriptor = $convert.base64Decode(
 const ListAssetsResponse$json = {
   '1': 'ListAssetsResponse',
   '2': [
-    {'1': 'assets', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegalAsset', '10': 'assets'},
+    {
+      '1': 'assets',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegalAsset',
+      '10': 'assets'
+    },
   ],
 };
 
@@ -220,14 +298,22 @@ final $typed_data.Uint8List recordAssetVersionRequestDescriptor = $convert.base6
 const RecordAssetVersionResponse$json = {
   '1': 'RecordAssetVersionResponse',
   '2': [
-    {'1': 'version', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.AssetVersion', '10': 'version'},
+    {
+      '1': 'version',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.AssetVersion',
+      '10': 'version'
+    },
   ],
 };
 
 /// Descriptor for `RecordAssetVersionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recordAssetVersionResponseDescriptor = $convert.base64Decode(
-    'ChpSZWNvcmRBc3NldFZlcnNpb25SZXNwb25zZRI6Cgd2ZXJzaW9uGAEgASgLMiAuc3R0YXR0dX'
-    'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIHdmVyc2lvbg==');
+final $typed_data.Uint8List recordAssetVersionResponseDescriptor =
+    $convert.base64Decode(
+        'ChpSZWNvcmRBc3NldFZlcnNpb25SZXNwb25zZRI6Cgd2ZXJzaW9uGAEgASgLMiAuc3R0YXR0dX'
+        'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIHdmVyc2lvbg==');
 
 @$core.Deprecated('Use listAssetVersionsRequestDescriptor instead')
 const ListAssetVersionsRequest$json = {
@@ -238,21 +324,30 @@ const ListAssetVersionsRequest$json = {
 };
 
 /// Descriptor for `ListAssetVersionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAssetVersionsRequestDescriptor = $convert.base64Decode(
-    'ChhMaXN0QXNzZXRWZXJzaW9uc1JlcXVlc3QSGQoIYXNzZXRfaWQYASABKAlSB2Fzc2V0SWQ=');
+final $typed_data.Uint8List listAssetVersionsRequestDescriptor =
+    $convert.base64Decode(
+        'ChhMaXN0QXNzZXRWZXJzaW9uc1JlcXVlc3QSGQoIYXNzZXRfaWQYASABKAlSB2Fzc2V0SWQ=');
 
 @$core.Deprecated('Use listAssetVersionsResponseDescriptor instead')
 const ListAssetVersionsResponse$json = {
   '1': 'ListAssetVersionsResponse',
   '2': [
-    {'1': 'versions', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.AssetVersion', '10': 'versions'},
+    {
+      '1': 'versions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.AssetVersion',
+      '10': 'versions'
+    },
   ],
 };
 
 /// Descriptor for `ListAssetVersionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAssetVersionsResponseDescriptor = $convert.base64Decode(
-    'ChlMaXN0QXNzZXRWZXJzaW9uc1Jlc3BvbnNlEjwKCHZlcnNpb25zGAEgAygLMiAuc3R0YXR0dX'
-    'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIIdmVyc2lvbnM=');
+final $typed_data.Uint8List listAssetVersionsResponseDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0QXNzZXRWZXJzaW9uc1Jlc3BvbnNlEjwKCHZlcnNpb25zGAEgAygLMiAuc3R0YXR0dX'
+        'MubGVnYWN5LnYxLkFzc2V0VmVyc2lvblIIdmVyc2lvbnM=');
 
 @$core.Deprecated('Use legacyCategoryDescriptor instead')
 const LegacyCategory$json = {
@@ -278,21 +373,29 @@ const ListLegacyCategoriesRequest$json = {
 };
 
 /// Descriptor for `ListLegacyCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLegacyCategoriesRequestDescriptor = $convert.base64Decode(
-    'ChtMaXN0TGVnYWN5Q2F0ZWdvcmllc1JlcXVlc3Q=');
+final $typed_data.Uint8List listLegacyCategoriesRequestDescriptor =
+    $convert.base64Decode('ChtMaXN0TGVnYWN5Q2F0ZWdvcmllc1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listLegacyCategoriesResponseDescriptor instead')
 const ListLegacyCategoriesResponse$json = {
   '1': 'ListLegacyCategoriesResponse',
   '2': [
-    {'1': 'categories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegacyCategory', '10': 'categories'},
+    {
+      '1': 'categories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyCategory',
+      '10': 'categories'
+    },
   ],
 };
 
 /// Descriptor for `ListLegacyCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLegacyCategoriesResponseDescriptor = $convert.base64Decode(
-    'ChxMaXN0TGVnYWN5Q2F0ZWdvcmllc1Jlc3BvbnNlEkIKCmNhdGVnb3JpZXMYASADKAsyIi5zdH'
-    'RhdHR1cy5sZWdhY3kudjEuTGVnYWN5Q2F0ZWdvcnlSCmNhdGVnb3JpZXM=');
+final $typed_data.Uint8List listLegacyCategoriesResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TGVnYWN5Q2F0ZWdvcmllc1Jlc3BvbnNlEkIKCmNhdGVnb3JpZXMYASADKAsyIi5zdH'
+        'RhdHR1cy5sZWdhY3kudjEuTGVnYWN5Q2F0ZWdvcnlSCmNhdGVnb3JpZXM=');
 
 @$core.Deprecated('Use assignAssetCategoryRequestDescriptor instead')
 const AssignAssetCategoryRequest$json = {
@@ -304,9 +407,10 @@ const AssignAssetCategoryRequest$json = {
 };
 
 /// Descriptor for `AssignAssetCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List assignAssetCategoryRequestDescriptor = $convert.base64Decode(
-    'ChpBc3NpZ25Bc3NldENhdGVnb3J5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
-    'IfCgtjYXRlZ29yeV9pZBgCIAEoCVIKY2F0ZWdvcnlJZA==');
+final $typed_data.Uint8List assignAssetCategoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChpBc3NpZ25Bc3NldENhdGVnb3J5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
+        'IfCgtjYXRlZ29yeV9pZBgCIAEoCVIKY2F0ZWdvcnlJZA==');
 
 @$core.Deprecated('Use assignAssetCategoryResponseDescriptor instead')
 const AssignAssetCategoryResponse$json = {
@@ -314,8 +418,8 @@ const AssignAssetCategoryResponse$json = {
 };
 
 /// Descriptor for `AssignAssetCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List assignAssetCategoryResponseDescriptor = $convert.base64Decode(
-    'ChtBc3NpZ25Bc3NldENhdGVnb3J5UmVzcG9uc2U=');
+final $typed_data.Uint8List assignAssetCategoryResponseDescriptor =
+    $convert.base64Decode('ChtBc3NpZ25Bc3NldENhdGVnb3J5UmVzcG9uc2U=');
 
 @$core.Deprecated('Use unassignAssetCategoryRequestDescriptor instead')
 const UnassignAssetCategoryRequest$json = {
@@ -327,9 +431,10 @@ const UnassignAssetCategoryRequest$json = {
 };
 
 /// Descriptor for `UnassignAssetCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List unassignAssetCategoryRequestDescriptor = $convert.base64Decode(
-    'ChxVbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXF1ZXN0EhkKCGFzc2V0X2lkGAEgASgJUgdhc3NldE'
-    'lkEh8KC2NhdGVnb3J5X2lkGAIgASgJUgpjYXRlZ29yeUlk');
+final $typed_data.Uint8List unassignAssetCategoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChxVbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXF1ZXN0EhkKCGFzc2V0X2lkGAEgASgJUgdhc3NldE'
+        'lkEh8KC2NhdGVnb3J5X2lkGAIgASgJUgpjYXRlZ29yeUlk');
 
 @$core.Deprecated('Use unassignAssetCategoryResponseDescriptor instead')
 const UnassignAssetCategoryResponse$json = {
@@ -337,8 +442,8 @@ const UnassignAssetCategoryResponse$json = {
 };
 
 /// Descriptor for `UnassignAssetCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List unassignAssetCategoryResponseDescriptor = $convert.base64Decode(
-    'Ch1VbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXNwb25zZQ==');
+final $typed_data.Uint8List unassignAssetCategoryResponseDescriptor =
+    $convert.base64Decode('Ch1VbmFzc2lnbkFzc2V0Q2F0ZWdvcnlSZXNwb25zZQ==');
 
 @$core.Deprecated('Use listAssetCategoriesRequestDescriptor instead')
 const ListAssetCategoriesRequest$json = {
@@ -349,22 +454,31 @@ const ListAssetCategoriesRequest$json = {
 };
 
 /// Descriptor for `ListAssetCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAssetCategoriesRequestDescriptor = $convert.base64Decode(
-    'ChpMaXN0QXNzZXRDYXRlZ29yaWVzUmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZA'
-    '==');
+final $typed_data.Uint8List listAssetCategoriesRequestDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0QXNzZXRDYXRlZ29yaWVzUmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZA'
+        '==');
 
 @$core.Deprecated('Use listAssetCategoriesResponseDescriptor instead')
 const ListAssetCategoriesResponse$json = {
   '1': 'ListAssetCategoriesResponse',
   '2': [
-    {'1': 'categories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegacyCategory', '10': 'categories'},
+    {
+      '1': 'categories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyCategory',
+      '10': 'categories'
+    },
   ],
 };
 
 /// Descriptor for `ListAssetCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAssetCategoriesResponseDescriptor = $convert.base64Decode(
-    'ChtMaXN0QXNzZXRDYXRlZ29yaWVzUmVzcG9uc2USQgoKY2F0ZWdvcmllcxgBIAMoCzIiLnN0dG'
-    'F0dHVzLmxlZ2FjeS52MS5MZWdhY3lDYXRlZ29yeVIKY2F0ZWdvcmllcw==');
+final $typed_data.Uint8List listAssetCategoriesResponseDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0QXNzZXRDYXRlZ29yaWVzUmVzcG9uc2USQgoKY2F0ZWdvcmllcxgBIAMoCzIiLnN0dG'
+        'F0dHVzLmxlZ2FjeS52MS5MZWdhY3lDYXRlZ29yeVIKY2F0ZWdvcmllcw==');
 
 @$core.Deprecated('Use encryptedBlobMetadataDescriptor instead')
 const EncryptedBlobMetadata$json = {
@@ -431,14 +545,22 @@ final $typed_data.Uint8List storeEncryptedBlobRequestDescriptor = $convert.base6
 const StoreEncryptedBlobResponse$json = {
   '1': 'StoreEncryptedBlobResponse',
   '2': [
-    {'1': 'blob', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.EncryptedBlobMetadata', '10': 'blob'},
+    {
+      '1': 'blob',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EncryptedBlobMetadata',
+      '10': 'blob'
+    },
   ],
 };
 
 /// Descriptor for `StoreEncryptedBlobResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List storeEncryptedBlobResponseDescriptor = $convert.base64Decode(
-    'ChpTdG9yZUVuY3J5cHRlZEJsb2JSZXNwb25zZRI9CgRibG9iGAEgASgLMikuc3R0YXR0dXMubG'
-    'VnYWN5LnYxLkVuY3J5cHRlZEJsb2JNZXRhZGF0YVIEYmxvYg==');
+final $typed_data.Uint8List storeEncryptedBlobResponseDescriptor =
+    $convert.base64Decode(
+        'ChpTdG9yZUVuY3J5cHRlZEJsb2JSZXNwb25zZRI9CgRibG9iGAEgASgLMikuc3R0YXR0dXMubG'
+        'VnYWN5LnYxLkVuY3J5cHRlZEJsb2JNZXRhZGF0YVIEYmxvYg==');
 
 @$core.Deprecated('Use getEncryptedBlobRequestDescriptor instead')
 const GetEncryptedBlobRequest$json = {
@@ -449,21 +571,29 @@ const GetEncryptedBlobRequest$json = {
 };
 
 /// Descriptor for `GetEncryptedBlobRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEncryptedBlobRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRFbmNyeXB0ZWRCbG9iUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+final $typed_data.Uint8List getEncryptedBlobRequestDescriptor = $convert
+    .base64Decode('ChdHZXRFbmNyeXB0ZWRCbG9iUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
 
 @$core.Deprecated('Use getEncryptedBlobResponseDescriptor instead')
 const GetEncryptedBlobResponse$json = {
   '1': 'GetEncryptedBlobResponse',
   '2': [
-    {'1': 'blob', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.EncryptedBlob', '10': 'blob'},
+    {
+      '1': 'blob',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EncryptedBlob',
+      '10': 'blob'
+    },
   ],
 };
 
 /// Descriptor for `GetEncryptedBlobResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEncryptedBlobResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRFbmNyeXB0ZWRCbG9iUmVzcG9uc2USNQoEYmxvYhgBIAEoCzIhLnN0dGF0dHVzLmxlZ2'
-    'FjeS52MS5FbmNyeXB0ZWRCbG9iUgRibG9i');
+final $typed_data.Uint8List getEncryptedBlobResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRFbmNyeXB0ZWRCbG9iUmVzcG9uc2USNQoEYmxvYhgBIAEoCzIhLnN0dGF0dHVzLmxlZ2'
+        'FjeS52MS5FbmNyeXB0ZWRCbG9iUgRibG9i');
 
 @$core.Deprecated('Use listMyEncryptedBlobsRequestDescriptor instead')
 const ListMyEncryptedBlobsRequest$json = {
@@ -471,21 +601,29 @@ const ListMyEncryptedBlobsRequest$json = {
 };
 
 /// Descriptor for `ListMyEncryptedBlobsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyEncryptedBlobsRequestDescriptor = $convert.base64Decode(
-    'ChtMaXN0TXlFbmNyeXB0ZWRCbG9ic1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyEncryptedBlobsRequestDescriptor =
+    $convert.base64Decode('ChtMaXN0TXlFbmNyeXB0ZWRCbG9ic1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyEncryptedBlobsResponseDescriptor instead')
 const ListMyEncryptedBlobsResponse$json = {
   '1': 'ListMyEncryptedBlobsResponse',
   '2': [
-    {'1': 'blobs', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.EncryptedBlobMetadata', '10': 'blobs'},
+    {
+      '1': 'blobs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EncryptedBlobMetadata',
+      '10': 'blobs'
+    },
   ],
 };
 
 /// Descriptor for `ListMyEncryptedBlobsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyEncryptedBlobsResponseDescriptor = $convert.base64Decode(
-    'ChxMaXN0TXlFbmNyeXB0ZWRCbG9ic1Jlc3BvbnNlEj8KBWJsb2JzGAEgAygLMikuc3R0YXR0dX'
-    'MubGVnYWN5LnYxLkVuY3J5cHRlZEJsb2JNZXRhZGF0YVIFYmxvYnM=');
+final $typed_data.Uint8List listMyEncryptedBlobsResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlFbmNyeXB0ZWRCbG9ic1Jlc3BvbnNlEj8KBWJsb2JzGAEgAygLMikuc3R0YXR0dX'
+        'MubGVnYWN5LnYxLkVuY3J5cHRlZEJsb2JNZXRhZGF0YVIFYmxvYnM=');
 
 @$core.Deprecated('Use recoveryShareDescriptor instead')
 const RecoveryShare$json = {
@@ -528,14 +666,22 @@ final $typed_data.Uint8List storeRecoveryShareRequestDescriptor = $convert.base6
 const StoreRecoveryShareResponse$json = {
   '1': 'StoreRecoveryShareResponse',
   '2': [
-    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.RecoveryShare', '10': 'share'},
+    {
+      '1': 'share',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.RecoveryShare',
+      '10': 'share'
+    },
   ],
 };
 
 /// Descriptor for `StoreRecoveryShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List storeRecoveryShareResponseDescriptor = $convert.base64Decode(
-    'ChpTdG9yZVJlY292ZXJ5U2hhcmVSZXNwb25zZRI3CgVzaGFyZRgBIAEoCzIhLnN0dGF0dHVzLm'
-    'xlZ2FjeS52MS5SZWNvdmVyeVNoYXJlUgVzaGFyZQ==');
+final $typed_data.Uint8List storeRecoveryShareResponseDescriptor =
+    $convert.base64Decode(
+        'ChpTdG9yZVJlY292ZXJ5U2hhcmVSZXNwb25zZRI3CgVzaGFyZRgBIAEoCzIhLnN0dGF0dHVzLm'
+        'xlZ2FjeS52MS5SZWNvdmVyeVNoYXJlUgVzaGFyZQ==');
 
 @$core.Deprecated('Use listMyRecoverySharesRequestDescriptor instead')
 const ListMyRecoverySharesRequest$json = {
@@ -543,21 +689,29 @@ const ListMyRecoverySharesRequest$json = {
 };
 
 /// Descriptor for `ListMyRecoverySharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyRecoverySharesRequestDescriptor = $convert.base64Decode(
-    'ChtMaXN0TXlSZWNvdmVyeVNoYXJlc1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyRecoverySharesRequestDescriptor =
+    $convert.base64Decode('ChtMaXN0TXlSZWNvdmVyeVNoYXJlc1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyRecoverySharesResponseDescriptor instead')
 const ListMyRecoverySharesResponse$json = {
   '1': 'ListMyRecoverySharesResponse',
   '2': [
-    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.RecoveryShare', '10': 'shares'},
+    {
+      '1': 'shares',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.RecoveryShare',
+      '10': 'shares'
+    },
   ],
 };
 
 /// Descriptor for `ListMyRecoverySharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyRecoverySharesResponseDescriptor = $convert.base64Decode(
-    'ChxMaXN0TXlSZWNvdmVyeVNoYXJlc1Jlc3BvbnNlEjkKBnNoYXJlcxgBIAMoCzIhLnN0dGF0dH'
-    'VzLmxlZ2FjeS52MS5SZWNvdmVyeVNoYXJlUgZzaGFyZXM=');
+final $typed_data.Uint8List listMyRecoverySharesResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlSZWNvdmVyeVNoYXJlc1Jlc3BvbnNlEjkKBnNoYXJlcxgBIAMoCzIhLnN0dGF0dH'
+        'VzLmxlZ2FjeS52MS5SZWNvdmVyeVNoYXJlUgZzaGFyZXM=');
 
 @$core.Deprecated('Use deleteRecoveryShareRequestDescriptor instead')
 const DeleteRecoveryShareRequest$json = {
@@ -568,9 +722,10 @@ const DeleteRecoveryShareRequest$json = {
 };
 
 /// Descriptor for `DeleteRecoveryShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteRecoveryShareRequestDescriptor = $convert.base64Decode(
-    'ChpEZWxldGVSZWNvdmVyeVNoYXJlUmVxdWVzdBIZCghzaGFyZV9pZBgBIAEoCVIHc2hhcmVJZA'
-    '==');
+final $typed_data.Uint8List deleteRecoveryShareRequestDescriptor =
+    $convert.base64Decode(
+        'ChpEZWxldGVSZWNvdmVyeVNoYXJlUmVxdWVzdBIZCghzaGFyZV9pZBgBIAEoCVIHc2hhcmVJZA'
+        '==');
 
 @$core.Deprecated('Use deleteRecoveryShareResponseDescriptor instead')
 const DeleteRecoveryShareResponse$json = {
@@ -578,8 +733,8 @@ const DeleteRecoveryShareResponse$json = {
 };
 
 /// Descriptor for `DeleteRecoveryShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteRecoveryShareResponseDescriptor = $convert.base64Decode(
-    'ChtEZWxldGVSZWNvdmVyeVNoYXJlUmVzcG9uc2U=');
+final $typed_data.Uint8List deleteRecoveryShareResponseDescriptor =
+    $convert.base64Decode('ChtEZWxldGVSZWNvdmVyeVNoYXJlUmVzcG9uc2U=');
 
 @$core.Deprecated('Use readinessComponentDescriptor instead')
 const ReadinessComponent$json = {
@@ -605,7 +760,14 @@ const EstateReadiness$json = {
   '2': [
     {'1': 'score', '3': 1, '4': 1, '5': 5, '10': 'score'},
     {'1': 'band', '3': 2, '4': 1, '5': 9, '10': 'band'},
-    {'1': 'components', '3': 3, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.ReadinessComponent', '10': 'components'},
+    {
+      '1': 'components',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ReadinessComponent',
+      '10': 'components'
+    },
     {'1': 'next_action', '3': 4, '4': 1, '5': 9, '10': 'nextAction'},
   ],
 };
@@ -622,21 +784,29 @@ const GetEstateReadinessRequest$json = {
 };
 
 /// Descriptor for `GetEstateReadinessRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEstateReadinessRequestDescriptor = $convert.base64Decode(
-    'ChlHZXRFc3RhdGVSZWFkaW5lc3NSZXF1ZXN0');
+final $typed_data.Uint8List getEstateReadinessRequestDescriptor =
+    $convert.base64Decode('ChlHZXRFc3RhdGVSZWFkaW5lc3NSZXF1ZXN0');
 
 @$core.Deprecated('Use getEstateReadinessResponseDescriptor instead')
 const GetEstateReadinessResponse$json = {
   '1': 'GetEstateReadinessResponse',
   '2': [
-    {'1': 'readiness', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.EstateReadiness', '10': 'readiness'},
+    {
+      '1': 'readiness',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EstateReadiness',
+      '10': 'readiness'
+    },
   ],
 };
 
 /// Descriptor for `GetEstateReadinessResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEstateReadinessResponseDescriptor = $convert.base64Decode(
-    'ChpHZXRFc3RhdGVSZWFkaW5lc3NSZXNwb25zZRJBCglyZWFkaW5lc3MYASABKAsyIy5zdHRhdH'
-    'R1cy5sZWdhY3kudjEuRXN0YXRlUmVhZGluZXNzUglyZWFkaW5lc3M=');
+final $typed_data.Uint8List getEstateReadinessResponseDescriptor =
+    $convert.base64Decode(
+        'ChpHZXRFc3RhdGVSZWFkaW5lc3NSZXNwb25zZRJBCglyZWFkaW5lc3MYASABKAsyIy5zdHRhdH'
+        'R1cy5sZWdhY3kudjEuRXN0YXRlUmVhZGluZXNzUglyZWFkaW5lc3M=');
 
 @$core.Deprecated('Use beneficiaryDescriptor instead')
 const Beneficiary$json = {
@@ -665,21 +835,29 @@ const ListMyBeneficiariesRequest$json = {
 };
 
 /// Descriptor for `ListMyBeneficiariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyBeneficiariesRequestDescriptor = $convert.base64Decode(
-    'ChpMaXN0TXlCZW5lZmljaWFyaWVzUmVxdWVzdA==');
+final $typed_data.Uint8List listMyBeneficiariesRequestDescriptor =
+    $convert.base64Decode('ChpMaXN0TXlCZW5lZmljaWFyaWVzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listMyBeneficiariesResponseDescriptor instead')
 const ListMyBeneficiariesResponse$json = {
   '1': 'ListMyBeneficiariesResponse',
   '2': [
-    {'1': 'beneficiaries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.Beneficiary', '10': 'beneficiaries'},
+    {
+      '1': 'beneficiaries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Beneficiary',
+      '10': 'beneficiaries'
+    },
   ],
 };
 
 /// Descriptor for `ListMyBeneficiariesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyBeneficiariesResponseDescriptor = $convert.base64Decode(
-    'ChtMaXN0TXlCZW5lZmljaWFyaWVzUmVzcG9uc2USRQoNYmVuZWZpY2lhcmllcxgBIAMoCzIfLn'
-    'N0dGF0dHVzLmxlZ2FjeS52MS5CZW5lZmljaWFyeVINYmVuZWZpY2lhcmllcw==');
+final $typed_data.Uint8List listMyBeneficiariesResponseDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0TXlCZW5lZmljaWFyaWVzUmVzcG9uc2USRQoNYmVuZWZpY2lhcmllcxgBIAMoCzIfLn'
+        'N0dGF0dHVzLmxlZ2FjeS52MS5CZW5lZmljaWFyeVINYmVuZWZpY2lhcmllcw==');
 
 @$core.Deprecated('Use addBeneficiaryRequestDescriptor instead')
 const AddBeneficiaryRequest$json = {
@@ -703,14 +881,22 @@ final $typed_data.Uint8List addBeneficiaryRequestDescriptor = $convert.base64Dec
 const AddBeneficiaryResponse$json = {
   '1': 'AddBeneficiaryResponse',
   '2': [
-    {'1': 'beneficiary', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.Beneficiary', '10': 'beneficiary'},
+    {
+      '1': 'beneficiary',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Beneficiary',
+      '10': 'beneficiary'
+    },
   ],
 };
 
 /// Descriptor for `AddBeneficiaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addBeneficiaryResponseDescriptor = $convert.base64Decode(
-    'ChZBZGRCZW5lZmljaWFyeVJlc3BvbnNlEkEKC2JlbmVmaWNpYXJ5GAEgASgLMh8uc3R0YXR0dX'
-    'MubGVnYWN5LnYxLkJlbmVmaWNpYXJ5UgtiZW5lZmljaWFyeQ==');
+final $typed_data.Uint8List addBeneficiaryResponseDescriptor =
+    $convert.base64Decode(
+        'ChZBZGRCZW5lZmljaWFyeVJlc3BvbnNlEkEKC2JlbmVmaWNpYXJ5GAEgASgLMh8uc3R0YXR0dX'
+        'MubGVnYWN5LnYxLkJlbmVmaWNpYXJ5UgtiZW5lZmljaWFyeQ==');
 
 @$core.Deprecated('Use removeBeneficiaryRequestDescriptor instead')
 const RemoveBeneficiaryRequest$json = {
@@ -721,9 +907,10 @@ const RemoveBeneficiaryRequest$json = {
 };
 
 /// Descriptor for `RemoveBeneficiaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeBeneficiaryRequestDescriptor = $convert.base64Decode(
-    'ChhSZW1vdmVCZW5lZmljaWFyeVJlcXVlc3QSJQoOYmVuZWZpY2lhcnlfaWQYASABKAlSDWJlbm'
-    'VmaWNpYXJ5SWQ=');
+final $typed_data.Uint8List removeBeneficiaryRequestDescriptor =
+    $convert.base64Decode(
+        'ChhSZW1vdmVCZW5lZmljaWFyeVJlcXVlc3QSJQoOYmVuZWZpY2lhcnlfaWQYASABKAlSDWJlbm'
+        'VmaWNpYXJ5SWQ=');
 
 @$core.Deprecated('Use removeBeneficiaryResponseDescriptor instead')
 const RemoveBeneficiaryResponse$json = {
@@ -731,8 +918,8 @@ const RemoveBeneficiaryResponse$json = {
 };
 
 /// Descriptor for `RemoveBeneficiaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeBeneficiaryResponseDescriptor = $convert.base64Decode(
-    'ChlSZW1vdmVCZW5lZmljaWFyeVJlc3BvbnNl');
+final $typed_data.Uint8List removeBeneficiaryResponseDescriptor =
+    $convert.base64Decode('ChlSZW1vdmVCZW5lZmljaWFyeVJlc3BvbnNl');
 
 @$core.Deprecated('Use deadManSwitchDescriptor instead')
 const DeadManSwitch$json = {
@@ -745,7 +932,13 @@ const DeadManSwitch$json = {
     {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
     {'1': 'last_checkin_unix', '3': 6, '4': 1, '5': 3, '10': 'lastCheckinUnix'},
     {'1': 'next_checkin_unix', '3': 7, '4': 1, '5': 3, '10': 'nextCheckinUnix'},
-    {'1': 'trustees_configured', '3': 8, '4': 1, '5': 5, '10': 'trusteesConfigured'},
+    {
+      '1': 'trustees_configured',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'trusteesConfigured'
+    },
   ],
 };
 
@@ -764,21 +957,29 @@ const GetDeadManSwitchRequest$json = {
 };
 
 /// Descriptor for `GetDeadManSwitchRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getDeadManSwitchRequestDescriptor = $convert.base64Decode(
-    'ChdHZXREZWFkTWFuU3dpdGNoUmVxdWVzdA==');
+final $typed_data.Uint8List getDeadManSwitchRequestDescriptor =
+    $convert.base64Decode('ChdHZXREZWFkTWFuU3dpdGNoUmVxdWVzdA==');
 
 @$core.Deprecated('Use getDeadManSwitchResponseDescriptor instead')
 const GetDeadManSwitchResponse$json = {
   '1': 'GetDeadManSwitchResponse',
   '2': [
-    {'1': 'state', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.DeadManSwitch', '10': 'state'},
+    {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.DeadManSwitch',
+      '10': 'state'
+    },
   ],
 };
 
 /// Descriptor for `GetDeadManSwitchResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getDeadManSwitchResponseDescriptor = $convert.base64Decode(
-    'ChhHZXREZWFkTWFuU3dpdGNoUmVzcG9uc2USNwoFc3RhdGUYASABKAsyIS5zdHRhdHR1cy5sZW'
-    'dhY3kudjEuRGVhZE1hblN3aXRjaFIFc3RhdGU=');
+final $typed_data.Uint8List getDeadManSwitchResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXREZWFkTWFuU3dpdGNoUmVzcG9uc2USNwoFc3RhdGUYASABKAsyIS5zdHRhdHR1cy5sZW'
+        'dhY3kudjEuRGVhZE1hblN3aXRjaFIFc3RhdGU=');
 
 @$core.Deprecated('Use configureDeadManSwitchRequestDescriptor instead')
 const ConfigureDeadManSwitchRequest$json = {
@@ -790,22 +991,31 @@ const ConfigureDeadManSwitchRequest$json = {
 };
 
 /// Descriptor for `ConfigureDeadManSwitchRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configureDeadManSwitchRequestDescriptor = $convert.base64Decode(
-    'Ch1Db25maWd1cmVEZWFkTWFuU3dpdGNoUmVxdWVzdBIYCgdlbmFibGVkGAEgASgIUgdlbmFibG'
-    'VkEiEKDGNhZGVuY2VfZGF5cxgCIAEoBVILY2FkZW5jZURheXM=');
+final $typed_data.Uint8List configureDeadManSwitchRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1Db25maWd1cmVEZWFkTWFuU3dpdGNoUmVxdWVzdBIYCgdlbmFibGVkGAEgASgIUgdlbmFibG'
+        'VkEiEKDGNhZGVuY2VfZGF5cxgCIAEoBVILY2FkZW5jZURheXM=');
 
 @$core.Deprecated('Use configureDeadManSwitchResponseDescriptor instead')
 const ConfigureDeadManSwitchResponse$json = {
   '1': 'ConfigureDeadManSwitchResponse',
   '2': [
-    {'1': 'state', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.DeadManSwitch', '10': 'state'},
+    {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.DeadManSwitch',
+      '10': 'state'
+    },
   ],
 };
 
 /// Descriptor for `ConfigureDeadManSwitchResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List configureDeadManSwitchResponseDescriptor = $convert.base64Decode(
-    'Ch5Db25maWd1cmVEZWFkTWFuU3dpdGNoUmVzcG9uc2USNwoFc3RhdGUYASABKAsyIS5zdHRhdH'
-    'R1cy5sZWdhY3kudjEuRGVhZE1hblN3aXRjaFIFc3RhdGU=');
+final $typed_data.Uint8List configureDeadManSwitchResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5Db25maWd1cmVEZWFkTWFuU3dpdGNoUmVzcG9uc2USNwoFc3RhdGUYASABKAsyIS5zdHRhdH'
+        'R1cy5sZWdhY3kudjEuRGVhZE1hblN3aXRjaFIFc3RhdGU=');
 
 @$core.Deprecated('Use checkInDeadManSwitchRequestDescriptor instead')
 const CheckInDeadManSwitchRequest$json = {
@@ -813,21 +1023,29 @@ const CheckInDeadManSwitchRequest$json = {
 };
 
 /// Descriptor for `CheckInDeadManSwitchRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List checkInDeadManSwitchRequestDescriptor = $convert.base64Decode(
-    'ChtDaGVja0luRGVhZE1hblN3aXRjaFJlcXVlc3Q=');
+final $typed_data.Uint8List checkInDeadManSwitchRequestDescriptor =
+    $convert.base64Decode('ChtDaGVja0luRGVhZE1hblN3aXRjaFJlcXVlc3Q=');
 
 @$core.Deprecated('Use checkInDeadManSwitchResponseDescriptor instead')
 const CheckInDeadManSwitchResponse$json = {
   '1': 'CheckInDeadManSwitchResponse',
   '2': [
-    {'1': 'state', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.DeadManSwitch', '10': 'state'},
+    {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.DeadManSwitch',
+      '10': 'state'
+    },
   ],
 };
 
 /// Descriptor for `CheckInDeadManSwitchResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List checkInDeadManSwitchResponseDescriptor = $convert.base64Decode(
-    'ChxDaGVja0luRGVhZE1hblN3aXRjaFJlc3BvbnNlEjcKBXN0YXRlGAEgASgLMiEuc3R0YXR0dX'
-    'MubGVnYWN5LnYxLkRlYWRNYW5Td2l0Y2hSBXN0YXRl');
+final $typed_data.Uint8List checkInDeadManSwitchResponseDescriptor =
+    $convert.base64Decode(
+        'ChxDaGVja0luRGVhZE1hblN3aXRjaFJlc3BvbnNlEjcKBXN0YXRlGAEgASgLMiEuc3R0YXR0dX'
+        'MubGVnYWN5LnYxLkRlYWRNYW5Td2l0Y2hSBXN0YXRl');
 
 @$core.Deprecated('Use anchorDescriptor instead')
 const Anchor$json = {
@@ -874,7 +1092,14 @@ final $typed_data.Uint8List createAnchorRequestDescriptor = $convert.base64Decod
 const CreateAnchorResponse$json = {
   '1': 'CreateAnchorResponse',
   '2': [
-    {'1': 'anchor', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.Anchor', '10': 'anchor'},
+    {
+      '1': 'anchor',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Anchor',
+      '10': 'anchor'
+    },
   ],
 };
 
@@ -889,14 +1114,21 @@ const ListMyAnchorsRequest$json = {
 };
 
 /// Descriptor for `ListMyAnchorsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyAnchorsRequestDescriptor = $convert.base64Decode(
-    'ChRMaXN0TXlBbmNob3JzUmVxdWVzdA==');
+final $typed_data.Uint8List listMyAnchorsRequestDescriptor =
+    $convert.base64Decode('ChRMaXN0TXlBbmNob3JzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listMyAnchorsResponseDescriptor instead')
 const ListMyAnchorsResponse$json = {
   '1': 'ListMyAnchorsResponse',
   '2': [
-    {'1': 'anchors', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.Anchor', '10': 'anchors'},
+    {
+      '1': 'anchors',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Anchor',
+      '10': 'anchors'
+    },
   ],
 };
 
@@ -947,7 +1179,14 @@ final $typed_data.Uint8List listLawyersRequestDescriptor = $convert.base64Decode
 const ListLawyersResponse$json = {
   '1': 'ListLawyersResponse',
   '2': [
-    {'1': 'lawyers', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.Lawyer', '10': 'lawyers'},
+    {
+      '1': 'lawyers',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Lawyer',
+      '10': 'lawyers'
+    },
   ],
 };
 
@@ -994,7 +1233,14 @@ final $typed_data.Uint8List listNotariesRequestDescriptor = $convert.base64Decod
 const ListNotariesResponse$json = {
   '1': 'ListNotariesResponse',
   '2': [
-    {'1': 'notaries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.Notary', '10': 'notaries'},
+    {
+      '1': 'notaries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Notary',
+      '10': 'notaries'
+    },
   ],
 };
 
@@ -1031,7 +1277,14 @@ const DocumentTemplate$json = {
     {'1': 'jurisdiction', '3': 4, '4': 1, '5': 9, '10': 'jurisdiction'},
     {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
     {'1': 'summary', '3': 6, '4': 1, '5': 9, '10': 'summary'},
-    {'1': 'fields', '3': 7, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.TemplateField', '10': 'fields'},
+    {
+      '1': 'fields',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.TemplateField',
+      '10': 'fields'
+    },
     {'1': 'sovereign_only', '3': 8, '4': 1, '5': 8, '10': 'sovereignOnly'},
   ],
 };
@@ -1062,7 +1315,14 @@ final $typed_data.Uint8List listTemplatesRequestDescriptor = $convert.base64Deco
 const ListTemplatesResponse$json = {
   '1': 'ListTemplatesResponse',
   '2': [
-    {'1': 'templates', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.DocumentTemplate', '10': 'templates'},
+    {
+      '1': 'templates',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.DocumentTemplate',
+      '10': 'templates'
+    },
   ],
 };
 
@@ -1087,7 +1347,14 @@ final $typed_data.Uint8List getTemplateRequestDescriptor = $convert.base64Decode
 const GetTemplateResponse$json = {
   '1': 'GetTemplateResponse',
   '2': [
-    {'1': 'template', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.DocumentTemplate', '10': 'template'},
+    {
+      '1': 'template',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.DocumentTemplate',
+      '10': 'template'
+    },
     {'1': 'body_template', '3': 2, '4': 1, '5': 9, '10': 'bodyTemplate'},
   ],
 };
@@ -1126,7 +1393,14 @@ const GenerateDocumentRequest$json = {
   '2': [
     {'1': 'template_id', '3': 1, '4': 1, '5': 9, '10': 'templateId'},
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'values', '3': 3, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry', '10': 'values'},
+    {
+      '1': 'values',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry',
+      '10': 'values'
+    },
   ],
   '3': [GenerateDocumentRequest_ValuesEntry$json],
 };
@@ -1152,14 +1426,22 @@ final $typed_data.Uint8List generateDocumentRequestDescriptor = $convert.base64D
 const GenerateDocumentResponse$json = {
   '1': 'GenerateDocumentResponse',
   '2': [
-    {'1': 'document', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.GeneratedDocument', '10': 'document'},
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.GeneratedDocument',
+      '10': 'document'
+    },
   ],
 };
 
 /// Descriptor for `GenerateDocumentResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateDocumentResponseDescriptor = $convert.base64Decode(
-    'ChhHZW5lcmF0ZURvY3VtZW50UmVzcG9uc2USQQoIZG9jdW1lbnQYASABKAsyJS5zdHRhdHR1cy'
-    '5sZWdhY3kudjEuR2VuZXJhdGVkRG9jdW1lbnRSCGRvY3VtZW50');
+final $typed_data.Uint8List generateDocumentResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZW5lcmF0ZURvY3VtZW50UmVzcG9uc2USQQoIZG9jdW1lbnQYASABKAsyJS5zdHRhdHR1cy'
+        '5sZWdhY3kudjEuR2VuZXJhdGVkRG9jdW1lbnRSCGRvY3VtZW50');
 
 @$core.Deprecated('Use listMyGeneratedDocumentsRequestDescriptor instead')
 const ListMyGeneratedDocumentsRequest$json = {
@@ -1167,21 +1449,29 @@ const ListMyGeneratedDocumentsRequest$json = {
 };
 
 /// Descriptor for `ListMyGeneratedDocumentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyGeneratedDocumentsRequestDescriptor = $convert.base64Decode(
-    'Ch9MaXN0TXlHZW5lcmF0ZWREb2N1bWVudHNSZXF1ZXN0');
+final $typed_data.Uint8List listMyGeneratedDocumentsRequestDescriptor =
+    $convert.base64Decode('Ch9MaXN0TXlHZW5lcmF0ZWREb2N1bWVudHNSZXF1ZXN0');
 
 @$core.Deprecated('Use listMyGeneratedDocumentsResponseDescriptor instead')
 const ListMyGeneratedDocumentsResponse$json = {
   '1': 'ListMyGeneratedDocumentsResponse',
   '2': [
-    {'1': 'documents', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.GeneratedDocument', '10': 'documents'},
+    {
+      '1': 'documents',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.GeneratedDocument',
+      '10': 'documents'
+    },
   ],
 };
 
 /// Descriptor for `ListMyGeneratedDocumentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyGeneratedDocumentsResponseDescriptor = $convert.base64Decode(
-    'CiBMaXN0TXlHZW5lcmF0ZWREb2N1bWVudHNSZXNwb25zZRJDCglkb2N1bWVudHMYASADKAsyJS'
-    '5zdHRhdHR1cy5sZWdhY3kudjEuR2VuZXJhdGVkRG9jdW1lbnRSCWRvY3VtZW50cw==');
+final $typed_data.Uint8List listMyGeneratedDocumentsResponseDescriptor =
+    $convert.base64Decode(
+        'CiBMaXN0TXlHZW5lcmF0ZWREb2N1bWVudHNSZXNwb25zZRJDCglkb2N1bWVudHMYASADKAsyJS'
+        '5zdHRhdHR1cy5sZWdhY3kudjEuR2VuZXJhdGVkRG9jdW1lbnRSCWRvY3VtZW50cw==');
 
 @$core.Deprecated('Use handoffDescriptor instead')
 const Handoff$json = {
@@ -1191,7 +1481,14 @@ const Handoff$json = {
     {'1': 'source_pillar', '3': 2, '4': 1, '5': 9, '10': 'sourcePillar'},
     {'1': 'source_ref', '3': 3, '4': 1, '5': 9, '10': 'sourceRef'},
     {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'category', '3': 5, '4': 1, '5': 14, '6': '.sttattus.legacy.v1.AssetCategory', '10': 'category'},
+    {
+      '1': 'category',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.legacy.v1.AssetCategory',
+      '10': 'category'
+    },
     {'1': 'jurisdiction', '3': 6, '4': 1, '5': 9, '10': 'jurisdiction'},
     {'1': 'valuation_usd', '3': 7, '4': 1, '5': 1, '10': 'valuationUsd'},
     {'1': 'summary', '3': 8, '4': 1, '5': 9, '10': 'summary'},
@@ -1216,21 +1513,29 @@ const ListMyHandoffsRequest$json = {
 };
 
 /// Descriptor for `ListMyHandoffsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyHandoffsRequestDescriptor = $convert.base64Decode(
-    'ChVMaXN0TXlIYW5kb2Zmc1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyHandoffsRequestDescriptor =
+    $convert.base64Decode('ChVMaXN0TXlIYW5kb2Zmc1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyHandoffsResponseDescriptor instead')
 const ListMyHandoffsResponse$json = {
   '1': 'ListMyHandoffsResponse',
   '2': [
-    {'1': 'handoffs', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.Handoff', '10': 'handoffs'},
+    {
+      '1': 'handoffs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.Handoff',
+      '10': 'handoffs'
+    },
   ],
 };
 
 /// Descriptor for `ListMyHandoffsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyHandoffsResponseDescriptor = $convert.base64Decode(
-    'ChZMaXN0TXlIYW5kb2Zmc1Jlc3BvbnNlEjcKCGhhbmRvZmZzGAEgAygLMhsuc3R0YXR0dXMubG'
-    'VnYWN5LnYxLkhhbmRvZmZSCGhhbmRvZmZz');
+final $typed_data.Uint8List listMyHandoffsResponseDescriptor =
+    $convert.base64Decode(
+        'ChZMaXN0TXlIYW5kb2Zmc1Jlc3BvbnNlEjcKCGhhbmRvZmZzGAEgAygLMhsuc3R0YXR0dXMubG'
+        'VnYWN5LnYxLkhhbmRvZmZSCGhhbmRvZmZz');
 
 @$core.Deprecated('Use acceptHandoffRequestDescriptor instead')
 const AcceptHandoffRequest$json = {
@@ -1248,7 +1553,14 @@ final $typed_data.Uint8List acceptHandoffRequestDescriptor = $convert.base64Deco
 const AcceptHandoffResponse$json = {
   '1': 'AcceptHandoffResponse',
   '2': [
-    {'1': 'asset', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.LegalAsset', '10': 'asset'},
+    {
+      '1': 'asset',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegalAsset',
+      '10': 'asset'
+    },
   ],
 };
 
@@ -1275,16 +1587,29 @@ const DismissHandoffResponse$json = {
 };
 
 /// Descriptor for `DismissHandoffResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List dismissHandoffResponseDescriptor = $convert.base64Decode(
-    'ChZEaXNtaXNzSGFuZG9mZlJlc3BvbnNl');
+final $typed_data.Uint8List dismissHandoffResponseDescriptor =
+    $convert.base64Decode('ChZEaXNtaXNzSGFuZG9mZlJlc3BvbnNl');
 
 @$core.Deprecated('Use estateSummaryDescriptor instead')
 const EstateSummary$json = {
   '1': 'EstateSummary',
   '2': [
-    {'1': 'readiness', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.EstateReadiness', '10': 'readiness'},
+    {
+      '1': 'readiness',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EstateReadiness',
+      '10': 'readiness'
+    },
     {'1': 'document_count', '3': 2, '4': 1, '5': 5, '10': 'documentCount'},
-    {'1': 'beneficiary_count', '3': 3, '4': 1, '5': 5, '10': 'beneficiaryCount'},
+    {
+      '1': 'beneficiary_count',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'beneficiaryCount'
+    },
     {'1': 'anchor_count', '3': 4, '4': 1, '5': 5, '10': 'anchorCount'},
     {'1': 'pending_handoffs', '3': 5, '4': 1, '5': 5, '10': 'pendingHandoffs'},
     {'1': 'switch_status', '3': 6, '4': 1, '5': 9, '10': 'switchStatus'},
@@ -1309,21 +1634,29 @@ const GetEstateSummaryRequest$json = {
 };
 
 /// Descriptor for `GetEstateSummaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEstateSummaryRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRFc3RhdGVTdW1tYXJ5UmVxdWVzdA==');
+final $typed_data.Uint8List getEstateSummaryRequestDescriptor =
+    $convert.base64Decode('ChdHZXRFc3RhdGVTdW1tYXJ5UmVxdWVzdA==');
 
 @$core.Deprecated('Use getEstateSummaryResponseDescriptor instead')
 const GetEstateSummaryResponse$json = {
   '1': 'GetEstateSummaryResponse',
   '2': [
-    {'1': 'summary', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.EstateSummary', '10': 'summary'},
+    {
+      '1': 'summary',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.EstateSummary',
+      '10': 'summary'
+    },
   ],
 };
 
 /// Descriptor for `GetEstateSummaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getEstateSummaryResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRFc3RhdGVTdW1tYXJ5UmVzcG9uc2USOwoHc3VtbWFyeRgBIAEoCzIhLnN0dGF0dHVzLm'
-    'xlZ2FjeS52MS5Fc3RhdGVTdW1tYXJ5UgdzdW1tYXJ5');
+final $typed_data.Uint8List getEstateSummaryResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRFc3RhdGVTdW1tYXJ5UmVzcG9uc2USOwoHc3VtbWFyeRgBIAEoCzIhLnN0dGF0dHVzLm'
+        'xlZ2FjeS52MS5Fc3RhdGVTdW1tYXJ5UgdzdW1tYXJ5');
 
 @$core.Deprecated('Use conciergeMessageDescriptor instead')
 const ConciergeMessage$json = {
@@ -1352,7 +1685,14 @@ const ConciergeThread$json = {
     {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
     {'1': 'sla_due_at_unix', '3': 5, '4': 1, '5': 3, '10': 'slaDueAtUnix'},
     {'1': 'created_at_unix', '3': 6, '4': 1, '5': 3, '10': 'createdAtUnix'},
-    {'1': 'messages', '3': 7, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.ConciergeMessage', '10': 'messages'},
+    {
+      '1': 'messages',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ConciergeMessage',
+      '10': 'messages'
+    },
   ],
 };
 
@@ -1375,23 +1715,32 @@ const StartConciergeThreadRequest$json = {
 };
 
 /// Descriptor for `StartConciergeThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List startConciergeThreadRequestDescriptor = $convert.base64Decode(
-    'ChtTdGFydENvbmNpZXJnZVRocmVhZFJlcXVlc3QSGAoHc3ViamVjdBgBIAEoCVIHc3ViamVjdB'
-    'IUCgV0b3BpYxgCIAEoCVIFdG9waWMSIwoNZmlyc3RfbWVzc2FnZRgDIAEoCVIMZmlyc3RNZXNz'
-    'YWdl');
+final $typed_data.Uint8List startConciergeThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChtTdGFydENvbmNpZXJnZVRocmVhZFJlcXVlc3QSGAoHc3ViamVjdBgBIAEoCVIHc3ViamVjdB'
+        'IUCgV0b3BpYxgCIAEoCVIFdG9waWMSIwoNZmlyc3RfbWVzc2FnZRgDIAEoCVIMZmlyc3RNZXNz'
+        'YWdl');
 
 @$core.Deprecated('Use startConciergeThreadResponseDescriptor instead')
 const StartConciergeThreadResponse$json = {
   '1': 'StartConciergeThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.ConciergeThread', '10': 'thread'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ConciergeThread',
+      '10': 'thread'
+    },
   ],
 };
 
 /// Descriptor for `StartConciergeThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List startConciergeThreadResponseDescriptor = $convert.base64Decode(
-    'ChxTdGFydENvbmNpZXJnZVRocmVhZFJlc3BvbnNlEjsKBnRocmVhZBgBIAEoCzIjLnN0dGF0dH'
-    'VzLmxlZ2FjeS52MS5Db25jaWVyZ2VUaHJlYWRSBnRocmVhZA==');
+final $typed_data.Uint8List startConciergeThreadResponseDescriptor =
+    $convert.base64Decode(
+        'ChxTdGFydENvbmNpZXJnZVRocmVhZFJlc3BvbnNlEjsKBnRocmVhZBgBIAEoCzIjLnN0dGF0dH'
+        'VzLmxlZ2FjeS52MS5Db25jaWVyZ2VUaHJlYWRSBnRocmVhZA==');
 
 @$core.Deprecated('Use listMyConciergeThreadsRequestDescriptor instead')
 const ListMyConciergeThreadsRequest$json = {
@@ -1399,21 +1748,29 @@ const ListMyConciergeThreadsRequest$json = {
 };
 
 /// Descriptor for `ListMyConciergeThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyConciergeThreadsRequestDescriptor = $convert.base64Decode(
-    'Ch1MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVxdWVzdA==');
+final $typed_data.Uint8List listMyConciergeThreadsRequestDescriptor =
+    $convert.base64Decode('Ch1MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listMyConciergeThreadsResponseDescriptor instead')
 const ListMyConciergeThreadsResponse$json = {
   '1': 'ListMyConciergeThreadsResponse',
   '2': [
-    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.ConciergeThread', '10': 'threads'},
+    {
+      '1': 'threads',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ConciergeThread',
+      '10': 'threads'
+    },
   ],
 };
 
 /// Descriptor for `ListMyConciergeThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyConciergeThreadsResponseDescriptor = $convert.base64Decode(
-    'Ch5MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVzcG9uc2USPQoHdGhyZWFkcxgBIAMoCzIjLnN0dG'
-    'F0dHVzLmxlZ2FjeS52MS5Db25jaWVyZ2VUaHJlYWRSB3RocmVhZHM=');
+final $typed_data.Uint8List listMyConciergeThreadsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVzcG9uc2USPQoHdGhyZWFkcxgBIAMoCzIjLnN0dG'
+        'F0dHVzLmxlZ2FjeS52MS5Db25jaWVyZ2VUaHJlYWRSB3RocmVhZHM=');
 
 @$core.Deprecated('Use getConciergeThreadRequestDescriptor instead')
 const GetConciergeThreadRequest$json = {
@@ -1424,22 +1781,31 @@ const GetConciergeThreadRequest$json = {
 };
 
 /// Descriptor for `GetConciergeThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getConciergeThreadRequestDescriptor = $convert.base64Decode(
-    'ChlHZXRDb25jaWVyZ2VUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
-    'Q=');
+final $typed_data.Uint8List getConciergeThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChlHZXRDb25jaWVyZ2VUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
+        'Q=');
 
 @$core.Deprecated('Use getConciergeThreadResponseDescriptor instead')
 const GetConciergeThreadResponse$json = {
   '1': 'GetConciergeThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.ConciergeThread', '10': 'thread'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ConciergeThread',
+      '10': 'thread'
+    },
   ],
 };
 
 /// Descriptor for `GetConciergeThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getConciergeThreadResponseDescriptor = $convert.base64Decode(
-    'ChpHZXRDb25jaWVyZ2VUaHJlYWRSZXNwb25zZRI7CgZ0aHJlYWQYASABKAsyIy5zdHRhdHR1cy'
-    '5sZWdhY3kudjEuQ29uY2llcmdlVGhyZWFkUgZ0aHJlYWQ=');
+final $typed_data.Uint8List getConciergeThreadResponseDescriptor =
+    $convert.base64Decode(
+        'ChpHZXRDb25jaWVyZ2VUaHJlYWRSZXNwb25zZRI7CgZ0aHJlYWQYASABKAsyIy5zdHRhdHR1cy'
+        '5sZWdhY3kudjEuQ29uY2llcmdlVGhyZWFkUgZ0aHJlYWQ=');
 
 @$core.Deprecated('Use postConciergeMessageRequestDescriptor instead')
 const PostConciergeMessageRequest$json = {
@@ -1451,22 +1817,31 @@ const PostConciergeMessageRequest$json = {
 };
 
 /// Descriptor for `PostConciergeMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postConciergeMessageRequestDescriptor = $convert.base64Decode(
-    'ChtQb3N0Q29uY2llcmdlTWVzc2FnZVJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYW'
-    'RJZBISCgRib2R5GAIgASgJUgRib2R5');
+final $typed_data.Uint8List postConciergeMessageRequestDescriptor =
+    $convert.base64Decode(
+        'ChtQb3N0Q29uY2llcmdlTWVzc2FnZVJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYW'
+        'RJZBISCgRib2R5GAIgASgJUgRib2R5');
 
 @$core.Deprecated('Use postConciergeMessageResponseDescriptor instead')
 const PostConciergeMessageResponse$json = {
   '1': 'PostConciergeMessageResponse',
   '2': [
-    {'1': 'message', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.ConciergeMessage', '10': 'message'},
+    {
+      '1': 'message',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.ConciergeMessage',
+      '10': 'message'
+    },
   ],
 };
 
 /// Descriptor for `PostConciergeMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postConciergeMessageResponseDescriptor = $convert.base64Decode(
-    'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
-    'R1cy5sZWdhY3kudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
+final $typed_data.Uint8List postConciergeMessageResponseDescriptor =
+    $convert.base64Decode(
+        'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
+        'R1cy5sZWdhY3kudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
 
 @$core.Deprecated('Use anthologyArticleDescriptor instead')
 const AnthologyArticle$json = {
@@ -1482,7 +1857,13 @@ const AnthologyArticle$json = {
     {'1': 'author_name', '3': 8, '4': 1, '5': 9, '10': 'authorName'},
     {'1': 'author_title', '3': 9, '4': 1, '5': 9, '10': 'authorTitle'},
     {'1': 'author_photo_url', '3': 10, '4': 1, '5': 9, '10': 'authorPhotoUrl'},
-    {'1': 'published_at_unix', '3': 11, '4': 1, '5': 3, '10': 'publishedAtUnix'},
+    {
+      '1': 'published_at_unix',
+      '3': 11,
+      '4': 1,
+      '5': 3,
+      '10': 'publishedAtUnix'
+    },
   ],
 };
 
@@ -1504,21 +1885,30 @@ const ListAnthologyArticlesRequest$json = {
 };
 
 /// Descriptor for `ListAnthologyArticlesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor = $convert.base64Decode(
-    'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0EhQKBXRvcGljGAEgASgJUgV0b3BpYw==');
+final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0EhQKBXRvcGljGAEgASgJUgV0b3BpYw==');
 
 @$core.Deprecated('Use listAnthologyArticlesResponseDescriptor instead')
 const ListAnthologyArticlesResponse$json = {
   '1': 'ListAnthologyArticlesResponse',
   '2': [
-    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.AnthologyArticle', '10': 'articles'},
+    {
+      '1': 'articles',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.AnthologyArticle',
+      '10': 'articles'
+    },
   ],
 };
 
 /// Descriptor for `ListAnthologyArticlesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor = $convert.base64Decode(
-    'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJACghhcnRpY2xlcxgBIAMoCzIkLnN0dG'
-    'F0dHVzLmxlZ2FjeS52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
+final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJACghhcnRpY2xlcxgBIAMoCzIkLnN0dG'
+        'F0dHVzLmxlZ2FjeS52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
 
 @$core.Deprecated('Use getAnthologyArticleRequestDescriptor instead')
 const GetAnthologyArticleRequest$json = {
@@ -1529,22 +1919,31 @@ const GetAnthologyArticleRequest$json = {
 };
 
 /// Descriptor for `GetAnthologyArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAnthologyArticleRequestDescriptor = $convert.base64Decode(
-    'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBIdCgphcnRpY2xlX2lkGAEgASgJUglhcnRpY2'
-    'xlSWQ=');
+final $typed_data.Uint8List getAnthologyArticleRequestDescriptor =
+    $convert.base64Decode(
+        'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBIdCgphcnRpY2xlX2lkGAEgASgJUglhcnRpY2'
+        'xlSWQ=');
 
 @$core.Deprecated('Use getAnthologyArticleResponseDescriptor instead')
 const GetAnthologyArticleResponse$json = {
   '1': 'GetAnthologyArticleResponse',
   '2': [
-    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.AnthologyArticle', '10': 'article'},
+    {
+      '1': 'article',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.AnthologyArticle',
+      '10': 'article'
+    },
   ],
 };
 
 /// Descriptor for `GetAnthologyArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAnthologyArticleResponseDescriptor = $convert.base64Decode(
-    'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPgoHYXJ0aWNsZRgBIAEoCzIkLnN0dGF0dH'
-    'VzLmxlZ2FjeS52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
+final $typed_data.Uint8List getAnthologyArticleResponseDescriptor =
+    $convert.base64Decode(
+        'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPgoHYXJ0aWNsZRgBIAEoCzIkLnN0dGF0dH'
+        'VzLmxlZ2FjeS52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
 
 @$core.Deprecated('Use letterOfWishesDescriptor instead')
 const LetterOfWishes$json = {
@@ -1587,14 +1986,22 @@ final $typed_data.Uint8List addLetterOfWishesRequestDescriptor = $convert.base64
 const AddLetterOfWishesResponse$json = {
   '1': 'AddLetterOfWishesResponse',
   '2': [
-    {'1': 'letter', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.LetterOfWishes', '10': 'letter'},
+    {
+      '1': 'letter',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LetterOfWishes',
+      '10': 'letter'
+    },
   ],
 };
 
 /// Descriptor for `AddLetterOfWishesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addLetterOfWishesResponseDescriptor = $convert.base64Decode(
-    'ChlBZGRMZXR0ZXJPZldpc2hlc1Jlc3BvbnNlEjoKBmxldHRlchgBIAEoCzIiLnN0dGF0dHVzLm'
-    'xlZ2FjeS52MS5MZXR0ZXJPZldpc2hlc1IGbGV0dGVy');
+final $typed_data.Uint8List addLetterOfWishesResponseDescriptor =
+    $convert.base64Decode(
+        'ChlBZGRMZXR0ZXJPZldpc2hlc1Jlc3BvbnNlEjoKBmxldHRlchgBIAEoCzIiLnN0dGF0dHVzLm'
+        'xlZ2FjeS52MS5MZXR0ZXJPZldpc2hlc1IGbGV0dGVy');
 
 @$core.Deprecated('Use listMyLettersOfWishesRequestDescriptor instead')
 const ListMyLettersOfWishesRequest$json = {
@@ -1602,21 +2009,29 @@ const ListMyLettersOfWishesRequest$json = {
 };
 
 /// Descriptor for `ListMyLettersOfWishesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyLettersOfWishesRequestDescriptor = $convert.base64Decode(
-    'ChxMaXN0TXlMZXR0ZXJzT2ZXaXNoZXNSZXF1ZXN0');
+final $typed_data.Uint8List listMyLettersOfWishesRequestDescriptor =
+    $convert.base64Decode('ChxMaXN0TXlMZXR0ZXJzT2ZXaXNoZXNSZXF1ZXN0');
 
 @$core.Deprecated('Use listMyLettersOfWishesResponseDescriptor instead')
 const ListMyLettersOfWishesResponse$json = {
   '1': 'ListMyLettersOfWishesResponse',
   '2': [
-    {'1': 'letters', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LetterOfWishes', '10': 'letters'},
+    {
+      '1': 'letters',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LetterOfWishes',
+      '10': 'letters'
+    },
   ],
 };
 
 /// Descriptor for `ListMyLettersOfWishesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyLettersOfWishesResponseDescriptor = $convert.base64Decode(
-    'Ch1MaXN0TXlMZXR0ZXJzT2ZXaXNoZXNSZXNwb25zZRI8CgdsZXR0ZXJzGAEgAygLMiIuc3R0YX'
-    'R0dXMubGVnYWN5LnYxLkxldHRlck9mV2lzaGVzUgdsZXR0ZXJz');
+final $typed_data.Uint8List listMyLettersOfWishesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0TXlMZXR0ZXJzT2ZXaXNoZXNSZXNwb25zZRI8CgdsZXR0ZXJzGAEgAygLMiIuc3R0YX'
+        'R0dXMubGVnYWN5LnYxLkxldHRlck9mV2lzaGVzUgdsZXR0ZXJz');
 
 @$core.Deprecated('Use removeLetterOfWishesRequestDescriptor instead')
 const RemoveLetterOfWishesRequest$json = {
@@ -1627,9 +2042,10 @@ const RemoveLetterOfWishesRequest$json = {
 };
 
 /// Descriptor for `RemoveLetterOfWishesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeLetterOfWishesRequestDescriptor = $convert.base64Decode(
-    'ChtSZW1vdmVMZXR0ZXJPZldpc2hlc1JlcXVlc3QSGwoJbGV0dGVyX2lkGAEgASgJUghsZXR0ZX'
-    'JJZA==');
+final $typed_data.Uint8List removeLetterOfWishesRequestDescriptor =
+    $convert.base64Decode(
+        'ChtSZW1vdmVMZXR0ZXJPZldpc2hlc1JlcXVlc3QSGwoJbGV0dGVyX2lkGAEgASgJUghsZXR0ZX'
+        'JJZA==');
 
 @$core.Deprecated('Use removeLetterOfWishesResponseDescriptor instead')
 const RemoveLetterOfWishesResponse$json = {
@@ -1637,8 +2053,8 @@ const RemoveLetterOfWishesResponse$json = {
 };
 
 /// Descriptor for `RemoveLetterOfWishesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeLetterOfWishesResponseDescriptor = $convert.base64Decode(
-    'ChxSZW1vdmVMZXR0ZXJPZldpc2hlc1Jlc3BvbnNl');
+final $typed_data.Uint8List removeLetterOfWishesResponseDescriptor =
+    $convert.base64Decode('ChxSZW1vdmVMZXR0ZXJPZldpc2hlc1Jlc3BvbnNl');
 
 @$core.Deprecated('Use generateLegacyAlmanacRequestDescriptor instead')
 const GenerateLegacyAlmanacRequest$json = {
@@ -1646,8 +2062,8 @@ const GenerateLegacyAlmanacRequest$json = {
 };
 
 /// Descriptor for `GenerateLegacyAlmanacRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateLegacyAlmanacRequestDescriptor = $convert.base64Decode(
-    'ChxHZW5lcmF0ZUxlZ2FjeUFsbWFuYWNSZXF1ZXN0');
+final $typed_data.Uint8List generateLegacyAlmanacRequestDescriptor =
+    $convert.base64Decode('ChxHZW5lcmF0ZUxlZ2FjeUFsbWFuYWNSZXF1ZXN0');
 
 @$core.Deprecated('Use generateLegacyAlmanacResponseDescriptor instead')
 const GenerateLegacyAlmanacResponse$json = {
@@ -1659,9 +2075,10 @@ const GenerateLegacyAlmanacResponse$json = {
 };
 
 /// Descriptor for `GenerateLegacyAlmanacResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateLegacyAlmanacResponseDescriptor = $convert.base64Decode(
-    'Ch1HZW5lcmF0ZUxlZ2FjeUFsbWFuYWNSZXNwb25zZRIQCgN1cmwYASABKAlSA3VybBIdCgpwYW'
-    'dlX2NvdW50GAIgASgFUglwYWdlQ291bnQ=');
+final $typed_data.Uint8List generateLegacyAlmanacResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1HZW5lcmF0ZUxlZ2FjeUFsbWFuYWNSZXNwb25zZRIQCgN1cmwYASABKAlSA3VybBIdCgpwYW'
+        'dlX2NvdW50GAIgASgFUglwYWdlQ291bnQ=');
 
 @$core.Deprecated('Use ipAssetDescriptor instead')
 const IpAsset$json = {
@@ -1690,15 +2107,28 @@ const ListIpPortfolioRequest$json = {
 };
 
 /// Descriptor for `ListIpPortfolioRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listIpPortfolioRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0SXBQb3J0Zm9saW9SZXF1ZXN0');
+final $typed_data.Uint8List listIpPortfolioRequestDescriptor =
+    $convert.base64Decode('ChZMaXN0SXBQb3J0Zm9saW9SZXF1ZXN0');
 
 @$core.Deprecated('Use listIpPortfolioResponseDescriptor instead')
 const ListIpPortfolioResponse$json = {
   '1': 'ListIpPortfolioResponse',
   '2': [
-    {'1': 'assets', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.IpAsset', '10': 'assets'},
-    {'1': 'needs_review_count', '3': 2, '4': 1, '5': 5, '10': 'needsReviewCount'},
+    {
+      '1': 'assets',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.IpAsset',
+      '10': 'assets'
+    },
+    {
+      '1': 'needs_review_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'needsReviewCount'
+    },
   ],
 };
 
@@ -1716,7 +2146,13 @@ const LegacyShare$json = {
     {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
     {'1': 'url', '3': 3, '4': 1, '5': 9, '10': 'url'},
     {'1': 'audience', '3': 4, '4': 1, '5': 9, '10': 'audience'},
-    {'1': 'include_valuations', '3': 5, '4': 1, '5': 8, '10': 'includeValuations'},
+    {
+      '1': 'include_valuations',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'includeValuations'
+    },
     {'1': 'expires_at_unix', '3': 6, '4': 1, '5': 3, '10': 'expiresAtUnix'},
     {'1': 'created_at_unix', '3': 7, '4': 1, '5': 3, '10': 'createdAtUnix'},
   ],
@@ -1735,7 +2171,13 @@ const CreateLegacyShareRequest$json = {
   '1': 'CreateLegacyShareRequest',
   '2': [
     {'1': 'audience', '3': 1, '4': 1, '5': 9, '10': 'audience'},
-    {'1': 'include_valuations', '3': 2, '4': 1, '5': 8, '10': 'includeValuations'},
+    {
+      '1': 'include_valuations',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'includeValuations'
+    },
     {'1': 'ttl_days', '3': 3, '4': 1, '5': 5, '10': 'ttlDays'},
   ],
 };
@@ -1750,14 +2192,22 @@ final $typed_data.Uint8List createLegacyShareRequestDescriptor = $convert.base64
 const CreateLegacyShareResponse$json = {
   '1': 'CreateLegacyShareResponse',
   '2': [
-    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.legacy.v1.LegacyShare', '10': 'share'},
+    {
+      '1': 'share',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyShare',
+      '10': 'share'
+    },
   ],
 };
 
 /// Descriptor for `CreateLegacyShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createLegacyShareResponseDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVMZWdhY3lTaGFyZVJlc3BvbnNlEjUKBXNoYXJlGAEgASgLMh8uc3R0YXR0dXMubG'
-    'VnYWN5LnYxLkxlZ2FjeVNoYXJlUgVzaGFyZQ==');
+final $typed_data.Uint8List createLegacyShareResponseDescriptor =
+    $convert.base64Decode(
+        'ChlDcmVhdGVMZWdhY3lTaGFyZVJlc3BvbnNlEjUKBXNoYXJlGAEgASgLMh8uc3R0YXR0dXMubG'
+        'VnYWN5LnYxLkxlZ2FjeVNoYXJlUgVzaGFyZQ==');
 
 @$core.Deprecated('Use listMyLegacySharesRequestDescriptor instead')
 const ListMyLegacySharesRequest$json = {
@@ -1765,21 +2215,29 @@ const ListMyLegacySharesRequest$json = {
 };
 
 /// Descriptor for `ListMyLegacySharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyLegacySharesRequestDescriptor = $convert.base64Decode(
-    'ChlMaXN0TXlMZWdhY3lTaGFyZXNSZXF1ZXN0');
+final $typed_data.Uint8List listMyLegacySharesRequestDescriptor =
+    $convert.base64Decode('ChlMaXN0TXlMZWdhY3lTaGFyZXNSZXF1ZXN0');
 
 @$core.Deprecated('Use listMyLegacySharesResponseDescriptor instead')
 const ListMyLegacySharesResponse$json = {
   '1': 'ListMyLegacySharesResponse',
   '2': [
-    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.legacy.v1.LegacyShare', '10': 'shares'},
+    {
+      '1': 'shares',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyShare',
+      '10': 'shares'
+    },
   ],
 };
 
 /// Descriptor for `ListMyLegacySharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyLegacySharesResponseDescriptor = $convert.base64Decode(
-    'ChpMaXN0TXlMZWdhY3lTaGFyZXNSZXNwb25zZRI3CgZzaGFyZXMYASADKAsyHy5zdHRhdHR1cy'
-    '5sZWdhY3kudjEuTGVnYWN5U2hhcmVSBnNoYXJlcw==');
+final $typed_data.Uint8List listMyLegacySharesResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0TXlMZWdhY3lTaGFyZXNSZXNwb25zZRI3CgZzaGFyZXMYASADKAsyHy5zdHRhdHR1cy'
+        '5sZWdhY3kudjEuTGVnYWN5U2hhcmVSBnNoYXJlcw==');
 
 @$core.Deprecated('Use revokeLegacyShareRequestDescriptor instead')
 const RevokeLegacyShareRequest$json = {
@@ -1790,8 +2248,9 @@ const RevokeLegacyShareRequest$json = {
 };
 
 /// Descriptor for `RevokeLegacyShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List revokeLegacyShareRequestDescriptor = $convert.base64Decode(
-    'ChhSZXZva2VMZWdhY3lTaGFyZVJlcXVlc3QSGQoIc2hhcmVfaWQYASABKAlSB3NoYXJlSWQ=');
+final $typed_data.Uint8List revokeLegacyShareRequestDescriptor =
+    $convert.base64Decode(
+        'ChhSZXZva2VMZWdhY3lTaGFyZVJlcXVlc3QSGQoIc2hhcmVfaWQYASABKAlSB3NoYXJlSWQ=');
 
 @$core.Deprecated('Use revokeLegacyShareResponseDescriptor instead')
 const RevokeLegacyShareResponse$json = {
@@ -1799,8 +2258,8 @@ const RevokeLegacyShareResponse$json = {
 };
 
 /// Descriptor for `RevokeLegacyShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List revokeLegacyShareResponseDescriptor = $convert.base64Decode(
-    'ChlSZXZva2VMZWdhY3lTaGFyZVJlc3BvbnNl');
+final $typed_data.Uint8List revokeLegacyShareResponseDescriptor =
+    $convert.base64Decode('ChlSZXZva2VMZWdhY3lTaGFyZVJlc3BvbnNl');
 
 @$core.Deprecated('Use parseDocumentExpiryRequestDescriptor instead')
 const ParseDocumentExpiryRequest$json = {
@@ -1812,9 +2271,10 @@ const ParseDocumentExpiryRequest$json = {
 };
 
 /// Descriptor for `ParseDocumentExpiryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List parseDocumentExpiryRequestDescriptor = $convert.base64Decode(
-    'ChpQYXJzZURvY3VtZW50RXhwaXJ5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
-    'IjCg1kb2N1bWVudF90ZXh0GAIgASgJUgxkb2N1bWVudFRleHQ=');
+final $typed_data.Uint8List parseDocumentExpiryRequestDescriptor =
+    $convert.base64Decode(
+        'ChpQYXJzZURvY3VtZW50RXhwaXJ5UmVxdWVzdBIZCghhc3NldF9pZBgBIAEoCVIHYXNzZXRJZB'
+        'IjCg1kb2N1bWVudF90ZXh0GAIgASgJUgxkb2N1bWVudFRleHQ=');
 
 @$core.Deprecated('Use parseDocumentExpiryResponseDescriptor instead')
 const ParseDocumentExpiryResponse$json = {
@@ -1827,8 +2287,8 @@ const ParseDocumentExpiryResponse$json = {
 };
 
 /// Descriptor for `ParseDocumentExpiryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List parseDocumentExpiryResponseDescriptor = $convert.base64Decode(
-    'ChtQYXJzZURvY3VtZW50RXhwaXJ5UmVzcG9uc2USFAoFZm91bmQYASABKAhSBWZvdW5kEiYKD2'
-    'V4cGlyZXNfYXRfdW5peBgCIAEoA1INZXhwaXJlc0F0VW5peBIjCg1kZXRlY3RlZF90ZXh0GAMg'
-    'ASgJUgxkZXRlY3RlZFRleHQ=');
-
+final $typed_data.Uint8List parseDocumentExpiryResponseDescriptor =
+    $convert.base64Decode(
+        'ChtQYXJzZURvY3VtZW50RXhwaXJ5UmVzcG9uc2USFAoFZm91bmQYASABKAhSBWZvdW5kEiYKD2'
+        'V4cGlyZXNfYXRfdW5peBgCIAEoA1INZXhwaXJlc0F0VW5peBIjCg1kZXRlY3RlZF90ZXh0GAMg'
+        'ASgJUgxkZXRlY3RlZFRleHQ=');

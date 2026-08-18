@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -58,9 +59,30 @@ const StrategicInsight$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 3, '4': 1, '5': 9, '10': 'content'},
-    {'1': 'domain', '3': 4, '4': 1, '5': 14, '6': '.sttattus.oracle.v1.StrategicDomain', '10': 'domain'},
-    {'1': 'grading', '3': 5, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.DepthGrading', '10': 'grading'},
-    {'1': 'discovered_at', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'discoveredAt'},
+    {
+      '1': 'domain',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.oracle.v1.StrategicDomain',
+      '10': 'domain'
+    },
+    {
+      '1': 'grading',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.DepthGrading',
+      '10': 'grading'
+    },
+    {
+      '1': 'discovered_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'discoveredAt'
+    },
   ],
 };
 
@@ -77,10 +99,29 @@ const OracleStats$json = {
   '1': 'OracleStats',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'intellectual_rank', '3': 2, '4': 1, '5': 1, '10': 'intellectualRank'},
+    {
+      '1': 'intellectual_rank',
+      '3': 2,
+      '4': 1,
+      '5': 1,
+      '10': 'intellectualRank'
+    },
     {'1': 'rank_label', '3': 3, '4': 1, '5': 9, '10': 'rankLabel'},
-    {'1': 'total_clout_earned', '3': 4, '4': 1, '5': 5, '10': 'totalCloutEarned'},
-    {'1': 'domain_mastery', '3': 5, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleStats.DomainMasteryEntry', '10': 'domainMastery'},
+    {
+      '1': 'total_clout_earned',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'totalCloutEarned'
+    },
+    {
+      '1': 'domain_mastery',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleStats.DomainMasteryEntry',
+      '10': 'domainMastery'
+    },
   ],
   '3': [OracleStats_DomainMasteryEntry$json],
 };
@@ -123,8 +164,22 @@ const QueryResponse$json = {
   '1': 'QueryResponse',
   '2': [
     {'1': 'response', '3': 1, '4': 1, '5': 9, '10': 'response'},
-    {'1': 'insight', '3': 2, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.StrategicInsight', '10': 'insight'},
-    {'1': 'stats', '3': 3, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleStats', '10': 'stats'},
+    {
+      '1': 'insight',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.StrategicInsight',
+      '10': 'insight'
+    },
+    {
+      '1': 'stats',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleStats',
+      '10': 'stats'
+    },
   ],
 };
 
@@ -143,34 +198,62 @@ const GetOracleStatsRequest$json = {
 };
 
 /// Descriptor for `GetOracleStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getOracleStatsRequestDescriptor = $convert.base64Decode(
-    'ChVHZXRPcmFjbGVTdGF0c1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
+final $typed_data.Uint8List getOracleStatsRequestDescriptor =
+    $convert.base64Decode(
+        'ChVHZXRPcmFjbGVTdGF0c1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
 
 @$core.Deprecated('Use getOracleStatsResponseDescriptor instead')
 const GetOracleStatsResponse$json = {
   '1': 'GetOracleStatsResponse',
   '2': [
-    {'1': 'stats', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleStats', '10': 'stats'},
+    {
+      '1': 'stats',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleStats',
+      '10': 'stats'
+    },
   ],
 };
 
 /// Descriptor for `GetOracleStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getOracleStatsResponseDescriptor = $convert.base64Decode(
-    'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
-    'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
+final $typed_data.Uint8List getOracleStatsResponseDescriptor =
+    $convert.base64Decode(
+        'ChZHZXRPcmFjbGVTdGF0c1Jlc3BvbnNlEjUKBXN0YXRzGAEgASgLMh8uc3R0YXR0dXMub3JhY2'
+        'xlLnYxLk9yYWNsZVN0YXRzUgVzdGF0cw==');
 
 @$core.Deprecated('Use rankExplainerDescriptor instead')
 const RankExplainer$json = {
   '1': 'RankExplainer',
   '2': [
-    {'1': 'intellectual_rank', '3': 1, '4': 1, '5': 1, '10': 'intellectualRank'},
+    {
+      '1': 'intellectual_rank',
+      '3': 1,
+      '4': 1,
+      '5': 1,
+      '10': 'intellectualRank'
+    },
     {'1': 'rank_label', '3': 2, '4': 1, '5': 9, '10': 'rankLabel'},
     {'1': 'avg_complexity', '3': 3, '4': 1, '5': 1, '10': 'avgComplexity'},
     {'1': 'avg_synthesis', '3': 4, '4': 1, '5': 1, '10': 'avgSynthesis'},
     {'1': 'avg_foresight', '3': 5, '4': 1, '5': 1, '10': 'avgForesight'},
-    {'1': 'unique_domains_visited', '3': 6, '4': 1, '5': 5, '10': 'uniqueDomainsVisited'},
+    {
+      '1': 'unique_domains_visited',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'uniqueDomainsVisited'
+    },
     {'1': 'total_inquiries', '3': 7, '4': 1, '5': 5, '10': 'totalInquiries'},
-    {'1': 'per_domain_clout', '3': 8, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry', '10': 'perDomainClout'},
+    {
+      '1': 'per_domain_clout',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry',
+      '10': 'perDomainClout'
+    },
   ],
   '3': [RankExplainer_PerDomainCloutEntry$json],
 };
@@ -203,21 +286,29 @@ const GetRankExplainerRequest$json = {
 };
 
 /// Descriptor for `GetRankExplainerRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getRankExplainerRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRSYW5rRXhwbGFpbmVyUmVxdWVzdA==');
+final $typed_data.Uint8List getRankExplainerRequestDescriptor =
+    $convert.base64Decode('ChdHZXRSYW5rRXhwbGFpbmVyUmVxdWVzdA==');
 
 @$core.Deprecated('Use getRankExplainerResponseDescriptor instead')
 const GetRankExplainerResponse$json = {
   '1': 'GetRankExplainerResponse',
   '2': [
-    {'1': 'explainer', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.RankExplainer', '10': 'explainer'},
+    {
+      '1': 'explainer',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.RankExplainer',
+      '10': 'explainer'
+    },
   ],
 };
 
 /// Descriptor for `GetRankExplainerResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getRankExplainerResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRSYW5rRXhwbGFpbmVyUmVzcG9uc2USPwoJZXhwbGFpbmVyGAEgASgLMiEuc3R0YXR0dX'
-    'Mub3JhY2xlLnYxLlJhbmtFeHBsYWluZXJSCWV4cGxhaW5lcg==');
+final $typed_data.Uint8List getRankExplainerResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRSYW5rRXhwbGFpbmVyUmVzcG9uc2USPwoJZXhwbGFpbmVyGAEgASgLMiEuc3R0YXR0dX'
+        'Mub3JhY2xlLnYxLlJhbmtFeHBsYWluZXJSCWV4cGxhaW5lcg==');
 
 @$core.Deprecated('Use oracleToolDescriptor instead')
 const OracleTool$json = {
@@ -242,28 +333,43 @@ const ListAvailableToolsRequest$json = {
 };
 
 /// Descriptor for `ListAvailableToolsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAvailableToolsRequestDescriptor = $convert.base64Decode(
-    'ChlMaXN0QXZhaWxhYmxlVG9vbHNSZXF1ZXN0');
+final $typed_data.Uint8List listAvailableToolsRequestDescriptor =
+    $convert.base64Decode('ChlMaXN0QXZhaWxhYmxlVG9vbHNSZXF1ZXN0');
 
 @$core.Deprecated('Use listAvailableToolsResponseDescriptor instead')
 const ListAvailableToolsResponse$json = {
   '1': 'ListAvailableToolsResponse',
   '2': [
-    {'1': 'tools', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleTool', '10': 'tools'},
+    {
+      '1': 'tools',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleTool',
+      '10': 'tools'
+    },
   ],
 };
 
 /// Descriptor for `ListAvailableToolsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAvailableToolsResponseDescriptor = $convert.base64Decode(
-    'ChpMaXN0QXZhaWxhYmxlVG9vbHNSZXNwb25zZRI0CgV0b29scxgBIAMoCzIeLnN0dGF0dHVzLm'
-    '9yYWNsZS52MS5PcmFjbGVUb29sUgV0b29scw==');
+final $typed_data.Uint8List listAvailableToolsResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0QXZhaWxhYmxlVG9vbHNSZXNwb25zZRI0CgV0b29scxgBIAMoCzIeLnN0dGF0dHVzLm'
+        '9yYWNsZS52MS5PcmFjbGVUb29sUgV0b29scw==');
 
 @$core.Deprecated('Use runOracleToolRequestDescriptor instead')
 const RunOracleToolRequest$json = {
   '1': 'RunOracleToolRequest',
   '2': [
     {'1': 'tool_name', '3': 1, '4': 1, '5': 9, '10': 'toolName'},
-    {'1': 'args', '3': 2, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry', '10': 'args'},
+    {
+      '1': 'args',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry',
+      '10': 'args'
+    },
   ],
   '3': [RunOracleToolRequest_ArgsEntry$json],
 };
@@ -320,21 +426,29 @@ const ListMyScopeGrantsRequest$json = {
 };
 
 /// Descriptor for `ListMyScopeGrantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyScopeGrantsRequestDescriptor = $convert.base64Decode(
-    'ChhMaXN0TXlTY29wZUdyYW50c1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyScopeGrantsRequestDescriptor =
+    $convert.base64Decode('ChhMaXN0TXlTY29wZUdyYW50c1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyScopeGrantsResponseDescriptor instead')
 const ListMyScopeGrantsResponse$json = {
   '1': 'ListMyScopeGrantsResponse',
   '2': [
-    {'1': 'grants', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grants'},
+    {
+      '1': 'grants',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ScopeGrant',
+      '10': 'grants'
+    },
   ],
 };
 
 /// Descriptor for `ListMyScopeGrantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyScopeGrantsResponseDescriptor = $convert.base64Decode(
-    'ChlMaXN0TXlTY29wZUdyYW50c1Jlc3BvbnNlEjYKBmdyYW50cxgBIAMoCzIeLnN0dGF0dHVzLm'
-    '9yYWNsZS52MS5TY29wZUdyYW50UgZncmFudHM=');
+final $typed_data.Uint8List listMyScopeGrantsResponseDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0TXlTY29wZUdyYW50c1Jlc3BvbnNlEjYKBmdyYW50cxgBIAMoCzIeLnN0dGF0dHVzLm'
+        '9yYWNsZS52MS5TY29wZUdyYW50UgZncmFudHM=');
 
 @$core.Deprecated('Use grantScopeRequestDescriptor instead')
 const GrantScopeRequest$json = {
@@ -352,7 +466,14 @@ final $typed_data.Uint8List grantScopeRequestDescriptor = $convert.base64Decode(
 const GrantScopeResponse$json = {
   '1': 'GrantScopeResponse',
   '2': [
-    {'1': 'grant', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grant'},
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ScopeGrant',
+      '10': 'grant'
+    },
   ],
 };
 
@@ -370,14 +491,22 @@ const RevokeScopeRequest$json = {
 };
 
 /// Descriptor for `RevokeScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List revokeScopeRequestDescriptor = $convert.base64Decode(
-    'ChJSZXZva2VTY29wZVJlcXVlc3QSFgoGcGlsbGFyGAEgASgJUgZwaWxsYXI=');
+final $typed_data.Uint8List revokeScopeRequestDescriptor =
+    $convert.base64Decode(
+        'ChJSZXZva2VTY29wZVJlcXVlc3QSFgoGcGlsbGFyGAEgASgJUgZwaWxsYXI=');
 
 @$core.Deprecated('Use revokeScopeResponseDescriptor instead')
 const RevokeScopeResponse$json = {
   '1': 'RevokeScopeResponse',
   '2': [
-    {'1': 'grant', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ScopeGrant', '10': 'grant'},
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ScopeGrant',
+      '10': 'grant'
+    },
   ],
 };
 
@@ -432,22 +561,31 @@ const RecordEpisodicMemoryRequest$json = {
 };
 
 /// Descriptor for `RecordEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recordEpisodicMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtSZWNvcmRFcGlzb2RpY01lbW9yeVJlcXVlc3QSFgoGc291cmNlGAEgASgJUgZzb3VyY2USEg'
-    'oEYm9keRgCIAEoCVIEYm9keRIjCg1vY2N1cnJlZF91bml4GAMgASgDUgxvY2N1cnJlZFVuaXg=');
+final $typed_data.Uint8List recordEpisodicMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChtSZWNvcmRFcGlzb2RpY01lbW9yeVJlcXVlc3QSFgoGc291cmNlGAEgASgJUgZzb3VyY2USEg'
+        'oEYm9keRgCIAEoCVIEYm9keRIjCg1vY2N1cnJlZF91bml4GAMgASgDUgxvY2N1cnJlZFVuaXg=');
 
 @$core.Deprecated('Use recordEpisodicMemoryResponseDescriptor instead')
 const RecordEpisodicMemoryResponse$json = {
   '1': 'RecordEpisodicMemoryResponse',
   '2': [
-    {'1': 'memory', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.EpisodicMemory', '10': 'memory'},
+    {
+      '1': 'memory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.EpisodicMemory',
+      '10': 'memory'
+    },
   ],
 };
 
 /// Descriptor for `RecordEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recordEpisodicMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxSZWNvcmRFcGlzb2RpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
-    'VzLm9yYWNsZS52MS5FcGlzb2RpY01lbW9yeVIGbWVtb3J5');
+final $typed_data.Uint8List recordEpisodicMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'ChxSZWNvcmRFcGlzb2RpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
+        'VzLm9yYWNsZS52MS5FcGlzb2RpY01lbW9yeVIGbWVtb3J5');
 
 @$core.Deprecated('Use listMyEpisodicMemoryRequestDescriptor instead')
 const ListMyEpisodicMemoryRequest$json = {
@@ -458,21 +596,30 @@ const ListMyEpisodicMemoryRequest$json = {
 };
 
 /// Descriptor for `ListMyEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyEpisodicMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtMaXN0TXlFcGlzb2RpY01lbW9yeVJlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
+final $typed_data.Uint8List listMyEpisodicMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0TXlFcGlzb2RpY01lbW9yeVJlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
 
 @$core.Deprecated('Use listMyEpisodicMemoryResponseDescriptor instead')
 const ListMyEpisodicMemoryResponse$json = {
   '1': 'ListMyEpisodicMemoryResponse',
   '2': [
-    {'1': 'memories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.EpisodicMemory', '10': 'memories'},
+    {
+      '1': 'memories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.EpisodicMemory',
+      '10': 'memories'
+    },
   ],
 };
 
 /// Descriptor for `ListMyEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyEpisodicMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxMaXN0TXlFcGlzb2RpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
-    'R0dXMub3JhY2xlLnYxLkVwaXNvZGljTWVtb3J5UghtZW1vcmllcw==');
+final $typed_data.Uint8List listMyEpisodicMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlFcGlzb2RpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
+        'R0dXMub3JhY2xlLnYxLkVwaXNvZGljTWVtb3J5UghtZW1vcmllcw==');
 
 @$core.Deprecated('Use deleteEpisodicMemoryRequestDescriptor instead')
 const DeleteEpisodicMemoryRequest$json = {
@@ -483,9 +630,10 @@ const DeleteEpisodicMemoryRequest$json = {
 };
 
 /// Descriptor for `DeleteEpisodicMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteEpisodicMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtEZWxldGVFcGlzb2RpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
-    'lJZA==');
+final $typed_data.Uint8List deleteEpisodicMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChtEZWxldGVFcGlzb2RpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
+        'lJZA==');
 
 @$core.Deprecated('Use deleteEpisodicMemoryResponseDescriptor instead')
 const DeleteEpisodicMemoryResponse$json = {
@@ -493,8 +641,8 @@ const DeleteEpisodicMemoryResponse$json = {
 };
 
 /// Descriptor for `DeleteEpisodicMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteEpisodicMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxEZWxldGVFcGlzb2RpY01lbW9yeVJlc3BvbnNl');
+final $typed_data.Uint8List deleteEpisodicMemoryResponseDescriptor =
+    $convert.base64Decode('ChxEZWxldGVFcGlzb2RpY01lbW9yeVJlc3BvbnNl');
 
 @$core.Deprecated('Use upsertSemanticMemoryRequestDescriptor instead')
 const UpsertSemanticMemoryRequest$json = {
@@ -507,22 +655,31 @@ const UpsertSemanticMemoryRequest$json = {
 };
 
 /// Descriptor for `UpsertSemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List upsertSemanticMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtVcHNlcnRTZW1hbnRpY01lbW9yeVJlcXVlc3QSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdW'
-    'UYAiABKAlSBXZhbHVlEhYKBnNvdXJjZRgDIAEoCVIGc291cmNl');
+final $typed_data.Uint8List upsertSemanticMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChtVcHNlcnRTZW1hbnRpY01lbW9yeVJlcXVlc3QSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdW'
+        'UYAiABKAlSBXZhbHVlEhYKBnNvdXJjZRgDIAEoCVIGc291cmNl');
 
 @$core.Deprecated('Use upsertSemanticMemoryResponseDescriptor instead')
 const UpsertSemanticMemoryResponse$json = {
   '1': 'UpsertSemanticMemoryResponse',
   '2': [
-    {'1': 'memory', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.SemanticMemory', '10': 'memory'},
+    {
+      '1': 'memory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.SemanticMemory',
+      '10': 'memory'
+    },
   ],
 };
 
 /// Descriptor for `UpsertSemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List upsertSemanticMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxVcHNlcnRTZW1hbnRpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
-    'VzLm9yYWNsZS52MS5TZW1hbnRpY01lbW9yeVIGbWVtb3J5');
+final $typed_data.Uint8List upsertSemanticMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'ChxVcHNlcnRTZW1hbnRpY01lbW9yeVJlc3BvbnNlEjoKBm1lbW9yeRgBIAEoCzIiLnN0dGF0dH'
+        'VzLm9yYWNsZS52MS5TZW1hbnRpY01lbW9yeVIGbWVtb3J5');
 
 @$core.Deprecated('Use listMySemanticMemoryRequestDescriptor instead')
 const ListMySemanticMemoryRequest$json = {
@@ -530,21 +687,29 @@ const ListMySemanticMemoryRequest$json = {
 };
 
 /// Descriptor for `ListMySemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMySemanticMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtMaXN0TXlTZW1hbnRpY01lbW9yeVJlcXVlc3Q=');
+final $typed_data.Uint8List listMySemanticMemoryRequestDescriptor =
+    $convert.base64Decode('ChtMaXN0TXlTZW1hbnRpY01lbW9yeVJlcXVlc3Q=');
 
 @$core.Deprecated('Use listMySemanticMemoryResponseDescriptor instead')
 const ListMySemanticMemoryResponse$json = {
   '1': 'ListMySemanticMemoryResponse',
   '2': [
-    {'1': 'memories', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.SemanticMemory', '10': 'memories'},
+    {
+      '1': 'memories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.SemanticMemory',
+      '10': 'memories'
+    },
   ],
 };
 
 /// Descriptor for `ListMySemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMySemanticMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxMaXN0TXlTZW1hbnRpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
-    'R0dXMub3JhY2xlLnYxLlNlbWFudGljTWVtb3J5UghtZW1vcmllcw==');
+final $typed_data.Uint8List listMySemanticMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlTZW1hbnRpY01lbW9yeVJlc3BvbnNlEj4KCG1lbW9yaWVzGAEgAygLMiIuc3R0YX'
+        'R0dXMub3JhY2xlLnYxLlNlbWFudGljTWVtb3J5UghtZW1vcmllcw==');
 
 @$core.Deprecated('Use deleteSemanticMemoryRequestDescriptor instead')
 const DeleteSemanticMemoryRequest$json = {
@@ -555,9 +720,10 @@ const DeleteSemanticMemoryRequest$json = {
 };
 
 /// Descriptor for `DeleteSemanticMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteSemanticMemoryRequestDescriptor = $convert.base64Decode(
-    'ChtEZWxldGVTZW1hbnRpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
-    'lJZA==');
+final $typed_data.Uint8List deleteSemanticMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'ChtEZWxldGVTZW1hbnRpY01lbW9yeVJlcXVlc3QSGwoJbWVtb3J5X2lkGAEgASgJUghtZW1vcn'
+        'lJZA==');
 
 @$core.Deprecated('Use deleteSemanticMemoryResponseDescriptor instead')
 const DeleteSemanticMemoryResponse$json = {
@@ -565,8 +731,8 @@ const DeleteSemanticMemoryResponse$json = {
 };
 
 /// Descriptor for `DeleteSemanticMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteSemanticMemoryResponseDescriptor = $convert.base64Decode(
-    'ChxEZWxldGVTZW1hbnRpY01lbW9yeVJlc3BvbnNl');
+final $typed_data.Uint8List deleteSemanticMemoryResponseDescriptor =
+    $convert.base64Decode('ChxEZWxldGVTZW1hbnRpY01lbW9yeVJlc3BvbnNl');
 
 @$core.Deprecated('Use oracleThreadDescriptor instead')
 const OracleThread$json = {
@@ -593,7 +759,14 @@ const OracleThreadMessage$json = {
     {'1': 'thread_id', '3': 2, '4': 1, '5': 9, '10': 'threadId'},
     {'1': 'prompt', '3': 3, '4': 1, '5': 9, '10': 'prompt'},
     {'1': 'response', '3': 4, '4': 1, '5': 9, '10': 'response'},
-    {'1': 'domain', '3': 5, '4': 1, '5': 14, '6': '.sttattus.oracle.v1.StrategicDomain', '10': 'domain'},
+    {
+      '1': 'domain',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.oracle.v1.StrategicDomain',
+      '10': 'domain'
+    },
     {'1': 'created_unix', '3': 6, '4': 1, '5': 3, '10': 'createdUnix'},
     {'1': 'complexity_score', '3': 7, '4': 1, '5': 1, '10': 'complexityScore'},
     {'1': 'synthesis_score', '3': 8, '4': 1, '5': 1, '10': 'synthesisScore'},
@@ -617,14 +790,21 @@ const ListMyThreadsRequest$json = {
 };
 
 /// Descriptor for `ListMyThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyThreadsRequestDescriptor = $convert.base64Decode(
-    'ChRMaXN0TXlUaHJlYWRzUmVxdWVzdA==');
+final $typed_data.Uint8List listMyThreadsRequestDescriptor =
+    $convert.base64Decode('ChRMaXN0TXlUaHJlYWRzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listMyThreadsResponseDescriptor instead')
 const ListMyThreadsResponse$json = {
   '1': 'ListMyThreadsResponse',
   '2': [
-    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'threads'},
+    {
+      '1': 'threads',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleThread',
+      '10': 'threads'
+    },
   ],
 };
 
@@ -642,14 +822,22 @@ const CreateThreadRequest$json = {
 };
 
 /// Descriptor for `CreateThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createThreadRequestDescriptor = $convert.base64Decode(
-    'ChNDcmVhdGVUaHJlYWRSZXF1ZXN0EhQKBXRpdGxlGAEgASgJUgV0aXRsZQ==');
+final $typed_data.Uint8List createThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChNDcmVhdGVUaHJlYWRSZXF1ZXN0EhQKBXRpdGxlGAEgASgJUgV0aXRsZQ==');
 
 @$core.Deprecated('Use createThreadResponseDescriptor instead')
 const CreateThreadResponse$json = {
   '1': 'CreateThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'thread'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleThread',
+      '10': 'thread'
+    },
   ],
 };
 
@@ -676,7 +864,14 @@ final $typed_data.Uint8List renameThreadRequestDescriptor = $convert.base64Decod
 const RenameThreadResponse$json = {
   '1': 'RenameThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleThread', '10': 'thread'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleThread',
+      '10': 'thread'
+    },
   ],
 };
 
@@ -694,8 +889,9 @@ const DeleteThreadRequest$json = {
 };
 
 /// Descriptor for `DeleteThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteThreadRequestDescriptor = $convert.base64Decode(
-    'ChNEZWxldGVUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQ=');
+final $typed_data.Uint8List deleteThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChNEZWxldGVUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSWQ=');
 
 @$core.Deprecated('Use deleteThreadResponseDescriptor instead')
 const DeleteThreadResponse$json = {
@@ -703,8 +899,8 @@ const DeleteThreadResponse$json = {
 };
 
 /// Descriptor for `DeleteThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteThreadResponseDescriptor = $convert.base64Decode(
-    'ChREZWxldGVUaHJlYWRSZXNwb25zZQ==');
+final $typed_data.Uint8List deleteThreadResponseDescriptor =
+    $convert.base64Decode('ChREZWxldGVUaHJlYWRSZXNwb25zZQ==');
 
 @$core.Deprecated('Use listThreadMessagesRequestDescriptor instead')
 const ListThreadMessagesRequest$json = {
@@ -715,22 +911,31 @@ const ListThreadMessagesRequest$json = {
 };
 
 /// Descriptor for `ListThreadMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listThreadMessagesRequestDescriptor = $convert.base64Decode(
-    'ChlMaXN0VGhyZWFkTWVzc2FnZXNSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
-    'Q=');
+final $typed_data.Uint8List listThreadMessagesRequestDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0VGhyZWFkTWVzc2FnZXNSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
+        'Q=');
 
 @$core.Deprecated('Use listThreadMessagesResponseDescriptor instead')
 const ListThreadMessagesResponse$json = {
   '1': 'ListThreadMessagesResponse',
   '2': [
-    {'1': 'messages', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleThreadMessage', '10': 'messages'},
+    {
+      '1': 'messages',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleThreadMessage',
+      '10': 'messages'
+    },
   ],
 };
 
 /// Descriptor for `ListThreadMessagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listThreadMessagesResponseDescriptor = $convert.base64Decode(
-    'ChpMaXN0VGhyZWFkTWVzc2FnZXNSZXNwb25zZRJDCghtZXNzYWdlcxgBIAMoCzInLnN0dGF0dH'
-    'VzLm9yYWNsZS52MS5PcmFjbGVUaHJlYWRNZXNzYWdlUghtZXNzYWdlcw==');
+final $typed_data.Uint8List listThreadMessagesResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0VGhyZWFkTWVzc2FnZXNSZXNwb25zZRJDCghtZXNzYWdlcxgBIAMoCzInLnN0dGF0dH'
+        'VzLm9yYWNsZS52MS5PcmFjbGVUaHJlYWRNZXNzYWdlUghtZXNzYWdlcw==');
 
 @$core.Deprecated('Use streamQueryRequestDescriptor instead')
 const StreamQueryRequest$json = {
@@ -787,15 +992,22 @@ const GetTodayBriefingRequest$json = {
 };
 
 /// Descriptor for `GetTodayBriefingRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getTodayBriefingRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRUb2RheUJyaWVmaW5nUmVxdWVzdA==');
+final $typed_data.Uint8List getTodayBriefingRequestDescriptor =
+    $convert.base64Decode('ChdHZXRUb2RheUJyaWVmaW5nUmVxdWVzdA==');
 
 @$core.Deprecated('Use getTodayBriefingResponseDescriptor instead')
 const GetTodayBriefingResponse$json = {
   '1': 'GetTodayBriefingResponse',
   '2': [
     {'1': 'briefing', '3': 1, '4': 1, '5': 9, '10': 'briefing'},
-    {'1': 'lines', '3': 2, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.BriefingLine', '10': 'lines'},
+    {
+      '1': 'lines',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.BriefingLine',
+      '10': 'lines'
+    },
     {'1': 'granted_count', '3': 3, '4': 1, '5': 5, '10': 'grantedCount'},
     {'1': 'generated_unix', '3': 4, '4': 1, '5': 3, '10': 'generatedUnix'},
     {'1': 'ai_generated', '3': 5, '4': 1, '5': 8, '10': 'aiGenerated'},
@@ -851,7 +1063,14 @@ final $typed_data.Uint8List createTriggerRequestDescriptor = $convert.base64Deco
 const CreateTriggerResponse$json = {
   '1': 'CreateTriggerResponse',
   '2': [
-    {'1': 'trigger', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleTrigger', '10': 'trigger'},
+    {
+      '1': 'trigger',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleTrigger',
+      '10': 'trigger'
+    },
   ],
 };
 
@@ -866,21 +1085,29 @@ const ListMyTriggersRequest$json = {
 };
 
 /// Descriptor for `ListMyTriggersRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyTriggersRequestDescriptor = $convert.base64Decode(
-    'ChVMaXN0TXlUcmlnZ2Vyc1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyTriggersRequestDescriptor =
+    $convert.base64Decode('ChVMaXN0TXlUcmlnZ2Vyc1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyTriggersResponseDescriptor instead')
 const ListMyTriggersResponse$json = {
   '1': 'ListMyTriggersResponse',
   '2': [
-    {'1': 'triggers', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleTrigger', '10': 'triggers'},
+    {
+      '1': 'triggers',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleTrigger',
+      '10': 'triggers'
+    },
   ],
 };
 
 /// Descriptor for `ListMyTriggersResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyTriggersResponseDescriptor = $convert.base64Decode(
-    'ChZMaXN0TXlUcmlnZ2Vyc1Jlc3BvbnNlEj0KCHRyaWdnZXJzGAEgAygLMiEuc3R0YXR0dXMub3'
-    'JhY2xlLnYxLk9yYWNsZVRyaWdnZXJSCHRyaWdnZXJz');
+final $typed_data.Uint8List listMyTriggersResponseDescriptor =
+    $convert.base64Decode(
+        'ChZMaXN0TXlUcmlnZ2Vyc1Jlc3BvbnNlEj0KCHRyaWdnZXJzGAEgAygLMiEuc3R0YXR0dXMub3'
+        'JhY2xlLnYxLk9yYWNsZVRyaWdnZXJSCHRyaWdnZXJz');
 
 @$core.Deprecated('Use deleteTriggerRequestDescriptor instead')
 const DeleteTriggerRequest$json = {
@@ -900,8 +1127,8 @@ const DeleteTriggerResponse$json = {
 };
 
 /// Descriptor for `DeleteTriggerResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteTriggerResponseDescriptor = $convert.base64Decode(
-    'ChVEZWxldGVUcmlnZ2VyUmVzcG9uc2U=');
+final $typed_data.Uint8List deleteTriggerResponseDescriptor =
+    $convert.base64Decode('ChVEZWxldGVUcmlnZ2VyUmVzcG9uc2U=');
 
 @$core.Deprecated('Use inboxItemDescriptor instead')
 const InboxItem$json = {
@@ -930,14 +1157,21 @@ const GetInboxRequest$json = {
 };
 
 /// Descriptor for `GetInboxRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInboxRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRJbmJveFJlcXVlc3Q=');
+final $typed_data.Uint8List getInboxRequestDescriptor =
+    $convert.base64Decode('Cg9HZXRJbmJveFJlcXVlc3Q=');
 
 @$core.Deprecated('Use getInboxResponseDescriptor instead')
 const GetInboxResponse$json = {
   '1': 'GetInboxResponse',
   '2': [
-    {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.InboxItem', '10': 'items'},
+    {
+      '1': 'items',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.InboxItem',
+      '10': 'items'
+    },
   ],
 };
 
@@ -984,14 +1218,22 @@ final $typed_data.Uint8List createDocumentRequestDescriptor = $convert.base64Dec
 const CreateDocumentResponse$json = {
   '1': 'CreateDocumentResponse',
   '2': [
-    {'1': 'document', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleDocument', '10': 'document'},
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleDocument',
+      '10': 'document'
+    },
   ],
 };
 
 /// Descriptor for `CreateDocumentResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createDocumentResponseDescriptor = $convert.base64Decode(
-    'ChZDcmVhdGVEb2N1bWVudFJlc3BvbnNlEj4KCGRvY3VtZW50GAEgASgLMiIuc3R0YXR0dXMub3'
-    'JhY2xlLnYxLk9yYWNsZURvY3VtZW50Ughkb2N1bWVudA==');
+final $typed_data.Uint8List createDocumentResponseDescriptor =
+    $convert.base64Decode(
+        'ChZDcmVhdGVEb2N1bWVudFJlc3BvbnNlEj4KCGRvY3VtZW50GAEgASgLMiIuc3R0YXR0dXMub3'
+        'JhY2xlLnYxLk9yYWNsZURvY3VtZW50Ughkb2N1bWVudA==');
 
 @$core.Deprecated('Use listMyDocumentsRequestDescriptor instead')
 const ListMyDocumentsRequest$json = {
@@ -999,21 +1241,29 @@ const ListMyDocumentsRequest$json = {
 };
 
 /// Descriptor for `ListMyDocumentsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyDocumentsRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0TXlEb2N1bWVudHNSZXF1ZXN0');
+final $typed_data.Uint8List listMyDocumentsRequestDescriptor =
+    $convert.base64Decode('ChZMaXN0TXlEb2N1bWVudHNSZXF1ZXN0');
 
 @$core.Deprecated('Use listMyDocumentsResponseDescriptor instead')
 const ListMyDocumentsResponse$json = {
   '1': 'ListMyDocumentsResponse',
   '2': [
-    {'1': 'documents', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.OracleDocument', '10': 'documents'},
+    {
+      '1': 'documents',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleDocument',
+      '10': 'documents'
+    },
   ],
 };
 
 /// Descriptor for `ListMyDocumentsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyDocumentsResponseDescriptor = $convert.base64Decode(
-    'ChdMaXN0TXlEb2N1bWVudHNSZXNwb25zZRJACglkb2N1bWVudHMYASADKAsyIi5zdHRhdHR1cy'
-    '5vcmFjbGUudjEuT3JhY2xlRG9jdW1lbnRSCWRvY3VtZW50cw==');
+final $typed_data.Uint8List listMyDocumentsResponseDescriptor =
+    $convert.base64Decode(
+        'ChdMaXN0TXlEb2N1bWVudHNSZXNwb25zZRJACglkb2N1bWVudHMYASADKAsyIi5zdHRhdHR1cy'
+        '5vcmFjbGUudjEuT3JhY2xlRG9jdW1lbnRSCWRvY3VtZW50cw==');
 
 @$core.Deprecated('Use getDocumentRequestDescriptor instead')
 const GetDocumentRequest$json = {
@@ -1031,7 +1281,14 @@ final $typed_data.Uint8List getDocumentRequestDescriptor = $convert.base64Decode
 const GetDocumentResponse$json = {
   '1': 'GetDocumentResponse',
   '2': [
-    {'1': 'document', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleDocument', '10': 'document'},
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleDocument',
+      '10': 'document'
+    },
   ],
 };
 
@@ -1059,14 +1316,22 @@ final $typed_data.Uint8List updateDocumentRequestDescriptor = $convert.base64Dec
 const UpdateDocumentResponse$json = {
   '1': 'UpdateDocumentResponse',
   '2': [
-    {'1': 'document', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleDocument', '10': 'document'},
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleDocument',
+      '10': 'document'
+    },
   ],
 };
 
 /// Descriptor for `UpdateDocumentResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateDocumentResponseDescriptor = $convert.base64Decode(
-    'ChZVcGRhdGVEb2N1bWVudFJlc3BvbnNlEj4KCGRvY3VtZW50GAEgASgLMiIuc3R0YXR0dXMub3'
-    'JhY2xlLnYxLk9yYWNsZURvY3VtZW50Ughkb2N1bWVudA==');
+final $typed_data.Uint8List updateDocumentResponseDescriptor =
+    $convert.base64Decode(
+        'ChZVcGRhdGVEb2N1bWVudFJlc3BvbnNlEj4KCGRvY3VtZW50GAEgASgLMiIuc3R0YXR0dXMub3'
+        'JhY2xlLnYxLk9yYWNsZURvY3VtZW50Ughkb2N1bWVudA==');
 
 @$core.Deprecated('Use deleteDocumentRequestDescriptor instead')
 const DeleteDocumentRequest$json = {
@@ -1087,8 +1352,8 @@ const DeleteDocumentResponse$json = {
 };
 
 /// Descriptor for `DeleteDocumentResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteDocumentResponseDescriptor = $convert.base64Decode(
-    'ChZEZWxldGVEb2N1bWVudFJlc3BvbnNl');
+final $typed_data.Uint8List deleteDocumentResponseDescriptor =
+    $convert.base64Decode('ChZEZWxldGVEb2N1bWVudFJlc3BvbnNl');
 
 @$core.Deprecated('Use draftDocumentRequestDescriptor instead')
 const DraftDocumentRequest$json = {
@@ -1108,7 +1373,14 @@ final $typed_data.Uint8List draftDocumentRequestDescriptor = $convert.base64Deco
 const DraftDocumentResponse$json = {
   '1': 'DraftDocumentResponse',
   '2': [
-    {'1': 'document', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.OracleDocument', '10': 'document'},
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.OracleDocument',
+      '10': 'document'
+    },
     {'1': 'err', '3': 2, '4': 1, '5': 9, '10': 'err'},
   ],
 };
@@ -1165,22 +1437,31 @@ const StartConciergeThreadRequest$json = {
 };
 
 /// Descriptor for `StartConciergeThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List startConciergeThreadRequestDescriptor = $convert.base64Decode(
-    'ChtTdGFydENvbmNpZXJnZVRocmVhZFJlcXVlc3QSGAoHc3ViamVjdBgBIAEoCVIHc3ViamVjdB'
-    'InCg9vcGVuaW5nX21lc3NhZ2UYAiABKAlSDm9wZW5pbmdNZXNzYWdl');
+final $typed_data.Uint8List startConciergeThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChtTdGFydENvbmNpZXJnZVRocmVhZFJlcXVlc3QSGAoHc3ViamVjdBgBIAEoCVIHc3ViamVjdB'
+        'InCg9vcGVuaW5nX21lc3NhZ2UYAiABKAlSDm9wZW5pbmdNZXNzYWdl');
 
 @$core.Deprecated('Use startConciergeThreadResponseDescriptor instead')
 const StartConciergeThreadResponse$json = {
   '1': 'StartConciergeThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ConciergeThread', '10': 'thread'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ConciergeThread',
+      '10': 'thread'
+    },
   ],
 };
 
 /// Descriptor for `StartConciergeThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List startConciergeThreadResponseDescriptor = $convert.base64Decode(
-    'ChxTdGFydENvbmNpZXJnZVRocmVhZFJlc3BvbnNlEjsKBnRocmVhZBgBIAEoCzIjLnN0dGF0dH'
-    'VzLm9yYWNsZS52MS5Db25jaWVyZ2VUaHJlYWRSBnRocmVhZA==');
+final $typed_data.Uint8List startConciergeThreadResponseDescriptor =
+    $convert.base64Decode(
+        'ChxTdGFydENvbmNpZXJnZVRocmVhZFJlc3BvbnNlEjsKBnRocmVhZBgBIAEoCzIjLnN0dGF0dH'
+        'VzLm9yYWNsZS52MS5Db25jaWVyZ2VUaHJlYWRSBnRocmVhZA==');
 
 @$core.Deprecated('Use listMyConciergeThreadsRequestDescriptor instead')
 const ListMyConciergeThreadsRequest$json = {
@@ -1188,21 +1469,29 @@ const ListMyConciergeThreadsRequest$json = {
 };
 
 /// Descriptor for `ListMyConciergeThreadsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyConciergeThreadsRequestDescriptor = $convert.base64Decode(
-    'Ch1MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVxdWVzdA==');
+final $typed_data.Uint8List listMyConciergeThreadsRequestDescriptor =
+    $convert.base64Decode('Ch1MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listMyConciergeThreadsResponseDescriptor instead')
 const ListMyConciergeThreadsResponse$json = {
   '1': 'ListMyConciergeThreadsResponse',
   '2': [
-    {'1': 'threads', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.ConciergeThread', '10': 'threads'},
+    {
+      '1': 'threads',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ConciergeThread',
+      '10': 'threads'
+    },
   ],
 };
 
 /// Descriptor for `ListMyConciergeThreadsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyConciergeThreadsResponseDescriptor = $convert.base64Decode(
-    'Ch5MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVzcG9uc2USPQoHdGhyZWFkcxgBIAMoCzIjLnN0dG'
-    'F0dHVzLm9yYWNsZS52MS5Db25jaWVyZ2VUaHJlYWRSB3RocmVhZHM=');
+final $typed_data.Uint8List listMyConciergeThreadsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0TXlDb25jaWVyZ2VUaHJlYWRzUmVzcG9uc2USPQoHdGhyZWFkcxgBIAMoCzIjLnN0dG'
+        'F0dHVzLm9yYWNsZS52MS5Db25jaWVyZ2VUaHJlYWRSB3RocmVhZHM=');
 
 @$core.Deprecated('Use getConciergeThreadRequestDescriptor instead')
 const GetConciergeThreadRequest$json = {
@@ -1213,24 +1502,40 @@ const GetConciergeThreadRequest$json = {
 };
 
 /// Descriptor for `GetConciergeThreadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getConciergeThreadRequestDescriptor = $convert.base64Decode(
-    'ChlHZXRDb25jaWVyZ2VUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
-    'Q=');
+final $typed_data.Uint8List getConciergeThreadRequestDescriptor =
+    $convert.base64Decode(
+        'ChlHZXRDb25jaWVyZ2VUaHJlYWRSZXF1ZXN0EhsKCXRocmVhZF9pZBgBIAEoCVIIdGhyZWFkSW'
+        'Q=');
 
 @$core.Deprecated('Use getConciergeThreadResponseDescriptor instead')
 const GetConciergeThreadResponse$json = {
   '1': 'GetConciergeThreadResponse',
   '2': [
-    {'1': 'thread', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ConciergeThread', '10': 'thread'},
-    {'1': 'messages', '3': 2, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.ConciergeMessage', '10': 'messages'},
+    {
+      '1': 'thread',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ConciergeThread',
+      '10': 'thread'
+    },
+    {
+      '1': 'messages',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ConciergeMessage',
+      '10': 'messages'
+    },
   ],
 };
 
 /// Descriptor for `GetConciergeThreadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getConciergeThreadResponseDescriptor = $convert.base64Decode(
-    'ChpHZXRDb25jaWVyZ2VUaHJlYWRSZXNwb25zZRI7CgZ0aHJlYWQYASABKAsyIy5zdHRhdHR1cy'
-    '5vcmFjbGUudjEuQ29uY2llcmdlVGhyZWFkUgZ0aHJlYWQSQAoIbWVzc2FnZXMYAiADKAsyJC5z'
-    'dHRhdHR1cy5vcmFjbGUudjEuQ29uY2llcmdlTWVzc2FnZVIIbWVzc2FnZXM=');
+final $typed_data.Uint8List getConciergeThreadResponseDescriptor =
+    $convert.base64Decode(
+        'ChpHZXRDb25jaWVyZ2VUaHJlYWRSZXNwb25zZRI7CgZ0aHJlYWQYASABKAsyIy5zdHRhdHR1cy'
+        '5vcmFjbGUudjEuQ29uY2llcmdlVGhyZWFkUgZ0aHJlYWQSQAoIbWVzc2FnZXMYAiADKAsyJC5z'
+        'dHRhdHR1cy5vcmFjbGUudjEuQ29uY2llcmdlTWVzc2FnZVIIbWVzc2FnZXM=');
 
 @$core.Deprecated('Use postConciergeMessageRequestDescriptor instead')
 const PostConciergeMessageRequest$json = {
@@ -1242,22 +1547,31 @@ const PostConciergeMessageRequest$json = {
 };
 
 /// Descriptor for `PostConciergeMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postConciergeMessageRequestDescriptor = $convert.base64Decode(
-    'ChtQb3N0Q29uY2llcmdlTWVzc2FnZVJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYW'
-    'RJZBISCgRib2R5GAIgASgJUgRib2R5');
+final $typed_data.Uint8List postConciergeMessageRequestDescriptor =
+    $convert.base64Decode(
+        'ChtQb3N0Q29uY2llcmdlTWVzc2FnZVJlcXVlc3QSGwoJdGhyZWFkX2lkGAEgASgJUgh0aHJlYW'
+        'RJZBISCgRib2R5GAIgASgJUgRib2R5');
 
 @$core.Deprecated('Use postConciergeMessageResponseDescriptor instead')
 const PostConciergeMessageResponse$json = {
   '1': 'PostConciergeMessageResponse',
   '2': [
-    {'1': 'message', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.ConciergeMessage', '10': 'message'},
+    {
+      '1': 'message',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.ConciergeMessage',
+      '10': 'message'
+    },
   ],
 };
 
 /// Descriptor for `PostConciergeMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List postConciergeMessageResponseDescriptor = $convert.base64Decode(
-    'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
-    'R1cy5vcmFjbGUudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
+final $typed_data.Uint8List postConciergeMessageResponseDescriptor =
+    $convert.base64Decode(
+        'ChxQb3N0Q29uY2llcmdlTWVzc2FnZVJlc3BvbnNlEj4KB21lc3NhZ2UYASABKAsyJC5zdHRhdH'
+        'R1cy5vcmFjbGUudjEuQ29uY2llcmdlTWVzc2FnZVIHbWVzc2FnZQ==');
 
 @$core.Deprecated('Use anthologyArticleDescriptor instead')
 const AnthologyArticle$json = {
@@ -1288,21 +1602,29 @@ const ListAnthologyArticlesRequest$json = {
 };
 
 /// Descriptor for `ListAnthologyArticlesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor = $convert.base64Decode(
-    'ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0');
+final $typed_data.Uint8List listAnthologyArticlesRequestDescriptor =
+    $convert.base64Decode('ChxMaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXF1ZXN0');
 
 @$core.Deprecated('Use listAnthologyArticlesResponseDescriptor instead')
 const ListAnthologyArticlesResponse$json = {
   '1': 'ListAnthologyArticlesResponse',
   '2': [
-    {'1': 'articles', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.AnthologyArticle', '10': 'articles'},
+    {
+      '1': 'articles',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.AnthologyArticle',
+      '10': 'articles'
+    },
   ],
 };
 
 /// Descriptor for `ListAnthologyArticlesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor = $convert.base64Decode(
-    'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJACghhcnRpY2xlcxgBIAMoCzIkLnN0dG'
-    'F0dHVzLm9yYWNsZS52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
+final $typed_data.Uint8List listAnthologyArticlesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0QW50aG9sb2d5QXJ0aWNsZXNSZXNwb25zZRJACghhcnRpY2xlcxgBIAMoCzIkLnN0dG'
+        'F0dHVzLm9yYWNsZS52MS5BbnRob2xvZ3lBcnRpY2xlUghhcnRpY2xlcw==');
 
 @$core.Deprecated('Use getAnthologyArticleRequestDescriptor instead')
 const GetAnthologyArticleRequest$json = {
@@ -1313,22 +1635,31 @@ const GetAnthologyArticleRequest$json = {
 };
 
 /// Descriptor for `GetAnthologyArticleRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAnthologyArticleRequestDescriptor = $convert.base64Decode(
-    'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBIdCgphcnRpY2xlX2lkGAEgASgJUglhcnRpY2'
-    'xlSWQ=');
+final $typed_data.Uint8List getAnthologyArticleRequestDescriptor =
+    $convert.base64Decode(
+        'ChpHZXRBbnRob2xvZ3lBcnRpY2xlUmVxdWVzdBIdCgphcnRpY2xlX2lkGAEgASgJUglhcnRpY2'
+        'xlSWQ=');
 
 @$core.Deprecated('Use getAnthologyArticleResponseDescriptor instead')
 const GetAnthologyArticleResponse$json = {
   '1': 'GetAnthologyArticleResponse',
   '2': [
-    {'1': 'article', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.AnthologyArticle', '10': 'article'},
+    {
+      '1': 'article',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.AnthologyArticle',
+      '10': 'article'
+    },
   ],
 };
 
 /// Descriptor for `GetAnthologyArticleResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAnthologyArticleResponseDescriptor = $convert.base64Decode(
-    'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPgoHYXJ0aWNsZRgBIAEoCzIkLnN0dGF0dH'
-    'VzLm9yYWNsZS52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
+final $typed_data.Uint8List getAnthologyArticleResponseDescriptor =
+    $convert.base64Decode(
+        'ChtHZXRBbnRob2xvZ3lBcnRpY2xlUmVzcG9uc2USPgoHYXJ0aWNsZRgBIAEoCzIkLnN0dGF0dH'
+        'VzLm9yYWNsZS52MS5BbnRob2xvZ3lBcnRpY2xlUgdhcnRpY2xl');
 
 @$core.Deprecated('Use briefShareDescriptor instead')
 const BriefShare$json = {
@@ -1358,22 +1689,31 @@ const CreateBriefShareRequest$json = {
 };
 
 /// Descriptor for `CreateBriefShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createBriefShareRequestDescriptor = $convert.base64Decode(
-    'ChdDcmVhdGVCcmllZlNoYXJlUmVxdWVzdBIfCgtkb2N1bWVudF9pZBgBIAEoCVIKZG9jdW1lbn'
-    'RJZBIZCgh0dGxfZGF5cxgCIAEoBVIHdHRsRGF5cw==');
+final $typed_data.Uint8List createBriefShareRequestDescriptor =
+    $convert.base64Decode(
+        'ChdDcmVhdGVCcmllZlNoYXJlUmVxdWVzdBIfCgtkb2N1bWVudF9pZBgBIAEoCVIKZG9jdW1lbn'
+        'RJZBIZCgh0dGxfZGF5cxgCIAEoBVIHdHRsRGF5cw==');
 
 @$core.Deprecated('Use createBriefShareResponseDescriptor instead')
 const CreateBriefShareResponse$json = {
   '1': 'CreateBriefShareResponse',
   '2': [
-    {'1': 'share', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.BriefShare', '10': 'share'},
+    {
+      '1': 'share',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.BriefShare',
+      '10': 'share'
+    },
   ],
 };
 
 /// Descriptor for `CreateBriefShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createBriefShareResponseDescriptor = $convert.base64Decode(
-    'ChhDcmVhdGVCcmllZlNoYXJlUmVzcG9uc2USNAoFc2hhcmUYASABKAsyHi5zdHRhdHR1cy5vcm'
-    'FjbGUudjEuQnJpZWZTaGFyZVIFc2hhcmU=');
+final $typed_data.Uint8List createBriefShareResponseDescriptor =
+    $convert.base64Decode(
+        'ChhDcmVhdGVCcmllZlNoYXJlUmVzcG9uc2USNAoFc2hhcmUYASABKAsyHi5zdHRhdHR1cy5vcm'
+        'FjbGUudjEuQnJpZWZTaGFyZVIFc2hhcmU=');
 
 @$core.Deprecated('Use listMyBriefSharesRequestDescriptor instead')
 const ListMyBriefSharesRequest$json = {
@@ -1381,21 +1721,29 @@ const ListMyBriefSharesRequest$json = {
 };
 
 /// Descriptor for `ListMyBriefSharesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyBriefSharesRequestDescriptor = $convert.base64Decode(
-    'ChhMaXN0TXlCcmllZlNoYXJlc1JlcXVlc3Q=');
+final $typed_data.Uint8List listMyBriefSharesRequestDescriptor =
+    $convert.base64Decode('ChhMaXN0TXlCcmllZlNoYXJlc1JlcXVlc3Q=');
 
 @$core.Deprecated('Use listMyBriefSharesResponseDescriptor instead')
 const ListMyBriefSharesResponse$json = {
   '1': 'ListMyBriefSharesResponse',
   '2': [
-    {'1': 'shares', '3': 1, '4': 3, '5': 11, '6': '.sttattus.oracle.v1.BriefShare', '10': 'shares'},
+    {
+      '1': 'shares',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.BriefShare',
+      '10': 'shares'
+    },
   ],
 };
 
 /// Descriptor for `ListMyBriefSharesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listMyBriefSharesResponseDescriptor = $convert.base64Decode(
-    'ChlMaXN0TXlCcmllZlNoYXJlc1Jlc3BvbnNlEjYKBnNoYXJlcxgBIAMoCzIeLnN0dGF0dHVzLm'
-    '9yYWNsZS52MS5CcmllZlNoYXJlUgZzaGFyZXM=');
+final $typed_data.Uint8List listMyBriefSharesResponseDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0TXlCcmllZlNoYXJlc1Jlc3BvbnNlEjYKBnNoYXJlcxgBIAMoCzIeLnN0dGF0dHVzLm'
+        '9yYWNsZS52MS5CcmllZlNoYXJlUgZzaGFyZXM=');
 
 @$core.Deprecated('Use revokeBriefShareRequestDescriptor instead')
 const RevokeBriefShareRequest$json = {
@@ -1406,8 +1754,9 @@ const RevokeBriefShareRequest$json = {
 };
 
 /// Descriptor for `RevokeBriefShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List revokeBriefShareRequestDescriptor = $convert.base64Decode(
-    'ChdSZXZva2VCcmllZlNoYXJlUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG9rZW4=');
+final $typed_data.Uint8List revokeBriefShareRequestDescriptor =
+    $convert.base64Decode(
+        'ChdSZXZva2VCcmllZlNoYXJlUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG9rZW4=');
 
 @$core.Deprecated('Use revokeBriefShareResponseDescriptor instead')
 const RevokeBriefShareResponse$json = {
@@ -1415,15 +1764,21 @@ const RevokeBriefShareResponse$json = {
 };
 
 /// Descriptor for `RevokeBriefShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List revokeBriefShareResponseDescriptor = $convert.base64Decode(
-    'ChhSZXZva2VCcmllZlNoYXJlUmVzcG9uc2U=');
+final $typed_data.Uint8List revokeBriefShareResponseDescriptor =
+    $convert.base64Decode('ChhSZXZva2VCcmllZlNoYXJlUmVzcG9uc2U=');
 
 @$core.Deprecated('Use yearInOracleRecapDescriptor instead')
 const YearInOracleRecap$json = {
   '1': 'YearInOracleRecap',
   '2': [
     {'1': 'year', '3': 1, '4': 1, '5': 9, '10': 'year'},
-    {'1': 'intellectual_rank', '3': 2, '4': 1, '5': 1, '10': 'intellectualRank'},
+    {
+      '1': 'intellectual_rank',
+      '3': 2,
+      '4': 1,
+      '5': 1,
+      '10': 'intellectualRank'
+    },
     {'1': 'rank_label', '3': 3, '4': 1, '5': 9, '10': 'rankLabel'},
     {'1': 'total_inquiries', '3': 4, '4': 1, '5': 5, '10': 'totalInquiries'},
     {'1': 'unique_domains', '3': 5, '4': 1, '5': 5, '10': 'uniqueDomains'},
@@ -1450,21 +1805,29 @@ const GetYearInOracleRecapRequest$json = {
 };
 
 /// Descriptor for `GetYearInOracleRecapRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getYearInOracleRecapRequestDescriptor = $convert.base64Decode(
-    'ChtHZXRZZWFySW5PcmFjbGVSZWNhcFJlcXVlc3Q=');
+final $typed_data.Uint8List getYearInOracleRecapRequestDescriptor =
+    $convert.base64Decode('ChtHZXRZZWFySW5PcmFjbGVSZWNhcFJlcXVlc3Q=');
 
 @$core.Deprecated('Use getYearInOracleRecapResponseDescriptor instead')
 const GetYearInOracleRecapResponse$json = {
   '1': 'GetYearInOracleRecapResponse',
   '2': [
-    {'1': 'recap', '3': 1, '4': 1, '5': 11, '6': '.sttattus.oracle.v1.YearInOracleRecap', '10': 'recap'},
+    {
+      '1': 'recap',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.oracle.v1.YearInOracleRecap',
+      '10': 'recap'
+    },
   ],
 };
 
 /// Descriptor for `GetYearInOracleRecapResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getYearInOracleRecapResponseDescriptor = $convert.base64Decode(
-    'ChxHZXRZZWFySW5PcmFjbGVSZWNhcFJlc3BvbnNlEjsKBXJlY2FwGAEgASgLMiUuc3R0YXR0dX'
-    'Mub3JhY2xlLnYxLlllYXJJbk9yYWNsZVJlY2FwUgVyZWNhcA==');
+final $typed_data.Uint8List getYearInOracleRecapResponseDescriptor =
+    $convert.base64Decode(
+        'ChxHZXRZZWFySW5PcmFjbGVSZWNhcFJlc3BvbnNlEjsKBXJlY2FwGAEgASgLMiUuc3R0YXR0dX'
+        'Mub3JhY2xlLnYxLlllYXJJbk9yYWNsZVJlY2FwUgVyZWNhcA==');
 
 @$core.Deprecated('Use generateYearInOracleRequestDescriptor instead')
 const GenerateYearInOracleRequest$json = {
@@ -1472,8 +1835,8 @@ const GenerateYearInOracleRequest$json = {
 };
 
 /// Descriptor for `GenerateYearInOracleRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateYearInOracleRequestDescriptor = $convert.base64Decode(
-    'ChtHZW5lcmF0ZVllYXJJbk9yYWNsZVJlcXVlc3Q=');
+final $typed_data.Uint8List generateYearInOracleRequestDescriptor =
+    $convert.base64Decode('ChtHZW5lcmF0ZVllYXJJbk9yYWNsZVJlcXVlc3Q=');
 
 @$core.Deprecated('Use generateYearInOracleResponseDescriptor instead')
 const GenerateYearInOracleResponse$json = {
@@ -1485,7 +1848,7 @@ const GenerateYearInOracleResponse$json = {
 };
 
 /// Descriptor for `GenerateYearInOracleResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateYearInOracleResponseDescriptor = $convert.base64Decode(
-    'ChxHZW5lcmF0ZVllYXJJbk9yYWNsZVJlc3BvbnNlEhAKA3VybBgBIAEoCVIDdXJsEh0KCnBhZ2'
-    'VfY291bnQYAiABKAVSCXBhZ2VDb3VudA==');
-
+final $typed_data.Uint8List generateYearInOracleResponseDescriptor =
+    $convert.base64Decode(
+        'ChxHZW5lcmF0ZVllYXJJbk9yYWNsZVJlc3BvbnNlEhAKA3VybBgBIAEoCVIDdXJsEh0KCnBhZ2'
+        'VfY291bnQYAiABKAVSCXBhZ2VDb3VudA==');

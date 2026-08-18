@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -34,21 +34,30 @@ class WorkoutSeriesInput extends $pb.GeneratedMessage {
 
   WorkoutSeriesInput._();
 
-  factory WorkoutSeriesInput.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory WorkoutSeriesInput.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory WorkoutSeriesInput.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory WorkoutSeriesInput.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'WorkoutSeriesInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'setIndex', $pb.PbFieldType.O3)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'WorkoutSeriesInput',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'setIndex')
+    ..aD(2, _omitFieldNames ? '' : 'weight')
+    ..aI(3, _omitFieldNames ? '' : 'reps')
     ..aOS(4, _omitFieldNames ? '' : 'unit')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  WorkoutSeriesInput clone() => WorkoutSeriesInput()..mergeFromMessage(this);
+  WorkoutSeriesInput clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  WorkoutSeriesInput copyWith(void Function(WorkoutSeriesInput) updates) => super.copyWith((message) => updates(message as WorkoutSeriesInput)) as WorkoutSeriesInput;
+  WorkoutSeriesInput copyWith(void Function(WorkoutSeriesInput) updates) =>
+      super.copyWith((message) => updates(message as WorkoutSeriesInput))
+          as WorkoutSeriesInput;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -57,9 +66,9 @@ class WorkoutSeriesInput extends $pb.GeneratedMessage {
   static WorkoutSeriesInput create() => WorkoutSeriesInput._();
   @$core.override
   WorkoutSeriesInput createEmptyInstance() => create();
-  static $pb.PbList<WorkoutSeriesInput> createRepeated() => $pb.PbList<WorkoutSeriesInput>();
   @$core.pragma('dart2js:noInline')
-  static WorkoutSeriesInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WorkoutSeriesInput>(create);
+  static WorkoutSeriesInput getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<WorkoutSeriesInput>(create);
   static WorkoutSeriesInput? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -118,22 +127,32 @@ class ScoreWorkoutRequest extends $pb.GeneratedMessage {
 
   ScoreWorkoutRequest._();
 
-  factory ScoreWorkoutRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreWorkoutRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreWorkoutRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreWorkoutRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreWorkoutRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreWorkoutRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'currentPower', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'currentAgility', $pb.PbFieldType.O3)
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'currentGrit', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..pPM<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series',
+        subBuilder: WorkoutSeriesInput.create)
+    ..aI(3, _omitFieldNames ? '' : 'currentPower')
+    ..aI(4, _omitFieldNames ? '' : 'currentAgility')
+    ..aI(5, _omitFieldNames ? '' : 'currentGrit')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreWorkoutRequest clone() => ScoreWorkoutRequest()..mergeFromMessage(this);
+  ScoreWorkoutRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreWorkoutRequest copyWith(void Function(ScoreWorkoutRequest) updates) => super.copyWith((message) => updates(message as ScoreWorkoutRequest)) as ScoreWorkoutRequest;
+  ScoreWorkoutRequest copyWith(void Function(ScoreWorkoutRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreWorkoutRequest))
+          as ScoreWorkoutRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -142,9 +161,9 @@ class ScoreWorkoutRequest extends $pb.GeneratedMessage {
   static ScoreWorkoutRequest create() => ScoreWorkoutRequest._();
   @$core.override
   ScoreWorkoutRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreWorkoutRequest> createRepeated() => $pb.PbList<ScoreWorkoutRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreWorkoutRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreWorkoutRequest>(create);
+  static ScoreWorkoutRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreWorkoutRequest>(create);
   static ScoreWorkoutRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -206,21 +225,30 @@ class ScoreWorkoutResponse extends $pb.GeneratedMessage {
 
   ScoreWorkoutResponse._();
 
-  factory ScoreWorkoutResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreWorkoutResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreWorkoutResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreWorkoutResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreWorkoutResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreWorkoutResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'experienceDelta')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'powerDelta', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'agilityDelta', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'gritDelta', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'powerDelta')
+    ..aI(3, _omitFieldNames ? '' : 'agilityDelta')
+    ..aI(4, _omitFieldNames ? '' : 'gritDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreWorkoutResponse clone() => ScoreWorkoutResponse()..mergeFromMessage(this);
+  ScoreWorkoutResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreWorkoutResponse copyWith(void Function(ScoreWorkoutResponse) updates) => super.copyWith((message) => updates(message as ScoreWorkoutResponse)) as ScoreWorkoutResponse;
+  ScoreWorkoutResponse copyWith(void Function(ScoreWorkoutResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreWorkoutResponse))
+          as ScoreWorkoutResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -229,9 +257,9 @@ class ScoreWorkoutResponse extends $pb.GeneratedMessage {
   static ScoreWorkoutResponse create() => ScoreWorkoutResponse._();
   @$core.override
   ScoreWorkoutResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreWorkoutResponse> createRepeated() => $pb.PbList<ScoreWorkoutResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreWorkoutResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreWorkoutResponse>(create);
+  static ScoreWorkoutResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreWorkoutResponse>(create);
   static ScoreWorkoutResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -286,40 +314,53 @@ class ScoreLexicalProgressRequest extends $pb.GeneratedMessage {
     if (scoreDelta != null) result.scoreDelta = scoreDelta;
     if (mastered != null) result.mastered = mastered;
     if (currentEloquence != null) result.currentEloquence = currentEloquence;
-    if (currentLexicalDepth != null) result.currentLexicalDepth = currentLexicalDepth;
+    if (currentLexicalDepth != null)
+      result.currentLexicalDepth = currentLexicalDepth;
     return result;
   }
 
   ScoreLexicalProgressRequest._();
 
-  factory ScoreLexicalProgressRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreLexicalProgressRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreLexicalProgressRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreLexicalProgressRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreLexicalProgressRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreLexicalProgressRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..aOS(2, _omitFieldNames ? '' : 'wordId')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'scoreDelta', $pb.PbFieldType.O3)
+    ..aI(3, _omitFieldNames ? '' : 'scoreDelta')
     ..aOB(4, _omitFieldNames ? '' : 'mastered')
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'currentEloquence', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'currentLexicalDepth', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aI(5, _omitFieldNames ? '' : 'currentEloquence')
+    ..aI(6, _omitFieldNames ? '' : 'currentLexicalDepth')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLexicalProgressRequest clone() => ScoreLexicalProgressRequest()..mergeFromMessage(this);
+  ScoreLexicalProgressRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLexicalProgressRequest copyWith(void Function(ScoreLexicalProgressRequest) updates) => super.copyWith((message) => updates(message as ScoreLexicalProgressRequest)) as ScoreLexicalProgressRequest;
+  ScoreLexicalProgressRequest copyWith(
+          void Function(ScoreLexicalProgressRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreLexicalProgressRequest))
+          as ScoreLexicalProgressRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreLexicalProgressRequest create() => ScoreLexicalProgressRequest._();
+  static ScoreLexicalProgressRequest create() =>
+      ScoreLexicalProgressRequest._();
   @$core.override
   ScoreLexicalProgressRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreLexicalProgressRequest> createRepeated() => $pb.PbList<ScoreLexicalProgressRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreLexicalProgressRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreLexicalProgressRequest>(create);
+  static ScoreLexicalProgressRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreLexicalProgressRequest>(create);
   static ScoreLexicalProgressRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -390,30 +431,42 @@ class ScoreLexicalProgressResponse extends $pb.GeneratedMessage {
 
   ScoreLexicalProgressResponse._();
 
-  factory ScoreLexicalProgressResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreLexicalProgressResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreLexicalProgressResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreLexicalProgressResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreLexicalProgressResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'eloquenceDelta', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'lexicalDepthDelta', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreLexicalProgressResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'eloquenceDelta')
+    ..aI(2, _omitFieldNames ? '' : 'lexicalDepthDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLexicalProgressResponse clone() => ScoreLexicalProgressResponse()..mergeFromMessage(this);
+  ScoreLexicalProgressResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLexicalProgressResponse copyWith(void Function(ScoreLexicalProgressResponse) updates) => super.copyWith((message) => updates(message as ScoreLexicalProgressResponse)) as ScoreLexicalProgressResponse;
+  ScoreLexicalProgressResponse copyWith(
+          void Function(ScoreLexicalProgressResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreLexicalProgressResponse))
+          as ScoreLexicalProgressResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreLexicalProgressResponse create() => ScoreLexicalProgressResponse._();
+  static ScoreLexicalProgressResponse create() =>
+      ScoreLexicalProgressResponse._();
   @$core.override
   ScoreLexicalProgressResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreLexicalProgressResponse> createRepeated() => $pb.PbList<ScoreLexicalProgressResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreLexicalProgressResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreLexicalProgressResponse>(create);
+  static ScoreLexicalProgressResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreLexicalProgressResponse>(create);
   static ScoreLexicalProgressResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -460,49 +513,66 @@ class ScoreMatchRequest extends $pb.GeneratedMessage {
     if (swiperVaultRank != null) result.swiperVaultRank = swiperVaultRank;
     if (swiperApexRank != null) result.swiperApexRank = swiperApexRank;
     if (swiperForgeRank != null) result.swiperForgeRank = swiperForgeRank;
-    if (swiperIntellectualPace != null) result.swiperIntellectualPace = swiperIntellectualPace;
-    if (swiperEmotionalGranularity != null) result.swiperEmotionalGranularity = swiperEmotionalGranularity;
-    if (swiperPhysicalDrive != null) result.swiperPhysicalDrive = swiperPhysicalDrive;
-    if (swiperSocialBattery != null) result.swiperSocialBattery = swiperSocialBattery;
+    if (swiperIntellectualPace != null)
+      result.swiperIntellectualPace = swiperIntellectualPace;
+    if (swiperEmotionalGranularity != null)
+      result.swiperEmotionalGranularity = swiperEmotionalGranularity;
+    if (swiperPhysicalDrive != null)
+      result.swiperPhysicalDrive = swiperPhysicalDrive;
+    if (swiperSocialBattery != null)
+      result.swiperSocialBattery = swiperSocialBattery;
     if (targetVaultRank != null) result.targetVaultRank = targetVaultRank;
     if (targetApexRank != null) result.targetApexRank = targetApexRank;
     if (targetForgeRank != null) result.targetForgeRank = targetForgeRank;
-    if (targetIntellectualPace != null) result.targetIntellectualPace = targetIntellectualPace;
-    if (targetEmotionalGranularity != null) result.targetEmotionalGranularity = targetEmotionalGranularity;
-    if (targetPhysicalDrive != null) result.targetPhysicalDrive = targetPhysicalDrive;
-    if (targetSocialBattery != null) result.targetSocialBattery = targetSocialBattery;
+    if (targetIntellectualPace != null)
+      result.targetIntellectualPace = targetIntellectualPace;
+    if (targetEmotionalGranularity != null)
+      result.targetEmotionalGranularity = targetEmotionalGranularity;
+    if (targetPhysicalDrive != null)
+      result.targetPhysicalDrive = targetPhysicalDrive;
+    if (targetSocialBattery != null)
+      result.targetSocialBattery = targetSocialBattery;
     return result;
   }
 
   ScoreMatchRequest._();
 
-  factory ScoreMatchRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreMatchRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreMatchRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreMatchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreMatchRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreMatchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'swiperUserId')
     ..aOS(2, _omitFieldNames ? '' : 'targetUserId')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'swiperVaultRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'swiperApexRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'swiperForgeRank', $pb.PbFieldType.OD)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'swiperIntellectualPace', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'swiperEmotionalGranularity', $pb.PbFieldType.O3)
-    ..a<$core.int>(8, _omitFieldNames ? '' : 'swiperPhysicalDrive', $pb.PbFieldType.O3)
-    ..a<$core.int>(9, _omitFieldNames ? '' : 'swiperSocialBattery', $pb.PbFieldType.O3)
-    ..a<$core.double>(10, _omitFieldNames ? '' : 'targetVaultRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(11, _omitFieldNames ? '' : 'targetApexRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(12, _omitFieldNames ? '' : 'targetForgeRank', $pb.PbFieldType.OD)
-    ..a<$core.int>(13, _omitFieldNames ? '' : 'targetIntellectualPace', $pb.PbFieldType.O3)
-    ..a<$core.int>(14, _omitFieldNames ? '' : 'targetEmotionalGranularity', $pb.PbFieldType.O3)
-    ..a<$core.int>(15, _omitFieldNames ? '' : 'targetPhysicalDrive', $pb.PbFieldType.O3)
-    ..a<$core.int>(16, _omitFieldNames ? '' : 'targetSocialBattery', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aD(3, _omitFieldNames ? '' : 'swiperVaultRank')
+    ..aD(4, _omitFieldNames ? '' : 'swiperApexRank')
+    ..aD(5, _omitFieldNames ? '' : 'swiperForgeRank')
+    ..aI(6, _omitFieldNames ? '' : 'swiperIntellectualPace')
+    ..aI(7, _omitFieldNames ? '' : 'swiperEmotionalGranularity')
+    ..aI(8, _omitFieldNames ? '' : 'swiperPhysicalDrive')
+    ..aI(9, _omitFieldNames ? '' : 'swiperSocialBattery')
+    ..aD(10, _omitFieldNames ? '' : 'targetVaultRank')
+    ..aD(11, _omitFieldNames ? '' : 'targetApexRank')
+    ..aD(12, _omitFieldNames ? '' : 'targetForgeRank')
+    ..aI(13, _omitFieldNames ? '' : 'targetIntellectualPace')
+    ..aI(14, _omitFieldNames ? '' : 'targetEmotionalGranularity')
+    ..aI(15, _omitFieldNames ? '' : 'targetPhysicalDrive')
+    ..aI(16, _omitFieldNames ? '' : 'targetSocialBattery')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreMatchRequest clone() => ScoreMatchRequest()..mergeFromMessage(this);
+  ScoreMatchRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreMatchRequest copyWith(void Function(ScoreMatchRequest) updates) => super.copyWith((message) => updates(message as ScoreMatchRequest)) as ScoreMatchRequest;
+  ScoreMatchRequest copyWith(void Function(ScoreMatchRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreMatchRequest))
+          as ScoreMatchRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -511,9 +581,9 @@ class ScoreMatchRequest extends $pb.GeneratedMessage {
   static ScoreMatchRequest create() => ScoreMatchRequest._();
   @$core.override
   ScoreMatchRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreMatchRequest> createRepeated() => $pb.PbList<ScoreMatchRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreMatchRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreMatchRequest>(create);
+  static ScoreMatchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreMatchRequest>(create);
   static ScoreMatchRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -638,7 +708,8 @@ class ScoreMatchRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.int get targetEmotionalGranularity => $_getIZ(13);
   @$pb.TagNumber(14)
-  set targetEmotionalGranularity($core.int value) => $_setSignedInt32(13, value);
+  set targetEmotionalGranularity($core.int value) =>
+      $_setSignedInt32(13, value);
   @$pb.TagNumber(14)
   $core.bool hasTargetEmotionalGranularity() => $_has(13);
   @$pb.TagNumber(14)
@@ -676,19 +747,28 @@ class ScoreMatchResponse extends $pb.GeneratedMessage {
 
   ScoreMatchResponse._();
 
-  factory ScoreMatchResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreMatchResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreMatchResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreMatchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreMatchResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'compatibility', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'tensionBaseline', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreMatchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'compatibility')
+    ..aD(2, _omitFieldNames ? '' : 'tensionBaseline')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreMatchResponse clone() => ScoreMatchResponse()..mergeFromMessage(this);
+  ScoreMatchResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreMatchResponse copyWith(void Function(ScoreMatchResponse) updates) => super.copyWith((message) => updates(message as ScoreMatchResponse)) as ScoreMatchResponse;
+  ScoreMatchResponse copyWith(void Function(ScoreMatchResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreMatchResponse))
+          as ScoreMatchResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -697,9 +777,9 @@ class ScoreMatchResponse extends $pb.GeneratedMessage {
   static ScoreMatchResponse create() => ScoreMatchResponse._();
   @$core.override
   ScoreMatchResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreMatchResponse> createRepeated() => $pb.PbList<ScoreMatchResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreMatchResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreMatchResponse>(create);
+  static ScoreMatchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreMatchResponse>(create);
   static ScoreMatchResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -745,7 +825,8 @@ class ScoreEmpireRequest extends $pb.GeneratedMessage {
     if (atlasBehavioral != null) result.atlasBehavioral = atlasBehavioral;
     if (vaultWealth != null) result.vaultWealth = vaultWealth;
     if (apexBiomarkers != null) result.apexBiomarkers = apexBiomarkers;
-    if (oracleIntelligence != null) result.oracleIntelligence = oracleIntelligence;
+    if (oracleIntelligence != null)
+      result.oracleIntelligence = oracleIntelligence;
     if (dominionEstate != null) result.dominionEstate = dominionEstate;
     if (legacyHeritage != null) result.legacyHeritage = legacyHeritage;
     if (zenithFocus != null) result.zenithFocus = zenithFocus;
@@ -756,30 +837,39 @@ class ScoreEmpireRequest extends $pb.GeneratedMessage {
 
   ScoreEmpireRequest._();
 
-  factory ScoreEmpireRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreEmpireRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreEmpireRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreEmpireRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreEmpireRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreEmpireRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'forgeExp', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'lexiconEloquence', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'nomadExploration', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'atlasBehavioral', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'vaultWealth', $pb.PbFieldType.OD)
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'apexBiomarkers', $pb.PbFieldType.OD)
-    ..a<$core.double>(8, _omitFieldNames ? '' : 'oracleIntelligence', $pb.PbFieldType.OD)
-    ..a<$core.double>(9, _omitFieldNames ? '' : 'dominionEstate', $pb.PbFieldType.OD)
-    ..a<$core.double>(10, _omitFieldNames ? '' : 'legacyHeritage', $pb.PbFieldType.OD)
-    ..a<$core.double>(11, _omitFieldNames ? '' : 'zenithFocus', $pb.PbFieldType.OD)
-    ..a<$core.double>(12, _omitFieldNames ? '' : 'onyxExclusivity', $pb.PbFieldType.OD)
-    ..a<$core.double>(13, _omitFieldNames ? '' : 'empireReputation', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'forgeExp')
+    ..aD(3, _omitFieldNames ? '' : 'lexiconEloquence')
+    ..aD(4, _omitFieldNames ? '' : 'nomadExploration')
+    ..aD(5, _omitFieldNames ? '' : 'atlasBehavioral')
+    ..aD(6, _omitFieldNames ? '' : 'vaultWealth')
+    ..aD(7, _omitFieldNames ? '' : 'apexBiomarkers')
+    ..aD(8, _omitFieldNames ? '' : 'oracleIntelligence')
+    ..aD(9, _omitFieldNames ? '' : 'dominionEstate')
+    ..aD(10, _omitFieldNames ? '' : 'legacyHeritage')
+    ..aD(11, _omitFieldNames ? '' : 'zenithFocus')
+    ..aD(12, _omitFieldNames ? '' : 'onyxExclusivity')
+    ..aD(13, _omitFieldNames ? '' : 'empireReputation')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreEmpireRequest clone() => ScoreEmpireRequest()..mergeFromMessage(this);
+  ScoreEmpireRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreEmpireRequest copyWith(void Function(ScoreEmpireRequest) updates) => super.copyWith((message) => updates(message as ScoreEmpireRequest)) as ScoreEmpireRequest;
+  ScoreEmpireRequest copyWith(void Function(ScoreEmpireRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreEmpireRequest))
+          as ScoreEmpireRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -788,9 +878,9 @@ class ScoreEmpireRequest extends $pb.GeneratedMessage {
   static ScoreEmpireRequest create() => ScoreEmpireRequest._();
   @$core.override
   ScoreEmpireRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreEmpireRequest> createRepeated() => $pb.PbList<ScoreEmpireRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreEmpireRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreEmpireRequest>(create);
+  static ScoreEmpireRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreEmpireRequest>(create);
   static ScoreEmpireRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -925,19 +1015,28 @@ class ScoreEmpireResponse extends $pb.GeneratedMessage {
 
   ScoreEmpireResponse._();
 
-  factory ScoreEmpireResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreEmpireResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreEmpireResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreEmpireResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreEmpireResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'sttattusScore', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreEmpireResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'sttattusScore')
     ..aOS(2, _omitFieldNames ? '' : 'recommendedTier')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreEmpireResponse clone() => ScoreEmpireResponse()..mergeFromMessage(this);
+  ScoreEmpireResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreEmpireResponse copyWith(void Function(ScoreEmpireResponse) updates) => super.copyWith((message) => updates(message as ScoreEmpireResponse)) as ScoreEmpireResponse;
+  ScoreEmpireResponse copyWith(void Function(ScoreEmpireResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreEmpireResponse))
+          as ScoreEmpireResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -946,9 +1045,9 @@ class ScoreEmpireResponse extends $pb.GeneratedMessage {
   static ScoreEmpireResponse create() => ScoreEmpireResponse._();
   @$core.override
   ScoreEmpireResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreEmpireResponse> createRepeated() => $pb.PbList<ScoreEmpireResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreEmpireResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreEmpireResponse>(create);
+  static ScoreEmpireResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreEmpireResponse>(create);
   static ScoreEmpireResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -985,20 +1084,29 @@ class ApplyDecayRequest extends $pb.GeneratedMessage {
 
   ApplyDecayRequest._();
 
-  factory ApplyDecayRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApplyDecayRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApplyDecayRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApplyDecayRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApplyDecayRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'currentScore', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'decayRate', $pb.PbFieldType.OD)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'daysInactive', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApplyDecayRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'currentScore')
+    ..aD(2, _omitFieldNames ? '' : 'decayRate')
+    ..aI(3, _omitFieldNames ? '' : 'daysInactive')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApplyDecayRequest clone() => ApplyDecayRequest()..mergeFromMessage(this);
+  ApplyDecayRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApplyDecayRequest copyWith(void Function(ApplyDecayRequest) updates) => super.copyWith((message) => updates(message as ApplyDecayRequest)) as ApplyDecayRequest;
+  ApplyDecayRequest copyWith(void Function(ApplyDecayRequest) updates) =>
+      super.copyWith((message) => updates(message as ApplyDecayRequest))
+          as ApplyDecayRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1007,9 +1115,9 @@ class ApplyDecayRequest extends $pb.GeneratedMessage {
   static ApplyDecayRequest create() => ApplyDecayRequest._();
   @$core.override
   ApplyDecayRequest createEmptyInstance() => create();
-  static $pb.PbList<ApplyDecayRequest> createRepeated() => $pb.PbList<ApplyDecayRequest>();
   @$core.pragma('dart2js:noInline')
-  static ApplyDecayRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApplyDecayRequest>(create);
+  static ApplyDecayRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApplyDecayRequest>(create);
   static ApplyDecayRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1051,18 +1159,27 @@ class ApplyDecayResponse extends $pb.GeneratedMessage {
 
   ApplyDecayResponse._();
 
-  factory ApplyDecayResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ApplyDecayResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ApplyDecayResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApplyDecayResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApplyDecayResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'decayedScore', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApplyDecayResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'decayedScore')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApplyDecayResponse clone() => ApplyDecayResponse()..mergeFromMessage(this);
+  ApplyDecayResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ApplyDecayResponse copyWith(void Function(ApplyDecayResponse) updates) => super.copyWith((message) => updates(message as ApplyDecayResponse)) as ApplyDecayResponse;
+  ApplyDecayResponse copyWith(void Function(ApplyDecayResponse) updates) =>
+      super.copyWith((message) => updates(message as ApplyDecayResponse))
+          as ApplyDecayResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1071,9 +1188,9 @@ class ApplyDecayResponse extends $pb.GeneratedMessage {
   static ApplyDecayResponse create() => ApplyDecayResponse._();
   @$core.override
   ApplyDecayResponse createEmptyInstance() => create();
-  static $pb.PbList<ApplyDecayResponse> createRepeated() => $pb.PbList<ApplyDecayResponse>();
   @$core.pragma('dart2js:noInline')
-  static ApplyDecayResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApplyDecayResponse>(create);
+  static ApplyDecayResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ApplyDecayResponse>(create);
   static ApplyDecayResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1113,26 +1230,36 @@ class ScoreForgeRequest extends $pb.GeneratedMessage {
 
   ScoreForgeRequest._();
 
-  factory ScoreForgeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreForgeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreForgeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreForgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreForgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreForgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'avgHeartRate', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'maxHeartRate', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'activeEnergyKcal', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'recoveryImpact', $pb.PbFieldType.OD)
+    ..pPM<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series',
+        subBuilder: WorkoutSeriesInput.create)
+    ..aD(3, _omitFieldNames ? '' : 'avgHeartRate')
+    ..aD(4, _omitFieldNames ? '' : 'maxHeartRate')
+    ..aD(5, _omitFieldNames ? '' : 'activeEnergyKcal')
+    ..aD(6, _omitFieldNames ? '' : 'recoveryImpact')
     ..aOB(7, _omitFieldNames ? '' : 'isVerified')
     ..aInt64(8, _omitFieldNames ? '' : 'currentExperience')
-    ..a<$core.double>(9, _omitFieldNames ? '' : 'currentForgeRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aD(9, _omitFieldNames ? '' : 'currentForgeRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreForgeRequest clone() => ScoreForgeRequest()..mergeFromMessage(this);
+  ScoreForgeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreForgeRequest copyWith(void Function(ScoreForgeRequest) updates) => super.copyWith((message) => updates(message as ScoreForgeRequest)) as ScoreForgeRequest;
+  ScoreForgeRequest copyWith(void Function(ScoreForgeRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreForgeRequest))
+          as ScoreForgeRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1141,9 +1268,9 @@ class ScoreForgeRequest extends $pb.GeneratedMessage {
   static ScoreForgeRequest create() => ScoreForgeRequest._();
   @$core.override
   ScoreForgeRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreForgeRequest> createRepeated() => $pb.PbList<ScoreForgeRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreForgeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreForgeRequest>(create);
+  static ScoreForgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreForgeRequest>(create);
   static ScoreForgeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1242,22 +1369,31 @@ class ScoreForgeResponse extends $pb.GeneratedMessage {
 
   ScoreForgeResponse._();
 
-  factory ScoreForgeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreForgeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreForgeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreForgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreForgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreForgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'experienceDelta')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'newForgeRank', $pb.PbFieldType.OD)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'powerDelta', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'agilityDelta', $pb.PbFieldType.O3)
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'gritDelta', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'newForgeRank')
+    ..aI(3, _omitFieldNames ? '' : 'powerDelta')
+    ..aI(4, _omitFieldNames ? '' : 'agilityDelta')
+    ..aI(5, _omitFieldNames ? '' : 'gritDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreForgeResponse clone() => ScoreForgeResponse()..mergeFromMessage(this);
+  ScoreForgeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreForgeResponse copyWith(void Function(ScoreForgeResponse) updates) => super.copyWith((message) => updates(message as ScoreForgeResponse)) as ScoreForgeResponse;
+  ScoreForgeResponse copyWith(void Function(ScoreForgeResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreForgeResponse))
+          as ScoreForgeResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1266,9 +1402,9 @@ class ScoreForgeResponse extends $pb.GeneratedMessage {
   static ScoreForgeResponse create() => ScoreForgeResponse._();
   @$core.override
   ScoreForgeResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreForgeResponse> createRepeated() => $pb.PbList<ScoreForgeResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreForgeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreForgeResponse>(create);
+  static ScoreForgeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreForgeResponse>(create);
   static ScoreForgeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1331,41 +1467,54 @@ class ScoreCognitiveMasteryRequest extends $pb.GeneratedMessage {
     if (scenarioId != null) result.scenarioId = scenarioId;
     if (responseTimeMs != null) result.responseTimeMs = responseTimeMs;
     if (wasOptimal != null) result.wasOptimal = wasOptimal;
-    if (sessionDurationSec != null) result.sessionDurationSec = sessionDurationSec;
+    if (sessionDurationSec != null)
+      result.sessionDurationSec = sessionDurationSec;
     if (currentEloquence != null) result.currentEloquence = currentEloquence;
     return result;
   }
 
   ScoreCognitiveMasteryRequest._();
 
-  factory ScoreCognitiveMasteryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreCognitiveMasteryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreCognitiveMasteryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreCognitiveMasteryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreCognitiveMasteryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreCognitiveMasteryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
     ..aOS(2, _omitFieldNames ? '' : 'scenarioId')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'responseTimeMs', $pb.PbFieldType.O3)
+    ..aI(3, _omitFieldNames ? '' : 'responseTimeMs')
     ..aOB(4, _omitFieldNames ? '' : 'wasOptimal')
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'sessionDurationSec', $pb.PbFieldType.O3)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'currentEloquence', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aI(5, _omitFieldNames ? '' : 'sessionDurationSec')
+    ..aD(6, _omitFieldNames ? '' : 'currentEloquence')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreCognitiveMasteryRequest clone() => ScoreCognitiveMasteryRequest()..mergeFromMessage(this);
+  ScoreCognitiveMasteryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreCognitiveMasteryRequest copyWith(void Function(ScoreCognitiveMasteryRequest) updates) => super.copyWith((message) => updates(message as ScoreCognitiveMasteryRequest)) as ScoreCognitiveMasteryRequest;
+  ScoreCognitiveMasteryRequest copyWith(
+          void Function(ScoreCognitiveMasteryRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreCognitiveMasteryRequest))
+          as ScoreCognitiveMasteryRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreCognitiveMasteryRequest create() => ScoreCognitiveMasteryRequest._();
+  static ScoreCognitiveMasteryRequest create() =>
+      ScoreCognitiveMasteryRequest._();
   @$core.override
   ScoreCognitiveMasteryRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreCognitiveMasteryRequest> createRepeated() => $pb.PbList<ScoreCognitiveMasteryRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreCognitiveMasteryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreCognitiveMasteryRequest>(create);
+  static ScoreCognitiveMasteryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreCognitiveMasteryRequest>(create);
   static ScoreCognitiveMasteryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1430,7 +1579,8 @@ class ScoreCognitiveMasteryResponse extends $pb.GeneratedMessage {
     $core.double? eloquenceDelta,
   }) {
     final result = create();
-    if (cognitiveLoadIndex != null) result.cognitiveLoadIndex = cognitiveLoadIndex;
+    if (cognitiveLoadIndex != null)
+      result.cognitiveLoadIndex = cognitiveLoadIndex;
     if (nextReviewDays != null) result.nextReviewDays = nextReviewDays;
     if (eloquenceDelta != null) result.eloquenceDelta = eloquenceDelta;
     return result;
@@ -1438,31 +1588,43 @@ class ScoreCognitiveMasteryResponse extends $pb.GeneratedMessage {
 
   ScoreCognitiveMasteryResponse._();
 
-  factory ScoreCognitiveMasteryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreCognitiveMasteryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreCognitiveMasteryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreCognitiveMasteryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreCognitiveMasteryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'cognitiveLoadIndex', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'nextReviewDays', $pb.PbFieldType.O3)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'eloquenceDelta', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreCognitiveMasteryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'cognitiveLoadIndex')
+    ..aI(2, _omitFieldNames ? '' : 'nextReviewDays')
+    ..aD(3, _omitFieldNames ? '' : 'eloquenceDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreCognitiveMasteryResponse clone() => ScoreCognitiveMasteryResponse()..mergeFromMessage(this);
+  ScoreCognitiveMasteryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreCognitiveMasteryResponse copyWith(void Function(ScoreCognitiveMasteryResponse) updates) => super.copyWith((message) => updates(message as ScoreCognitiveMasteryResponse)) as ScoreCognitiveMasteryResponse;
+  ScoreCognitiveMasteryResponse copyWith(
+          void Function(ScoreCognitiveMasteryResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreCognitiveMasteryResponse))
+          as ScoreCognitiveMasteryResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreCognitiveMasteryResponse create() => ScoreCognitiveMasteryResponse._();
+  static ScoreCognitiveMasteryResponse create() =>
+      ScoreCognitiveMasteryResponse._();
   @$core.override
   ScoreCognitiveMasteryResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreCognitiveMasteryResponse> createRepeated() => $pb.PbList<ScoreCognitiveMasteryResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreCognitiveMasteryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreCognitiveMasteryResponse>(create);
+  static ScoreCognitiveMasteryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreCognitiveMasteryResponse>(create);
   static ScoreCognitiveMasteryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1512,22 +1674,31 @@ class ScoreNomadRequest extends $pb.GeneratedMessage {
 
   ScoreNomadRequest._();
 
-  factory ScoreNomadRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreNomadRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreNomadRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreNomadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreNomadRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreNomadRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'countriesVisited', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'verifiedCheckins', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'eliteHubsVisited', $pb.PbFieldType.O3)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'currentNomadRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'countriesVisited')
+    ..aI(3, _omitFieldNames ? '' : 'verifiedCheckins')
+    ..aI(4, _omitFieldNames ? '' : 'eliteHubsVisited')
+    ..aD(5, _omitFieldNames ? '' : 'currentNomadRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreNomadRequest clone() => ScoreNomadRequest()..mergeFromMessage(this);
+  ScoreNomadRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreNomadRequest copyWith(void Function(ScoreNomadRequest) updates) => super.copyWith((message) => updates(message as ScoreNomadRequest)) as ScoreNomadRequest;
+  ScoreNomadRequest copyWith(void Function(ScoreNomadRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreNomadRequest))
+          as ScoreNomadRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1536,9 +1707,9 @@ class ScoreNomadRequest extends $pb.GeneratedMessage {
   static ScoreNomadRequest create() => ScoreNomadRequest._();
   @$core.override
   ScoreNomadRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreNomadRequest> createRepeated() => $pb.PbList<ScoreNomadRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreNomadRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreNomadRequest>(create);
+  static ScoreNomadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreNomadRequest>(create);
   static ScoreNomadRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1600,19 +1771,28 @@ class ScoreNomadResponse extends $pb.GeneratedMessage {
 
   ScoreNomadResponse._();
 
-  factory ScoreNomadResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreNomadResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreNomadResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreNomadResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreNomadResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'newNomadRank', $pb.PbFieldType.OD)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'explorationDelta', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreNomadResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'newNomadRank')
+    ..aI(2, _omitFieldNames ? '' : 'explorationDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreNomadResponse clone() => ScoreNomadResponse()..mergeFromMessage(this);
+  ScoreNomadResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreNomadResponse copyWith(void Function(ScoreNomadResponse) updates) => super.copyWith((message) => updates(message as ScoreNomadResponse)) as ScoreNomadResponse;
+  ScoreNomadResponse copyWith(void Function(ScoreNomadResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreNomadResponse))
+          as ScoreNomadResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1621,9 +1801,9 @@ class ScoreNomadResponse extends $pb.GeneratedMessage {
   static ScoreNomadResponse create() => ScoreNomadResponse._();
   @$core.override
   ScoreNomadResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreNomadResponse> createRepeated() => $pb.PbList<ScoreNomadResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreNomadResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreNomadResponse>(create);
+  static ScoreNomadResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreNomadResponse>(create);
   static ScoreNomadResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1659,30 +1839,41 @@ class ScoreOracleRequest extends $pb.GeneratedMessage {
     if (averageComplexity != null) result.averageComplexity = averageComplexity;
     if (averageSynthesis != null) result.averageSynthesis = averageSynthesis;
     if (averageForesight != null) result.averageForesight = averageForesight;
-    if (uniqueDomainsVisited != null) result.uniqueDomainsVisited = uniqueDomainsVisited;
-    if (currentIntellectualRank != null) result.currentIntellectualRank = currentIntellectualRank;
+    if (uniqueDomainsVisited != null)
+      result.uniqueDomainsVisited = uniqueDomainsVisited;
+    if (currentIntellectualRank != null)
+      result.currentIntellectualRank = currentIntellectualRank;
     return result;
   }
 
   ScoreOracleRequest._();
 
-  factory ScoreOracleRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreOracleRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreOracleRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreOracleRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreOracleRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreOracleRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'averageComplexity', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'averageSynthesis', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'averageForesight', $pb.PbFieldType.OD)
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'uniqueDomainsVisited', $pb.PbFieldType.O3)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'currentIntellectualRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'averageComplexity')
+    ..aD(3, _omitFieldNames ? '' : 'averageSynthesis')
+    ..aD(4, _omitFieldNames ? '' : 'averageForesight')
+    ..aI(5, _omitFieldNames ? '' : 'uniqueDomainsVisited')
+    ..aD(6, _omitFieldNames ? '' : 'currentIntellectualRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreOracleRequest clone() => ScoreOracleRequest()..mergeFromMessage(this);
+  ScoreOracleRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreOracleRequest copyWith(void Function(ScoreOracleRequest) updates) => super.copyWith((message) => updates(message as ScoreOracleRequest)) as ScoreOracleRequest;
+  ScoreOracleRequest copyWith(void Function(ScoreOracleRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreOracleRequest))
+          as ScoreOracleRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1691,9 +1882,9 @@ class ScoreOracleRequest extends $pb.GeneratedMessage {
   static ScoreOracleRequest create() => ScoreOracleRequest._();
   @$core.override
   ScoreOracleRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreOracleRequest> createRepeated() => $pb.PbList<ScoreOracleRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreOracleRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreOracleRequest>(create);
+  static ScoreOracleRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreOracleRequest>(create);
   static ScoreOracleRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1757,26 +1948,36 @@ class ScoreOracleResponse extends $pb.GeneratedMessage {
     $core.double? cloutDelta,
   }) {
     final result = create();
-    if (newIntellectualRank != null) result.newIntellectualRank = newIntellectualRank;
+    if (newIntellectualRank != null)
+      result.newIntellectualRank = newIntellectualRank;
     if (cloutDelta != null) result.cloutDelta = cloutDelta;
     return result;
   }
 
   ScoreOracleResponse._();
 
-  factory ScoreOracleResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreOracleResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreOracleResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreOracleResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreOracleResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'newIntellectualRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'cloutDelta', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreOracleResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'newIntellectualRank')
+    ..aD(2, _omitFieldNames ? '' : 'cloutDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreOracleResponse clone() => ScoreOracleResponse()..mergeFromMessage(this);
+  ScoreOracleResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreOracleResponse copyWith(void Function(ScoreOracleResponse) updates) => super.copyWith((message) => updates(message as ScoreOracleResponse)) as ScoreOracleResponse;
+  ScoreOracleResponse copyWith(void Function(ScoreOracleResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreOracleResponse))
+          as ScoreOracleResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1785,9 +1986,9 @@ class ScoreOracleResponse extends $pb.GeneratedMessage {
   static ScoreOracleResponse create() => ScoreOracleResponse._();
   @$core.override
   ScoreOracleResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreOracleResponse> createRepeated() => $pb.PbList<ScoreOracleResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreOracleResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreOracleResponse>(create);
+  static ScoreOracleResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreOracleResponse>(create);
   static ScoreOracleResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1821,35 +2022,46 @@ class ScoreZenithRequest extends $pb.GeneratedMessage {
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
-    if (sessionDurationMins != null) result.sessionDurationMins = sessionDurationMins;
+    if (sessionDurationMins != null)
+      result.sessionDurationMins = sessionDurationMins;
     if (focusScore != null) result.focusScore = focusScore;
     if (isVerified != null) result.isVerified = isVerified;
     if (avgHeartRate != null) result.avgHeartRate = avgHeartRate;
     if (hrvDelta != null) result.hrvDelta = hrvDelta;
-    if (currentFortitudeRank != null) result.currentFortitudeRank = currentFortitudeRank;
+    if (currentFortitudeRank != null)
+      result.currentFortitudeRank = currentFortitudeRank;
     return result;
   }
 
   ScoreZenithRequest._();
 
-  factory ScoreZenithRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreZenithRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreZenithRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreZenithRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreZenithRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreZenithRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'sessionDurationMins', $pb.PbFieldType.O3)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'focusScore', $pb.PbFieldType.OD)
+    ..aI(2, _omitFieldNames ? '' : 'sessionDurationMins')
+    ..aD(3, _omitFieldNames ? '' : 'focusScore')
     ..aOB(4, _omitFieldNames ? '' : 'isVerified')
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'avgHeartRate', $pb.PbFieldType.OD)
-    ..a<$core.double>(6, _omitFieldNames ? '' : 'hrvDelta', $pb.PbFieldType.OD)
-    ..a<$core.double>(7, _omitFieldNames ? '' : 'currentFortitudeRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aD(5, _omitFieldNames ? '' : 'avgHeartRate')
+    ..aD(6, _omitFieldNames ? '' : 'hrvDelta')
+    ..aD(7, _omitFieldNames ? '' : 'currentFortitudeRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreZenithRequest clone() => ScoreZenithRequest()..mergeFromMessage(this);
+  ScoreZenithRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreZenithRequest copyWith(void Function(ScoreZenithRequest) updates) => super.copyWith((message) => updates(message as ScoreZenithRequest)) as ScoreZenithRequest;
+  ScoreZenithRequest copyWith(void Function(ScoreZenithRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreZenithRequest))
+          as ScoreZenithRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1858,9 +2070,9 @@ class ScoreZenithRequest extends $pb.GeneratedMessage {
   static ScoreZenithRequest create() => ScoreZenithRequest._();
   @$core.override
   ScoreZenithRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreZenithRequest> createRepeated() => $pb.PbList<ScoreZenithRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreZenithRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreZenithRequest>(create);
+  static ScoreZenithRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreZenithRequest>(create);
   static ScoreZenithRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1940,19 +2152,28 @@ class ScoreZenithResponse extends $pb.GeneratedMessage {
 
   ScoreZenithResponse._();
 
-  factory ScoreZenithResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreZenithResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreZenithResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreZenithResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreZenithResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'newFortitudeRank', $pb.PbFieldType.OD)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'focusMinutesDelta', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreZenithResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'newFortitudeRank')
+    ..aI(2, _omitFieldNames ? '' : 'focusMinutesDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreZenithResponse clone() => ScoreZenithResponse()..mergeFromMessage(this);
+  ScoreZenithResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreZenithResponse copyWith(void Function(ScoreZenithResponse) updates) => super.copyWith((message) => updates(message as ScoreZenithResponse)) as ScoreZenithResponse;
+  ScoreZenithResponse copyWith(void Function(ScoreZenithResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreZenithResponse))
+          as ScoreZenithResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1961,9 +2182,9 @@ class ScoreZenithResponse extends $pb.GeneratedMessage {
   static ScoreZenithResponse create() => ScoreZenithResponse._();
   @$core.override
   ScoreZenithResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreZenithResponse> createRepeated() => $pb.PbList<ScoreZenithResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreZenithResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreZenithResponse>(create);
+  static ScoreZenithResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreZenithResponse>(create);
   static ScoreZenithResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1995,31 +2216,43 @@ class ScoreLegacyRequest extends $pb.GeneratedMessage {
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
-    if (verifiedAssetsCount != null) result.verifiedAssetsCount = verifiedAssetsCount;
+    if (verifiedAssetsCount != null)
+      result.verifiedAssetsCount = verifiedAssetsCount;
     if (totalIpValuation != null) result.totalIpValuation = totalIpValuation;
-    if (uniqueJurisdictions != null) result.uniqueJurisdictions = uniqueJurisdictions;
-    if (currentInfluenceRank != null) result.currentInfluenceRank = currentInfluenceRank;
+    if (uniqueJurisdictions != null)
+      result.uniqueJurisdictions = uniqueJurisdictions;
+    if (currentInfluenceRank != null)
+      result.currentInfluenceRank = currentInfluenceRank;
     return result;
   }
 
   ScoreLegacyRequest._();
 
-  factory ScoreLegacyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreLegacyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreLegacyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreLegacyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreLegacyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreLegacyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'verifiedAssetsCount', $pb.PbFieldType.O3)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalIpValuation', $pb.PbFieldType.OD)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'uniqueJurisdictions', $pb.PbFieldType.O3)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'currentInfluenceRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'verifiedAssetsCount')
+    ..aD(3, _omitFieldNames ? '' : 'totalIpValuation')
+    ..aI(4, _omitFieldNames ? '' : 'uniqueJurisdictions')
+    ..aD(5, _omitFieldNames ? '' : 'currentInfluenceRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLegacyRequest clone() => ScoreLegacyRequest()..mergeFromMessage(this);
+  ScoreLegacyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLegacyRequest copyWith(void Function(ScoreLegacyRequest) updates) => super.copyWith((message) => updates(message as ScoreLegacyRequest)) as ScoreLegacyRequest;
+  ScoreLegacyRequest copyWith(void Function(ScoreLegacyRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreLegacyRequest))
+          as ScoreLegacyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2028,9 +2261,9 @@ class ScoreLegacyRequest extends $pb.GeneratedMessage {
   static ScoreLegacyRequest create() => ScoreLegacyRequest._();
   @$core.override
   ScoreLegacyRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreLegacyRequest> createRepeated() => $pb.PbList<ScoreLegacyRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreLegacyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreLegacyRequest>(create);
+  static ScoreLegacyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreLegacyRequest>(create);
   static ScoreLegacyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2092,19 +2325,28 @@ class ScoreLegacyResponse extends $pb.GeneratedMessage {
 
   ScoreLegacyResponse._();
 
-  factory ScoreLegacyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreLegacyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreLegacyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreLegacyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreLegacyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'newInfluenceRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'influenceDelta', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreLegacyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'newInfluenceRank')
+    ..aD(2, _omitFieldNames ? '' : 'influenceDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLegacyResponse clone() => ScoreLegacyResponse()..mergeFromMessage(this);
+  ScoreLegacyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreLegacyResponse copyWith(void Function(ScoreLegacyResponse) updates) => super.copyWith((message) => updates(message as ScoreLegacyResponse)) as ScoreLegacyResponse;
+  ScoreLegacyResponse copyWith(void Function(ScoreLegacyResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreLegacyResponse))
+          as ScoreLegacyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2113,9 +2355,9 @@ class ScoreLegacyResponse extends $pb.GeneratedMessage {
   static ScoreLegacyResponse create() => ScoreLegacyResponse._();
   @$core.override
   ScoreLegacyResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreLegacyResponse> createRepeated() => $pb.PbList<ScoreLegacyResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreLegacyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreLegacyResponse>(create);
+  static ScoreLegacyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreLegacyResponse>(create);
   static ScoreLegacyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2147,31 +2389,44 @@ class ScoreDominionRequest extends $pb.GeneratedMessage {
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
-    if (verifiedPropertiesCount != null) result.verifiedPropertiesCount = verifiedPropertiesCount;
-    if (totalPortfolioValuation != null) result.totalPortfolioValuation = totalPortfolioValuation;
-    if (uniqueRegionsCount != null) result.uniqueRegionsCount = uniqueRegionsCount;
-    if (currentDominionRank != null) result.currentDominionRank = currentDominionRank;
+    if (verifiedPropertiesCount != null)
+      result.verifiedPropertiesCount = verifiedPropertiesCount;
+    if (totalPortfolioValuation != null)
+      result.totalPortfolioValuation = totalPortfolioValuation;
+    if (uniqueRegionsCount != null)
+      result.uniqueRegionsCount = uniqueRegionsCount;
+    if (currentDominionRank != null)
+      result.currentDominionRank = currentDominionRank;
     return result;
   }
 
   ScoreDominionRequest._();
 
-  factory ScoreDominionRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreDominionRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreDominionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreDominionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreDominionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreDominionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'verifiedPropertiesCount', $pb.PbFieldType.O3)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'totalPortfolioValuation', $pb.PbFieldType.OD)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'uniqueRegionsCount', $pb.PbFieldType.O3)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'currentDominionRank', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+    ..aI(2, _omitFieldNames ? '' : 'verifiedPropertiesCount')
+    ..aD(3, _omitFieldNames ? '' : 'totalPortfolioValuation')
+    ..aI(4, _omitFieldNames ? '' : 'uniqueRegionsCount')
+    ..aD(5, _omitFieldNames ? '' : 'currentDominionRank')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreDominionRequest clone() => ScoreDominionRequest()..mergeFromMessage(this);
+  ScoreDominionRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreDominionRequest copyWith(void Function(ScoreDominionRequest) updates) => super.copyWith((message) => updates(message as ScoreDominionRequest)) as ScoreDominionRequest;
+  ScoreDominionRequest copyWith(void Function(ScoreDominionRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreDominionRequest))
+          as ScoreDominionRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2180,9 +2435,9 @@ class ScoreDominionRequest extends $pb.GeneratedMessage {
   static ScoreDominionRequest create() => ScoreDominionRequest._();
   @$core.override
   ScoreDominionRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreDominionRequest> createRepeated() => $pb.PbList<ScoreDominionRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreDominionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreDominionRequest>(create);
+  static ScoreDominionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreDominionRequest>(create);
   static ScoreDominionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2244,19 +2499,29 @@ class ScoreDominionResponse extends $pb.GeneratedMessage {
 
   ScoreDominionResponse._();
 
-  factory ScoreDominionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreDominionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreDominionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreDominionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreDominionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'newDominionRank', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'dominionDelta', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreDominionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'newDominionRank')
+    ..aD(2, _omitFieldNames ? '' : 'dominionDelta')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreDominionResponse clone() => ScoreDominionResponse()..mergeFromMessage(this);
+  ScoreDominionResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreDominionResponse copyWith(void Function(ScoreDominionResponse) updates) => super.copyWith((message) => updates(message as ScoreDominionResponse)) as ScoreDominionResponse;
+  ScoreDominionResponse copyWith(
+          void Function(ScoreDominionResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreDominionResponse))
+          as ScoreDominionResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2265,9 +2530,9 @@ class ScoreDominionResponse extends $pb.GeneratedMessage {
   static ScoreDominionResponse create() => ScoreDominionResponse._();
   @$core.override
   ScoreDominionResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreDominionResponse> createRepeated() => $pb.PbList<ScoreDominionResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreDominionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreDominionResponse>(create);
+  static ScoreDominionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreDominionResponse>(create);
   static ScoreDominionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2296,37 +2561,53 @@ class ScoreSessionAnalyticsRequest_HeartRatePoint extends $pb.GeneratedMessage {
     $core.double? bpm,
   }) {
     final result = create();
-    if (timestampOffsetSeconds != null) result.timestampOffsetSeconds = timestampOffsetSeconds;
+    if (timestampOffsetSeconds != null)
+      result.timestampOffsetSeconds = timestampOffsetSeconds;
     if (bpm != null) result.bpm = bpm;
     return result;
   }
 
   ScoreSessionAnalyticsRequest_HeartRatePoint._();
 
-  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsRequest_HeartRatePoint.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest.HeartRatePoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'timestampOffsetSeconds', $pb.PbFieldType.O3)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'bpm', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest.HeartRatePoint',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'timestampOffsetSeconds')
+    ..aD(2, _omitFieldNames ? '' : 'bpm')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsRequest_HeartRatePoint clone() => ScoreSessionAnalyticsRequest_HeartRatePoint()..mergeFromMessage(this);
+  ScoreSessionAnalyticsRequest_HeartRatePoint clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsRequest_HeartRatePoint copyWith(void Function(ScoreSessionAnalyticsRequest_HeartRatePoint) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsRequest_HeartRatePoint)) as ScoreSessionAnalyticsRequest_HeartRatePoint;
+  ScoreSessionAnalyticsRequest_HeartRatePoint copyWith(
+          void Function(ScoreSessionAnalyticsRequest_HeartRatePoint) updates) =>
+      super.copyWith((message) =>
+              updates(message as ScoreSessionAnalyticsRequest_HeartRatePoint))
+          as ScoreSessionAnalyticsRequest_HeartRatePoint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsRequest_HeartRatePoint create() => ScoreSessionAnalyticsRequest_HeartRatePoint._();
+  static ScoreSessionAnalyticsRequest_HeartRatePoint create() =>
+      ScoreSessionAnalyticsRequest_HeartRatePoint._();
   @$core.override
   ScoreSessionAnalyticsRequest_HeartRatePoint createEmptyInstance() => create();
-  static $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint> createRepeated() => $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint>();
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsRequest_HeartRatePoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsRequest_HeartRatePoint>(create);
+  static ScoreSessionAnalyticsRequest_HeartRatePoint getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ScoreSessionAnalyticsRequest_HeartRatePoint>(create);
   static ScoreSessionAnalyticsRequest_HeartRatePoint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2363,31 +2644,46 @@ class ScoreSessionAnalyticsRequest extends $pb.GeneratedMessage {
 
   ScoreSessionAnalyticsRequest._();
 
-  factory ScoreSessionAnalyticsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreSessionAnalyticsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreSessionAnalyticsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreSessionAnalyticsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
-    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
-    ..pc<ScoreSessionAnalyticsRequest_HeartRatePoint>(3, _omitFieldNames ? '' : 'heartRateData', $pb.PbFieldType.PM, subBuilder: ScoreSessionAnalyticsRequest_HeartRatePoint.create)
-    ..hasRequiredFields = false
-  ;
+    ..pPM<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series',
+        subBuilder: WorkoutSeriesInput.create)
+    ..pPM<ScoreSessionAnalyticsRequest_HeartRatePoint>(
+        3, _omitFieldNames ? '' : 'heartRateData',
+        subBuilder: ScoreSessionAnalyticsRequest_HeartRatePoint.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsRequest clone() => ScoreSessionAnalyticsRequest()..mergeFromMessage(this);
+  ScoreSessionAnalyticsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsRequest copyWith(void Function(ScoreSessionAnalyticsRequest) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsRequest)) as ScoreSessionAnalyticsRequest;
+  ScoreSessionAnalyticsRequest copyWith(
+          void Function(ScoreSessionAnalyticsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreSessionAnalyticsRequest))
+          as ScoreSessionAnalyticsRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsRequest create() => ScoreSessionAnalyticsRequest._();
+  static ScoreSessionAnalyticsRequest create() =>
+      ScoreSessionAnalyticsRequest._();
   @$core.override
   ScoreSessionAnalyticsRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreSessionAnalyticsRequest> createRepeated() => $pb.PbList<ScoreSessionAnalyticsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsRequest>(create);
+  static ScoreSessionAnalyticsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsRequest>(create);
   static ScoreSessionAnalyticsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2403,7 +2699,8 @@ class ScoreSessionAnalyticsRequest extends $pb.GeneratedMessage {
   $pb.PbList<WorkoutSeriesInput> get series => $_getList(1);
 
   @$pb.TagNumber(3)
-  $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint> get heartRateData => $_getList(2);
+  $pb.PbList<ScoreSessionAnalyticsRequest_HeartRatePoint> get heartRateData =>
+      $_getList(2);
 }
 
 class MetricPoint extends $pb.GeneratedMessage {
@@ -2412,26 +2709,36 @@ class MetricPoint extends $pb.GeneratedMessage {
     $core.double? value,
   }) {
     final result = create();
-    if (timestampOffsetSeconds != null) result.timestampOffsetSeconds = timestampOffsetSeconds;
+    if (timestampOffsetSeconds != null)
+      result.timestampOffsetSeconds = timestampOffsetSeconds;
     if (value != null) result.value = value;
     return result;
   }
 
   MetricPoint._();
 
-  factory MetricPoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory MetricPoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory MetricPoint.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MetricPoint.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MetricPoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'timestampOffsetSeconds', $pb.PbFieldType.O3)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MetricPoint',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'timestampOffsetSeconds')
+    ..aD(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  MetricPoint clone() => MetricPoint()..mergeFromMessage(this);
+  MetricPoint clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  MetricPoint copyWith(void Function(MetricPoint) updates) => super.copyWith((message) => updates(message as MetricPoint)) as MetricPoint;
+  MetricPoint copyWith(void Function(MetricPoint) updates) =>
+      super.copyWith((message) => updates(message as MetricPoint))
+          as MetricPoint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2440,9 +2747,9 @@ class MetricPoint extends $pb.GeneratedMessage {
   static MetricPoint create() => MetricPoint._();
   @$core.override
   MetricPoint createEmptyInstance() => create();
-  static $pb.PbList<MetricPoint> createRepeated() => $pb.PbList<MetricPoint>();
   @$core.pragma('dart2js:noInline')
-  static MetricPoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MetricPoint>(create);
+  static MetricPoint getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MetricPoint>(create);
   static MetricPoint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2485,34 +2792,49 @@ class ScoreSessionAnalyticsResponse extends $pb.GeneratedMessage {
 
   ScoreSessionAnalyticsResponse._();
 
-  factory ScoreSessionAnalyticsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreSessionAnalyticsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreSessionAnalyticsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreSessionAnalyticsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreSessionAnalyticsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..pc<MetricPoint>(1, _omitFieldNames ? '' : 'volumeCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..pc<MetricPoint>(2, _omitFieldNames ? '' : 'intensityCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..pc<MetricPoint>(3, _omitFieldNames ? '' : 'heartRateCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'totalVolume', $pb.PbFieldType.OD)
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'avgIntensity', $pb.PbFieldType.OD)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'peakHeartRate', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreSessionAnalyticsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..pPM<MetricPoint>(1, _omitFieldNames ? '' : 'volumeCurve',
+        subBuilder: MetricPoint.create)
+    ..pPM<MetricPoint>(2, _omitFieldNames ? '' : 'intensityCurve',
+        subBuilder: MetricPoint.create)
+    ..pPM<MetricPoint>(3, _omitFieldNames ? '' : 'heartRateCurve',
+        subBuilder: MetricPoint.create)
+    ..aD(4, _omitFieldNames ? '' : 'totalVolume')
+    ..aD(5, _omitFieldNames ? '' : 'avgIntensity')
+    ..aI(6, _omitFieldNames ? '' : 'peakHeartRate')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsResponse clone() => ScoreSessionAnalyticsResponse()..mergeFromMessage(this);
+  ScoreSessionAnalyticsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreSessionAnalyticsResponse copyWith(void Function(ScoreSessionAnalyticsResponse) updates) => super.copyWith((message) => updates(message as ScoreSessionAnalyticsResponse)) as ScoreSessionAnalyticsResponse;
+  ScoreSessionAnalyticsResponse copyWith(
+          void Function(ScoreSessionAnalyticsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ScoreSessionAnalyticsResponse))
+          as ScoreSessionAnalyticsResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsResponse create() => ScoreSessionAnalyticsResponse._();
+  static ScoreSessionAnalyticsResponse create() =>
+      ScoreSessionAnalyticsResponse._();
   @$core.override
   ScoreSessionAnalyticsResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreSessionAnalyticsResponse> createRepeated() => $pb.PbList<ScoreSessionAnalyticsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreSessionAnalyticsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsResponse>(create);
+  static ScoreSessionAnalyticsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreSessionAnalyticsResponse>(create);
   static ScoreSessionAnalyticsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2565,28 +2887,40 @@ class ScoreRivalryRequest extends $pb.GeneratedMessage {
     if (myCurrentScore != null) result.myCurrentScore = myCurrentScore;
     if (rivalCurrentScore != null) result.rivalCurrentScore = rivalCurrentScore;
     if (myScoreHistory != null) result.myScoreHistory.addAll(myScoreHistory);
-    if (rivalScoreHistory != null) result.rivalScoreHistory.addAll(rivalScoreHistory);
+    if (rivalScoreHistory != null)
+      result.rivalScoreHistory.addAll(rivalScoreHistory);
     return result;
   }
 
   ScoreRivalryRequest._();
 
-  factory ScoreRivalryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreRivalryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreRivalryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreRivalryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreRivalryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreRivalryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'rivalryId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'myCurrentScore', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'rivalCurrentScore', $pb.PbFieldType.OD)
-    ..pc<MetricPoint>(4, _omitFieldNames ? '' : 'myScoreHistory', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..pc<MetricPoint>(5, _omitFieldNames ? '' : 'rivalScoreHistory', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'myCurrentScore')
+    ..aD(3, _omitFieldNames ? '' : 'rivalCurrentScore')
+    ..pPM<MetricPoint>(4, _omitFieldNames ? '' : 'myScoreHistory',
+        subBuilder: MetricPoint.create)
+    ..pPM<MetricPoint>(5, _omitFieldNames ? '' : 'rivalScoreHistory',
+        subBuilder: MetricPoint.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreRivalryRequest clone() => ScoreRivalryRequest()..mergeFromMessage(this);
+  ScoreRivalryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreRivalryRequest copyWith(void Function(ScoreRivalryRequest) updates) => super.copyWith((message) => updates(message as ScoreRivalryRequest)) as ScoreRivalryRequest;
+  ScoreRivalryRequest copyWith(void Function(ScoreRivalryRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreRivalryRequest))
+          as ScoreRivalryRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2595,9 +2929,9 @@ class ScoreRivalryRequest extends $pb.GeneratedMessage {
   static ScoreRivalryRequest create() => ScoreRivalryRequest._();
   @$core.override
   ScoreRivalryRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreRivalryRequest> createRepeated() => $pb.PbList<ScoreRivalryRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreRivalryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreRivalryRequest>(create);
+  static ScoreRivalryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreRivalryRequest>(create);
   static ScoreRivalryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2646,30 +2980,43 @@ class ScoreRivalryResponse extends $pb.GeneratedMessage {
     final result = create();
     if (myProgressPct != null) result.myProgressPct = myProgressPct;
     if (rivalProgressPct != null) result.rivalProgressPct = rivalProgressPct;
-    if (myNormalizedCurve != null) result.myNormalizedCurve.addAll(myNormalizedCurve);
-    if (rivalNormalizedCurve != null) result.rivalNormalizedCurve.addAll(rivalNormalizedCurve);
+    if (myNormalizedCurve != null)
+      result.myNormalizedCurve.addAll(myNormalizedCurve);
+    if (rivalNormalizedCurve != null)
+      result.rivalNormalizedCurve.addAll(rivalNormalizedCurve);
     if (leadingUserId != null) result.leadingUserId = leadingUserId;
     return result;
   }
 
   ScoreRivalryResponse._();
 
-  factory ScoreRivalryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreRivalryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreRivalryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreRivalryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreRivalryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'myProgressPct', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'rivalProgressPct', $pb.PbFieldType.OD)
-    ..pc<MetricPoint>(3, _omitFieldNames ? '' : 'myNormalizedCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
-    ..pc<MetricPoint>(4, _omitFieldNames ? '' : 'rivalNormalizedCurve', $pb.PbFieldType.PM, subBuilder: MetricPoint.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreRivalryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'myProgressPct')
+    ..aD(2, _omitFieldNames ? '' : 'rivalProgressPct')
+    ..pPM<MetricPoint>(3, _omitFieldNames ? '' : 'myNormalizedCurve',
+        subBuilder: MetricPoint.create)
+    ..pPM<MetricPoint>(4, _omitFieldNames ? '' : 'rivalNormalizedCurve',
+        subBuilder: MetricPoint.create)
     ..aOS(5, _omitFieldNames ? '' : 'leadingUserId')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreRivalryResponse clone() => ScoreRivalryResponse()..mergeFromMessage(this);
+  ScoreRivalryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreRivalryResponse copyWith(void Function(ScoreRivalryResponse) updates) => super.copyWith((message) => updates(message as ScoreRivalryResponse)) as ScoreRivalryResponse;
+  ScoreRivalryResponse copyWith(void Function(ScoreRivalryResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreRivalryResponse))
+          as ScoreRivalryResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2678,9 +3025,9 @@ class ScoreRivalryResponse extends $pb.GeneratedMessage {
   static ScoreRivalryResponse create() => ScoreRivalryResponse._();
   @$core.override
   ScoreRivalryResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreRivalryResponse> createRepeated() => $pb.PbList<ScoreRivalryResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreRivalryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreRivalryResponse>(create);
+  static ScoreRivalryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreRivalryResponse>(create);
   static ScoreRivalryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2736,20 +3083,31 @@ class ScoreAcuteChronicRequest extends $pb.GeneratedMessage {
 
   ScoreAcuteChronicRequest._();
 
-  factory ScoreAcuteChronicRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreAcuteChronicRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreAcuteChronicRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreAcuteChronicRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreAcuteChronicRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreAcuteChronicRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'acuteLoad7d', $pb.PbFieldType.OD, protoName: 'acute_load_7d')
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'chronicLoad28d', $pb.PbFieldType.OD, protoName: 'chronic_load_28d')
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'acuteLoad7d', protoName: 'acute_load_7d')
+    ..aD(3, _omitFieldNames ? '' : 'chronicLoad28d',
+        protoName: 'chronic_load_28d')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreAcuteChronicRequest clone() => ScoreAcuteChronicRequest()..mergeFromMessage(this);
+  ScoreAcuteChronicRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreAcuteChronicRequest copyWith(void Function(ScoreAcuteChronicRequest) updates) => super.copyWith((message) => updates(message as ScoreAcuteChronicRequest)) as ScoreAcuteChronicRequest;
+  ScoreAcuteChronicRequest copyWith(
+          void Function(ScoreAcuteChronicRequest) updates) =>
+      super.copyWith((message) => updates(message as ScoreAcuteChronicRequest))
+          as ScoreAcuteChronicRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2758,9 +3116,9 @@ class ScoreAcuteChronicRequest extends $pb.GeneratedMessage {
   static ScoreAcuteChronicRequest create() => ScoreAcuteChronicRequest._();
   @$core.override
   ScoreAcuteChronicRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreAcuteChronicRequest> createRepeated() => $pb.PbList<ScoreAcuteChronicRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreAcuteChronicRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicRequest>(create);
+  static ScoreAcuteChronicRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicRequest>(create);
   static ScoreAcuteChronicRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2806,20 +3164,30 @@ class ScoreAcuteChronicResponse extends $pb.GeneratedMessage {
 
   ScoreAcuteChronicResponse._();
 
-  factory ScoreAcuteChronicResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreAcuteChronicResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreAcuteChronicResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreAcuteChronicResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreAcuteChronicResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'ratio', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreAcuteChronicResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'ratio')
     ..aOS(2, _omitFieldNames ? '' : 'zone')
     ..aOB(3, _omitFieldNames ? '' : 'injuryRisk')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreAcuteChronicResponse clone() => ScoreAcuteChronicResponse()..mergeFromMessage(this);
+  ScoreAcuteChronicResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreAcuteChronicResponse copyWith(void Function(ScoreAcuteChronicResponse) updates) => super.copyWith((message) => updates(message as ScoreAcuteChronicResponse)) as ScoreAcuteChronicResponse;
+  ScoreAcuteChronicResponse copyWith(
+          void Function(ScoreAcuteChronicResponse) updates) =>
+      super.copyWith((message) => updates(message as ScoreAcuteChronicResponse))
+          as ScoreAcuteChronicResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2828,9 +3196,9 @@ class ScoreAcuteChronicResponse extends $pb.GeneratedMessage {
   static ScoreAcuteChronicResponse create() => ScoreAcuteChronicResponse._();
   @$core.override
   ScoreAcuteChronicResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreAcuteChronicResponse> createRepeated() => $pb.PbList<ScoreAcuteChronicResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreAcuteChronicResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicResponse>(create);
+  static ScoreAcuteChronicResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScoreAcuteChronicResponse>(create);
   static ScoreAcuteChronicResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2881,20 +3249,29 @@ class EstimateOneRmRequest extends $pb.GeneratedMessage {
 
   EstimateOneRmRequest._();
 
-  factory EstimateOneRmRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory EstimateOneRmRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory EstimateOneRmRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EstimateOneRmRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimateOneRmRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EstimateOneRmRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'weight', $pb.PbFieldType.OD)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'reps', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..aD(2, _omitFieldNames ? '' : 'weight')
+    ..aI(3, _omitFieldNames ? '' : 'reps')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EstimateOneRmRequest clone() => EstimateOneRmRequest()..mergeFromMessage(this);
+  EstimateOneRmRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EstimateOneRmRequest copyWith(void Function(EstimateOneRmRequest) updates) => super.copyWith((message) => updates(message as EstimateOneRmRequest)) as EstimateOneRmRequest;
+  EstimateOneRmRequest copyWith(void Function(EstimateOneRmRequest) updates) =>
+      super.copyWith((message) => updates(message as EstimateOneRmRequest))
+          as EstimateOneRmRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2903,9 +3280,9 @@ class EstimateOneRmRequest extends $pb.GeneratedMessage {
   static EstimateOneRmRequest create() => EstimateOneRmRequest._();
   @$core.override
   EstimateOneRmRequest createEmptyInstance() => create();
-  static $pb.PbList<EstimateOneRmRequest> createRepeated() => $pb.PbList<EstimateOneRmRequest>();
   @$core.pragma('dart2js:noInline')
-  static EstimateOneRmRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimateOneRmRequest>(create);
+  static EstimateOneRmRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EstimateOneRmRequest>(create);
   static EstimateOneRmRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -2949,19 +3326,29 @@ class EstimateOneRmResponse extends $pb.GeneratedMessage {
 
   EstimateOneRmResponse._();
 
-  factory EstimateOneRmResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory EstimateOneRmResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory EstimateOneRmResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EstimateOneRmResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EstimateOneRmResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'estimatedOneRm', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EstimateOneRmResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'estimatedOneRm')
+    ..aD(2, _omitFieldNames ? '' : 'confidence')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EstimateOneRmResponse clone() => EstimateOneRmResponse()..mergeFromMessage(this);
+  EstimateOneRmResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  EstimateOneRmResponse copyWith(void Function(EstimateOneRmResponse) updates) => super.copyWith((message) => updates(message as EstimateOneRmResponse)) as EstimateOneRmResponse;
+  EstimateOneRmResponse copyWith(
+          void Function(EstimateOneRmResponse) updates) =>
+      super.copyWith((message) => updates(message as EstimateOneRmResponse))
+          as EstimateOneRmResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -2970,9 +3357,9 @@ class EstimateOneRmResponse extends $pb.GeneratedMessage {
   static EstimateOneRmResponse create() => EstimateOneRmResponse._();
   @$core.override
   EstimateOneRmResponse createEmptyInstance() => create();
-  static $pb.PbList<EstimateOneRmResponse> createRepeated() => $pb.PbList<EstimateOneRmResponse>();
   @$core.pragma('dart2js:noInline')
-  static EstimateOneRmResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EstimateOneRmResponse>(create);
+  static EstimateOneRmResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EstimateOneRmResponse>(create);
   static EstimateOneRmResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3015,32 +3402,47 @@ class ScoreVolumeIntensityFrequencyRequest extends $pb.GeneratedMessage {
 
   ScoreVolumeIntensityFrequencyRequest._();
 
-  factory ScoreVolumeIntensityFrequencyRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreVolumeIntensityFrequencyRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreVolumeIntensityFrequencyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreVolumeIntensityFrequencyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'userId')
-    ..pc<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series', $pb.PbFieldType.PM, subBuilder: WorkoutSeriesInput.create)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'sessionDays', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'windowDays', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..pPM<WorkoutSeriesInput>(2, _omitFieldNames ? '' : 'series',
+        subBuilder: WorkoutSeriesInput.create)
+    ..aI(3, _omitFieldNames ? '' : 'sessionDays')
+    ..aI(4, _omitFieldNames ? '' : 'windowDays')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreVolumeIntensityFrequencyRequest clone() => ScoreVolumeIntensityFrequencyRequest()..mergeFromMessage(this);
+  ScoreVolumeIntensityFrequencyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreVolumeIntensityFrequencyRequest copyWith(void Function(ScoreVolumeIntensityFrequencyRequest) updates) => super.copyWith((message) => updates(message as ScoreVolumeIntensityFrequencyRequest)) as ScoreVolumeIntensityFrequencyRequest;
+  ScoreVolumeIntensityFrequencyRequest copyWith(
+          void Function(ScoreVolumeIntensityFrequencyRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ScoreVolumeIntensityFrequencyRequest))
+          as ScoreVolumeIntensityFrequencyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreVolumeIntensityFrequencyRequest create() => ScoreVolumeIntensityFrequencyRequest._();
+  static ScoreVolumeIntensityFrequencyRequest create() =>
+      ScoreVolumeIntensityFrequencyRequest._();
   @$core.override
   ScoreVolumeIntensityFrequencyRequest createEmptyInstance() => create();
-  static $pb.PbList<ScoreVolumeIntensityFrequencyRequest> createRepeated() => $pb.PbList<ScoreVolumeIntensityFrequencyRequest>();
   @$core.pragma('dart2js:noInline')
-  static ScoreVolumeIntensityFrequencyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreVolumeIntensityFrequencyRequest>(create);
+  static ScoreVolumeIntensityFrequencyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ScoreVolumeIntensityFrequencyRequest>(create);
   static ScoreVolumeIntensityFrequencyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -3093,32 +3495,46 @@ class ScoreVolumeIntensityFrequencyResponse extends $pb.GeneratedMessage {
 
   ScoreVolumeIntensityFrequencyResponse._();
 
-  factory ScoreVolumeIntensityFrequencyResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ScoreVolumeIntensityFrequencyResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ScoreVolumeIntensityFrequencyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScoreVolumeIntensityFrequencyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'volume', $pb.PbFieldType.OD)
-    ..a<$core.double>(2, _omitFieldNames ? '' : 'intensity', $pb.PbFieldType.OD)
-    ..a<$core.double>(3, _omitFieldNames ? '' : 'frequency', $pb.PbFieldType.OD)
-    ..a<$core.double>(4, _omitFieldNames ? '' : 'composite', $pb.PbFieldType.OD)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScoreVolumeIntensityFrequencyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.scoring.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'volume')
+    ..aD(2, _omitFieldNames ? '' : 'intensity')
+    ..aD(3, _omitFieldNames ? '' : 'frequency')
+    ..aD(4, _omitFieldNames ? '' : 'composite')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreVolumeIntensityFrequencyResponse clone() => ScoreVolumeIntensityFrequencyResponse()..mergeFromMessage(this);
+  ScoreVolumeIntensityFrequencyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ScoreVolumeIntensityFrequencyResponse copyWith(void Function(ScoreVolumeIntensityFrequencyResponse) updates) => super.copyWith((message) => updates(message as ScoreVolumeIntensityFrequencyResponse)) as ScoreVolumeIntensityFrequencyResponse;
+  ScoreVolumeIntensityFrequencyResponse copyWith(
+          void Function(ScoreVolumeIntensityFrequencyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ScoreVolumeIntensityFrequencyResponse))
+          as ScoreVolumeIntensityFrequencyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ScoreVolumeIntensityFrequencyResponse create() => ScoreVolumeIntensityFrequencyResponse._();
+  static ScoreVolumeIntensityFrequencyResponse create() =>
+      ScoreVolumeIntensityFrequencyResponse._();
   @$core.override
   ScoreVolumeIntensityFrequencyResponse createEmptyInstance() => create();
-  static $pb.PbList<ScoreVolumeIntensityFrequencyResponse> createRepeated() => $pb.PbList<ScoreVolumeIntensityFrequencyResponse>();
   @$core.pragma('dart2js:noInline')
-  static ScoreVolumeIntensityFrequencyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ScoreVolumeIntensityFrequencyResponse>(create);
+  static ScoreVolumeIntensityFrequencyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ScoreVolumeIntensityFrequencyResponse>(create);
   static ScoreVolumeIntensityFrequencyResponse? _defaultInstance;
 
   /// Total tonnage (sum of weight * reps) across the window.
@@ -3162,6 +3578,7 @@ class ScoreVolumeIntensityFrequencyResponse extends $pb.GeneratedMessage {
   void clearComposite() => $_clearField(4);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

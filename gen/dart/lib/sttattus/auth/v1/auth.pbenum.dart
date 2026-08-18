@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -18,21 +18,34 @@ import 'package:protobuf/protobuf.dart' as $pb;
 /// see "this user uses workout + dating" and so cross-app linking can record the
 /// new app the user just joined.
 class AppCode extends $pb.ProtobufEnum {
-  static const AppCode APP_CODE_UNSPECIFIED = AppCode._(0, _omitEnumNames ? '' : 'APP_CODE_UNSPECIFIED');
-  static const AppCode APP_CODE_FORGE = AppCode._(1, _omitEnumNames ? '' : 'APP_CODE_FORGE');
-  static const AppCode APP_CODE_LEXICON = AppCode._(2, _omitEnumNames ? '' : 'APP_CODE_LEXICON');
-  static const AppCode APP_CODE_NOMAD = AppCode._(3, _omitEnumNames ? '' : 'APP_CODE_NOMAD');
-  static const AppCode APP_CODE_ATLAS = AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_ATLAS');
-  static const AppCode APP_CODE_EMPIRE = AppCode._(5, _omitEnumNames ? '' : 'APP_CODE_EMPIRE');
-  static const AppCode APP_CODE_ONYX = AppCode._(6, _omitEnumNames ? '' : 'APP_CODE_ONYX');
-  static const AppCode APP_CODE_APEX = AppCode._(7, _omitEnumNames ? '' : 'APP_CODE_APEX');
-  static const AppCode APP_CODE_VAULT = AppCode._(8, _omitEnumNames ? '' : 'APP_CODE_VAULT');
-  static const AppCode APP_CODE_DOMINION = AppCode._(9, _omitEnumNames ? '' : 'APP_CODE_DOMINION');
-  static const AppCode APP_CODE_ORACLE = AppCode._(10, _omitEnumNames ? '' : 'APP_CODE_ORACLE');
-  static const AppCode APP_CODE_LEGACY = AppCode._(11, _omitEnumNames ? '' : 'APP_CODE_LEGACY');
-  static const AppCode APP_CODE_ZENITH = AppCode._(12, _omitEnumNames ? '' : 'APP_CODE_ZENITH');
+  static const AppCode APP_CODE_UNSPECIFIED =
+      AppCode._(0, _omitEnumNames ? '' : 'APP_CODE_UNSPECIFIED');
+  static const AppCode APP_CODE_FORGE =
+      AppCode._(1, _omitEnumNames ? '' : 'APP_CODE_FORGE');
+  static const AppCode APP_CODE_LEXICON =
+      AppCode._(2, _omitEnumNames ? '' : 'APP_CODE_LEXICON');
+  static const AppCode APP_CODE_NOMAD =
+      AppCode._(3, _omitEnumNames ? '' : 'APP_CODE_NOMAD');
+  static const AppCode APP_CODE_ATLAS =
+      AppCode._(4, _omitEnumNames ? '' : 'APP_CODE_ATLAS');
+  static const AppCode APP_CODE_EMPIRE =
+      AppCode._(5, _omitEnumNames ? '' : 'APP_CODE_EMPIRE');
+  static const AppCode APP_CODE_ONYX =
+      AppCode._(6, _omitEnumNames ? '' : 'APP_CODE_ONYX');
+  static const AppCode APP_CODE_APEX =
+      AppCode._(7, _omitEnumNames ? '' : 'APP_CODE_APEX');
+  static const AppCode APP_CODE_VAULT =
+      AppCode._(8, _omitEnumNames ? '' : 'APP_CODE_VAULT');
+  static const AppCode APP_CODE_DOMINION =
+      AppCode._(9, _omitEnumNames ? '' : 'APP_CODE_DOMINION');
+  static const AppCode APP_CODE_ORACLE =
+      AppCode._(10, _omitEnumNames ? '' : 'APP_CODE_ORACLE');
+  static const AppCode APP_CODE_LEGACY =
+      AppCode._(11, _omitEnumNames ? '' : 'APP_CODE_LEGACY');
+  static const AppCode APP_CODE_ZENITH =
+      AppCode._(12, _omitEnumNames ? '' : 'APP_CODE_ZENITH');
 
-  static const $core.List<AppCode> values = <AppCode> [
+  static const $core.List<AppCode> values = <AppCode>[
     APP_CODE_UNSPECIFIED,
     APP_CODE_FORGE,
     APP_CODE_LEXICON,
@@ -48,30 +61,38 @@ class AppCode extends $pb.ProtobufEnum {
     APP_CODE_ZENITH,
   ];
 
-  static final $core.List<AppCode?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 12);
-  static AppCode? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
+  static final $core.List<AppCode?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 12);
+  static AppCode? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AppCode._(super.value, super.name);
 }
 
 class AuthProvider extends $pb.ProtobufEnum {
-  static const AuthProvider AUTH_PROVIDER_UNSPECIFIED = AuthProvider._(0, _omitEnumNames ? '' : 'AUTH_PROVIDER_UNSPECIFIED');
-  static const AuthProvider AUTH_PROVIDER_GOOGLE = AuthProvider._(1, _omitEnumNames ? '' : 'AUTH_PROVIDER_GOOGLE');
-  static const AuthProvider AUTH_PROVIDER_FACEBOOK = AuthProvider._(2, _omitEnumNames ? '' : 'AUTH_PROVIDER_FACEBOOK');
-  static const AuthProvider AUTH_PROVIDER_GITHUB = AuthProvider._(3, _omitEnumNames ? '' : 'AUTH_PROVIDER_GITHUB');
+  static const AuthProvider AUTH_PROVIDER_UNSPECIFIED =
+      AuthProvider._(0, _omitEnumNames ? '' : 'AUTH_PROVIDER_UNSPECIFIED');
+  static const AuthProvider AUTH_PROVIDER_GOOGLE =
+      AuthProvider._(1, _omitEnumNames ? '' : 'AUTH_PROVIDER_GOOGLE');
+  static const AuthProvider AUTH_PROVIDER_FACEBOOK =
+      AuthProvider._(2, _omitEnumNames ? '' : 'AUTH_PROVIDER_FACEBOOK');
+  static const AuthProvider AUTH_PROVIDER_GITHUB =
+      AuthProvider._(3, _omitEnumNames ? '' : 'AUTH_PROVIDER_GITHUB');
 
-  static const $core.List<AuthProvider> values = <AuthProvider> [
+  static const $core.List<AuthProvider> values = <AuthProvider>[
     AUTH_PROVIDER_UNSPECIFIED,
     AUTH_PROVIDER_GOOGLE,
     AUTH_PROVIDER_FACEBOOK,
     AUTH_PROVIDER_GITHUB,
   ];
 
-  static final $core.List<AuthProvider?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 3);
-  static AuthProvider? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
+  static final $core.List<AuthProvider?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static AuthProvider? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const AuthProvider._(super.value, super.name);
 }
 
-
-const $core.bool _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
+const $core.bool _omitEnumNames =
+    $core.bool.fromEnvironment('protobuf.omit_enum_names');

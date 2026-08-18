@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -67,7 +68,13 @@ const TokenPair$json = {
     {'1': 'access_token', '3': 1, '4': 1, '5': 9, '10': 'accessToken'},
     {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '10': 'refreshToken'},
     {'1': 'access_expires_at', '3': 3, '4': 1, '5': 3, '10': 'accessExpiresAt'},
-    {'1': 'refresh_expires_at', '3': 4, '4': 1, '5': 3, '10': 'refreshExpiresAt'},
+    {
+      '1': 'refresh_expires_at',
+      '3': 4,
+      '4': 1,
+      '5': 3,
+      '10': 'refreshExpiresAt'
+    },
   ],
 };
 
@@ -86,9 +93,23 @@ const ProfileHint$json = {
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'avatar_url', '3': 4, '4': 1, '5': 9, '10': 'avatarUrl'},
-    {'1': 'linked_apps', '3': 5, '4': 3, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'linkedApps'},
+    {
+      '1': 'linked_apps',
+      '3': 5,
+      '4': 3,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'linkedApps'
+    },
     {'1': 'has_password', '3': 6, '4': 1, '5': 8, '10': 'hasPassword'},
-    {'1': 'linked_providers', '3': 7, '4': 3, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'linkedProviders'},
+    {
+      '1': 'linked_providers',
+      '3': 7,
+      '4': 3,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AuthProvider',
+      '10': 'linkedProviders'
+    },
     {'1': 'locale', '3': 8, '4': 1, '5': 9, '10': 'locale'},
   ],
 };
@@ -109,7 +130,14 @@ const RegisterRequest$json = {
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'app_code', '3': 4, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
@@ -124,9 +152,30 @@ const RegisterResponse$json = {
   '1': 'RegisterResponse',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
-    {'1': 'existing_profile', '3': 4, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'existingProfile'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
+    {
+      '1': 'existing_profile',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'existingProfile'
+    },
   ],
 };
 
@@ -144,7 +193,14 @@ const LoginRequest$json = {
   '2': [
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'app_code', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
@@ -159,8 +215,22 @@ const LoginResponse$json = {
   '1': 'LoginResponse',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
   ],
 };
 
@@ -174,9 +244,23 @@ final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
 const OAuthLoginRequest$json = {
   '1': 'OAuthLoginRequest',
   '2': [
-    {'1': 'provider', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'provider'},
+    {
+      '1': 'provider',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AuthProvider',
+      '10': 'provider'
+    },
     {'1': 'id_token', '3': 2, '4': 1, '5': 9, '10': 'idToken'},
-    {'1': 'app_code', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
@@ -191,9 +275,30 @@ const OAuthLoginResponse$json = {
   '1': 'OAuthLoginResponse',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
-    {'1': 'existing_profile', '3': 4, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'existingProfile'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
+    {
+      '1': 'existing_profile',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'existingProfile'
+    },
   ],
 };
 
@@ -214,15 +319,22 @@ const CheckEmailRequest$json = {
 };
 
 /// Descriptor for `CheckEmailRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List checkEmailRequestDescriptor = $convert.base64Decode(
-    'ChFDaGVja0VtYWlsUmVxdWVzdBIUCgVlbWFpbBgBIAEoCVIFZW1haWw=');
+final $typed_data.Uint8List checkEmailRequestDescriptor = $convert
+    .base64Decode('ChFDaGVja0VtYWlsUmVxdWVzdBIUCgVlbWFpbBgBIAEoCVIFZW1haWw=');
 
 @$core.Deprecated('Use checkEmailResponseDescriptor instead')
 const CheckEmailResponse$json = {
   '1': 'CheckEmailResponse',
   '2': [
     {'1': 'exists', '3': 1, '4': 1, '5': 8, '10': 'exists'},
-    {'1': 'hint', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'hint'},
+    {
+      '1': 'hint',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'hint'
+    },
   ],
 };
 
@@ -237,7 +349,14 @@ const LinkAppRequest$json = {
   '2': [
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'app_code', '3': 3, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
@@ -252,8 +371,22 @@ const LinkAppResponse$json = {
   '1': 'LinkAppResponse',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
   ],
 };
 
@@ -267,7 +400,14 @@ final $typed_data.Uint8List linkAppResponseDescriptor = $convert.base64Decode(
 const LinkProviderRequest$json = {
   '1': 'LinkProviderRequest',
   '2': [
-    {'1': 'provider', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AuthProvider', '10': 'provider'},
+    {
+      '1': 'provider',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AuthProvider',
+      '10': 'provider'
+    },
     {'1': 'id_token', '3': 2, '4': 1, '5': 9, '10': 'idToken'},
   ],
 };
@@ -283,8 +423,8 @@ const LinkProviderResponse$json = {
 };
 
 /// Descriptor for `LinkProviderResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List linkProviderResponseDescriptor = $convert.base64Decode(
-    'ChRMaW5rUHJvdmlkZXJSZXNwb25zZQ==');
+final $typed_data.Uint8List linkProviderResponseDescriptor =
+    $convert.base64Decode('ChRMaW5rUHJvdmlkZXJSZXNwb25zZQ==');
 
 @$core.Deprecated('Use setPasswordRequestDescriptor instead')
 const SetPasswordRequest$json = {
@@ -305,8 +445,8 @@ const SetPasswordResponse$json = {
 };
 
 /// Descriptor for `SetPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List setPasswordResponseDescriptor = $convert.base64Decode(
-    'ChNTZXRQYXNzd29yZFJlc3BvbnNl');
+final $typed_data.Uint8List setPasswordResponseDescriptor =
+    $convert.base64Decode('ChNTZXRQYXNzd29yZFJlc3BvbnNl');
 
 @$core.Deprecated('Use forgotPasswordRequestDescriptor instead')
 const ForgotPasswordRequest$json = {
@@ -327,8 +467,8 @@ const ForgotPasswordResponse$json = {
 };
 
 /// Descriptor for `ForgotPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List forgotPasswordResponseDescriptor = $convert.base64Decode(
-    'ChZGb3Jnb3RQYXNzd29yZFJlc3BvbnNl');
+final $typed_data.Uint8List forgotPasswordResponseDescriptor =
+    $convert.base64Decode('ChZGb3Jnb3RQYXNzd29yZFJlc3BvbnNl');
 
 @$core.Deprecated('Use resetPasswordRequestDescriptor instead')
 const ResetPasswordRequest$json = {
@@ -350,8 +490,8 @@ const ResetPasswordResponse$json = {
 };
 
 /// Descriptor for `ResetPasswordResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List resetPasswordResponseDescriptor = $convert.base64Decode(
-    'ChVSZXNldFBhc3N3b3JkUmVzcG9uc2U=');
+final $typed_data.Uint8List resetPasswordResponseDescriptor =
+    $convert.base64Decode('ChVSZXNldFBhc3N3b3JkUmVzcG9uc2U=');
 
 @$core.Deprecated('Use refreshRequestDescriptor instead')
 const RefreshRequest$json = {
@@ -369,7 +509,14 @@ final $typed_data.Uint8List refreshRequestDescriptor = $convert.base64Decode(
 const RefreshResponse$json = {
   '1': 'RefreshResponse',
   '2': [
-    {'1': 'tokens', '3': 1, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
+    {
+      '1': 'tokens',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
   ],
 };
 
@@ -395,22 +542,44 @@ const ExchangeOAuthHandoffRequest$json = {
   '1': 'ExchangeOAuthHandoffRequest',
   '2': [
     {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
-    {'1': 'app_code', '3': 2, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
 /// Descriptor for `ExchangeOAuthHandoffRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List exchangeOAuthHandoffRequestDescriptor = $convert.base64Decode(
-    'ChtFeGNoYW5nZU9BdXRoSGFuZG9mZlJlcXVlc3QSEgoEY29kZRgBIAEoCVIEY29kZRI0CghhcH'
-    'BfY29kZRgCIAEoDjIZLnN0dGF0dHVzLmF1dGgudjEuQXBwQ29kZVIHYXBwQ29kZQ==');
+final $typed_data.Uint8List exchangeOAuthHandoffRequestDescriptor =
+    $convert.base64Decode(
+        'ChtFeGNoYW5nZU9BdXRoSGFuZG9mZlJlcXVlc3QSEgoEY29kZRgBIAEoCVIEY29kZRI0CghhcH'
+        'BfY29kZRgCIAEoDjIZLnN0dGF0dHVzLmF1dGgudjEuQXBwQ29kZVIHYXBwQ29kZQ==');
 
 @$core.Deprecated('Use exchangeOAuthHandoffResponseDescriptor instead')
 const ExchangeOAuthHandoffResponse$json = {
   '1': 'ExchangeOAuthHandoffResponse',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'tokens', '3': 2, '4': 1, '5': 11, '6': '.sttattus.auth.v1.TokenPair', '10': 'tokens'},
-    {'1': 'profile', '3': 3, '4': 1, '5': 11, '6': '.sttattus.auth.v1.ProfileHint', '10': 'profile'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
   ],
 };
 
@@ -426,6 +595,5 @@ const LogoutResponse$json = {
 };
 
 /// Descriptor for `LogoutResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List logoutResponseDescriptor = $convert.base64Decode(
-    'Cg5Mb2dvdXRSZXNwb25zZQ==');
-
+final $typed_data.Uint8List logoutResponseDescriptor =
+    $convert.base64Decode('Cg5Mb2dvdXRSZXNwb25zZQ==');

@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -19,9 +20,28 @@ const CalculateBioRankRequest$json = {
   '1': 'CalculateBioRankRequest',
   '2': [
     {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
-    {'1': 'biomarkers', '3': 2, '4': 3, '5': 11, '6': '.sttattus.apex.v1.Biomarker', '10': 'biomarkers'},
-    {'1': 'chronological_age', '3': 3, '4': 1, '5': 1, '10': 'chronologicalAge'},
-    {'1': 'chronological_age_present', '3': 4, '4': 1, '5': 8, '10': 'chronologicalAgePresent'},
+    {
+      '1': 'biomarkers',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.apex.v1.Biomarker',
+      '10': 'biomarkers'
+    },
+    {
+      '1': 'chronological_age',
+      '3': 3,
+      '4': 1,
+      '5': 1,
+      '10': 'chronologicalAge'
+    },
+    {
+      '1': 'chronological_age_present',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'chronologicalAgePresent'
+    },
     {'1': 'biological_sex', '3': 5, '4': 1, '5': 9, '10': 'biologicalSex'},
   ],
 };
@@ -40,7 +60,14 @@ const CalculateBioRankResponse$json = {
   '2': [
     {'1': 'bio_rank', '3': 1, '4': 1, '5': 1, '10': 'bioRank'},
     {'1': 'biological_age', '3': 2, '4': 1, '5': 1, '10': 'biologicalAge'},
-    {'1': 'system_scores', '3': 3, '4': 3, '5': 11, '6': '.sttattus.apex.v1.CalculateBioRankResponse.SystemScoresEntry', '10': 'systemScores'},
+    {
+      '1': 'system_scores',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.apex.v1.CalculateBioRankResponse.SystemScoresEntry',
+      '10': 'systemScores'
+    },
     {'1': 'method', '3': 4, '4': 1, '5': 9, '10': 'method'},
     {'1': 'markers_used', '3': 5, '4': 3, '5': 9, '10': 'markersUsed'},
     {'1': 'markers_missing', '3': 6, '4': 3, '5': 9, '10': 'markersMissing'},
@@ -67,4 +94,3 @@ final $typed_data.Uint8List calculateBioRankResponseDescriptor = $convert.base64
     'a2Vyc191c2VkGAUgAygJUgttYXJrZXJzVXNlZBInCg9tYXJrZXJzX21pc3NpbmcYBiADKAlSDm'
     '1hcmtlcnNNaXNzaW5nGj8KEVN5c3RlbVNjb3Jlc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQK'
     'BXZhbHVlGAIgASgBUgV2YWx1ZToCOAE=');
-

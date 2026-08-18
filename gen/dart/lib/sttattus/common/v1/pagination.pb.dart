@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -32,19 +32,28 @@ class PageRequest extends $pb.GeneratedMessage {
 
   PageRequest._();
 
-  factory PageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PageRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.common.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.common.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'pageSize')
     ..aOS(2, _omitFieldNames ? '' : 'pageToken')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PageRequest clone() => PageRequest()..mergeFromMessage(this);
+  PageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PageRequest copyWith(void Function(PageRequest) updates) => super.copyWith((message) => updates(message as PageRequest)) as PageRequest;
+  PageRequest copyWith(void Function(PageRequest) updates) =>
+      super.copyWith((message) => updates(message as PageRequest))
+          as PageRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -53,9 +62,9 @@ class PageRequest extends $pb.GeneratedMessage {
   static PageRequest create() => PageRequest._();
   @$core.override
   PageRequest createEmptyInstance() => create();
-  static $pb.PbList<PageRequest> createRepeated() => $pb.PbList<PageRequest>();
   @$core.pragma('dart2js:noInline')
-  static PageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PageRequest>(create);
+  static PageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PageRequest>(create);
   static PageRequest? _defaultInstance;
 
   /// Maximum number of items to return. Server may cap this.
@@ -93,19 +102,28 @@ class PageResponse extends $pb.GeneratedMessage {
 
   PageResponse._();
 
-  factory PageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PageResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.common.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.common.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'nextPageToken')
     ..aInt64(2, _omitFieldNames ? '' : 'totalSize')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PageResponse clone() => PageResponse()..mergeFromMessage(this);
+  PageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PageResponse copyWith(void Function(PageResponse) updates) => super.copyWith((message) => updates(message as PageResponse)) as PageResponse;
+  PageResponse copyWith(void Function(PageResponse) updates) =>
+      super.copyWith((message) => updates(message as PageResponse))
+          as PageResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -114,9 +132,9 @@ class PageResponse extends $pb.GeneratedMessage {
   static PageResponse create() => PageResponse._();
   @$core.override
   PageResponse createEmptyInstance() => create();
-  static $pb.PbList<PageResponse> createRepeated() => $pb.PbList<PageResponse>();
   @$core.pragma('dart2js:noInline')
-  static PageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PageResponse>(create);
+  static PageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PageResponse>(create);
   static PageResponse? _defaultInstance;
 
   /// Token to pass to the next PageRequest. Empty when there are no more pages.
@@ -141,6 +159,7 @@ class PageResponse extends $pb.GeneratedMessage {
   void clearTotalSize() => $_clearField(2);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

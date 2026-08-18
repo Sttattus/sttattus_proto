@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -28,7 +29,13 @@ const UserProfile$json = {
     {'1': 'banned', '3': 8, '4': 1, '5': 8, '10': 'banned'},
     {'1': 'sttattus_score', '3': 9, '4': 1, '5': 1, '10': 'sttattusScore'},
     {'1': 'global_rank', '3': 10, '4': 1, '5': 5, '10': 'globalRank'},
-    {'1': 'global_percentile', '3': 11, '4': 1, '5': 1, '10': 'globalPercentile'},
+    {
+      '1': 'global_percentile',
+      '3': 11,
+      '4': 1,
+      '5': 1,
+      '10': 'globalPercentile'
+    },
     {'1': 'tier', '3': 12, '4': 1, '5': 9, '10': 'tier'},
     {'1': 'aura_color', '3': 13, '4': 1, '5': 9, '10': 'auraColor'},
     {'1': 'vault_rank', '3': 14, '4': 1, '5': 1, '10': 'vaultRank'},
@@ -56,7 +63,14 @@ final $typed_data.Uint8List userProfileDescriptor = $convert.base64Decode(
 const AppAccess$json = {
   '1': 'AppAccess',
   '2': [
-    {'1': 'app_code', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
     {'1': 'granted_at', '3': 2, '4': 1, '5': 3, '10': 'grantedAt'},
     {'1': 'last_active_at', '3': 3, '4': 1, '5': 3, '10': 'lastActiveAt'},
   ],
@@ -74,14 +88,21 @@ const GetMeRequest$json = {
 };
 
 /// Descriptor for `GetMeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getMeRequestDescriptor = $convert.base64Decode(
-    'CgxHZXRNZVJlcXVlc3Q=');
+final $typed_data.Uint8List getMeRequestDescriptor =
+    $convert.base64Decode('CgxHZXRNZVJlcXVlc3Q=');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {
   '1': 'GetMeResponse',
   '2': [
-    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.UserProfile', '10': 'profile'},
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.user.v1.UserProfile',
+      '10': 'profile'
+    },
   ],
 };
 
@@ -109,7 +130,14 @@ final $typed_data.Uint8List updateMeRequestDescriptor = $convert.base64Decode(
 const UpdateMeResponse$json = {
   '1': 'UpdateMeResponse',
   '2': [
-    {'1': 'profile', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.UserProfile', '10': 'profile'},
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.user.v1.UserProfile',
+      '10': 'profile'
+    },
   ],
 };
 
@@ -124,14 +152,21 @@ const ListAppAccessRequest$json = {
 };
 
 /// Descriptor for `ListAppAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAppAccessRequestDescriptor = $convert.base64Decode(
-    'ChRMaXN0QXBwQWNjZXNzUmVxdWVzdA==');
+final $typed_data.Uint8List listAppAccessRequestDescriptor =
+    $convert.base64Decode('ChRMaXN0QXBwQWNjZXNzUmVxdWVzdA==');
 
 @$core.Deprecated('Use listAppAccessResponseDescriptor instead')
 const ListAppAccessResponse$json = {
   '1': 'ListAppAccessResponse',
   '2': [
-    {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.sttattus.user.v1.AppAccess', '10': 'apps'},
+    {
+      '1': 'apps',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.user.v1.AppAccess',
+      '10': 'apps'
+    },
   ],
 };
 
@@ -144,7 +179,14 @@ final $typed_data.Uint8List listAppAccessResponseDescriptor = $convert.base64Dec
 const GrantAppRequest$json = {
   '1': 'GrantAppRequest',
   '2': [
-    {'1': 'app_code', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
   ],
 };
 
@@ -157,7 +199,14 @@ final $typed_data.Uint8List grantAppRequestDescriptor = $convert.base64Decode(
 const GrantAppResponse$json = {
   '1': 'GrantAppResponse',
   '2': [
-    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.AppAccess', '10': 'app'},
+    {
+      '1': 'app',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.user.v1.AppAccess',
+      '10': 'app'
+    },
   ],
 };
 
@@ -205,8 +254,9 @@ const GetSttattusRequest$json = {
 };
 
 /// Descriptor for `GetSttattusRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getSttattusRequestDescriptor = $convert.base64Decode(
-    'ChJHZXRTdHRhdHR1c1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
+final $typed_data.Uint8List getSttattusRequestDescriptor =
+    $convert.base64Decode(
+        'ChJHZXRTdHRhdHR1c1JlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklk');
 
 @$core.Deprecated('Use getSttattusResponseDescriptor instead')
 const GetSttattusResponse$json = {
@@ -214,10 +264,23 @@ const GetSttattusResponse$json = {
   '2': [
     {'1': 'sttattus_score', '3': 1, '4': 1, '5': 1, '10': 'sttattusScore'},
     {'1': 'global_rank', '3': 2, '4': 1, '5': 5, '10': 'globalRank'},
-    {'1': 'global_percentile', '3': 3, '4': 1, '5': 1, '10': 'globalPercentile'},
+    {
+      '1': 'global_percentile',
+      '3': 3,
+      '4': 1,
+      '5': 1,
+      '10': 'globalPercentile'
+    },
     {'1': 'tier', '3': 4, '4': 1, '5': 9, '10': 'tier'},
     {'1': 'aura_color', '3': 5, '4': 1, '5': 9, '10': 'auraColor'},
-    {'1': 'breakdown', '3': 6, '4': 1, '5': 11, '6': '.sttattus.user.v1.SttattusBreakdown', '10': 'breakdown'},
+    {
+      '1': 'breakdown',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.user.v1.SttattusBreakdown',
+      '10': 'breakdown'
+    },
   ],
 };
 
@@ -238,14 +301,22 @@ const ListLeaderboardRequest$json = {
 };
 
 /// Descriptor for `ListLeaderboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLeaderboardRequestDescriptor = $convert.base64Decode(
-    'ChZMaXN0TGVhZGVyYm9hcmRSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA==');
+final $typed_data.Uint8List listLeaderboardRequestDescriptor =
+    $convert.base64Decode(
+        'ChZMaXN0TGVhZGVyYm9hcmRSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA==');
 
 @$core.Deprecated('Use listLeaderboardResponseDescriptor instead')
 const ListLeaderboardResponse$json = {
   '1': 'ListLeaderboardResponse',
   '2': [
-    {'1': 'entries', '3': 1, '4': 3, '5': 11, '6': '.sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry', '10': 'entries'},
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.user.v1.ListLeaderboardResponse.LeaderboardEntry',
+      '10': 'entries'
+    },
   ],
   '3': [ListLeaderboardResponse_LeaderboardEntry$json],
 };
@@ -276,7 +347,14 @@ final $typed_data.Uint8List listLeaderboardResponseDescriptor = $convert.base64D
 const AppHeartbeatRequest$json = {
   '1': 'AppHeartbeatRequest',
   '2': [
-    {'1': 'app_code', '3': 1, '4': 1, '5': 14, '6': '.sttattus.auth.v1.AppCode', '10': 'appCode'},
+    {
+      '1': 'app_code',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.auth.v1.AppCode',
+      '10': 'appCode'
+    },
     {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
     {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
   ],
@@ -292,7 +370,14 @@ final $typed_data.Uint8List appHeartbeatRequestDescriptor = $convert.base64Decod
 const AppHeartbeatResponse$json = {
   '1': 'AppHeartbeatResponse',
   '2': [
-    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.sttattus.user.v1.AppAccess', '10': 'app'},
+    {
+      '1': 'app',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.user.v1.AppAccess',
+      '10': 'app'
+    },
   ],
 };
 
@@ -300,4 +385,3 @@ const AppHeartbeatResponse$json = {
 final $typed_data.Uint8List appHeartbeatResponseDescriptor = $convert.base64Decode(
     'ChRBcHBIZWFydGJlYXRSZXNwb25zZRItCgNhcHAYASABKAsyGy5zdHRhdHR1cy51c2VyLnYxLk'
     'FwcEFjY2Vzc1IDYXBw');
-

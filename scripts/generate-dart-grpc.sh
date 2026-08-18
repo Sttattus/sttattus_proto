@@ -13,17 +13,19 @@
 #
 # The plugin version is pinned below and activated automatically, for the same
 # reason buf.gen.yaml pins the TS plugins: generator and runtime move together.
-# protoc_plugin 25 emits `..aI(...)` on BuilderInfo, which only exists in
-# protobuf >= 5. Every app pins protobuf ^4.x, so generating with an unpinned
-# plugin produced stubs that analyze clean and fail at compile time in all
-# twelve apps at once — "The method 'aI' isn't defined for the type
-# 'BuilderInfo'". Bump PROTOC_PLUGIN_VERSION only alongside the protobuf and
-# grpc constraints in apps/*/pubspec.yaml and gen/dart/pubspec.yaml.
+# protoc_plugin 25 emits `..aI(...)` on BuilderInfo, which exists only in
+# protobuf >= 5. That is why this was pinned to 22.4.0 while the apps were on
+# protobuf ^4 — the mismatch broke all twelve at once.
+#
+# The apps are now on protobuf ^6 (required by grpc ^5), so 25.0.0 is the
+# matching generator. Keep this pin, the protobuf constraint in
+# gen/dart/pubspec.yaml, and the app pubspecs moving together: changing one
+# alone reproduces the original breakage.
 
 set -euo pipefail
 
 # Pairs with protobuf ^4.1.0 — matches the apps. See the note above.
-PROTOC_PLUGIN_VERSION="22.4.0"
+PROTOC_PLUGIN_VERSION="25.0.0"
 
 cd "$(dirname "$0")/.."
 
