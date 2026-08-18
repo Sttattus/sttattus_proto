@@ -1471,6 +1471,7 @@ const GetYearInOnyxResponse$json = {
     {'1': 'onyx_score', '3': 6, '4': 1, '5': 1, '10': 'onyxScore'},
     {'1': 'top_creators', '3': 7, '4': 3, '5': 9, '10': 'topCreators'},
     {'1': 'notable_titles', '3': 8, '4': 3, '5': 9, '10': 'notableTitles'},
+    {'1': 'latest_archive', '3': 9, '4': 1, '5': 11, '6': '.sttattus.onyx.v1.AnnualArchive', '10': 'latestArchive'},
   ],
 };
 
@@ -1481,7 +1482,26 @@ final $typed_data.Uint8List getYearInOnyxResponseDescriptor = $convert.base64Dec
     'ZWNlc0ZpbmlzaGVkEicKD3NhbG9uc19hdHRlbmRlZBgEIAEoBVIOc2Fsb25zQXR0ZW5kZWQSGA'
     'oHdW5sb2NrcxgFIAEoBVIHdW5sb2NrcxIdCgpvbnl4X3Njb3JlGAYgASgBUglvbnl4U2NvcmUS'
     'IQoMdG9wX2NyZWF0b3JzGAcgAygJUgt0b3BDcmVhdG9ycxIlCg5ub3RhYmxlX3RpdGxlcxgIIA'
-    'MoCVINbm90YWJsZVRpdGxlcw==');
+    'MoCVINbm90YWJsZVRpdGxlcxJGCg5sYXRlc3RfYXJjaGl2ZRgJIAEoCzIfLnN0dGF0dHVzLm9u'
+    'eXgudjEuQW5udWFsQXJjaGl2ZVINbGF0ZXN0QXJjaGl2ZQ==');
+
+@$core.Deprecated('Use annualArchiveDescriptor instead')
+const AnnualArchive$json = {
+  '1': 'AnnualArchive',
+  '2': [
+    {'1': 'media_asset_id', '3': 1, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'public_url', '3': 2, '4': 1, '5': 9, '10': 'publicUrl'},
+    {'1': 'generated_at', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'generatedAt'},
+    {'1': 'size_bytes', '3': 4, '4': 1, '5': 3, '10': 'sizeBytes'},
+  ],
+};
+
+/// Descriptor for `AnnualArchive`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchiveDescriptor = $convert.base64Decode(
+    'Cg1Bbm51YWxBcmNoaXZlEiQKDm1lZGlhX2Fzc2V0X2lkGAEgASgJUgxtZWRpYUFzc2V0SWQSHQ'
+    'oKcHVibGljX3VybBgCIAEoCVIJcHVibGljVXJsEj0KDGdlbmVyYXRlZF9hdBgDIAEoCzIaLmdv'
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2dlbmVyYXRlZEF0Eh0KCnNpemVfYnl0ZXMYBCABKA'
+    'NSCXNpemVCeXRlcw==');
 
 @$core.Deprecated('Use generateAnnualArchiveRequestDescriptor instead')
 const GenerateAnnualArchiveRequest$json = {

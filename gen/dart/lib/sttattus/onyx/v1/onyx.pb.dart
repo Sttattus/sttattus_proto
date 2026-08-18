@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
@@ -5980,6 +5981,7 @@ class GetYearInOnyxResponse extends $pb.GeneratedMessage {
     $core.double? onyxScore,
     $core.Iterable<$core.String>? topCreators,
     $core.Iterable<$core.String>? notableTitles,
+    AnnualArchive? latestArchive,
   }) {
     final result = create();
     if (year != null) result.year = year;
@@ -5990,6 +5992,7 @@ class GetYearInOnyxResponse extends $pb.GeneratedMessage {
     if (onyxScore != null) result.onyxScore = onyxScore;
     if (topCreators != null) result.topCreators.addAll(topCreators);
     if (notableTitles != null) result.notableTitles.addAll(notableTitles);
+    if (latestArchive != null) result.latestArchive = latestArchive;
     return result;
   }
 
@@ -6007,6 +6010,7 @@ class GetYearInOnyxResponse extends $pb.GeneratedMessage {
     ..a<$core.double>(6, _omitFieldNames ? '' : 'onyxScore', $pb.PbFieldType.OD)
     ..pPS(7, _omitFieldNames ? '' : 'topCreators')
     ..pPS(8, _omitFieldNames ? '' : 'notableTitles')
+    ..aOM<AnnualArchive>(9, _omitFieldNames ? '' : 'latestArchive', subBuilder: AnnualArchive.create)
     ..hasRequiredFields = false
   ;
 
@@ -6081,11 +6085,112 @@ class GetYearInOnyxResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearOnyxScore() => $_clearField(6);
 
+  /// Creators the member consumed, then creators they follow. Both surfaces
+  /// label this "CREATORS YOU FOLLOWED", so follows must be represented.
   @$pb.TagNumber(7)
   $pb.PbList<$core.String> get topCreators => $_getList(6);
 
   @$pb.TagNumber(8)
   $pb.PbList<$core.String> get notableTitles => $_getList(7);
+
+  /// The most recent Annual Archive for this year, absent when never generated.
+  @$pb.TagNumber(9)
+  AnnualArchive get latestArchive => $_getN(8);
+  @$pb.TagNumber(9)
+  set latestArchive(AnnualArchive value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasLatestArchive() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearLatestArchive() => $_clearField(9);
+  @$pb.TagNumber(9)
+  AnnualArchive ensureLatestArchive() => $_ensure(8);
+}
+
+/// AnnualArchive describes a generated archive PDF. public_url is a *signed*,
+/// short-lived URL and is re-issued on every read — it must never be cached by
+/// a client, and the stored r2:// locator must never be sent in its place.
+class AnnualArchive extends $pb.GeneratedMessage {
+  factory AnnualArchive({
+    $core.String? mediaAssetId,
+    $core.String? publicUrl,
+    $1.Timestamp? generatedAt,
+    $fixnum.Int64? sizeBytes,
+  }) {
+    final result = create();
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (publicUrl != null) result.publicUrl = publicUrl;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    return result;
+  }
+
+  AnnualArchive._();
+
+  factory AnnualArchive.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AnnualArchive.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AnnualArchive', package: const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(2, _omitFieldNames ? '' : 'publicUrl')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'generatedAt', subBuilder: $1.Timestamp.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'sizeBytes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchive clone() => AnnualArchive()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchive copyWith(void Function(AnnualArchive) updates) => super.copyWith((message) => updates(message as AnnualArchive)) as AnnualArchive;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchive create() => AnnualArchive._();
+  @$core.override
+  AnnualArchive createEmptyInstance() => create();
+  static $pb.PbList<AnnualArchive> createRepeated() => $pb.PbList<AnnualArchive>();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchive getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AnnualArchive>(create);
+  static AnnualArchive? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mediaAssetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaAssetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaAssetId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get publicUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set publicUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPublicUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPublicUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get generatedAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set generatedAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGeneratedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGeneratedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get sizeBytes => $_getI64(3);
+  @$pb.TagNumber(4)
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSizeBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSizeBytes() => $_clearField(4);
 }
 
 class GenerateAnnualArchiveRequest extends $pb.GeneratedMessage {

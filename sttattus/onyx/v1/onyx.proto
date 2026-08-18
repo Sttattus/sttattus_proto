@@ -521,8 +521,22 @@ message GetYearInOnyxResponse {
   int32 salons_attended = 4;
   int32 unlocks = 5;
   double onyx_score = 6;
-  repeated string top_creators = 7; // names, by consumption
+  // Creators the member consumed, then creators they follow. Both surfaces
+  // label this "CREATORS YOU FOLLOWED", so follows must be represented.
+  repeated string top_creators = 7;
   repeated string notable_titles = 8; // finished pieces worth recalling
+  // The most recent Annual Archive for this year, absent when never generated.
+  AnnualArchive latest_archive = 9;
+}
+
+// AnnualArchive describes a generated archive PDF. public_url is a *signed*,
+// short-lived URL and is re-issued on every read — it must never be cached by
+// a client, and the stored r2:// locator must never be sent in its place.
+message AnnualArchive {
+  string media_asset_id = 1;
+  string public_url = 2;
+  google.protobuf.Timestamp generated_at = 3;
+  int64 size_bytes = 4;
 }
 
 message GenerateAnnualArchiveRequest {

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * GatingCriteria defines the status requirements to access content.
@@ -4622,7 +4622,8 @@ export class GetYearInOnyxResponse extends Message<GetYearInOnyxResponse> {
   onyxScore = 0;
 
   /**
-   * names, by consumption
+   * Creators the member consumed, then creators they follow. Both surfaces
+   * label this "CREATORS YOU FOLLOWED", so follows must be represented.
    *
    * @generated from field: repeated string top_creators = 7;
    */
@@ -4634,6 +4635,13 @@ export class GetYearInOnyxResponse extends Message<GetYearInOnyxResponse> {
    * @generated from field: repeated string notable_titles = 8;
    */
   notableTitles: string[] = [];
+
+  /**
+   * The most recent Annual Archive for this year, absent when never generated.
+   *
+   * @generated from field: sttattus.onyx.v1.AnnualArchive latest_archive = 9;
+   */
+  latestArchive?: AnnualArchive;
 
   constructor(data?: PartialMessage<GetYearInOnyxResponse>) {
     super();
@@ -4651,6 +4659,7 @@ export class GetYearInOnyxResponse extends Message<GetYearInOnyxResponse> {
     { no: 6, name: "onyx_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "top_creators", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 8, name: "notable_titles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "latest_archive", kind: "message", T: AnnualArchive },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetYearInOnyxResponse {
@@ -4667,6 +4676,65 @@ export class GetYearInOnyxResponse extends Message<GetYearInOnyxResponse> {
 
   static equals(a: GetYearInOnyxResponse | PlainMessage<GetYearInOnyxResponse> | undefined, b: GetYearInOnyxResponse | PlainMessage<GetYearInOnyxResponse> | undefined): boolean {
     return proto3.util.equals(GetYearInOnyxResponse, a, b);
+  }
+}
+
+/**
+ * AnnualArchive describes a generated archive PDF. public_url is a *signed*,
+ * short-lived URL and is re-issued on every read — it must never be cached by
+ * a client, and the stored r2:// locator must never be sent in its place.
+ *
+ * @generated from message sttattus.onyx.v1.AnnualArchive
+ */
+export class AnnualArchive extends Message<AnnualArchive> {
+  /**
+   * @generated from field: string media_asset_id = 1;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string public_url = 2;
+   */
+  publicUrl = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 3;
+   */
+  generatedAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 size_bytes = 4;
+   */
+  sizeBytes = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AnnualArchive>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchive";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "public_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "generated_at", kind: "message", T: Timestamp },
+    { no: 4, name: "size_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchive {
+    return new AnnualArchive().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchive {
+    return new AnnualArchive().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchive {
+    return new AnnualArchive().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchive | PlainMessage<AnnualArchive> | undefined, b: AnnualArchive | PlainMessage<AnnualArchive> | undefined): boolean {
+    return proto3.util.equals(AnnualArchive, a, b);
   }
 }
 
