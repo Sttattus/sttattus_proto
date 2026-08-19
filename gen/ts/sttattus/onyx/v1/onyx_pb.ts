@@ -3478,6 +3478,15 @@ export class LiveEvent extends Message<LiveEvent> {
    */
   heroImageUrl = "";
 
+  /**
+   * True when required_tier is above what this member has earned. The server
+   * refuses the RSVP either way; this is so the client can say why instead of
+   * offering a button it knows will be refused. Mirrors Programme.locked.
+   *
+   * @generated from field: bool locked = 13;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<LiveEvent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3498,6 +3507,7 @@ export class LiveEvent extends Message<LiveEvent> {
     { no: 10, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "recording_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "hero_image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveEvent {

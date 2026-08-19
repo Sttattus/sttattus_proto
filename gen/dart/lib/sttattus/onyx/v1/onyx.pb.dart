@@ -5238,6 +5238,7 @@ class LiveEvent extends $pb.GeneratedMessage {
     $core.String? status,
     $core.String? recordingContentId,
     $core.String? heroImageUrl,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5253,6 +5254,7 @@ class LiveEvent extends $pb.GeneratedMessage {
     if (recordingContentId != null)
       result.recordingContentId = recordingContentId;
     if (heroImageUrl != null) result.heroImageUrl = heroImageUrl;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -5283,6 +5285,7 @@ class LiveEvent extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'status')
     ..aOS(11, _omitFieldNames ? '' : 'recordingContentId')
     ..aOS(12, _omitFieldNames ? '' : 'heroImageUrl')
+    ..aOB(13, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5413,6 +5416,18 @@ class LiveEvent extends $pb.GeneratedMessage {
   $core.bool hasHeroImageUrl() => $_has(11);
   @$pb.TagNumber(12)
   void clearHeroImageUrl() => $_clearField(12);
+
+  /// True when required_tier is above what this member has earned. The server
+  /// refuses the RSVP either way; this is so the client can say why instead of
+  /// offering a button it knows will be refused. Mirrors Programme.locked.
+  @$pb.TagNumber(13)
+  $core.bool get locked => $_getBF(12);
+  @$pb.TagNumber(13)
+  set locked($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLocked() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLocked() => $_clearField(13);
 }
 
 class ListLiveEventsRequest extends $pb.GeneratedMessage {

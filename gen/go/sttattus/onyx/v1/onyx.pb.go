@@ -4056,8 +4056,12 @@ type LiveEvent struct {
 	// When recorded, the onyx_content id of the archived recording ("" if none).
 	RecordingContentId string `protobuf:"bytes,11,opt,name=recording_content_id,json=recordingContentId,proto3" json:"recording_content_id,omitempty"`
 	HeroImageUrl       string `protobuf:"bytes,12,opt,name=hero_image_url,json=heroImageUrl,proto3" json:"hero_image_url,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// True when required_tier is above what this member has earned. The server
+	// refuses the RSVP either way; this is so the client can say why instead of
+	// offering a button it knows will be refused. Mirrors Programme.locked.
+	Locked        bool `protobuf:"varint,13,opt,name=locked,proto3" json:"locked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *LiveEvent) Reset() {
@@ -4172,6 +4176,13 @@ func (x *LiveEvent) GetHeroImageUrl() string {
 		return x.HeroImageUrl
 	}
 	return ""
+}
+
+func (x *LiveEvent) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
 }
 
 type ListLiveEventsRequest struct {
@@ -6122,7 +6133,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
 	"\x04body\x18\x02 \x01(\tR\x04body\"\\\n" +
 	"\x1cPostConciergeMessageResponse\x12<\n" +
-	"\amessage\x18\x01 \x01(\v2\".sttattus.onyx.v1.ConciergeMessageR\amessage\"\x8a\x03\n" +
+	"\amessage\x18\x01 \x01(\v2\".sttattus.onyx.v1.ConciergeMessageR\amessage\"\xa2\x03\n" +
 	"\tLiveEvent\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
@@ -6137,7 +6148,8 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x06status\x18\n" +
 	" \x01(\tR\x06status\x120\n" +
 	"\x14recording_content_id\x18\v \x01(\tR\x12recordingContentId\x12$\n" +
-	"\x0ehero_image_url\x18\f \x01(\tR\fheroImageUrl\"-\n" +
+	"\x0ehero_image_url\x18\f \x01(\tR\fheroImageUrl\x12\x16\n" +
+	"\x06locked\x18\r \x01(\bR\x06locked\"-\n" +
 	"\x15ListLiveEventsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\"M\n" +
 	"\x16ListLiveEventsResponse\x123\n" +

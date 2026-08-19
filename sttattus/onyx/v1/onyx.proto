@@ -411,6 +411,10 @@ message LiveEvent {
   // When recorded, the onyx_content id of the archived recording ("" if none).
   string recording_content_id = 11;
   string hero_image_url = 12;
+  // True when required_tier is above what this member has earned. The server
+  // refuses the RSVP either way; this is so the client can say why instead of
+  // offering a button it knows will be refused. Mirrors Programme.locked.
+  bool locked = 13;
 }
 message ListLiveEventsRequest {
   int32 limit = 1;

@@ -1449,6 +1449,7 @@ const LiveEvent$json = {
       '10': 'recordingContentId'
     },
     {'1': 'hero_image_url', '3': 12, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'locked', '3': 13, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -1461,7 +1462,7 @@ final $typed_data.Uint8List liveEventDescriptor = $convert.base64Decode(
     'Eh0KCnJzdnBfY291bnQYCCABKAVSCXJzdnBDb3VudBIbCglpc19yc3ZwZWQYCSABKAhSCGlzUn'
     'N2cGVkEhYKBnN0YXR1cxgKIAEoCVIGc3RhdHVzEjAKFHJlY29yZGluZ19jb250ZW50X2lkGAsg'
     'ASgJUhJyZWNvcmRpbmdDb250ZW50SWQSJAoOaGVyb19pbWFnZV91cmwYDCABKAlSDGhlcm9JbW'
-    'FnZVVybA==');
+    'FnZVVybBIWCgZsb2NrZWQYDSABKAhSBmxvY2tlZA==');
 
 @$core.Deprecated('Use listLiveEventsRequestDescriptor instead')
 const ListLiveEventsRequest$json = {
