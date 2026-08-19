@@ -173,6 +173,14 @@ const SyncPropertiesResponse$json = {
       '6': '.sttattus.dominion.v1.DominionStats',
       '10': 'stats'
     },
+    {
+      '1': 'properties',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.Property',
+      '10': 'properties'
+    },
   ],
 };
 
@@ -180,7 +188,8 @@ const SyncPropertiesResponse$json = {
 final $typed_data.Uint8List syncPropertiesResponseDescriptor = $convert.base64Decode(
     'ChZTeW5jUHJvcGVydGllc1Jlc3BvbnNlEjQKFmN1cnJlbnRfZG9taW5pb25fc2NvcmUYASABKA'
     'FSFGN1cnJlbnREb21pbmlvblNjb3JlEjkKBXN0YXRzGAIgASgLMiMuc3R0YXR0dXMuZG9taW5p'
-    'b24udjEuRG9taW5pb25TdGF0c1IFc3RhdHM=');
+    'b24udjEuRG9taW5pb25TdGF0c1IFc3RhdHMSPgoKcHJvcGVydGllcxgDIAMoCzIeLnN0dGF0dH'
+    'VzLmRvbWluaW9uLnYxLlByb3BlcnR5Ugpwcm9wZXJ0aWVz');
 
 @$core.Deprecated('Use listTerritoriesRequestDescriptor instead')
 const ListTerritoriesRequest$json = {

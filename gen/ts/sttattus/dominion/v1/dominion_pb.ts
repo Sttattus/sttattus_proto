@@ -308,6 +308,15 @@ export class SyncPropertiesResponse extends Message<SyncPropertiesResponse> {
    */
   stats?: DominionStats;
 
+  /**
+   * The rows as they were written, in request order, with server-assigned
+   * ids. Without these the client cannot file the deed it just made the
+   * member upload — SubmitDeed needs a property_id.
+   *
+   * @generated from field: repeated sttattus.dominion.v1.Property properties = 3;
+   */
+  properties: Property[] = [];
+
   constructor(data?: PartialMessage<SyncPropertiesResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -318,6 +327,7 @@ export class SyncPropertiesResponse extends Message<SyncPropertiesResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "current_dominion_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "stats", kind: "message", T: DominionStats },
+    { no: 3, name: "properties", kind: "message", T: Property, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SyncPropertiesResponse {

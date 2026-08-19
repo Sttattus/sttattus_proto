@@ -55,6 +55,10 @@ message SyncPropertiesRequest {
 message SyncPropertiesResponse {
   double current_dominion_score = 1;
   DominionStats stats = 2;
+  // The rows as they were written, in request order, with server-assigned
+  // ids. Without these the client cannot file the deed it just made the
+  // member upload — SubmitDeed needs a property_id.
+  repeated Property properties = 3;
 }
 
 message ListTerritoriesRequest {

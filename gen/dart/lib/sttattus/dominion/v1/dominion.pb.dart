@@ -378,11 +378,13 @@ class SyncPropertiesResponse extends $pb.GeneratedMessage {
   factory SyncPropertiesResponse({
     $core.double? currentDominionScore,
     DominionStats? stats,
+    $core.Iterable<Property>? properties,
   }) {
     final result = create();
     if (currentDominionScore != null)
       result.currentDominionScore = currentDominionScore;
     if (stats != null) result.stats = stats;
+    if (properties != null) result.properties.addAll(properties);
     return result;
   }
 
@@ -403,6 +405,8 @@ class SyncPropertiesResponse extends $pb.GeneratedMessage {
     ..aD(1, _omitFieldNames ? '' : 'currentDominionScore')
     ..aOM<DominionStats>(2, _omitFieldNames ? '' : 'stats',
         subBuilder: DominionStats.create)
+    ..pPM<Property>(3, _omitFieldNames ? '' : 'properties',
+        subBuilder: Property.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -444,6 +448,12 @@ class SyncPropertiesResponse extends $pb.GeneratedMessage {
   void clearStats() => $_clearField(2);
   @$pb.TagNumber(2)
   DominionStats ensureStats() => $_ensure(1);
+
+  /// The rows as they were written, in request order, with server-assigned
+  /// ids. Without these the client cannot file the deed it just made the
+  /// member upload — SubmitDeed needs a property_id.
+  @$pb.TagNumber(3)
+  $pb.PbList<Property> get properties => $_getList(2);
 }
 
 class ListTerritoriesRequest extends $pb.GeneratedMessage {

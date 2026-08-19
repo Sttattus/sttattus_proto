@@ -390,8 +390,12 @@ type SyncPropertiesResponse struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
 	CurrentDominionScore float64                `protobuf:"fixed64,1,opt,name=current_dominion_score,json=currentDominionScore,proto3" json:"current_dominion_score,omitempty"`
 	Stats                *DominionStats         `protobuf:"bytes,2,opt,name=stats,proto3" json:"stats,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// The rows as they were written, in request order, with server-assigned
+	// ids. Without these the client cannot file the deed it just made the
+	// member upload — SubmitDeed needs a property_id.
+	Properties    []*Property `protobuf:"bytes,3,rep,name=properties,proto3" json:"properties,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SyncPropertiesResponse) Reset() {
@@ -434,6 +438,13 @@ func (x *SyncPropertiesResponse) GetCurrentDominionScore() float64 {
 func (x *SyncPropertiesResponse) GetStats() *DominionStats {
 	if x != nil {
 		return x.Stats
+	}
+	return nil
+}
+
+func (x *SyncPropertiesResponse) GetProperties() []*Property {
+	if x != nil {
+		return x.Properties
 	}
 	return nil
 }
@@ -5620,10 +5631,13 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x15SyncPropertiesRequest\x12>\n" +
 	"\n" +
 	"properties\x18\x01 \x03(\v2\x1e.sttattus.dominion.v1.PropertyR\n" +
-	"properties\"\x89\x01\n" +
+	"properties\"\xc9\x01\n" +
 	"\x16SyncPropertiesResponse\x124\n" +
 	"\x16current_dominion_score\x18\x01 \x01(\x01R\x14currentDominionScore\x129\n" +
-	"\x05stats\x18\x02 \x01(\v2#.sttattus.dominion.v1.DominionStatsR\x05stats\"1\n" +
+	"\x05stats\x18\x02 \x01(\v2#.sttattus.dominion.v1.DominionStatsR\x05stats\x12>\n" +
+	"\n" +
+	"properties\x18\x03 \x03(\v2\x1e.sttattus.dominion.v1.PropertyR\n" +
+	"properties\"1\n" +
 	"\x16ListTerritoriesRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"Y\n" +
 	"\x17ListTerritoriesResponse\x12>\n" +
@@ -6170,123 +6184,124 @@ var file_sttattus_dominion_v1_dominion_proto_depIdxs = []int32{
 	99, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
 	2,  // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
 	3,  // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	2,  // 5: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
-	3,  // 6: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	99, // 7: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
-	12, // 8: sttattus.dominion.v1.ListLoungesResponse.lounges:type_name -> sttattus.dominion.v1.Lounge
-	15, // 9: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
-	15, // 10: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
-	15, // 11: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
-	15, // 12: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
-	24, // 13: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
-	27, // 14: sttattus.dominion.v1.ListLoungeEventsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
-	27, // 15: sttattus.dominion.v1.ListMyLoungeRsvpsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
-	34, // 16: sttattus.dominion.v1.ListSalonsResponse.salons:type_name -> sttattus.dominion.v1.Salon
-	34, // 17: sttattus.dominion.v1.ListMySalonRsvpsResponse.salons:type_name -> sttattus.dominion.v1.Salon
-	41, // 18: sttattus.dominion.v1.GetPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
-	41, // 19: sttattus.dominion.v1.UpsertPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
-	48, // 20: sttattus.dominion.v1.ListRegionIntelResponse.regions:type_name -> sttattus.dominion.v1.RegionIntel
-	48, // 21: sttattus.dominion.v1.GetRegionIntelResponse.region:type_name -> sttattus.dominion.v1.RegionIntel
-	53, // 22: sttattus.dominion.v1.TerritoryAllocation.regions:type_name -> sttattus.dominion.v1.RegionWeight
-	54, // 23: sttattus.dominion.v1.GetTerritoryAllocationResponse.allocation:type_name -> sttattus.dominion.v1.TerritoryAllocation
-	57, // 24: sttattus.dominion.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.dominion.v1.TodaySummary
-	60, // 25: sttattus.dominion.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
-	60, // 26: sttattus.dominion.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dominion.v1.ConciergeThread
-	60, // 27: sttattus.dominion.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
-	61, // 28: sttattus.dominion.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dominion.v1.ConciergeMessage
-	61, // 29: sttattus.dominion.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dominion.v1.ConciergeMessage
-	70, // 30: sttattus.dominion.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.dominion.v1.AnthologyArticle
-	70, // 31: sttattus.dominion.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.dominion.v1.AnthologyArticle
-	75, // 32: sttattus.dominion.v1.ListDirectoryResponse.partners:type_name -> sttattus.dominion.v1.DirectoryPartner
-	78, // 33: sttattus.dominion.v1.ListOffMarketResponse.listings:type_name -> sttattus.dominion.v1.OffMarketListing
-	78, // 34: sttattus.dominion.v1.GetOffMarketResponse.listing:type_name -> sttattus.dominion.v1.OffMarketListing
-	85, // 35: sttattus.dominion.v1.CreateDominionShareResponse.token:type_name -> sttattus.dominion.v1.DominionShareToken
-	85, // 36: sttattus.dominion.v1.ListMyDominionSharesResponse.tokens:type_name -> sttattus.dominion.v1.DominionShareToken
-	94, // 37: sttattus.dominion.v1.CreateLoungePassResponse.pass:type_name -> sttattus.dominion.v1.LoungePass
-	94, // 38: sttattus.dominion.v1.ListMyLoungePassesResponse.passes:type_name -> sttattus.dominion.v1.LoungePass
-	4,  // 39: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
-	6,  // 40: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
-	8,  // 41: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
-	10, // 42: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
-	25, // 43: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
-	16, // 44: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
-	18, // 45: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
-	20, // 46: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
-	22, // 47: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
-	13, // 48: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
-	28, // 49: sttattus.dominion.v1.DominionService.ListLoungeEvents:input_type -> sttattus.dominion.v1.ListLoungeEventsRequest
-	30, // 50: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:input_type -> sttattus.dominion.v1.RsvpLoungeEventRequest
-	32, // 51: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:input_type -> sttattus.dominion.v1.ListMyLoungeRsvpsRequest
-	35, // 52: sttattus.dominion.v1.DominionService.ListSalons:input_type -> sttattus.dominion.v1.ListSalonsRequest
-	37, // 53: sttattus.dominion.v1.DominionService.RsvpSalon:input_type -> sttattus.dominion.v1.RsvpSalonRequest
-	39, // 54: sttattus.dominion.v1.DominionService.ListMySalonRsvps:input_type -> sttattus.dominion.v1.ListMySalonRsvpsRequest
-	42, // 55: sttattus.dominion.v1.DominionService.GetPropertyFinancials:input_type -> sttattus.dominion.v1.GetPropertyFinancialsRequest
-	44, // 56: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:input_type -> sttattus.dominion.v1.UpsertPropertyFinancialsRequest
-	46, // 57: sttattus.dominion.v1.DominionService.GetPortfolioYield:input_type -> sttattus.dominion.v1.GetPortfolioYieldRequest
-	49, // 58: sttattus.dominion.v1.DominionService.ListRegionIntel:input_type -> sttattus.dominion.v1.ListRegionIntelRequest
-	51, // 59: sttattus.dominion.v1.DominionService.GetRegionIntel:input_type -> sttattus.dominion.v1.GetRegionIntelRequest
-	55, // 60: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:input_type -> sttattus.dominion.v1.GetTerritoryAllocationRequest
-	58, // 61: sttattus.dominion.v1.DominionService.GetTodaySummary:input_type -> sttattus.dominion.v1.GetTodaySummaryRequest
-	62, // 62: sttattus.dominion.v1.DominionService.StartConciergeThread:input_type -> sttattus.dominion.v1.StartConciergeThreadRequest
-	64, // 63: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:input_type -> sttattus.dominion.v1.ListMyConciergeThreadsRequest
-	66, // 64: sttattus.dominion.v1.DominionService.GetConciergeThread:input_type -> sttattus.dominion.v1.GetConciergeThreadRequest
-	68, // 65: sttattus.dominion.v1.DominionService.PostConciergeMessage:input_type -> sttattus.dominion.v1.PostConciergeMessageRequest
-	71, // 66: sttattus.dominion.v1.DominionService.ListAnthologyArticles:input_type -> sttattus.dominion.v1.ListAnthologyArticlesRequest
-	73, // 67: sttattus.dominion.v1.DominionService.GetAnthologyArticle:input_type -> sttattus.dominion.v1.GetAnthologyArticleRequest
-	76, // 68: sttattus.dominion.v1.DominionService.ListDirectory:input_type -> sttattus.dominion.v1.ListDirectoryRequest
-	79, // 69: sttattus.dominion.v1.DominionService.ListOffMarket:input_type -> sttattus.dominion.v1.ListOffMarketRequest
-	81, // 70: sttattus.dominion.v1.DominionService.GetOffMarket:input_type -> sttattus.dominion.v1.GetOffMarketRequest
-	83, // 71: sttattus.dominion.v1.DominionService.ParseDeed:input_type -> sttattus.dominion.v1.ParseDeedRequest
-	86, // 72: sttattus.dominion.v1.DominionService.CreateDominionShare:input_type -> sttattus.dominion.v1.CreateDominionShareRequest
-	88, // 73: sttattus.dominion.v1.DominionService.ListMyDominionShares:input_type -> sttattus.dominion.v1.ListMyDominionSharesRequest
-	90, // 74: sttattus.dominion.v1.DominionService.RevokeDominionShare:input_type -> sttattus.dominion.v1.RevokeDominionShareRequest
-	92, // 75: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:input_type -> sttattus.dominion.v1.GenerateDominionAlmanacRequest
-	95, // 76: sttattus.dominion.v1.DominionService.CreateLoungePass:input_type -> sttattus.dominion.v1.CreateLoungePassRequest
-	97, // 77: sttattus.dominion.v1.DominionService.ListMyLoungePasses:input_type -> sttattus.dominion.v1.ListMyLoungePassesRequest
-	5,  // 78: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
-	7,  // 79: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
-	9,  // 80: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
-	11, // 81: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
-	26, // 82: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
-	17, // 83: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
-	19, // 84: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
-	21, // 85: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
-	23, // 86: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
-	14, // 87: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
-	29, // 88: sttattus.dominion.v1.DominionService.ListLoungeEvents:output_type -> sttattus.dominion.v1.ListLoungeEventsResponse
-	31, // 89: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:output_type -> sttattus.dominion.v1.RsvpLoungeEventResponse
-	33, // 90: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:output_type -> sttattus.dominion.v1.ListMyLoungeRsvpsResponse
-	36, // 91: sttattus.dominion.v1.DominionService.ListSalons:output_type -> sttattus.dominion.v1.ListSalonsResponse
-	38, // 92: sttattus.dominion.v1.DominionService.RsvpSalon:output_type -> sttattus.dominion.v1.RsvpSalonResponse
-	40, // 93: sttattus.dominion.v1.DominionService.ListMySalonRsvps:output_type -> sttattus.dominion.v1.ListMySalonRsvpsResponse
-	43, // 94: sttattus.dominion.v1.DominionService.GetPropertyFinancials:output_type -> sttattus.dominion.v1.GetPropertyFinancialsResponse
-	45, // 95: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:output_type -> sttattus.dominion.v1.UpsertPropertyFinancialsResponse
-	47, // 96: sttattus.dominion.v1.DominionService.GetPortfolioYield:output_type -> sttattus.dominion.v1.GetPortfolioYieldResponse
-	50, // 97: sttattus.dominion.v1.DominionService.ListRegionIntel:output_type -> sttattus.dominion.v1.ListRegionIntelResponse
-	52, // 98: sttattus.dominion.v1.DominionService.GetRegionIntel:output_type -> sttattus.dominion.v1.GetRegionIntelResponse
-	56, // 99: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:output_type -> sttattus.dominion.v1.GetTerritoryAllocationResponse
-	59, // 100: sttattus.dominion.v1.DominionService.GetTodaySummary:output_type -> sttattus.dominion.v1.GetTodaySummaryResponse
-	63, // 101: sttattus.dominion.v1.DominionService.StartConciergeThread:output_type -> sttattus.dominion.v1.StartConciergeThreadResponse
-	65, // 102: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:output_type -> sttattus.dominion.v1.ListMyConciergeThreadsResponse
-	67, // 103: sttattus.dominion.v1.DominionService.GetConciergeThread:output_type -> sttattus.dominion.v1.GetConciergeThreadResponse
-	69, // 104: sttattus.dominion.v1.DominionService.PostConciergeMessage:output_type -> sttattus.dominion.v1.PostConciergeMessageResponse
-	72, // 105: sttattus.dominion.v1.DominionService.ListAnthologyArticles:output_type -> sttattus.dominion.v1.ListAnthologyArticlesResponse
-	74, // 106: sttattus.dominion.v1.DominionService.GetAnthologyArticle:output_type -> sttattus.dominion.v1.GetAnthologyArticleResponse
-	77, // 107: sttattus.dominion.v1.DominionService.ListDirectory:output_type -> sttattus.dominion.v1.ListDirectoryResponse
-	80, // 108: sttattus.dominion.v1.DominionService.ListOffMarket:output_type -> sttattus.dominion.v1.ListOffMarketResponse
-	82, // 109: sttattus.dominion.v1.DominionService.GetOffMarket:output_type -> sttattus.dominion.v1.GetOffMarketResponse
-	84, // 110: sttattus.dominion.v1.DominionService.ParseDeed:output_type -> sttattus.dominion.v1.ParseDeedResponse
-	87, // 111: sttattus.dominion.v1.DominionService.CreateDominionShare:output_type -> sttattus.dominion.v1.CreateDominionShareResponse
-	89, // 112: sttattus.dominion.v1.DominionService.ListMyDominionShares:output_type -> sttattus.dominion.v1.ListMyDominionSharesResponse
-	91, // 113: sttattus.dominion.v1.DominionService.RevokeDominionShare:output_type -> sttattus.dominion.v1.RevokeDominionShareResponse
-	93, // 114: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:output_type -> sttattus.dominion.v1.GenerateDominionAlmanacResponse
-	96, // 115: sttattus.dominion.v1.DominionService.CreateLoungePass:output_type -> sttattus.dominion.v1.CreateLoungePassResponse
-	98, // 116: sttattus.dominion.v1.DominionService.ListMyLoungePasses:output_type -> sttattus.dominion.v1.ListMyLoungePassesResponse
-	78, // [78:117] is the sub-list for method output_type
-	39, // [39:78] is the sub-list for method input_type
-	39, // [39:39] is the sub-list for extension type_name
-	39, // [39:39] is the sub-list for extension extendee
-	0,  // [0:39] is the sub-list for field type_name
+	2,  // 5: sttattus.dominion.v1.SyncPropertiesResponse.properties:type_name -> sttattus.dominion.v1.Property
+	2,  // 6: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
+	3,  // 7: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
+	99, // 8: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
+	12, // 9: sttattus.dominion.v1.ListLoungesResponse.lounges:type_name -> sttattus.dominion.v1.Lounge
+	15, // 10: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	15, // 11: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	15, // 12: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	15, // 13: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	24, // 14: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
+	27, // 15: sttattus.dominion.v1.ListLoungeEventsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	27, // 16: sttattus.dominion.v1.ListMyLoungeRsvpsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	34, // 17: sttattus.dominion.v1.ListSalonsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	34, // 18: sttattus.dominion.v1.ListMySalonRsvpsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	41, // 19: sttattus.dominion.v1.GetPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	41, // 20: sttattus.dominion.v1.UpsertPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	48, // 21: sttattus.dominion.v1.ListRegionIntelResponse.regions:type_name -> sttattus.dominion.v1.RegionIntel
+	48, // 22: sttattus.dominion.v1.GetRegionIntelResponse.region:type_name -> sttattus.dominion.v1.RegionIntel
+	53, // 23: sttattus.dominion.v1.TerritoryAllocation.regions:type_name -> sttattus.dominion.v1.RegionWeight
+	54, // 24: sttattus.dominion.v1.GetTerritoryAllocationResponse.allocation:type_name -> sttattus.dominion.v1.TerritoryAllocation
+	57, // 25: sttattus.dominion.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.dominion.v1.TodaySummary
+	60, // 26: sttattus.dominion.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	60, // 27: sttattus.dominion.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dominion.v1.ConciergeThread
+	60, // 28: sttattus.dominion.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	61, // 29: sttattus.dominion.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dominion.v1.ConciergeMessage
+	61, // 30: sttattus.dominion.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dominion.v1.ConciergeMessage
+	70, // 31: sttattus.dominion.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.dominion.v1.AnthologyArticle
+	70, // 32: sttattus.dominion.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.dominion.v1.AnthologyArticle
+	75, // 33: sttattus.dominion.v1.ListDirectoryResponse.partners:type_name -> sttattus.dominion.v1.DirectoryPartner
+	78, // 34: sttattus.dominion.v1.ListOffMarketResponse.listings:type_name -> sttattus.dominion.v1.OffMarketListing
+	78, // 35: sttattus.dominion.v1.GetOffMarketResponse.listing:type_name -> sttattus.dominion.v1.OffMarketListing
+	85, // 36: sttattus.dominion.v1.CreateDominionShareResponse.token:type_name -> sttattus.dominion.v1.DominionShareToken
+	85, // 37: sttattus.dominion.v1.ListMyDominionSharesResponse.tokens:type_name -> sttattus.dominion.v1.DominionShareToken
+	94, // 38: sttattus.dominion.v1.CreateLoungePassResponse.pass:type_name -> sttattus.dominion.v1.LoungePass
+	94, // 39: sttattus.dominion.v1.ListMyLoungePassesResponse.passes:type_name -> sttattus.dominion.v1.LoungePass
+	4,  // 40: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
+	6,  // 41: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
+	8,  // 42: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
+	10, // 43: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
+	25, // 44: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
+	16, // 45: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
+	18, // 46: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
+	20, // 47: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
+	22, // 48: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
+	13, // 49: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
+	28, // 50: sttattus.dominion.v1.DominionService.ListLoungeEvents:input_type -> sttattus.dominion.v1.ListLoungeEventsRequest
+	30, // 51: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:input_type -> sttattus.dominion.v1.RsvpLoungeEventRequest
+	32, // 52: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:input_type -> sttattus.dominion.v1.ListMyLoungeRsvpsRequest
+	35, // 53: sttattus.dominion.v1.DominionService.ListSalons:input_type -> sttattus.dominion.v1.ListSalonsRequest
+	37, // 54: sttattus.dominion.v1.DominionService.RsvpSalon:input_type -> sttattus.dominion.v1.RsvpSalonRequest
+	39, // 55: sttattus.dominion.v1.DominionService.ListMySalonRsvps:input_type -> sttattus.dominion.v1.ListMySalonRsvpsRequest
+	42, // 56: sttattus.dominion.v1.DominionService.GetPropertyFinancials:input_type -> sttattus.dominion.v1.GetPropertyFinancialsRequest
+	44, // 57: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:input_type -> sttattus.dominion.v1.UpsertPropertyFinancialsRequest
+	46, // 58: sttattus.dominion.v1.DominionService.GetPortfolioYield:input_type -> sttattus.dominion.v1.GetPortfolioYieldRequest
+	49, // 59: sttattus.dominion.v1.DominionService.ListRegionIntel:input_type -> sttattus.dominion.v1.ListRegionIntelRequest
+	51, // 60: sttattus.dominion.v1.DominionService.GetRegionIntel:input_type -> sttattus.dominion.v1.GetRegionIntelRequest
+	55, // 61: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:input_type -> sttattus.dominion.v1.GetTerritoryAllocationRequest
+	58, // 62: sttattus.dominion.v1.DominionService.GetTodaySummary:input_type -> sttattus.dominion.v1.GetTodaySummaryRequest
+	62, // 63: sttattus.dominion.v1.DominionService.StartConciergeThread:input_type -> sttattus.dominion.v1.StartConciergeThreadRequest
+	64, // 64: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:input_type -> sttattus.dominion.v1.ListMyConciergeThreadsRequest
+	66, // 65: sttattus.dominion.v1.DominionService.GetConciergeThread:input_type -> sttattus.dominion.v1.GetConciergeThreadRequest
+	68, // 66: sttattus.dominion.v1.DominionService.PostConciergeMessage:input_type -> sttattus.dominion.v1.PostConciergeMessageRequest
+	71, // 67: sttattus.dominion.v1.DominionService.ListAnthologyArticles:input_type -> sttattus.dominion.v1.ListAnthologyArticlesRequest
+	73, // 68: sttattus.dominion.v1.DominionService.GetAnthologyArticle:input_type -> sttattus.dominion.v1.GetAnthologyArticleRequest
+	76, // 69: sttattus.dominion.v1.DominionService.ListDirectory:input_type -> sttattus.dominion.v1.ListDirectoryRequest
+	79, // 70: sttattus.dominion.v1.DominionService.ListOffMarket:input_type -> sttattus.dominion.v1.ListOffMarketRequest
+	81, // 71: sttattus.dominion.v1.DominionService.GetOffMarket:input_type -> sttattus.dominion.v1.GetOffMarketRequest
+	83, // 72: sttattus.dominion.v1.DominionService.ParseDeed:input_type -> sttattus.dominion.v1.ParseDeedRequest
+	86, // 73: sttattus.dominion.v1.DominionService.CreateDominionShare:input_type -> sttattus.dominion.v1.CreateDominionShareRequest
+	88, // 74: sttattus.dominion.v1.DominionService.ListMyDominionShares:input_type -> sttattus.dominion.v1.ListMyDominionSharesRequest
+	90, // 75: sttattus.dominion.v1.DominionService.RevokeDominionShare:input_type -> sttattus.dominion.v1.RevokeDominionShareRequest
+	92, // 76: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:input_type -> sttattus.dominion.v1.GenerateDominionAlmanacRequest
+	95, // 77: sttattus.dominion.v1.DominionService.CreateLoungePass:input_type -> sttattus.dominion.v1.CreateLoungePassRequest
+	97, // 78: sttattus.dominion.v1.DominionService.ListMyLoungePasses:input_type -> sttattus.dominion.v1.ListMyLoungePassesRequest
+	5,  // 79: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
+	7,  // 80: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
+	9,  // 81: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
+	11, // 82: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
+	26, // 83: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
+	17, // 84: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
+	19, // 85: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
+	21, // 86: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
+	23, // 87: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
+	14, // 88: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
+	29, // 89: sttattus.dominion.v1.DominionService.ListLoungeEvents:output_type -> sttattus.dominion.v1.ListLoungeEventsResponse
+	31, // 90: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:output_type -> sttattus.dominion.v1.RsvpLoungeEventResponse
+	33, // 91: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:output_type -> sttattus.dominion.v1.ListMyLoungeRsvpsResponse
+	36, // 92: sttattus.dominion.v1.DominionService.ListSalons:output_type -> sttattus.dominion.v1.ListSalonsResponse
+	38, // 93: sttattus.dominion.v1.DominionService.RsvpSalon:output_type -> sttattus.dominion.v1.RsvpSalonResponse
+	40, // 94: sttattus.dominion.v1.DominionService.ListMySalonRsvps:output_type -> sttattus.dominion.v1.ListMySalonRsvpsResponse
+	43, // 95: sttattus.dominion.v1.DominionService.GetPropertyFinancials:output_type -> sttattus.dominion.v1.GetPropertyFinancialsResponse
+	45, // 96: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:output_type -> sttattus.dominion.v1.UpsertPropertyFinancialsResponse
+	47, // 97: sttattus.dominion.v1.DominionService.GetPortfolioYield:output_type -> sttattus.dominion.v1.GetPortfolioYieldResponse
+	50, // 98: sttattus.dominion.v1.DominionService.ListRegionIntel:output_type -> sttattus.dominion.v1.ListRegionIntelResponse
+	52, // 99: sttattus.dominion.v1.DominionService.GetRegionIntel:output_type -> sttattus.dominion.v1.GetRegionIntelResponse
+	56, // 100: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:output_type -> sttattus.dominion.v1.GetTerritoryAllocationResponse
+	59, // 101: sttattus.dominion.v1.DominionService.GetTodaySummary:output_type -> sttattus.dominion.v1.GetTodaySummaryResponse
+	63, // 102: sttattus.dominion.v1.DominionService.StartConciergeThread:output_type -> sttattus.dominion.v1.StartConciergeThreadResponse
+	65, // 103: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:output_type -> sttattus.dominion.v1.ListMyConciergeThreadsResponse
+	67, // 104: sttattus.dominion.v1.DominionService.GetConciergeThread:output_type -> sttattus.dominion.v1.GetConciergeThreadResponse
+	69, // 105: sttattus.dominion.v1.DominionService.PostConciergeMessage:output_type -> sttattus.dominion.v1.PostConciergeMessageResponse
+	72, // 106: sttattus.dominion.v1.DominionService.ListAnthologyArticles:output_type -> sttattus.dominion.v1.ListAnthologyArticlesResponse
+	74, // 107: sttattus.dominion.v1.DominionService.GetAnthologyArticle:output_type -> sttattus.dominion.v1.GetAnthologyArticleResponse
+	77, // 108: sttattus.dominion.v1.DominionService.ListDirectory:output_type -> sttattus.dominion.v1.ListDirectoryResponse
+	80, // 109: sttattus.dominion.v1.DominionService.ListOffMarket:output_type -> sttattus.dominion.v1.ListOffMarketResponse
+	82, // 110: sttattus.dominion.v1.DominionService.GetOffMarket:output_type -> sttattus.dominion.v1.GetOffMarketResponse
+	84, // 111: sttattus.dominion.v1.DominionService.ParseDeed:output_type -> sttattus.dominion.v1.ParseDeedResponse
+	87, // 112: sttattus.dominion.v1.DominionService.CreateDominionShare:output_type -> sttattus.dominion.v1.CreateDominionShareResponse
+	89, // 113: sttattus.dominion.v1.DominionService.ListMyDominionShares:output_type -> sttattus.dominion.v1.ListMyDominionSharesResponse
+	91, // 114: sttattus.dominion.v1.DominionService.RevokeDominionShare:output_type -> sttattus.dominion.v1.RevokeDominionShareResponse
+	93, // 115: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:output_type -> sttattus.dominion.v1.GenerateDominionAlmanacResponse
+	96, // 116: sttattus.dominion.v1.DominionService.CreateLoungePass:output_type -> sttattus.dominion.v1.CreateLoungePassResponse
+	98, // 117: sttattus.dominion.v1.DominionService.ListMyLoungePasses:output_type -> sttattus.dominion.v1.ListMyLoungePassesResponse
+	79, // [79:118] is the sub-list for method output_type
+	40, // [40:79] is the sub-list for method input_type
+	40, // [40:40] is the sub-list for extension type_name
+	40, // [40:40] is the sub-list for extension extendee
+	0,  // [0:40] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dominion_v1_dominion_proto_init() }
