@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package sttattus.vitals.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/vitals/v1;vitalsv1";
+
+// Wearable and manual body readings, shared across every pillar.
+//
+// The data was always platform-wide — three pillars read it before this service
+// existed (Apex, Zenith's focus verification, Forge's readiness) — but the only
+// API over it was ApexService. That meant a member had to install and use Apex
+// for Zenith to have anything to verify against, which is the one thing the
+// product must not require: apps share data, they do not depend on each other
+// being installed.
+//
+// So the store was renamed apex_vitals -> hub_vitals, and this is the neutral
+// API over it. Any pillar's app can sync from the device it is already talking
+// to, and any pillar can read the result.
+
+service VitalsService {
+  // Push readings taken from the member's device. Idempotent per
+  // (metric_code, recorded_at): re-syncing an overlapping window is normal,
+  // because a client asking for "the last 30 days" every time is simpler and
+  // more robust than one tracking a cursor.
+  rpc SyncVitals(SyncVitalsRequest) returns (SyncVitalsResponse);
+
+  // One metric's recent mean against its own prior baseline. Generalises
+  // ApexService.GetHrvWindow, which only ever answered for HRV.
+  rpc GetVitalWindow(GetVitalWindowRequest) returns (GetVitalWindowResponse);
+
+  // Whether a device is actually reporting.
+  //
+  // Deliberately not "did the member tap connect". Health Connect being
+  // installed, permissions being granted, and readings actually arriving are
+  // three different states, and only the third one means anything: permissions
+  // can be granted with no watch paired, and a paired watch can stop syncing.
+  // Features that require a wearable must gate on this.
+  rpc GetVitalsLinkStatus(GetVitalsLinkStatusRequest) returns (GetVitalsLinkStatusResponse);
+}
+
+// A single reading. metric_code follows what the shared sensors package emits:
+// HRV, RHR, BLOOD_OXYGEN, GLUCOSE, SLEEP_DURATION.
+message VitalReading {
+  string metric_code = 1;
+  string category = 2; // 'sensors' | 'lab' | 'manual'
+  double value = 3;
+  string unit = 4;
+  google.protobuf.Timestamp recorded_at = 5;
+}
+
+message SyncVitalsRequest {
+  repeated VitalReading readings = 1;
+}
+
+message SyncVitalsResponse {
+  int32 accepted = 1; // rows written or refreshed
+  int32 rejected = 2; // readings dropped as malformed, with reasons in `notes`
+  google.protobuf.Timestamp latest_recorded_at = 3;
+  repeated string notes = 4;
+}
+
+message GetVitalWindowRequest {
+  string metric_code = 1;
+  int32 window_days = 2;   // defaults to 7
+  int32 baseline_days = 3; // defaults to 30, and excludes the window
+}
+
+message GetVitalWindowResponse {
+  bool present = 1; // false when the window or the baseline is empty
+  double window_mean = 2;
+  double baseline_mean = 3;
+  double delta = 4; // window_mean - baseline_mean
+  int32 window_count = 5;
+  int32 baseline_count = 6;
+}
+
+message GetVitalsLinkStatusRequest {}
+
+message GetVitalsLinkStatusResponse {
+  // Any reading, ever. A member who linked a device once and let it lapse is
+  // linked but not fresh, and the two want different messages.
+  bool linked = 1;
+  // A reading inside fresh_within_hours. This is the one to gate on.
+  bool fresh = 2;
+  google.protobuf.Timestamp latest_recorded_at = 3;
+  // Which metric codes have fresh data, so a caller needing HRV specifically
+  // can tell "no device" from "device, but this metric is missing".
+  repeated string fresh_metrics = 4;
+  // What the server meant by fresh, so the client states the rule rather than
+  // inventing its own and disagreeing.
+  int32 fresh_within_hours = 5;
+}
