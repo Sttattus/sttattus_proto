@@ -145,9 +145,13 @@ func (x *SyncVitalsRequest) GetReadings() []*VitalReading {
 }
 
 type SyncVitalsResponse struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	Accepted         int32                  `protobuf:"varint,1,opt,name=accepted,proto3" json:"accepted,omitempty"` // rows written or refreshed
-	Rejected         int32                  `protobuf:"varint,2,opt,name=rejected,proto3" json:"rejected,omitempty"` // readings dropped as malformed, with reasons in `notes`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Readings the server now holds. A reading it already had counts here, so
+	// `accepted` is not the number of rows written — re-syncing an overlapping
+	// window is the intended usage and must not look like an error. The
+	// invariant a caller can rely on is accepted + rejected == readings sent.
+	Accepted         int32                  `protobuf:"varint,1,opt,name=accepted,proto3" json:"accepted,omitempty"`
+	Rejected         int32                  `protobuf:"varint,2,opt,name=rejected,proto3" json:"rejected,omitempty"` // readings refused, with the reason in `notes`
 	LatestRecordedAt *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=latest_recorded_at,json=latestRecordedAt,proto3" json:"latest_recorded_at,omitempty"`
 	Notes            []string               `protobuf:"bytes,4,rep,name=notes,proto3" json:"notes,omitempty"`
 	unknownFields    protoimpl.UnknownFields

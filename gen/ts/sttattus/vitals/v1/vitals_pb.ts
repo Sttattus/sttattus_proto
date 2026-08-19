@@ -114,14 +114,17 @@ export class SyncVitalsRequest extends Message<SyncVitalsRequest> {
  */
 export class SyncVitalsResponse extends Message<SyncVitalsResponse> {
   /**
-   * rows written or refreshed
+   * Readings the server now holds. A reading it already had counts here, so
+   * `accepted` is not the number of rows written — re-syncing an overlapping
+   * window is the intended usage and must not look like an error. The
+   * invariant a caller can rely on is accepted + rejected == readings sent.
    *
    * @generated from field: int32 accepted = 1;
    */
   accepted = 0;
 
   /**
-   * readings dropped as malformed, with reasons in `notes`
+   * readings refused, with the reason in `notes`
    *
    * @generated from field: int32 rejected = 2;
    */

@@ -231,6 +231,10 @@ class SyncVitalsResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<SyncVitalsResponse>(create);
   static SyncVitalsResponse? _defaultInstance;
 
+  /// Readings the server now holds. A reading it already had counts here, so
+  /// `accepted` is not the number of rows written — re-syncing an overlapping
+  /// window is the intended usage and must not look like an error. The
+  /// invariant a caller can rely on is accepted + rejected == readings sent.
   @$pb.TagNumber(1)
   $core.int get accepted => $_getIZ(0);
   @$pb.TagNumber(1)
