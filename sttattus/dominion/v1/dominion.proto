@@ -104,6 +104,11 @@ message Lounge {
   // True when this member's standing does not clear min_tier. A gate the
   // client can draw beats one it can only discover by being refused.
   bool locked = 13;
+  // dominion_lounges has carried coordinates since D14.7 and the territory
+  // map's own docstring promises lounge locations, but the proto had no way
+  // to send them, so the network was never plotted.
+  double latitude = 14;
+  double longitude = 15;
 }
 
 message ListLoungesRequest {}

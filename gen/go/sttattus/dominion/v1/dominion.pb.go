@@ -740,7 +740,12 @@ type Lounge struct {
 	LiveCapacityStatus  string   `protobuf:"bytes,12,opt,name=live_capacity_status,json=liveCapacityStatus,proto3" json:"live_capacity_status,omitempty"`
 	// True when this member's standing does not clear min_tier. A gate the
 	// client can draw beats one it can only discover by being refused.
-	Locked        bool `protobuf:"varint,13,opt,name=locked,proto3" json:"locked,omitempty"`
+	Locked bool `protobuf:"varint,13,opt,name=locked,proto3" json:"locked,omitempty"`
+	// dominion_lounges has carried coordinates since D14.7 and the territory
+	// map's own docstring promises lounge locations, but the proto had no way
+	// to send them, so the network was never plotted.
+	Latitude      float64 `protobuf:"fixed64,14,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude     float64 `protobuf:"fixed64,15,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -864,6 +869,20 @@ func (x *Lounge) GetLocked() bool {
 		return x.Locked
 	}
 	return false
+}
+
+func (x *Lounge) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *Lounge) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
 }
 
 type ListLoungesRequest struct {
@@ -5710,7 +5729,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x14GetLoungeKeyResponse\x12$\n" +
 	"\x0elounge_key_jwt\x18\x01 \x01(\tR\floungeKeyJwt\x129\n" +
 	"\n" +
-	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xf4\x02\n" +
+	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xae\x03\n" +
 	"\x06Lounge\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
@@ -5725,7 +5744,9 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	" \x03(\tR\tamenities\x121\n" +
 	"\x14location_description\x18\v \x01(\tR\x13locationDescription\x120\n" +
 	"\x14live_capacity_status\x18\f \x01(\tR\x12liveCapacityStatus\x12\x16\n" +
-	"\x06locked\x18\r \x01(\bR\x06locked\"\x14\n" +
+	"\x06locked\x18\r \x01(\bR\x06locked\x12\x1a\n" +
+	"\blatitude\x18\x0e \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\x0f \x01(\x01R\tlongitude\"\x14\n" +
 	"\x12ListLoungesRequest\"M\n" +
 	"\x13ListLoungesResponse\x126\n" +
 	"\alounges\x18\x01 \x03(\v2\x1c.sttattus.dominion.v1.LoungeR\alounges\"\x8b\x02\n" +

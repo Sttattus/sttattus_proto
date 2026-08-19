@@ -659,6 +659,20 @@ export class Lounge extends Message<Lounge> {
    */
   locked = false;
 
+  /**
+   * dominion_lounges has carried coordinates since D14.7 and the territory
+   * map's own docstring promises lounge locations, but the proto had no way
+   * to send them, so the network was never plotted.
+   *
+   * @generated from field: double latitude = 14;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 15;
+   */
+  longitude = 0;
+
   constructor(data?: PartialMessage<Lounge>) {
     super();
     proto3.util.initPartial(data, this);
@@ -680,6 +694,8 @@ export class Lounge extends Message<Lounge> {
     { no: 11, name: "location_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "live_capacity_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 15, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Lounge {

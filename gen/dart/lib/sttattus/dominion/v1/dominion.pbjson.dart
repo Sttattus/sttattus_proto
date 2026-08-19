@@ -322,6 +322,8 @@ const Lounge$json = {
       '10': 'liveCapacityStatus'
     },
     {'1': 'locked', '3': 13, '4': 1, '5': 8, '10': 'locked'},
+    {'1': 'latitude', '3': 14, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 15, '4': 1, '5': 1, '10': 'longitude'},
   ],
 };
 
@@ -333,7 +335,8 @@ final $typed_data.Uint8List loungeDescriptor = $convert.base64Decode(
     'kKCG1pbl90aWVyGAggASgJUgdtaW5UaWVyEhcKB2lzX29wZW4YCSABKAhSBmlzT3BlbhIcCglh'
     'bWVuaXRpZXMYCiADKAlSCWFtZW5pdGllcxIxChRsb2NhdGlvbl9kZXNjcmlwdGlvbhgLIAEoCV'
     'ITbG9jYXRpb25EZXNjcmlwdGlvbhIwChRsaXZlX2NhcGFjaXR5X3N0YXR1cxgMIAEoCVISbGl2'
-    'ZUNhcGFjaXR5U3RhdHVzEhYKBmxvY2tlZBgNIAEoCFIGbG9ja2Vk');
+    'ZUNhcGFjaXR5U3RhdHVzEhYKBmxvY2tlZBgNIAEoCFIGbG9ja2VkEhoKCGxhdGl0dWRlGA4gAS'
+    'gBUghsYXRpdHVkZRIcCglsb25naXR1ZGUYDyABKAFSCWxvbmdpdHVkZQ==');
 
 @$core.Deprecated('Use listLoungesRequestDescriptor instead')
 const ListLoungesRequest$json = {

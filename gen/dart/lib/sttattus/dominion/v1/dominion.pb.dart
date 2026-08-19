@@ -818,6 +818,8 @@ class Lounge extends $pb.GeneratedMessage {
     $core.String? locationDescription,
     $core.String? liveCapacityStatus,
     $core.bool? locked,
+    $core.double? latitude,
+    $core.double? longitude,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -835,6 +837,8 @@ class Lounge extends $pb.GeneratedMessage {
     if (liveCapacityStatus != null)
       result.liveCapacityStatus = liveCapacityStatus;
     if (locked != null) result.locked = locked;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
     return result;
   }
 
@@ -865,6 +869,8 @@ class Lounge extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'locationDescription')
     ..aOS(12, _omitFieldNames ? '' : 'liveCapacityStatus')
     ..aOB(13, _omitFieldNames ? '' : 'locked')
+    ..aD(14, _omitFieldNames ? '' : 'latitude')
+    ..aD(15, _omitFieldNames ? '' : 'longitude')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1000,6 +1006,27 @@ class Lounge extends $pb.GeneratedMessage {
   $core.bool hasLocked() => $_has(12);
   @$pb.TagNumber(13)
   void clearLocked() => $_clearField(13);
+
+  /// dominion_lounges has carried coordinates since D14.7 and the territory
+  /// map's own docstring promises lounge locations, but the proto had no way
+  /// to send them, so the network was never plotted.
+  @$pb.TagNumber(14)
+  $core.double get latitude => $_getN(13);
+  @$pb.TagNumber(14)
+  set latitude($core.double value) => $_setDouble(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasLatitude() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLatitude() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get longitude => $_getN(14);
+  @$pb.TagNumber(15)
+  set longitude($core.double value) => $_setDouble(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasLongitude() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLongitude() => $_clearField(15);
 }
 
 class ListLoungesRequest extends $pb.GeneratedMessage {
