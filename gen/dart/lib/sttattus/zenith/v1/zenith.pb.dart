@@ -1981,6 +1981,7 @@ class Programme extends $pb.GeneratedMessage {
     $core.bool? enrolled,
     $core.int? currentWeek,
     $core.String? status,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1994,6 +1995,7 @@ class Programme extends $pb.GeneratedMessage {
     if (enrolled != null) result.enrolled = enrolled;
     if (currentWeek != null) result.currentWeek = currentWeek;
     if (status != null) result.status = status;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -2022,6 +2024,7 @@ class Programme extends $pb.GeneratedMessage {
     ..aOB(9, _omitFieldNames ? '' : 'enrolled')
     ..aI(10, _omitFieldNames ? '' : 'currentWeek')
     ..aOS(11, _omitFieldNames ? '' : 'status')
+    ..aOB(12, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2141,6 +2144,18 @@ class Programme extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(10);
   @$pb.TagNumber(11)
   void clearStatus() => $_clearField(11);
+
+  /// True when sovereign_only and this member has not earned it. The server
+  /// refuses to enrol either way; this is so the client can say why instead of
+  /// firing a request it knows will be denied. Mirrors AnthologyArticle.locked.
+  @$pb.TagNumber(12)
+  $core.bool get locked => $_getBF(11);
+  @$pb.TagNumber(12)
+  set locked($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLocked() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLocked() => $_clearField(12);
 }
 
 class ProgrammeWeek extends $pb.GeneratedMessage {

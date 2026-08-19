@@ -957,13 +957,13 @@ export class ListMyCalendarEventsResponse extends Message<ListMyCalendarEventsRe
 
 /**
  * === Z16.5 — today's cognitive load ===
- *
+ * 
  * Composite of:
  *   - calendar_density (Z16.6 — null until calendar wire ships)
  *   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
  *   - session_pressure (real today: how much focused work the user
  *     already logged vs their 14-day rolling average)
- *
+ * 
  * Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
  * the composite is the mean of available inputs (no fabrication).
  *
@@ -1329,6 +1329,15 @@ export class Programme extends Message<Programme> {
    */
   status = "";
 
+  /**
+   * True when sovereign_only and this member has not earned it. The server
+   * refuses to enrol either way; this is so the client can say why instead of
+   * firing a request it knows will be denied. Mirrors AnthologyArticle.locked.
+   *
+   * @generated from field: bool locked = 12;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<Programme>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1348,6 +1357,7 @@ export class Programme extends Message<Programme> {
     { no: 9, name: "enrolled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "current_week", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 11, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Programme {

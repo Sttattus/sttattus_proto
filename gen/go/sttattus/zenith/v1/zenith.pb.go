@@ -1520,9 +1520,13 @@ type Programme struct {
 	Weeks         int32                  `protobuf:"varint,7,opt,name=weeks,proto3" json:"weeks,omitempty"`
 	SovereignOnly bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
 	// Populated on enrolled lists:
-	Enrolled      bool   `protobuf:"varint,9,opt,name=enrolled,proto3" json:"enrolled,omitempty"`
-	CurrentWeek   int32  `protobuf:"varint,10,opt,name=current_week,json=currentWeek,proto3" json:"current_week,omitempty"`
-	Status        string `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"` // '' | 'active' | 'completed' | 'abandoned'
+	Enrolled    bool   `protobuf:"varint,9,opt,name=enrolled,proto3" json:"enrolled,omitempty"`
+	CurrentWeek int32  `protobuf:"varint,10,opt,name=current_week,json=currentWeek,proto3" json:"current_week,omitempty"`
+	Status      string `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"` // '' | 'active' | 'completed' | 'abandoned'
+	// True when sovereign_only and this member has not earned it. The server
+	// refuses to enrol either way; this is so the client can say why instead of
+	// firing a request it knows will be denied. Mirrors AnthologyArticle.locked.
+	Locked        bool `protobuf:"varint,12,opt,name=locked,proto3" json:"locked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1632,6 +1636,13 @@ func (x *Programme) GetStatus() string {
 		return x.Status
 	}
 	return ""
+}
+
+func (x *Programme) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
 }
 
 type ProgrammeWeek struct {
@@ -6927,7 +6938,7 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\asummary\x18\a \x01(\tR\asummary\"\x1b\n" +
 	"\x19ListBlockTemplatesRequest\"]\n" +
 	"\x1aListBlockTemplatesResponse\x12?\n" +
-	"\ttemplates\x18\x01 \x03(\v2!.sttattus.zenith.v1.BlockTemplateR\ttemplates\"\xac\x02\n" +
+	"\ttemplates\x18\x01 \x03(\v2!.sttattus.zenith.v1.BlockTemplateR\ttemplates\"\xc4\x02\n" +
 	"\tProgramme\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
@@ -6941,7 +6952,8 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\benrolled\x18\t \x01(\bR\benrolled\x12!\n" +
 	"\fcurrent_week\x18\n" +
 	" \x01(\x05R\vcurrentWeek\x12\x16\n" +
-	"\x06status\x18\v \x01(\tR\x06status\"\x8b\x01\n" +
+	"\x06status\x18\v \x01(\tR\x06status\x12\x16\n" +
+	"\x06locked\x18\f \x01(\bR\x06locked\"\x8b\x01\n" +
 	"\rProgrammeWeek\x12\x1f\n" +
 	"\vweek_number\x18\x01 \x01(\x05R\n" +
 	"weekNumber\x12\x14\n" +

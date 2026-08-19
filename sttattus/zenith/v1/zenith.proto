@@ -174,6 +174,10 @@ message Programme {
   bool enrolled = 9;
   int32 current_week = 10;
   string status = 11; // '' | 'active' | 'completed' | 'abandoned'
+  // True when sovereign_only and this member has not earned it. The server
+  // refuses to enrol either way; this is so the client can say why instead of
+  // firing a request it knows will be denied. Mirrors AnthologyArticle.locked.
+  bool locked = 12;
 }
 message ProgrammeWeek {
   int32 week_number = 1;

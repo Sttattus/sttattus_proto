@@ -546,6 +546,7 @@ const Programme$json = {
     {'1': 'enrolled', '3': 9, '4': 1, '5': 8, '10': 'enrolled'},
     {'1': 'current_week', '3': 10, '4': 1, '5': 5, '10': 'currentWeek'},
     {'1': 'status', '3': 11, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'locked', '3': 12, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -556,7 +557,7 @@ final $typed_data.Uint8List programmeDescriptor = $convert.base64Decode(
     'IAEoCVIJZm9jdXNBcmVhEhgKB3N1bW1hcnkYBiABKAlSB3N1bW1hcnkSFAoFd2Vla3MYByABKA'
     'VSBXdlZWtzEiUKDnNvdmVyZWlnbl9vbmx5GAggASgIUg1zb3ZlcmVpZ25Pbmx5EhoKCGVucm9s'
     'bGVkGAkgASgIUghlbnJvbGxlZBIhCgxjdXJyZW50X3dlZWsYCiABKAVSC2N1cnJlbnRXZWVrEh'
-    'YKBnN0YXR1cxgLIAEoCVIGc3RhdHVz');
+    'YKBnN0YXR1cxgLIAEoCVIGc3RhdHVzEhYKBmxvY2tlZBgMIAEoCFIGbG9ja2Vk');
 
 @$core.Deprecated('Use programmeWeekDescriptor instead')
 const ProgrammeWeek$json = {
