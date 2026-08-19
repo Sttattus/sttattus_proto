@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
     as $1;
@@ -273,11 +274,15 @@ class GetVitalWindowRequest extends $pb.GeneratedMessage {
     $core.String? metricCode,
     $core.int? windowDays,
     $core.int? baselineDays,
+    $fixnum.Int64? startUnix,
+    $fixnum.Int64? endUnix,
   }) {
     final result = create();
     if (metricCode != null) result.metricCode = metricCode;
     if (windowDays != null) result.windowDays = windowDays;
     if (baselineDays != null) result.baselineDays = baselineDays;
+    if (startUnix != null) result.startUnix = startUnix;
+    if (endUnix != null) result.endUnix = endUnix;
     return result;
   }
 
@@ -298,6 +303,8 @@ class GetVitalWindowRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'metricCode')
     ..aI(2, _omitFieldNames ? '' : 'windowDays')
     ..aI(3, _omitFieldNames ? '' : 'baselineDays')
+    ..aInt64(4, _omitFieldNames ? '' : 'startUnix')
+    ..aInt64(5, _omitFieldNames ? '' : 'endUnix')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -346,6 +353,31 @@ class GetVitalWindowRequest extends $pb.GeneratedMessage {
   $core.bool hasBaselineDays() => $_has(2);
   @$pb.TagNumber(3)
   void clearBaselineDays() => $_clearField(3);
+
+  /// An explicit window, overriding window_days when both are set.
+  ///
+  /// Needed because the windows callers care about are not always whole days:
+  /// Zenith compares the HRV during one focus block — ninety minutes — against
+  /// the member's 30-day baseline, and rounding that to a day would average the
+  /// block away into the rest of the afternoon. The baseline still comes from
+  /// baseline_days, measured back from start_unix.
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get startUnix => $_getI64(3);
+  @$pb.TagNumber(4)
+  set startUnix($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStartUnix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStartUnix() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get endUnix => $_getI64(4);
+  @$pb.TagNumber(5)
+  set endUnix($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEndUnix() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndUnix() => $_clearField(5);
 }
 
 class GetVitalWindowResponse extends $pb.GeneratedMessage {

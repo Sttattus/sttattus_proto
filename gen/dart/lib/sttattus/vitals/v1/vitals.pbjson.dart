@@ -93,6 +93,8 @@ const GetVitalWindowRequest$json = {
     {'1': 'metric_code', '3': 1, '4': 1, '5': 9, '10': 'metricCode'},
     {'1': 'window_days', '3': 2, '4': 1, '5': 5, '10': 'windowDays'},
     {'1': 'baseline_days', '3': 3, '4': 1, '5': 5, '10': 'baselineDays'},
+    {'1': 'start_unix', '3': 4, '4': 1, '5': 3, '10': 'startUnix'},
+    {'1': 'end_unix', '3': 5, '4': 1, '5': 3, '10': 'endUnix'},
   ],
 };
 
@@ -100,7 +102,8 @@ const GetVitalWindowRequest$json = {
 final $typed_data.Uint8List getVitalWindowRequestDescriptor = $convert.base64Decode(
     'ChVHZXRWaXRhbFdpbmRvd1JlcXVlc3QSHwoLbWV0cmljX2NvZGUYASABKAlSCm1ldHJpY0NvZG'
     'USHwoLd2luZG93X2RheXMYAiABKAVSCndpbmRvd0RheXMSIwoNYmFzZWxpbmVfZGF5cxgDIAEo'
-    'BVIMYmFzZWxpbmVEYXlz');
+    'BVIMYmFzZWxpbmVEYXlzEh0KCnN0YXJ0X3VuaXgYBCABKANSCXN0YXJ0VW5peBIZCghlbmRfdW'
+    '5peBgFIAEoA1IHZW5kVW5peA==');
 
 @$core.Deprecated('Use getVitalWindowResponseDescriptor instead')
 const GetVitalWindowResponse$json = {

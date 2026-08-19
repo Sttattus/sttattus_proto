@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * A single reading. metric_code follows what the shared sensors package emits:
@@ -194,6 +194,24 @@ export class GetVitalWindowRequest extends Message<GetVitalWindowRequest> {
    */
   baselineDays = 0;
 
+  /**
+   * An explicit window, overriding window_days when both are set.
+   * 
+   * Needed because the windows callers care about are not always whole days:
+   * Zenith compares the HRV during one focus block — ninety minutes — against
+   * the member's 30-day baseline, and rounding that to a day would average the
+   * block away into the rest of the afternoon. The baseline still comes from
+   * baseline_days, measured back from start_unix.
+   *
+   * @generated from field: int64 start_unix = 4;
+   */
+  startUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 end_unix = 5;
+   */
+  endUnix = protoInt64.zero;
+
   constructor(data?: PartialMessage<GetVitalWindowRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -205,6 +223,8 @@ export class GetVitalWindowRequest extends Message<GetVitalWindowRequest> {
     { no: 1, name: "metric_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "window_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "baseline_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "start_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "end_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVitalWindowRequest {

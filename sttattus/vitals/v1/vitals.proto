@@ -69,6 +69,16 @@ message GetVitalWindowRequest {
   string metric_code = 1;
   int32 window_days = 2;   // defaults to 7
   int32 baseline_days = 3; // defaults to 30, and excludes the window
+
+  // An explicit window, overriding window_days when both are set.
+  //
+  // Needed because the windows callers care about are not always whole days:
+  // Zenith compares the HRV during one focus block — ninety minutes — against
+  // the member's 30-day baseline, and rounding that to a day would average the
+  // block away into the rest of the afternoon. The baseline still comes from
+  // baseline_days, measured back from start_unix.
+  int64 start_unix = 4;
+  int64 end_unix = 5;
 }
 
 message GetVitalWindowResponse {

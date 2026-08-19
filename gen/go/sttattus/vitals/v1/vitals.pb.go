@@ -217,10 +217,19 @@ func (x *SyncVitalsResponse) GetNotes() []string {
 }
 
 type GetVitalWindowRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	MetricCode    string                 `protobuf:"bytes,1,opt,name=metric_code,json=metricCode,proto3" json:"metric_code,omitempty"`
-	WindowDays    int32                  `protobuf:"varint,2,opt,name=window_days,json=windowDays,proto3" json:"window_days,omitempty"`       // defaults to 7
-	BaselineDays  int32                  `protobuf:"varint,3,opt,name=baseline_days,json=baselineDays,proto3" json:"baseline_days,omitempty"` // defaults to 30, and excludes the window
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	MetricCode   string                 `protobuf:"bytes,1,opt,name=metric_code,json=metricCode,proto3" json:"metric_code,omitempty"`
+	WindowDays   int32                  `protobuf:"varint,2,opt,name=window_days,json=windowDays,proto3" json:"window_days,omitempty"`       // defaults to 7
+	BaselineDays int32                  `protobuf:"varint,3,opt,name=baseline_days,json=baselineDays,proto3" json:"baseline_days,omitempty"` // defaults to 30, and excludes the window
+	// An explicit window, overriding window_days when both are set.
+	//
+	// Needed because the windows callers care about are not always whole days:
+	// Zenith compares the HRV during one focus block — ninety minutes — against
+	// the member's 30-day baseline, and rounding that to a day would average the
+	// block away into the rest of the afternoon. The baseline still comes from
+	// baseline_days, measured back from start_unix.
+	StartUnix     int64 `protobuf:"varint,4,opt,name=start_unix,json=startUnix,proto3" json:"start_unix,omitempty"`
+	EndUnix       int64 `protobuf:"varint,5,opt,name=end_unix,json=endUnix,proto3" json:"end_unix,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -272,6 +281,20 @@ func (x *GetVitalWindowRequest) GetWindowDays() int32 {
 func (x *GetVitalWindowRequest) GetBaselineDays() int32 {
 	if x != nil {
 		return x.BaselineDays
+	}
+	return 0
+}
+
+func (x *GetVitalWindowRequest) GetStartUnix() int64 {
+	if x != nil {
+		return x.StartUnix
+	}
+	return 0
+}
+
+func (x *GetVitalWindowRequest) GetEndUnix() int64 {
+	if x != nil {
+		return x.EndUnix
 	}
 	return 0
 }
@@ -498,13 +521,16 @@ const file_sttattus_vitals_v1_vitals_proto_rawDesc = "" +
 	"\baccepted\x18\x01 \x01(\x05R\baccepted\x12\x1a\n" +
 	"\brejected\x18\x02 \x01(\x05R\brejected\x12H\n" +
 	"\x12latest_recorded_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x10latestRecordedAt\x12\x14\n" +
-	"\x05notes\x18\x04 \x03(\tR\x05notes\"~\n" +
+	"\x05notes\x18\x04 \x03(\tR\x05notes\"\xb8\x01\n" +
 	"\x15GetVitalWindowRequest\x12\x1f\n" +
 	"\vmetric_code\x18\x01 \x01(\tR\n" +
 	"metricCode\x12\x1f\n" +
 	"\vwindow_days\x18\x02 \x01(\x05R\n" +
 	"windowDays\x12#\n" +
-	"\rbaseline_days\x18\x03 \x01(\x05R\fbaselineDays\"\xd8\x01\n" +
+	"\rbaseline_days\x18\x03 \x01(\x05R\fbaselineDays\x12\x1d\n" +
+	"\n" +
+	"start_unix\x18\x04 \x01(\x03R\tstartUnix\x12\x19\n" +
+	"\bend_unix\x18\x05 \x01(\x03R\aendUnix\"\xd8\x01\n" +
 	"\x16GetVitalWindowResponse\x12\x18\n" +
 	"\apresent\x18\x01 \x01(\bR\apresent\x12\x1f\n" +
 	"\vwindow_mean\x18\x02 \x01(\x01R\n" +
