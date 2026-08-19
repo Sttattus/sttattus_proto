@@ -814,6 +814,10 @@ class Lounge extends $pb.GeneratedMessage {
     $core.String? kind,
     $core.String? minTier,
     $core.bool? isOpen,
+    $core.Iterable<$core.String>? amenities,
+    $core.String? locationDescription,
+    $core.String? liveCapacityStatus,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -825,6 +829,12 @@ class Lounge extends $pb.GeneratedMessage {
     if (kind != null) result.kind = kind;
     if (minTier != null) result.minTier = minTier;
     if (isOpen != null) result.isOpen = isOpen;
+    if (amenities != null) result.amenities.addAll(amenities);
+    if (locationDescription != null)
+      result.locationDescription = locationDescription;
+    if (liveCapacityStatus != null)
+      result.liveCapacityStatus = liveCapacityStatus;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -851,6 +861,10 @@ class Lounge extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'kind')
     ..aOS(8, _omitFieldNames ? '' : 'minTier')
     ..aOB(9, _omitFieldNames ? '' : 'isOpen')
+    ..pPS(10, _omitFieldNames ? '' : 'amenities')
+    ..aOS(11, _omitFieldNames ? '' : 'locationDescription')
+    ..aOS(12, _omitFieldNames ? '' : 'liveCapacityStatus')
+    ..aOB(13, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -951,6 +965,41 @@ class Lounge extends $pb.GeneratedMessage {
   $core.bool hasIsOpen() => $_has(8);
   @$pb.TagNumber(9)
   void clearIsOpen() => $_clearField(9);
+
+  /// D14.7 columns that existed in dominion_lounges from the start and had
+  /// no reader: the lounge card's tap handler was empty, so nothing in the
+  /// app ever opened a lounge.
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get amenities => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.String get locationDescription => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set locationDescription($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLocationDescription() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLocationDescription() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get liveCapacityStatus => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set liveCapacityStatus($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLiveCapacityStatus() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLiveCapacityStatus() => $_clearField(12);
+
+  /// True when this member's standing does not clear min_tier. A gate the
+  /// client can draw beats one it can only discover by being refused.
+  @$pb.TagNumber(13)
+  $core.bool get locked => $_getBF(12);
+  @$pb.TagNumber(13)
+  set locked($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLocked() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLocked() => $_clearField(13);
 }
 
 class ListLoungesRequest extends $pb.GeneratedMessage {
@@ -5159,6 +5208,7 @@ class AnthologyArticle extends $pb.GeneratedMessage {
     $core.String? regionCode,
     $core.bool? sovereignOnly,
     $fixnum.Int64? publishedAtUnix,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5171,6 +5221,7 @@ class AnthologyArticle extends $pb.GeneratedMessage {
     if (regionCode != null) result.regionCode = regionCode;
     if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
     if (publishedAtUnix != null) result.publishedAtUnix = publishedAtUnix;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -5198,6 +5249,7 @@ class AnthologyArticle extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'regionCode')
     ..aOB(9, _omitFieldNames ? '' : 'sovereignOnly')
     ..aInt64(10, _omitFieldNames ? '' : 'publishedAtUnix')
+    ..aOB(11, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5308,6 +5360,17 @@ class AnthologyArticle extends $pb.GeneratedMessage {
   $core.bool hasPublishedAtUnix() => $_has(9);
   @$pb.TagNumber(10)
   void clearPublishedAtUnix() => $_clearField(10);
+
+  /// True when sovereign_only and this member has not earned it. The body is
+  /// withheld server-side in that case; this is what the card should lock on.
+  @$pb.TagNumber(11)
+  $core.bool get locked => $_getBF(10);
+  @$pb.TagNumber(11)
+  set locked($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLocked() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLocked() => $_clearField(11);
 }
 
 class ListAnthologyArticlesRequest extends $pb.GeneratedMessage {
@@ -5536,6 +5599,7 @@ class DirectoryPartner extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? portfolioUrl,
     $core.bool? sovereignOnly,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5549,6 +5613,7 @@ class DirectoryPartner extends $pb.GeneratedMessage {
     if (description != null) result.description = description;
     if (portfolioUrl != null) result.portfolioUrl = portfolioUrl;
     if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -5577,6 +5642,7 @@ class DirectoryPartner extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'description')
     ..aOS(10, _omitFieldNames ? '' : 'portfolioUrl')
     ..aOB(11, _omitFieldNames ? '' : 'sovereignOnly')
+    ..aOB(12, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5690,6 +5756,17 @@ class DirectoryPartner extends $pb.GeneratedMessage {
   $core.bool hasSovereignOnly() => $_has(10);
   @$pb.TagNumber(11)
   void clearSovereignOnly() => $_clearField(11);
+
+  /// True when sovereign_only and this member has not earned it. The
+  /// description and portfolio link are withheld server-side in that case.
+  @$pb.TagNumber(12)
+  $core.bool get locked => $_getBF(11);
+  @$pb.TagNumber(12)
+  set locked($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLocked() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLocked() => $_clearField(12);
 }
 
 class ListDirectoryRequest extends $pb.GeneratedMessage {

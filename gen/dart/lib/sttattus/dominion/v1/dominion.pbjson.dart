@@ -306,6 +306,22 @@ const Lounge$json = {
     {'1': 'kind', '3': 7, '4': 1, '5': 9, '10': 'kind'},
     {'1': 'min_tier', '3': 8, '4': 1, '5': 9, '10': 'minTier'},
     {'1': 'is_open', '3': 9, '4': 1, '5': 8, '10': 'isOpen'},
+    {'1': 'amenities', '3': 10, '4': 3, '5': 9, '10': 'amenities'},
+    {
+      '1': 'location_description',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'locationDescription'
+    },
+    {
+      '1': 'live_capacity_status',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'liveCapacityStatus'
+    },
+    {'1': 'locked', '3': 13, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -314,7 +330,10 @@ final $typed_data.Uint8List loungeDescriptor = $convert.base64Decode(
     'CgZMb3VuZ2USDgoCaWQYASABKAlSAmlkEhIKBHNsdWcYAiABKAlSBHNsdWcSEgoEbmFtZRgDIA'
     'EoCVIEbmFtZRISCgRjaXR5GAQgASgJUgRjaXR5EiEKDGNvdW50cnlfY29kZRgFIAEoCVILY291'
     'bnRyeUNvZGUSGAoHYWRkcmVzcxgGIAEoCVIHYWRkcmVzcxISCgRraW5kGAcgASgJUgRraW5kEh'
-    'kKCG1pbl90aWVyGAggASgJUgdtaW5UaWVyEhcKB2lzX29wZW4YCSABKAhSBmlzT3Blbg==');
+    'kKCG1pbl90aWVyGAggASgJUgdtaW5UaWVyEhcKB2lzX29wZW4YCSABKAhSBmlzT3BlbhIcCglh'
+    'bWVuaXRpZXMYCiADKAlSCWFtZW5pdGllcxIxChRsb2NhdGlvbl9kZXNjcmlwdGlvbhgLIAEoCV'
+    'ITbG9jYXRpb25EZXNjcmlwdGlvbhIwChRsaXZlX2NhcGFjaXR5X3N0YXR1cxgMIAEoCVISbGl2'
+    'ZUNhcGFjaXR5U3RhdHVzEhYKBmxvY2tlZBgNIAEoCFIGbG9ja2Vk');
 
 @$core.Deprecated('Use listLoungesRequestDescriptor instead')
 const ListLoungesRequest$json = {
@@ -1448,6 +1467,7 @@ const AnthologyArticle$json = {
       '5': 3,
       '10': 'publishedAtUnix'
     },
+    {'1': 'locked', '3': 11, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -1458,7 +1478,8 @@ final $typed_data.Uint8List anthologyArticleDescriptor = $convert.base64Decode(
     'b2R5Eh8KC2F1dGhvcl9uYW1lGAYgASgJUgphdXRob3JOYW1lEi0KEmF1dGhvcl9jcmVkZW50aW'
     'FscxgHIAEoCVIRYXV0aG9yQ3JlZGVudGlhbHMSHwoLcmVnaW9uX2NvZGUYCCABKAlSCnJlZ2lv'
     'bkNvZGUSJQoOc292ZXJlaWduX29ubHkYCSABKAhSDXNvdmVyZWlnbk9ubHkSKgoRcHVibGlzaG'
-    'VkX2F0X3VuaXgYCiABKANSD3B1Ymxpc2hlZEF0VW5peA==');
+    'VkX2F0X3VuaXgYCiABKANSD3B1Ymxpc2hlZEF0VW5peBIWCgZsb2NrZWQYCyABKAhSBmxvY2tl'
+    'ZA==');
 
 @$core.Deprecated('Use listAnthologyArticlesRequestDescriptor instead')
 const ListAnthologyArticlesRequest$json = {
@@ -1539,6 +1560,7 @@ const DirectoryPartner$json = {
     {'1': 'description', '3': 9, '4': 1, '5': 9, '10': 'description'},
     {'1': 'portfolio_url', '3': 10, '4': 1, '5': 9, '10': 'portfolioUrl'},
     {'1': 'sovereign_only', '3': 11, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'locked', '3': 12, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -1549,7 +1571,8 @@ final $typed_data.Uint8List directoryPartnerDescriptor = $convert.base64Decode(
     'aXR5EiEKDGNvdW50cnlfY29kZRgGIAEoCVILY291bnRyeUNvZGUSHwoLcmVnaW9uX2NvZGUYBy'
     'ABKAlSCnJlZ2lvbkNvZGUSIAoLc3BlY2lhbHRpZXMYCCADKAlSC3NwZWNpYWx0aWVzEiAKC2Rl'
     'c2NyaXB0aW9uGAkgASgJUgtkZXNjcmlwdGlvbhIjCg1wb3J0Zm9saW9fdXJsGAogASgJUgxwb3'
-    'J0Zm9saW9VcmwSJQoOc292ZXJlaWduX29ubHkYCyABKAhSDXNvdmVyZWlnbk9ubHk=');
+    'J0Zm9saW9VcmwSJQoOc292ZXJlaWduX29ubHkYCyABKAhSDXNvdmVyZWlnbk9ubHkSFgoGbG9j'
+    'a2VkGAwgASgIUgZsb2NrZWQ=');
 
 @$core.Deprecated('Use listDirectoryRequestDescriptor instead')
 const ListDirectoryRequest$json = {

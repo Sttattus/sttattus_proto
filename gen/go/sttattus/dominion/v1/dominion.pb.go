@@ -722,16 +722,25 @@ func (x *GetLoungeKeyResponse) GetExpiresAt() *timestamppb.Timestamp {
 }
 
 type Lounge struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Slug          string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
-	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
-	CountryCode   string                 `protobuf:"bytes,5,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
-	Address       string                 `protobuf:"bytes,6,opt,name=address,proto3" json:"address,omitempty"`
-	Kind          string                 `protobuf:"bytes,7,opt,name=kind,proto3" json:"kind,omitempty"`                      // 'sttattus' | 'partner'
-	MinTier       string                 `protobuf:"bytes,8,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"` // 'sovereign' | 'governor' | 'open'
-	IsOpen        bool                   `protobuf:"varint,9,opt,name=is_open,json=isOpen,proto3" json:"is_open,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Slug        string                 `protobuf:"bytes,2,opt,name=slug,proto3" json:"slug,omitempty"`
+	Name        string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	City        string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	CountryCode string                 `protobuf:"bytes,5,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	Address     string                 `protobuf:"bytes,6,opt,name=address,proto3" json:"address,omitempty"`
+	Kind        string                 `protobuf:"bytes,7,opt,name=kind,proto3" json:"kind,omitempty"`                      // 'sttattus' | 'partner'
+	MinTier     string                 `protobuf:"bytes,8,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"` // 'sovereign' | 'governor' | 'open'
+	IsOpen      bool                   `protobuf:"varint,9,opt,name=is_open,json=isOpen,proto3" json:"is_open,omitempty"`
+	// D14.7 columns that existed in dominion_lounges from the start and had
+	// no reader: the lounge card's tap handler was empty, so nothing in the
+	// app ever opened a lounge.
+	Amenities           []string `protobuf:"bytes,10,rep,name=amenities,proto3" json:"amenities,omitempty"`
+	LocationDescription string   `protobuf:"bytes,11,opt,name=location_description,json=locationDescription,proto3" json:"location_description,omitempty"`
+	LiveCapacityStatus  string   `protobuf:"bytes,12,opt,name=live_capacity_status,json=liveCapacityStatus,proto3" json:"live_capacity_status,omitempty"`
+	// True when this member's standing does not clear min_tier. A gate the
+	// client can draw beats one it can only discover by being refused.
+	Locked        bool `protobuf:"varint,13,opt,name=locked,proto3" json:"locked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -825,6 +834,34 @@ func (x *Lounge) GetMinTier() string {
 func (x *Lounge) GetIsOpen() bool {
 	if x != nil {
 		return x.IsOpen
+	}
+	return false
+}
+
+func (x *Lounge) GetAmenities() []string {
+	if x != nil {
+		return x.Amenities
+	}
+	return nil
+}
+
+func (x *Lounge) GetLocationDescription() string {
+	if x != nil {
+		return x.LocationDescription
+	}
+	return ""
+}
+
+func (x *Lounge) GetLiveCapacityStatus() string {
+	if x != nil {
+		return x.LiveCapacityStatus
+	}
+	return ""
+}
+
+func (x *Lounge) GetLocked() bool {
+	if x != nil {
+		return x.Locked
 	}
 	return false
 }
@@ -4048,8 +4085,11 @@ type AnthologyArticle struct {
 	RegionCode        string                 `protobuf:"bytes,8,opt,name=region_code,json=regionCode,proto3" json:"region_code,omitempty"`
 	SovereignOnly     bool                   `protobuf:"varint,9,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
 	PublishedAtUnix   int64                  `protobuf:"varint,10,opt,name=published_at_unix,json=publishedAtUnix,proto3" json:"published_at_unix,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// True when sovereign_only and this member has not earned it. The body is
+	// withheld server-side in that case; this is what the card should lock on.
+	Locked        bool `protobuf:"varint,11,opt,name=locked,proto3" json:"locked,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *AnthologyArticle) Reset() {
@@ -4150,6 +4190,13 @@ func (x *AnthologyArticle) GetPublishedAtUnix() int64 {
 		return x.PublishedAtUnix
 	}
 	return 0
+}
+
+func (x *AnthologyArticle) GetLocked() bool {
+	if x != nil {
+		return x.Locked
+	}
+	return false
 }
 
 type ListAnthologyArticlesRequest struct {
@@ -4333,6 +4380,9 @@ type DirectoryPartner struct {
 	Description   string                 `protobuf:"bytes,9,opt,name=description,proto3" json:"description,omitempty"`
 	PortfolioUrl  string                 `protobuf:"bytes,10,opt,name=portfolio_url,json=portfolioUrl,proto3" json:"portfolio_url,omitempty"`
 	SovereignOnly bool                   `protobuf:"varint,11,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
+	// True when sovereign_only and this member has not earned it. The
+	// description and portfolio link are withheld server-side in that case.
+	Locked        bool `protobuf:"varint,12,opt,name=locked,proto3" json:"locked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4440,6 +4490,13 @@ func (x *DirectoryPartner) GetPortfolioUrl() string {
 func (x *DirectoryPartner) GetSovereignOnly() bool {
 	if x != nil {
 		return x.SovereignOnly
+	}
+	return false
+}
+
+func (x *DirectoryPartner) GetLocked() bool {
+	if x != nil {
+		return x.Locked
 	}
 	return false
 }
@@ -5653,7 +5710,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x14GetLoungeKeyResponse\x12$\n" +
 	"\x0elounge_key_jwt\x18\x01 \x01(\tR\floungeKeyJwt\x129\n" +
 	"\n" +
-	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xd9\x01\n" +
+	"expires_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xf4\x02\n" +
 	"\x06Lounge\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
@@ -5663,7 +5720,12 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\aaddress\x18\x06 \x01(\tR\aaddress\x12\x12\n" +
 	"\x04kind\x18\a \x01(\tR\x04kind\x12\x19\n" +
 	"\bmin_tier\x18\b \x01(\tR\aminTier\x12\x17\n" +
-	"\ais_open\x18\t \x01(\bR\x06isOpen\"\x14\n" +
+	"\ais_open\x18\t \x01(\bR\x06isOpen\x12\x1c\n" +
+	"\tamenities\x18\n" +
+	" \x03(\tR\tamenities\x121\n" +
+	"\x14location_description\x18\v \x01(\tR\x13locationDescription\x120\n" +
+	"\x14live_capacity_status\x18\f \x01(\tR\x12liveCapacityStatus\x12\x16\n" +
+	"\x06locked\x18\r \x01(\bR\x06locked\"\x14\n" +
 	"\x12ListLoungesRequest\"M\n" +
 	"\x13ListLoungesResponse\x126\n" +
 	"\alounges\x18\x01 \x03(\v2\x1c.sttattus.dominion.v1.LoungeR\alounges\"\x8b\x02\n" +
@@ -5899,7 +5961,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\tthread_id\x18\x01 \x01(\tR\bthreadId\x12\x12\n" +
 	"\x04body\x18\x02 \x01(\tR\x04body\"`\n" +
 	"\x1cPostConciergeMessageResponse\x12@\n" +
-	"\amessage\x18\x01 \x01(\v2&.sttattus.dominion.v1.ConciergeMessageR\amessage\"\xb6\x02\n" +
+	"\amessage\x18\x01 \x01(\v2&.sttattus.dominion.v1.ConciergeMessageR\amessage\"\xce\x02\n" +
 	"\x10AnthologyArticle\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x14\n" +
@@ -5913,14 +5975,15 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"regionCode\x12%\n" +
 	"\x0esovereign_only\x18\t \x01(\bR\rsovereignOnly\x12*\n" +
 	"\x11published_at_unix\x18\n" +
-	" \x01(\x03R\x0fpublishedAtUnix\"\x1e\n" +
+	" \x01(\x03R\x0fpublishedAtUnix\x12\x16\n" +
+	"\x06locked\x18\v \x01(\bR\x06locked\"\x1e\n" +
 	"\x1cListAnthologyArticlesRequest\"c\n" +
 	"\x1dListAnthologyArticlesResponse\x12B\n" +
 	"\barticles\x18\x01 \x03(\v2&.sttattus.dominion.v1.AnthologyArticleR\barticles\"0\n" +
 	"\x1aGetAnthologyArticleRequest\x12\x12\n" +
 	"\x04slug\x18\x01 \x01(\tR\x04slug\"_\n" +
 	"\x1bGetAnthologyArticleResponse\x12@\n" +
-	"\aarticle\x18\x01 \x01(\v2&.sttattus.dominion.v1.AnthologyArticleR\aarticle\"\xc6\x02\n" +
+	"\aarticle\x18\x01 \x01(\v2&.sttattus.dominion.v1.AnthologyArticleR\aarticle\"\xde\x02\n" +
 	"\x10DirectoryPartner\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04slug\x18\x02 \x01(\tR\x04slug\x12\x12\n" +
@@ -5934,7 +5997,8 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\vdescription\x18\t \x01(\tR\vdescription\x12#\n" +
 	"\rportfolio_url\x18\n" +
 	" \x01(\tR\fportfolioUrl\x12%\n" +
-	"\x0esovereign_only\x18\v \x01(\bR\rsovereignOnly\"K\n" +
+	"\x0esovereign_only\x18\v \x01(\bR\rsovereignOnly\x12\x16\n" +
+	"\x06locked\x18\f \x01(\bR\x06locked\"K\n" +
 	"\x14ListDirectoryRequest\x12\x12\n" +
 	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x1f\n" +
 	"\vregion_code\x18\x02 \x01(\tR\n" +

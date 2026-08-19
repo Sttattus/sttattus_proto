@@ -632,6 +632,33 @@ export class Lounge extends Message<Lounge> {
    */
   isOpen = false;
 
+  /**
+   * D14.7 columns that existed in dominion_lounges from the start and had
+   * no reader: the lounge card's tap handler was empty, so nothing in the
+   * app ever opened a lounge.
+   *
+   * @generated from field: repeated string amenities = 10;
+   */
+  amenities: string[] = [];
+
+  /**
+   * @generated from field: string location_description = 11;
+   */
+  locationDescription = "";
+
+  /**
+   * @generated from field: string live_capacity_status = 12;
+   */
+  liveCapacityStatus = "";
+
+  /**
+   * True when this member's standing does not clear min_tier. A gate the
+   * client can draw beats one it can only discover by being refused.
+   *
+   * @generated from field: bool locked = 13;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<Lounge>) {
     super();
     proto3.util.initPartial(data, this);
@@ -649,6 +676,10 @@ export class Lounge extends Message<Lounge> {
     { no: 7, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "min_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "is_open", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "amenities", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "location_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "live_capacity_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Lounge {
@@ -3382,6 +3413,14 @@ export class AnthologyArticle extends Message<AnthologyArticle> {
    */
   publishedAtUnix = protoInt64.zero;
 
+  /**
+   * True when sovereign_only and this member has not earned it. The body is
+   * withheld server-side in that case; this is what the card should lock on.
+   *
+   * @generated from field: bool locked = 11;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<AnthologyArticle>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3400,6 +3439,7 @@ export class AnthologyArticle extends Message<AnthologyArticle> {
     { no: 8, name: "region_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "published_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnthologyArticle {
@@ -3622,6 +3662,14 @@ export class DirectoryPartner extends Message<DirectoryPartner> {
    */
   sovereignOnly = false;
 
+  /**
+   * True when sovereign_only and this member has not earned it. The
+   * description and portfolio link are withheld server-side in that case.
+   *
+   * @generated from field: bool locked = 12;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<DirectoryPartner>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3641,6 +3689,7 @@ export class DirectoryPartner extends Message<DirectoryPartner> {
     { no: 9, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "portfolio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DirectoryPartner {

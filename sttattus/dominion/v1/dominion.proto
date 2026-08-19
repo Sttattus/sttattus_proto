@@ -95,6 +95,15 @@ message Lounge {
   string kind = 7; // 'sttattus' | 'partner'
   string min_tier = 8; // 'sovereign' | 'governor' | 'open'
   bool is_open = 9;
+  // D14.7 columns that existed in dominion_lounges from the start and had
+  // no reader: the lounge card's tap handler was empty, so nothing in the
+  // app ever opened a lounge.
+  repeated string amenities = 10;
+  string location_description = 11;
+  string live_capacity_status = 12;
+  // True when this member's standing does not clear min_tier. A gate the
+  // client can draw beats one it can only discover by being refused.
+  bool locked = 13;
 }
 
 message ListLoungesRequest {}
@@ -393,6 +402,9 @@ message AnthologyArticle {
   string region_code = 8;
   bool sovereign_only = 9;
   int64 published_at_unix = 10;
+  // True when sovereign_only and this member has not earned it. The body is
+  // withheld server-side in that case; this is what the card should lock on.
+  bool locked = 11;
 }
 message ListAnthologyArticlesRequest {}
 message ListAnthologyArticlesResponse {
@@ -419,6 +431,9 @@ message DirectoryPartner {
   string description = 9;
   string portfolio_url = 10;
   bool sovereign_only = 11;
+  // True when sovereign_only and this member has not earned it. The
+  // description and portfolio link are withheld server-side in that case.
+  bool locked = 12;
 }
 message ListDirectoryRequest {
   string kind = 1; // empty => all
