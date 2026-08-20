@@ -43,8 +43,14 @@ export const DominionService = {
     },
     /**
      * Hard Perks
+     * Deprecated: use CreateLoungePass. This minted a credential that persisted
+     * nowhere and could not be revoked, listed or audited, while
+     * CreateLoungePass — gating on identical standing — wrote a revocable row.
+     * The handler now delegates to CreateLoungePass so the two cannot drift,
+     * and `lounge_key_jwt` carries that pass's token. No client calls this.
      *
      * @generated from rpc sttattus.dominion.v1.DominionService.GetLoungeKey
+     * @deprecated
      */
     getLoungeKey: {
       name: "GetLoungeKey",

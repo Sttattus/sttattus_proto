@@ -1416,6 +1416,15 @@ export class LoungeEvent extends Message<LoungeEvent> {
    */
   rsvped = false;
 
+  /**
+   * True when this member's standing does not clear min_tier. The chip was
+   * drawn from the raw column and enforced nothing; the server now enforces
+   * it on RSVP, and this lets the card say so before the member taps.
+   *
+   * @generated from field: bool locked = 11;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<LoungeEvent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1434,6 +1443,7 @@ export class LoungeEvent extends Message<LoungeEvent> {
     { no: 8, name: "starts_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "ends_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "rsvped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoungeEvent {
@@ -1743,6 +1753,23 @@ export class Salon extends Message<Salon> {
    */
   rsvped = false;
 
+  /**
+   * Dominion rank ladder: open / governor / sovereign — the same vocabulary
+   * as lounge_events.min_tier. The column existed from the start and no
+   * handler ever selected it, so the salon gate was invisible to the client
+   * and unenforced on the server.
+   *
+   * @generated from field: string min_tier = 13;
+   */
+  minTier = "";
+
+  /**
+   * True when this member's standing does not clear min_tier.
+   *
+   * @generated from field: bool locked = 14;
+   */
+  locked = false;
+
   constructor(data?: PartialMessage<Salon>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1763,6 +1790,8 @@ export class Salon extends Message<Salon> {
     { no: 10, name: "reserved", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 11, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "rsvped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "min_tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Salon {

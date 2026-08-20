@@ -609,6 +609,7 @@ const LoungeEvent$json = {
     {'1': 'starts_at_unix', '3': 8, '4': 1, '5': 3, '10': 'startsAtUnix'},
     {'1': 'ends_at_unix', '3': 9, '4': 1, '5': 3, '10': 'endsAtUnix'},
     {'1': 'rsvped', '3': 10, '4': 1, '5': 8, '10': 'rsvped'},
+    {'1': 'locked', '3': 11, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -619,7 +620,7 @@ final $typed_data.Uint8List loungeEventDescriptor = $convert.base64Decode(
     'CVIKbG91bmdlQ2l0eRIUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24YBiABKA'
     'lSC2Rlc2NyaXB0aW9uEhkKCG1pbl90aWVyGAcgASgJUgdtaW5UaWVyEiQKDnN0YXJ0c19hdF91'
     'bml4GAggASgDUgxzdGFydHNBdFVuaXgSIAoMZW5kc19hdF91bml4GAkgASgDUgplbmRzQXRVbm'
-    'l4EhYKBnJzdnBlZBgKIAEoCFIGcnN2cGVk');
+    'l4EhYKBnJzdnBlZBgKIAEoCFIGcnN2cGVkEhYKBmxvY2tlZBgLIAEoCFIGbG9ja2Vk');
 
 @$core.Deprecated('Use listLoungeEventsRequestDescriptor instead')
 const ListLoungeEventsRequest$json = {
@@ -729,6 +730,8 @@ const Salon$json = {
     {'1': 'reserved', '3': 10, '4': 1, '5': 5, '10': 'reserved'},
     {'1': 'status', '3': 11, '4': 1, '5': 9, '10': 'status'},
     {'1': 'rsvped', '3': 12, '4': 1, '5': 8, '10': 'rsvped'},
+    {'1': 'min_tier', '3': 13, '4': 1, '5': 9, '10': 'minTier'},
+    {'1': 'locked', '3': 14, '4': 1, '5': 8, '10': 'locked'},
   ],
 };
 
@@ -740,7 +743,8 @@ final $typed_data.Uint8List salonDescriptor = $convert.base64Decode(
     'RhcnRzX2F0X3VuaXgYByABKANSDHN0YXJ0c0F0VW5peBIgCgxlbmRzX2F0X3VuaXgYCCABKANS'
     'CmVuZHNBdFVuaXgSGgoIY2FwYWNpdHkYCSABKAVSCGNhcGFjaXR5EhoKCHJlc2VydmVkGAogAS'
     'gFUghyZXNlcnZlZBIWCgZzdGF0dXMYCyABKAlSBnN0YXR1cxIWCgZyc3ZwZWQYDCABKAhSBnJz'
-    'dnBlZA==');
+    'dnBlZBIZCghtaW5fdGllchgNIAEoCVIHbWluVGllchIWCgZsb2NrZWQYDiABKAhSBmxvY2tlZA'
+    '==');
 
 @$core.Deprecated('Use listSalonsRequestDescriptor instead')
 const ListSalonsRequest$json = {

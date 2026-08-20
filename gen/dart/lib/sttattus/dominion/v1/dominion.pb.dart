@@ -2036,6 +2036,7 @@ class LoungeEvent extends $pb.GeneratedMessage {
     $fixnum.Int64? startsAtUnix,
     $fixnum.Int64? endsAtUnix,
     $core.bool? rsvped,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2048,6 +2049,7 @@ class LoungeEvent extends $pb.GeneratedMessage {
     if (startsAtUnix != null) result.startsAtUnix = startsAtUnix;
     if (endsAtUnix != null) result.endsAtUnix = endsAtUnix;
     if (rsvped != null) result.rsvped = rsvped;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -2075,6 +2077,7 @@ class LoungeEvent extends $pb.GeneratedMessage {
     ..aInt64(8, _omitFieldNames ? '' : 'startsAtUnix')
     ..aInt64(9, _omitFieldNames ? '' : 'endsAtUnix')
     ..aOB(10, _omitFieldNames ? '' : 'rsvped')
+    ..aOB(11, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2185,6 +2188,18 @@ class LoungeEvent extends $pb.GeneratedMessage {
   $core.bool hasRsvped() => $_has(9);
   @$pb.TagNumber(10)
   void clearRsvped() => $_clearField(10);
+
+  /// True when this member's standing does not clear min_tier. The chip was
+  /// drawn from the raw column and enforced nothing; the server now enforces
+  /// it on RSVP, and this lets the card say so before the member taps.
+  @$pb.TagNumber(11)
+  $core.bool get locked => $_getBF(10);
+  @$pb.TagNumber(11)
+  set locked($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLocked() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLocked() => $_clearField(11);
 }
 
 class ListLoungeEventsRequest extends $pb.GeneratedMessage {
@@ -2523,6 +2538,8 @@ class Salon extends $pb.GeneratedMessage {
     $core.int? reserved,
     $core.String? status,
     $core.bool? rsvped,
+    $core.String? minTier,
+    $core.bool? locked,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2537,6 +2554,8 @@ class Salon extends $pb.GeneratedMessage {
     if (reserved != null) result.reserved = reserved;
     if (status != null) result.status = status;
     if (rsvped != null) result.rsvped = rsvped;
+    if (minTier != null) result.minTier = minTier;
+    if (locked != null) result.locked = locked;
     return result;
   }
 
@@ -2566,6 +2585,8 @@ class Salon extends $pb.GeneratedMessage {
     ..aI(10, _omitFieldNames ? '' : 'reserved')
     ..aOS(11, _omitFieldNames ? '' : 'status')
     ..aOB(12, _omitFieldNames ? '' : 'rsvped')
+    ..aOS(13, _omitFieldNames ? '' : 'minTier')
+    ..aOB(14, _omitFieldNames ? '' : 'locked')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2693,6 +2714,29 @@ class Salon extends $pb.GeneratedMessage {
   $core.bool hasRsvped() => $_has(11);
   @$pb.TagNumber(12)
   void clearRsvped() => $_clearField(12);
+
+  /// Dominion rank ladder: open / governor / sovereign — the same vocabulary
+  /// as lounge_events.min_tier. The column existed from the start and no
+  /// handler ever selected it, so the salon gate was invisible to the client
+  /// and unenforced on the server.
+  @$pb.TagNumber(13)
+  $core.String get minTier => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set minTier($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasMinTier() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearMinTier() => $_clearField(13);
+
+  /// True when this member's standing does not clear min_tier.
+  @$pb.TagNumber(14)
+  $core.bool get locked => $_getBF(13);
+  @$pb.TagNumber(14)
+  set locked($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasLocked() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLocked() => $_clearField(14);
 }
 
 class ListSalonsRequest extends $pb.GeneratedMessage {

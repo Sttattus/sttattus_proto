@@ -68,7 +68,13 @@ type DominionServiceClient interface {
 	SyncProperties(ctx context.Context, in *SyncPropertiesRequest, opts ...grpc.CallOption) (*SyncPropertiesResponse, error)
 	ListTerritories(ctx context.Context, in *ListTerritoriesRequest, opts ...grpc.CallOption) (*ListTerritoriesResponse, error)
 	GetDominionStats(ctx context.Context, in *GetDominionStatsRequest, opts ...grpc.CallOption) (*GetDominionStatsResponse, error)
+	// Deprecated: Do not use.
 	// Hard Perks
+	// Deprecated: use CreateLoungePass. This minted a credential that persisted
+	// nowhere and could not be revoked, listed or audited, while
+	// CreateLoungePass — gating on identical standing — wrote a revocable row.
+	// The handler now delegates to CreateLoungePass so the two cannot drift,
+	// and `lounge_key_jwt` carries that pass's token. No client calls this.
 	GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error)
 	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
 	EstimatePropertyValue(ctx context.Context, in *EstimatePropertyValueRequest, opts ...grpc.CallOption) (*EstimatePropertyValueResponse, error)
@@ -161,6 +167,7 @@ func (c *dominionServiceClient) GetDominionStats(ctx context.Context, in *GetDom
 	return out, nil
 }
 
+// Deprecated: Do not use.
 func (c *dominionServiceClient) GetLoungeKey(ctx context.Context, in *GetLoungeKeyRequest, opts ...grpc.CallOption) (*GetLoungeKeyResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetLoungeKeyResponse)
@@ -529,7 +536,13 @@ type DominionServiceServer interface {
 	SyncProperties(context.Context, *SyncPropertiesRequest) (*SyncPropertiesResponse, error)
 	ListTerritories(context.Context, *ListTerritoriesRequest) (*ListTerritoriesResponse, error)
 	GetDominionStats(context.Context, *GetDominionStatsRequest) (*GetDominionStatsResponse, error)
+	// Deprecated: Do not use.
 	// Hard Perks
+	// Deprecated: use CreateLoungePass. This minted a credential that persisted
+	// nowhere and could not be revoked, listed or audited, while
+	// CreateLoungePass — gating on identical standing — wrote a revocable row.
+	// The handler now delegates to CreateLoungePass so the two cannot drift,
+	// and `lounge_key_jwt` carries that pass's token. No client calls this.
 	GetLoungeKey(context.Context, *GetLoungeKeyRequest) (*GetLoungeKeyResponse, error)
 	// D14.3 — AVM estimate (Zillow + Rightmove pilot).
 	EstimatePropertyValue(context.Context, *EstimatePropertyValueRequest) (*EstimatePropertyValueResponse, error)

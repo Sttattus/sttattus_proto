@@ -1657,17 +1657,21 @@ func (x *EstimatePropertyValueResponse) GetFromCache() bool {
 }
 
 type LoungeEvent struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	LoungeId      string                 `protobuf:"bytes,2,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
-	LoungeName    string                 `protobuf:"bytes,3,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
-	LoungeCity    string                 `protobuf:"bytes,4,opt,name=lounge_city,json=loungeCity,proto3" json:"lounge_city,omitempty"`
-	Title         string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
-	Description   string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
-	MinTier       string                 `protobuf:"bytes,7,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"`
-	StartsAtUnix  int64                  `protobuf:"varint,8,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
-	EndsAtUnix    int64                  `protobuf:"varint,9,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
-	Rsvped        bool                   `protobuf:"varint,10,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	LoungeId     string                 `protobuf:"bytes,2,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	LoungeName   string                 `protobuf:"bytes,3,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
+	LoungeCity   string                 `protobuf:"bytes,4,opt,name=lounge_city,json=loungeCity,proto3" json:"lounge_city,omitempty"`
+	Title        string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	Description  string                 `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
+	MinTier      string                 `protobuf:"bytes,7,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"`
+	StartsAtUnix int64                  `protobuf:"varint,8,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	EndsAtUnix   int64                  `protobuf:"varint,9,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
+	Rsvped       bool                   `protobuf:"varint,10,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	// True when this member's standing does not clear min_tier. The chip was
+	// drawn from the raw column and enforced nothing; the server now enforces
+	// it on RSVP, and this lets the card say so before the member taps.
+	Locked        bool `protobuf:"varint,11,opt,name=locked,proto3" json:"locked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1768,6 +1772,13 @@ func (x *LoungeEvent) GetEndsAtUnix() int64 {
 func (x *LoungeEvent) GetRsvped() bool {
 	if x != nil {
 		return x.Rsvped
+	}
+	return false
+}
+
+func (x *LoungeEvent) GetLocked() bool {
+	if x != nil {
+		return x.Locked
 	}
 	return false
 }
@@ -2037,19 +2048,26 @@ func (x *ListMyLoungeRsvpsResponse) GetEvents() []*LoungeEvent {
 }
 
 type Salon struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	City          string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
-	LoungeId      string                 `protobuf:"bytes,5,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
-	LoungeName    string                 `protobuf:"bytes,6,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
-	StartsAtUnix  int64                  `protobuf:"varint,7,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
-	EndsAtUnix    int64                  `protobuf:"varint,8,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
-	Capacity      int32                  `protobuf:"varint,9,opt,name=capacity,proto3" json:"capacity,omitempty"`
-	Reserved      int32                  `protobuf:"varint,10,opt,name=reserved,proto3" json:"reserved,omitempty"`
-	Status        string                 `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"`
-	Rsvped        bool                   `protobuf:"varint,12,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title        string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Description  string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	City         string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	LoungeId     string                 `protobuf:"bytes,5,opt,name=lounge_id,json=loungeId,proto3" json:"lounge_id,omitempty"`
+	LoungeName   string                 `protobuf:"bytes,6,opt,name=lounge_name,json=loungeName,proto3" json:"lounge_name,omitempty"`
+	StartsAtUnix int64                  `protobuf:"varint,7,opt,name=starts_at_unix,json=startsAtUnix,proto3" json:"starts_at_unix,omitempty"`
+	EndsAtUnix   int64                  `protobuf:"varint,8,opt,name=ends_at_unix,json=endsAtUnix,proto3" json:"ends_at_unix,omitempty"`
+	Capacity     int32                  `protobuf:"varint,9,opt,name=capacity,proto3" json:"capacity,omitempty"`
+	Reserved     int32                  `protobuf:"varint,10,opt,name=reserved,proto3" json:"reserved,omitempty"`
+	Status       string                 `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"`
+	Rsvped       bool                   `protobuf:"varint,12,opt,name=rsvped,proto3" json:"rsvped,omitempty"`
+	// Dominion rank ladder: open / governor / sovereign — the same vocabulary
+	// as lounge_events.min_tier. The column existed from the start and no
+	// handler ever selected it, so the salon gate was invisible to the client
+	// and unenforced on the server.
+	MinTier string `protobuf:"bytes,13,opt,name=min_tier,json=minTier,proto3" json:"min_tier,omitempty"`
+	// True when this member's standing does not clear min_tier.
+	Locked        bool `protobuf:"varint,14,opt,name=locked,proto3" json:"locked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2164,6 +2182,20 @@ func (x *Salon) GetStatus() string {
 func (x *Salon) GetRsvped() bool {
 	if x != nil {
 		return x.Rsvped
+	}
+	return false
+}
+
+func (x *Salon) GetMinTier() string {
+	if x != nil {
+		return x.MinTier
+	}
+	return ""
+}
+
+func (x *Salon) GetLocked() bool {
+	if x != nil {
+		return x.Locked
 	}
 	return false
 }
@@ -5802,7 +5834,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1dEstimatePropertyValueResponse\x127\n" +
 	"\x06result\x18\x01 \x01(\v2\x1f.sttattus.dominion.v1.AVMResultR\x06result\x12\x1d\n" +
 	"\n" +
-	"from_cache\x18\x02 \x01(\bR\tfromCache\"\xaf\x02\n" +
+	"from_cache\x18\x02 \x01(\bR\tfromCache\"\xc7\x02\n" +
 	"\vLoungeEvent\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tlounge_id\x18\x02 \x01(\tR\bloungeId\x12\x1f\n" +
@@ -5817,7 +5849,8 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\fends_at_unix\x18\t \x01(\x03R\n" +
 	"endsAtUnix\x12\x16\n" +
 	"\x06rsvped\x18\n" +
-	" \x01(\bR\x06rsvped\"6\n" +
+	" \x01(\bR\x06rsvped\x12\x16\n" +
+	"\x06locked\x18\v \x01(\bR\x06locked\"6\n" +
 	"\x17ListLoungeEventsRequest\x12\x1b\n" +
 	"\tlounge_id\x18\x01 \x01(\tR\bloungeId\"U\n" +
 	"\x18ListLoungeEventsResponse\x129\n" +
@@ -5829,7 +5862,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x06rsvped\x18\x01 \x01(\bR\x06rsvped\"\x1a\n" +
 	"\x18ListMyLoungeRsvpsRequest\"V\n" +
 	"\x19ListMyLoungeRsvpsResponse\x129\n" +
-	"\x06events\x18\x01 \x03(\v2!.sttattus.dominion.v1.LoungeEventR\x06events\"\xd1\x02\n" +
+	"\x06events\x18\x01 \x03(\v2!.sttattus.dominion.v1.LoungeEventR\x06events\"\x84\x03\n" +
 	"\x05Salon\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
@@ -5845,7 +5878,9 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\breserved\x18\n" +
 	" \x01(\x05R\breserved\x12\x16\n" +
 	"\x06status\x18\v \x01(\tR\x06status\x12\x16\n" +
-	"\x06rsvped\x18\f \x01(\bR\x06rsvped\"\x13\n" +
+	"\x06rsvped\x18\f \x01(\bR\x06rsvped\x12\x19\n" +
+	"\bmin_tier\x18\r \x01(\tR\aminTier\x12\x16\n" +
+	"\x06locked\x18\x0e \x01(\bR\x06locked\"\x13\n" +
 	"\x11ListSalonsRequest\"I\n" +
 	"\x12ListSalonsResponse\x123\n" +
 	"\x06salons\x18\x01 \x03(\v2\x1b.sttattus.dominion.v1.SalonR\x06salons\"K\n" +
@@ -6103,12 +6138,12 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xc7#\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xcc#\n" +
 	"\x0fDominionService\x12k\n" +
 	"\x0eSyncProperties\x12+.sttattus.dominion.v1.SyncPropertiesRequest\x1a,.sttattus.dominion.v1.SyncPropertiesResponse\x12n\n" +
 	"\x0fListTerritories\x12,.sttattus.dominion.v1.ListTerritoriesRequest\x1a-.sttattus.dominion.v1.ListTerritoriesResponse\x12q\n" +
-	"\x10GetDominionStats\x12-.sttattus.dominion.v1.GetDominionStatsRequest\x1a..sttattus.dominion.v1.GetDominionStatsResponse\x12e\n" +
-	"\fGetLoungeKey\x12).sttattus.dominion.v1.GetLoungeKeyRequest\x1a*.sttattus.dominion.v1.GetLoungeKeyResponse\x12\x80\x01\n" +
+	"\x10GetDominionStats\x12-.sttattus.dominion.v1.GetDominionStatsRequest\x1a..sttattus.dominion.v1.GetDominionStatsResponse\x12j\n" +
+	"\fGetLoungeKey\x12).sttattus.dominion.v1.GetLoungeKeyRequest\x1a*.sttattus.dominion.v1.GetLoungeKeyResponse\"\x03\x88\x02\x01\x12\x80\x01\n" +
 	"\x15EstimatePropertyValue\x122.sttattus.dominion.v1.EstimatePropertyValueRequest\x1a3.sttattus.dominion.v1.EstimatePropertyValueResponse\x12_\n" +
 	"\n" +
 	"SubmitDeed\x12'.sttattus.dominion.v1.SubmitDeedRequest\x1a(.sttattus.dominion.v1.SubmitDeedResponse\x12b\n" +

@@ -198,6 +198,10 @@ message LoungeEvent {
   int64 starts_at_unix = 8;
   int64 ends_at_unix = 9;
   bool rsvped = 10;
+  // True when this member's standing does not clear min_tier. The chip was
+  // drawn from the raw column and enforced nothing; the server now enforces
+  // it on RSVP, and this lets the card say so before the member taps.
+  bool locked = 11;
 }
 message ListLoungeEventsRequest {
   string lounge_id = 1; // empty => all upcoming events
@@ -230,6 +234,13 @@ message Salon {
   int32 reserved = 10;
   string status = 11;
   bool rsvped = 12;
+  // Dominion rank ladder: open / governor / sovereign — the same vocabulary
+  // as lounge_events.min_tier. The column existed from the start and no
+  // handler ever selected it, so the salon gate was invisible to the client
+  // and unenforced on the server.
+  string min_tier = 13;
+  // True when this member's standing does not clear min_tier.
+  bool locked = 14;
 }
 message ListSalonsRequest {}
 message ListSalonsResponse {
@@ -547,7 +558,14 @@ service DominionService {
   rpc GetDominionStats(GetDominionStatsRequest) returns (GetDominionStatsResponse);
 
   // Hard Perks
-  rpc GetLoungeKey(GetLoungeKeyRequest) returns (GetLoungeKeyResponse);
+  // Deprecated: use CreateLoungePass. This minted a credential that persisted
+  // nowhere and could not be revoked, listed or audited, while
+  // CreateLoungePass — gating on identical standing — wrote a revocable row.
+  // The handler now delegates to CreateLoungePass so the two cannot drift,
+  // and `lounge_key_jwt` carries that pass's token. No client calls this.
+  rpc GetLoungeKey(GetLoungeKeyRequest) returns (GetLoungeKeyResponse) {
+    option deprecated = true;
+  };
 
   // D14.3 — AVM estimate (Zillow + Rightmove pilot).
   rpc EstimatePropertyValue(EstimatePropertyValueRequest) returns (EstimatePropertyValueResponse);
