@@ -94,6 +94,8 @@ const Asset$json = {
       '6': '.sttattus.vault.v1.Asset.MetadataEntry',
       '10': 'metadata'
     },
+    {'1': 'native_currency', '3': 9, '4': 1, '5': 9, '10': 'nativeCurrency'},
+    {'1': 'native_value', '3': 10, '4': 1, '5': 1, '10': 'nativeValue'},
   ],
   '3': [Asset_MetadataEntry$json],
 };
@@ -116,8 +118,10 @@ final $typed_data.Uint8List assetDescriptor = $convert.base64Decode(
     'R1cy52YXVsdC52MS5WZXJpZmljYXRpb25TdGF0dXNSBnN0YXR1cxIbCglpbWFnZV91cmwYBiAB'
     'KAlSCGltYWdlVXJsEj0KDGxhc3RfdXBkYXRlZBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
     '1lc3RhbXBSC2xhc3RVcGRhdGVkEkIKCG1ldGFkYXRhGAggAygLMiYuc3R0YXR0dXMudmF1bHQu'
-    'djEuQXNzZXQuTWV0YWRhdGFFbnRyeVIIbWV0YWRhdGEaOwoNTWV0YWRhdGFFbnRyeRIQCgNrZX'
-    'kYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+    'djEuQXNzZXQuTWV0YWRhdGFFbnRyeVIIbWV0YWRhdGESJwoPbmF0aXZlX2N1cnJlbmN5GAkgAS'
+    'gJUg5uYXRpdmVDdXJyZW5jeRIhCgxuYXRpdmVfdmFsdWUYCiABKAFSC25hdGl2ZVZhbHVlGjsK'
+    'DU1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOg'
+    'I4AQ==');
 
 @$core.Deprecated('Use portfolioDescriptor instead')
 const Portfolio$json = {
@@ -188,6 +192,8 @@ const SubmitAssetRequest$json = {
       '6': '.sttattus.vault.v1.SubmitAssetRequest.MetadataEntry',
       '10': 'metadata'
     },
+    {'1': 'native_currency', '3': 6, '4': 1, '5': 9, '10': 'nativeCurrency'},
+    {'1': 'native_value', '3': 7, '4': 1, '5': 1, '10': 'nativeValue'},
   ],
   '3': [SubmitAssetRequest_MetadataEntry$json],
 };
@@ -208,8 +214,10 @@ final $typed_data.Uint8List submitAssetRequestDescriptor = $convert.base64Decode
     'EoDjIgLnN0dGF0dHVzLnZhdWx0LnYxLkFzc2V0Q2F0ZWdvcnlSCGNhdGVnb3J5Ei4KE2VzdGlt'
     'YXRlZF92YWx1ZV91c2QYAyABKAFSEWVzdGltYXRlZFZhbHVlVXNkEhsKCWltYWdlX3VybBgEIA'
     'EoCVIIaW1hZ2VVcmwSTwoIbWV0YWRhdGEYBSADKAsyMy5zdHRhdHR1cy52YXVsdC52MS5TdWJt'
-    'aXRBc3NldFJlcXVlc3QuTWV0YWRhdGFFbnRyeVIIbWV0YWRhdGEaOwoNTWV0YWRhdGFFbnRyeR'
-    'IQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
+    'aXRBc3NldFJlcXVlc3QuTWV0YWRhdGFFbnRyeVIIbWV0YWRhdGESJwoPbmF0aXZlX2N1cnJlbm'
+    'N5GAYgASgJUg5uYXRpdmVDdXJyZW5jeRIhCgxuYXRpdmVfdmFsdWUYByABKAFSC25hdGl2ZVZh'
+    'bHVlGjsKDU1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBX'
+    'ZhbHVlOgI4AQ==');
 
 @$core.Deprecated('Use submitAssetResponseDescriptor instead')
 const SubmitAssetResponse$json = {

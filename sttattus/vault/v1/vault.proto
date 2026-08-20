@@ -35,6 +35,18 @@ message Asset {
   string image_url = 6; // For Rare Assets
   google.protobuf.Timestamp last_updated = 7;
   map<string, string> metadata = 8; // e.g., "serial_number": "123", "wallet_address": "0x..."
+
+  // Multi-currency (V8P2.2). vault_assets has carried native_currency and
+  // native_value since the schema landed, and nothing read or wrote either —
+  // the feature was a table, a rates job and an RPC with no path to a member.
+  // Finding 58.
+  //
+  // valuation_usd stays the single source of truth for net worth, rank and
+  // allocation; these two only record what the member actually entered, so a
+  // EUR asset can be shown in EUR without every downstream sum having to know
+  // about currencies.
+  string native_currency = 9; // ISO-4217 alpha-3; empty means USD
+  double native_value = 10;   // amount in native_currency; 0 when not recorded
 }
 
 // Portfolio is the aggregated view of a user's wealth.
@@ -52,6 +64,13 @@ message SubmitAssetRequest {
   double estimated_value_usd = 3;
   string image_url = 4; // From shared_uploader
   map<string, string> metadata = 5;
+
+  // Finding 58. When set, the member entered the value in this currency and
+  // the server converts to USD with the latest vault_fx_rates row. When empty
+  // the request is USD and estimated_value_usd is taken as given, so every
+  // existing caller keeps working unchanged.
+  string native_currency = 6; // ISO-4217 alpha-3; empty means USD
+  double native_value = 7;
 }
 
 message SubmitAssetResponse {

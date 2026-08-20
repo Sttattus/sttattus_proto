@@ -139,17 +139,28 @@ func (VerificationStatus) EnumDescriptor() ([]byte, []int) {
 
 // Asset represents a single item of wealth.
 type Asset struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Category      AssetCategory          `protobuf:"varint,3,opt,name=category,proto3,enum=sttattus.vault.v1.AssetCategory" json:"category,omitempty"`
-	ValuationUsd  float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
-	Status        VerificationStatus     `protobuf:"varint,5,opt,name=status,proto3,enum=sttattus.vault.v1.VerificationStatus" json:"status,omitempty"`
-	ImageUrl      string                 `protobuf:"bytes,6,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"` // For Rare Assets
-	LastUpdated   *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`
-	Metadata      map[string]string      `protobuf:"bytes,8,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // e.g., "serial_number": "123", "wallet_address": "0x..."
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name         string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Category     AssetCategory          `protobuf:"varint,3,opt,name=category,proto3,enum=sttattus.vault.v1.AssetCategory" json:"category,omitempty"`
+	ValuationUsd float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
+	Status       VerificationStatus     `protobuf:"varint,5,opt,name=status,proto3,enum=sttattus.vault.v1.VerificationStatus" json:"status,omitempty"`
+	ImageUrl     string                 `protobuf:"bytes,6,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"` // For Rare Assets
+	LastUpdated  *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=last_updated,json=lastUpdated,proto3" json:"last_updated,omitempty"`
+	Metadata     map[string]string      `protobuf:"bytes,8,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"` // e.g., "serial_number": "123", "wallet_address": "0x..."
+	// Multi-currency (V8P2.2). vault_assets has carried native_currency and
+	// native_value since the schema landed, and nothing read or wrote either —
+	// the feature was a table, a rates job and an RPC with no path to a member.
+	// Finding 58.
+	//
+	// valuation_usd stays the single source of truth for net worth, rank and
+	// allocation; these two only record what the member actually entered, so a
+	// EUR asset can be shown in EUR without every downstream sum having to know
+	// about currencies.
+	NativeCurrency string  `protobuf:"bytes,9,opt,name=native_currency,json=nativeCurrency,proto3" json:"native_currency,omitempty"` // ISO-4217 alpha-3; empty means USD
+	NativeValue    float64 `protobuf:"fixed64,10,opt,name=native_value,json=nativeValue,proto3" json:"native_value,omitempty"`       // amount in native_currency; 0 when not recorded
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *Asset) Reset() {
@@ -238,6 +249,20 @@ func (x *Asset) GetMetadata() map[string]string {
 	return nil
 }
 
+func (x *Asset) GetNativeCurrency() string {
+	if x != nil {
+		return x.NativeCurrency
+	}
+	return ""
+}
+
+func (x *Asset) GetNativeValue() float64 {
+	if x != nil {
+		return x.NativeValue
+	}
+	return 0
+}
+
 // Portfolio is the aggregated view of a user's wealth.
 type Portfolio struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
@@ -322,8 +347,14 @@ type SubmitAssetRequest struct {
 	EstimatedValueUsd float64                `protobuf:"fixed64,3,opt,name=estimated_value_usd,json=estimatedValueUsd,proto3" json:"estimated_value_usd,omitempty"`
 	ImageUrl          string                 `protobuf:"bytes,4,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"` // From shared_uploader
 	Metadata          map[string]string      `protobuf:"bytes,5,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// Finding 58. When set, the member entered the value in this currency and
+	// the server converts to USD with the latest vault_fx_rates row. When empty
+	// the request is USD and estimated_value_usd is taken as given, so every
+	// existing caller keeps working unchanged.
+	NativeCurrency string  `protobuf:"bytes,6,opt,name=native_currency,json=nativeCurrency,proto3" json:"native_currency,omitempty"` // ISO-4217 alpha-3; empty means USD
+	NativeValue    float64 `protobuf:"fixed64,7,opt,name=native_value,json=nativeValue,proto3" json:"native_value,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *SubmitAssetRequest) Reset() {
@@ -389,6 +420,20 @@ func (x *SubmitAssetRequest) GetMetadata() map[string]string {
 		return x.Metadata
 	}
 	return nil
+}
+
+func (x *SubmitAssetRequest) GetNativeCurrency() string {
+	if x != nil {
+		return x.NativeCurrency
+	}
+	return ""
+}
+
+func (x *SubmitAssetRequest) GetNativeValue() float64 {
+	if x != nil {
+		return x.NativeValue
+	}
+	return 0
 }
 
 type SubmitAssetResponse struct {
@@ -6867,7 +6912,7 @@ var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\n" +
-	"\x1dsttattus/vault/v1/vault.proto\x12\x11sttattus.vault.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaa\x03\n" +
+	"\x1dsttattus/vault/v1/vault.proto\x12\x11sttattus.vault.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf6\x03\n" +
 	"\x05Asset\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12<\n" +
@@ -6876,7 +6921,10 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x06status\x18\x05 \x01(\x0e2%.sttattus.vault.v1.VerificationStatusR\x06status\x12\x1b\n" +
 	"\timage_url\x18\x06 \x01(\tR\bimageUrl\x12=\n" +
 	"\flast_updated\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\vlastUpdated\x12B\n" +
-	"\bmetadata\x18\b \x03(\v2&.sttattus.vault.v1.Asset.MetadataEntryR\bmetadata\x1a;\n" +
+	"\bmetadata\x18\b \x03(\v2&.sttattus.vault.v1.Asset.MetadataEntryR\bmetadata\x12'\n" +
+	"\x0fnative_currency\x18\t \x01(\tR\x0enativeCurrency\x12!\n" +
+	"\fnative_value\x18\n" +
+	" \x01(\x01R\vnativeValue\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe5\x01\n" +
@@ -6886,13 +6934,15 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x06assets\x18\x03 \x03(\v2\x18.sttattus.vault.v1.AssetR\x06assets\x12\x1d\n" +
 	"\n" +
 	"vault_rank\x18\x04 \x01(\x01R\tvaultRank\x12?\n" +
-	"\rcalculated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fcalculatedAt\"\xc1\x02\n" +
+	"\rcalculated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fcalculatedAt\"\x8d\x03\n" +
 	"\x12SubmitAssetRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12<\n" +
 	"\bcategory\x18\x02 \x01(\x0e2 .sttattus.vault.v1.AssetCategoryR\bcategory\x12.\n" +
 	"\x13estimated_value_usd\x18\x03 \x01(\x01R\x11estimatedValueUsd\x12\x1b\n" +
 	"\timage_url\x18\x04 \x01(\tR\bimageUrl\x12O\n" +
-	"\bmetadata\x18\x05 \x03(\v23.sttattus.vault.v1.SubmitAssetRequest.MetadataEntryR\bmetadata\x1a;\n" +
+	"\bmetadata\x18\x05 \x03(\v23.sttattus.vault.v1.SubmitAssetRequest.MetadataEntryR\bmetadata\x12'\n" +
+	"\x0fnative_currency\x18\x06 \x01(\tR\x0enativeCurrency\x12!\n" +
+	"\fnative_value\x18\a \x01(\x01R\vnativeValue\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"E\n" +

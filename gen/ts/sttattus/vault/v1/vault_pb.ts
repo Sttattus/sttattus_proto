@@ -154,6 +154,30 @@ export class Asset extends Message<Asset> {
    */
   metadata: { [key: string]: string } = {};
 
+  /**
+   * Multi-currency (V8P2.2). vault_assets has carried native_currency and
+   * native_value since the schema landed, and nothing read or wrote either —
+   * the feature was a table, a rates job and an RPC with no path to a member.
+   * Finding 58.
+   *
+   * valuation_usd stays the single source of truth for net worth, rank and
+   * allocation; these two only record what the member actually entered, so a
+   * EUR asset can be shown in EUR without every downstream sum having to know
+   * about currencies.
+   *
+   * ISO-4217 alpha-3; empty means USD
+   *
+   * @generated from field: string native_currency = 9;
+   */
+  nativeCurrency = "";
+
+  /**
+   * amount in native_currency; 0 when not recorded
+   *
+   * @generated from field: double native_value = 10;
+   */
+  nativeValue = 0;
+
   constructor(data?: PartialMessage<Asset>) {
     super();
     proto3.util.initPartial(data, this);
@@ -170,6 +194,8 @@ export class Asset extends Message<Asset> {
     { no: 6, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "last_updated", kind: "message", T: Timestamp },
     { no: 8, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 9, name: "native_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "native_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Asset {
@@ -285,6 +311,23 @@ export class SubmitAssetRequest extends Message<SubmitAssetRequest> {
    */
   metadata: { [key: string]: string } = {};
 
+  /**
+   * Finding 58. When set, the member entered the value in this currency and
+   * the server converts to USD with the latest vault_fx_rates row. When empty
+   * the request is USD and estimated_value_usd is taken as given, so every
+   * existing caller keeps working unchanged.
+   *
+   * ISO-4217 alpha-3; empty means USD
+   *
+   * @generated from field: string native_currency = 6;
+   */
+  nativeCurrency = "";
+
+  /**
+   * @generated from field: double native_value = 7;
+   */
+  nativeValue = 0;
+
   constructor(data?: PartialMessage<SubmitAssetRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -298,6 +341,8 @@ export class SubmitAssetRequest extends Message<SubmitAssetRequest> {
     { no: 3, name: "estimated_value_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 6, name: "native_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "native_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAssetRequest {

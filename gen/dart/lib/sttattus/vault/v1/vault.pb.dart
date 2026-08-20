@@ -34,6 +34,8 @@ class Asset extends $pb.GeneratedMessage {
     $core.String? imageUrl,
     $1.Timestamp? lastUpdated,
     $core.Iterable<$core.MapEntry<$core.String, $core.String>>? metadata,
+    $core.String? nativeCurrency,
+    $core.double? nativeValue,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -44,6 +46,8 @@ class Asset extends $pb.GeneratedMessage {
     if (imageUrl != null) result.imageUrl = imageUrl;
     if (lastUpdated != null) result.lastUpdated = lastUpdated;
     if (metadata != null) result.metadata.addEntries(metadata);
+    if (nativeCurrency != null) result.nativeCurrency = nativeCurrency;
+    if (nativeValue != null) result.nativeValue = nativeValue;
     return result;
   }
 
@@ -76,6 +80,8 @@ class Asset extends $pb.GeneratedMessage {
         keyFieldType: $pb.PbFieldType.OS,
         valueFieldType: $pb.PbFieldType.OS,
         packageName: const $pb.PackageName('sttattus.vault.v1'))
+    ..aOS(9, _omitFieldNames ? '' : 'nativeCurrency')
+    ..aD(10, _omitFieldNames ? '' : 'nativeValue')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -163,6 +169,33 @@ class Asset extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $pb.PbMap<$core.String, $core.String> get metadata => $_getMap(7);
+
+  /// Multi-currency (V8P2.2). vault_assets has carried native_currency and
+  /// native_value since the schema landed, and nothing read or wrote either —
+  /// the feature was a table, a rates job and an RPC with no path to a member.
+  /// Finding 58.
+  ///
+  /// valuation_usd stays the single source of truth for net worth, rank and
+  /// allocation; these two only record what the member actually entered, so a
+  /// EUR asset can be shown in EUR without every downstream sum having to know
+  /// about currencies.
+  @$pb.TagNumber(9)
+  $core.String get nativeCurrency => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set nativeCurrency($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNativeCurrency() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNativeCurrency() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get nativeValue => $_getN(9);
+  @$pb.TagNumber(10)
+  set nativeValue($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNativeValue() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNativeValue() => $_clearField(10);
 }
 
 /// Portfolio is the aggregated view of a user's wealth.
@@ -272,6 +305,8 @@ class SubmitAssetRequest extends $pb.GeneratedMessage {
     $core.double? estimatedValueUsd,
     $core.String? imageUrl,
     $core.Iterable<$core.MapEntry<$core.String, $core.String>>? metadata,
+    $core.String? nativeCurrency,
+    $core.double? nativeValue,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -279,6 +314,8 @@ class SubmitAssetRequest extends $pb.GeneratedMessage {
     if (estimatedValueUsd != null) result.estimatedValueUsd = estimatedValueUsd;
     if (imageUrl != null) result.imageUrl = imageUrl;
     if (metadata != null) result.metadata.addEntries(metadata);
+    if (nativeCurrency != null) result.nativeCurrency = nativeCurrency;
+    if (nativeValue != null) result.nativeValue = nativeValue;
     return result;
   }
 
@@ -306,6 +343,8 @@ class SubmitAssetRequest extends $pb.GeneratedMessage {
         keyFieldType: $pb.PbFieldType.OS,
         valueFieldType: $pb.PbFieldType.OS,
         packageName: const $pb.PackageName('sttattus.vault.v1'))
+    ..aOS(6, _omitFieldNames ? '' : 'nativeCurrency')
+    ..aD(7, _omitFieldNames ? '' : 'nativeValue')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -365,6 +404,28 @@ class SubmitAssetRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $pb.PbMap<$core.String, $core.String> get metadata => $_getMap(4);
+
+  /// Finding 58. When set, the member entered the value in this currency and
+  /// the server converts to USD with the latest vault_fx_rates row. When empty
+  /// the request is USD and estimated_value_usd is taken as given, so every
+  /// existing caller keeps working unchanged.
+  @$pb.TagNumber(6)
+  $core.String get nativeCurrency => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nativeCurrency($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNativeCurrency() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNativeCurrency() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get nativeValue => $_getN(6);
+  @$pb.TagNumber(7)
+  set nativeValue($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNativeValue() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNativeValue() => $_clearField(7);
 }
 
 class SubmitAssetResponse extends $pb.GeneratedMessage {
