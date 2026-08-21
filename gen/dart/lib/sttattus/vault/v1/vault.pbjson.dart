@@ -153,6 +153,14 @@ const Portfolio$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'calculatedAt'
     },
+    {'1': 'total_assets_usd', '3': 6, '4': 1, '5': 1, '10': 'totalAssetsUsd'},
+    {
+      '1': 'total_liabilities_usd',
+      '3': 7,
+      '4': 1,
+      '5': 1,
+      '10': 'totalLiabilitiesUsd'
+    },
   ],
 };
 
@@ -162,7 +170,8 @@ final $typed_data.Uint8List portfolioDescriptor = $convert.base64Decode(
     '91c2QYAiABKAFSEHRvdGFsTmV0V29ydGhVc2QSMAoGYXNzZXRzGAMgAygLMhguc3R0YXR0dXMu'
     'dmF1bHQudjEuQXNzZXRSBmFzc2V0cxIdCgp2YXVsdF9yYW5rGAQgASgBUgl2YXVsdFJhbmsSPw'
     'oNY2FsY3VsYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDGNhbGN1'
-    'bGF0ZWRBdA==');
+    'bGF0ZWRBdBIoChB0b3RhbF9hc3NldHNfdXNkGAYgASgBUg50b3RhbEFzc2V0c1VzZBIyChV0b3'
+    'RhbF9saWFiaWxpdGllc191c2QYByABKAFSE3RvdGFsTGlhYmlsaXRpZXNVc2Q=');
 
 @$core.Deprecated('Use submitAssetRequestDescriptor instead')
 const SubmitAssetRequest$json = {

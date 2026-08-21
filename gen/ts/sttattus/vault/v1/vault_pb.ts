@@ -242,6 +242,12 @@ export class Portfolio extends Message<Portfolio> {
   userId = "";
 
   /**
+   * Net of linked debt: total_assets_usd - total_liabilities_usd.
+   *
+   * Finding 68 stopped counting a mortgage as wealth. It did not decide
+   * whether to subtract it, and the header has read TOTAL NET WORTH the whole
+   * time — a claim the server was not computing. It computes it now.
+   *
    * @generated from field: double total_net_worth_usd = 2;
    */
   totalNetWorthUsd = 0;
@@ -263,6 +269,23 @@ export class Portfolio extends Message<Portfolio> {
    */
   calculatedAt?: Timestamp;
 
+  /**
+   * The two halves, so the member can see what was deducted rather than
+   * watching the headline drop with no explanation. The allocation donut and
+   * the liquidity ladder are built from assets alone: a negative slice means
+   * nothing, and a debt does not convert to cash.
+   *
+   * @generated from field: double total_assets_usd = 6;
+   */
+  totalAssetsUsd = 0;
+
+  /**
+   * reported positive
+   *
+   * @generated from field: double total_liabilities_usd = 7;
+   */
+  totalLiabilitiesUsd = 0;
+
   constructor(data?: PartialMessage<Portfolio>) {
     super();
     proto3.util.initPartial(data, this);
@@ -276,6 +299,8 @@ export class Portfolio extends Message<Portfolio> {
     { no: 3, name: "assets", kind: "message", T: Asset, repeated: true },
     { no: 4, name: "vault_rank", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 5, name: "calculated_at", kind: "message", T: Timestamp },
+    { no: 6, name: "total_assets_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "total_liabilities_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Portfolio {

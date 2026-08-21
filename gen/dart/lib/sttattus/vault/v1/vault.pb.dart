@@ -206,6 +206,8 @@ class Portfolio extends $pb.GeneratedMessage {
     $core.Iterable<Asset>? assets,
     $core.double? vaultRank,
     $1.Timestamp? calculatedAt,
+    $core.double? totalAssetsUsd,
+    $core.double? totalLiabilitiesUsd,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -213,6 +215,9 @@ class Portfolio extends $pb.GeneratedMessage {
     if (assets != null) result.assets.addAll(assets);
     if (vaultRank != null) result.vaultRank = vaultRank;
     if (calculatedAt != null) result.calculatedAt = calculatedAt;
+    if (totalAssetsUsd != null) result.totalAssetsUsd = totalAssetsUsd;
+    if (totalLiabilitiesUsd != null)
+      result.totalLiabilitiesUsd = totalLiabilitiesUsd;
     return result;
   }
 
@@ -236,6 +241,8 @@ class Portfolio extends $pb.GeneratedMessage {
     ..aD(4, _omitFieldNames ? '' : 'vaultRank')
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'calculatedAt',
         subBuilder: $1.Timestamp.create)
+    ..aD(6, _omitFieldNames ? '' : 'totalAssetsUsd')
+    ..aD(7, _omitFieldNames ? '' : 'totalLiabilitiesUsd')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -265,6 +272,11 @@ class Portfolio extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearUserId() => $_clearField(1);
 
+  /// Net of linked debt: total_assets_usd - total_liabilities_usd.
+  ///
+  /// Finding 68 stopped counting a mortgage as wealth. It did not decide
+  /// whether to subtract it, and the header has read TOTAL NET WORTH the whole
+  /// time — a claim the server was not computing. It computes it now.
   @$pb.TagNumber(2)
   $core.double get totalNetWorthUsd => $_getN(1);
   @$pb.TagNumber(2)
@@ -296,6 +308,28 @@ class Portfolio extends $pb.GeneratedMessage {
   void clearCalculatedAt() => $_clearField(5);
   @$pb.TagNumber(5)
   $1.Timestamp ensureCalculatedAt() => $_ensure(4);
+
+  /// The two halves, so the member can see what was deducted rather than
+  /// watching the headline drop with no explanation. The allocation donut and
+  /// the liquidity ladder are built from assets alone: a negative slice means
+  /// nothing, and a debt does not convert to cash.
+  @$pb.TagNumber(6)
+  $core.double get totalAssetsUsd => $_getN(5);
+  @$pb.TagNumber(6)
+  set totalAssetsUsd($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTotalAssetsUsd() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTotalAssetsUsd() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get totalLiabilitiesUsd => $_getN(6);
+  @$pb.TagNumber(7)
+  set totalLiabilitiesUsd($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTotalLiabilitiesUsd() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTotalLiabilitiesUsd() => $_clearField(7);
 }
 
 class SubmitAssetRequest extends $pb.GeneratedMessage {

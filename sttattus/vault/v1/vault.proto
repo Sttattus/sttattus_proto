@@ -62,10 +62,24 @@ message Asset {
 // Portfolio is the aggregated view of a user's wealth.
 message Portfolio {
   string user_id = 1;
+
+  // Net of linked debt: total_assets_usd - total_liabilities_usd.
+  //
+  // Finding 68 stopped counting a mortgage as wealth. It did not decide
+  // whether to subtract it, and the header has read TOTAL NET WORTH the whole
+  // time — a claim the server was not computing. It computes it now.
   double total_net_worth_usd = 2;
+
   repeated Asset assets = 3;
   double vault_rank = 4; // 1-100 calculated score
   google.protobuf.Timestamp calculated_at = 5;
+
+  // The two halves, so the member can see what was deducted rather than
+  // watching the headline drop with no explanation. The allocation donut and
+  // the liquidity ladder are built from assets alone: a negative slice means
+  // nothing, and a debt does not convert to cash.
+  double total_assets_usd = 6;
+  double total_liabilities_usd = 7; // reported positive
 }
 
 message SubmitAssetRequest {

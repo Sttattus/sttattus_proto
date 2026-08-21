@@ -276,14 +276,25 @@ func (x *Asset) GetNativeValue() float64 {
 
 // Portfolio is the aggregated view of a user's wealth.
 type Portfolio struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	UserId string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// Net of linked debt: total_assets_usd - total_liabilities_usd.
+	//
+	// Finding 68 stopped counting a mortgage as wealth. It did not decide
+	// whether to subtract it, and the header has read TOTAL NET WORTH the whole
+	// time — a claim the server was not computing. It computes it now.
 	TotalNetWorthUsd float64                `protobuf:"fixed64,2,opt,name=total_net_worth_usd,json=totalNetWorthUsd,proto3" json:"total_net_worth_usd,omitempty"`
 	Assets           []*Asset               `protobuf:"bytes,3,rep,name=assets,proto3" json:"assets,omitempty"`
 	VaultRank        float64                `protobuf:"fixed64,4,opt,name=vault_rank,json=vaultRank,proto3" json:"vault_rank,omitempty"` // 1-100 calculated score
 	CalculatedAt     *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=calculated_at,json=calculatedAt,proto3" json:"calculated_at,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// The two halves, so the member can see what was deducted rather than
+	// watching the headline drop with no explanation. The allocation donut and
+	// the liquidity ladder are built from assets alone: a negative slice means
+	// nothing, and a debt does not convert to cash.
+	TotalAssetsUsd      float64 `protobuf:"fixed64,6,opt,name=total_assets_usd,json=totalAssetsUsd,proto3" json:"total_assets_usd,omitempty"`
+	TotalLiabilitiesUsd float64 `protobuf:"fixed64,7,opt,name=total_liabilities_usd,json=totalLiabilitiesUsd,proto3" json:"total_liabilities_usd,omitempty"` // reported positive
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *Portfolio) Reset() {
@@ -349,6 +360,20 @@ func (x *Portfolio) GetCalculatedAt() *timestamppb.Timestamp {
 		return x.CalculatedAt
 	}
 	return nil
+}
+
+func (x *Portfolio) GetTotalAssetsUsd() float64 {
+	if x != nil {
+		return x.TotalAssetsUsd
+	}
+	return 0
+}
+
+func (x *Portfolio) GetTotalLiabilitiesUsd() float64 {
+	if x != nil {
+		return x.TotalLiabilitiesUsd
+	}
+	return 0
 }
 
 type SubmitAssetRequest struct {
@@ -6938,14 +6963,16 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	" \x01(\x01R\vnativeValue\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xe5\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xc3\x02\n" +
 	"\tPortfolio\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12-\n" +
 	"\x13total_net_worth_usd\x18\x02 \x01(\x01R\x10totalNetWorthUsd\x120\n" +
 	"\x06assets\x18\x03 \x03(\v2\x18.sttattus.vault.v1.AssetR\x06assets\x12\x1d\n" +
 	"\n" +
 	"vault_rank\x18\x04 \x01(\x01R\tvaultRank\x12?\n" +
-	"\rcalculated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fcalculatedAt\"\x8d\x03\n" +
+	"\rcalculated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\fcalculatedAt\x12(\n" +
+	"\x10total_assets_usd\x18\x06 \x01(\x01R\x0etotalAssetsUsd\x122\n" +
+	"\x15total_liabilities_usd\x18\a \x01(\x01R\x13totalLiabilitiesUsd\"\x8d\x03\n" +
 	"\x12SubmitAssetRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12<\n" +
 	"\bcategory\x18\x02 \x01(\x0e2 .sttattus.vault.v1.AssetCategoryR\bcategory\x12.\n" +
