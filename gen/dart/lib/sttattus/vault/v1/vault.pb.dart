@@ -4799,6 +4799,8 @@ class PlaidHolding extends $pb.GeneratedMessage {
     $core.double? institutionValue,
     $core.double? institutionPrice,
     $core.String? isoCurrencyCode,
+    $core.String? accountName,
+    $core.double? accountBalance,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -4812,6 +4814,8 @@ class PlaidHolding extends $pb.GeneratedMessage {
     if (institutionValue != null) result.institutionValue = institutionValue;
     if (institutionPrice != null) result.institutionPrice = institutionPrice;
     if (isoCurrencyCode != null) result.isoCurrencyCode = isoCurrencyCode;
+    if (accountName != null) result.accountName = accountName;
+    if (accountBalance != null) result.accountBalance = accountBalance;
     return result;
   }
 
@@ -4840,6 +4844,8 @@ class PlaidHolding extends $pb.GeneratedMessage {
     ..aD(9, _omitFieldNames ? '' : 'institutionValue')
     ..aD(10, _omitFieldNames ? '' : 'institutionPrice')
     ..aOS(11, _omitFieldNames ? '' : 'isoCurrencyCode')
+    ..aOS(12, _omitFieldNames ? '' : 'accountName')
+    ..aD(13, _omitFieldNames ? '' : 'accountBalance')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4959,6 +4965,35 @@ class PlaidHolding extends $pb.GeneratedMessage {
   $core.bool hasIsoCurrencyCode() => $_has(10);
   @$pb.TagNumber(11)
   void clearIsoCurrencyCode() => $_clearField(11);
+
+  /// The account this position sits in, denormalised onto each holding because
+  /// there is no PlaidAccount message and the client has no other way to
+  /// resolve account_id.
+  ///
+  /// account_balance is what actually reaches net worth. It is carried here
+  /// because the two do not always agree: in sandbox the 401k reports a balance
+  /// of $23,631.98 against positions totalling $25,125.63, and a real brokerage
+  /// balance can lag its positions the same way. A screen that showed only the
+  /// positions total would contradict the allocation donut, which is the
+  /// two-numbers-for-one-thing failure this audit keeps finding. Showing both
+  /// lets the screen say which is which.
+  @$pb.TagNumber(12)
+  $core.String get accountName => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set accountName($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasAccountName() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAccountName() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.double get accountBalance => $_getN(12);
+  @$pb.TagNumber(13)
+  set accountBalance($core.double value) => $_setDouble(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasAccountBalance() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAccountBalance() => $_clearField(13);
 }
 
 class ListPlaidHoldingsRequest extends $pb.GeneratedMessage {

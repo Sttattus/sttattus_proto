@@ -3249,6 +3249,28 @@ export class PlaidHolding extends Message<PlaidHolding> {
    */
   isoCurrencyCode = "";
 
+  /**
+   * The account this position sits in, denormalised onto each holding because
+   * there is no PlaidAccount message and the client has no other way to
+   * resolve account_id.
+   *
+   * account_balance is what actually reaches net worth. It is carried here
+   * because the two do not always agree: in sandbox the 401k reports a balance
+   * of $23,631.98 against positions totalling $25,125.63, and a real brokerage
+   * balance can lag its positions the same way. A screen that showed only the
+   * positions total would contradict the allocation donut, which is the
+   * two-numbers-for-one-thing failure this audit keeps finding. Showing both
+   * lets the screen say which is which.
+   *
+   * @generated from field: string account_name = 12;
+   */
+  accountName = "";
+
+  /**
+   * @generated from field: double account_balance = 13;
+   */
+  accountBalance = 0;
+
   constructor(data?: PartialMessage<PlaidHolding>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3268,6 +3290,8 @@ export class PlaidHolding extends Message<PlaidHolding> {
     { no: 9, name: "institution_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 10, name: "institution_price", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 11, name: "iso_currency_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "account_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "account_balance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlaidHolding {

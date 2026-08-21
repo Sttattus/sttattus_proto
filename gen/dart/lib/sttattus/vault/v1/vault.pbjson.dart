@@ -1450,6 +1450,8 @@ const PlaidHolding$json = {
       '5': 9,
       '10': 'isoCurrencyCode'
     },
+    {'1': 'account_name', '3': 12, '4': 1, '5': 9, '10': 'accountName'},
+    {'1': 'account_balance', '3': 13, '4': 1, '5': 1, '10': 'accountBalance'},
   ],
 };
 
@@ -1461,7 +1463,9 @@ final $typed_data.Uint8List plaidHoldingDescriptor = $convert.base64Decode(
     'lfdHlwZRgGIAEoCVIMc2VjdXJpdHlUeXBlEhoKCHF1YW50aXR5GAcgASgBUghxdWFudGl0eRId'
     'Cgpjb3N0X2Jhc2lzGAggASgBUgljb3N0QmFzaXMSKwoRaW5zdGl0dXRpb25fdmFsdWUYCSABKA'
     'FSEGluc3RpdHV0aW9uVmFsdWUSKwoRaW5zdGl0dXRpb25fcHJpY2UYCiABKAFSEGluc3RpdHV0'
-    'aW9uUHJpY2USKgoRaXNvX2N1cnJlbmN5X2NvZGUYCyABKAlSD2lzb0N1cnJlbmN5Q29kZQ==');
+    'aW9uUHJpY2USKgoRaXNvX2N1cnJlbmN5X2NvZGUYCyABKAlSD2lzb0N1cnJlbmN5Q29kZRIhCg'
+    'xhY2NvdW50X25hbWUYDCABKAlSC2FjY291bnROYW1lEicKD2FjY291bnRfYmFsYW5jZRgNIAEo'
+    'AVIOYWNjb3VudEJhbGFuY2U=');
 
 @$core.Deprecated('Use listPlaidHoldingsRequestDescriptor instead')
 const ListPlaidHoldingsRequest$json = {

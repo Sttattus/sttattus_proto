@@ -3790,8 +3790,21 @@ type PlaidHolding struct {
 	InstitutionValue float64                `protobuf:"fixed64,9,opt,name=institution_value,json=institutionValue,proto3" json:"institution_value,omitempty"`
 	InstitutionPrice float64                `protobuf:"fixed64,10,opt,name=institution_price,json=institutionPrice,proto3" json:"institution_price,omitempty"`
 	IsoCurrencyCode  string                 `protobuf:"bytes,11,opt,name=iso_currency_code,json=isoCurrencyCode,proto3" json:"iso_currency_code,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// The account this position sits in, denormalised onto each holding because
+	// there is no PlaidAccount message and the client has no other way to
+	// resolve account_id.
+	//
+	// account_balance is what actually reaches net worth. It is carried here
+	// because the two do not always agree: in sandbox the 401k reports a balance
+	// of $23,631.98 against positions totalling $25,125.63, and a real brokerage
+	// balance can lag its positions the same way. A screen that showed only the
+	// positions total would contradict the allocation donut, which is the
+	// two-numbers-for-one-thing failure this audit keeps finding. Showing both
+	// lets the screen say which is which.
+	AccountName    string  `protobuf:"bytes,12,opt,name=account_name,json=accountName,proto3" json:"account_name,omitempty"`
+	AccountBalance float64 `protobuf:"fixed64,13,opt,name=account_balance,json=accountBalance,proto3" json:"account_balance,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *PlaidHolding) Reset() {
@@ -3899,6 +3912,20 @@ func (x *PlaidHolding) GetIsoCurrencyCode() string {
 		return x.IsoCurrencyCode
 	}
 	return ""
+}
+
+func (x *PlaidHolding) GetAccountName() string {
+	if x != nil {
+		return x.AccountName
+	}
+	return ""
+}
+
+func (x *PlaidHolding) GetAccountBalance() float64 {
+	if x != nil {
+		return x.AccountBalance
+	}
+	return 0
 }
 
 type ListPlaidHoldingsRequest struct {
@@ -7208,7 +7235,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\"h\n" +
 	"\x1dListPlaidTransactionsResponse\x12G\n" +
-	"\ftransactions\x18\x01 \x03(\v2#.sttattus.vault.v1.PlaidTransactionR\ftransactions\"\x81\x03\n" +
+	"\ftransactions\x18\x01 \x03(\v2#.sttattus.vault.v1.PlaidTransactionR\ftransactions\"\xcd\x03\n" +
 	"\fPlaidHolding\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
@@ -7224,7 +7251,9 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x11institution_value\x18\t \x01(\x01R\x10institutionValue\x12+\n" +
 	"\x11institution_price\x18\n" +
 	" \x01(\x01R\x10institutionPrice\x12*\n" +
-	"\x11iso_currency_code\x18\v \x01(\tR\x0fisoCurrencyCode\"\x1a\n" +
+	"\x11iso_currency_code\x18\v \x01(\tR\x0fisoCurrencyCode\x12!\n" +
+	"\faccount_name\x18\f \x01(\tR\vaccountName\x12'\n" +
+	"\x0faccount_balance\x18\r \x01(\x01R\x0eaccountBalance\"\x1a\n" +
 	"\x18ListPlaidHoldingsRequest\"X\n" +
 	"\x19ListPlaidHoldingsResponse\x12;\n" +
 	"\bholdings\x18\x01 \x03(\v2\x1f.sttattus.vault.v1.PlaidHoldingR\bholdings\"J\n" +

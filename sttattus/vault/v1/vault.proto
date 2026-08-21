@@ -550,6 +550,20 @@ message PlaidHolding {
   double institution_value = 9;
   double institution_price = 10;
   string iso_currency_code = 11;
+
+  // The account this position sits in, denormalised onto each holding because
+  // there is no PlaidAccount message and the client has no other way to
+  // resolve account_id.
+  //
+  // account_balance is what actually reaches net worth. It is carried here
+  // because the two do not always agree: in sandbox the 401k reports a balance
+  // of $23,631.98 against positions totalling $25,125.63, and a real brokerage
+  // balance can lag its positions the same way. A screen that showed only the
+  // positions total would contradict the allocation donut, which is the
+  // two-numbers-for-one-thing failure this audit keeps finding. Showing both
+  // lets the screen say which is which.
+  string account_name = 12;
+  double account_balance = 13;
 }
 
 message ListPlaidHoldingsRequest {}
