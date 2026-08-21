@@ -410,6 +410,14 @@ export class LoginRequest extends Message<LoginRequest> {
    */
   appCode = AppCode.UNSPECIFIED;
 
+  /**
+   * A device the member previously chose to trust. When it is still valid the
+   * second factor is skipped for this sign-in.
+   *
+   * @generated from field: string trusted_device_token = 4;
+   */
+  trustedDeviceToken = "";
+
   constructor(data?: PartialMessage<LoginRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -421,6 +429,7 @@ export class LoginRequest extends Message<LoginRequest> {
     { no: 1, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "app_code", kind: "enum", T: proto3.getEnumType(AppCode) },
+    { no: 4, name: "trusted_device_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoginRequest {
@@ -450,6 +459,10 @@ export class LoginResponse extends Message<LoginResponse> {
   userId = "";
 
   /**
+   * Empty when two_factor_required is true. No usable token is ever issued
+   * before the second factor is verified — a half-authenticated session is
+   * the thing 2FA exists to prevent.
+   *
    * @generated from field: sttattus.auth.v1.TokenPair tokens = 2;
    */
   tokens?: TokenPair;
@@ -458,6 +471,19 @@ export class LoginResponse extends Message<LoginResponse> {
    * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
    */
   profile?: ProfileHint;
+
+  /**
+   * The password was correct, and this member has 2FA enabled. Send the
+   * challenge back with a code to VerifyTwoFactor.
+   *
+   * @generated from field: bool two_factor_required = 4;
+   */
+  twoFactorRequired = false;
+
+  /**
+   * @generated from field: string two_factor_token = 5;
+   */
+  twoFactorToken = "";
 
   constructor(data?: PartialMessage<LoginResponse>) {
     super();
@@ -470,6 +496,8 @@ export class LoginResponse extends Message<LoginResponse> {
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tokens", kind: "message", T: TokenPair },
     { no: 3, name: "profile", kind: "message", T: ProfileHint },
+    { no: 4, name: "two_factor_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "two_factor_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoginResponse {
@@ -486,6 +514,138 @@ export class LoginResponse extends Message<LoginResponse> {
 
   static equals(a: LoginResponse | PlainMessage<LoginResponse> | undefined, b: LoginResponse | PlainMessage<LoginResponse> | undefined): boolean {
     return proto3.util.equals(LoginResponse, a, b);
+  }
+}
+
+/**
+ * ===== Second factor =====
+ *
+ * The twelve apps used to sign in with an email and a password alone, while
+ * the members site enforced TOTP. A member with 2FA enabled could open any
+ * app and skip it — which defeats the one thing 2FA is for, a stolen
+ * password. Verified in production on 2026-08-21: apps@sttattus.com has
+ * two_factor_enabled = true and hub_two_factor holds their enrolled secret.
+ *
+ * Enrolment stays on the web. These RPCs only enforce what is already there,
+ * against the same secret the member's authenticator already holds, so
+ * nobody has to re-enrol.
+ *
+ * @generated from message sttattus.auth.v1.VerifyTwoFactorRequest
+ */
+export class VerifyTwoFactorRequest extends Message<VerifyTwoFactorRequest> {
+  /**
+   * @generated from field: string two_factor_token = 1;
+   */
+  twoFactorToken = "";
+
+  /**
+   * A six-digit TOTP code, or one of the member's backup codes. A backup code
+   * is consumed on use, and the web sees it consumed — the two share storage.
+   *
+   * @generated from field: string code = 2;
+   */
+  code = "";
+
+  /**
+   * Remember this device and skip the second factor next time.
+   *
+   * @generated from field: bool trust_device = 3;
+   */
+  trustDevice = false;
+
+  /**
+   * Shown to the member when they review their trusted devices.
+   *
+   * @generated from field: string device_label = 4;
+   */
+  deviceLabel = "";
+
+  constructor(data?: PartialMessage<VerifyTwoFactorRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.VerifyTwoFactorRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "two_factor_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "trust_device", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "device_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyTwoFactorRequest {
+    return new VerifyTwoFactorRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyTwoFactorRequest {
+    return new VerifyTwoFactorRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyTwoFactorRequest {
+    return new VerifyTwoFactorRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyTwoFactorRequest | PlainMessage<VerifyTwoFactorRequest> | undefined, b: VerifyTwoFactorRequest | PlainMessage<VerifyTwoFactorRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyTwoFactorRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.auth.v1.VerifyTwoFactorResponse
+ */
+export class VerifyTwoFactorResponse extends Message<VerifyTwoFactorResponse> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: sttattus.auth.v1.TokenPair tokens = 2;
+   */
+  tokens?: TokenPair;
+
+  /**
+   * @generated from field: sttattus.auth.v1.ProfileHint profile = 3;
+   */
+  profile?: ProfileHint;
+
+  /**
+   * Present only when trust_device was set. Store it and send it as
+   * LoginRequest.trusted_device_token.
+   *
+   * @generated from field: string trusted_device_token = 4;
+   */
+  trustedDeviceToken = "";
+
+  constructor(data?: PartialMessage<VerifyTwoFactorResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.auth.v1.VerifyTwoFactorResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "tokens", kind: "message", T: TokenPair },
+    { no: 3, name: "profile", kind: "message", T: ProfileHint },
+    { no: 4, name: "trusted_device_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyTwoFactorResponse {
+    return new VerifyTwoFactorResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyTwoFactorResponse {
+    return new VerifyTwoFactorResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyTwoFactorResponse {
+    return new VerifyTwoFactorResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyTwoFactorResponse | PlainMessage<VerifyTwoFactorResponse> | undefined, b: VerifyTwoFactorResponse | PlainMessage<VerifyTwoFactorResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyTwoFactorResponse, a, b);
   }
 }
 
@@ -1192,12 +1352,12 @@ export class LogoutRequest extends Message<LogoutRequest> {
  * ===== ExchangeOAuthHandoff =====
  * Redeems the single-use code a completed browser sign-in deep-links back into
  * the app.
- * 
+ *
  * This exists because the alternative — putting the token pair in the deep-link
  * URL — hands the session to anything that can register the same custom scheme,
  * and to whatever logs that URL. The code is 256 bits of randomness, single-use,
  * and valid for two minutes; it is spent here over TLS instead.
- * 
+ *
  * Unauthenticated by necessity: this is how a signed-out member obtains a
  * token. Safe for the same reason Login is — possession of a secret this server
  * issued after verifying an identity with the provider.

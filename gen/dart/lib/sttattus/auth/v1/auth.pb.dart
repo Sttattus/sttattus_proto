@@ -452,11 +452,14 @@ class LoginRequest extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? password,
     AppCode? appCode,
+    $core.String? trustedDeviceToken,
   }) {
     final result = create();
     if (email != null) result.email = email;
     if (password != null) result.password = password;
     if (appCode != null) result.appCode = appCode;
+    if (trustedDeviceToken != null)
+      result.trustedDeviceToken = trustedDeviceToken;
     return result;
   }
 
@@ -478,6 +481,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'password')
     ..aE<AppCode>(3, _omitFieldNames ? '' : 'appCode',
         enumValues: AppCode.values)
+    ..aOS(4, _omitFieldNames ? '' : 'trustedDeviceToken')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -525,6 +529,17 @@ class LoginRequest extends $pb.GeneratedMessage {
   $core.bool hasAppCode() => $_has(2);
   @$pb.TagNumber(3)
   void clearAppCode() => $_clearField(3);
+
+  /// A device the member previously chose to trust. When it is still valid the
+  /// second factor is skipped for this sign-in.
+  @$pb.TagNumber(4)
+  $core.String get trustedDeviceToken => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set trustedDeviceToken($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTrustedDeviceToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTrustedDeviceToken() => $_clearField(4);
 }
 
 class LoginResponse extends $pb.GeneratedMessage {
@@ -532,11 +547,15 @@ class LoginResponse extends $pb.GeneratedMessage {
     $core.String? userId,
     TokenPair? tokens,
     ProfileHint? profile,
+    $core.bool? twoFactorRequired,
+    $core.String? twoFactorToken,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
     if (tokens != null) result.tokens = tokens;
     if (profile != null) result.profile = profile;
+    if (twoFactorRequired != null) result.twoFactorRequired = twoFactorRequired;
+    if (twoFactorToken != null) result.twoFactorToken = twoFactorToken;
     return result;
   }
 
@@ -559,6 +578,8 @@ class LoginResponse extends $pb.GeneratedMessage {
         subBuilder: TokenPair.create)
     ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile',
         subBuilder: ProfileHint.create)
+    ..aOB(4, _omitFieldNames ? '' : 'twoFactorRequired')
+    ..aOS(5, _omitFieldNames ? '' : 'twoFactorToken')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -579,6 +600,226 @@ class LoginResponse extends $pb.GeneratedMessage {
   static LoginResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
   static LoginResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  /// Empty when two_factor_required is true. No usable token is ever issued
+  /// before the second factor is verified — a half-authenticated session is
+  /// the thing 2FA exists to prevent.
+  @$pb.TagNumber(2)
+  TokenPair get tokens => $_getN(1);
+  @$pb.TagNumber(2)
+  set tokens(TokenPair value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTokens() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTokens() => $_clearField(2);
+  @$pb.TagNumber(2)
+  TokenPair ensureTokens() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ProfileHint get profile => $_getN(2);
+  @$pb.TagNumber(3)
+  set profile(ProfileHint value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProfile() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProfile() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ProfileHint ensureProfile() => $_ensure(2);
+
+  /// The password was correct, and this member has 2FA enabled. Send the
+  /// challenge back with a code to VerifyTwoFactor.
+  @$pb.TagNumber(4)
+  $core.bool get twoFactorRequired => $_getBF(3);
+  @$pb.TagNumber(4)
+  set twoFactorRequired($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTwoFactorRequired() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTwoFactorRequired() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get twoFactorToken => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set twoFactorToken($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTwoFactorToken() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTwoFactorToken() => $_clearField(5);
+}
+
+/// ===== Second factor =====
+///
+/// The twelve apps used to sign in with an email and a password alone, while
+/// the members site enforced TOTP. A member with 2FA enabled could open any
+/// app and skip it — which defeats the one thing 2FA is for, a stolen
+/// password. Verified in production on 2026-08-21: apps@sttattus.com has
+/// two_factor_enabled = true and hub_two_factor holds their enrolled secret.
+///
+/// Enrolment stays on the web. These RPCs only enforce what is already there,
+/// against the same secret the member's authenticator already holds, so
+/// nobody has to re-enrol.
+class VerifyTwoFactorRequest extends $pb.GeneratedMessage {
+  factory VerifyTwoFactorRequest({
+    $core.String? twoFactorToken,
+    $core.String? code,
+    $core.bool? trustDevice,
+    $core.String? deviceLabel,
+  }) {
+    final result = create();
+    if (twoFactorToken != null) result.twoFactorToken = twoFactorToken;
+    if (code != null) result.code = code;
+    if (trustDevice != null) result.trustDevice = trustDevice;
+    if (deviceLabel != null) result.deviceLabel = deviceLabel;
+    return result;
+  }
+
+  VerifyTwoFactorRequest._();
+
+  factory VerifyTwoFactorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyTwoFactorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyTwoFactorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'twoFactorToken')
+    ..aOS(2, _omitFieldNames ? '' : 'code')
+    ..aOB(3, _omitFieldNames ? '' : 'trustDevice')
+    ..aOS(4, _omitFieldNames ? '' : 'deviceLabel')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyTwoFactorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyTwoFactorRequest copyWith(
+          void Function(VerifyTwoFactorRequest) updates) =>
+      super.copyWith((message) => updates(message as VerifyTwoFactorRequest))
+          as VerifyTwoFactorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyTwoFactorRequest create() => VerifyTwoFactorRequest._();
+  @$core.override
+  VerifyTwoFactorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyTwoFactorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VerifyTwoFactorRequest>(create);
+  static VerifyTwoFactorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get twoFactorToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set twoFactorToken($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTwoFactorToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTwoFactorToken() => $_clearField(1);
+
+  /// A six-digit TOTP code, or one of the member's backup codes. A backup code
+  /// is consumed on use, and the web sees it consumed — the two share storage.
+  @$pb.TagNumber(2)
+  $core.String get code => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set code($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => $_clearField(2);
+
+  /// Remember this device and skip the second factor next time.
+  @$pb.TagNumber(3)
+  $core.bool get trustDevice => $_getBF(2);
+  @$pb.TagNumber(3)
+  set trustDevice($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTrustDevice() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTrustDevice() => $_clearField(3);
+
+  /// Shown to the member when they review their trusted devices.
+  @$pb.TagNumber(4)
+  $core.String get deviceLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deviceLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceLabel() => $_clearField(4);
+}
+
+class VerifyTwoFactorResponse extends $pb.GeneratedMessage {
+  factory VerifyTwoFactorResponse({
+    $core.String? userId,
+    TokenPair? tokens,
+    ProfileHint? profile,
+    $core.String? trustedDeviceToken,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (tokens != null) result.tokens = tokens;
+    if (profile != null) result.profile = profile;
+    if (trustedDeviceToken != null)
+      result.trustedDeviceToken = trustedDeviceToken;
+    return result;
+  }
+
+  VerifyTwoFactorResponse._();
+
+  factory VerifyTwoFactorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyTwoFactorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyTwoFactorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.auth.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOM<TokenPair>(2, _omitFieldNames ? '' : 'tokens',
+        subBuilder: TokenPair.create)
+    ..aOM<ProfileHint>(3, _omitFieldNames ? '' : 'profile',
+        subBuilder: ProfileHint.create)
+    ..aOS(4, _omitFieldNames ? '' : 'trustedDeviceToken')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyTwoFactorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyTwoFactorResponse copyWith(
+          void Function(VerifyTwoFactorResponse) updates) =>
+      super.copyWith((message) => updates(message as VerifyTwoFactorResponse))
+          as VerifyTwoFactorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyTwoFactorResponse create() => VerifyTwoFactorResponse._();
+  @$core.override
+  VerifyTwoFactorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyTwoFactorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VerifyTwoFactorResponse>(create);
+  static VerifyTwoFactorResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get userId => $_getSZ(0);
@@ -610,6 +851,17 @@ class LoginResponse extends $pb.GeneratedMessage {
   void clearProfile() => $_clearField(3);
   @$pb.TagNumber(3)
   ProfileHint ensureProfile() => $_ensure(2);
+
+  /// Present only when trust_device was set. Store it and send it as
+  /// LoginRequest.trusted_device_token.
+  @$pb.TagNumber(4)
+  $core.String get trustedDeviceToken => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set trustedDeviceToken($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTrustedDeviceToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTrustedDeviceToken() => $_clearField(4);
 }
 
 /// ===== OAuth Login =====

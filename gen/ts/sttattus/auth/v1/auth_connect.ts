@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CheckEmailRequest, CheckEmailResponse, ExchangeOAuthHandoffRequest, ExchangeOAuthHandoffResponse, ForgotPasswordRequest, ForgotPasswordResponse, LinkAppRequest, LinkAppResponse, LinkProviderRequest, LinkProviderResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, OAuthLoginRequest, OAuthLoginResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, SetPasswordRequest, SetPasswordResponse } from "./auth_pb.js";
+import { CheckEmailRequest, CheckEmailResponse, ExchangeOAuthHandoffRequest, ExchangeOAuthHandoffResponse, ForgotPasswordRequest, ForgotPasswordResponse, LinkAppRequest, LinkAppResponse, LinkProviderRequest, LinkProviderResponse, LoginRequest, LoginResponse, LogoutRequest, LogoutResponse, OAuthLoginRequest, OAuthLoginResponse, RefreshRequest, RefreshResponse, RegisterRequest, RegisterResponse, ResetPasswordRequest, ResetPasswordResponse, SetPasswordRequest, SetPasswordResponse, VerifyTwoFactorRequest, VerifyTwoFactorResponse } from "./auth_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,15 @@ export const AuthService = {
       name: "Login",
       I: LoginRequest,
       O: LoginResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.auth.v1.AuthService.VerifyTwoFactor
+     */
+    verifyTwoFactor: {
+      name: "VerifyTwoFactor",
+      I: VerifyTwoFactorRequest,
+      O: VerifyTwoFactorResponse,
       kind: MethodKind.Unary,
     },
     /**

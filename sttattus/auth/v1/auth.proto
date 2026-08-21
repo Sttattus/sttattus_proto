@@ -77,12 +77,59 @@ message LoginRequest {
   string email = 1;
   string password = 2;
   AppCode app_code = 3;
+
+  // A device the member previously chose to trust. When it is still valid the
+  // second factor is skipped for this sign-in.
+  string trusted_device_token = 4;
 }
 
 message LoginResponse {
   string user_id = 1;
+
+  // Empty when two_factor_required is true. No usable token is ever issued
+  // before the second factor is verified — a half-authenticated session is
+  // the thing 2FA exists to prevent.
   TokenPair tokens = 2;
   ProfileHint profile = 3;
+
+  // The password was correct, and this member has 2FA enabled. Send the
+  // challenge back with a code to VerifyTwoFactor.
+  bool two_factor_required = 4;
+  string two_factor_token = 5;
+}
+
+// ===== Second factor =====
+//
+// The twelve apps used to sign in with an email and a password alone, while
+// the members site enforced TOTP. A member with 2FA enabled could open any
+// app and skip it — which defeats the one thing 2FA is for, a stolen
+// password. Verified in production on 2026-08-21: apps@sttattus.com has
+// two_factor_enabled = true and hub_two_factor holds their enrolled secret.
+//
+// Enrolment stays on the web. These RPCs only enforce what is already there,
+// against the same secret the member's authenticator already holds, so
+// nobody has to re-enrol.
+message VerifyTwoFactorRequest {
+  string two_factor_token = 1;
+
+  // A six-digit TOTP code, or one of the member's backup codes. A backup code
+  // is consumed on use, and the web sees it consumed — the two share storage.
+  string code = 2;
+
+  // Remember this device and skip the second factor next time.
+  bool trust_device = 3;
+  // Shown to the member when they review their trusted devices.
+  string device_label = 4;
+}
+
+message VerifyTwoFactorResponse {
+  string user_id = 1;
+  TokenPair tokens = 2;
+  ProfileHint profile = 3;
+
+  // Present only when trust_device was set. Store it and send it as
+  // LoginRequest.trusted_device_token.
+  string trusted_device_token = 4;
 }
 
 // ===== OAuth Login =====
@@ -197,6 +244,7 @@ message LogoutResponse {}
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
   rpc Login(LoginRequest) returns (LoginResponse);
+  rpc VerifyTwoFactor(VerifyTwoFactorRequest) returns (VerifyTwoFactorResponse);
   // OAuthLogin is the legacy id_token shape. It never verified anything and
   // cannot serve GitHub, which issues no id_token at all. Superseded by the
   // browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.

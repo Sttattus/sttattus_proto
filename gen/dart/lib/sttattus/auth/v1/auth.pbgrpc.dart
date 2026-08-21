@@ -46,6 +46,13 @@ class AuthServiceClient extends $grpc.Client {
     return $createUnaryCall(_$login, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.VerifyTwoFactorResponse> verifyTwoFactor(
+    $0.VerifyTwoFactorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyTwoFactor, request, options: options);
+  }
+
   /// OAuthLogin is the legacy id_token shape. It never verified anything and
   /// cannot serve GitHub, which issues no id_token at all. Superseded by the
   /// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
@@ -130,6 +137,11 @@ class AuthServiceClient extends $grpc.Client {
       '/sttattus.auth.v1.AuthService/Login',
       ($0.LoginRequest value) => value.writeToBuffer(),
       $0.LoginResponse.fromBuffer);
+  static final _$verifyTwoFactor =
+      $grpc.ClientMethod<$0.VerifyTwoFactorRequest, $0.VerifyTwoFactorResponse>(
+          '/sttattus.auth.v1.AuthService/VerifyTwoFactor',
+          ($0.VerifyTwoFactorRequest value) => value.writeToBuffer(),
+          $0.VerifyTwoFactorResponse.fromBuffer);
   static final _$oAuthLogin =
       $grpc.ClientMethod<$0.OAuthLoginRequest, $0.OAuthLoginResponse>(
           '/sttattus.auth.v1.AuthService/OAuthLogin',
@@ -201,6 +213,15 @@ abstract class AuthServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.LoginRequest.fromBuffer(value),
         ($0.LoginResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyTwoFactorRequest,
+            $0.VerifyTwoFactorResponse>(
+        'VerifyTwoFactor',
+        verifyTwoFactor_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyTwoFactorRequest.fromBuffer(value),
+        ($0.VerifyTwoFactorResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.OAuthLoginRequest, $0.OAuthLoginResponse>(
         'OAuthLogin',
         oAuthLogin_Pre,
@@ -298,6 +319,15 @@ abstract class AuthServiceBase extends $grpc.Service {
 
   $async.Future<$0.LoginResponse> login(
       $grpc.ServiceCall call, $0.LoginRequest request);
+
+  $async.Future<$0.VerifyTwoFactorResponse> verifyTwoFactor_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.VerifyTwoFactorRequest> $request) async {
+    return verifyTwoFactor($call, await $request);
+  }
+
+  $async.Future<$0.VerifyTwoFactorResponse> verifyTwoFactor(
+      $grpc.ServiceCall call, $0.VerifyTwoFactorRequest request);
 
   $async.Future<$0.OAuthLoginResponse> oAuthLogin_Pre($grpc.ServiceCall $call,
       $async.Future<$0.OAuthLoginRequest> $request) async {

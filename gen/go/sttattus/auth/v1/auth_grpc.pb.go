@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	AuthService_Register_FullMethodName             = "/sttattus.auth.v1.AuthService/Register"
 	AuthService_Login_FullMethodName                = "/sttattus.auth.v1.AuthService/Login"
+	AuthService_VerifyTwoFactor_FullMethodName      = "/sttattus.auth.v1.AuthService/VerifyTwoFactor"
 	AuthService_OAuthLogin_FullMethodName           = "/sttattus.auth.v1.AuthService/OAuthLogin"
 	AuthService_ExchangeOAuthHandoff_FullMethodName = "/sttattus.auth.v1.AuthService/ExchangeOAuthHandoff"
 	AuthService_CheckEmail_FullMethodName           = "/sttattus.auth.v1.AuthService/CheckEmail"
@@ -39,6 +40,7 @@ const (
 type AuthServiceClient interface {
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*RegisterResponse, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
+	VerifyTwoFactor(ctx context.Context, in *VerifyTwoFactorRequest, opts ...grpc.CallOption) (*VerifyTwoFactorResponse, error)
 	// OAuthLogin is the legacy id_token shape. It never verified anything and
 	// cannot serve GitHub, which issues no id_token at all. Superseded by the
 	// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
@@ -76,6 +78,16 @@ func (c *authServiceClient) Login(ctx context.Context, in *LoginRequest, opts ..
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(LoginResponse)
 	err := c.cc.Invoke(ctx, AuthService_Login_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *authServiceClient) VerifyTwoFactor(ctx context.Context, in *VerifyTwoFactorRequest, opts ...grpc.CallOption) (*VerifyTwoFactorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyTwoFactorResponse)
+	err := c.cc.Invoke(ctx, AuthService_VerifyTwoFactor_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -188,6 +200,7 @@ func (c *authServiceClient) Logout(ctx context.Context, in *LogoutRequest, opts 
 type AuthServiceServer interface {
 	Register(context.Context, *RegisterRequest) (*RegisterResponse, error)
 	Login(context.Context, *LoginRequest) (*LoginResponse, error)
+	VerifyTwoFactor(context.Context, *VerifyTwoFactorRequest) (*VerifyTwoFactorResponse, error)
 	// OAuthLogin is the legacy id_token shape. It never verified anything and
 	// cannot serve GitHub, which issues no id_token at all. Superseded by the
 	// browser flow at /oauth/mobile/start plus ExchangeOAuthHandoff.
@@ -216,6 +229,9 @@ func (UnimplementedAuthServiceServer) Register(context.Context, *RegisterRequest
 }
 func (UnimplementedAuthServiceServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedAuthServiceServer) VerifyTwoFactor(context.Context, *VerifyTwoFactorRequest) (*VerifyTwoFactorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyTwoFactor not implemented")
 }
 func (UnimplementedAuthServiceServer) OAuthLogin(context.Context, *OAuthLoginRequest) (*OAuthLoginResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method OAuthLogin not implemented")
@@ -300,6 +316,24 @@ func _AuthService_Login_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AuthServiceServer).Login(ctx, req.(*LoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AuthService_VerifyTwoFactor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyTwoFactorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AuthServiceServer).VerifyTwoFactor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AuthService_VerifyTwoFactor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AuthServiceServer).VerifyTwoFactor(ctx, req.(*VerifyTwoFactorRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -498,6 +532,10 @@ var AuthService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Login",
 			Handler:    _AuthService_Login_Handler,
+		},
+		{
+			MethodName: "VerifyTwoFactor",
+			Handler:    _AuthService_VerifyTwoFactor_Handler,
 		},
 		{
 			MethodName: "OAuthLogin",

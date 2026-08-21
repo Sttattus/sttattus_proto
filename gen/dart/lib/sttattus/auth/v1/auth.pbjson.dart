@@ -201,6 +201,13 @@ const LoginRequest$json = {
       '6': '.sttattus.auth.v1.AppCode',
       '10': 'appCode'
     },
+    {
+      '1': 'trusted_device_token',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'trustedDeviceToken'
+    },
   ],
 };
 
@@ -208,7 +215,8 @@ const LoginRequest$json = {
 final $typed_data.Uint8List loginRequestDescriptor = $convert.base64Decode(
     'CgxMb2dpblJlcXVlc3QSFAoFZW1haWwYASABKAlSBWVtYWlsEhoKCHBhc3N3b3JkGAIgASgJUg'
     'hwYXNzd29yZBI0CghhcHBfY29kZRgDIAEoDjIZLnN0dGF0dHVzLmF1dGgudjEuQXBwQ29kZVIH'
-    'YXBwQ29kZQ==');
+    'YXBwQ29kZRIwChR0cnVzdGVkX2RldmljZV90b2tlbhgEIAEoCVISdHJ1c3RlZERldmljZVRva2'
+    'Vu');
 
 @$core.Deprecated('Use loginResponseDescriptor instead')
 const LoginResponse$json = {
@@ -231,6 +239,14 @@ const LoginResponse$json = {
       '6': '.sttattus.auth.v1.ProfileHint',
       '10': 'profile'
     },
+    {
+      '1': 'two_factor_required',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'twoFactorRequired'
+    },
+    {'1': 'two_factor_token', '3': 5, '4': 1, '5': 9, '10': 'twoFactorToken'},
   ],
 };
 
@@ -238,7 +254,64 @@ const LoginResponse$json = {
 final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
     'Cg1Mb2dpblJlc3BvbnNlEhcKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIzCgZ0b2tlbnMYAiABKA'
     'syGy5zdHRhdHR1cy5hdXRoLnYxLlRva2VuUGFpclIGdG9rZW5zEjcKB3Byb2ZpbGUYAyABKAsy'
-    'HS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ugdwcm9maWxl');
+    'HS5zdHRhdHR1cy5hdXRoLnYxLlByb2ZpbGVIaW50Ugdwcm9maWxlEi4KE3R3b19mYWN0b3Jfcm'
+    'VxdWlyZWQYBCABKAhSEXR3b0ZhY3RvclJlcXVpcmVkEigKEHR3b19mYWN0b3JfdG9rZW4YBSAB'
+    'KAlSDnR3b0ZhY3RvclRva2Vu');
+
+@$core.Deprecated('Use verifyTwoFactorRequestDescriptor instead')
+const VerifyTwoFactorRequest$json = {
+  '1': 'VerifyTwoFactorRequest',
+  '2': [
+    {'1': 'two_factor_token', '3': 1, '4': 1, '5': 9, '10': 'twoFactorToken'},
+    {'1': 'code', '3': 2, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'trust_device', '3': 3, '4': 1, '5': 8, '10': 'trustDevice'},
+    {'1': 'device_label', '3': 4, '4': 1, '5': 9, '10': 'deviceLabel'},
+  ],
+};
+
+/// Descriptor for `VerifyTwoFactorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyTwoFactorRequestDescriptor = $convert.base64Decode(
+    'ChZWZXJpZnlUd29GYWN0b3JSZXF1ZXN0EigKEHR3b19mYWN0b3JfdG9rZW4YASABKAlSDnR3b0'
+    'ZhY3RvclRva2VuEhIKBGNvZGUYAiABKAlSBGNvZGUSIQoMdHJ1c3RfZGV2aWNlGAMgASgIUgt0'
+    'cnVzdERldmljZRIhCgxkZXZpY2VfbGFiZWwYBCABKAlSC2RldmljZUxhYmVs');
+
+@$core.Deprecated('Use verifyTwoFactorResponseDescriptor instead')
+const VerifyTwoFactorResponse$json = {
+  '1': 'VerifyTwoFactorResponse',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {
+      '1': 'tokens',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.TokenPair',
+      '10': 'tokens'
+    },
+    {
+      '1': 'profile',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.auth.v1.ProfileHint',
+      '10': 'profile'
+    },
+    {
+      '1': 'trusted_device_token',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'trustedDeviceToken'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyTwoFactorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyTwoFactorResponseDescriptor = $convert.base64Decode(
+    'ChdWZXJpZnlUd29GYWN0b3JSZXNwb25zZRIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSMwoGdG'
+    '9rZW5zGAIgASgLMhsuc3R0YXR0dXMuYXV0aC52MS5Ub2tlblBhaXJSBnRva2VucxI3Cgdwcm9m'
+    'aWxlGAMgASgLMh0uc3R0YXR0dXMuYXV0aC52MS5Qcm9maWxlSGludFIHcHJvZmlsZRIwChR0cn'
+    'VzdGVkX2RldmljZV90b2tlbhgEIAEoCVISdHJ1c3RlZERldmljZVRva2Vu');
 
 @$core.Deprecated('Use oAuthLoginRequestDescriptor instead')
 const OAuthLoginRequest$json = {
