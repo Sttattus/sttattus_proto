@@ -310,6 +310,45 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createLinguistShare, request, options: options);
   }
 
+  /// L13 — the practice engine. Spaced repetition over a concept/lexeme corpus,
+  /// which is the learning loop the app was missing entirely: the Today plan's
+  /// three blocks were self-report checkboxes and lexicon_progress was never
+  /// read or written by anything.
+  $grpc.ResponseFuture<$0.GetPracticeSessionResponse> getPracticeSession(
+    $0.GetPracticeSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPracticeSession, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitAnswerResponse> submitAnswer(
+    $0.SubmitAnswerRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitAnswer, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPracticeStatsResponse> getPracticeStats(
+    $0.GetPracticeStatsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPracticeStats, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMemberPrefsResponse> getMemberPrefs(
+    $0.GetMemberPrefsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMemberPrefs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetMemberPrefsResponse> setMemberPrefs(
+    $0.SetMemberPrefsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setMemberPrefs, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords(
     $0.ListWordsRequest request, {
@@ -502,6 +541,31 @@ class LanguagesServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.LanguagesService/CreateLinguistShare',
       ($0.CreateLinguistShareRequest value) => value.writeToBuffer(),
       $0.CreateLinguistShareResponse.fromBuffer);
+  static final _$getPracticeSession = $grpc.ClientMethod<
+          $0.GetPracticeSessionRequest, $0.GetPracticeSessionResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetPracticeSession',
+      ($0.GetPracticeSessionRequest value) => value.writeToBuffer(),
+      $0.GetPracticeSessionResponse.fromBuffer);
+  static final _$submitAnswer =
+      $grpc.ClientMethod<$0.SubmitAnswerRequest, $0.SubmitAnswerResponse>(
+          '/sttattus.languages.v1.LanguagesService/SubmitAnswer',
+          ($0.SubmitAnswerRequest value) => value.writeToBuffer(),
+          $0.SubmitAnswerResponse.fromBuffer);
+  static final _$getPracticeStats = $grpc.ClientMethod<
+          $0.GetPracticeStatsRequest, $0.GetPracticeStatsResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetPracticeStats',
+      ($0.GetPracticeStatsRequest value) => value.writeToBuffer(),
+      $0.GetPracticeStatsResponse.fromBuffer);
+  static final _$getMemberPrefs =
+      $grpc.ClientMethod<$0.GetMemberPrefsRequest, $0.GetMemberPrefsResponse>(
+          '/sttattus.languages.v1.LanguagesService/GetMemberPrefs',
+          ($0.GetMemberPrefsRequest value) => value.writeToBuffer(),
+          $0.GetMemberPrefsResponse.fromBuffer);
+  static final _$setMemberPrefs =
+      $grpc.ClientMethod<$0.SetMemberPrefsRequest, $0.SetMemberPrefsResponse>(
+          '/sttattus.languages.v1.LanguagesService/SetMemberPrefs',
+          ($0.SetMemberPrefsRequest value) => value.writeToBuffer(),
+          $0.SetMemberPrefsResponse.fromBuffer);
   static final _$listWords =
       $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
           '/sttattus.languages.v1.LanguagesService/ListWords',
@@ -836,6 +900,51 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.CreateLinguistShareRequest.fromBuffer(value),
         ($0.CreateLinguistShareResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPracticeSessionRequest,
+            $0.GetPracticeSessionResponse>(
+        'GetPracticeSession',
+        getPracticeSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPracticeSessionRequest.fromBuffer(value),
+        ($0.GetPracticeSessionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.SubmitAnswerRequest, $0.SubmitAnswerResponse>(
+            'SubmitAnswer',
+            submitAnswer_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.SubmitAnswerRequest.fromBuffer(value),
+            ($0.SubmitAnswerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPracticeStatsRequest,
+            $0.GetPracticeStatsResponse>(
+        'GetPracticeStats',
+        getPracticeStats_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPracticeStatsRequest.fromBuffer(value),
+        ($0.GetPracticeStatsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMemberPrefsRequest,
+            $0.GetMemberPrefsResponse>(
+        'GetMemberPrefs',
+        getMemberPrefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMemberPrefsRequest.fromBuffer(value),
+        ($0.GetMemberPrefsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetMemberPrefsRequest,
+            $0.SetMemberPrefsResponse>(
+        'SetMemberPrefs',
+        setMemberPrefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetMemberPrefsRequest.fromBuffer(value),
+        ($0.SetMemberPrefsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -1167,6 +1276,51 @@ abstract class LanguagesServiceBase extends $grpc.Service {
 
   $async.Future<$0.CreateLinguistShareResponse> createLinguistShare(
       $grpc.ServiceCall call, $0.CreateLinguistShareRequest request);
+
+  $async.Future<$0.GetPracticeSessionResponse> getPracticeSession_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetPracticeSessionRequest> $request) async {
+    return getPracticeSession($call, await $request);
+  }
+
+  $async.Future<$0.GetPracticeSessionResponse> getPracticeSession(
+      $grpc.ServiceCall call, $0.GetPracticeSessionRequest request);
+
+  $async.Future<$0.SubmitAnswerResponse> submitAnswer_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SubmitAnswerRequest> $request) async {
+    return submitAnswer($call, await $request);
+  }
+
+  $async.Future<$0.SubmitAnswerResponse> submitAnswer(
+      $grpc.ServiceCall call, $0.SubmitAnswerRequest request);
+
+  $async.Future<$0.GetPracticeStatsResponse> getPracticeStats_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetPracticeStatsRequest> $request) async {
+    return getPracticeStats($call, await $request);
+  }
+
+  $async.Future<$0.GetPracticeStatsResponse> getPracticeStats(
+      $grpc.ServiceCall call, $0.GetPracticeStatsRequest request);
+
+  $async.Future<$0.GetMemberPrefsResponse> getMemberPrefs_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetMemberPrefsRequest> $request) async {
+    return getMemberPrefs($call, await $request);
+  }
+
+  $async.Future<$0.GetMemberPrefsResponse> getMemberPrefs(
+      $grpc.ServiceCall call, $0.GetMemberPrefsRequest request);
+
+  $async.Future<$0.SetMemberPrefsResponse> setMemberPrefs_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetMemberPrefsRequest> $request) async {
+    return setMemberPrefs($call, await $request);
+  }
+
+  $async.Future<$0.SetMemberPrefsResponse> setMemberPrefs(
+      $grpc.ServiceCall call, $0.SetMemberPrefsRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call,
       $async.Future<$0.ListWordsRequest> $request) async {

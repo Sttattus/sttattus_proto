@@ -48,5 +48,41 @@ class CulturalCategory extends $pb.ProtobufEnum {
   const CulturalCategory._(super.value, super.name);
 }
 
+/// Exercise escalates as an item strengthens: recognition first, production
+/// last. The same lexeme is drilled a different way each time it comes due.
+class ExerciseKind extends $pb.ProtobufEnum {
+  static const ExerciseKind EXERCISE_KIND_UNSPECIFIED =
+      ExerciseKind._(0, _omitEnumNames ? '' : 'EXERCISE_KIND_UNSPECIFIED');
+  static const ExerciseKind EXERCISE_KIND_RECOGNISE =
+      ExerciseKind._(1, _omitEnumNames ? '' : 'EXERCISE_KIND_RECOGNISE');
+  static const ExerciseKind EXERCISE_KIND_RECALL =
+      ExerciseKind._(2, _omitEnumNames ? '' : 'EXERCISE_KIND_RECALL');
+  static const ExerciseKind EXERCISE_KIND_LISTEN =
+      ExerciseKind._(3, _omitEnumNames ? '' : 'EXERCISE_KIND_LISTEN');
+  static const ExerciseKind EXERCISE_KIND_CLOZE =
+      ExerciseKind._(4, _omitEnumNames ? '' : 'EXERCISE_KIND_CLOZE');
+  static const ExerciseKind EXERCISE_KIND_TYPE =
+      ExerciseKind._(5, _omitEnumNames ? '' : 'EXERCISE_KIND_TYPE');
+  static const ExerciseKind EXERCISE_KIND_SPEAK =
+      ExerciseKind._(6, _omitEnumNames ? '' : 'EXERCISE_KIND_SPEAK');
+
+  static const $core.List<ExerciseKind> values = <ExerciseKind>[
+    EXERCISE_KIND_UNSPECIFIED,
+    EXERCISE_KIND_RECOGNISE,
+    EXERCISE_KIND_RECALL,
+    EXERCISE_KIND_LISTEN,
+    EXERCISE_KIND_CLOZE,
+    EXERCISE_KIND_TYPE,
+    EXERCISE_KIND_SPEAK,
+  ];
+
+  static final $core.List<ExerciseKind?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 6);
+  static ExerciseKind? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const ExerciseKind._(super.value, super.name);
+}
+
 const $core.bool _omitEnumNames =
     $core.bool.fromEnvironment('protobuf.omit_enum_names');

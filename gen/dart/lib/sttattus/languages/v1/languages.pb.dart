@@ -3095,6 +3095,10 @@ class DailyPlan extends $pb.GeneratedMessage {
     $core.String? immersionClipTitle,
     $core.String? speakingPromptId,
     $core.String? speakingPromptPhrase,
+    $core.int? reviewsDone,
+    $core.int? newLearned,
+    $core.int? reviewTarget,
+    $core.int? newTarget,
   }) {
     final result = create();
     if (language != null) result.language = language;
@@ -3109,6 +3113,10 @@ class DailyPlan extends $pb.GeneratedMessage {
     if (speakingPromptId != null) result.speakingPromptId = speakingPromptId;
     if (speakingPromptPhrase != null)
       result.speakingPromptPhrase = speakingPromptPhrase;
+    if (reviewsDone != null) result.reviewsDone = reviewsDone;
+    if (newLearned != null) result.newLearned = newLearned;
+    if (reviewTarget != null) result.reviewTarget = reviewTarget;
+    if (newTarget != null) result.newTarget = newTarget;
     return result;
   }
 
@@ -3136,6 +3144,10 @@ class DailyPlan extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'immersionClipTitle')
     ..aOS(9, _omitFieldNames ? '' : 'speakingPromptId')
     ..aOS(10, _omitFieldNames ? '' : 'speakingPromptPhrase')
+    ..aI(11, _omitFieldNames ? '' : 'reviewsDone')
+    ..aI(12, _omitFieldNames ? '' : 'newLearned')
+    ..aI(13, _omitFieldNames ? '' : 'reviewTarget')
+    ..aI(14, _omitFieldNames ? '' : 'newTarget')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3248,6 +3260,45 @@ class DailyPlan extends $pb.GeneratedMessage {
   $core.bool hasSpeakingPromptPhrase() => $_has(9);
   @$pb.TagNumber(10)
   void clearSpeakingPromptPhrase() => $_clearField(10);
+
+  /// Real work done today, counted from answers actually given rather than
+  /// from a member ticking a box. The *_done_unix fields above are a claim;
+  /// these are evidence.
+  @$pb.TagNumber(11)
+  $core.int get reviewsDone => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set reviewsDone($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasReviewsDone() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearReviewsDone() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get newLearned => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set newLearned($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasNewLearned() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearNewLearned() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get reviewTarget => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set reviewTarget($core.int value) => $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasReviewTarget() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearReviewTarget() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get newTarget => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set newTarget($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasNewTarget() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearNewTarget() => $_clearField(14);
 }
 
 class GetTodayPlanRequest extends $pb.GeneratedMessage {
@@ -7290,6 +7341,1123 @@ class CreateLinguistShareResponse extends $pb.GeneratedMessage {
   $core.bool hasShareUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearShareUrl() => $_clearField(2);
+}
+
+/// One thing to answer. `prompt` is always written in the member's base
+/// language or the target, depending on kind; the client never has to decide.
+class PracticeCard extends $pb.GeneratedMessage {
+  factory PracticeCard({
+    $core.String? lexemeId,
+    $core.String? conceptId,
+    ExerciseKind? exercise,
+    $core.String? prompt,
+    $core.String? promptDetail,
+    $core.Iterable<$core.String>? options,
+    $core.int? correctIndex,
+    $core.String? answer,
+    $core.String? answerDetail,
+    $core.String? audioUrl,
+    $core.String? ipa,
+    $core.int? strength,
+    $core.bool? isNew,
+    $core.String? targetLanguage,
+    $core.String? baseLanguage,
+  }) {
+    final result = create();
+    if (lexemeId != null) result.lexemeId = lexemeId;
+    if (conceptId != null) result.conceptId = conceptId;
+    if (exercise != null) result.exercise = exercise;
+    if (prompt != null) result.prompt = prompt;
+    if (promptDetail != null) result.promptDetail = promptDetail;
+    if (options != null) result.options.addAll(options);
+    if (correctIndex != null) result.correctIndex = correctIndex;
+    if (answer != null) result.answer = answer;
+    if (answerDetail != null) result.answerDetail = answerDetail;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    if (ipa != null) result.ipa = ipa;
+    if (strength != null) result.strength = strength;
+    if (isNew != null) result.isNew = isNew;
+    if (targetLanguage != null) result.targetLanguage = targetLanguage;
+    if (baseLanguage != null) result.baseLanguage = baseLanguage;
+    return result;
+  }
+
+  PracticeCard._();
+
+  factory PracticeCard.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PracticeCard.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PracticeCard',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'lexemeId')
+    ..aOS(2, _omitFieldNames ? '' : 'conceptId')
+    ..aE<ExerciseKind>(3, _omitFieldNames ? '' : 'exercise',
+        enumValues: ExerciseKind.values)
+    ..aOS(4, _omitFieldNames ? '' : 'prompt')
+    ..aOS(5, _omitFieldNames ? '' : 'promptDetail')
+    ..pPS(6, _omitFieldNames ? '' : 'options')
+    ..aI(7, _omitFieldNames ? '' : 'correctIndex')
+    ..aOS(8, _omitFieldNames ? '' : 'answer')
+    ..aOS(9, _omitFieldNames ? '' : 'answerDetail')
+    ..aOS(10, _omitFieldNames ? '' : 'audioUrl')
+    ..aOS(11, _omitFieldNames ? '' : 'ipa')
+    ..aI(12, _omitFieldNames ? '' : 'strength')
+    ..aOB(13, _omitFieldNames ? '' : 'isNew')
+    ..aOS(14, _omitFieldNames ? '' : 'targetLanguage')
+    ..aOS(15, _omitFieldNames ? '' : 'baseLanguage')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PracticeCard clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PracticeCard copyWith(void Function(PracticeCard) updates) =>
+      super.copyWith((message) => updates(message as PracticeCard))
+          as PracticeCard;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PracticeCard create() => PracticeCard._();
+  @$core.override
+  PracticeCard createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PracticeCard getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PracticeCard>(create);
+  static PracticeCard? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get lexemeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set lexemeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLexemeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLexemeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get conceptId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set conceptId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConceptId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConceptId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  ExerciseKind get exercise => $_getN(2);
+  @$pb.TagNumber(3)
+  set exercise(ExerciseKind value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExercise() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExercise() => $_clearField(3);
+
+  /// What the member is shown.
+  @$pb.TagNumber(4)
+  $core.String get prompt => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set prompt($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPrompt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPrompt() => $_clearField(4);
+
+  /// Supporting line under the prompt (a sentence, a gloss). May be empty.
+  @$pb.TagNumber(5)
+  $core.String get promptDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set promptDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPromptDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPromptDetail() => $_clearField(5);
+
+  /// Multiple-choice options; empty for TYPE and SPEAK.
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get options => $_getList(5);
+
+  /// Index into `options`. Sent so the client can grade instantly and show the
+  /// answer without a round trip; the server re-grades authoritatively on
+  /// SubmitAnswer and its verdict is the one that is recorded.
+  @$pb.TagNumber(7)
+  $core.int get correctIndex => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set correctIndex($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCorrectIndex() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCorrectIndex() => $_clearField(7);
+
+  /// The canonical written answer, revealed after the member answers.
+  @$pb.TagNumber(8)
+  $core.String get answer => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set answer($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAnswer() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAnswer() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get answerDetail => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set answerDetail($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAnswerDetail() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAnswerDetail() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get audioUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set audioUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAudioUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAudioUrl() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get ipa => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set ipa($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIpa() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIpa() => $_clearField(11);
+
+  /// SRS state, for the strength bar.
+  @$pb.TagNumber(12)
+  $core.int get strength => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set strength($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasStrength() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearStrength() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get isNew => $_getBF(12);
+  @$pb.TagNumber(13)
+  set isNew($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIsNew() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIsNew() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get targetLanguage => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set targetLanguage($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasTargetLanguage() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTargetLanguage() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get baseLanguage => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set baseLanguage($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasBaseLanguage() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearBaseLanguage() => $_clearField(15);
+}
+
+class GetPracticeSessionRequest extends $pb.GeneratedMessage {
+  factory GetPracticeSessionRequest({
+    $core.String? language,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  GetPracticeSessionRequest._();
+
+  factory GetPracticeSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPracticeSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPracticeSessionRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeSessionRequest copyWith(
+          void Function(GetPracticeSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as GetPracticeSessionRequest))
+          as GetPracticeSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeSessionRequest create() => GetPracticeSessionRequest._();
+  @$core.override
+  GetPracticeSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPracticeSessionRequest>(create);
+  static GetPracticeSessionRequest? _defaultInstance;
+
+  /// The language being learned.
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  /// How many cards to build. Server clamps to a sane range.
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class GetPracticeSessionResponse extends $pb.GeneratedMessage {
+  factory GetPracticeSessionResponse({
+    $core.Iterable<PracticeCard>? cards,
+    $core.int? dueCount,
+    $core.int? newCount,
+    $core.bool? corpusEmpty,
+  }) {
+    final result = create();
+    if (cards != null) result.cards.addAll(cards);
+    if (dueCount != null) result.dueCount = dueCount;
+    if (newCount != null) result.newCount = newCount;
+    if (corpusEmpty != null) result.corpusEmpty = corpusEmpty;
+    return result;
+  }
+
+  GetPracticeSessionResponse._();
+
+  factory GetPracticeSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPracticeSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPracticeSessionResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..pPM<PracticeCard>(1, _omitFieldNames ? '' : 'cards',
+        subBuilder: PracticeCard.create)
+    ..aI(2, _omitFieldNames ? '' : 'dueCount')
+    ..aI(3, _omitFieldNames ? '' : 'newCount')
+    ..aOB(4, _omitFieldNames ? '' : 'corpusEmpty')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeSessionResponse copyWith(
+          void Function(GetPracticeSessionResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetPracticeSessionResponse))
+          as GetPracticeSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeSessionResponse create() => GetPracticeSessionResponse._();
+  @$core.override
+  GetPracticeSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPracticeSessionResponse>(create);
+  static GetPracticeSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PracticeCard> get cards => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get dueCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set dueCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDueCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDueCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get newCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set newCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNewCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNewCount() => $_clearField(3);
+
+  /// True when the corpus has nothing for this language, which is a content
+  /// gap and must not be dressed up as "you are all caught up".
+  @$pb.TagNumber(4)
+  $core.bool get corpusEmpty => $_getBF(3);
+  @$pb.TagNumber(4)
+  set corpusEmpty($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCorpusEmpty() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCorpusEmpty() => $_clearField(4);
+}
+
+class SubmitAnswerRequest extends $pb.GeneratedMessage {
+  factory SubmitAnswerRequest({
+    $core.String? lexemeId,
+    ExerciseKind? exercise,
+    $core.String? answerGiven,
+    $core.bool? clientCorrect,
+    $core.int? elapsedMs,
+    $core.String? language,
+  }) {
+    final result = create();
+    if (lexemeId != null) result.lexemeId = lexemeId;
+    if (exercise != null) result.exercise = exercise;
+    if (answerGiven != null) result.answerGiven = answerGiven;
+    if (clientCorrect != null) result.clientCorrect = clientCorrect;
+    if (elapsedMs != null) result.elapsedMs = elapsedMs;
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  SubmitAnswerRequest._();
+
+  factory SubmitAnswerRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAnswerRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAnswerRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'lexemeId')
+    ..aE<ExerciseKind>(2, _omitFieldNames ? '' : 'exercise',
+        enumValues: ExerciseKind.values)
+    ..aOS(3, _omitFieldNames ? '' : 'answerGiven')
+    ..aOB(4, _omitFieldNames ? '' : 'clientCorrect')
+    ..aI(5, _omitFieldNames ? '' : 'elapsedMs')
+    ..aOS(6, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnswerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnswerRequest copyWith(void Function(SubmitAnswerRequest) updates) =>
+      super.copyWith((message) => updates(message as SubmitAnswerRequest))
+          as SubmitAnswerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnswerRequest create() => SubmitAnswerRequest._();
+  @$core.override
+  SubmitAnswerRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnswerRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitAnswerRequest>(create);
+  static SubmitAnswerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get lexemeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set lexemeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLexemeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLexemeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  ExerciseKind get exercise => $_getN(1);
+  @$pb.TagNumber(2)
+  set exercise(ExerciseKind value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExercise() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExercise() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get answerGiven => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set answerGiven($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAnswerGiven() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAnswerGiven() => $_clearField(3);
+
+  /// Client-side grading is advisory; the server decides.
+  @$pb.TagNumber(4)
+  $core.bool get clientCorrect => $_getBF(3);
+  @$pb.TagNumber(4)
+  set clientCorrect($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientCorrect() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientCorrect() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get elapsedMs => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set elapsedMs($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasElapsedMs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearElapsedMs() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get language => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set language($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLanguage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLanguage() => $_clearField(6);
+}
+
+class SubmitAnswerResponse extends $pb.GeneratedMessage {
+  factory SubmitAnswerResponse({
+    $core.bool? correct,
+    $core.String? expected,
+    $core.int? strength,
+    $1.Timestamp? dueAt,
+    $core.int? reviewsDoneToday,
+    $core.int? newLearnedToday,
+  }) {
+    final result = create();
+    if (correct != null) result.correct = correct;
+    if (expected != null) result.expected = expected;
+    if (strength != null) result.strength = strength;
+    if (dueAt != null) result.dueAt = dueAt;
+    if (reviewsDoneToday != null) result.reviewsDoneToday = reviewsDoneToday;
+    if (newLearnedToday != null) result.newLearnedToday = newLearnedToday;
+    return result;
+  }
+
+  SubmitAnswerResponse._();
+
+  factory SubmitAnswerResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAnswerResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAnswerResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'correct')
+    ..aOS(2, _omitFieldNames ? '' : 'expected')
+    ..aI(3, _omitFieldNames ? '' : 'strength')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'dueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aI(5, _omitFieldNames ? '' : 'reviewsDoneToday')
+    ..aI(6, _omitFieldNames ? '' : 'newLearnedToday')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnswerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnswerResponse copyWith(void Function(SubmitAnswerResponse) updates) =>
+      super.copyWith((message) => updates(message as SubmitAnswerResponse))
+          as SubmitAnswerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnswerResponse create() => SubmitAnswerResponse._();
+  @$core.override
+  SubmitAnswerResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnswerResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitAnswerResponse>(create);
+  static SubmitAnswerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get correct => $_getBF(0);
+  @$pb.TagNumber(1)
+  set correct($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCorrect() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCorrect() => $_clearField(1);
+
+  /// The answer as it should have been given.
+  @$pb.TagNumber(2)
+  $core.String get expected => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set expected($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpected() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpected() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get strength => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set strength($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStrength() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStrength() => $_clearField(3);
+
+  /// When this item comes back.
+  @$pb.TagNumber(4)
+  $1.Timestamp get dueAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set dueAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDueAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDueAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureDueAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.int get reviewsDoneToday => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set reviewsDoneToday($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReviewsDoneToday() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReviewsDoneToday() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get newLearnedToday => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set newLearnedToday($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNewLearnedToday() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNewLearnedToday() => $_clearField(6);
+}
+
+class GetPracticeStatsRequest extends $pb.GeneratedMessage {
+  factory GetPracticeStatsRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  GetPracticeStatsRequest._();
+
+  factory GetPracticeStatsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPracticeStatsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPracticeStatsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeStatsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeStatsRequest copyWith(
+          void Function(GetPracticeStatsRequest) updates) =>
+      super.copyWith((message) => updates(message as GetPracticeStatsRequest))
+          as GetPracticeStatsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeStatsRequest create() => GetPracticeStatsRequest._();
+  @$core.override
+  GetPracticeStatsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeStatsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPracticeStatsRequest>(create);
+  static GetPracticeStatsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class GetPracticeStatsResponse extends $pb.GeneratedMessage {
+  factory GetPracticeStatsResponse({
+    $core.int? dueNow,
+    $core.int? learning,
+    $core.int? mastered,
+    $core.int? totalSeen,
+    $core.int? corpusSize,
+    $core.int? reviewsToday,
+    $core.int? newToday,
+    $core.int? streakDays,
+  }) {
+    final result = create();
+    if (dueNow != null) result.dueNow = dueNow;
+    if (learning != null) result.learning = learning;
+    if (mastered != null) result.mastered = mastered;
+    if (totalSeen != null) result.totalSeen = totalSeen;
+    if (corpusSize != null) result.corpusSize = corpusSize;
+    if (reviewsToday != null) result.reviewsToday = reviewsToday;
+    if (newToday != null) result.newToday = newToday;
+    if (streakDays != null) result.streakDays = streakDays;
+    return result;
+  }
+
+  GetPracticeStatsResponse._();
+
+  factory GetPracticeStatsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPracticeStatsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPracticeStatsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'dueNow')
+    ..aI(2, _omitFieldNames ? '' : 'learning')
+    ..aI(3, _omitFieldNames ? '' : 'mastered')
+    ..aI(4, _omitFieldNames ? '' : 'totalSeen')
+    ..aI(5, _omitFieldNames ? '' : 'corpusSize')
+    ..aI(6, _omitFieldNames ? '' : 'reviewsToday')
+    ..aI(7, _omitFieldNames ? '' : 'newToday')
+    ..aI(8, _omitFieldNames ? '' : 'streakDays')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeStatsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPracticeStatsResponse copyWith(
+          void Function(GetPracticeStatsResponse) updates) =>
+      super.copyWith((message) => updates(message as GetPracticeStatsResponse))
+          as GetPracticeStatsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeStatsResponse create() => GetPracticeStatsResponse._();
+  @$core.override
+  GetPracticeStatsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPracticeStatsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPracticeStatsResponse>(create);
+  static GetPracticeStatsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get dueNow => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set dueNow($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDueNow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDueNow() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get learning => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set learning($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLearning() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLearning() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get mastered => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set mastered($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMastered() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMastered() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get totalSeen => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set totalSeen($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTotalSeen() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalSeen() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get corpusSize => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set corpusSize($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCorpusSize() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCorpusSize() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get reviewsToday => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set reviewsToday($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReviewsToday() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReviewsToday() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get newToday => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set newToday($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNewToday() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNewToday() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get streakDays => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set streakDays($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStreakDays() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStreakDays() => $_clearField(8);
+}
+
+class MemberPrefs extends $pb.GeneratedMessage {
+  factory MemberPrefs({
+    $core.String? baseLanguage,
+    $core.int? dailyNewTarget,
+    $core.int? dailyReviewTarget,
+  }) {
+    final result = create();
+    if (baseLanguage != null) result.baseLanguage = baseLanguage;
+    if (dailyNewTarget != null) result.dailyNewTarget = dailyNewTarget;
+    if (dailyReviewTarget != null) result.dailyReviewTarget = dailyReviewTarget;
+    return result;
+  }
+
+  MemberPrefs._();
+
+  factory MemberPrefs.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MemberPrefs.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MemberPrefs',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'baseLanguage')
+    ..aI(2, _omitFieldNames ? '' : 'dailyNewTarget')
+    ..aI(3, _omitFieldNames ? '' : 'dailyReviewTarget')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MemberPrefs clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MemberPrefs copyWith(void Function(MemberPrefs) updates) =>
+      super.copyWith((message) => updates(message as MemberPrefs))
+          as MemberPrefs;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MemberPrefs create() => MemberPrefs._();
+  @$core.override
+  MemberPrefs createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MemberPrefs getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MemberPrefs>(create);
+  static MemberPrefs? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get baseLanguage => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set baseLanguage($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBaseLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBaseLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get dailyNewTarget => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set dailyNewTarget($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDailyNewTarget() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDailyNewTarget() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get dailyReviewTarget => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set dailyReviewTarget($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDailyReviewTarget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDailyReviewTarget() => $_clearField(3);
+}
+
+class GetMemberPrefsRequest extends $pb.GeneratedMessage {
+  factory GetMemberPrefsRequest() => create();
+
+  GetMemberPrefsRequest._();
+
+  factory GetMemberPrefsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberPrefsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberPrefsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberPrefsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberPrefsRequest copyWith(
+          void Function(GetMemberPrefsRequest) updates) =>
+      super.copyWith((message) => updates(message as GetMemberPrefsRequest))
+          as GetMemberPrefsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberPrefsRequest create() => GetMemberPrefsRequest._();
+  @$core.override
+  GetMemberPrefsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberPrefsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMemberPrefsRequest>(create);
+  static GetMemberPrefsRequest? _defaultInstance;
+}
+
+class GetMemberPrefsResponse extends $pb.GeneratedMessage {
+  factory GetMemberPrefsResponse({
+    MemberPrefs? prefs,
+  }) {
+    final result = create();
+    if (prefs != null) result.prefs = prefs;
+    return result;
+  }
+
+  GetMemberPrefsResponse._();
+
+  factory GetMemberPrefsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberPrefsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberPrefsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<MemberPrefs>(1, _omitFieldNames ? '' : 'prefs',
+        subBuilder: MemberPrefs.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberPrefsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberPrefsResponse copyWith(
+          void Function(GetMemberPrefsResponse) updates) =>
+      super.copyWith((message) => updates(message as GetMemberPrefsResponse))
+          as GetMemberPrefsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberPrefsResponse create() => GetMemberPrefsResponse._();
+  @$core.override
+  GetMemberPrefsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberPrefsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMemberPrefsResponse>(create);
+  static GetMemberPrefsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MemberPrefs get prefs => $_getN(0);
+  @$pb.TagNumber(1)
+  set prefs(MemberPrefs value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrefs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrefs() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MemberPrefs ensurePrefs() => $_ensure(0);
+}
+
+class SetMemberPrefsRequest extends $pb.GeneratedMessage {
+  factory SetMemberPrefsRequest({
+    MemberPrefs? prefs,
+  }) {
+    final result = create();
+    if (prefs != null) result.prefs = prefs;
+    return result;
+  }
+
+  SetMemberPrefsRequest._();
+
+  factory SetMemberPrefsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMemberPrefsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMemberPrefsRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<MemberPrefs>(1, _omitFieldNames ? '' : 'prefs',
+        subBuilder: MemberPrefs.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemberPrefsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemberPrefsRequest copyWith(
+          void Function(SetMemberPrefsRequest) updates) =>
+      super.copyWith((message) => updates(message as SetMemberPrefsRequest))
+          as SetMemberPrefsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMemberPrefsRequest create() => SetMemberPrefsRequest._();
+  @$core.override
+  SetMemberPrefsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMemberPrefsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMemberPrefsRequest>(create);
+  static SetMemberPrefsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MemberPrefs get prefs => $_getN(0);
+  @$pb.TagNumber(1)
+  set prefs(MemberPrefs value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrefs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrefs() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MemberPrefs ensurePrefs() => $_ensure(0);
+}
+
+class SetMemberPrefsResponse extends $pb.GeneratedMessage {
+  factory SetMemberPrefsResponse({
+    MemberPrefs? prefs,
+  }) {
+    final result = create();
+    if (prefs != null) result.prefs = prefs;
+    return result;
+  }
+
+  SetMemberPrefsResponse._();
+
+  factory SetMemberPrefsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMemberPrefsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMemberPrefsResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<MemberPrefs>(1, _omitFieldNames ? '' : 'prefs',
+        subBuilder: MemberPrefs.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemberPrefsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemberPrefsResponse copyWith(
+          void Function(SetMemberPrefsResponse) updates) =>
+      super.copyWith((message) => updates(message as SetMemberPrefsResponse))
+          as SetMemberPrefsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMemberPrefsResponse create() => SetMemberPrefsResponse._();
+  @$core.override
+  SetMemberPrefsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMemberPrefsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMemberPrefsResponse>(create);
+  static SetMemberPrefsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MemberPrefs get prefs => $_getN(0);
+  @$pb.TagNumber(1)
+  set prefs(MemberPrefs value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrefs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrefs() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MemberPrefs ensurePrefs() => $_ensure(0);
 }
 
 /// Deprecated Word-based messages (for transition)

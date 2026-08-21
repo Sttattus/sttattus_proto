@@ -2121,6 +2121,30 @@ export class DailyPlan extends Message<DailyPlan> {
    */
   speakingPromptPhrase = "";
 
+  /**
+   * Real work done today, counted from answers actually given rather than
+   * from a member ticking a box. The *_done_unix fields above are a claim;
+   * these are evidence.
+   *
+   * @generated from field: int32 reviews_done = 11;
+   */
+  reviewsDone = 0;
+
+  /**
+   * @generated from field: int32 new_learned = 12;
+   */
+  newLearned = 0;
+
+  /**
+   * @generated from field: int32 review_target = 13;
+   */
+  reviewTarget = 0;
+
+  /**
+   * @generated from field: int32 new_target = 14;
+   */
+  newTarget = 0;
+
   constructor(data?: PartialMessage<DailyPlan>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2139,6 +2163,10 @@ export class DailyPlan extends Message<DailyPlan> {
     { no: 8, name: "immersion_clip_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "speaking_prompt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "speaking_prompt_phrase", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "reviews_done", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "new_learned", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "review_target", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "new_target", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DailyPlan {

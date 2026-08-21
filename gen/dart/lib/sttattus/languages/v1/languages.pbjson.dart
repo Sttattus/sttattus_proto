@@ -34,6 +34,27 @@ final $typed_data.Uint8List culturalCategoryDescriptor = $convert.base64Decode(
     'VVJZX0FTU0VUUxACEiAKHENVTFRVUkFMX0NBVEVHT1JZX0dBU1RST05PTVkQAxIiCh5DVUxUVV'
     'JBTF9DQVRFR09SWV9QSElMQU5USFJPUFkQBA==');
 
+@$core.Deprecated('Use exerciseKindDescriptor instead')
+const ExerciseKind$json = {
+  '1': 'ExerciseKind',
+  '2': [
+    {'1': 'EXERCISE_KIND_UNSPECIFIED', '2': 0},
+    {'1': 'EXERCISE_KIND_RECOGNISE', '2': 1},
+    {'1': 'EXERCISE_KIND_RECALL', '2': 2},
+    {'1': 'EXERCISE_KIND_LISTEN', '2': 3},
+    {'1': 'EXERCISE_KIND_CLOZE', '2': 4},
+    {'1': 'EXERCISE_KIND_TYPE', '2': 5},
+    {'1': 'EXERCISE_KIND_SPEAK', '2': 6},
+  ],
+};
+
+/// Descriptor for `ExerciseKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List exerciseKindDescriptor = $convert.base64Decode(
+    'CgxFeGVyY2lzZUtpbmQSHQoZRVhFUkNJU0VfS0lORF9VTlNQRUNJRklFRBAAEhsKF0VYRVJDSV'
+    'NFX0tJTkRfUkVDT0dOSVNFEAESGAoURVhFUkNJU0VfS0lORF9SRUNBTEwQAhIYChRFWEVSQ0lT'
+    'RV9LSU5EX0xJU1RFThADEhcKE0VYRVJDSVNFX0tJTkRfQ0xPWkUQBBIWChJFWEVSQ0lTRV9LSU'
+    '5EX1RZUEUQBRIXChNFWEVSQ0lTRV9LSU5EX1NQRUFLEAY=');
+
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {
   '1': 'CulturalNuance',
@@ -892,6 +913,10 @@ const DailyPlan$json = {
       '5': 9,
       '10': 'speakingPromptPhrase'
     },
+    {'1': 'reviews_done', '3': 11, '4': 1, '5': 5, '10': 'reviewsDone'},
+    {'1': 'new_learned', '3': 12, '4': 1, '5': 5, '10': 'newLearned'},
+    {'1': 'review_target', '3': 13, '4': 1, '5': 5, '10': 'reviewTarget'},
+    {'1': 'new_target', '3': 14, '4': 1, '5': 5, '10': 'newTarget'},
   ],
 };
 
@@ -904,7 +929,10 @@ final $typed_data.Uint8List dailyPlanDescriptor = $convert.base64Decode(
     'KAlSDXdhcm11cE1lc3NhZ2USKgoRaW1tZXJzaW9uX2NsaXBfaWQYByABKAlSD2ltbWVyc2lvbk'
     'NsaXBJZBIwChRpbW1lcnNpb25fY2xpcF90aXRsZRgIIAEoCVISaW1tZXJzaW9uQ2xpcFRpdGxl'
     'EiwKEnNwZWFraW5nX3Byb21wdF9pZBgJIAEoCVIQc3BlYWtpbmdQcm9tcHRJZBI0ChZzcGVha2'
-    'luZ19wcm9tcHRfcGhyYXNlGAogASgJUhRzcGVha2luZ1Byb21wdFBocmFzZQ==');
+    'luZ19wcm9tcHRfcGhyYXNlGAogASgJUhRzcGVha2luZ1Byb21wdFBocmFzZRIhCgxyZXZpZXdz'
+    'X2RvbmUYCyABKAVSC3Jldmlld3NEb25lEh8KC25ld19sZWFybmVkGAwgASgFUgpuZXdMZWFybm'
+    'VkEiMKDXJldmlld190YXJnZXQYDSABKAVSDHJldmlld1RhcmdldBIdCgpuZXdfdGFyZ2V0GA4g'
+    'ASgFUgluZXdUYXJnZXQ=');
 
 @$core.Deprecated('Use getTodayPlanRequestDescriptor instead')
 const GetTodayPlanRequest$json = {
@@ -1916,6 +1944,279 @@ final $typed_data.Uint8List createLinguistShareResponseDescriptor =
     $convert.base64Decode(
         'ChtDcmVhdGVMaW5ndWlzdFNoYXJlUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2VuEhsKCX'
         'NoYXJlX3VybBgCIAEoCVIIc2hhcmVVcmw=');
+
+@$core.Deprecated('Use practiceCardDescriptor instead')
+const PracticeCard$json = {
+  '1': 'PracticeCard',
+  '2': [
+    {'1': 'lexeme_id', '3': 1, '4': 1, '5': 9, '10': 'lexemeId'},
+    {'1': 'concept_id', '3': 2, '4': 1, '5': 9, '10': 'conceptId'},
+    {
+      '1': 'exercise',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.ExerciseKind',
+      '10': 'exercise'
+    },
+    {'1': 'prompt', '3': 4, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'prompt_detail', '3': 5, '4': 1, '5': 9, '10': 'promptDetail'},
+    {'1': 'options', '3': 6, '4': 3, '5': 9, '10': 'options'},
+    {'1': 'correct_index', '3': 7, '4': 1, '5': 5, '10': 'correctIndex'},
+    {'1': 'answer', '3': 8, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'answer_detail', '3': 9, '4': 1, '5': 9, '10': 'answerDetail'},
+    {'1': 'audio_url', '3': 10, '4': 1, '5': 9, '10': 'audioUrl'},
+    {'1': 'ipa', '3': 11, '4': 1, '5': 9, '10': 'ipa'},
+    {'1': 'strength', '3': 12, '4': 1, '5': 5, '10': 'strength'},
+    {'1': 'is_new', '3': 13, '4': 1, '5': 8, '10': 'isNew'},
+    {'1': 'target_language', '3': 14, '4': 1, '5': 9, '10': 'targetLanguage'},
+    {'1': 'base_language', '3': 15, '4': 1, '5': 9, '10': 'baseLanguage'},
+  ],
+};
+
+/// Descriptor for `PracticeCard`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
+    'CgxQcmFjdGljZUNhcmQSGwoJbGV4ZW1lX2lkGAEgASgJUghsZXhlbWVJZBIdCgpjb25jZXB0X2'
+    'lkGAIgASgJUgljb25jZXB0SWQSPwoIZXhlcmNpc2UYAyABKA4yIy5zdHRhdHR1cy5sYW5ndWFn'
+    'ZXMudjEuRXhlcmNpc2VLaW5kUghleGVyY2lzZRIWCgZwcm9tcHQYBCABKAlSBnByb21wdBIjCg'
+    '1wcm9tcHRfZGV0YWlsGAUgASgJUgxwcm9tcHREZXRhaWwSGAoHb3B0aW9ucxgGIAMoCVIHb3B0'
+    'aW9ucxIjCg1jb3JyZWN0X2luZGV4GAcgASgFUgxjb3JyZWN0SW5kZXgSFgoGYW5zd2VyGAggAS'
+    'gJUgZhbnN3ZXISIwoNYW5zd2VyX2RldGFpbBgJIAEoCVIMYW5zd2VyRGV0YWlsEhsKCWF1ZGlv'
+    'X3VybBgKIAEoCVIIYXVkaW9VcmwSEAoDaXBhGAsgASgJUgNpcGESGgoIc3RyZW5ndGgYDCABKA'
+    'VSCHN0cmVuZ3RoEhUKBmlzX25ldxgNIAEoCFIFaXNOZXcSJwoPdGFyZ2V0X2xhbmd1YWdlGA4g'
+    'ASgJUg50YXJnZXRMYW5ndWFnZRIjCg1iYXNlX2xhbmd1YWdlGA8gASgJUgxiYXNlTGFuZ3VhZ2'
+    'U=');
+
+@$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
+const GetPracticeSessionRequest$json = {
+  '1': 'GetPracticeSessionRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `GetPracticeSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPracticeSessionRequestDescriptor =
+    $convert.base64Decode(
+        'ChlHZXRQcmFjdGljZVNlc3Npb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
+        'IUCgVsaW1pdBgCIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use getPracticeSessionResponseDescriptor instead')
+const GetPracticeSessionResponse$json = {
+  '1': 'GetPracticeSessionResponse',
+  '2': [
+    {
+      '1': 'cards',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PracticeCard',
+      '10': 'cards'
+    },
+    {'1': 'due_count', '3': 2, '4': 1, '5': 5, '10': 'dueCount'},
+    {'1': 'new_count', '3': 3, '4': 1, '5': 5, '10': 'newCount'},
+    {'1': 'corpus_empty', '3': 4, '4': 1, '5': 8, '10': 'corpusEmpty'},
+  ],
+};
+
+/// Descriptor for `GetPracticeSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPracticeSessionResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRQcmFjdGljZVNlc3Npb25SZXNwb25zZRI5CgVjYXJkcxgBIAMoCzIjLnN0dGF0dHVzLm'
+    'xhbmd1YWdlcy52MS5QcmFjdGljZUNhcmRSBWNhcmRzEhsKCWR1ZV9jb3VudBgCIAEoBVIIZHVl'
+    'Q291bnQSGwoJbmV3X2NvdW50GAMgASgFUghuZXdDb3VudBIhCgxjb3JwdXNfZW1wdHkYBCABKA'
+    'hSC2NvcnB1c0VtcHR5');
+
+@$core.Deprecated('Use submitAnswerRequestDescriptor instead')
+const SubmitAnswerRequest$json = {
+  '1': 'SubmitAnswerRequest',
+  '2': [
+    {'1': 'lexeme_id', '3': 1, '4': 1, '5': 9, '10': 'lexemeId'},
+    {
+      '1': 'exercise',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.ExerciseKind',
+      '10': 'exercise'
+    },
+    {'1': 'answer_given', '3': 3, '4': 1, '5': 9, '10': 'answerGiven'},
+    {'1': 'client_correct', '3': 4, '4': 1, '5': 8, '10': 'clientCorrect'},
+    {'1': 'elapsed_ms', '3': 5, '4': 1, '5': 5, '10': 'elapsedMs'},
+    {'1': 'language', '3': 6, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `SubmitAnswerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decode(
+    'ChNTdWJtaXRBbnN3ZXJSZXF1ZXN0EhsKCWxleGVtZV9pZBgBIAEoCVIIbGV4ZW1lSWQSPwoIZX'
+    'hlcmNpc2UYAiABKA4yIy5zdHRhdHR1cy5sYW5ndWFnZXMudjEuRXhlcmNpc2VLaW5kUghleGVy'
+    'Y2lzZRIhCgxhbnN3ZXJfZ2l2ZW4YAyABKAlSC2Fuc3dlckdpdmVuEiUKDmNsaWVudF9jb3JyZW'
+    'N0GAQgASgIUg1jbGllbnRDb3JyZWN0Eh0KCmVsYXBzZWRfbXMYBSABKAVSCWVsYXBzZWRNcxIa'
+    'CghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2U=');
+
+@$core.Deprecated('Use submitAnswerResponseDescriptor instead')
+const SubmitAnswerResponse$json = {
+  '1': 'SubmitAnswerResponse',
+  '2': [
+    {'1': 'correct', '3': 1, '4': 1, '5': 8, '10': 'correct'},
+    {'1': 'expected', '3': 2, '4': 1, '5': 9, '10': 'expected'},
+    {'1': 'strength', '3': 3, '4': 1, '5': 5, '10': 'strength'},
+    {
+      '1': 'due_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'dueAt'
+    },
+    {
+      '1': 'reviews_done_today',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'reviewsDoneToday'
+    },
+    {'1': 'new_learned_today', '3': 6, '4': 1, '5': 5, '10': 'newLearnedToday'},
+  ],
+};
+
+/// Descriptor for `SubmitAnswerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitAnswerResponseDescriptor = $convert.base64Decode(
+    'ChRTdWJtaXRBbnN3ZXJSZXNwb25zZRIYCgdjb3JyZWN0GAEgASgIUgdjb3JyZWN0EhoKCGV4cG'
+    'VjdGVkGAIgASgJUghleHBlY3RlZBIaCghzdHJlbmd0aBgDIAEoBVIIc3RyZW5ndGgSMQoGZHVl'
+    'X2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIFZHVlQXQSLAoScmV2aWV3c1'
+    '9kb25lX3RvZGF5GAUgASgFUhByZXZpZXdzRG9uZVRvZGF5EioKEW5ld19sZWFybmVkX3RvZGF5'
+    'GAYgASgFUg9uZXdMZWFybmVkVG9kYXk=');
+
+@$core.Deprecated('Use getPracticeStatsRequestDescriptor instead')
+const GetPracticeStatsRequest$json = {
+  '1': 'GetPracticeStatsRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `GetPracticeStatsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPracticeStatsRequestDescriptor =
+    $convert.base64Decode(
+        'ChdHZXRQcmFjdGljZVN0YXRzUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2U=');
+
+@$core.Deprecated('Use getPracticeStatsResponseDescriptor instead')
+const GetPracticeStatsResponse$json = {
+  '1': 'GetPracticeStatsResponse',
+  '2': [
+    {'1': 'due_now', '3': 1, '4': 1, '5': 5, '10': 'dueNow'},
+    {'1': 'learning', '3': 2, '4': 1, '5': 5, '10': 'learning'},
+    {'1': 'mastered', '3': 3, '4': 1, '5': 5, '10': 'mastered'},
+    {'1': 'total_seen', '3': 4, '4': 1, '5': 5, '10': 'totalSeen'},
+    {'1': 'corpus_size', '3': 5, '4': 1, '5': 5, '10': 'corpusSize'},
+    {'1': 'reviews_today', '3': 6, '4': 1, '5': 5, '10': 'reviewsToday'},
+    {'1': 'new_today', '3': 7, '4': 1, '5': 5, '10': 'newToday'},
+    {'1': 'streak_days', '3': 8, '4': 1, '5': 5, '10': 'streakDays'},
+  ],
+};
+
+/// Descriptor for `GetPracticeStatsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPracticeStatsResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRQcmFjdGljZVN0YXRzUmVzcG9uc2USFwoHZHVlX25vdxgBIAEoBVIGZHVlTm93EhoKCG'
+    'xlYXJuaW5nGAIgASgFUghsZWFybmluZxIaCghtYXN0ZXJlZBgDIAEoBVIIbWFzdGVyZWQSHQoK'
+    'dG90YWxfc2VlbhgEIAEoBVIJdG90YWxTZWVuEh8KC2NvcnB1c19zaXplGAUgASgFUgpjb3JwdX'
+    'NTaXplEiMKDXJldmlld3NfdG9kYXkYBiABKAVSDHJldmlld3NUb2RheRIbCgluZXdfdG9kYXkY'
+    'ByABKAVSCG5ld1RvZGF5Eh8KC3N0cmVha19kYXlzGAggASgFUgpzdHJlYWtEYXlz');
+
+@$core.Deprecated('Use memberPrefsDescriptor instead')
+const MemberPrefs$json = {
+  '1': 'MemberPrefs',
+  '2': [
+    {'1': 'base_language', '3': 1, '4': 1, '5': 9, '10': 'baseLanguage'},
+    {'1': 'daily_new_target', '3': 2, '4': 1, '5': 5, '10': 'dailyNewTarget'},
+    {
+      '1': 'daily_review_target',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'dailyReviewTarget'
+    },
+  ],
+};
+
+/// Descriptor for `MemberPrefs`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List memberPrefsDescriptor = $convert.base64Decode(
+    'CgtNZW1iZXJQcmVmcxIjCg1iYXNlX2xhbmd1YWdlGAEgASgJUgxiYXNlTGFuZ3VhZ2USKAoQZG'
+    'FpbHlfbmV3X3RhcmdldBgCIAEoBVIOZGFpbHlOZXdUYXJnZXQSLgoTZGFpbHlfcmV2aWV3X3Rh'
+    'cmdldBgDIAEoBVIRZGFpbHlSZXZpZXdUYXJnZXQ=');
+
+@$core.Deprecated('Use getMemberPrefsRequestDescriptor instead')
+const GetMemberPrefsRequest$json = {
+  '1': 'GetMemberPrefsRequest',
+};
+
+/// Descriptor for `GetMemberPrefsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMemberPrefsRequestDescriptor =
+    $convert.base64Decode('ChVHZXRNZW1iZXJQcmVmc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getMemberPrefsResponseDescriptor instead')
+const GetMemberPrefsResponse$json = {
+  '1': 'GetMemberPrefsResponse',
+  '2': [
+    {
+      '1': 'prefs',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.MemberPrefs',
+      '10': 'prefs'
+    },
+  ],
+};
+
+/// Descriptor for `GetMemberPrefsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMemberPrefsResponseDescriptor =
+    $convert.base64Decode(
+        'ChZHZXRNZW1iZXJQcmVmc1Jlc3BvbnNlEjgKBXByZWZzGAEgASgLMiIuc3R0YXR0dXMubGFuZ3'
+        'VhZ2VzLnYxLk1lbWJlclByZWZzUgVwcmVmcw==');
+
+@$core.Deprecated('Use setMemberPrefsRequestDescriptor instead')
+const SetMemberPrefsRequest$json = {
+  '1': 'SetMemberPrefsRequest',
+  '2': [
+    {
+      '1': 'prefs',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.MemberPrefs',
+      '10': 'prefs'
+    },
+  ],
+};
+
+/// Descriptor for `SetMemberPrefsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMemberPrefsRequestDescriptor = $convert.base64Decode(
+    'ChVTZXRNZW1iZXJQcmVmc1JlcXVlc3QSOAoFcHJlZnMYASABKAsyIi5zdHRhdHR1cy5sYW5ndW'
+    'FnZXMudjEuTWVtYmVyUHJlZnNSBXByZWZz');
+
+@$core.Deprecated('Use setMemberPrefsResponseDescriptor instead')
+const SetMemberPrefsResponse$json = {
+  '1': 'SetMemberPrefsResponse',
+  '2': [
+    {
+      '1': 'prefs',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.MemberPrefs',
+      '10': 'prefs'
+    },
+  ],
+};
+
+/// Descriptor for `SetMemberPrefsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMemberPrefsResponseDescriptor =
+    $convert.base64Decode(
+        'ChZTZXRNZW1iZXJQcmVmc1Jlc3BvbnNlEjgKBXByZWZzGAEgASgLMiIuc3R0YXR0dXMubGFuZ3'
+        'VhZ2VzLnYxLk1lbWJlclByZWZzUgVwcmVmcw==');
 
 @$core.Deprecated('Use wordDescriptor instead')
 const Word$json = {

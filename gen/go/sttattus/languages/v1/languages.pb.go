@@ -2467,8 +2467,15 @@ type DailyPlan struct {
 	ImmersionClipTitle   string `protobuf:"bytes,8,opt,name=immersion_clip_title,json=immersionClipTitle,proto3" json:"immersion_clip_title,omitempty"`
 	SpeakingPromptId     string `protobuf:"bytes,9,opt,name=speaking_prompt_id,json=speakingPromptId,proto3" json:"speaking_prompt_id,omitempty"` // lexicon_speaking_prompts row
 	SpeakingPromptPhrase string `protobuf:"bytes,10,opt,name=speaking_prompt_phrase,json=speakingPromptPhrase,proto3" json:"speaking_prompt_phrase,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// Real work done today, counted from answers actually given rather than
+	// from a member ticking a box. The *_done_unix fields above are a claim;
+	// these are evidence.
+	ReviewsDone   int32 `protobuf:"varint,11,opt,name=reviews_done,json=reviewsDone,proto3" json:"reviews_done,omitempty"`
+	NewLearned    int32 `protobuf:"varint,12,opt,name=new_learned,json=newLearned,proto3" json:"new_learned,omitempty"`
+	ReviewTarget  int32 `protobuf:"varint,13,opt,name=review_target,json=reviewTarget,proto3" json:"review_target,omitempty"`
+	NewTarget     int32 `protobuf:"varint,14,opt,name=new_target,json=newTarget,proto3" json:"new_target,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DailyPlan) Reset() {
@@ -2569,6 +2576,34 @@ func (x *DailyPlan) GetSpeakingPromptPhrase() string {
 		return x.SpeakingPromptPhrase
 	}
 	return ""
+}
+
+func (x *DailyPlan) GetReviewsDone() int32 {
+	if x != nil {
+		return x.ReviewsDone
+	}
+	return 0
+}
+
+func (x *DailyPlan) GetNewLearned() int32 {
+	if x != nil {
+		return x.NewLearned
+	}
+	return 0
+}
+
+func (x *DailyPlan) GetReviewTarget() int32 {
+	if x != nil {
+		return x.ReviewTarget
+	}
+	return 0
+}
+
+func (x *DailyPlan) GetNewTarget() int32 {
+	if x != nil {
+		return x.NewTarget
+	}
+	return 0
 }
 
 type GetTodayPlanRequest struct {
@@ -6807,7 +6842,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1dMarkImmersionCompletedRequest\x12\x17\n" +
 	"\aclip_id\x18\x01 \x01(\tR\x06clipId\"Z\n" +
 	"\x1eMarkImmersionCompletedResponse\x128\n" +
-	"\x04clip\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionClipR\x04clip\"\xb1\x03\n" +
+	"\x04clip\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionClipR\x04clip\"\xb9\x04\n" +
 	"\tDailyPlan\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x1b\n" +
 	"\tplan_date\x18\x02 \x01(\tR\bplanDate\x12(\n" +
@@ -6819,7 +6854,13 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x14immersion_clip_title\x18\b \x01(\tR\x12immersionClipTitle\x12,\n" +
 	"\x12speaking_prompt_id\x18\t \x01(\tR\x10speakingPromptId\x124\n" +
 	"\x16speaking_prompt_phrase\x18\n" +
-	" \x01(\tR\x14speakingPromptPhrase\"1\n" +
+	" \x01(\tR\x14speakingPromptPhrase\x12!\n" +
+	"\freviews_done\x18\v \x01(\x05R\vreviewsDone\x12\x1f\n" +
+	"\vnew_learned\x18\f \x01(\x05R\n" +
+	"newLearned\x12#\n" +
+	"\rreview_target\x18\r \x01(\x05R\freviewTarget\x12\x1d\n" +
+	"\n" +
+	"new_target\x18\x0e \x01(\x05R\tnewTarget\"1\n" +
 	"\x13GetTodayPlanRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\"L\n" +
 	"\x14GetTodayPlanResponse\x124\n" +

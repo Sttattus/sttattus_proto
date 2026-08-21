@@ -265,6 +265,14 @@ message DailyPlan {
   string immersion_clip_title = 8;
   string speaking_prompt_id = 9; // lexicon_speaking_prompts row
   string speaking_prompt_phrase = 10;
+
+  // Real work done today, counted from answers actually given rather than
+  // from a member ticking a box. The *_done_unix fields above are a claim;
+  // these are evidence.
+  int32 reviews_done = 11;
+  int32 new_learned = 12;
+  int32 review_target = 13;
+  int32 new_target = 14;
 }
 
 message GetTodayPlanRequest {
