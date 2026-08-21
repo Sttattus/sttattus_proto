@@ -55,6 +55,11 @@ const (
 	LanguagesService_ListMyCertificates_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyCertificates"
 	LanguagesService_GenerateLinguistAlmanac_FullMethodName  = "/sttattus.languages.v1.LanguagesService/GenerateLinguistAlmanac"
 	LanguagesService_CreateLinguistShare_FullMethodName      = "/sttattus.languages.v1.LanguagesService/CreateLinguistShare"
+	LanguagesService_GetPracticeSession_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetPracticeSession"
+	LanguagesService_SubmitAnswer_FullMethodName             = "/sttattus.languages.v1.LanguagesService/SubmitAnswer"
+	LanguagesService_GetPracticeStats_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetPracticeStats"
+	LanguagesService_GetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetMemberPrefs"
+	LanguagesService_SetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/SetMemberPrefs"
 	LanguagesService_ListWords_FullMethodName                = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -114,6 +119,15 @@ type LanguagesServiceClient interface {
 	GenerateLinguistAlmanac(ctx context.Context, in *GenerateLinguistAlmanacRequest, opts ...grpc.CallOption) (*GenerateLinguistAlmanacResponse, error)
 	// L12.16 — public Linguist profile share.
 	CreateLinguistShare(ctx context.Context, in *CreateLinguistShareRequest, opts ...grpc.CallOption) (*CreateLinguistShareResponse, error)
+	// L13 — the practice engine. Spaced repetition over a concept/lexeme corpus,
+	// which is the learning loop the app was missing entirely: the Today plan's
+	// three blocks were self-report checkboxes and lexicon_progress was never
+	// read or written by anything.
+	GetPracticeSession(ctx context.Context, in *GetPracticeSessionRequest, opts ...grpc.CallOption) (*GetPracticeSessionResponse, error)
+	SubmitAnswer(ctx context.Context, in *SubmitAnswerRequest, opts ...grpc.CallOption) (*SubmitAnswerResponse, error)
+	GetPracticeStats(ctx context.Context, in *GetPracticeStatsRequest, opts ...grpc.CallOption) (*GetPracticeStatsResponse, error)
+	GetMemberPrefs(ctx context.Context, in *GetMemberPrefsRequest, opts ...grpc.CallOption) (*GetMemberPrefsResponse, error)
+	SetMemberPrefs(ctx context.Context, in *SetMemberPrefsRequest, opts ...grpc.CallOption) (*SetMemberPrefsResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -486,6 +500,56 @@ func (c *languagesServiceClient) CreateLinguistShare(ctx context.Context, in *Cr
 	return out, nil
 }
 
+func (c *languagesServiceClient) GetPracticeSession(ctx context.Context, in *GetPracticeSessionRequest, opts ...grpc.CallOption) (*GetPracticeSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPracticeSessionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetPracticeSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SubmitAnswer(ctx context.Context, in *SubmitAnswerRequest, opts ...grpc.CallOption) (*SubmitAnswerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitAnswerResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitAnswer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetPracticeStats(ctx context.Context, in *GetPracticeStatsRequest, opts ...grpc.CallOption) (*GetPracticeStatsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPracticeStatsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetPracticeStats_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetMemberPrefs(ctx context.Context, in *GetMemberPrefsRequest, opts ...grpc.CallOption) (*GetMemberPrefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMemberPrefsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetMemberPrefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SetMemberPrefs(ctx context.Context, in *SetMemberPrefsRequest, opts ...grpc.CallOption) (*SetMemberPrefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetMemberPrefsResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SetMemberPrefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -552,6 +616,15 @@ type LanguagesServiceServer interface {
 	GenerateLinguistAlmanac(context.Context, *GenerateLinguistAlmanacRequest) (*GenerateLinguistAlmanacResponse, error)
 	// L12.16 — public Linguist profile share.
 	CreateLinguistShare(context.Context, *CreateLinguistShareRequest) (*CreateLinguistShareResponse, error)
+	// L13 — the practice engine. Spaced repetition over a concept/lexeme corpus,
+	// which is the learning loop the app was missing entirely: the Today plan's
+	// three blocks were self-report checkboxes and lexicon_progress was never
+	// read or written by anything.
+	GetPracticeSession(context.Context, *GetPracticeSessionRequest) (*GetPracticeSessionResponse, error)
+	SubmitAnswer(context.Context, *SubmitAnswerRequest) (*SubmitAnswerResponse, error)
+	GetPracticeStats(context.Context, *GetPracticeStatsRequest) (*GetPracticeStatsResponse, error)
+	GetMemberPrefs(context.Context, *GetMemberPrefsRequest) (*GetMemberPrefsResponse, error)
+	SetMemberPrefs(context.Context, *SetMemberPrefsRequest) (*SetMemberPrefsResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -671,6 +744,21 @@ func (UnimplementedLanguagesServiceServer) GenerateLinguistAlmanac(context.Conte
 }
 func (UnimplementedLanguagesServiceServer) CreateLinguistShare(context.Context, *CreateLinguistShareRequest) (*CreateLinguistShareResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateLinguistShare not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetPracticeSession(context.Context, *GetPracticeSessionRequest) (*GetPracticeSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPracticeSession not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitAnswer(context.Context, *SubmitAnswerRequest) (*SubmitAnswerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitAnswer not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetPracticeStats(context.Context, *GetPracticeStatsRequest) (*GetPracticeStatsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPracticeStats not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetMemberPrefs(context.Context, *GetMemberPrefsRequest) (*GetMemberPrefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMemberPrefs not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SetMemberPrefs(context.Context, *SetMemberPrefsRequest) (*SetMemberPrefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetMemberPrefs not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -1344,6 +1432,96 @@ func _LanguagesService_CreateLinguistShare_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_GetPracticeSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPracticeSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetPracticeSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetPracticeSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetPracticeSession(ctx, req.(*GetPracticeSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SubmitAnswer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAnswerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitAnswer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitAnswer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitAnswer(ctx, req.(*SubmitAnswerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetPracticeStats_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPracticeStatsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetPracticeStats(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetPracticeStats_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetPracticeStats(ctx, req.(*GetPracticeStatsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetMemberPrefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMemberPrefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetMemberPrefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetMemberPrefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetMemberPrefs(ctx, req.(*GetMemberPrefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SetMemberPrefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetMemberPrefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SetMemberPrefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SetMemberPrefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SetMemberPrefs(ctx, req.(*SetMemberPrefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -1512,6 +1690,26 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateLinguistShare",
 			Handler:    _LanguagesService_CreateLinguistShare_Handler,
+		},
+		{
+			MethodName: "GetPracticeSession",
+			Handler:    _LanguagesService_GetPracticeSession_Handler,
+		},
+		{
+			MethodName: "SubmitAnswer",
+			Handler:    _LanguagesService_SubmitAnswer_Handler,
+		},
+		{
+			MethodName: "GetPracticeStats",
+			Handler:    _LanguagesService_GetPracticeStats_Handler,
+		},
+		{
+			MethodName: "GetMemberPrefs",
+			Handler:    _LanguagesService_GetMemberPrefs_Handler,
+		},
+		{
+			MethodName: "SetMemberPrefs",
+			Handler:    _LanguagesService_SetMemberPrefs_Handler,
 		},
 		{
 			MethodName: "ListWords",

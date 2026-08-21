@@ -643,9 +643,122 @@ service LanguagesService {
   // L12.16 — public Linguist profile share.
   rpc CreateLinguistShare(CreateLinguistShareRequest) returns (CreateLinguistShareResponse);
 
+  // L13 — the practice engine. Spaced repetition over a concept/lexeme corpus,
+  // which is the learning loop the app was missing entirely: the Today plan's
+  // three blocks were self-report checkboxes and lexicon_progress was never
+  // read or written by anything.
+  rpc GetPracticeSession(GetPracticeSessionRequest) returns (GetPracticeSessionResponse);
+  rpc SubmitAnswer(SubmitAnswerRequest) returns (SubmitAnswerResponse);
+  rpc GetPracticeStats(GetPracticeStatsRequest) returns (GetPracticeStatsResponse);
+  rpc GetMemberPrefs(GetMemberPrefsRequest) returns (GetMemberPrefsResponse);
+  rpc SetMemberPrefs(SetMemberPrefsRequest) returns (SetMemberPrefsResponse);
+
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
 }
+
+// ============================================================================
+// L13 — practice engine
+// ============================================================================
+
+// Exercise escalates as an item strengthens: recognition first, production
+// last. The same lexeme is drilled a different way each time it comes due.
+enum ExerciseKind {
+  EXERCISE_KIND_UNSPECIFIED = 0;
+  EXERCISE_KIND_RECOGNISE = 1; // see target language, choose meaning
+  EXERCISE_KIND_RECALL = 2;    // see meaning, choose target language
+  EXERCISE_KIND_LISTEN = 3;    // hear it, choose meaning
+  EXERCISE_KIND_CLOZE = 4;     // fill the gap in a real sentence
+  EXERCISE_KIND_TYPE = 5;      // produce it from memory, typed
+  EXERCISE_KIND_SPEAK = 6;     // produce it aloud
+}
+
+// One thing to answer. `prompt` is always written in the member's base
+// language or the target, depending on kind; the client never has to decide.
+message PracticeCard {
+  string lexeme_id = 1;
+  string concept_id = 2;
+  ExerciseKind exercise = 3;
+  // What the member is shown.
+  string prompt = 4;
+  // Supporting line under the prompt (a sentence, a gloss). May be empty.
+  string prompt_detail = 5;
+  // Multiple-choice options; empty for TYPE and SPEAK.
+  repeated string options = 6;
+  // Index into `options`. Sent so the client can grade instantly and show the
+  // answer without a round trip; the server re-grades authoritatively on
+  // SubmitAnswer and its verdict is the one that is recorded.
+  int32 correct_index = 7;
+  // The canonical written answer, revealed after the member answers.
+  string answer = 8;
+  string answer_detail = 9;
+  string audio_url = 10;
+  string ipa = 11;
+  // SRS state, for the strength bar.
+  int32 strength = 12;
+  bool is_new = 13;
+  string target_language = 14;
+  string base_language = 15;
+}
+
+message GetPracticeSessionRequest {
+  // The language being learned.
+  string language = 1;
+  // How many cards to build. Server clamps to a sane range.
+  int32 limit = 2;
+}
+message GetPracticeSessionResponse {
+  repeated PracticeCard cards = 1;
+  int32 due_count = 2;
+  int32 new_count = 3;
+  // True when the corpus has nothing for this language, which is a content
+  // gap and must not be dressed up as "you are all caught up".
+  bool corpus_empty = 4;
+}
+
+message SubmitAnswerRequest {
+  string lexeme_id = 1;
+  ExerciseKind exercise = 2;
+  string answer_given = 3;
+  // Client-side grading is advisory; the server decides.
+  bool client_correct = 4;
+  int32 elapsed_ms = 5;
+  string language = 6;
+}
+message SubmitAnswerResponse {
+  bool correct = 1;
+  // The answer as it should have been given.
+  string expected = 2;
+  int32 strength = 3;
+  // When this item comes back.
+  google.protobuf.Timestamp due_at = 4;
+  int32 reviews_done_today = 5;
+  int32 new_learned_today = 6;
+}
+
+message GetPracticeStatsRequest {
+  string language = 1;
+}
+message GetPracticeStatsResponse {
+  int32 due_now = 1;
+  int32 learning = 2;
+  int32 mastered = 3;
+  int32 total_seen = 4;
+  int32 corpus_size = 5;
+  int32 reviews_today = 6;
+  int32 new_today = 7;
+  int32 streak_days = 8;
+}
+
+message MemberPrefs {
+  string base_language = 1;
+  int32 daily_new_target = 2;
+  int32 daily_review_target = 3;
+}
+message GetMemberPrefsRequest {}
+message GetMemberPrefsResponse { MemberPrefs prefs = 1; }
+message SetMemberPrefsRequest { MemberPrefs prefs = 1; }
+message SetMemberPrefsResponse { MemberPrefs prefs = 1; }
 
 // Deprecated Word-based messages (for transition)
 message Word {

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetMemberPrefsRequest, GetMemberPrefsResponse, GetPracticeSessionRequest, GetPracticeSessionResponse, GetPracticeStatsRequest, GetPracticeStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMemberPrefsRequest, SetMemberPrefsResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitAnswerRequest, SubmitAnswerResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -366,6 +366,56 @@ export const LanguagesService = {
       name: "CreateLinguistShare",
       I: CreateLinguistShareRequest,
       O: CreateLinguistShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * L13 — the practice engine. Spaced repetition over a concept/lexeme corpus,
+     * which is the learning loop the app was missing entirely: the Today plan's
+     * three blocks were self-report checkboxes and lexicon_progress was never
+     * read or written by anything.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetPracticeSession
+     */
+    getPracticeSession: {
+      name: "GetPracticeSession",
+      I: GetPracticeSessionRequest,
+      O: GetPracticeSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitAnswer
+     */
+    submitAnswer: {
+      name: "SubmitAnswer",
+      I: SubmitAnswerRequest,
+      O: SubmitAnswerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetPracticeStats
+     */
+    getPracticeStats: {
+      name: "GetPracticeStats",
+      I: GetPracticeStatsRequest,
+      O: GetPracticeStatsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetMemberPrefs
+     */
+    getMemberPrefs: {
+      name: "GetMemberPrefs",
+      I: GetMemberPrefsRequest,
+      O: GetMemberPrefsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SetMemberPrefs
+     */
+    setMemberPrefs: {
+      name: "SetMemberPrefs",
+      I: SetMemberPrefsRequest,
+      O: SetMemberPrefsResponse,
       kind: MethodKind.Unary,
     },
     /**
