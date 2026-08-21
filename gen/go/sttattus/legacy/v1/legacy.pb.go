@@ -132,16 +132,31 @@ func (VerificationStatus) EnumDescriptor() ([]byte, []int) {
 
 // LegalAsset represents a verified node of influence.
 type LegalAsset struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Category      AssetCategory          `protobuf:"varint,3,opt,name=category,proto3,enum=sttattus.legacy.v1.AssetCategory" json:"category,omitempty"`
-	ValuationUsd  float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"` // Strategic or IP valuation
-	Jurisdiction  string                 `protobuf:"bytes,5,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`                       // e.g., 'DE', 'CH', 'SG'
-	Status        VerificationStatus     `protobuf:"varint,6,opt,name=status,proto3,enum=sttattus.legacy.v1.VerificationStatus" json:"status,omitempty"`
-	ContentHash   string                 `protobuf:"bytes,7,opt,name=content_hash,json=contentHash,proto3" json:"content_hash,omitempty"`
-	FiledAt       *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=filed_at,json=filedAt,proto3" json:"filed_at,omitempty"`
-	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title        string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Category     AssetCategory          `protobuf:"varint,3,opt,name=category,proto3,enum=sttattus.legacy.v1.AssetCategory" json:"category,omitempty"`
+	ValuationUsd float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"` // Strategic or IP valuation
+	Jurisdiction string                 `protobuf:"bytes,5,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`                       // e.g., 'DE', 'CH', 'SG'
+	Status       VerificationStatus     `protobuf:"varint,6,opt,name=status,proto3,enum=sttattus.legacy.v1.VerificationStatus" json:"status,omitempty"`
+	ContentHash  string                 `protobuf:"bytes,7,opt,name=content_hash,json=contentHash,proto3" json:"content_hash,omitempty"`
+	FiledAt      *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=filed_at,json=filedAt,proto3" json:"filed_at,omitempty"`
+	ExpiresAt    *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	// Where the member's proof document actually lives, and how to open it.
+	//
+	// Before these fields the app uploaded the legal proof, kept the URL in a
+	// local variable, used it only as a null-check and threw it away: the
+	// object sat in private storage with nothing in legacy_documents pointing
+	// at it, so no screen could ever show a member the deed they had filed.
+	//
+	// The stored object is CIPHERTEXT. The client encrypts with the member's
+	// recovery KEK before upload, so the server holds bytes it cannot read;
+	// doc_nonce + doc_wrapped_key are what the member needs to open it again.
+	// doc_url is served signed (s3.ReadURL), never as an r2:// locator.
+	DocUrl        string `protobuf:"bytes,10,opt,name=doc_url,json=docUrl,proto3" json:"doc_url,omitempty"`
+	DocNonce      []byte `protobuf:"bytes,11,opt,name=doc_nonce,json=docNonce,proto3" json:"doc_nonce,omitempty"`
+	DocWrappedKey []byte `protobuf:"bytes,12,opt,name=doc_wrapped_key,json=docWrappedKey,proto3" json:"doc_wrapped_key,omitempty"`
+	DocAlgorithm  string `protobuf:"bytes,13,opt,name=doc_algorithm,json=docAlgorithm,proto3" json:"doc_algorithm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -239,6 +254,34 @@ func (x *LegalAsset) GetExpiresAt() *timestamppb.Timestamp {
 	return nil
 }
 
+func (x *LegalAsset) GetDocUrl() string {
+	if x != nil {
+		return x.DocUrl
+	}
+	return ""
+}
+
+func (x *LegalAsset) GetDocNonce() []byte {
+	if x != nil {
+		return x.DocNonce
+	}
+	return nil
+}
+
+func (x *LegalAsset) GetDocWrappedKey() []byte {
+	if x != nil {
+		return x.DocWrappedKey
+	}
+	return nil
+}
+
+func (x *LegalAsset) GetDocAlgorithm() string {
+	if x != nil {
+		return x.DocAlgorithm
+	}
+	return ""
+}
+
 type HeritageStats struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -323,6 +366,11 @@ type StoreDocumentRequest struct {
 	Jurisdiction  string                 `protobuf:"bytes,3,opt,name=jurisdiction,proto3" json:"jurisdiction,omitempty"`
 	ValuationUsd  float64                `protobuf:"fixed64,4,opt,name=valuation_usd,json=valuationUsd,proto3" json:"valuation_usd,omitempty"`
 	EncryptedBlob []byte                 `protobuf:"bytes,5,opt,name=encrypted_blob,json=encryptedBlob,proto3" json:"encrypted_blob,omitempty"`
+	// The encrypted proof document. See LegalAsset for why these exist.
+	DocUrl        string `protobuf:"bytes,6,opt,name=doc_url,json=docUrl,proto3" json:"doc_url,omitempty"`
+	DocNonce      []byte `protobuf:"bytes,7,opt,name=doc_nonce,json=docNonce,proto3" json:"doc_nonce,omitempty"`
+	DocWrappedKey []byte `protobuf:"bytes,8,opt,name=doc_wrapped_key,json=docWrappedKey,proto3" json:"doc_wrapped_key,omitempty"`
+	DocAlgorithm  string `protobuf:"bytes,9,opt,name=doc_algorithm,json=docAlgorithm,proto3" json:"doc_algorithm,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -390,6 +438,34 @@ func (x *StoreDocumentRequest) GetEncryptedBlob() []byte {
 		return x.EncryptedBlob
 	}
 	return nil
+}
+
+func (x *StoreDocumentRequest) GetDocUrl() string {
+	if x != nil {
+		return x.DocUrl
+	}
+	return ""
+}
+
+func (x *StoreDocumentRequest) GetDocNonce() []byte {
+	if x != nil {
+		return x.DocNonce
+	}
+	return nil
+}
+
+func (x *StoreDocumentRequest) GetDocWrappedKey() []byte {
+	if x != nil {
+		return x.DocWrappedKey
+	}
+	return nil
+}
+
+func (x *StoreDocumentRequest) GetDocAlgorithm() string {
+	if x != nil {
+		return x.DocAlgorithm
+	}
+	return ""
 }
 
 type StoreDocumentResponse struct {
@@ -6884,7 +6960,7 @@ var File_sttattus_legacy_v1_legacy_proto protoreflect.FileDescriptor
 
 const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/legacy/v1/legacy.proto\x12\x12sttattus.legacy.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8f\x03\n" +
+	"\x1fsttattus/legacy/v1/legacy.proto\x12\x12sttattus.legacy.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x92\x04\n" +
 	"\n" +
 	"LegalAsset\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
@@ -6896,20 +6972,29 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\fcontent_hash\x18\a \x01(\tR\vcontentHash\x125\n" +
 	"\bfiled_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\afiledAt\x129\n" +
 	"\n" +
-	"expires_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xd0\x01\n" +
+	"expires_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12\x17\n" +
+	"\adoc_url\x18\n" +
+	" \x01(\tR\x06docUrl\x12\x1b\n" +
+	"\tdoc_nonce\x18\v \x01(\fR\bdocNonce\x12&\n" +
+	"\x0fdoc_wrapped_key\x18\f \x01(\fR\rdocWrappedKey\x12#\n" +
+	"\rdoc_algorithm\x18\r \x01(\tR\fdocAlgorithm\"\xd0\x01\n" +
 	"\rHeritageStats\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
 	"\x0einfluence_rank\x18\x02 \x01(\x01R\rinfluenceRank\x12\x1d\n" +
 	"\n" +
 	"rank_label\x18\x03 \x01(\tR\trankLabel\x122\n" +
 	"\x15verified_assets_count\x18\x04 \x01(\x05R\x13verifiedAssetsCount\x12,\n" +
-	"\x12total_ip_valuation\x18\x05 \x01(\x01R\x10totalIpValuation\"\xdb\x01\n" +
+	"\x12total_ip_valuation\x18\x05 \x01(\x01R\x10totalIpValuation\"\xde\x02\n" +
 	"\x14StoreDocumentRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12=\n" +
 	"\bcategory\x18\x02 \x01(\x0e2!.sttattus.legacy.v1.AssetCategoryR\bcategory\x12\"\n" +
 	"\fjurisdiction\x18\x03 \x01(\tR\fjurisdiction\x12#\n" +
 	"\rvaluation_usd\x18\x04 \x01(\x01R\fvaluationUsd\x12%\n" +
-	"\x0eencrypted_blob\x18\x05 \x01(\fR\rencryptedBlob\"\x86\x01\n" +
+	"\x0eencrypted_blob\x18\x05 \x01(\fR\rencryptedBlob\x12\x17\n" +
+	"\adoc_url\x18\x06 \x01(\tR\x06docUrl\x12\x1b\n" +
+	"\tdoc_nonce\x18\a \x01(\fR\bdocNonce\x12&\n" +
+	"\x0fdoc_wrapped_key\x18\b \x01(\fR\rdocWrappedKey\x12#\n" +
+	"\rdoc_algorithm\x18\t \x01(\tR\fdocAlgorithm\"\x86\x01\n" +
 	"\x15StoreDocumentResponse\x124\n" +
 	"\x05asset\x18\x01 \x01(\v2\x1e.sttattus.legacy.v1.LegalAssetR\x05asset\x127\n" +
 	"\x05stats\x18\x02 \x01(\v2!.sttattus.legacy.v1.HeritageStatsR\x05stats\"2\n" +

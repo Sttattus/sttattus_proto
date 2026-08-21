@@ -92,6 +92,10 @@ const LegalAsset$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'expiresAt'
     },
+    {'1': 'doc_url', '3': 10, '4': 1, '5': 9, '10': 'docUrl'},
+    {'1': 'doc_nonce', '3': 11, '4': 1, '5': 12, '10': 'docNonce'},
+    {'1': 'doc_wrapped_key', '3': 12, '4': 1, '5': 12, '10': 'docWrappedKey'},
+    {'1': 'doc_algorithm', '3': 13, '4': 1, '5': 9, '10': 'docAlgorithm'},
   ],
 };
 
@@ -104,7 +108,9 @@ final $typed_data.Uint8List legalAssetDescriptor = $convert.base64Decode(
     'MS5WZXJpZmljYXRpb25TdGF0dXNSBnN0YXR1cxIhCgxjb250ZW50X2hhc2gYByABKAlSC2Nvbn'
     'RlbnRIYXNoEjUKCGZpbGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIH'
     'ZmlsZWRBdBI5CgpleHBpcmVzX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcF'
-    'IJZXhwaXJlc0F0');
+    'IJZXhwaXJlc0F0EhcKB2RvY191cmwYCiABKAlSBmRvY1VybBIbCglkb2Nfbm9uY2UYCyABKAxS'
+    'CGRvY05vbmNlEiYKD2RvY193cmFwcGVkX2tleRgMIAEoDFINZG9jV3JhcHBlZEtleRIjCg1kb2'
+    'NfYWxnb3JpdGhtGA0gASgJUgxkb2NBbGdvcml0aG0=');
 
 @$core.Deprecated('Use heritageStatsDescriptor instead')
 const HeritageStats$json = {
@@ -153,6 +159,10 @@ const StoreDocumentRequest$json = {
     {'1': 'jurisdiction', '3': 3, '4': 1, '5': 9, '10': 'jurisdiction'},
     {'1': 'valuation_usd', '3': 4, '4': 1, '5': 1, '10': 'valuationUsd'},
     {'1': 'encrypted_blob', '3': 5, '4': 1, '5': 12, '10': 'encryptedBlob'},
+    {'1': 'doc_url', '3': 6, '4': 1, '5': 9, '10': 'docUrl'},
+    {'1': 'doc_nonce', '3': 7, '4': 1, '5': 12, '10': 'docNonce'},
+    {'1': 'doc_wrapped_key', '3': 8, '4': 1, '5': 12, '10': 'docWrappedKey'},
+    {'1': 'doc_algorithm', '3': 9, '4': 1, '5': 9, '10': 'docAlgorithm'},
   ],
 };
 
@@ -161,7 +171,10 @@ final $typed_data.Uint8List storeDocumentRequestDescriptor = $convert.base64Deco
     'ChRTdG9yZURvY3VtZW50UmVxdWVzdBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSPQoIY2F0ZWdvcn'
     'kYAiABKA4yIS5zdHRhdHR1cy5sZWdhY3kudjEuQXNzZXRDYXRlZ29yeVIIY2F0ZWdvcnkSIgoM'
     'anVyaXNkaWN0aW9uGAMgASgJUgxqdXJpc2RpY3Rpb24SIwoNdmFsdWF0aW9uX3VzZBgEIAEoAV'
-    'IMdmFsdWF0aW9uVXNkEiUKDmVuY3J5cHRlZF9ibG9iGAUgASgMUg1lbmNyeXB0ZWRCbG9i');
+    'IMdmFsdWF0aW9uVXNkEiUKDmVuY3J5cHRlZF9ibG9iGAUgASgMUg1lbmNyeXB0ZWRCbG9iEhcK'
+    'B2RvY191cmwYBiABKAlSBmRvY1VybBIbCglkb2Nfbm9uY2UYByABKAxSCGRvY05vbmNlEiYKD2'
+    'RvY193cmFwcGVkX2tleRgIIAEoDFINZG9jV3JhcHBlZEtleRIjCg1kb2NfYWxnb3JpdGhtGAkg'
+    'ASgJUgxkb2NBbGdvcml0aG0=');
 
 @$core.Deprecated('Use storeDocumentResponseDescriptor instead')
 const StoreDocumentResponse$json = {

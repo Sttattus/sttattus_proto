@@ -35,6 +35,10 @@ class LegalAsset extends $pb.GeneratedMessage {
     $core.String? contentHash,
     $1.Timestamp? filedAt,
     $1.Timestamp? expiresAt,
+    $core.String? docUrl,
+    $core.List<$core.int>? docNonce,
+    $core.List<$core.int>? docWrappedKey,
+    $core.String? docAlgorithm,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -46,6 +50,10 @@ class LegalAsset extends $pb.GeneratedMessage {
     if (contentHash != null) result.contentHash = contentHash;
     if (filedAt != null) result.filedAt = filedAt;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (docUrl != null) result.docUrl = docUrl;
+    if (docNonce != null) result.docNonce = docNonce;
+    if (docWrappedKey != null) result.docWrappedKey = docWrappedKey;
+    if (docAlgorithm != null) result.docAlgorithm = docAlgorithm;
     return result;
   }
 
@@ -76,6 +84,12 @@ class LegalAsset extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'expiresAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(10, _omitFieldNames ? '' : 'docUrl')
+    ..a<$core.List<$core.int>>(
+        11, _omitFieldNames ? '' : 'docNonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        12, _omitFieldNames ? '' : 'docWrappedKey', $pb.PbFieldType.OY)
+    ..aOS(13, _omitFieldNames ? '' : 'docAlgorithm')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -180,6 +194,53 @@ class LegalAsset extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(9);
   @$pb.TagNumber(9)
   $1.Timestamp ensureExpiresAt() => $_ensure(8);
+
+  /// Where the member's proof document actually lives, and how to open it.
+  ///
+  /// Before these fields the app uploaded the legal proof, kept the URL in a
+  /// local variable, used it only as a null-check and threw it away: the
+  /// object sat in private storage with nothing in legacy_documents pointing
+  /// at it, so no screen could ever show a member the deed they had filed.
+  ///
+  /// The stored object is CIPHERTEXT. The client encrypts with the member's
+  /// recovery KEK before upload, so the server holds bytes it cannot read;
+  /// doc_nonce + doc_wrapped_key are what the member needs to open it again.
+  /// doc_url is served signed (s3.ReadURL), never as an r2:// locator.
+  @$pb.TagNumber(10)
+  $core.String get docUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set docUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDocUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDocUrl() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.List<$core.int> get docNonce => $_getN(10);
+  @$pb.TagNumber(11)
+  set docNonce($core.List<$core.int> value) => $_setBytes(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDocNonce() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDocNonce() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.int> get docWrappedKey => $_getN(11);
+  @$pb.TagNumber(12)
+  set docWrappedKey($core.List<$core.int> value) => $_setBytes(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDocWrappedKey() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDocWrappedKey() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get docAlgorithm => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set docAlgorithm($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasDocAlgorithm() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearDocAlgorithm() => $_clearField(13);
 }
 
 class HeritageStats extends $pb.GeneratedMessage {
@@ -294,6 +355,10 @@ class StoreDocumentRequest extends $pb.GeneratedMessage {
     $core.String? jurisdiction,
     $core.double? valuationUsd,
     $core.List<$core.int>? encryptedBlob,
+    $core.String? docUrl,
+    $core.List<$core.int>? docNonce,
+    $core.List<$core.int>? docWrappedKey,
+    $core.String? docAlgorithm,
   }) {
     final result = create();
     if (title != null) result.title = title;
@@ -301,6 +366,10 @@ class StoreDocumentRequest extends $pb.GeneratedMessage {
     if (jurisdiction != null) result.jurisdiction = jurisdiction;
     if (valuationUsd != null) result.valuationUsd = valuationUsd;
     if (encryptedBlob != null) result.encryptedBlob = encryptedBlob;
+    if (docUrl != null) result.docUrl = docUrl;
+    if (docNonce != null) result.docNonce = docNonce;
+    if (docWrappedKey != null) result.docWrappedKey = docWrappedKey;
+    if (docAlgorithm != null) result.docAlgorithm = docAlgorithm;
     return result;
   }
 
@@ -325,6 +394,12 @@ class StoreDocumentRequest extends $pb.GeneratedMessage {
     ..aD(4, _omitFieldNames ? '' : 'valuationUsd')
     ..a<$core.List<$core.int>>(
         5, _omitFieldNames ? '' : 'encryptedBlob', $pb.PbFieldType.OY)
+    ..aOS(6, _omitFieldNames ? '' : 'docUrl')
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'docNonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'docWrappedKey', $pb.PbFieldType.OY)
+    ..aOS(9, _omitFieldNames ? '' : 'docAlgorithm')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -390,6 +465,43 @@ class StoreDocumentRequest extends $pb.GeneratedMessage {
   $core.bool hasEncryptedBlob() => $_has(4);
   @$pb.TagNumber(5)
   void clearEncryptedBlob() => $_clearField(5);
+
+  /// The encrypted proof document. See LegalAsset for why these exist.
+  @$pb.TagNumber(6)
+  $core.String get docUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set docUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDocUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDocUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get docNonce => $_getN(6);
+  @$pb.TagNumber(7)
+  set docNonce($core.List<$core.int> value) => $_setBytes(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDocNonce() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDocNonce() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get docWrappedKey => $_getN(7);
+  @$pb.TagNumber(8)
+  set docWrappedKey($core.List<$core.int> value) => $_setBytes(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDocWrappedKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDocWrappedKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get docAlgorithm => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set docAlgorithm($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDocAlgorithm() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDocAlgorithm() => $_clearField(9);
 }
 
 class StoreDocumentResponse extends $pb.GeneratedMessage {

@@ -141,6 +141,38 @@ export class LegalAsset extends Message<LegalAsset> {
    */
   expiresAt?: Timestamp;
 
+  /**
+   * Where the member's proof document actually lives, and how to open it.
+   *
+   * Before these fields the app uploaded the legal proof, kept the URL in a
+   * local variable, used it only as a null-check and threw it away: the
+   * object sat in private storage with nothing in legacy_documents pointing
+   * at it, so no screen could ever show a member the deed they had filed.
+   *
+   * The stored object is CIPHERTEXT. The client encrypts with the member's
+   * recovery KEK before upload, so the server holds bytes it cannot read;
+   * doc_nonce + doc_wrapped_key are what the member needs to open it again.
+   * doc_url is served signed (s3.ReadURL), never as an r2:// locator.
+   *
+   * @generated from field: string doc_url = 10;
+   */
+  docUrl = "";
+
+  /**
+   * @generated from field: bytes doc_nonce = 11;
+   */
+  docNonce = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes doc_wrapped_key = 12;
+   */
+  docWrappedKey = new Uint8Array(0);
+
+  /**
+   * @generated from field: string doc_algorithm = 13;
+   */
+  docAlgorithm = "";
+
   constructor(data?: PartialMessage<LegalAsset>) {
     super();
     proto3.util.initPartial(data, this);
@@ -158,6 +190,10 @@ export class LegalAsset extends Message<LegalAsset> {
     { no: 7, name: "content_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "filed_at", kind: "message", T: Timestamp },
     { no: 9, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 10, name: "doc_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "doc_nonce", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 12, name: "doc_wrapped_key", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 13, name: "doc_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegalAsset {
@@ -273,6 +309,28 @@ export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
    */
   encryptedBlob = new Uint8Array(0);
 
+  /**
+   * The encrypted proof document. See LegalAsset for why these exist.
+   *
+   * @generated from field: string doc_url = 6;
+   */
+  docUrl = "";
+
+  /**
+   * @generated from field: bytes doc_nonce = 7;
+   */
+  docNonce = new Uint8Array(0);
+
+  /**
+   * @generated from field: bytes doc_wrapped_key = 8;
+   */
+  docWrappedKey = new Uint8Array(0);
+
+  /**
+   * @generated from field: string doc_algorithm = 9;
+   */
+  docAlgorithm = "";
+
   constructor(data?: PartialMessage<StoreDocumentRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -286,6 +344,10 @@ export class StoreDocumentRequest extends Message<StoreDocumentRequest> {
     { no: 3, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "valuation_usd", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 5, name: "encrypted_blob", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 6, name: "doc_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "doc_nonce", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 8, name: "doc_wrapped_key", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 9, name: "doc_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreDocumentRequest {

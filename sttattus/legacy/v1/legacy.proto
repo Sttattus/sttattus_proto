@@ -33,6 +33,22 @@ message LegalAsset {
   string content_hash = 7;
   google.protobuf.Timestamp filed_at = 8;
   google.protobuf.Timestamp expires_at = 9;
+
+  // Where the member's proof document actually lives, and how to open it.
+  //
+  // Before these fields the app uploaded the legal proof, kept the URL in a
+  // local variable, used it only as a null-check and threw it away: the
+  // object sat in private storage with nothing in legacy_documents pointing
+  // at it, so no screen could ever show a member the deed they had filed.
+  //
+  // The stored object is CIPHERTEXT. The client encrypts with the member's
+  // recovery KEK before upload, so the server holds bytes it cannot read;
+  // doc_nonce + doc_wrapped_key are what the member needs to open it again.
+  // doc_url is served signed (s3.ReadURL), never as an r2:// locator.
+  string doc_url = 10;
+  bytes doc_nonce = 11;
+  bytes doc_wrapped_key = 12;
+  string doc_algorithm = 13;
 }
 
 message HeritageStats {
@@ -50,6 +66,12 @@ message StoreDocumentRequest {
   string jurisdiction = 3;
   double valuation_usd = 4;
   bytes encrypted_blob = 5;
+
+  // The encrypted proof document. See LegalAsset for why these exist.
+  string doc_url = 6;
+  bytes doc_nonce = 7;
+  bytes doc_wrapped_key = 8;
+  string doc_algorithm = 9;
 }
 message StoreDocumentResponse {
   LegalAsset asset = 1;
