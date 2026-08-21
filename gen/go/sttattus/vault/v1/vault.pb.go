@@ -33,6 +33,15 @@ const (
 	AssetCategory_ASSET_CATEGORY_METAL          AssetCategory = 4 // Gold, Silver
 	AssetCategory_ASSET_CATEGORY_REAL_ESTATE    AssetCategory = 5 // Direct property holdings
 	AssetCategory_ASSET_CATEGORY_PRIVATE_EQUITY AssetCategory = 6 // Private companies, funds, SAFEs
+	// Brokerage, IRA, 401k — a linked investment account, not a current account.
+	//
+	// Added for Finding 70. Finding 68 stopped filing Plaid `investment` and
+	// `brokerage` accounts as FIAT, because an IRA is not cash and the allocation
+	// donut groups by category. But it wrote a category string this enum could
+	// not represent, so listAssets fell through to UNSPECIFIED and the holdings
+	// list labelled a $27,541 401k "UNSPECIFIED" while the donut — which carries
+	// raw strings, not enum values — labelled the same money "Investments".
+	AssetCategory_ASSET_CATEGORY_INVESTMENT_ACCOUNT AssetCategory = 7
 )
 
 // Enum value maps for AssetCategory.
@@ -45,15 +54,17 @@ var (
 		4: "ASSET_CATEGORY_METAL",
 		5: "ASSET_CATEGORY_REAL_ESTATE",
 		6: "ASSET_CATEGORY_PRIVATE_EQUITY",
+		7: "ASSET_CATEGORY_INVESTMENT_ACCOUNT",
 	}
 	AssetCategory_value = map[string]int32{
-		"ASSET_CATEGORY_UNSPECIFIED":    0,
-		"ASSET_CATEGORY_FIAT":           1,
-		"ASSET_CATEGORY_CRYPTO":         2,
-		"ASSET_CATEGORY_RARE_ASSET":     3,
-		"ASSET_CATEGORY_METAL":          4,
-		"ASSET_CATEGORY_REAL_ESTATE":    5,
-		"ASSET_CATEGORY_PRIVATE_EQUITY": 6,
+		"ASSET_CATEGORY_UNSPECIFIED":        0,
+		"ASSET_CATEGORY_FIAT":               1,
+		"ASSET_CATEGORY_CRYPTO":             2,
+		"ASSET_CATEGORY_RARE_ASSET":         3,
+		"ASSET_CATEGORY_METAL":              4,
+		"ASSET_CATEGORY_REAL_ESTATE":        5,
+		"ASSET_CATEGORY_PRIVATE_EQUITY":     6,
+		"ASSET_CATEGORY_INVESTMENT_ACCOUNT": 7,
 	}
 )
 
@@ -7363,7 +7374,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x04lots\x18\x04 \x03(\v2\x19.sttattus.vault.v1.TaxLotR\x04lots\"\x17\n" +
 	"\x15ExportUsCgtCsvRequest\"*\n" +
 	"\x16ExportUsCgtCsvResponse\x12\x10\n" +
-	"\x03csv\x18\x01 \x01(\fR\x03csv*\xdf\x01\n" +
+	"\x03csv\x18\x01 \x01(\fR\x03csv*\x86\x02\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -7371,7 +7382,8 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x19ASSET_CATEGORY_RARE_ASSET\x10\x03\x12\x18\n" +
 	"\x14ASSET_CATEGORY_METAL\x10\x04\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_REAL_ESTATE\x10\x05\x12!\n" +
-	"\x1dASSET_CATEGORY_PRIVATE_EQUITY\x10\x06*\x9e\x01\n" +
+	"\x1dASSET_CATEGORY_PRIVATE_EQUITY\x10\x06\x12%\n" +
+	"!ASSET_CATEGORY_INVESTMENT_ACCOUNT\x10\a*\x9e\x01\n" +
 	"\x12VerificationStatus\x12#\n" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +

@@ -31,6 +31,18 @@ class AssetCategory extends $pb.ProtobufEnum {
   static const AssetCategory ASSET_CATEGORY_PRIVATE_EQUITY =
       AssetCategory._(6, _omitEnumNames ? '' : 'ASSET_CATEGORY_PRIVATE_EQUITY');
 
+  /// Brokerage, IRA, 401k — a linked investment account, not a current account.
+  ///
+  /// Added for Finding 70. Finding 68 stopped filing Plaid `investment` and
+  /// `brokerage` accounts as FIAT, because an IRA is not cash and the allocation
+  /// donut groups by category. But it wrote a category string this enum could
+  /// not represent, so listAssets fell through to UNSPECIFIED and the holdings
+  /// list labelled a $27,541 401k "UNSPECIFIED" while the donut — which carries
+  /// raw strings, not enum values — labelled the same money "Investments".
+  static const AssetCategory ASSET_CATEGORY_INVESTMENT_ACCOUNT =
+      AssetCategory._(
+          7, _omitEnumNames ? '' : 'ASSET_CATEGORY_INVESTMENT_ACCOUNT');
+
   static const $core.List<AssetCategory> values = <AssetCategory>[
     ASSET_CATEGORY_UNSPECIFIED,
     ASSET_CATEGORY_FIAT,
@@ -39,10 +51,11 @@ class AssetCategory extends $pb.ProtobufEnum {
     ASSET_CATEGORY_METAL,
     ASSET_CATEGORY_REAL_ESTATE,
     ASSET_CATEGORY_PRIVATE_EQUITY,
+    ASSET_CATEGORY_INVESTMENT_ACCOUNT,
   ];
 
   static final $core.List<AssetCategory?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 6);
+      $pb.ProtobufEnum.$_initByValueList(values, 7);
   static AssetCategory? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 
