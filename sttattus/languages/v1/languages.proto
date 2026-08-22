@@ -170,6 +170,9 @@ message SpeakingPrompt {
 message PhonemeScore {
   string token = 1;
   int32 score = 2; // 0..100
+  // What went wrong with this word, in one short phrase. Empty when the word
+  // was fine, or when no coach was available to say.
+  string note = 3;
 }
 
 // SpeakingAttempt is the per-user row hydrated for the drill UI.
@@ -186,6 +189,14 @@ message SpeakingAttempt {
   repeated PhonemeScore phonemes = 7;
   int64 created_unix = 8;
   int64 updated_unix = 9;
+  // A coaching sentence about the attempt as a whole. A percentage tells a
+  // member they were wrong; this tells them what to change.
+  string feedback = 10;
+  // How the score was arrived at: 'coach' when a language model listened to
+  // the transcript and judged it, 'overlap' when it fell back to counting
+  // which target words survived transcription. The member is not told a
+  // word-count is pronunciation feedback.
+  string scored_by = 11;
 }
 
 message ListSpeakingPromptsRequest {

@@ -1753,9 +1753,12 @@ func (x *SpeakingPrompt) GetTranslation() string {
 }
 
 type PhonemeScore struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Score         int32                  `protobuf:"varint,2,opt,name=score,proto3" json:"score,omitempty"` // 0..100
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Token string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Score int32                  `protobuf:"varint,2,opt,name=score,proto3" json:"score,omitempty"` // 0..100
+	// What went wrong with this word, in one short phrase. Empty when the word
+	// was fine, or when no coach was available to say.
+	Note          string `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1804,21 +1807,36 @@ func (x *PhonemeScore) GetScore() int32 {
 	return 0
 }
 
+func (x *PhonemeScore) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
 // SpeakingAttempt is the per-user row hydrated for the drill UI.
 // status: 'pending' = scorer not yet run, 'transcribed' = Whisper
 // + overlap complete, 'unavailable' = provider missing — client
 // renders "transcription unavailable, audio preserved".
 type SpeakingAttempt struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	PromptId      string                 `protobuf:"bytes,2,opt,name=prompt_id,json=promptId,proto3" json:"prompt_id,omitempty"`
-	AudioUrl      string                 `protobuf:"bytes,3,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`
-	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	Transcribed   string                 `protobuf:"bytes,5,opt,name=transcribed,proto3" json:"transcribed,omitempty"`
-	Score         int32                  `protobuf:"varint,6,opt,name=score,proto3" json:"score,omitempty"`
-	Phonemes      []*PhonemeScore        `protobuf:"bytes,7,rep,name=phonemes,proto3" json:"phonemes,omitempty"`
-	CreatedUnix   int64                  `protobuf:"varint,8,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
-	UpdatedUnix   int64                  `protobuf:"varint,9,opt,name=updated_unix,json=updatedUnix,proto3" json:"updated_unix,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	PromptId    string                 `protobuf:"bytes,2,opt,name=prompt_id,json=promptId,proto3" json:"prompt_id,omitempty"`
+	AudioUrl    string                 `protobuf:"bytes,3,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`
+	Status      string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	Transcribed string                 `protobuf:"bytes,5,opt,name=transcribed,proto3" json:"transcribed,omitempty"`
+	Score       int32                  `protobuf:"varint,6,opt,name=score,proto3" json:"score,omitempty"`
+	Phonemes    []*PhonemeScore        `protobuf:"bytes,7,rep,name=phonemes,proto3" json:"phonemes,omitempty"`
+	CreatedUnix int64                  `protobuf:"varint,8,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	UpdatedUnix int64                  `protobuf:"varint,9,opt,name=updated_unix,json=updatedUnix,proto3" json:"updated_unix,omitempty"`
+	// A coaching sentence about the attempt as a whole. A percentage tells a
+	// member they were wrong; this tells them what to change.
+	Feedback string `protobuf:"bytes,10,opt,name=feedback,proto3" json:"feedback,omitempty"`
+	// How the score was arrived at: 'coach' when a language model listened to
+	// the transcript and judged it, 'overlap' when it fell back to counting
+	// which target words survived transcription. The member is not told a
+	// word-count is pronunciation feedback.
+	ScoredBy      string `protobuf:"bytes,11,opt,name=scored_by,json=scoredBy,proto3" json:"scored_by,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1914,6 +1932,20 @@ func (x *SpeakingAttempt) GetUpdatedUnix() int64 {
 		return x.UpdatedUnix
 	}
 	return 0
+}
+
+func (x *SpeakingAttempt) GetFeedback() string {
+	if x != nil {
+		return x.Feedback
+	}
+	return ""
+}
+
+func (x *SpeakingAttempt) GetScoredBy() string {
+	if x != nil {
+		return x.ScoredBy
+	}
+	return ""
 }
 
 type ListSpeakingPromptsRequest struct {
@@ -6969,10 +7001,11 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\vcefr_target\x18\x03 \x01(\tR\n" +
 	"cefrTarget\x12\x16\n" +
 	"\x06phrase\x18\x04 \x01(\tR\x06phrase\x12 \n" +
-	"\vtranslation\x18\x05 \x01(\tR\vtranslation\":\n" +
+	"\vtranslation\x18\x05 \x01(\tR\vtranslation\"N\n" +
 	"\fPhonemeScore\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x14\n" +
-	"\x05score\x18\x02 \x01(\x05R\x05score\"\xb2\x02\n" +
+	"\x05score\x18\x02 \x01(\x05R\x05score\x12\x12\n" +
+	"\x04note\x18\x03 \x01(\tR\x04note\"\xeb\x02\n" +
 	"\x0fSpeakingAttempt\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tprompt_id\x18\x02 \x01(\tR\bpromptId\x12\x1b\n" +
@@ -6982,7 +7015,10 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x05score\x18\x06 \x01(\x05R\x05score\x12?\n" +
 	"\bphonemes\x18\a \x03(\v2#.sttattus.languages.v1.PhonemeScoreR\bphonemes\x12!\n" +
 	"\fcreated_unix\x18\b \x01(\x03R\vcreatedUnix\x12!\n" +
-	"\fupdated_unix\x18\t \x01(\x03R\vupdatedUnix\"W\n" +
+	"\fupdated_unix\x18\t \x01(\x03R\vupdatedUnix\x12\x1a\n" +
+	"\bfeedback\x18\n" +
+	" \x01(\tR\bfeedback\x12\x1b\n" +
+	"\tscored_by\x18\v \x01(\tR\bscoredBy\"W\n" +
 	"\x1aListSpeakingPromptsRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x1d\n" +
 	"\n" +

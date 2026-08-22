@@ -648,13 +648,14 @@ const PhonemeScore$json = {
   '2': [
     {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
     {'1': 'score', '3': 2, '4': 1, '5': 5, '10': 'score'},
+    {'1': 'note', '3': 3, '4': 1, '5': 9, '10': 'note'},
   ],
 };
 
 /// Descriptor for `PhonemeScore`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List phonemeScoreDescriptor = $convert.base64Decode(
     'CgxQaG9uZW1lU2NvcmUSFAoFdG9rZW4YASABKAlSBXRva2VuEhQKBXNjb3JlGAIgASgFUgVzY2'
-    '9yZQ==');
+    '9yZRISCgRub3RlGAMgASgJUgRub3Rl');
 
 @$core.Deprecated('Use speakingAttemptDescriptor instead')
 const SpeakingAttempt$json = {
@@ -676,6 +677,8 @@ const SpeakingAttempt$json = {
     },
     {'1': 'created_unix', '3': 8, '4': 1, '5': 3, '10': 'createdUnix'},
     {'1': 'updated_unix', '3': 9, '4': 1, '5': 3, '10': 'updatedUnix'},
+    {'1': 'feedback', '3': 10, '4': 1, '5': 9, '10': 'feedback'},
+    {'1': 'scored_by', '3': 11, '4': 1, '5': 9, '10': 'scoredBy'},
   ],
 };
 
@@ -686,7 +689,8 @@ final $typed_data.Uint8List speakingAttemptDescriptor = $convert.base64Decode(
     'YXR1cxIgCgt0cmFuc2NyaWJlZBgFIAEoCVILdHJhbnNjcmliZWQSFAoFc2NvcmUYBiABKAVSBX'
     'Njb3JlEj8KCHBob25lbWVzGAcgAygLMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLlBob25lbWVT'
     'Y29yZVIIcGhvbmVtZXMSIQoMY3JlYXRlZF91bml4GAggASgDUgtjcmVhdGVkVW5peBIhCgx1cG'
-    'RhdGVkX3VuaXgYCSABKANSC3VwZGF0ZWRVbml4');
+    'RhdGVkX3VuaXgYCSABKANSC3VwZGF0ZWRVbml4EhoKCGZlZWRiYWNrGAogASgJUghmZWVkYmFj'
+    'axIbCglzY29yZWRfYnkYCyABKAlSCHNjb3JlZEJ5');
 
 @$core.Deprecated('Use listSpeakingPromptsRequestDescriptor instead')
 const ListSpeakingPromptsRequest$json = {

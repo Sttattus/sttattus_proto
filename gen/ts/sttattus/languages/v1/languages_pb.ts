@@ -1487,6 +1487,14 @@ export class PhonemeScore extends Message<PhonemeScore> {
    */
   score = 0;
 
+  /**
+   * What went wrong with this word, in one short phrase. Empty when the word
+   * was fine, or when no coach was available to say.
+   *
+   * @generated from field: string note = 3;
+   */
+  note = "";
+
   constructor(data?: PartialMessage<PhonemeScore>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1497,6 +1505,7 @@ export class PhonemeScore extends Message<PhonemeScore> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PhonemeScore {
@@ -1570,6 +1579,24 @@ export class SpeakingAttempt extends Message<SpeakingAttempt> {
    */
   updatedUnix = protoInt64.zero;
 
+  /**
+   * A coaching sentence about the attempt as a whole. A percentage tells a
+   * member they were wrong; this tells them what to change.
+   *
+   * @generated from field: string feedback = 10;
+   */
+  feedback = "";
+
+  /**
+   * How the score was arrived at: 'coach' when a language model listened to
+   * the transcript and judged it, 'overlap' when it fell back to counting
+   * which target words survived transcription. The member is not told a
+   * word-count is pronunciation feedback.
+   *
+   * @generated from field: string scored_by = 11;
+   */
+  scoredBy = "";
+
   constructor(data?: PartialMessage<SpeakingAttempt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1587,6 +1614,8 @@ export class SpeakingAttempt extends Message<SpeakingAttempt> {
     { no: 7, name: "phonemes", kind: "message", T: PhonemeScore, repeated: true },
     { no: 8, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "feedback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "scored_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingAttempt {

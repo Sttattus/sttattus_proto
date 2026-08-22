@@ -2081,10 +2081,12 @@ class PhonemeScore extends $pb.GeneratedMessage {
   factory PhonemeScore({
     $core.String? token,
     $core.int? score,
+    $core.String? note,
   }) {
     final result = create();
     if (token != null) result.token = token;
     if (score != null) result.score = score;
+    if (note != null) result.note = note;
     return result;
   }
 
@@ -2104,6 +2106,7 @@ class PhonemeScore extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
     ..aI(2, _omitFieldNames ? '' : 'score')
+    ..aOS(3, _omitFieldNames ? '' : 'note')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2142,6 +2145,17 @@ class PhonemeScore extends $pb.GeneratedMessage {
   $core.bool hasScore() => $_has(1);
   @$pb.TagNumber(2)
   void clearScore() => $_clearField(2);
+
+  /// What went wrong with this word, in one short phrase. Empty when the word
+  /// was fine, or when no coach was available to say.
+  @$pb.TagNumber(3)
+  $core.String get note => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set note($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNote() => $_clearField(3);
 }
 
 /// SpeakingAttempt is the per-user row hydrated for the drill UI.
@@ -2159,6 +2173,8 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
     $core.Iterable<PhonemeScore>? phonemes,
     $fixnum.Int64? createdUnix,
     $fixnum.Int64? updatedUnix,
+    $core.String? feedback,
+    $core.String? scoredBy,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2170,6 +2186,8 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
     if (phonemes != null) result.phonemes.addAll(phonemes);
     if (createdUnix != null) result.createdUnix = createdUnix;
     if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    if (feedback != null) result.feedback = feedback;
+    if (scoredBy != null) result.scoredBy = scoredBy;
     return result;
   }
 
@@ -2197,6 +2215,8 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
         subBuilder: PhonemeScore.create)
     ..aInt64(8, _omitFieldNames ? '' : 'createdUnix')
     ..aInt64(9, _omitFieldNames ? '' : 'updatedUnix')
+    ..aOS(10, _omitFieldNames ? '' : 'feedback')
+    ..aOS(11, _omitFieldNames ? '' : 'scoredBy')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2292,6 +2312,30 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
   $core.bool hasUpdatedUnix() => $_has(8);
   @$pb.TagNumber(9)
   void clearUpdatedUnix() => $_clearField(9);
+
+  /// A coaching sentence about the attempt as a whole. A percentage tells a
+  /// member they were wrong; this tells them what to change.
+  @$pb.TagNumber(10)
+  $core.String get feedback => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set feedback($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasFeedback() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearFeedback() => $_clearField(10);
+
+  /// How the score was arrived at: 'coach' when a language model listened to
+  /// the transcript and judged it, 'overlap' when it fell back to counting
+  /// which target words survived transcription. The member is not told a
+  /// word-count is pronunciation feedback.
+  @$pb.TagNumber(11)
+  $core.String get scoredBy => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set scoredBy($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasScoredBy() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearScoredBy() => $_clearField(11);
 }
 
 class ListSpeakingPromptsRequest extends $pb.GeneratedMessage {
