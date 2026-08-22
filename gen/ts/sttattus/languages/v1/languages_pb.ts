@@ -2979,7 +2979,85 @@ export class RubricScore extends Message<RubricScore> {
  * WritingSubmission status: 'corrected' = Gemini rough correction ran,
  * 'heuristic' = provider unavailable so a deterministic local rubric was
  * applied, 'pending' = not yet scored.
+ * One thing the member got wrong, named rather than merely corrected.
+ * 
+ * A corrected paragraph with bold on the changes tells a member *what* to
+ * write next time. It does not tell them which rule they broke, and it cannot
+ * be practised. This can: `grammar_point_key` links the mistake to a point in
+ * the grammar corpus, and the engine schedules that point so the member's own
+ * errors become their review queue.
  *
+ * @generated from message sttattus.languages.v1.WritingError
+ */
+export class WritingError extends Message<WritingError> {
+  /**
+   * the span as the member wrote it
+   *
+   * @generated from field: string original = 1;
+   */
+  original = "";
+
+  /**
+   * what it should have been
+   *
+   * @generated from field: string correction = 2;
+   */
+  correction = "";
+
+  /**
+   * agreement | tense | mood | preposition | vocabulary | spelling |
+   * word_order | register
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string explanation = 4;
+   */
+  explanation = "";
+
+  /**
+   * lexicon_grammar_points.key, when the mistake maps onto a point that is
+   * actually taught. Empty when it does not.
+   *
+   * @generated from field: string grammar_point_key = 5;
+   */
+  grammarPointKey = "";
+
+  constructor(data?: PartialMessage<WritingError>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.WritingError";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "original", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "correction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "grammar_point_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WritingError {
+    return new WritingError().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WritingError {
+    return new WritingError().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WritingError {
+    return new WritingError().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: WritingError | PlainMessage<WritingError> | undefined, b: WritingError | PlainMessage<WritingError> | undefined): boolean {
+    return proto3.util.equals(WritingError, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.languages.v1.WritingSubmission
  */
 export class WritingSubmission extends Message<WritingSubmission> {
@@ -3033,6 +3111,27 @@ export class WritingSubmission extends Message<WritingSubmission> {
    */
   updatedUnix = protoInt64.zero;
 
+  /**
+   * @generated from field: repeated sttattus.languages.v1.WritingError errors = 11;
+   */
+  errors: WritingError[] = [];
+
+  /**
+   * The single most useful thing to work on next, in one sentence.
+   *
+   * @generated from field: string next_step = 12;
+   */
+  nextStep = "";
+
+  /**
+   * Grammar points scheduled into the member's review queue as a result of
+   * this piece. Named so the app can say what practice was added rather than
+   * silently changing the queue.
+   *
+   * @generated from field: repeated string scheduled_points = 13;
+   */
+  scheduledPoints: string[] = [];
+
   constructor(data?: PartialMessage<WritingSubmission>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3051,6 +3150,9 @@ export class WritingSubmission extends Message<WritingSubmission> {
     { no: 8, name: "score", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "errors", kind: "message", T: WritingError, repeated: true },
+    { no: 12, name: "next_step", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "scheduled_points", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WritingSubmission {

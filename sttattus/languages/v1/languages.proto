@@ -379,6 +379,25 @@ message RubricScore {
 // WritingSubmission status: 'corrected' = Gemini rough correction ran,
 // 'heuristic' = provider unavailable so a deterministic local rubric was
 // applied, 'pending' = not yet scored.
+// One thing the member got wrong, named rather than merely corrected.
+//
+// A corrected paragraph with bold on the changes tells a member *what* to
+// write next time. It does not tell them which rule they broke, and it cannot
+// be practised. This can: `grammar_point_key` links the mistake to a point in
+// the grammar corpus, and the engine schedules that point so the member's own
+// errors become their review queue.
+message WritingError {
+  string original = 1;    // the span as the member wrote it
+  string correction = 2;  // what it should have been
+  // agreement | tense | mood | preposition | vocabulary | spelling |
+  // word_order | register
+  string kind = 3;
+  string explanation = 4;
+  // lexicon_grammar_points.key, when the mistake maps onto a point that is
+  // actually taught. Empty when it does not.
+  string grammar_point_key = 5;
+}
+
 message WritingSubmission {
   string id = 1;
   string prompt_id = 2;
@@ -390,6 +409,13 @@ message WritingSubmission {
   int32 score = 8;
   int64 created_unix = 9;
   int64 updated_unix = 10;
+  repeated WritingError errors = 11;
+  // The single most useful thing to work on next, in one sentence.
+  string next_step = 12;
+  // Grammar points scheduled into the member's review queue as a result of
+  // this piece. Named so the app can say what practice was added rather than
+  // silently changing the queue.
+  repeated string scheduled_points = 13;
 }
 
 message ListWritingPromptsRequest {

@@ -1226,6 +1226,25 @@ final $typed_data.Uint8List rubricScoreDescriptor = $convert.base64Decode(
     'CgtSdWJyaWNTY29yZRIcCglkaW1lbnNpb24YASABKAlSCWRpbWVuc2lvbhIUCgVzY29yZRgCIA'
     'EoBVIFc2NvcmUSGAoHY29tbWVudBgDIAEoCVIHY29tbWVudA==');
 
+@$core.Deprecated('Use writingErrorDescriptor instead')
+const WritingError$json = {
+  '1': 'WritingError',
+  '2': [
+    {'1': 'original', '3': 1, '4': 1, '5': 9, '10': 'original'},
+    {'1': 'correction', '3': 2, '4': 1, '5': 9, '10': 'correction'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'explanation', '3': 4, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'grammar_point_key', '3': 5, '4': 1, '5': 9, '10': 'grammarPointKey'},
+  ],
+};
+
+/// Descriptor for `WritingError`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List writingErrorDescriptor = $convert.base64Decode(
+    'CgxXcml0aW5nRXJyb3ISGgoIb3JpZ2luYWwYASABKAlSCG9yaWdpbmFsEh4KCmNvcnJlY3Rpb2'
+    '4YAiABKAlSCmNvcnJlY3Rpb24SEgoEa2luZBgDIAEoCVIEa2luZBIgCgtleHBsYW5hdGlvbhgE'
+    'IAEoCVILZXhwbGFuYXRpb24SKgoRZ3JhbW1hcl9wb2ludF9rZXkYBSABKAlSD2dyYW1tYXJQb2'
+    'ludEtleQ==');
+
 @$core.Deprecated('Use writingSubmissionDescriptor instead')
 const WritingSubmission$json = {
   '1': 'WritingSubmission',
@@ -1253,6 +1272,16 @@ const WritingSubmission$json = {
     {'1': 'score', '3': 8, '4': 1, '5': 5, '10': 'score'},
     {'1': 'created_unix', '3': 9, '4': 1, '5': 3, '10': 'createdUnix'},
     {'1': 'updated_unix', '3': 10, '4': 1, '5': 3, '10': 'updatedUnix'},
+    {
+      '1': 'errors',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.WritingError',
+      '10': 'errors'
+    },
+    {'1': 'next_step', '3': 12, '4': 1, '5': 9, '10': 'nextStep'},
+    {'1': 'scheduled_points', '3': 13, '4': 3, '5': 9, '10': 'scheduledPoints'},
   ],
 };
 
@@ -1264,7 +1293,9 @@ final $typed_data.Uint8List writingSubmissionDescriptor = $convert.base64Decode(
     'ABKAlSEWNvcnJlY3RlZE1hcmtkb3duEjoKBnJ1YnJpYxgHIAMoCzIiLnN0dGF0dHVzLmxhbmd1'
     'YWdlcy52MS5SdWJyaWNTY29yZVIGcnVicmljEhQKBXNjb3JlGAggASgFUgVzY29yZRIhCgxjcm'
     'VhdGVkX3VuaXgYCSABKANSC2NyZWF0ZWRVbml4EiEKDHVwZGF0ZWRfdW5peBgKIAEoA1ILdXBk'
-    'YXRlZFVuaXg=');
+    'YXRlZFVuaXgSOwoGZXJyb3JzGAsgAygLMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLldyaXRpbm'
+    'dFcnJvclIGZXJyb3JzEhsKCW5leHRfc3RlcBgMIAEoCVIIbmV4dFN0ZXASKQoQc2NoZWR1bGVk'
+    'X3BvaW50cxgNIAMoCVIPc2NoZWR1bGVkUG9pbnRz');
 
 @$core.Deprecated('Use listWritingPromptsRequestDescriptor instead')
 const ListWritingPromptsRequest$json = {

@@ -4460,6 +4460,120 @@ class RubricScore extends $pb.GeneratedMessage {
 /// WritingSubmission status: 'corrected' = Gemini rough correction ran,
 /// 'heuristic' = provider unavailable so a deterministic local rubric was
 /// applied, 'pending' = not yet scored.
+/// One thing the member got wrong, named rather than merely corrected.
+///
+/// A corrected paragraph with bold on the changes tells a member *what* to
+/// write next time. It does not tell them which rule they broke, and it cannot
+/// be practised. This can: `grammar_point_key` links the mistake to a point in
+/// the grammar corpus, and the engine schedules that point so the member's own
+/// errors become their review queue.
+class WritingError extends $pb.GeneratedMessage {
+  factory WritingError({
+    $core.String? original,
+    $core.String? correction,
+    $core.String? kind,
+    $core.String? explanation,
+    $core.String? grammarPointKey,
+  }) {
+    final result = create();
+    if (original != null) result.original = original;
+    if (correction != null) result.correction = correction;
+    if (kind != null) result.kind = kind;
+    if (explanation != null) result.explanation = explanation;
+    if (grammarPointKey != null) result.grammarPointKey = grammarPointKey;
+    return result;
+  }
+
+  WritingError._();
+
+  factory WritingError.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory WritingError.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'WritingError',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'original')
+    ..aOS(2, _omitFieldNames ? '' : 'correction')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'explanation')
+    ..aOS(5, _omitFieldNames ? '' : 'grammarPointKey')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingError clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WritingError copyWith(void Function(WritingError) updates) =>
+      super.copyWith((message) => updates(message as WritingError))
+          as WritingError;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WritingError create() => WritingError._();
+  @$core.override
+  WritingError createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static WritingError getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<WritingError>(create);
+  static WritingError? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get original => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set original($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOriginal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOriginal() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get correction => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set correction($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCorrection() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCorrection() => $_clearField(2);
+
+  /// agreement | tense | mood | preposition | vocabulary | spelling |
+  /// word_order | register
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get explanation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set explanation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExplanation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExplanation() => $_clearField(4);
+
+  /// lexicon_grammar_points.key, when the mistake maps onto a point that is
+  /// actually taught. Empty when it does not.
+  @$pb.TagNumber(5)
+  $core.String get grammarPointKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set grammarPointKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGrammarPointKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGrammarPointKey() => $_clearField(5);
+}
+
 class WritingSubmission extends $pb.GeneratedMessage {
   factory WritingSubmission({
     $core.String? id,
@@ -4472,6 +4586,9 @@ class WritingSubmission extends $pb.GeneratedMessage {
     $core.int? score,
     $fixnum.Int64? createdUnix,
     $fixnum.Int64? updatedUnix,
+    $core.Iterable<WritingError>? errors,
+    $core.String? nextStep,
+    $core.Iterable<$core.String>? scheduledPoints,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -4484,6 +4601,9 @@ class WritingSubmission extends $pb.GeneratedMessage {
     if (score != null) result.score = score;
     if (createdUnix != null) result.createdUnix = createdUnix;
     if (updatedUnix != null) result.updatedUnix = updatedUnix;
+    if (errors != null) result.errors.addAll(errors);
+    if (nextStep != null) result.nextStep = nextStep;
+    if (scheduledPoints != null) result.scheduledPoints.addAll(scheduledPoints);
     return result;
   }
 
@@ -4512,6 +4632,10 @@ class WritingSubmission extends $pb.GeneratedMessage {
     ..aI(8, _omitFieldNames ? '' : 'score')
     ..aInt64(9, _omitFieldNames ? '' : 'createdUnix')
     ..aInt64(10, _omitFieldNames ? '' : 'updatedUnix')
+    ..pPM<WritingError>(11, _omitFieldNames ? '' : 'errors',
+        subBuilder: WritingError.create)
+    ..aOS(12, _omitFieldNames ? '' : 'nextStep')
+    ..pPS(13, _omitFieldNames ? '' : 'scheduledPoints')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4616,6 +4740,25 @@ class WritingSubmission extends $pb.GeneratedMessage {
   $core.bool hasUpdatedUnix() => $_has(9);
   @$pb.TagNumber(10)
   void clearUpdatedUnix() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<WritingError> get errors => $_getList(10);
+
+  /// The single most useful thing to work on next, in one sentence.
+  @$pb.TagNumber(12)
+  $core.String get nextStep => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set nextStep($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasNextStep() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearNextStep() => $_clearField(12);
+
+  /// Grammar points scheduled into the member's review queue as a result of
+  /// this piece. Named so the app can say what practice was added rather than
+  /// silently changing the queue.
+  @$pb.TagNumber(13)
+  $pb.PbList<$core.String> get scheduledPoints => $_getList(12);
 }
 
 class ListWritingPromptsRequest extends $pb.GeneratedMessage {
