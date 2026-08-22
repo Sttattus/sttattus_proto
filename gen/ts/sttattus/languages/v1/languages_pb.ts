@@ -108,6 +108,13 @@ export enum ExerciseKind {
    * @generated from enum value: EXERCISE_KIND_SPEAK = 6;
    */
   SPEAK = 6,
+
+  /**
+   * give the requested cell of a verb paradigm
+   *
+   * @generated from enum value: EXERCISE_KIND_CONJUGATE = 7;
+   */
+  CONJUGATE = 7,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ExerciseKind)
 proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
@@ -118,6 +125,49 @@ proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
   { no: 4, name: "EXERCISE_KIND_CLOZE" },
   { no: 5, name: "EXERCISE_KIND_TYPE" },
   { no: 6, name: "EXERCISE_KIND_SPEAK" },
+  { no: 7, name: "EXERCISE_KIND_CONJUGATE" },
+]);
+
+/**
+ * What a schedulable item actually is. Vocabulary alone is not a language: a
+ * member who knows five hundred nouns and cannot conjugate `tener` cannot say
+ * anything. All three kinds share one queue and one scheduler.
+ *
+ * @generated from enum sttattus.languages.v1.StudyItemKind
+ */
+export enum StudyItemKind {
+  /**
+   * @generated from enum value: STUDY_ITEM_KIND_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * a word
+   *
+   * @generated from enum value: STUDY_ITEM_KIND_LEXEME = 1;
+   */
+  LEXEME = 1,
+
+  /**
+   * a grammar point's drill item
+   *
+   * @generated from enum value: STUDY_ITEM_KIND_GRAMMAR = 2;
+   */
+  GRAMMAR = 2,
+
+  /**
+   * one cell of a conjugation table
+   *
+   * @generated from enum value: STUDY_ITEM_KIND_VERB_FORM = 3;
+   */
+  VERB_FORM = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(StudyItemKind)
+proto3.util.setEnumType(StudyItemKind, "sttattus.languages.v1.StudyItemKind", [
+  { no: 0, name: "STUDY_ITEM_KIND_UNSPECIFIED" },
+  { no: 1, name: "STUDY_ITEM_KIND_LEXEME" },
+  { no: 2, name: "STUDY_ITEM_KIND_GRAMMAR" },
+  { no: 3, name: "STUDY_ITEM_KIND_VERB_FORM" },
 ]);
 
 /**
@@ -4861,6 +4911,43 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   isLeech = false;
 
+  /**
+   * Which kind of item this is, and its id. `lexeme_id` above stays populated
+   * for vocabulary so an older client keeps working.
+   *
+   * @generated from field: sttattus.languages.v1.StudyItemKind item_kind = 17;
+   */
+  itemKind = StudyItemKind.UNSPECIFIED;
+
+  /**
+   * @generated from field: string item_id = 18;
+   */
+  itemId = "";
+
+  /**
+   * Why the answer is the answer. A drill that marks you wrong and moves on
+   * teaches you to guess, so grammar and conjugation cards carry the reason.
+   *
+   * @generated from field: string rationale = 19;
+   */
+  rationale = "";
+
+  /**
+   * What is being practised: the grammar point's title, or the verb and the
+   * cell being asked for ("tener - preterite").
+   *
+   * @generated from field: string point_title = 20;
+   */
+  pointTitle = "";
+
+  /**
+   * True when this cell breaks the pattern its verb class would predict. A
+   * regular cell is a rule; an irregular one is a fact to memorise.
+   *
+   * @generated from field: bool irregular = 21;
+   */
+  irregular = false;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4885,6 +4972,11 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 14, name: "target_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "base_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 16, name: "is_leech", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "item_kind", kind: "enum", T: proto3.getEnumType(StudyItemKind) },
+    { no: 18, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "point_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "irregular", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -5056,6 +5148,20 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   language = "";
 
+  /**
+   * Present for grammar and conjugation items. When unset the request is
+   * read as a vocabulary answer against lexeme_id, which is what the
+   * already-deployed client sends.
+   *
+   * @generated from field: sttattus.languages.v1.StudyItemKind item_kind = 7;
+   */
+  itemKind = StudyItemKind.UNSPECIFIED;
+
+  /**
+   * @generated from field: string item_id = 8;
+   */
+  itemId = "";
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5070,6 +5176,8 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 4, name: "client_correct", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "elapsed_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 6, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "item_kind", kind: "enum", T: proto3.getEnumType(StudyItemKind) },
+    { no: 8, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {
@@ -5127,6 +5235,14 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
    */
   newLearnedToday = 0;
 
+  /**
+   * The explanation for this item, so the client can show it after an answer
+   * without holding the card.
+   *
+   * @generated from field: string rationale = 7;
+   */
+  rationale = "";
+
   constructor(data?: PartialMessage<SubmitAnswerResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5141,6 +5257,7 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
     { no: 4, name: "due_at", kind: "message", T: Timestamp },
     { no: 5, name: "reviews_done_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 6, name: "new_learned_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerResponse {
@@ -5241,6 +5358,24 @@ export class GetPracticeStatsResponse extends Message<GetPracticeStatsResponse> 
    */
   streakDays = 0;
 
+  /**
+   * Per-kind corpus sizes. One number hides the case where a language has
+   * vocabulary and no grammar at all.
+   *
+   * @generated from field: int32 corpus_vocabulary = 9;
+   */
+  corpusVocabulary = 0;
+
+  /**
+   * @generated from field: int32 corpus_grammar = 10;
+   */
+  corpusGrammar = 0;
+
+  /**
+   * @generated from field: int32 corpus_verb_forms = 11;
+   */
+  corpusVerbForms = 0;
+
   constructor(data?: PartialMessage<GetPracticeStatsResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5257,6 +5392,9 @@ export class GetPracticeStatsResponse extends Message<GetPracticeStatsResponse> 
     { no: 6, name: "reviews_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "new_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 8, name: "streak_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "corpus_vocabulary", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "corpus_grammar", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "corpus_verb_forms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeStatsResponse {

@@ -45,6 +45,7 @@ const ExerciseKind$json = {
     {'1': 'EXERCISE_KIND_CLOZE', '2': 4},
     {'1': 'EXERCISE_KIND_TYPE', '2': 5},
     {'1': 'EXERCISE_KIND_SPEAK', '2': 6},
+    {'1': 'EXERCISE_KIND_CONJUGATE', '2': 7},
   ],
 };
 
@@ -53,7 +54,25 @@ final $typed_data.Uint8List exerciseKindDescriptor = $convert.base64Decode(
     'CgxFeGVyY2lzZUtpbmQSHQoZRVhFUkNJU0VfS0lORF9VTlNQRUNJRklFRBAAEhsKF0VYRVJDSV'
     'NFX0tJTkRfUkVDT0dOSVNFEAESGAoURVhFUkNJU0VfS0lORF9SRUNBTEwQAhIYChRFWEVSQ0lT'
     'RV9LSU5EX0xJU1RFThADEhcKE0VYRVJDSVNFX0tJTkRfQ0xPWkUQBBIWChJFWEVSQ0lTRV9LSU'
-    '5EX1RZUEUQBRIXChNFWEVSQ0lTRV9LSU5EX1NQRUFLEAY=');
+    '5EX1RZUEUQBRIXChNFWEVSQ0lTRV9LSU5EX1NQRUFLEAYSGwoXRVhFUkNJU0VfS0lORF9DT05K'
+    'VUdBVEUQBw==');
+
+@$core.Deprecated('Use studyItemKindDescriptor instead')
+const StudyItemKind$json = {
+  '1': 'StudyItemKind',
+  '2': [
+    {'1': 'STUDY_ITEM_KIND_UNSPECIFIED', '2': 0},
+    {'1': 'STUDY_ITEM_KIND_LEXEME', '2': 1},
+    {'1': 'STUDY_ITEM_KIND_GRAMMAR', '2': 2},
+    {'1': 'STUDY_ITEM_KIND_VERB_FORM', '2': 3},
+  ],
+};
+
+/// Descriptor for `StudyItemKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List studyItemKindDescriptor = $convert.base64Decode(
+    'Cg1TdHVkeUl0ZW1LaW5kEh8KG1NUVURZX0lURU1fS0lORF9VTlNQRUNJRklFRBAAEhoKFlNUVU'
+    'RZX0lURU1fS0lORF9MRVhFTUUQARIbChdTVFVEWV9JVEVNX0tJTkRfR1JBTU1BUhACEh0KGVNU'
+    'VURZX0lURU1fS0lORF9WRVJCX0ZPUk0QAw==');
 
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {
@@ -1972,6 +1991,18 @@ const PracticeCard$json = {
     {'1': 'target_language', '3': 14, '4': 1, '5': 9, '10': 'targetLanguage'},
     {'1': 'base_language', '3': 15, '4': 1, '5': 9, '10': 'baseLanguage'},
     {'1': 'is_leech', '3': 16, '4': 1, '5': 8, '10': 'isLeech'},
+    {
+      '1': 'item_kind',
+      '3': 17,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.StudyItemKind',
+      '10': 'itemKind'
+    },
+    {'1': 'item_id', '3': 18, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'rationale', '3': 19, '4': 1, '5': 9, '10': 'rationale'},
+    {'1': 'point_title', '3': 20, '4': 1, '5': 9, '10': 'pointTitle'},
+    {'1': 'irregular', '3': 21, '4': 1, '5': 8, '10': 'irregular'},
   ],
 };
 
@@ -1986,7 +2017,10 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'X3VybBgKIAEoCVIIYXVkaW9VcmwSEAoDaXBhGAsgASgJUgNpcGESGgoIc3RyZW5ndGgYDCABKA'
     'VSCHN0cmVuZ3RoEhUKBmlzX25ldxgNIAEoCFIFaXNOZXcSJwoPdGFyZ2V0X2xhbmd1YWdlGA4g'
     'ASgJUg50YXJnZXRMYW5ndWFnZRIjCg1iYXNlX2xhbmd1YWdlGA8gASgJUgxiYXNlTGFuZ3VhZ2'
-    'USGQoIaXNfbGVlY2gYECABKAhSB2lzTGVlY2g=');
+    'USGQoIaXNfbGVlY2gYECABKAhSB2lzTGVlY2gSQQoJaXRlbV9raW5kGBEgASgOMiQuc3R0YXR0'
+    'dXMubGFuZ3VhZ2VzLnYxLlN0dWR5SXRlbUtpbmRSCGl0ZW1LaW5kEhcKB2l0ZW1faWQYEiABKA'
+    'lSBml0ZW1JZBIcCglyYXRpb25hbGUYEyABKAlSCXJhdGlvbmFsZRIfCgtwb2ludF90aXRsZRgU'
+    'IAEoCVIKcG9pbnRUaXRsZRIcCglpcnJlZ3VsYXIYFSABKAhSCWlycmVndWxhcg==');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2046,6 +2080,15 @@ const SubmitAnswerRequest$json = {
     {'1': 'client_correct', '3': 4, '4': 1, '5': 8, '10': 'clientCorrect'},
     {'1': 'elapsed_ms', '3': 5, '4': 1, '5': 5, '10': 'elapsedMs'},
     {'1': 'language', '3': 6, '4': 1, '5': 9, '10': 'language'},
+    {
+      '1': 'item_kind',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.StudyItemKind',
+      '10': 'itemKind'
+    },
+    {'1': 'item_id', '3': 8, '4': 1, '5': 9, '10': 'itemId'},
   ],
 };
 
@@ -2055,7 +2098,9 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     'hlcmNpc2UYAiABKA4yIy5zdHRhdHR1cy5sYW5ndWFnZXMudjEuRXhlcmNpc2VLaW5kUghleGVy'
     'Y2lzZRIhCgxhbnN3ZXJfZ2l2ZW4YAyABKAlSC2Fuc3dlckdpdmVuEiUKDmNsaWVudF9jb3JyZW'
     'N0GAQgASgIUg1jbGllbnRDb3JyZWN0Eh0KCmVsYXBzZWRfbXMYBSABKAVSCWVsYXBzZWRNcxIa'
-    'CghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2U=');
+    'CghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2USQQoJaXRlbV9raW5kGAcgASgOMiQuc3R0YXR0dX'
+    'MubGFuZ3VhZ2VzLnYxLlN0dWR5SXRlbUtpbmRSCGl0ZW1LaW5kEhcKB2l0ZW1faWQYCCABKAlS'
+    'Bml0ZW1JZA==');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {
@@ -2080,6 +2125,7 @@ const SubmitAnswerResponse$json = {
       '10': 'reviewsDoneToday'
     },
     {'1': 'new_learned_today', '3': 6, '4': 1, '5': 5, '10': 'newLearnedToday'},
+    {'1': 'rationale', '3': 7, '4': 1, '5': 9, '10': 'rationale'},
   ],
 };
 
@@ -2089,7 +2135,7 @@ final $typed_data.Uint8List submitAnswerResponseDescriptor = $convert.base64Deco
     'VjdGVkGAIgASgJUghleHBlY3RlZBIaCghzdHJlbmd0aBgDIAEoBVIIc3RyZW5ndGgSMQoGZHVl'
     'X2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIFZHVlQXQSLAoScmV2aWV3c1'
     '9kb25lX3RvZGF5GAUgASgFUhByZXZpZXdzRG9uZVRvZGF5EioKEW5ld19sZWFybmVkX3RvZGF5'
-    'GAYgASgFUg9uZXdMZWFybmVkVG9kYXk=');
+    'GAYgASgFUg9uZXdMZWFybmVkVG9kYXkSHAoJcmF0aW9uYWxlGAcgASgJUglyYXRpb25hbGU=');
 
 @$core.Deprecated('Use getPracticeStatsRequestDescriptor instead')
 const GetPracticeStatsRequest$json = {
@@ -2116,6 +2162,21 @@ const GetPracticeStatsResponse$json = {
     {'1': 'reviews_today', '3': 6, '4': 1, '5': 5, '10': 'reviewsToday'},
     {'1': 'new_today', '3': 7, '4': 1, '5': 5, '10': 'newToday'},
     {'1': 'streak_days', '3': 8, '4': 1, '5': 5, '10': 'streakDays'},
+    {
+      '1': 'corpus_vocabulary',
+      '3': 9,
+      '4': 1,
+      '5': 5,
+      '10': 'corpusVocabulary'
+    },
+    {'1': 'corpus_grammar', '3': 10, '4': 1, '5': 5, '10': 'corpusGrammar'},
+    {
+      '1': 'corpus_verb_forms',
+      '3': 11,
+      '4': 1,
+      '5': 5,
+      '10': 'corpusVerbForms'
+    },
   ],
 };
 
@@ -2125,7 +2186,10 @@ final $typed_data.Uint8List getPracticeStatsResponseDescriptor = $convert.base64
     'xlYXJuaW5nGAIgASgFUghsZWFybmluZxIaCghtYXN0ZXJlZBgDIAEoBVIIbWFzdGVyZWQSHQoK'
     'dG90YWxfc2VlbhgEIAEoBVIJdG90YWxTZWVuEh8KC2NvcnB1c19zaXplGAUgASgFUgpjb3JwdX'
     'NTaXplEiMKDXJldmlld3NfdG9kYXkYBiABKAVSDHJldmlld3NUb2RheRIbCgluZXdfdG9kYXkY'
-    'ByABKAVSCG5ld1RvZGF5Eh8KC3N0cmVha19kYXlzGAggASgFUgpzdHJlYWtEYXlz');
+    'ByABKAVSCG5ld1RvZGF5Eh8KC3N0cmVha19kYXlzGAggASgFUgpzdHJlYWtEYXlzEisKEWNvcn'
+    'B1c192b2NhYnVsYXJ5GAkgASgFUhBjb3JwdXNWb2NhYnVsYXJ5EiUKDmNvcnB1c19ncmFtbWFy'
+    'GAogASgFUg1jb3JwdXNHcmFtbWFyEioKEWNvcnB1c192ZXJiX2Zvcm1zGAsgASgFUg9jb3JwdX'
+    'NWZXJiRm9ybXM=');
 
 @$core.Deprecated('Use memberPrefsDescriptor instead')
 const MemberPrefs$json = {

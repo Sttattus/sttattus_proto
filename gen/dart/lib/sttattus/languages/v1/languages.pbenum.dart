@@ -65,6 +65,8 @@ class ExerciseKind extends $pb.ProtobufEnum {
       ExerciseKind._(5, _omitEnumNames ? '' : 'EXERCISE_KIND_TYPE');
   static const ExerciseKind EXERCISE_KIND_SPEAK =
       ExerciseKind._(6, _omitEnumNames ? '' : 'EXERCISE_KIND_SPEAK');
+  static const ExerciseKind EXERCISE_KIND_CONJUGATE =
+      ExerciseKind._(7, _omitEnumNames ? '' : 'EXERCISE_KIND_CONJUGATE');
 
   static const $core.List<ExerciseKind> values = <ExerciseKind>[
     EXERCISE_KIND_UNSPECIFIED,
@@ -74,14 +76,43 @@ class ExerciseKind extends $pb.ProtobufEnum {
     EXERCISE_KIND_CLOZE,
     EXERCISE_KIND_TYPE,
     EXERCISE_KIND_SPEAK,
+    EXERCISE_KIND_CONJUGATE,
   ];
 
   static final $core.List<ExerciseKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 6);
+      $pb.ProtobufEnum.$_initByValueList(values, 7);
   static ExerciseKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const ExerciseKind._(super.value, super.name);
+}
+
+/// What a schedulable item actually is. Vocabulary alone is not a language: a
+/// member who knows five hundred nouns and cannot conjugate `tener` cannot say
+/// anything. All three kinds share one queue and one scheduler.
+class StudyItemKind extends $pb.ProtobufEnum {
+  static const StudyItemKind STUDY_ITEM_KIND_UNSPECIFIED =
+      StudyItemKind._(0, _omitEnumNames ? '' : 'STUDY_ITEM_KIND_UNSPECIFIED');
+  static const StudyItemKind STUDY_ITEM_KIND_LEXEME =
+      StudyItemKind._(1, _omitEnumNames ? '' : 'STUDY_ITEM_KIND_LEXEME');
+  static const StudyItemKind STUDY_ITEM_KIND_GRAMMAR =
+      StudyItemKind._(2, _omitEnumNames ? '' : 'STUDY_ITEM_KIND_GRAMMAR');
+  static const StudyItemKind STUDY_ITEM_KIND_VERB_FORM =
+      StudyItemKind._(3, _omitEnumNames ? '' : 'STUDY_ITEM_KIND_VERB_FORM');
+
+  static const $core.List<StudyItemKind> values = <StudyItemKind>[
+    STUDY_ITEM_KIND_UNSPECIFIED,
+    STUDY_ITEM_KIND_LEXEME,
+    STUDY_ITEM_KIND_GRAMMAR,
+    STUDY_ITEM_KIND_VERB_FORM,
+  ];
+
+  static final $core.List<StudyItemKind?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static StudyItemKind? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const StudyItemKind._(super.value, super.name);
 }
 
 const $core.bool _omitEnumNames =

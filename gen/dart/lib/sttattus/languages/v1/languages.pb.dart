@@ -7363,6 +7363,11 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.String? targetLanguage,
     $core.String? baseLanguage,
     $core.bool? isLeech,
+    StudyItemKind? itemKind,
+    $core.String? itemId,
+    $core.String? rationale,
+    $core.String? pointTitle,
+    $core.bool? irregular,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -7381,6 +7386,11 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (targetLanguage != null) result.targetLanguage = targetLanguage;
     if (baseLanguage != null) result.baseLanguage = baseLanguage;
     if (isLeech != null) result.isLeech = isLeech;
+    if (itemKind != null) result.itemKind = itemKind;
+    if (itemId != null) result.itemId = itemId;
+    if (rationale != null) result.rationale = rationale;
+    if (pointTitle != null) result.pointTitle = pointTitle;
+    if (irregular != null) result.irregular = irregular;
     return result;
   }
 
@@ -7415,6 +7425,12 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOS(14, _omitFieldNames ? '' : 'targetLanguage')
     ..aOS(15, _omitFieldNames ? '' : 'baseLanguage')
     ..aOB(16, _omitFieldNames ? '' : 'isLeech')
+    ..aE<StudyItemKind>(17, _omitFieldNames ? '' : 'itemKind',
+        enumValues: StudyItemKind.values)
+    ..aOS(18, _omitFieldNames ? '' : 'itemId')
+    ..aOS(19, _omitFieldNames ? '' : 'rationale')
+    ..aOS(20, _omitFieldNames ? '' : 'pointTitle')
+    ..aOB(21, _omitFieldNames ? '' : 'irregular')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7583,6 +7599,59 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasIsLeech() => $_has(15);
   @$pb.TagNumber(16)
   void clearIsLeech() => $_clearField(16);
+
+  /// Which kind of item this is, and its id. `lexeme_id` above stays populated
+  /// for vocabulary so an older client keeps working.
+  @$pb.TagNumber(17)
+  StudyItemKind get itemKind => $_getN(16);
+  @$pb.TagNumber(17)
+  set itemKind(StudyItemKind value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasItemKind() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearItemKind() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get itemId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set itemId($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasItemId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearItemId() => $_clearField(18);
+
+  /// Why the answer is the answer. A drill that marks you wrong and moves on
+  /// teaches you to guess, so grammar and conjugation cards carry the reason.
+  @$pb.TagNumber(19)
+  $core.String get rationale => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set rationale($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasRationale() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRationale() => $_clearField(19);
+
+  /// What is being practised: the grammar point's title, or the verb and the
+  /// cell being asked for ("tener - preterite").
+  @$pb.TagNumber(20)
+  $core.String get pointTitle => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set pointTitle($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPointTitle() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPointTitle() => $_clearField(20);
+
+  /// True when this cell breaks the pattern its verb class would predict. A
+  /// regular cell is a rule; an irregular one is a fact to memorise.
+  @$pb.TagNumber(21)
+  $core.bool get irregular => $_getBF(20);
+  @$pb.TagNumber(21)
+  set irregular($core.bool value) => $_setBool(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasIrregular() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearIrregular() => $_clearField(21);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -7763,6 +7832,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.bool? clientCorrect,
     $core.int? elapsedMs,
     $core.String? language,
+    StudyItemKind? itemKind,
+    $core.String? itemId,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -7771,6 +7842,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (clientCorrect != null) result.clientCorrect = clientCorrect;
     if (elapsedMs != null) result.elapsedMs = elapsedMs;
     if (language != null) result.language = language;
+    if (itemKind != null) result.itemKind = itemKind;
+    if (itemId != null) result.itemId = itemId;
     return result;
   }
 
@@ -7795,6 +7868,9 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'clientCorrect')
     ..aI(5, _omitFieldNames ? '' : 'elapsedMs')
     ..aOS(6, _omitFieldNames ? '' : 'language')
+    ..aE<StudyItemKind>(7, _omitFieldNames ? '' : 'itemKind',
+        enumValues: StudyItemKind.values)
+    ..aOS(8, _omitFieldNames ? '' : 'itemId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7870,6 +7946,27 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasLanguage() => $_has(5);
   @$pb.TagNumber(6)
   void clearLanguage() => $_clearField(6);
+
+  /// Present for grammar and conjugation items. When unset the request is
+  /// read as a vocabulary answer against lexeme_id, which is what the
+  /// already-deployed client sends.
+  @$pb.TagNumber(7)
+  StudyItemKind get itemKind => $_getN(6);
+  @$pb.TagNumber(7)
+  set itemKind(StudyItemKind value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasItemKind() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearItemKind() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get itemId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set itemId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasItemId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearItemId() => $_clearField(8);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {
@@ -7880,6 +7977,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     $1.Timestamp? dueAt,
     $core.int? reviewsDoneToday,
     $core.int? newLearnedToday,
+    $core.String? rationale,
   }) {
     final result = create();
     if (correct != null) result.correct = correct;
@@ -7888,6 +7986,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     if (dueAt != null) result.dueAt = dueAt;
     if (reviewsDoneToday != null) result.reviewsDoneToday = reviewsDoneToday;
     if (newLearnedToday != null) result.newLearnedToday = newLearnedToday;
+    if (rationale != null) result.rationale = rationale;
     return result;
   }
 
@@ -7912,6 +8011,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aI(5, _omitFieldNames ? '' : 'reviewsDoneToday')
     ..aI(6, _omitFieldNames ? '' : 'newLearnedToday')
+    ..aOS(7, _omitFieldNames ? '' : 'rationale')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7990,6 +8090,17 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
   $core.bool hasNewLearnedToday() => $_has(5);
   @$pb.TagNumber(6)
   void clearNewLearnedToday() => $_clearField(6);
+
+  /// The explanation for this item, so the client can show it after an answer
+  /// without holding the card.
+  @$pb.TagNumber(7)
+  $core.String get rationale => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set rationale($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRationale() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRationale() => $_clearField(7);
 }
 
 class GetPracticeStatsRequest extends $pb.GeneratedMessage {
@@ -8058,6 +8169,9 @@ class GetPracticeStatsResponse extends $pb.GeneratedMessage {
     $core.int? reviewsToday,
     $core.int? newToday,
     $core.int? streakDays,
+    $core.int? corpusVocabulary,
+    $core.int? corpusGrammar,
+    $core.int? corpusVerbForms,
   }) {
     final result = create();
     if (dueNow != null) result.dueNow = dueNow;
@@ -8068,6 +8182,9 @@ class GetPracticeStatsResponse extends $pb.GeneratedMessage {
     if (reviewsToday != null) result.reviewsToday = reviewsToday;
     if (newToday != null) result.newToday = newToday;
     if (streakDays != null) result.streakDays = streakDays;
+    if (corpusVocabulary != null) result.corpusVocabulary = corpusVocabulary;
+    if (corpusGrammar != null) result.corpusGrammar = corpusGrammar;
+    if (corpusVerbForms != null) result.corpusVerbForms = corpusVerbForms;
     return result;
   }
 
@@ -8093,6 +8210,9 @@ class GetPracticeStatsResponse extends $pb.GeneratedMessage {
     ..aI(6, _omitFieldNames ? '' : 'reviewsToday')
     ..aI(7, _omitFieldNames ? '' : 'newToday')
     ..aI(8, _omitFieldNames ? '' : 'streakDays')
+    ..aI(9, _omitFieldNames ? '' : 'corpusVocabulary')
+    ..aI(10, _omitFieldNames ? '' : 'corpusGrammar')
+    ..aI(11, _omitFieldNames ? '' : 'corpusVerbForms')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8186,6 +8306,35 @@ class GetPracticeStatsResponse extends $pb.GeneratedMessage {
   $core.bool hasStreakDays() => $_has(7);
   @$pb.TagNumber(8)
   void clearStreakDays() => $_clearField(8);
+
+  /// Per-kind corpus sizes. One number hides the case where a language has
+  /// vocabulary and no grammar at all.
+  @$pb.TagNumber(9)
+  $core.int get corpusVocabulary => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set corpusVocabulary($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCorpusVocabulary() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCorpusVocabulary() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get corpusGrammar => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set corpusGrammar($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCorpusGrammar() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCorpusGrammar() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get corpusVerbForms => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set corpusVerbForms($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCorpusVerbForms() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCorpusVerbForms() => $_clearField(11);
 }
 
 class MemberPrefs extends $pb.GeneratedMessage {

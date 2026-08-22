@@ -679,6 +679,17 @@ enum ExerciseKind {
   EXERCISE_KIND_CLOZE = 4;     // fill the gap in a real sentence
   EXERCISE_KIND_TYPE = 5;      // produce it from memory, typed
   EXERCISE_KIND_SPEAK = 6;     // produce it aloud
+  EXERCISE_KIND_CONJUGATE = 7; // give the requested cell of a verb paradigm
+}
+
+// What a schedulable item actually is. Vocabulary alone is not a language: a
+// member who knows five hundred nouns and cannot conjugate `tener` cannot say
+// anything. All three kinds share one queue and one scheduler.
+enum StudyItemKind {
+  STUDY_ITEM_KIND_UNSPECIFIED = 0;
+  STUDY_ITEM_KIND_LEXEME = 1;    // a word
+  STUDY_ITEM_KIND_GRAMMAR = 2;   // a grammar point's drill item
+  STUDY_ITEM_KIND_VERB_FORM = 3; // one cell of a conjugation table
 }
 
 // One thing to answer. `prompt` is always written in the member's base
@@ -710,6 +721,20 @@ message PracticeCard {
   // An item the member keeps losing. Flagged so the client can say why it
   // has come back rather than looking like it forgot they knew it.
   bool is_leech = 16;
+
+  // Which kind of item this is, and its id. `lexeme_id` above stays populated
+  // for vocabulary so an older client keeps working.
+  StudyItemKind item_kind = 17;
+  string item_id = 18;
+  // Why the answer is the answer. A drill that marks you wrong and moves on
+  // teaches you to guess, so grammar and conjugation cards carry the reason.
+  string rationale = 19;
+  // What is being practised: the grammar point's title, or the verb and the
+  // cell being asked for ("tener - preterite").
+  string point_title = 20;
+  // True when this cell breaks the pattern its verb class would predict. A
+  // regular cell is a rule; an irregular one is a fact to memorise.
+  bool irregular = 21;
 }
 
 message GetPracticeSessionRequest {
@@ -740,6 +765,11 @@ message SubmitAnswerRequest {
   bool client_correct = 4;
   int32 elapsed_ms = 5;
   string language = 6;
+  // Present for grammar and conjugation items. When unset the request is
+  // read as a vocabulary answer against lexeme_id, which is what the
+  // already-deployed client sends.
+  StudyItemKind item_kind = 7;
+  string item_id = 8;
 }
 message SubmitAnswerResponse {
   bool correct = 1;
@@ -750,6 +780,9 @@ message SubmitAnswerResponse {
   google.protobuf.Timestamp due_at = 4;
   int32 reviews_done_today = 5;
   int32 new_learned_today = 6;
+  // The explanation for this item, so the client can show it after an answer
+  // without holding the card.
+  string rationale = 7;
 }
 
 message GetPracticeStatsRequest {
@@ -764,6 +797,11 @@ message GetPracticeStatsResponse {
   int32 reviews_today = 6;
   int32 new_today = 7;
   int32 streak_days = 8;
+  // Per-kind corpus sizes. One number hides the case where a language has
+  // vocabulary and no grammar at all.
+  int32 corpus_vocabulary = 9;
+  int32 corpus_grammar = 10;
+  int32 corpus_verb_forms = 11;
 }
 
 message MemberPrefs {
