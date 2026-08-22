@@ -126,6 +126,9 @@ class Scenario extends $pb.GeneratedMessage {
     $core.String? locale,
     $core.Iterable<DialogueNode>? nodes,
     $core.double? minSttattusScore,
+    $core.String? language,
+    $core.String? cefrLevel,
+    $core.String? objective,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -136,6 +139,9 @@ class Scenario extends $pb.GeneratedMessage {
     if (locale != null) result.locale = locale;
     if (nodes != null) result.nodes.addAll(nodes);
     if (minSttattusScore != null) result.minSttattusScore = minSttattusScore;
+    if (language != null) result.language = language;
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    if (objective != null) result.objective = objective;
     return result;
   }
 
@@ -162,6 +168,9 @@ class Scenario extends $pb.GeneratedMessage {
     ..pPM<DialogueNode>(6, _omitFieldNames ? '' : 'nodes',
         subBuilder: DialogueNode.create)
     ..aD(7, _omitFieldNames ? '' : 'minSttattusScore')
+    ..aOS(8, _omitFieldNames ? '' : 'language')
+    ..aOS(9, _omitFieldNames ? '' : 'cefrLevel')
+    ..aOS(10, _omitFieldNames ? '' : 'objective')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -238,6 +247,37 @@ class Scenario extends $pb.GeneratedMessage {
   $core.bool hasMinSttattusScore() => $_has(6);
   @$pb.TagNumber(7)
   void clearMinSttattusScore() => $_clearField(7);
+
+  /// The study language. `locale` was the only marker and nothing filtered on
+  /// it, so a member studying French was offered Spanish dialogue.
+  @$pb.TagNumber(8)
+  $core.String get language => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set language($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLanguage() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLanguage() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get cefrLevel => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set cefrLevel($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCefrLevel() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCefrLevel() => $_clearField(9);
+
+  /// What the member is being tested on, shown before they begin. "Read the
+  /// room" is the exercise; hiding the objective makes it a guessing game.
+  @$pb.TagNumber(10)
+  $core.String get objective => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set objective($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasObjective() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearObjective() => $_clearField(10);
 }
 
 /// DialogueNode is a single step in a social interaction script.
@@ -249,6 +289,9 @@ class DialogueNode extends $pb.GeneratedMessage {
     $core.String? literalTranslation,
     $core.String? culturalInsight,
     $core.Iterable<DialogueOption>? options,
+    $core.bool? isEnding,
+    $core.String? endingQuality,
+    $core.String? debrief,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -258,6 +301,9 @@ class DialogueNode extends $pb.GeneratedMessage {
       result.literalTranslation = literalTranslation;
     if (culturalInsight != null) result.culturalInsight = culturalInsight;
     if (options != null) result.options.addAll(options);
+    if (isEnding != null) result.isEnding = isEnding;
+    if (endingQuality != null) result.endingQuality = endingQuality;
+    if (debrief != null) result.debrief = debrief;
     return result;
   }
 
@@ -282,6 +328,9 @@ class DialogueNode extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'culturalInsight')
     ..pPM<DialogueOption>(6, _omitFieldNames ? '' : 'options',
         subBuilder: DialogueOption.create)
+    ..aOB(7, _omitFieldNames ? '' : 'isEnding')
+    ..aOS(8, _omitFieldNames ? '' : 'endingQuality')
+    ..aOS(9, _omitFieldNames ? '' : 'debrief')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -350,6 +399,37 @@ class DialogueNode extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $pb.PbList<DialogueOption> get options => $_getList(5);
+
+  /// A terminal node: the conversation is over. A scenario that always resolves
+  /// the same way regardless of the path is not a simulation, so endings are
+  /// graded — 'strong' | 'adequate' | 'poor' — and carry a debrief saying what
+  /// the member's choices won or cost.
+  @$pb.TagNumber(7)
+  $core.bool get isEnding => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isEnding($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIsEnding() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsEnding() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get endingQuality => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set endingQuality($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEndingQuality() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEndingQuality() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get debrief => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set debrief($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDebrief() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDebrief() => $_clearField(9);
 }
 
 class DialogueOption extends $pb.GeneratedMessage {
@@ -358,12 +438,18 @@ class DialogueOption extends $pb.GeneratedMessage {
     $core.String? content,
     $core.bool? isOptimal,
     $core.int? graceBonus,
+    $core.String? nextNodeId,
+    $core.String? outcome,
+    $core.String? note,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (content != null) result.content = content;
     if (isOptimal != null) result.isOptimal = isOptimal;
     if (graceBonus != null) result.graceBonus = graceBonus;
+    if (nextNodeId != null) result.nextNodeId = nextNodeId;
+    if (outcome != null) result.outcome = outcome;
+    if (note != null) result.note = note;
     return result;
   }
 
@@ -385,6 +471,9 @@ class DialogueOption extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'content')
     ..aOB(3, _omitFieldNames ? '' : 'isOptimal')
     ..aI(4, _omitFieldNames ? '' : 'graceBonus')
+    ..aOS(5, _omitFieldNames ? '' : 'nextNodeId')
+    ..aOS(6, _omitFieldNames ? '' : 'outcome')
+    ..aOS(7, _omitFieldNames ? '' : 'note')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -441,6 +530,41 @@ class DialogueOption extends $pb.GeneratedMessage {
   $core.bool hasGraceBonus() => $_has(3);
   @$pb.TagNumber(4)
   void clearGraceBonus() => $_clearField(4);
+
+  /// Where the conversation goes if this is chosen. Empty means fall through to
+  /// the next node in order, which is what every scenario did before branching
+  /// existed — the client walked nodes[i] and incremented i, so every choice led
+  /// to the same next line.
+  @$pb.TagNumber(5)
+  $core.String get nextNodeId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set nextNodeId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNextNodeId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNextNodeId() => $_clearField(5);
+
+  /// What the other party does in response, shown before the explanation, so a
+  /// misstep is felt rather than merely described.
+  @$pb.TagNumber(6)
+  $core.String get outcome => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set outcome($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOutcome() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOutcome() => $_clearField(6);
+
+  /// What this choice signalled. `is_optimal` says whether it was right; this
+  /// says how it read.
+  @$pb.TagNumber(7)
+  $core.String get note => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set note($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNote() => $_clearField(7);
 }
 
 class Progress extends $pb.GeneratedMessage {
@@ -657,10 +781,12 @@ class ListScenariosRequest extends $pb.GeneratedMessage {
   factory ListScenariosRequest({
     CulturalCategory? category,
     $2.PageRequest? page,
+    $core.String? language,
   }) {
     final result = create();
     if (category != null) result.category = category;
     if (page != null) result.page = page;
+    if (language != null) result.language = language;
     return result;
   }
 
@@ -682,6 +808,7 @@ class ListScenariosRequest extends $pb.GeneratedMessage {
         enumValues: CulturalCategory.values)
     ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'page',
         subBuilder: $2.PageRequest.create)
+    ..aOS(3, _omitFieldNames ? '' : 'language')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -722,6 +849,17 @@ class ListScenariosRequest extends $pb.GeneratedMessage {
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
   $2.PageRequest ensurePage() => $_ensure(1);
+
+  /// Restrict to one study language. Empty returns every language, which is
+  /// what the handler did unconditionally before.
+  @$pb.TagNumber(3)
+  $core.String get language => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set language($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLanguage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguage() => $_clearField(3);
 }
 
 class ListScenariosResponse extends $pb.GeneratedMessage {

@@ -33,6 +33,14 @@ message Scenario {
   string locale = 5; // e.g., 'fr', 'jp'
   repeated DialogueNode nodes = 6;
   double min_sttattus_score = 7; // Gating requirement
+
+  // The study language. `locale` was the only marker and nothing filtered on
+  // it, so a member studying French was offered Spanish dialogue.
+  string language = 8;
+  string cefr_level = 9;
+  // What the member is being tested on, shown before they begin. "Read the
+  // room" is the exercise; hiding the objective makes it a guessing game.
+  string objective = 10;
 }
 
 // DialogueNode is a single step in a social interaction script.
@@ -43,6 +51,14 @@ message DialogueNode {
   string literal_translation = 4;
   string cultural_insight = 5; // Explanation of WHY this phrasing is high-status
   repeated DialogueOption options = 6;
+
+  // A terminal node: the conversation is over. A scenario that always resolves
+  // the same way regardless of the path is not a simulation, so endings are
+  // graded — 'strong' | 'adequate' | 'poor' — and carry a debrief saying what
+  // the member's choices won or cost.
+  bool is_ending = 7;
+  string ending_quality = 8;
+  string debrief = 9;
 }
 
 message DialogueOption {
@@ -50,6 +66,18 @@ message DialogueOption {
   string content = 2;
   bool is_optimal = 3; // The "Socially Gracious" path
   int32 grace_bonus = 4;
+
+  // Where the conversation goes if this is chosen. Empty means fall through to
+  // the next node in order, which is what every scenario did before branching
+  // existed — the client walked nodes[i] and incremented i, so every choice led
+  // to the same next line.
+  string next_node_id = 5;
+  // What the other party does in response, shown before the explanation, so a
+  // misstep is felt rather than merely described.
+  string outcome = 6;
+  // What this choice signalled. `is_optimal` says whether it was right; this
+  // says how it read.
+  string note = 7;
 }
 
 message Progress {
@@ -72,6 +100,9 @@ message LinguistStats {
 message ListScenariosRequest {
   CulturalCategory category = 1;
   sttattus.common.v1.PageRequest page = 2;
+  // Restrict to one study language. Empty returns every language, which is
+  // what the handler did unconditionally before.
+  string language = 3;
 }
 message ListScenariosResponse {
   repeated Scenario scenarios = 1;

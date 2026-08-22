@@ -128,6 +128,9 @@ const Scenario$json = {
       '5': 1,
       '10': 'minSttattusScore'
     },
+    {'1': 'language', '3': 8, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'cefr_level', '3': 9, '4': 1, '5': 9, '10': 'cefrLevel'},
+    {'1': 'objective', '3': 10, '4': 1, '5': 9, '10': 'objective'},
   ],
 };
 
@@ -138,7 +141,8 @@ final $typed_data.Uint8List scenarioDescriptor = $convert.base64Decode(
     'IAEoDjInLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5DdWx0dXJhbENhdGVnb3J5UghjYXRlZ29yeR'
     'IWCgZsb2NhbGUYBSABKAlSBmxvY2FsZRI5CgVub2RlcxgGIAMoCzIjLnN0dGF0dHVzLmxhbmd1'
     'YWdlcy52MS5EaWFsb2d1ZU5vZGVSBW5vZGVzEiwKEm1pbl9zdHRhdHR1c19zY29yZRgHIAEoAV'
-    'IQbWluU3R0YXR0dXNTY29yZQ==');
+    'IQbWluU3R0YXR0dXNTY29yZRIaCghsYW5ndWFnZRgIIAEoCVIIbGFuZ3VhZ2USHQoKY2Vmcl9s'
+    'ZXZlbBgJIAEoCVIJY2VmckxldmVsEhwKCW9iamVjdGl2ZRgKIAEoCVIJb2JqZWN0aXZl');
 
 @$core.Deprecated('Use dialogueNodeDescriptor instead')
 const DialogueNode$json = {
@@ -163,6 +167,9 @@ const DialogueNode$json = {
       '6': '.sttattus.languages.v1.DialogueOption',
       '10': 'options'
     },
+    {'1': 'is_ending', '3': 7, '4': 1, '5': 8, '10': 'isEnding'},
+    {'1': 'ending_quality', '3': 8, '4': 1, '5': 9, '10': 'endingQuality'},
+    {'1': 'debrief', '3': 9, '4': 1, '5': 9, '10': 'debrief'},
   ],
 };
 
@@ -172,7 +179,8 @@ final $typed_data.Uint8List dialogueNodeDescriptor = $convert.base64Decode(
     'ISGAoHY29udGVudBgDIAEoCVIHY29udGVudBIvChNsaXRlcmFsX3RyYW5zbGF0aW9uGAQgASgJ'
     'UhJsaXRlcmFsVHJhbnNsYXRpb24SKQoQY3VsdHVyYWxfaW5zaWdodBgFIAEoCVIPY3VsdHVyYW'
     'xJbnNpZ2h0Ej8KB29wdGlvbnMYBiADKAsyJS5zdHRhdHR1cy5sYW5ndWFnZXMudjEuRGlhbG9n'
-    'dWVPcHRpb25SB29wdGlvbnM=');
+    'dWVPcHRpb25SB29wdGlvbnMSGwoJaXNfZW5kaW5nGAcgASgIUghpc0VuZGluZxIlCg5lbmRpbm'
+    'dfcXVhbGl0eRgIIAEoCVINZW5kaW5nUXVhbGl0eRIYCgdkZWJyaWVmGAkgASgJUgdkZWJyaWVm');
 
 @$core.Deprecated('Use dialogueOptionDescriptor instead')
 const DialogueOption$json = {
@@ -182,6 +190,9 @@ const DialogueOption$json = {
     {'1': 'content', '3': 2, '4': 1, '5': 9, '10': 'content'},
     {'1': 'is_optimal', '3': 3, '4': 1, '5': 8, '10': 'isOptimal'},
     {'1': 'grace_bonus', '3': 4, '4': 1, '5': 5, '10': 'graceBonus'},
+    {'1': 'next_node_id', '3': 5, '4': 1, '5': 9, '10': 'nextNodeId'},
+    {'1': 'outcome', '3': 6, '4': 1, '5': 9, '10': 'outcome'},
+    {'1': 'note', '3': 7, '4': 1, '5': 9, '10': 'note'},
   ],
 };
 
@@ -189,7 +200,8 @@ const DialogueOption$json = {
 final $typed_data.Uint8List dialogueOptionDescriptor = $convert.base64Decode(
     'Cg5EaWFsb2d1ZU9wdGlvbhIOCgJpZBgBIAEoCVICaWQSGAoHY29udGVudBgCIAEoCVIHY29udG'
     'VudBIdCgppc19vcHRpbWFsGAMgASgIUglpc09wdGltYWwSHwoLZ3JhY2VfYm9udXMYBCABKAVS'
-    'CmdyYWNlQm9udXM=');
+    'CmdyYWNlQm9udXMSIAoMbmV4dF9ub2RlX2lkGAUgASgJUgpuZXh0Tm9kZUlkEhgKB291dGNvbW'
+    'UYBiABKAlSB291dGNvbWUSEgoEbm90ZRgHIAEoCVIEbm90ZQ==');
 
 @$core.Deprecated('Use progressDescriptor instead')
 const Progress$json = {
@@ -263,6 +275,7 @@ const ListScenariosRequest$json = {
       '6': '.sttattus.common.v1.PageRequest',
       '10': 'page'
     },
+    {'1': 'language', '3': 3, '4': 1, '5': 9, '10': 'language'},
   ],
 };
 
@@ -270,7 +283,8 @@ const ListScenariosRequest$json = {
 final $typed_data.Uint8List listScenariosRequestDescriptor = $convert.base64Decode(
     'ChRMaXN0U2NlbmFyaW9zUmVxdWVzdBJDCghjYXRlZ29yeRgBIAEoDjInLnN0dGF0dHVzLmxhbm'
     'd1YWdlcy52MS5DdWx0dXJhbENhdGVnb3J5UghjYXRlZ29yeRIzCgRwYWdlGAIgASgLMh8uc3R0'
-    'YXR0dXMuY29tbW9uLnYxLlBhZ2VSZXF1ZXN0UgRwYWdl');
+    'YXR0dXMuY29tbW9uLnYxLlBhZ2VSZXF1ZXN0UgRwYWdlEhoKCGxhbmd1YWdlGAMgASgJUghsYW'
+    '5ndWFnZQ==');
 
 @$core.Deprecated('Use listScenariosResponseDescriptor instead')
 const ListScenariosResponse$json = {

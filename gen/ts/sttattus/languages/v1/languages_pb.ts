@@ -274,6 +274,27 @@ export class Scenario extends Message<Scenario> {
    */
   minSttattusScore = 0;
 
+  /**
+   * The study language. `locale` was the only marker and nothing filtered on
+   * it, so a member studying French was offered Spanish dialogue.
+   *
+   * @generated from field: string language = 8;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string cefr_level = 9;
+   */
+  cefrLevel = "";
+
+  /**
+   * What the member is being tested on, shown before they begin. "Read the
+   * room" is the exercise; hiding the objective makes it a guessing game.
+   *
+   * @generated from field: string objective = 10;
+   */
+  objective = "";
+
   constructor(data?: PartialMessage<Scenario>) {
     super();
     proto3.util.initPartial(data, this);
@@ -289,6 +310,9 @@ export class Scenario extends Message<Scenario> {
     { no: 5, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "nodes", kind: "message", T: DialogueNode, repeated: true },
     { no: 7, name: "min_sttattus_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "cefr_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "objective", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Scenario {
@@ -348,6 +372,26 @@ export class DialogueNode extends Message<DialogueNode> {
    */
   options: DialogueOption[] = [];
 
+  /**
+   * A terminal node: the conversation is over. A scenario that always resolves
+   * the same way regardless of the path is not a simulation, so endings are
+   * graded — 'strong' | 'adequate' | 'poor' — and carry a debrief saying what
+   * the member's choices won or cost.
+   *
+   * @generated from field: bool is_ending = 7;
+   */
+  isEnding = false;
+
+  /**
+   * @generated from field: string ending_quality = 8;
+   */
+  endingQuality = "";
+
+  /**
+   * @generated from field: string debrief = 9;
+   */
+  debrief = "";
+
   constructor(data?: PartialMessage<DialogueNode>) {
     super();
     proto3.util.initPartial(data, this);
@@ -362,6 +406,9 @@ export class DialogueNode extends Message<DialogueNode> {
     { no: 4, name: "literal_translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "cultural_insight", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "options", kind: "message", T: DialogueOption, repeated: true },
+    { no: 7, name: "is_ending", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "ending_quality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "debrief", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DialogueNode {
@@ -407,6 +454,32 @@ export class DialogueOption extends Message<DialogueOption> {
    */
   graceBonus = 0;
 
+  /**
+   * Where the conversation goes if this is chosen. Empty means fall through to
+   * the next node in order, which is what every scenario did before branching
+   * existed — the client walked nodes[i] and incremented i, so every choice led
+   * to the same next line.
+   *
+   * @generated from field: string next_node_id = 5;
+   */
+  nextNodeId = "";
+
+  /**
+   * What the other party does in response, shown before the explanation, so a
+   * misstep is felt rather than merely described.
+   *
+   * @generated from field: string outcome = 6;
+   */
+  outcome = "";
+
+  /**
+   * What this choice signalled. `is_optimal` says whether it was right; this
+   * says how it read.
+   *
+   * @generated from field: string note = 7;
+   */
+  note = "";
+
   constructor(data?: PartialMessage<DialogueOption>) {
     super();
     proto3.util.initPartial(data, this);
@@ -419,6 +492,9 @@ export class DialogueOption extends Message<DialogueOption> {
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "is_optimal", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "grace_bonus", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "next_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DialogueOption {
@@ -586,6 +662,14 @@ export class ListScenariosRequest extends Message<ListScenariosRequest> {
    */
   page?: PageRequest;
 
+  /**
+   * Restrict to one study language. Empty returns every language, which is
+   * what the handler did unconditionally before.
+   *
+   * @generated from field: string language = 3;
+   */
+  language = "";
+
   constructor(data?: PartialMessage<ListScenariosRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -596,6 +680,7 @@ export class ListScenariosRequest extends Message<ListScenariosRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "category", kind: "enum", T: proto3.getEnumType(CulturalCategory) },
     { no: 2, name: "page", kind: "message", T: PageRequest },
+    { no: 3, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListScenariosRequest {

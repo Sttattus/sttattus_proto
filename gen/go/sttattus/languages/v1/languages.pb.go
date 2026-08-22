@@ -279,8 +279,15 @@ type Scenario struct {
 	Locale             string                 `protobuf:"bytes,5,opt,name=locale,proto3" json:"locale,omitempty"` // e.g., 'fr', 'jp'
 	Nodes              []*DialogueNode        `protobuf:"bytes,6,rep,name=nodes,proto3" json:"nodes,omitempty"`
 	MinSttattusScore   float64                `protobuf:"fixed64,7,opt,name=min_sttattus_score,json=minSttattusScore,proto3" json:"min_sttattus_score,omitempty"` // Gating requirement
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// The study language. `locale` was the only marker and nothing filtered on
+	// it, so a member studying French was offered Spanish dialogue.
+	Language  string `protobuf:"bytes,8,opt,name=language,proto3" json:"language,omitempty"`
+	CefrLevel string `protobuf:"bytes,9,opt,name=cefr_level,json=cefrLevel,proto3" json:"cefr_level,omitempty"`
+	// What the member is being tested on, shown before they begin. "Read the
+	// room" is the exercise; hiding the objective makes it a guessing game.
+	Objective     string `protobuf:"bytes,10,opt,name=objective,proto3" json:"objective,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Scenario) Reset() {
@@ -362,6 +369,27 @@ func (x *Scenario) GetMinSttattusScore() float64 {
 	return 0
 }
 
+func (x *Scenario) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *Scenario) GetCefrLevel() string {
+	if x != nil {
+		return x.CefrLevel
+	}
+	return ""
+}
+
+func (x *Scenario) GetObjective() string {
+	if x != nil {
+		return x.Objective
+	}
+	return ""
+}
+
 // DialogueNode is a single step in a social interaction script.
 type DialogueNode struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
@@ -371,8 +399,15 @@ type DialogueNode struct {
 	LiteralTranslation string                 `protobuf:"bytes,4,opt,name=literal_translation,json=literalTranslation,proto3" json:"literal_translation,omitempty"`
 	CulturalInsight    string                 `protobuf:"bytes,5,opt,name=cultural_insight,json=culturalInsight,proto3" json:"cultural_insight,omitempty"` // Explanation of WHY this phrasing is high-status
 	Options            []*DialogueOption      `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty"`
-	unknownFields      protoimpl.UnknownFields
-	sizeCache          protoimpl.SizeCache
+	// A terminal node: the conversation is over. A scenario that always resolves
+	// the same way regardless of the path is not a simulation, so endings are
+	// graded — 'strong' | 'adequate' | 'poor' — and carry a debrief saying what
+	// the member's choices won or cost.
+	IsEnding      bool   `protobuf:"varint,7,opt,name=is_ending,json=isEnding,proto3" json:"is_ending,omitempty"`
+	EndingQuality string `protobuf:"bytes,8,opt,name=ending_quality,json=endingQuality,proto3" json:"ending_quality,omitempty"`
+	Debrief       string `protobuf:"bytes,9,opt,name=debrief,proto3" json:"debrief,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DialogueNode) Reset() {
@@ -447,12 +482,44 @@ func (x *DialogueNode) GetOptions() []*DialogueOption {
 	return nil
 }
 
+func (x *DialogueNode) GetIsEnding() bool {
+	if x != nil {
+		return x.IsEnding
+	}
+	return false
+}
+
+func (x *DialogueNode) GetEndingQuality() string {
+	if x != nil {
+		return x.EndingQuality
+	}
+	return ""
+}
+
+func (x *DialogueNode) GetDebrief() string {
+	if x != nil {
+		return x.Debrief
+	}
+	return ""
+}
+
 type DialogueOption struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
-	IsOptimal     bool                   `protobuf:"varint,3,opt,name=is_optimal,json=isOptimal,proto3" json:"is_optimal,omitempty"` // The "Socially Gracious" path
-	GraceBonus    int32                  `protobuf:"varint,4,opt,name=grace_bonus,json=graceBonus,proto3" json:"grace_bonus,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	Id         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Content    string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	IsOptimal  bool                   `protobuf:"varint,3,opt,name=is_optimal,json=isOptimal,proto3" json:"is_optimal,omitempty"` // The "Socially Gracious" path
+	GraceBonus int32                  `protobuf:"varint,4,opt,name=grace_bonus,json=graceBonus,proto3" json:"grace_bonus,omitempty"`
+	// Where the conversation goes if this is chosen. Empty means fall through to
+	// the next node in order, which is what every scenario did before branching
+	// existed — the client walked nodes[i] and incremented i, so every choice led
+	// to the same next line.
+	NextNodeId string `protobuf:"bytes,5,opt,name=next_node_id,json=nextNodeId,proto3" json:"next_node_id,omitempty"`
+	// What the other party does in response, shown before the explanation, so a
+	// misstep is felt rather than merely described.
+	Outcome string `protobuf:"bytes,6,opt,name=outcome,proto3" json:"outcome,omitempty"`
+	// What this choice signalled. `is_optimal` says whether it was right; this
+	// says how it read.
+	Note          string `protobuf:"bytes,7,opt,name=note,proto3" json:"note,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -513,6 +580,27 @@ func (x *DialogueOption) GetGraceBonus() int32 {
 		return x.GraceBonus
 	}
 	return 0
+}
+
+func (x *DialogueOption) GetNextNodeId() string {
+	if x != nil {
+		return x.NextNodeId
+	}
+	return ""
+}
+
+func (x *DialogueOption) GetOutcome() string {
+	if x != nil {
+		return x.Outcome
+	}
+	return ""
+}
+
+func (x *DialogueOption) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
 }
 
 type Progress struct {
@@ -669,9 +757,12 @@ func (x *LinguistStats) GetMasteryRank() string {
 
 // REQ/RES
 type ListScenariosRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Category      CulturalCategory       `protobuf:"varint,1,opt,name=category,proto3,enum=sttattus.languages.v1.CulturalCategory" json:"category,omitempty"`
-	Page          *v1.PageRequest        `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Category CulturalCategory       `protobuf:"varint,1,opt,name=category,proto3,enum=sttattus.languages.v1.CulturalCategory" json:"category,omitempty"`
+	Page     *v1.PageRequest        `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	// Restrict to one study language. Empty returns every language, which is
+	// what the handler did unconditionally before.
+	Language      string `protobuf:"bytes,3,opt,name=language,proto3" json:"language,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -718,6 +809,13 @@ func (x *ListScenariosRequest) GetPage() *v1.PageRequest {
 		return x.Page
 	}
 	return nil
+}
+
+func (x *ListScenariosRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
 }
 
 type ListScenariosResponse struct {
@@ -7013,7 +7111,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12#\n" +
-	"\rstatus_weight\x18\x04 \x01(\x05R\fstatusWeight\"\xa7\x02\n" +
+	"\rstatus_weight\x18\x04 \x01(\x05R\fstatusWeight\"\x80\x03\n" +
 	"\bScenario\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12/\n" +
@@ -7021,21 +7119,33 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\bcategory\x18\x04 \x01(\x0e2'.sttattus.languages.v1.CulturalCategoryR\bcategory\x12\x16\n" +
 	"\x06locale\x18\x05 \x01(\tR\x06locale\x129\n" +
 	"\x05nodes\x18\x06 \x03(\v2#.sttattus.languages.v1.DialogueNodeR\x05nodes\x12,\n" +
-	"\x12min_sttattus_score\x18\a \x01(\x01R\x10minSttattusScore\"\xef\x01\n" +
+	"\x12min_sttattus_score\x18\a \x01(\x01R\x10minSttattusScore\x12\x1a\n" +
+	"\blanguage\x18\b \x01(\tR\blanguage\x12\x1d\n" +
+	"\n" +
+	"cefr_level\x18\t \x01(\tR\tcefrLevel\x12\x1c\n" +
+	"\tobjective\x18\n" +
+	" \x01(\tR\tobjective\"\xcd\x02\n" +
 	"\fDialogueNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\aspeaker\x18\x02 \x01(\tR\aspeaker\x12\x18\n" +
 	"\acontent\x18\x03 \x01(\tR\acontent\x12/\n" +
 	"\x13literal_translation\x18\x04 \x01(\tR\x12literalTranslation\x12)\n" +
 	"\x10cultural_insight\x18\x05 \x01(\tR\x0fculturalInsight\x12?\n" +
-	"\aoptions\x18\x06 \x03(\v2%.sttattus.languages.v1.DialogueOptionR\aoptions\"z\n" +
+	"\aoptions\x18\x06 \x03(\v2%.sttattus.languages.v1.DialogueOptionR\aoptions\x12\x1b\n" +
+	"\tis_ending\x18\a \x01(\bR\bisEnding\x12%\n" +
+	"\x0eending_quality\x18\b \x01(\tR\rendingQuality\x12\x18\n" +
+	"\adebrief\x18\t \x01(\tR\adebrief\"\xca\x01\n" +
 	"\x0eDialogueOption\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\acontent\x18\x02 \x01(\tR\acontent\x12\x1d\n" +
 	"\n" +
 	"is_optimal\x18\x03 \x01(\bR\tisOptimal\x12\x1f\n" +
 	"\vgrace_bonus\x18\x04 \x01(\x05R\n" +
-	"graceBonus\"\xe1\x01\n" +
+	"graceBonus\x12 \n" +
+	"\fnext_node_id\x18\x05 \x01(\tR\n" +
+	"nextNodeId\x12\x18\n" +
+	"\aoutcome\x18\x06 \x01(\tR\aoutcome\x12\x12\n" +
+	"\x04note\x18\a \x01(\tR\x04note\"\xe1\x01\n" +
 	"\bProgress\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
 	"\vscenario_id\x18\x02 \x01(\tR\n" +
@@ -7048,10 +7158,11 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\teloquence\x18\x02 \x01(\x05R\teloquence\x12!\n" +
 	"\fsocial_grace\x18\x03 \x01(\x05R\vsocialGrace\x12)\n" +
 	"\x10cultural_capital\x18\x04 \x01(\x05R\x0fculturalCapital\x12!\n" +
-	"\fmastery_rank\x18\x05 \x01(\tR\vmasteryRank\"\x90\x01\n" +
+	"\fmastery_rank\x18\x05 \x01(\tR\vmasteryRank\"\xac\x01\n" +
 	"\x14ListScenariosRequest\x12C\n" +
 	"\bcategory\x18\x01 \x01(\x0e2'.sttattus.languages.v1.CulturalCategoryR\bcategory\x123\n" +
-	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x8c\x01\n" +
+	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\x12\x1a\n" +
+	"\blanguage\x18\x03 \x01(\tR\blanguage\"\x8c\x01\n" +
 	"\x15ListScenariosResponse\x12=\n" +
 	"\tscenarios\x18\x01 \x03(\v2\x1f.sttattus.languages.v1.ScenarioR\tscenarios\x124\n" +
 	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\xc6\x01\n" +
