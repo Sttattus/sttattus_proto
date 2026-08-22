@@ -1971,6 +1971,7 @@ const PracticeCard$json = {
     {'1': 'is_new', '3': 13, '4': 1, '5': 8, '10': 'isNew'},
     {'1': 'target_language', '3': 14, '4': 1, '5': 9, '10': 'targetLanguage'},
     {'1': 'base_language', '3': 15, '4': 1, '5': 9, '10': 'baseLanguage'},
+    {'1': 'is_leech', '3': 16, '4': 1, '5': 8, '10': 'isLeech'},
   ],
 };
 
@@ -1985,7 +1986,7 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'X3VybBgKIAEoCVIIYXVkaW9VcmwSEAoDaXBhGAsgASgJUgNpcGESGgoIc3RyZW5ndGgYDCABKA'
     'VSCHN0cmVuZ3RoEhUKBmlzX25ldxgNIAEoCFIFaXNOZXcSJwoPdGFyZ2V0X2xhbmd1YWdlGA4g'
     'ASgJUg50YXJnZXRMYW5ndWFnZRIjCg1iYXNlX2xhbmd1YWdlGA8gASgJUgxiYXNlTGFuZ3VhZ2'
-    'U=');
+    'USGQoIaXNfbGVlY2gYECABKAhSB2lzTGVlY2g=');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -1993,14 +1994,15 @@ const GetPracticeSessionRequest$json = {
   '2': [
     {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
     {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'tts_languages', '3': 3, '4': 3, '5': 9, '10': 'ttsLanguages'},
   ],
 };
 
 /// Descriptor for `GetPracticeSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getPracticeSessionRequestDescriptor =
-    $convert.base64Decode(
-        'ChlHZXRQcmFjdGljZVNlc3Npb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
-        'IUCgVsaW1pdBgCIAEoBVIFbGltaXQ=');
+final $typed_data.Uint8List getPracticeSessionRequestDescriptor = $convert.base64Decode(
+    'ChlHZXRQcmFjdGljZVNlc3Npb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
+    'IUCgVsaW1pdBgCIAEoBVIFbGltaXQSIwoNdHRzX2xhbmd1YWdlcxgDIAMoCVIMdHRzTGFuZ3Vh'
+    'Z2Vz');
 
 @$core.Deprecated('Use getPracticeSessionResponseDescriptor instead')
 const GetPracticeSessionResponse$json = {

@@ -5727,8 +5727,11 @@ type PracticeCard struct {
 	IsNew          bool   `protobuf:"varint,13,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
 	TargetLanguage string `protobuf:"bytes,14,opt,name=target_language,json=targetLanguage,proto3" json:"target_language,omitempty"`
 	BaseLanguage   string `protobuf:"bytes,15,opt,name=base_language,json=baseLanguage,proto3" json:"base_language,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// An item the member keeps losing. Flagged so the client can say why it
+	// has come back rather than looking like it forgot they knew it.
+	IsLeech       bool `protobuf:"varint,16,opt,name=is_leech,json=isLeech,proto3" json:"is_leech,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PracticeCard) Reset() {
@@ -5866,12 +5869,24 @@ func (x *PracticeCard) GetBaseLanguage() string {
 	return ""
 }
 
+func (x *PracticeCard) GetIsLeech() bool {
+	if x != nil {
+		return x.IsLeech
+	}
+	return false
+}
+
 type GetPracticeSessionRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The language being learned.
 	Language string `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
 	// How many cards to build. Server clamps to a sane range.
-	Limit         int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	// Languages this device can actually speak, from the platform TTS voice
+	// list. Listening exercises are only scheduled for a language named here
+	// (or for an item with recorded audio): a listen card on a device with no
+	// voice installed has no prompt at all and cannot be answered.
+	TtsLanguages  []string `protobuf:"bytes,3,rep,name=tts_languages,json=ttsLanguages,proto3" json:"tts_languages,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5918,6 +5933,13 @@ func (x *GetPracticeSessionRequest) GetLimit() int32 {
 		return x.Limit
 	}
 	return 0
+}
+
+func (x *GetPracticeSessionRequest) GetTtsLanguages() []string {
+	if x != nil {
+		return x.TtsLanguages
+	}
+	return nil
 }
 
 type GetPracticeSessionResponse struct {
@@ -7071,7 +7093,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aCreateLinguistShareRequest\"P\n" +
 	"\x1bCreateLinguistShareResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
-	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xf4\x03\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\x8f\x04\n" +
 	"\fPracticeCard\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12\x1d\n" +
 	"\n" +
@@ -7089,10 +7111,12 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\bstrength\x18\f \x01(\x05R\bstrength\x12\x15\n" +
 	"\x06is_new\x18\r \x01(\bR\x05isNew\x12'\n" +
 	"\x0ftarget_language\x18\x0e \x01(\tR\x0etargetLanguage\x12#\n" +
-	"\rbase_language\x18\x0f \x01(\tR\fbaseLanguage\"M\n" +
+	"\rbase_language\x18\x0f \x01(\tR\fbaseLanguage\x12\x19\n" +
+	"\bis_leech\x18\x10 \x01(\bR\aisLeech\"r\n" +
 	"\x19GetPracticeSessionRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
-	"\x05limit\x18\x02 \x01(\x05R\x05limit\"\xb4\x01\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12#\n" +
+	"\rtts_languages\x18\x03 \x03(\tR\fttsLanguages\"\xb4\x01\n" +
 	"\x1aGetPracticeSessionResponse\x129\n" +
 	"\x05cards\x18\x01 \x03(\v2#.sttattus.languages.v1.PracticeCardR\x05cards\x12\x1b\n" +
 	"\tdue_count\x18\x02 \x01(\x05R\bdueCount\x12\x1b\n" +

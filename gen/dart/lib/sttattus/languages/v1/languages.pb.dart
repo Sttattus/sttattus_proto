@@ -7362,6 +7362,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.bool? isNew,
     $core.String? targetLanguage,
     $core.String? baseLanguage,
+    $core.bool? isLeech,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -7379,6 +7380,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (isNew != null) result.isNew = isNew;
     if (targetLanguage != null) result.targetLanguage = targetLanguage;
     if (baseLanguage != null) result.baseLanguage = baseLanguage;
+    if (isLeech != null) result.isLeech = isLeech;
     return result;
   }
 
@@ -7412,6 +7414,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOB(13, _omitFieldNames ? '' : 'isNew')
     ..aOS(14, _omitFieldNames ? '' : 'targetLanguage')
     ..aOS(15, _omitFieldNames ? '' : 'baseLanguage')
+    ..aOB(16, _omitFieldNames ? '' : 'isLeech')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7569,16 +7572,29 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasBaseLanguage() => $_has(14);
   @$pb.TagNumber(15)
   void clearBaseLanguage() => $_clearField(15);
+
+  /// An item the member keeps losing. Flagged so the client can say why it
+  /// has come back rather than looking like it forgot they knew it.
+  @$pb.TagNumber(16)
+  $core.bool get isLeech => $_getBF(15);
+  @$pb.TagNumber(16)
+  set isLeech($core.bool value) => $_setBool(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasIsLeech() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearIsLeech() => $_clearField(16);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
   factory GetPracticeSessionRequest({
     $core.String? language,
     $core.int? limit,
+    $core.Iterable<$core.String>? ttsLanguages,
   }) {
     final result = create();
     if (language != null) result.language = language;
     if (limit != null) result.limit = limit;
+    if (ttsLanguages != null) result.ttsLanguages.addAll(ttsLanguages);
     return result;
   }
 
@@ -7598,6 +7614,7 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'language')
     ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..pPS(3, _omitFieldNames ? '' : 'ttsLanguages')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7639,6 +7656,13 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasLimit() => $_has(1);
   @$pb.TagNumber(2)
   void clearLimit() => $_clearField(2);
+
+  /// Languages this device can actually speak, from the platform TTS voice
+  /// list. Listening exercises are only scheduled for a language named here
+  /// (or for an item with recorded audio): a listen card on a device with no
+  /// voice installed has no prompt at all and cannot be answered.
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get ttsLanguages => $_getList(2);
 }
 
 class GetPracticeSessionResponse extends $pb.GeneratedMessage {

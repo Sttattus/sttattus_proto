@@ -4853,6 +4853,14 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   baseLanguage = "";
 
+  /**
+   * An item the member keeps losing. Flagged so the client can say why it
+   * has come back rather than looking like it forgot they knew it.
+   *
+   * @generated from field: bool is_leech = 16;
+   */
+  isLeech = false;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4876,6 +4884,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 13, name: "is_new", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 14, name: "target_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "base_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "is_leech", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -4913,6 +4922,16 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
    */
   limit = 0;
 
+  /**
+   * Languages this device can actually speak, from the platform TTS voice
+   * list. Listening exercises are only scheduled for a language named here
+   * (or for an item with recorded audio): a listen card on a device with no
+   * voice installed has no prompt at all and cannot be answered.
+   *
+   * @generated from field: repeated string tts_languages = 3;
+   */
+  ttsLanguages: string[] = [];
+
   constructor(data?: PartialMessage<GetPracticeSessionRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4923,6 +4942,7 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "tts_languages", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeSessionRequest {

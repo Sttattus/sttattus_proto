@@ -707,6 +707,9 @@ message PracticeCard {
   bool is_new = 13;
   string target_language = 14;
   string base_language = 15;
+  // An item the member keeps losing. Flagged so the client can say why it
+  // has come back rather than looking like it forgot they knew it.
+  bool is_leech = 16;
 }
 
 message GetPracticeSessionRequest {
@@ -714,6 +717,11 @@ message GetPracticeSessionRequest {
   string language = 1;
   // How many cards to build. Server clamps to a sane range.
   int32 limit = 2;
+  // Languages this device can actually speak, from the platform TTS voice
+  // list. Listening exercises are only scheduled for a language named here
+  // (or for an item with recorded audio): a listen card on a device with no
+  // voice installed has no prompt at all and cannot be answered.
+  repeated string tts_languages = 3;
 }
 message GetPracticeSessionResponse {
   repeated PracticeCard cards = 1;
