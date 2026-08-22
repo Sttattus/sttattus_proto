@@ -4821,11 +4821,17 @@ func (x *TutorThread) GetMessages() []*TutorMessage {
 }
 
 type TutorMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // member | tutor | system
-	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedUnix   int64                  `protobuf:"varint,4,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// member | tutor | system. The dashboard writes "staff" for a human reply;
+	// clients must treat that as "tutor" rather than showing the member a word
+	// from our org chart.
+	Sender      string `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"`
+	Body        string `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedUnix int64  `protobuf:"varint,4,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	// The tutor who wrote it. Empty for member and system messages, and for
+	// replies written before authorship was recorded.
+	AuthorName    string `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4886,6 +4892,13 @@ func (x *TutorMessage) GetCreatedUnix() int64 {
 		return x.CreatedUnix
 	}
 	return 0
+}
+
+func (x *TutorMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type StartTutorThreadRequest struct {
@@ -7453,12 +7466,14 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\fcreated_unix\x18\x05 \x01(\x03R\vcreatedUnix\x12 \n" +
 	"\fsla_due_unix\x18\x06 \x01(\x03R\n" +
 	"slaDueUnix\x12?\n" +
-	"\bmessages\x18\a \x03(\v2#.sttattus.languages.v1.TutorMessageR\bmessages\"m\n" +
+	"\bmessages\x18\a \x03(\v2#.sttattus.languages.v1.TutorMessageR\bmessages\"\x8e\x01\n" +
 	"\fTutorMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
 	"\x04body\x18\x03 \x01(\tR\x04body\x12!\n" +
-	"\fcreated_unix\x18\x04 \x01(\x03R\vcreatedUnix\"_\n" +
+	"\fcreated_unix\x18\x04 \x01(\x03R\vcreatedUnix\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\"_\n" +
 	"\x17StartTutorThreadRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
 	"\x05topic\x18\x02 \x01(\tR\x05topic\x12\x12\n" +

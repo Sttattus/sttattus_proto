@@ -6133,12 +6133,14 @@ class TutorMessage extends $pb.GeneratedMessage {
     $core.String? sender,
     $core.String? body,
     $fixnum.Int64? createdUnix,
+    $core.String? authorName,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (sender != null) result.sender = sender;
     if (body != null) result.body = body;
     if (createdUnix != null) result.createdUnix = createdUnix;
+    if (authorName != null) result.authorName = authorName;
     return result;
   }
 
@@ -6160,6 +6162,7 @@ class TutorMessage extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'sender')
     ..aOS(3, _omitFieldNames ? '' : 'body')
     ..aInt64(4, _omitFieldNames ? '' : 'createdUnix')
+    ..aOS(5, _omitFieldNames ? '' : 'authorName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -6190,6 +6193,9 @@ class TutorMessage extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
 
+  /// member | tutor | system. The dashboard writes "staff" for a human reply;
+  /// clients must treat that as "tutor" rather than showing the member a word
+  /// from our org chart.
   @$pb.TagNumber(2)
   $core.String get sender => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -6216,6 +6222,17 @@ class TutorMessage extends $pb.GeneratedMessage {
   $core.bool hasCreatedUnix() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreatedUnix() => $_clearField(4);
+
+  /// The tutor who wrote it. Empty for member and system messages, and for
+  /// replies written before authorship was recorded.
+  @$pb.TagNumber(5)
+  $core.String get authorName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set authorName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthorName() => $_clearField(5);
 }
 
 class StartTutorThreadRequest extends $pb.GeneratedMessage {

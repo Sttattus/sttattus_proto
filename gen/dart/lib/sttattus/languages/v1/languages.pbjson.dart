@@ -1636,13 +1636,15 @@ const TutorMessage$json = {
     {'1': 'sender', '3': 2, '4': 1, '5': 9, '10': 'sender'},
     {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
     {'1': 'created_unix', '3': 4, '4': 1, '5': 3, '10': 'createdUnix'},
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
   ],
 };
 
 /// Descriptor for `TutorMessage`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tutorMessageDescriptor = $convert.base64Decode(
     'CgxUdXRvck1lc3NhZ2USDgoCaWQYASABKAlSAmlkEhYKBnNlbmRlchgCIAEoCVIGc2VuZGVyEh'
-    'IKBGJvZHkYAyABKAlSBGJvZHkSIQoMY3JlYXRlZF91bml4GAQgASgDUgtjcmVhdGVkVW5peA==');
+    'IKBGJvZHkYAyABKAlSBGJvZHkSIQoMY3JlYXRlZF91bml4GAQgASgDUgtjcmVhdGVkVW5peBIf'
+    'CgthdXRob3JfbmFtZRgFIAEoCVIKYXV0aG9yTmFtZQ==');
 
 @$core.Deprecated('Use startTutorThreadRequestDescriptor instead')
 const StartTutorThreadRequest$json = {

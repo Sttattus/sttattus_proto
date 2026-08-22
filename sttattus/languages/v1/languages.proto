@@ -418,8 +418,8 @@ message RubricScore {
 // the grammar corpus, and the engine schedules that point so the member's own
 // errors become their review queue.
 message WritingError {
-  string original = 1;    // the span as the member wrote it
-  string correction = 2;  // what it should have been
+  string original = 1; // the span as the member wrote it
+  string correction = 2; // what it should have been
   // agreement | tense | mood | preposition | vocabulary | spelling |
   // word_order | register
   string kind = 3;
@@ -542,9 +542,15 @@ message TutorThread {
 
 message TutorMessage {
   string id = 1;
-  string sender = 2; // member | tutor | system
+  // member | tutor | system. The dashboard writes "staff" for a human reply;
+  // clients must treat that as "tutor" rather than showing the member a word
+  // from our org chart.
+  string sender = 2;
   string body = 3;
   int64 created_unix = 4;
+  // The tutor who wrote it. Empty for member and system messages, and for
+  // replies written before authorship was recorded.
+  string author_name = 5;
 }
 
 message StartTutorThreadRequest {
@@ -742,11 +748,11 @@ service LanguagesService {
 enum ExerciseKind {
   EXERCISE_KIND_UNSPECIFIED = 0;
   EXERCISE_KIND_RECOGNISE = 1; // see target language, choose meaning
-  EXERCISE_KIND_RECALL = 2;    // see meaning, choose target language
-  EXERCISE_KIND_LISTEN = 3;    // hear it, choose meaning
-  EXERCISE_KIND_CLOZE = 4;     // fill the gap in a real sentence
-  EXERCISE_KIND_TYPE = 5;      // produce it from memory, typed
-  EXERCISE_KIND_SPEAK = 6;     // produce it aloud
+  EXERCISE_KIND_RECALL = 2; // see meaning, choose target language
+  EXERCISE_KIND_LISTEN = 3; // hear it, choose meaning
+  EXERCISE_KIND_CLOZE = 4; // fill the gap in a real sentence
+  EXERCISE_KIND_TYPE = 5; // produce it from memory, typed
+  EXERCISE_KIND_SPEAK = 6; // produce it aloud
   EXERCISE_KIND_CONJUGATE = 7; // give the requested cell of a verb paradigm
 }
 
@@ -755,8 +761,8 @@ enum ExerciseKind {
 // anything. All three kinds share one queue and one scheduler.
 enum StudyItemKind {
   STUDY_ITEM_KIND_UNSPECIFIED = 0;
-  STUDY_ITEM_KIND_LEXEME = 1;    // a word
-  STUDY_ITEM_KIND_GRAMMAR = 2;   // a grammar point's drill item
+  STUDY_ITEM_KIND_LEXEME = 1; // a word
+  STUDY_ITEM_KIND_GRAMMAR = 2; // a grammar point's drill item
   STUDY_ITEM_KIND_VERB_FORM = 3; // one cell of a conjugation table
 }
 
@@ -878,9 +884,15 @@ message MemberPrefs {
   int32 daily_review_target = 3;
 }
 message GetMemberPrefsRequest {}
-message GetMemberPrefsResponse { MemberPrefs prefs = 1; }
-message SetMemberPrefsRequest { MemberPrefs prefs = 1; }
-message SetMemberPrefsResponse { MemberPrefs prefs = 1; }
+message GetMemberPrefsResponse {
+  MemberPrefs prefs = 1;
+}
+message SetMemberPrefsRequest {
+  MemberPrefs prefs = 1;
+}
+message SetMemberPrefsResponse {
+  MemberPrefs prefs = 1;
+}
 
 // Deprecated Word-based messages (for transition)
 message Word {

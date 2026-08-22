@@ -3065,7 +3065,7 @@ export class RubricScore extends Message<RubricScore> {
  * 'heuristic' = provider unavailable so a deterministic local rubric was
  * applied, 'pending' = not yet scored.
  * One thing the member got wrong, named rather than merely corrected.
- * 
+ *
  * A corrected paragraph with bold on the changes tells a member *what* to
  * write next time. It does not tell them which rule they broke, and it cannot
  * be practised. This can: `grammar_point_key` links the mistake to a point in
@@ -4048,7 +4048,9 @@ export class TutorMessage extends Message<TutorMessage> {
   id = "";
 
   /**
-   * member | tutor | system
+   * member | tutor | system. The dashboard writes "staff" for a human reply;
+   * clients must treat that as "tutor" rather than showing the member a word
+   * from our org chart.
    *
    * @generated from field: string sender = 2;
    */
@@ -4064,6 +4066,14 @@ export class TutorMessage extends Message<TutorMessage> {
    */
   createdUnix = protoInt64.zero;
 
+  /**
+   * The tutor who wrote it. Empty for member and system messages, and for
+   * replies written before authorship was recorded.
+   *
+   * @generated from field: string author_name = 5;
+   */
+  authorName = "";
+
   constructor(data?: PartialMessage<TutorMessage>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4076,6 +4086,7 @@ export class TutorMessage extends Message<TutorMessage> {
     { no: 2, name: "sender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "created_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "author_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TutorMessage {
