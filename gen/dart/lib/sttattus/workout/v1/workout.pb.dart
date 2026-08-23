@@ -12836,12 +12836,14 @@ class CoachMessage extends $pb.GeneratedMessage {
     $core.String? senderRole,
     $core.String? body,
     $fixnum.Int64? createdAtUnix,
+    $core.String? authorName,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (senderRole != null) result.senderRole = senderRole;
     if (body != null) result.body = body;
     if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    if (authorName != null) result.authorName = authorName;
     return result;
   }
 
@@ -12863,6 +12865,7 @@ class CoachMessage extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'senderRole')
     ..aOS(3, _omitFieldNames ? '' : 'body')
     ..aInt64(4, _omitFieldNames ? '' : 'createdAtUnix')
+    ..aOS(5, _omitFieldNames ? '' : 'authorName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -12919,6 +12922,22 @@ class CoachMessage extends $pb.GeneratedMessage {
   $core.bool hasCreatedAtUnix() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreatedAtUnix() => $_clearField(4);
+
+  /// The coach who wrote it. Empty for member and system messages, and
+  /// for replies written before authorship was recorded.
+  ///
+  /// Every desk on the platform answered as an anonymous "STAFF" until
+  /// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+  /// and was the only one. A white-glove desk that will not say who is
+  /// speaking is not white-glove.
+  @$pb.TagNumber(5)
+  $core.String get authorName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set authorName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthorName() => $_clearField(5);
 }
 
 class StartCoachThreadRequest extends $pb.GeneratedMessage {

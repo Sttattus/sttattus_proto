@@ -9818,6 +9818,14 @@ type CoachMessage struct {
 	SenderRole    string                 `protobuf:"bytes,2,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // member | coach | system
 	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
 	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	// The coach who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -9878,6 +9886,13 @@ func (x *CoachMessage) GetCreatedAtUnix() int64 {
 		return x.CreatedAtUnix
 	}
 	return 0
+}
+
+func (x *CoachMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type StartCoachThreadRequest struct {
@@ -11583,13 +11598,15 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12%\n" +
 	"\x0fsla_due_at_unix\x18\x04 \x01(\x03R\fslaDueAtUnix\x12&\n" +
 	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\x12&\n" +
-	"\x0fupdated_at_unix\x18\x06 \x01(\x03R\rupdatedAtUnix\"{\n" +
+	"\x0fupdated_at_unix\x18\x06 \x01(\x03R\rupdatedAtUnix\"\x9c\x01\n" +
 	"\fCoachMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vsender_role\x18\x02 \x01(\tR\n" +
 	"senderRole\x12\x12\n" +
 	"\x04body\x18\x03 \x01(\tR\x04body\x12&\n" +
-	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\"\\\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\"\\\n" +
 	"\x17StartCoachThreadRequest\x12\x18\n" +
 	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
 	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"T\n" +

@@ -3514,11 +3514,19 @@ func (x *GetCrossPillarUnlocksResponse) GetUnlocks() []*CrossPillarUnlock {
 }
 
 type ConciergeMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // member | system | editor
-	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Sender    string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // member | system | editor
+	Body      string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3579,6 +3587,13 @@ func (x *ConciergeMessage) GetCreatedAt() *timestamppb.Timestamp {
 		return x.CreatedAt
 	}
 	return nil
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type ConciergeThread struct {
@@ -6099,13 +6114,15 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x1cGetCrossPillarUnlocksRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\"^\n" +
 	"\x1dGetCrossPillarUnlocksResponse\x12=\n" +
-	"\aunlocks\x18\x01 \x03(\v2#.sttattus.onyx.v1.CrossPillarUnlockR\aunlocks\"\x89\x01\n" +
+	"\aunlocks\x18\x01 \x03(\v2#.sttattus.onyx.v1.CrossPillarUnlockR\aunlocks\"\xaa\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
 	"\x04body\x18\x03 \x01(\tR\x04body\x129\n" +
 	"\n" +
-	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x9e\x02\n" +
+	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\"\x9e\x02\n" +
 	"\x0fConciergeThread\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\asubject\x18\x02 \x01(\tR\asubject\x12\x14\n" +

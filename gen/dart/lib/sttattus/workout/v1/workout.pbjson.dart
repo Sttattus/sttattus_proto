@@ -3296,6 +3296,7 @@ const CoachMessage$json = {
     {'1': 'sender_role', '3': 2, '4': 1, '5': 9, '10': 'senderRole'},
     {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
     {'1': 'created_at_unix', '3': 4, '4': 1, '5': 3, '10': 'createdAtUnix'},
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
   ],
 };
 
@@ -3303,7 +3304,7 @@ const CoachMessage$json = {
 final $typed_data.Uint8List coachMessageDescriptor = $convert.base64Decode(
     'CgxDb2FjaE1lc3NhZ2USDgoCaWQYASABKAlSAmlkEh8KC3NlbmRlcl9yb2xlGAIgASgJUgpzZW'
     '5kZXJSb2xlEhIKBGJvZHkYAyABKAlSBGJvZHkSJgoPY3JlYXRlZF9hdF91bml4GAQgASgDUg1j'
-    'cmVhdGVkQXRVbml4');
+    'cmVhdGVkQXRVbml4Eh8KC2F1dGhvcl9uYW1lGAUgASgJUgphdXRob3JOYW1l');
 
 @$core.Deprecated('Use startCoachThreadRequestDescriptor instead')
 const StartCoachThreadRequest$json = {

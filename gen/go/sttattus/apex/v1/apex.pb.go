@@ -5095,6 +5095,14 @@ type ConciergeMessage struct {
 	SenderRole    string                 `protobuf:"bytes,3,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // member | desk | system
 	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
 	CreatedAtUnix int64                  `protobuf:"varint,5,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	// The clinician who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5162,6 +5170,13 @@ func (x *ConciergeMessage) GetCreatedAtUnix() int64 {
 		return x.CreatedAtUnix
 	}
 	return 0
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type StartConciergeThreadRequest struct {
@@ -9063,14 +9078,16 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x0fsla_due_at_unix\x18\x04 \x01(\x03R\fslaDueAtUnix\x12&\n" +
 	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\x12&\n" +
 	"\x0fupdated_at_unix\x18\x06 \x01(\x03R\rupdatedAtUnix\x12#\n" +
-	"\rmessage_count\x18\a \x01(\x05R\fmessageCount\"\x9c\x01\n" +
+	"\rmessage_count\x18\a \x01(\x05R\fmessageCount\"\xbd\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x1f\n" +
 	"\vsender_role\x18\x03 \x01(\tR\n" +
 	"senderRole\x12\x12\n" +
 	"\x04body\x18\x04 \x01(\tR\x04body\x12&\n" +
-	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\"`\n" +
+	"\x0fcreated_at_unix\x18\x05 \x01(\x03R\rcreatedAtUnix\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\"`\n" +
 	"\x1bStartConciergeThreadRequest\x12\x18\n" +
 	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
 	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"Y\n" +

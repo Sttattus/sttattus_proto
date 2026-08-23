@@ -5042,6 +5042,14 @@ type ConciergeMessage struct {
 	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // 'member' | 'concierge' | 'system'
 	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
 	CreatedAtUnix int64                  `protobuf:"varint,4,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -5102,6 +5110,13 @@ func (x *ConciergeMessage) GetCreatedAtUnix() int64 {
 		return x.CreatedAtUnix
 	}
 	return 0
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type ConciergeThread struct {
@@ -7306,12 +7321,14 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"rank_label\x18\b \x01(\tR\trankLabel\"\x19\n" +
 	"\x17GetEstateSummaryRequest\"W\n" +
 	"\x18GetEstateSummaryResponse\x12;\n" +
-	"\asummary\x18\x01 \x01(\v2!.sttattus.legacy.v1.EstateSummaryR\asummary\"v\n" +
+	"\asummary\x18\x01 \x01(\v2!.sttattus.legacy.v1.EstateSummaryR\asummary\"\x97\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
 	"\x04body\x18\x03 \x01(\tR\x04body\x12&\n" +
-	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\"\xfa\x01\n" +
+	"\x0fcreated_at_unix\x18\x04 \x01(\x03R\rcreatedAtUnix\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\"\xfa\x01\n" +
 	"\x0fConciergeThread\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\asubject\x18\x02 \x01(\tR\asubject\x12\x14\n" +

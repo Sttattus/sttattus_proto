@@ -6253,12 +6253,20 @@ func (x *ConciergeThread) GetCreatedAt() int64 {
 }
 
 type ConciergeMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ThreadId      string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
-	SenderRole    string                 `protobuf:"bytes,3,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // user | matchmaker | system
-	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedAt     int64                  `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	Id         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ThreadId   string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	SenderRole string                 `protobuf:"bytes,3,opt,name=sender_role,json=senderRole,proto3" json:"sender_role,omitempty"` // user | matchmaker | system
+	Body       string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt  int64                  `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6326,6 +6334,13 @@ func (x *ConciergeMessage) GetCreatedAt() int64 {
 		return x.CreatedAt
 	}
 	return 0
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type StartConciergeThreadRequest struct {
@@ -9288,7 +9303,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\n" +
 	"sla_due_at\x18\x05 \x01(\x03R\bslaDueAt\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x06 \x01(\x03R\tcreatedAt\"\x93\x01\n" +
+	"created_at\x18\x06 \x01(\x03R\tcreatedAt\"\xb4\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x1f\n" +
@@ -9296,7 +9311,9 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"senderRole\x12\x12\n" +
 	"\x04body\x18\x04 \x01(\tR\x04body\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\x03R\tcreatedAt\"`\n" +
+	"created_at\x18\x05 \x01(\x03R\tcreatedAt\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\"`\n" +
 	"\x1bStartConciergeThreadRequest\x12\x18\n" +
 	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
 	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"[\n" +

@@ -1228,6 +1228,7 @@ const ConciergeMessage$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
   ],
 };
 
@@ -1235,7 +1236,8 @@ const ConciergeMessage$json = {
 final $typed_data.Uint8List conciergeMessageDescriptor = $convert.base64Decode(
     'ChBDb25jaWVyZ2VNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIWCgZzZW5kZXIYAiABKAlSBnNlbm'
     'RlchISCgRib2R5GAMgASgJUgRib2R5EjkKCmNyZWF0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJv'
-    'dG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
+    'dG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSHwoLYXV0aG9yX25hbWUYBSABKAlSCmF1dGhvck'
+    '5hbWU=');
 
 @$core.Deprecated('Use conciergeThreadDescriptor instead')
 const ConciergeThread$json = {

@@ -664,6 +664,7 @@ const AdvisorMessage$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
   ],
 };
 
@@ -671,7 +672,8 @@ const AdvisorMessage$json = {
 final $typed_data.Uint8List advisorMessageDescriptor = $convert.base64Decode(
     'Cg5BZHZpc29yTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSFgoGc2VuZGVyGAIgASgJUgZzZW5kZX'
     'ISEgoEYm9keRgDIAEoCVIEYm9keRI5CgpjcmVhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3Rv'
-    'YnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+    'YnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0Eh8KC2F1dGhvcl9uYW1lGAUgASgJUgphdXRob3JOYW'
+    '1l');
 
 @$core.Deprecated('Use advisorThreadDescriptor instead')
 const AdvisorThread$json = {

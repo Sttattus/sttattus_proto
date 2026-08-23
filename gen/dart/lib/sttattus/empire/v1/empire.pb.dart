@@ -5363,6 +5363,7 @@ class ConciergeMessage extends $pb.GeneratedMessage {
     $core.String? sender,
     $core.String? body,
     $core.String? createdAt,
+    $core.String? authorName,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5370,6 +5371,7 @@ class ConciergeMessage extends $pb.GeneratedMessage {
     if (sender != null) result.sender = sender;
     if (body != null) result.body = body;
     if (createdAt != null) result.createdAt = createdAt;
+    if (authorName != null) result.authorName = authorName;
     return result;
   }
 
@@ -5392,6 +5394,7 @@ class ConciergeMessage extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'sender')
     ..aOS(4, _omitFieldNames ? '' : 'body')
     ..aOS(5, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(6, _omitFieldNames ? '' : 'authorName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5458,6 +5461,22 @@ class ConciergeMessage extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => $_clearField(5);
+
+  /// The concierge who wrote it. Empty for member and system messages, and
+  /// for replies written before authorship was recorded.
+  ///
+  /// Every desk on the platform answered as an anonymous "STAFF" until
+  /// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+  /// and was the only one. A white-glove desk that will not say who is
+  /// speaking is not white-glove.
+  @$pb.TagNumber(6)
+  $core.String get authorName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set authorName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAuthorName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAuthorName() => $_clearField(6);
 }
 
 class StartConciergeThreadRequest extends $pb.GeneratedMessage {

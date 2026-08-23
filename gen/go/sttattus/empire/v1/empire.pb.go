@@ -4138,9 +4138,17 @@ type ConciergeMessage struct {
 	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	ThreadId string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
 	// member | concierge | system.
-	Sender        string `protobuf:"bytes,3,opt,name=sender,proto3" json:"sender,omitempty"`
-	Body          string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedAt     string `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Sender    string `protobuf:"bytes,3,opt,name=sender,proto3" json:"sender,omitempty"`
+	Body      string `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt string `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4206,6 +4214,13 @@ func (x *ConciergeMessage) GetBody() string {
 func (x *ConciergeMessage) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
+	}
+	return ""
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
 	}
 	return ""
 }
@@ -6420,14 +6435,16 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x04 \x01(\tR\tcreatedAt\x12&\n" +
 	"\x0flast_message_at\x18\x05 \x01(\tR\rlastMessageAt\x12#\n" +
-	"\rmessage_count\x18\x06 \x01(\x05R\fmessageCount\"\x8a\x01\n" +
+	"\rmessage_count\x18\x06 \x01(\x05R\fmessageCount\"\xab\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x16\n" +
 	"\x06sender\x18\x03 \x01(\tR\x06sender\x12\x12\n" +
 	"\x04body\x18\x04 \x01(\tR\x04body\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\tR\tcreatedAt\"K\n" +
+	"created_at\x18\x05 \x01(\tR\tcreatedAt\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\"K\n" +
 	"\x1bStartConciergeThreadRequest\x12\x18\n" +
 	"\asubject\x18\x01 \x01(\tR\asubject\x12\x12\n" +
 	"\x04body\x18\x02 \x01(\tR\x04body\";\n" +

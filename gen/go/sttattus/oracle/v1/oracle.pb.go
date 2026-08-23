@@ -4149,11 +4149,19 @@ func (x *ConciergeThread) GetUpdatedUnix() int64 {
 }
 
 type ConciergeMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Sender        string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // user | concierge | system
-	Body          string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedUnix   int64                  `protobuf:"varint,4,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Sender      string                 `protobuf:"bytes,2,opt,name=sender,proto3" json:"sender,omitempty"` // user | concierge | system
+	Body        string                 `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedUnix int64                  `protobuf:"varint,4,opt,name=created_unix,json=createdUnix,proto3" json:"created_unix,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,5,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4214,6 +4222,13 @@ func (x *ConciergeMessage) GetCreatedUnix() int64 {
 		return x.CreatedUnix
 	}
 	return 0
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type StartConciergeThreadRequest struct {
@@ -5726,12 +5741,14 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\fsla_due_unix\x18\x04 \x01(\x03R\n" +
 	"slaDueUnix\x12!\n" +
 	"\fcreated_unix\x18\x05 \x01(\x03R\vcreatedUnix\x12!\n" +
-	"\fupdated_unix\x18\x06 \x01(\x03R\vupdatedUnix\"q\n" +
+	"\fupdated_unix\x18\x06 \x01(\x03R\vupdatedUnix\"\x92\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06sender\x18\x02 \x01(\tR\x06sender\x12\x12\n" +
 	"\x04body\x18\x03 \x01(\tR\x04body\x12!\n" +
-	"\fcreated_unix\x18\x04 \x01(\x03R\vcreatedUnix\"`\n" +
+	"\fcreated_unix\x18\x04 \x01(\x03R\vcreatedUnix\x12\x1f\n" +
+	"\vauthor_name\x18\x05 \x01(\tR\n" +
+	"authorName\"`\n" +
 	"\x1bStartConciergeThreadRequest\x12\x18\n" +
 	"\asubject\x18\x01 \x01(\tR\asubject\x12'\n" +
 	"\x0fopening_message\x18\x02 \x01(\tR\x0eopeningMessage\"[\n" +

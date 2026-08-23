@@ -1679,6 +1679,7 @@ const ConciergeMessage$json = {
     {'1': 'sender', '3': 2, '4': 1, '5': 9, '10': 'sender'},
     {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
     {'1': 'created_at_unix', '3': 4, '4': 1, '5': 3, '10': 'createdAtUnix'},
+    {'1': 'author_name', '3': 5, '4': 1, '5': 9, '10': 'authorName'},
   ],
 };
 
@@ -1686,7 +1687,7 @@ const ConciergeMessage$json = {
 final $typed_data.Uint8List conciergeMessageDescriptor = $convert.base64Decode(
     'ChBDb25jaWVyZ2VNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIWCgZzZW5kZXIYAiABKAlSBnNlbm'
     'RlchISCgRib2R5GAMgASgJUgRib2R5EiYKD2NyZWF0ZWRfYXRfdW5peBgEIAEoA1INY3JlYXRl'
-    'ZEF0VW5peA==');
+    'ZEF0VW5peBIfCgthdXRob3JfbmFtZRgFIAEoCVIKYXV0aG9yTmFtZQ==');
 
 @$core.Deprecated('Use conciergeThreadDescriptor instead')
 const ConciergeThread$json = {

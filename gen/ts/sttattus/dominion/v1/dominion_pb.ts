@@ -3065,6 +3065,19 @@ export class ConciergeMessage extends Message<ConciergeMessage> {
    */
   createdAtUnix = protoInt64.zero;
 
+  /**
+   * The concierge who wrote it. Empty for member and system messages, and
+   * for replies written before authorship was recorded.
+   *
+   * Every desk on the platform answered as an anonymous "STAFF" until
+   * 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+   * and was the only one. A white-glove desk that will not say who is
+   * speaking is not white-glove.
+   *
+   * @generated from field: string author_name = 5;
+   */
+  authorName = "";
+
   constructor(data?: PartialMessage<ConciergeMessage>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3077,6 +3090,7 @@ export class ConciergeMessage extends Message<ConciergeMessage> {
     { no: 2, name: "sender_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "author_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConciergeMessage {

@@ -1776,12 +1776,20 @@ func (x *ListVisitedCountriesResponse) GetContinents() []*ContinentClaim {
 }
 
 type ConciergeMessage struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	IsStaff       bool                   `protobuf:"varint,2,opt,name=is_staff,json=isStaff,proto3" json:"is_staff,omitempty"`
-	SenderUserId  string                 `protobuf:"bytes,3,opt,name=sender_user_id,json=senderUserId,proto3" json:"sender_user_id,omitempty"`
-	Body          string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	CreatedAt     int64                  `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	IsStaff      bool                   `protobuf:"varint,2,opt,name=is_staff,json=isStaff,proto3" json:"is_staff,omitempty"`
+	SenderUserId string                 `protobuf:"bytes,3,opt,name=sender_user_id,json=senderUserId,proto3" json:"sender_user_id,omitempty"`
+	Body         string                 `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
+	CreatedAt    int64                  `protobuf:"varint,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	// The concierge who wrote it. Empty for member and system messages, and
+	// for replies written before authorship was recorded.
+	//
+	// Every desk on the platform answered as an anonymous "STAFF" until
+	// 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
+	// and was the only one. A white-glove desk that will not say who is
+	// speaking is not white-glove.
+	AuthorName    string `protobuf:"bytes,6,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1849,6 +1857,13 @@ func (x *ConciergeMessage) GetCreatedAt() int64 {
 		return x.CreatedAt
 	}
 	return 0
+}
+
+func (x *ConciergeMessage) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
 }
 
 type ListConciergeMessagesRequest struct {
@@ -4622,14 +4637,16 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\tcountries\x18\x01 \x03(\v2\".sttattus.travel.v1.VisitedCountryR\tcountries\x12B\n" +
 	"\n" +
 	"continents\x18\x02 \x03(\v2\".sttattus.travel.v1.ContinentClaimR\n" +
-	"continents\"\x96\x01\n" +
+	"continents\"\xb7\x01\n" +
 	"\x10ConciergeMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bis_staff\x18\x02 \x01(\bR\aisStaff\x12$\n" +
 	"\x0esender_user_id\x18\x03 \x01(\tR\fsenderUserId\x12\x12\n" +
 	"\x04body\x18\x04 \x01(\tR\x04body\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x05 \x01(\x03R\tcreatedAt\"\x1e\n" +
+	"created_at\x18\x05 \x01(\x03R\tcreatedAt\x12\x1f\n" +
+	"\vauthor_name\x18\x06 \x01(\tR\n" +
+	"authorName\"\x1e\n" +
 	"\x1cListConciergeMessagesRequest\"a\n" +
 	"\x1dListConciergeMessagesResponse\x12@\n" +
 	"\bmessages\x18\x01 \x03(\v2$.sttattus.travel.v1.ConciergeMessageR\bmessages\"1\n" +
