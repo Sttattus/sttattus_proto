@@ -1018,13 +1018,14 @@ const ListMyAuditLogRequest$json = {
   '2': [
     {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
     {'1': 'offset', '3': 2, '4': 1, '5': 5, '10': 'offset'},
+    {'1': 'action_prefix', '3': 3, '4': 1, '5': 9, '10': 'actionPrefix'},
   ],
 };
 
 /// Descriptor for `ListMyAuditLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listMyAuditLogRequestDescriptor = $convert.base64Decode(
     'ChVMaXN0TXlBdWRpdExvZ1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0EhYKBm9mZnNldB'
-    'gCIAEoBVIGb2Zmc2V0');
+    'gCIAEoBVIGb2Zmc2V0EiMKDWFjdGlvbl9wcmVmaXgYAyABKAlSDGFjdGlvblByZWZpeA==');
 
 @$core.Deprecated('Use myAuditEntryDescriptor instead')
 const MyAuditEntry$json = {

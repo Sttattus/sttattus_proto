@@ -4122,11 +4122,18 @@ type LoungeDetail struct {
 	Name                string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	City                string                 `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
 	LocationDescription string                 `protobuf:"bytes,4,opt,name=location_description,json=locationDescription,proto3" json:"location_description,omitempty"`
-	LiveCapacityStatus  string                 `protobuf:"bytes,5,opt,name=live_capacity_status,json=liveCapacityStatus,proto3" json:"live_capacity_status,omitempty"` // e.g. 'Quiet', 'Busy'
-	Amenities           []string               `protobuf:"bytes,6,rep,name=amenities,proto3" json:"amenities,omitempty"`
-	CurrentMenuUrl      string                 `protobuf:"bytes,7,opt,name=current_menu_url,json=currentMenuUrl,proto3" json:"current_menu_url,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// How busy this lounge usually is: 'Quiet', 'Moderate', 'Busy'.
+	//
+	// EDITORIAL, NOT LIVE. It is a constant in the curated lounge table and
+	// does not change with the hour. The field name says "live" and the app
+	// said "LIVE CAPACITY" above it, which promised an occupancy feed that has
+	// never existed. Renaming the field would break clients; the comment and
+	// the label are the honest fix until something actually measures this.
+	LiveCapacityStatus string   `protobuf:"bytes,5,opt,name=live_capacity_status,json=liveCapacityStatus,proto3" json:"live_capacity_status,omitempty"`
+	Amenities          []string `protobuf:"bytes,6,rep,name=amenities,proto3" json:"amenities,omitempty"`
+	CurrentMenuUrl     string   `protobuf:"bytes,7,opt,name=current_menu_url,json=currentMenuUrl,proto3" json:"current_menu_url,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *LoungeDetail) Reset() {

@@ -196,7 +196,7 @@ export class GetVitalWindowRequest extends Message<GetVitalWindowRequest> {
 
   /**
    * An explicit window, overriding window_days when both are set.
-   * 
+   *
    * Needed because the windows callers care about are not always whole days:
    * Zenith compares the HRV during one focus block — ninety minutes — against
    * the member's 30-day baseline, and rounding that to a day would average the

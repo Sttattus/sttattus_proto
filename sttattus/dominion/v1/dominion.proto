@@ -565,7 +565,7 @@ service DominionService {
   // and `lounge_key_jwt` carries that pass's token. No client calls this.
   rpc GetLoungeKey(GetLoungeKeyRequest) returns (GetLoungeKeyResponse) {
     option deprecated = true;
-  };
+  }
 
   // D14.3 — AVM estimate (Zillow + Rightmove pilot).
   rpc EstimatePropertyValue(EstimatePropertyValueRequest) returns (EstimatePropertyValueResponse);

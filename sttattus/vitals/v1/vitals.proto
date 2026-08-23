@@ -67,7 +67,7 @@ message SyncVitalsResponse {
 
 message GetVitalWindowRequest {
   string metric_code = 1;
-  int32 window_days = 2;   // defaults to 7
+  int32 window_days = 2; // defaults to 7
   int32 baseline_days = 3; // defaults to 30, and excludes the window
 
   // An explicit window, overriding window_days when both are set.

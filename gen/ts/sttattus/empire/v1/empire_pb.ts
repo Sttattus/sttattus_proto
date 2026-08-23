@@ -2831,6 +2831,18 @@ export class ListMyAuditLogRequest extends Message<ListMyAuditLogRequest> {
    */
   offset = 0;
 
+  /**
+   * Restrict to entries whose action starts with this string, e.g.
+   * "/sttattus.apex.v1.". Apex's Clinical Audit screen promises "every
+   * change to your vitals or profile" and was rendering whatever the
+   * member last did in Oracle, Vault or Nomad, because the log is
+   * platform-wide and the screen had no way to ask for its own slice.
+   * Empty means the whole log, which is what Empire's own screen wants.
+   *
+   * @generated from field: string action_prefix = 3;
+   */
+  actionPrefix = "";
+
   constructor(data?: PartialMessage<ListMyAuditLogRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2841,6 +2853,7 @@ export class ListMyAuditLogRequest extends Message<ListMyAuditLogRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "action_prefix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyAuditLogRequest {

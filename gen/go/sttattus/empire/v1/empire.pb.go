@@ -3373,9 +3373,16 @@ func (x *GetLatestCloutDropResponse) GetEntries() []*CloutDropEntry {
 }
 
 type ListMyAuditLogRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
-	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Limit  int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	// Restrict to entries whose action starts with this string, e.g.
+	// "/sttattus.apex.v1.". Apex's Clinical Audit screen promises "every
+	// change to your vitals or profile" and was rendering whatever the
+	// member last did in Oracle, Vault or Nomad, because the log is
+	// platform-wide and the screen had no way to ask for its own slice.
+	// Empty means the whole log, which is what Empire's own screen wants.
+	ActionPrefix  string `protobuf:"bytes,3,opt,name=action_prefix,json=actionPrefix,proto3" json:"action_prefix,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3422,6 +3429,13 @@ func (x *ListMyAuditLogRequest) GetOffset() int32 {
 		return x.Offset
 	}
 	return 0
+}
+
+func (x *ListMyAuditLogRequest) GetActionPrefix() string {
+	if x != nil {
+		return x.ActionPrefix
+	}
+	return ""
 }
 
 // MyAuditEntry is one audit_logs row from the caller's perspective.
@@ -6356,10 +6370,11 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x1aGetLatestCloutDropResponse\x12\x1d\n" +
 	"\n" +
 	"week_start\x18\x01 \x01(\tR\tweekStart\x12<\n" +
-	"\aentries\x18\x02 \x03(\v2\".sttattus.empire.v1.CloutDropEntryR\aentries\"E\n" +
+	"\aentries\x18\x02 \x03(\v2\".sttattus.empire.v1.CloutDropEntryR\aentries\"j\n" +
 	"\x15ListMyAuditLogRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"\xa4\x01\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12#\n" +
+	"\raction_prefix\x18\x03 \x01(\tR\factionPrefix\"\xa4\x01\n" +
 	"\fMyAuditEntry\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06action\x18\x02 \x01(\tR\x06action\x12*\n" +

@@ -4393,10 +4393,12 @@ class ListMyAuditLogRequest extends $pb.GeneratedMessage {
   factory ListMyAuditLogRequest({
     $core.int? limit,
     $core.int? offset,
+    $core.String? actionPrefix,
   }) {
     final result = create();
     if (limit != null) result.limit = limit;
     if (offset != null) result.offset = offset;
+    if (actionPrefix != null) result.actionPrefix = actionPrefix;
     return result;
   }
 
@@ -4416,6 +4418,7 @@ class ListMyAuditLogRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aI(1, _omitFieldNames ? '' : 'limit')
     ..aI(2, _omitFieldNames ? '' : 'offset')
+    ..aOS(3, _omitFieldNames ? '' : 'actionPrefix')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4455,6 +4458,21 @@ class ListMyAuditLogRequest extends $pb.GeneratedMessage {
   $core.bool hasOffset() => $_has(1);
   @$pb.TagNumber(2)
   void clearOffset() => $_clearField(2);
+
+  /// Restrict to entries whose action starts with this string, e.g.
+  /// "/sttattus.apex.v1.". Apex's Clinical Audit screen promises "every
+  /// change to your vitals or profile" and was rendering whatever the
+  /// member last did in Oracle, Vault or Nomad, because the log is
+  /// platform-wide and the screen had no way to ask for its own slice.
+  /// Empty means the whole log, which is what Empire's own screen wants.
+  @$pb.TagNumber(3)
+  $core.String get actionPrefix => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set actionPrefix($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasActionPrefix() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearActionPrefix() => $_clearField(3);
 }
 
 /// MyAuditEntry is one audit_logs row from the caller's perspective.

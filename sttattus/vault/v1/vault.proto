@@ -56,7 +56,7 @@ message Asset {
   // EUR asset can be shown in EUR without every downstream sum having to know
   // about currencies.
   string native_currency = 9; // ISO-4217 alpha-3; empty means USD
-  double native_value = 10;   // amount in native_currency; 0 when not recorded
+  double native_value = 10; // amount in native_currency; 0 when not recorded
 }
 
 // Portfolio is the aggregated view of a user's wealth.

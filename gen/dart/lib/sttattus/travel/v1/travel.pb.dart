@@ -5444,6 +5444,13 @@ class LoungeDetail extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearLocationDescription() => $_clearField(4);
 
+  /// How busy this lounge usually is: 'Quiet', 'Moderate', 'Busy'.
+  ///
+  /// EDITORIAL, NOT LIVE. It is a constant in the curated lounge table and
+  /// does not change with the hour. The field name says "live" and the app
+  /// said "LIVE CAPACITY" above it, which promised an occupancy feed that has
+  /// never existed. Renaming the field would break clients; the comment and
+  /// the label are the honest fix until something actually measures this.
   @$pb.TagNumber(5)
   $core.String get liveCapacityStatus => $_getSZ(4);
   @$pb.TagNumber(5)

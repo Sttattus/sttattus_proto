@@ -429,6 +429,13 @@ message GetLatestCloutDropResponse {
 message ListMyAuditLogRequest {
   int32 limit = 1;
   int32 offset = 2;
+  // Restrict to entries whose action starts with this string, e.g.
+  // "/sttattus.apex.v1.". Apex's Clinical Audit screen promises "every
+  // change to your vitals or profile" and was rendering whatever the
+  // member last did in Oracle, Vault or Nomad, because the log is
+  // platform-wide and the screen had no way to ask for its own slice.
+  // Empty means the whole log, which is what Empire's own screen wants.
+  string action_prefix = 3;
 }
 
 // MyAuditEntry is one audit_logs row from the caller's perspective.

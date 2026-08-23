@@ -957,13 +957,13 @@ export class ListMyCalendarEventsResponse extends Message<ListMyCalendarEventsRe
 
 /**
  * === Z16.5 — today's cognitive load ===
- * 
+ *
  * Composite of:
  *   - calendar_density (Z16.6 — null until calendar wire ships)
  *   - apex_readiness  (Z16.4 deferral — null until Apex HRV bridge)
  *   - session_pressure (real today: how much focused work the user
  *     already logged vs their 14-day rolling average)
- * 
+ *
  * Per audits/zenith.md §10 Phase 1 item 5. Each input is optional;
  * the composite is the mean of available inputs (no fabrication).
  *

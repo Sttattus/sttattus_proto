@@ -40,7 +40,7 @@ export const VitalsService = {
     },
     /**
      * Whether a device is actually reporting.
-     * 
+     *
      * Deliberately not "did the member tap connect". Health Connect being
      * installed, permissions being granted, and readings actually arriving are
      * three different states, and only the third one means anything: permissions
