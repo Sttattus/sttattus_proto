@@ -10307,6 +10307,7 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
     $core.double? bestEstimatedOneRm,
     $core.String? bestOneRmExercise,
     $core.bool? isEmpty,
+    $core.Iterable<ForgeDailyVolume>? volumeDaily,
   }) {
     final result = create();
     if (acuteChronicRatio != null) result.acuteChronicRatio = acuteChronicRatio;
@@ -10320,6 +10321,7 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
       result.bestEstimatedOneRm = bestEstimatedOneRm;
     if (bestOneRmExercise != null) result.bestOneRmExercise = bestOneRmExercise;
     if (isEmpty != null) result.isEmpty = isEmpty;
+    if (volumeDaily != null) result.volumeDaily.addAll(volumeDaily);
     return result;
   }
 
@@ -10347,6 +10349,8 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
     ..aD(8, _omitFieldNames ? '' : 'bestEstimatedOneRm')
     ..aOS(9, _omitFieldNames ? '' : 'bestOneRmExercise')
     ..aOB(10, _omitFieldNames ? '' : 'isEmpty')
+    ..pPM<ForgeDailyVolume>(11, _omitFieldNames ? '' : 'volumeDaily',
+        subBuilder: ForgeDailyVolume.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -10465,6 +10469,85 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
   $core.bool hasIsEmpty() => $_has(9);
   @$pb.TagNumber(10)
   void clearIsEmpty() => $_clearField(10);
+
+  /// Daily tonnage across the same trailing 28-day window the chronic load
+  /// uses. Emitted for EVERY day in the window, rest days included as 0.0, so
+  /// the client plots a calendar rather than reconstructing one from gaps —
+  /// and so a week off reads as a trough instead of vanishing.
+  ///
+  /// Added because the analytics screen shipped a grey box reading "Chart
+  /// plotting logic lands in Phase 2": the aggregation already existed for
+  /// volume_7d, and nothing carried a series.
+  @$pb.TagNumber(11)
+  $pb.PbList<ForgeDailyVolume> get volumeDaily => $_getList(10);
+}
+
+/// One day of training volume.
+class ForgeDailyVolume extends $pb.GeneratedMessage {
+  factory ForgeDailyVolume({
+    $core.String? date,
+    $core.double? tonnage,
+  }) {
+    final result = create();
+    if (date != null) result.date = date;
+    if (tonnage != null) result.tonnage = tonnage;
+    return result;
+  }
+
+  ForgeDailyVolume._();
+
+  factory ForgeDailyVolume.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ForgeDailyVolume.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ForgeDailyVolume',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'date')
+    ..aD(2, _omitFieldNames ? '' : 'tonnage')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeDailyVolume clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ForgeDailyVolume copyWith(void Function(ForgeDailyVolume) updates) =>
+      super.copyWith((message) => updates(message as ForgeDailyVolume))
+          as ForgeDailyVolume;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ForgeDailyVolume create() => ForgeDailyVolume._();
+  @$core.override
+  ForgeDailyVolume createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ForgeDailyVolume getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ForgeDailyVolume>(create);
+  static ForgeDailyVolume? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get date => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set date($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDate() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get tonnage => $_getN(1);
+  @$pb.TagNumber(2)
+  set tonnage($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTonnage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTonnage() => $_clearField(2);
 }
 
 class GetForgeAnalyticsRequest extends $pb.GeneratedMessage {

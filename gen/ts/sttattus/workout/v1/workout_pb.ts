@@ -6647,6 +6647,20 @@ export class ForgeAnalytics extends Message<ForgeAnalytics> {
    */
   isEmpty = false;
 
+  /**
+   * Daily tonnage across the same trailing 28-day window the chronic load
+   * uses. Emitted for EVERY day in the window, rest days included as 0.0, so
+   * the client plots a calendar rather than reconstructing one from gaps —
+   * and so a week off reads as a trough instead of vanishing.
+   *
+   * Added because the analytics screen shipped a grey box reading "Chart
+   * plotting logic lands in Phase 2": the aggregation already existed for
+   * volume_7d, and nothing carried a series.
+   *
+   * @generated from field: repeated sttattus.workout.v1.ForgeDailyVolume volume_daily = 11;
+   */
+  volumeDaily: ForgeDailyVolume[] = [];
+
   constructor(data?: PartialMessage<ForgeAnalytics>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6665,6 +6679,7 @@ export class ForgeAnalytics extends Message<ForgeAnalytics> {
     { no: 8, name: "best_estimated_one_rm", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 9, name: "best_one_rm_exercise", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "is_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "volume_daily", kind: "message", T: ForgeDailyVolume, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeAnalytics {
@@ -6681,6 +6696,55 @@ export class ForgeAnalytics extends Message<ForgeAnalytics> {
 
   static equals(a: ForgeAnalytics | PlainMessage<ForgeAnalytics> | undefined, b: ForgeAnalytics | PlainMessage<ForgeAnalytics> | undefined): boolean {
     return proto3.util.equals(ForgeAnalytics, a, b);
+  }
+}
+
+/**
+ * One day of training volume.
+ *
+ * @generated from message sttattus.workout.v1.ForgeDailyVolume
+ */
+export class ForgeDailyVolume extends Message<ForgeDailyVolume> {
+  /**
+   * YYYY-MM-DD, UTC
+   *
+   * @generated from field: string date = 1;
+   */
+  date = "";
+
+  /**
+   * kg lifted that day (sum of weight x reps)
+   *
+   * @generated from field: double tonnage = 2;
+   */
+  tonnage = 0;
+
+  constructor(data?: PartialMessage<ForgeDailyVolume>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.ForgeDailyVolume";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "tonnage", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeDailyVolume {
+    return new ForgeDailyVolume().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ForgeDailyVolume {
+    return new ForgeDailyVolume().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ForgeDailyVolume {
+    return new ForgeDailyVolume().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ForgeDailyVolume | PlainMessage<ForgeDailyVolume> | undefined, b: ForgeDailyVolume | PlainMessage<ForgeDailyVolume> | undefined): boolean {
+    return proto3.util.equals(ForgeDailyVolume, a, b);
   }
 }
 

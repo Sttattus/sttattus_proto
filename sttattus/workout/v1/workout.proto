@@ -879,6 +879,22 @@ message ForgeAnalytics {
   // True when the lifter has no completed sessions in the window —
   // the client shows an editorial empty state instead of zeroes.
   bool is_empty = 10;
+
+  // Daily tonnage across the same trailing 28-day window the chronic load
+  // uses. Emitted for EVERY day in the window, rest days included as 0.0, so
+  // the client plots a calendar rather than reconstructing one from gaps —
+  // and so a week off reads as a trough instead of vanishing.
+  //
+  // Added because the analytics screen shipped a grey box reading "Chart
+  // plotting logic lands in Phase 2": the aggregation already existed for
+  // volume_7d, and nothing carried a series.
+  repeated ForgeDailyVolume volume_daily = 11;
+}
+
+// One day of training volume.
+message ForgeDailyVolume {
+  string date = 1; // YYYY-MM-DD, UTC
+  double tonnage = 2; // kg lifted that day (sum of weight x reps)
 }
 
 message GetForgeAnalyticsRequest {}

@@ -7879,7 +7879,16 @@ type ForgeAnalytics struct {
 	BestOneRmExercise  string  `protobuf:"bytes,9,opt,name=best_one_rm_exercise,json=bestOneRmExercise,proto3" json:"best_one_rm_exercise,omitempty"`
 	// True when the lifter has no completed sessions in the window —
 	// the client shows an editorial empty state instead of zeroes.
-	IsEmpty       bool `protobuf:"varint,10,opt,name=is_empty,json=isEmpty,proto3" json:"is_empty,omitempty"`
+	IsEmpty bool `protobuf:"varint,10,opt,name=is_empty,json=isEmpty,proto3" json:"is_empty,omitempty"`
+	// Daily tonnage across the same trailing 28-day window the chronic load
+	// uses. Emitted for EVERY day in the window, rest days included as 0.0, so
+	// the client plots a calendar rather than reconstructing one from gaps —
+	// and so a week off reads as a trough instead of vanishing.
+	//
+	// Added because the analytics screen shipped a grey box reading "Chart
+	// plotting logic lands in Phase 2": the aggregation already existed for
+	// volume_7d, and nothing carried a series.
+	VolumeDaily   []*ForgeDailyVolume `protobuf:"bytes,11,rep,name=volume_daily,json=volumeDaily,proto3" json:"volume_daily,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -7984,6 +7993,66 @@ func (x *ForgeAnalytics) GetIsEmpty() bool {
 	return false
 }
 
+func (x *ForgeAnalytics) GetVolumeDaily() []*ForgeDailyVolume {
+	if x != nil {
+		return x.VolumeDaily
+	}
+	return nil
+}
+
+// One day of training volume.
+type ForgeDailyVolume struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Date          string                 `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`         // YYYY-MM-DD, UTC
+	Tonnage       float64                `protobuf:"fixed64,2,opt,name=tonnage,proto3" json:"tonnage,omitempty"` // kg lifted that day (sum of weight x reps)
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgeDailyVolume) Reset() {
+	*x = ForgeDailyVolume{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgeDailyVolume) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgeDailyVolume) ProtoMessage() {}
+
+func (x *ForgeDailyVolume) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgeDailyVolume.ProtoReflect.Descriptor instead.
+func (*ForgeDailyVolume) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *ForgeDailyVolume) GetDate() string {
+	if x != nil {
+		return x.Date
+	}
+	return ""
+}
+
+func (x *ForgeDailyVolume) GetTonnage() float64 {
+	if x != nil {
+		return x.Tonnage
+	}
+	return 0
+}
+
 type GetForgeAnalyticsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -7992,7 +8061,7 @@ type GetForgeAnalyticsRequest struct {
 
 func (x *GetForgeAnalyticsRequest) Reset() {
 	*x = GetForgeAnalyticsRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[134]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[135]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8004,7 +8073,7 @@ func (x *GetForgeAnalyticsRequest) String() string {
 func (*GetForgeAnalyticsRequest) ProtoMessage() {}
 
 func (x *GetForgeAnalyticsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[134]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[135]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8017,7 +8086,7 @@ func (x *GetForgeAnalyticsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetForgeAnalyticsRequest.ProtoReflect.Descriptor instead.
 func (*GetForgeAnalyticsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{134}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{135}
 }
 
 type GetForgeAnalyticsResponse struct {
@@ -8029,7 +8098,7 @@ type GetForgeAnalyticsResponse struct {
 
 func (x *GetForgeAnalyticsResponse) Reset() {
 	*x = GetForgeAnalyticsResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[135]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[136]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8041,7 +8110,7 @@ func (x *GetForgeAnalyticsResponse) String() string {
 func (*GetForgeAnalyticsResponse) ProtoMessage() {}
 
 func (x *GetForgeAnalyticsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[135]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[136]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8054,7 +8123,7 @@ func (x *GetForgeAnalyticsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetForgeAnalyticsResponse.ProtoReflect.Descriptor instead.
 func (*GetForgeAnalyticsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{135}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{136}
 }
 
 func (x *GetForgeAnalyticsResponse) GetAnalytics() *ForgeAnalytics {
@@ -8078,7 +8147,7 @@ type CreateRivalryRequest struct {
 
 func (x *CreateRivalryRequest) Reset() {
 	*x = CreateRivalryRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[136]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[137]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8090,7 +8159,7 @@ func (x *CreateRivalryRequest) String() string {
 func (*CreateRivalryRequest) ProtoMessage() {}
 
 func (x *CreateRivalryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[136]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[137]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8103,7 +8172,7 @@ func (x *CreateRivalryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRivalryRequest.ProtoReflect.Descriptor instead.
 func (*CreateRivalryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{136}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{137}
 }
 
 func (x *CreateRivalryRequest) GetRivalHandle() string {
@@ -8136,7 +8205,7 @@ type CreateRivalryResponse struct {
 
 func (x *CreateRivalryResponse) Reset() {
 	*x = CreateRivalryResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[137]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[138]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8148,7 +8217,7 @@ func (x *CreateRivalryResponse) String() string {
 func (*CreateRivalryResponse) ProtoMessage() {}
 
 func (x *CreateRivalryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[137]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[138]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8161,7 +8230,7 @@ func (x *CreateRivalryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRivalryResponse.ProtoReflect.Descriptor instead.
 func (*CreateRivalryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{137}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{138}
 }
 
 func (x *CreateRivalryResponse) GetRivalry() *WorkoutRivalry {
@@ -8188,7 +8257,7 @@ type LeaderboardEntry struct {
 
 func (x *LeaderboardEntry) Reset() {
 	*x = LeaderboardEntry{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[138]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[139]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8200,7 +8269,7 @@ func (x *LeaderboardEntry) String() string {
 func (*LeaderboardEntry) ProtoMessage() {}
 
 func (x *LeaderboardEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[138]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[139]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8213,7 +8282,7 @@ func (x *LeaderboardEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeaderboardEntry.ProtoReflect.Descriptor instead.
 func (*LeaderboardEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{138}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{139}
 }
 
 func (x *LeaderboardEntry) GetPosition() int32 {
@@ -8289,7 +8358,7 @@ type GetLeaderboardRequest struct {
 
 func (x *GetLeaderboardRequest) Reset() {
 	*x = GetLeaderboardRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[139]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[140]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8301,7 +8370,7 @@ func (x *GetLeaderboardRequest) String() string {
 func (*GetLeaderboardRequest) ProtoMessage() {}
 
 func (x *GetLeaderboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[139]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[140]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8314,7 +8383,7 @@ func (x *GetLeaderboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLeaderboardRequest.ProtoReflect.Descriptor instead.
 func (*GetLeaderboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{139}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{140}
 }
 
 func (x *GetLeaderboardRequest) GetLimit() int32 {
@@ -8336,7 +8405,7 @@ type GetLeaderboardResponse struct {
 
 func (x *GetLeaderboardResponse) Reset() {
 	*x = GetLeaderboardResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[140]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[141]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8348,7 +8417,7 @@ func (x *GetLeaderboardResponse) String() string {
 func (*GetLeaderboardResponse) ProtoMessage() {}
 
 func (x *GetLeaderboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[140]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[141]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8361,7 +8430,7 @@ func (x *GetLeaderboardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLeaderboardResponse.ProtoReflect.Descriptor instead.
 func (*GetLeaderboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{140}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{141}
 }
 
 func (x *GetLeaderboardResponse) GetEntries() []*LeaderboardEntry {
@@ -8394,7 +8463,7 @@ type ForgeLounge struct {
 
 func (x *ForgeLounge) Reset() {
 	*x = ForgeLounge{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[141]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[142]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8406,7 +8475,7 @@ func (x *ForgeLounge) String() string {
 func (*ForgeLounge) ProtoMessage() {}
 
 func (x *ForgeLounge) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[141]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[142]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8419,7 +8488,7 @@ func (x *ForgeLounge) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForgeLounge.ProtoReflect.Descriptor instead.
 func (*ForgeLounge) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{141}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{142}
 }
 
 func (x *ForgeLounge) GetId() string {
@@ -8492,7 +8561,7 @@ type ForgeLoungeBooking struct {
 
 func (x *ForgeLoungeBooking) Reset() {
 	*x = ForgeLoungeBooking{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[142]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[143]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8504,7 +8573,7 @@ func (x *ForgeLoungeBooking) String() string {
 func (*ForgeLoungeBooking) ProtoMessage() {}
 
 func (x *ForgeLoungeBooking) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[142]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[143]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8517,7 +8586,7 @@ func (x *ForgeLoungeBooking) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ForgeLoungeBooking.ProtoReflect.Descriptor instead.
 func (*ForgeLoungeBooking) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{142}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{143}
 }
 
 func (x *ForgeLoungeBooking) GetId() string {
@@ -8570,7 +8639,7 @@ type ListForgeLoungesRequest struct {
 
 func (x *ListForgeLoungesRequest) Reset() {
 	*x = ListForgeLoungesRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[143]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[144]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8582,7 +8651,7 @@ func (x *ListForgeLoungesRequest) String() string {
 func (*ListForgeLoungesRequest) ProtoMessage() {}
 
 func (x *ListForgeLoungesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[143]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[144]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8595,7 +8664,7 @@ func (x *ListForgeLoungesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListForgeLoungesRequest.ProtoReflect.Descriptor instead.
 func (*ListForgeLoungesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{143}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{144}
 }
 
 type ListForgeLoungesResponse struct {
@@ -8607,7 +8676,7 @@ type ListForgeLoungesResponse struct {
 
 func (x *ListForgeLoungesResponse) Reset() {
 	*x = ListForgeLoungesResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[144]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[145]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8619,7 +8688,7 @@ func (x *ListForgeLoungesResponse) String() string {
 func (*ListForgeLoungesResponse) ProtoMessage() {}
 
 func (x *ListForgeLoungesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[144]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[145]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8632,7 +8701,7 @@ func (x *ListForgeLoungesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListForgeLoungesResponse.ProtoReflect.Descriptor instead.
 func (*ListForgeLoungesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{144}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{145}
 }
 
 func (x *ListForgeLoungesResponse) GetLounges() []*ForgeLounge {
@@ -8650,7 +8719,7 @@ type ListMyLoungeBookingsRequest struct {
 
 func (x *ListMyLoungeBookingsRequest) Reset() {
 	*x = ListMyLoungeBookingsRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[145]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[146]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8662,7 +8731,7 @@ func (x *ListMyLoungeBookingsRequest) String() string {
 func (*ListMyLoungeBookingsRequest) ProtoMessage() {}
 
 func (x *ListMyLoungeBookingsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[145]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[146]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8675,7 +8744,7 @@ func (x *ListMyLoungeBookingsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyLoungeBookingsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyLoungeBookingsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{145}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{146}
 }
 
 type ListMyLoungeBookingsResponse struct {
@@ -8687,7 +8756,7 @@ type ListMyLoungeBookingsResponse struct {
 
 func (x *ListMyLoungeBookingsResponse) Reset() {
 	*x = ListMyLoungeBookingsResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[146]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[147]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8699,7 +8768,7 @@ func (x *ListMyLoungeBookingsResponse) String() string {
 func (*ListMyLoungeBookingsResponse) ProtoMessage() {}
 
 func (x *ListMyLoungeBookingsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[146]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[147]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8712,7 +8781,7 @@ func (x *ListMyLoungeBookingsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyLoungeBookingsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyLoungeBookingsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{146}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{147}
 }
 
 func (x *ListMyLoungeBookingsResponse) GetBookings() []*ForgeLoungeBooking {
@@ -8732,7 +8801,7 @@ type CreateLoungeBookingRequest struct {
 
 func (x *CreateLoungeBookingRequest) Reset() {
 	*x = CreateLoungeBookingRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[147]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[148]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8744,7 +8813,7 @@ func (x *CreateLoungeBookingRequest) String() string {
 func (*CreateLoungeBookingRequest) ProtoMessage() {}
 
 func (x *CreateLoungeBookingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[147]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[148]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8757,7 +8826,7 @@ func (x *CreateLoungeBookingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLoungeBookingRequest.ProtoReflect.Descriptor instead.
 func (*CreateLoungeBookingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{147}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{148}
 }
 
 func (x *CreateLoungeBookingRequest) GetLoungeId() string {
@@ -8783,7 +8852,7 @@ type CreateLoungeBookingResponse struct {
 
 func (x *CreateLoungeBookingResponse) Reset() {
 	*x = CreateLoungeBookingResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[148]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[149]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8795,7 +8864,7 @@ func (x *CreateLoungeBookingResponse) String() string {
 func (*CreateLoungeBookingResponse) ProtoMessage() {}
 
 func (x *CreateLoungeBookingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[148]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[149]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8808,7 +8877,7 @@ func (x *CreateLoungeBookingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLoungeBookingResponse.ProtoReflect.Descriptor instead.
 func (*CreateLoungeBookingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{148}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{149}
 }
 
 func (x *CreateLoungeBookingResponse) GetBooking() *ForgeLoungeBooking {
@@ -8827,7 +8896,7 @@ type CancelLoungeBookingRequest struct {
 
 func (x *CancelLoungeBookingRequest) Reset() {
 	*x = CancelLoungeBookingRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[149]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[150]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8839,7 +8908,7 @@ func (x *CancelLoungeBookingRequest) String() string {
 func (*CancelLoungeBookingRequest) ProtoMessage() {}
 
 func (x *CancelLoungeBookingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[149]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[150]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8852,7 +8921,7 @@ func (x *CancelLoungeBookingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelLoungeBookingRequest.ProtoReflect.Descriptor instead.
 func (*CancelLoungeBookingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{149}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{150}
 }
 
 func (x *CancelLoungeBookingRequest) GetId() string {
@@ -8870,7 +8939,7 @@ type CancelLoungeBookingResponse struct {
 
 func (x *CancelLoungeBookingResponse) Reset() {
 	*x = CancelLoungeBookingResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[150]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[151]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8882,7 +8951,7 @@ func (x *CancelLoungeBookingResponse) String() string {
 func (*CancelLoungeBookingResponse) ProtoMessage() {}
 
 func (x *CancelLoungeBookingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[150]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[151]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8895,7 +8964,7 @@ func (x *CancelLoungeBookingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelLoungeBookingResponse.ProtoReflect.Descriptor instead.
 func (*CancelLoungeBookingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{150}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{151}
 }
 
 type Coach struct {
@@ -8914,7 +8983,7 @@ type Coach struct {
 
 func (x *Coach) Reset() {
 	*x = Coach{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[151]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[152]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8926,7 +8995,7 @@ func (x *Coach) String() string {
 func (*Coach) ProtoMessage() {}
 
 func (x *Coach) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[151]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[152]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8939,7 +9008,7 @@ func (x *Coach) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Coach.ProtoReflect.Descriptor instead.
 func (*Coach) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{151}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{152}
 }
 
 func (x *Coach) GetId() string {
@@ -9006,7 +9075,7 @@ type ListCoachesRequest struct {
 
 func (x *ListCoachesRequest) Reset() {
 	*x = ListCoachesRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[152]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[153]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9018,7 +9087,7 @@ func (x *ListCoachesRequest) String() string {
 func (*ListCoachesRequest) ProtoMessage() {}
 
 func (x *ListCoachesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[152]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[153]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9031,7 +9100,7 @@ func (x *ListCoachesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCoachesRequest.ProtoReflect.Descriptor instead.
 func (*ListCoachesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{152}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{153}
 }
 
 type ListCoachesResponse struct {
@@ -9043,7 +9112,7 @@ type ListCoachesResponse struct {
 
 func (x *ListCoachesResponse) Reset() {
 	*x = ListCoachesResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[153]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[154]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9055,7 +9124,7 @@ func (x *ListCoachesResponse) String() string {
 func (*ListCoachesResponse) ProtoMessage() {}
 
 func (x *ListCoachesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[153]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[154]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9068,7 +9137,7 @@ func (x *ListCoachesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCoachesResponse.ProtoReflect.Descriptor instead.
 func (*ListCoachesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{153}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{154}
 }
 
 func (x *ListCoachesResponse) GetCoaches() []*Coach {
@@ -9088,7 +9157,7 @@ type RequestCoachBookingRequest struct {
 
 func (x *RequestCoachBookingRequest) Reset() {
 	*x = RequestCoachBookingRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[154]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[155]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9100,7 +9169,7 @@ func (x *RequestCoachBookingRequest) String() string {
 func (*RequestCoachBookingRequest) ProtoMessage() {}
 
 func (x *RequestCoachBookingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[154]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[155]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9113,7 +9182,7 @@ func (x *RequestCoachBookingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestCoachBookingRequest.ProtoReflect.Descriptor instead.
 func (*RequestCoachBookingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{154}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{155}
 }
 
 func (x *RequestCoachBookingRequest) GetCoachId() string {
@@ -9141,7 +9210,7 @@ type RequestCoachBookingResponse struct {
 
 func (x *RequestCoachBookingResponse) Reset() {
 	*x = RequestCoachBookingResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[155]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[156]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9153,7 +9222,7 @@ func (x *RequestCoachBookingResponse) String() string {
 func (*RequestCoachBookingResponse) ProtoMessage() {}
 
 func (x *RequestCoachBookingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[155]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[156]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9166,7 +9235,7 @@ func (x *RequestCoachBookingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestCoachBookingResponse.ProtoReflect.Descriptor instead.
 func (*RequestCoachBookingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{155}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{156}
 }
 
 func (x *RequestCoachBookingResponse) GetRequestId() string {
@@ -9193,7 +9262,7 @@ type GenerateForgeAlmanacRequest struct {
 
 func (x *GenerateForgeAlmanacRequest) Reset() {
 	*x = GenerateForgeAlmanacRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[156]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[157]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9205,7 +9274,7 @@ func (x *GenerateForgeAlmanacRequest) String() string {
 func (*GenerateForgeAlmanacRequest) ProtoMessage() {}
 
 func (x *GenerateForgeAlmanacRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[156]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[157]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9218,7 +9287,7 @@ func (x *GenerateForgeAlmanacRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateForgeAlmanacRequest.ProtoReflect.Descriptor instead.
 func (*GenerateForgeAlmanacRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{156}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{157}
 }
 
 func (x *GenerateForgeAlmanacRequest) GetYear() int32 {
@@ -9239,7 +9308,7 @@ type GenerateForgeAlmanacResponse struct {
 
 func (x *GenerateForgeAlmanacResponse) Reset() {
 	*x = GenerateForgeAlmanacResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[157]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[158]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9251,7 +9320,7 @@ func (x *GenerateForgeAlmanacResponse) String() string {
 func (*GenerateForgeAlmanacResponse) ProtoMessage() {}
 
 func (x *GenerateForgeAlmanacResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[157]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[158]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9264,7 +9333,7 @@ func (x *GenerateForgeAlmanacResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateForgeAlmanacResponse.ProtoReflect.Descriptor instead.
 func (*GenerateForgeAlmanacResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{157}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{158}
 }
 
 func (x *GenerateForgeAlmanacResponse) GetMediaAssetId() string {
@@ -9297,7 +9366,7 @@ type AnalyzeFormVideoRequest struct {
 
 func (x *AnalyzeFormVideoRequest) Reset() {
 	*x = AnalyzeFormVideoRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[158]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[159]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9309,7 +9378,7 @@ func (x *AnalyzeFormVideoRequest) String() string {
 func (*AnalyzeFormVideoRequest) ProtoMessage() {}
 
 func (x *AnalyzeFormVideoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[158]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[159]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9322,7 +9391,7 @@ func (x *AnalyzeFormVideoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyzeFormVideoRequest.ProtoReflect.Descriptor instead.
 func (*AnalyzeFormVideoRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{158}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{159}
 }
 
 func (x *AnalyzeFormVideoRequest) GetFormVideoId() string {
@@ -9346,7 +9415,7 @@ type AnalyzeFormVideoResponse struct {
 
 func (x *AnalyzeFormVideoResponse) Reset() {
 	*x = AnalyzeFormVideoResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[159]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[160]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9358,7 +9427,7 @@ func (x *AnalyzeFormVideoResponse) String() string {
 func (*AnalyzeFormVideoResponse) ProtoMessage() {}
 
 func (x *AnalyzeFormVideoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[159]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[160]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9371,7 +9440,7 @@ func (x *AnalyzeFormVideoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyzeFormVideoResponse.ProtoReflect.Descriptor instead.
 func (*AnalyzeFormVideoResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{159}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{160}
 }
 
 func (x *AnalyzeFormVideoResponse) GetCue() string {
@@ -9409,7 +9478,7 @@ type AthleteShare struct {
 
 func (x *AthleteShare) Reset() {
 	*x = AthleteShare{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[160]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[161]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9421,7 +9490,7 @@ func (x *AthleteShare) String() string {
 func (*AthleteShare) ProtoMessage() {}
 
 func (x *AthleteShare) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[160]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[161]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9434,7 +9503,7 @@ func (x *AthleteShare) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AthleteShare.ProtoReflect.Descriptor instead.
 func (*AthleteShare) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{160}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{161}
 }
 
 func (x *AthleteShare) GetId() string {
@@ -9489,7 +9558,7 @@ type CreateAthleteShareRequest struct {
 
 func (x *CreateAthleteShareRequest) Reset() {
 	*x = CreateAthleteShareRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[161]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[162]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9501,7 +9570,7 @@ func (x *CreateAthleteShareRequest) String() string {
 func (*CreateAthleteShareRequest) ProtoMessage() {}
 
 func (x *CreateAthleteShareRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[161]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[162]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9514,7 +9583,7 @@ func (x *CreateAthleteShareRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAthleteShareRequest.ProtoReflect.Descriptor instead.
 func (*CreateAthleteShareRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{161}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{162}
 }
 
 func (x *CreateAthleteShareRequest) GetTtlDays() int32 {
@@ -9533,7 +9602,7 @@ type CreateAthleteShareResponse struct {
 
 func (x *CreateAthleteShareResponse) Reset() {
 	*x = CreateAthleteShareResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[162]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[163]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9545,7 +9614,7 @@ func (x *CreateAthleteShareResponse) String() string {
 func (*CreateAthleteShareResponse) ProtoMessage() {}
 
 func (x *CreateAthleteShareResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[162]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[163]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9558,7 +9627,7 @@ func (x *CreateAthleteShareResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAthleteShareResponse.ProtoReflect.Descriptor instead.
 func (*CreateAthleteShareResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{162}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{163}
 }
 
 func (x *CreateAthleteShareResponse) GetShare() *AthleteShare {
@@ -9576,7 +9645,7 @@ type ListMyAthleteSharesRequest struct {
 
 func (x *ListMyAthleteSharesRequest) Reset() {
 	*x = ListMyAthleteSharesRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[163]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[164]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9588,7 +9657,7 @@ func (x *ListMyAthleteSharesRequest) String() string {
 func (*ListMyAthleteSharesRequest) ProtoMessage() {}
 
 func (x *ListMyAthleteSharesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[163]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[164]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9601,7 +9670,7 @@ func (x *ListMyAthleteSharesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAthleteSharesRequest.ProtoReflect.Descriptor instead.
 func (*ListMyAthleteSharesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{163}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{164}
 }
 
 type ListMyAthleteSharesResponse struct {
@@ -9613,7 +9682,7 @@ type ListMyAthleteSharesResponse struct {
 
 func (x *ListMyAthleteSharesResponse) Reset() {
 	*x = ListMyAthleteSharesResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[164]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[165]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9625,7 +9694,7 @@ func (x *ListMyAthleteSharesResponse) String() string {
 func (*ListMyAthleteSharesResponse) ProtoMessage() {}
 
 func (x *ListMyAthleteSharesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[164]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[165]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9638,7 +9707,7 @@ func (x *ListMyAthleteSharesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAthleteSharesResponse.ProtoReflect.Descriptor instead.
 func (*ListMyAthleteSharesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{164}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{165}
 }
 
 func (x *ListMyAthleteSharesResponse) GetShares() []*AthleteShare {
@@ -9657,7 +9726,7 @@ type RevokeAthleteShareRequest struct {
 
 func (x *RevokeAthleteShareRequest) Reset() {
 	*x = RevokeAthleteShareRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[165]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[166]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9669,7 +9738,7 @@ func (x *RevokeAthleteShareRequest) String() string {
 func (*RevokeAthleteShareRequest) ProtoMessage() {}
 
 func (x *RevokeAthleteShareRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[165]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[166]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9682,7 +9751,7 @@ func (x *RevokeAthleteShareRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeAthleteShareRequest.ProtoReflect.Descriptor instead.
 func (*RevokeAthleteShareRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{165}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{166}
 }
 
 func (x *RevokeAthleteShareRequest) GetId() string {
@@ -9700,7 +9769,7 @@ type RevokeAthleteShareResponse struct {
 
 func (x *RevokeAthleteShareResponse) Reset() {
 	*x = RevokeAthleteShareResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[166]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[167]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9712,7 +9781,7 @@ func (x *RevokeAthleteShareResponse) String() string {
 func (*RevokeAthleteShareResponse) ProtoMessage() {}
 
 func (x *RevokeAthleteShareResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[166]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[167]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9725,7 +9794,7 @@ func (x *RevokeAthleteShareResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeAthleteShareResponse.ProtoReflect.Descriptor instead.
 func (*RevokeAthleteShareResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{166}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{167}
 }
 
 type CoachThread struct {
@@ -9742,7 +9811,7 @@ type CoachThread struct {
 
 func (x *CoachThread) Reset() {
 	*x = CoachThread{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[167]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[168]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9754,7 +9823,7 @@ func (x *CoachThread) String() string {
 func (*CoachThread) ProtoMessage() {}
 
 func (x *CoachThread) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[167]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[168]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9767,7 +9836,7 @@ func (x *CoachThread) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CoachThread.ProtoReflect.Descriptor instead.
 func (*CoachThread) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{167}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{168}
 }
 
 func (x *CoachThread) GetId() string {
@@ -9832,7 +9901,7 @@ type CoachMessage struct {
 
 func (x *CoachMessage) Reset() {
 	*x = CoachMessage{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[168]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[169]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9844,7 +9913,7 @@ func (x *CoachMessage) String() string {
 func (*CoachMessage) ProtoMessage() {}
 
 func (x *CoachMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[168]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[169]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9857,7 +9926,7 @@ func (x *CoachMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CoachMessage.ProtoReflect.Descriptor instead.
 func (*CoachMessage) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{168}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{169}
 }
 
 func (x *CoachMessage) GetId() string {
@@ -9905,7 +9974,7 @@ type StartCoachThreadRequest struct {
 
 func (x *StartCoachThreadRequest) Reset() {
 	*x = StartCoachThreadRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[169]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[170]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9917,7 +9986,7 @@ func (x *StartCoachThreadRequest) String() string {
 func (*StartCoachThreadRequest) ProtoMessage() {}
 
 func (x *StartCoachThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[169]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[170]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9930,7 +9999,7 @@ func (x *StartCoachThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartCoachThreadRequest.ProtoReflect.Descriptor instead.
 func (*StartCoachThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{169}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{170}
 }
 
 func (x *StartCoachThreadRequest) GetSubject() string {
@@ -9956,7 +10025,7 @@ type StartCoachThreadResponse struct {
 
 func (x *StartCoachThreadResponse) Reset() {
 	*x = StartCoachThreadResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[170]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[171]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9968,7 +10037,7 @@ func (x *StartCoachThreadResponse) String() string {
 func (*StartCoachThreadResponse) ProtoMessage() {}
 
 func (x *StartCoachThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[170]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[171]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9981,7 +10050,7 @@ func (x *StartCoachThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartCoachThreadResponse.ProtoReflect.Descriptor instead.
 func (*StartCoachThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{170}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{171}
 }
 
 func (x *StartCoachThreadResponse) GetThread() *CoachThread {
@@ -9999,7 +10068,7 @@ type ListMyCoachThreadsRequest struct {
 
 func (x *ListMyCoachThreadsRequest) Reset() {
 	*x = ListMyCoachThreadsRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[171]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[172]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10011,7 +10080,7 @@ func (x *ListMyCoachThreadsRequest) String() string {
 func (*ListMyCoachThreadsRequest) ProtoMessage() {}
 
 func (x *ListMyCoachThreadsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[171]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[172]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10024,7 +10093,7 @@ func (x *ListMyCoachThreadsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyCoachThreadsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyCoachThreadsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{171}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{172}
 }
 
 type ListMyCoachThreadsResponse struct {
@@ -10036,7 +10105,7 @@ type ListMyCoachThreadsResponse struct {
 
 func (x *ListMyCoachThreadsResponse) Reset() {
 	*x = ListMyCoachThreadsResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[172]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[173]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10048,7 +10117,7 @@ func (x *ListMyCoachThreadsResponse) String() string {
 func (*ListMyCoachThreadsResponse) ProtoMessage() {}
 
 func (x *ListMyCoachThreadsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[172]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[173]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10061,7 +10130,7 @@ func (x *ListMyCoachThreadsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyCoachThreadsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyCoachThreadsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{172}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{173}
 }
 
 func (x *ListMyCoachThreadsResponse) GetThreads() []*CoachThread {
@@ -10080,7 +10149,7 @@ type GetCoachThreadRequest struct {
 
 func (x *GetCoachThreadRequest) Reset() {
 	*x = GetCoachThreadRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[173]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[174]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10092,7 +10161,7 @@ func (x *GetCoachThreadRequest) String() string {
 func (*GetCoachThreadRequest) ProtoMessage() {}
 
 func (x *GetCoachThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[173]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[174]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10105,7 +10174,7 @@ func (x *GetCoachThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCoachThreadRequest.ProtoReflect.Descriptor instead.
 func (*GetCoachThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{173}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{174}
 }
 
 func (x *GetCoachThreadRequest) GetThreadId() string {
@@ -10125,7 +10194,7 @@ type GetCoachThreadResponse struct {
 
 func (x *GetCoachThreadResponse) Reset() {
 	*x = GetCoachThreadResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[174]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[175]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10137,7 +10206,7 @@ func (x *GetCoachThreadResponse) String() string {
 func (*GetCoachThreadResponse) ProtoMessage() {}
 
 func (x *GetCoachThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[174]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[175]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10150,7 +10219,7 @@ func (x *GetCoachThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCoachThreadResponse.ProtoReflect.Descriptor instead.
 func (*GetCoachThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{174}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{175}
 }
 
 func (x *GetCoachThreadResponse) GetThread() *CoachThread {
@@ -10177,7 +10246,7 @@ type PostCoachMessageRequest struct {
 
 func (x *PostCoachMessageRequest) Reset() {
 	*x = PostCoachMessageRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[175]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[176]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10189,7 +10258,7 @@ func (x *PostCoachMessageRequest) String() string {
 func (*PostCoachMessageRequest) ProtoMessage() {}
 
 func (x *PostCoachMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[175]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[176]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10202,7 +10271,7 @@ func (x *PostCoachMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostCoachMessageRequest.ProtoReflect.Descriptor instead.
 func (*PostCoachMessageRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{175}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{176}
 }
 
 func (x *PostCoachMessageRequest) GetThreadId() string {
@@ -10228,7 +10297,7 @@ type PostCoachMessageResponse struct {
 
 func (x *PostCoachMessageResponse) Reset() {
 	*x = PostCoachMessageResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[176]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[177]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10240,7 +10309,7 @@ func (x *PostCoachMessageResponse) String() string {
 func (*PostCoachMessageResponse) ProtoMessage() {}
 
 func (x *PostCoachMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[176]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[177]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10253,7 +10322,7 @@ func (x *PostCoachMessageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostCoachMessageResponse.ProtoReflect.Descriptor instead.
 func (*PostCoachMessageResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{176}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{177}
 }
 
 func (x *PostCoachMessageResponse) GetMessage() *CoachMessage {
@@ -10281,7 +10350,7 @@ type AnthologyArticle struct {
 
 func (x *AnthologyArticle) Reset() {
 	*x = AnthologyArticle{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[177]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[178]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10293,7 +10362,7 @@ func (x *AnthologyArticle) String() string {
 func (*AnthologyArticle) ProtoMessage() {}
 
 func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[177]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[178]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10306,7 +10375,7 @@ func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
 func (*AnthologyArticle) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{177}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{178}
 }
 
 func (x *AnthologyArticle) GetId() string {
@@ -10388,7 +10457,7 @@ type ListAnthologyArticlesRequest struct {
 
 func (x *ListAnthologyArticlesRequest) Reset() {
 	*x = ListAnthologyArticlesRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[178]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[179]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10400,7 +10469,7 @@ func (x *ListAnthologyArticlesRequest) String() string {
 func (*ListAnthologyArticlesRequest) ProtoMessage() {}
 
 func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[178]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[179]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10413,7 +10482,7 @@ func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
 func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{178}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{179}
 }
 
 func (x *ListAnthologyArticlesRequest) GetIncludeSovereign() bool {
@@ -10433,7 +10502,7 @@ type ListAnthologyArticlesResponse struct {
 
 func (x *ListAnthologyArticlesResponse) Reset() {
 	*x = ListAnthologyArticlesResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[179]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[180]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10445,7 +10514,7 @@ func (x *ListAnthologyArticlesResponse) String() string {
 func (*ListAnthologyArticlesResponse) ProtoMessage() {}
 
 func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[179]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[180]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10458,7 +10527,7 @@ func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
 func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{179}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{180}
 }
 
 func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
@@ -10477,7 +10546,7 @@ type GetAnthologyArticleRequest struct {
 
 func (x *GetAnthologyArticleRequest) Reset() {
 	*x = GetAnthologyArticleRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[180]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[181]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10489,7 +10558,7 @@ func (x *GetAnthologyArticleRequest) String() string {
 func (*GetAnthologyArticleRequest) ProtoMessage() {}
 
 func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[180]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[181]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10502,7 +10571,7 @@ func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
 func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{180}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{181}
 }
 
 func (x *GetAnthologyArticleRequest) GetSlug() string {
@@ -10521,7 +10590,7 @@ type GetAnthologyArticleResponse struct {
 
 func (x *GetAnthologyArticleResponse) Reset() {
 	*x = GetAnthologyArticleResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[181]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[182]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10533,7 +10602,7 @@ func (x *GetAnthologyArticleResponse) String() string {
 func (*GetAnthologyArticleResponse) ProtoMessage() {}
 
 func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[181]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[182]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10546,7 +10615,7 @@ func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
 func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{181}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{182}
 }
 
 func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
@@ -10569,7 +10638,7 @@ type SimulateForgeRankRequest struct {
 
 func (x *SimulateForgeRankRequest) Reset() {
 	*x = SimulateForgeRankRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[182]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[183]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10581,7 +10650,7 @@ func (x *SimulateForgeRankRequest) String() string {
 func (*SimulateForgeRankRequest) ProtoMessage() {}
 
 func (x *SimulateForgeRankRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[182]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[183]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10594,7 +10663,7 @@ func (x *SimulateForgeRankRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SimulateForgeRankRequest.ProtoReflect.Descriptor instead.
 func (*SimulateForgeRankRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{182}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{183}
 }
 
 func (x *SimulateForgeRankRequest) GetSeries() []*Series {
@@ -10640,7 +10709,7 @@ type SimulateForgeRankResponse struct {
 
 func (x *SimulateForgeRankResponse) Reset() {
 	*x = SimulateForgeRankResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[183]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[184]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10652,7 +10721,7 @@ func (x *SimulateForgeRankResponse) String() string {
 func (*SimulateForgeRankResponse) ProtoMessage() {}
 
 func (x *SimulateForgeRankResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[183]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[184]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10665,7 +10734,7 @@ func (x *SimulateForgeRankResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SimulateForgeRankResponse.ProtoReflect.Descriptor instead.
 func (*SimulateForgeRankResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{183}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{184}
 }
 
 func (x *SimulateForgeRankResponse) GetCurrentForgeRank() float64 {
@@ -10746,7 +10815,7 @@ type GetRecoveryScoreRequest struct {
 
 func (x *GetRecoveryScoreRequest) Reset() {
 	*x = GetRecoveryScoreRequest{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[184]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[185]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10758,7 +10827,7 @@ func (x *GetRecoveryScoreRequest) String() string {
 func (*GetRecoveryScoreRequest) ProtoMessage() {}
 
 func (x *GetRecoveryScoreRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[184]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[185]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10771,7 +10840,7 @@ func (x *GetRecoveryScoreRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecoveryScoreRequest.ProtoReflect.Descriptor instead.
 func (*GetRecoveryScoreRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{184}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{185}
 }
 
 type GetRecoveryScoreResponse struct {
@@ -10797,7 +10866,7 @@ type GetRecoveryScoreResponse struct {
 
 func (x *GetRecoveryScoreResponse) Reset() {
 	*x = GetRecoveryScoreResponse{}
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[185]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[186]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10809,7 +10878,7 @@ func (x *GetRecoveryScoreResponse) String() string {
 func (*GetRecoveryScoreResponse) ProtoMessage() {}
 
 func (x *GetRecoveryScoreResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[185]
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[186]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10822,7 +10891,7 @@ func (x *GetRecoveryScoreResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecoveryScoreResponse.ProtoReflect.Descriptor instead.
 func (*GetRecoveryScoreResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{185}
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{186}
 }
 
 func (x *GetRecoveryScoreResponse) GetScore() int32 {
@@ -11465,7 +11534,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x06metric\x18\x01 \x01(\tR\x06metric\x12\x16\n" +
 	"\x06source\x18\x02 \x01(\tR\x06source\"\\\n" +
 	"\x19SetSensorPriorityResponse\x12?\n" +
-	"\bpriority\x18\x01 \x01(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority\"\x96\x03\n" +
+	"\bpriority\x18\x01 \x01(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority\"\xe0\x03\n" +
 	"\x0eForgeAnalytics\x12.\n" +
 	"\x13acute_chronic_ratio\x18\x01 \x01(\x01R\x11acuteChronicRatio\x12,\n" +
 	"\x12acute_chronic_zone\x18\x02 \x01(\tR\x10acuteChronicZone\x12\x1f\n" +
@@ -11478,7 +11547,11 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x15best_estimated_one_rm\x18\b \x01(\x01R\x12bestEstimatedOneRm\x12/\n" +
 	"\x14best_one_rm_exercise\x18\t \x01(\tR\x11bestOneRmExercise\x12\x19\n" +
 	"\bis_empty\x18\n" +
-	" \x01(\bR\aisEmpty\"\x1a\n" +
+	" \x01(\bR\aisEmpty\x12H\n" +
+	"\fvolume_daily\x18\v \x03(\v2%.sttattus.workout.v1.ForgeDailyVolumeR\vvolumeDaily\"@\n" +
+	"\x10ForgeDailyVolume\x12\x12\n" +
+	"\x04date\x18\x01 \x01(\tR\x04date\x12\x18\n" +
+	"\atonnage\x18\x02 \x01(\x01R\atonnage\"\x1a\n" +
 	"\x18GetForgeAnalyticsRequest\"^\n" +
 	"\x19GetForgeAnalyticsResponse\x12A\n" +
 	"\tanalytics\x18\x01 \x01(\v2#.sttattus.workout.v1.ForgeAnalyticsR\tanalytics\"}\n" +
@@ -11765,7 +11838,7 @@ func file_sttattus_workout_v1_workout_proto_rawDescGZIP() []byte {
 	return file_sttattus_workout_v1_workout_proto_rawDescData
 }
 
-var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 186)
+var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 187)
 var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*Tag)(nil),                                // 0: sttattus.workout.v1.Tag
 	(*Workout)(nil),                            // 1: sttattus.workout.v1.Workout
@@ -11901,87 +11974,88 @@ var file_sttattus_workout_v1_workout_proto_goTypes = []any{
 	(*SetSensorPriorityRequest)(nil),           // 131: sttattus.workout.v1.SetSensorPriorityRequest
 	(*SetSensorPriorityResponse)(nil),          // 132: sttattus.workout.v1.SetSensorPriorityResponse
 	(*ForgeAnalytics)(nil),                     // 133: sttattus.workout.v1.ForgeAnalytics
-	(*GetForgeAnalyticsRequest)(nil),           // 134: sttattus.workout.v1.GetForgeAnalyticsRequest
-	(*GetForgeAnalyticsResponse)(nil),          // 135: sttattus.workout.v1.GetForgeAnalyticsResponse
-	(*CreateRivalryRequest)(nil),               // 136: sttattus.workout.v1.CreateRivalryRequest
-	(*CreateRivalryResponse)(nil),              // 137: sttattus.workout.v1.CreateRivalryResponse
-	(*LeaderboardEntry)(nil),                   // 138: sttattus.workout.v1.LeaderboardEntry
-	(*GetLeaderboardRequest)(nil),              // 139: sttattus.workout.v1.GetLeaderboardRequest
-	(*GetLeaderboardResponse)(nil),             // 140: sttattus.workout.v1.GetLeaderboardResponse
-	(*ForgeLounge)(nil),                        // 141: sttattus.workout.v1.ForgeLounge
-	(*ForgeLoungeBooking)(nil),                 // 142: sttattus.workout.v1.ForgeLoungeBooking
-	(*ListForgeLoungesRequest)(nil),            // 143: sttattus.workout.v1.ListForgeLoungesRequest
-	(*ListForgeLoungesResponse)(nil),           // 144: sttattus.workout.v1.ListForgeLoungesResponse
-	(*ListMyLoungeBookingsRequest)(nil),        // 145: sttattus.workout.v1.ListMyLoungeBookingsRequest
-	(*ListMyLoungeBookingsResponse)(nil),       // 146: sttattus.workout.v1.ListMyLoungeBookingsResponse
-	(*CreateLoungeBookingRequest)(nil),         // 147: sttattus.workout.v1.CreateLoungeBookingRequest
-	(*CreateLoungeBookingResponse)(nil),        // 148: sttattus.workout.v1.CreateLoungeBookingResponse
-	(*CancelLoungeBookingRequest)(nil),         // 149: sttattus.workout.v1.CancelLoungeBookingRequest
-	(*CancelLoungeBookingResponse)(nil),        // 150: sttattus.workout.v1.CancelLoungeBookingResponse
-	(*Coach)(nil),                              // 151: sttattus.workout.v1.Coach
-	(*ListCoachesRequest)(nil),                 // 152: sttattus.workout.v1.ListCoachesRequest
-	(*ListCoachesResponse)(nil),                // 153: sttattus.workout.v1.ListCoachesResponse
-	(*RequestCoachBookingRequest)(nil),         // 154: sttattus.workout.v1.RequestCoachBookingRequest
-	(*RequestCoachBookingResponse)(nil),        // 155: sttattus.workout.v1.RequestCoachBookingResponse
-	(*GenerateForgeAlmanacRequest)(nil),        // 156: sttattus.workout.v1.GenerateForgeAlmanacRequest
-	(*GenerateForgeAlmanacResponse)(nil),       // 157: sttattus.workout.v1.GenerateForgeAlmanacResponse
-	(*AnalyzeFormVideoRequest)(nil),            // 158: sttattus.workout.v1.AnalyzeFormVideoRequest
-	(*AnalyzeFormVideoResponse)(nil),           // 159: sttattus.workout.v1.AnalyzeFormVideoResponse
-	(*AthleteShare)(nil),                       // 160: sttattus.workout.v1.AthleteShare
-	(*CreateAthleteShareRequest)(nil),          // 161: sttattus.workout.v1.CreateAthleteShareRequest
-	(*CreateAthleteShareResponse)(nil),         // 162: sttattus.workout.v1.CreateAthleteShareResponse
-	(*ListMyAthleteSharesRequest)(nil),         // 163: sttattus.workout.v1.ListMyAthleteSharesRequest
-	(*ListMyAthleteSharesResponse)(nil),        // 164: sttattus.workout.v1.ListMyAthleteSharesResponse
-	(*RevokeAthleteShareRequest)(nil),          // 165: sttattus.workout.v1.RevokeAthleteShareRequest
-	(*RevokeAthleteShareResponse)(nil),         // 166: sttattus.workout.v1.RevokeAthleteShareResponse
-	(*CoachThread)(nil),                        // 167: sttattus.workout.v1.CoachThread
-	(*CoachMessage)(nil),                       // 168: sttattus.workout.v1.CoachMessage
-	(*StartCoachThreadRequest)(nil),            // 169: sttattus.workout.v1.StartCoachThreadRequest
-	(*StartCoachThreadResponse)(nil),           // 170: sttattus.workout.v1.StartCoachThreadResponse
-	(*ListMyCoachThreadsRequest)(nil),          // 171: sttattus.workout.v1.ListMyCoachThreadsRequest
-	(*ListMyCoachThreadsResponse)(nil),         // 172: sttattus.workout.v1.ListMyCoachThreadsResponse
-	(*GetCoachThreadRequest)(nil),              // 173: sttattus.workout.v1.GetCoachThreadRequest
-	(*GetCoachThreadResponse)(nil),             // 174: sttattus.workout.v1.GetCoachThreadResponse
-	(*PostCoachMessageRequest)(nil),            // 175: sttattus.workout.v1.PostCoachMessageRequest
-	(*PostCoachMessageResponse)(nil),           // 176: sttattus.workout.v1.PostCoachMessageResponse
-	(*AnthologyArticle)(nil),                   // 177: sttattus.workout.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),       // 178: sttattus.workout.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),      // 179: sttattus.workout.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),         // 180: sttattus.workout.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),        // 181: sttattus.workout.v1.GetAnthologyArticleResponse
-	(*SimulateForgeRankRequest)(nil),           // 182: sttattus.workout.v1.SimulateForgeRankRequest
-	(*SimulateForgeRankResponse)(nil),          // 183: sttattus.workout.v1.SimulateForgeRankResponse
-	(*GetRecoveryScoreRequest)(nil),            // 184: sttattus.workout.v1.GetRecoveryScoreRequest
-	(*GetRecoveryScoreResponse)(nil),           // 185: sttattus.workout.v1.GetRecoveryScoreResponse
-	(*v1.PageRequest)(nil),                     // 186: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                    // 187: sttattus.common.v1.PageResponse
+	(*ForgeDailyVolume)(nil),                   // 134: sttattus.workout.v1.ForgeDailyVolume
+	(*GetForgeAnalyticsRequest)(nil),           // 135: sttattus.workout.v1.GetForgeAnalyticsRequest
+	(*GetForgeAnalyticsResponse)(nil),          // 136: sttattus.workout.v1.GetForgeAnalyticsResponse
+	(*CreateRivalryRequest)(nil),               // 137: sttattus.workout.v1.CreateRivalryRequest
+	(*CreateRivalryResponse)(nil),              // 138: sttattus.workout.v1.CreateRivalryResponse
+	(*LeaderboardEntry)(nil),                   // 139: sttattus.workout.v1.LeaderboardEntry
+	(*GetLeaderboardRequest)(nil),              // 140: sttattus.workout.v1.GetLeaderboardRequest
+	(*GetLeaderboardResponse)(nil),             // 141: sttattus.workout.v1.GetLeaderboardResponse
+	(*ForgeLounge)(nil),                        // 142: sttattus.workout.v1.ForgeLounge
+	(*ForgeLoungeBooking)(nil),                 // 143: sttattus.workout.v1.ForgeLoungeBooking
+	(*ListForgeLoungesRequest)(nil),            // 144: sttattus.workout.v1.ListForgeLoungesRequest
+	(*ListForgeLoungesResponse)(nil),           // 145: sttattus.workout.v1.ListForgeLoungesResponse
+	(*ListMyLoungeBookingsRequest)(nil),        // 146: sttattus.workout.v1.ListMyLoungeBookingsRequest
+	(*ListMyLoungeBookingsResponse)(nil),       // 147: sttattus.workout.v1.ListMyLoungeBookingsResponse
+	(*CreateLoungeBookingRequest)(nil),         // 148: sttattus.workout.v1.CreateLoungeBookingRequest
+	(*CreateLoungeBookingResponse)(nil),        // 149: sttattus.workout.v1.CreateLoungeBookingResponse
+	(*CancelLoungeBookingRequest)(nil),         // 150: sttattus.workout.v1.CancelLoungeBookingRequest
+	(*CancelLoungeBookingResponse)(nil),        // 151: sttattus.workout.v1.CancelLoungeBookingResponse
+	(*Coach)(nil),                              // 152: sttattus.workout.v1.Coach
+	(*ListCoachesRequest)(nil),                 // 153: sttattus.workout.v1.ListCoachesRequest
+	(*ListCoachesResponse)(nil),                // 154: sttattus.workout.v1.ListCoachesResponse
+	(*RequestCoachBookingRequest)(nil),         // 155: sttattus.workout.v1.RequestCoachBookingRequest
+	(*RequestCoachBookingResponse)(nil),        // 156: sttattus.workout.v1.RequestCoachBookingResponse
+	(*GenerateForgeAlmanacRequest)(nil),        // 157: sttattus.workout.v1.GenerateForgeAlmanacRequest
+	(*GenerateForgeAlmanacResponse)(nil),       // 158: sttattus.workout.v1.GenerateForgeAlmanacResponse
+	(*AnalyzeFormVideoRequest)(nil),            // 159: sttattus.workout.v1.AnalyzeFormVideoRequest
+	(*AnalyzeFormVideoResponse)(nil),           // 160: sttattus.workout.v1.AnalyzeFormVideoResponse
+	(*AthleteShare)(nil),                       // 161: sttattus.workout.v1.AthleteShare
+	(*CreateAthleteShareRequest)(nil),          // 162: sttattus.workout.v1.CreateAthleteShareRequest
+	(*CreateAthleteShareResponse)(nil),         // 163: sttattus.workout.v1.CreateAthleteShareResponse
+	(*ListMyAthleteSharesRequest)(nil),         // 164: sttattus.workout.v1.ListMyAthleteSharesRequest
+	(*ListMyAthleteSharesResponse)(nil),        // 165: sttattus.workout.v1.ListMyAthleteSharesResponse
+	(*RevokeAthleteShareRequest)(nil),          // 166: sttattus.workout.v1.RevokeAthleteShareRequest
+	(*RevokeAthleteShareResponse)(nil),         // 167: sttattus.workout.v1.RevokeAthleteShareResponse
+	(*CoachThread)(nil),                        // 168: sttattus.workout.v1.CoachThread
+	(*CoachMessage)(nil),                       // 169: sttattus.workout.v1.CoachMessage
+	(*StartCoachThreadRequest)(nil),            // 170: sttattus.workout.v1.StartCoachThreadRequest
+	(*StartCoachThreadResponse)(nil),           // 171: sttattus.workout.v1.StartCoachThreadResponse
+	(*ListMyCoachThreadsRequest)(nil),          // 172: sttattus.workout.v1.ListMyCoachThreadsRequest
+	(*ListMyCoachThreadsResponse)(nil),         // 173: sttattus.workout.v1.ListMyCoachThreadsResponse
+	(*GetCoachThreadRequest)(nil),              // 174: sttattus.workout.v1.GetCoachThreadRequest
+	(*GetCoachThreadResponse)(nil),             // 175: sttattus.workout.v1.GetCoachThreadResponse
+	(*PostCoachMessageRequest)(nil),            // 176: sttattus.workout.v1.PostCoachMessageRequest
+	(*PostCoachMessageResponse)(nil),           // 177: sttattus.workout.v1.PostCoachMessageResponse
+	(*AnthologyArticle)(nil),                   // 178: sttattus.workout.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),       // 179: sttattus.workout.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),      // 180: sttattus.workout.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),         // 181: sttattus.workout.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),        // 182: sttattus.workout.v1.GetAnthologyArticleResponse
+	(*SimulateForgeRankRequest)(nil),           // 183: sttattus.workout.v1.SimulateForgeRankRequest
+	(*SimulateForgeRankResponse)(nil),          // 184: sttattus.workout.v1.SimulateForgeRankResponse
+	(*GetRecoveryScoreRequest)(nil),            // 185: sttattus.workout.v1.GetRecoveryScoreRequest
+	(*GetRecoveryScoreResponse)(nil),           // 186: sttattus.workout.v1.GetRecoveryScoreResponse
+	(*v1.PageRequest)(nil),                     // 187: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                    // 188: sttattus.common.v1.PageResponse
 }
 var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	0,   // 0: sttattus.workout.v1.Workout.tags:type_name -> sttattus.workout.v1.Tag
 	1,   // 1: sttattus.workout.v1.DayWorkout.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 2: sttattus.workout.v1.DayWorkout.series:type_name -> sttattus.workout.v1.Series
 	3,   // 3: sttattus.workout.v1.DayWorkout.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	186, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	1,   // 5: sttattus.workout.v1.ListWorkoutsResponse.workouts:type_name -> sttattus.workout.v1.Workout
-	187, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	188, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,   // 7: sttattus.workout.v1.GetWorkoutResponse.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 8: sttattus.workout.v1.LogDayWorkoutRequest.series:type_name -> sttattus.workout.v1.Series
 	3,   // 9: sttattus.workout.v1.LogDayWorkoutRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
 	4,   // 10: sttattus.workout.v1.LogDayWorkoutResponse.day_workout:type_name -> sttattus.workout.v1.DayWorkout
 	5,   // 11: sttattus.workout.v1.LogDayWorkoutResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	186, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
 	4,   // 13: sttattus.workout.v1.ListHistoryResponse.entries:type_name -> sttattus.workout.v1.DayWorkout
-	187, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
+	188, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,   // 15: sttattus.workout.v1.GetForgeStatsResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
 	19,  // 16: sttattus.workout.v1.SessionExercise.sets:type_name -> sttattus.workout.v1.SessionSet
 	20,  // 17: sttattus.workout.v1.ForgeSession.exercises:type_name -> sttattus.workout.v1.SessionExercise
-	186, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 18: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	18,  // 19: sttattus.workout.v1.ListExercisesResponse.exercises:type_name -> sttattus.workout.v1.Exercise
 	22,  // 20: sttattus.workout.v1.CreateSessionRequest.exercises:type_name -> sttattus.workout.v1.PlannedExercise
 	21,  // 21: sttattus.workout.v1.CreateSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 22: sttattus.workout.v1.GetSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 23: sttattus.workout.v1.GetActiveSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
-	186, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 24: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	21,  // 25: sttattus.workout.v1.ListSessionsResponse.sessions:type_name -> sttattus.workout.v1.ForgeSession
 	21,  // 26: sttattus.workout.v1.UpdateSessionStatusResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	19,  // 27: sttattus.workout.v1.LogSetResponse.set:type_name -> sttattus.workout.v1.SessionSet
@@ -12001,7 +12075,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	56,  // 41: sttattus.workout.v1.GetTodayResponse.today:type_name -> sttattus.workout.v1.TodaySnapshot
 	59,  // 42: sttattus.workout.v1.GetForgeStreakResponse.streak:type_name -> sttattus.workout.v1.ForgeStreak
 	62,  // 43: sttattus.workout.v1.CreateFormVideoResponse.video:type_name -> sttattus.workout.v1.FormVideo
-	186, // 44: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 44: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
 	62,  // 45: sttattus.workout.v1.ListMyFormVideosResponse.videos:type_name -> sttattus.workout.v1.FormVideo
 	62,  // 46: sttattus.workout.v1.UpdateFormVideoStatusResponse.video:type_name -> sttattus.workout.v1.FormVideo
 	71,  // 47: sttattus.workout.v1.ProgrammeEnrolment.programme:type_name -> sttattus.workout.v1.Programme
@@ -12016,7 +12090,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	87,  // 56: sttattus.workout.v1.GetProgrammeWeekResponse.week:type_name -> sttattus.workout.v1.ProgrammeWeek
 	92,  // 57: sttattus.workout.v1.ListMyPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
 	92,  // 58: sttattus.workout.v1.ListRecentPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
-	186, // 59: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	187, // 59: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	97,  // 60: sttattus.workout.v1.ListBodyCompositionsResponse.entries:type_name -> sttattus.workout.v1.BodyComposition
 	97,  // 61: sttattus.workout.v1.CreateBodyCompositionResponse.entry:type_name -> sttattus.workout.v1.BodyComposition
 	104, // 62: sttattus.workout.v1.ListInjuriesResponse.injuries:type_name -> sttattus.workout.v1.Injury
@@ -12032,176 +12106,177 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	123, // 72: sttattus.workout.v1.SetSensorConnectionStatusResponse.connection:type_name -> sttattus.workout.v1.SensorConnection
 	123, // 73: sttattus.workout.v1.MarkSensorSyncedResponse.connection:type_name -> sttattus.workout.v1.SensorConnection
 	124, // 74: sttattus.workout.v1.SetSensorPriorityResponse.priority:type_name -> sttattus.workout.v1.SensorPriority
-	133, // 75: sttattus.workout.v1.GetForgeAnalyticsResponse.analytics:type_name -> sttattus.workout.v1.ForgeAnalytics
-	48,  // 76: sttattus.workout.v1.CreateRivalryResponse.rivalry:type_name -> sttattus.workout.v1.WorkoutRivalry
-	138, // 77: sttattus.workout.v1.GetLeaderboardResponse.entries:type_name -> sttattus.workout.v1.LeaderboardEntry
-	138, // 78: sttattus.workout.v1.GetLeaderboardResponse.my_standing:type_name -> sttattus.workout.v1.LeaderboardEntry
-	141, // 79: sttattus.workout.v1.ListForgeLoungesResponse.lounges:type_name -> sttattus.workout.v1.ForgeLounge
-	142, // 80: sttattus.workout.v1.ListMyLoungeBookingsResponse.bookings:type_name -> sttattus.workout.v1.ForgeLoungeBooking
-	142, // 81: sttattus.workout.v1.CreateLoungeBookingResponse.booking:type_name -> sttattus.workout.v1.ForgeLoungeBooking
-	151, // 82: sttattus.workout.v1.ListCoachesResponse.coaches:type_name -> sttattus.workout.v1.Coach
-	160, // 83: sttattus.workout.v1.CreateAthleteShareResponse.share:type_name -> sttattus.workout.v1.AthleteShare
-	160, // 84: sttattus.workout.v1.ListMyAthleteSharesResponse.shares:type_name -> sttattus.workout.v1.AthleteShare
-	167, // 85: sttattus.workout.v1.StartCoachThreadResponse.thread:type_name -> sttattus.workout.v1.CoachThread
-	167, // 86: sttattus.workout.v1.ListMyCoachThreadsResponse.threads:type_name -> sttattus.workout.v1.CoachThread
-	167, // 87: sttattus.workout.v1.GetCoachThreadResponse.thread:type_name -> sttattus.workout.v1.CoachThread
-	168, // 88: sttattus.workout.v1.GetCoachThreadResponse.messages:type_name -> sttattus.workout.v1.CoachMessage
-	168, // 89: sttattus.workout.v1.PostCoachMessageResponse.message:type_name -> sttattus.workout.v1.CoachMessage
-	177, // 90: sttattus.workout.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.workout.v1.AnthologyArticle
-	177, // 91: sttattus.workout.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.workout.v1.AnthologyArticle
-	2,   // 92: sttattus.workout.v1.SimulateForgeRankRequest.series:type_name -> sttattus.workout.v1.Series
-	3,   // 93: sttattus.workout.v1.SimulateForgeRankRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	6,   // 94: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
-	8,   // 95: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
-	10,  // 96: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
-	12,  // 97: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
-	14,  // 98: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
-	16,  // 99: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
-	57,  // 100: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
-	54,  // 101: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
-	23,  // 102: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
-	25,  // 103: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
-	27,  // 104: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
-	29,  // 105: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
-	31,  // 106: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
-	33,  // 107: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
-	35,  // 108: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
-	60,  // 109: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
-	63,  // 110: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
-	65,  // 111: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
-	67,  // 112: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
-	69,  // 113: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
-	73,  // 114: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
-	75,  // 115: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
-	77,  // 116: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
-	79,  // 117: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
-	81,  // 118: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
-	83,  // 119: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
-	88,  // 120: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:input_type -> sttattus.workout.v1.ListProgrammeWeeksRequest
-	90,  // 121: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:input_type -> sttattus.workout.v1.GetProgrammeWeekRequest
-	93,  // 122: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
-	95,  // 123: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
-	98,  // 124: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
-	100, // 125: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
-	102, // 126: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
-	105, // 127: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
-	107, // 128: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
-	109, // 129: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
-	111, // 130: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
-	115, // 131: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
-	117, // 132: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
-	119, // 133: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
-	121, // 134: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
-	125, // 135: sttattus.workout.v1.WorkoutService.ListSensorConnections:input_type -> sttattus.workout.v1.ListSensorConnectionsRequest
-	127, // 136: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:input_type -> sttattus.workout.v1.SetSensorConnectionStatusRequest
-	129, // 137: sttattus.workout.v1.WorkoutService.MarkSensorSynced:input_type -> sttattus.workout.v1.MarkSensorSyncedRequest
-	131, // 138: sttattus.workout.v1.WorkoutService.SetSensorPriority:input_type -> sttattus.workout.v1.SetSensorPriorityRequest
-	134, // 139: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:input_type -> sttattus.workout.v1.GetForgeAnalyticsRequest
-	39,  // 140: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:input_type -> sttattus.workout.v1.GetSessionAnalyticsRequest
-	42,  // 141: sttattus.workout.v1.WorkoutService.ListUserEquipment:input_type -> sttattus.workout.v1.ListUserEquipmentRequest
-	44,  // 142: sttattus.workout.v1.WorkoutService.AddUserEquipment:input_type -> sttattus.workout.v1.AddUserEquipmentRequest
-	46,  // 143: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:input_type -> sttattus.workout.v1.DeleteUserEquipmentRequest
-	49,  // 144: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:input_type -> sttattus.workout.v1.ListWorkoutRivalriesRequest
-	51,  // 145: sttattus.workout.v1.WorkoutService.GetRivalryDetail:input_type -> sttattus.workout.v1.GetRivalryDetailRequest
-	182, // 146: sttattus.workout.v1.WorkoutService.SimulateForgeRank:input_type -> sttattus.workout.v1.SimulateForgeRankRequest
-	184, // 147: sttattus.workout.v1.WorkoutService.GetRecoveryScore:input_type -> sttattus.workout.v1.GetRecoveryScoreRequest
-	169, // 148: sttattus.workout.v1.WorkoutService.StartCoachThread:input_type -> sttattus.workout.v1.StartCoachThreadRequest
-	171, // 149: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:input_type -> sttattus.workout.v1.ListMyCoachThreadsRequest
-	173, // 150: sttattus.workout.v1.WorkoutService.GetCoachThread:input_type -> sttattus.workout.v1.GetCoachThreadRequest
-	175, // 151: sttattus.workout.v1.WorkoutService.PostCoachMessage:input_type -> sttattus.workout.v1.PostCoachMessageRequest
-	178, // 152: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:input_type -> sttattus.workout.v1.ListAnthologyArticlesRequest
-	180, // 153: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:input_type -> sttattus.workout.v1.GetAnthologyArticleRequest
-	161, // 154: sttattus.workout.v1.WorkoutService.CreateAthleteShare:input_type -> sttattus.workout.v1.CreateAthleteShareRequest
-	163, // 155: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:input_type -> sttattus.workout.v1.ListMyAthleteSharesRequest
-	165, // 156: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:input_type -> sttattus.workout.v1.RevokeAthleteShareRequest
-	156, // 157: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:input_type -> sttattus.workout.v1.GenerateForgeAlmanacRequest
-	158, // 158: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:input_type -> sttattus.workout.v1.AnalyzeFormVideoRequest
-	136, // 159: sttattus.workout.v1.WorkoutService.CreateRivalry:input_type -> sttattus.workout.v1.CreateRivalryRequest
-	139, // 160: sttattus.workout.v1.WorkoutService.GetLeaderboard:input_type -> sttattus.workout.v1.GetLeaderboardRequest
-	143, // 161: sttattus.workout.v1.WorkoutService.ListForgeLounges:input_type -> sttattus.workout.v1.ListForgeLoungesRequest
-	145, // 162: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:input_type -> sttattus.workout.v1.ListMyLoungeBookingsRequest
-	147, // 163: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:input_type -> sttattus.workout.v1.CreateLoungeBookingRequest
-	149, // 164: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:input_type -> sttattus.workout.v1.CancelLoungeBookingRequest
-	152, // 165: sttattus.workout.v1.WorkoutService.ListCoaches:input_type -> sttattus.workout.v1.ListCoachesRequest
-	154, // 166: sttattus.workout.v1.WorkoutService.RequestCoachBooking:input_type -> sttattus.workout.v1.RequestCoachBookingRequest
-	7,   // 167: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
-	9,   // 168: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
-	11,  // 169: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
-	13,  // 170: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
-	15,  // 171: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
-	17,  // 172: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
-	58,  // 173: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
-	55,  // 174: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
-	24,  // 175: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
-	26,  // 176: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
-	28,  // 177: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
-	30,  // 178: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
-	32,  // 179: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
-	34,  // 180: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
-	36,  // 181: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
-	61,  // 182: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
-	64,  // 183: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
-	66,  // 184: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
-	68,  // 185: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
-	70,  // 186: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
-	74,  // 187: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
-	76,  // 188: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
-	78,  // 189: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
-	80,  // 190: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
-	82,  // 191: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
-	84,  // 192: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
-	89,  // 193: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:output_type -> sttattus.workout.v1.ListProgrammeWeeksResponse
-	91,  // 194: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:output_type -> sttattus.workout.v1.GetProgrammeWeekResponse
-	94,  // 195: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
-	96,  // 196: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
-	99,  // 197: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
-	101, // 198: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
-	103, // 199: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
-	106, // 200: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
-	108, // 201: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
-	110, // 202: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
-	112, // 203: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
-	116, // 204: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
-	118, // 205: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
-	120, // 206: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
-	122, // 207: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
-	126, // 208: sttattus.workout.v1.WorkoutService.ListSensorConnections:output_type -> sttattus.workout.v1.ListSensorConnectionsResponse
-	128, // 209: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:output_type -> sttattus.workout.v1.SetSensorConnectionStatusResponse
-	130, // 210: sttattus.workout.v1.WorkoutService.MarkSensorSynced:output_type -> sttattus.workout.v1.MarkSensorSyncedResponse
-	132, // 211: sttattus.workout.v1.WorkoutService.SetSensorPriority:output_type -> sttattus.workout.v1.SetSensorPriorityResponse
-	135, // 212: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:output_type -> sttattus.workout.v1.GetForgeAnalyticsResponse
-	40,  // 213: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:output_type -> sttattus.workout.v1.GetSessionAnalyticsResponse
-	43,  // 214: sttattus.workout.v1.WorkoutService.ListUserEquipment:output_type -> sttattus.workout.v1.ListUserEquipmentResponse
-	45,  // 215: sttattus.workout.v1.WorkoutService.AddUserEquipment:output_type -> sttattus.workout.v1.AddUserEquipmentResponse
-	47,  // 216: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:output_type -> sttattus.workout.v1.DeleteUserEquipmentResponse
-	50,  // 217: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:output_type -> sttattus.workout.v1.ListWorkoutRivalriesResponse
-	52,  // 218: sttattus.workout.v1.WorkoutService.GetRivalryDetail:output_type -> sttattus.workout.v1.GetRivalryDetailResponse
-	183, // 219: sttattus.workout.v1.WorkoutService.SimulateForgeRank:output_type -> sttattus.workout.v1.SimulateForgeRankResponse
-	185, // 220: sttattus.workout.v1.WorkoutService.GetRecoveryScore:output_type -> sttattus.workout.v1.GetRecoveryScoreResponse
-	170, // 221: sttattus.workout.v1.WorkoutService.StartCoachThread:output_type -> sttattus.workout.v1.StartCoachThreadResponse
-	172, // 222: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:output_type -> sttattus.workout.v1.ListMyCoachThreadsResponse
-	174, // 223: sttattus.workout.v1.WorkoutService.GetCoachThread:output_type -> sttattus.workout.v1.GetCoachThreadResponse
-	176, // 224: sttattus.workout.v1.WorkoutService.PostCoachMessage:output_type -> sttattus.workout.v1.PostCoachMessageResponse
-	179, // 225: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:output_type -> sttattus.workout.v1.ListAnthologyArticlesResponse
-	181, // 226: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:output_type -> sttattus.workout.v1.GetAnthologyArticleResponse
-	162, // 227: sttattus.workout.v1.WorkoutService.CreateAthleteShare:output_type -> sttattus.workout.v1.CreateAthleteShareResponse
-	164, // 228: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:output_type -> sttattus.workout.v1.ListMyAthleteSharesResponse
-	166, // 229: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:output_type -> sttattus.workout.v1.RevokeAthleteShareResponse
-	157, // 230: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:output_type -> sttattus.workout.v1.GenerateForgeAlmanacResponse
-	159, // 231: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:output_type -> sttattus.workout.v1.AnalyzeFormVideoResponse
-	137, // 232: sttattus.workout.v1.WorkoutService.CreateRivalry:output_type -> sttattus.workout.v1.CreateRivalryResponse
-	140, // 233: sttattus.workout.v1.WorkoutService.GetLeaderboard:output_type -> sttattus.workout.v1.GetLeaderboardResponse
-	144, // 234: sttattus.workout.v1.WorkoutService.ListForgeLounges:output_type -> sttattus.workout.v1.ListForgeLoungesResponse
-	146, // 235: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:output_type -> sttattus.workout.v1.ListMyLoungeBookingsResponse
-	148, // 236: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:output_type -> sttattus.workout.v1.CreateLoungeBookingResponse
-	150, // 237: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:output_type -> sttattus.workout.v1.CancelLoungeBookingResponse
-	153, // 238: sttattus.workout.v1.WorkoutService.ListCoaches:output_type -> sttattus.workout.v1.ListCoachesResponse
-	155, // 239: sttattus.workout.v1.WorkoutService.RequestCoachBooking:output_type -> sttattus.workout.v1.RequestCoachBookingResponse
-	167, // [167:240] is the sub-list for method output_type
-	94,  // [94:167] is the sub-list for method input_type
-	94,  // [94:94] is the sub-list for extension type_name
-	94,  // [94:94] is the sub-list for extension extendee
-	0,   // [0:94] is the sub-list for field type_name
+	134, // 75: sttattus.workout.v1.ForgeAnalytics.volume_daily:type_name -> sttattus.workout.v1.ForgeDailyVolume
+	133, // 76: sttattus.workout.v1.GetForgeAnalyticsResponse.analytics:type_name -> sttattus.workout.v1.ForgeAnalytics
+	48,  // 77: sttattus.workout.v1.CreateRivalryResponse.rivalry:type_name -> sttattus.workout.v1.WorkoutRivalry
+	139, // 78: sttattus.workout.v1.GetLeaderboardResponse.entries:type_name -> sttattus.workout.v1.LeaderboardEntry
+	139, // 79: sttattus.workout.v1.GetLeaderboardResponse.my_standing:type_name -> sttattus.workout.v1.LeaderboardEntry
+	142, // 80: sttattus.workout.v1.ListForgeLoungesResponse.lounges:type_name -> sttattus.workout.v1.ForgeLounge
+	143, // 81: sttattus.workout.v1.ListMyLoungeBookingsResponse.bookings:type_name -> sttattus.workout.v1.ForgeLoungeBooking
+	143, // 82: sttattus.workout.v1.CreateLoungeBookingResponse.booking:type_name -> sttattus.workout.v1.ForgeLoungeBooking
+	152, // 83: sttattus.workout.v1.ListCoachesResponse.coaches:type_name -> sttattus.workout.v1.Coach
+	161, // 84: sttattus.workout.v1.CreateAthleteShareResponse.share:type_name -> sttattus.workout.v1.AthleteShare
+	161, // 85: sttattus.workout.v1.ListMyAthleteSharesResponse.shares:type_name -> sttattus.workout.v1.AthleteShare
+	168, // 86: sttattus.workout.v1.StartCoachThreadResponse.thread:type_name -> sttattus.workout.v1.CoachThread
+	168, // 87: sttattus.workout.v1.ListMyCoachThreadsResponse.threads:type_name -> sttattus.workout.v1.CoachThread
+	168, // 88: sttattus.workout.v1.GetCoachThreadResponse.thread:type_name -> sttattus.workout.v1.CoachThread
+	169, // 89: sttattus.workout.v1.GetCoachThreadResponse.messages:type_name -> sttattus.workout.v1.CoachMessage
+	169, // 90: sttattus.workout.v1.PostCoachMessageResponse.message:type_name -> sttattus.workout.v1.CoachMessage
+	178, // 91: sttattus.workout.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.workout.v1.AnthologyArticle
+	178, // 92: sttattus.workout.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.workout.v1.AnthologyArticle
+	2,   // 93: sttattus.workout.v1.SimulateForgeRankRequest.series:type_name -> sttattus.workout.v1.Series
+	3,   // 94: sttattus.workout.v1.SimulateForgeRankRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
+	6,   // 95: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
+	8,   // 96: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
+	10,  // 97: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
+	12,  // 98: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
+	14,  // 99: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
+	16,  // 100: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
+	57,  // 101: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
+	54,  // 102: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
+	23,  // 103: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
+	25,  // 104: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
+	27,  // 105: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
+	29,  // 106: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
+	31,  // 107: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
+	33,  // 108: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
+	35,  // 109: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
+	60,  // 110: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
+	63,  // 111: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
+	65,  // 112: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
+	67,  // 113: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
+	69,  // 114: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
+	73,  // 115: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
+	75,  // 116: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
+	77,  // 117: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
+	79,  // 118: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
+	81,  // 119: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
+	83,  // 120: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
+	88,  // 121: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:input_type -> sttattus.workout.v1.ListProgrammeWeeksRequest
+	90,  // 122: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:input_type -> sttattus.workout.v1.GetProgrammeWeekRequest
+	93,  // 123: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
+	95,  // 124: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
+	98,  // 125: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
+	100, // 126: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
+	102, // 127: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
+	105, // 128: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
+	107, // 129: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
+	109, // 130: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
+	111, // 131: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
+	115, // 132: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
+	117, // 133: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
+	119, // 134: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
+	121, // 135: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
+	125, // 136: sttattus.workout.v1.WorkoutService.ListSensorConnections:input_type -> sttattus.workout.v1.ListSensorConnectionsRequest
+	127, // 137: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:input_type -> sttattus.workout.v1.SetSensorConnectionStatusRequest
+	129, // 138: sttattus.workout.v1.WorkoutService.MarkSensorSynced:input_type -> sttattus.workout.v1.MarkSensorSyncedRequest
+	131, // 139: sttattus.workout.v1.WorkoutService.SetSensorPriority:input_type -> sttattus.workout.v1.SetSensorPriorityRequest
+	135, // 140: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:input_type -> sttattus.workout.v1.GetForgeAnalyticsRequest
+	39,  // 141: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:input_type -> sttattus.workout.v1.GetSessionAnalyticsRequest
+	42,  // 142: sttattus.workout.v1.WorkoutService.ListUserEquipment:input_type -> sttattus.workout.v1.ListUserEquipmentRequest
+	44,  // 143: sttattus.workout.v1.WorkoutService.AddUserEquipment:input_type -> sttattus.workout.v1.AddUserEquipmentRequest
+	46,  // 144: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:input_type -> sttattus.workout.v1.DeleteUserEquipmentRequest
+	49,  // 145: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:input_type -> sttattus.workout.v1.ListWorkoutRivalriesRequest
+	51,  // 146: sttattus.workout.v1.WorkoutService.GetRivalryDetail:input_type -> sttattus.workout.v1.GetRivalryDetailRequest
+	183, // 147: sttattus.workout.v1.WorkoutService.SimulateForgeRank:input_type -> sttattus.workout.v1.SimulateForgeRankRequest
+	185, // 148: sttattus.workout.v1.WorkoutService.GetRecoveryScore:input_type -> sttattus.workout.v1.GetRecoveryScoreRequest
+	170, // 149: sttattus.workout.v1.WorkoutService.StartCoachThread:input_type -> sttattus.workout.v1.StartCoachThreadRequest
+	172, // 150: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:input_type -> sttattus.workout.v1.ListMyCoachThreadsRequest
+	174, // 151: sttattus.workout.v1.WorkoutService.GetCoachThread:input_type -> sttattus.workout.v1.GetCoachThreadRequest
+	176, // 152: sttattus.workout.v1.WorkoutService.PostCoachMessage:input_type -> sttattus.workout.v1.PostCoachMessageRequest
+	179, // 153: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:input_type -> sttattus.workout.v1.ListAnthologyArticlesRequest
+	181, // 154: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:input_type -> sttattus.workout.v1.GetAnthologyArticleRequest
+	162, // 155: sttattus.workout.v1.WorkoutService.CreateAthleteShare:input_type -> sttattus.workout.v1.CreateAthleteShareRequest
+	164, // 156: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:input_type -> sttattus.workout.v1.ListMyAthleteSharesRequest
+	166, // 157: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:input_type -> sttattus.workout.v1.RevokeAthleteShareRequest
+	157, // 158: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:input_type -> sttattus.workout.v1.GenerateForgeAlmanacRequest
+	159, // 159: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:input_type -> sttattus.workout.v1.AnalyzeFormVideoRequest
+	137, // 160: sttattus.workout.v1.WorkoutService.CreateRivalry:input_type -> sttattus.workout.v1.CreateRivalryRequest
+	140, // 161: sttattus.workout.v1.WorkoutService.GetLeaderboard:input_type -> sttattus.workout.v1.GetLeaderboardRequest
+	144, // 162: sttattus.workout.v1.WorkoutService.ListForgeLounges:input_type -> sttattus.workout.v1.ListForgeLoungesRequest
+	146, // 163: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:input_type -> sttattus.workout.v1.ListMyLoungeBookingsRequest
+	148, // 164: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:input_type -> sttattus.workout.v1.CreateLoungeBookingRequest
+	150, // 165: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:input_type -> sttattus.workout.v1.CancelLoungeBookingRequest
+	153, // 166: sttattus.workout.v1.WorkoutService.ListCoaches:input_type -> sttattus.workout.v1.ListCoachesRequest
+	155, // 167: sttattus.workout.v1.WorkoutService.RequestCoachBooking:input_type -> sttattus.workout.v1.RequestCoachBookingRequest
+	7,   // 168: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
+	9,   // 169: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
+	11,  // 170: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
+	13,  // 171: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
+	15,  // 172: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
+	17,  // 173: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
+	58,  // 174: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
+	55,  // 175: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
+	24,  // 176: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
+	26,  // 177: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
+	28,  // 178: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
+	30,  // 179: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
+	32,  // 180: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
+	34,  // 181: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
+	36,  // 182: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
+	61,  // 183: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
+	64,  // 184: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
+	66,  // 185: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
+	68,  // 186: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
+	70,  // 187: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
+	74,  // 188: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
+	76,  // 189: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
+	78,  // 190: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
+	80,  // 191: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
+	82,  // 192: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
+	84,  // 193: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
+	89,  // 194: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:output_type -> sttattus.workout.v1.ListProgrammeWeeksResponse
+	91,  // 195: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:output_type -> sttattus.workout.v1.GetProgrammeWeekResponse
+	94,  // 196: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
+	96,  // 197: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
+	99,  // 198: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
+	101, // 199: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
+	103, // 200: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
+	106, // 201: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
+	108, // 202: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
+	110, // 203: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
+	112, // 204: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
+	116, // 205: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
+	118, // 206: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
+	120, // 207: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
+	122, // 208: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
+	126, // 209: sttattus.workout.v1.WorkoutService.ListSensorConnections:output_type -> sttattus.workout.v1.ListSensorConnectionsResponse
+	128, // 210: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:output_type -> sttattus.workout.v1.SetSensorConnectionStatusResponse
+	130, // 211: sttattus.workout.v1.WorkoutService.MarkSensorSynced:output_type -> sttattus.workout.v1.MarkSensorSyncedResponse
+	132, // 212: sttattus.workout.v1.WorkoutService.SetSensorPriority:output_type -> sttattus.workout.v1.SetSensorPriorityResponse
+	136, // 213: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:output_type -> sttattus.workout.v1.GetForgeAnalyticsResponse
+	40,  // 214: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:output_type -> sttattus.workout.v1.GetSessionAnalyticsResponse
+	43,  // 215: sttattus.workout.v1.WorkoutService.ListUserEquipment:output_type -> sttattus.workout.v1.ListUserEquipmentResponse
+	45,  // 216: sttattus.workout.v1.WorkoutService.AddUserEquipment:output_type -> sttattus.workout.v1.AddUserEquipmentResponse
+	47,  // 217: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:output_type -> sttattus.workout.v1.DeleteUserEquipmentResponse
+	50,  // 218: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:output_type -> sttattus.workout.v1.ListWorkoutRivalriesResponse
+	52,  // 219: sttattus.workout.v1.WorkoutService.GetRivalryDetail:output_type -> sttattus.workout.v1.GetRivalryDetailResponse
+	184, // 220: sttattus.workout.v1.WorkoutService.SimulateForgeRank:output_type -> sttattus.workout.v1.SimulateForgeRankResponse
+	186, // 221: sttattus.workout.v1.WorkoutService.GetRecoveryScore:output_type -> sttattus.workout.v1.GetRecoveryScoreResponse
+	171, // 222: sttattus.workout.v1.WorkoutService.StartCoachThread:output_type -> sttattus.workout.v1.StartCoachThreadResponse
+	173, // 223: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:output_type -> sttattus.workout.v1.ListMyCoachThreadsResponse
+	175, // 224: sttattus.workout.v1.WorkoutService.GetCoachThread:output_type -> sttattus.workout.v1.GetCoachThreadResponse
+	177, // 225: sttattus.workout.v1.WorkoutService.PostCoachMessage:output_type -> sttattus.workout.v1.PostCoachMessageResponse
+	180, // 226: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:output_type -> sttattus.workout.v1.ListAnthologyArticlesResponse
+	182, // 227: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:output_type -> sttattus.workout.v1.GetAnthologyArticleResponse
+	163, // 228: sttattus.workout.v1.WorkoutService.CreateAthleteShare:output_type -> sttattus.workout.v1.CreateAthleteShareResponse
+	165, // 229: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:output_type -> sttattus.workout.v1.ListMyAthleteSharesResponse
+	167, // 230: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:output_type -> sttattus.workout.v1.RevokeAthleteShareResponse
+	158, // 231: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:output_type -> sttattus.workout.v1.GenerateForgeAlmanacResponse
+	160, // 232: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:output_type -> sttattus.workout.v1.AnalyzeFormVideoResponse
+	138, // 233: sttattus.workout.v1.WorkoutService.CreateRivalry:output_type -> sttattus.workout.v1.CreateRivalryResponse
+	141, // 234: sttattus.workout.v1.WorkoutService.GetLeaderboard:output_type -> sttattus.workout.v1.GetLeaderboardResponse
+	145, // 235: sttattus.workout.v1.WorkoutService.ListForgeLounges:output_type -> sttattus.workout.v1.ListForgeLoungesResponse
+	147, // 236: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:output_type -> sttattus.workout.v1.ListMyLoungeBookingsResponse
+	149, // 237: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:output_type -> sttattus.workout.v1.CreateLoungeBookingResponse
+	151, // 238: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:output_type -> sttattus.workout.v1.CancelLoungeBookingResponse
+	154, // 239: sttattus.workout.v1.WorkoutService.ListCoaches:output_type -> sttattus.workout.v1.ListCoachesResponse
+	156, // 240: sttattus.workout.v1.WorkoutService.RequestCoachBooking:output_type -> sttattus.workout.v1.RequestCoachBookingResponse
+	168, // [168:241] is the sub-list for method output_type
+	95,  // [95:168] is the sub-list for method input_type
+	95,  // [95:95] is the sub-list for extension type_name
+	95,  // [95:95] is the sub-list for extension extendee
+	0,   // [0:95] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_workout_v1_workout_proto_init() }
@@ -12215,7 +12290,7 @@ func file_sttattus_workout_v1_workout_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_workout_v1_workout_proto_rawDesc), len(file_sttattus_workout_v1_workout_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   186,
+			NumMessages:   187,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

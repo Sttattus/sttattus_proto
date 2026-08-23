@@ -2714,6 +2714,14 @@ const ForgeAnalytics$json = {
       '10': 'bestOneRmExercise'
     },
     {'1': 'is_empty', '3': 10, '4': 1, '5': 8, '10': 'isEmpty'},
+    {
+      '1': 'volume_daily',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.workout.v1.ForgeDailyVolume',
+      '10': 'volumeDaily'
+    },
   ],
 };
 
@@ -2726,7 +2734,22 @@ final $typed_data.Uint8List forgeAnalyticsDescriptor = $convert.base64Decode(
     'ZBgGIAEoAVILZnJlcXVlbmN5N2QSIwoNdmlmX2NvbXBvc2l0ZRgHIAEoAVIMdmlmQ29tcG9zaX'
     'RlEjEKFWJlc3RfZXN0aW1hdGVkX29uZV9ybRgIIAEoAVISYmVzdEVzdGltYXRlZE9uZVJtEi8K'
     'FGJlc3Rfb25lX3JtX2V4ZXJjaXNlGAkgASgJUhFiZXN0T25lUm1FeGVyY2lzZRIZCghpc19lbX'
-    'B0eRgKIAEoCFIHaXNFbXB0eQ==');
+    'B0eRgKIAEoCFIHaXNFbXB0eRJICgx2b2x1bWVfZGFpbHkYCyADKAsyJS5zdHRhdHR1cy53b3Jr'
+    'b3V0LnYxLkZvcmdlRGFpbHlWb2x1bWVSC3ZvbHVtZURhaWx5');
+
+@$core.Deprecated('Use forgeDailyVolumeDescriptor instead')
+const ForgeDailyVolume$json = {
+  '1': 'ForgeDailyVolume',
+  '2': [
+    {'1': 'date', '3': 1, '4': 1, '5': 9, '10': 'date'},
+    {'1': 'tonnage', '3': 2, '4': 1, '5': 1, '10': 'tonnage'},
+  ],
+};
+
+/// Descriptor for `ForgeDailyVolume`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List forgeDailyVolumeDescriptor = $convert.base64Decode(
+    'ChBGb3JnZURhaWx5Vm9sdW1lEhIKBGRhdGUYASABKAlSBGRhdGUSGAoHdG9ubmFnZRgCIAEoAV'
+    'IHdG9ubmFnZQ==');
 
 @$core.Deprecated('Use getForgeAnalyticsRequestDescriptor instead')
 const GetForgeAnalyticsRequest$json = {
