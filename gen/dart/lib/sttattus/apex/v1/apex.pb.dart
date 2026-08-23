@@ -4002,6 +4002,7 @@ class Supplement extends $pb.GeneratedMessage {
     $core.String? evidenceRating,
     $core.double? defaultDoseMg,
     $core.bool? sovereignOnly,
+    $core.String? doseUnit,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -4012,6 +4013,7 @@ class Supplement extends $pb.GeneratedMessage {
     if (evidenceRating != null) result.evidenceRating = evidenceRating;
     if (defaultDoseMg != null) result.defaultDoseMg = defaultDoseMg;
     if (sovereignOnly != null) result.sovereignOnly = sovereignOnly;
+    if (doseUnit != null) result.doseUnit = doseUnit;
     return result;
   }
 
@@ -4037,6 +4039,7 @@ class Supplement extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'evidenceRating')
     ..aD(7, _omitFieldNames ? '' : 'defaultDoseMg')
     ..aOB(8, _omitFieldNames ? '' : 'sovereignOnly')
+    ..aOS(9, _omitFieldNames ? '' : 'doseUnit')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4128,6 +4131,19 @@ class Supplement extends $pb.GeneratedMessage {
   $core.bool hasSovereignOnly() => $_has(7);
   @$pb.TagNumber(8)
   void clearSovereignOnly() => $_clearField(8);
+
+  /// 'mg' | 'mcg' | 'IU' | 'g'. The column is named default_dose_mg and most
+  /// rows really are milligrams, but Vitamin D3 is in IU and K2 (MK-7) is in
+  /// micrograms, and rendering either as mg is a dosing error, not a typo.
+  /// Empty reads as 'mg'.
+  @$pb.TagNumber(9)
+  $core.String get doseUnit => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set doseUnit($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDoseUnit() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDoseUnit() => $_clearField(9);
 }
 
 class UserSupplement extends $pb.GeneratedMessage {

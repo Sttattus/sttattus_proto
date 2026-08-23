@@ -481,6 +481,11 @@ message Supplement {
   string evidence_rating = 6; // A | B | C
   double default_dose_mg = 7;
   bool sovereign_only = 8;
+  // 'mg' | 'mcg' | 'IU' | 'g'. The column is named default_dose_mg and most
+  // rows really are milligrams, but Vitamin D3 is in IU and K2 (MK-7) is in
+  // micrograms, and rendering either as mg is a dosing error, not a typo.
+  // Empty reads as 'mg'.
+  string dose_unit = 9;
 }
 
 message UserSupplement {

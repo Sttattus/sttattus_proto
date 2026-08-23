@@ -1164,6 +1164,7 @@ const Supplement$json = {
     {'1': 'evidence_rating', '3': 6, '4': 1, '5': 9, '10': 'evidenceRating'},
     {'1': 'default_dose_mg', '3': 7, '4': 1, '5': 1, '10': 'defaultDoseMg'},
     {'1': 'sovereign_only', '3': 8, '4': 1, '5': 8, '10': 'sovereignOnly'},
+    {'1': 'dose_unit', '3': 9, '4': 1, '5': 9, '10': 'doseUnit'},
   ],
 };
 
@@ -1173,7 +1174,8 @@ final $typed_data.Uint8List supplementDescriptor = $convert.base64Decode(
     'UYAyABKAlSBG5hbWUSGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5EiAKC2Rlc2NyaXB0aW9u'
     'GAUgASgJUgtkZXNjcmlwdGlvbhInCg9ldmlkZW5jZV9yYXRpbmcYBiABKAlSDmV2aWRlbmNlUm'
     'F0aW5nEiYKD2RlZmF1bHRfZG9zZV9tZxgHIAEoAVINZGVmYXVsdERvc2VNZxIlCg5zb3ZlcmVp'
-    'Z25fb25seRgIIAEoCFINc292ZXJlaWduT25seQ==');
+    'Z25fb25seRgIIAEoCFINc292ZXJlaWduT25seRIbCglkb3NlX3VuaXQYCSABKAlSCGRvc2VVbm'
+    'l0');
 
 @$core.Deprecated('Use userSupplementDescriptor instead')
 const UserSupplement$json = {

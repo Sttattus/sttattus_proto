@@ -2698,6 +2698,16 @@ export class Supplement extends Message<Supplement> {
    */
   sovereignOnly = false;
 
+  /**
+   * 'mg' | 'mcg' | 'IU' | 'g'. The column is named default_dose_mg and most
+   * rows really are milligrams, but Vitamin D3 is in IU and K2 (MK-7) is in
+   * micrograms, and rendering either as mg is a dosing error, not a typo.
+   * Empty reads as 'mg'.
+   *
+   * @generated from field: string dose_unit = 9;
+   */
+  doseUnit = "";
+
   constructor(data?: PartialMessage<Supplement>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2714,6 +2724,7 @@ export class Supplement extends Message<Supplement> {
     { no: 6, name: "evidence_rating", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "default_dose_mg", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 8, name: "sovereign_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "dose_unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Supplement {

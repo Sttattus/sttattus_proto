@@ -3160,8 +3160,13 @@ type Supplement struct {
 	EvidenceRating string                 `protobuf:"bytes,6,opt,name=evidence_rating,json=evidenceRating,proto3" json:"evidence_rating,omitempty"` // A | B | C
 	DefaultDoseMg  float64                `protobuf:"fixed64,7,opt,name=default_dose_mg,json=defaultDoseMg,proto3" json:"default_dose_mg,omitempty"`
 	SovereignOnly  bool                   `protobuf:"varint,8,opt,name=sovereign_only,json=sovereignOnly,proto3" json:"sovereign_only,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// 'mg' | 'mcg' | 'IU' | 'g'. The column is named default_dose_mg and most
+	// rows really are milligrams, but Vitamin D3 is in IU and K2 (MK-7) is in
+	// micrograms, and rendering either as mg is a dosing error, not a typo.
+	// Empty reads as 'mg'.
+	DoseUnit      string `protobuf:"bytes,9,opt,name=dose_unit,json=doseUnit,proto3" json:"dose_unit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Supplement) Reset() {
@@ -3248,6 +3253,13 @@ func (x *Supplement) GetSovereignOnly() bool {
 		return x.SovereignOnly
 	}
 	return false
+}
+
+func (x *Supplement) GetDoseUnit() string {
+	if x != nil {
+		return x.DoseUnit
+	}
+	return ""
 }
 
 type UserSupplement struct {
@@ -8900,7 +8912,7 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\arequest\x18\x01 \x01(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\arequest\"&\n" +
 	"$ListMyApexClinicIntroRequestsRequest\"m\n" +
 	"%ListMyApexClinicIntroRequestsResponse\x12D\n" +
-	"\brequests\x18\x01 \x03(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\brequests\"\xfa\x01\n" +
+	"\brequests\x18\x01 \x03(\v2(.sttattus.apex.v1.ApexClinicIntroRequestR\brequests\"\x97\x02\n" +
 	"\n" +
 	"Supplement\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -8910,7 +8922,8 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\vdescription\x18\x05 \x01(\tR\vdescription\x12'\n" +
 	"\x0fevidence_rating\x18\x06 \x01(\tR\x0eevidenceRating\x12&\n" +
 	"\x0fdefault_dose_mg\x18\a \x01(\x01R\rdefaultDoseMg\x12%\n" +
-	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\"\xd3\x01\n" +
+	"\x0esovereign_only\x18\b \x01(\bR\rsovereignOnly\x12\x1b\n" +
+	"\tdose_unit\x18\t \x01(\tR\bdoseUnit\"\xd3\x01\n" +
 	"\x0eUserSupplement\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12<\n" +
 	"\n" +
