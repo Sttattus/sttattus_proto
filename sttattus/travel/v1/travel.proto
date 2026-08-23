@@ -27,7 +27,24 @@ message Milestone {
   string story = 8;
   int64 achieved_at = 9;
   bool is_verified = 10;
+  // A verified presence event. Present only when the member actually checked
+  // in from the place, which is what makes the milestone verified.
   CheckIn checkin = 11;
+
+  // Where this milestone is, approximately, whether or not it was verified.
+  //
+  // Coordinates used to travel only inside `checkin`, and `checkin` is only
+  // populated for a verified milestone. So a milestone logged from the Globe
+  // — city and country, no device fix — reached the client with no position
+  // at all, and the Globe's pin layer dropped it. The map stayed empty no
+  // matter how much a member logged.
+  //
+  // Resolved from the city server-side. (0,0) means "we could not place it",
+  // and the pin layer must keep skipping that rather than drawing the Gulf of
+  // Guinea. Read `is_verified` to colour the pin: this field is a claim about
+  // where the member says they were, not proof that they were there.
+  double latitude = 12;
+  double longitude = 13;
 }
 
 // CheckIn represents a verified presence event.

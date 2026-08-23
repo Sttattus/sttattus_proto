@@ -153,6 +153,8 @@ class Milestone extends $pb.GeneratedMessage {
     $fixnum.Int64? achievedAt,
     $core.bool? isVerified,
     CheckIn? checkin,
+    $core.double? latitude,
+    $core.double? longitude,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -166,6 +168,8 @@ class Milestone extends $pb.GeneratedMessage {
     if (achievedAt != null) result.achievedAt = achievedAt;
     if (isVerified != null) result.isVerified = isVerified;
     if (checkin != null) result.checkin = checkin;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
     return result;
   }
 
@@ -195,6 +199,8 @@ class Milestone extends $pb.GeneratedMessage {
     ..aOB(10, _omitFieldNames ? '' : 'isVerified')
     ..aOM<CheckIn>(11, _omitFieldNames ? '' : 'checkin',
         subBuilder: CheckIn.create)
+    ..aD(12, _omitFieldNames ? '' : 'latitude')
+    ..aD(13, _omitFieldNames ? '' : 'longitude')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -305,6 +311,8 @@ class Milestone extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearIsVerified() => $_clearField(10);
 
+  /// A verified presence event. Present only when the member actually checked
+  /// in from the place, which is what makes the milestone verified.
   @$pb.TagNumber(11)
   CheckIn get checkin => $_getN(10);
   @$pb.TagNumber(11)
@@ -315,6 +323,36 @@ class Milestone extends $pb.GeneratedMessage {
   void clearCheckin() => $_clearField(11);
   @$pb.TagNumber(11)
   CheckIn ensureCheckin() => $_ensure(10);
+
+  /// Where this milestone is, approximately, whether or not it was verified.
+  ///
+  /// Coordinates used to travel only inside `checkin`, and `checkin` is only
+  /// populated for a verified milestone. So a milestone logged from the Globe
+  /// — city and country, no device fix — reached the client with no position
+  /// at all, and the Globe's pin layer dropped it. The map stayed empty no
+  /// matter how much a member logged.
+  ///
+  /// Resolved from the city server-side. (0,0) means "we could not place it",
+  /// and the pin layer must keep skipping that rather than drawing the Gulf of
+  /// Guinea. Read `is_verified` to colour the pin: this field is a claim about
+  /// where the member says they were, not proof that they were there.
+  @$pb.TagNumber(12)
+  $core.double get latitude => $_getN(11);
+  @$pb.TagNumber(12)
+  set latitude($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLatitude() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLatitude() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.double get longitude => $_getN(12);
+  @$pb.TagNumber(13)
+  set longitude($core.double value) => $_setDouble(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLongitude() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLongitude() => $_clearField(13);
 }
 
 /// CheckIn represents a verified presence event.

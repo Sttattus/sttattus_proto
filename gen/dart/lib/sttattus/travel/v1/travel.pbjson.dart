@@ -94,6 +94,8 @@ const Milestone$json = {
       '6': '.sttattus.travel.v1.CheckIn',
       '10': 'checkin'
     },
+    {'1': 'latitude', '3': 12, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 13, '4': 1, '5': 1, '10': 'longitude'},
   ],
 };
 
@@ -105,7 +107,8 @@ final $typed_data.Uint8List milestoneDescriptor = $convert.base64Decode(
     '5haWxVcmwSKAoQYWNjZW50X2NvbG9yX2hleBgHIAEoCVIOYWNjZW50Q29sb3JIZXgSFAoFc3Rv'
     'cnkYCCABKAlSBXN0b3J5Eh8KC2FjaGlldmVkX2F0GAkgASgDUgphY2hpZXZlZEF0Eh8KC2lzX3'
     'ZlcmlmaWVkGAogASgIUgppc1ZlcmlmaWVkEjUKB2NoZWNraW4YCyABKAsyGy5zdHRhdHR1cy50'
-    'cmF2ZWwudjEuQ2hlY2tJblIHY2hlY2tpbg==');
+    'cmF2ZWwudjEuQ2hlY2tJblIHY2hlY2tpbhIaCghsYXRpdHVkZRgMIAEoAVIIbGF0aXR1ZGUSHA'
+    'oJbG9uZ2l0dWRlGA0gASgBUglsb25naXR1ZGU=');
 
 @$core.Deprecated('Use checkInDescriptor instead')
 const CheckIn$json = {

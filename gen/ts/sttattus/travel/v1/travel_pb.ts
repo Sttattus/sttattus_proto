@@ -171,9 +171,35 @@ export class Milestone extends Message<Milestone> {
   isVerified = false;
 
   /**
+   * A verified presence event. Present only when the member actually checked
+   * in from the place, which is what makes the milestone verified.
+   *
    * @generated from field: sttattus.travel.v1.CheckIn checkin = 11;
    */
   checkin?: CheckIn;
+
+  /**
+   * Where this milestone is, approximately, whether or not it was verified.
+   *
+   * Coordinates used to travel only inside `checkin`, and `checkin` is only
+   * populated for a verified milestone. So a milestone logged from the Globe
+   * — city and country, no device fix — reached the client with no position
+   * at all, and the Globe's pin layer dropped it. The map stayed empty no
+   * matter how much a member logged.
+   *
+   * Resolved from the city server-side. (0,0) means "we could not place it",
+   * and the pin layer must keep skipping that rather than drawing the Gulf of
+   * Guinea. Read `is_verified` to colour the pin: this field is a claim about
+   * where the member says they were, not proof that they were there.
+   *
+   * @generated from field: double latitude = 12;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 13;
+   */
+  longitude = 0;
 
   constructor(data?: PartialMessage<Milestone>) {
     super();
@@ -194,6 +220,8 @@ export class Milestone extends Message<Milestone> {
     { no: 9, name: "achieved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "is_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "checkin", kind: "message", T: CheckIn },
+    { no: 12, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 13, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Milestone {

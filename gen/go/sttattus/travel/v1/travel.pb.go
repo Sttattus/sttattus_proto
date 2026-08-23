@@ -174,9 +174,25 @@ type Milestone struct {
 	Story          string                 `protobuf:"bytes,8,opt,name=story,proto3" json:"story,omitempty"`
 	AchievedAt     int64                  `protobuf:"varint,9,opt,name=achieved_at,json=achievedAt,proto3" json:"achieved_at,omitempty"`
 	IsVerified     bool                   `protobuf:"varint,10,opt,name=is_verified,json=isVerified,proto3" json:"is_verified,omitempty"`
-	Checkin        *CheckIn               `protobuf:"bytes,11,opt,name=checkin,proto3" json:"checkin,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// A verified presence event. Present only when the member actually checked
+	// in from the place, which is what makes the milestone verified.
+	Checkin *CheckIn `protobuf:"bytes,11,opt,name=checkin,proto3" json:"checkin,omitempty"`
+	// Where this milestone is, approximately, whether or not it was verified.
+	//
+	// Coordinates used to travel only inside `checkin`, and `checkin` is only
+	// populated for a verified milestone. So a milestone logged from the Globe
+	// — city and country, no device fix — reached the client with no position
+	// at all, and the Globe's pin layer dropped it. The map stayed empty no
+	// matter how much a member logged.
+	//
+	// Resolved from the city server-side. (0,0) means "we could not place it",
+	// and the pin layer must keep skipping that rather than drawing the Gulf of
+	// Guinea. Read `is_verified` to colour the pin: this field is a claim about
+	// where the member says they were, not proof that they were there.
+	Latitude      float64 `protobuf:"fixed64,12,opt,name=latitude,proto3" json:"latitude,omitempty"`
+	Longitude     float64 `protobuf:"fixed64,13,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Milestone) Reset() {
@@ -284,6 +300,20 @@ func (x *Milestone) GetCheckin() *CheckIn {
 		return x.Checkin
 	}
 	return nil
+}
+
+func (x *Milestone) GetLatitude() float64 {
+	if x != nil {
+		return x.Latitude
+	}
+	return 0
+}
+
+func (x *Milestone) GetLongitude() float64 {
+	if x != nil {
+		return x.Longitude
+	}
+	return 0
 }
 
 // CheckIn represents a verified presence event.
@@ -4459,7 +4489,7 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\x10nomad_rank_label\x18\x04 \x01(\tR\x0enomadRankLabel\x12\x1d\n" +
 	"\n" +
 	"nomad_rank\x18\x05 \x01(\x01R\tnomadRank\x126\n" +
-	"\x17verified_checkins_count\x18\x06 \x01(\x05R\x15verifiedCheckinsCount\"\xe6\x02\n" +
+	"\x17verified_checkins_count\x18\x06 \x01(\x05R\x15verifiedCheckinsCount\"\xa0\x03\n" +
 	"\tMilestone\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
@@ -4474,7 +4504,9 @@ const file_sttattus_travel_v1_travel_proto_rawDesc = "" +
 	"\vis_verified\x18\n" +
 	" \x01(\bR\n" +
 	"isVerified\x125\n" +
-	"\acheckin\x18\v \x01(\v2\x1b.sttattus.travel.v1.CheckInR\acheckin\"\xa0\x02\n" +
+	"\acheckin\x18\v \x01(\v2\x1b.sttattus.travel.v1.CheckInR\acheckin\x12\x1a\n" +
+	"\blatitude\x18\f \x01(\x01R\blatitude\x12\x1c\n" +
+	"\tlongitude\x18\r \x01(\x01R\tlongitude\"\xa0\x02\n" +
 	"\aCheckIn\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
 	"\blatitude\x18\x02 \x01(\x01R\blatitude\x12\x1c\n" +
