@@ -9964,6 +9964,7 @@ class ImagingStudy extends $pb.GeneratedMessage {
     $core.String? headlineUnit,
     $core.String? mediaAssetId,
     $fixnum.Int64? createdAtUnix,
+    $core.bool? headlineValuePresent,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -9976,6 +9977,8 @@ class ImagingStudy extends $pb.GeneratedMessage {
     if (headlineUnit != null) result.headlineUnit = headlineUnit;
     if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
     if (createdAtUnix != null) result.createdAtUnix = createdAtUnix;
+    if (headlineValuePresent != null)
+      result.headlineValuePresent = headlineValuePresent;
     return result;
   }
 
@@ -10003,6 +10006,7 @@ class ImagingStudy extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'headlineUnit')
     ..aOS(9, _omitFieldNames ? '' : 'mediaAssetId')
     ..aInt64(10, _omitFieldNames ? '' : 'createdAtUnix')
+    ..aOB(11, _omitFieldNames ? '' : 'headlineValuePresent')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -10113,6 +10117,18 @@ class ImagingStudy extends $pb.GeneratedMessage {
   $core.bool hasCreatedAtUnix() => $_has(9);
   @$pb.TagNumber(10)
   void clearCreatedAtUnix() => $_clearField(10);
+
+  /// Whether headline_value was recorded at all. A CAC score of 0 is the
+  /// best possible coronary result and the number a member most wants on
+  /// the record, so 0 cannot double as "not measured".
+  @$pb.TagNumber(11)
+  $core.bool get headlineValuePresent => $_getBF(10);
+  @$pb.TagNumber(11)
+  set headlineValuePresent($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasHeadlineValuePresent() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearHeadlineValuePresent() => $_clearField(11);
 }
 
 class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
@@ -10125,6 +10141,7 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
     $core.double? headlineValue,
     $core.String? headlineUnit,
     $core.String? mediaAssetId,
+    $core.bool? headlineValuePresent,
   }) {
     final result = create();
     if (modality != null) result.modality = modality;
@@ -10135,6 +10152,8 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
     if (headlineValue != null) result.headlineValue = headlineValue;
     if (headlineUnit != null) result.headlineUnit = headlineUnit;
     if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (headlineValuePresent != null)
+      result.headlineValuePresent = headlineValuePresent;
     return result;
   }
 
@@ -10160,6 +10179,7 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
     ..aD(6, _omitFieldNames ? '' : 'headlineValue')
     ..aOS(7, _omitFieldNames ? '' : 'headlineUnit')
     ..aOS(8, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOB(9, _omitFieldNames ? '' : 'headlineValuePresent')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -10253,6 +10273,17 @@ class SubmitImagingStudyRequest extends $pb.GeneratedMessage {
   $core.bool hasMediaAssetId() => $_has(7);
   @$pb.TagNumber(8)
   void clearMediaAssetId() => $_clearField(8);
+
+  /// See ImagingStudy.headline_value_present. Absent from an older client
+  /// means "0 is unset", which is the behaviour that lost a CAC of 0.
+  @$pb.TagNumber(9)
+  $core.bool get headlineValuePresent => $_getBF(8);
+  @$pb.TagNumber(9)
+  set headlineValuePresent($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasHeadlineValuePresent() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHeadlineValuePresent() => $_clearField(9);
 }
 
 class SubmitImagingStudyResponse extends $pb.GeneratedMessage {

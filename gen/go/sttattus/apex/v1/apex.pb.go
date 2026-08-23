@@ -7732,8 +7732,12 @@ type ImagingStudy struct {
 	HeadlineUnit   string                 `protobuf:"bytes,8,opt,name=headline_unit,json=headlineUnit,proto3" json:"headline_unit,omitempty"`
 	MediaAssetId   string                 `protobuf:"bytes,9,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
 	CreatedAtUnix  int64                  `protobuf:"varint,10,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// Whether headline_value was recorded at all. A CAC score of 0 is the
+	// best possible coronary result and the number a member most wants on
+	// the record, so 0 cannot double as "not measured".
+	HeadlineValuePresent bool `protobuf:"varint,11,opt,name=headline_value_present,json=headlineValuePresent,proto3" json:"headline_value_present,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *ImagingStudy) Reset() {
@@ -7836,6 +7840,13 @@ func (x *ImagingStudy) GetCreatedAtUnix() int64 {
 	return 0
 }
 
+func (x *ImagingStudy) GetHeadlineValuePresent() bool {
+	if x != nil {
+		return x.HeadlineValuePresent
+	}
+	return false
+}
+
 type SubmitImagingStudyRequest struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Modality       string                 `protobuf:"bytes,1,opt,name=modality,proto3" json:"modality,omitempty"`
@@ -7846,8 +7857,11 @@ type SubmitImagingStudyRequest struct {
 	HeadlineValue  float64                `protobuf:"fixed64,6,opt,name=headline_value,json=headlineValue,proto3" json:"headline_value,omitempty"`
 	HeadlineUnit   string                 `protobuf:"bytes,7,opt,name=headline_unit,json=headlineUnit,proto3" json:"headline_unit,omitempty"`
 	MediaAssetId   string                 `protobuf:"bytes,8,opt,name=media_asset_id,json=mediaAssetId,proto3" json:"media_asset_id,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// See ImagingStudy.headline_value_present. Absent from an older client
+	// means "0 is unset", which is the behaviour that lost a CAC of 0.
+	HeadlineValuePresent bool `protobuf:"varint,9,opt,name=headline_value_present,json=headlineValuePresent,proto3" json:"headline_value_present,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *SubmitImagingStudyRequest) Reset() {
@@ -7934,6 +7948,13 @@ func (x *SubmitImagingStudyRequest) GetMediaAssetId() string {
 		return x.MediaAssetId
 	}
 	return ""
+}
+
+func (x *SubmitImagingStudyRequest) GetHeadlineValuePresent() bool {
+	if x != nil {
+		return x.HeadlineValuePresent
+	}
+	return false
 }
 
 type SubmitImagingStudyResponse struct {
@@ -9214,7 +9235,7 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"public_url\x18\x02 \x01(\tR\tpublicUrl\x12*\n" +
 	"\x11generated_at_unix\x18\x03 \x01(\x03R\x0fgeneratedAtUnix\x12\x1d\n" +
 	"\n" +
-	"page_count\x18\x04 \x01(\x05R\tpageCount\"\xe1\x02\n" +
+	"page_count\x18\x04 \x01(\x05R\tpageCount\"\x97\x03\n" +
 	"\fImagingStudy\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
 	"\bmodality\x18\x02 \x01(\tR\bmodality\x12\x1a\n" +
@@ -9226,7 +9247,8 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\rheadline_unit\x18\b \x01(\tR\fheadlineUnit\x12$\n" +
 	"\x0emedia_asset_id\x18\t \x01(\tR\fmediaAssetId\x12&\n" +
 	"\x0fcreated_at_unix\x18\n" +
-	" \x01(\x03R\rcreatedAtUnix\"\xb6\x02\n" +
+	" \x01(\x03R\rcreatedAtUnix\x124\n" +
+	"\x16headline_value_present\x18\v \x01(\bR\x14headlineValuePresent\"\xec\x02\n" +
 	"\x19SubmitImagingStudyRequest\x12\x1a\n" +
 	"\bmodality\x18\x01 \x01(\tR\bmodality\x12\x1a\n" +
 	"\bprovider\x18\x02 \x01(\tR\bprovider\x12!\n" +
@@ -9235,7 +9257,8 @@ const file_sttattus_apex_v1_apex_proto_rawDesc = "" +
 	"\x0fheadline_metric\x18\x05 \x01(\tR\x0eheadlineMetric\x12%\n" +
 	"\x0eheadline_value\x18\x06 \x01(\x01R\rheadlineValue\x12#\n" +
 	"\rheadline_unit\x18\a \x01(\tR\fheadlineUnit\x12$\n" +
-	"\x0emedia_asset_id\x18\b \x01(\tR\fmediaAssetId\"R\n" +
+	"\x0emedia_asset_id\x18\b \x01(\tR\fmediaAssetId\x124\n" +
+	"\x16headline_value_present\x18\t \x01(\bR\x14headlineValuePresent\"R\n" +
 	"\x1aSubmitImagingStudyResponse\x124\n" +
 	"\x05study\x18\x01 \x01(\v2\x1e.sttattus.apex.v1.ImagingStudyR\x05study\"\x1d\n" +
 	"\x1bListMyImagingStudiesRequest\"X\n" +

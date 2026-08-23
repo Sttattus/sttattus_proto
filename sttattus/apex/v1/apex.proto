@@ -925,6 +925,10 @@ message ImagingStudy {
   string headline_unit = 8;
   string media_asset_id = 9;
   int64 created_at_unix = 10;
+  // Whether headline_value was recorded at all. A CAC score of 0 is the
+  // best possible coronary result and the number a member most wants on
+  // the record, so 0 cannot double as "not measured".
+  bool headline_value_present = 11;
 }
 
 message SubmitImagingStudyRequest {
@@ -936,6 +940,9 @@ message SubmitImagingStudyRequest {
   double headline_value = 6;
   string headline_unit = 7;
   string media_asset_id = 8;
+  // See ImagingStudy.headline_value_present. Absent from an older client
+  // means "0 is unset", which is the behaviour that lost a CAC of 0.
+  bool headline_value_present = 9;
 }
 message SubmitImagingStudyResponse {
   ImagingStudy study = 1;

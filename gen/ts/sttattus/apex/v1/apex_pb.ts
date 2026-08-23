@@ -6545,6 +6545,15 @@ export class ImagingStudy extends Message<ImagingStudy> {
    */
   createdAtUnix = protoInt64.zero;
 
+  /**
+   * Whether headline_value was recorded at all. A CAC score of 0 is the
+   * best possible coronary result and the number a member most wants on
+   * the record, so 0 cannot double as "not measured".
+   *
+   * @generated from field: bool headline_value_present = 11;
+   */
+  headlineValuePresent = false;
+
   constructor(data?: PartialMessage<ImagingStudy>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6563,6 +6572,7 @@ export class ImagingStudy extends Message<ImagingStudy> {
     { no: 8, name: "headline_unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "created_at_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "headline_value_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImagingStudy {
@@ -6626,6 +6636,14 @@ export class SubmitImagingStudyRequest extends Message<SubmitImagingStudyRequest
    */
   mediaAssetId = "";
 
+  /**
+   * See ImagingStudy.headline_value_present. Absent from an older client
+   * means "0 is unset", which is the behaviour that lost a CAC of 0.
+   *
+   * @generated from field: bool headline_value_present = 9;
+   */
+  headlineValuePresent = false;
+
   constructor(data?: PartialMessage<SubmitImagingStudyRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6642,6 +6660,7 @@ export class SubmitImagingStudyRequest extends Message<SubmitImagingStudyRequest
     { no: 6, name: "headline_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "headline_unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "headline_value_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitImagingStudyRequest {

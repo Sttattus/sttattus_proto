@@ -2679,6 +2679,13 @@ const ImagingStudy$json = {
     {'1': 'headline_unit', '3': 8, '4': 1, '5': 9, '10': 'headlineUnit'},
     {'1': 'media_asset_id', '3': 9, '4': 1, '5': 9, '10': 'mediaAssetId'},
     {'1': 'created_at_unix', '3': 10, '4': 1, '5': 3, '10': 'createdAtUnix'},
+    {
+      '1': 'headline_value_present',
+      '3': 11,
+      '4': 1,
+      '5': 8,
+      '10': 'headlineValuePresent'
+    },
   ],
 };
 
@@ -2690,7 +2697,8 @@ final $typed_data.Uint8List imagingStudyDescriptor = $convert.base64Decode(
     'xpbmVfbWV0cmljGAYgASgJUg5oZWFkbGluZU1ldHJpYxIlCg5oZWFkbGluZV92YWx1ZRgHIAEo'
     'AVINaGVhZGxpbmVWYWx1ZRIjCg1oZWFkbGluZV91bml0GAggASgJUgxoZWFkbGluZVVuaXQSJA'
     'oObWVkaWFfYXNzZXRfaWQYCSABKAlSDG1lZGlhQXNzZXRJZBImCg9jcmVhdGVkX2F0X3VuaXgY'
-    'CiABKANSDWNyZWF0ZWRBdFVuaXg=');
+    'CiABKANSDWNyZWF0ZWRBdFVuaXgSNAoWaGVhZGxpbmVfdmFsdWVfcHJlc2VudBgLIAEoCFIUaG'
+    'VhZGxpbmVWYWx1ZVByZXNlbnQ=');
 
 @$core.Deprecated('Use submitImagingStudyRequestDescriptor instead')
 const SubmitImagingStudyRequest$json = {
@@ -2704,6 +2712,13 @@ const SubmitImagingStudyRequest$json = {
     {'1': 'headline_value', '3': 6, '4': 1, '5': 1, '10': 'headlineValue'},
     {'1': 'headline_unit', '3': 7, '4': 1, '5': 9, '10': 'headlineUnit'},
     {'1': 'media_asset_id', '3': 8, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {
+      '1': 'headline_value_present',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'headlineValuePresent'
+    },
   ],
 };
 
@@ -2714,7 +2729,8 @@ final $typed_data.Uint8List submitImagingStudyRequestDescriptor = $convert.base6
     'b3JtZWRPbhIjCg1maW5kaW5nc190ZXh0GAQgASgJUgxmaW5kaW5nc1RleHQSJwoPaGVhZGxpbm'
     'VfbWV0cmljGAUgASgJUg5oZWFkbGluZU1ldHJpYxIlCg5oZWFkbGluZV92YWx1ZRgGIAEoAVIN'
     'aGVhZGxpbmVWYWx1ZRIjCg1oZWFkbGluZV91bml0GAcgASgJUgxoZWFkbGluZVVuaXQSJAoObW'
-    'VkaWFfYXNzZXRfaWQYCCABKAlSDG1lZGlhQXNzZXRJZA==');
+    'VkaWFfYXNzZXRfaWQYCCABKAlSDG1lZGlhQXNzZXRJZBI0ChZoZWFkbGluZV92YWx1ZV9wcmVz'
+    'ZW50GAkgASgIUhRoZWFkbGluZVZhbHVlUHJlc2VudA==');
 
 @$core.Deprecated('Use submitImagingStudyResponseDescriptor instead')
 const SubmitImagingStudyResponse$json = {
