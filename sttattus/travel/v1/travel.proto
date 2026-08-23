@@ -484,7 +484,14 @@ message LoungeDetail {
   string name = 2;
   string city = 3;
   string location_description = 4;
-  string live_capacity_status = 5; // e.g. 'Quiet', 'Busy'
+  // How busy this lounge usually is: 'Quiet', 'Moderate', 'Busy'.
+  //
+  // EDITORIAL, NOT LIVE. It is a constant in the curated lounge table and
+  // does not change with the hour. The field name says "live" and the app
+  // said "LIVE CAPACITY" above it, which promised an occupancy feed that has
+  // never existed. Renaming the field would break clients; the comment and
+  // the label are the honest fix until something actually measures this.
+  string live_capacity_status = 5;
   repeated string amenities = 6;
   string current_menu_url = 7;
 }
