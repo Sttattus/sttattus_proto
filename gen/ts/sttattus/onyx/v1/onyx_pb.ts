@@ -289,6 +289,34 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   iReacted = false;
 
+  /**
+   * Reader OS — populated on GetContent for articles. List responses carry
+   * only the revision identity so rails remain light.
+   *
+   * @generated from field: string revision_id = 24;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: int32 revision_number = 25;
+   */
+  revisionNumber = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DocumentBlock document_blocks = 26;
+   */
+  documentBlocks: DocumentBlock[] = [];
+
+  /**
+   * @generated from field: string progress_passage_key = 27;
+   */
+  progressPassageKey = "";
+
+  /**
+   * @generated from field: int32 progress_offset = 28;
+   */
+  progressOffset = 0;
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -320,6 +348,11 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 21, name: "progress_position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 22, name: "reaction_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 23, name: "i_reacted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 24, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 25, name: "revision_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 26, name: "document_blocks", kind: "message", T: DocumentBlock, repeated: true },
+    { no: 27, name: "progress_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 28, name: "progress_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {
@@ -336,6 +369,83 @@ export class OnyxContent extends Message<OnyxContent> {
 
   static equals(a: OnyxContent | PlainMessage<OnyxContent> | undefined, b: OnyxContent | PlainMessage<OnyxContent> | undefined): boolean {
     return proto3.util.equals(OnyxContent, a, b);
+  }
+}
+
+/**
+ * A stable, addressable passage in one immutable editorial revision.
+ *
+ * @generated from message sttattus.onyx.v1.DocumentBlock
+ */
+export class DocumentBlock extends Message<DocumentBlock> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 3;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 ordinal = 4;
+   */
+  ordinal = 0;
+
+  /**
+   * paragraph | heading | quote | list | code | other
+   *
+   * @generated from field: string block_type = 5;
+   */
+  blockType = "";
+
+  /**
+   * @generated from field: string markdown = 6;
+   */
+  markdown = "";
+
+  /**
+   * @generated from field: string plain_text = 7;
+   */
+  plainText = "";
+
+  constructor(data?: PartialMessage<DocumentBlock>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DocumentBlock";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "block_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "plain_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DocumentBlock {
+    return new DocumentBlock().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DocumentBlock {
+    return new DocumentBlock().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DocumentBlock {
+    return new DocumentBlock().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DocumentBlock | PlainMessage<DocumentBlock> | undefined, b: DocumentBlock | PlainMessage<DocumentBlock> | undefined): boolean {
+    return proto3.util.equals(DocumentBlock, a, b);
   }
 }
 
@@ -1082,6 +1192,16 @@ export class RecordProgressRequest extends Message<RecordProgressRequest> {
    */
   positionSeconds = 0;
 
+  /**
+   * @generated from field: string passage_key = 4;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 offset = 5;
+   */
+  offset = 0;
+
   constructor(data?: PartialMessage<RecordProgressRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1093,6 +1213,8 @@ export class RecordProgressRequest extends Message<RecordProgressRequest> {
     { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "completion", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressRequest {
@@ -1126,6 +1248,16 @@ export class RecordProgressResponse extends Message<RecordProgressResponse> {
    */
   positionSeconds = 0;
 
+  /**
+   * @generated from field: string passage_key = 3;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 offset = 4;
+   */
+  offset = 0;
+
   constructor(data?: PartialMessage<RecordProgressResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1136,6 +1268,8 @@ export class RecordProgressResponse extends Message<RecordProgressResponse> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "completion", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressResponse {
@@ -2035,6 +2169,894 @@ export class DeleteNoteResponse extends Message<DeleteNoteResponse> {
 
   static equals(a: DeleteNoteResponse | PlainMessage<DeleteNoteResponse> | undefined, b: DeleteNoteResponse | PlainMessage<DeleteNoteResponse> | undefined): boolean {
     return proto3.util.equals(DeleteNoteResponse, a, b);
+  }
+}
+
+/**
+ * Reader OS annotations supersede the original free-form Note contract while
+ * the Note RPCs remain available as a backwards-compatible view of kind=note.
+ * A bookmark may omit quote/body; a highlight requires quote; a note requires
+ * body. Passage keys are stable across editorial revisions when text survives.
+ *
+ * @generated from message sttattus.onyx.v1.ReaderAnnotation
+ */
+export class ReaderAnnotation extends Message<ReaderAnnotation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 4;
+   */
+  passageKey = "";
+
+  /**
+   * highlight | note | bookmark
+   *
+   * @generated from field: string kind = 5;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string quote = 6;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string body = 7;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string color = 8;
+   */
+  color = "";
+
+  /**
+   * @generated from field: repeated string tags = 9;
+   */
+  tags: string[] = [];
+
+  /**
+   * @generated from field: int32 start_offset = 10;
+   */
+  startOffset = 0;
+
+  /**
+   * @generated from field: int32 end_offset = 11;
+   */
+  endOffset = 0;
+
+  /**
+   * @generated from field: int64 version = 12;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  /**
+   * @generated from field: string content_title = 15;
+   */
+  contentTitle = "";
+
+  constructor(data?: PartialMessage<ReaderAnnotation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReaderAnnotation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tags", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "start_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "end_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+    { no: 14, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 15, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReaderAnnotation {
+    return new ReaderAnnotation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReaderAnnotation {
+    return new ReaderAnnotation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReaderAnnotation {
+    return new ReaderAnnotation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReaderAnnotation | PlainMessage<ReaderAnnotation> | undefined, b: ReaderAnnotation | PlainMessage<ReaderAnnotation> | undefined): boolean {
+    return proto3.util.equals(ReaderAnnotation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertReaderAnnotationRequest
+ */
+export class UpsertReaderAnnotationRequest extends Message<UpsertReaderAnnotationRequest> {
+  /**
+   * empty creates; populated updates the caller's annotation
+   *
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 4;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string kind = 5;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string quote = 6;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string body = 7;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string color = 8;
+   */
+  color = "";
+
+  /**
+   * @generated from field: repeated string tags = 9;
+   */
+  tags: string[] = [];
+
+  /**
+   * @generated from field: int32 start_offset = 10;
+   */
+  startOffset = 0;
+
+  /**
+   * @generated from field: int32 end_offset = 11;
+   */
+  endOffset = 0;
+
+  /**
+   * UUID; makes offline retries idempotent
+   *
+   * @generated from field: string client_mutation_id = 12;
+   */
+  clientMutationId = "";
+
+  /**
+   * 0 creates; updates use optimistic concurrency
+   *
+   * @generated from field: int64 expected_version = 13;
+   */
+  expectedVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UpsertReaderAnnotationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertReaderAnnotationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tags", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "start_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "end_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertReaderAnnotationRequest {
+    return new UpsertReaderAnnotationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertReaderAnnotationRequest {
+    return new UpsertReaderAnnotationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertReaderAnnotationRequest {
+    return new UpsertReaderAnnotationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertReaderAnnotationRequest | PlainMessage<UpsertReaderAnnotationRequest> | undefined, b: UpsertReaderAnnotationRequest | PlainMessage<UpsertReaderAnnotationRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertReaderAnnotationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertReaderAnnotationResponse
+ */
+export class UpsertReaderAnnotationResponse extends Message<UpsertReaderAnnotationResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ReaderAnnotation annotation = 1;
+   */
+  annotation?: ReaderAnnotation;
+
+  /**
+   * @generated from field: int64 sync_sequence = 2;
+   */
+  syncSequence = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UpsertReaderAnnotationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertReaderAnnotationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "annotation", kind: "message", T: ReaderAnnotation },
+    { no: 2, name: "sync_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertReaderAnnotationResponse {
+    return new UpsertReaderAnnotationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertReaderAnnotationResponse {
+    return new UpsertReaderAnnotationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertReaderAnnotationResponse {
+    return new UpsertReaderAnnotationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertReaderAnnotationResponse | PlainMessage<UpsertReaderAnnotationResponse> | undefined, b: UpsertReaderAnnotationResponse | PlainMessage<UpsertReaderAnnotationResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertReaderAnnotationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteReaderAnnotationRequest
+ */
+export class DeleteReaderAnnotationRequest extends Message<DeleteReaderAnnotationRequest> {
+  /**
+   * @generated from field: string annotation_id = 1;
+   */
+  annotationId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 3;
+   */
+  expectedVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<DeleteReaderAnnotationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteReaderAnnotationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "annotation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteReaderAnnotationRequest {
+    return new DeleteReaderAnnotationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteReaderAnnotationRequest {
+    return new DeleteReaderAnnotationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteReaderAnnotationRequest {
+    return new DeleteReaderAnnotationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteReaderAnnotationRequest | PlainMessage<DeleteReaderAnnotationRequest> | undefined, b: DeleteReaderAnnotationRequest | PlainMessage<DeleteReaderAnnotationRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteReaderAnnotationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteReaderAnnotationResponse
+ */
+export class DeleteReaderAnnotationResponse extends Message<DeleteReaderAnnotationResponse> {
+  /**
+   * @generated from field: int64 sync_sequence = 1;
+   */
+  syncSequence = protoInt64.zero;
+
+  constructor(data?: PartialMessage<DeleteReaderAnnotationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteReaderAnnotationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sync_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteReaderAnnotationResponse {
+    return new DeleteReaderAnnotationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteReaderAnnotationResponse {
+    return new DeleteReaderAnnotationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteReaderAnnotationResponse {
+    return new DeleteReaderAnnotationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteReaderAnnotationResponse | PlainMessage<DeleteReaderAnnotationResponse> | undefined, b: DeleteReaderAnnotationResponse | PlainMessage<DeleteReaderAnnotationResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteReaderAnnotationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+ */
+export class ListMyReaderAnnotationsRequest extends Message<ListMyReaderAnnotationsRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string color = 3;
+   */
+  color = "";
+
+  /**
+   * @generated from field: string tag = 4;
+   */
+  tag = "";
+
+  /**
+   * @generated from field: string query = 5;
+   */
+  query = "";
+
+  /**
+   * @generated from field: int32 limit = 6;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyReaderAnnotationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyReaderAnnotationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "tag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyReaderAnnotationsRequest {
+    return new ListMyReaderAnnotationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyReaderAnnotationsRequest {
+    return new ListMyReaderAnnotationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyReaderAnnotationsRequest {
+    return new ListMyReaderAnnotationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyReaderAnnotationsRequest | PlainMessage<ListMyReaderAnnotationsRequest> | undefined, b: ListMyReaderAnnotationsRequest | PlainMessage<ListMyReaderAnnotationsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyReaderAnnotationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+ */
+export class ListMyReaderAnnotationsResponse extends Message<ListMyReaderAnnotationsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ReaderAnnotation annotations = 1;
+   */
+  annotations: ReaderAnnotation[] = [];
+
+  /**
+   * @generated from field: int64 latest_sync_sequence = 2;
+   */
+  latestSyncSequence = protoInt64.zero;
+
+  constructor(data?: PartialMessage<ListMyReaderAnnotationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyReaderAnnotationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "annotations", kind: "message", T: ReaderAnnotation, repeated: true },
+    { no: 2, name: "latest_sync_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyReaderAnnotationsResponse {
+    return new ListMyReaderAnnotationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyReaderAnnotationsResponse {
+    return new ListMyReaderAnnotationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyReaderAnnotationsResponse {
+    return new ListMyReaderAnnotationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyReaderAnnotationsResponse | PlainMessage<ListMyReaderAnnotationsResponse> | undefined, b: ListMyReaderAnnotationsResponse | PlainMessage<ListMyReaderAnnotationsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyReaderAnnotationsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReaderSearchResult
+ */
+export class ReaderSearchResult extends Message<ReaderSearchResult> {
+  /**
+   * content | annotation
+   *
+   * @generated from field: string scope = 1;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 2;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.ReaderAnnotation annotation = 3;
+   */
+  annotation?: ReaderAnnotation;
+
+  /**
+   * @generated from field: string snippet = 4;
+   */
+  snippet = "";
+
+  constructor(data?: PartialMessage<ReaderSearchResult>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReaderSearchResult";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content", kind: "message", T: OnyxContent },
+    { no: 3, name: "annotation", kind: "message", T: ReaderAnnotation },
+    { no: 4, name: "snippet", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReaderSearchResult {
+    return new ReaderSearchResult().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReaderSearchResult {
+    return new ReaderSearchResult().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReaderSearchResult {
+    return new ReaderSearchResult().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReaderSearchResult | PlainMessage<ReaderSearchResult> | undefined, b: ReaderSearchResult | PlainMessage<ReaderSearchResult> | undefined): boolean {
+    return proto3.util.equals(ReaderSearchResult, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SearchReaderRequest
+ */
+export class SearchReaderRequest extends Message<SearchReaderRequest> {
+  /**
+   * @generated from field: string query = 1;
+   */
+  query = "";
+
+  /**
+   * all | content | annotations
+   *
+   * @generated from field: string scope = 2;
+   */
+  scope = "";
+
+  /**
+   * optional content-kind filter
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 limit = 4;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<SearchReaderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SearchReaderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchReaderRequest {
+    return new SearchReaderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchReaderRequest {
+    return new SearchReaderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchReaderRequest {
+    return new SearchReaderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SearchReaderRequest | PlainMessage<SearchReaderRequest> | undefined, b: SearchReaderRequest | PlainMessage<SearchReaderRequest> | undefined): boolean {
+    return proto3.util.equals(SearchReaderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SearchReaderResponse
+ */
+export class SearchReaderResponse extends Message<SearchReaderResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ReaderSearchResult results = 1;
+   */
+  results: ReaderSearchResult[] = [];
+
+  constructor(data?: PartialMessage<SearchReaderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SearchReaderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: ReaderSearchResult, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchReaderResponse {
+    return new SearchReaderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchReaderResponse {
+    return new SearchReaderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchReaderResponse {
+    return new SearchReaderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SearchReaderResponse | PlainMessage<SearchReaderResponse> | undefined, b: SearchReaderResponse | PlainMessage<SearchReaderResponse> | undefined): boolean {
+    return proto3.util.equals(SearchReaderResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportReaderDataRequest
+ */
+export class ExportReaderDataRequest extends Message<ExportReaderDataRequest> {
+  /**
+   * @generated from field: string format = 1;
+   */
+  format = "";
+
+  constructor(data?: PartialMessage<ExportReaderDataRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportReaderDataRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportReaderDataRequest {
+    return new ExportReaderDataRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportReaderDataRequest {
+    return new ExportReaderDataRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportReaderDataRequest {
+    return new ExportReaderDataRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportReaderDataRequest | PlainMessage<ExportReaderDataRequest> | undefined, b: ExportReaderDataRequest | PlainMessage<ExportReaderDataRequest> | undefined): boolean {
+    return proto3.util.equals(ExportReaderDataRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportReaderDataResponse
+ */
+export class ExportReaderDataResponse extends Message<ExportReaderDataResponse> {
+  /**
+   * @generated from field: string filename = 1;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 2;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: bytes data = 3;
+   */
+  data = new Uint8Array(0);
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 4;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ExportReaderDataResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportReaderDataResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 4, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportReaderDataResponse {
+    return new ExportReaderDataResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportReaderDataResponse {
+    return new ExportReaderDataResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportReaderDataResponse {
+    return new ExportReaderDataResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportReaderDataResponse | PlainMessage<ExportReaderDataResponse> | undefined, b: ExportReaderDataResponse | PlainMessage<ExportReaderDataResponse> | undefined): boolean {
+    return proto3.util.equals(ExportReaderDataResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReaderSyncChange
+ */
+export class ReaderSyncChange extends Message<ReaderSyncChange> {
+  /**
+   * @generated from field: int64 sequence = 1;
+   */
+  sequence = protoInt64.zero;
+
+  /**
+   * @generated from field: string entity_type = 2;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 3;
+   */
+  entityId = "";
+
+  /**
+   * upsert | delete
+   *
+   * @generated from field: string operation = 4;
+   */
+  operation = "";
+
+  /**
+   * @generated from field: int64 version = 5;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp changed_at = 6;
+   */
+  changedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ReaderSyncChange>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReaderSyncChange";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "operation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "changed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReaderSyncChange {
+    return new ReaderSyncChange().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReaderSyncChange {
+    return new ReaderSyncChange().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReaderSyncChange {
+    return new ReaderSyncChange().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReaderSyncChange | PlainMessage<ReaderSyncChange> | undefined, b: ReaderSyncChange | PlainMessage<ReaderSyncChange> | undefined): boolean {
+    return proto3.util.equals(ReaderSyncChange, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListReaderSyncChangesRequest
+ */
+export class ListReaderSyncChangesRequest extends Message<ListReaderSyncChangesRequest> {
+  /**
+   * @generated from field: int64 after_sequence = 1;
+   */
+  afterSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListReaderSyncChangesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListReaderSyncChangesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "after_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListReaderSyncChangesRequest {
+    return new ListReaderSyncChangesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListReaderSyncChangesRequest {
+    return new ListReaderSyncChangesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListReaderSyncChangesRequest {
+    return new ListReaderSyncChangesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListReaderSyncChangesRequest | PlainMessage<ListReaderSyncChangesRequest> | undefined, b: ListReaderSyncChangesRequest | PlainMessage<ListReaderSyncChangesRequest> | undefined): boolean {
+    return proto3.util.equals(ListReaderSyncChangesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListReaderSyncChangesResponse
+ */
+export class ListReaderSyncChangesResponse extends Message<ListReaderSyncChangesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ReaderSyncChange changes = 1;
+   */
+  changes: ReaderSyncChange[] = [];
+
+  /**
+   * @generated from field: int64 latest_sequence = 2;
+   */
+  latestSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: bool has_more = 3;
+   */
+  hasMore = false;
+
+  constructor(data?: PartialMessage<ListReaderSyncChangesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListReaderSyncChangesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "changes", kind: "message", T: ReaderSyncChange, repeated: true },
+    { no: 2, name: "latest_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "has_more", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListReaderSyncChangesResponse {
+    return new ListReaderSyncChangesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListReaderSyncChangesResponse {
+    return new ListReaderSyncChangesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListReaderSyncChangesResponse {
+    return new ListReaderSyncChangesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListReaderSyncChangesResponse | PlainMessage<ListReaderSyncChangesResponse> | undefined, b: ListReaderSyncChangesResponse | PlainMessage<ListReaderSyncChangesResponse> | undefined): boolean {
+    return proto3.util.equals(ListReaderSyncChangesResponse, a, b);
   }
 }
 

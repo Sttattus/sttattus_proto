@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddNoteRequest, AddNoteResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteNoteRequest, DeleteNoteResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse } from "./onyx_pb.js";
+import { AddNoteRequest, AddNoteResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, ExportReaderDataRequest, ExportReaderDataResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SearchReaderRequest, SearchReaderResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -190,6 +190,63 @@ export const OnyxService = {
       name: "DeleteNote",
       I: DeleteNoteRequest,
       O: DeleteNoteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Reader OS — stable passages, private highlights/notes/bookmarks,
+     * cross-library search/export, and an offline-safe change cursor.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation
+     */
+    upsertReaderAnnotation: {
+      name: "UpsertReaderAnnotation",
+      I: UpsertReaderAnnotationRequest,
+      O: UpsertReaderAnnotationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation
+     */
+    deleteReaderAnnotation: {
+      name: "DeleteReaderAnnotation",
+      I: DeleteReaderAnnotationRequest,
+      O: DeleteReaderAnnotationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations
+     */
+    listMyReaderAnnotations: {
+      name: "ListMyReaderAnnotations",
+      I: ListMyReaderAnnotationsRequest,
+      O: ListMyReaderAnnotationsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SearchReader
+     */
+    searchReader: {
+      name: "SearchReader",
+      I: SearchReaderRequest,
+      O: SearchReaderResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ExportReaderData
+     */
+    exportReaderData: {
+      name: "ExportReaderData",
+      I: ExportReaderDataRequest,
+      O: ExportReaderDataResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListReaderSyncChanges
+     */
+    listReaderSyncChanges: {
+      name: "ListReaderSyncChanges",
+      I: ListReaderSyncChangesRequest,
+      O: ListReaderSyncChangesResponse,
       kind: MethodKind.Unary,
     },
     /**

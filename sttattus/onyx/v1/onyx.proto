@@ -63,6 +63,25 @@ message OnyxContent {
   // responses (avoids an N+1 across rails).
   int32 reaction_count = 22;
   bool i_reacted = 23;
+
+  // Reader OS — populated on GetContent for articles. List responses carry
+  // only the revision identity so rails remain light.
+  string revision_id = 24;
+  int32 revision_number = 25;
+  repeated DocumentBlock document_blocks = 26;
+  string progress_passage_key = 27;
+  int32 progress_offset = 28;
+}
+
+// A stable, addressable passage in one immutable editorial revision.
+message DocumentBlock {
+  string id = 1;
+  string revision_id = 2;
+  string passage_key = 3;
+  int32 ordinal = 4;
+  string block_type = 5; // paragraph | heading | quote | list | code | other
+  string markdown = 6;
+  string plain_text = 7;
 }
 
 // Subscription represents an exclusive link between user and creator.
@@ -155,11 +174,15 @@ message RecordProgressRequest {
   // 0..1 fraction. >= 1 marks complete.
   double completion = 2;
   int32 position_seconds = 3;
+  string passage_key = 4;
+  int32 offset = 5;
 }
 
 message RecordProgressResponse {
   double completion = 1;
   int32 position_seconds = 2;
+  string passage_key = 3;
+  int32 offset = 4;
 }
 
 // === P6.6 — subscription + points redemption ===
@@ -258,6 +281,114 @@ message DeleteNoteRequest {
   string note_id = 1;
 }
 message DeleteNoteResponse {}
+
+// Reader OS annotations supersede the original free-form Note contract while
+// the Note RPCs remain available as a backwards-compatible view of kind=note.
+// A bookmark may omit quote/body; a highlight requires quote; a note requires
+// body. Passage keys are stable across editorial revisions when text survives.
+message ReaderAnnotation {
+  string id = 1;
+  string content_id = 2;
+  string revision_id = 3;
+  string passage_key = 4;
+  string kind = 5; // highlight | note | bookmark
+  string quote = 6;
+  string body = 7;
+  string color = 8;
+  repeated string tags = 9;
+  int32 start_offset = 10;
+  int32 end_offset = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+  string content_title = 15;
+}
+
+message UpsertReaderAnnotationRequest {
+  string id = 1; // empty creates; populated updates the caller's annotation
+  string content_id = 2;
+  string revision_id = 3;
+  string passage_key = 4;
+  string kind = 5;
+  string quote = 6;
+  string body = 7;
+  string color = 8;
+  repeated string tags = 9;
+  int32 start_offset = 10;
+  int32 end_offset = 11;
+  string client_mutation_id = 12; // UUID; makes offline retries idempotent
+  int64 expected_version = 13; // 0 creates; updates use optimistic concurrency
+}
+message UpsertReaderAnnotationResponse {
+  ReaderAnnotation annotation = 1;
+  int64 sync_sequence = 2;
+}
+
+message DeleteReaderAnnotationRequest {
+  string annotation_id = 1;
+  string client_mutation_id = 2;
+  int64 expected_version = 3;
+}
+message DeleteReaderAnnotationResponse {
+  int64 sync_sequence = 1;
+}
+
+message ListMyReaderAnnotationsRequest {
+  string content_id = 1;
+  string kind = 2;
+  string color = 3;
+  string tag = 4;
+  string query = 5;
+  int32 limit = 6;
+}
+message ListMyReaderAnnotationsResponse {
+  repeated ReaderAnnotation annotations = 1;
+  int64 latest_sync_sequence = 2;
+}
+
+message ReaderSearchResult {
+  string scope = 1; // content | annotation
+  OnyxContent content = 2;
+  ReaderAnnotation annotation = 3;
+  string snippet = 4;
+}
+message SearchReaderRequest {
+  string query = 1;
+  string scope = 2; // all | content | annotations
+  string kind = 3; // optional content-kind filter
+  int32 limit = 4;
+}
+message SearchReaderResponse {
+  repeated ReaderSearchResult results = 1;
+}
+
+message ExportReaderDataRequest {
+  string format = 1;
+} // markdown | json
+message ExportReaderDataResponse {
+  string filename = 1;
+  string mime_type = 2;
+  bytes data = 3;
+  google.protobuf.Timestamp generated_at = 4;
+}
+
+message ReaderSyncChange {
+  int64 sequence = 1;
+  string entity_type = 2;
+  string entity_id = 3;
+  string operation = 4; // upsert | delete
+  int64 version = 5;
+  google.protobuf.Timestamp changed_at = 6;
+}
+message ListReaderSyncChangesRequest {
+  int64 after_sequence = 1;
+  int32 limit = 2;
+}
+message ListReaderSyncChangesResponse {
+  repeated ReaderSyncChange changes = 1;
+  int64 latest_sequence = 2;
+  bool has_more = 3;
+}
 
 message ListMyUnlocksRequest {
   int32 limit = 1;
@@ -609,6 +740,15 @@ service OnyxService {
   rpc AddNote(AddNoteRequest) returns (AddNoteResponse);
   rpc ListMyNotes(ListMyNotesRequest) returns (ListMyNotesResponse);
   rpc DeleteNote(DeleteNoteRequest) returns (DeleteNoteResponse);
+
+  // Reader OS — stable passages, private highlights/notes/bookmarks,
+  // cross-library search/export, and an offline-safe change cursor.
+  rpc UpsertReaderAnnotation(UpsertReaderAnnotationRequest) returns (UpsertReaderAnnotationResponse);
+  rpc DeleteReaderAnnotation(DeleteReaderAnnotationRequest) returns (DeleteReaderAnnotationResponse);
+  rpc ListMyReaderAnnotations(ListMyReaderAnnotationsRequest) returns (ListMyReaderAnnotationsResponse);
+  rpc SearchReader(SearchReaderRequest) returns (SearchReaderResponse);
+  rpc ExportReaderData(ExportReaderDataRequest) returns (ExportReaderDataResponse);
+  rpc ListReaderSyncChanges(ListReaderSyncChangesRequest) returns (ListReaderSyncChangesResponse);
 
   // P2 — personal library / account.
   rpc ListMyUnlocks(ListMyUnlocksRequest) returns (ListMyUnlocksResponse);

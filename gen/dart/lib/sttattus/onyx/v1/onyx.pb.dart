@@ -271,6 +271,11 @@ class OnyxContent extends $pb.GeneratedMessage {
     $core.int? progressPositionSeconds,
     $core.int? reactionCount,
     $core.bool? iReacted,
+    $core.String? revisionId,
+    $core.int? revisionNumber,
+    $core.Iterable<DocumentBlock>? documentBlocks,
+    $core.String? progressPassageKey,
+    $core.int? progressOffset,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -298,6 +303,12 @@ class OnyxContent extends $pb.GeneratedMessage {
       result.progressPositionSeconds = progressPositionSeconds;
     if (reactionCount != null) result.reactionCount = reactionCount;
     if (iReacted != null) result.iReacted = iReacted;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (revisionNumber != null) result.revisionNumber = revisionNumber;
+    if (documentBlocks != null) result.documentBlocks.addAll(documentBlocks);
+    if (progressPassageKey != null)
+      result.progressPassageKey = progressPassageKey;
+    if (progressOffset != null) result.progressOffset = progressOffset;
     return result;
   }
 
@@ -341,6 +352,12 @@ class OnyxContent extends $pb.GeneratedMessage {
     ..aI(21, _omitFieldNames ? '' : 'progressPositionSeconds')
     ..aI(22, _omitFieldNames ? '' : 'reactionCount')
     ..aOB(23, _omitFieldNames ? '' : 'iReacted')
+    ..aOS(24, _omitFieldNames ? '' : 'revisionId')
+    ..aI(25, _omitFieldNames ? '' : 'revisionNumber')
+    ..pPM<DocumentBlock>(26, _omitFieldNames ? '' : 'documentBlocks',
+        subBuilder: DocumentBlock.create)
+    ..aOS(27, _omitFieldNames ? '' : 'progressPassageKey')
+    ..aI(28, _omitFieldNames ? '' : 'progressOffset')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -582,6 +599,175 @@ class OnyxContent extends $pb.GeneratedMessage {
   $core.bool hasIReacted() => $_has(22);
   @$pb.TagNumber(23)
   void clearIReacted() => $_clearField(23);
+
+  /// Reader OS — populated on GetContent for articles. List responses carry
+  /// only the revision identity so rails remain light.
+  @$pb.TagNumber(24)
+  $core.String get revisionId => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set revisionId($core.String value) => $_setString(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasRevisionId() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearRevisionId() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.int get revisionNumber => $_getIZ(24);
+  @$pb.TagNumber(25)
+  set revisionNumber($core.int value) => $_setSignedInt32(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasRevisionNumber() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearRevisionNumber() => $_clearField(25);
+
+  @$pb.TagNumber(26)
+  $pb.PbList<DocumentBlock> get documentBlocks => $_getList(25);
+
+  @$pb.TagNumber(27)
+  $core.String get progressPassageKey => $_getSZ(26);
+  @$pb.TagNumber(27)
+  set progressPassageKey($core.String value) => $_setString(26, value);
+  @$pb.TagNumber(27)
+  $core.bool hasProgressPassageKey() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearProgressPassageKey() => $_clearField(27);
+
+  @$pb.TagNumber(28)
+  $core.int get progressOffset => $_getIZ(27);
+  @$pb.TagNumber(28)
+  set progressOffset($core.int value) => $_setSignedInt32(27, value);
+  @$pb.TagNumber(28)
+  $core.bool hasProgressOffset() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearProgressOffset() => $_clearField(28);
+}
+
+/// A stable, addressable passage in one immutable editorial revision.
+class DocumentBlock extends $pb.GeneratedMessage {
+  factory DocumentBlock({
+    $core.String? id,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.int? ordinal,
+    $core.String? blockType,
+    $core.String? markdown,
+    $core.String? plainText,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (ordinal != null) result.ordinal = ordinal;
+    if (blockType != null) result.blockType = blockType;
+    if (markdown != null) result.markdown = markdown;
+    if (plainText != null) result.plainText = plainText;
+    return result;
+  }
+
+  DocumentBlock._();
+
+  factory DocumentBlock.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DocumentBlock.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DocumentBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(3, _omitFieldNames ? '' : 'passageKey')
+    ..aI(4, _omitFieldNames ? '' : 'ordinal')
+    ..aOS(5, _omitFieldNames ? '' : 'blockType')
+    ..aOS(6, _omitFieldNames ? '' : 'markdown')
+    ..aOS(7, _omitFieldNames ? '' : 'plainText')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DocumentBlock clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DocumentBlock copyWith(void Function(DocumentBlock) updates) =>
+      super.copyWith((message) => updates(message as DocumentBlock))
+          as DocumentBlock;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DocumentBlock create() => DocumentBlock._();
+  @$core.override
+  DocumentBlock createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DocumentBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DocumentBlock>(create);
+  static DocumentBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get revisionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set revisionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRevisionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRevisionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get passageKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set passageKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPassageKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPassageKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get ordinal => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set ordinal($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOrdinal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrdinal() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get blockType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set blockType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBlockType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBlockType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get markdown => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set markdown($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMarkdown() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMarkdown() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get plainText => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set plainText($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPlainText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPlainText() => $_clearField(7);
 }
 
 /// Subscription represents an exclusive link between user and creator.
@@ -1656,11 +1842,15 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
     $core.String? contentId,
     $core.double? completion,
     $core.int? positionSeconds,
+    $core.String? passageKey,
+    $core.int? offset,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
     if (completion != null) result.completion = completion;
     if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (offset != null) result.offset = offset;
     return result;
   }
 
@@ -1681,6 +1871,8 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'contentId')
     ..aD(2, _omitFieldNames ? '' : 'completion')
     ..aI(3, _omitFieldNames ? '' : 'positionSeconds')
+    ..aOS(4, _omitFieldNames ? '' : 'passageKey')
+    ..aI(5, _omitFieldNames ? '' : 'offset')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1730,16 +1922,38 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
   $core.bool hasPositionSeconds() => $_has(2);
   @$pb.TagNumber(3)
   void clearPositionSeconds() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get passageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set passageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get offset => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set offset($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOffset() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOffset() => $_clearField(5);
 }
 
 class RecordProgressResponse extends $pb.GeneratedMessage {
   factory RecordProgressResponse({
     $core.double? completion,
     $core.int? positionSeconds,
+    $core.String? passageKey,
+    $core.int? offset,
   }) {
     final result = create();
     if (completion != null) result.completion = completion;
     if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (offset != null) result.offset = offset;
     return result;
   }
 
@@ -1759,6 +1973,8 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aD(1, _omitFieldNames ? '' : 'completion')
     ..aI(2, _omitFieldNames ? '' : 'positionSeconds')
+    ..aOS(3, _omitFieldNames ? '' : 'passageKey')
+    ..aI(4, _omitFieldNames ? '' : 'offset')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1798,6 +2014,24 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
   $core.bool hasPositionSeconds() => $_has(1);
   @$pb.TagNumber(2)
   void clearPositionSeconds() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get passageKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set passageKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPassageKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPassageKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get offset => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set offset($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOffset() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOffset() => $_clearField(4);
 }
 
 class RedeemContentRequest extends $pb.GeneratedMessage {
@@ -3144,6 +3378,1482 @@ class DeleteNoteResponse extends $pb.GeneratedMessage {
   static DeleteNoteResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteNoteResponse>(create);
   static DeleteNoteResponse? _defaultInstance;
+}
+
+/// Reader OS annotations supersede the original free-form Note contract while
+/// the Note RPCs remain available as a backwards-compatible view of kind=note.
+/// A bookmark may omit quote/body; a highlight requires quote; a note requires
+/// body. Passage keys are stable across editorial revisions when text survives.
+class ReaderAnnotation extends $pb.GeneratedMessage {
+  factory ReaderAnnotation({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? kind,
+    $core.String? quote,
+    $core.String? body,
+    $core.String? color,
+    $core.Iterable<$core.String>? tags,
+    $core.int? startOffset,
+    $core.int? endOffset,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $core.String? contentTitle,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (kind != null) result.kind = kind;
+    if (quote != null) result.quote = quote;
+    if (body != null) result.body = body;
+    if (color != null) result.color = color;
+    if (tags != null) result.tags.addAll(tags);
+    if (startOffset != null) result.startOffset = startOffset;
+    if (endOffset != null) result.endOffset = endOffset;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (contentTitle != null) result.contentTitle = contentTitle;
+    return result;
+  }
+
+  ReaderAnnotation._();
+
+  factory ReaderAnnotation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReaderAnnotation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReaderAnnotation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'kind')
+    ..aOS(6, _omitFieldNames ? '' : 'quote')
+    ..aOS(7, _omitFieldNames ? '' : 'body')
+    ..aOS(8, _omitFieldNames ? '' : 'color')
+    ..pPS(9, _omitFieldNames ? '' : 'tags')
+    ..aI(10, _omitFieldNames ? '' : 'startOffset')
+    ..aI(11, _omitFieldNames ? '' : 'endOffset')
+    ..aInt64(12, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(15, _omitFieldNames ? '' : 'contentTitle')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderAnnotation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderAnnotation copyWith(void Function(ReaderAnnotation) updates) =>
+      super.copyWith((message) => updates(message as ReaderAnnotation))
+          as ReaderAnnotation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReaderAnnotation create() => ReaderAnnotation._();
+  @$core.override
+  ReaderAnnotation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReaderAnnotation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReaderAnnotation>(create);
+  static ReaderAnnotation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get passageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set passageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get kind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set kind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get quote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set quote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get body => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set body($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBody() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBody() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get color => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set color($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasColor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearColor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get tags => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.int get startOffset => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set startOffset($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStartOffset() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStartOffset() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get endOffset => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set endOffset($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEndOffset() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEndOffset() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get version => $_getI64(11);
+  @$pb.TagNumber(12)
+  set version($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.String get contentTitle => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set contentTitle($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasContentTitle() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearContentTitle() => $_clearField(15);
+}
+
+class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
+  factory UpsertReaderAnnotationRequest({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? kind,
+    $core.String? quote,
+    $core.String? body,
+    $core.String? color,
+    $core.Iterable<$core.String>? tags,
+    $core.int? startOffset,
+    $core.int? endOffset,
+    $core.String? clientMutationId,
+    $fixnum.Int64? expectedVersion,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (kind != null) result.kind = kind;
+    if (quote != null) result.quote = quote;
+    if (body != null) result.body = body;
+    if (color != null) result.color = color;
+    if (tags != null) result.tags.addAll(tags);
+    if (startOffset != null) result.startOffset = startOffset;
+    if (endOffset != null) result.endOffset = endOffset;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    return result;
+  }
+
+  UpsertReaderAnnotationRequest._();
+
+  factory UpsertReaderAnnotationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertReaderAnnotationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertReaderAnnotationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'kind')
+    ..aOS(6, _omitFieldNames ? '' : 'quote')
+    ..aOS(7, _omitFieldNames ? '' : 'body')
+    ..aOS(8, _omitFieldNames ? '' : 'color')
+    ..pPS(9, _omitFieldNames ? '' : 'tags')
+    ..aI(10, _omitFieldNames ? '' : 'startOffset')
+    ..aI(11, _omitFieldNames ? '' : 'endOffset')
+    ..aOS(12, _omitFieldNames ? '' : 'clientMutationId')
+    ..aInt64(13, _omitFieldNames ? '' : 'expectedVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertReaderAnnotationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertReaderAnnotationRequest copyWith(
+          void Function(UpsertReaderAnnotationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertReaderAnnotationRequest))
+          as UpsertReaderAnnotationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertReaderAnnotationRequest create() =>
+      UpsertReaderAnnotationRequest._();
+  @$core.override
+  UpsertReaderAnnotationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertReaderAnnotationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertReaderAnnotationRequest>(create);
+  static UpsertReaderAnnotationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get passageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set passageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get kind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set kind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get quote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set quote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get body => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set body($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBody() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBody() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get color => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set color($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasColor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearColor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get tags => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.int get startOffset => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set startOffset($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStartOffset() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStartOffset() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get endOffset => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set endOffset($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEndOffset() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEndOffset() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get clientMutationId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set clientMutationId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasClientMutationId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearClientMutationId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get expectedVersion => $_getI64(12);
+  @$pb.TagNumber(13)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasExpectedVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearExpectedVersion() => $_clearField(13);
+}
+
+class UpsertReaderAnnotationResponse extends $pb.GeneratedMessage {
+  factory UpsertReaderAnnotationResponse({
+    ReaderAnnotation? annotation,
+    $fixnum.Int64? syncSequence,
+  }) {
+    final result = create();
+    if (annotation != null) result.annotation = annotation;
+    if (syncSequence != null) result.syncSequence = syncSequence;
+    return result;
+  }
+
+  UpsertReaderAnnotationResponse._();
+
+  factory UpsertReaderAnnotationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertReaderAnnotationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertReaderAnnotationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ReaderAnnotation>(1, _omitFieldNames ? '' : 'annotation',
+        subBuilder: ReaderAnnotation.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'syncSequence')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertReaderAnnotationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertReaderAnnotationResponse copyWith(
+          void Function(UpsertReaderAnnotationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertReaderAnnotationResponse))
+          as UpsertReaderAnnotationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertReaderAnnotationResponse create() =>
+      UpsertReaderAnnotationResponse._();
+  @$core.override
+  UpsertReaderAnnotationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertReaderAnnotationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertReaderAnnotationResponse>(create);
+  static UpsertReaderAnnotationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ReaderAnnotation get annotation => $_getN(0);
+  @$pb.TagNumber(1)
+  set annotation(ReaderAnnotation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAnnotation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAnnotation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ReaderAnnotation ensureAnnotation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get syncSequence => $_getI64(1);
+  @$pb.TagNumber(2)
+  set syncSequence($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSyncSequence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSyncSequence() => $_clearField(2);
+}
+
+class DeleteReaderAnnotationRequest extends $pb.GeneratedMessage {
+  factory DeleteReaderAnnotationRequest({
+    $core.String? annotationId,
+    $core.String? clientMutationId,
+    $fixnum.Int64? expectedVersion,
+  }) {
+    final result = create();
+    if (annotationId != null) result.annotationId = annotationId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    return result;
+  }
+
+  DeleteReaderAnnotationRequest._();
+
+  factory DeleteReaderAnnotationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteReaderAnnotationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteReaderAnnotationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'annotationId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteReaderAnnotationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteReaderAnnotationRequest copyWith(
+          void Function(DeleteReaderAnnotationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteReaderAnnotationRequest))
+          as DeleteReaderAnnotationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteReaderAnnotationRequest create() =>
+      DeleteReaderAnnotationRequest._();
+  @$core.override
+  DeleteReaderAnnotationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteReaderAnnotationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteReaderAnnotationRequest>(create);
+  static DeleteReaderAnnotationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get annotationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set annotationId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAnnotationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAnnotationId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedVersion => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedVersion() => $_clearField(3);
+}
+
+class DeleteReaderAnnotationResponse extends $pb.GeneratedMessage {
+  factory DeleteReaderAnnotationResponse({
+    $fixnum.Int64? syncSequence,
+  }) {
+    final result = create();
+    if (syncSequence != null) result.syncSequence = syncSequence;
+    return result;
+  }
+
+  DeleteReaderAnnotationResponse._();
+
+  factory DeleteReaderAnnotationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteReaderAnnotationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteReaderAnnotationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'syncSequence')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteReaderAnnotationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteReaderAnnotationResponse copyWith(
+          void Function(DeleteReaderAnnotationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteReaderAnnotationResponse))
+          as DeleteReaderAnnotationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteReaderAnnotationResponse create() =>
+      DeleteReaderAnnotationResponse._();
+  @$core.override
+  DeleteReaderAnnotationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteReaderAnnotationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteReaderAnnotationResponse>(create);
+  static DeleteReaderAnnotationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get syncSequence => $_getI64(0);
+  @$pb.TagNumber(1)
+  set syncSequence($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSyncSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSyncSequence() => $_clearField(1);
+}
+
+class ListMyReaderAnnotationsRequest extends $pb.GeneratedMessage {
+  factory ListMyReaderAnnotationsRequest({
+    $core.String? contentId,
+    $core.String? kind,
+    $core.String? color,
+    $core.String? tag,
+    $core.String? query,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (kind != null) result.kind = kind;
+    if (color != null) result.color = color;
+    if (tag != null) result.tag = tag;
+    if (query != null) result.query = query;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListMyReaderAnnotationsRequest._();
+
+  factory ListMyReaderAnnotationsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyReaderAnnotationsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyReaderAnnotationsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'color')
+    ..aOS(4, _omitFieldNames ? '' : 'tag')
+    ..aOS(5, _omitFieldNames ? '' : 'query')
+    ..aI(6, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReaderAnnotationsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReaderAnnotationsRequest copyWith(
+          void Function(ListMyReaderAnnotationsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyReaderAnnotationsRequest))
+          as ListMyReaderAnnotationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReaderAnnotationsRequest create() =>
+      ListMyReaderAnnotationsRequest._();
+  @$core.override
+  ListMyReaderAnnotationsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReaderAnnotationsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyReaderAnnotationsRequest>(create);
+  static ListMyReaderAnnotationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get color => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set color($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasColor() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearColor() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get tag => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tag($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTag() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTag() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get query => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set query($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasQuery() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuery() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get limit => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set limit($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLimit() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLimit() => $_clearField(6);
+}
+
+class ListMyReaderAnnotationsResponse extends $pb.GeneratedMessage {
+  factory ListMyReaderAnnotationsResponse({
+    $core.Iterable<ReaderAnnotation>? annotations,
+    $fixnum.Int64? latestSyncSequence,
+  }) {
+    final result = create();
+    if (annotations != null) result.annotations.addAll(annotations);
+    if (latestSyncSequence != null)
+      result.latestSyncSequence = latestSyncSequence;
+    return result;
+  }
+
+  ListMyReaderAnnotationsResponse._();
+
+  factory ListMyReaderAnnotationsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyReaderAnnotationsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyReaderAnnotationsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ReaderAnnotation>(1, _omitFieldNames ? '' : 'annotations',
+        subBuilder: ReaderAnnotation.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'latestSyncSequence')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReaderAnnotationsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyReaderAnnotationsResponse copyWith(
+          void Function(ListMyReaderAnnotationsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyReaderAnnotationsResponse))
+          as ListMyReaderAnnotationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyReaderAnnotationsResponse create() =>
+      ListMyReaderAnnotationsResponse._();
+  @$core.override
+  ListMyReaderAnnotationsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyReaderAnnotationsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyReaderAnnotationsResponse>(
+          create);
+  static ListMyReaderAnnotationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ReaderAnnotation> get annotations => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get latestSyncSequence => $_getI64(1);
+  @$pb.TagNumber(2)
+  set latestSyncSequence($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLatestSyncSequence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatestSyncSequence() => $_clearField(2);
+}
+
+class ReaderSearchResult extends $pb.GeneratedMessage {
+  factory ReaderSearchResult({
+    $core.String? scope,
+    OnyxContent? content,
+    ReaderAnnotation? annotation,
+    $core.String? snippet,
+  }) {
+    final result = create();
+    if (scope != null) result.scope = scope;
+    if (content != null) result.content = content;
+    if (annotation != null) result.annotation = annotation;
+    if (snippet != null) result.snippet = snippet;
+    return result;
+  }
+
+  ReaderSearchResult._();
+
+  factory ReaderSearchResult.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReaderSearchResult.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReaderSearchResult',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scope')
+    ..aOM<OnyxContent>(2, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aOM<ReaderAnnotation>(3, _omitFieldNames ? '' : 'annotation',
+        subBuilder: ReaderAnnotation.create)
+    ..aOS(4, _omitFieldNames ? '' : 'snippet')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderSearchResult clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderSearchResult copyWith(void Function(ReaderSearchResult) updates) =>
+      super.copyWith((message) => updates(message as ReaderSearchResult))
+          as ReaderSearchResult;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReaderSearchResult create() => ReaderSearchResult._();
+  @$core.override
+  ReaderSearchResult createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReaderSearchResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReaderSearchResult>(create);
+  static ReaderSearchResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scope => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scope($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScope() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScope() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  OnyxContent get content => $_getN(1);
+  @$pb.TagNumber(2)
+  set content(OnyxContent value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContent() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxContent ensureContent() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  ReaderAnnotation get annotation => $_getN(2);
+  @$pb.TagNumber(3)
+  set annotation(ReaderAnnotation value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAnnotation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAnnotation() => $_clearField(3);
+  @$pb.TagNumber(3)
+  ReaderAnnotation ensureAnnotation() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get snippet => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set snippet($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSnippet() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSnippet() => $_clearField(4);
+}
+
+class SearchReaderRequest extends $pb.GeneratedMessage {
+  factory SearchReaderRequest({
+    $core.String? query,
+    $core.String? scope,
+    $core.String? kind,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (query != null) result.query = query;
+    if (scope != null) result.scope = scope;
+    if (kind != null) result.kind = kind;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  SearchReaderRequest._();
+
+  factory SearchReaderRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchReaderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchReaderRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'query')
+    ..aOS(2, _omitFieldNames ? '' : 'scope')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aI(4, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchReaderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchReaderRequest copyWith(void Function(SearchReaderRequest) updates) =>
+      super.copyWith((message) => updates(message as SearchReaderRequest))
+          as SearchReaderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchReaderRequest create() => SearchReaderRequest._();
+  @$core.override
+  SearchReaderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SearchReaderRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchReaderRequest>(create);
+  static SearchReaderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get query => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set query($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuery() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get scope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set scope($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get limit => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set limit($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLimit() => $_clearField(4);
+}
+
+class SearchReaderResponse extends $pb.GeneratedMessage {
+  factory SearchReaderResponse({
+    $core.Iterable<ReaderSearchResult>? results,
+  }) {
+    final result = create();
+    if (results != null) result.results.addAll(results);
+    return result;
+  }
+
+  SearchReaderResponse._();
+
+  factory SearchReaderResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchReaderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchReaderResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ReaderSearchResult>(1, _omitFieldNames ? '' : 'results',
+        subBuilder: ReaderSearchResult.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchReaderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchReaderResponse copyWith(void Function(SearchReaderResponse) updates) =>
+      super.copyWith((message) => updates(message as SearchReaderResponse))
+          as SearchReaderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchReaderResponse create() => SearchReaderResponse._();
+  @$core.override
+  SearchReaderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SearchReaderResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchReaderResponse>(create);
+  static SearchReaderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ReaderSearchResult> get results => $_getList(0);
+}
+
+class ExportReaderDataRequest extends $pb.GeneratedMessage {
+  factory ExportReaderDataRequest({
+    $core.String? format,
+  }) {
+    final result = create();
+    if (format != null) result.format = format;
+    return result;
+  }
+
+  ExportReaderDataRequest._();
+
+  factory ExportReaderDataRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportReaderDataRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportReaderDataRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'format')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportReaderDataRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportReaderDataRequest copyWith(
+          void Function(ExportReaderDataRequest) updates) =>
+      super.copyWith((message) => updates(message as ExportReaderDataRequest))
+          as ExportReaderDataRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportReaderDataRequest create() => ExportReaderDataRequest._();
+  @$core.override
+  ExportReaderDataRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportReaderDataRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportReaderDataRequest>(create);
+  static ExportReaderDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get format => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set format($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFormat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFormat() => $_clearField(1);
+}
+
+class ExportReaderDataResponse extends $pb.GeneratedMessage {
+  factory ExportReaderDataResponse({
+    $core.String? filename,
+    $core.String? mimeType,
+    $core.List<$core.int>? data,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (data != null) result.data = data;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  ExportReaderDataResponse._();
+
+  factory ExportReaderDataResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportReaderDataResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportReaderDataResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filename')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportReaderDataResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportReaderDataResponse copyWith(
+          void Function(ExportReaderDataResponse) updates) =>
+      super.copyWith((message) => updates(message as ExportReaderDataResponse))
+          as ExportReaderDataResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportReaderDataResponse create() => ExportReaderDataResponse._();
+  @$core.override
+  ExportReaderDataResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportReaderDataResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportReaderDataResponse>(create);
+  static ExportReaderDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filename => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filename($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilename() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilename() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mimeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mimeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMimeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMimeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get data => $_getN(2);
+  @$pb.TagNumber(3)
+  set data($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasData() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearData() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get generatedAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set generatedAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGeneratedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGeneratedAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(3);
+}
+
+class ReaderSyncChange extends $pb.GeneratedMessage {
+  factory ReaderSyncChange({
+    $fixnum.Int64? sequence,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? operation,
+    $fixnum.Int64? version,
+    $1.Timestamp? changedAt,
+  }) {
+    final result = create();
+    if (sequence != null) result.sequence = sequence;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (operation != null) result.operation = operation;
+    if (version != null) result.version = version;
+    if (changedAt != null) result.changedAt = changedAt;
+    return result;
+  }
+
+  ReaderSyncChange._();
+
+  factory ReaderSyncChange.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReaderSyncChange.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReaderSyncChange',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'sequence')
+    ..aOS(2, _omitFieldNames ? '' : 'entityType')
+    ..aOS(3, _omitFieldNames ? '' : 'entityId')
+    ..aOS(4, _omitFieldNames ? '' : 'operation')
+    ..aInt64(5, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'changedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderSyncChange clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReaderSyncChange copyWith(void Function(ReaderSyncChange) updates) =>
+      super.copyWith((message) => updates(message as ReaderSyncChange))
+          as ReaderSyncChange;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReaderSyncChange create() => ReaderSyncChange._();
+  @$core.override
+  ReaderSyncChange createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReaderSyncChange getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReaderSyncChange>(create);
+  static ReaderSyncChange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get sequence => $_getI64(0);
+  @$pb.TagNumber(1)
+  set sequence($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSequence() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entityId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entityId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntityId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntityId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get operation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set operation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOperation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOperation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get version => $_getI64(4);
+  @$pb.TagNumber(5)
+  set version($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get changedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set changedAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasChangedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearChangedAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureChangedAt() => $_ensure(5);
+}
+
+class ListReaderSyncChangesRequest extends $pb.GeneratedMessage {
+  factory ListReaderSyncChangesRequest({
+    $fixnum.Int64? afterSequence,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (afterSequence != null) result.afterSequence = afterSequence;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListReaderSyncChangesRequest._();
+
+  factory ListReaderSyncChangesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListReaderSyncChangesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListReaderSyncChangesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'afterSequence')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReaderSyncChangesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReaderSyncChangesRequest copyWith(
+          void Function(ListReaderSyncChangesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListReaderSyncChangesRequest))
+          as ListReaderSyncChangesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReaderSyncChangesRequest create() =>
+      ListReaderSyncChangesRequest._();
+  @$core.override
+  ListReaderSyncChangesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListReaderSyncChangesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListReaderSyncChangesRequest>(create);
+  static ListReaderSyncChangesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get afterSequence => $_getI64(0);
+  @$pb.TagNumber(1)
+  set afterSequence($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAfterSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAfterSequence() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListReaderSyncChangesResponse extends $pb.GeneratedMessage {
+  factory ListReaderSyncChangesResponse({
+    $core.Iterable<ReaderSyncChange>? changes,
+    $fixnum.Int64? latestSequence,
+    $core.bool? hasMore,
+  }) {
+    final result = create();
+    if (changes != null) result.changes.addAll(changes);
+    if (latestSequence != null) result.latestSequence = latestSequence;
+    if (hasMore != null) result.hasMore = hasMore;
+    return result;
+  }
+
+  ListReaderSyncChangesResponse._();
+
+  factory ListReaderSyncChangesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListReaderSyncChangesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListReaderSyncChangesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ReaderSyncChange>(1, _omitFieldNames ? '' : 'changes',
+        subBuilder: ReaderSyncChange.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'latestSequence')
+    ..aOB(3, _omitFieldNames ? '' : 'hasMore')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReaderSyncChangesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListReaderSyncChangesResponse copyWith(
+          void Function(ListReaderSyncChangesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListReaderSyncChangesResponse))
+          as ListReaderSyncChangesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListReaderSyncChangesResponse create() =>
+      ListReaderSyncChangesResponse._();
+  @$core.override
+  ListReaderSyncChangesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListReaderSyncChangesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListReaderSyncChangesResponse>(create);
+  static ListReaderSyncChangesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ReaderSyncChange> get changes => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get latestSequence => $_getI64(1);
+  @$pb.TagNumber(2)
+  set latestSequence($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLatestSequence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatestSequence() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hasMore => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hasMore($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHasMore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHasMore() => $_clearField(3);
 }
 
 class ListMyUnlocksRequest extends $pb.GeneratedMessage {

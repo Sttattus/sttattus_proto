@@ -135,6 +135,24 @@ const OnyxContent$json = {
     },
     {'1': 'reaction_count', '3': 22, '4': 1, '5': 5, '10': 'reactionCount'},
     {'1': 'i_reacted', '3': 23, '4': 1, '5': 8, '10': 'iReacted'},
+    {'1': 'revision_id', '3': 24, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'revision_number', '3': 25, '4': 1, '5': 5, '10': 'revisionNumber'},
+    {
+      '1': 'document_blocks',
+      '3': 26,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DocumentBlock',
+      '10': 'documentBlocks'
+    },
+    {
+      '1': 'progress_passage_key',
+      '3': 27,
+      '4': 1,
+      '5': 9,
+      '10': 'progressPassageKey'
+    },
+    {'1': 'progress_offset', '3': 28, '4': 1, '5': 5, '10': 'progressOffset'},
   ],
 };
 
@@ -155,7 +173,32 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     'ZGUSLwoTcHJvZ3Jlc3NfY29tcGxldGlvbhgUIAEoAVIScHJvZ3Jlc3NDb21wbGV0aW9uEjoKGX'
     'Byb2dyZXNzX3Bvc2l0aW9uX3NlY29uZHMYFSABKAVSF3Byb2dyZXNzUG9zaXRpb25TZWNvbmRz'
     'EiUKDnJlYWN0aW9uX2NvdW50GBYgASgFUg1yZWFjdGlvbkNvdW50EhsKCWlfcmVhY3RlZBgXIA'
-    'EoCFIIaVJlYWN0ZWQ=');
+    'EoCFIIaVJlYWN0ZWQSHwoLcmV2aXNpb25faWQYGCABKAlSCnJldmlzaW9uSWQSJwoPcmV2aXNp'
+    'b25fbnVtYmVyGBkgASgFUg5yZXZpc2lvbk51bWJlchJICg9kb2N1bWVudF9ibG9ja3MYGiADKA'
+    'syHy5zdHRhdHR1cy5vbnl4LnYxLkRvY3VtZW50QmxvY2tSDmRvY3VtZW50QmxvY2tzEjAKFHBy'
+    'b2dyZXNzX3Bhc3NhZ2Vfa2V5GBsgASgJUhJwcm9ncmVzc1Bhc3NhZ2VLZXkSJwoPcHJvZ3Jlc3'
+    'Nfb2Zmc2V0GBwgASgFUg5wcm9ncmVzc09mZnNldA==');
+
+@$core.Deprecated('Use documentBlockDescriptor instead')
+const DocumentBlock$json = {
+  '1': 'DocumentBlock',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'revision_id', '3': 2, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 3, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'ordinal', '3': 4, '4': 1, '5': 5, '10': 'ordinal'},
+    {'1': 'block_type', '3': 5, '4': 1, '5': 9, '10': 'blockType'},
+    {'1': 'markdown', '3': 6, '4': 1, '5': 9, '10': 'markdown'},
+    {'1': 'plain_text', '3': 7, '4': 1, '5': 9, '10': 'plainText'},
+  ],
+};
+
+/// Descriptor for `DocumentBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List documentBlockDescriptor = $convert.base64Decode(
+    'Cg1Eb2N1bWVudEJsb2NrEg4KAmlkGAEgASgJUgJpZBIfCgtyZXZpc2lvbl9pZBgCIAEoCVIKcm'
+    'V2aXNpb25JZBIfCgtwYXNzYWdlX2tleRgDIAEoCVIKcGFzc2FnZUtleRIYCgdvcmRpbmFsGAQg'
+    'ASgFUgdvcmRpbmFsEh0KCmJsb2NrX3R5cGUYBSABKAlSCWJsb2NrVHlwZRIaCghtYXJrZG93bh'
+    'gGIAEoCVIIbWFya2Rvd24SHQoKcGxhaW5fdGV4dBgHIAEoCVIJcGxhaW5UZXh0');
 
 @$core.Deprecated('Use subscriptionDescriptor instead')
 const Subscription$json = {
@@ -479,6 +522,8 @@ const RecordProgressRequest$json = {
     {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
     {'1': 'completion', '3': 2, '4': 1, '5': 1, '10': 'completion'},
     {'1': 'position_seconds', '3': 3, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'offset', '3': 5, '4': 1, '5': 5, '10': 'offset'},
   ],
 };
 
@@ -486,7 +531,8 @@ const RecordProgressRequest$json = {
 final $typed_data.Uint8List recordProgressRequestDescriptor = $convert.base64Decode(
     'ChVSZWNvcmRQcm9ncmVzc1JlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY29udGVudElkEh'
     '4KCmNvbXBsZXRpb24YAiABKAFSCmNvbXBsZXRpb24SKQoQcG9zaXRpb25fc2Vjb25kcxgDIAEo'
-    'BVIPcG9zaXRpb25TZWNvbmRz');
+    'BVIPcG9zaXRpb25TZWNvbmRzEh8KC3Bhc3NhZ2Vfa2V5GAQgASgJUgpwYXNzYWdlS2V5EhYKBm'
+    '9mZnNldBgFIAEoBVIGb2Zmc2V0');
 
 @$core.Deprecated('Use recordProgressResponseDescriptor instead')
 const RecordProgressResponse$json = {
@@ -494,14 +540,16 @@ const RecordProgressResponse$json = {
   '2': [
     {'1': 'completion', '3': 1, '4': 1, '5': 1, '10': 'completion'},
     {'1': 'position_seconds', '3': 2, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {'1': 'passage_key', '3': 3, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'offset', '3': 4, '4': 1, '5': 5, '10': 'offset'},
   ],
 };
 
 /// Descriptor for `RecordProgressResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recordProgressResponseDescriptor =
-    $convert.base64Decode(
-        'ChZSZWNvcmRQcm9ncmVzc1Jlc3BvbnNlEh4KCmNvbXBsZXRpb24YASABKAFSCmNvbXBsZXRpb2'
-        '4SKQoQcG9zaXRpb25fc2Vjb25kcxgCIAEoBVIPcG9zaXRpb25TZWNvbmRz');
+final $typed_data.Uint8List recordProgressResponseDescriptor = $convert.base64Decode(
+    'ChZSZWNvcmRQcm9ncmVzc1Jlc3BvbnNlEh4KCmNvbXBsZXRpb24YASABKAFSCmNvbXBsZXRpb2'
+    '4SKQoQcG9zaXRpb25fc2Vjb25kcxgCIAEoBVIPcG9zaXRpb25TZWNvbmRzEh8KC3Bhc3NhZ2Vf'
+    'a2V5GAMgASgJUgpwYXNzYWdlS2V5EhYKBm9mZnNldBgEIAEoBVIGb2Zmc2V0');
 
 @$core.Deprecated('Use redeemContentRequestDescriptor instead')
 const RedeemContentRequest$json = {
@@ -827,6 +875,374 @@ const DeleteNoteResponse$json = {
 /// Descriptor for `DeleteNoteResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteNoteResponseDescriptor =
     $convert.base64Decode('ChJEZWxldGVOb3RlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use readerAnnotationDescriptor instead')
+const ReaderAnnotation$json = {
+  '1': 'ReaderAnnotation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'kind', '3': 5, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'quote', '3': 6, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'body', '3': 7, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'color', '3': 8, '4': 1, '5': 9, '10': 'color'},
+    {'1': 'tags', '3': 9, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'start_offset', '3': 10, '4': 1, '5': 5, '10': 'startOffset'},
+    {'1': 'end_offset', '3': 11, '4': 1, '5': 5, '10': 'endOffset'},
+    {'1': 'version', '3': 12, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {'1': 'content_title', '3': 15, '4': 1, '5': 9, '10': 'contentTitle'},
+  ],
+};
+
+/// Descriptor for `ReaderAnnotation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readerAnnotationDescriptor = $convert.base64Decode(
+    'ChBSZWFkZXJBbm5vdGF0aW9uEg4KAmlkGAEgASgJUgJpZBIdCgpjb250ZW50X2lkGAIgASgJUg'
+    'ljb250ZW50SWQSHwoLcmV2aXNpb25faWQYAyABKAlSCnJldmlzaW9uSWQSHwoLcGFzc2FnZV9r'
+    'ZXkYBCABKAlSCnBhc3NhZ2VLZXkSEgoEa2luZBgFIAEoCVIEa2luZBIUCgVxdW90ZRgGIAEoCV'
+    'IFcXVvdGUSEgoEYm9keRgHIAEoCVIEYm9keRIUCgVjb2xvchgIIAEoCVIFY29sb3ISEgoEdGFn'
+    'cxgJIAMoCVIEdGFncxIhCgxzdGFydF9vZmZzZXQYCiABKAVSC3N0YXJ0T2Zmc2V0Eh0KCmVuZF'
+    '9vZmZzZXQYCyABKAVSCWVuZE9mZnNldBIYCgd2ZXJzaW9uGAwgASgDUgd2ZXJzaW9uEjkKCmNy'
+    'ZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQ'
+    'oKdXBkYXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRB'
+    'dBIjCg1jb250ZW50X3RpdGxlGA8gASgJUgxjb250ZW50VGl0bGU=');
+
+@$core.Deprecated('Use upsertReaderAnnotationRequestDescriptor instead')
+const UpsertReaderAnnotationRequest$json = {
+  '1': 'UpsertReaderAnnotationRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'kind', '3': 5, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'quote', '3': 6, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'body', '3': 7, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'color', '3': 8, '4': 1, '5': 9, '10': 'color'},
+    {'1': 'tags', '3': 9, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'start_offset', '3': 10, '4': 1, '5': 5, '10': 'startOffset'},
+    {'1': 'end_offset', '3': 11, '4': 1, '5': 5, '10': 'endOffset'},
+    {
+      '1': 'client_mutation_id',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'expected_version', '3': 13, '4': 1, '5': 3, '10': 'expectedVersion'},
+  ],
+};
+
+/// Descriptor for `UpsertReaderAnnotationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertReaderAnnotationRequestDescriptor = $convert.base64Decode(
+    'Ch1VcHNlcnRSZWFkZXJBbm5vdGF0aW9uUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSHQoKY29udG'
+    'VudF9pZBgCIAEoCVIJY29udGVudElkEh8KC3JldmlzaW9uX2lkGAMgASgJUgpyZXZpc2lvbklk'
+    'Eh8KC3Bhc3NhZ2Vfa2V5GAQgASgJUgpwYXNzYWdlS2V5EhIKBGtpbmQYBSABKAlSBGtpbmQSFA'
+    'oFcXVvdGUYBiABKAlSBXF1b3RlEhIKBGJvZHkYByABKAlSBGJvZHkSFAoFY29sb3IYCCABKAlS'
+    'BWNvbG9yEhIKBHRhZ3MYCSADKAlSBHRhZ3MSIQoMc3RhcnRfb2Zmc2V0GAogASgFUgtzdGFydE'
+    '9mZnNldBIdCgplbmRfb2Zmc2V0GAsgASgFUgllbmRPZmZzZXQSLAoSY2xpZW50X211dGF0aW9u'
+    'X2lkGAwgASgJUhBjbGllbnRNdXRhdGlvbklkEikKEGV4cGVjdGVkX3ZlcnNpb24YDSABKANSD2'
+    'V4cGVjdGVkVmVyc2lvbg==');
+
+@$core.Deprecated('Use upsertReaderAnnotationResponseDescriptor instead')
+const UpsertReaderAnnotationResponse$json = {
+  '1': 'UpsertReaderAnnotationResponse',
+  '2': [
+    {
+      '1': 'annotation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ReaderAnnotation',
+      '10': 'annotation'
+    },
+    {'1': 'sync_sequence', '3': 2, '4': 1, '5': 3, '10': 'syncSequence'},
+  ],
+};
+
+/// Descriptor for `UpsertReaderAnnotationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertReaderAnnotationResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5VcHNlcnRSZWFkZXJBbm5vdGF0aW9uUmVzcG9uc2USQgoKYW5ub3RhdGlvbhgBIAEoCzIiLn'
+        'N0dGF0dHVzLm9ueXgudjEuUmVhZGVyQW5ub3RhdGlvblIKYW5ub3RhdGlvbhIjCg1zeW5jX3Nl'
+        'cXVlbmNlGAIgASgDUgxzeW5jU2VxdWVuY2U=');
+
+@$core.Deprecated('Use deleteReaderAnnotationRequestDescriptor instead')
+const DeleteReaderAnnotationRequest$json = {
+  '1': 'DeleteReaderAnnotationRequest',
+  '2': [
+    {'1': 'annotation_id', '3': 1, '4': 1, '5': 9, '10': 'annotationId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'expected_version', '3': 3, '4': 1, '5': 3, '10': 'expectedVersion'},
+  ],
+};
+
+/// Descriptor for `DeleteReaderAnnotationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteReaderAnnotationRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1EZWxldGVSZWFkZXJBbm5vdGF0aW9uUmVxdWVzdBIjCg1hbm5vdGF0aW9uX2lkGAEgASgJUg'
+        'xhbm5vdGF0aW9uSWQSLAoSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlv'
+        'bklkEikKEGV4cGVjdGVkX3ZlcnNpb24YAyABKANSD2V4cGVjdGVkVmVyc2lvbg==');
+
+@$core.Deprecated('Use deleteReaderAnnotationResponseDescriptor instead')
+const DeleteReaderAnnotationResponse$json = {
+  '1': 'DeleteReaderAnnotationResponse',
+  '2': [
+    {'1': 'sync_sequence', '3': 1, '4': 1, '5': 3, '10': 'syncSequence'},
+  ],
+};
+
+/// Descriptor for `DeleteReaderAnnotationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteReaderAnnotationResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5EZWxldGVSZWFkZXJBbm5vdGF0aW9uUmVzcG9uc2USIwoNc3luY19zZXF1ZW5jZRgBIAEoA1'
+        'IMc3luY1NlcXVlbmNl');
+
+@$core.Deprecated('Use listMyReaderAnnotationsRequestDescriptor instead')
+const ListMyReaderAnnotationsRequest$json = {
+  '1': 'ListMyReaderAnnotationsRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'color', '3': 3, '4': 1, '5': 9, '10': 'color'},
+    {'1': 'tag', '3': 4, '4': 1, '5': 9, '10': 'tag'},
+    {'1': 'query', '3': 5, '4': 1, '5': 9, '10': 'query'},
+    {'1': 'limit', '3': 6, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyReaderAnnotationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReaderAnnotationsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0TXlSZWFkZXJBbm5vdGF0aW9uc1JlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY2'
+        '9udGVudElkEhIKBGtpbmQYAiABKAlSBGtpbmQSFAoFY29sb3IYAyABKAlSBWNvbG9yEhAKA3Rh'
+        'ZxgEIAEoCVIDdGFnEhQKBXF1ZXJ5GAUgASgJUgVxdWVyeRIUCgVsaW1pdBgGIAEoBVIFbGltaX'
+        'Q=');
+
+@$core.Deprecated('Use listMyReaderAnnotationsResponseDescriptor instead')
+const ListMyReaderAnnotationsResponse$json = {
+  '1': 'ListMyReaderAnnotationsResponse',
+  '2': [
+    {
+      '1': 'annotations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ReaderAnnotation',
+      '10': 'annotations'
+    },
+    {
+      '1': 'latest_sync_sequence',
+      '3': 2,
+      '4': 1,
+      '5': 3,
+      '10': 'latestSyncSequence'
+    },
+  ],
+};
+
+/// Descriptor for `ListMyReaderAnnotationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyReaderAnnotationsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9MaXN0TXlSZWFkZXJBbm5vdGF0aW9uc1Jlc3BvbnNlEkQKC2Fubm90YXRpb25zGAEgAygLMi'
+        'Iuc3R0YXR0dXMub255eC52MS5SZWFkZXJBbm5vdGF0aW9uUgthbm5vdGF0aW9ucxIwChRsYXRl'
+        'c3Rfc3luY19zZXF1ZW5jZRgCIAEoA1ISbGF0ZXN0U3luY1NlcXVlbmNl');
+
+@$core.Deprecated('Use readerSearchResultDescriptor instead')
+const ReaderSearchResult$json = {
+  '1': 'ReaderSearchResult',
+  '2': [
+    {'1': 'scope', '3': 1, '4': 1, '5': 9, '10': 'scope'},
+    {
+      '1': 'content',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'content'
+    },
+    {
+      '1': 'annotation',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ReaderAnnotation',
+      '10': 'annotation'
+    },
+    {'1': 'snippet', '3': 4, '4': 1, '5': 9, '10': 'snippet'},
+  ],
+};
+
+/// Descriptor for `ReaderSearchResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readerSearchResultDescriptor = $convert.base64Decode(
+    'ChJSZWFkZXJTZWFyY2hSZXN1bHQSFAoFc2NvcGUYASABKAlSBXNjb3BlEjcKB2NvbnRlbnQYAi'
+    'ABKAsyHS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhDb250ZW50Ugdjb250ZW50EkIKCmFubm90YXRp'
+    'b24YAyABKAsyIi5zdHRhdHR1cy5vbnl4LnYxLlJlYWRlckFubm90YXRpb25SCmFubm90YXRpb2'
+    '4SGAoHc25pcHBldBgEIAEoCVIHc25pcHBldA==');
+
+@$core.Deprecated('Use searchReaderRequestDescriptor instead')
+const SearchReaderRequest$json = {
+  '1': 'SearchReaderRequest',
+  '2': [
+    {'1': 'query', '3': 1, '4': 1, '5': 9, '10': 'query'},
+    {'1': 'scope', '3': 2, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `SearchReaderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchReaderRequestDescriptor = $convert.base64Decode(
+    'ChNTZWFyY2hSZWFkZXJSZXF1ZXN0EhQKBXF1ZXJ5GAEgASgJUgVxdWVyeRIUCgVzY29wZRgCIA'
+    'EoCVIFc2NvcGUSEgoEa2luZBgDIAEoCVIEa2luZBIUCgVsaW1pdBgEIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use searchReaderResponseDescriptor instead')
+const SearchReaderResponse$json = {
+  '1': 'SearchReaderResponse',
+  '2': [
+    {
+      '1': 'results',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ReaderSearchResult',
+      '10': 'results'
+    },
+  ],
+};
+
+/// Descriptor for `SearchReaderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchReaderResponseDescriptor = $convert.base64Decode(
+    'ChRTZWFyY2hSZWFkZXJSZXNwb25zZRI+CgdyZXN1bHRzGAEgAygLMiQuc3R0YXR0dXMub255eC'
+    '52MS5SZWFkZXJTZWFyY2hSZXN1bHRSB3Jlc3VsdHM=');
+
+@$core.Deprecated('Use exportReaderDataRequestDescriptor instead')
+const ExportReaderDataRequest$json = {
+  '1': 'ExportReaderDataRequest',
+  '2': [
+    {'1': 'format', '3': 1, '4': 1, '5': 9, '10': 'format'},
+  ],
+};
+
+/// Descriptor for `ExportReaderDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportReaderDataRequestDescriptor =
+    $convert.base64Decode(
+        'ChdFeHBvcnRSZWFkZXJEYXRhUmVxdWVzdBIWCgZmb3JtYXQYASABKAlSBmZvcm1hdA==');
+
+@$core.Deprecated('Use exportReaderDataResponseDescriptor instead')
+const ExportReaderDataResponse$json = {
+  '1': 'ExportReaderDataResponse',
+  '2': [
+    {'1': 'filename', '3': 1, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'data', '3': 3, '4': 1, '5': 12, '10': 'data'},
+    {
+      '1': 'generated_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ExportReaderDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportReaderDataResponseDescriptor = $convert.base64Decode(
+    'ChhFeHBvcnRSZWFkZXJEYXRhUmVzcG9uc2USGgoIZmlsZW5hbWUYASABKAlSCGZpbGVuYW1lEh'
+    'sKCW1pbWVfdHlwZRgCIAEoCVIIbWltZVR5cGUSEgoEZGF0YRgDIAEoDFIEZGF0YRI9CgxnZW5l'
+    'cmF0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtnZW5lcmF0ZWRBdA'
+    '==');
+
+@$core.Deprecated('Use readerSyncChangeDescriptor instead')
+const ReaderSyncChange$json = {
+  '1': 'ReaderSyncChange',
+  '2': [
+    {'1': 'sequence', '3': 1, '4': 1, '5': 3, '10': 'sequence'},
+    {'1': 'entity_type', '3': 2, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 3, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'operation', '3': 4, '4': 1, '5': 9, '10': 'operation'},
+    {'1': 'version', '3': 5, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'changed_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'changedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ReaderSyncChange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readerSyncChangeDescriptor = $convert.base64Decode(
+    'ChBSZWFkZXJTeW5jQ2hhbmdlEhoKCHNlcXVlbmNlGAEgASgDUghzZXF1ZW5jZRIfCgtlbnRpdH'
+    'lfdHlwZRgCIAEoCVIKZW50aXR5VHlwZRIbCgllbnRpdHlfaWQYAyABKAlSCGVudGl0eUlkEhwK'
+    'CW9wZXJhdGlvbhgEIAEoCVIJb3BlcmF0aW9uEhgKB3ZlcnNpb24YBSABKANSB3ZlcnNpb24SOQ'
+    'oKY2hhbmdlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNoYW5nZWRB'
+    'dA==');
+
+@$core.Deprecated('Use listReaderSyncChangesRequestDescriptor instead')
+const ListReaderSyncChangesRequest$json = {
+  '1': 'ListReaderSyncChangesRequest',
+  '2': [
+    {'1': 'after_sequence', '3': 1, '4': 1, '5': 3, '10': 'afterSequence'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListReaderSyncChangesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReaderSyncChangesRequestDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0UmVhZGVyU3luY0NoYW5nZXNSZXF1ZXN0EiUKDmFmdGVyX3NlcXVlbmNlGAEgASgDUg'
+        '1hZnRlclNlcXVlbmNlEhQKBWxpbWl0GAIgASgFUgVsaW1pdA==');
+
+@$core.Deprecated('Use listReaderSyncChangesResponseDescriptor instead')
+const ListReaderSyncChangesResponse$json = {
+  '1': 'ListReaderSyncChangesResponse',
+  '2': [
+    {
+      '1': 'changes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ReaderSyncChange',
+      '10': 'changes'
+    },
+    {'1': 'latest_sequence', '3': 2, '4': 1, '5': 3, '10': 'latestSequence'},
+    {'1': 'has_more', '3': 3, '4': 1, '5': 8, '10': 'hasMore'},
+  ],
+};
+
+/// Descriptor for `ListReaderSyncChangesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listReaderSyncChangesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0UmVhZGVyU3luY0NoYW5nZXNSZXNwb25zZRI8CgdjaGFuZ2VzGAEgAygLMiIuc3R0YX'
+        'R0dXMub255eC52MS5SZWFkZXJTeW5jQ2hhbmdlUgdjaGFuZ2VzEicKD2xhdGVzdF9zZXF1ZW5j'
+        'ZRgCIAEoA1IObGF0ZXN0U2VxdWVuY2USGQoIaGFzX21vcmUYAyABKAhSB2hhc01vcmU=');
 
 @$core.Deprecated('Use listMyUnlocksRequestDescriptor instead')
 const ListMyUnlocksRequest$json = {

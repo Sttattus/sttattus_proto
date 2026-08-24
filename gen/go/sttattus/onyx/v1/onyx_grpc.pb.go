@@ -37,6 +37,12 @@ const (
 	OnyxService_AddNote_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/AddNote"
 	OnyxService_ListMyNotes_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
 	OnyxService_DeleteNote_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/DeleteNote"
+	OnyxService_UpsertReaderAnnotation_FullMethodName     = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
+	OnyxService_DeleteReaderAnnotation_FullMethodName     = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
+	OnyxService_ListMyReaderAnnotations_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
+	OnyxService_SearchReader_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SearchReader"
+	OnyxService_ExportReaderData_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
+	OnyxService_ListReaderSyncChanges_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
 	OnyxService_ListMyUnlocks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
 	OnyxService_ListMySubscriptions_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
 	OnyxService_ListMyFollows_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
@@ -97,6 +103,14 @@ type OnyxServiceClient interface {
 	AddNote(ctx context.Context, in *AddNoteRequest, opts ...grpc.CallOption) (*AddNoteResponse, error)
 	ListMyNotes(ctx context.Context, in *ListMyNotesRequest, opts ...grpc.CallOption) (*ListMyNotesResponse, error)
 	DeleteNote(ctx context.Context, in *DeleteNoteRequest, opts ...grpc.CallOption) (*DeleteNoteResponse, error)
+	// Reader OS — stable passages, private highlights/notes/bookmarks,
+	// cross-library search/export, and an offline-safe change cursor.
+	UpsertReaderAnnotation(ctx context.Context, in *UpsertReaderAnnotationRequest, opts ...grpc.CallOption) (*UpsertReaderAnnotationResponse, error)
+	DeleteReaderAnnotation(ctx context.Context, in *DeleteReaderAnnotationRequest, opts ...grpc.CallOption) (*DeleteReaderAnnotationResponse, error)
+	ListMyReaderAnnotations(ctx context.Context, in *ListMyReaderAnnotationsRequest, opts ...grpc.CallOption) (*ListMyReaderAnnotationsResponse, error)
+	SearchReader(ctx context.Context, in *SearchReaderRequest, opts ...grpc.CallOption) (*SearchReaderResponse, error)
+	ExportReaderData(ctx context.Context, in *ExportReaderDataRequest, opts ...grpc.CallOption) (*ExportReaderDataResponse, error)
+	ListReaderSyncChanges(ctx context.Context, in *ListReaderSyncChangesRequest, opts ...grpc.CallOption) (*ListReaderSyncChangesResponse, error)
 	// P2 — personal library / account.
 	ListMyUnlocks(ctx context.Context, in *ListMyUnlocksRequest, opts ...grpc.CallOption) (*ListMyUnlocksResponse, error)
 	ListMySubscriptions(ctx context.Context, in *ListMySubscriptionsRequest, opts ...grpc.CallOption) (*ListMySubscriptionsResponse, error)
@@ -318,6 +332,66 @@ func (c *onyxServiceClient) DeleteNote(ctx context.Context, in *DeleteNoteReques
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteNoteResponse)
 	err := c.cc.Invoke(ctx, OnyxService_DeleteNote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertReaderAnnotation(ctx context.Context, in *UpsertReaderAnnotationRequest, opts ...grpc.CallOption) (*UpsertReaderAnnotationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertReaderAnnotationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertReaderAnnotation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteReaderAnnotation(ctx context.Context, in *DeleteReaderAnnotationRequest, opts ...grpc.CallOption) (*DeleteReaderAnnotationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteReaderAnnotationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteReaderAnnotation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyReaderAnnotations(ctx context.Context, in *ListMyReaderAnnotationsRequest, opts ...grpc.CallOption) (*ListMyReaderAnnotationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyReaderAnnotationsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyReaderAnnotations_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SearchReader(ctx context.Context, in *SearchReaderRequest, opts ...grpc.CallOption) (*SearchReaderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SearchReaderResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SearchReader_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ExportReaderData(ctx context.Context, in *ExportReaderDataRequest, opts ...grpc.CallOption) (*ExportReaderDataResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportReaderDataResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ExportReaderData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListReaderSyncChanges(ctx context.Context, in *ListReaderSyncChangesRequest, opts ...grpc.CallOption) (*ListReaderSyncChangesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListReaderSyncChangesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListReaderSyncChanges_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -625,6 +699,14 @@ type OnyxServiceServer interface {
 	AddNote(context.Context, *AddNoteRequest) (*AddNoteResponse, error)
 	ListMyNotes(context.Context, *ListMyNotesRequest) (*ListMyNotesResponse, error)
 	DeleteNote(context.Context, *DeleteNoteRequest) (*DeleteNoteResponse, error)
+	// Reader OS — stable passages, private highlights/notes/bookmarks,
+	// cross-library search/export, and an offline-safe change cursor.
+	UpsertReaderAnnotation(context.Context, *UpsertReaderAnnotationRequest) (*UpsertReaderAnnotationResponse, error)
+	DeleteReaderAnnotation(context.Context, *DeleteReaderAnnotationRequest) (*DeleteReaderAnnotationResponse, error)
+	ListMyReaderAnnotations(context.Context, *ListMyReaderAnnotationsRequest) (*ListMyReaderAnnotationsResponse, error)
+	SearchReader(context.Context, *SearchReaderRequest) (*SearchReaderResponse, error)
+	ExportReaderData(context.Context, *ExportReaderDataRequest) (*ExportReaderDataResponse, error)
+	ListReaderSyncChanges(context.Context, *ListReaderSyncChangesRequest) (*ListReaderSyncChangesResponse, error)
 	// P2 — personal library / account.
 	ListMyUnlocks(context.Context, *ListMyUnlocksRequest) (*ListMyUnlocksResponse, error)
 	ListMySubscriptions(context.Context, *ListMySubscriptionsRequest) (*ListMySubscriptionsResponse, error)
@@ -725,6 +807,24 @@ func (UnimplementedOnyxServiceServer) ListMyNotes(context.Context, *ListMyNotesR
 }
 func (UnimplementedOnyxServiceServer) DeleteNote(context.Context, *DeleteNoteRequest) (*DeleteNoteResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteNote not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertReaderAnnotation(context.Context, *UpsertReaderAnnotationRequest) (*UpsertReaderAnnotationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertReaderAnnotation not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteReaderAnnotation(context.Context, *DeleteReaderAnnotationRequest) (*DeleteReaderAnnotationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteReaderAnnotation not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyReaderAnnotations(context.Context, *ListMyReaderAnnotationsRequest) (*ListMyReaderAnnotationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyReaderAnnotations not implemented")
+}
+func (UnimplementedOnyxServiceServer) SearchReader(context.Context, *SearchReaderRequest) (*SearchReaderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SearchReader not implemented")
+}
+func (UnimplementedOnyxServiceServer) ExportReaderData(context.Context, *ExportReaderDataRequest) (*ExportReaderDataResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportReaderData not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListReaderSyncChanges(context.Context, *ListReaderSyncChangesRequest) (*ListReaderSyncChangesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListReaderSyncChanges not implemented")
 }
 func (UnimplementedOnyxServiceServer) ListMyUnlocks(context.Context, *ListMyUnlocksRequest) (*ListMyUnlocksResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyUnlocks not implemented")
@@ -1148,6 +1248,114 @@ func _OnyxService_DeleteNote_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).DeleteNote(ctx, req.(*DeleteNoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertReaderAnnotation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertReaderAnnotationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertReaderAnnotation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertReaderAnnotation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertReaderAnnotation(ctx, req.(*UpsertReaderAnnotationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteReaderAnnotation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteReaderAnnotationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteReaderAnnotation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteReaderAnnotation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteReaderAnnotation(ctx, req.(*DeleteReaderAnnotationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyReaderAnnotations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyReaderAnnotationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyReaderAnnotations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyReaderAnnotations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyReaderAnnotations(ctx, req.(*ListMyReaderAnnotationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SearchReader_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchReaderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SearchReader(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SearchReader_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SearchReader(ctx, req.(*SearchReaderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ExportReaderData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportReaderDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ExportReaderData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ExportReaderData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ExportReaderData(ctx, req.(*ExportReaderDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListReaderSyncChanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListReaderSyncChangesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListReaderSyncChanges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListReaderSyncChanges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListReaderSyncChanges(ctx, req.(*ListReaderSyncChangesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1716,6 +1924,30 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteNote",
 			Handler:    _OnyxService_DeleteNote_Handler,
+		},
+		{
+			MethodName: "UpsertReaderAnnotation",
+			Handler:    _OnyxService_UpsertReaderAnnotation_Handler,
+		},
+		{
+			MethodName: "DeleteReaderAnnotation",
+			Handler:    _OnyxService_DeleteReaderAnnotation_Handler,
+		},
+		{
+			MethodName: "ListMyReaderAnnotations",
+			Handler:    _OnyxService_ListMyReaderAnnotations_Handler,
+		},
+		{
+			MethodName: "SearchReader",
+			Handler:    _OnyxService_SearchReader_Handler,
+		},
+		{
+			MethodName: "ExportReaderData",
+			Handler:    _OnyxService_ExportReaderData_Handler,
+		},
+		{
+			MethodName: "ListReaderSyncChanges",
+			Handler:    _OnyxService_ListReaderSyncChanges_Handler,
 		},
 		{
 			MethodName: "ListMyUnlocks",

@@ -169,6 +169,56 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteNote, request, options: options);
   }
 
+  /// Reader OS — stable passages, private highlights/notes/bookmarks,
+  /// cross-library search/export, and an offline-safe change cursor.
+  $grpc.ResponseFuture<$0.UpsertReaderAnnotationResponse>
+      upsertReaderAnnotation(
+    $0.UpsertReaderAnnotationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertReaderAnnotation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteReaderAnnotationResponse>
+      deleteReaderAnnotation(
+    $0.DeleteReaderAnnotationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteReaderAnnotation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyReaderAnnotationsResponse>
+      listMyReaderAnnotations(
+    $0.ListMyReaderAnnotationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyReaderAnnotations, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SearchReaderResponse> searchReader(
+    $0.SearchReaderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$searchReader, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportReaderDataResponse> exportReaderData(
+    $0.ExportReaderDataRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportReaderData, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListReaderSyncChangesResponse> listReaderSyncChanges(
+    $0.ListReaderSyncChangesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listReaderSyncChanges, request, options: options);
+  }
+
   /// P2 — personal library / account.
   $grpc.ResponseFuture<$0.ListMyUnlocksResponse> listMyUnlocks(
     $0.ListMyUnlocksRequest request, {
@@ -463,6 +513,37 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/DeleteNote',
           ($0.DeleteNoteRequest value) => value.writeToBuffer(),
           $0.DeleteNoteResponse.fromBuffer);
+  static final _$upsertReaderAnnotation = $grpc.ClientMethod<
+          $0.UpsertReaderAnnotationRequest, $0.UpsertReaderAnnotationResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation',
+      ($0.UpsertReaderAnnotationRequest value) => value.writeToBuffer(),
+      $0.UpsertReaderAnnotationResponse.fromBuffer);
+  static final _$deleteReaderAnnotation = $grpc.ClientMethod<
+          $0.DeleteReaderAnnotationRequest, $0.DeleteReaderAnnotationResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation',
+      ($0.DeleteReaderAnnotationRequest value) => value.writeToBuffer(),
+      $0.DeleteReaderAnnotationResponse.fromBuffer);
+  static final _$listMyReaderAnnotations = $grpc.ClientMethod<
+          $0.ListMyReaderAnnotationsRequest,
+          $0.ListMyReaderAnnotationsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations',
+      ($0.ListMyReaderAnnotationsRequest value) => value.writeToBuffer(),
+      $0.ListMyReaderAnnotationsResponse.fromBuffer);
+  static final _$searchReader =
+      $grpc.ClientMethod<$0.SearchReaderRequest, $0.SearchReaderResponse>(
+          '/sttattus.onyx.v1.OnyxService/SearchReader',
+          ($0.SearchReaderRequest value) => value.writeToBuffer(),
+          $0.SearchReaderResponse.fromBuffer);
+  static final _$exportReaderData = $grpc.ClientMethod<
+          $0.ExportReaderDataRequest, $0.ExportReaderDataResponse>(
+      '/sttattus.onyx.v1.OnyxService/ExportReaderData',
+      ($0.ExportReaderDataRequest value) => value.writeToBuffer(),
+      $0.ExportReaderDataResponse.fromBuffer);
+  static final _$listReaderSyncChanges = $grpc.ClientMethod<
+          $0.ListReaderSyncChangesRequest, $0.ListReaderSyncChangesResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges',
+      ($0.ListReaderSyncChangesRequest value) => value.writeToBuffer(),
+      $0.ListReaderSyncChangesResponse.fromBuffer);
   static final _$listMyUnlocks =
       $grpc.ClientMethod<$0.ListMyUnlocksRequest, $0.ListMyUnlocksResponse>(
           '/sttattus.onyx.v1.OnyxService/ListMyUnlocks',
@@ -752,6 +833,60 @@ abstract class OnyxServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DeleteNoteRequest.fromBuffer(value),
         ($0.DeleteNoteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertReaderAnnotationRequest,
+            $0.UpsertReaderAnnotationResponse>(
+        'UpsertReaderAnnotation',
+        upsertReaderAnnotation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertReaderAnnotationRequest.fromBuffer(value),
+        ($0.UpsertReaderAnnotationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteReaderAnnotationRequest,
+            $0.DeleteReaderAnnotationResponse>(
+        'DeleteReaderAnnotation',
+        deleteReaderAnnotation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteReaderAnnotationRequest.fromBuffer(value),
+        ($0.DeleteReaderAnnotationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyReaderAnnotationsRequest,
+            $0.ListMyReaderAnnotationsResponse>(
+        'ListMyReaderAnnotations',
+        listMyReaderAnnotations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyReaderAnnotationsRequest.fromBuffer(value),
+        ($0.ListMyReaderAnnotationsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.SearchReaderRequest, $0.SearchReaderResponse>(
+            'SearchReader',
+            searchReader_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.SearchReaderRequest.fromBuffer(value),
+            ($0.SearchReaderResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportReaderDataRequest,
+            $0.ExportReaderDataResponse>(
+        'ExportReaderData',
+        exportReaderData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportReaderDataRequest.fromBuffer(value),
+        ($0.ExportReaderDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListReaderSyncChangesRequest,
+            $0.ListReaderSyncChangesResponse>(
+        'ListReaderSyncChanges',
+        listReaderSyncChanges_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListReaderSyncChangesRequest.fromBuffer(value),
+        ($0.ListReaderSyncChangesResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.ListMyUnlocksRequest, $0.ListMyUnlocksResponse>(
             'ListMyUnlocks',
@@ -1145,6 +1280,60 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.DeleteNoteResponse> deleteNote(
       $grpc.ServiceCall call, $0.DeleteNoteRequest request);
+
+  $async.Future<$0.UpsertReaderAnnotationResponse> upsertReaderAnnotation_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertReaderAnnotationRequest> $request) async {
+    return upsertReaderAnnotation($call, await $request);
+  }
+
+  $async.Future<$0.UpsertReaderAnnotationResponse> upsertReaderAnnotation(
+      $grpc.ServiceCall call, $0.UpsertReaderAnnotationRequest request);
+
+  $async.Future<$0.DeleteReaderAnnotationResponse> deleteReaderAnnotation_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteReaderAnnotationRequest> $request) async {
+    return deleteReaderAnnotation($call, await $request);
+  }
+
+  $async.Future<$0.DeleteReaderAnnotationResponse> deleteReaderAnnotation(
+      $grpc.ServiceCall call, $0.DeleteReaderAnnotationRequest request);
+
+  $async.Future<$0.ListMyReaderAnnotationsResponse> listMyReaderAnnotations_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMyReaderAnnotationsRequest> $request) async {
+    return listMyReaderAnnotations($call, await $request);
+  }
+
+  $async.Future<$0.ListMyReaderAnnotationsResponse> listMyReaderAnnotations(
+      $grpc.ServiceCall call, $0.ListMyReaderAnnotationsRequest request);
+
+  $async.Future<$0.SearchReaderResponse> searchReader_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SearchReaderRequest> $request) async {
+    return searchReader($call, await $request);
+  }
+
+  $async.Future<$0.SearchReaderResponse> searchReader(
+      $grpc.ServiceCall call, $0.SearchReaderRequest request);
+
+  $async.Future<$0.ExportReaderDataResponse> exportReaderData_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ExportReaderDataRequest> $request) async {
+    return exportReaderData($call, await $request);
+  }
+
+  $async.Future<$0.ExportReaderDataResponse> exportReaderData(
+      $grpc.ServiceCall call, $0.ExportReaderDataRequest request);
+
+  $async.Future<$0.ListReaderSyncChangesResponse> listReaderSyncChanges_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListReaderSyncChangesRequest> $request) async {
+    return listReaderSyncChanges($call, await $request);
+  }
+
+  $async.Future<$0.ListReaderSyncChangesResponse> listReaderSyncChanges(
+      $grpc.ServiceCall call, $0.ListReaderSyncChangesRequest request);
 
   $async.Future<$0.ListMyUnlocksResponse> listMyUnlocks_Pre(
       $grpc.ServiceCall $call,
