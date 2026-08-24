@@ -107,6 +107,14 @@ export class OnyxProfile extends Message<OnyxProfile> {
    */
   verifiedAt?: Timestamp;
 
+  /**
+   * Populated only when the caller requests their own profile. This is the
+   * network-wide Stripe entitlement, not a creator subscription.
+   *
+   * @generated from field: bool has_network_subscription = 7;
+   */
+  hasNetworkSubscription = false;
+
   constructor(data?: PartialMessage<OnyxProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -121,6 +129,7 @@ export class OnyxProfile extends Message<OnyxProfile> {
     { no: 4, name: "is_creator", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "min_entry_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 6, name: "verified_at", kind: "message", T: Timestamp },
+    { no: 7, name: "has_network_subscription", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxProfile {

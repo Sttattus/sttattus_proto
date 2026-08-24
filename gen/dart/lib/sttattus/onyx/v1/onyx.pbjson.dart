@@ -56,6 +56,13 @@ const OnyxProfile$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'verifiedAt'
     },
+    {
+      '1': 'has_network_subscription',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'hasNetworkSubscription'
+    },
   ],
 };
 
@@ -64,7 +71,9 @@ final $typed_data.Uint8List onyxProfileDescriptor = $convert.base64Decode(
     'CgtPbnl4UHJvZmlsZRIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSHQoKc3RhZ2VfbmFtZRgCIA'
     'EoCVIJc3RhZ2VOYW1lEhAKA2JpbxgDIAEoCVIDYmlvEh0KCmlzX2NyZWF0b3IYBCABKAhSCWlz'
     'Q3JlYXRvchImCg9taW5fZW50cnlfc2NvcmUYBSABKAFSDW1pbkVudHJ5U2NvcmUSOwoLdmVyaW'
-    'ZpZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp2ZXJpZmllZEF0');
+    'ZpZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp2ZXJpZmllZEF0EjgK'
+    'GGhhc19uZXR3b3JrX3N1YnNjcmlwdGlvbhgHIAEoCFIWaGFzTmV0d29ya1N1YnNjcmlwdGlvbg'
+    '==');
 
 @$core.Deprecated('Use onyxContentDescriptor instead')
 const OnyxContent$json = {

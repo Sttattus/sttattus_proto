@@ -120,6 +120,7 @@ class OnyxProfile extends $pb.GeneratedMessage {
     $core.bool? isCreator,
     $core.double? minEntryScore,
     $1.Timestamp? verifiedAt,
+    $core.bool? hasNetworkSubscription,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -128,6 +129,8 @@ class OnyxProfile extends $pb.GeneratedMessage {
     if (isCreator != null) result.isCreator = isCreator;
     if (minEntryScore != null) result.minEntryScore = minEntryScore;
     if (verifiedAt != null) result.verifiedAt = verifiedAt;
+    if (hasNetworkSubscription != null)
+      result.hasNetworkSubscription = hasNetworkSubscription;
     return result;
   }
 
@@ -152,6 +155,7 @@ class OnyxProfile extends $pb.GeneratedMessage {
     ..aD(5, _omitFieldNames ? '' : 'minEntryScore')
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'verifiedAt',
         subBuilder: $1.Timestamp.create)
+    ..aOB(7, _omitFieldNames ? '' : 'hasNetworkSubscription')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -228,6 +232,17 @@ class OnyxProfile extends $pb.GeneratedMessage {
   void clearVerifiedAt() => $_clearField(6);
   @$pb.TagNumber(6)
   $1.Timestamp ensureVerifiedAt() => $_ensure(5);
+
+  /// Populated only when the caller requests their own profile. This is the
+  /// network-wide Stripe entitlement, not a creator subscription.
+  @$pb.TagNumber(7)
+  $core.bool get hasNetworkSubscription => $_getBF(6);
+  @$pb.TagNumber(7)
+  set hasNetworkSubscription($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasHasNetworkSubscription() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHasNetworkSubscription() => $_clearField(7);
 }
 
 /// OnyxContent represents an exclusive media item.

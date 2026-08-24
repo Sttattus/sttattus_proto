@@ -100,8 +100,11 @@ type OnyxProfile struct {
 	IsCreator     bool                   `protobuf:"varint,4,opt,name=is_creator,json=isCreator,proto3" json:"is_creator,omitempty"`
 	MinEntryScore float64                `protobuf:"fixed64,5,opt,name=min_entry_score,json=minEntryScore,proto3" json:"min_entry_score,omitempty"` // Requirement to view this profile
 	VerifiedAt    *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=verified_at,json=verifiedAt,proto3" json:"verified_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// Populated only when the caller requests their own profile. This is the
+	// network-wide Stripe entitlement, not a creator subscription.
+	HasNetworkSubscription bool `protobuf:"varint,7,opt,name=has_network_subscription,json=hasNetworkSubscription,proto3" json:"has_network_subscription,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
 }
 
 func (x *OnyxProfile) Reset() {
@@ -174,6 +177,13 @@ func (x *OnyxProfile) GetVerifiedAt() *timestamppb.Timestamp {
 		return x.VerifiedAt
 	}
 	return nil
+}
+
+func (x *OnyxProfile) GetHasNetworkSubscription() bool {
+	if x != nil {
+		return x.HasNetworkSubscription
+	}
+	return false
 }
 
 // OnyxContent represents an exclusive media item.
@@ -5875,7 +5885,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\rrequired_tier\x18\x01 \x01(\tR\frequiredTier\x12,\n" +
 	"\x12min_sttattus_score\x18\x02 \x01(\x01R\x10minSttattusScore\x12$\n" +
 	"\x0emin_vault_rank\x18\x03 \x01(\x01R\fminVaultRank\x12\"\n" +
-	"\rmin_apex_rank\x18\x04 \x01(\x01R\vminApexRank\"\xdb\x01\n" +
+	"\rmin_apex_rank\x18\x04 \x01(\x01R\vminApexRank\"\x95\x02\n" +
 	"\vOnyxProfile\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n" +
 	"\n" +
@@ -5885,7 +5895,8 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"is_creator\x18\x04 \x01(\bR\tisCreator\x12&\n" +
 	"\x0fmin_entry_score\x18\x05 \x01(\x01R\rminEntryScore\x12;\n" +
 	"\vverified_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"verifiedAt\"\xcd\x06\n" +
+	"verifiedAt\x128\n" +
+	"\x18has_network_subscription\x18\a \x01(\bR\x16hasNetworkSubscription\"\xcd\x06\n" +
 	"\vOnyxContent\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +

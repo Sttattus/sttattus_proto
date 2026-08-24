@@ -22,6 +22,9 @@ message OnyxProfile {
   bool is_creator = 4;
   double min_entry_score = 5; // Requirement to view this profile
   google.protobuf.Timestamp verified_at = 6;
+  // Populated only when the caller requests their own profile. This is the
+  // network-wide Stripe entitlement, not a creator subscription.
+  bool has_network_subscription = 7;
 }
 
 // OnyxContent represents an exclusive media item.
