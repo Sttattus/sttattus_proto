@@ -71,6 +71,8 @@ message OnyxContent {
   repeated DocumentBlock document_blocks = 26;
   string progress_passage_key = 27;
   int32 progress_offset = 28;
+  bool is_private_capture = 29;
+  string source_capture_id = 30;
 }
 
 // A stable, addressable passage in one immutable editorial revision.

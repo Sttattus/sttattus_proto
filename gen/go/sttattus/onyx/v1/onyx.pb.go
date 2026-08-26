@@ -227,6 +227,8 @@ type OnyxContent struct {
 	DocumentBlocks     []*DocumentBlock `protobuf:"bytes,26,rep,name=document_blocks,json=documentBlocks,proto3" json:"document_blocks,omitempty"`
 	ProgressPassageKey string           `protobuf:"bytes,27,opt,name=progress_passage_key,json=progressPassageKey,proto3" json:"progress_passage_key,omitempty"`
 	ProgressOffset     int32            `protobuf:"varint,28,opt,name=progress_offset,json=progressOffset,proto3" json:"progress_offset,omitempty"`
+	IsPrivateCapture   bool             `protobuf:"varint,29,opt,name=is_private_capture,json=isPrivateCapture,proto3" json:"is_private_capture,omitempty"`
+	SourceCaptureId    string           `protobuf:"bytes,30,opt,name=source_capture_id,json=sourceCaptureId,proto3" json:"source_capture_id,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -455,6 +457,20 @@ func (x *OnyxContent) GetProgressOffset() int32 {
 		return x.ProgressOffset
 	}
 	return 0
+}
+
+func (x *OnyxContent) GetIsPrivateCapture() bool {
+	if x != nil {
+		return x.IsPrivateCapture
+	}
+	return false
+}
+
+func (x *OnyxContent) GetSourceCaptureId() string {
+	if x != nil {
+		return x.SourceCaptureId
+	}
+	return ""
 }
 
 // A stable, addressable passage in one immutable editorial revision.
@@ -7918,7 +7934,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x0fmin_entry_score\x18\x05 \x01(\x01R\rminEntryScore\x12;\n" +
 	"\vverified_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"verifiedAt\x128\n" +
-	"\x18has_network_subscription\x18\a \x01(\bR\x16hasNetworkSubscription\"\xbc\b\n" +
+	"\x18has_network_subscription\x18\a \x01(\bR\x16hasNetworkSubscription\"\x96\t\n" +
 	"\vOnyxContent\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
@@ -7954,7 +7970,9 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x0frevision_number\x18\x19 \x01(\x05R\x0erevisionNumber\x12H\n" +
 	"\x0fdocument_blocks\x18\x1a \x03(\v2\x1f.sttattus.onyx.v1.DocumentBlockR\x0edocumentBlocks\x120\n" +
 	"\x14progress_passage_key\x18\x1b \x01(\tR\x12progressPassageKey\x12'\n" +
-	"\x0fprogress_offset\x18\x1c \x01(\x05R\x0eprogressOffset\"\xd5\x01\n" +
+	"\x0fprogress_offset\x18\x1c \x01(\x05R\x0eprogressOffset\x12,\n" +
+	"\x12is_private_capture\x18\x1d \x01(\bR\x10isPrivateCapture\x12*\n" +
+	"\x11source_capture_id\x18\x1e \x01(\tR\x0fsourceCaptureId\"\xd5\x01\n" +
 	"\rDocumentBlock\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vrevision_id\x18\x02 \x01(\tR\n" +

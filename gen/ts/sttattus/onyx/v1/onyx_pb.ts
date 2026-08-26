@@ -317,6 +317,16 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   progressOffset = 0;
 
+  /**
+   * @generated from field: bool is_private_capture = 29;
+   */
+  isPrivateCapture = false;
+
+  /**
+   * @generated from field: string source_capture_id = 30;
+   */
+  sourceCaptureId = "";
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -353,6 +363,8 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 26, name: "document_blocks", kind: "message", T: DocumentBlock, repeated: true },
     { no: 27, name: "progress_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 28, name: "progress_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 29, name: "is_private_capture", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 30, name: "source_capture_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {

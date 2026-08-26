@@ -276,6 +276,8 @@ class OnyxContent extends $pb.GeneratedMessage {
     $core.Iterable<DocumentBlock>? documentBlocks,
     $core.String? progressPassageKey,
     $core.int? progressOffset,
+    $core.bool? isPrivateCapture,
+    $core.String? sourceCaptureId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -309,6 +311,8 @@ class OnyxContent extends $pb.GeneratedMessage {
     if (progressPassageKey != null)
       result.progressPassageKey = progressPassageKey;
     if (progressOffset != null) result.progressOffset = progressOffset;
+    if (isPrivateCapture != null) result.isPrivateCapture = isPrivateCapture;
+    if (sourceCaptureId != null) result.sourceCaptureId = sourceCaptureId;
     return result;
   }
 
@@ -358,6 +362,8 @@ class OnyxContent extends $pb.GeneratedMessage {
         subBuilder: DocumentBlock.create)
     ..aOS(27, _omitFieldNames ? '' : 'progressPassageKey')
     ..aI(28, _omitFieldNames ? '' : 'progressOffset')
+    ..aOB(29, _omitFieldNames ? '' : 'isPrivateCapture')
+    ..aOS(30, _omitFieldNames ? '' : 'sourceCaptureId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -640,6 +646,24 @@ class OnyxContent extends $pb.GeneratedMessage {
   $core.bool hasProgressOffset() => $_has(27);
   @$pb.TagNumber(28)
   void clearProgressOffset() => $_clearField(28);
+
+  @$pb.TagNumber(29)
+  $core.bool get isPrivateCapture => $_getBF(28);
+  @$pb.TagNumber(29)
+  set isPrivateCapture($core.bool value) => $_setBool(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasIsPrivateCapture() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearIsPrivateCapture() => $_clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get sourceCaptureId => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set sourceCaptureId($core.String value) => $_setString(29, value);
+  @$pb.TagNumber(30)
+  $core.bool hasSourceCaptureId() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearSourceCaptureId() => $_clearField(30);
 }
 
 /// A stable, addressable passage in one immutable editorial revision.

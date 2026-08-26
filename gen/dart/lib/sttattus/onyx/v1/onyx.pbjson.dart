@@ -153,6 +153,20 @@ const OnyxContent$json = {
       '10': 'progressPassageKey'
     },
     {'1': 'progress_offset', '3': 28, '4': 1, '5': 5, '10': 'progressOffset'},
+    {
+      '1': 'is_private_capture',
+      '3': 29,
+      '4': 1,
+      '5': 8,
+      '10': 'isPrivateCapture'
+    },
+    {
+      '1': 'source_capture_id',
+      '3': 30,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceCaptureId'
+    },
   ],
 };
 
@@ -177,7 +191,9 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     'b25fbnVtYmVyGBkgASgFUg5yZXZpc2lvbk51bWJlchJICg9kb2N1bWVudF9ibG9ja3MYGiADKA'
     'syHy5zdHRhdHR1cy5vbnl4LnYxLkRvY3VtZW50QmxvY2tSDmRvY3VtZW50QmxvY2tzEjAKFHBy'
     'b2dyZXNzX3Bhc3NhZ2Vfa2V5GBsgASgJUhJwcm9ncmVzc1Bhc3NhZ2VLZXkSJwoPcHJvZ3Jlc3'
-    'Nfb2Zmc2V0GBwgASgFUg5wcm9ncmVzc09mZnNldA==');
+    'Nfb2Zmc2V0GBwgASgFUg5wcm9ncmVzc09mZnNldBIsChJpc19wcml2YXRlX2NhcHR1cmUYHSAB'
+    'KAhSEGlzUHJpdmF0ZUNhcHR1cmUSKgoRc291cmNlX2NhcHR1cmVfaWQYHiABKAlSD3NvdXJjZU'
+    'NhcHR1cmVJZA==');
 
 @$core.Deprecated('Use documentBlockDescriptor instead')
 const DocumentBlock$json = {
