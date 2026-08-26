@@ -9314,6 +9314,1072 @@ class ReactToContentResponse extends $pb.GeneratedMessage {
   void clearReacted() => $_clearField(2);
 }
 
+/// IngestionItem is the member-visible lifecycle of one private capture. The
+/// immutable original and parser diagnostics stay server-side; this DTO exposes
+/// only the provenance and recovery information the owner needs.
+class IngestionItem extends $pb.GeneratedMessage {
+  factory IngestionItem({
+    $core.String? id,
+    $core.String? sourceType,
+    $core.String? title,
+    $core.String? sourceUrl,
+    $core.String? mediaAssetId,
+    $core.String? originalFilename,
+    $core.String? detectedMime,
+    $fixnum.Int64? sizeBytes,
+    $core.String? status,
+    $core.String? stage,
+    $core.String? errorMessage,
+    $core.String? duplicateOfId,
+    $core.String? contentId,
+    $core.String? parserVersion,
+    $core.String? checksum,
+    $core.String? languageCode,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (title != null) result.title = title;
+    if (sourceUrl != null) result.sourceUrl = sourceUrl;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (originalFilename != null) result.originalFilename = originalFilename;
+    if (detectedMime != null) result.detectedMime = detectedMime;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (status != null) result.status = status;
+    if (stage != null) result.stage = stage;
+    if (errorMessage != null) result.errorMessage = errorMessage;
+    if (duplicateOfId != null) result.duplicateOfId = duplicateOfId;
+    if (contentId != null) result.contentId = contentId;
+    if (parserVersion != null) result.parserVersion = parserVersion;
+    if (checksum != null) result.checksum = checksum;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  IngestionItem._();
+
+  factory IngestionItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IngestionItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IngestionItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(6, _omitFieldNames ? '' : 'originalFilename')
+    ..aOS(7, _omitFieldNames ? '' : 'detectedMime')
+    ..aInt64(8, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOS(9, _omitFieldNames ? '' : 'status')
+    ..aOS(10, _omitFieldNames ? '' : 'stage')
+    ..aOS(11, _omitFieldNames ? '' : 'errorMessage')
+    ..aOS(12, _omitFieldNames ? '' : 'duplicateOfId')
+    ..aOS(13, _omitFieldNames ? '' : 'contentId')
+    ..aOS(14, _omitFieldNames ? '' : 'parserVersion')
+    ..aOS(15, _omitFieldNames ? '' : 'checksum')
+    ..aOS(16, _omitFieldNames ? '' : 'languageCode')
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IngestionItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IngestionItem copyWith(void Function(IngestionItem) updates) =>
+      super.copyWith((message) => updates(message as IngestionItem))
+          as IngestionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IngestionItem create() => IngestionItem._();
+  @$core.override
+  IngestionItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IngestionItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IngestionItem>(create);
+  static IngestionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceUrl($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get mediaAssetId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set mediaAssetId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMediaAssetId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMediaAssetId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get originalFilename => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set originalFilename($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOriginalFilename() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOriginalFilename() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get detectedMime => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set detectedMime($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDetectedMime() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDetectedMime() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get sizeBytes => $_getI64(7);
+  @$pb.TagNumber(8)
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSizeBytes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSizeBytes() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get status => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set status($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get stage => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set stage($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStage() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStage() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get errorMessage => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set errorMessage($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasErrorMessage() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearErrorMessage() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get duplicateOfId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set duplicateOfId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDuplicateOfId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDuplicateOfId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get contentId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set contentId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasContentId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearContentId() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get parserVersion => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set parserVersion($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasParserVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearParserVersion() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get checksum => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set checksum($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasChecksum() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearChecksum() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get languageCode => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set languageCode($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasLanguageCode() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearLanguageCode() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get createdAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set createdAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasCreatedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearCreatedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureCreatedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get updatedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set updatedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasUpdatedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearUpdatedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(17);
+}
+
+class CreateIngestionItemRequest extends $pb.GeneratedMessage {
+  factory CreateIngestionItemRequest({
+    $core.String? sourceType,
+    $core.String? title,
+    $core.String? sourceUrl,
+    $core.String? bodyText,
+    $core.String? mediaAssetId,
+    $core.String? originalFilename,
+  }) {
+    final result = create();
+    if (sourceType != null) result.sourceType = sourceType;
+    if (title != null) result.title = title;
+    if (sourceUrl != null) result.sourceUrl = sourceUrl;
+    if (bodyText != null) result.bodyText = bodyText;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (originalFilename != null) result.originalFilename = originalFilename;
+    return result;
+  }
+
+  CreateIngestionItemRequest._();
+
+  factory CreateIngestionItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateIngestionItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateIngestionItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'bodyText')
+    ..aOS(5, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(6, _omitFieldNames ? '' : 'originalFilename')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIngestionItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIngestionItemRequest copyWith(
+          void Function(CreateIngestionItemRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateIngestionItemRequest))
+          as CreateIngestionItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIngestionItemRequest create() => CreateIngestionItemRequest._();
+  @$core.override
+  CreateIngestionItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateIngestionItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateIngestionItemRequest>(create);
+  static CreateIngestionItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceType($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceType() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get bodyText => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set bodyText($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBodyText() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBodyText() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get mediaAssetId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set mediaAssetId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMediaAssetId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMediaAssetId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get originalFilename => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set originalFilename($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOriginalFilename() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOriginalFilename() => $_clearField(6);
+}
+
+class CreateIngestionItemResponse extends $pb.GeneratedMessage {
+  factory CreateIngestionItemResponse({
+    IngestionItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  CreateIngestionItemResponse._();
+
+  factory CreateIngestionItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateIngestionItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateIngestionItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IngestionItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIngestionItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIngestionItemResponse copyWith(
+          void Function(CreateIngestionItemResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateIngestionItemResponse))
+          as CreateIngestionItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIngestionItemResponse create() =>
+      CreateIngestionItemResponse._();
+  @$core.override
+  CreateIngestionItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateIngestionItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateIngestionItemResponse>(create);
+  static CreateIngestionItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IngestionItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IngestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IngestionItem ensureItem() => $_ensure(0);
+}
+
+class ListMyIngestionItemsRequest extends $pb.GeneratedMessage {
+  factory ListMyIngestionItemsRequest({
+    $core.String? status,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListMyIngestionItemsRequest._();
+
+  factory ListMyIngestionItemsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyIngestionItemsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyIngestionItemsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyIngestionItemsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyIngestionItemsRequest copyWith(
+          void Function(ListMyIngestionItemsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyIngestionItemsRequest))
+          as ListMyIngestionItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyIngestionItemsRequest create() =>
+      ListMyIngestionItemsRequest._();
+  @$core.override
+  ListMyIngestionItemsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyIngestionItemsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyIngestionItemsRequest>(create);
+  static ListMyIngestionItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListMyIngestionItemsResponse extends $pb.GeneratedMessage {
+  factory ListMyIngestionItemsResponse({
+    $core.Iterable<IngestionItem>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListMyIngestionItemsResponse._();
+
+  factory ListMyIngestionItemsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyIngestionItemsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyIngestionItemsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IngestionItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyIngestionItemsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyIngestionItemsResponse copyWith(
+          void Function(ListMyIngestionItemsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyIngestionItemsResponse))
+          as ListMyIngestionItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyIngestionItemsResponse create() =>
+      ListMyIngestionItemsResponse._();
+  @$core.override
+  ListMyIngestionItemsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyIngestionItemsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyIngestionItemsResponse>(create);
+  static ListMyIngestionItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IngestionItem> get items => $_getList(0);
+}
+
+class GetIngestionItemRequest extends $pb.GeneratedMessage {
+  factory GetIngestionItemRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetIngestionItemRequest._();
+
+  factory GetIngestionItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIngestionItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIngestionItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIngestionItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIngestionItemRequest copyWith(
+          void Function(GetIngestionItemRequest) updates) =>
+      super.copyWith((message) => updates(message as GetIngestionItemRequest))
+          as GetIngestionItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIngestionItemRequest create() => GetIngestionItemRequest._();
+  @$core.override
+  GetIngestionItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIngestionItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIngestionItemRequest>(create);
+  static GetIngestionItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetIngestionItemResponse extends $pb.GeneratedMessage {
+  factory GetIngestionItemResponse({
+    IngestionItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  GetIngestionItemResponse._();
+
+  factory GetIngestionItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIngestionItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIngestionItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IngestionItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIngestionItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIngestionItemResponse copyWith(
+          void Function(GetIngestionItemResponse) updates) =>
+      super.copyWith((message) => updates(message as GetIngestionItemResponse))
+          as GetIngestionItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIngestionItemResponse create() => GetIngestionItemResponse._();
+  @$core.override
+  GetIngestionItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIngestionItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIngestionItemResponse>(create);
+  static GetIngestionItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IngestionItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IngestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IngestionItem ensureItem() => $_ensure(0);
+}
+
+class RetryIngestionItemRequest extends $pb.GeneratedMessage {
+  factory RetryIngestionItemRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  RetryIngestionItemRequest._();
+
+  factory RetryIngestionItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryIngestionItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryIngestionItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryIngestionItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryIngestionItemRequest copyWith(
+          void Function(RetryIngestionItemRequest) updates) =>
+      super.copyWith((message) => updates(message as RetryIngestionItemRequest))
+          as RetryIngestionItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryIngestionItemRequest create() => RetryIngestionItemRequest._();
+  @$core.override
+  RetryIngestionItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryIngestionItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RetryIngestionItemRequest>(create);
+  static RetryIngestionItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class RetryIngestionItemResponse extends $pb.GeneratedMessage {
+  factory RetryIngestionItemResponse({
+    IngestionItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  RetryIngestionItemResponse._();
+
+  factory RetryIngestionItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryIngestionItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryIngestionItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IngestionItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryIngestionItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryIngestionItemResponse copyWith(
+          void Function(RetryIngestionItemResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RetryIngestionItemResponse))
+          as RetryIngestionItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryIngestionItemResponse create() => RetryIngestionItemResponse._();
+  @$core.override
+  RetryIngestionItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryIngestionItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RetryIngestionItemResponse>(create);
+  static RetryIngestionItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IngestionItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IngestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IngestionItem ensureItem() => $_ensure(0);
+}
+
+class SetIngestionItemStateRequest extends $pb.GeneratedMessage {
+  factory SetIngestionItemStateRequest({
+    $core.String? id,
+    $core.String? action,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    return result;
+  }
+
+  SetIngestionItemStateRequest._();
+
+  factory SetIngestionItemStateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIngestionItemStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIngestionItemStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIngestionItemStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIngestionItemStateRequest copyWith(
+          void Function(SetIngestionItemStateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetIngestionItemStateRequest))
+          as SetIngestionItemStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIngestionItemStateRequest create() =>
+      SetIngestionItemStateRequest._();
+  @$core.override
+  SetIngestionItemStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIngestionItemStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetIngestionItemStateRequest>(create);
+  static SetIngestionItemStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+}
+
+class SetIngestionItemStateResponse extends $pb.GeneratedMessage {
+  factory SetIngestionItemStateResponse({
+    IngestionItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SetIngestionItemStateResponse._();
+
+  factory SetIngestionItemStateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIngestionItemStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIngestionItemStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IngestionItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIngestionItemStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIngestionItemStateResponse copyWith(
+          void Function(SetIngestionItemStateResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetIngestionItemStateResponse))
+          as SetIngestionItemStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIngestionItemStateResponse create() =>
+      SetIngestionItemStateResponse._();
+  @$core.override
+  SetIngestionItemStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIngestionItemStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetIngestionItemStateResponse>(create);
+  static SetIngestionItemStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IngestionItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IngestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IngestionItem ensureItem() => $_ensure(0);
+}
+
+class ResolveIngestionDuplicateRequest extends $pb.GeneratedMessage {
+  factory ResolveIngestionDuplicateRequest({
+    $core.String? id,
+    $core.String? action,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    return result;
+  }
+
+  ResolveIngestionDuplicateRequest._();
+
+  factory ResolveIngestionDuplicateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveIngestionDuplicateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveIngestionDuplicateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIngestionDuplicateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIngestionDuplicateRequest copyWith(
+          void Function(ResolveIngestionDuplicateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ResolveIngestionDuplicateRequest))
+          as ResolveIngestionDuplicateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveIngestionDuplicateRequest create() =>
+      ResolveIngestionDuplicateRequest._();
+  @$core.override
+  ResolveIngestionDuplicateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveIngestionDuplicateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveIngestionDuplicateRequest>(
+          create);
+  static ResolveIngestionDuplicateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+}
+
+class ResolveIngestionDuplicateResponse extends $pb.GeneratedMessage {
+  factory ResolveIngestionDuplicateResponse({
+    IngestionItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  ResolveIngestionDuplicateResponse._();
+
+  factory ResolveIngestionDuplicateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveIngestionDuplicateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveIngestionDuplicateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IngestionItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IngestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIngestionDuplicateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIngestionDuplicateResponse copyWith(
+          void Function(ResolveIngestionDuplicateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveIngestionDuplicateResponse))
+          as ResolveIngestionDuplicateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveIngestionDuplicateResponse create() =>
+      ResolveIngestionDuplicateResponse._();
+  @$core.override
+  ResolveIngestionDuplicateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveIngestionDuplicateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveIngestionDuplicateResponse>(
+          create);
+  static ResolveIngestionDuplicateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IngestionItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IngestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IngestionItem ensureItem() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

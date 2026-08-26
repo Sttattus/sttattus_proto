@@ -5973,3 +5973,646 @@ export class ReactToContentResponse extends Message<ReactToContentResponse> {
   }
 }
 
+/**
+ * IngestionItem is the member-visible lifecycle of one private capture. The
+ * immutable original and parser diagnostics stay server-side; this DTO exposes
+ * only the provenance and recovery information the owner needs.
+ *
+ * @generated from message sttattus.onyx.v1.IngestionItem
+ */
+export class IngestionItem extends Message<IngestionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * text | url | rss | email | file | share
+   *
+   * @generated from field: string source_type = 2;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string source_url = 4;
+   */
+  sourceUrl = "";
+
+  /**
+   * @generated from field: string media_asset_id = 5;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string original_filename = 6;
+   */
+  originalFilename = "";
+
+  /**
+   * @generated from field: string detected_mime = 7;
+   */
+  detectedMime = "";
+
+  /**
+   * @generated from field: int64 size_bytes = 8;
+   */
+  sizeBytes = protoInt64.zero;
+
+  /**
+   * queued | processing | ready | needs_review | duplicate | failed | quarantined | archived
+   *
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string stage = 10;
+   */
+  stage = "";
+
+  /**
+   * @generated from field: string error_message = 11;
+   */
+  errorMessage = "";
+
+  /**
+   * @generated from field: string duplicate_of_id = 12;
+   */
+  duplicateOfId = "";
+
+  /**
+   * @generated from field: string content_id = 13;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string parser_version = 14;
+   */
+  parserVersion = "";
+
+  /**
+   * @generated from field: string checksum = 15;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string language_code = 16;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 17;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 18;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IngestionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IngestionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "original_filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "detected_mime", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "size_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "stage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "error_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "duplicate_of_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "parser_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "created_at", kind: "message", T: Timestamp },
+    { no: 18, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IngestionItem {
+    return new IngestionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IngestionItem {
+    return new IngestionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IngestionItem {
+    return new IngestionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IngestionItem | PlainMessage<IngestionItem> | undefined, b: IngestionItem | PlainMessage<IngestionItem> | undefined): boolean {
+    return proto3.util.equals(IngestionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateIngestionItemRequest
+ */
+export class CreateIngestionItemRequest extends Message<CreateIngestionItemRequest> {
+  /**
+   * @generated from field: string source_type = 1;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string source_url = 3;
+   */
+  sourceUrl = "";
+
+  /**
+   * @generated from field: string body_text = 4;
+   */
+  bodyText = "";
+
+  /**
+   * @generated from field: string media_asset_id = 5;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string original_filename = 6;
+   */
+  originalFilename = "";
+
+  constructor(data?: PartialMessage<CreateIngestionItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateIngestionItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "body_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "original_filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateIngestionItemRequest {
+    return new CreateIngestionItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateIngestionItemRequest {
+    return new CreateIngestionItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateIngestionItemRequest {
+    return new CreateIngestionItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateIngestionItemRequest | PlainMessage<CreateIngestionItemRequest> | undefined, b: CreateIngestionItemRequest | PlainMessage<CreateIngestionItemRequest> | undefined): boolean {
+    return proto3.util.equals(CreateIngestionItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateIngestionItemResponse
+ */
+export class CreateIngestionItemResponse extends Message<CreateIngestionItemResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IngestionItem item = 1;
+   */
+  item?: IngestionItem;
+
+  constructor(data?: PartialMessage<CreateIngestionItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateIngestionItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IngestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateIngestionItemResponse {
+    return new CreateIngestionItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateIngestionItemResponse {
+    return new CreateIngestionItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateIngestionItemResponse {
+    return new CreateIngestionItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateIngestionItemResponse | PlainMessage<CreateIngestionItemResponse> | undefined, b: CreateIngestionItemResponse | PlainMessage<CreateIngestionItemResponse> | undefined): boolean {
+    return proto3.util.equals(CreateIngestionItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyIngestionItemsRequest
+ */
+export class ListMyIngestionItemsRequest extends Message<ListMyIngestionItemsRequest> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyIngestionItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyIngestionItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyIngestionItemsRequest {
+    return new ListMyIngestionItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyIngestionItemsRequest {
+    return new ListMyIngestionItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyIngestionItemsRequest {
+    return new ListMyIngestionItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyIngestionItemsRequest | PlainMessage<ListMyIngestionItemsRequest> | undefined, b: ListMyIngestionItemsRequest | PlainMessage<ListMyIngestionItemsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyIngestionItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyIngestionItemsResponse
+ */
+export class ListMyIngestionItemsResponse extends Message<ListMyIngestionItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IngestionItem items = 1;
+   */
+  items: IngestionItem[] = [];
+
+  constructor(data?: PartialMessage<ListMyIngestionItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyIngestionItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: IngestionItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyIngestionItemsResponse {
+    return new ListMyIngestionItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyIngestionItemsResponse {
+    return new ListMyIngestionItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyIngestionItemsResponse {
+    return new ListMyIngestionItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyIngestionItemsResponse | PlainMessage<ListMyIngestionItemsResponse> | undefined, b: ListMyIngestionItemsResponse | PlainMessage<ListMyIngestionItemsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyIngestionItemsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIngestionItemRequest
+ */
+export class GetIngestionItemRequest extends Message<GetIngestionItemRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetIngestionItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIngestionItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIngestionItemRequest {
+    return new GetIngestionItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIngestionItemRequest {
+    return new GetIngestionItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIngestionItemRequest {
+    return new GetIngestionItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIngestionItemRequest | PlainMessage<GetIngestionItemRequest> | undefined, b: GetIngestionItemRequest | PlainMessage<GetIngestionItemRequest> | undefined): boolean {
+    return proto3.util.equals(GetIngestionItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIngestionItemResponse
+ */
+export class GetIngestionItemResponse extends Message<GetIngestionItemResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IngestionItem item = 1;
+   */
+  item?: IngestionItem;
+
+  constructor(data?: PartialMessage<GetIngestionItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIngestionItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IngestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIngestionItemResponse {
+    return new GetIngestionItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIngestionItemResponse {
+    return new GetIngestionItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIngestionItemResponse {
+    return new GetIngestionItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIngestionItemResponse | PlainMessage<GetIngestionItemResponse> | undefined, b: GetIngestionItemResponse | PlainMessage<GetIngestionItemResponse> | undefined): boolean {
+    return proto3.util.equals(GetIngestionItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RetryIngestionItemRequest
+ */
+export class RetryIngestionItemRequest extends Message<RetryIngestionItemRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<RetryIngestionItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RetryIngestionItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryIngestionItemRequest {
+    return new RetryIngestionItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RetryIngestionItemRequest {
+    return new RetryIngestionItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RetryIngestionItemRequest {
+    return new RetryIngestionItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RetryIngestionItemRequest | PlainMessage<RetryIngestionItemRequest> | undefined, b: RetryIngestionItemRequest | PlainMessage<RetryIngestionItemRequest> | undefined): boolean {
+    return proto3.util.equals(RetryIngestionItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RetryIngestionItemResponse
+ */
+export class RetryIngestionItemResponse extends Message<RetryIngestionItemResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IngestionItem item = 1;
+   */
+  item?: IngestionItem;
+
+  constructor(data?: PartialMessage<RetryIngestionItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RetryIngestionItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IngestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryIngestionItemResponse {
+    return new RetryIngestionItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RetryIngestionItemResponse {
+    return new RetryIngestionItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RetryIngestionItemResponse {
+    return new RetryIngestionItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RetryIngestionItemResponse | PlainMessage<RetryIngestionItemResponse> | undefined, b: RetryIngestionItemResponse | PlainMessage<RetryIngestionItemResponse> | undefined): boolean {
+    return proto3.util.equals(RetryIngestionItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIngestionItemStateRequest
+ */
+export class SetIngestionItemStateRequest extends Message<SetIngestionItemStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * archive | restore | delete
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  constructor(data?: PartialMessage<SetIngestionItemStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIngestionItemStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIngestionItemStateRequest {
+    return new SetIngestionItemStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIngestionItemStateRequest {
+    return new SetIngestionItemStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIngestionItemStateRequest {
+    return new SetIngestionItemStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIngestionItemStateRequest | PlainMessage<SetIngestionItemStateRequest> | undefined, b: SetIngestionItemStateRequest | PlainMessage<SetIngestionItemStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIngestionItemStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIngestionItemStateResponse
+ */
+export class SetIngestionItemStateResponse extends Message<SetIngestionItemStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IngestionItem item = 1;
+   */
+  item?: IngestionItem;
+
+  constructor(data?: PartialMessage<SetIngestionItemStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIngestionItemStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IngestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIngestionItemStateResponse {
+    return new SetIngestionItemStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIngestionItemStateResponse {
+    return new SetIngestionItemStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIngestionItemStateResponse {
+    return new SetIngestionItemStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIngestionItemStateResponse | PlainMessage<SetIngestionItemStateResponse> | undefined, b: SetIngestionItemStateResponse | PlainMessage<SetIngestionItemStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIngestionItemStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+ */
+export class ResolveIngestionDuplicateRequest extends Message<ResolveIngestionDuplicateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * keep_both | use_existing
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  constructor(data?: PartialMessage<ResolveIngestionDuplicateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveIngestionDuplicateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveIngestionDuplicateRequest {
+    return new ResolveIngestionDuplicateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveIngestionDuplicateRequest {
+    return new ResolveIngestionDuplicateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveIngestionDuplicateRequest {
+    return new ResolveIngestionDuplicateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveIngestionDuplicateRequest | PlainMessage<ResolveIngestionDuplicateRequest> | undefined, b: ResolveIngestionDuplicateRequest | PlainMessage<ResolveIngestionDuplicateRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveIngestionDuplicateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+ */
+export class ResolveIngestionDuplicateResponse extends Message<ResolveIngestionDuplicateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IngestionItem item = 1;
+   */
+  item?: IngestionItem;
+
+  constructor(data?: PartialMessage<ResolveIngestionDuplicateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveIngestionDuplicateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IngestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveIngestionDuplicateResponse {
+    return new ResolveIngestionDuplicateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveIngestionDuplicateResponse {
+    return new ResolveIngestionDuplicateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveIngestionDuplicateResponse {
+    return new ResolveIngestionDuplicateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveIngestionDuplicateResponse | PlainMessage<ResolveIngestionDuplicateResponse> | undefined, b: ResolveIngestionDuplicateResponse | PlainMessage<ResolveIngestionDuplicateResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveIngestionDuplicateResponse, a, b);
+  }
+}
+

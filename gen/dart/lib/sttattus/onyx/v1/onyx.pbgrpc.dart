@@ -420,6 +420,52 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$reactToContent, request, options: options);
   }
 
+  /// Reader OS capture — private imports with durable processing and explicit
+  /// duplicate/failure recovery.
+  $grpc.ResponseFuture<$0.CreateIngestionItemResponse> createIngestionItem(
+    $0.CreateIngestionItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createIngestionItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyIngestionItemsResponse> listMyIngestionItems(
+    $0.ListMyIngestionItemsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyIngestionItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetIngestionItemResponse> getIngestionItem(
+    $0.GetIngestionItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getIngestionItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RetryIngestionItemResponse> retryIngestionItem(
+    $0.RetryIngestionItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$retryIngestionItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIngestionItemStateResponse> setIngestionItemState(
+    $0.SetIngestionItemStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIngestionItemState, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveIngestionDuplicateResponse>
+      resolveIngestionDuplicate(
+    $0.ResolveIngestionDuplicateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveIngestionDuplicate, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -679,6 +725,37 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/ReactToContent',
           ($0.ReactToContentRequest value) => value.writeToBuffer(),
           $0.ReactToContentResponse.fromBuffer);
+  static final _$createIngestionItem = $grpc.ClientMethod<
+          $0.CreateIngestionItemRequest, $0.CreateIngestionItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateIngestionItem',
+      ($0.CreateIngestionItemRequest value) => value.writeToBuffer(),
+      $0.CreateIngestionItemResponse.fromBuffer);
+  static final _$listMyIngestionItems = $grpc.ClientMethod<
+          $0.ListMyIngestionItemsRequest, $0.ListMyIngestionItemsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListMyIngestionItems',
+      ($0.ListMyIngestionItemsRequest value) => value.writeToBuffer(),
+      $0.ListMyIngestionItemsResponse.fromBuffer);
+  static final _$getIngestionItem = $grpc.ClientMethod<
+          $0.GetIngestionItemRequest, $0.GetIngestionItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetIngestionItem',
+      ($0.GetIngestionItemRequest value) => value.writeToBuffer(),
+      $0.GetIngestionItemResponse.fromBuffer);
+  static final _$retryIngestionItem = $grpc.ClientMethod<
+          $0.RetryIngestionItemRequest, $0.RetryIngestionItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/RetryIngestionItem',
+      ($0.RetryIngestionItemRequest value) => value.writeToBuffer(),
+      $0.RetryIngestionItemResponse.fromBuffer);
+  static final _$setIngestionItemState = $grpc.ClientMethod<
+          $0.SetIngestionItemStateRequest, $0.SetIngestionItemStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIngestionItemState',
+      ($0.SetIngestionItemStateRequest value) => value.writeToBuffer(),
+      $0.SetIngestionItemStateResponse.fromBuffer);
+  static final _$resolveIngestionDuplicate = $grpc.ClientMethod<
+          $0.ResolveIngestionDuplicateRequest,
+          $0.ResolveIngestionDuplicateResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate',
+      ($0.ResolveIngestionDuplicateRequest value) => value.writeToBuffer(),
+      $0.ResolveIngestionDuplicateResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -1126,6 +1203,60 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ReactToContentRequest.fromBuffer(value),
         ($0.ReactToContentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateIngestionItemRequest,
+            $0.CreateIngestionItemResponse>(
+        'CreateIngestionItem',
+        createIngestionItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateIngestionItemRequest.fromBuffer(value),
+        ($0.CreateIngestionItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyIngestionItemsRequest,
+            $0.ListMyIngestionItemsResponse>(
+        'ListMyIngestionItems',
+        listMyIngestionItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyIngestionItemsRequest.fromBuffer(value),
+        ($0.ListMyIngestionItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetIngestionItemRequest,
+            $0.GetIngestionItemResponse>(
+        'GetIngestionItem',
+        getIngestionItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetIngestionItemRequest.fromBuffer(value),
+        ($0.GetIngestionItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RetryIngestionItemRequest,
+            $0.RetryIngestionItemResponse>(
+        'RetryIngestionItem',
+        retryIngestionItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RetryIngestionItemRequest.fromBuffer(value),
+        ($0.RetryIngestionItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetIngestionItemStateRequest,
+            $0.SetIngestionItemStateResponse>(
+        'SetIngestionItemState',
+        setIngestionItemState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIngestionItemStateRequest.fromBuffer(value),
+        ($0.SetIngestionItemStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveIngestionDuplicateRequest,
+            $0.ResolveIngestionDuplicateResponse>(
+        'ResolveIngestionDuplicate',
+        resolveIngestionDuplicate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveIngestionDuplicateRequest.fromBuffer(value),
+        ($0.ResolveIngestionDuplicateResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -1575,4 +1706,58 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.ReactToContentResponse> reactToContent(
       $grpc.ServiceCall call, $0.ReactToContentRequest request);
+
+  $async.Future<$0.CreateIngestionItemResponse> createIngestionItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateIngestionItemRequest> $request) async {
+    return createIngestionItem($call, await $request);
+  }
+
+  $async.Future<$0.CreateIngestionItemResponse> createIngestionItem(
+      $grpc.ServiceCall call, $0.CreateIngestionItemRequest request);
+
+  $async.Future<$0.ListMyIngestionItemsResponse> listMyIngestionItems_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMyIngestionItemsRequest> $request) async {
+    return listMyIngestionItems($call, await $request);
+  }
+
+  $async.Future<$0.ListMyIngestionItemsResponse> listMyIngestionItems(
+      $grpc.ServiceCall call, $0.ListMyIngestionItemsRequest request);
+
+  $async.Future<$0.GetIngestionItemResponse> getIngestionItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetIngestionItemRequest> $request) async {
+    return getIngestionItem($call, await $request);
+  }
+
+  $async.Future<$0.GetIngestionItemResponse> getIngestionItem(
+      $grpc.ServiceCall call, $0.GetIngestionItemRequest request);
+
+  $async.Future<$0.RetryIngestionItemResponse> retryIngestionItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RetryIngestionItemRequest> $request) async {
+    return retryIngestionItem($call, await $request);
+  }
+
+  $async.Future<$0.RetryIngestionItemResponse> retryIngestionItem(
+      $grpc.ServiceCall call, $0.RetryIngestionItemRequest request);
+
+  $async.Future<$0.SetIngestionItemStateResponse> setIngestionItemState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetIngestionItemStateRequest> $request) async {
+    return setIngestionItemState($call, await $request);
+  }
+
+  $async.Future<$0.SetIngestionItemStateResponse> setIngestionItemState(
+      $grpc.ServiceCall call, $0.SetIngestionItemStateRequest request);
+
+  $async.Future<$0.ResolveIngestionDuplicateResponse>
+      resolveIngestionDuplicate_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ResolveIngestionDuplicateRequest> $request) async {
+    return resolveIngestionDuplicate($call, await $request);
+  }
+
+  $async.Future<$0.ResolveIngestionDuplicateResponse> resolveIngestionDuplicate(
+      $grpc.ServiceCall call, $0.ResolveIngestionDuplicateRequest request);
 }

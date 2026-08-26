@@ -70,6 +70,12 @@ const (
 	OnyxService_GetYearInOnyx_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
 	OnyxService_GenerateAnnualArchive_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
 	OnyxService_ReactToContent_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReactToContent"
+	OnyxService_CreateIngestionItem_FullMethodName        = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
+	OnyxService_ListMyIngestionItems_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
+	OnyxService_GetIngestionItem_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
+	OnyxService_RetryIngestionItem_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
+	OnyxService_SetIngestionItemState_FullMethodName      = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
+	OnyxService_ResolveIngestionDuplicate_FullMethodName  = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -148,6 +154,14 @@ type OnyxServiceClient interface {
 	GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error)
 	ReactToContent(ctx context.Context, in *ReactToContentRequest, opts ...grpc.CallOption) (*ReactToContentResponse, error)
+	// Reader OS capture — private imports with durable processing and explicit
+	// duplicate/failure recovery.
+	CreateIngestionItem(ctx context.Context, in *CreateIngestionItemRequest, opts ...grpc.CallOption) (*CreateIngestionItemResponse, error)
+	ListMyIngestionItems(ctx context.Context, in *ListMyIngestionItemsRequest, opts ...grpc.CallOption) (*ListMyIngestionItemsResponse, error)
+	GetIngestionItem(ctx context.Context, in *GetIngestionItemRequest, opts ...grpc.CallOption) (*GetIngestionItemResponse, error)
+	RetryIngestionItem(ctx context.Context, in *RetryIngestionItemRequest, opts ...grpc.CallOption) (*RetryIngestionItemResponse, error)
+	SetIngestionItemState(ctx context.Context, in *SetIngestionItemStateRequest, opts ...grpc.CallOption) (*SetIngestionItemStateResponse, error)
+	ResolveIngestionDuplicate(ctx context.Context, in *ResolveIngestionDuplicateRequest, opts ...grpc.CallOption) (*ResolveIngestionDuplicateResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -668,6 +682,66 @@ func (c *onyxServiceClient) ReactToContent(ctx context.Context, in *ReactToConte
 	return out, nil
 }
 
+func (c *onyxServiceClient) CreateIngestionItem(ctx context.Context, in *CreateIngestionItemRequest, opts ...grpc.CallOption) (*CreateIngestionItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateIngestionItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateIngestionItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyIngestionItems(ctx context.Context, in *ListMyIngestionItemsRequest, opts ...grpc.CallOption) (*ListMyIngestionItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyIngestionItemsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyIngestionItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetIngestionItem(ctx context.Context, in *GetIngestionItemRequest, opts ...grpc.CallOption) (*GetIngestionItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIngestionItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetIngestionItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RetryIngestionItem(ctx context.Context, in *RetryIngestionItemRequest, opts ...grpc.CallOption) (*RetryIngestionItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RetryIngestionItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RetryIngestionItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIngestionItemState(ctx context.Context, in *SetIngestionItemStateRequest, opts ...grpc.CallOption) (*SetIngestionItemStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIngestionItemStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIngestionItemState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ResolveIngestionDuplicate(ctx context.Context, in *ResolveIngestionDuplicateRequest, opts ...grpc.CallOption) (*ResolveIngestionDuplicateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveIngestionDuplicateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ResolveIngestionDuplicate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -744,6 +818,14 @@ type OnyxServiceServer interface {
 	GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error)
 	ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error)
+	// Reader OS capture — private imports with durable processing and explicit
+	// duplicate/failure recovery.
+	CreateIngestionItem(context.Context, *CreateIngestionItemRequest) (*CreateIngestionItemResponse, error)
+	ListMyIngestionItems(context.Context, *ListMyIngestionItemsRequest) (*ListMyIngestionItemsResponse, error)
+	GetIngestionItem(context.Context, *GetIngestionItemRequest) (*GetIngestionItemResponse, error)
+	RetryIngestionItem(context.Context, *RetryIngestionItemRequest) (*RetryIngestionItemResponse, error)
+	SetIngestionItemState(context.Context, *SetIngestionItemStateRequest) (*SetIngestionItemStateResponse, error)
+	ResolveIngestionDuplicate(context.Context, *ResolveIngestionDuplicateRequest) (*ResolveIngestionDuplicateResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -906,6 +988,24 @@ func (UnimplementedOnyxServiceServer) GenerateAnnualArchive(context.Context, *Ge
 }
 func (UnimplementedOnyxServiceServer) ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ReactToContent not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateIngestionItem(context.Context, *CreateIngestionItemRequest) (*CreateIngestionItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateIngestionItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyIngestionItems(context.Context, *ListMyIngestionItemsRequest) (*ListMyIngestionItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyIngestionItems not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetIngestionItem(context.Context, *GetIngestionItemRequest) (*GetIngestionItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIngestionItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) RetryIngestionItem(context.Context, *RetryIngestionItemRequest) (*RetryIngestionItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RetryIngestionItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIngestionItemState(context.Context, *SetIngestionItemStateRequest) (*SetIngestionItemStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIngestionItemState not implemented")
+}
+func (UnimplementedOnyxServiceServer) ResolveIngestionDuplicate(context.Context, *ResolveIngestionDuplicateRequest) (*ResolveIngestionDuplicateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveIngestionDuplicate not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -1846,6 +1946,114 @@ func _OnyxService_ReactToContent_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_CreateIngestionItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIngestionItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateIngestionItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateIngestionItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateIngestionItem(ctx, req.(*CreateIngestionItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyIngestionItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyIngestionItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyIngestionItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyIngestionItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyIngestionItems(ctx, req.(*ListMyIngestionItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetIngestionItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIngestionItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetIngestionItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetIngestionItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetIngestionItem(ctx, req.(*GetIngestionItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RetryIngestionItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RetryIngestionItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RetryIngestionItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RetryIngestionItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RetryIngestionItem(ctx, req.(*RetryIngestionItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIngestionItemState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIngestionItemStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIngestionItemState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIngestionItemState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIngestionItemState(ctx, req.(*SetIngestionItemStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ResolveIngestionDuplicate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveIngestionDuplicateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ResolveIngestionDuplicate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ResolveIngestionDuplicate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ResolveIngestionDuplicate(ctx, req.(*ResolveIngestionDuplicateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2056,6 +2264,30 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ReactToContent",
 			Handler:    _OnyxService_ReactToContent_Handler,
+		},
+		{
+			MethodName: "CreateIngestionItem",
+			Handler:    _OnyxService_CreateIngestionItem_Handler,
+		},
+		{
+			MethodName: "ListMyIngestionItems",
+			Handler:    _OnyxService_ListMyIngestionItems_Handler,
+		},
+		{
+			MethodName: "GetIngestionItem",
+			Handler:    _OnyxService_GetIngestionItem_Handler,
+		},
+		{
+			MethodName: "RetryIngestionItem",
+			Handler:    _OnyxService_RetryIngestionItem_Handler,
+		},
+		{
+			MethodName: "SetIngestionItemState",
+			Handler:    _OnyxService_SetIngestionItemState_Handler,
+		},
+		{
+			MethodName: "ResolveIngestionDuplicate",
+			Handler:    _OnyxService_ResolveIngestionDuplicate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

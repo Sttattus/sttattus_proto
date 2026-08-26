@@ -2455,3 +2455,286 @@ final $typed_data.Uint8List reactToContentResponseDescriptor =
     $convert.base64Decode(
         'ChZSZWFjdFRvQ29udGVudFJlc3BvbnNlEiUKDnJlYWN0aW9uX2NvdW50GAEgASgFUg1yZWFjdG'
         'lvbkNvdW50EhgKB3JlYWN0ZWQYAiABKAhSB3JlYWN0ZWQ=');
+
+@$core.Deprecated('Use ingestionItemDescriptor instead')
+const IngestionItem$json = {
+  '1': 'IngestionItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_type', '3': 2, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'source_url', '3': 4, '4': 1, '5': 9, '10': 'sourceUrl'},
+    {'1': 'media_asset_id', '3': 5, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {
+      '1': 'original_filename',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'originalFilename'
+    },
+    {'1': 'detected_mime', '3': 7, '4': 1, '5': 9, '10': 'detectedMime'},
+    {'1': 'size_bytes', '3': 8, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'status', '3': 9, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'stage', '3': 10, '4': 1, '5': 9, '10': 'stage'},
+    {'1': 'error_message', '3': 11, '4': 1, '5': 9, '10': 'errorMessage'},
+    {'1': 'duplicate_of_id', '3': 12, '4': 1, '5': 9, '10': 'duplicateOfId'},
+    {'1': 'content_id', '3': 13, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'parser_version', '3': 14, '4': 1, '5': 9, '10': 'parserVersion'},
+    {'1': 'checksum', '3': 15, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'language_code', '3': 16, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'created_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IngestionItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ingestionItemDescriptor = $convert.base64Decode(
+    'Cg1Jbmdlc3Rpb25JdGVtEg4KAmlkGAEgASgJUgJpZBIfCgtzb3VyY2VfdHlwZRgCIAEoCVIKc2'
+    '91cmNlVHlwZRIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSHQoKc291cmNlX3VybBgEIAEoCVIJc291'
+    'cmNlVXJsEiQKDm1lZGlhX2Fzc2V0X2lkGAUgASgJUgxtZWRpYUFzc2V0SWQSKwoRb3JpZ2luYW'
+    'xfZmlsZW5hbWUYBiABKAlSEG9yaWdpbmFsRmlsZW5hbWUSIwoNZGV0ZWN0ZWRfbWltZRgHIAEo'
+    'CVIMZGV0ZWN0ZWRNaW1lEh0KCnNpemVfYnl0ZXMYCCABKANSCXNpemVCeXRlcxIWCgZzdGF0dX'
+    'MYCSABKAlSBnN0YXR1cxIUCgVzdGFnZRgKIAEoCVIFc3RhZ2USIwoNZXJyb3JfbWVzc2FnZRgL'
+    'IAEoCVIMZXJyb3JNZXNzYWdlEiYKD2R1cGxpY2F0ZV9vZl9pZBgMIAEoCVINZHVwbGljYXRlT2'
+    'ZJZBIdCgpjb250ZW50X2lkGA0gASgJUgljb250ZW50SWQSJQoOcGFyc2VyX3ZlcnNpb24YDiAB'
+    'KAlSDXBhcnNlclZlcnNpb24SGgoIY2hlY2tzdW0YDyABKAlSCGNoZWNrc3VtEiMKDWxhbmd1YW'
+    'dlX2NvZGUYECABKAlSDGxhbmd1YWdlQ29kZRI5CgpjcmVhdGVkX2F0GBEgASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYEiABKAsyGi5nb2'
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use createIngestionItemRequestDescriptor instead')
+const CreateIngestionItemRequest$json = {
+  '1': 'CreateIngestionItemRequest',
+  '2': [
+    {'1': 'source_type', '3': 1, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'source_url', '3': 3, '4': 1, '5': 9, '10': 'sourceUrl'},
+    {'1': 'body_text', '3': 4, '4': 1, '5': 9, '10': 'bodyText'},
+    {'1': 'media_asset_id', '3': 5, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {
+      '1': 'original_filename',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'originalFilename'
+    },
+  ],
+};
+
+/// Descriptor for `CreateIngestionItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createIngestionItemRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVJbmdlc3Rpb25JdGVtUmVxdWVzdBIfCgtzb3VyY2VfdHlwZRgBIAEoCVIKc291cm'
+    'NlVHlwZRIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSHQoKc291cmNlX3VybBgDIAEoCVIJc291cmNl'
+    'VXJsEhsKCWJvZHlfdGV4dBgEIAEoCVIIYm9keVRleHQSJAoObWVkaWFfYXNzZXRfaWQYBSABKA'
+    'lSDG1lZGlhQXNzZXRJZBIrChFvcmlnaW5hbF9maWxlbmFtZRgGIAEoCVIQb3JpZ2luYWxGaWxl'
+    'bmFtZQ==');
+
+@$core.Deprecated('Use createIngestionItemResponseDescriptor instead')
+const CreateIngestionItemResponse$json = {
+  '1': 'CreateIngestionItemResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `CreateIngestionItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createIngestionItemResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVJbmdlc3Rpb25JdGVtUmVzcG9uc2USMwoEaXRlbRgBIAEoCzIfLnN0dGF0dHVzLm'
+        '9ueXgudjEuSW5nZXN0aW9uSXRlbVIEaXRlbQ==');
+
+@$core.Deprecated('Use listMyIngestionItemsRequestDescriptor instead')
+const ListMyIngestionItemsRequest$json = {
+  '1': 'ListMyIngestionItemsRequest',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyIngestionItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyIngestionItemsRequestDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0TXlJbmdlc3Rpb25JdGVtc1JlcXVlc3QSFgoGc3RhdHVzGAEgASgJUgZzdGF0dXMSFA'
+        'oFbGltaXQYAiABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use listMyIngestionItemsResponseDescriptor instead')
+const ListMyIngestionItemsResponse$json = {
+  '1': 'ListMyIngestionItemsResponse',
+  '2': [
+    {
+      '1': 'items',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'items'
+    },
+  ],
+};
+
+/// Descriptor for `ListMyIngestionItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyIngestionItemsResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlJbmdlc3Rpb25JdGVtc1Jlc3BvbnNlEjUKBWl0ZW1zGAEgAygLMh8uc3R0YXR0dX'
+        'Mub255eC52MS5Jbmdlc3Rpb25JdGVtUgVpdGVtcw==');
+
+@$core.Deprecated('Use getIngestionItemRequestDescriptor instead')
+const GetIngestionItemRequest$json = {
+  '1': 'GetIngestionItemRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetIngestionItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIngestionItemRequestDescriptor = $convert
+    .base64Decode('ChdHZXRJbmdlc3Rpb25JdGVtUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getIngestionItemResponseDescriptor instead')
+const GetIngestionItemResponse$json = {
+  '1': 'GetIngestionItemResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `GetIngestionItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIngestionItemResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRJbmdlc3Rpb25JdGVtUmVzcG9uc2USMwoEaXRlbRgBIAEoCzIfLnN0dGF0dHVzLm9ueX'
+        'gudjEuSW5nZXN0aW9uSXRlbVIEaXRlbQ==');
+
+@$core.Deprecated('Use retryIngestionItemRequestDescriptor instead')
+const RetryIngestionItemRequest$json = {
+  '1': 'RetryIngestionItemRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RetryIngestionItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryIngestionItemRequestDescriptor =
+    $convert.base64Decode(
+        'ChlSZXRyeUluZ2VzdGlvbkl0ZW1SZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use retryIngestionItemResponseDescriptor instead')
+const RetryIngestionItemResponse$json = {
+  '1': 'RetryIngestionItemResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `RetryIngestionItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryIngestionItemResponseDescriptor =
+    $convert.base64Decode(
+        'ChpSZXRyeUluZ2VzdGlvbkl0ZW1SZXNwb25zZRIzCgRpdGVtGAEgASgLMh8uc3R0YXR0dXMub2'
+        '55eC52MS5Jbmdlc3Rpb25JdGVtUgRpdGVt');
+
+@$core.Deprecated('Use setIngestionItemStateRequestDescriptor instead')
+const SetIngestionItemStateRequest$json = {
+  '1': 'SetIngestionItemStateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+  ],
+};
+
+/// Descriptor for `SetIngestionItemStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIngestionItemStateRequestDescriptor =
+    $convert.base64Decode(
+        'ChxTZXRJbmdlc3Rpb25JdGVtU3RhdGVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIWCgZhY3Rpb2'
+        '4YAiABKAlSBmFjdGlvbg==');
+
+@$core.Deprecated('Use setIngestionItemStateResponseDescriptor instead')
+const SetIngestionItemStateResponse$json = {
+  '1': 'SetIngestionItemStateResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `SetIngestionItemStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIngestionItemStateResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1TZXRJbmdlc3Rpb25JdGVtU3RhdGVSZXNwb25zZRIzCgRpdGVtGAEgASgLMh8uc3R0YXR0dX'
+        'Mub255eC52MS5Jbmdlc3Rpb25JdGVtUgRpdGVt');
+
+@$core.Deprecated('Use resolveIngestionDuplicateRequestDescriptor instead')
+const ResolveIngestionDuplicateRequest$json = {
+  '1': 'ResolveIngestionDuplicateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+  ],
+};
+
+/// Descriptor for `ResolveIngestionDuplicateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveIngestionDuplicateRequestDescriptor =
+    $convert.base64Decode(
+        'CiBSZXNvbHZlSW5nZXN0aW9uRHVwbGljYXRlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFgoGYW'
+        'N0aW9uGAIgASgJUgZhY3Rpb24=');
+
+@$core.Deprecated('Use resolveIngestionDuplicateResponseDescriptor instead')
+const ResolveIngestionDuplicateResponse$json = {
+  '1': 'ResolveIngestionDuplicateResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IngestionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveIngestionDuplicateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveIngestionDuplicateResponseDescriptor =
+    $convert.base64Decode(
+        'CiFSZXNvbHZlSW5nZXN0aW9uRHVwbGljYXRlUmVzcG9uc2USMwoEaXRlbRgBIAEoCzIfLnN0dG'
+        'F0dHVzLm9ueXgudjEuSW5nZXN0aW9uSXRlbVIEaXRlbQ==');

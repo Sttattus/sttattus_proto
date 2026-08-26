@@ -705,6 +705,82 @@ message ReactToContentResponse {
   bool reacted = 2;
 }
 
+// === Reader OS capture + ingestion factory ===
+
+// IngestionItem is the member-visible lifecycle of one private capture. The
+// immutable original and parser diagnostics stay server-side; this DTO exposes
+// only the provenance and recovery information the owner needs.
+message IngestionItem {
+  string id = 1;
+  string source_type = 2; // text | url | rss | email | file | share
+  string title = 3;
+  string source_url = 4;
+  string media_asset_id = 5;
+  string original_filename = 6;
+  string detected_mime = 7;
+  int64 size_bytes = 8;
+  string status = 9; // queued | processing | ready | needs_review | duplicate | failed | quarantined | archived
+  string stage = 10;
+  string error_message = 11;
+  string duplicate_of_id = 12;
+  string content_id = 13;
+  string parser_version = 14;
+  string checksum = 15;
+  string language_code = 16;
+  google.protobuf.Timestamp created_at = 17;
+  google.protobuf.Timestamp updated_at = 18;
+}
+
+message CreateIngestionItemRequest {
+  string source_type = 1;
+  string title = 2;
+  string source_url = 3;
+  string body_text = 4;
+  string media_asset_id = 5;
+  string original_filename = 6;
+}
+message CreateIngestionItemResponse {
+  IngestionItem item = 1;
+}
+
+message ListMyIngestionItemsRequest {
+  string status = 1;
+  int32 limit = 2;
+}
+message ListMyIngestionItemsResponse {
+  repeated IngestionItem items = 1;
+}
+
+message GetIngestionItemRequest {
+  string id = 1;
+}
+message GetIngestionItemResponse {
+  IngestionItem item = 1;
+}
+
+message RetryIngestionItemRequest {
+  string id = 1;
+}
+message RetryIngestionItemResponse {
+  IngestionItem item = 1;
+}
+
+message SetIngestionItemStateRequest {
+  string id = 1;
+  string action = 2; // archive | restore | delete
+}
+message SetIngestionItemStateResponse {
+  IngestionItem item = 1;
+}
+
+message ResolveIngestionDuplicateRequest {
+  string id = 1;
+  string action = 2; // keep_both | use_existing
+}
+message ResolveIngestionDuplicateResponse {
+  IngestionItem item = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -796,4 +872,13 @@ service OnyxService {
   rpc GetYearInOnyx(GetYearInOnyxRequest) returns (GetYearInOnyxResponse);
   rpc GenerateAnnualArchive(GenerateAnnualArchiveRequest) returns (GenerateAnnualArchiveResponse);
   rpc ReactToContent(ReactToContentRequest) returns (ReactToContentResponse);
+
+  // Reader OS capture — private imports with durable processing and explicit
+  // duplicate/failure recovery.
+  rpc CreateIngestionItem(CreateIngestionItemRequest) returns (CreateIngestionItemResponse);
+  rpc ListMyIngestionItems(ListMyIngestionItemsRequest) returns (ListMyIngestionItemsResponse);
+  rpc GetIngestionItem(GetIngestionItemRequest) returns (GetIngestionItemResponse);
+  rpc RetryIngestionItem(RetryIngestionItemRequest) returns (RetryIngestionItemResponse);
+  rpc SetIngestionItemState(SetIngestionItemStateRequest) returns (SetIngestionItemStateResponse);
+  rpc ResolveIngestionDuplicate(ResolveIngestionDuplicateRequest) returns (ResolveIngestionDuplicateResponse);
 }
