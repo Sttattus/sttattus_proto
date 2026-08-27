@@ -783,6 +783,127 @@ message ResolveIngestionDuplicateResponse {
   IngestionItem item = 1;
 }
 
+// === Evidence briefing engine ===
+
+// A policy-bearing provenance card. Administrative notes and internal storage
+// locators never cross this member-facing contract.
+message EvidenceSource {
+  string id = 1;
+  string content_id = 2;
+  string revision_id = 3;
+  string source_kind = 4;
+  string title = 5;
+  string canonical_url = 6;
+  string archive_url = 7;
+  string author = 8;
+  string publisher = 9;
+  string publisher_owner = 10;
+  string jurisdiction = 11;
+  string rights_status = 12;
+  string funding = 13;
+  string methods = 14;
+  string conflicts = 15;
+  string status = 16;
+  google.protobuf.Timestamp published_at = 17;
+  google.protobuf.Timestamp retrieved_at = 18;
+}
+
+message EvidenceCitation {
+  string id = 1;
+  string source_id = 2;
+  string source_title = 3;
+  string revision_id = 4;
+  string passage_key = 5;
+  string quote = 6;
+  string relation = 7; // supports | contradicts | insufficient
+  string independence_key = 8;
+  string canonical_url = 9;
+}
+
+message EvidenceClaim {
+  string id = 1;
+  string content_id = 2;
+  string revision_id = 3;
+  string statement = 4;
+  string classification = 5; // factual | analysis | opinion | question
+  string verification_status = 6; // machine | verified | disputed | corrected | retracted
+  double confidence = 7;
+  int32 version = 8;
+  repeated EvidenceCitation citations = 9;
+}
+
+message EvidenceCorrection {
+  string id = 1;
+  string source_id = 2;
+  string claim_id = 3;
+  string kind = 4; // correction | clarification | retraction
+  string summary = 5;
+  string replacement_text = 6;
+  google.protobuf.Timestamp effective_at = 7;
+  google.protobuf.Timestamp published_at = 8;
+}
+
+message GetEvidenceWorkspaceRequest {
+  string content_id = 1;
+}
+message GetEvidenceWorkspaceResponse {
+  string content_id = 1;
+  string content_title = 2;
+  string revision_id = 3;
+  repeated EvidenceSource sources = 4;
+  repeated EvidenceClaim claims = 5;
+  repeated EvidenceCorrection corrections = 6;
+  bool can_brief = 7;
+  string policy_notice = 8;
+}
+
+message BriefPoint {
+  string text = 1;
+  string classification = 2; // factual | analysis
+  repeated EvidenceCitation citations = 3;
+}
+
+message EvidenceBrief {
+  string id = 1;
+  string mode = 2;
+  string question = 3;
+  string title = 4;
+  string status = 5;
+  repeated BriefPoint points = 6;
+  string model_key = 7;
+  string prompt_key = 8;
+  int32 prompt_version = 9;
+  string source_manifest_checksum = 10;
+  google.protobuf.Timestamp cutoff_at = 11;
+  google.protobuf.Timestamp generated_at = 12;
+  repeated EvidenceCorrection corrections = 13;
+  int32 source_count = 14;
+}
+
+message CreateEvidenceBriefRequest {
+  repeated string content_ids = 1;
+  string mode = 2;
+  string question = 3;
+  repeated string pinned_source_ids = 4;
+  repeated string excluded_source_ids = 5;
+  google.protobuf.Timestamp cutoff_at = 6;
+}
+message CreateEvidenceBriefResponse {
+  EvidenceBrief brief = 1;
+}
+message ListMyEvidenceBriefsRequest {
+  int32 limit = 1;
+}
+message ListMyEvidenceBriefsResponse {
+  repeated EvidenceBrief briefs = 1;
+}
+message GetEvidenceBriefRequest {
+  string id = 1;
+}
+message GetEvidenceBriefResponse {
+  EvidenceBrief brief = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -883,4 +1004,11 @@ service OnyxService {
   rpc RetryIngestionItem(RetryIngestionItemRequest) returns (RetryIngestionItemResponse);
   rpc SetIngestionItemState(SetIngestionItemStateRequest) returns (SetIngestionItemStateResponse);
   rpc ResolveIngestionDuplicate(ResolveIngestionDuplicateRequest) returns (ResolveIngestionDuplicateResponse);
+
+  // Evidence briefing — source cards, claim-level citations, reproducible
+  // selected-source runs, and correction overlays on historical output.
+  rpc GetEvidenceWorkspace(GetEvidenceWorkspaceRequest) returns (GetEvidenceWorkspaceResponse);
+  rpc CreateEvidenceBrief(CreateEvidenceBriefRequest) returns (CreateEvidenceBriefResponse);
+  rpc ListMyEvidenceBriefs(ListMyEvidenceBriefsRequest) returns (ListMyEvidenceBriefsResponse);
+  rpc GetEvidenceBrief(GetEvidenceBriefRequest) returns (GetEvidenceBriefResponse);
 }

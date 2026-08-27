@@ -76,6 +76,10 @@ const (
 	OnyxService_RetryIngestionItem_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
 	OnyxService_SetIngestionItemState_FullMethodName      = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
 	OnyxService_ResolveIngestionDuplicate_FullMethodName  = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
+	OnyxService_GetEvidenceWorkspace_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
+	OnyxService_CreateEvidenceBrief_FullMethodName        = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
+	OnyxService_ListMyEvidenceBriefs_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
+	OnyxService_GetEvidenceBrief_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -162,6 +166,12 @@ type OnyxServiceClient interface {
 	RetryIngestionItem(ctx context.Context, in *RetryIngestionItemRequest, opts ...grpc.CallOption) (*RetryIngestionItemResponse, error)
 	SetIngestionItemState(ctx context.Context, in *SetIngestionItemStateRequest, opts ...grpc.CallOption) (*SetIngestionItemStateResponse, error)
 	ResolveIngestionDuplicate(ctx context.Context, in *ResolveIngestionDuplicateRequest, opts ...grpc.CallOption) (*ResolveIngestionDuplicateResponse, error)
+	// Evidence briefing — source cards, claim-level citations, reproducible
+	// selected-source runs, and correction overlays on historical output.
+	GetEvidenceWorkspace(ctx context.Context, in *GetEvidenceWorkspaceRequest, opts ...grpc.CallOption) (*GetEvidenceWorkspaceResponse, error)
+	CreateEvidenceBrief(ctx context.Context, in *CreateEvidenceBriefRequest, opts ...grpc.CallOption) (*CreateEvidenceBriefResponse, error)
+	ListMyEvidenceBriefs(ctx context.Context, in *ListMyEvidenceBriefsRequest, opts ...grpc.CallOption) (*ListMyEvidenceBriefsResponse, error)
+	GetEvidenceBrief(ctx context.Context, in *GetEvidenceBriefRequest, opts ...grpc.CallOption) (*GetEvidenceBriefResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -742,6 +752,46 @@ func (c *onyxServiceClient) ResolveIngestionDuplicate(ctx context.Context, in *R
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetEvidenceWorkspace(ctx context.Context, in *GetEvidenceWorkspaceRequest, opts ...grpc.CallOption) (*GetEvidenceWorkspaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEvidenceWorkspaceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetEvidenceWorkspace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateEvidenceBrief(ctx context.Context, in *CreateEvidenceBriefRequest, opts ...grpc.CallOption) (*CreateEvidenceBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateEvidenceBriefResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateEvidenceBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyEvidenceBriefs(ctx context.Context, in *ListMyEvidenceBriefsRequest, opts ...grpc.CallOption) (*ListMyEvidenceBriefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyEvidenceBriefsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyEvidenceBriefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetEvidenceBrief(ctx context.Context, in *GetEvidenceBriefRequest, opts ...grpc.CallOption) (*GetEvidenceBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEvidenceBriefResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetEvidenceBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -826,6 +876,12 @@ type OnyxServiceServer interface {
 	RetryIngestionItem(context.Context, *RetryIngestionItemRequest) (*RetryIngestionItemResponse, error)
 	SetIngestionItemState(context.Context, *SetIngestionItemStateRequest) (*SetIngestionItemStateResponse, error)
 	ResolveIngestionDuplicate(context.Context, *ResolveIngestionDuplicateRequest) (*ResolveIngestionDuplicateResponse, error)
+	// Evidence briefing — source cards, claim-level citations, reproducible
+	// selected-source runs, and correction overlays on historical output.
+	GetEvidenceWorkspace(context.Context, *GetEvidenceWorkspaceRequest) (*GetEvidenceWorkspaceResponse, error)
+	CreateEvidenceBrief(context.Context, *CreateEvidenceBriefRequest) (*CreateEvidenceBriefResponse, error)
+	ListMyEvidenceBriefs(context.Context, *ListMyEvidenceBriefsRequest) (*ListMyEvidenceBriefsResponse, error)
+	GetEvidenceBrief(context.Context, *GetEvidenceBriefRequest) (*GetEvidenceBriefResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -1006,6 +1062,18 @@ func (UnimplementedOnyxServiceServer) SetIngestionItemState(context.Context, *Se
 }
 func (UnimplementedOnyxServiceServer) ResolveIngestionDuplicate(context.Context, *ResolveIngestionDuplicateRequest) (*ResolveIngestionDuplicateResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ResolveIngestionDuplicate not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetEvidenceWorkspace(context.Context, *GetEvidenceWorkspaceRequest) (*GetEvidenceWorkspaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEvidenceWorkspace not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateEvidenceBrief(context.Context, *CreateEvidenceBriefRequest) (*CreateEvidenceBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateEvidenceBrief not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyEvidenceBriefs(context.Context, *ListMyEvidenceBriefsRequest) (*ListMyEvidenceBriefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyEvidenceBriefs not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetEvidenceBrief(context.Context, *GetEvidenceBriefRequest) (*GetEvidenceBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEvidenceBrief not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -2054,6 +2122,78 @@ func _OnyxService_ResolveIngestionDuplicate_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetEvidenceWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEvidenceWorkspaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetEvidenceWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetEvidenceWorkspace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetEvidenceWorkspace(ctx, req.(*GetEvidenceWorkspaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateEvidenceBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateEvidenceBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateEvidenceBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateEvidenceBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateEvidenceBrief(ctx, req.(*CreateEvidenceBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyEvidenceBriefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyEvidenceBriefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyEvidenceBriefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyEvidenceBriefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyEvidenceBriefs(ctx, req.(*ListMyEvidenceBriefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetEvidenceBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEvidenceBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetEvidenceBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetEvidenceBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetEvidenceBrief(ctx, req.(*GetEvidenceBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2288,6 +2428,22 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ResolveIngestionDuplicate",
 			Handler:    _OnyxService_ResolveIngestionDuplicate_Handler,
+		},
+		{
+			MethodName: "GetEvidenceWorkspace",
+			Handler:    _OnyxService_GetEvidenceWorkspace_Handler,
+		},
+		{
+			MethodName: "CreateEvidenceBrief",
+			Handler:    _OnyxService_CreateEvidenceBrief_Handler,
+		},
+		{
+			MethodName: "ListMyEvidenceBriefs",
+			Handler:    _OnyxService_ListMyEvidenceBriefs_Handler,
+		},
+		{
+			MethodName: "GetEvidenceBrief",
+			Handler:    _OnyxService_GetEvidenceBrief_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

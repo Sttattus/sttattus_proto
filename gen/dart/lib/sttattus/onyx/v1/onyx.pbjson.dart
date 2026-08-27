@@ -2754,3 +2754,433 @@ final $typed_data.Uint8List resolveIngestionDuplicateResponseDescriptor =
     $convert.base64Decode(
         'CiFSZXNvbHZlSW5nZXN0aW9uRHVwbGljYXRlUmVzcG9uc2USMwoEaXRlbRgBIAEoCzIfLnN0dG'
         'F0dHVzLm9ueXgudjEuSW5nZXN0aW9uSXRlbVIEaXRlbQ==');
+
+@$core.Deprecated('Use evidenceSourceDescriptor instead')
+const EvidenceSource$json = {
+  '1': 'EvidenceSource',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'source_kind', '3': 4, '4': 1, '5': 9, '10': 'sourceKind'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'canonical_url', '3': 6, '4': 1, '5': 9, '10': 'canonicalUrl'},
+    {'1': 'archive_url', '3': 7, '4': 1, '5': 9, '10': 'archiveUrl'},
+    {'1': 'author', '3': 8, '4': 1, '5': 9, '10': 'author'},
+    {'1': 'publisher', '3': 9, '4': 1, '5': 9, '10': 'publisher'},
+    {'1': 'publisher_owner', '3': 10, '4': 1, '5': 9, '10': 'publisherOwner'},
+    {'1': 'jurisdiction', '3': 11, '4': 1, '5': 9, '10': 'jurisdiction'},
+    {'1': 'rights_status', '3': 12, '4': 1, '5': 9, '10': 'rightsStatus'},
+    {'1': 'funding', '3': 13, '4': 1, '5': 9, '10': 'funding'},
+    {'1': 'methods', '3': 14, '4': 1, '5': 9, '10': 'methods'},
+    {'1': 'conflicts', '3': 15, '4': 1, '5': 9, '10': 'conflicts'},
+    {'1': 'status', '3': 16, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'published_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+    {
+      '1': 'retrieved_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'retrievedAt'
+    },
+  ],
+};
+
+/// Descriptor for `EvidenceSource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceSourceDescriptor = $convert.base64Decode(
+    'Cg5FdmlkZW5jZVNvdXJjZRIOCgJpZBgBIAEoCVICaWQSHQoKY29udGVudF9pZBgCIAEoCVIJY2'
+    '9udGVudElkEh8KC3JldmlzaW9uX2lkGAMgASgJUgpyZXZpc2lvbklkEh8KC3NvdXJjZV9raW5k'
+    'GAQgASgJUgpzb3VyY2VLaW5kEhQKBXRpdGxlGAUgASgJUgV0aXRsZRIjCg1jYW5vbmljYWxfdX'
+    'JsGAYgASgJUgxjYW5vbmljYWxVcmwSHwoLYXJjaGl2ZV91cmwYByABKAlSCmFyY2hpdmVVcmwS'
+    'FgoGYXV0aG9yGAggASgJUgZhdXRob3ISHAoJcHVibGlzaGVyGAkgASgJUglwdWJsaXNoZXISJw'
+    'oPcHVibGlzaGVyX293bmVyGAogASgJUg5wdWJsaXNoZXJPd25lchIiCgxqdXJpc2RpY3Rpb24Y'
+    'CyABKAlSDGp1cmlzZGljdGlvbhIjCg1yaWdodHNfc3RhdHVzGAwgASgJUgxyaWdodHNTdGF0dX'
+    'MSGAoHZnVuZGluZxgNIAEoCVIHZnVuZGluZxIYCgdtZXRob2RzGA4gASgJUgdtZXRob2RzEhwK'
+    'CWNvbmZsaWN0cxgPIAEoCVIJY29uZmxpY3RzEhYKBnN0YXR1cxgQIAEoCVIGc3RhdHVzEj0KDH'
+    'B1Ymxpc2hlZF9hdBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3B1Ymxpc2hl'
+    'ZEF0Ej0KDHJldHJpZXZlZF9hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3'
+    'JldHJpZXZlZEF0');
+
+@$core.Deprecated('Use evidenceCitationDescriptor instead')
+const EvidenceCitation$json = {
+  '1': 'EvidenceCitation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_id', '3': 2, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'source_title', '3': 3, '4': 1, '5': 9, '10': 'sourceTitle'},
+    {'1': 'revision_id', '3': 4, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'quote', '3': 6, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'relation', '3': 7, '4': 1, '5': 9, '10': 'relation'},
+    {'1': 'independence_key', '3': 8, '4': 1, '5': 9, '10': 'independenceKey'},
+    {'1': 'canonical_url', '3': 9, '4': 1, '5': 9, '10': 'canonicalUrl'},
+  ],
+};
+
+/// Descriptor for `EvidenceCitation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceCitationDescriptor = $convert.base64Decode(
+    'ChBFdmlkZW5jZUNpdGF0aW9uEg4KAmlkGAEgASgJUgJpZBIbCglzb3VyY2VfaWQYAiABKAlSCH'
+    'NvdXJjZUlkEiEKDHNvdXJjZV90aXRsZRgDIAEoCVILc291cmNlVGl0bGUSHwoLcmV2aXNpb25f'
+    'aWQYBCABKAlSCnJldmlzaW9uSWQSHwoLcGFzc2FnZV9rZXkYBSABKAlSCnBhc3NhZ2VLZXkSFA'
+    'oFcXVvdGUYBiABKAlSBXF1b3RlEhoKCHJlbGF0aW9uGAcgASgJUghyZWxhdGlvbhIpChBpbmRl'
+    'cGVuZGVuY2Vfa2V5GAggASgJUg9pbmRlcGVuZGVuY2VLZXkSIwoNY2Fub25pY2FsX3VybBgJIA'
+    'EoCVIMY2Fub25pY2FsVXJs');
+
+@$core.Deprecated('Use evidenceClaimDescriptor instead')
+const EvidenceClaim$json = {
+  '1': 'EvidenceClaim',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'statement', '3': 4, '4': 1, '5': 9, '10': 'statement'},
+    {'1': 'classification', '3': 5, '4': 1, '5': 9, '10': 'classification'},
+    {
+      '1': 'verification_status',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {'1': 'confidence', '3': 7, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'version', '3': 8, '4': 1, '5': 5, '10': 'version'},
+    {
+      '1': 'citations',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceCitation',
+      '10': 'citations'
+    },
+  ],
+};
+
+/// Descriptor for `EvidenceClaim`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceClaimDescriptor = $convert.base64Decode(
+    'Cg1FdmlkZW5jZUNsYWltEg4KAmlkGAEgASgJUgJpZBIdCgpjb250ZW50X2lkGAIgASgJUgljb2'
+    '50ZW50SWQSHwoLcmV2aXNpb25faWQYAyABKAlSCnJldmlzaW9uSWQSHAoJc3RhdGVtZW50GAQg'
+    'ASgJUglzdGF0ZW1lbnQSJgoOY2xhc3NpZmljYXRpb24YBSABKAlSDmNsYXNzaWZpY2F0aW9uEi'
+    '8KE3ZlcmlmaWNhdGlvbl9zdGF0dXMYBiABKAlSEnZlcmlmaWNhdGlvblN0YXR1cxIeCgpjb25m'
+    'aWRlbmNlGAcgASgBUgpjb25maWRlbmNlEhgKB3ZlcnNpb24YCCABKAVSB3ZlcnNpb24SQAoJY2'
+    'l0YXRpb25zGAkgAygLMiIuc3R0YXR0dXMub255eC52MS5FdmlkZW5jZUNpdGF0aW9uUgljaXRh'
+    'dGlvbnM=');
+
+@$core.Deprecated('Use evidenceCorrectionDescriptor instead')
+const EvidenceCorrection$json = {
+  '1': 'EvidenceCorrection',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_id', '3': 2, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'claim_id', '3': 3, '4': 1, '5': 9, '10': 'claimId'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'replacement_text', '3': 6, '4': 1, '5': 9, '10': 'replacementText'},
+    {
+      '1': 'effective_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'effectiveAt'
+    },
+    {
+      '1': 'published_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+  ],
+};
+
+/// Descriptor for `EvidenceCorrection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceCorrectionDescriptor = $convert.base64Decode(
+    'ChJFdmlkZW5jZUNvcnJlY3Rpb24SDgoCaWQYASABKAlSAmlkEhsKCXNvdXJjZV9pZBgCIAEoCV'
+    'IIc291cmNlSWQSGQoIY2xhaW1faWQYAyABKAlSB2NsYWltSWQSEgoEa2luZBgEIAEoCVIEa2lu'
+    'ZBIYCgdzdW1tYXJ5GAUgASgJUgdzdW1tYXJ5EikKEHJlcGxhY2VtZW50X3RleHQYBiABKAlSD3'
+    'JlcGxhY2VtZW50VGV4dBI9CgxlZmZlY3RpdmVfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYu'
+    'VGltZXN0YW1wUgtlZmZlY3RpdmVBdBI9CgxwdWJsaXNoZWRfYXQYCCABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wUgtwdWJsaXNoZWRBdA==');
+
+@$core.Deprecated('Use getEvidenceWorkspaceRequestDescriptor instead')
+const GetEvidenceWorkspaceRequest$json = {
+  '1': 'GetEvidenceWorkspaceRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+  ],
+};
+
+/// Descriptor for `GetEvidenceWorkspaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceWorkspaceRequestDescriptor =
+    $convert.base64Decode(
+        'ChtHZXRFdmlkZW5jZVdvcmtzcGFjZVJlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY29udG'
+        'VudElk');
+
+@$core.Deprecated('Use getEvidenceWorkspaceResponseDescriptor instead')
+const GetEvidenceWorkspaceResponse$json = {
+  '1': 'GetEvidenceWorkspaceResponse',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'content_title', '3': 2, '4': 1, '5': 9, '10': 'contentTitle'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {
+      '1': 'sources',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceSource',
+      '10': 'sources'
+    },
+    {
+      '1': 'claims',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceClaim',
+      '10': 'claims'
+    },
+    {
+      '1': 'corrections',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceCorrection',
+      '10': 'corrections'
+    },
+    {'1': 'can_brief', '3': 7, '4': 1, '5': 8, '10': 'canBrief'},
+    {'1': 'policy_notice', '3': 8, '4': 1, '5': 9, '10': 'policyNotice'},
+  ],
+};
+
+/// Descriptor for `GetEvidenceWorkspaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceWorkspaceResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRFdmlkZW5jZVdvcmtzcGFjZVJlc3BvbnNlEh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbn'
+    'RlbnRJZBIjCg1jb250ZW50X3RpdGxlGAIgASgJUgxjb250ZW50VGl0bGUSHwoLcmV2aXNpb25f'
+    'aWQYAyABKAlSCnJldmlzaW9uSWQSOgoHc291cmNlcxgEIAMoCzIgLnN0dGF0dHVzLm9ueXgudj'
+    'EuRXZpZGVuY2VTb3VyY2VSB3NvdXJjZXMSNwoGY2xhaW1zGAUgAygLMh8uc3R0YXR0dXMub255'
+    'eC52MS5FdmlkZW5jZUNsYWltUgZjbGFpbXMSRgoLY29ycmVjdGlvbnMYBiADKAsyJC5zdHRhdH'
+    'R1cy5vbnl4LnYxLkV2aWRlbmNlQ29ycmVjdGlvblILY29ycmVjdGlvbnMSGwoJY2FuX2JyaWVm'
+    'GAcgASgIUghjYW5CcmllZhIjCg1wb2xpY3lfbm90aWNlGAggASgJUgxwb2xpY3lOb3RpY2U=');
+
+@$core.Deprecated('Use briefPointDescriptor instead')
+const BriefPoint$json = {
+  '1': 'BriefPoint',
+  '2': [
+    {'1': 'text', '3': 1, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'classification', '3': 2, '4': 1, '5': 9, '10': 'classification'},
+    {
+      '1': 'citations',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceCitation',
+      '10': 'citations'
+    },
+  ],
+};
+
+/// Descriptor for `BriefPoint`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List briefPointDescriptor = $convert.base64Decode(
+    'CgpCcmllZlBvaW50EhIKBHRleHQYASABKAlSBHRleHQSJgoOY2xhc3NpZmljYXRpb24YAiABKA'
+    'lSDmNsYXNzaWZpY2F0aW9uEkAKCWNpdGF0aW9ucxgDIAMoCzIiLnN0dGF0dHVzLm9ueXgudjEu'
+    'RXZpZGVuY2VDaXRhdGlvblIJY2l0YXRpb25z');
+
+@$core.Deprecated('Use evidenceBriefDescriptor instead')
+const EvidenceBrief$json = {
+  '1': 'EvidenceBrief',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'mode', '3': 2, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'question', '3': 3, '4': 1, '5': 9, '10': 'question'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'points',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.BriefPoint',
+      '10': 'points'
+    },
+    {'1': 'model_key', '3': 7, '4': 1, '5': 9, '10': 'modelKey'},
+    {'1': 'prompt_key', '3': 8, '4': 1, '5': 9, '10': 'promptKey'},
+    {'1': 'prompt_version', '3': 9, '4': 1, '5': 5, '10': 'promptVersion'},
+    {
+      '1': 'source_manifest_checksum',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceManifestChecksum'
+    },
+    {
+      '1': 'cutoff_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'cutoffAt'
+    },
+    {
+      '1': 'generated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+    {
+      '1': 'corrections',
+      '3': 13,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceCorrection',
+      '10': 'corrections'
+    },
+    {'1': 'source_count', '3': 14, '4': 1, '5': 5, '10': 'sourceCount'},
+  ],
+};
+
+/// Descriptor for `EvidenceBrief`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceBriefDescriptor = $convert.base64Decode(
+    'Cg1FdmlkZW5jZUJyaWVmEg4KAmlkGAEgASgJUgJpZBISCgRtb2RlGAIgASgJUgRtb2RlEhoKCH'
+    'F1ZXN0aW9uGAMgASgJUghxdWVzdGlvbhIUCgV0aXRsZRgEIAEoCVIFdGl0bGUSFgoGc3RhdHVz'
+    'GAUgASgJUgZzdGF0dXMSNAoGcG9pbnRzGAYgAygLMhwuc3R0YXR0dXMub255eC52MS5CcmllZl'
+    'BvaW50UgZwb2ludHMSGwoJbW9kZWxfa2V5GAcgASgJUghtb2RlbEtleRIdCgpwcm9tcHRfa2V5'
+    'GAggASgJUglwcm9tcHRLZXkSJQoOcHJvbXB0X3ZlcnNpb24YCSABKAVSDXByb21wdFZlcnNpb2'
+    '4SOAoYc291cmNlX21hbmlmZXN0X2NoZWNrc3VtGAogASgJUhZzb3VyY2VNYW5pZmVzdENoZWNr'
+    'c3VtEjcKCWN1dG9mZl9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGN1dG'
+    '9mZkF0Ej0KDGdlbmVyYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'C2dlbmVyYXRlZEF0EkYKC2NvcnJlY3Rpb25zGA0gAygLMiQuc3R0YXR0dXMub255eC52MS5Fdm'
+    'lkZW5jZUNvcnJlY3Rpb25SC2NvcnJlY3Rpb25zEiEKDHNvdXJjZV9jb3VudBgOIAEoBVILc291'
+    'cmNlQ291bnQ=');
+
+@$core.Deprecated('Use createEvidenceBriefRequestDescriptor instead')
+const CreateEvidenceBriefRequest$json = {
+  '1': 'CreateEvidenceBriefRequest',
+  '2': [
+    {'1': 'content_ids', '3': 1, '4': 3, '5': 9, '10': 'contentIds'},
+    {'1': 'mode', '3': 2, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'question', '3': 3, '4': 1, '5': 9, '10': 'question'},
+    {'1': 'pinned_source_ids', '3': 4, '4': 3, '5': 9, '10': 'pinnedSourceIds'},
+    {
+      '1': 'excluded_source_ids',
+      '3': 5,
+      '4': 3,
+      '5': 9,
+      '10': 'excludedSourceIds'
+    },
+    {
+      '1': 'cutoff_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'cutoffAt'
+    },
+  ],
+};
+
+/// Descriptor for `CreateEvidenceBriefRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEvidenceBriefRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVFdmlkZW5jZUJyaWVmUmVxdWVzdBIfCgtjb250ZW50X2lkcxgBIAMoCVIKY29udG'
+    'VudElkcxISCgRtb2RlGAIgASgJUgRtb2RlEhoKCHF1ZXN0aW9uGAMgASgJUghxdWVzdGlvbhIq'
+    'ChFwaW5uZWRfc291cmNlX2lkcxgEIAMoCVIPcGlubmVkU291cmNlSWRzEi4KE2V4Y2x1ZGVkX3'
+    'NvdXJjZV9pZHMYBSADKAlSEWV4Y2x1ZGVkU291cmNlSWRzEjcKCWN1dG9mZl9hdBgGIAEoCzIa'
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGN1dG9mZkF0');
+
+@$core.Deprecated('Use createEvidenceBriefResponseDescriptor instead')
+const CreateEvidenceBriefResponse$json = {
+  '1': 'CreateEvidenceBriefResponse',
+  '2': [
+    {
+      '1': 'brief',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceBrief',
+      '10': 'brief'
+    },
+  ],
+};
+
+/// Descriptor for `CreateEvidenceBriefResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createEvidenceBriefResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVFdmlkZW5jZUJyaWVmUmVzcG9uc2USNQoFYnJpZWYYASABKAsyHy5zdHRhdHR1cy'
+        '5vbnl4LnYxLkV2aWRlbmNlQnJpZWZSBWJyaWVm');
+
+@$core.Deprecated('Use listMyEvidenceBriefsRequestDescriptor instead')
+const ListMyEvidenceBriefsRequest$json = {
+  '1': 'ListMyEvidenceBriefsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListMyEvidenceBriefsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEvidenceBriefsRequestDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0TXlFdmlkZW5jZUJyaWVmc1JlcXVlc3QSFAoFbGltaXQYASABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use listMyEvidenceBriefsResponseDescriptor instead')
+const ListMyEvidenceBriefsResponse$json = {
+  '1': 'ListMyEvidenceBriefsResponse',
+  '2': [
+    {
+      '1': 'briefs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceBrief',
+      '10': 'briefs'
+    },
+  ],
+};
+
+/// Descriptor for `ListMyEvidenceBriefsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyEvidenceBriefsResponseDescriptor =
+    $convert.base64Decode(
+        'ChxMaXN0TXlFdmlkZW5jZUJyaWVmc1Jlc3BvbnNlEjcKBmJyaWVmcxgBIAMoCzIfLnN0dGF0dH'
+        'VzLm9ueXgudjEuRXZpZGVuY2VCcmllZlIGYnJpZWZz');
+
+@$core.Deprecated('Use getEvidenceBriefRequestDescriptor instead')
+const GetEvidenceBriefRequest$json = {
+  '1': 'GetEvidenceBriefRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetEvidenceBriefRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceBriefRequestDescriptor = $convert
+    .base64Decode('ChdHZXRFdmlkZW5jZUJyaWVmUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getEvidenceBriefResponseDescriptor instead')
+const GetEvidenceBriefResponse$json = {
+  '1': 'GetEvidenceBriefResponse',
+  '2': [
+    {
+      '1': 'brief',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceBrief',
+      '10': 'brief'
+    },
+  ],
+};
+
+/// Descriptor for `GetEvidenceBriefResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceBriefResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRFdmlkZW5jZUJyaWVmUmVzcG9uc2USNQoFYnJpZWYYASABKAsyHy5zdHRhdHR1cy5vbn'
+        'l4LnYxLkV2aWRlbmNlQnJpZWZSBWJyaWVm');

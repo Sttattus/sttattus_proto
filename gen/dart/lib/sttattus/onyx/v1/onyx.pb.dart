@@ -10404,6 +10404,1572 @@ class ResolveIngestionDuplicateResponse extends $pb.GeneratedMessage {
   IngestionItem ensureItem() => $_ensure(0);
 }
 
+/// A policy-bearing provenance card. Administrative notes and internal storage
+/// locators never cross this member-facing contract.
+class EvidenceSource extends $pb.GeneratedMessage {
+  factory EvidenceSource({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? sourceKind,
+    $core.String? title,
+    $core.String? canonicalUrl,
+    $core.String? archiveUrl,
+    $core.String? author,
+    $core.String? publisher,
+    $core.String? publisherOwner,
+    $core.String? jurisdiction,
+    $core.String? rightsStatus,
+    $core.String? funding,
+    $core.String? methods,
+    $core.String? conflicts,
+    $core.String? status,
+    $1.Timestamp? publishedAt,
+    $1.Timestamp? retrievedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (sourceKind != null) result.sourceKind = sourceKind;
+    if (title != null) result.title = title;
+    if (canonicalUrl != null) result.canonicalUrl = canonicalUrl;
+    if (archiveUrl != null) result.archiveUrl = archiveUrl;
+    if (author != null) result.author = author;
+    if (publisher != null) result.publisher = publisher;
+    if (publisherOwner != null) result.publisherOwner = publisherOwner;
+    if (jurisdiction != null) result.jurisdiction = jurisdiction;
+    if (rightsStatus != null) result.rightsStatus = rightsStatus;
+    if (funding != null) result.funding = funding;
+    if (methods != null) result.methods = methods;
+    if (conflicts != null) result.conflicts = conflicts;
+    if (status != null) result.status = status;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    if (retrievedAt != null) result.retrievedAt = retrievedAt;
+    return result;
+  }
+
+  EvidenceSource._();
+
+  factory EvidenceSource.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceSource.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceSource',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceKind')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'canonicalUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'archiveUrl')
+    ..aOS(8, _omitFieldNames ? '' : 'author')
+    ..aOS(9, _omitFieldNames ? '' : 'publisher')
+    ..aOS(10, _omitFieldNames ? '' : 'publisherOwner')
+    ..aOS(11, _omitFieldNames ? '' : 'jurisdiction')
+    ..aOS(12, _omitFieldNames ? '' : 'rightsStatus')
+    ..aOS(13, _omitFieldNames ? '' : 'funding')
+    ..aOS(14, _omitFieldNames ? '' : 'methods')
+    ..aOS(15, _omitFieldNames ? '' : 'conflicts')
+    ..aOS(16, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'retrievedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSource clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSource copyWith(void Function(EvidenceSource) updates) =>
+      super.copyWith((message) => updates(message as EvidenceSource))
+          as EvidenceSource;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSource create() => EvidenceSource._();
+  @$core.override
+  EvidenceSource createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSource getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceSource>(create);
+  static EvidenceSource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get canonicalUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set canonicalUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCanonicalUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCanonicalUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get archiveUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set archiveUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasArchiveUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearArchiveUrl() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get author => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set author($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAuthor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAuthor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get publisher => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set publisher($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPublisher() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPublisher() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get publisherOwner => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set publisherOwner($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPublisherOwner() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPublisherOwner() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get jurisdiction => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set jurisdiction($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasJurisdiction() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearJurisdiction() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get rightsStatus => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set rightsStatus($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRightsStatus() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRightsStatus() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get funding => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set funding($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasFunding() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearFunding() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get methods => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set methods($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasMethods() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMethods() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get conflicts => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set conflicts($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasConflicts() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearConflicts() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get status => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set status($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasStatus() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearStatus() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get publishedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set publishedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasPublishedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearPublishedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensurePublishedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get retrievedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set retrievedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasRetrievedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearRetrievedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureRetrievedAt() => $_ensure(17);
+}
+
+class EvidenceCitation extends $pb.GeneratedMessage {
+  factory EvidenceCitation({
+    $core.String? id,
+    $core.String? sourceId,
+    $core.String? sourceTitle,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? quote,
+    $core.String? relation,
+    $core.String? independenceKey,
+    $core.String? canonicalUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (sourceTitle != null) result.sourceTitle = sourceTitle;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (quote != null) result.quote = quote;
+    if (relation != null) result.relation = relation;
+    if (independenceKey != null) result.independenceKey = independenceKey;
+    if (canonicalUrl != null) result.canonicalUrl = canonicalUrl;
+    return result;
+  }
+
+  EvidenceCitation._();
+
+  factory EvidenceCitation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceCitation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceCitation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(6, _omitFieldNames ? '' : 'quote')
+    ..aOS(7, _omitFieldNames ? '' : 'relation')
+    ..aOS(8, _omitFieldNames ? '' : 'independenceKey')
+    ..aOS(9, _omitFieldNames ? '' : 'canonicalUrl')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceCitation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceCitation copyWith(void Function(EvidenceCitation) updates) =>
+      super.copyWith((message) => updates(message as EvidenceCitation))
+          as EvidenceCitation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceCitation create() => EvidenceCitation._();
+  @$core.override
+  EvidenceCitation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceCitation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceCitation>(create);
+  static EvidenceCitation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get revisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get quote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set quote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get relation => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set relation($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRelation() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRelation() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get independenceKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set independenceKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIndependenceKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIndependenceKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get canonicalUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set canonicalUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCanonicalUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCanonicalUrl() => $_clearField(9);
+}
+
+class EvidenceClaim extends $pb.GeneratedMessage {
+  factory EvidenceClaim({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? statement,
+    $core.String? classification,
+    $core.String? verificationStatus,
+    $core.double? confidence,
+    $core.int? version,
+    $core.Iterable<EvidenceCitation>? citations,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (statement != null) result.statement = statement;
+    if (classification != null) result.classification = classification;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    if (confidence != null) result.confidence = confidence;
+    if (version != null) result.version = version;
+    if (citations != null) result.citations.addAll(citations);
+    return result;
+  }
+
+  EvidenceClaim._();
+
+  factory EvidenceClaim.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceClaim.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceClaim',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'statement')
+    ..aOS(5, _omitFieldNames ? '' : 'classification')
+    ..aOS(6, _omitFieldNames ? '' : 'verificationStatus')
+    ..aD(7, _omitFieldNames ? '' : 'confidence')
+    ..aI(8, _omitFieldNames ? '' : 'version')
+    ..pPM<EvidenceCitation>(9, _omitFieldNames ? '' : 'citations',
+        subBuilder: EvidenceCitation.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceClaim clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceClaim copyWith(void Function(EvidenceClaim) updates) =>
+      super.copyWith((message) => updates(message as EvidenceClaim))
+          as EvidenceClaim;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceClaim create() => EvidenceClaim._();
+  @$core.override
+  EvidenceClaim createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceClaim getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceClaim>(create);
+  static EvidenceClaim? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get statement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set statement($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get classification => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set classification($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClassification() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClassification() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get verificationStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set verificationStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVerificationStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVerificationStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get confidence => $_getN(6);
+  @$pb.TagNumber(7)
+  set confidence($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConfidence() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfidence() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get version => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set version($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<EvidenceCitation> get citations => $_getList(8);
+}
+
+class EvidenceCorrection extends $pb.GeneratedMessage {
+  factory EvidenceCorrection({
+    $core.String? id,
+    $core.String? sourceId,
+    $core.String? claimId,
+    $core.String? kind,
+    $core.String? summary,
+    $core.String? replacementText,
+    $1.Timestamp? effectiveAt,
+    $1.Timestamp? publishedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (claimId != null) result.claimId = claimId;
+    if (kind != null) result.kind = kind;
+    if (summary != null) result.summary = summary;
+    if (replacementText != null) result.replacementText = replacementText;
+    if (effectiveAt != null) result.effectiveAt = effectiveAt;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    return result;
+  }
+
+  EvidenceCorrection._();
+
+  factory EvidenceCorrection.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceCorrection.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceCorrection',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(3, _omitFieldNames ? '' : 'claimId')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..aOS(5, _omitFieldNames ? '' : 'summary')
+    ..aOS(6, _omitFieldNames ? '' : 'replacementText')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'effectiveAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceCorrection clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceCorrection copyWith(void Function(EvidenceCorrection) updates) =>
+      super.copyWith((message) => updates(message as EvidenceCorrection))
+          as EvidenceCorrection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceCorrection create() => EvidenceCorrection._();
+  @$core.override
+  EvidenceCorrection createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceCorrection getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceCorrection>(create);
+  static EvidenceCorrection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get claimId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set claimId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClaimId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClaimId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get summary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set summary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get replacementText => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set replacementText($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReplacementText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReplacementText() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get effectiveAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set effectiveAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEffectiveAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEffectiveAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureEffectiveAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get publishedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set publishedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPublishedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPublishedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensurePublishedAt() => $_ensure(7);
+}
+
+class GetEvidenceWorkspaceRequest extends $pb.GeneratedMessage {
+  factory GetEvidenceWorkspaceRequest({
+    $core.String? contentId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    return result;
+  }
+
+  GetEvidenceWorkspaceRequest._();
+
+  factory GetEvidenceWorkspaceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceWorkspaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceWorkspaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceWorkspaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceWorkspaceRequest copyWith(
+          void Function(GetEvidenceWorkspaceRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetEvidenceWorkspaceRequest))
+          as GetEvidenceWorkspaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceWorkspaceRequest create() =>
+      GetEvidenceWorkspaceRequest._();
+  @$core.override
+  GetEvidenceWorkspaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceWorkspaceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceWorkspaceRequest>(create);
+  static GetEvidenceWorkspaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+}
+
+class GetEvidenceWorkspaceResponse extends $pb.GeneratedMessage {
+  factory GetEvidenceWorkspaceResponse({
+    $core.String? contentId,
+    $core.String? contentTitle,
+    $core.String? revisionId,
+    $core.Iterable<EvidenceSource>? sources,
+    $core.Iterable<EvidenceClaim>? claims,
+    $core.Iterable<EvidenceCorrection>? corrections,
+    $core.bool? canBrief,
+    $core.String? policyNotice,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (contentTitle != null) result.contentTitle = contentTitle;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (sources != null) result.sources.addAll(sources);
+    if (claims != null) result.claims.addAll(claims);
+    if (corrections != null) result.corrections.addAll(corrections);
+    if (canBrief != null) result.canBrief = canBrief;
+    if (policyNotice != null) result.policyNotice = policyNotice;
+    return result;
+  }
+
+  GetEvidenceWorkspaceResponse._();
+
+  factory GetEvidenceWorkspaceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceWorkspaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceWorkspaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'contentTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..pPM<EvidenceSource>(4, _omitFieldNames ? '' : 'sources',
+        subBuilder: EvidenceSource.create)
+    ..pPM<EvidenceClaim>(5, _omitFieldNames ? '' : 'claims',
+        subBuilder: EvidenceClaim.create)
+    ..pPM<EvidenceCorrection>(6, _omitFieldNames ? '' : 'corrections',
+        subBuilder: EvidenceCorrection.create)
+    ..aOB(7, _omitFieldNames ? '' : 'canBrief')
+    ..aOS(8, _omitFieldNames ? '' : 'policyNotice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceWorkspaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceWorkspaceResponse copyWith(
+          void Function(GetEvidenceWorkspaceResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetEvidenceWorkspaceResponse))
+          as GetEvidenceWorkspaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceWorkspaceResponse create() =>
+      GetEvidenceWorkspaceResponse._();
+  @$core.override
+  GetEvidenceWorkspaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceWorkspaceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceWorkspaceResponse>(create);
+  static GetEvidenceWorkspaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<EvidenceSource> get sources => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<EvidenceClaim> get claims => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<EvidenceCorrection> get corrections => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.bool get canBrief => $_getBF(6);
+  @$pb.TagNumber(7)
+  set canBrief($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCanBrief() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCanBrief() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get policyNotice => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set policyNotice($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPolicyNotice() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPolicyNotice() => $_clearField(8);
+}
+
+class BriefPoint extends $pb.GeneratedMessage {
+  factory BriefPoint({
+    $core.String? text,
+    $core.String? classification,
+    $core.Iterable<EvidenceCitation>? citations,
+  }) {
+    final result = create();
+    if (text != null) result.text = text;
+    if (classification != null) result.classification = classification;
+    if (citations != null) result.citations.addAll(citations);
+    return result;
+  }
+
+  BriefPoint._();
+
+  factory BriefPoint.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory BriefPoint.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'BriefPoint',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'text')
+    ..aOS(2, _omitFieldNames ? '' : 'classification')
+    ..pPM<EvidenceCitation>(3, _omitFieldNames ? '' : 'citations',
+        subBuilder: EvidenceCitation.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BriefPoint clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BriefPoint copyWith(void Function(BriefPoint) updates) =>
+      super.copyWith((message) => updates(message as BriefPoint)) as BriefPoint;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BriefPoint create() => BriefPoint._();
+  @$core.override
+  BriefPoint createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static BriefPoint getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<BriefPoint>(create);
+  static BriefPoint? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get text => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set text($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasText() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearText() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get classification => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set classification($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClassification() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClassification() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EvidenceCitation> get citations => $_getList(2);
+}
+
+class EvidenceBrief extends $pb.GeneratedMessage {
+  factory EvidenceBrief({
+    $core.String? id,
+    $core.String? mode,
+    $core.String? question,
+    $core.String? title,
+    $core.String? status,
+    $core.Iterable<BriefPoint>? points,
+    $core.String? modelKey,
+    $core.String? promptKey,
+    $core.int? promptVersion,
+    $core.String? sourceManifestChecksum,
+    $1.Timestamp? cutoffAt,
+    $1.Timestamp? generatedAt,
+    $core.Iterable<EvidenceCorrection>? corrections,
+    $core.int? sourceCount,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (mode != null) result.mode = mode;
+    if (question != null) result.question = question;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (points != null) result.points.addAll(points);
+    if (modelKey != null) result.modelKey = modelKey;
+    if (promptKey != null) result.promptKey = promptKey;
+    if (promptVersion != null) result.promptVersion = promptVersion;
+    if (sourceManifestChecksum != null)
+      result.sourceManifestChecksum = sourceManifestChecksum;
+    if (cutoffAt != null) result.cutoffAt = cutoffAt;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    if (corrections != null) result.corrections.addAll(corrections);
+    if (sourceCount != null) result.sourceCount = sourceCount;
+    return result;
+  }
+
+  EvidenceBrief._();
+
+  factory EvidenceBrief.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceBrief.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceBrief',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'mode')
+    ..aOS(3, _omitFieldNames ? '' : 'question')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..pPM<BriefPoint>(6, _omitFieldNames ? '' : 'points',
+        subBuilder: BriefPoint.create)
+    ..aOS(7, _omitFieldNames ? '' : 'modelKey')
+    ..aOS(8, _omitFieldNames ? '' : 'promptKey')
+    ..aI(9, _omitFieldNames ? '' : 'promptVersion')
+    ..aOS(10, _omitFieldNames ? '' : 'sourceManifestChecksum')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'cutoffAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<EvidenceCorrection>(13, _omitFieldNames ? '' : 'corrections',
+        subBuilder: EvidenceCorrection.create)
+    ..aI(14, _omitFieldNames ? '' : 'sourceCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceBrief clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceBrief copyWith(void Function(EvidenceBrief) updates) =>
+      super.copyWith((message) => updates(message as EvidenceBrief))
+          as EvidenceBrief;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceBrief create() => EvidenceBrief._();
+  @$core.override
+  EvidenceBrief createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceBrief getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceBrief>(create);
+  static EvidenceBrief? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get question => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set question($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuestion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuestion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<BriefPoint> get points => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get modelKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set modelKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasModelKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearModelKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get promptKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set promptKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPromptKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPromptKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get promptVersion => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set promptVersion($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPromptVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPromptVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sourceManifestChecksum => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sourceManifestChecksum($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceManifestChecksum() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceManifestChecksum() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get cutoffAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set cutoffAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCutoffAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCutoffAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCutoffAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get generatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set generatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasGeneratedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearGeneratedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $pb.PbList<EvidenceCorrection> get corrections => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.int get sourceCount => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set sourceCount($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasSourceCount() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSourceCount() => $_clearField(14);
+}
+
+class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
+  factory CreateEvidenceBriefRequest({
+    $core.Iterable<$core.String>? contentIds,
+    $core.String? mode,
+    $core.String? question,
+    $core.Iterable<$core.String>? pinnedSourceIds,
+    $core.Iterable<$core.String>? excludedSourceIds,
+    $1.Timestamp? cutoffAt,
+  }) {
+    final result = create();
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    if (mode != null) result.mode = mode;
+    if (question != null) result.question = question;
+    if (pinnedSourceIds != null) result.pinnedSourceIds.addAll(pinnedSourceIds);
+    if (excludedSourceIds != null)
+      result.excludedSourceIds.addAll(excludedSourceIds);
+    if (cutoffAt != null) result.cutoffAt = cutoffAt;
+    return result;
+  }
+
+  CreateEvidenceBriefRequest._();
+
+  factory CreateEvidenceBriefRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateEvidenceBriefRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateEvidenceBriefRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'contentIds')
+    ..aOS(2, _omitFieldNames ? '' : 'mode')
+    ..aOS(3, _omitFieldNames ? '' : 'question')
+    ..pPS(4, _omitFieldNames ? '' : 'pinnedSourceIds')
+    ..pPS(5, _omitFieldNames ? '' : 'excludedSourceIds')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'cutoffAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEvidenceBriefRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEvidenceBriefRequest copyWith(
+          void Function(CreateEvidenceBriefRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateEvidenceBriefRequest))
+          as CreateEvidenceBriefRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateEvidenceBriefRequest create() => CreateEvidenceBriefRequest._();
+  @$core.override
+  CreateEvidenceBriefRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateEvidenceBriefRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateEvidenceBriefRequest>(create);
+  static CreateEvidenceBriefRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get contentIds => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get mode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get question => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set question($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuestion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuestion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get pinnedSourceIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get excludedSourceIds => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get cutoffAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set cutoffAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCutoffAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCutoffAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureCutoffAt() => $_ensure(5);
+}
+
+class CreateEvidenceBriefResponse extends $pb.GeneratedMessage {
+  factory CreateEvidenceBriefResponse({
+    EvidenceBrief? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  CreateEvidenceBriefResponse._();
+
+  factory CreateEvidenceBriefResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateEvidenceBriefResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateEvidenceBriefResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<EvidenceBrief>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: EvidenceBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEvidenceBriefResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateEvidenceBriefResponse copyWith(
+          void Function(CreateEvidenceBriefResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateEvidenceBriefResponse))
+          as CreateEvidenceBriefResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateEvidenceBriefResponse create() =>
+      CreateEvidenceBriefResponse._();
+  @$core.override
+  CreateEvidenceBriefResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateEvidenceBriefResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateEvidenceBriefResponse>(create);
+  static CreateEvidenceBriefResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EvidenceBrief get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(EvidenceBrief value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EvidenceBrief ensureBrief() => $_ensure(0);
+}
+
+class ListMyEvidenceBriefsRequest extends $pb.GeneratedMessage {
+  factory ListMyEvidenceBriefsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListMyEvidenceBriefsRequest._();
+
+  factory ListMyEvidenceBriefsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyEvidenceBriefsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyEvidenceBriefsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEvidenceBriefsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEvidenceBriefsRequest copyWith(
+          void Function(ListMyEvidenceBriefsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyEvidenceBriefsRequest))
+          as ListMyEvidenceBriefsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEvidenceBriefsRequest create() =>
+      ListMyEvidenceBriefsRequest._();
+  @$core.override
+  ListMyEvidenceBriefsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEvidenceBriefsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyEvidenceBriefsRequest>(create);
+  static ListMyEvidenceBriefsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListMyEvidenceBriefsResponse extends $pb.GeneratedMessage {
+  factory ListMyEvidenceBriefsResponse({
+    $core.Iterable<EvidenceBrief>? briefs,
+  }) {
+    final result = create();
+    if (briefs != null) result.briefs.addAll(briefs);
+    return result;
+  }
+
+  ListMyEvidenceBriefsResponse._();
+
+  factory ListMyEvidenceBriefsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyEvidenceBriefsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyEvidenceBriefsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<EvidenceBrief>(1, _omitFieldNames ? '' : 'briefs',
+        subBuilder: EvidenceBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEvidenceBriefsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyEvidenceBriefsResponse copyWith(
+          void Function(ListMyEvidenceBriefsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListMyEvidenceBriefsResponse))
+          as ListMyEvidenceBriefsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyEvidenceBriefsResponse create() =>
+      ListMyEvidenceBriefsResponse._();
+  @$core.override
+  ListMyEvidenceBriefsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyEvidenceBriefsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyEvidenceBriefsResponse>(create);
+  static ListMyEvidenceBriefsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EvidenceBrief> get briefs => $_getList(0);
+}
+
+class GetEvidenceBriefRequest extends $pb.GeneratedMessage {
+  factory GetEvidenceBriefRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetEvidenceBriefRequest._();
+
+  factory GetEvidenceBriefRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceBriefRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceBriefRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceBriefRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceBriefRequest copyWith(
+          void Function(GetEvidenceBriefRequest) updates) =>
+      super.copyWith((message) => updates(message as GetEvidenceBriefRequest))
+          as GetEvidenceBriefRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceBriefRequest create() => GetEvidenceBriefRequest._();
+  @$core.override
+  GetEvidenceBriefRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceBriefRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceBriefRequest>(create);
+  static GetEvidenceBriefRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetEvidenceBriefResponse extends $pb.GeneratedMessage {
+  factory GetEvidenceBriefResponse({
+    EvidenceBrief? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  GetEvidenceBriefResponse._();
+
+  factory GetEvidenceBriefResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceBriefResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceBriefResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<EvidenceBrief>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: EvidenceBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceBriefResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceBriefResponse copyWith(
+          void Function(GetEvidenceBriefResponse) updates) =>
+      super.copyWith((message) => updates(message as GetEvidenceBriefResponse))
+          as GetEvidenceBriefResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceBriefResponse create() => GetEvidenceBriefResponse._();
+  @$core.override
+  GetEvidenceBriefResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceBriefResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceBriefResponse>(create);
+  static GetEvidenceBriefResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EvidenceBrief get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(EvidenceBrief value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EvidenceBrief ensureBrief() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

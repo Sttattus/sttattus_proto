@@ -466,6 +466,36 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Evidence briefing — source cards, claim-level citations, reproducible
+  /// selected-source runs, and correction overlays on historical output.
+  $grpc.ResponseFuture<$0.GetEvidenceWorkspaceResponse> getEvidenceWorkspace(
+    $0.GetEvidenceWorkspaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEvidenceWorkspace, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateEvidenceBriefResponse> createEvidenceBrief(
+    $0.CreateEvidenceBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createEvidenceBrief, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyEvidenceBriefsResponse> listMyEvidenceBriefs(
+    $0.ListMyEvidenceBriefsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyEvidenceBriefs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetEvidenceBriefResponse> getEvidenceBrief(
+    $0.GetEvidenceBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEvidenceBrief, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -756,6 +786,26 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate',
       ($0.ResolveIngestionDuplicateRequest value) => value.writeToBuffer(),
       $0.ResolveIngestionDuplicateResponse.fromBuffer);
+  static final _$getEvidenceWorkspace = $grpc.ClientMethod<
+          $0.GetEvidenceWorkspaceRequest, $0.GetEvidenceWorkspaceResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace',
+      ($0.GetEvidenceWorkspaceRequest value) => value.writeToBuffer(),
+      $0.GetEvidenceWorkspaceResponse.fromBuffer);
+  static final _$createEvidenceBrief = $grpc.ClientMethod<
+          $0.CreateEvidenceBriefRequest, $0.CreateEvidenceBriefResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief',
+      ($0.CreateEvidenceBriefRequest value) => value.writeToBuffer(),
+      $0.CreateEvidenceBriefResponse.fromBuffer);
+  static final _$listMyEvidenceBriefs = $grpc.ClientMethod<
+          $0.ListMyEvidenceBriefsRequest, $0.ListMyEvidenceBriefsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs',
+      ($0.ListMyEvidenceBriefsRequest value) => value.writeToBuffer(),
+      $0.ListMyEvidenceBriefsResponse.fromBuffer);
+  static final _$getEvidenceBrief = $grpc.ClientMethod<
+          $0.GetEvidenceBriefRequest, $0.GetEvidenceBriefResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetEvidenceBrief',
+      ($0.GetEvidenceBriefRequest value) => value.writeToBuffer(),
+      $0.GetEvidenceBriefResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -1257,6 +1307,42 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ResolveIngestionDuplicateRequest.fromBuffer(value),
         ($0.ResolveIngestionDuplicateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetEvidenceWorkspaceRequest,
+            $0.GetEvidenceWorkspaceResponse>(
+        'GetEvidenceWorkspace',
+        getEvidenceWorkspace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetEvidenceWorkspaceRequest.fromBuffer(value),
+        ($0.GetEvidenceWorkspaceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateEvidenceBriefRequest,
+            $0.CreateEvidenceBriefResponse>(
+        'CreateEvidenceBrief',
+        createEvidenceBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateEvidenceBriefRequest.fromBuffer(value),
+        ($0.CreateEvidenceBriefResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyEvidenceBriefsRequest,
+            $0.ListMyEvidenceBriefsResponse>(
+        'ListMyEvidenceBriefs',
+        listMyEvidenceBriefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyEvidenceBriefsRequest.fromBuffer(value),
+        ($0.ListMyEvidenceBriefsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetEvidenceBriefRequest,
+            $0.GetEvidenceBriefResponse>(
+        'GetEvidenceBrief',
+        getEvidenceBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetEvidenceBriefRequest.fromBuffer(value),
+        ($0.GetEvidenceBriefResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -1760,4 +1846,40 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.ResolveIngestionDuplicateResponse> resolveIngestionDuplicate(
       $grpc.ServiceCall call, $0.ResolveIngestionDuplicateRequest request);
+
+  $async.Future<$0.GetEvidenceWorkspaceResponse> getEvidenceWorkspace_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetEvidenceWorkspaceRequest> $request) async {
+    return getEvidenceWorkspace($call, await $request);
+  }
+
+  $async.Future<$0.GetEvidenceWorkspaceResponse> getEvidenceWorkspace(
+      $grpc.ServiceCall call, $0.GetEvidenceWorkspaceRequest request);
+
+  $async.Future<$0.CreateEvidenceBriefResponse> createEvidenceBrief_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateEvidenceBriefRequest> $request) async {
+    return createEvidenceBrief($call, await $request);
+  }
+
+  $async.Future<$0.CreateEvidenceBriefResponse> createEvidenceBrief(
+      $grpc.ServiceCall call, $0.CreateEvidenceBriefRequest request);
+
+  $async.Future<$0.ListMyEvidenceBriefsResponse> listMyEvidenceBriefs_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMyEvidenceBriefsRequest> $request) async {
+    return listMyEvidenceBriefs($call, await $request);
+  }
+
+  $async.Future<$0.ListMyEvidenceBriefsResponse> listMyEvidenceBriefs(
+      $grpc.ServiceCall call, $0.ListMyEvidenceBriefsRequest request);
+
+  $async.Future<$0.GetEvidenceBriefResponse> getEvidenceBrief_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetEvidenceBriefRequest> $request) async {
+    return getEvidenceBrief($call, await $request);
+  }
+
+  $async.Future<$0.GetEvidenceBriefResponse> getEvidenceBrief(
+      $grpc.ServiceCall call, $0.GetEvidenceBriefRequest request);
 }

@@ -6628,3 +6628,936 @@ export class ResolveIngestionDuplicateResponse extends Message<ResolveIngestionD
   }
 }
 
+/**
+ * A policy-bearing provenance card. Administrative notes and internal storage
+ * locators never cross this member-facing contract.
+ *
+ * @generated from message sttattus.onyx.v1.EvidenceSource
+ */
+export class EvidenceSource extends Message<EvidenceSource> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string source_kind = 4;
+   */
+  sourceKind = "";
+
+  /**
+   * @generated from field: string title = 5;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string canonical_url = 6;
+   */
+  canonicalUrl = "";
+
+  /**
+   * @generated from field: string archive_url = 7;
+   */
+  archiveUrl = "";
+
+  /**
+   * @generated from field: string author = 8;
+   */
+  author = "";
+
+  /**
+   * @generated from field: string publisher = 9;
+   */
+  publisher = "";
+
+  /**
+   * @generated from field: string publisher_owner = 10;
+   */
+  publisherOwner = "";
+
+  /**
+   * @generated from field: string jurisdiction = 11;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: string rights_status = 12;
+   */
+  rightsStatus = "";
+
+  /**
+   * @generated from field: string funding = 13;
+   */
+  funding = "";
+
+  /**
+   * @generated from field: string methods = 14;
+   */
+  methods = "";
+
+  /**
+   * @generated from field: string conflicts = 15;
+   */
+  conflicts = "";
+
+  /**
+   * @generated from field: string status = 16;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 17;
+   */
+  publishedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp retrieved_at = 18;
+   */
+  retrievedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<EvidenceSource>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceSource";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "canonical_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "archive_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "author", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "publisher", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "publisher_owner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "rights_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "funding", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "methods", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "conflicts", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "published_at", kind: "message", T: Timestamp },
+    { no: 18, name: "retrieved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceSource {
+    return new EvidenceSource().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceSource {
+    return new EvidenceSource().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceSource {
+    return new EvidenceSource().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceSource | PlainMessage<EvidenceSource> | undefined, b: EvidenceSource | PlainMessage<EvidenceSource> | undefined): boolean {
+    return proto3.util.equals(EvidenceSource, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceCitation
+ */
+export class EvidenceCitation extends Message<EvidenceCitation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_id = 2;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string source_title = 3;
+   */
+  sourceTitle = "";
+
+  /**
+   * @generated from field: string revision_id = 4;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 5;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string quote = 6;
+   */
+  quote = "";
+
+  /**
+   * supports | contradicts | insufficient
+   *
+   * @generated from field: string relation = 7;
+   */
+  relation = "";
+
+  /**
+   * @generated from field: string independence_key = 8;
+   */
+  independenceKey = "";
+
+  /**
+   * @generated from field: string canonical_url = 9;
+   */
+  canonicalUrl = "";
+
+  constructor(data?: PartialMessage<EvidenceCitation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceCitation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "independence_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "canonical_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceCitation {
+    return new EvidenceCitation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceCitation {
+    return new EvidenceCitation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceCitation {
+    return new EvidenceCitation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceCitation | PlainMessage<EvidenceCitation> | undefined, b: EvidenceCitation | PlainMessage<EvidenceCitation> | undefined): boolean {
+    return proto3.util.equals(EvidenceCitation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceClaim
+ */
+export class EvidenceClaim extends Message<EvidenceClaim> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string statement = 4;
+   */
+  statement = "";
+
+  /**
+   * factual | analysis | opinion | question
+   *
+   * @generated from field: string classification = 5;
+   */
+  classification = "";
+
+  /**
+   * machine | verified | disputed | corrected | retracted
+   *
+   * @generated from field: string verification_status = 6;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: double confidence = 7;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: int32 version = 8;
+   */
+  version = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceCitation citations = 9;
+   */
+  citations: EvidenceCitation[] = [];
+
+  constructor(data?: PartialMessage<EvidenceClaim>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceClaim";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "classification", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "citations", kind: "message", T: EvidenceCitation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceClaim {
+    return new EvidenceClaim().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceClaim {
+    return new EvidenceClaim().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceClaim {
+    return new EvidenceClaim().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceClaim | PlainMessage<EvidenceClaim> | undefined, b: EvidenceClaim | PlainMessage<EvidenceClaim> | undefined): boolean {
+    return proto3.util.equals(EvidenceClaim, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceCorrection
+ */
+export class EvidenceCorrection extends Message<EvidenceCorrection> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_id = 2;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string claim_id = 3;
+   */
+  claimId = "";
+
+  /**
+   * correction | clarification | retraction
+   *
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string summary = 5;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string replacement_text = 6;
+   */
+  replacementText = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp effective_at = 7;
+   */
+  effectiveAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 8;
+   */
+  publishedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<EvidenceCorrection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceCorrection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "claim_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "replacement_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "effective_at", kind: "message", T: Timestamp },
+    { no: 8, name: "published_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceCorrection {
+    return new EvidenceCorrection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceCorrection {
+    return new EvidenceCorrection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceCorrection {
+    return new EvidenceCorrection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceCorrection | PlainMessage<EvidenceCorrection> | undefined, b: EvidenceCorrection | PlainMessage<EvidenceCorrection> | undefined): boolean {
+    return proto3.util.equals(EvidenceCorrection, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+ */
+export class GetEvidenceWorkspaceRequest extends Message<GetEvidenceWorkspaceRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  constructor(data?: PartialMessage<GetEvidenceWorkspaceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceWorkspaceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceWorkspaceRequest {
+    return new GetEvidenceWorkspaceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceWorkspaceRequest {
+    return new GetEvidenceWorkspaceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceWorkspaceRequest {
+    return new GetEvidenceWorkspaceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceWorkspaceRequest | PlainMessage<GetEvidenceWorkspaceRequest> | undefined, b: GetEvidenceWorkspaceRequest | PlainMessage<GetEvidenceWorkspaceRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceWorkspaceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+ */
+export class GetEvidenceWorkspaceResponse extends Message<GetEvidenceWorkspaceResponse> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string content_title = 2;
+   */
+  contentTitle = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceSource sources = 4;
+   */
+  sources: EvidenceSource[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceClaim claims = 5;
+   */
+  claims: EvidenceClaim[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceCorrection corrections = 6;
+   */
+  corrections: EvidenceCorrection[] = [];
+
+  /**
+   * @generated from field: bool can_brief = 7;
+   */
+  canBrief = false;
+
+  /**
+   * @generated from field: string policy_notice = 8;
+   */
+  policyNotice = "";
+
+  constructor(data?: PartialMessage<GetEvidenceWorkspaceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceWorkspaceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "sources", kind: "message", T: EvidenceSource, repeated: true },
+    { no: 5, name: "claims", kind: "message", T: EvidenceClaim, repeated: true },
+    { no: 6, name: "corrections", kind: "message", T: EvidenceCorrection, repeated: true },
+    { no: 7, name: "can_brief", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "policy_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceWorkspaceResponse {
+    return new GetEvidenceWorkspaceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceWorkspaceResponse {
+    return new GetEvidenceWorkspaceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceWorkspaceResponse {
+    return new GetEvidenceWorkspaceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceWorkspaceResponse | PlainMessage<GetEvidenceWorkspaceResponse> | undefined, b: GetEvidenceWorkspaceResponse | PlainMessage<GetEvidenceWorkspaceResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceWorkspaceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.BriefPoint
+ */
+export class BriefPoint extends Message<BriefPoint> {
+  /**
+   * @generated from field: string text = 1;
+   */
+  text = "";
+
+  /**
+   * factual | analysis
+   *
+   * @generated from field: string classification = 2;
+   */
+  classification = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceCitation citations = 3;
+   */
+  citations: EvidenceCitation[] = [];
+
+  constructor(data?: PartialMessage<BriefPoint>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.BriefPoint";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "classification", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "citations", kind: "message", T: EvidenceCitation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BriefPoint {
+    return new BriefPoint().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BriefPoint {
+    return new BriefPoint().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BriefPoint {
+    return new BriefPoint().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: BriefPoint | PlainMessage<BriefPoint> | undefined, b: BriefPoint | PlainMessage<BriefPoint> | undefined): boolean {
+    return proto3.util.equals(BriefPoint, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceBrief
+ */
+export class EvidenceBrief extends Message<EvidenceBrief> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string mode = 2;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: string question = 3;
+   */
+  question = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.BriefPoint points = 6;
+   */
+  points: BriefPoint[] = [];
+
+  /**
+   * @generated from field: string model_key = 7;
+   */
+  modelKey = "";
+
+  /**
+   * @generated from field: string prompt_key = 8;
+   */
+  promptKey = "";
+
+  /**
+   * @generated from field: int32 prompt_version = 9;
+   */
+  promptVersion = 0;
+
+  /**
+   * @generated from field: string source_manifest_checksum = 10;
+   */
+  sourceManifestChecksum = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp cutoff_at = 11;
+   */
+  cutoffAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 12;
+   */
+  generatedAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceCorrection corrections = 13;
+   */
+  corrections: EvidenceCorrection[] = [];
+
+  /**
+   * @generated from field: int32 source_count = 14;
+   */
+  sourceCount = 0;
+
+  constructor(data?: PartialMessage<EvidenceBrief>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceBrief";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "question", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "points", kind: "message", T: BriefPoint, repeated: true },
+    { no: 7, name: "model_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "prompt_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "prompt_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "source_manifest_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "cutoff_at", kind: "message", T: Timestamp },
+    { no: 12, name: "generated_at", kind: "message", T: Timestamp },
+    { no: 13, name: "corrections", kind: "message", T: EvidenceCorrection, repeated: true },
+    { no: 14, name: "source_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceBrief {
+    return new EvidenceBrief().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceBrief {
+    return new EvidenceBrief().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceBrief {
+    return new EvidenceBrief().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceBrief | PlainMessage<EvidenceBrief> | undefined, b: EvidenceBrief | PlainMessage<EvidenceBrief> | undefined): boolean {
+    return proto3.util.equals(EvidenceBrief, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateEvidenceBriefRequest
+ */
+export class CreateEvidenceBriefRequest extends Message<CreateEvidenceBriefRequest> {
+  /**
+   * @generated from field: repeated string content_ids = 1;
+   */
+  contentIds: string[] = [];
+
+  /**
+   * @generated from field: string mode = 2;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: string question = 3;
+   */
+  question = "";
+
+  /**
+   * @generated from field: repeated string pinned_source_ids = 4;
+   */
+  pinnedSourceIds: string[] = [];
+
+  /**
+   * @generated from field: repeated string excluded_source_ids = 5;
+   */
+  excludedSourceIds: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp cutoff_at = 6;
+   */
+  cutoffAt?: Timestamp;
+
+  constructor(data?: PartialMessage<CreateEvidenceBriefRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateEvidenceBriefRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "question", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "pinned_source_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "excluded_source_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "cutoff_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvidenceBriefRequest {
+    return new CreateEvidenceBriefRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvidenceBriefRequest {
+    return new CreateEvidenceBriefRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvidenceBriefRequest {
+    return new CreateEvidenceBriefRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvidenceBriefRequest | PlainMessage<CreateEvidenceBriefRequest> | undefined, b: CreateEvidenceBriefRequest | PlainMessage<CreateEvidenceBriefRequest> | undefined): boolean {
+    return proto3.util.equals(CreateEvidenceBriefRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateEvidenceBriefResponse
+ */
+export class CreateEvidenceBriefResponse extends Message<CreateEvidenceBriefResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.EvidenceBrief brief = 1;
+   */
+  brief?: EvidenceBrief;
+
+  constructor(data?: PartialMessage<CreateEvidenceBriefResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateEvidenceBriefResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: EvidenceBrief },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvidenceBriefResponse {
+    return new CreateEvidenceBriefResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEvidenceBriefResponse {
+    return new CreateEvidenceBriefResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvidenceBriefResponse {
+    return new CreateEvidenceBriefResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateEvidenceBriefResponse | PlainMessage<CreateEvidenceBriefResponse> | undefined, b: CreateEvidenceBriefResponse | PlainMessage<CreateEvidenceBriefResponse> | undefined): boolean {
+    return proto3.util.equals(CreateEvidenceBriefResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+ */
+export class ListMyEvidenceBriefsRequest extends Message<ListMyEvidenceBriefsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListMyEvidenceBriefsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyEvidenceBriefsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEvidenceBriefsRequest {
+    return new ListMyEvidenceBriefsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEvidenceBriefsRequest {
+    return new ListMyEvidenceBriefsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEvidenceBriefsRequest {
+    return new ListMyEvidenceBriefsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEvidenceBriefsRequest | PlainMessage<ListMyEvidenceBriefsRequest> | undefined, b: ListMyEvidenceBriefsRequest | PlainMessage<ListMyEvidenceBriefsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyEvidenceBriefsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+ */
+export class ListMyEvidenceBriefsResponse extends Message<ListMyEvidenceBriefsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceBrief briefs = 1;
+   */
+  briefs: EvidenceBrief[] = [];
+
+  constructor(data?: PartialMessage<ListMyEvidenceBriefsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMyEvidenceBriefsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "briefs", kind: "message", T: EvidenceBrief, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyEvidenceBriefsResponse {
+    return new ListMyEvidenceBriefsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyEvidenceBriefsResponse {
+    return new ListMyEvidenceBriefsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyEvidenceBriefsResponse {
+    return new ListMyEvidenceBriefsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyEvidenceBriefsResponse | PlainMessage<ListMyEvidenceBriefsResponse> | undefined, b: ListMyEvidenceBriefsResponse | PlainMessage<ListMyEvidenceBriefsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyEvidenceBriefsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceBriefRequest
+ */
+export class GetEvidenceBriefRequest extends Message<GetEvidenceBriefRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetEvidenceBriefRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceBriefRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceBriefRequest {
+    return new GetEvidenceBriefRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceBriefRequest {
+    return new GetEvidenceBriefRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceBriefRequest {
+    return new GetEvidenceBriefRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceBriefRequest | PlainMessage<GetEvidenceBriefRequest> | undefined, b: GetEvidenceBriefRequest | PlainMessage<GetEvidenceBriefRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceBriefRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceBriefResponse
+ */
+export class GetEvidenceBriefResponse extends Message<GetEvidenceBriefResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.EvidenceBrief brief = 1;
+   */
+  brief?: EvidenceBrief;
+
+  constructor(data?: PartialMessage<GetEvidenceBriefResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceBriefResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: EvidenceBrief },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceBriefResponse {
+    return new GetEvidenceBriefResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceBriefResponse {
+    return new GetEvidenceBriefResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceBriefResponse {
+    return new GetEvidenceBriefResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceBriefResponse | PlainMessage<GetEvidenceBriefResponse> | undefined, b: GetEvidenceBriefResponse | PlainMessage<GetEvidenceBriefResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceBriefResponse, a, b);
+  }
+}
+

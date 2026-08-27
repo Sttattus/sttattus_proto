@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddNoteRequest, AddNoteResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, ExportReaderDataRequest, ExportReaderDataResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SearchReaderRequest, SearchReaderResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse } from "./onyx_pb.js";
+import { AddNoteRequest, AddNoteResponse, CreateEvidenceBriefRequest, CreateEvidenceBriefResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, ExportReaderDataRequest, ExportReaderDataResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetEvidenceBriefRequest, GetEvidenceBriefResponse, GetEvidenceWorkspaceRequest, GetEvidenceWorkspaceResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEvidenceBriefsRequest, ListMyEvidenceBriefsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SearchReaderRequest, SearchReaderResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -567,6 +567,45 @@ export const OnyxService = {
       name: "ResolveIngestionDuplicate",
       I: ResolveIngestionDuplicateRequest,
       O: ResolveIngestionDuplicateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Evidence briefing — source cards, claim-level citations, reproducible
+     * selected-source runs, and correction overlays on historical output.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace
+     */
+    getEvidenceWorkspace: {
+      name: "GetEvidenceWorkspace",
+      I: GetEvidenceWorkspaceRequest,
+      O: GetEvidenceWorkspaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateEvidenceBrief
+     */
+    createEvidenceBrief: {
+      name: "CreateEvidenceBrief",
+      I: CreateEvidenceBriefRequest,
+      O: CreateEvidenceBriefResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs
+     */
+    listMyEvidenceBriefs: {
+      name: "ListMyEvidenceBriefs",
+      I: ListMyEvidenceBriefsRequest,
+      O: ListMyEvidenceBriefsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetEvidenceBrief
+     */
+    getEvidenceBrief: {
+      name: "GetEvidenceBrief",
+      I: GetEvidenceBriefRequest,
+      O: GetEvidenceBriefResponse,
       kind: MethodKind.Unary,
     },
   }
