@@ -24,6 +24,24 @@ const GetScoreBreakdownRequest$json = {
 final $typed_data.Uint8List getScoreBreakdownRequestDescriptor =
     $convert.base64Decode('ChhHZXRTY29yZUJyZWFrZG93blJlcXVlc3Q=');
 
+@$core.Deprecated('Use pillarStandingDescriptor instead')
+const PillarStanding$json = {
+  '1': 'PillarStanding',
+  '2': [
+    {'1': 'app_code', '3': 1, '4': 1, '5': 9, '10': 'appCode'},
+    {'1': 'score', '3': 2, '4': 1, '5': 1, '10': 'score'},
+    {'1': 'leader_score', '3': 3, '4': 1, '5': 1, '10': 'leaderScore'},
+    {'1': 'standing', '3': 4, '4': 1, '5': 1, '10': 'standing'},
+    {'1': 'is_leader', '3': 5, '4': 1, '5': 8, '10': 'isLeader'},
+  ],
+};
+
+/// Descriptor for `PillarStanding`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pillarStandingDescriptor = $convert.base64Decode(
+    'Cg5QaWxsYXJTdGFuZGluZxIZCghhcHBfY29kZRgBIAEoCVIHYXBwQ29kZRIUCgVzY29yZRgCIA'
+    'EoAVIFc2NvcmUSIQoMbGVhZGVyX3Njb3JlGAMgASgBUgtsZWFkZXJTY29yZRIaCghzdGFuZGlu'
+    'ZxgEIAEoAVIIc3RhbmRpbmcSGwoJaXNfbGVhZGVyGAUgASgIUghpc0xlYWRlcg==');
+
 @$core.Deprecated('Use getScoreBreakdownResponseDescriptor instead')
 const GetScoreBreakdownResponse$json = {
   '1': 'GetScoreBreakdownResponse',
@@ -48,6 +66,14 @@ const GetScoreBreakdownResponse$json = {
       '5': 1,
       '10': 'operationalComponent'
     },
+    {
+      '1': 'pillar_standings',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.empire.v1.PillarStanding',
+      '10': 'pillarStandings'
+    },
   ],
 };
 
@@ -59,7 +85,8 @@ final $typed_data.Uint8List getScoreBreakdownResponseDescriptor = $convert.base6
     'oQd2VhbHRoX2NvbXBvbmVudBgFIAEoAVIPd2VhbHRoQ29tcG9uZW50EiMKDWJpb19jb21wb25l'
     'bnQYBiABKAFSDGJpb0NvbXBvbmVudBIpChBzb2NpYWxfY29tcG9uZW50GAcgASgBUg9zb2NpYW'
     'xDb21wb25lbnQSMwoVb3BlcmF0aW9uYWxfY29tcG9uZW50GAggASgBUhRvcGVyYXRpb25hbENv'
-    'bXBvbmVudA==');
+    'bXBvbmVudBJNChBwaWxsYXJfc3RhbmRpbmdzGAkgAygLMiIuc3R0YXR0dXMuZW1waXJlLnYxLl'
+    'BpbGxhclN0YW5kaW5nUg9waWxsYXJTdGFuZGluZ3M=');
 
 @$core.Deprecated('Use getTierLadderRequestDescriptor instead')
 const GetTierLadderRequest$json = {

@@ -57,6 +57,122 @@ class GetScoreBreakdownRequest extends $pb.GeneratedMessage {
   static GetScoreBreakdownRequest? _defaultInstance;
 }
 
+/// PillarStanding is one line of the glass box: where you sit in one app,
+/// measured against whoever leads it.
+///
+/// This is what the Sttattus Score is actually made of. Per app you score
+/// `100 * yours / the leader's`; the global score is the mean of `standing`
+/// across every app that has at least one participant.
+class PillarStanding extends $pb.GeneratedMessage {
+  factory PillarStanding({
+    $core.String? appCode,
+    $core.double? score,
+    $core.double? leaderScore,
+    $core.double? standing,
+    $core.bool? isLeader,
+  }) {
+    final result = create();
+    if (appCode != null) result.appCode = appCode;
+    if (score != null) result.score = score;
+    if (leaderScore != null) result.leaderScore = leaderScore;
+    if (standing != null) result.standing = standing;
+    if (isLeader != null) result.isLeader = isLeader;
+    return result;
+  }
+
+  PillarStanding._();
+
+  factory PillarStanding.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PillarStanding.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PillarStanding',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appCode')
+    ..aD(2, _omitFieldNames ? '' : 'score')
+    ..aD(3, _omitFieldNames ? '' : 'leaderScore')
+    ..aD(4, _omitFieldNames ? '' : 'standing')
+    ..aOB(5, _omitFieldNames ? '' : 'isLeader')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PillarStanding clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PillarStanding copyWith(void Function(PillarStanding) updates) =>
+      super.copyWith((message) => updates(message as PillarStanding))
+          as PillarStanding;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PillarStanding create() => PillarStanding._();
+  @$core.override
+  PillarStanding createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PillarStanding getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PillarStanding>(create);
+  static PillarStanding? _defaultInstance;
+
+  /// forge | lexicon | nomad | atlas | vault | apex | oracle | dominion |
+  /// legacy | zenith | onyx.
+  @$pb.TagNumber(1)
+  $core.String get appCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppCode() => $_clearField(1);
+
+  /// The member's raw 0-100 pillar score.
+  @$pb.TagNumber(2)
+  $core.double get score => $_getN(1);
+  @$pb.TagNumber(2)
+  set score($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScore() => $_clearField(2);
+
+  /// The platform leader's score in this app — what `score` is measured
+  /// against. Never zero for an active app.
+  @$pb.TagNumber(3)
+  $core.double get leaderScore => $_getN(2);
+  @$pb.TagNumber(3)
+  set leaderScore($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLeaderScore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLeaderScore() => $_clearField(3);
+
+  /// 100 * score / leader_score. This is the number that enters the mean.
+  @$pb.TagNumber(4)
+  $core.double get standing => $_getN(3);
+  @$pb.TagNumber(4)
+  set standing($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStanding() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStanding() => $_clearField(4);
+
+  /// True when this member IS the leader. Ties count as leading.
+  @$pb.TagNumber(5)
+  $core.bool get isLeader => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isLeader($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIsLeader() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsLeader() => $_clearField(5);
+}
+
 class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
   factory GetScoreBreakdownResponse({
     $core.double? sttattusScore,
@@ -67,6 +183,7 @@ class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
     $core.double? bioComponent,
     $core.double? socialComponent,
     $core.double? operationalComponent,
+    $core.Iterable<PillarStanding>? pillarStandings,
   }) {
     final result = create();
     if (sttattusScore != null) result.sttattusScore = sttattusScore;
@@ -78,6 +195,7 @@ class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
     if (socialComponent != null) result.socialComponent = socialComponent;
     if (operationalComponent != null)
       result.operationalComponent = operationalComponent;
+    if (pillarStandings != null) result.pillarStandings.addAll(pillarStandings);
     return result;
   }
 
@@ -103,6 +221,8 @@ class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
     ..aD(6, _omitFieldNames ? '' : 'bioComponent')
     ..aD(7, _omitFieldNames ? '' : 'socialComponent')
     ..aD(8, _omitFieldNames ? '' : 'operationalComponent')
+    ..pPM<PillarStanding>(9, _omitFieldNames ? '' : 'pillarStandings',
+        subBuilder: PillarStanding.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -163,9 +283,18 @@ class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearGlobalPercentile() => $_clearField(4);
 
-  /// Glass-box: the four weighted buckets empire_engine returns. Weights
-  /// are wealth 30% / bio 25% / social 20% / operational 25% — published
-  /// here so the app can render the exact contribution of each.
+  /// DEPRECATED — empire_engine's four weighted buckets (wealth 30% / bio 25%
+  /// / social 20% / operational 25%).
+  ///
+  /// These do not explain sttattus_score and never did: the buckets are
+  /// empire_engine's own weighting while the score is the platform composite.
+  /// On production they summed to 35.4 under a headline of 13.8, on a card
+  /// captioned "Four weighted buckets. Every weight published." The weights
+  /// were published; they were the weights of a different number.
+  ///
+  /// Kept on the wire so an older client does not break. Read
+  /// pillar_standings instead — it is what the score is built from and it
+  /// sums, by construction, to sttattus_score.
   @$pb.TagNumber(5)
   $core.double get wealthComponent => $_getN(4);
   @$pb.TagNumber(5)
@@ -201,6 +330,15 @@ class GetScoreBreakdownResponse extends $pb.GeneratedMessage {
   $core.bool hasOperationalComponent() => $_has(7);
   @$pb.TagNumber(8)
   void clearOperationalComponent() => $_clearField(8);
+
+  /// One entry per ACTIVE app — an app nobody has scored in is omitted,
+  /// because it is excluded from the score's denominator too. Ordered by
+  /// standing, strongest first.
+  ///
+  /// mean(standing) == sttattus_score. That identity is the whole point: the
+  /// glass box now explains the number it sits under.
+  @$pb.TagNumber(9)
+  $pb.PbList<PillarStanding> get pillarStandings => $_getList(8);
 }
 
 class GetTierLadderRequest extends $pb.GeneratedMessage {

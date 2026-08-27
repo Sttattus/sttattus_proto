@@ -57,6 +57,95 @@ func (*GetScoreBreakdownRequest) Descriptor() ([]byte, []int) {
 	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{0}
 }
 
+// PillarStanding is one line of the glass box: where you sit in one app,
+// measured against whoever leads it.
+//
+// This is what the Sttattus Score is actually made of. Per app you score
+// `100 * yours / the leader's`; the global score is the mean of `standing`
+// across every app that has at least one participant.
+type PillarStanding struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// forge | lexicon | nomad | atlas | vault | apex | oracle | dominion |
+	// legacy | zenith | onyx.
+	AppCode string `protobuf:"bytes,1,opt,name=app_code,json=appCode,proto3" json:"app_code,omitempty"`
+	// The member's raw 0-100 pillar score.
+	Score float64 `protobuf:"fixed64,2,opt,name=score,proto3" json:"score,omitempty"`
+	// The platform leader's score in this app — what `score` is measured
+	// against. Never zero for an active app.
+	LeaderScore float64 `protobuf:"fixed64,3,opt,name=leader_score,json=leaderScore,proto3" json:"leader_score,omitempty"`
+	// 100 * score / leader_score. This is the number that enters the mean.
+	Standing float64 `protobuf:"fixed64,4,opt,name=standing,proto3" json:"standing,omitempty"`
+	// True when this member IS the leader. Ties count as leading.
+	IsLeader      bool `protobuf:"varint,5,opt,name=is_leader,json=isLeader,proto3" json:"is_leader,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PillarStanding) Reset() {
+	*x = PillarStanding{}
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PillarStanding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PillarStanding) ProtoMessage() {}
+
+func (x *PillarStanding) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PillarStanding.ProtoReflect.Descriptor instead.
+func (*PillarStanding) Descriptor() ([]byte, []int) {
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *PillarStanding) GetAppCode() string {
+	if x != nil {
+		return x.AppCode
+	}
+	return ""
+}
+
+func (x *PillarStanding) GetScore() float64 {
+	if x != nil {
+		return x.Score
+	}
+	return 0
+}
+
+func (x *PillarStanding) GetLeaderScore() float64 {
+	if x != nil {
+		return x.LeaderScore
+	}
+	return 0
+}
+
+func (x *PillarStanding) GetStanding() float64 {
+	if x != nil {
+		return x.Standing
+	}
+	return 0
+}
+
+func (x *PillarStanding) GetIsLeader() bool {
+	if x != nil {
+		return x.IsLeader
+	}
+	return false
+}
+
 type GetScoreBreakdownResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 0..100 unified composite.
@@ -65,20 +154,36 @@ type GetScoreBreakdownResponse struct {
 	Tier             string  `protobuf:"bytes,2,opt,name=tier,proto3" json:"tier,omitempty"`
 	GlobalRank       int32   `protobuf:"varint,3,opt,name=global_rank,json=globalRank,proto3" json:"global_rank,omitempty"`
 	GlobalPercentile float64 `protobuf:"fixed64,4,opt,name=global_percentile,json=globalPercentile,proto3" json:"global_percentile,omitempty"`
-	// Glass-box: the four weighted buckets empire_engine returns. Weights
-	// are wealth 30% / bio 25% / social 20% / operational 25% — published
-	// here so the app can render the exact contribution of each.
+	// DEPRECATED — empire_engine's four weighted buckets (wealth 30% / bio 25%
+	// / social 20% / operational 25%).
+	//
+	// These do not explain sttattus_score and never did: the buckets are
+	// empire_engine's own weighting while the score is the platform composite.
+	// On production they summed to 35.4 under a headline of 13.8, on a card
+	// captioned "Four weighted buckets. Every weight published." The weights
+	// were published; they were the weights of a different number.
+	//
+	// Kept on the wire so an older client does not break. Read
+	// pillar_standings instead — it is what the score is built from and it
+	// sums, by construction, to sttattus_score.
 	WealthComponent      float64 `protobuf:"fixed64,5,opt,name=wealth_component,json=wealthComponent,proto3" json:"wealth_component,omitempty"`
 	BioComponent         float64 `protobuf:"fixed64,6,opt,name=bio_component,json=bioComponent,proto3" json:"bio_component,omitempty"`
 	SocialComponent      float64 `protobuf:"fixed64,7,opt,name=social_component,json=socialComponent,proto3" json:"social_component,omitempty"`
 	OperationalComponent float64 `protobuf:"fixed64,8,opt,name=operational_component,json=operationalComponent,proto3" json:"operational_component,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// One entry per ACTIVE app — an app nobody has scored in is omitted,
+	// because it is excluded from the score's denominator too. Ordered by
+	// standing, strongest first.
+	//
+	// mean(standing) == sttattus_score. That identity is the whole point: the
+	// glass box now explains the number it sits under.
+	PillarStandings []*PillarStanding `protobuf:"bytes,9,rep,name=pillar_standings,json=pillarStandings,proto3" json:"pillar_standings,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *GetScoreBreakdownResponse) Reset() {
 	*x = GetScoreBreakdownResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[1]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -90,7 +195,7 @@ func (x *GetScoreBreakdownResponse) String() string {
 func (*GetScoreBreakdownResponse) ProtoMessage() {}
 
 func (x *GetScoreBreakdownResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[1]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -103,7 +208,7 @@ func (x *GetScoreBreakdownResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetScoreBreakdownResponse.ProtoReflect.Descriptor instead.
 func (*GetScoreBreakdownResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{1}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetScoreBreakdownResponse) GetSttattusScore() float64 {
@@ -162,6 +267,13 @@ func (x *GetScoreBreakdownResponse) GetOperationalComponent() float64 {
 	return 0
 }
 
+func (x *GetScoreBreakdownResponse) GetPillarStandings() []*PillarStanding {
+	if x != nil {
+		return x.PillarStandings
+	}
+	return nil
+}
+
 type GetTierLadderRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -170,7 +282,7 @@ type GetTierLadderRequest struct {
 
 func (x *GetTierLadderRequest) Reset() {
 	*x = GetTierLadderRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -182,7 +294,7 @@ func (x *GetTierLadderRequest) String() string {
 func (*GetTierLadderRequest) ProtoMessage() {}
 
 func (x *GetTierLadderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[2]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -195,7 +307,7 @@ func (x *GetTierLadderRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTierLadderRequest.ProtoReflect.Descriptor instead.
 func (*GetTierLadderRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{2}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{3}
 }
 
 type TierBand struct {
@@ -216,7 +328,7 @@ type TierBand struct {
 
 func (x *TierBand) Reset() {
 	*x = TierBand{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -228,7 +340,7 @@ func (x *TierBand) String() string {
 func (*TierBand) ProtoMessage() {}
 
 func (x *TierBand) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[3]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -241,7 +353,7 @@ func (x *TierBand) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TierBand.ProtoReflect.Descriptor instead.
 func (*TierBand) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{3}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *TierBand) GetCode() string {
@@ -300,7 +412,7 @@ type GetTierLadderResponse struct {
 
 func (x *GetTierLadderResponse) Reset() {
 	*x = GetTierLadderResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -312,7 +424,7 @@ func (x *GetTierLadderResponse) String() string {
 func (*GetTierLadderResponse) ProtoMessage() {}
 
 func (x *GetTierLadderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[4]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -325,7 +437,7 @@ func (x *GetTierLadderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTierLadderResponse.ProtoReflect.Descriptor instead.
 func (*GetTierLadderResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{4}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetTierLadderResponse) GetBands() []*TierBand {
@@ -357,7 +469,7 @@ type GetWalletRequest struct {
 
 func (x *GetWalletRequest) Reset() {
 	*x = GetWalletRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -369,7 +481,7 @@ func (x *GetWalletRequest) String() string {
 func (*GetWalletRequest) ProtoMessage() {}
 
 func (x *GetWalletRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[5]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -382,7 +494,7 @@ func (x *GetWalletRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWalletRequest.ProtoReflect.Descriptor instead.
 func (*GetWalletRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{5}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{6}
 }
 
 // PillarPoints is one pillar's contribution to the points economy —
@@ -398,7 +510,7 @@ type PillarPoints struct {
 
 func (x *PillarPoints) Reset() {
 	*x = PillarPoints{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -410,7 +522,7 @@ func (x *PillarPoints) String() string {
 func (*PillarPoints) ProtoMessage() {}
 
 func (x *PillarPoints) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[6]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -423,7 +535,7 @@ func (x *PillarPoints) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PillarPoints.ProtoReflect.Descriptor instead.
 func (*PillarPoints) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{6}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PillarPoints) GetAppCode() string {
@@ -465,7 +577,7 @@ type GetWalletResponse struct {
 
 func (x *GetWalletResponse) Reset() {
 	*x = GetWalletResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -477,7 +589,7 @@ func (x *GetWalletResponse) String() string {
 func (*GetWalletResponse) ProtoMessage() {}
 
 func (x *GetWalletResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[7]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -490,7 +602,7 @@ func (x *GetWalletResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetWalletResponse.ProtoReflect.Descriptor instead.
 func (*GetWalletResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{7}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetWalletResponse) GetBalance() int64 {
@@ -531,7 +643,7 @@ type ListLedgerEntriesRequest struct {
 
 func (x *ListLedgerEntriesRequest) Reset() {
 	*x = ListLedgerEntriesRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -543,7 +655,7 @@ func (x *ListLedgerEntriesRequest) String() string {
 func (*ListLedgerEntriesRequest) ProtoMessage() {}
 
 func (x *ListLedgerEntriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[8]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -556,7 +668,7 @@ func (x *ListLedgerEntriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLedgerEntriesRequest.ProtoReflect.Descriptor instead.
 func (*ListLedgerEntriesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{8}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ListLedgerEntriesRequest) GetLimit() int32 {
@@ -593,7 +705,7 @@ type LedgerEntry struct {
 
 func (x *LedgerEntry) Reset() {
 	*x = LedgerEntry{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -605,7 +717,7 @@ func (x *LedgerEntry) String() string {
 func (*LedgerEntry) ProtoMessage() {}
 
 func (x *LedgerEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[9]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -618,7 +730,7 @@ func (x *LedgerEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LedgerEntry.ProtoReflect.Descriptor instead.
 func (*LedgerEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{9}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *LedgerEntry) GetId() string {
@@ -672,7 +784,7 @@ type ListLedgerEntriesResponse struct {
 
 func (x *ListLedgerEntriesResponse) Reset() {
 	*x = ListLedgerEntriesResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -684,7 +796,7 @@ func (x *ListLedgerEntriesResponse) String() string {
 func (*ListLedgerEntriesResponse) ProtoMessage() {}
 
 func (x *ListLedgerEntriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[10]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -697,7 +809,7 @@ func (x *ListLedgerEntriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLedgerEntriesResponse.ProtoReflect.Descriptor instead.
 func (*ListLedgerEntriesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{10}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListLedgerEntriesResponse) GetEntries() []*LedgerEntry {
@@ -721,7 +833,7 @@ type GetTaxStatementRequest struct {
 
 func (x *GetTaxStatementRequest) Reset() {
 	*x = GetTaxStatementRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -733,7 +845,7 @@ func (x *GetTaxStatementRequest) String() string {
 func (*GetTaxStatementRequest) ProtoMessage() {}
 
 func (x *GetTaxStatementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[11]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -746,7 +858,7 @@ func (x *GetTaxStatementRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTaxStatementRequest.ProtoReflect.Descriptor instead.
 func (*GetTaxStatementRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{11}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *GetTaxStatementRequest) GetAnnualSpend() int64 {
@@ -775,7 +887,7 @@ type TaxRuleSummary struct {
 
 func (x *TaxRuleSummary) Reset() {
 	*x = TaxRuleSummary{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -787,7 +899,7 @@ func (x *TaxRuleSummary) String() string {
 func (*TaxRuleSummary) ProtoMessage() {}
 
 func (x *TaxRuleSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[12]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -800,7 +912,7 @@ func (x *TaxRuleSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaxRuleSummary.ProtoReflect.Descriptor instead.
 func (*TaxRuleSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{12}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *TaxRuleSummary) GetRuleId() string {
@@ -848,7 +960,7 @@ type GetTaxStatementResponse struct {
 
 func (x *GetTaxStatementResponse) Reset() {
 	*x = GetTaxStatementResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -860,7 +972,7 @@ func (x *GetTaxStatementResponse) String() string {
 func (*GetTaxStatementResponse) ProtoMessage() {}
 
 func (x *GetTaxStatementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[13]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -873,7 +985,7 @@ func (x *GetTaxStatementResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTaxStatementResponse.ProtoReflect.Descriptor instead.
 func (*GetTaxStatementResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{13}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *GetTaxStatementResponse) GetTier() string {
@@ -942,7 +1054,7 @@ type GetPublicProfileRequest struct {
 
 func (x *GetPublicProfileRequest) Reset() {
 	*x = GetPublicProfileRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -954,7 +1066,7 @@ func (x *GetPublicProfileRequest) String() string {
 func (*GetPublicProfileRequest) ProtoMessage() {}
 
 func (x *GetPublicProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[14]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -967,7 +1079,7 @@ func (x *GetPublicProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPublicProfileRequest.ProtoReflect.Descriptor instead.
 func (*GetPublicProfileRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{14}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *GetPublicProfileRequest) GetHandle() string {
@@ -997,7 +1109,7 @@ type GetPublicProfileResponse struct {
 
 func (x *GetPublicProfileResponse) Reset() {
 	*x = GetPublicProfileResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1009,7 +1121,7 @@ func (x *GetPublicProfileResponse) String() string {
 func (*GetPublicProfileResponse) ProtoMessage() {}
 
 func (x *GetPublicProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[15]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1134,7 @@ func (x *GetPublicProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPublicProfileResponse.ProtoReflect.Descriptor instead.
 func (*GetPublicProfileResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{15}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *GetPublicProfileResponse) GetHandle() string {
@@ -1092,7 +1204,7 @@ type ClaimHandleRequest struct {
 
 func (x *ClaimHandleRequest) Reset() {
 	*x = ClaimHandleRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1104,7 +1216,7 @@ func (x *ClaimHandleRequest) String() string {
 func (*ClaimHandleRequest) ProtoMessage() {}
 
 func (x *ClaimHandleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[16]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1117,7 +1229,7 @@ func (x *ClaimHandleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClaimHandleRequest.ProtoReflect.Descriptor instead.
 func (*ClaimHandleRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{16}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ClaimHandleRequest) GetHandle() string {
@@ -1136,7 +1248,7 @@ type ClaimHandleResponse struct {
 
 func (x *ClaimHandleResponse) Reset() {
 	*x = ClaimHandleResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1148,7 +1260,7 @@ func (x *ClaimHandleResponse) String() string {
 func (*ClaimHandleResponse) ProtoMessage() {}
 
 func (x *ClaimHandleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[17]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1161,7 +1273,7 @@ func (x *ClaimHandleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClaimHandleResponse.ProtoReflect.Descriptor instead.
 func (*ClaimHandleResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{17}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ClaimHandleResponse) GetHandle() string {
@@ -1183,7 +1295,7 @@ type UpdatePublicProfileRequest struct {
 
 func (x *UpdatePublicProfileRequest) Reset() {
 	*x = UpdatePublicProfileRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1195,7 +1307,7 @@ func (x *UpdatePublicProfileRequest) String() string {
 func (*UpdatePublicProfileRequest) ProtoMessage() {}
 
 func (x *UpdatePublicProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[18]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1208,7 +1320,7 @@ func (x *UpdatePublicProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePublicProfileRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePublicProfileRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{18}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdatePublicProfileRequest) GetTagline() string {
@@ -1235,7 +1347,7 @@ type UpdatePublicProfileResponse struct {
 
 func (x *UpdatePublicProfileResponse) Reset() {
 	*x = UpdatePublicProfileResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1247,7 +1359,7 @@ func (x *UpdatePublicProfileResponse) String() string {
 func (*UpdatePublicProfileResponse) ProtoMessage() {}
 
 func (x *UpdatePublicProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[19]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1260,7 +1372,7 @@ func (x *UpdatePublicProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePublicProfileResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePublicProfileResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{19}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *UpdatePublicProfileResponse) GetTagline() string {
@@ -1294,7 +1406,7 @@ type RedemptionItem struct {
 
 func (x *RedemptionItem) Reset() {
 	*x = RedemptionItem{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1306,7 +1418,7 @@ func (x *RedemptionItem) String() string {
 func (*RedemptionItem) ProtoMessage() {}
 
 func (x *RedemptionItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[20]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1319,7 +1431,7 @@ func (x *RedemptionItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RedemptionItem.ProtoReflect.Descriptor instead.
 func (*RedemptionItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{20}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *RedemptionItem) GetId() string {
@@ -1386,7 +1498,7 @@ type ListRedemptionItemsRequest struct {
 
 func (x *ListRedemptionItemsRequest) Reset() {
 	*x = ListRedemptionItemsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1398,7 +1510,7 @@ func (x *ListRedemptionItemsRequest) String() string {
 func (*ListRedemptionItemsRequest) ProtoMessage() {}
 
 func (x *ListRedemptionItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[21]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1411,7 +1523,7 @@ func (x *ListRedemptionItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRedemptionItemsRequest.ProtoReflect.Descriptor instead.
 func (*ListRedemptionItemsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{21}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{22}
 }
 
 type ListRedemptionItemsResponse struct {
@@ -1423,7 +1535,7 @@ type ListRedemptionItemsResponse struct {
 
 func (x *ListRedemptionItemsResponse) Reset() {
 	*x = ListRedemptionItemsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1435,7 +1547,7 @@ func (x *ListRedemptionItemsResponse) String() string {
 func (*ListRedemptionItemsResponse) ProtoMessage() {}
 
 func (x *ListRedemptionItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[22]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1448,7 +1560,7 @@ func (x *ListRedemptionItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRedemptionItemsResponse.ProtoReflect.Descriptor instead.
 func (*ListRedemptionItemsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{22}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ListRedemptionItemsResponse) GetItems() []*RedemptionItem {
@@ -1468,7 +1580,7 @@ type RedeemItemRequest struct {
 
 func (x *RedeemItemRequest) Reset() {
 	*x = RedeemItemRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1480,7 +1592,7 @@ func (x *RedeemItemRequest) String() string {
 func (*RedeemItemRequest) ProtoMessage() {}
 
 func (x *RedeemItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[23]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1493,7 +1605,7 @@ func (x *RedeemItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RedeemItemRequest.ProtoReflect.Descriptor instead.
 func (*RedeemItemRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{23}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *RedeemItemRequest) GetItemId() string {
@@ -1520,7 +1632,7 @@ type RedeemItemResponse struct {
 
 func (x *RedeemItemResponse) Reset() {
 	*x = RedeemItemResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1532,7 +1644,7 @@ func (x *RedeemItemResponse) String() string {
 func (*RedeemItemResponse) ProtoMessage() {}
 
 func (x *RedeemItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[24]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1545,7 +1657,7 @@ func (x *RedeemItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RedeemItemResponse.ProtoReflect.Descriptor instead.
 func (*RedeemItemResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{24}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *RedeemItemResponse) GetOrderId() string {
@@ -1577,7 +1689,7 @@ type RedemptionOrderSummary struct {
 
 func (x *RedemptionOrderSummary) Reset() {
 	*x = RedemptionOrderSummary{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1589,7 +1701,7 @@ func (x *RedemptionOrderSummary) String() string {
 func (*RedemptionOrderSummary) ProtoMessage() {}
 
 func (x *RedemptionOrderSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[25]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1602,7 +1714,7 @@ func (x *RedemptionOrderSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RedemptionOrderSummary.ProtoReflect.Descriptor instead.
 func (*RedemptionOrderSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{25}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *RedemptionOrderSummary) GetId() string {
@@ -1664,7 +1776,7 @@ type ListMyRedemptionsRequest struct {
 
 func (x *ListMyRedemptionsRequest) Reset() {
 	*x = ListMyRedemptionsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1676,7 +1788,7 @@ func (x *ListMyRedemptionsRequest) String() string {
 func (*ListMyRedemptionsRequest) ProtoMessage() {}
 
 func (x *ListMyRedemptionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[26]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1689,7 +1801,7 @@ func (x *ListMyRedemptionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyRedemptionsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyRedemptionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{26}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *ListMyRedemptionsRequest) GetLimit() int32 {
@@ -1715,7 +1827,7 @@ type ListMyRedemptionsResponse struct {
 
 func (x *ListMyRedemptionsResponse) Reset() {
 	*x = ListMyRedemptionsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1727,7 +1839,7 @@ func (x *ListMyRedemptionsResponse) String() string {
 func (*ListMyRedemptionsResponse) ProtoMessage() {}
 
 func (x *ListMyRedemptionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[27]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1740,7 +1852,7 @@ func (x *ListMyRedemptionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyRedemptionsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyRedemptionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{27}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ListMyRedemptionsResponse) GetOrders() []*RedemptionOrderSummary {
@@ -1765,7 +1877,7 @@ type RegisterDeviceTokenRequest struct {
 
 func (x *RegisterDeviceTokenRequest) Reset() {
 	*x = RegisterDeviceTokenRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1777,7 +1889,7 @@ func (x *RegisterDeviceTokenRequest) String() string {
 func (*RegisterDeviceTokenRequest) ProtoMessage() {}
 
 func (x *RegisterDeviceTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[28]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1790,7 +1902,7 @@ func (x *RegisterDeviceTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterDeviceTokenRequest.ProtoReflect.Descriptor instead.
 func (*RegisterDeviceTokenRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{28}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *RegisterDeviceTokenRequest) GetPlatform() string {
@@ -1823,7 +1935,7 @@ type RegisterDeviceTokenResponse struct {
 
 func (x *RegisterDeviceTokenResponse) Reset() {
 	*x = RegisterDeviceTokenResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1835,7 +1947,7 @@ func (x *RegisterDeviceTokenResponse) String() string {
 func (*RegisterDeviceTokenResponse) ProtoMessage() {}
 
 func (x *RegisterDeviceTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[29]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1848,7 +1960,7 @@ func (x *RegisterDeviceTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterDeviceTokenResponse.ProtoReflect.Descriptor instead.
 func (*RegisterDeviceTokenResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{29}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *RegisterDeviceTokenResponse) GetToken() string {
@@ -1867,7 +1979,7 @@ type UnregisterDeviceTokenRequest struct {
 
 func (x *UnregisterDeviceTokenRequest) Reset() {
 	*x = UnregisterDeviceTokenRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1879,7 +1991,7 @@ func (x *UnregisterDeviceTokenRequest) String() string {
 func (*UnregisterDeviceTokenRequest) ProtoMessage() {}
 
 func (x *UnregisterDeviceTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[30]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1892,7 +2004,7 @@ func (x *UnregisterDeviceTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnregisterDeviceTokenRequest.ProtoReflect.Descriptor instead.
 func (*UnregisterDeviceTokenRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{30}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *UnregisterDeviceTokenRequest) GetToken() string {
@@ -1910,7 +2022,7 @@ type UnregisterDeviceTokenResponse struct {
 
 func (x *UnregisterDeviceTokenResponse) Reset() {
 	*x = UnregisterDeviceTokenResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1922,7 +2034,7 @@ func (x *UnregisterDeviceTokenResponse) String() string {
 func (*UnregisterDeviceTokenResponse) ProtoMessage() {}
 
 func (x *UnregisterDeviceTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[31]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1935,7 +2047,7 @@ func (x *UnregisterDeviceTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnregisterDeviceTokenResponse.ProtoReflect.Descriptor instead.
 func (*UnregisterDeviceTokenResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{31}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{32}
 }
 
 type NotificationPreference struct {
@@ -1953,7 +2065,7 @@ type NotificationPreference struct {
 
 func (x *NotificationPreference) Reset() {
 	*x = NotificationPreference{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1965,7 +2077,7 @@ func (x *NotificationPreference) String() string {
 func (*NotificationPreference) ProtoMessage() {}
 
 func (x *NotificationPreference) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[32]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1978,7 +2090,7 @@ func (x *NotificationPreference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotificationPreference.ProtoReflect.Descriptor instead.
 func (*NotificationPreference) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{32}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *NotificationPreference) GetChannel() string {
@@ -2024,7 +2136,7 @@ type ListNotificationPreferencesRequest struct {
 
 func (x *ListNotificationPreferencesRequest) Reset() {
 	*x = ListNotificationPreferencesRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2036,7 +2148,7 @@ func (x *ListNotificationPreferencesRequest) String() string {
 func (*ListNotificationPreferencesRequest) ProtoMessage() {}
 
 func (x *ListNotificationPreferencesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[33]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2049,7 +2161,7 @@ func (x *ListNotificationPreferencesRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ListNotificationPreferencesRequest.ProtoReflect.Descriptor instead.
 func (*ListNotificationPreferencesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{33}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{34}
 }
 
 type ListNotificationPreferencesResponse struct {
@@ -2061,7 +2173,7 @@ type ListNotificationPreferencesResponse struct {
 
 func (x *ListNotificationPreferencesResponse) Reset() {
 	*x = ListNotificationPreferencesResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2073,7 +2185,7 @@ func (x *ListNotificationPreferencesResponse) String() string {
 func (*ListNotificationPreferencesResponse) ProtoMessage() {}
 
 func (x *ListNotificationPreferencesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[34]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2086,7 +2198,7 @@ func (x *ListNotificationPreferencesResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ListNotificationPreferencesResponse.ProtoReflect.Descriptor instead.
 func (*ListNotificationPreferencesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{34}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *ListNotificationPreferencesResponse) GetPreferences() []*NotificationPreference {
@@ -2109,7 +2221,7 @@ type UpdateNotificationPreferenceRequest struct {
 
 func (x *UpdateNotificationPreferenceRequest) Reset() {
 	*x = UpdateNotificationPreferenceRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2121,7 +2233,7 @@ func (x *UpdateNotificationPreferenceRequest) String() string {
 func (*UpdateNotificationPreferenceRequest) ProtoMessage() {}
 
 func (x *UpdateNotificationPreferenceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[35]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2134,7 +2246,7 @@ func (x *UpdateNotificationPreferenceRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use UpdateNotificationPreferenceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateNotificationPreferenceRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{35}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *UpdateNotificationPreferenceRequest) GetChannel() string {
@@ -2181,7 +2293,7 @@ type UpdateNotificationPreferenceResponse struct {
 
 func (x *UpdateNotificationPreferenceResponse) Reset() {
 	*x = UpdateNotificationPreferenceResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2193,7 +2305,7 @@ func (x *UpdateNotificationPreferenceResponse) String() string {
 func (*UpdateNotificationPreferenceResponse) ProtoMessage() {}
 
 func (x *UpdateNotificationPreferenceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[36]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2206,7 +2318,7 @@ func (x *UpdateNotificationPreferenceResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use UpdateNotificationPreferenceResponse.ProtoReflect.Descriptor instead.
 func (*UpdateNotificationPreferenceResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{36}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *UpdateNotificationPreferenceResponse) GetPreference() *NotificationPreference {
@@ -2240,7 +2352,7 @@ type SalonSummary struct {
 
 func (x *SalonSummary) Reset() {
 	*x = SalonSummary{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2252,7 +2364,7 @@ func (x *SalonSummary) String() string {
 func (*SalonSummary) ProtoMessage() {}
 
 func (x *SalonSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[37]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2265,7 +2377,7 @@ func (x *SalonSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SalonSummary.ProtoReflect.Descriptor instead.
 func (*SalonSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{37}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *SalonSummary) GetId() string {
@@ -2354,7 +2466,7 @@ type ListUpcomingSalonsRequest struct {
 
 func (x *ListUpcomingSalonsRequest) Reset() {
 	*x = ListUpcomingSalonsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2366,7 +2478,7 @@ func (x *ListUpcomingSalonsRequest) String() string {
 func (*ListUpcomingSalonsRequest) ProtoMessage() {}
 
 func (x *ListUpcomingSalonsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[38]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2379,7 +2491,7 @@ func (x *ListUpcomingSalonsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingSalonsRequest.ProtoReflect.Descriptor instead.
 func (*ListUpcomingSalonsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{38}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *ListUpcomingSalonsRequest) GetLimit() int32 {
@@ -2398,7 +2510,7 @@ type ListUpcomingSalonsResponse struct {
 
 func (x *ListUpcomingSalonsResponse) Reset() {
 	*x = ListUpcomingSalonsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2410,7 +2522,7 @@ func (x *ListUpcomingSalonsResponse) String() string {
 func (*ListUpcomingSalonsResponse) ProtoMessage() {}
 
 func (x *ListUpcomingSalonsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[39]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2423,7 +2535,7 @@ func (x *ListUpcomingSalonsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingSalonsResponse.ProtoReflect.Descriptor instead.
 func (*ListUpcomingSalonsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{39}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *ListUpcomingSalonsResponse) GetSalons() []*SalonSummary {
@@ -2444,7 +2556,7 @@ type UpdateSalonRsvpRequest struct {
 
 func (x *UpdateSalonRsvpRequest) Reset() {
 	*x = UpdateSalonRsvpRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2456,7 +2568,7 @@ func (x *UpdateSalonRsvpRequest) String() string {
 func (*UpdateSalonRsvpRequest) ProtoMessage() {}
 
 func (x *UpdateSalonRsvpRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[40]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2469,7 +2581,7 @@ func (x *UpdateSalonRsvpRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSalonRsvpRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSalonRsvpRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{40}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *UpdateSalonRsvpRequest) GetSalonId() string {
@@ -2496,7 +2608,7 @@ type UpdateSalonRsvpResponse struct {
 
 func (x *UpdateSalonRsvpResponse) Reset() {
 	*x = UpdateSalonRsvpResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2508,7 +2620,7 @@ func (x *UpdateSalonRsvpResponse) String() string {
 func (*UpdateSalonRsvpResponse) ProtoMessage() {}
 
 func (x *UpdateSalonRsvpResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[41]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2521,7 +2633,7 @@ func (x *UpdateSalonRsvpResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSalonRsvpResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSalonRsvpResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{41}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *UpdateSalonRsvpResponse) GetSalonId() string {
@@ -2554,7 +2666,7 @@ type Lounge struct {
 
 func (x *Lounge) Reset() {
 	*x = Lounge{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2566,7 +2678,7 @@ func (x *Lounge) String() string {
 func (*Lounge) ProtoMessage() {}
 
 func (x *Lounge) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[42]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2579,7 +2691,7 @@ func (x *Lounge) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Lounge.ProtoReflect.Descriptor instead.
 func (*Lounge) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{42}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *Lounge) GetId() string {
@@ -2639,7 +2751,7 @@ type ListLoungesRequest struct {
 
 func (x *ListLoungesRequest) Reset() {
 	*x = ListLoungesRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2651,7 +2763,7 @@ func (x *ListLoungesRequest) String() string {
 func (*ListLoungesRequest) ProtoMessage() {}
 
 func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[43]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2664,7 +2776,7 @@ func (x *ListLoungesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLoungesRequest.ProtoReflect.Descriptor instead.
 func (*ListLoungesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{43}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{44}
 }
 
 type ListLoungesResponse struct {
@@ -2676,7 +2788,7 @@ type ListLoungesResponse struct {
 
 func (x *ListLoungesResponse) Reset() {
 	*x = ListLoungesResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2688,7 +2800,7 @@ func (x *ListLoungesResponse) String() string {
 func (*ListLoungesResponse) ProtoMessage() {}
 
 func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[44]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2701,7 +2813,7 @@ func (x *ListLoungesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLoungesResponse.ProtoReflect.Descriptor instead.
 func (*ListLoungesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{44}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *ListLoungesResponse) GetLounges() []*Lounge {
@@ -2729,7 +2841,7 @@ type LoungeEvent struct {
 
 func (x *LoungeEvent) Reset() {
 	*x = LoungeEvent{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2741,7 +2853,7 @@ func (x *LoungeEvent) String() string {
 func (*LoungeEvent) ProtoMessage() {}
 
 func (x *LoungeEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[45]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2754,7 +2866,7 @@ func (x *LoungeEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoungeEvent.ProtoReflect.Descriptor instead.
 func (*LoungeEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{45}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *LoungeEvent) GetId() string {
@@ -2829,7 +2941,7 @@ type ListUpcomingLoungeEventsRequest struct {
 
 func (x *ListUpcomingLoungeEventsRequest) Reset() {
 	*x = ListUpcomingLoungeEventsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2841,7 +2953,7 @@ func (x *ListUpcomingLoungeEventsRequest) String() string {
 func (*ListUpcomingLoungeEventsRequest) ProtoMessage() {}
 
 func (x *ListUpcomingLoungeEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[46]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2854,7 +2966,7 @@ func (x *ListUpcomingLoungeEventsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingLoungeEventsRequest.ProtoReflect.Descriptor instead.
 func (*ListUpcomingLoungeEventsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{46}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *ListUpcomingLoungeEventsRequest) GetLimit() int32 {
@@ -2873,7 +2985,7 @@ type ListUpcomingLoungeEventsResponse struct {
 
 func (x *ListUpcomingLoungeEventsResponse) Reset() {
 	*x = ListUpcomingLoungeEventsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2885,7 +2997,7 @@ func (x *ListUpcomingLoungeEventsResponse) String() string {
 func (*ListUpcomingLoungeEventsResponse) ProtoMessage() {}
 
 func (x *ListUpcomingLoungeEventsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[47]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2898,7 +3010,7 @@ func (x *ListUpcomingLoungeEventsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUpcomingLoungeEventsResponse.ProtoReflect.Descriptor instead.
 func (*ListUpcomingLoungeEventsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{47}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *ListUpcomingLoungeEventsResponse) GetEvents() []*LoungeEvent {
@@ -2926,7 +3038,7 @@ type EditorialDigest struct {
 
 func (x *EditorialDigest) Reset() {
 	*x = EditorialDigest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2938,7 +3050,7 @@ func (x *EditorialDigest) String() string {
 func (*EditorialDigest) ProtoMessage() {}
 
 func (x *EditorialDigest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[48]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2951,7 +3063,7 @@ func (x *EditorialDigest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EditorialDigest.ProtoReflect.Descriptor instead.
 func (*EditorialDigest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{48}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *EditorialDigest) GetId() string {
@@ -3011,7 +3123,7 @@ type GetLatestEditorialDigestRequest struct {
 
 func (x *GetLatestEditorialDigestRequest) Reset() {
 	*x = GetLatestEditorialDigestRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3023,7 +3135,7 @@ func (x *GetLatestEditorialDigestRequest) String() string {
 func (*GetLatestEditorialDigestRequest) ProtoMessage() {}
 
 func (x *GetLatestEditorialDigestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[49]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3036,7 +3148,7 @@ func (x *GetLatestEditorialDigestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestEditorialDigestRequest.ProtoReflect.Descriptor instead.
 func (*GetLatestEditorialDigestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{49}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{50}
 }
 
 type GetLatestEditorialDigestResponse struct {
@@ -3049,7 +3161,7 @@ type GetLatestEditorialDigestResponse struct {
 
 func (x *GetLatestEditorialDigestResponse) Reset() {
 	*x = GetLatestEditorialDigestResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3061,7 +3173,7 @@ func (x *GetLatestEditorialDigestResponse) String() string {
 func (*GetLatestEditorialDigestResponse) ProtoMessage() {}
 
 func (x *GetLatestEditorialDigestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[50]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3074,7 +3186,7 @@ func (x *GetLatestEditorialDigestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestEditorialDigestResponse.ProtoReflect.Descriptor instead.
 func (*GetLatestEditorialDigestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{50}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *GetLatestEditorialDigestResponse) GetDigest() *EditorialDigest {
@@ -3094,7 +3206,7 @@ type ListEditorialDigestsRequest struct {
 
 func (x *ListEditorialDigestsRequest) Reset() {
 	*x = ListEditorialDigestsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[51]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3106,7 +3218,7 @@ func (x *ListEditorialDigestsRequest) String() string {
 func (*ListEditorialDigestsRequest) ProtoMessage() {}
 
 func (x *ListEditorialDigestsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[51]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3119,7 +3231,7 @@ func (x *ListEditorialDigestsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEditorialDigestsRequest.ProtoReflect.Descriptor instead.
 func (*ListEditorialDigestsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{51}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *ListEditorialDigestsRequest) GetLimit() int32 {
@@ -3145,7 +3257,7 @@ type ListEditorialDigestsResponse struct {
 
 func (x *ListEditorialDigestsResponse) Reset() {
 	*x = ListEditorialDigestsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[52]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3157,7 +3269,7 @@ func (x *ListEditorialDigestsResponse) String() string {
 func (*ListEditorialDigestsResponse) ProtoMessage() {}
 
 func (x *ListEditorialDigestsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[52]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3170,7 +3282,7 @@ func (x *ListEditorialDigestsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListEditorialDigestsResponse.ProtoReflect.Descriptor instead.
 func (*ListEditorialDigestsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{52}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *ListEditorialDigestsResponse) GetDigests() []*EditorialDigest {
@@ -3188,7 +3300,7 @@ type GetLatestCloutDropRequest struct {
 
 func (x *GetLatestCloutDropRequest) Reset() {
 	*x = GetLatestCloutDropRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[53]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3200,7 +3312,7 @@ func (x *GetLatestCloutDropRequest) String() string {
 func (*GetLatestCloutDropRequest) ProtoMessage() {}
 
 func (x *GetLatestCloutDropRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[53]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3213,7 +3325,7 @@ func (x *GetLatestCloutDropRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestCloutDropRequest.ProtoReflect.Descriptor instead.
 func (*GetLatestCloutDropRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{53}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{54}
 }
 
 // CloutDropEntry is one (pillar, rank) cell of the drop.
@@ -3234,7 +3346,7 @@ type CloutDropEntry struct {
 
 func (x *CloutDropEntry) Reset() {
 	*x = CloutDropEntry{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[54]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3246,7 +3358,7 @@ func (x *CloutDropEntry) String() string {
 func (*CloutDropEntry) ProtoMessage() {}
 
 func (x *CloutDropEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[54]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3259,7 +3371,7 @@ func (x *CloutDropEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloutDropEntry.ProtoReflect.Descriptor instead.
 func (*CloutDropEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{54}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *CloutDropEntry) GetPillarCode() string {
@@ -3330,7 +3442,7 @@ type GetLatestCloutDropResponse struct {
 
 func (x *GetLatestCloutDropResponse) Reset() {
 	*x = GetLatestCloutDropResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[55]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3342,7 +3454,7 @@ func (x *GetLatestCloutDropResponse) String() string {
 func (*GetLatestCloutDropResponse) ProtoMessage() {}
 
 func (x *GetLatestCloutDropResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[55]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3355,7 +3467,7 @@ func (x *GetLatestCloutDropResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLatestCloutDropResponse.ProtoReflect.Descriptor instead.
 func (*GetLatestCloutDropResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{55}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *GetLatestCloutDropResponse) GetWeekStart() string {
@@ -3389,7 +3501,7 @@ type ListMyAuditLogRequest struct {
 
 func (x *ListMyAuditLogRequest) Reset() {
 	*x = ListMyAuditLogRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[56]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3401,7 +3513,7 @@ func (x *ListMyAuditLogRequest) String() string {
 func (*ListMyAuditLogRequest) ProtoMessage() {}
 
 func (x *ListMyAuditLogRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[56]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3414,7 +3526,7 @@ func (x *ListMyAuditLogRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAuditLogRequest.ProtoReflect.Descriptor instead.
 func (*ListMyAuditLogRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{56}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ListMyAuditLogRequest) GetLimit() int32 {
@@ -3456,7 +3568,7 @@ type MyAuditEntry struct {
 
 func (x *MyAuditEntry) Reset() {
 	*x = MyAuditEntry{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[57]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3468,7 +3580,7 @@ func (x *MyAuditEntry) String() string {
 func (*MyAuditEntry) ProtoMessage() {}
 
 func (x *MyAuditEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[57]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3481,7 +3593,7 @@ func (x *MyAuditEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MyAuditEntry.ProtoReflect.Descriptor instead.
 func (*MyAuditEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{57}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *MyAuditEntry) GetId() string {
@@ -3528,7 +3640,7 @@ type ListMyAuditLogResponse struct {
 
 func (x *ListMyAuditLogResponse) Reset() {
 	*x = ListMyAuditLogResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[58]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3540,7 +3652,7 @@ func (x *ListMyAuditLogResponse) String() string {
 func (*ListMyAuditLogResponse) ProtoMessage() {}
 
 func (x *ListMyAuditLogResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[58]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3553,7 +3665,7 @@ func (x *ListMyAuditLogResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAuditLogResponse.ProtoReflect.Descriptor instead.
 func (*ListMyAuditLogResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{58}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *ListMyAuditLogResponse) GetEntries() []*MyAuditEntry {
@@ -3583,7 +3695,7 @@ type FriendSummary struct {
 
 func (x *FriendSummary) Reset() {
 	*x = FriendSummary{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[59]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3595,7 +3707,7 @@ func (x *FriendSummary) String() string {
 func (*FriendSummary) ProtoMessage() {}
 
 func (x *FriendSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[59]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3608,7 +3720,7 @@ func (x *FriendSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FriendSummary.ProtoReflect.Descriptor instead.
 func (*FriendSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{59}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *FriendSummary) GetFriendshipId() string {
@@ -3675,7 +3787,7 @@ type ListFriendsRequest struct {
 
 func (x *ListFriendsRequest) Reset() {
 	*x = ListFriendsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[60]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3687,7 +3799,7 @@ func (x *ListFriendsRequest) String() string {
 func (*ListFriendsRequest) ProtoMessage() {}
 
 func (x *ListFriendsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[60]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3700,7 +3812,7 @@ func (x *ListFriendsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFriendsRequest.ProtoReflect.Descriptor instead.
 func (*ListFriendsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{60}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{61}
 }
 
 type ListFriendsResponse struct {
@@ -3714,7 +3826,7 @@ type ListFriendsResponse struct {
 
 func (x *ListFriendsResponse) Reset() {
 	*x = ListFriendsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[61]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3726,7 +3838,7 @@ func (x *ListFriendsResponse) String() string {
 func (*ListFriendsResponse) ProtoMessage() {}
 
 func (x *ListFriendsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[61]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3739,7 +3851,7 @@ func (x *ListFriendsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListFriendsResponse.ProtoReflect.Descriptor instead.
 func (*ListFriendsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{61}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *ListFriendsResponse) GetFriends() []*FriendSummary {
@@ -3773,7 +3885,7 @@ type SendInviteRequest struct {
 
 func (x *SendInviteRequest) Reset() {
 	*x = SendInviteRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[62]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3785,7 +3897,7 @@ func (x *SendInviteRequest) String() string {
 func (*SendInviteRequest) ProtoMessage() {}
 
 func (x *SendInviteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[62]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3798,7 +3910,7 @@ func (x *SendInviteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendInviteRequest.ProtoReflect.Descriptor instead.
 func (*SendInviteRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{62}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *SendInviteRequest) GetHandle() string {
@@ -3817,7 +3929,7 @@ type SendInviteResponse struct {
 
 func (x *SendInviteResponse) Reset() {
 	*x = SendInviteResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[63]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3829,7 +3941,7 @@ func (x *SendInviteResponse) String() string {
 func (*SendInviteResponse) ProtoMessage() {}
 
 func (x *SendInviteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[63]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3842,7 +3954,7 @@ func (x *SendInviteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendInviteResponse.ProtoReflect.Descriptor instead.
 func (*SendInviteResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{63}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *SendInviteResponse) GetFriendshipId() string {
@@ -3863,7 +3975,7 @@ type RespondInviteRequest struct {
 
 func (x *RespondInviteRequest) Reset() {
 	*x = RespondInviteRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[64]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3875,7 +3987,7 @@ func (x *RespondInviteRequest) String() string {
 func (*RespondInviteRequest) ProtoMessage() {}
 
 func (x *RespondInviteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[64]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3888,7 +4000,7 @@ func (x *RespondInviteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondInviteRequest.ProtoReflect.Descriptor instead.
 func (*RespondInviteRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{64}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *RespondInviteRequest) GetFriendshipId() string {
@@ -3916,7 +4028,7 @@ type RespondInviteResponse struct {
 
 func (x *RespondInviteResponse) Reset() {
 	*x = RespondInviteResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[65]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3928,7 +4040,7 @@ func (x *RespondInviteResponse) String() string {
 func (*RespondInviteResponse) ProtoMessage() {}
 
 func (x *RespondInviteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[65]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3941,7 +4053,7 @@ func (x *RespondInviteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondInviteResponse.ProtoReflect.Descriptor instead.
 func (*RespondInviteResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{65}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *RespondInviteResponse) GetFriendshipId() string {
@@ -3969,7 +4081,7 @@ type RemoveFriendRequest struct {
 
 func (x *RemoveFriendRequest) Reset() {
 	*x = RemoveFriendRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[66]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3981,7 +4093,7 @@ func (x *RemoveFriendRequest) String() string {
 func (*RemoveFriendRequest) ProtoMessage() {}
 
 func (x *RemoveFriendRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[66]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3994,7 +4106,7 @@ func (x *RemoveFriendRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveFriendRequest.ProtoReflect.Descriptor instead.
 func (*RemoveFriendRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{66}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *RemoveFriendRequest) GetFriendshipId() string {
@@ -4013,7 +4125,7 @@ type RemoveFriendResponse struct {
 
 func (x *RemoveFriendResponse) Reset() {
 	*x = RemoveFriendResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[67]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4025,7 +4137,7 @@ func (x *RemoveFriendResponse) String() string {
 func (*RemoveFriendResponse) ProtoMessage() {}
 
 func (x *RemoveFriendResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[67]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4038,7 +4150,7 @@ func (x *RemoveFriendResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveFriendResponse.ProtoReflect.Descriptor instead.
 func (*RemoveFriendResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{67}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *RemoveFriendResponse) GetFriendshipId() string {
@@ -4063,7 +4175,7 @@ type ConciergeThread struct {
 
 func (x *ConciergeThread) Reset() {
 	*x = ConciergeThread{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4075,7 +4187,7 @@ func (x *ConciergeThread) String() string {
 func (*ConciergeThread) ProtoMessage() {}
 
 func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[68]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4088,7 +4200,7 @@ func (x *ConciergeThread) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConciergeThread.ProtoReflect.Descriptor instead.
 func (*ConciergeThread) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{68}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *ConciergeThread) GetId() string {
@@ -4155,7 +4267,7 @@ type ConciergeMessage struct {
 
 func (x *ConciergeMessage) Reset() {
 	*x = ConciergeMessage{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4167,7 +4279,7 @@ func (x *ConciergeMessage) String() string {
 func (*ConciergeMessage) ProtoMessage() {}
 
 func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[69]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4180,7 +4292,7 @@ func (x *ConciergeMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConciergeMessage.ProtoReflect.Descriptor instead.
 func (*ConciergeMessage) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{69}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *ConciergeMessage) GetId() string {
@@ -4235,7 +4347,7 @@ type StartConciergeThreadRequest struct {
 
 func (x *StartConciergeThreadRequest) Reset() {
 	*x = StartConciergeThreadRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4247,7 +4359,7 @@ func (x *StartConciergeThreadRequest) String() string {
 func (*StartConciergeThreadRequest) ProtoMessage() {}
 
 func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[70]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4260,7 +4372,7 @@ func (x *StartConciergeThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartConciergeThreadRequest.ProtoReflect.Descriptor instead.
 func (*StartConciergeThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{70}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *StartConciergeThreadRequest) GetSubject() string {
@@ -4286,7 +4398,7 @@ type StartConciergeThreadResponse struct {
 
 func (x *StartConciergeThreadResponse) Reset() {
 	*x = StartConciergeThreadResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4298,7 +4410,7 @@ func (x *StartConciergeThreadResponse) String() string {
 func (*StartConciergeThreadResponse) ProtoMessage() {}
 
 func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[71]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4311,7 +4423,7 @@ func (x *StartConciergeThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartConciergeThreadResponse.ProtoReflect.Descriptor instead.
 func (*StartConciergeThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{71}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *StartConciergeThreadResponse) GetThreadId() string {
@@ -4329,7 +4441,7 @@ type ListMyConciergeThreadsRequest struct {
 
 func (x *ListMyConciergeThreadsRequest) Reset() {
 	*x = ListMyConciergeThreadsRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4341,7 +4453,7 @@ func (x *ListMyConciergeThreadsRequest) String() string {
 func (*ListMyConciergeThreadsRequest) ProtoMessage() {}
 
 func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[72]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4354,7 +4466,7 @@ func (x *ListMyConciergeThreadsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyConciergeThreadsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyConciergeThreadsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{72}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{73}
 }
 
 type ListMyConciergeThreadsResponse struct {
@@ -4366,7 +4478,7 @@ type ListMyConciergeThreadsResponse struct {
 
 func (x *ListMyConciergeThreadsResponse) Reset() {
 	*x = ListMyConciergeThreadsResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4378,7 +4490,7 @@ func (x *ListMyConciergeThreadsResponse) String() string {
 func (*ListMyConciergeThreadsResponse) ProtoMessage() {}
 
 func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[73]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4391,7 +4503,7 @@ func (x *ListMyConciergeThreadsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyConciergeThreadsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyConciergeThreadsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{73}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ListMyConciergeThreadsResponse) GetThreads() []*ConciergeThread {
@@ -4410,7 +4522,7 @@ type GetConciergeThreadRequest struct {
 
 func (x *GetConciergeThreadRequest) Reset() {
 	*x = GetConciergeThreadRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4422,7 +4534,7 @@ func (x *GetConciergeThreadRequest) String() string {
 func (*GetConciergeThreadRequest) ProtoMessage() {}
 
 func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[74]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4435,7 +4547,7 @@ func (x *GetConciergeThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConciergeThreadRequest.ProtoReflect.Descriptor instead.
 func (*GetConciergeThreadRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{74}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *GetConciergeThreadRequest) GetThreadId() string {
@@ -4455,7 +4567,7 @@ type GetConciergeThreadResponse struct {
 
 func (x *GetConciergeThreadResponse) Reset() {
 	*x = GetConciergeThreadResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4467,7 +4579,7 @@ func (x *GetConciergeThreadResponse) String() string {
 func (*GetConciergeThreadResponse) ProtoMessage() {}
 
 func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[75]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4480,7 +4592,7 @@ func (x *GetConciergeThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetConciergeThreadResponse.ProtoReflect.Descriptor instead.
 func (*GetConciergeThreadResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{75}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *GetConciergeThreadResponse) GetThread() *ConciergeThread {
@@ -4507,7 +4619,7 @@ type PostConciergeMessageRequest struct {
 
 func (x *PostConciergeMessageRequest) Reset() {
 	*x = PostConciergeMessageRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4519,7 +4631,7 @@ func (x *PostConciergeMessageRequest) String() string {
 func (*PostConciergeMessageRequest) ProtoMessage() {}
 
 func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[76]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4532,7 +4644,7 @@ func (x *PostConciergeMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostConciergeMessageRequest.ProtoReflect.Descriptor instead.
 func (*PostConciergeMessageRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{76}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *PostConciergeMessageRequest) GetThreadId() string {
@@ -4558,7 +4670,7 @@ type PostConciergeMessageResponse struct {
 
 func (x *PostConciergeMessageResponse) Reset() {
 	*x = PostConciergeMessageResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4570,7 +4682,7 @@ func (x *PostConciergeMessageResponse) String() string {
 func (*PostConciergeMessageResponse) ProtoMessage() {}
 
 func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[77]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4583,7 +4695,7 @@ func (x *PostConciergeMessageResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostConciergeMessageResponse.ProtoReflect.Descriptor instead.
 func (*PostConciergeMessageResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{77}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *PostConciergeMessageResponse) GetMessage() *ConciergeMessage {
@@ -4612,7 +4724,7 @@ type AnthologyArticle struct {
 
 func (x *AnthologyArticle) Reset() {
 	*x = AnthologyArticle{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4624,7 +4736,7 @@ func (x *AnthologyArticle) String() string {
 func (*AnthologyArticle) ProtoMessage() {}
 
 func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[78]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4637,7 +4749,7 @@ func (x *AnthologyArticle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnthologyArticle.ProtoReflect.Descriptor instead.
 func (*AnthologyArticle) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{78}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *AnthologyArticle) GetId() string {
@@ -4720,7 +4832,7 @@ type ListAnthologyArticlesRequest struct {
 
 func (x *ListAnthologyArticlesRequest) Reset() {
 	*x = ListAnthologyArticlesRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4732,7 +4844,7 @@ func (x *ListAnthologyArticlesRequest) String() string {
 func (*ListAnthologyArticlesRequest) ProtoMessage() {}
 
 func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[79]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4745,7 +4857,7 @@ func (x *ListAnthologyArticlesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAnthologyArticlesRequest.ProtoReflect.Descriptor instead.
 func (*ListAnthologyArticlesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{79}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *ListAnthologyArticlesRequest) GetLimit() int32 {
@@ -4772,7 +4884,7 @@ type ListAnthologyArticlesResponse struct {
 
 func (x *ListAnthologyArticlesResponse) Reset() {
 	*x = ListAnthologyArticlesResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4784,7 +4896,7 @@ func (x *ListAnthologyArticlesResponse) String() string {
 func (*ListAnthologyArticlesResponse) ProtoMessage() {}
 
 func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[80]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4797,7 +4909,7 @@ func (x *ListAnthologyArticlesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAnthologyArticlesResponse.ProtoReflect.Descriptor instead.
 func (*ListAnthologyArticlesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{80}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *ListAnthologyArticlesResponse) GetArticles() []*AnthologyArticle {
@@ -4816,7 +4928,7 @@ type GetAnthologyArticleRequest struct {
 
 func (x *GetAnthologyArticleRequest) Reset() {
 	*x = GetAnthologyArticleRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4828,7 +4940,7 @@ func (x *GetAnthologyArticleRequest) String() string {
 func (*GetAnthologyArticleRequest) ProtoMessage() {}
 
 func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[81]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4841,7 +4953,7 @@ func (x *GetAnthologyArticleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAnthologyArticleRequest.ProtoReflect.Descriptor instead.
 func (*GetAnthologyArticleRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{81}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *GetAnthologyArticleRequest) GetSlug() string {
@@ -4860,7 +4972,7 @@ type GetAnthologyArticleResponse struct {
 
 func (x *GetAnthologyArticleResponse) Reset() {
 	*x = GetAnthologyArticleResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4872,7 +4984,7 @@ func (x *GetAnthologyArticleResponse) String() string {
 func (*GetAnthologyArticleResponse) ProtoMessage() {}
 
 func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[82]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4885,7 +4997,7 @@ func (x *GetAnthologyArticleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAnthologyArticleResponse.ProtoReflect.Descriptor instead.
 func (*GetAnthologyArticleResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{82}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *GetAnthologyArticleResponse) GetArticle() *AnthologyArticle {
@@ -4911,7 +5023,7 @@ type DirectoryMember struct {
 
 func (x *DirectoryMember) Reset() {
 	*x = DirectoryMember{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4923,7 +5035,7 @@ func (x *DirectoryMember) String() string {
 func (*DirectoryMember) ProtoMessage() {}
 
 func (x *DirectoryMember) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[83]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4936,7 +5048,7 @@ func (x *DirectoryMember) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DirectoryMember.ProtoReflect.Descriptor instead.
 func (*DirectoryMember) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{83}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *DirectoryMember) GetUserId() string {
@@ -5008,7 +5120,7 @@ type ListMemberDirectoryRequest struct {
 
 func (x *ListMemberDirectoryRequest) Reset() {
 	*x = ListMemberDirectoryRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5020,7 +5132,7 @@ func (x *ListMemberDirectoryRequest) String() string {
 func (*ListMemberDirectoryRequest) ProtoMessage() {}
 
 func (x *ListMemberDirectoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[84]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5033,7 +5145,7 @@ func (x *ListMemberDirectoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMemberDirectoryRequest.ProtoReflect.Descriptor instead.
 func (*ListMemberDirectoryRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{84}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *ListMemberDirectoryRequest) GetTier() string {
@@ -5073,7 +5185,7 @@ type ListMemberDirectoryResponse struct {
 
 func (x *ListMemberDirectoryResponse) Reset() {
 	*x = ListMemberDirectoryResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5085,7 +5197,7 @@ func (x *ListMemberDirectoryResponse) String() string {
 func (*ListMemberDirectoryResponse) ProtoMessage() {}
 
 func (x *ListMemberDirectoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[85]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5098,7 +5210,7 @@ func (x *ListMemberDirectoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMemberDirectoryResponse.ProtoReflect.Descriptor instead.
 func (*ListMemberDirectoryResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{85}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *ListMemberDirectoryResponse) GetMembers() []*DirectoryMember {
@@ -5119,7 +5231,7 @@ type SetDirectoryVisibilityRequest struct {
 
 func (x *SetDirectoryVisibilityRequest) Reset() {
 	*x = SetDirectoryVisibilityRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5131,7 +5243,7 @@ func (x *SetDirectoryVisibilityRequest) String() string {
 func (*SetDirectoryVisibilityRequest) ProtoMessage() {}
 
 func (x *SetDirectoryVisibilityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[86]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5144,7 +5256,7 @@ func (x *SetDirectoryVisibilityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDirectoryVisibilityRequest.ProtoReflect.Descriptor instead.
 func (*SetDirectoryVisibilityRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{86}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *SetDirectoryVisibilityRequest) GetVisible() bool {
@@ -5171,7 +5283,7 @@ type SetDirectoryVisibilityResponse struct {
 
 func (x *SetDirectoryVisibilityResponse) Reset() {
 	*x = SetDirectoryVisibilityResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5183,7 +5295,7 @@ func (x *SetDirectoryVisibilityResponse) String() string {
 func (*SetDirectoryVisibilityResponse) ProtoMessage() {}
 
 func (x *SetDirectoryVisibilityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[87]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5196,7 +5308,7 @@ func (x *SetDirectoryVisibilityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDirectoryVisibilityResponse.ProtoReflect.Descriptor instead.
 func (*SetDirectoryVisibilityResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{87}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *SetDirectoryVisibilityResponse) GetVisible() bool {
@@ -5223,7 +5335,7 @@ type GenerateEmpireAlmanacRequest struct {
 
 func (x *GenerateEmpireAlmanacRequest) Reset() {
 	*x = GenerateEmpireAlmanacRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5235,7 +5347,7 @@ func (x *GenerateEmpireAlmanacRequest) String() string {
 func (*GenerateEmpireAlmanacRequest) ProtoMessage() {}
 
 func (x *GenerateEmpireAlmanacRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[88]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5248,7 +5360,7 @@ func (x *GenerateEmpireAlmanacRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateEmpireAlmanacRequest.ProtoReflect.Descriptor instead.
 func (*GenerateEmpireAlmanacRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{88}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *GenerateEmpireAlmanacRequest) GetYear() string {
@@ -5270,7 +5382,7 @@ type GenerateEmpireAlmanacResponse struct {
 
 func (x *GenerateEmpireAlmanacResponse) Reset() {
 	*x = GenerateEmpireAlmanacResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5282,7 +5394,7 @@ func (x *GenerateEmpireAlmanacResponse) String() string {
 func (*GenerateEmpireAlmanacResponse) ProtoMessage() {}
 
 func (x *GenerateEmpireAlmanacResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[89]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5295,7 +5407,7 @@ func (x *GenerateEmpireAlmanacResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateEmpireAlmanacResponse.ProtoReflect.Descriptor instead.
 func (*GenerateEmpireAlmanacResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{89}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *GenerateEmpireAlmanacResponse) GetMediaAssetId() string {
@@ -5334,7 +5446,7 @@ type CreateScoreBadgeRequest struct {
 
 func (x *CreateScoreBadgeRequest) Reset() {
 	*x = CreateScoreBadgeRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5346,7 +5458,7 @@ func (x *CreateScoreBadgeRequest) String() string {
 func (*CreateScoreBadgeRequest) ProtoMessage() {}
 
 func (x *CreateScoreBadgeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[90]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5359,7 +5471,7 @@ func (x *CreateScoreBadgeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateScoreBadgeRequest.ProtoReflect.Descriptor instead.
 func (*CreateScoreBadgeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{90}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{91}
 }
 
 type CreateScoreBadgeResponse struct {
@@ -5376,7 +5488,7 @@ type CreateScoreBadgeResponse struct {
 
 func (x *CreateScoreBadgeResponse) Reset() {
 	*x = CreateScoreBadgeResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5388,7 +5500,7 @@ func (x *CreateScoreBadgeResponse) String() string {
 func (*CreateScoreBadgeResponse) ProtoMessage() {}
 
 func (x *CreateScoreBadgeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[91]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5401,7 +5513,7 @@ func (x *CreateScoreBadgeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateScoreBadgeResponse.ProtoReflect.Descriptor instead.
 func (*CreateScoreBadgeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{91}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *CreateScoreBadgeResponse) GetToken() string {
@@ -5433,7 +5545,7 @@ type GetTierCardRequest struct {
 
 func (x *GetTierCardRequest) Reset() {
 	*x = GetTierCardRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5445,7 +5557,7 @@ func (x *GetTierCardRequest) String() string {
 func (*GetTierCardRequest) ProtoMessage() {}
 
 func (x *GetTierCardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[92]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5458,7 +5570,7 @@ func (x *GetTierCardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTierCardRequest.ProtoReflect.Descriptor instead.
 func (*GetTierCardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{92}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{93}
 }
 
 type GetTierCardResponse struct {
@@ -5479,7 +5591,7 @@ type GetTierCardResponse struct {
 
 func (x *GetTierCardResponse) Reset() {
 	*x = GetTierCardResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5491,7 +5603,7 @@ func (x *GetTierCardResponse) String() string {
 func (*GetTierCardResponse) ProtoMessage() {}
 
 func (x *GetTierCardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[93]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5504,7 +5616,7 @@ func (x *GetTierCardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTierCardResponse.ProtoReflect.Descriptor instead.
 func (*GetTierCardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{93}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *GetTierCardResponse) GetMemberName() string {
@@ -5559,7 +5671,7 @@ type CreateLoungePassRequest struct {
 
 func (x *CreateLoungePassRequest) Reset() {
 	*x = CreateLoungePassRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5571,7 +5683,7 @@ func (x *CreateLoungePassRequest) String() string {
 func (*CreateLoungePassRequest) ProtoMessage() {}
 
 func (x *CreateLoungePassRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[94]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5584,7 +5696,7 @@ func (x *CreateLoungePassRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLoungePassRequest.ProtoReflect.Descriptor instead.
 func (*CreateLoungePassRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{94}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *CreateLoungePassRequest) GetLoungeId() string {
@@ -5608,7 +5720,7 @@ type CreateLoungePassResponse struct {
 
 func (x *CreateLoungePassResponse) Reset() {
 	*x = CreateLoungePassResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5620,7 +5732,7 @@ func (x *CreateLoungePassResponse) String() string {
 func (*CreateLoungePassResponse) ProtoMessage() {}
 
 func (x *CreateLoungePassResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[95]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5633,7 +5745,7 @@ func (x *CreateLoungePassResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLoungePassResponse.ProtoReflect.Descriptor instead.
 func (*CreateLoungePassResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{95}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *CreateLoungePassResponse) GetToken() string {
@@ -5680,7 +5792,7 @@ type OrderAlmanacPrintRequest struct {
 
 func (x *OrderAlmanacPrintRequest) Reset() {
 	*x = OrderAlmanacPrintRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5692,7 +5804,7 @@ func (x *OrderAlmanacPrintRequest) String() string {
 func (*OrderAlmanacPrintRequest) ProtoMessage() {}
 
 func (x *OrderAlmanacPrintRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[96]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5705,7 +5817,7 @@ func (x *OrderAlmanacPrintRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderAlmanacPrintRequest.ProtoReflect.Descriptor instead.
 func (*OrderAlmanacPrintRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{96}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *OrderAlmanacPrintRequest) GetMediaAssetId() string {
@@ -5768,7 +5880,7 @@ type OrderAlmanacPrintResponse struct {
 
 func (x *OrderAlmanacPrintResponse) Reset() {
 	*x = OrderAlmanacPrintResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5780,7 +5892,7 @@ func (x *OrderAlmanacPrintResponse) String() string {
 func (*OrderAlmanacPrintResponse) ProtoMessage() {}
 
 func (x *OrderAlmanacPrintResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[97]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5793,7 +5905,7 @@ func (x *OrderAlmanacPrintResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderAlmanacPrintResponse.ProtoReflect.Descriptor instead.
 func (*OrderAlmanacPrintResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{97}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *OrderAlmanacPrintResponse) GetOrderId() string {
@@ -5824,7 +5936,7 @@ type AlmanacPrintOrder struct {
 
 func (x *AlmanacPrintOrder) Reset() {
 	*x = AlmanacPrintOrder{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5836,7 +5948,7 @@ func (x *AlmanacPrintOrder) String() string {
 func (*AlmanacPrintOrder) ProtoMessage() {}
 
 func (x *AlmanacPrintOrder) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[98]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5849,7 +5961,7 @@ func (x *AlmanacPrintOrder) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AlmanacPrintOrder.ProtoReflect.Descriptor instead.
 func (*AlmanacPrintOrder) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{98}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *AlmanacPrintOrder) GetId() string {
@@ -5902,7 +6014,7 @@ type ListMyAlmanacOrdersRequest struct {
 
 func (x *ListMyAlmanacOrdersRequest) Reset() {
 	*x = ListMyAlmanacOrdersRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5914,7 +6026,7 @@ func (x *ListMyAlmanacOrdersRequest) String() string {
 func (*ListMyAlmanacOrdersRequest) ProtoMessage() {}
 
 func (x *ListMyAlmanacOrdersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[99]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5927,7 +6039,7 @@ func (x *ListMyAlmanacOrdersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAlmanacOrdersRequest.ProtoReflect.Descriptor instead.
 func (*ListMyAlmanacOrdersRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{99}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{100}
 }
 
 type ListMyAlmanacOrdersResponse struct {
@@ -5939,7 +6051,7 @@ type ListMyAlmanacOrdersResponse struct {
 
 func (x *ListMyAlmanacOrdersResponse) Reset() {
 	*x = ListMyAlmanacOrdersResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5951,7 +6063,7 @@ func (x *ListMyAlmanacOrdersResponse) String() string {
 func (*ListMyAlmanacOrdersResponse) ProtoMessage() {}
 
 func (x *ListMyAlmanacOrdersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[100]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5964,7 +6076,7 @@ func (x *ListMyAlmanacOrdersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyAlmanacOrdersResponse.ProtoReflect.Descriptor instead.
 func (*ListMyAlmanacOrdersResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{100}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *ListMyAlmanacOrdersResponse) GetOrders() []*AlmanacPrintOrder {
@@ -5984,7 +6096,7 @@ type GetYearInEmpireRequest struct {
 
 func (x *GetYearInEmpireRequest) Reset() {
 	*x = GetYearInEmpireRequest{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5996,7 +6108,7 @@ func (x *GetYearInEmpireRequest) String() string {
 func (*GetYearInEmpireRequest) ProtoMessage() {}
 
 func (x *GetYearInEmpireRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[101]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6009,7 +6121,7 @@ func (x *GetYearInEmpireRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetYearInEmpireRequest.ProtoReflect.Descriptor instead.
 func (*GetYearInEmpireRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{101}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *GetYearInEmpireRequest) GetYear() string {
@@ -6042,7 +6154,7 @@ type GetYearInEmpireResponse struct {
 
 func (x *GetYearInEmpireResponse) Reset() {
 	*x = GetYearInEmpireResponse{}
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6054,7 +6166,7 @@ func (x *GetYearInEmpireResponse) String() string {
 func (*GetYearInEmpireResponse) ProtoMessage() {}
 
 func (x *GetYearInEmpireResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[102]
+	mi := &file_sttattus_empire_v1_empire_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6067,7 +6179,7 @@ func (x *GetYearInEmpireResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetYearInEmpireResponse.ProtoReflect.Descriptor instead.
 func (*GetYearInEmpireResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{102}
+	return file_sttattus_empire_v1_empire_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *GetYearInEmpireResponse) GetYear() string {
@@ -6152,7 +6264,13 @@ var File_sttattus_empire_v1_empire_proto protoreflect.FileDescriptor
 const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\n" +
 	"\x1fsttattus/empire/v1/empire.proto\x12\x12sttattus.empire.v1\"\x1a\n" +
-	"\x18GetScoreBreakdownRequest\"\xd4\x02\n" +
+	"\x18GetScoreBreakdownRequest\"\x9d\x01\n" +
+	"\x0ePillarStanding\x12\x19\n" +
+	"\bapp_code\x18\x01 \x01(\tR\aappCode\x12\x14\n" +
+	"\x05score\x18\x02 \x01(\x01R\x05score\x12!\n" +
+	"\fleader_score\x18\x03 \x01(\x01R\vleaderScore\x12\x1a\n" +
+	"\bstanding\x18\x04 \x01(\x01R\bstanding\x12\x1b\n" +
+	"\tis_leader\x18\x05 \x01(\bR\bisLeader\"\xa3\x03\n" +
 	"\x19GetScoreBreakdownResponse\x12%\n" +
 	"\x0esttattus_score\x18\x01 \x01(\x01R\rsttattusScore\x12\x12\n" +
 	"\x04tier\x18\x02 \x01(\tR\x04tier\x12\x1f\n" +
@@ -6162,7 +6280,8 @@ const file_sttattus_empire_v1_empire_proto_rawDesc = "" +
 	"\x10wealth_component\x18\x05 \x01(\x01R\x0fwealthComponent\x12#\n" +
 	"\rbio_component\x18\x06 \x01(\x01R\fbioComponent\x12)\n" +
 	"\x10social_component\x18\a \x01(\x01R\x0fsocialComponent\x123\n" +
-	"\x15operational_component\x18\b \x01(\x01R\x14operationalComponent\"\x16\n" +
+	"\x15operational_component\x18\b \x01(\x01R\x14operationalComponent\x12M\n" +
+	"\x10pillar_standings\x18\t \x03(\v2\".sttattus.empire.v1.PillarStandingR\x0fpillarStandings\"\x16\n" +
 	"\x14GetTierLadderRequest\"\xa8\x01\n" +
 	"\bTierBand\x12\x12\n" +
 	"\x04code\x18\x01 \x01(\tR\x04code\x12\x12\n" +
@@ -6640,228 +6759,230 @@ func file_sttattus_empire_v1_empire_proto_rawDescGZIP() []byte {
 	return file_sttattus_empire_v1_empire_proto_rawDescData
 }
 
-var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 103)
+var file_sttattus_empire_v1_empire_proto_msgTypes = make([]protoimpl.MessageInfo, 104)
 var file_sttattus_empire_v1_empire_proto_goTypes = []any{
 	(*GetScoreBreakdownRequest)(nil),             // 0: sttattus.empire.v1.GetScoreBreakdownRequest
-	(*GetScoreBreakdownResponse)(nil),            // 1: sttattus.empire.v1.GetScoreBreakdownResponse
-	(*GetTierLadderRequest)(nil),                 // 2: sttattus.empire.v1.GetTierLadderRequest
-	(*TierBand)(nil),                             // 3: sttattus.empire.v1.TierBand
-	(*GetTierLadderResponse)(nil),                // 4: sttattus.empire.v1.GetTierLadderResponse
-	(*GetWalletRequest)(nil),                     // 5: sttattus.empire.v1.GetWalletRequest
-	(*PillarPoints)(nil),                         // 6: sttattus.empire.v1.PillarPoints
-	(*GetWalletResponse)(nil),                    // 7: sttattus.empire.v1.GetWalletResponse
-	(*ListLedgerEntriesRequest)(nil),             // 8: sttattus.empire.v1.ListLedgerEntriesRequest
-	(*LedgerEntry)(nil),                          // 9: sttattus.empire.v1.LedgerEntry
-	(*ListLedgerEntriesResponse)(nil),            // 10: sttattus.empire.v1.ListLedgerEntriesResponse
-	(*GetTaxStatementRequest)(nil),               // 11: sttattus.empire.v1.GetTaxStatementRequest
-	(*TaxRuleSummary)(nil),                       // 12: sttattus.empire.v1.TaxRuleSummary
-	(*GetTaxStatementResponse)(nil),              // 13: sttattus.empire.v1.GetTaxStatementResponse
-	(*GetPublicProfileRequest)(nil),              // 14: sttattus.empire.v1.GetPublicProfileRequest
-	(*GetPublicProfileResponse)(nil),             // 15: sttattus.empire.v1.GetPublicProfileResponse
-	(*ClaimHandleRequest)(nil),                   // 16: sttattus.empire.v1.ClaimHandleRequest
-	(*ClaimHandleResponse)(nil),                  // 17: sttattus.empire.v1.ClaimHandleResponse
-	(*UpdatePublicProfileRequest)(nil),           // 18: sttattus.empire.v1.UpdatePublicProfileRequest
-	(*UpdatePublicProfileResponse)(nil),          // 19: sttattus.empire.v1.UpdatePublicProfileResponse
-	(*RedemptionItem)(nil),                       // 20: sttattus.empire.v1.RedemptionItem
-	(*ListRedemptionItemsRequest)(nil),           // 21: sttattus.empire.v1.ListRedemptionItemsRequest
-	(*ListRedemptionItemsResponse)(nil),          // 22: sttattus.empire.v1.ListRedemptionItemsResponse
-	(*RedeemItemRequest)(nil),                    // 23: sttattus.empire.v1.RedeemItemRequest
-	(*RedeemItemResponse)(nil),                   // 24: sttattus.empire.v1.RedeemItemResponse
-	(*RedemptionOrderSummary)(nil),               // 25: sttattus.empire.v1.RedemptionOrderSummary
-	(*ListMyRedemptionsRequest)(nil),             // 26: sttattus.empire.v1.ListMyRedemptionsRequest
-	(*ListMyRedemptionsResponse)(nil),            // 27: sttattus.empire.v1.ListMyRedemptionsResponse
-	(*RegisterDeviceTokenRequest)(nil),           // 28: sttattus.empire.v1.RegisterDeviceTokenRequest
-	(*RegisterDeviceTokenResponse)(nil),          // 29: sttattus.empire.v1.RegisterDeviceTokenResponse
-	(*UnregisterDeviceTokenRequest)(nil),         // 30: sttattus.empire.v1.UnregisterDeviceTokenRequest
-	(*UnregisterDeviceTokenResponse)(nil),        // 31: sttattus.empire.v1.UnregisterDeviceTokenResponse
-	(*NotificationPreference)(nil),               // 32: sttattus.empire.v1.NotificationPreference
-	(*ListNotificationPreferencesRequest)(nil),   // 33: sttattus.empire.v1.ListNotificationPreferencesRequest
-	(*ListNotificationPreferencesResponse)(nil),  // 34: sttattus.empire.v1.ListNotificationPreferencesResponse
-	(*UpdateNotificationPreferenceRequest)(nil),  // 35: sttattus.empire.v1.UpdateNotificationPreferenceRequest
-	(*UpdateNotificationPreferenceResponse)(nil), // 36: sttattus.empire.v1.UpdateNotificationPreferenceResponse
-	(*SalonSummary)(nil),                         // 37: sttattus.empire.v1.SalonSummary
-	(*ListUpcomingSalonsRequest)(nil),            // 38: sttattus.empire.v1.ListUpcomingSalonsRequest
-	(*ListUpcomingSalonsResponse)(nil),           // 39: sttattus.empire.v1.ListUpcomingSalonsResponse
-	(*UpdateSalonRsvpRequest)(nil),               // 40: sttattus.empire.v1.UpdateSalonRsvpRequest
-	(*UpdateSalonRsvpResponse)(nil),              // 41: sttattus.empire.v1.UpdateSalonRsvpResponse
-	(*Lounge)(nil),                               // 42: sttattus.empire.v1.Lounge
-	(*ListLoungesRequest)(nil),                   // 43: sttattus.empire.v1.ListLoungesRequest
-	(*ListLoungesResponse)(nil),                  // 44: sttattus.empire.v1.ListLoungesResponse
-	(*LoungeEvent)(nil),                          // 45: sttattus.empire.v1.LoungeEvent
-	(*ListUpcomingLoungeEventsRequest)(nil),      // 46: sttattus.empire.v1.ListUpcomingLoungeEventsRequest
-	(*ListUpcomingLoungeEventsResponse)(nil),     // 47: sttattus.empire.v1.ListUpcomingLoungeEventsResponse
-	(*EditorialDigest)(nil),                      // 48: sttattus.empire.v1.EditorialDigest
-	(*GetLatestEditorialDigestRequest)(nil),      // 49: sttattus.empire.v1.GetLatestEditorialDigestRequest
-	(*GetLatestEditorialDigestResponse)(nil),     // 50: sttattus.empire.v1.GetLatestEditorialDigestResponse
-	(*ListEditorialDigestsRequest)(nil),          // 51: sttattus.empire.v1.ListEditorialDigestsRequest
-	(*ListEditorialDigestsResponse)(nil),         // 52: sttattus.empire.v1.ListEditorialDigestsResponse
-	(*GetLatestCloutDropRequest)(nil),            // 53: sttattus.empire.v1.GetLatestCloutDropRequest
-	(*CloutDropEntry)(nil),                       // 54: sttattus.empire.v1.CloutDropEntry
-	(*GetLatestCloutDropResponse)(nil),           // 55: sttattus.empire.v1.GetLatestCloutDropResponse
-	(*ListMyAuditLogRequest)(nil),                // 56: sttattus.empire.v1.ListMyAuditLogRequest
-	(*MyAuditEntry)(nil),                         // 57: sttattus.empire.v1.MyAuditEntry
-	(*ListMyAuditLogResponse)(nil),               // 58: sttattus.empire.v1.ListMyAuditLogResponse
-	(*FriendSummary)(nil),                        // 59: sttattus.empire.v1.FriendSummary
-	(*ListFriendsRequest)(nil),                   // 60: sttattus.empire.v1.ListFriendsRequest
-	(*ListFriendsResponse)(nil),                  // 61: sttattus.empire.v1.ListFriendsResponse
-	(*SendInviteRequest)(nil),                    // 62: sttattus.empire.v1.SendInviteRequest
-	(*SendInviteResponse)(nil),                   // 63: sttattus.empire.v1.SendInviteResponse
-	(*RespondInviteRequest)(nil),                 // 64: sttattus.empire.v1.RespondInviteRequest
-	(*RespondInviteResponse)(nil),                // 65: sttattus.empire.v1.RespondInviteResponse
-	(*RemoveFriendRequest)(nil),                  // 66: sttattus.empire.v1.RemoveFriendRequest
-	(*RemoveFriendResponse)(nil),                 // 67: sttattus.empire.v1.RemoveFriendResponse
-	(*ConciergeThread)(nil),                      // 68: sttattus.empire.v1.ConciergeThread
-	(*ConciergeMessage)(nil),                     // 69: sttattus.empire.v1.ConciergeMessage
-	(*StartConciergeThreadRequest)(nil),          // 70: sttattus.empire.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),         // 71: sttattus.empire.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),        // 72: sttattus.empire.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),       // 73: sttattus.empire.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),            // 74: sttattus.empire.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),           // 75: sttattus.empire.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),          // 76: sttattus.empire.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),         // 77: sttattus.empire.v1.PostConciergeMessageResponse
-	(*AnthologyArticle)(nil),                     // 78: sttattus.empire.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),         // 79: sttattus.empire.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),        // 80: sttattus.empire.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),           // 81: sttattus.empire.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),          // 82: sttattus.empire.v1.GetAnthologyArticleResponse
-	(*DirectoryMember)(nil),                      // 83: sttattus.empire.v1.DirectoryMember
-	(*ListMemberDirectoryRequest)(nil),           // 84: sttattus.empire.v1.ListMemberDirectoryRequest
-	(*ListMemberDirectoryResponse)(nil),          // 85: sttattus.empire.v1.ListMemberDirectoryResponse
-	(*SetDirectoryVisibilityRequest)(nil),        // 86: sttattus.empire.v1.SetDirectoryVisibilityRequest
-	(*SetDirectoryVisibilityResponse)(nil),       // 87: sttattus.empire.v1.SetDirectoryVisibilityResponse
-	(*GenerateEmpireAlmanacRequest)(nil),         // 88: sttattus.empire.v1.GenerateEmpireAlmanacRequest
-	(*GenerateEmpireAlmanacResponse)(nil),        // 89: sttattus.empire.v1.GenerateEmpireAlmanacResponse
-	(*CreateScoreBadgeRequest)(nil),              // 90: sttattus.empire.v1.CreateScoreBadgeRequest
-	(*CreateScoreBadgeResponse)(nil),             // 91: sttattus.empire.v1.CreateScoreBadgeResponse
-	(*GetTierCardRequest)(nil),                   // 92: sttattus.empire.v1.GetTierCardRequest
-	(*GetTierCardResponse)(nil),                  // 93: sttattus.empire.v1.GetTierCardResponse
-	(*CreateLoungePassRequest)(nil),              // 94: sttattus.empire.v1.CreateLoungePassRequest
-	(*CreateLoungePassResponse)(nil),             // 95: sttattus.empire.v1.CreateLoungePassResponse
-	(*OrderAlmanacPrintRequest)(nil),             // 96: sttattus.empire.v1.OrderAlmanacPrintRequest
-	(*OrderAlmanacPrintResponse)(nil),            // 97: sttattus.empire.v1.OrderAlmanacPrintResponse
-	(*AlmanacPrintOrder)(nil),                    // 98: sttattus.empire.v1.AlmanacPrintOrder
-	(*ListMyAlmanacOrdersRequest)(nil),           // 99: sttattus.empire.v1.ListMyAlmanacOrdersRequest
-	(*ListMyAlmanacOrdersResponse)(nil),          // 100: sttattus.empire.v1.ListMyAlmanacOrdersResponse
-	(*GetYearInEmpireRequest)(nil),               // 101: sttattus.empire.v1.GetYearInEmpireRequest
-	(*GetYearInEmpireResponse)(nil),              // 102: sttattus.empire.v1.GetYearInEmpireResponse
+	(*PillarStanding)(nil),                       // 1: sttattus.empire.v1.PillarStanding
+	(*GetScoreBreakdownResponse)(nil),            // 2: sttattus.empire.v1.GetScoreBreakdownResponse
+	(*GetTierLadderRequest)(nil),                 // 3: sttattus.empire.v1.GetTierLadderRequest
+	(*TierBand)(nil),                             // 4: sttattus.empire.v1.TierBand
+	(*GetTierLadderResponse)(nil),                // 5: sttattus.empire.v1.GetTierLadderResponse
+	(*GetWalletRequest)(nil),                     // 6: sttattus.empire.v1.GetWalletRequest
+	(*PillarPoints)(nil),                         // 7: sttattus.empire.v1.PillarPoints
+	(*GetWalletResponse)(nil),                    // 8: sttattus.empire.v1.GetWalletResponse
+	(*ListLedgerEntriesRequest)(nil),             // 9: sttattus.empire.v1.ListLedgerEntriesRequest
+	(*LedgerEntry)(nil),                          // 10: sttattus.empire.v1.LedgerEntry
+	(*ListLedgerEntriesResponse)(nil),            // 11: sttattus.empire.v1.ListLedgerEntriesResponse
+	(*GetTaxStatementRequest)(nil),               // 12: sttattus.empire.v1.GetTaxStatementRequest
+	(*TaxRuleSummary)(nil),                       // 13: sttattus.empire.v1.TaxRuleSummary
+	(*GetTaxStatementResponse)(nil),              // 14: sttattus.empire.v1.GetTaxStatementResponse
+	(*GetPublicProfileRequest)(nil),              // 15: sttattus.empire.v1.GetPublicProfileRequest
+	(*GetPublicProfileResponse)(nil),             // 16: sttattus.empire.v1.GetPublicProfileResponse
+	(*ClaimHandleRequest)(nil),                   // 17: sttattus.empire.v1.ClaimHandleRequest
+	(*ClaimHandleResponse)(nil),                  // 18: sttattus.empire.v1.ClaimHandleResponse
+	(*UpdatePublicProfileRequest)(nil),           // 19: sttattus.empire.v1.UpdatePublicProfileRequest
+	(*UpdatePublicProfileResponse)(nil),          // 20: sttattus.empire.v1.UpdatePublicProfileResponse
+	(*RedemptionItem)(nil),                       // 21: sttattus.empire.v1.RedemptionItem
+	(*ListRedemptionItemsRequest)(nil),           // 22: sttattus.empire.v1.ListRedemptionItemsRequest
+	(*ListRedemptionItemsResponse)(nil),          // 23: sttattus.empire.v1.ListRedemptionItemsResponse
+	(*RedeemItemRequest)(nil),                    // 24: sttattus.empire.v1.RedeemItemRequest
+	(*RedeemItemResponse)(nil),                   // 25: sttattus.empire.v1.RedeemItemResponse
+	(*RedemptionOrderSummary)(nil),               // 26: sttattus.empire.v1.RedemptionOrderSummary
+	(*ListMyRedemptionsRequest)(nil),             // 27: sttattus.empire.v1.ListMyRedemptionsRequest
+	(*ListMyRedemptionsResponse)(nil),            // 28: sttattus.empire.v1.ListMyRedemptionsResponse
+	(*RegisterDeviceTokenRequest)(nil),           // 29: sttattus.empire.v1.RegisterDeviceTokenRequest
+	(*RegisterDeviceTokenResponse)(nil),          // 30: sttattus.empire.v1.RegisterDeviceTokenResponse
+	(*UnregisterDeviceTokenRequest)(nil),         // 31: sttattus.empire.v1.UnregisterDeviceTokenRequest
+	(*UnregisterDeviceTokenResponse)(nil),        // 32: sttattus.empire.v1.UnregisterDeviceTokenResponse
+	(*NotificationPreference)(nil),               // 33: sttattus.empire.v1.NotificationPreference
+	(*ListNotificationPreferencesRequest)(nil),   // 34: sttattus.empire.v1.ListNotificationPreferencesRequest
+	(*ListNotificationPreferencesResponse)(nil),  // 35: sttattus.empire.v1.ListNotificationPreferencesResponse
+	(*UpdateNotificationPreferenceRequest)(nil),  // 36: sttattus.empire.v1.UpdateNotificationPreferenceRequest
+	(*UpdateNotificationPreferenceResponse)(nil), // 37: sttattus.empire.v1.UpdateNotificationPreferenceResponse
+	(*SalonSummary)(nil),                         // 38: sttattus.empire.v1.SalonSummary
+	(*ListUpcomingSalonsRequest)(nil),            // 39: sttattus.empire.v1.ListUpcomingSalonsRequest
+	(*ListUpcomingSalonsResponse)(nil),           // 40: sttattus.empire.v1.ListUpcomingSalonsResponse
+	(*UpdateSalonRsvpRequest)(nil),               // 41: sttattus.empire.v1.UpdateSalonRsvpRequest
+	(*UpdateSalonRsvpResponse)(nil),              // 42: sttattus.empire.v1.UpdateSalonRsvpResponse
+	(*Lounge)(nil),                               // 43: sttattus.empire.v1.Lounge
+	(*ListLoungesRequest)(nil),                   // 44: sttattus.empire.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),                  // 45: sttattus.empire.v1.ListLoungesResponse
+	(*LoungeEvent)(nil),                          // 46: sttattus.empire.v1.LoungeEvent
+	(*ListUpcomingLoungeEventsRequest)(nil),      // 47: sttattus.empire.v1.ListUpcomingLoungeEventsRequest
+	(*ListUpcomingLoungeEventsResponse)(nil),     // 48: sttattus.empire.v1.ListUpcomingLoungeEventsResponse
+	(*EditorialDigest)(nil),                      // 49: sttattus.empire.v1.EditorialDigest
+	(*GetLatestEditorialDigestRequest)(nil),      // 50: sttattus.empire.v1.GetLatestEditorialDigestRequest
+	(*GetLatestEditorialDigestResponse)(nil),     // 51: sttattus.empire.v1.GetLatestEditorialDigestResponse
+	(*ListEditorialDigestsRequest)(nil),          // 52: sttattus.empire.v1.ListEditorialDigestsRequest
+	(*ListEditorialDigestsResponse)(nil),         // 53: sttattus.empire.v1.ListEditorialDigestsResponse
+	(*GetLatestCloutDropRequest)(nil),            // 54: sttattus.empire.v1.GetLatestCloutDropRequest
+	(*CloutDropEntry)(nil),                       // 55: sttattus.empire.v1.CloutDropEntry
+	(*GetLatestCloutDropResponse)(nil),           // 56: sttattus.empire.v1.GetLatestCloutDropResponse
+	(*ListMyAuditLogRequest)(nil),                // 57: sttattus.empire.v1.ListMyAuditLogRequest
+	(*MyAuditEntry)(nil),                         // 58: sttattus.empire.v1.MyAuditEntry
+	(*ListMyAuditLogResponse)(nil),               // 59: sttattus.empire.v1.ListMyAuditLogResponse
+	(*FriendSummary)(nil),                        // 60: sttattus.empire.v1.FriendSummary
+	(*ListFriendsRequest)(nil),                   // 61: sttattus.empire.v1.ListFriendsRequest
+	(*ListFriendsResponse)(nil),                  // 62: sttattus.empire.v1.ListFriendsResponse
+	(*SendInviteRequest)(nil),                    // 63: sttattus.empire.v1.SendInviteRequest
+	(*SendInviteResponse)(nil),                   // 64: sttattus.empire.v1.SendInviteResponse
+	(*RespondInviteRequest)(nil),                 // 65: sttattus.empire.v1.RespondInviteRequest
+	(*RespondInviteResponse)(nil),                // 66: sttattus.empire.v1.RespondInviteResponse
+	(*RemoveFriendRequest)(nil),                  // 67: sttattus.empire.v1.RemoveFriendRequest
+	(*RemoveFriendResponse)(nil),                 // 68: sttattus.empire.v1.RemoveFriendResponse
+	(*ConciergeThread)(nil),                      // 69: sttattus.empire.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                     // 70: sttattus.empire.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),          // 71: sttattus.empire.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),         // 72: sttattus.empire.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),        // 73: sttattus.empire.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),       // 74: sttattus.empire.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),            // 75: sttattus.empire.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),           // 76: sttattus.empire.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),          // 77: sttattus.empire.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),         // 78: sttattus.empire.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                     // 79: sttattus.empire.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),         // 80: sttattus.empire.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),        // 81: sttattus.empire.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),           // 82: sttattus.empire.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),          // 83: sttattus.empire.v1.GetAnthologyArticleResponse
+	(*DirectoryMember)(nil),                      // 84: sttattus.empire.v1.DirectoryMember
+	(*ListMemberDirectoryRequest)(nil),           // 85: sttattus.empire.v1.ListMemberDirectoryRequest
+	(*ListMemberDirectoryResponse)(nil),          // 86: sttattus.empire.v1.ListMemberDirectoryResponse
+	(*SetDirectoryVisibilityRequest)(nil),        // 87: sttattus.empire.v1.SetDirectoryVisibilityRequest
+	(*SetDirectoryVisibilityResponse)(nil),       // 88: sttattus.empire.v1.SetDirectoryVisibilityResponse
+	(*GenerateEmpireAlmanacRequest)(nil),         // 89: sttattus.empire.v1.GenerateEmpireAlmanacRequest
+	(*GenerateEmpireAlmanacResponse)(nil),        // 90: sttattus.empire.v1.GenerateEmpireAlmanacResponse
+	(*CreateScoreBadgeRequest)(nil),              // 91: sttattus.empire.v1.CreateScoreBadgeRequest
+	(*CreateScoreBadgeResponse)(nil),             // 92: sttattus.empire.v1.CreateScoreBadgeResponse
+	(*GetTierCardRequest)(nil),                   // 93: sttattus.empire.v1.GetTierCardRequest
+	(*GetTierCardResponse)(nil),                  // 94: sttattus.empire.v1.GetTierCardResponse
+	(*CreateLoungePassRequest)(nil),              // 95: sttattus.empire.v1.CreateLoungePassRequest
+	(*CreateLoungePassResponse)(nil),             // 96: sttattus.empire.v1.CreateLoungePassResponse
+	(*OrderAlmanacPrintRequest)(nil),             // 97: sttattus.empire.v1.OrderAlmanacPrintRequest
+	(*OrderAlmanacPrintResponse)(nil),            // 98: sttattus.empire.v1.OrderAlmanacPrintResponse
+	(*AlmanacPrintOrder)(nil),                    // 99: sttattus.empire.v1.AlmanacPrintOrder
+	(*ListMyAlmanacOrdersRequest)(nil),           // 100: sttattus.empire.v1.ListMyAlmanacOrdersRequest
+	(*ListMyAlmanacOrdersResponse)(nil),          // 101: sttattus.empire.v1.ListMyAlmanacOrdersResponse
+	(*GetYearInEmpireRequest)(nil),               // 102: sttattus.empire.v1.GetYearInEmpireRequest
+	(*GetYearInEmpireResponse)(nil),              // 103: sttattus.empire.v1.GetYearInEmpireResponse
 }
 var file_sttattus_empire_v1_empire_proto_depIdxs = []int32{
-	3,   // 0: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
-	6,   // 1: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
-	9,   // 2: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
-	12,  // 3: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
-	20,  // 4: sttattus.empire.v1.ListRedemptionItemsResponse.items:type_name -> sttattus.empire.v1.RedemptionItem
-	25,  // 5: sttattus.empire.v1.ListMyRedemptionsResponse.orders:type_name -> sttattus.empire.v1.RedemptionOrderSummary
-	32,  // 6: sttattus.empire.v1.ListNotificationPreferencesResponse.preferences:type_name -> sttattus.empire.v1.NotificationPreference
-	32,  // 7: sttattus.empire.v1.UpdateNotificationPreferenceResponse.preference:type_name -> sttattus.empire.v1.NotificationPreference
-	37,  // 8: sttattus.empire.v1.ListUpcomingSalonsResponse.salons:type_name -> sttattus.empire.v1.SalonSummary
-	42,  // 9: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
-	45,  // 10: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
-	48,  // 11: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
-	48,  // 12: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
-	54,  // 13: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
-	57,  // 14: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
-	59,  // 15: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
-	59,  // 16: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
-	59,  // 17: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
-	68,  // 18: sttattus.empire.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.empire.v1.ConciergeThread
-	68,  // 19: sttattus.empire.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.empire.v1.ConciergeThread
-	69,  // 20: sttattus.empire.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.empire.v1.ConciergeMessage
-	69,  // 21: sttattus.empire.v1.PostConciergeMessageResponse.message:type_name -> sttattus.empire.v1.ConciergeMessage
-	78,  // 22: sttattus.empire.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.empire.v1.AnthologyArticle
-	78,  // 23: sttattus.empire.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.empire.v1.AnthologyArticle
-	83,  // 24: sttattus.empire.v1.ListMemberDirectoryResponse.members:type_name -> sttattus.empire.v1.DirectoryMember
-	98,  // 25: sttattus.empire.v1.ListMyAlmanacOrdersResponse.orders:type_name -> sttattus.empire.v1.AlmanacPrintOrder
-	0,   // 26: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
-	2,   // 27: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
-	5,   // 28: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
-	8,   // 29: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
-	11,  // 30: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
-	14,  // 31: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
-	16,  // 32: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
-	18,  // 33: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
-	60,  // 34: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
-	62,  // 35: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
-	64,  // 36: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
-	66,  // 37: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
-	56,  // 38: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
-	53,  // 39: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
-	49,  // 40: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
-	51,  // 41: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
-	43,  // 42: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
-	46,  // 43: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
-	38,  // 44: sttattus.empire.v1.EmpireService.ListUpcomingSalons:input_type -> sttattus.empire.v1.ListUpcomingSalonsRequest
-	40,  // 45: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:input_type -> sttattus.empire.v1.UpdateSalonRsvpRequest
-	28,  // 46: sttattus.empire.v1.EmpireService.RegisterDeviceToken:input_type -> sttattus.empire.v1.RegisterDeviceTokenRequest
-	30,  // 47: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:input_type -> sttattus.empire.v1.UnregisterDeviceTokenRequest
-	33,  // 48: sttattus.empire.v1.EmpireService.ListNotificationPreferences:input_type -> sttattus.empire.v1.ListNotificationPreferencesRequest
-	35,  // 49: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:input_type -> sttattus.empire.v1.UpdateNotificationPreferenceRequest
-	21,  // 50: sttattus.empire.v1.EmpireService.ListRedemptionItems:input_type -> sttattus.empire.v1.ListRedemptionItemsRequest
-	23,  // 51: sttattus.empire.v1.EmpireService.RedeemItem:input_type -> sttattus.empire.v1.RedeemItemRequest
-	26,  // 52: sttattus.empire.v1.EmpireService.ListMyRedemptions:input_type -> sttattus.empire.v1.ListMyRedemptionsRequest
-	70,  // 53: sttattus.empire.v1.EmpireService.StartConciergeThread:input_type -> sttattus.empire.v1.StartConciergeThreadRequest
-	72,  // 54: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:input_type -> sttattus.empire.v1.ListMyConciergeThreadsRequest
-	74,  // 55: sttattus.empire.v1.EmpireService.GetConciergeThread:input_type -> sttattus.empire.v1.GetConciergeThreadRequest
-	76,  // 56: sttattus.empire.v1.EmpireService.PostConciergeMessage:input_type -> sttattus.empire.v1.PostConciergeMessageRequest
-	79,  // 57: sttattus.empire.v1.EmpireService.ListAnthologyArticles:input_type -> sttattus.empire.v1.ListAnthologyArticlesRequest
-	81,  // 58: sttattus.empire.v1.EmpireService.GetAnthologyArticle:input_type -> sttattus.empire.v1.GetAnthologyArticleRequest
-	84,  // 59: sttattus.empire.v1.EmpireService.ListMemberDirectory:input_type -> sttattus.empire.v1.ListMemberDirectoryRequest
-	86,  // 60: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:input_type -> sttattus.empire.v1.SetDirectoryVisibilityRequest
-	88,  // 61: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:input_type -> sttattus.empire.v1.GenerateEmpireAlmanacRequest
-	90,  // 62: sttattus.empire.v1.EmpireService.CreateScoreBadge:input_type -> sttattus.empire.v1.CreateScoreBadgeRequest
-	92,  // 63: sttattus.empire.v1.EmpireService.GetTierCard:input_type -> sttattus.empire.v1.GetTierCardRequest
-	94,  // 64: sttattus.empire.v1.EmpireService.CreateLoungePass:input_type -> sttattus.empire.v1.CreateLoungePassRequest
-	96,  // 65: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:input_type -> sttattus.empire.v1.OrderAlmanacPrintRequest
-	99,  // 66: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:input_type -> sttattus.empire.v1.ListMyAlmanacOrdersRequest
-	101, // 67: sttattus.empire.v1.EmpireService.GetYearInEmpire:input_type -> sttattus.empire.v1.GetYearInEmpireRequest
-	1,   // 68: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
-	4,   // 69: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
-	7,   // 70: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
-	10,  // 71: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
-	13,  // 72: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
-	15,  // 73: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
-	17,  // 74: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
-	19,  // 75: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
-	61,  // 76: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
-	63,  // 77: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
-	65,  // 78: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
-	67,  // 79: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
-	58,  // 80: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
-	55,  // 81: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
-	50,  // 82: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
-	52,  // 83: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
-	44,  // 84: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
-	47,  // 85: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
-	39,  // 86: sttattus.empire.v1.EmpireService.ListUpcomingSalons:output_type -> sttattus.empire.v1.ListUpcomingSalonsResponse
-	41,  // 87: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:output_type -> sttattus.empire.v1.UpdateSalonRsvpResponse
-	29,  // 88: sttattus.empire.v1.EmpireService.RegisterDeviceToken:output_type -> sttattus.empire.v1.RegisterDeviceTokenResponse
-	31,  // 89: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:output_type -> sttattus.empire.v1.UnregisterDeviceTokenResponse
-	34,  // 90: sttattus.empire.v1.EmpireService.ListNotificationPreferences:output_type -> sttattus.empire.v1.ListNotificationPreferencesResponse
-	36,  // 91: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:output_type -> sttattus.empire.v1.UpdateNotificationPreferenceResponse
-	22,  // 92: sttattus.empire.v1.EmpireService.ListRedemptionItems:output_type -> sttattus.empire.v1.ListRedemptionItemsResponse
-	24,  // 93: sttattus.empire.v1.EmpireService.RedeemItem:output_type -> sttattus.empire.v1.RedeemItemResponse
-	27,  // 94: sttattus.empire.v1.EmpireService.ListMyRedemptions:output_type -> sttattus.empire.v1.ListMyRedemptionsResponse
-	71,  // 95: sttattus.empire.v1.EmpireService.StartConciergeThread:output_type -> sttattus.empire.v1.StartConciergeThreadResponse
-	73,  // 96: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:output_type -> sttattus.empire.v1.ListMyConciergeThreadsResponse
-	75,  // 97: sttattus.empire.v1.EmpireService.GetConciergeThread:output_type -> sttattus.empire.v1.GetConciergeThreadResponse
-	77,  // 98: sttattus.empire.v1.EmpireService.PostConciergeMessage:output_type -> sttattus.empire.v1.PostConciergeMessageResponse
-	80,  // 99: sttattus.empire.v1.EmpireService.ListAnthologyArticles:output_type -> sttattus.empire.v1.ListAnthologyArticlesResponse
-	82,  // 100: sttattus.empire.v1.EmpireService.GetAnthologyArticle:output_type -> sttattus.empire.v1.GetAnthologyArticleResponse
-	85,  // 101: sttattus.empire.v1.EmpireService.ListMemberDirectory:output_type -> sttattus.empire.v1.ListMemberDirectoryResponse
-	87,  // 102: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:output_type -> sttattus.empire.v1.SetDirectoryVisibilityResponse
-	89,  // 103: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:output_type -> sttattus.empire.v1.GenerateEmpireAlmanacResponse
-	91,  // 104: sttattus.empire.v1.EmpireService.CreateScoreBadge:output_type -> sttattus.empire.v1.CreateScoreBadgeResponse
-	93,  // 105: sttattus.empire.v1.EmpireService.GetTierCard:output_type -> sttattus.empire.v1.GetTierCardResponse
-	95,  // 106: sttattus.empire.v1.EmpireService.CreateLoungePass:output_type -> sttattus.empire.v1.CreateLoungePassResponse
-	97,  // 107: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:output_type -> sttattus.empire.v1.OrderAlmanacPrintResponse
-	100, // 108: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:output_type -> sttattus.empire.v1.ListMyAlmanacOrdersResponse
-	102, // 109: sttattus.empire.v1.EmpireService.GetYearInEmpire:output_type -> sttattus.empire.v1.GetYearInEmpireResponse
-	68,  // [68:110] is the sub-list for method output_type
-	26,  // [26:68] is the sub-list for method input_type
-	26,  // [26:26] is the sub-list for extension type_name
-	26,  // [26:26] is the sub-list for extension extendee
-	0,   // [0:26] is the sub-list for field type_name
+	1,   // 0: sttattus.empire.v1.GetScoreBreakdownResponse.pillar_standings:type_name -> sttattus.empire.v1.PillarStanding
+	4,   // 1: sttattus.empire.v1.GetTierLadderResponse.bands:type_name -> sttattus.empire.v1.TierBand
+	7,   // 2: sttattus.empire.v1.GetWalletResponse.by_pillar:type_name -> sttattus.empire.v1.PillarPoints
+	10,  // 3: sttattus.empire.v1.ListLedgerEntriesResponse.entries:type_name -> sttattus.empire.v1.LedgerEntry
+	13,  // 4: sttattus.empire.v1.GetTaxStatementResponse.active_rules:type_name -> sttattus.empire.v1.TaxRuleSummary
+	21,  // 5: sttattus.empire.v1.ListRedemptionItemsResponse.items:type_name -> sttattus.empire.v1.RedemptionItem
+	26,  // 6: sttattus.empire.v1.ListMyRedemptionsResponse.orders:type_name -> sttattus.empire.v1.RedemptionOrderSummary
+	33,  // 7: sttattus.empire.v1.ListNotificationPreferencesResponse.preferences:type_name -> sttattus.empire.v1.NotificationPreference
+	33,  // 8: sttattus.empire.v1.UpdateNotificationPreferenceResponse.preference:type_name -> sttattus.empire.v1.NotificationPreference
+	38,  // 9: sttattus.empire.v1.ListUpcomingSalonsResponse.salons:type_name -> sttattus.empire.v1.SalonSummary
+	43,  // 10: sttattus.empire.v1.ListLoungesResponse.lounges:type_name -> sttattus.empire.v1.Lounge
+	46,  // 11: sttattus.empire.v1.ListUpcomingLoungeEventsResponse.events:type_name -> sttattus.empire.v1.LoungeEvent
+	49,  // 12: sttattus.empire.v1.GetLatestEditorialDigestResponse.digest:type_name -> sttattus.empire.v1.EditorialDigest
+	49,  // 13: sttattus.empire.v1.ListEditorialDigestsResponse.digests:type_name -> sttattus.empire.v1.EditorialDigest
+	55,  // 14: sttattus.empire.v1.GetLatestCloutDropResponse.entries:type_name -> sttattus.empire.v1.CloutDropEntry
+	58,  // 15: sttattus.empire.v1.ListMyAuditLogResponse.entries:type_name -> sttattus.empire.v1.MyAuditEntry
+	60,  // 16: sttattus.empire.v1.ListFriendsResponse.friends:type_name -> sttattus.empire.v1.FriendSummary
+	60,  // 17: sttattus.empire.v1.ListFriendsResponse.incoming:type_name -> sttattus.empire.v1.FriendSummary
+	60,  // 18: sttattus.empire.v1.ListFriendsResponse.outgoing:type_name -> sttattus.empire.v1.FriendSummary
+	69,  // 19: sttattus.empire.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.empire.v1.ConciergeThread
+	69,  // 20: sttattus.empire.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.empire.v1.ConciergeThread
+	70,  // 21: sttattus.empire.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.empire.v1.ConciergeMessage
+	70,  // 22: sttattus.empire.v1.PostConciergeMessageResponse.message:type_name -> sttattus.empire.v1.ConciergeMessage
+	79,  // 23: sttattus.empire.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.empire.v1.AnthologyArticle
+	79,  // 24: sttattus.empire.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.empire.v1.AnthologyArticle
+	84,  // 25: sttattus.empire.v1.ListMemberDirectoryResponse.members:type_name -> sttattus.empire.v1.DirectoryMember
+	99,  // 26: sttattus.empire.v1.ListMyAlmanacOrdersResponse.orders:type_name -> sttattus.empire.v1.AlmanacPrintOrder
+	0,   // 27: sttattus.empire.v1.EmpireService.GetScoreBreakdown:input_type -> sttattus.empire.v1.GetScoreBreakdownRequest
+	3,   // 28: sttattus.empire.v1.EmpireService.GetTierLadder:input_type -> sttattus.empire.v1.GetTierLadderRequest
+	6,   // 29: sttattus.empire.v1.EmpireService.GetWallet:input_type -> sttattus.empire.v1.GetWalletRequest
+	9,   // 30: sttattus.empire.v1.EmpireService.ListLedgerEntries:input_type -> sttattus.empire.v1.ListLedgerEntriesRequest
+	12,  // 31: sttattus.empire.v1.EmpireService.GetTaxStatement:input_type -> sttattus.empire.v1.GetTaxStatementRequest
+	15,  // 32: sttattus.empire.v1.EmpireService.GetPublicProfile:input_type -> sttattus.empire.v1.GetPublicProfileRequest
+	17,  // 33: sttattus.empire.v1.EmpireService.ClaimHandle:input_type -> sttattus.empire.v1.ClaimHandleRequest
+	19,  // 34: sttattus.empire.v1.EmpireService.UpdatePublicProfile:input_type -> sttattus.empire.v1.UpdatePublicProfileRequest
+	61,  // 35: sttattus.empire.v1.EmpireService.ListFriends:input_type -> sttattus.empire.v1.ListFriendsRequest
+	63,  // 36: sttattus.empire.v1.EmpireService.SendInvite:input_type -> sttattus.empire.v1.SendInviteRequest
+	65,  // 37: sttattus.empire.v1.EmpireService.RespondInvite:input_type -> sttattus.empire.v1.RespondInviteRequest
+	67,  // 38: sttattus.empire.v1.EmpireService.RemoveFriend:input_type -> sttattus.empire.v1.RemoveFriendRequest
+	57,  // 39: sttattus.empire.v1.EmpireService.ListMyAuditLog:input_type -> sttattus.empire.v1.ListMyAuditLogRequest
+	54,  // 40: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:input_type -> sttattus.empire.v1.GetLatestCloutDropRequest
+	50,  // 41: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:input_type -> sttattus.empire.v1.GetLatestEditorialDigestRequest
+	52,  // 42: sttattus.empire.v1.EmpireService.ListEditorialDigests:input_type -> sttattus.empire.v1.ListEditorialDigestsRequest
+	44,  // 43: sttattus.empire.v1.EmpireService.ListLounges:input_type -> sttattus.empire.v1.ListLoungesRequest
+	47,  // 44: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:input_type -> sttattus.empire.v1.ListUpcomingLoungeEventsRequest
+	39,  // 45: sttattus.empire.v1.EmpireService.ListUpcomingSalons:input_type -> sttattus.empire.v1.ListUpcomingSalonsRequest
+	41,  // 46: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:input_type -> sttattus.empire.v1.UpdateSalonRsvpRequest
+	29,  // 47: sttattus.empire.v1.EmpireService.RegisterDeviceToken:input_type -> sttattus.empire.v1.RegisterDeviceTokenRequest
+	31,  // 48: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:input_type -> sttattus.empire.v1.UnregisterDeviceTokenRequest
+	34,  // 49: sttattus.empire.v1.EmpireService.ListNotificationPreferences:input_type -> sttattus.empire.v1.ListNotificationPreferencesRequest
+	36,  // 50: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:input_type -> sttattus.empire.v1.UpdateNotificationPreferenceRequest
+	22,  // 51: sttattus.empire.v1.EmpireService.ListRedemptionItems:input_type -> sttattus.empire.v1.ListRedemptionItemsRequest
+	24,  // 52: sttattus.empire.v1.EmpireService.RedeemItem:input_type -> sttattus.empire.v1.RedeemItemRequest
+	27,  // 53: sttattus.empire.v1.EmpireService.ListMyRedemptions:input_type -> sttattus.empire.v1.ListMyRedemptionsRequest
+	71,  // 54: sttattus.empire.v1.EmpireService.StartConciergeThread:input_type -> sttattus.empire.v1.StartConciergeThreadRequest
+	73,  // 55: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:input_type -> sttattus.empire.v1.ListMyConciergeThreadsRequest
+	75,  // 56: sttattus.empire.v1.EmpireService.GetConciergeThread:input_type -> sttattus.empire.v1.GetConciergeThreadRequest
+	77,  // 57: sttattus.empire.v1.EmpireService.PostConciergeMessage:input_type -> sttattus.empire.v1.PostConciergeMessageRequest
+	80,  // 58: sttattus.empire.v1.EmpireService.ListAnthologyArticles:input_type -> sttattus.empire.v1.ListAnthologyArticlesRequest
+	82,  // 59: sttattus.empire.v1.EmpireService.GetAnthologyArticle:input_type -> sttattus.empire.v1.GetAnthologyArticleRequest
+	85,  // 60: sttattus.empire.v1.EmpireService.ListMemberDirectory:input_type -> sttattus.empire.v1.ListMemberDirectoryRequest
+	87,  // 61: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:input_type -> sttattus.empire.v1.SetDirectoryVisibilityRequest
+	89,  // 62: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:input_type -> sttattus.empire.v1.GenerateEmpireAlmanacRequest
+	91,  // 63: sttattus.empire.v1.EmpireService.CreateScoreBadge:input_type -> sttattus.empire.v1.CreateScoreBadgeRequest
+	93,  // 64: sttattus.empire.v1.EmpireService.GetTierCard:input_type -> sttattus.empire.v1.GetTierCardRequest
+	95,  // 65: sttattus.empire.v1.EmpireService.CreateLoungePass:input_type -> sttattus.empire.v1.CreateLoungePassRequest
+	97,  // 66: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:input_type -> sttattus.empire.v1.OrderAlmanacPrintRequest
+	100, // 67: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:input_type -> sttattus.empire.v1.ListMyAlmanacOrdersRequest
+	102, // 68: sttattus.empire.v1.EmpireService.GetYearInEmpire:input_type -> sttattus.empire.v1.GetYearInEmpireRequest
+	2,   // 69: sttattus.empire.v1.EmpireService.GetScoreBreakdown:output_type -> sttattus.empire.v1.GetScoreBreakdownResponse
+	5,   // 70: sttattus.empire.v1.EmpireService.GetTierLadder:output_type -> sttattus.empire.v1.GetTierLadderResponse
+	8,   // 71: sttattus.empire.v1.EmpireService.GetWallet:output_type -> sttattus.empire.v1.GetWalletResponse
+	11,  // 72: sttattus.empire.v1.EmpireService.ListLedgerEntries:output_type -> sttattus.empire.v1.ListLedgerEntriesResponse
+	14,  // 73: sttattus.empire.v1.EmpireService.GetTaxStatement:output_type -> sttattus.empire.v1.GetTaxStatementResponse
+	16,  // 74: sttattus.empire.v1.EmpireService.GetPublicProfile:output_type -> sttattus.empire.v1.GetPublicProfileResponse
+	18,  // 75: sttattus.empire.v1.EmpireService.ClaimHandle:output_type -> sttattus.empire.v1.ClaimHandleResponse
+	20,  // 76: sttattus.empire.v1.EmpireService.UpdatePublicProfile:output_type -> sttattus.empire.v1.UpdatePublicProfileResponse
+	62,  // 77: sttattus.empire.v1.EmpireService.ListFriends:output_type -> sttattus.empire.v1.ListFriendsResponse
+	64,  // 78: sttattus.empire.v1.EmpireService.SendInvite:output_type -> sttattus.empire.v1.SendInviteResponse
+	66,  // 79: sttattus.empire.v1.EmpireService.RespondInvite:output_type -> sttattus.empire.v1.RespondInviteResponse
+	68,  // 80: sttattus.empire.v1.EmpireService.RemoveFriend:output_type -> sttattus.empire.v1.RemoveFriendResponse
+	59,  // 81: sttattus.empire.v1.EmpireService.ListMyAuditLog:output_type -> sttattus.empire.v1.ListMyAuditLogResponse
+	56,  // 82: sttattus.empire.v1.EmpireService.GetLatestCloutDrop:output_type -> sttattus.empire.v1.GetLatestCloutDropResponse
+	51,  // 83: sttattus.empire.v1.EmpireService.GetLatestEditorialDigest:output_type -> sttattus.empire.v1.GetLatestEditorialDigestResponse
+	53,  // 84: sttattus.empire.v1.EmpireService.ListEditorialDigests:output_type -> sttattus.empire.v1.ListEditorialDigestsResponse
+	45,  // 85: sttattus.empire.v1.EmpireService.ListLounges:output_type -> sttattus.empire.v1.ListLoungesResponse
+	48,  // 86: sttattus.empire.v1.EmpireService.ListUpcomingLoungeEvents:output_type -> sttattus.empire.v1.ListUpcomingLoungeEventsResponse
+	40,  // 87: sttattus.empire.v1.EmpireService.ListUpcomingSalons:output_type -> sttattus.empire.v1.ListUpcomingSalonsResponse
+	42,  // 88: sttattus.empire.v1.EmpireService.UpdateSalonRsvp:output_type -> sttattus.empire.v1.UpdateSalonRsvpResponse
+	30,  // 89: sttattus.empire.v1.EmpireService.RegisterDeviceToken:output_type -> sttattus.empire.v1.RegisterDeviceTokenResponse
+	32,  // 90: sttattus.empire.v1.EmpireService.UnregisterDeviceToken:output_type -> sttattus.empire.v1.UnregisterDeviceTokenResponse
+	35,  // 91: sttattus.empire.v1.EmpireService.ListNotificationPreferences:output_type -> sttattus.empire.v1.ListNotificationPreferencesResponse
+	37,  // 92: sttattus.empire.v1.EmpireService.UpdateNotificationPreference:output_type -> sttattus.empire.v1.UpdateNotificationPreferenceResponse
+	23,  // 93: sttattus.empire.v1.EmpireService.ListRedemptionItems:output_type -> sttattus.empire.v1.ListRedemptionItemsResponse
+	25,  // 94: sttattus.empire.v1.EmpireService.RedeemItem:output_type -> sttattus.empire.v1.RedeemItemResponse
+	28,  // 95: sttattus.empire.v1.EmpireService.ListMyRedemptions:output_type -> sttattus.empire.v1.ListMyRedemptionsResponse
+	72,  // 96: sttattus.empire.v1.EmpireService.StartConciergeThread:output_type -> sttattus.empire.v1.StartConciergeThreadResponse
+	74,  // 97: sttattus.empire.v1.EmpireService.ListMyConciergeThreads:output_type -> sttattus.empire.v1.ListMyConciergeThreadsResponse
+	76,  // 98: sttattus.empire.v1.EmpireService.GetConciergeThread:output_type -> sttattus.empire.v1.GetConciergeThreadResponse
+	78,  // 99: sttattus.empire.v1.EmpireService.PostConciergeMessage:output_type -> sttattus.empire.v1.PostConciergeMessageResponse
+	81,  // 100: sttattus.empire.v1.EmpireService.ListAnthologyArticles:output_type -> sttattus.empire.v1.ListAnthologyArticlesResponse
+	83,  // 101: sttattus.empire.v1.EmpireService.GetAnthologyArticle:output_type -> sttattus.empire.v1.GetAnthologyArticleResponse
+	86,  // 102: sttattus.empire.v1.EmpireService.ListMemberDirectory:output_type -> sttattus.empire.v1.ListMemberDirectoryResponse
+	88,  // 103: sttattus.empire.v1.EmpireService.SetDirectoryVisibility:output_type -> sttattus.empire.v1.SetDirectoryVisibilityResponse
+	90,  // 104: sttattus.empire.v1.EmpireService.GenerateEmpireAlmanac:output_type -> sttattus.empire.v1.GenerateEmpireAlmanacResponse
+	92,  // 105: sttattus.empire.v1.EmpireService.CreateScoreBadge:output_type -> sttattus.empire.v1.CreateScoreBadgeResponse
+	94,  // 106: sttattus.empire.v1.EmpireService.GetTierCard:output_type -> sttattus.empire.v1.GetTierCardResponse
+	96,  // 107: sttattus.empire.v1.EmpireService.CreateLoungePass:output_type -> sttattus.empire.v1.CreateLoungePassResponse
+	98,  // 108: sttattus.empire.v1.EmpireService.OrderAlmanacPrint:output_type -> sttattus.empire.v1.OrderAlmanacPrintResponse
+	101, // 109: sttattus.empire.v1.EmpireService.ListMyAlmanacOrders:output_type -> sttattus.empire.v1.ListMyAlmanacOrdersResponse
+	103, // 110: sttattus.empire.v1.EmpireService.GetYearInEmpire:output_type -> sttattus.empire.v1.GetYearInEmpireResponse
+	69,  // [69:111] is the sub-list for method output_type
+	27,  // [27:69] is the sub-list for method input_type
+	27,  // [27:27] is the sub-list for extension type_name
+	27,  // [27:27] is the sub-list for extension extendee
+	0,   // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_empire_v1_empire_proto_init() }
@@ -6875,7 +6996,7 @@ func file_sttattus_empire_v1_empire_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_empire_v1_empire_proto_rawDesc), len(file_sttattus_empire_v1_empire_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   103,
+			NumMessages:   104,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

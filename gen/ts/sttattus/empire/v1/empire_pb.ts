@@ -38,6 +38,86 @@ export class GetScoreBreakdownRequest extends Message<GetScoreBreakdownRequest> 
 }
 
 /**
+ * PillarStanding is one line of the glass box: where you sit in one app,
+ * measured against whoever leads it.
+ * 
+ * This is what the Sttattus Score is actually made of. Per app you score
+ * `100 * yours / the leader's`; the global score is the mean of `standing`
+ * across every app that has at least one participant.
+ *
+ * @generated from message sttattus.empire.v1.PillarStanding
+ */
+export class PillarStanding extends Message<PillarStanding> {
+  /**
+   * forge | lexicon | nomad | atlas | vault | apex | oracle | dominion |
+   * legacy | zenith | onyx.
+   *
+   * @generated from field: string app_code = 1;
+   */
+  appCode = "";
+
+  /**
+   * The member's raw 0-100 pillar score.
+   *
+   * @generated from field: double score = 2;
+   */
+  score = 0;
+
+  /**
+   * The platform leader's score in this app — what `score` is measured
+   * against. Never zero for an active app.
+   *
+   * @generated from field: double leader_score = 3;
+   */
+  leaderScore = 0;
+
+  /**
+   * 100 * score / leader_score. This is the number that enters the mean.
+   *
+   * @generated from field: double standing = 4;
+   */
+  standing = 0;
+
+  /**
+   * True when this member IS the leader. Ties count as leading.
+   *
+   * @generated from field: bool is_leader = 5;
+   */
+  isLeader = false;
+
+  constructor(data?: PartialMessage<PillarStanding>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.empire.v1.PillarStanding";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "app_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "leader_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "standing", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "is_leader", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PillarStanding {
+    return new PillarStanding().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PillarStanding {
+    return new PillarStanding().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PillarStanding {
+    return new PillarStanding().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PillarStanding | PlainMessage<PillarStanding> | undefined, b: PillarStanding | PlainMessage<PillarStanding> | undefined): boolean {
+    return proto3.util.equals(PillarStanding, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.empire.v1.GetScoreBreakdownResponse
  */
 export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse> {
@@ -66,9 +146,18 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
   globalPercentile = 0;
 
   /**
-   * Glass-box: the four weighted buckets empire_engine returns. Weights
-   * are wealth 30% / bio 25% / social 20% / operational 25% — published
-   * here so the app can render the exact contribution of each.
+   * DEPRECATED — empire_engine's four weighted buckets (wealth 30% / bio 25%
+   * / social 20% / operational 25%).
+   * 
+   * These do not explain sttattus_score and never did: the buckets are
+   * empire_engine's own weighting while the score is the platform composite.
+   * On production they summed to 35.4 under a headline of 13.8, on a card
+   * captioned "Four weighted buckets. Every weight published." The weights
+   * were published; they were the weights of a different number.
+   * 
+   * Kept on the wire so an older client does not break. Read
+   * pillar_standings instead — it is what the score is built from and it
+   * sums, by construction, to sttattus_score.
    *
    * @generated from field: double wealth_component = 5;
    */
@@ -89,6 +178,18 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
    */
   operationalComponent = 0;
 
+  /**
+   * One entry per ACTIVE app — an app nobody has scored in is omitted,
+   * because it is excluded from the score's denominator too. Ordered by
+   * standing, strongest first.
+   * 
+   * mean(standing) == sttattus_score. That identity is the whole point: the
+   * glass box now explains the number it sits under.
+   *
+   * @generated from field: repeated sttattus.empire.v1.PillarStanding pillar_standings = 9;
+   */
+  pillarStandings: PillarStanding[] = [];
+
   constructor(data?: PartialMessage<GetScoreBreakdownResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -105,6 +206,7 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
     { no: 6, name: "bio_component", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "social_component", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 8, name: "operational_component", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "pillar_standings", kind: "message", T: PillarStanding, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetScoreBreakdownResponse {
@@ -3489,7 +3591,7 @@ export class ConciergeMessage extends Message<ConciergeMessage> {
   /**
    * The concierge who wrote it. Empty for member and system messages, and
    * for replies written before authorship was recorded.
-   *
+   * 
    * Every desk on the platform answered as an anonymous "STAFF" until
    * 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
    * and was the only one. A white-glove desk that will not say who is
