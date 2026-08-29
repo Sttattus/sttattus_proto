@@ -311,3 +311,137 @@ final $typed_data.Uint8List listAuditLogsResponseDescriptor = $convert.base64Dec
     'ChVMaXN0QXVkaXRMb2dzUmVzcG9uc2USOgoHZW50cmllcxgBIAMoCzIgLnN0dGF0dHVzLmFkbW'
     'luLnYxLkF1ZGl0TG9nRW50cnlSB2VudHJpZXMSNAoEcGFnZRgCIAEoCzIgLnN0dGF0dHVzLmNv'
     'bW1vbi52MS5QYWdlUmVzcG9uc2VSBHBhZ2U=');
+
+@$core.Deprecated('Use deviceGrantRowDescriptor instead')
+const DeviceGrantRow$json = {
+  '1': 'DeviceGrantRow',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'device_name', '3': 3, '4': 1, '5': 9, '10': 'deviceName'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'last_sync_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSyncAt'
+    },
+    {'1': 'security_level', '3': 8, '4': 1, '5': 9, '10': 'securityLevel'},
+    {'1': 'key_fingerprint', '3': 9, '4': 1, '5': 9, '10': 'keyFingerprint'},
+  ],
+};
+
+/// Descriptor for `DeviceGrantRow`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deviceGrantRowDescriptor = $convert.base64Decode(
+    'Cg5EZXZpY2VHcmFudFJvdxIbCglkZXZpY2VfaWQYASABKAlSCGRldmljZUlkEhcKB3VzZXJfaW'
+    'QYAiABKAlSBnVzZXJJZBIfCgtkZXZpY2VfbmFtZRgDIAEoCVIKZGV2aWNlTmFtZRIWCgZzdGF0'
+    'dXMYBCABKAlSBnN0YXR1cxI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCmV4cGlyZXNfYXQYBiABKAsyGi5nb29nbGUucHJvdG9i'
+    'dWYuVGltZXN0YW1wUglleHBpcmVzQXQSPAoMbGFzdF9zeW5jX2F0GAcgASgLMhouZ29vZ2xlLn'
+    'Byb3RvYnVmLlRpbWVzdGFtcFIKbGFzdFN5bmNBdBIlCg5zZWN1cml0eV9sZXZlbBgIIAEoCVIN'
+    'c2VjdXJpdHlMZXZlbBInCg9rZXlfZmluZ2VycHJpbnQYCSABKAlSDmtleUZpbmdlcnByaW50');
+
+@$core.Deprecated('Use listDeviceGrantsRequestDescriptor instead')
+const ListDeviceGrantsRequest$json = {
+  '1': 'ListDeviceGrantsRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {
+      '1': 'page',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.common.v1.PageRequest',
+      '10': 'page'
+    },
+  ],
+};
+
+/// Descriptor for `ListDeviceGrantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDeviceGrantsRequestDescriptor =
+    $convert.base64Decode(
+        'ChdMaXN0RGV2aWNlR3JhbnRzUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySWQSMwoEcG'
+        'FnZRgCIAEoCzIfLnN0dGF0dHVzLmNvbW1vbi52MS5QYWdlUmVxdWVzdFIEcGFnZQ==');
+
+@$core.Deprecated('Use listDeviceGrantsResponseDescriptor instead')
+const ListDeviceGrantsResponse$json = {
+  '1': 'ListDeviceGrantsResponse',
+  '2': [
+    {
+      '1': 'rows',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.admin.v1.DeviceGrantRow',
+      '10': 'rows'
+    },
+    {
+      '1': 'page',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.common.v1.PageResponse',
+      '10': 'page'
+    },
+  ],
+};
+
+/// Descriptor for `ListDeviceGrantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDeviceGrantsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0RGV2aWNlR3JhbnRzUmVzcG9uc2USNQoEcm93cxgBIAMoCzIhLnN0dGF0dHVzLmFkbW'
+    'luLnYxLkRldmljZUdyYW50Um93UgRyb3dzEjQKBHBhZ2UYAiABKAsyIC5zdHRhdHR1cy5jb21t'
+    'b24udjEuUGFnZVJlc3BvbnNlUgRwYWdl');
+
+@$core.Deprecated('Use revokeDeviceGrantRequestDescriptor instead')
+const RevokeDeviceGrantRequest$json = {
+  '1': 'RevokeDeviceGrantRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `RevokeDeviceGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeDeviceGrantRequestDescriptor =
+    $convert.base64Decode(
+        'ChhSZXZva2VEZXZpY2VHcmFudFJlcXVlc3QSGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2VJZB'
+        'IWCgZyZWFzb24YAiABKAlSBnJlYXNvbg==');
+
+@$core.Deprecated('Use revokeDeviceGrantResponseDescriptor instead')
+const RevokeDeviceGrantResponse$json = {
+  '1': 'RevokeDeviceGrantResponse',
+  '2': [
+    {
+      '1': 'row',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.admin.v1.DeviceGrantRow',
+      '10': 'row'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeDeviceGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeDeviceGrantResponseDescriptor =
+    $convert.base64Decode(
+        'ChlSZXZva2VEZXZpY2VHcmFudFJlc3BvbnNlEjMKA3JvdxgBIAEoCzIhLnN0dGF0dHVzLmFkbW'
+        'luLnYxLkRldmljZUdyYW50Um93UgNyb3c=');

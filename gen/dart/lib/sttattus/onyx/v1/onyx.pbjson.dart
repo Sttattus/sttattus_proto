@@ -2303,14 +2303,118 @@ const RevokeShareLinkResponse$json = {
 final $typed_data.Uint8List revokeShareLinkResponseDescriptor =
     $convert.base64Decode('ChdSZXZva2VTaGFyZUxpbmtSZXNwb25zZQ==');
 
+@$core.Deprecated('Use encryptedRenditionDescriptor instead')
+const EncryptedRendition$json = {
+  '1': 'EncryptedRendition',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'rendition_id', '3': 2, '4': 1, '5': 9, '10': 'renditionId'},
+    {'1': 'content_type', '3': 3, '4': 1, '5': 9, '10': 'contentType'},
+    {'1': 'size_bytes', '3': 4, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'wrapped_cek', '3': 5, '4': 1, '5': 9, '10': 'wrappedCek'},
+    {'1': 'iv', '3': 6, '4': 1, '5': 9, '10': 'iv'},
+    {
+      '1': 'signed_download_url',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'signedDownloadUrl'
+    },
+    {'1': 'content_hash', '3': 8, '4': 1, '5': 9, '10': 'contentHash'},
+    {'1': 'revision_id', '3': 9, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'chunk_size', '3': 10, '4': 1, '5': 5, '10': 'chunkSize'},
+    {
+      '1': 'status',
+      '3': 11,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.EncryptedRendition.RenditionStatus',
+      '10': 'status'
+    },
+    {
+      '1': 'url_expires_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'urlExpiresAt'
+    },
+    {'1': 'policy_version', '3': 13, '4': 1, '5': 9, '10': 'policyVersion'},
+    {'1': 'source_version', '3': 14, '4': 1, '5': 3, '10': 'sourceVersion'},
+    {
+      '1': 'package_type',
+      '3': 15,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.EncryptedRendition.OfflinePackageType',
+      '10': 'packageType'
+    },
+  ],
+  '4': [
+    EncryptedRendition_RenditionStatus$json,
+    EncryptedRendition_OfflinePackageType$json
+  ],
+};
+
+@$core.Deprecated('Use encryptedRenditionDescriptor instead')
+const EncryptedRendition_RenditionStatus$json = {
+  '1': 'RenditionStatus',
+  '2': [
+    {'1': 'RENDITION_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'RENDITION_STATUS_PREPARING', '2': 1},
+    {'1': 'RENDITION_STATUS_READY', '2': 2},
+    {'1': 'RENDITION_STATUS_FAILED', '2': 3},
+  ],
+};
+
+@$core.Deprecated('Use encryptedRenditionDescriptor instead')
+const EncryptedRendition_OfflinePackageType$json = {
+  '1': 'OfflinePackageType',
+  '2': [
+    {'1': 'OFFLINE_PACKAGE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'OFFLINE_PACKAGE_TYPE_PROTOBUF_ARTICLE', '2': 1},
+    {'1': 'OFFLINE_PACKAGE_TYPE_EVIDENCE_BRIEF', '2': 2},
+    {'1': 'OFFLINE_PACKAGE_TYPE_RAW_AUDIO', '2': 3},
+    {'1': 'OFFLINE_PACKAGE_TYPE_CAPTIONS', '2': 4},
+    {'1': 'OFFLINE_PACKAGE_TYPE_PDF', '2': 5},
+  ],
+};
+
+/// Descriptor for `EncryptedRendition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List encryptedRenditionDescriptor = $convert.base64Decode(
+    'ChJFbmNyeXB0ZWRSZW5kaXRpb24SHQoKY29udGVudF9pZBgBIAEoCVIJY29udGVudElkEiEKDH'
+    'JlbmRpdGlvbl9pZBgCIAEoCVILcmVuZGl0aW9uSWQSIQoMY29udGVudF90eXBlGAMgASgJUgtj'
+    'b250ZW50VHlwZRIdCgpzaXplX2J5dGVzGAQgASgDUglzaXplQnl0ZXMSHwoLd3JhcHBlZF9jZW'
+    'sYBSABKAlSCndyYXBwZWRDZWsSDgoCaXYYBiABKAlSAml2Ei4KE3NpZ25lZF9kb3dubG9hZF91'
+    'cmwYByABKAlSEXNpZ25lZERvd25sb2FkVXJsEiEKDGNvbnRlbnRfaGFzaBgIIAEoCVILY29udG'
+    'VudEhhc2gSHwoLcmV2aXNpb25faWQYCSABKAlSCnJldmlzaW9uSWQSHQoKY2h1bmtfc2l6ZRgK'
+    'IAEoBVIJY2h1bmtTaXplEkwKBnN0YXR1cxgLIAEoDjI0LnN0dGF0dHVzLm9ueXgudjEuRW5jcn'
+    'lwdGVkUmVuZGl0aW9uLlJlbmRpdGlvblN0YXR1c1IGc3RhdHVzEkAKDnVybF9leHBpcmVzX2F0'
+    'GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMdXJsRXhwaXJlc0F0EiUKDnBvbG'
+    'ljeV92ZXJzaW9uGA0gASgJUg1wb2xpY3lWZXJzaW9uEiUKDnNvdXJjZV92ZXJzaW9uGA4gASgD'
+    'Ug1zb3VyY2VWZXJzaW9uEloKDHBhY2thZ2VfdHlwZRgPIAEoDjI3LnN0dGF0dHVzLm9ueXgudj'
+    'EuRW5jcnlwdGVkUmVuZGl0aW9uLk9mZmxpbmVQYWNrYWdlVHlwZVILcGFja2FnZVR5cGUijAEK'
+    'D1JlbmRpdGlvblN0YXR1cxIgChxSRU5ESVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASHgoaUk'
+    'VORElUSU9OX1NUQVRVU19QUkVQQVJJTkcQARIaChZSRU5ESVRJT05fU1RBVFVTX1JFQURZEAIS'
+    'GwoXUkVORElUSU9OX1NUQVRVU19GQUlMRUQQAyLzAQoST2ZmbGluZVBhY2thZ2VUeXBlEiQKIE'
+    '9GRkxJTkVfUEFDS0FHRV9UWVBFX1VOU1BFQ0lGSUVEEAASKQolT0ZGTElORV9QQUNLQUdFX1RZ'
+    'UEVfUFJPVE9CVUZfQVJUSUNMRRABEicKI09GRkxJTkVfUEFDS0FHRV9UWVBFX0VWSURFTkNFX0'
+    'JSSUVGEAISIgoeT0ZGTElORV9QQUNLQUdFX1RZUEVfUkFXX0FVRElPEAMSIQodT0ZGTElORV9Q'
+    'QUNLQUdFX1RZUEVfQ0FQVElPTlMQBBIcChhPRkZMSU5FX1BBQ0tBR0VfVFlQRV9QREYQBQ==');
+
 @$core.Deprecated('Use getOfflineManifestRequestDescriptor instead')
 const GetOfflineManifestRequest$json = {
   '1': 'GetOfflineManifestRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
 };
 
 /// Descriptor for `GetOfflineManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getOfflineManifestRequestDescriptor =
-    $convert.base64Decode('ChlHZXRPZmZsaW5lTWFuaWZlc3RSZXF1ZXN0');
+    $convert.base64Decode(
+        'ChlHZXRPZmZsaW5lTWFuaWZlc3RSZXF1ZXN0EhsKCWRldmljZV9pZBgBIAEoCVIIZGV2aWNlSW'
+        'Q=');
 
 @$core.Deprecated('Use getOfflineManifestResponseDescriptor instead')
 const GetOfflineManifestResponse$json = {
@@ -2325,15 +2429,490 @@ const GetOfflineManifestResponse$json = {
       '10': 'items'
     },
     {'1': 'watermark_policy', '3': 2, '4': 1, '5': 9, '10': 'watermarkPolicy'},
+    {
+      '1': 'encrypted_renditions',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EncryptedRendition',
+      '10': 'encryptedRenditions'
+    },
+    {
+      '1': 'grant_expires_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'grantExpiresAt'
+    },
+    {'1': 'requires_purge', '3': 5, '4': 1, '5': 8, '10': 'requiresPurge'},
+    {'1': 'purge_challenge', '3': 6, '4': 1, '5': 9, '10': 'purgeChallenge'},
   ],
 };
 
 /// Descriptor for `GetOfflineManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getOfflineManifestResponseDescriptor =
+final $typed_data.Uint8List getOfflineManifestResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRPZmZsaW5lTWFuaWZlc3RSZXNwb25zZRIzCgVpdGVtcxgBIAMoCzIdLnN0dGF0dHVzLm'
+    '9ueXgudjEuT255eENvbnRlbnRSBWl0ZW1zEikKEHdhdGVybWFya19wb2xpY3kYAiABKAlSD3dh'
+    'dGVybWFya1BvbGljeRJXChRlbmNyeXB0ZWRfcmVuZGl0aW9ucxgDIAMoCzIkLnN0dGF0dHVzLm'
+    '9ueXgudjEuRW5jcnlwdGVkUmVuZGl0aW9uUhNlbmNyeXB0ZWRSZW5kaXRpb25zEkQKEGdyYW50'
+    'X2V4cGlyZXNfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg5ncmFudEV4cG'
+    'lyZXNBdBIlCg5yZXF1aXJlc19wdXJnZRgFIAEoCFINcmVxdWlyZXNQdXJnZRInCg9wdXJnZV9j'
+    'aGFsbGVuZ2UYBiABKAlSDnB1cmdlQ2hhbGxlbmdl');
+
+@$core.Deprecated('Use registerDeviceRequestDescriptor instead')
+const RegisterDeviceRequest$json = {
+  '1': 'RegisterDeviceRequest',
+  '2': [
+    {'1': 'device_name', '3': 1, '4': 1, '5': 9, '10': 'deviceName'},
+    {'1': 'public_key_pem', '3': 2, '4': 1, '5': 9, '10': 'publicKeyPem'},
+    {'1': 'attestation_data', '3': 3, '4': 1, '5': 9, '10': 'attestationData'},
+    {'1': 'key_fingerprint', '3': 4, '4': 1, '5': 9, '10': 'keyFingerprint'},
+    {'1': 'app_version', '3': 5, '4': 1, '5': 9, '10': 'appVersion'},
+    {'1': 'os_version', '3': 6, '4': 1, '5': 9, '10': 'osVersion'},
+    {'1': 'security_level', '3': 7, '4': 1, '5': 9, '10': 'securityLevel'},
+    {'1': 'install_id', '3': 8, '4': 1, '5': 9, '10': 'installId'},
+  ],
+};
+
+/// Descriptor for `RegisterDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceRequestDescriptor = $convert.base64Decode(
+    'ChVSZWdpc3RlckRldmljZVJlcXVlc3QSHwoLZGV2aWNlX25hbWUYASABKAlSCmRldmljZU5hbW'
+    'USJAoOcHVibGljX2tleV9wZW0YAiABKAlSDHB1YmxpY0tleVBlbRIpChBhdHRlc3RhdGlvbl9k'
+    'YXRhGAMgASgJUg9hdHRlc3RhdGlvbkRhdGESJwoPa2V5X2ZpbmdlcnByaW50GAQgASgJUg5rZX'
+    'lGaW5nZXJwcmludBIfCgthcHBfdmVyc2lvbhgFIAEoCVIKYXBwVmVyc2lvbhIdCgpvc192ZXJz'
+    'aW9uGAYgASgJUglvc1ZlcnNpb24SJQoOc2VjdXJpdHlfbGV2ZWwYByABKAlSDXNlY3VyaXR5TG'
+    'V2ZWwSHQoKaW5zdGFsbF9pZBgIIAEoCVIJaW5zdGFsbElk');
+
+@$core.Deprecated('Use registerDeviceResponseDescriptor instead')
+const RegisterDeviceResponse$json = {
+  '1': 'RegisterDeviceResponse',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'expires_at',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `RegisterDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceResponseDescriptor = $convert.base64Decode(
+    'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEhsKCWRldmljZV9pZBgBIAEoCVIIZGV2aWNlSWQSOQ'
+    'oKZXhwaXJlc19hdBgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNB'
+    'dA==');
+
+@$core.Deprecated('Use acknowledgePurgeRequestDescriptor instead')
+const AcknowledgePurgeRequest$json = {
+  '1': 'AcknowledgePurgeRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'purged_content_ids',
+      '3': 2,
+      '4': 3,
+      '5': 9,
+      '10': 'purgedContentIds'
+    },
+    {'1': 'purge_challenge', '3': 3, '4': 1, '5': 9, '10': 'purgeChallenge'},
+    {
+      '1': 'challenge_signature',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'challengeSignature'
+    },
+  ],
+};
+
+/// Descriptor for `AcknowledgePurgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acknowledgePurgeRequestDescriptor = $convert.base64Decode(
+    'ChdBY2tub3dsZWRnZVB1cmdlUmVxdWVzdBIbCglkZXZpY2VfaWQYASABKAlSCGRldmljZUlkEi'
+    'wKEnB1cmdlZF9jb250ZW50X2lkcxgCIAMoCVIQcHVyZ2VkQ29udGVudElkcxInCg9wdXJnZV9j'
+    'aGFsbGVuZ2UYAyABKAlSDnB1cmdlQ2hhbGxlbmdlEi8KE2NoYWxsZW5nZV9zaWduYXR1cmUYBC'
+    'ABKAlSEmNoYWxsZW5nZVNpZ25hdHVyZQ==');
+
+@$core.Deprecated('Use acknowledgePurgeResponseDescriptor instead')
+const AcknowledgePurgeResponse$json = {
+  '1': 'AcknowledgePurgeResponse',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+  ],
+};
+
+/// Descriptor for `AcknowledgePurgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acknowledgePurgeResponseDescriptor =
     $convert.base64Decode(
-        'ChpHZXRPZmZsaW5lTWFuaWZlc3RSZXNwb25zZRIzCgVpdGVtcxgBIAMoCzIdLnN0dGF0dHVzLm'
-        '9ueXgudjEuT255eENvbnRlbnRSBWl0ZW1zEikKEHdhdGVybWFya19wb2xpY3kYAiABKAlSD3dh'
-        'dGVybWFya1BvbGljeQ==');
+        'ChhBY2tub3dsZWRnZVB1cmdlUmVzcG9uc2USHQoKcmVjZWlwdF9pZBgBIAEoCVIJcmVjZWlwdE'
+        'lk');
+
+@$core.Deprecated('Use getDeviceGrantsRequestDescriptor instead')
+const GetDeviceGrantsRequest$json = {
+  '1': 'GetDeviceGrantsRequest',
+};
+
+/// Descriptor for `GetDeviceGrantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeviceGrantsRequestDescriptor =
+    $convert.base64Decode('ChZHZXREZXZpY2VHcmFudHNSZXF1ZXN0');
+
+@$core.Deprecated('Use deviceGrantInfoDescriptor instead')
+const DeviceGrantInfo$json = {
+  '1': 'DeviceGrantInfo',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'device_name', '3': 2, '4': 1, '5': 9, '10': 'deviceName'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'created_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'last_sync_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSyncAt'
+    },
+    {'1': 'security_level', '3': 7, '4': 1, '5': 9, '10': 'securityLevel'},
+    {
+      '1': 'claimed_security_level',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'claimedSecurityLevel'
+    },
+    {
+      '1': 'verified_security_level',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'verifiedSecurityLevel'
+    },
+    {
+      '1': 'attestation_status',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'attestationStatus'
+    },
+    {'1': 'purge_receipt_id', '3': 11, '4': 1, '5': 9, '10': 'purgeReceiptId'},
+    {
+      '1': 'pending_purge_content_ids',
+      '3': 12,
+      '4': 3,
+      '5': 9,
+      '10': 'pendingPurgeContentIds'
+    },
+  ],
+};
+
+/// Descriptor for `DeviceGrantInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deviceGrantInfoDescriptor = $convert.base64Decode(
+    'Cg9EZXZpY2VHcmFudEluZm8SGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2VJZBIfCgtkZXZpY2'
+    'VfbmFtZRgCIAEoCVIKZGV2aWNlTmFtZRIWCgZzdGF0dXMYAyABKAlSBnN0YXR1cxI5CgpjcmVh'
+    'dGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCm'
+    'V4cGlyZXNfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQS'
+    'PAoMbGFzdF9zeW5jX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKbGFzdF'
+    'N5bmNBdBIlCg5zZWN1cml0eV9sZXZlbBgHIAEoCVINc2VjdXJpdHlMZXZlbBI0ChZjbGFpbWVk'
+    'X3NlY3VyaXR5X2xldmVsGAggASgJUhRjbGFpbWVkU2VjdXJpdHlMZXZlbBI2Chd2ZXJpZmllZF'
+    '9zZWN1cml0eV9sZXZlbBgJIAEoCVIVdmVyaWZpZWRTZWN1cml0eUxldmVsEi0KEmF0dGVzdGF0'
+    'aW9uX3N0YXR1cxgKIAEoCVIRYXR0ZXN0YXRpb25TdGF0dXMSKAoQcHVyZ2VfcmVjZWlwdF9pZB'
+    'gLIAEoCVIOcHVyZ2VSZWNlaXB0SWQSOQoZcGVuZGluZ19wdXJnZV9jb250ZW50X2lkcxgMIAMo'
+    'CVIWcGVuZGluZ1B1cmdlQ29udGVudElkcw==');
+
+@$core.Deprecated('Use getDeviceGrantsResponseDescriptor instead')
+const GetDeviceGrantsResponse$json = {
+  '1': 'GetDeviceGrantsResponse',
+  '2': [
+    {
+      '1': 'grants',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DeviceGrantInfo',
+      '10': 'grants'
+    },
+  ],
+};
+
+/// Descriptor for `GetDeviceGrantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeviceGrantsResponseDescriptor =
+    $convert.base64Decode(
+        'ChdHZXREZXZpY2VHcmFudHNSZXNwb25zZRI5CgZncmFudHMYASADKAsyIS5zdHRhdHR1cy5vbn'
+        'l4LnYxLkRldmljZUdyYW50SW5mb1IGZ3JhbnRz');
+
+@$core.Deprecated('Use revokeMyDeviceRequestDescriptor instead')
+const RevokeMyDeviceRequest$json = {
+  '1': 'RevokeMyDeviceRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `RevokeMyDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeMyDeviceRequestDescriptor = $convert.base64Decode(
+    'ChVSZXZva2VNeURldmljZVJlcXVlc3QSGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2VJZA==');
+
+@$core.Deprecated('Use revokeMyDeviceResponseDescriptor instead')
+const RevokeMyDeviceResponse$json = {
+  '1': 'RevokeMyDeviceResponse',
+};
+
+/// Descriptor for `RevokeMyDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeMyDeviceResponseDescriptor =
+    $convert.base64Decode('ChZSZXZva2VNeURldmljZVJlc3BvbnNl');
+
+@$core.Deprecated('Use markMyDeviceLostRequestDescriptor instead')
+const MarkMyDeviceLostRequest$json = {
+  '1': 'MarkMyDeviceLostRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `MarkMyDeviceLostRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markMyDeviceLostRequestDescriptor =
+    $convert.base64Decode(
+        'ChdNYXJrTXlEZXZpY2VMb3N0UmVxdWVzdBIbCglkZXZpY2VfaWQYASABKAlSCGRldmljZUlk');
+
+@$core.Deprecated('Use markMyDeviceLostResponseDescriptor instead')
+const MarkMyDeviceLostResponse$json = {
+  '1': 'MarkMyDeviceLostResponse',
+};
+
+/// Descriptor for `MarkMyDeviceLostResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markMyDeviceLostResponseDescriptor =
+    $convert.base64Decode('ChhNYXJrTXlEZXZpY2VMb3N0UmVzcG9uc2U=');
+
+@$core.Deprecated('Use getPurgeReceiptRequestDescriptor instead')
+const GetPurgeReceiptRequest$json = {
+  '1': 'GetPurgeReceiptRequest',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+  ],
+};
+
+/// Descriptor for `GetPurgeReceiptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPurgeReceiptRequestDescriptor =
+    $convert.base64Decode(
+        'ChZHZXRQdXJnZVJlY2VpcHRSZXF1ZXN0Eh0KCnJlY2VpcHRfaWQYASABKAlSCXJlY2VpcHRJZA'
+        '==');
+
+@$core.Deprecated('Use getPurgeReceiptResponseDescriptor instead')
+const GetPurgeReceiptResponse$json = {
+  '1': 'GetPurgeReceiptResponse',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'purged_content_ids',
+      '3': 3,
+      '4': 3,
+      '5': 9,
+      '10': 'purgedContentIds'
+    },
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `GetPurgeReceiptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPurgeReceiptResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRQdXJnZVJlY2VpcHRSZXNwb25zZRIdCgpyZWNlaXB0X2lkGAEgASgJUglyZWNlaXB0SW'
+    'QSGwoJZGV2aWNlX2lkGAIgASgJUghkZXZpY2VJZBIsChJwdXJnZWRfY29udGVudF9pZHMYAyAD'
+    'KAlSEHB1cmdlZENvbnRlbnRJZHMSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use listOfflineManifestItemsRequestDescriptor instead')
+const ListOfflineManifestItemsRequest$json = {
+  '1': 'ListOfflineManifestItemsRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `ListOfflineManifestItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOfflineManifestItemsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9MaXN0T2ZmbGluZU1hbmlmZXN0SXRlbXNSZXF1ZXN0EhsKCWRldmljZV9pZBgBIAEoCVIIZG'
+        'V2aWNlSWQ=');
+
+@$core.Deprecated('Use offlineManifestItemInfoDescriptor instead')
+const OfflineManifestItemInfo$json = {
+  '1': 'OfflineManifestItemInfo',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'rendition_id', '3': 2, '4': 1, '5': 9, '10': 'renditionId'},
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OfflineManifestItemInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List offlineManifestItemInfoDescriptor = $convert.base64Decode(
+    'ChdPZmZsaW5lTWFuaWZlc3RJdGVtSW5mbxIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SW'
+    'QSIQoMcmVuZGl0aW9uX2lkGAIgASgJUgtyZW5kaXRpb25JZBI5CgpjcmVhdGVkX2F0GAMgASgL'
+    'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use listOfflineManifestItemsResponseDescriptor instead')
+const ListOfflineManifestItemsResponse$json = {
+  '1': 'ListOfflineManifestItemsResponse',
+  '2': [
+    {
+      '1': 'items',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OfflineManifestItemInfo',
+      '10': 'items'
+    },
+  ],
+};
+
+/// Descriptor for `ListOfflineManifestItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listOfflineManifestItemsResponseDescriptor =
+    $convert.base64Decode(
+        'CiBMaXN0T2ZmbGluZU1hbmlmZXN0SXRlbXNSZXNwb25zZRI/CgVpdGVtcxgBIAMoCzIpLnN0dG'
+        'F0dHVzLm9ueXgudjEuT2ZmbGluZU1hbmlmZXN0SXRlbUluZm9SBWl0ZW1z');
+
+@$core.Deprecated('Use refreshOfflineRenditionsRequestDescriptor instead')
+const RefreshOfflineRenditionsRequest$json = {
+  '1': 'RefreshOfflineRenditionsRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'rendition_ids', '3': 2, '4': 3, '5': 9, '10': 'renditionIds'},
+  ],
+};
+
+/// Descriptor for `RefreshOfflineRenditionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshOfflineRenditionsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9SZWZyZXNoT2ZmbGluZVJlbmRpdGlvbnNSZXF1ZXN0EhsKCWRldmljZV9pZBgBIAEoCVIIZG'
+        'V2aWNlSWQSIwoNcmVuZGl0aW9uX2lkcxgCIAMoCVIMcmVuZGl0aW9uSWRz');
+
+@$core.Deprecated('Use refreshedRenditionDescriptor instead')
+const RefreshedRendition$json = {
+  '1': 'RefreshedRendition',
+  '2': [
+    {'1': 'rendition_id', '3': 1, '4': 1, '5': 9, '10': 'renditionId'},
+    {
+      '1': 'signed_download_url',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'signedDownloadUrl'
+    },
+    {
+      '1': 'expires_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {'1': 'policy_version', '3': 4, '4': 1, '5': 9, '10': 'policyVersion'},
+    {'1': 'source_version', '3': 5, '4': 1, '5': 3, '10': 'sourceVersion'},
+  ],
+};
+
+/// Descriptor for `RefreshedRendition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshedRenditionDescriptor = $convert.base64Decode(
+    'ChJSZWZyZXNoZWRSZW5kaXRpb24SIQoMcmVuZGl0aW9uX2lkGAEgASgJUgtyZW5kaXRpb25JZB'
+    'IuChNzaWduZWRfZG93bmxvYWRfdXJsGAIgASgJUhFzaWduZWREb3dubG9hZFVybBI5CgpleHBp'
+    'cmVzX2F0GAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EiUKDn'
+    'BvbGljeV92ZXJzaW9uGAQgASgJUg1wb2xpY3lWZXJzaW9uEiUKDnNvdXJjZV92ZXJzaW9uGAUg'
+    'ASgDUg1zb3VyY2VWZXJzaW9u');
+
+@$core.Deprecated('Use refreshOfflineRenditionsResponseDescriptor instead')
+const RefreshOfflineRenditionsResponse$json = {
+  '1': 'RefreshOfflineRenditionsResponse',
+  '2': [
+    {
+      '1': 'renditions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RefreshedRendition',
+      '10': 'renditions'
+    },
+  ],
+};
+
+/// Descriptor for `RefreshOfflineRenditionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List refreshOfflineRenditionsResponseDescriptor =
+    $convert.base64Decode(
+        'CiBSZWZyZXNoT2ZmbGluZVJlbmRpdGlvbnNSZXNwb25zZRJECgpyZW5kaXRpb25zGAEgAygLMi'
+        'Quc3R0YXR0dXMub255eC52MS5SZWZyZXNoZWRSZW5kaXRpb25SCnJlbmRpdGlvbnM=');
+
+@$core.Deprecated('Use recordOfflineEventRequestDescriptor instead')
+const RecordOfflineEventRequest$json = {
+  '1': 'RecordOfflineEventRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'content_id', '3': 3, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'rendition_id', '3': 4, '4': 1, '5': 9, '10': 'renditionId'},
+    {'1': 'event_type', '3': 5, '4': 1, '5': 9, '10': 'eventType'},
+    {'1': 'outcome', '3': 6, '4': 1, '5': 9, '10': 'outcome'},
+    {'1': 'error_code', '3': 7, '4': 1, '5': 9, '10': 'errorCode'},
+    {'1': 'bytes', '3': 8, '4': 1, '5': 3, '10': 'bytes'},
+    {'1': 'latency_ms', '3': 9, '4': 1, '5': 5, '10': 'latencyMs'},
+    {'1': 'metadata_json', '3': 10, '4': 1, '5': 9, '10': 'metadataJson'},
+  ],
+};
+
+/// Descriptor for `RecordOfflineEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordOfflineEventRequestDescriptor = $convert.base64Decode(
+    'ChlSZWNvcmRPZmZsaW5lRXZlbnRSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIbCglkZXZpY2VfaW'
+    'QYAiABKAlSCGRldmljZUlkEh0KCmNvbnRlbnRfaWQYAyABKAlSCWNvbnRlbnRJZBIhCgxyZW5k'
+    'aXRpb25faWQYBCABKAlSC3JlbmRpdGlvbklkEh0KCmV2ZW50X3R5cGUYBSABKAlSCWV2ZW50VH'
+    'lwZRIYCgdvdXRjb21lGAYgASgJUgdvdXRjb21lEh0KCmVycm9yX2NvZGUYByABKAlSCWVycm9y'
+    'Q29kZRIUCgVieXRlcxgIIAEoA1IFYnl0ZXMSHQoKbGF0ZW5jeV9tcxgJIAEoBVIJbGF0ZW5jeU'
+    '1zEiMKDW1ldGFkYXRhX2pzb24YCiABKAlSDG1ldGFkYXRhSnNvbg==');
+
+@$core.Deprecated('Use recordOfflineEventResponseDescriptor instead')
+const RecordOfflineEventResponse$json = {
+  '1': 'RecordOfflineEventResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'success', '3': 2, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `RecordOfflineEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordOfflineEventResponseDescriptor =
+    $convert.base64Decode(
+        'ChpSZWNvcmRPZmZsaW5lRXZlbnRSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSGAoHc3VjY2Vzcx'
+        'gCIAEoCFIHc3VjY2Vzcw==');
 
 @$core.Deprecated('Use getYearInOnyxRequestDescriptor instead')
 const GetYearInOnyxRequest$json = {

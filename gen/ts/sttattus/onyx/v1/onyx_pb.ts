@@ -5538,9 +5538,217 @@ export class RevokeShareLinkResponse extends Message<RevokeShareLinkResponse> {
 }
 
 /**
+ * @generated from message sttattus.onyx.v1.EncryptedRendition
+ */
+export class EncryptedRendition extends Message<EncryptedRendition> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string rendition_id = 2;
+   */
+  renditionId = "";
+
+  /**
+   * @generated from field: string content_type = 3;
+   */
+  contentType = "";
+
+  /**
+   * @generated from field: int64 size_bytes = 4;
+   */
+  sizeBytes = protoInt64.zero;
+
+  /**
+   * CEK wrapped with device's public key (base64)
+   *
+   * @generated from field: string wrapped_cek = 5;
+   */
+  wrappedCek = "";
+
+  /**
+   * Base64 Initialization Vector (base nonce)
+   *
+   * @generated from field: string iv = 6;
+   */
+  iv = "";
+
+  /**
+   * @generated from field: string signed_download_url = 7;
+   */
+  signedDownloadUrl = "";
+
+  /**
+   * SHA-256 digest of the ciphertext content
+   *
+   * @generated from field: string content_hash = 8;
+   */
+  contentHash = "";
+
+  /**
+   * @generated from field: string revision_id = 9;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: int32 chunk_size = 10;
+   */
+  chunkSize = 0;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.EncryptedRendition.RenditionStatus status = 11;
+   */
+  status = EncryptedRendition_RenditionStatus.UNSPECIFIED;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp url_expires_at = 12;
+   */
+  urlExpiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string policy_version = 13;
+   */
+  policyVersion = "";
+
+  /**
+   * @generated from field: int64 source_version = 14;
+   */
+  sourceVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.EncryptedRendition.OfflinePackageType package_type = 15;
+   */
+  packageType = EncryptedRendition_OfflinePackageType.UNSPECIFIED;
+
+  constructor(data?: PartialMessage<EncryptedRendition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EncryptedRendition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rendition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "size_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "wrapped_cek", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "iv", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "signed_download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "content_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "chunk_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "status", kind: "enum", T: proto3.getEnumType(EncryptedRendition_RenditionStatus) },
+    { no: 12, name: "url_expires_at", kind: "message", T: Timestamp },
+    { no: 13, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "source_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "package_type", kind: "enum", T: proto3.getEnumType(EncryptedRendition_OfflinePackageType) },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedRendition {
+    return new EncryptedRendition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EncryptedRendition {
+    return new EncryptedRendition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EncryptedRendition {
+    return new EncryptedRendition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EncryptedRendition | PlainMessage<EncryptedRendition> | undefined, b: EncryptedRendition | PlainMessage<EncryptedRendition> | undefined): boolean {
+    return proto3.util.equals(EncryptedRendition, a, b);
+  }
+}
+
+/**
+ * @generated from enum sttattus.onyx.v1.EncryptedRendition.RenditionStatus
+ */
+export enum EncryptedRendition_RenditionStatus {
+  /**
+   * @generated from enum value: RENDITION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: RENDITION_STATUS_PREPARING = 1;
+   */
+  PREPARING = 1,
+
+  /**
+   * @generated from enum value: RENDITION_STATUS_READY = 2;
+   */
+  READY = 2,
+
+  /**
+   * @generated from enum value: RENDITION_STATUS_FAILED = 3;
+   */
+  FAILED = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(EncryptedRendition_RenditionStatus)
+proto3.util.setEnumType(EncryptedRendition_RenditionStatus, "sttattus.onyx.v1.EncryptedRendition.RenditionStatus", [
+  { no: 0, name: "RENDITION_STATUS_UNSPECIFIED" },
+  { no: 1, name: "RENDITION_STATUS_PREPARING" },
+  { no: 2, name: "RENDITION_STATUS_READY" },
+  { no: 3, name: "RENDITION_STATUS_FAILED" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
+ */
+export enum EncryptedRendition_OfflinePackageType {
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_PROTOBUF_ARTICLE = 1;
+   */
+  PROTOBUF_ARTICLE = 1,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_EVIDENCE_BRIEF = 2;
+   */
+  EVIDENCE_BRIEF = 2,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_RAW_AUDIO = 3;
+   */
+  RAW_AUDIO = 3,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_CAPTIONS = 4;
+   */
+  CAPTIONS = 4,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_PDF = 5;
+   */
+  PDF = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(EncryptedRendition_OfflinePackageType)
+proto3.util.setEnumType(EncryptedRendition_OfflinePackageType, "sttattus.onyx.v1.EncryptedRendition.OfflinePackageType", [
+  { no: 0, name: "OFFLINE_PACKAGE_TYPE_UNSPECIFIED" },
+  { no: 1, name: "OFFLINE_PACKAGE_TYPE_PROTOBUF_ARTICLE" },
+  { no: 2, name: "OFFLINE_PACKAGE_TYPE_EVIDENCE_BRIEF" },
+  { no: 3, name: "OFFLINE_PACKAGE_TYPE_RAW_AUDIO" },
+  { no: 4, name: "OFFLINE_PACKAGE_TYPE_CAPTIONS" },
+  { no: 5, name: "OFFLINE_PACKAGE_TYPE_PDF" },
+]);
+
+/**
  * @generated from message sttattus.onyx.v1.GetOfflineManifestRequest
  */
 export class GetOfflineManifestRequest extends Message<GetOfflineManifestRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
   constructor(data?: PartialMessage<GetOfflineManifestRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5549,6 +5757,7 @@ export class GetOfflineManifestRequest extends Message<GetOfflineManifestRequest
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "sttattus.onyx.v1.GetOfflineManifestRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfflineManifestRequest {
@@ -5586,6 +5795,30 @@ export class GetOfflineManifestResponse extends Message<GetOfflineManifestRespon
    */
   watermarkPolicy = "";
 
+  /**
+   * Encrypted renditions for the granted items.
+   *
+   * @generated from field: repeated sttattus.onyx.v1.EncryptedRendition encrypted_renditions = 3;
+   */
+  encryptedRenditions: EncryptedRendition[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp grant_expires_at = 4;
+   */
+  grantExpiresAt?: Timestamp;
+
+  /**
+   * @generated from field: bool requires_purge = 5;
+   */
+  requiresPurge = false;
+
+  /**
+   * A server-issued challenge nonce for the client to sign when acknowledging a purge
+   *
+   * @generated from field: string purge_challenge = 6;
+   */
+  purgeChallenge = "";
+
   constructor(data?: PartialMessage<GetOfflineManifestResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5596,6 +5829,10 @@ export class GetOfflineManifestResponse extends Message<GetOfflineManifestRespon
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "items", kind: "message", T: OnyxContent, repeated: true },
     { no: 2, name: "watermark_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "encrypted_renditions", kind: "message", T: EncryptedRendition, repeated: true },
+    { no: 4, name: "grant_expires_at", kind: "message", T: Timestamp },
+    { no: 5, name: "requires_purge", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "purge_challenge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfflineManifestResponse {
@@ -5612,6 +5849,1027 @@ export class GetOfflineManifestResponse extends Message<GetOfflineManifestRespon
 
   static equals(a: GetOfflineManifestResponse | PlainMessage<GetOfflineManifestResponse> | undefined, b: GetOfflineManifestResponse | PlainMessage<GetOfflineManifestResponse> | undefined): boolean {
     return proto3.util.equals(GetOfflineManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RegisterDeviceRequest
+ */
+export class RegisterDeviceRequest extends Message<RegisterDeviceRequest> {
+  /**
+   * @generated from field: string device_name = 1;
+   */
+  deviceName = "";
+
+  /**
+   * X.509 SPKI RSA public key PEM, non-exportable from Keystore
+   *
+   * @generated from field: string public_key_pem = 2;
+   */
+  publicKeyPem = "";
+
+  /**
+   * @generated from field: string attestation_data = 3;
+   */
+  attestationData = "";
+
+  /**
+   * Key ID or fingerprint to handle idempotency
+   *
+   * @generated from field: string key_fingerprint = 4;
+   */
+  keyFingerprint = "";
+
+  /**
+   * @generated from field: string app_version = 5;
+   */
+  appVersion = "";
+
+  /**
+   * @generated from field: string os_version = 6;
+   */
+  osVersion = "";
+
+  /**
+   * e.g., "STRONGBOX", "TRUSTED_ENVIRONMENT", "SOFTWARE"
+   *
+   * @generated from field: string security_level = 7;
+   */
+  securityLevel = "";
+
+  /**
+   * @generated from field: string install_id = 8;
+   */
+  installId = "";
+
+  constructor(data?: PartialMessage<RegisterDeviceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RegisterDeviceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "public_key_pem", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "attestation_data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "key_fingerprint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "app_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "os_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "security_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "install_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterDeviceRequest {
+    return new RegisterDeviceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterDeviceRequest {
+    return new RegisterDeviceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterDeviceRequest {
+    return new RegisterDeviceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterDeviceRequest | PlainMessage<RegisterDeviceRequest> | undefined, b: RegisterDeviceRequest | PlainMessage<RegisterDeviceRequest> | undefined): boolean {
+    return proto3.util.equals(RegisterDeviceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RegisterDeviceResponse
+ */
+export class RegisterDeviceResponse extends Message<RegisterDeviceResponse> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 2;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RegisterDeviceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RegisterDeviceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterDeviceResponse {
+    return new RegisterDeviceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterDeviceResponse {
+    return new RegisterDeviceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterDeviceResponse {
+    return new RegisterDeviceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterDeviceResponse | PlainMessage<RegisterDeviceResponse> | undefined, b: RegisterDeviceResponse | PlainMessage<RegisterDeviceResponse> | undefined): boolean {
+    return proto3.util.equals(RegisterDeviceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AcknowledgePurgeRequest
+ */
+export class AcknowledgePurgeRequest extends Message<AcknowledgePurgeRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated string purged_content_ids = 2;
+   */
+  purgedContentIds: string[] = [];
+
+  /**
+   * @generated from field: string purge_challenge = 3;
+   */
+  purgeChallenge = "";
+
+  /**
+   * Base64 signature of the purge_challenge using the device's private Keystore key
+   *
+   * @generated from field: string challenge_signature = 4;
+   */
+  challengeSignature = "";
+
+  constructor(data?: PartialMessage<AcknowledgePurgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AcknowledgePurgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "purged_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "purge_challenge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "challenge_signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgePurgeRequest {
+    return new AcknowledgePurgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgePurgeRequest {
+    return new AcknowledgePurgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgePurgeRequest {
+    return new AcknowledgePurgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgePurgeRequest | PlainMessage<AcknowledgePurgeRequest> | undefined, b: AcknowledgePurgeRequest | PlainMessage<AcknowledgePurgeRequest> | undefined): boolean {
+    return proto3.util.equals(AcknowledgePurgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AcknowledgePurgeResponse
+ */
+export class AcknowledgePurgeResponse extends Message<AcknowledgePurgeResponse> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  constructor(data?: PartialMessage<AcknowledgePurgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AcknowledgePurgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgePurgeResponse {
+    return new AcknowledgePurgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgePurgeResponse {
+    return new AcknowledgePurgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgePurgeResponse {
+    return new AcknowledgePurgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgePurgeResponse | PlainMessage<AcknowledgePurgeResponse> | undefined, b: AcknowledgePurgeResponse | PlainMessage<AcknowledgePurgeResponse> | undefined): boolean {
+    return proto3.util.equals(AcknowledgePurgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDeviceGrantsRequest
+ */
+export class GetDeviceGrantsRequest extends Message<GetDeviceGrantsRequest> {
+  constructor(data?: PartialMessage<GetDeviceGrantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDeviceGrantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeviceGrantsRequest {
+    return new GetDeviceGrantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeviceGrantsRequest {
+    return new GetDeviceGrantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeviceGrantsRequest {
+    return new GetDeviceGrantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDeviceGrantsRequest | PlainMessage<GetDeviceGrantsRequest> | undefined, b: GetDeviceGrantsRequest | PlainMessage<GetDeviceGrantsRequest> | undefined): boolean {
+    return proto3.util.equals(GetDeviceGrantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeviceGrantInfo
+ */
+export class DeviceGrantInfo extends Message<DeviceGrantInfo> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string device_name = 2;
+   */
+  deviceName = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 4;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 5;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_sync_at = 6;
+   */
+  lastSyncAt?: Timestamp;
+
+  /**
+   * @generated from field: string security_level = 7;
+   */
+  securityLevel = "";
+
+  /**
+   * @generated from field: string claimed_security_level = 8;
+   */
+  claimedSecurityLevel = "";
+
+  /**
+   * @generated from field: string verified_security_level = 9;
+   */
+  verifiedSecurityLevel = "";
+
+  /**
+   * @generated from field: string attestation_status = 10;
+   */
+  attestationStatus = "";
+
+  /**
+   * @generated from field: string purge_receipt_id = 11;
+   */
+  purgeReceiptId = "";
+
+  /**
+   * @generated from field: repeated string pending_purge_content_ids = 12;
+   */
+  pendingPurgeContentIds: string[] = [];
+
+  constructor(data?: PartialMessage<DeviceGrantInfo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeviceGrantInfo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "created_at", kind: "message", T: Timestamp },
+    { no: 5, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 6, name: "last_sync_at", kind: "message", T: Timestamp },
+    { no: 7, name: "security_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "claimed_security_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "verified_security_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "attestation_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "purge_receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "pending_purge_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeviceGrantInfo {
+    return new DeviceGrantInfo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeviceGrantInfo {
+    return new DeviceGrantInfo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeviceGrantInfo {
+    return new DeviceGrantInfo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeviceGrantInfo | PlainMessage<DeviceGrantInfo> | undefined, b: DeviceGrantInfo | PlainMessage<DeviceGrantInfo> | undefined): boolean {
+    return proto3.util.equals(DeviceGrantInfo, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDeviceGrantsResponse
+ */
+export class GetDeviceGrantsResponse extends Message<GetDeviceGrantsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DeviceGrantInfo grants = 1;
+   */
+  grants: DeviceGrantInfo[] = [];
+
+  constructor(data?: PartialMessage<GetDeviceGrantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDeviceGrantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grants", kind: "message", T: DeviceGrantInfo, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeviceGrantsResponse {
+    return new GetDeviceGrantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeviceGrantsResponse {
+    return new GetDeviceGrantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeviceGrantsResponse {
+    return new GetDeviceGrantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDeviceGrantsResponse | PlainMessage<GetDeviceGrantsResponse> | undefined, b: GetDeviceGrantsResponse | PlainMessage<GetDeviceGrantsResponse> | undefined): boolean {
+    return proto3.util.equals(GetDeviceGrantsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeMyDeviceRequest
+ */
+export class RevokeMyDeviceRequest extends Message<RevokeMyDeviceRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<RevokeMyDeviceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeMyDeviceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeMyDeviceRequest {
+    return new RevokeMyDeviceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeMyDeviceRequest {
+    return new RevokeMyDeviceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeMyDeviceRequest {
+    return new RevokeMyDeviceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeMyDeviceRequest | PlainMessage<RevokeMyDeviceRequest> | undefined, b: RevokeMyDeviceRequest | PlainMessage<RevokeMyDeviceRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeMyDeviceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeMyDeviceResponse
+ */
+export class RevokeMyDeviceResponse extends Message<RevokeMyDeviceResponse> {
+  constructor(data?: PartialMessage<RevokeMyDeviceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeMyDeviceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeMyDeviceResponse {
+    return new RevokeMyDeviceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeMyDeviceResponse {
+    return new RevokeMyDeviceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeMyDeviceResponse {
+    return new RevokeMyDeviceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeMyDeviceResponse | PlainMessage<RevokeMyDeviceResponse> | undefined, b: RevokeMyDeviceResponse | PlainMessage<RevokeMyDeviceResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeMyDeviceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.MarkMyDeviceLostRequest
+ */
+export class MarkMyDeviceLostRequest extends Message<MarkMyDeviceLostRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<MarkMyDeviceLostRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.MarkMyDeviceLostRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkMyDeviceLostRequest {
+    return new MarkMyDeviceLostRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkMyDeviceLostRequest {
+    return new MarkMyDeviceLostRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkMyDeviceLostRequest {
+    return new MarkMyDeviceLostRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkMyDeviceLostRequest | PlainMessage<MarkMyDeviceLostRequest> | undefined, b: MarkMyDeviceLostRequest | PlainMessage<MarkMyDeviceLostRequest> | undefined): boolean {
+    return proto3.util.equals(MarkMyDeviceLostRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.MarkMyDeviceLostResponse
+ */
+export class MarkMyDeviceLostResponse extends Message<MarkMyDeviceLostResponse> {
+  constructor(data?: PartialMessage<MarkMyDeviceLostResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.MarkMyDeviceLostResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MarkMyDeviceLostResponse {
+    return new MarkMyDeviceLostResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MarkMyDeviceLostResponse {
+    return new MarkMyDeviceLostResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MarkMyDeviceLostResponse {
+    return new MarkMyDeviceLostResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MarkMyDeviceLostResponse | PlainMessage<MarkMyDeviceLostResponse> | undefined, b: MarkMyDeviceLostResponse | PlainMessage<MarkMyDeviceLostResponse> | undefined): boolean {
+    return proto3.util.equals(MarkMyDeviceLostResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPurgeReceiptRequest
+ */
+export class GetPurgeReceiptRequest extends Message<GetPurgeReceiptRequest> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  constructor(data?: PartialMessage<GetPurgeReceiptRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPurgeReceiptRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPurgeReceiptRequest {
+    return new GetPurgeReceiptRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPurgeReceiptRequest {
+    return new GetPurgeReceiptRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPurgeReceiptRequest {
+    return new GetPurgeReceiptRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPurgeReceiptRequest | PlainMessage<GetPurgeReceiptRequest> | undefined, b: GetPurgeReceiptRequest | PlainMessage<GetPurgeReceiptRequest> | undefined): boolean {
+    return proto3.util.equals(GetPurgeReceiptRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPurgeReceiptResponse
+ */
+export class GetPurgeReceiptResponse extends Message<GetPurgeReceiptResponse> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated string purged_content_ids = 3;
+   */
+  purgedContentIds: string[] = [];
+
+  /**
+   * challenge_signature removed for security
+   *
+   * @generated from field: google.protobuf.Timestamp created_at = 5;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<GetPurgeReceiptResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPurgeReceiptResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "purged_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPurgeReceiptResponse {
+    return new GetPurgeReceiptResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPurgeReceiptResponse {
+    return new GetPurgeReceiptResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPurgeReceiptResponse {
+    return new GetPurgeReceiptResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPurgeReceiptResponse | PlainMessage<GetPurgeReceiptResponse> | undefined, b: GetPurgeReceiptResponse | PlainMessage<GetPurgeReceiptResponse> | undefined): boolean {
+    return proto3.util.equals(GetPurgeReceiptResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListOfflineManifestItemsRequest
+ */
+export class ListOfflineManifestItemsRequest extends Message<ListOfflineManifestItemsRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<ListOfflineManifestItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListOfflineManifestItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOfflineManifestItemsRequest {
+    return new ListOfflineManifestItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOfflineManifestItemsRequest {
+    return new ListOfflineManifestItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOfflineManifestItemsRequest {
+    return new ListOfflineManifestItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListOfflineManifestItemsRequest | PlainMessage<ListOfflineManifestItemsRequest> | undefined, b: ListOfflineManifestItemsRequest | PlainMessage<ListOfflineManifestItemsRequest> | undefined): boolean {
+    return proto3.util.equals(ListOfflineManifestItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OfflineManifestItemInfo
+ */
+export class OfflineManifestItemInfo extends Message<OfflineManifestItemInfo> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string rendition_id = 2;
+   */
+  renditionId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 3;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OfflineManifestItemInfo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OfflineManifestItemInfo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rendition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfflineManifestItemInfo {
+    return new OfflineManifestItemInfo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfflineManifestItemInfo {
+    return new OfflineManifestItemInfo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfflineManifestItemInfo {
+    return new OfflineManifestItemInfo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OfflineManifestItemInfo | PlainMessage<OfflineManifestItemInfo> | undefined, b: OfflineManifestItemInfo | PlainMessage<OfflineManifestItemInfo> | undefined): boolean {
+    return proto3.util.equals(OfflineManifestItemInfo, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListOfflineManifestItemsResponse
+ */
+export class ListOfflineManifestItemsResponse extends Message<ListOfflineManifestItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OfflineManifestItemInfo items = 1;
+   */
+  items: OfflineManifestItemInfo[] = [];
+
+  constructor(data?: PartialMessage<ListOfflineManifestItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListOfflineManifestItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: OfflineManifestItemInfo, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOfflineManifestItemsResponse {
+    return new ListOfflineManifestItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOfflineManifestItemsResponse {
+    return new ListOfflineManifestItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOfflineManifestItemsResponse {
+    return new ListOfflineManifestItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListOfflineManifestItemsResponse | PlainMessage<ListOfflineManifestItemsResponse> | undefined, b: ListOfflineManifestItemsResponse | PlainMessage<ListOfflineManifestItemsResponse> | undefined): boolean {
+    return proto3.util.equals(ListOfflineManifestItemsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+ */
+export class RefreshOfflineRenditionsRequest extends Message<RefreshOfflineRenditionsRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated string rendition_ids = 2;
+   */
+  renditionIds: string[] = [];
+
+  constructor(data?: PartialMessage<RefreshOfflineRenditionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RefreshOfflineRenditionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rendition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshOfflineRenditionsRequest {
+    return new RefreshOfflineRenditionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshOfflineRenditionsRequest {
+    return new RefreshOfflineRenditionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshOfflineRenditionsRequest {
+    return new RefreshOfflineRenditionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshOfflineRenditionsRequest | PlainMessage<RefreshOfflineRenditionsRequest> | undefined, b: RefreshOfflineRenditionsRequest | PlainMessage<RefreshOfflineRenditionsRequest> | undefined): boolean {
+    return proto3.util.equals(RefreshOfflineRenditionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RefreshedRendition
+ */
+export class RefreshedRendition extends Message<RefreshedRendition> {
+  /**
+   * @generated from field: string rendition_id = 1;
+   */
+  renditionId = "";
+
+  /**
+   * @generated from field: string signed_download_url = 2;
+   */
+  signedDownloadUrl = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 3;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string policy_version = 4;
+   */
+  policyVersion = "";
+
+  /**
+   * @generated from field: int64 source_version = 5;
+   */
+  sourceVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RefreshedRendition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RefreshedRendition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rendition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "signed_download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 4, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshedRendition {
+    return new RefreshedRendition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshedRendition {
+    return new RefreshedRendition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshedRendition {
+    return new RefreshedRendition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshedRendition | PlainMessage<RefreshedRendition> | undefined, b: RefreshedRendition | PlainMessage<RefreshedRendition> | undefined): boolean {
+    return proto3.util.equals(RefreshedRendition, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+ */
+export class RefreshOfflineRenditionsResponse extends Message<RefreshOfflineRenditionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RefreshedRendition renditions = 1;
+   */
+  renditions: RefreshedRendition[] = [];
+
+  constructor(data?: PartialMessage<RefreshOfflineRenditionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RefreshOfflineRenditionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "renditions", kind: "message", T: RefreshedRendition, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshOfflineRenditionsResponse {
+    return new RefreshOfflineRenditionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshOfflineRenditionsResponse {
+    return new RefreshOfflineRenditionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshOfflineRenditionsResponse {
+    return new RefreshOfflineRenditionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshOfflineRenditionsResponse | PlainMessage<RefreshOfflineRenditionsResponse> | undefined, b: RefreshOfflineRenditionsResponse | PlainMessage<RefreshOfflineRenditionsResponse> | undefined): boolean {
+    return proto3.util.equals(RefreshOfflineRenditionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordOfflineEventRequest
+ */
+export class RecordOfflineEventRequest extends Message<RecordOfflineEventRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string content_id = 3;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string rendition_id = 4;
+   */
+  renditionId = "";
+
+  /**
+   * @generated from field: string event_type = 5;
+   */
+  eventType = "";
+
+  /**
+   * @generated from field: string outcome = 6;
+   */
+  outcome = "";
+
+  /**
+   * @generated from field: string error_code = 7;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: int64 bytes = 8;
+   */
+  bytes = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 latency_ms = 9;
+   */
+  latencyMs = 0;
+
+  /**
+   * @generated from field: string metadata_json = 10;
+   */
+  metadataJson = "";
+
+  constructor(data?: PartialMessage<RecordOfflineEventRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordOfflineEventRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "rendition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "event_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "latency_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "metadata_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordOfflineEventRequest {
+    return new RecordOfflineEventRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordOfflineEventRequest {
+    return new RecordOfflineEventRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordOfflineEventRequest {
+    return new RecordOfflineEventRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordOfflineEventRequest | PlainMessage<RecordOfflineEventRequest> | undefined, b: RecordOfflineEventRequest | PlainMessage<RecordOfflineEventRequest> | undefined): boolean {
+    return proto3.util.equals(RecordOfflineEventRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordOfflineEventResponse
+ */
+export class RecordOfflineEventResponse extends Message<RecordOfflineEventResponse> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: bool success = 2;
+   */
+  success = false;
+
+  constructor(data?: PartialMessage<RecordOfflineEventResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordOfflineEventResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordOfflineEventResponse {
+    return new RecordOfflineEventResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordOfflineEventResponse {
+    return new RecordOfflineEventResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordOfflineEventResponse {
+    return new RecordOfflineEventResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordOfflineEventResponse | PlainMessage<RecordOfflineEventResponse> | undefined, b: RecordOfflineEventResponse | PlainMessage<RecordOfflineEventResponse> | undefined): boolean {
+    return proto3.util.equals(RecordOfflineEventResponse, a, b);
   }
 }
 

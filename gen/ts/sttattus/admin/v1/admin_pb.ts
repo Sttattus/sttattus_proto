@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 import { AppAccess, UserProfile } from "../../user/v1/user_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 import { AppCode } from "../../auth/v1/auth_pb.js";
@@ -620,6 +620,261 @@ export class ListAuditLogsResponse extends Message<ListAuditLogsResponse> {
 
   static equals(a: ListAuditLogsResponse | PlainMessage<ListAuditLogsResponse> | undefined, b: ListAuditLogsResponse | PlainMessage<ListAuditLogsResponse> | undefined): boolean {
     return proto3.util.equals(ListAuditLogsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.admin.v1.DeviceGrantRow
+ */
+export class DeviceGrantRow extends Message<DeviceGrantRow> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string device_name = 3;
+   */
+  deviceName = "";
+
+  /**
+   * active, revoked, expired, purged, lost
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 5;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 6;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_sync_at = 7;
+   */
+  lastSyncAt?: Timestamp;
+
+  /**
+   * @generated from field: string security_level = 8;
+   */
+  securityLevel = "";
+
+  /**
+   * @generated from field: string key_fingerprint = 9;
+   */
+  keyFingerprint = "";
+
+  constructor(data?: PartialMessage<DeviceGrantRow>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.admin.v1.DeviceGrantRow";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "device_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "message", T: Timestamp },
+    { no: 6, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 7, name: "last_sync_at", kind: "message", T: Timestamp },
+    { no: 8, name: "security_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "key_fingerprint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeviceGrantRow {
+    return new DeviceGrantRow().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeviceGrantRow {
+    return new DeviceGrantRow().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeviceGrantRow {
+    return new DeviceGrantRow().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeviceGrantRow | PlainMessage<DeviceGrantRow> | undefined, b: DeviceGrantRow | PlainMessage<DeviceGrantRow> | undefined): boolean {
+    return proto3.util.equals(DeviceGrantRow, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.admin.v1.ListDeviceGrantsRequest
+ */
+export class ListDeviceGrantsRequest extends Message<ListDeviceGrantsRequest> {
+  /**
+   * optional
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: sttattus.common.v1.PageRequest page = 2;
+   */
+  page?: PageRequest;
+
+  constructor(data?: PartialMessage<ListDeviceGrantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.admin.v1.ListDeviceGrantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "page", kind: "message", T: PageRequest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeviceGrantsRequest {
+    return new ListDeviceGrantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeviceGrantsRequest {
+    return new ListDeviceGrantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeviceGrantsRequest {
+    return new ListDeviceGrantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDeviceGrantsRequest | PlainMessage<ListDeviceGrantsRequest> | undefined, b: ListDeviceGrantsRequest | PlainMessage<ListDeviceGrantsRequest> | undefined): boolean {
+    return proto3.util.equals(ListDeviceGrantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.admin.v1.ListDeviceGrantsResponse
+ */
+export class ListDeviceGrantsResponse extends Message<ListDeviceGrantsResponse> {
+  /**
+   * @generated from field: repeated sttattus.admin.v1.DeviceGrantRow rows = 1;
+   */
+  rows: DeviceGrantRow[] = [];
+
+  /**
+   * @generated from field: sttattus.common.v1.PageResponse page = 2;
+   */
+  page?: PageResponse;
+
+  constructor(data?: PartialMessage<ListDeviceGrantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.admin.v1.ListDeviceGrantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rows", kind: "message", T: DeviceGrantRow, repeated: true },
+    { no: 2, name: "page", kind: "message", T: PageResponse },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeviceGrantsResponse {
+    return new ListDeviceGrantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeviceGrantsResponse {
+    return new ListDeviceGrantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeviceGrantsResponse {
+    return new ListDeviceGrantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDeviceGrantsResponse | PlainMessage<ListDeviceGrantsResponse> | undefined, b: ListDeviceGrantsResponse | PlainMessage<ListDeviceGrantsResponse> | undefined): boolean {
+    return proto3.util.equals(ListDeviceGrantsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.admin.v1.RevokeDeviceGrantRequest
+ */
+export class RevokeDeviceGrantRequest extends Message<RevokeDeviceGrantRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string reason = 2;
+   */
+  reason = "";
+
+  constructor(data?: PartialMessage<RevokeDeviceGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.admin.v1.RevokeDeviceGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeDeviceGrantRequest {
+    return new RevokeDeviceGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeDeviceGrantRequest {
+    return new RevokeDeviceGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeDeviceGrantRequest {
+    return new RevokeDeviceGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeDeviceGrantRequest | PlainMessage<RevokeDeviceGrantRequest> | undefined, b: RevokeDeviceGrantRequest | PlainMessage<RevokeDeviceGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeDeviceGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.admin.v1.RevokeDeviceGrantResponse
+ */
+export class RevokeDeviceGrantResponse extends Message<RevokeDeviceGrantResponse> {
+  /**
+   * @generated from field: sttattus.admin.v1.DeviceGrantRow row = 1;
+   */
+  row?: DeviceGrantRow;
+
+  constructor(data?: PartialMessage<RevokeDeviceGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.admin.v1.RevokeDeviceGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "row", kind: "message", T: DeviceGrantRow },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeDeviceGrantResponse {
+    return new RevokeDeviceGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeDeviceGrantResponse {
+    return new RevokeDeviceGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeDeviceGrantResponse {
+    return new RevokeDeviceGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeDeviceGrantResponse | PlainMessage<RevokeDeviceGrantResponse> | undefined, b: RevokeDeviceGrantResponse | PlainMessage<RevokeDeviceGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeDeviceGrantResponse, a, b);
   }
 }
 

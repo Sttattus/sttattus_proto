@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package sttattus.admin.v1;
 
+import "google/protobuf/timestamp.proto";
 import "sttattus/auth/v1/auth.proto";
 import "sttattus/common/v1/pagination.proto";
 import "sttattus/user/v1/user.proto";
@@ -80,10 +81,41 @@ message ListAuditLogsResponse {
   sttattus.common.v1.PageResponse page = 2;
 }
 
+message DeviceGrantRow {
+  string device_id = 1;
+  string user_id = 2;
+  string device_name = 3;
+  string status = 4; // active, revoked, expired, purged, lost
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp expires_at = 6;
+  google.protobuf.Timestamp last_sync_at = 7;
+  string security_level = 8;
+  string key_fingerprint = 9;
+}
+
+message ListDeviceGrantsRequest {
+  string user_id = 1; // optional
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListDeviceGrantsResponse {
+  repeated DeviceGrantRow rows = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message RevokeDeviceGrantRequest {
+  string device_id = 1;
+  string reason = 2;
+}
+message RevokeDeviceGrantResponse {
+  DeviceGrantRow row = 1;
+}
+
 service AdminService {
   rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
   rpc BanUser(BanUserRequest) returns (BanUserResponse);
   rpc BulkAction(BulkActionRequest) returns (BulkActionResponse);
   rpc ListAuditLogs(ListAuditLogsRequest) returns (ListAuditLogsResponse);
+  rpc ListDeviceGrants(ListDeviceGrantsRequest) returns (ListDeviceGrantsResponse);
+  rpc RevokeDeviceGrant(RevokeDeviceGrantRequest) returns (RevokeDeviceGrantResponse);
 }

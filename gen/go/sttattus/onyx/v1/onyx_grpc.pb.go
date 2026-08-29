@@ -67,6 +67,15 @@ const (
 	OnyxService_ListMyShareLinks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
 	OnyxService_RevokeShareLink_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
 	OnyxService_GetOfflineManifest_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
+	OnyxService_RegisterDevice_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
+	OnyxService_AcknowledgePurge_FullMethodName           = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
+	OnyxService_GetDeviceGrants_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
+	OnyxService_RevokeMyDevice_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
+	OnyxService_MarkMyDeviceLost_FullMethodName           = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
+	OnyxService_GetPurgeReceipt_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
+	OnyxService_ListOfflineManifestItems_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
+	OnyxService_RefreshOfflineRenditions_FullMethodName   = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
+	OnyxService_RecordOfflineEvent_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
 	OnyxService_GetYearInOnyx_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
 	OnyxService_GenerateAnnualArchive_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
 	OnyxService_ReactToContent_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReactToContent"
@@ -149,11 +158,20 @@ type OnyxServiceClient interface {
 	// P3 — editorial anthology.
 	ListAnthologies(ctx context.Context, in *ListAnthologiesRequest, opts ...grpc.CallOption) (*ListAnthologiesResponse, error)
 	GetAnthology(ctx context.Context, in *GetAnthologyRequest, opts ...grpc.CallOption) (*GetAnthologyResponse, error)
-	// P3.5 — signed share embeds + offline manifest.
+	// P3.5 — signed share embeds + offline manifest + device grants.
 	CreateShareLink(ctx context.Context, in *CreateShareLinkRequest, opts ...grpc.CallOption) (*CreateShareLinkResponse, error)
 	ListMyShareLinks(ctx context.Context, in *ListMyShareLinksRequest, opts ...grpc.CallOption) (*ListMyShareLinksResponse, error)
 	RevokeShareLink(ctx context.Context, in *RevokeShareLinkRequest, opts ...grpc.CallOption) (*RevokeShareLinkResponse, error)
 	GetOfflineManifest(ctx context.Context, in *GetOfflineManifestRequest, opts ...grpc.CallOption) (*GetOfflineManifestResponse, error)
+	RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error)
+	AcknowledgePurge(ctx context.Context, in *AcknowledgePurgeRequest, opts ...grpc.CallOption) (*AcknowledgePurgeResponse, error)
+	GetDeviceGrants(ctx context.Context, in *GetDeviceGrantsRequest, opts ...grpc.CallOption) (*GetDeviceGrantsResponse, error)
+	RevokeMyDevice(ctx context.Context, in *RevokeMyDeviceRequest, opts ...grpc.CallOption) (*RevokeMyDeviceResponse, error)
+	MarkMyDeviceLost(ctx context.Context, in *MarkMyDeviceLostRequest, opts ...grpc.CallOption) (*MarkMyDeviceLostResponse, error)
+	GetPurgeReceipt(ctx context.Context, in *GetPurgeReceiptRequest, opts ...grpc.CallOption) (*GetPurgeReceiptResponse, error)
+	ListOfflineManifestItems(ctx context.Context, in *ListOfflineManifestItemsRequest, opts ...grpc.CallOption) (*ListOfflineManifestItemsResponse, error)
+	RefreshOfflineRenditions(ctx context.Context, in *RefreshOfflineRenditionsRequest, opts ...grpc.CallOption) (*RefreshOfflineRenditionsResponse, error)
+	RecordOfflineEvent(ctx context.Context, in *RecordOfflineEventRequest, opts ...grpc.CallOption) (*RecordOfflineEventResponse, error)
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error)
@@ -662,6 +680,96 @@ func (c *onyxServiceClient) GetOfflineManifest(ctx context.Context, in *GetOffli
 	return out, nil
 }
 
+func (c *onyxServiceClient) RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterDeviceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RegisterDevice_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) AcknowledgePurge(ctx context.Context, in *AcknowledgePurgeRequest, opts ...grpc.CallOption) (*AcknowledgePurgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcknowledgePurgeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_AcknowledgePurge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetDeviceGrants(ctx context.Context, in *GetDeviceGrantsRequest, opts ...grpc.CallOption) (*GetDeviceGrantsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDeviceGrantsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDeviceGrants_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeMyDevice(ctx context.Context, in *RevokeMyDeviceRequest, opts ...grpc.CallOption) (*RevokeMyDeviceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeMyDeviceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeMyDevice_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) MarkMyDeviceLost(ctx context.Context, in *MarkMyDeviceLostRequest, opts ...grpc.CallOption) (*MarkMyDeviceLostResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MarkMyDeviceLostResponse)
+	err := c.cc.Invoke(ctx, OnyxService_MarkMyDeviceLost_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetPurgeReceipt(ctx context.Context, in *GetPurgeReceiptRequest, opts ...grpc.CallOption) (*GetPurgeReceiptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPurgeReceiptResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetPurgeReceipt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListOfflineManifestItems(ctx context.Context, in *ListOfflineManifestItemsRequest, opts ...grpc.CallOption) (*ListOfflineManifestItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListOfflineManifestItemsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListOfflineManifestItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RefreshOfflineRenditions(ctx context.Context, in *RefreshOfflineRenditionsRequest, opts ...grpc.CallOption) (*RefreshOfflineRenditionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RefreshOfflineRenditionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RefreshOfflineRenditions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordOfflineEvent(ctx context.Context, in *RecordOfflineEventRequest, opts ...grpc.CallOption) (*RecordOfflineEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordOfflineEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordOfflineEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetYearInOnyxResponse)
@@ -859,11 +967,20 @@ type OnyxServiceServer interface {
 	// P3 — editorial anthology.
 	ListAnthologies(context.Context, *ListAnthologiesRequest) (*ListAnthologiesResponse, error)
 	GetAnthology(context.Context, *GetAnthologyRequest) (*GetAnthologyResponse, error)
-	// P3.5 — signed share embeds + offline manifest.
+	// P3.5 — signed share embeds + offline manifest + device grants.
 	CreateShareLink(context.Context, *CreateShareLinkRequest) (*CreateShareLinkResponse, error)
 	ListMyShareLinks(context.Context, *ListMyShareLinksRequest) (*ListMyShareLinksResponse, error)
 	RevokeShareLink(context.Context, *RevokeShareLinkRequest) (*RevokeShareLinkResponse, error)
 	GetOfflineManifest(context.Context, *GetOfflineManifestRequest) (*GetOfflineManifestResponse, error)
+	RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error)
+	AcknowledgePurge(context.Context, *AcknowledgePurgeRequest) (*AcknowledgePurgeResponse, error)
+	GetDeviceGrants(context.Context, *GetDeviceGrantsRequest) (*GetDeviceGrantsResponse, error)
+	RevokeMyDevice(context.Context, *RevokeMyDeviceRequest) (*RevokeMyDeviceResponse, error)
+	MarkMyDeviceLost(context.Context, *MarkMyDeviceLostRequest) (*MarkMyDeviceLostResponse, error)
+	GetPurgeReceipt(context.Context, *GetPurgeReceiptRequest) (*GetPurgeReceiptResponse, error)
+	ListOfflineManifestItems(context.Context, *ListOfflineManifestItemsRequest) (*ListOfflineManifestItemsResponse, error)
+	RefreshOfflineRenditions(context.Context, *RefreshOfflineRenditionsRequest) (*RefreshOfflineRenditionsResponse, error)
+	RecordOfflineEvent(context.Context, *RecordOfflineEventRequest) (*RecordOfflineEventResponse, error)
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error)
@@ -1035,6 +1152,33 @@ func (UnimplementedOnyxServiceServer) RevokeShareLink(context.Context, *RevokeSh
 }
 func (UnimplementedOnyxServiceServer) GetOfflineManifest(context.Context, *GetOfflineManifestRequest) (*GetOfflineManifestResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetOfflineManifest not implemented")
+}
+func (UnimplementedOnyxServiceServer) RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterDevice not implemented")
+}
+func (UnimplementedOnyxServiceServer) AcknowledgePurge(context.Context, *AcknowledgePurgeRequest) (*AcknowledgePurgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcknowledgePurge not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDeviceGrants(context.Context, *GetDeviceGrantsRequest) (*GetDeviceGrantsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDeviceGrants not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeMyDevice(context.Context, *RevokeMyDeviceRequest) (*RevokeMyDeviceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeMyDevice not implemented")
+}
+func (UnimplementedOnyxServiceServer) MarkMyDeviceLost(context.Context, *MarkMyDeviceLostRequest) (*MarkMyDeviceLostResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MarkMyDeviceLost not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetPurgeReceipt(context.Context, *GetPurgeReceiptRequest) (*GetPurgeReceiptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPurgeReceipt not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListOfflineManifestItems(context.Context, *ListOfflineManifestItemsRequest) (*ListOfflineManifestItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListOfflineManifestItems not implemented")
+}
+func (UnimplementedOnyxServiceServer) RefreshOfflineRenditions(context.Context, *RefreshOfflineRenditionsRequest) (*RefreshOfflineRenditionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RefreshOfflineRenditions not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordOfflineEvent(context.Context, *RecordOfflineEventRequest) (*RecordOfflineEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordOfflineEvent not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetYearInOnyx not implemented")
@@ -1960,6 +2104,168 @@ func _OnyxService_GetOfflineManifest_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_RegisterDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RegisterDevice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RegisterDevice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RegisterDevice(ctx, req.(*RegisterDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_AcknowledgePurge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcknowledgePurgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).AcknowledgePurge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_AcknowledgePurge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).AcknowledgePurge(ctx, req.(*AcknowledgePurgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetDeviceGrants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDeviceGrantsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDeviceGrants(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDeviceGrants_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDeviceGrants(ctx, req.(*GetDeviceGrantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeMyDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeMyDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeMyDevice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeMyDevice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeMyDevice(ctx, req.(*RevokeMyDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_MarkMyDeviceLost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MarkMyDeviceLostRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).MarkMyDeviceLost(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_MarkMyDeviceLost_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).MarkMyDeviceLost(ctx, req.(*MarkMyDeviceLostRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetPurgeReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPurgeReceiptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetPurgeReceipt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetPurgeReceipt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetPurgeReceipt(ctx, req.(*GetPurgeReceiptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListOfflineManifestItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListOfflineManifestItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListOfflineManifestItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListOfflineManifestItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListOfflineManifestItems(ctx, req.(*ListOfflineManifestItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RefreshOfflineRenditions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshOfflineRenditionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RefreshOfflineRenditions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RefreshOfflineRenditions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RefreshOfflineRenditions(ctx, req.(*RefreshOfflineRenditionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordOfflineEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordOfflineEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordOfflineEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordOfflineEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordOfflineEvent(ctx, req.(*RecordOfflineEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_GetYearInOnyx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetYearInOnyxRequest)
 	if err := dec(in); err != nil {
@@ -2392,6 +2698,42 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetOfflineManifest",
 			Handler:    _OnyxService_GetOfflineManifest_Handler,
+		},
+		{
+			MethodName: "RegisterDevice",
+			Handler:    _OnyxService_RegisterDevice_Handler,
+		},
+		{
+			MethodName: "AcknowledgePurge",
+			Handler:    _OnyxService_AcknowledgePurge_Handler,
+		},
+		{
+			MethodName: "GetDeviceGrants",
+			Handler:    _OnyxService_GetDeviceGrants_Handler,
+		},
+		{
+			MethodName: "RevokeMyDevice",
+			Handler:    _OnyxService_RevokeMyDevice_Handler,
+		},
+		{
+			MethodName: "MarkMyDeviceLost",
+			Handler:    _OnyxService_MarkMyDeviceLost_Handler,
+		},
+		{
+			MethodName: "GetPurgeReceipt",
+			Handler:    _OnyxService_GetPurgeReceipt_Handler,
+		},
+		{
+			MethodName: "ListOfflineManifestItems",
+			Handler:    _OnyxService_ListOfflineManifestItems_Handler,
+		},
+		{
+			MethodName: "RefreshOfflineRenditions",
+			Handler:    _OnyxService_RefreshOfflineRenditions_Handler,
+		},
+		{
+			MethodName: "RecordOfflineEvent",
+			Handler:    _OnyxService_RecordOfflineEvent_Handler,
 		},
 		{
 			MethodName: "GetYearInOnyx",

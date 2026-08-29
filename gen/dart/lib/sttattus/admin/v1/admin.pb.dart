@@ -14,8 +14,10 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $3;
 
-import '../../auth/v1/auth.pbenum.dart' as $3;
+import '../../auth/v1/auth.pbenum.dart' as $4;
 import '../../common/v1/pagination.pb.dart' as $2;
 import '../../user/v1/user.pb.dart' as $1;
 import 'admin.pbenum.dart';
@@ -93,7 +95,7 @@ class ListUsersRequest extends $pb.GeneratedMessage {
   factory ListUsersRequest({
     $2.PageRequest? page,
     $core.String? search,
-    $3.AppCode? filterByApp,
+    $4.AppCode? filterByApp,
     $core.bool? onlyBanned,
     $core.bool? onlyAdmins,
   }) {
@@ -123,8 +125,8 @@ class ListUsersRequest extends $pb.GeneratedMessage {
     ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page',
         subBuilder: $2.PageRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'search')
-    ..aE<$3.AppCode>(3, _omitFieldNames ? '' : 'filterByApp',
-        enumValues: $3.AppCode.values)
+    ..aE<$4.AppCode>(3, _omitFieldNames ? '' : 'filterByApp',
+        enumValues: $4.AppCode.values)
     ..aOB(4, _omitFieldNames ? '' : 'onlyBanned')
     ..aOB(5, _omitFieldNames ? '' : 'onlyAdmins')
     ..hasRequiredFields = false;
@@ -169,9 +171,9 @@ class ListUsersRequest extends $pb.GeneratedMessage {
   void clearSearch() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $3.AppCode get filterByApp => $_getN(2);
+  $4.AppCode get filterByApp => $_getN(2);
   @$pb.TagNumber(3)
-  set filterByApp($3.AppCode value) => $_setField(3, value);
+  set filterByApp($4.AppCode value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasFilterByApp() => $_has(2);
   @$pb.TagNumber(3)
@@ -515,7 +517,7 @@ class BulkActionRequest extends $pb.GeneratedMessage {
   factory BulkActionRequest({
     $core.Iterable<$core.String>? userIds,
     BulkAction? action,
-    $3.AppCode? appCode,
+    $4.AppCode? appCode,
     $core.String? reason,
   }) {
     final result = create();
@@ -543,8 +545,8 @@ class BulkActionRequest extends $pb.GeneratedMessage {
     ..pPS(1, _omitFieldNames ? '' : 'userIds')
     ..aE<BulkAction>(2, _omitFieldNames ? '' : 'action',
         enumValues: BulkAction.values)
-    ..aE<$3.AppCode>(3, _omitFieldNames ? '' : 'appCode',
-        enumValues: $3.AppCode.values)
+    ..aE<$4.AppCode>(3, _omitFieldNames ? '' : 'appCode',
+        enumValues: $4.AppCode.values)
     ..aOS(4, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false;
 
@@ -580,9 +582,9 @@ class BulkActionRequest extends $pb.GeneratedMessage {
   void clearAction() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $3.AppCode get appCode => $_getN(2);
+  $4.AppCode get appCode => $_getN(2);
   @$pb.TagNumber(3)
-  set appCode($3.AppCode value) => $_setField(3, value);
+  set appCode($4.AppCode value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasAppCode() => $_has(2);
   @$pb.TagNumber(3)
@@ -950,6 +952,430 @@ class ListAuditLogsResponse extends $pb.GeneratedMessage {
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
   $2.PageResponse ensurePage() => $_ensure(1);
+}
+
+class DeviceGrantRow extends $pb.GeneratedMessage {
+  factory DeviceGrantRow({
+    $core.String? deviceId,
+    $core.String? userId,
+    $core.String? deviceName,
+    $core.String? status,
+    $3.Timestamp? createdAt,
+    $3.Timestamp? expiresAt,
+    $3.Timestamp? lastSyncAt,
+    $core.String? securityLevel,
+    $core.String? keyFingerprint,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (userId != null) result.userId = userId;
+    if (deviceName != null) result.deviceName = deviceName;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (lastSyncAt != null) result.lastSyncAt = lastSyncAt;
+    if (securityLevel != null) result.securityLevel = securityLevel;
+    if (keyFingerprint != null) result.keyFingerprint = keyFingerprint;
+    return result;
+  }
+
+  DeviceGrantRow._();
+
+  factory DeviceGrantRow.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeviceGrantRow.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeviceGrantRow',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.admin.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceName')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(6, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(7, _omitFieldNames ? '' : 'lastSyncAt',
+        subBuilder: $3.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'securityLevel')
+    ..aOS(9, _omitFieldNames ? '' : 'keyFingerprint')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeviceGrantRow clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeviceGrantRow copyWith(void Function(DeviceGrantRow) updates) =>
+      super.copyWith((message) => updates(message as DeviceGrantRow))
+          as DeviceGrantRow;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeviceGrantRow create() => DeviceGrantRow._();
+  @$core.override
+  DeviceGrantRow createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeviceGrantRow getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeviceGrantRow>(create);
+  static DeviceGrantRow? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $3.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($3.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureCreatedAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $3.Timestamp get expiresAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set expiresAt($3.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExpiresAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExpiresAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $3.Timestamp ensureExpiresAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $3.Timestamp get lastSyncAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set lastSyncAt($3.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastSyncAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastSyncAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $3.Timestamp ensureLastSyncAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get securityLevel => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set securityLevel($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSecurityLevel() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSecurityLevel() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get keyFingerprint => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set keyFingerprint($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasKeyFingerprint() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearKeyFingerprint() => $_clearField(9);
+}
+
+class ListDeviceGrantsRequest extends $pb.GeneratedMessage {
+  factory ListDeviceGrantsRequest({
+    $core.String? userId,
+    $2.PageRequest? page,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListDeviceGrantsRequest._();
+
+  factory ListDeviceGrantsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDeviceGrantsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDeviceGrantsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.admin.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeviceGrantsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeviceGrantsRequest copyWith(
+          void Function(ListDeviceGrantsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListDeviceGrantsRequest))
+          as ListDeviceGrantsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDeviceGrantsRequest create() => ListDeviceGrantsRequest._();
+  @$core.override
+  ListDeviceGrantsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDeviceGrantsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDeviceGrantsRequest>(create);
+  static ListDeviceGrantsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $2.PageRequest get page => $_getN(1);
+  @$pb.TagNumber(2)
+  set page($2.PageRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPage() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageRequest ensurePage() => $_ensure(1);
+}
+
+class ListDeviceGrantsResponse extends $pb.GeneratedMessage {
+  factory ListDeviceGrantsResponse({
+    $core.Iterable<DeviceGrantRow>? rows,
+    $2.PageResponse? page,
+  }) {
+    final result = create();
+    if (rows != null) result.rows.addAll(rows);
+    if (page != null) result.page = page;
+    return result;
+  }
+
+  ListDeviceGrantsResponse._();
+
+  factory ListDeviceGrantsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDeviceGrantsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDeviceGrantsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.admin.v1'),
+      createEmptyInstance: create)
+    ..pPM<DeviceGrantRow>(1, _omitFieldNames ? '' : 'rows',
+        subBuilder: DeviceGrantRow.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageResponse.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeviceGrantsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDeviceGrantsResponse copyWith(
+          void Function(ListDeviceGrantsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListDeviceGrantsResponse))
+          as ListDeviceGrantsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDeviceGrantsResponse create() => ListDeviceGrantsResponse._();
+  @$core.override
+  ListDeviceGrantsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDeviceGrantsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDeviceGrantsResponse>(create);
+  static ListDeviceGrantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DeviceGrantRow> get rows => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $2.PageResponse get page => $_getN(1);
+  @$pb.TagNumber(2)
+  set page($2.PageResponse value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPage() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $2.PageResponse ensurePage() => $_ensure(1);
+}
+
+class RevokeDeviceGrantRequest extends $pb.GeneratedMessage {
+  factory RevokeDeviceGrantRequest({
+    $core.String? deviceId,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  RevokeDeviceGrantRequest._();
+
+  factory RevokeDeviceGrantRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeDeviceGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeDeviceGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.admin.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeDeviceGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeDeviceGrantRequest copyWith(
+          void Function(RevokeDeviceGrantRequest) updates) =>
+      super.copyWith((message) => updates(message as RevokeDeviceGrantRequest))
+          as RevokeDeviceGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeDeviceGrantRequest create() => RevokeDeviceGrantRequest._();
+  @$core.override
+  RevokeDeviceGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeDeviceGrantRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeDeviceGrantRequest>(create);
+  static RevokeDeviceGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+}
+
+class RevokeDeviceGrantResponse extends $pb.GeneratedMessage {
+  factory RevokeDeviceGrantResponse({
+    DeviceGrantRow? row,
+  }) {
+    final result = create();
+    if (row != null) result.row = row;
+    return result;
+  }
+
+  RevokeDeviceGrantResponse._();
+
+  factory RevokeDeviceGrantResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeDeviceGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeDeviceGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.admin.v1'),
+      createEmptyInstance: create)
+    ..aOM<DeviceGrantRow>(1, _omitFieldNames ? '' : 'row',
+        subBuilder: DeviceGrantRow.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeDeviceGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeDeviceGrantResponse copyWith(
+          void Function(RevokeDeviceGrantResponse) updates) =>
+      super.copyWith((message) => updates(message as RevokeDeviceGrantResponse))
+          as RevokeDeviceGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeDeviceGrantResponse create() => RevokeDeviceGrantResponse._();
+  @$core.override
+  RevokeDeviceGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeDeviceGrantResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeDeviceGrantResponse>(create);
+  static RevokeDeviceGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DeviceGrantRow get row => $_getN(0);
+  @$pb.TagNumber(1)
+  set row(DeviceGrantRow value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DeviceGrantRow ensureRow() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =

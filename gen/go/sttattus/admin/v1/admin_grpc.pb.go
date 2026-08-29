@@ -19,11 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AdminService_ListUsers_FullMethodName     = "/sttattus.admin.v1.AdminService/ListUsers"
-	AdminService_GetUser_FullMethodName       = "/sttattus.admin.v1.AdminService/GetUser"
-	AdminService_BanUser_FullMethodName       = "/sttattus.admin.v1.AdminService/BanUser"
-	AdminService_BulkAction_FullMethodName    = "/sttattus.admin.v1.AdminService/BulkAction"
-	AdminService_ListAuditLogs_FullMethodName = "/sttattus.admin.v1.AdminService/ListAuditLogs"
+	AdminService_ListUsers_FullMethodName         = "/sttattus.admin.v1.AdminService/ListUsers"
+	AdminService_GetUser_FullMethodName           = "/sttattus.admin.v1.AdminService/GetUser"
+	AdminService_BanUser_FullMethodName           = "/sttattus.admin.v1.AdminService/BanUser"
+	AdminService_BulkAction_FullMethodName        = "/sttattus.admin.v1.AdminService/BulkAction"
+	AdminService_ListAuditLogs_FullMethodName     = "/sttattus.admin.v1.AdminService/ListAuditLogs"
+	AdminService_ListDeviceGrants_FullMethodName  = "/sttattus.admin.v1.AdminService/ListDeviceGrants"
+	AdminService_RevokeDeviceGrant_FullMethodName = "/sttattus.admin.v1.AdminService/RevokeDeviceGrant"
 )
 
 // AdminServiceClient is the client API for AdminService service.
@@ -35,6 +37,8 @@ type AdminServiceClient interface {
 	BanUser(ctx context.Context, in *BanUserRequest, opts ...grpc.CallOption) (*BanUserResponse, error)
 	BulkAction(ctx context.Context, in *BulkActionRequest, opts ...grpc.CallOption) (*BulkActionResponse, error)
 	ListAuditLogs(ctx context.Context, in *ListAuditLogsRequest, opts ...grpc.CallOption) (*ListAuditLogsResponse, error)
+	ListDeviceGrants(ctx context.Context, in *ListDeviceGrantsRequest, opts ...grpc.CallOption) (*ListDeviceGrantsResponse, error)
+	RevokeDeviceGrant(ctx context.Context, in *RevokeDeviceGrantRequest, opts ...grpc.CallOption) (*RevokeDeviceGrantResponse, error)
 }
 
 type adminServiceClient struct {
@@ -95,6 +99,26 @@ func (c *adminServiceClient) ListAuditLogs(ctx context.Context, in *ListAuditLog
 	return out, nil
 }
 
+func (c *adminServiceClient) ListDeviceGrants(ctx context.Context, in *ListDeviceGrantsRequest, opts ...grpc.CallOption) (*ListDeviceGrantsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDeviceGrantsResponse)
+	err := c.cc.Invoke(ctx, AdminService_ListDeviceGrants_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RevokeDeviceGrant(ctx context.Context, in *RevokeDeviceGrantRequest, opts ...grpc.CallOption) (*RevokeDeviceGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeDeviceGrantResponse)
+	err := c.cc.Invoke(ctx, AdminService_RevokeDeviceGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AdminServiceServer is the server API for AdminService service.
 // All implementations must embed UnimplementedAdminServiceServer
 // for forward compatibility.
@@ -104,6 +128,8 @@ type AdminServiceServer interface {
 	BanUser(context.Context, *BanUserRequest) (*BanUserResponse, error)
 	BulkAction(context.Context, *BulkActionRequest) (*BulkActionResponse, error)
 	ListAuditLogs(context.Context, *ListAuditLogsRequest) (*ListAuditLogsResponse, error)
+	ListDeviceGrants(context.Context, *ListDeviceGrantsRequest) (*ListDeviceGrantsResponse, error)
+	RevokeDeviceGrant(context.Context, *RevokeDeviceGrantRequest) (*RevokeDeviceGrantResponse, error)
 	mustEmbedUnimplementedAdminServiceServer()
 }
 
@@ -128,6 +154,12 @@ func (UnimplementedAdminServiceServer) BulkAction(context.Context, *BulkActionRe
 }
 func (UnimplementedAdminServiceServer) ListAuditLogs(context.Context, *ListAuditLogsRequest) (*ListAuditLogsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAuditLogs not implemented")
+}
+func (UnimplementedAdminServiceServer) ListDeviceGrants(context.Context, *ListDeviceGrantsRequest) (*ListDeviceGrantsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDeviceGrants not implemented")
+}
+func (UnimplementedAdminServiceServer) RevokeDeviceGrant(context.Context, *RevokeDeviceGrantRequest) (*RevokeDeviceGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeDeviceGrant not implemented")
 }
 func (UnimplementedAdminServiceServer) mustEmbedUnimplementedAdminServiceServer() {}
 func (UnimplementedAdminServiceServer) testEmbeddedByValue()                      {}
@@ -240,6 +272,42 @@ func _AdminService_ListAuditLogs_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AdminService_ListDeviceGrants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDeviceGrantsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ListDeviceGrants(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ListDeviceGrants_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ListDeviceGrants(ctx, req.(*ListDeviceGrantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RevokeDeviceGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeDeviceGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RevokeDeviceGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RevokeDeviceGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RevokeDeviceGrant(ctx, req.(*RevokeDeviceGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AdminService_ServiceDesc is the grpc.ServiceDesc for AdminService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -266,6 +334,14 @@ var AdminService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAuditLogs",
 			Handler:    _AdminService_ListAuditLogs_Handler,
+		},
+		{
+			MethodName: "ListDeviceGrants",
+			Handler:    _AdminService_ListDeviceGrants_Handler,
+		},
+		{
+			MethodName: "RevokeDeviceGrant",
+			Handler:    _AdminService_RevokeDeviceGrant_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

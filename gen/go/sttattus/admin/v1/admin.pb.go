@@ -12,6 +12,7 @@ import (
 	v1 "github.com/sttattus/proto/gen/go/sttattus/user/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -780,11 +781,319 @@ func (x *ListAuditLogsResponse) GetPage() *v11.PageResponse {
 	return nil
 }
 
+type DeviceGrantRow struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	DeviceId       string                 `protobuf:"bytes,1,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	UserId         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DeviceName     string                 `protobuf:"bytes,3,opt,name=device_name,json=deviceName,proto3" json:"device_name,omitempty"`
+	Status         string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"` // active, revoked, expired, purged, lost
+	CreatedAt      *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ExpiresAt      *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	LastSyncAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=last_sync_at,json=lastSyncAt,proto3" json:"last_sync_at,omitempty"`
+	SecurityLevel  string                 `protobuf:"bytes,8,opt,name=security_level,json=securityLevel,proto3" json:"security_level,omitempty"`
+	KeyFingerprint string                 `protobuf:"bytes,9,opt,name=key_fingerprint,json=keyFingerprint,proto3" json:"key_fingerprint,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *DeviceGrantRow) Reset() {
+	*x = DeviceGrantRow{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceGrantRow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceGrantRow) ProtoMessage() {}
+
+func (x *DeviceGrantRow) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceGrantRow.ProtoReflect.Descriptor instead.
+func (*DeviceGrantRow) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *DeviceGrantRow) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
+func (x *DeviceGrantRow) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DeviceGrantRow) GetDeviceName() string {
+	if x != nil {
+		return x.DeviceName
+	}
+	return ""
+}
+
+func (x *DeviceGrantRow) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *DeviceGrantRow) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *DeviceGrantRow) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *DeviceGrantRow) GetLastSyncAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastSyncAt
+	}
+	return nil
+}
+
+func (x *DeviceGrantRow) GetSecurityLevel() string {
+	if x != nil {
+		return x.SecurityLevel
+	}
+	return ""
+}
+
+func (x *DeviceGrantRow) GetKeyFingerprint() string {
+	if x != nil {
+		return x.KeyFingerprint
+	}
+	return ""
+}
+
+type ListDeviceGrantsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // optional
+	Page          *v11.PageRequest       `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDeviceGrantsRequest) Reset() {
+	*x = ListDeviceGrantsRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDeviceGrantsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDeviceGrantsRequest) ProtoMessage() {}
+
+func (x *ListDeviceGrantsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDeviceGrantsRequest.ProtoReflect.Descriptor instead.
+func (*ListDeviceGrantsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *ListDeviceGrantsRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ListDeviceGrantsRequest) GetPage() *v11.PageRequest {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type ListDeviceGrantsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rows          []*DeviceGrantRow      `protobuf:"bytes,1,rep,name=rows,proto3" json:"rows,omitempty"`
+	Page          *v11.PageResponse      `protobuf:"bytes,2,opt,name=page,proto3" json:"page,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDeviceGrantsResponse) Reset() {
+	*x = ListDeviceGrantsResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[14]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDeviceGrantsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDeviceGrantsResponse) ProtoMessage() {}
+
+func (x *ListDeviceGrantsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[14]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDeviceGrantsResponse.ProtoReflect.Descriptor instead.
+func (*ListDeviceGrantsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ListDeviceGrantsResponse) GetRows() []*DeviceGrantRow {
+	if x != nil {
+		return x.Rows
+	}
+	return nil
+}
+
+func (x *ListDeviceGrantsResponse) GetPage() *v11.PageResponse {
+	if x != nil {
+		return x.Page
+	}
+	return nil
+}
+
+type RevokeDeviceGrantRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DeviceId      string                 `protobuf:"bytes,1,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeDeviceGrantRequest) Reset() {
+	*x = RevokeDeviceGrantRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[15]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeDeviceGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeDeviceGrantRequest) ProtoMessage() {}
+
+func (x *RevokeDeviceGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[15]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeDeviceGrantRequest.ProtoReflect.Descriptor instead.
+func (*RevokeDeviceGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *RevokeDeviceGrantRequest) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
+func (x *RevokeDeviceGrantRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RevokeDeviceGrantResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Row           *DeviceGrantRow        `protobuf:"bytes,1,opt,name=row,proto3" json:"row,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeDeviceGrantResponse) Reset() {
+	*x = RevokeDeviceGrantResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[16]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeDeviceGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeDeviceGrantResponse) ProtoMessage() {}
+
+func (x *RevokeDeviceGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[16]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeDeviceGrantResponse.ProtoReflect.Descriptor instead.
+func (*RevokeDeviceGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *RevokeDeviceGrantResponse) GetRow() *DeviceGrantRow {
+	if x != nil {
+		return x.Row
+	}
+	return nil
+}
+
 var File_sttattus_admin_v1_admin_proto protoreflect.FileDescriptor
 
 const file_sttattus_admin_v1_admin_proto_rawDesc = "" +
 	"\n" +
-	"\x1dsttattus/admin/v1/admin.proto\x12\x11sttattus.admin.v1\x1a\x1bsttattus/auth/v1/auth.proto\x1a#sttattus/common/v1/pagination.proto\x1a\x1bsttattus/user/v1/user.proto\"x\n" +
+	"\x1dsttattus/admin/v1/admin.proto\x12\x11sttattus.admin.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bsttattus/auth/v1/auth.proto\x1a#sttattus/common/v1/pagination.proto\x1a\x1bsttattus/user/v1/user.proto\"x\n" +
 	"\fAdminUserRow\x127\n" +
 	"\aprofile\x18\x01 \x01(\v2\x1d.sttattus.user.v1.UserProfileR\aprofile\x12/\n" +
 	"\x04apps\x18\x02 \x03(\v2\x1b.sttattus.user.v1.AppAccessR\x04apps\"\xe0\x01\n" +
@@ -834,20 +1143,47 @@ const file_sttattus_admin_v1_admin_proto_rawDesc = "" +
 	"\x06action\x18\x04 \x01(\tR\x06action\"\x89\x01\n" +
 	"\x15ListAuditLogsResponse\x12:\n" +
 	"\aentries\x18\x01 \x03(\v2 .sttattus.admin.v1.AuditLogEntryR\aentries\x124\n" +
-	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page*q\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"\x83\x03\n" +
+	"\x0eDeviceGrantRow\x12\x1b\n" +
+	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vdevice_name\x18\x03 \x01(\tR\n" +
+	"deviceName\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x129\n" +
+	"\n" +
+	"created_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"expires_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12<\n" +
+	"\flast_sync_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"lastSyncAt\x12%\n" +
+	"\x0esecurity_level\x18\b \x01(\tR\rsecurityLevel\x12'\n" +
+	"\x0fkey_fingerprint\x18\t \x01(\tR\x0ekeyFingerprint\"g\n" +
+	"\x17ListDeviceGrantsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
+	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x87\x01\n" +
+	"\x18ListDeviceGrantsResponse\x125\n" +
+	"\x04rows\x18\x01 \x03(\v2!.sttattus.admin.v1.DeviceGrantRowR\x04rows\x124\n" +
+	"\x04page\x18\x02 \x01(\v2 .sttattus.common.v1.PageResponseR\x04page\"O\n" +
+	"\x18RevokeDeviceGrantRequest\x12\x1b\n" +
+	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"P\n" +
+	"\x19RevokeDeviceGrantResponse\x123\n" +
+	"\x03row\x18\x01 \x01(\v2!.sttattus.admin.v1.DeviceGrantRowR\x03row*q\n" +
 	"\n" +
 	"BulkAction\x12\x1b\n" +
 	"\x17BULK_ACTION_UNSPECIFIED\x10\x00\x12\x13\n" +
 	"\x0fBULK_ACTION_BAN\x10\x01\x12\x15\n" +
 	"\x11BULK_ACTION_UNBAN\x10\x02\x12\x1a\n" +
-	"\x16BULK_ACTION_REVOKE_APP\x10\x032\xc9\x03\n" +
+	"\x16BULK_ACTION_REVOKE_APP\x10\x032\xa6\x05\n" +
 	"\fAdminService\x12V\n" +
 	"\tListUsers\x12#.sttattus.admin.v1.ListUsersRequest\x1a$.sttattus.admin.v1.ListUsersResponse\x12P\n" +
 	"\aGetUser\x12!.sttattus.admin.v1.GetUserRequest\x1a\".sttattus.admin.v1.GetUserResponse\x12P\n" +
 	"\aBanUser\x12!.sttattus.admin.v1.BanUserRequest\x1a\".sttattus.admin.v1.BanUserResponse\x12Y\n" +
 	"\n" +
 	"BulkAction\x12$.sttattus.admin.v1.BulkActionRequest\x1a%.sttattus.admin.v1.BulkActionResponse\x12b\n" +
-	"\rListAuditLogs\x12'.sttattus.admin.v1.ListAuditLogsRequest\x1a(.sttattus.admin.v1.ListAuditLogsResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/admin/v1;adminv1b\x06proto3"
+	"\rListAuditLogs\x12'.sttattus.admin.v1.ListAuditLogsRequest\x1a(.sttattus.admin.v1.ListAuditLogsResponse\x12k\n" +
+	"\x10ListDeviceGrants\x12*.sttattus.admin.v1.ListDeviceGrantsRequest\x1a+.sttattus.admin.v1.ListDeviceGrantsResponse\x12n\n" +
+	"\x11RevokeDeviceGrant\x12+.sttattus.admin.v1.RevokeDeviceGrantRequest\x1a,.sttattus.admin.v1.RevokeDeviceGrantResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/admin/v1;adminv1b\x06proto3"
 
 var (
 	file_sttattus_admin_v1_admin_proto_rawDescOnce sync.Once
@@ -862,56 +1198,73 @@ func file_sttattus_admin_v1_admin_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_admin_v1_admin_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_admin_v1_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_sttattus_admin_v1_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_sttattus_admin_v1_admin_proto_goTypes = []any{
-	(BulkAction)(0),               // 0: sttattus.admin.v1.BulkAction
-	(*AdminUserRow)(nil),          // 1: sttattus.admin.v1.AdminUserRow
-	(*ListUsersRequest)(nil),      // 2: sttattus.admin.v1.ListUsersRequest
-	(*ListUsersResponse)(nil),     // 3: sttattus.admin.v1.ListUsersResponse
-	(*GetUserRequest)(nil),        // 4: sttattus.admin.v1.GetUserRequest
-	(*GetUserResponse)(nil),       // 5: sttattus.admin.v1.GetUserResponse
-	(*BanUserRequest)(nil),        // 6: sttattus.admin.v1.BanUserRequest
-	(*BanUserResponse)(nil),       // 7: sttattus.admin.v1.BanUserResponse
-	(*BulkActionRequest)(nil),     // 8: sttattus.admin.v1.BulkActionRequest
-	(*BulkActionResponse)(nil),    // 9: sttattus.admin.v1.BulkActionResponse
-	(*AuditLogEntry)(nil),         // 10: sttattus.admin.v1.AuditLogEntry
-	(*ListAuditLogsRequest)(nil),  // 11: sttattus.admin.v1.ListAuditLogsRequest
-	(*ListAuditLogsResponse)(nil), // 12: sttattus.admin.v1.ListAuditLogsResponse
-	(*v1.UserProfile)(nil),        // 13: sttattus.user.v1.UserProfile
-	(*v1.AppAccess)(nil),          // 14: sttattus.user.v1.AppAccess
-	(*v11.PageRequest)(nil),       // 15: sttattus.common.v1.PageRequest
-	(v12.AppCode)(0),              // 16: sttattus.auth.v1.AppCode
-	(*v11.PageResponse)(nil),      // 17: sttattus.common.v1.PageResponse
+	(BulkAction)(0),                   // 0: sttattus.admin.v1.BulkAction
+	(*AdminUserRow)(nil),              // 1: sttattus.admin.v1.AdminUserRow
+	(*ListUsersRequest)(nil),          // 2: sttattus.admin.v1.ListUsersRequest
+	(*ListUsersResponse)(nil),         // 3: sttattus.admin.v1.ListUsersResponse
+	(*GetUserRequest)(nil),            // 4: sttattus.admin.v1.GetUserRequest
+	(*GetUserResponse)(nil),           // 5: sttattus.admin.v1.GetUserResponse
+	(*BanUserRequest)(nil),            // 6: sttattus.admin.v1.BanUserRequest
+	(*BanUserResponse)(nil),           // 7: sttattus.admin.v1.BanUserResponse
+	(*BulkActionRequest)(nil),         // 8: sttattus.admin.v1.BulkActionRequest
+	(*BulkActionResponse)(nil),        // 9: sttattus.admin.v1.BulkActionResponse
+	(*AuditLogEntry)(nil),             // 10: sttattus.admin.v1.AuditLogEntry
+	(*ListAuditLogsRequest)(nil),      // 11: sttattus.admin.v1.ListAuditLogsRequest
+	(*ListAuditLogsResponse)(nil),     // 12: sttattus.admin.v1.ListAuditLogsResponse
+	(*DeviceGrantRow)(nil),            // 13: sttattus.admin.v1.DeviceGrantRow
+	(*ListDeviceGrantsRequest)(nil),   // 14: sttattus.admin.v1.ListDeviceGrantsRequest
+	(*ListDeviceGrantsResponse)(nil),  // 15: sttattus.admin.v1.ListDeviceGrantsResponse
+	(*RevokeDeviceGrantRequest)(nil),  // 16: sttattus.admin.v1.RevokeDeviceGrantRequest
+	(*RevokeDeviceGrantResponse)(nil), // 17: sttattus.admin.v1.RevokeDeviceGrantResponse
+	(*v1.UserProfile)(nil),            // 18: sttattus.user.v1.UserProfile
+	(*v1.AppAccess)(nil),              // 19: sttattus.user.v1.AppAccess
+	(*v11.PageRequest)(nil),           // 20: sttattus.common.v1.PageRequest
+	(v12.AppCode)(0),                  // 21: sttattus.auth.v1.AppCode
+	(*v11.PageResponse)(nil),          // 22: sttattus.common.v1.PageResponse
+	(*timestamppb.Timestamp)(nil),     // 23: google.protobuf.Timestamp
 }
 var file_sttattus_admin_v1_admin_proto_depIdxs = []int32{
-	13, // 0: sttattus.admin.v1.AdminUserRow.profile:type_name -> sttattus.user.v1.UserProfile
-	14, // 1: sttattus.admin.v1.AdminUserRow.apps:type_name -> sttattus.user.v1.AppAccess
-	15, // 2: sttattus.admin.v1.ListUsersRequest.page:type_name -> sttattus.common.v1.PageRequest
-	16, // 3: sttattus.admin.v1.ListUsersRequest.filter_by_app:type_name -> sttattus.auth.v1.AppCode
+	18, // 0: sttattus.admin.v1.AdminUserRow.profile:type_name -> sttattus.user.v1.UserProfile
+	19, // 1: sttattus.admin.v1.AdminUserRow.apps:type_name -> sttattus.user.v1.AppAccess
+	20, // 2: sttattus.admin.v1.ListUsersRequest.page:type_name -> sttattus.common.v1.PageRequest
+	21, // 3: sttattus.admin.v1.ListUsersRequest.filter_by_app:type_name -> sttattus.auth.v1.AppCode
 	1,  // 4: sttattus.admin.v1.ListUsersResponse.rows:type_name -> sttattus.admin.v1.AdminUserRow
-	17, // 5: sttattus.admin.v1.ListUsersResponse.page:type_name -> sttattus.common.v1.PageResponse
+	22, // 5: sttattus.admin.v1.ListUsersResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,  // 6: sttattus.admin.v1.GetUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
 	1,  // 7: sttattus.admin.v1.BanUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
 	0,  // 8: sttattus.admin.v1.BulkActionRequest.action:type_name -> sttattus.admin.v1.BulkAction
-	16, // 9: sttattus.admin.v1.BulkActionRequest.app_code:type_name -> sttattus.auth.v1.AppCode
-	15, // 10: sttattus.admin.v1.ListAuditLogsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	21, // 9: sttattus.admin.v1.BulkActionRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	20, // 10: sttattus.admin.v1.ListAuditLogsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	10, // 11: sttattus.admin.v1.ListAuditLogsResponse.entries:type_name -> sttattus.admin.v1.AuditLogEntry
-	17, // 12: sttattus.admin.v1.ListAuditLogsResponse.page:type_name -> sttattus.common.v1.PageResponse
-	2,  // 13: sttattus.admin.v1.AdminService.ListUsers:input_type -> sttattus.admin.v1.ListUsersRequest
-	4,  // 14: sttattus.admin.v1.AdminService.GetUser:input_type -> sttattus.admin.v1.GetUserRequest
-	6,  // 15: sttattus.admin.v1.AdminService.BanUser:input_type -> sttattus.admin.v1.BanUserRequest
-	8,  // 16: sttattus.admin.v1.AdminService.BulkAction:input_type -> sttattus.admin.v1.BulkActionRequest
-	11, // 17: sttattus.admin.v1.AdminService.ListAuditLogs:input_type -> sttattus.admin.v1.ListAuditLogsRequest
-	3,  // 18: sttattus.admin.v1.AdminService.ListUsers:output_type -> sttattus.admin.v1.ListUsersResponse
-	5,  // 19: sttattus.admin.v1.AdminService.GetUser:output_type -> sttattus.admin.v1.GetUserResponse
-	7,  // 20: sttattus.admin.v1.AdminService.BanUser:output_type -> sttattus.admin.v1.BanUserResponse
-	9,  // 21: sttattus.admin.v1.AdminService.BulkAction:output_type -> sttattus.admin.v1.BulkActionResponse
-	12, // 22: sttattus.admin.v1.AdminService.ListAuditLogs:output_type -> sttattus.admin.v1.ListAuditLogsResponse
-	18, // [18:23] is the sub-list for method output_type
-	13, // [13:18] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	22, // 12: sttattus.admin.v1.ListAuditLogsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	23, // 13: sttattus.admin.v1.DeviceGrantRow.created_at:type_name -> google.protobuf.Timestamp
+	23, // 14: sttattus.admin.v1.DeviceGrantRow.expires_at:type_name -> google.protobuf.Timestamp
+	23, // 15: sttattus.admin.v1.DeviceGrantRow.last_sync_at:type_name -> google.protobuf.Timestamp
+	20, // 16: sttattus.admin.v1.ListDeviceGrantsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	13, // 17: sttattus.admin.v1.ListDeviceGrantsResponse.rows:type_name -> sttattus.admin.v1.DeviceGrantRow
+	22, // 18: sttattus.admin.v1.ListDeviceGrantsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	13, // 19: sttattus.admin.v1.RevokeDeviceGrantResponse.row:type_name -> sttattus.admin.v1.DeviceGrantRow
+	2,  // 20: sttattus.admin.v1.AdminService.ListUsers:input_type -> sttattus.admin.v1.ListUsersRequest
+	4,  // 21: sttattus.admin.v1.AdminService.GetUser:input_type -> sttattus.admin.v1.GetUserRequest
+	6,  // 22: sttattus.admin.v1.AdminService.BanUser:input_type -> sttattus.admin.v1.BanUserRequest
+	8,  // 23: sttattus.admin.v1.AdminService.BulkAction:input_type -> sttattus.admin.v1.BulkActionRequest
+	11, // 24: sttattus.admin.v1.AdminService.ListAuditLogs:input_type -> sttattus.admin.v1.ListAuditLogsRequest
+	14, // 25: sttattus.admin.v1.AdminService.ListDeviceGrants:input_type -> sttattus.admin.v1.ListDeviceGrantsRequest
+	16, // 26: sttattus.admin.v1.AdminService.RevokeDeviceGrant:input_type -> sttattus.admin.v1.RevokeDeviceGrantRequest
+	3,  // 27: sttattus.admin.v1.AdminService.ListUsers:output_type -> sttattus.admin.v1.ListUsersResponse
+	5,  // 28: sttattus.admin.v1.AdminService.GetUser:output_type -> sttattus.admin.v1.GetUserResponse
+	7,  // 29: sttattus.admin.v1.AdminService.BanUser:output_type -> sttattus.admin.v1.BanUserResponse
+	9,  // 30: sttattus.admin.v1.AdminService.BulkAction:output_type -> sttattus.admin.v1.BulkActionResponse
+	12, // 31: sttattus.admin.v1.AdminService.ListAuditLogs:output_type -> sttattus.admin.v1.ListAuditLogsResponse
+	15, // 32: sttattus.admin.v1.AdminService.ListDeviceGrants:output_type -> sttattus.admin.v1.ListDeviceGrantsResponse
+	17, // 33: sttattus.admin.v1.AdminService.RevokeDeviceGrant:output_type -> sttattus.admin.v1.RevokeDeviceGrantResponse
+	27, // [27:34] is the sub-list for method output_type
+	20, // [20:27] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_admin_v1_admin_proto_init() }
@@ -925,7 +1278,7 @@ func file_sttattus_admin_v1_admin_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_admin_v1_admin_proto_rawDesc), len(file_sttattus_admin_v1_admin_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   12,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

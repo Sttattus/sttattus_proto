@@ -369,7 +369,7 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getAnthology, request, options: options);
   }
 
-  /// P3.5 — signed share embeds + offline manifest.
+  /// P3.5 — signed share embeds + offline manifest + device grants.
   $grpc.ResponseFuture<$0.CreateShareLinkResponse> createShareLink(
     $0.CreateShareLinkRequest request, {
     $grpc.CallOptions? options,
@@ -396,6 +396,73 @@ class OnyxServiceClient extends $grpc.Client {
     $grpc.CallOptions? options,
   }) {
     return $createUnaryCall(_$getOfflineManifest, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RegisterDeviceResponse> registerDevice(
+    $0.RegisterDeviceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$registerDevice, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AcknowledgePurgeResponse> acknowledgePurge(
+    $0.AcknowledgePurgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$acknowledgePurge, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetDeviceGrantsResponse> getDeviceGrants(
+    $0.GetDeviceGrantsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDeviceGrants, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeMyDeviceResponse> revokeMyDevice(
+    $0.RevokeMyDeviceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeMyDevice, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkMyDeviceLostResponse> markMyDeviceLost(
+    $0.MarkMyDeviceLostRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$markMyDeviceLost, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPurgeReceiptResponse> getPurgeReceipt(
+    $0.GetPurgeReceiptRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPurgeReceipt, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListOfflineManifestItemsResponse>
+      listOfflineManifestItems(
+    $0.ListOfflineManifestItemsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listOfflineManifestItems, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RefreshOfflineRenditionsResponse>
+      refreshOfflineRenditions(
+    $0.RefreshOfflineRenditionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$refreshOfflineRenditions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordOfflineEventResponse> recordOfflineEvent(
+    $0.RecordOfflineEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordOfflineEvent, request, options: options);
   }
 
   /// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
@@ -740,6 +807,53 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GetOfflineManifest',
       ($0.GetOfflineManifestRequest value) => value.writeToBuffer(),
       $0.GetOfflineManifestResponse.fromBuffer);
+  static final _$registerDevice =
+      $grpc.ClientMethod<$0.RegisterDeviceRequest, $0.RegisterDeviceResponse>(
+          '/sttattus.onyx.v1.OnyxService/RegisterDevice',
+          ($0.RegisterDeviceRequest value) => value.writeToBuffer(),
+          $0.RegisterDeviceResponse.fromBuffer);
+  static final _$acknowledgePurge = $grpc.ClientMethod<
+          $0.AcknowledgePurgeRequest, $0.AcknowledgePurgeResponse>(
+      '/sttattus.onyx.v1.OnyxService/AcknowledgePurge',
+      ($0.AcknowledgePurgeRequest value) => value.writeToBuffer(),
+      $0.AcknowledgePurgeResponse.fromBuffer);
+  static final _$getDeviceGrants =
+      $grpc.ClientMethod<$0.GetDeviceGrantsRequest, $0.GetDeviceGrantsResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetDeviceGrants',
+          ($0.GetDeviceGrantsRequest value) => value.writeToBuffer(),
+          $0.GetDeviceGrantsResponse.fromBuffer);
+  static final _$revokeMyDevice =
+      $grpc.ClientMethod<$0.RevokeMyDeviceRequest, $0.RevokeMyDeviceResponse>(
+          '/sttattus.onyx.v1.OnyxService/RevokeMyDevice',
+          ($0.RevokeMyDeviceRequest value) => value.writeToBuffer(),
+          $0.RevokeMyDeviceResponse.fromBuffer);
+  static final _$markMyDeviceLost = $grpc.ClientMethod<
+          $0.MarkMyDeviceLostRequest, $0.MarkMyDeviceLostResponse>(
+      '/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost',
+      ($0.MarkMyDeviceLostRequest value) => value.writeToBuffer(),
+      $0.MarkMyDeviceLostResponse.fromBuffer);
+  static final _$getPurgeReceipt =
+      $grpc.ClientMethod<$0.GetPurgeReceiptRequest, $0.GetPurgeReceiptResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetPurgeReceipt',
+          ($0.GetPurgeReceiptRequest value) => value.writeToBuffer(),
+          $0.GetPurgeReceiptResponse.fromBuffer);
+  static final _$listOfflineManifestItems = $grpc.ClientMethod<
+          $0.ListOfflineManifestItemsRequest,
+          $0.ListOfflineManifestItemsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems',
+      ($0.ListOfflineManifestItemsRequest value) => value.writeToBuffer(),
+      $0.ListOfflineManifestItemsResponse.fromBuffer);
+  static final _$refreshOfflineRenditions = $grpc.ClientMethod<
+          $0.RefreshOfflineRenditionsRequest,
+          $0.RefreshOfflineRenditionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions',
+      ($0.RefreshOfflineRenditionsRequest value) => value.writeToBuffer(),
+      $0.RefreshOfflineRenditionsResponse.fromBuffer);
+  static final _$recordOfflineEvent = $grpc.ClientMethod<
+          $0.RecordOfflineEventRequest, $0.RecordOfflineEventResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordOfflineEvent',
+      ($0.RecordOfflineEventRequest value) => value.writeToBuffer(),
+      $0.RecordOfflineEventResponse.fromBuffer);
   static final _$getYearInOnyx =
       $grpc.ClientMethod<$0.GetYearInOnyxRequest, $0.GetYearInOnyxResponse>(
           '/sttattus.onyx.v1.OnyxService/GetYearInOnyx',
@@ -1226,6 +1340,87 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetOfflineManifestRequest.fromBuffer(value),
         ($0.GetOfflineManifestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RegisterDeviceRequest,
+            $0.RegisterDeviceResponse>(
+        'RegisterDevice',
+        registerDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RegisterDeviceRequest.fromBuffer(value),
+        ($0.RegisterDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AcknowledgePurgeRequest,
+            $0.AcknowledgePurgeResponse>(
+        'AcknowledgePurge',
+        acknowledgePurge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AcknowledgePurgeRequest.fromBuffer(value),
+        ($0.AcknowledgePurgeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDeviceGrantsRequest,
+            $0.GetDeviceGrantsResponse>(
+        'GetDeviceGrants',
+        getDeviceGrants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDeviceGrantsRequest.fromBuffer(value),
+        ($0.GetDeviceGrantsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeMyDeviceRequest,
+            $0.RevokeMyDeviceResponse>(
+        'RevokeMyDevice',
+        revokeMyDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeMyDeviceRequest.fromBuffer(value),
+        ($0.RevokeMyDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkMyDeviceLostRequest,
+            $0.MarkMyDeviceLostResponse>(
+        'MarkMyDeviceLost',
+        markMyDeviceLost_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MarkMyDeviceLostRequest.fromBuffer(value),
+        ($0.MarkMyDeviceLostResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPurgeReceiptRequest,
+            $0.GetPurgeReceiptResponse>(
+        'GetPurgeReceipt',
+        getPurgeReceipt_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPurgeReceiptRequest.fromBuffer(value),
+        ($0.GetPurgeReceiptResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListOfflineManifestItemsRequest,
+            $0.ListOfflineManifestItemsResponse>(
+        'ListOfflineManifestItems',
+        listOfflineManifestItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListOfflineManifestItemsRequest.fromBuffer(value),
+        ($0.ListOfflineManifestItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RefreshOfflineRenditionsRequest,
+            $0.RefreshOfflineRenditionsResponse>(
+        'RefreshOfflineRenditions',
+        refreshOfflineRenditions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RefreshOfflineRenditionsRequest.fromBuffer(value),
+        ($0.RefreshOfflineRenditionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordOfflineEventRequest,
+            $0.RecordOfflineEventResponse>(
+        'RecordOfflineEvent',
+        recordOfflineEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordOfflineEventRequest.fromBuffer(value),
+        ($0.RecordOfflineEventResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.GetYearInOnyxRequest, $0.GetYearInOnyxResponse>(
             'GetYearInOnyx',
@@ -1765,6 +1960,87 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetOfflineManifestResponse> getOfflineManifest(
       $grpc.ServiceCall call, $0.GetOfflineManifestRequest request);
+
+  $async.Future<$0.RegisterDeviceResponse> registerDevice_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RegisterDeviceRequest> $request) async {
+    return registerDevice($call, await $request);
+  }
+
+  $async.Future<$0.RegisterDeviceResponse> registerDevice(
+      $grpc.ServiceCall call, $0.RegisterDeviceRequest request);
+
+  $async.Future<$0.AcknowledgePurgeResponse> acknowledgePurge_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.AcknowledgePurgeRequest> $request) async {
+    return acknowledgePurge($call, await $request);
+  }
+
+  $async.Future<$0.AcknowledgePurgeResponse> acknowledgePurge(
+      $grpc.ServiceCall call, $0.AcknowledgePurgeRequest request);
+
+  $async.Future<$0.GetDeviceGrantsResponse> getDeviceGrants_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDeviceGrantsRequest> $request) async {
+    return getDeviceGrants($call, await $request);
+  }
+
+  $async.Future<$0.GetDeviceGrantsResponse> getDeviceGrants(
+      $grpc.ServiceCall call, $0.GetDeviceGrantsRequest request);
+
+  $async.Future<$0.RevokeMyDeviceResponse> revokeMyDevice_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeMyDeviceRequest> $request) async {
+    return revokeMyDevice($call, await $request);
+  }
+
+  $async.Future<$0.RevokeMyDeviceResponse> revokeMyDevice(
+      $grpc.ServiceCall call, $0.RevokeMyDeviceRequest request);
+
+  $async.Future<$0.MarkMyDeviceLostResponse> markMyDeviceLost_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.MarkMyDeviceLostRequest> $request) async {
+    return markMyDeviceLost($call, await $request);
+  }
+
+  $async.Future<$0.MarkMyDeviceLostResponse> markMyDeviceLost(
+      $grpc.ServiceCall call, $0.MarkMyDeviceLostRequest request);
+
+  $async.Future<$0.GetPurgeReceiptResponse> getPurgeReceipt_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetPurgeReceiptRequest> $request) async {
+    return getPurgeReceipt($call, await $request);
+  }
+
+  $async.Future<$0.GetPurgeReceiptResponse> getPurgeReceipt(
+      $grpc.ServiceCall call, $0.GetPurgeReceiptRequest request);
+
+  $async.Future<$0.ListOfflineManifestItemsResponse>
+      listOfflineManifestItems_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListOfflineManifestItemsRequest> $request) async {
+    return listOfflineManifestItems($call, await $request);
+  }
+
+  $async.Future<$0.ListOfflineManifestItemsResponse> listOfflineManifestItems(
+      $grpc.ServiceCall call, $0.ListOfflineManifestItemsRequest request);
+
+  $async.Future<$0.RefreshOfflineRenditionsResponse>
+      refreshOfflineRenditions_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RefreshOfflineRenditionsRequest> $request) async {
+    return refreshOfflineRenditions($call, await $request);
+  }
+
+  $async.Future<$0.RefreshOfflineRenditionsResponse> refreshOfflineRenditions(
+      $grpc.ServiceCall call, $0.RefreshOfflineRenditionsRequest request);
+
+  $async.Future<$0.RecordOfflineEventResponse> recordOfflineEvent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordOfflineEventRequest> $request) async {
+    return recordOfflineEvent($call, await $request);
+  }
+
+  $async.Future<$0.RecordOfflineEventResponse> recordOfflineEvent(
+      $grpc.ServiceCall call, $0.RecordOfflineEventRequest request);
 
   $async.Future<$0.GetYearInOnyxResponse> getYearInOnyx_Pre(
       $grpc.ServiceCall $call,

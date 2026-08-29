@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BanUserRequest, BanUserResponse, BulkActionRequest, BulkActionResponse, GetUserRequest, GetUserResponse, ListAuditLogsRequest, ListAuditLogsResponse, ListUsersRequest, ListUsersResponse } from "./admin_pb.js";
+import { BanUserRequest, BanUserResponse, BulkActionRequest, BulkActionResponse, GetUserRequest, GetUserResponse, ListAuditLogsRequest, ListAuditLogsResponse, ListDeviceGrantsRequest, ListDeviceGrantsResponse, ListUsersRequest, ListUsersResponse, RevokeDeviceGrantRequest, RevokeDeviceGrantResponse } from "./admin_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,6 +55,24 @@ export const AdminService = {
       name: "ListAuditLogs",
       I: ListAuditLogsRequest,
       O: ListAuditLogsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ListDeviceGrants
+     */
+    listDeviceGrants: {
+      name: "ListDeviceGrants",
+      I: ListDeviceGrantsRequest,
+      O: ListDeviceGrantsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RevokeDeviceGrant
+     */
+    revokeDeviceGrant: {
+      name: "RevokeDeviceGrant",
+      I: RevokeDeviceGrantRequest,
+      O: RevokeDeviceGrantResponse,
       kind: MethodKind.Unary,
     },
   }

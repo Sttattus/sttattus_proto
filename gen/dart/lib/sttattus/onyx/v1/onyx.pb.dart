@@ -17,7 +17,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
     as $1;
 
+import 'onyx.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
+export 'onyx.pbenum.dart';
 
 /// GatingCriteria defines the status requirements to access content.
 class GatingCriteria extends $pb.GeneratedMessage {
@@ -8643,8 +8647,245 @@ class RevokeShareLinkResponse extends $pb.GeneratedMessage {
   static RevokeShareLinkResponse? _defaultInstance;
 }
 
+class EncryptedRendition extends $pb.GeneratedMessage {
+  factory EncryptedRendition({
+    $core.String? contentId,
+    $core.String? renditionId,
+    $core.String? contentType,
+    $fixnum.Int64? sizeBytes,
+    $core.String? wrappedCek,
+    $core.String? iv,
+    $core.String? signedDownloadUrl,
+    $core.String? contentHash,
+    $core.String? revisionId,
+    $core.int? chunkSize,
+    EncryptedRendition_RenditionStatus? status,
+    $1.Timestamp? urlExpiresAt,
+    $core.String? policyVersion,
+    $fixnum.Int64? sourceVersion,
+    EncryptedRendition_OfflinePackageType? packageType,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (renditionId != null) result.renditionId = renditionId;
+    if (contentType != null) result.contentType = contentType;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (wrappedCek != null) result.wrappedCek = wrappedCek;
+    if (iv != null) result.iv = iv;
+    if (signedDownloadUrl != null) result.signedDownloadUrl = signedDownloadUrl;
+    if (contentHash != null) result.contentHash = contentHash;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (chunkSize != null) result.chunkSize = chunkSize;
+    if (status != null) result.status = status;
+    if (urlExpiresAt != null) result.urlExpiresAt = urlExpiresAt;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (sourceVersion != null) result.sourceVersion = sourceVersion;
+    if (packageType != null) result.packageType = packageType;
+    return result;
+  }
+
+  EncryptedRendition._();
+
+  factory EncryptedRendition.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EncryptedRendition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EncryptedRendition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'renditionId')
+    ..aOS(3, _omitFieldNames ? '' : 'contentType')
+    ..aInt64(4, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOS(5, _omitFieldNames ? '' : 'wrappedCek')
+    ..aOS(6, _omitFieldNames ? '' : 'iv')
+    ..aOS(7, _omitFieldNames ? '' : 'signedDownloadUrl')
+    ..aOS(8, _omitFieldNames ? '' : 'contentHash')
+    ..aOS(9, _omitFieldNames ? '' : 'revisionId')
+    ..aI(10, _omitFieldNames ? '' : 'chunkSize')
+    ..aE<EncryptedRendition_RenditionStatus>(
+        11, _omitFieldNames ? '' : 'status',
+        enumValues: EncryptedRendition_RenditionStatus.values)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'urlExpiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(13, _omitFieldNames ? '' : 'policyVersion')
+    ..aInt64(14, _omitFieldNames ? '' : 'sourceVersion')
+    ..aE<EncryptedRendition_OfflinePackageType>(
+        15, _omitFieldNames ? '' : 'packageType',
+        enumValues: EncryptedRendition_OfflinePackageType.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedRendition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EncryptedRendition copyWith(void Function(EncryptedRendition) updates) =>
+      super.copyWith((message) => updates(message as EncryptedRendition))
+          as EncryptedRendition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EncryptedRendition create() => EncryptedRendition._();
+  @$core.override
+  EncryptedRendition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EncryptedRendition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EncryptedRendition>(create);
+  static EncryptedRendition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get renditionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set renditionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRenditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRenditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get sizeBytes => $_getI64(3);
+  @$pb.TagNumber(4)
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSizeBytes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSizeBytes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get wrappedCek => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set wrappedCek($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWrappedCek() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWrappedCek() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get iv => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set iv($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIv() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIv() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get signedDownloadUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set signedDownloadUrl($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSignedDownloadUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSignedDownloadUrl() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get contentHash => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set contentHash($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasContentHash() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearContentHash() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get revisionId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set revisionId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRevisionId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRevisionId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get chunkSize => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set chunkSize($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasChunkSize() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearChunkSize() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  EncryptedRendition_RenditionStatus get status => $_getN(10);
+  @$pb.TagNumber(11)
+  set status(EncryptedRendition_RenditionStatus value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get urlExpiresAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set urlExpiresAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUrlExpiresAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUrlExpiresAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUrlExpiresAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $core.String get policyVersion => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set policyVersion($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPolicyVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPolicyVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get sourceVersion => $_getI64(13);
+  @$pb.TagNumber(14)
+  set sourceVersion($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasSourceVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSourceVersion() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  EncryptedRendition_OfflinePackageType get packageType => $_getN(14);
+  @$pb.TagNumber(15)
+  set packageType(EncryptedRendition_OfflinePackageType value) =>
+      $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPackageType() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPackageType() => $_clearField(15);
+}
+
 class GetOfflineManifestRequest extends $pb.GeneratedMessage {
-  factory GetOfflineManifestRequest() => create();
+  factory GetOfflineManifestRequest({
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
 
   GetOfflineManifestRequest._();
 
@@ -8660,6 +8901,7 @@ class GetOfflineManifestRequest extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8681,16 +8923,34 @@ class GetOfflineManifestRequest extends $pb.GeneratedMessage {
   static GetOfflineManifestRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetOfflineManifestRequest>(create);
   static GetOfflineManifestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
 }
 
 class GetOfflineManifestResponse extends $pb.GeneratedMessage {
   factory GetOfflineManifestResponse({
     $core.Iterable<OnyxContent>? items,
     $core.String? watermarkPolicy,
+    $core.Iterable<EncryptedRendition>? encryptedRenditions,
+    $1.Timestamp? grantExpiresAt,
+    $core.bool? requiresPurge,
+    $core.String? purgeChallenge,
   }) {
     final result = create();
     if (items != null) result.items.addAll(items);
     if (watermarkPolicy != null) result.watermarkPolicy = watermarkPolicy;
+    if (encryptedRenditions != null)
+      result.encryptedRenditions.addAll(encryptedRenditions);
+    if (grantExpiresAt != null) result.grantExpiresAt = grantExpiresAt;
+    if (requiresPurge != null) result.requiresPurge = requiresPurge;
+    if (purgeChallenge != null) result.purgeChallenge = purgeChallenge;
     return result;
   }
 
@@ -8711,6 +8971,12 @@ class GetOfflineManifestResponse extends $pb.GeneratedMessage {
     ..pPM<OnyxContent>(1, _omitFieldNames ? '' : 'items',
         subBuilder: OnyxContent.create)
     ..aOS(2, _omitFieldNames ? '' : 'watermarkPolicy')
+    ..pPM<EncryptedRendition>(3, _omitFieldNames ? '' : 'encryptedRenditions',
+        subBuilder: EncryptedRendition.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'grantExpiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOB(5, _omitFieldNames ? '' : 'requiresPurge')
+    ..aOS(6, _omitFieldNames ? '' : 'purgeChallenge')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8747,6 +9013,1677 @@ class GetOfflineManifestResponse extends $pb.GeneratedMessage {
   $core.bool hasWatermarkPolicy() => $_has(1);
   @$pb.TagNumber(2)
   void clearWatermarkPolicy() => $_clearField(2);
+
+  /// Encrypted renditions for the granted items.
+  @$pb.TagNumber(3)
+  $pb.PbList<EncryptedRendition> get encryptedRenditions => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get grantExpiresAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set grantExpiresAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGrantExpiresAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGrantExpiresAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureGrantExpiresAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.bool get requiresPurge => $_getBF(4);
+  @$pb.TagNumber(5)
+  set requiresPurge($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRequiresPurge() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequiresPurge() => $_clearField(5);
+
+  /// A server-issued challenge nonce for the client to sign when acknowledging a purge
+  @$pb.TagNumber(6)
+  $core.String get purgeChallenge => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set purgeChallenge($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPurgeChallenge() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPurgeChallenge() => $_clearField(6);
+}
+
+class RegisterDeviceRequest extends $pb.GeneratedMessage {
+  factory RegisterDeviceRequest({
+    $core.String? deviceName,
+    $core.String? publicKeyPem,
+    $core.String? attestationData,
+    $core.String? keyFingerprint,
+    $core.String? appVersion,
+    $core.String? osVersion,
+    $core.String? securityLevel,
+    $core.String? installId,
+  }) {
+    final result = create();
+    if (deviceName != null) result.deviceName = deviceName;
+    if (publicKeyPem != null) result.publicKeyPem = publicKeyPem;
+    if (attestationData != null) result.attestationData = attestationData;
+    if (keyFingerprint != null) result.keyFingerprint = keyFingerprint;
+    if (appVersion != null) result.appVersion = appVersion;
+    if (osVersion != null) result.osVersion = osVersion;
+    if (securityLevel != null) result.securityLevel = securityLevel;
+    if (installId != null) result.installId = installId;
+    return result;
+  }
+
+  RegisterDeviceRequest._();
+
+  factory RegisterDeviceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterDeviceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterDeviceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceName')
+    ..aOS(2, _omitFieldNames ? '' : 'publicKeyPem')
+    ..aOS(3, _omitFieldNames ? '' : 'attestationData')
+    ..aOS(4, _omitFieldNames ? '' : 'keyFingerprint')
+    ..aOS(5, _omitFieldNames ? '' : 'appVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'osVersion')
+    ..aOS(7, _omitFieldNames ? '' : 'securityLevel')
+    ..aOS(8, _omitFieldNames ? '' : 'installId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceRequest copyWith(
+          void Function(RegisterDeviceRequest) updates) =>
+      super.copyWith((message) => updates(message as RegisterDeviceRequest))
+          as RegisterDeviceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceRequest create() => RegisterDeviceRequest._();
+  @$core.override
+  RegisterDeviceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterDeviceRequest>(create);
+  static RegisterDeviceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceName() => $_clearField(1);
+
+  /// X.509 SPKI RSA public key PEM, non-exportable from Keystore
+  @$pb.TagNumber(2)
+  $core.String get publicKeyPem => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set publicKeyPem($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPublicKeyPem() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPublicKeyPem() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get attestationData => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set attestationData($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAttestationData() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAttestationData() => $_clearField(3);
+
+  /// Key ID or fingerprint to handle idempotency
+  @$pb.TagNumber(4)
+  $core.String get keyFingerprint => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set keyFingerprint($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKeyFingerprint() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKeyFingerprint() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get appVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set appVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAppVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAppVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get osVersion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set osVersion($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOsVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOsVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get securityLevel => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set securityLevel($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSecurityLevel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSecurityLevel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get installId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set installId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInstallId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInstallId() => $_clearField(8);
+}
+
+class RegisterDeviceResponse extends $pb.GeneratedMessage {
+  factory RegisterDeviceResponse({
+    $core.String? deviceId,
+    $1.Timestamp? expiresAt,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  RegisterDeviceResponse._();
+
+  factory RegisterDeviceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterDeviceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterDeviceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterDeviceResponse copyWith(
+          void Function(RegisterDeviceResponse) updates) =>
+      super.copyWith((message) => updates(message as RegisterDeviceResponse))
+          as RegisterDeviceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceResponse create() => RegisterDeviceResponse._();
+  @$core.override
+  RegisterDeviceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterDeviceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterDeviceResponse>(create);
+  static RegisterDeviceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.Timestamp get expiresAt => $_getN(1);
+  @$pb.TagNumber(2)
+  set expiresAt($1.Timestamp value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpiresAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpiresAt() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $1.Timestamp ensureExpiresAt() => $_ensure(1);
+}
+
+class AcknowledgePurgeRequest extends $pb.GeneratedMessage {
+  factory AcknowledgePurgeRequest({
+    $core.String? deviceId,
+    $core.Iterable<$core.String>? purgedContentIds,
+    $core.String? purgeChallenge,
+    $core.String? challengeSignature,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (purgedContentIds != null)
+      result.purgedContentIds.addAll(purgedContentIds);
+    if (purgeChallenge != null) result.purgeChallenge = purgeChallenge;
+    if (challengeSignature != null)
+      result.challengeSignature = challengeSignature;
+    return result;
+  }
+
+  AcknowledgePurgeRequest._();
+
+  factory AcknowledgePurgeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgePurgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgePurgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..pPS(2, _omitFieldNames ? '' : 'purgedContentIds')
+    ..aOS(3, _omitFieldNames ? '' : 'purgeChallenge')
+    ..aOS(4, _omitFieldNames ? '' : 'challengeSignature')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgePurgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgePurgeRequest copyWith(
+          void Function(AcknowledgePurgeRequest) updates) =>
+      super.copyWith((message) => updates(message as AcknowledgePurgeRequest))
+          as AcknowledgePurgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgePurgeRequest create() => AcknowledgePurgeRequest._();
+  @$core.override
+  AcknowledgePurgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgePurgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AcknowledgePurgeRequest>(create);
+  static AcknowledgePurgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get purgedContentIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get purgeChallenge => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set purgeChallenge($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPurgeChallenge() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPurgeChallenge() => $_clearField(3);
+
+  /// Base64 signature of the purge_challenge using the device's private Keystore key
+  @$pb.TagNumber(4)
+  $core.String get challengeSignature => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set challengeSignature($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasChallengeSignature() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChallengeSignature() => $_clearField(4);
+}
+
+class AcknowledgePurgeResponse extends $pb.GeneratedMessage {
+  factory AcknowledgePurgeResponse({
+    $core.String? receiptId,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    return result;
+  }
+
+  AcknowledgePurgeResponse._();
+
+  factory AcknowledgePurgeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgePurgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgePurgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgePurgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgePurgeResponse copyWith(
+          void Function(AcknowledgePurgeResponse) updates) =>
+      super.copyWith((message) => updates(message as AcknowledgePurgeResponse))
+          as AcknowledgePurgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgePurgeResponse create() => AcknowledgePurgeResponse._();
+  @$core.override
+  AcknowledgePurgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgePurgeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AcknowledgePurgeResponse>(create);
+  static AcknowledgePurgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+}
+
+class GetDeviceGrantsRequest extends $pb.GeneratedMessage {
+  factory GetDeviceGrantsRequest() => create();
+
+  GetDeviceGrantsRequest._();
+
+  factory GetDeviceGrantsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDeviceGrantsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDeviceGrantsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceGrantsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceGrantsRequest copyWith(
+          void Function(GetDeviceGrantsRequest) updates) =>
+      super.copyWith((message) => updates(message as GetDeviceGrantsRequest))
+          as GetDeviceGrantsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGrantsRequest create() => GetDeviceGrantsRequest._();
+  @$core.override
+  GetDeviceGrantsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGrantsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDeviceGrantsRequest>(create);
+  static GetDeviceGrantsRequest? _defaultInstance;
+}
+
+class DeviceGrantInfo extends $pb.GeneratedMessage {
+  factory DeviceGrantInfo({
+    $core.String? deviceId,
+    $core.String? deviceName,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? lastSyncAt,
+    $core.String? securityLevel,
+    $core.String? claimedSecurityLevel,
+    $core.String? verifiedSecurityLevel,
+    $core.String? attestationStatus,
+    $core.String? purgeReceiptId,
+    $core.Iterable<$core.String>? pendingPurgeContentIds,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (deviceName != null) result.deviceName = deviceName;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (lastSyncAt != null) result.lastSyncAt = lastSyncAt;
+    if (securityLevel != null) result.securityLevel = securityLevel;
+    if (claimedSecurityLevel != null)
+      result.claimedSecurityLevel = claimedSecurityLevel;
+    if (verifiedSecurityLevel != null)
+      result.verifiedSecurityLevel = verifiedSecurityLevel;
+    if (attestationStatus != null) result.attestationStatus = attestationStatus;
+    if (purgeReceiptId != null) result.purgeReceiptId = purgeReceiptId;
+    if (pendingPurgeContentIds != null)
+      result.pendingPurgeContentIds.addAll(pendingPurgeContentIds);
+    return result;
+  }
+
+  DeviceGrantInfo._();
+
+  factory DeviceGrantInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeviceGrantInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeviceGrantInfo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceName')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'lastSyncAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'securityLevel')
+    ..aOS(8, _omitFieldNames ? '' : 'claimedSecurityLevel')
+    ..aOS(9, _omitFieldNames ? '' : 'verifiedSecurityLevel')
+    ..aOS(10, _omitFieldNames ? '' : 'attestationStatus')
+    ..aOS(11, _omitFieldNames ? '' : 'purgeReceiptId')
+    ..pPS(12, _omitFieldNames ? '' : 'pendingPurgeContentIds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeviceGrantInfo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeviceGrantInfo copyWith(void Function(DeviceGrantInfo) updates) =>
+      super.copyWith((message) => updates(message as DeviceGrantInfo))
+          as DeviceGrantInfo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeviceGrantInfo create() => DeviceGrantInfo._();
+  @$core.override
+  DeviceGrantInfo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeviceGrantInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeviceGrantInfo>(create);
+  static DeviceGrantInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get createdAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set createdAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureCreatedAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expiresAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set expiresAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpiresAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpiresAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpiresAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get lastSyncAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set lastSyncAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastSyncAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastSyncAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureLastSyncAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get securityLevel => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set securityLevel($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSecurityLevel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSecurityLevel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get claimedSecurityLevel => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set claimedSecurityLevel($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClaimedSecurityLevel() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClaimedSecurityLevel() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get verifiedSecurityLevel => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set verifiedSecurityLevel($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVerifiedSecurityLevel() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVerifiedSecurityLevel() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get attestationStatus => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set attestationStatus($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAttestationStatus() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAttestationStatus() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get purgeReceiptId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set purgeReceiptId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPurgeReceiptId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPurgeReceiptId() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<$core.String> get pendingPurgeContentIds => $_getList(11);
+}
+
+class GetDeviceGrantsResponse extends $pb.GeneratedMessage {
+  factory GetDeviceGrantsResponse({
+    $core.Iterable<DeviceGrantInfo>? grants,
+  }) {
+    final result = create();
+    if (grants != null) result.grants.addAll(grants);
+    return result;
+  }
+
+  GetDeviceGrantsResponse._();
+
+  factory GetDeviceGrantsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDeviceGrantsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDeviceGrantsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DeviceGrantInfo>(1, _omitFieldNames ? '' : 'grants',
+        subBuilder: DeviceGrantInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceGrantsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceGrantsResponse copyWith(
+          void Function(GetDeviceGrantsResponse) updates) =>
+      super.copyWith((message) => updates(message as GetDeviceGrantsResponse))
+          as GetDeviceGrantsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGrantsResponse create() => GetDeviceGrantsResponse._();
+  @$core.override
+  GetDeviceGrantsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceGrantsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDeviceGrantsResponse>(create);
+  static GetDeviceGrantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DeviceGrantInfo> get grants => $_getList(0);
+}
+
+class RevokeMyDeviceRequest extends $pb.GeneratedMessage {
+  factory RevokeMyDeviceRequest({
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  RevokeMyDeviceRequest._();
+
+  factory RevokeMyDeviceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeMyDeviceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeMyDeviceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyDeviceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyDeviceRequest copyWith(
+          void Function(RevokeMyDeviceRequest) updates) =>
+      super.copyWith((message) => updates(message as RevokeMyDeviceRequest))
+          as RevokeMyDeviceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyDeviceRequest create() => RevokeMyDeviceRequest._();
+  @$core.override
+  RevokeMyDeviceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyDeviceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeMyDeviceRequest>(create);
+  static RevokeMyDeviceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+}
+
+class RevokeMyDeviceResponse extends $pb.GeneratedMessage {
+  factory RevokeMyDeviceResponse() => create();
+
+  RevokeMyDeviceResponse._();
+
+  factory RevokeMyDeviceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeMyDeviceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeMyDeviceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyDeviceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyDeviceResponse copyWith(
+          void Function(RevokeMyDeviceResponse) updates) =>
+      super.copyWith((message) => updates(message as RevokeMyDeviceResponse))
+          as RevokeMyDeviceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyDeviceResponse create() => RevokeMyDeviceResponse._();
+  @$core.override
+  RevokeMyDeviceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyDeviceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeMyDeviceResponse>(create);
+  static RevokeMyDeviceResponse? _defaultInstance;
+}
+
+class MarkMyDeviceLostRequest extends $pb.GeneratedMessage {
+  factory MarkMyDeviceLostRequest({
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  MarkMyDeviceLostRequest._();
+
+  factory MarkMyDeviceLostRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MarkMyDeviceLostRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MarkMyDeviceLostRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkMyDeviceLostRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkMyDeviceLostRequest copyWith(
+          void Function(MarkMyDeviceLostRequest) updates) =>
+      super.copyWith((message) => updates(message as MarkMyDeviceLostRequest))
+          as MarkMyDeviceLostRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkMyDeviceLostRequest create() => MarkMyDeviceLostRequest._();
+  @$core.override
+  MarkMyDeviceLostRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MarkMyDeviceLostRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MarkMyDeviceLostRequest>(create);
+  static MarkMyDeviceLostRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+}
+
+class MarkMyDeviceLostResponse extends $pb.GeneratedMessage {
+  factory MarkMyDeviceLostResponse() => create();
+
+  MarkMyDeviceLostResponse._();
+
+  factory MarkMyDeviceLostResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MarkMyDeviceLostResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MarkMyDeviceLostResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkMyDeviceLostResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkMyDeviceLostResponse copyWith(
+          void Function(MarkMyDeviceLostResponse) updates) =>
+      super.copyWith((message) => updates(message as MarkMyDeviceLostResponse))
+          as MarkMyDeviceLostResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkMyDeviceLostResponse create() => MarkMyDeviceLostResponse._();
+  @$core.override
+  MarkMyDeviceLostResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MarkMyDeviceLostResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MarkMyDeviceLostResponse>(create);
+  static MarkMyDeviceLostResponse? _defaultInstance;
+}
+
+class GetPurgeReceiptRequest extends $pb.GeneratedMessage {
+  factory GetPurgeReceiptRequest({
+    $core.String? receiptId,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    return result;
+  }
+
+  GetPurgeReceiptRequest._();
+
+  factory GetPurgeReceiptRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPurgeReceiptRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPurgeReceiptRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPurgeReceiptRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPurgeReceiptRequest copyWith(
+          void Function(GetPurgeReceiptRequest) updates) =>
+      super.copyWith((message) => updates(message as GetPurgeReceiptRequest))
+          as GetPurgeReceiptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPurgeReceiptRequest create() => GetPurgeReceiptRequest._();
+  @$core.override
+  GetPurgeReceiptRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPurgeReceiptRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPurgeReceiptRequest>(create);
+  static GetPurgeReceiptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+}
+
+class GetPurgeReceiptResponse extends $pb.GeneratedMessage {
+  factory GetPurgeReceiptResponse({
+    $core.String? receiptId,
+    $core.String? deviceId,
+    $core.Iterable<$core.String>? purgedContentIds,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (purgedContentIds != null)
+      result.purgedContentIds.addAll(purgedContentIds);
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  GetPurgeReceiptResponse._();
+
+  factory GetPurgeReceiptResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPurgeReceiptResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPurgeReceiptResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..pPS(3, _omitFieldNames ? '' : 'purgedContentIds')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPurgeReceiptResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPurgeReceiptResponse copyWith(
+          void Function(GetPurgeReceiptResponse) updates) =>
+      super.copyWith((message) => updates(message as GetPurgeReceiptResponse))
+          as GetPurgeReceiptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPurgeReceiptResponse create() => GetPurgeReceiptResponse._();
+  @$core.override
+  GetPurgeReceiptResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPurgeReceiptResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPurgeReceiptResponse>(create);
+  static GetPurgeReceiptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get purgedContentIds => $_getList(2);
+
+  /// challenge_signature removed for security
+  @$pb.TagNumber(5)
+  $1.Timestamp get createdAt => $_getN(3);
+  @$pb.TagNumber(5)
+  set createdAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureCreatedAt() => $_ensure(3);
+}
+
+class ListOfflineManifestItemsRequest extends $pb.GeneratedMessage {
+  factory ListOfflineManifestItemsRequest({
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  ListOfflineManifestItemsRequest._();
+
+  factory ListOfflineManifestItemsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListOfflineManifestItemsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListOfflineManifestItemsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOfflineManifestItemsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOfflineManifestItemsRequest copyWith(
+          void Function(ListOfflineManifestItemsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListOfflineManifestItemsRequest))
+          as ListOfflineManifestItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListOfflineManifestItemsRequest create() =>
+      ListOfflineManifestItemsRequest._();
+  @$core.override
+  ListOfflineManifestItemsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListOfflineManifestItemsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListOfflineManifestItemsRequest>(
+          create);
+  static ListOfflineManifestItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+}
+
+class OfflineManifestItemInfo extends $pb.GeneratedMessage {
+  factory OfflineManifestItemInfo({
+    $core.String? contentId,
+    $core.String? renditionId,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (renditionId != null) result.renditionId = renditionId;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OfflineManifestItemInfo._();
+
+  factory OfflineManifestItemInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OfflineManifestItemInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OfflineManifestItemInfo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'renditionId')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineManifestItemInfo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineManifestItemInfo copyWith(
+          void Function(OfflineManifestItemInfo) updates) =>
+      super.copyWith((message) => updates(message as OfflineManifestItemInfo))
+          as OfflineManifestItemInfo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OfflineManifestItemInfo create() => OfflineManifestItemInfo._();
+  @$core.override
+  OfflineManifestItemInfo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OfflineManifestItemInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OfflineManifestItemInfo>(create);
+  static OfflineManifestItemInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get renditionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set renditionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRenditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRenditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureCreatedAt() => $_ensure(2);
+}
+
+class ListOfflineManifestItemsResponse extends $pb.GeneratedMessage {
+  factory ListOfflineManifestItemsResponse({
+    $core.Iterable<OfflineManifestItemInfo>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListOfflineManifestItemsResponse._();
+
+  factory ListOfflineManifestItemsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListOfflineManifestItemsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListOfflineManifestItemsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OfflineManifestItemInfo>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: OfflineManifestItemInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOfflineManifestItemsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListOfflineManifestItemsResponse copyWith(
+          void Function(ListOfflineManifestItemsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListOfflineManifestItemsResponse))
+          as ListOfflineManifestItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListOfflineManifestItemsResponse create() =>
+      ListOfflineManifestItemsResponse._();
+  @$core.override
+  ListOfflineManifestItemsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListOfflineManifestItemsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListOfflineManifestItemsResponse>(
+          create);
+  static ListOfflineManifestItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OfflineManifestItemInfo> get items => $_getList(0);
+}
+
+class RefreshOfflineRenditionsRequest extends $pb.GeneratedMessage {
+  factory RefreshOfflineRenditionsRequest({
+    $core.String? deviceId,
+    $core.Iterable<$core.String>? renditionIds,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (renditionIds != null) result.renditionIds.addAll(renditionIds);
+    return result;
+  }
+
+  RefreshOfflineRenditionsRequest._();
+
+  factory RefreshOfflineRenditionsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RefreshOfflineRenditionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RefreshOfflineRenditionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..pPS(2, _omitFieldNames ? '' : 'renditionIds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshOfflineRenditionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshOfflineRenditionsRequest copyWith(
+          void Function(RefreshOfflineRenditionsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RefreshOfflineRenditionsRequest))
+          as RefreshOfflineRenditionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshOfflineRenditionsRequest create() =>
+      RefreshOfflineRenditionsRequest._();
+  @$core.override
+  RefreshOfflineRenditionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RefreshOfflineRenditionsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RefreshOfflineRenditionsRequest>(
+          create);
+  static RefreshOfflineRenditionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get renditionIds => $_getList(1);
+}
+
+class RefreshedRendition extends $pb.GeneratedMessage {
+  factory RefreshedRendition({
+    $core.String? renditionId,
+    $core.String? signedDownloadUrl,
+    $1.Timestamp? expiresAt,
+    $core.String? policyVersion,
+    $fixnum.Int64? sourceVersion,
+  }) {
+    final result = create();
+    if (renditionId != null) result.renditionId = renditionId;
+    if (signedDownloadUrl != null) result.signedDownloadUrl = signedDownloadUrl;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (sourceVersion != null) result.sourceVersion = sourceVersion;
+    return result;
+  }
+
+  RefreshedRendition._();
+
+  factory RefreshedRendition.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RefreshedRendition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RefreshedRendition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'renditionId')
+    ..aOS(2, _omitFieldNames ? '' : 'signedDownloadUrl')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'policyVersion')
+    ..aInt64(5, _omitFieldNames ? '' : 'sourceVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshedRendition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshedRendition copyWith(void Function(RefreshedRendition) updates) =>
+      super.copyWith((message) => updates(message as RefreshedRendition))
+          as RefreshedRendition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshedRendition create() => RefreshedRendition._();
+  @$core.override
+  RefreshedRendition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RefreshedRendition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RefreshedRendition>(create);
+  static RefreshedRendition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get renditionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set renditionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRenditionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRenditionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get signedDownloadUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set signedDownloadUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSignedDownloadUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSignedDownloadUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get expiresAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set expiresAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpiresAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpiresAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureExpiresAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get policyVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set policyVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPolicyVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPolicyVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get sourceVersion => $_getI64(4);
+  @$pb.TagNumber(5)
+  set sourceVersion($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceVersion() => $_clearField(5);
+}
+
+class RefreshOfflineRenditionsResponse extends $pb.GeneratedMessage {
+  factory RefreshOfflineRenditionsResponse({
+    $core.Iterable<RefreshedRendition>? renditions,
+  }) {
+    final result = create();
+    if (renditions != null) result.renditions.addAll(renditions);
+    return result;
+  }
+
+  RefreshOfflineRenditionsResponse._();
+
+  factory RefreshOfflineRenditionsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RefreshOfflineRenditionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RefreshOfflineRenditionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<RefreshedRendition>(1, _omitFieldNames ? '' : 'renditions',
+        subBuilder: RefreshedRendition.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshOfflineRenditionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshOfflineRenditionsResponse copyWith(
+          void Function(RefreshOfflineRenditionsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RefreshOfflineRenditionsResponse))
+          as RefreshOfflineRenditionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshOfflineRenditionsResponse create() =>
+      RefreshOfflineRenditionsResponse._();
+  @$core.override
+  RefreshOfflineRenditionsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RefreshOfflineRenditionsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RefreshOfflineRenditionsResponse>(
+          create);
+  static RefreshOfflineRenditionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RefreshedRendition> get renditions => $_getList(0);
+}
+
+class RecordOfflineEventRequest extends $pb.GeneratedMessage {
+  factory RecordOfflineEventRequest({
+    $core.String? id,
+    $core.String? deviceId,
+    $core.String? contentId,
+    $core.String? renditionId,
+    $core.String? eventType,
+    $core.String? outcome,
+    $core.String? errorCode,
+    $fixnum.Int64? bytes,
+    $core.int? latencyMs,
+    $core.String? metadataJson,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (contentId != null) result.contentId = contentId;
+    if (renditionId != null) result.renditionId = renditionId;
+    if (eventType != null) result.eventType = eventType;
+    if (outcome != null) result.outcome = outcome;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (bytes != null) result.bytes = bytes;
+    if (latencyMs != null) result.latencyMs = latencyMs;
+    if (metadataJson != null) result.metadataJson = metadataJson;
+    return result;
+  }
+
+  RecordOfflineEventRequest._();
+
+  factory RecordOfflineEventRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordOfflineEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordOfflineEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(3, _omitFieldNames ? '' : 'contentId')
+    ..aOS(4, _omitFieldNames ? '' : 'renditionId')
+    ..aOS(5, _omitFieldNames ? '' : 'eventType')
+    ..aOS(6, _omitFieldNames ? '' : 'outcome')
+    ..aOS(7, _omitFieldNames ? '' : 'errorCode')
+    ..aInt64(8, _omitFieldNames ? '' : 'bytes')
+    ..aI(9, _omitFieldNames ? '' : 'latencyMs')
+    ..aOS(10, _omitFieldNames ? '' : 'metadataJson')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineEventRequest copyWith(
+          void Function(RecordOfflineEventRequest) updates) =>
+      super.copyWith((message) => updates(message as RecordOfflineEventRequest))
+          as RecordOfflineEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineEventRequest create() => RecordOfflineEventRequest._();
+  @$core.override
+  RecordOfflineEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineEventRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordOfflineEventRequest>(create);
+  static RecordOfflineEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get renditionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set renditionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRenditionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRenditionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get eventType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set eventType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEventType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEventType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get outcome => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set outcome($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOutcome() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOutcome() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get errorCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set errorCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasErrorCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearErrorCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get bytes => $_getI64(7);
+  @$pb.TagNumber(8)
+  set bytes($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBytes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBytes() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get latencyMs => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set latencyMs($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasLatencyMs() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearLatencyMs() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get metadataJson => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set metadataJson($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMetadataJson() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMetadataJson() => $_clearField(10);
+}
+
+class RecordOfflineEventResponse extends $pb.GeneratedMessage {
+  factory RecordOfflineEventResponse({
+    $core.String? id,
+    $core.bool? success,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (success != null) result.success = success;
+    return result;
+  }
+
+  RecordOfflineEventResponse._();
+
+  factory RecordOfflineEventResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordOfflineEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordOfflineEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOB(2, _omitFieldNames ? '' : 'success')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineEventResponse copyWith(
+          void Function(RecordOfflineEventResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordOfflineEventResponse))
+          as RecordOfflineEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineEventResponse create() => RecordOfflineEventResponse._();
+  @$core.override
+  RecordOfflineEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineEventResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordOfflineEventResponse>(create);
+  static RecordOfflineEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get success => $_getBF(1);
+  @$pb.TagNumber(2)
+  set success($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSuccess() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSuccess() => $_clearField(2);
 }
 
 class GetYearInOnyxRequest extends $pb.GeneratedMessage {

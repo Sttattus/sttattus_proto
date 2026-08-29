@@ -650,12 +650,177 @@ message RevokeShareLinkRequest {
 }
 message RevokeShareLinkResponse {}
 
-message GetOfflineManifestRequest {}
+message EncryptedRendition {
+  enum RenditionStatus {
+    RENDITION_STATUS_UNSPECIFIED = 0;
+    RENDITION_STATUS_PREPARING = 1;
+    RENDITION_STATUS_READY = 2;
+    RENDITION_STATUS_FAILED = 3;
+  }
+  enum OfflinePackageType {
+    OFFLINE_PACKAGE_TYPE_UNSPECIFIED = 0;
+    OFFLINE_PACKAGE_TYPE_PROTOBUF_ARTICLE = 1;
+    OFFLINE_PACKAGE_TYPE_EVIDENCE_BRIEF = 2;
+    OFFLINE_PACKAGE_TYPE_RAW_AUDIO = 3;
+    OFFLINE_PACKAGE_TYPE_CAPTIONS = 4;
+    OFFLINE_PACKAGE_TYPE_PDF = 5;
+  }
+  string content_id = 1;
+  string rendition_id = 2;
+  string content_type = 3;
+  int64 size_bytes = 4;
+  string wrapped_cek = 5; // CEK wrapped with device's public key (base64)
+  string iv = 6; // Base64 Initialization Vector (base nonce)
+  string signed_download_url = 7;
+  string content_hash = 8; // SHA-256 digest of the ciphertext content
+  string revision_id = 9;
+  int32 chunk_size = 10;
+  RenditionStatus status = 11;
+  google.protobuf.Timestamp url_expires_at = 12;
+  string policy_version = 13;
+  int64 source_version = 14;
+  OfflinePackageType package_type = 15;
+}
+
+message GetOfflineManifestRequest {
+  string device_id = 1;
+}
+
 message GetOfflineManifestResponse {
   // The pieces the caller may keep offline (unlocked + ungated).
   repeated OnyxContent items = 1;
   // The watermark / anti-piracy policy shown on the downloads surface.
   string watermark_policy = 2;
+  // Encrypted renditions for the granted items.
+  repeated EncryptedRendition encrypted_renditions = 3;
+  google.protobuf.Timestamp grant_expires_at = 4;
+  bool requires_purge = 5;
+  // A server-issued challenge nonce for the client to sign when acknowledging a purge
+  string purge_challenge = 6;
+}
+
+message RegisterDeviceRequest {
+  string device_name = 1;
+  // X.509 SPKI RSA public key PEM, non-exportable from Keystore
+  string public_key_pem = 2;
+  string attestation_data = 3;
+  // Key ID or fingerprint to handle idempotency
+  string key_fingerprint = 4;
+  string app_version = 5;
+  string os_version = 6;
+  string security_level = 7; // e.g., "STRONGBOX", "TRUSTED_ENVIRONMENT", "SOFTWARE"
+  string install_id = 8;
+}
+
+message RegisterDeviceResponse {
+  string device_id = 1;
+  google.protobuf.Timestamp expires_at = 2;
+}
+
+message AcknowledgePurgeRequest {
+  string device_id = 1;
+  repeated string purged_content_ids = 2;
+  string purge_challenge = 3;
+  // Base64 signature of the purge_challenge using the device's private Keystore key
+  string challenge_signature = 4;
+}
+
+message AcknowledgePurgeResponse {
+  string receipt_id = 1;
+}
+
+message GetDeviceGrantsRequest {}
+
+message DeviceGrantInfo {
+  string device_id = 1;
+  string device_name = 2;
+  string status = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp expires_at = 5;
+  google.protobuf.Timestamp last_sync_at = 6;
+  string security_level = 7;
+  string claimed_security_level = 8;
+  string verified_security_level = 9;
+  string attestation_status = 10;
+  string purge_receipt_id = 11;
+  repeated string pending_purge_content_ids = 12;
+}
+
+message GetDeviceGrantsResponse {
+  repeated DeviceGrantInfo grants = 1;
+}
+
+message RevokeMyDeviceRequest {
+  string device_id = 1;
+}
+
+message RevokeMyDeviceResponse {}
+
+message MarkMyDeviceLostRequest {
+  string device_id = 1;
+}
+
+message MarkMyDeviceLostResponse {}
+
+message GetPurgeReceiptRequest {
+  string receipt_id = 1;
+}
+
+message GetPurgeReceiptResponse {
+  string receipt_id = 1;
+  string device_id = 2;
+  repeated string purged_content_ids = 3;
+  // challenge_signature removed for security
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message ListOfflineManifestItemsRequest {
+  string device_id = 1;
+}
+
+message OfflineManifestItemInfo {
+  string content_id = 1;
+  string rendition_id = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
+
+message ListOfflineManifestItemsResponse {
+  repeated OfflineManifestItemInfo items = 1;
+}
+
+message RefreshOfflineRenditionsRequest {
+  string device_id = 1;
+  repeated string rendition_ids = 2;
+}
+
+message RefreshedRendition {
+  string rendition_id = 1;
+  string signed_download_url = 2;
+  google.protobuf.Timestamp expires_at = 3;
+  string policy_version = 4;
+  int64 source_version = 5;
+}
+
+message RefreshOfflineRenditionsResponse {
+  repeated RefreshedRendition renditions = 1;
+}
+
+message RecordOfflineEventRequest {
+  string id = 1;
+  string device_id = 2;
+  string content_id = 3;
+  string rendition_id = 4;
+  string event_type = 5;
+  string outcome = 6;
+  string error_code = 7;
+  int64 bytes = 8;
+  int32 latency_ms = 9;
+  string metadata_json = 10;
+}
+
+message RecordOfflineEventResponse {
+  string id = 1;
+  bool success = 2;
 }
 
 // === P4 — year-in-onyx recap, annual archive, silent reactions ===
@@ -985,11 +1150,20 @@ service OnyxService {
   rpc ListAnthologies(ListAnthologiesRequest) returns (ListAnthologiesResponse);
   rpc GetAnthology(GetAnthologyRequest) returns (GetAnthologyResponse);
 
-  // P3.5 — signed share embeds + offline manifest.
+  // P3.5 — signed share embeds + offline manifest + device grants.
   rpc CreateShareLink(CreateShareLinkRequest) returns (CreateShareLinkResponse);
   rpc ListMyShareLinks(ListMyShareLinksRequest) returns (ListMyShareLinksResponse);
   rpc RevokeShareLink(RevokeShareLinkRequest) returns (RevokeShareLinkResponse);
   rpc GetOfflineManifest(GetOfflineManifestRequest) returns (GetOfflineManifestResponse);
+  rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse);
+  rpc AcknowledgePurge(AcknowledgePurgeRequest) returns (AcknowledgePurgeResponse);
+  rpc GetDeviceGrants(GetDeviceGrantsRequest) returns (GetDeviceGrantsResponse);
+  rpc RevokeMyDevice(RevokeMyDeviceRequest) returns (RevokeMyDeviceResponse);
+  rpc MarkMyDeviceLost(MarkMyDeviceLostRequest) returns (MarkMyDeviceLostResponse);
+  rpc GetPurgeReceipt(GetPurgeReceiptRequest) returns (GetPurgeReceiptResponse);
+  rpc ListOfflineManifestItems(ListOfflineManifestItemsRequest) returns (ListOfflineManifestItemsResponse);
+  rpc RefreshOfflineRenditions(RefreshOfflineRenditionsRequest) returns (RefreshOfflineRenditionsResponse);
+  rpc RecordOfflineEvent(RecordOfflineEventRequest) returns (RecordOfflineEventResponse);
 
   // P4 — year-in-onyx recap, annual archive PDF, silent reactions.
   rpc GetYearInOnyx(GetYearInOnyxRequest) returns (GetYearInOnyxResponse);

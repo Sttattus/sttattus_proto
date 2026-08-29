@@ -67,6 +67,20 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAuditLogs, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ListDeviceGrantsResponse> listDeviceGrants(
+    $0.ListDeviceGrantsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listDeviceGrants, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeDeviceGrantResponse> revokeDeviceGrant(
+    $0.RevokeDeviceGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeDeviceGrant, request, options: options);
+  }
+
   // method descriptors
 
   static final _$listUsers =
@@ -94,6 +108,16 @@ class AdminServiceClient extends $grpc.Client {
           '/sttattus.admin.v1.AdminService/ListAuditLogs',
           ($0.ListAuditLogsRequest value) => value.writeToBuffer(),
           $0.ListAuditLogsResponse.fromBuffer);
+  static final _$listDeviceGrants = $grpc.ClientMethod<
+          $0.ListDeviceGrantsRequest, $0.ListDeviceGrantsResponse>(
+      '/sttattus.admin.v1.AdminService/ListDeviceGrants',
+      ($0.ListDeviceGrantsRequest value) => value.writeToBuffer(),
+      $0.ListDeviceGrantsResponse.fromBuffer);
+  static final _$revokeDeviceGrant = $grpc.ClientMethod<
+          $0.RevokeDeviceGrantRequest, $0.RevokeDeviceGrantResponse>(
+      '/sttattus.admin.v1.AdminService/RevokeDeviceGrant',
+      ($0.RevokeDeviceGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeDeviceGrantResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.admin.v1.AdminService')
@@ -138,6 +162,24 @@ abstract class AdminServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.ListAuditLogsRequest.fromBuffer(value),
             ($0.ListAuditLogsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDeviceGrantsRequest,
+            $0.ListDeviceGrantsResponse>(
+        'ListDeviceGrants',
+        listDeviceGrants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListDeviceGrantsRequest.fromBuffer(value),
+        ($0.ListDeviceGrantsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeDeviceGrantRequest,
+            $0.RevokeDeviceGrantResponse>(
+        'RevokeDeviceGrant',
+        revokeDeviceGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeDeviceGrantRequest.fromBuffer(value),
+        ($0.RevokeDeviceGrantResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListUsersResponse> listUsers_Pre($grpc.ServiceCall $call,
@@ -180,4 +222,22 @@ abstract class AdminServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListAuditLogsResponse> listAuditLogs(
       $grpc.ServiceCall call, $0.ListAuditLogsRequest request);
+
+  $async.Future<$0.ListDeviceGrantsResponse> listDeviceGrants_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListDeviceGrantsRequest> $request) async {
+    return listDeviceGrants($call, await $request);
+  }
+
+  $async.Future<$0.ListDeviceGrantsResponse> listDeviceGrants(
+      $grpc.ServiceCall call, $0.ListDeviceGrantsRequest request);
+
+  $async.Future<$0.RevokeDeviceGrantResponse> revokeDeviceGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeDeviceGrantRequest> $request) async {
+    return revokeDeviceGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeDeviceGrantResponse> revokeDeviceGrant(
+      $grpc.ServiceCall call, $0.RevokeDeviceGrantRequest request);
 }
