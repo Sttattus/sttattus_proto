@@ -5622,6 +5622,13 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
    */
   packageType = EncryptedRendition_OfflinePackageType.UNSPECIFIED;
 
+  /**
+   * RSA-OAEP-SHA-256-MGF1-SHA-1
+   *
+   * @generated from field: string key_wrap_algorithm = 16;
+   */
+  keyWrapAlgorithm = "";
+
   constructor(data?: PartialMessage<EncryptedRendition>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5645,6 +5652,7 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
     { no: 13, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "source_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 15, name: "package_type", kind: "enum", T: proto3.getEnumType(EncryptedRendition_OfflinePackageType) },
+    { no: 16, name: "key_wrap_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedRendition {

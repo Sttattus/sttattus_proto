@@ -6734,6 +6734,7 @@ type EncryptedRendition struct {
 	PolicyVersion     string                                `protobuf:"bytes,13,opt,name=policy_version,json=policyVersion,proto3" json:"policy_version,omitempty"`
 	SourceVersion     int64                                 `protobuf:"varint,14,opt,name=source_version,json=sourceVersion,proto3" json:"source_version,omitempty"`
 	PackageType       EncryptedRendition_OfflinePackageType `protobuf:"varint,15,opt,name=package_type,json=packageType,proto3,enum=sttattus.onyx.v1.EncryptedRendition_OfflinePackageType" json:"package_type,omitempty"`
+	KeyWrapAlgorithm  string                                `protobuf:"bytes,16,opt,name=key_wrap_algorithm,json=keyWrapAlgorithm,proto3" json:"key_wrap_algorithm,omitempty"` // RSA-OAEP-SHA-256-MGF1-SHA-1
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6871,6 +6872,13 @@ func (x *EncryptedRendition) GetPackageType() EncryptedRendition_OfflinePackageT
 		return x.PackageType
 	}
 	return EncryptedRendition_OFFLINE_PACKAGE_TYPE_UNSPECIFIED
+}
+
+func (x *EncryptedRendition) GetKeyWrapAlgorithm() string {
+	if x != nil {
+		return x.KeyWrapAlgorithm
+	}
+	return ""
 }
 
 type GetOfflineManifestRequest struct {
@@ -11114,7 +11122,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x05links\x18\x01 \x03(\v2\x1b.sttattus.onyx.v1.ShareLinkR\x05links\".\n" +
 	"\x16RevokeShareLinkRequest\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\"\x19\n" +
-	"\x17RevokeShareLinkResponse\"\x9b\b\n" +
+	"\x17RevokeShareLinkResponse\"\xc9\b\n" +
 	"\x12EncryptedRendition\x12\x1d\n" +
 	"\n" +
 	"content_id\x18\x01 \x01(\tR\tcontentId\x12!\n" +
@@ -11136,7 +11144,8 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x0eurl_expires_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\furlExpiresAt\x12%\n" +
 	"\x0epolicy_version\x18\r \x01(\tR\rpolicyVersion\x12%\n" +
 	"\x0esource_version\x18\x0e \x01(\x03R\rsourceVersion\x12Z\n" +
-	"\fpackage_type\x18\x0f \x01(\x0e27.sttattus.onyx.v1.EncryptedRendition.OfflinePackageTypeR\vpackageType\"\x8c\x01\n" +
+	"\fpackage_type\x18\x0f \x01(\x0e27.sttattus.onyx.v1.EncryptedRendition.OfflinePackageTypeR\vpackageType\x12,\n" +
+	"\x12key_wrap_algorithm\x18\x10 \x01(\tR\x10keyWrapAlgorithm\"\x8c\x01\n" +
 	"\x0fRenditionStatus\x12 \n" +
 	"\x1cRENDITION_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n" +
 	"\x1aRENDITION_STATUS_PREPARING\x10\x01\x12\x1a\n" +

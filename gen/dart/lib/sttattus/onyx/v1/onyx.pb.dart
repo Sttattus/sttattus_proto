@@ -8664,6 +8664,7 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     $core.String? policyVersion,
     $fixnum.Int64? sourceVersion,
     EncryptedRendition_OfflinePackageType? packageType,
+    $core.String? keyWrapAlgorithm,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
@@ -8681,6 +8682,7 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     if (policyVersion != null) result.policyVersion = policyVersion;
     if (sourceVersion != null) result.sourceVersion = sourceVersion;
     if (packageType != null) result.packageType = packageType;
+    if (keyWrapAlgorithm != null) result.keyWrapAlgorithm = keyWrapAlgorithm;
     return result;
   }
 
@@ -8718,6 +8720,7 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     ..aE<EncryptedRendition_OfflinePackageType>(
         15, _omitFieldNames ? '' : 'packageType',
         enumValues: EncryptedRendition_OfflinePackageType.values)
+    ..aOS(16, _omitFieldNames ? '' : 'keyWrapAlgorithm')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8876,6 +8879,15 @@ class EncryptedRendition extends $pb.GeneratedMessage {
   $core.bool hasPackageType() => $_has(14);
   @$pb.TagNumber(15)
   void clearPackageType() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get keyWrapAlgorithm => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set keyWrapAlgorithm($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasKeyWrapAlgorithm() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearKeyWrapAlgorithm() => $_clearField(16);
 }
 
 class GetOfflineManifestRequest extends $pb.GeneratedMessage {
