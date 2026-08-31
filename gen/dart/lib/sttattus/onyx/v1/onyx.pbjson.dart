@@ -63,6 +63,8 @@ const OnyxProfile$json = {
       '5': 8,
       '10': 'hasNetworkSubscription'
     },
+    {'1': 'creator_status', '3': 8, '4': 1, '5': 9, '10': 'creatorStatus'},
+    {'1': 'creator_slug', '3': 9, '4': 1, '5': 9, '10': 'creatorSlug'},
   ],
 };
 
@@ -72,8 +74,9 @@ final $typed_data.Uint8List onyxProfileDescriptor = $convert.base64Decode(
     'EoCVIJc3RhZ2VOYW1lEhAKA2JpbxgDIAEoCVIDYmlvEh0KCmlzX2NyZWF0b3IYBCABKAhSCWlz'
     'Q3JlYXRvchImCg9taW5fZW50cnlfc2NvcmUYBSABKAFSDW1pbkVudHJ5U2NvcmUSOwoLdmVyaW'
     'ZpZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp2ZXJpZmllZEF0EjgK'
-    'GGhhc19uZXR3b3JrX3N1YnNjcmlwdGlvbhgHIAEoCFIWaGFzTmV0d29ya1N1YnNjcmlwdGlvbg'
-    '==');
+    'GGhhc19uZXR3b3JrX3N1YnNjcmlwdGlvbhgHIAEoCFIWaGFzTmV0d29ya1N1YnNjcmlwdGlvbh'
+    'IlCg5jcmVhdG9yX3N0YXR1cxgIIAEoCVINY3JlYXRvclN0YXR1cxIhCgxjcmVhdG9yX3NsdWcY'
+    'CSABKAlSC2NyZWF0b3JTbHVn');
 
 @$core.Deprecated('Use onyxContentDescriptor instead')
 const OnyxContent$json = {
@@ -238,6 +241,33 @@ const Subscription$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'expiresAt'
     },
+    {'1': 'creator_name', '3': 5, '4': 1, '5': 9, '10': 'creatorName'},
+    {'1': 'product_id', '3': 6, '4': 1, '5': 9, '10': 'productId'},
+    {'1': 'price_id', '3': 7, '4': 1, '5': 9, '10': 'priceId'},
+    {'1': 'points_paid', '3': 8, '4': 1, '5': 5, '10': 'pointsPaid'},
+    {
+      '1': 'cancel_at_period_end',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'cancelAtPeriodEnd'
+    },
+    {'1': 'can_cancel', '3': 10, '4': 1, '5': 8, '10': 'canCancel'},
+    {
+      '1': 'client_mutation_id',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {
+      '1': 'updated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -246,7 +276,12 @@ final $typed_data.Uint8List subscriptionDescriptor = $convert.base64Decode(
     'CgxTdWJzY3JpcHRpb24SHQoKY3JlYXRvcl9pZBgBIAEoCVIJY3JlYXRvcklkEhYKBnN0YXR1cx'
     'gCIAEoCVIGc3RhdHVzEjkKCmdyYW50ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
     'ZXN0YW1wUglncmFudGVkQXQSOQoKZXhwaXJlc19hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
-    '5UaW1lc3RhbXBSCWV4cGlyZXNBdA==');
+    '5UaW1lc3RhbXBSCWV4cGlyZXNBdBIhCgxjcmVhdG9yX25hbWUYBSABKAlSC2NyZWF0b3JOYW1l'
+    'Eh0KCnByb2R1Y3RfaWQYBiABKAlSCXByb2R1Y3RJZBIZCghwcmljZV9pZBgHIAEoCVIHcHJpY2'
+    'VJZBIfCgtwb2ludHNfcGFpZBgIIAEoBVIKcG9pbnRzUGFpZBIvChRjYW5jZWxfYXRfcGVyaW9k'
+    'X2VuZBgJIAEoCFIRY2FuY2VsQXRQZXJpb2RFbmQSHQoKY2FuX2NhbmNlbBgKIAEoCFIJY2FuQ2'
+    'FuY2VsEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgLIAEoCVIQY2xpZW50TXV0YXRpb25JZBI5Cgp1'
+    'cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use createProfileRequestDescriptor instead')
 const CreateProfileRequest$json = {
@@ -352,12 +387,20 @@ const SubscribeRequest$json = {
   '1': 'SubscribeRequest',
   '2': [
     {'1': 'creator_id', '3': 1, '4': 1, '5': 9, '10': 'creatorId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
   ],
 };
 
 /// Descriptor for `SubscribeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List subscribeRequestDescriptor = $convert.base64Decode(
-    'ChBTdWJzY3JpYmVSZXF1ZXN0Eh0KCmNyZWF0b3JfaWQYASABKAlSCWNyZWF0b3JJZA==');
+    'ChBTdWJzY3JpYmVSZXF1ZXN0Eh0KCmNyZWF0b3JfaWQYASABKAlSCWNyZWF0b3JJZBIsChJjbG'
+    'llbnRfbXV0YXRpb25faWQYAiABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
 
 @$core.Deprecated('Use subscribeResponseDescriptor instead')
 const SubscribeResponse$json = {
@@ -609,12 +652,20 @@ const RedeemContentRequest$json = {
   '1': 'RedeemContentRequest',
   '2': [
     {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
   ],
 };
 
 /// Descriptor for `RedeemContentRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List redeemContentRequestDescriptor = $convert.base64Decode(
-    'ChRSZWRlZW1Db250ZW50UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SWQ=');
+    'ChRSZWRlZW1Db250ZW50UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SWQSLA'
+    'oSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlvbklk');
 
 @$core.Deprecated('Use redeemContentResponseDescriptor instead')
 const RedeemContentResponse$json = {
@@ -636,6 +687,14 @@ const CreateSubscriptionCheckoutRequest$json = {
   '2': [
     {'1': 'success_url', '3': 1, '4': 1, '5': 9, '10': 'successUrl'},
     {'1': 'cancel_url', '3': 2, '4': 1, '5': 9, '10': 'cancelUrl'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'product_code', '3': 4, '4': 1, '5': 9, '10': 'productCode'},
   ],
 };
 
@@ -643,13 +702,24 @@ const CreateSubscriptionCheckoutRequest$json = {
 final $typed_data.Uint8List createSubscriptionCheckoutRequestDescriptor =
     $convert.base64Decode(
         'CiFDcmVhdGVTdWJzY3JpcHRpb25DaGVja291dFJlcXVlc3QSHwoLc3VjY2Vzc191cmwYASABKA'
-        'lSCnN1Y2Nlc3NVcmwSHQoKY2FuY2VsX3VybBgCIAEoCVIJY2FuY2VsVXJs');
+        'lSCnN1Y2Nlc3NVcmwSHQoKY2FuY2VsX3VybBgCIAEoCVIJY2FuY2VsVXJsEiwKEmNsaWVudF9t'
+        'dXRhdGlvbl9pZBgDIAEoCVIQY2xpZW50TXV0YXRpb25JZBIhCgxwcm9kdWN0X2NvZGUYBCABKA'
+        'lSC3Byb2R1Y3RDb2Rl');
 
 @$core.Deprecated('Use createSubscriptionCheckoutResponseDescriptor instead')
 const CreateSubscriptionCheckoutResponse$json = {
   '1': 'CreateSubscriptionCheckoutResponse',
   '2': [
     {'1': 'checkout_url', '3': 1, '4': 1, '5': 9, '10': 'checkoutUrl'},
+    {
+      '1': 'checkout_intent_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'checkoutIntentId'
+    },
+    {'1': 'stripe_session_id', '3': 3, '4': 1, '5': 9, '10': 'stripeSessionId'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
   ],
 };
 
@@ -657,7 +727,9 @@ const CreateSubscriptionCheckoutResponse$json = {
 final $typed_data.Uint8List createSubscriptionCheckoutResponseDescriptor =
     $convert.base64Decode(
         'CiJDcmVhdGVTdWJzY3JpcHRpb25DaGVja291dFJlc3BvbnNlEiEKDGNoZWNrb3V0X3VybBgBIA'
-        'EoCVILY2hlY2tvdXRVcmw=');
+        'EoCVILY2hlY2tvdXRVcmwSLAoSY2hlY2tvdXRfaW50ZW50X2lkGAIgASgJUhBjaGVja291dElu'
+        'dGVudElkEioKEXN0cmlwZV9zZXNzaW9uX2lkGAMgASgJUg9zdHJpcGVTZXNzaW9uSWQSFgoGc3'
+        'RhdHVzGAQgASgJUgZzdGF0dXM=');
 
 @$core.Deprecated('Use creatorProfileDescriptor instead')
 const CreatorProfile$json = {
@@ -671,6 +743,15 @@ const CreatorProfile$json = {
     {'1': 'follower_count', '3': 6, '4': 1, '5': 5, '10': 'followerCount'},
     {'1': 'is_following', '3': 7, '4': 1, '5': 8, '10': 'isFollowing'},
     {'1': 'is_subscribed', '3': 8, '4': 1, '5': 8, '10': 'isSubscribed'},
+    {'1': 'creator_status', '3': 9, '4': 1, '5': 9, '10': 'creatorStatus'},
+    {'1': 'min_entry_score', '3': 10, '4': 1, '5': 1, '10': 'minEntryScore'},
+    {
+      '1': 'subscription_point_price',
+      '3': 11,
+      '4': 1,
+      '5': 5,
+      '10': 'subscriptionPointPrice'
+    },
   ],
 };
 
@@ -680,7 +761,10 @@ final $typed_data.Uint8List creatorProfileDescriptor = $convert.base64Decode(
     'gCIAEoCVIJc3RhZ2VOYW1lEhAKA2JpbxgDIAEoCVIDYmlvEiEKDHBvcnRyYWl0X3VybBgEIAEo'
     'CVILcG9ydHJhaXRVcmwSHwoLd29ya3NfY291bnQYBSABKAVSCndvcmtzQ291bnQSJQoOZm9sbG'
     '93ZXJfY291bnQYBiABKAVSDWZvbGxvd2VyQ291bnQSIQoMaXNfZm9sbG93aW5nGAcgASgIUgtp'
-    'c0ZvbGxvd2luZxIjCg1pc19zdWJzY3JpYmVkGAggASgIUgxpc1N1YnNjcmliZWQ=');
+    'c0ZvbGxvd2luZxIjCg1pc19zdWJzY3JpYmVkGAggASgIUgxpc1N1YnNjcmliZWQSJQoOY3JlYX'
+    'Rvcl9zdGF0dXMYCSABKAlSDWNyZWF0b3JTdGF0dXMSJgoPbWluX2VudHJ5X3Njb3JlGAogASgB'
+    'Ug1taW5FbnRyeVNjb3JlEjgKGHN1YnNjcmlwdGlvbl9wb2ludF9wcmljZRgLIAEoBVIWc3Vic2'
+    'NyaXB0aW9uUG9pbnRQcmljZQ==');
 
 @$core.Deprecated('Use getCreatorRequestDescriptor instead')
 const GetCreatorRequest$json = {
@@ -4524,3 +4608,826 @@ final $typed_data.Uint8List getEvidenceBriefResponseDescriptor =
     $convert.base64Decode(
         'ChhHZXRFdmlkZW5jZUJyaWVmUmVzcG9uc2USNQoFYnJpZWYYASABKAsyHy5zdHRhdHR1cy5vbn'
         'l4LnYxLkV2aWRlbmNlQnJpZWZSBWJyaWVm');
+
+@$core.Deprecated('Use creatorContractDescriptor instead')
+const CreatorContract$json = {
+  '1': 'CreatorContract',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'version', '3': 2, '4': 1, '5': 5, '10': 'version'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'territory', '3': 4, '4': 1, '5': 9, '10': 'territory'},
+    {'1': 'currency', '3': 5, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'royalty_bps', '3': 6, '4': 1, '5': 5, '10': 'royaltyBps'},
+    {'1': 'exclusivity', '3': 7, '4': 1, '5': 9, '10': 'exclusivity'},
+    {'1': 'tax_status', '3': 8, '4': 1, '5': 9, '10': 'taxStatus'},
+    {
+      '1': 'starts_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'startsAt'
+    },
+    {
+      '1': 'ends_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'endsAt'
+    },
+    {
+      '1': 'signed_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'signedAt'
+    },
+  ],
+};
+
+/// Descriptor for `CreatorContract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List creatorContractDescriptor = $convert.base64Decode(
+    'Cg9DcmVhdG9yQ29udHJhY3QSDgoCaWQYASABKAlSAmlkEhgKB3ZlcnNpb24YAiABKAVSB3Zlcn'
+    'Npb24SFgoGc3RhdHVzGAMgASgJUgZzdGF0dXMSHAoJdGVycml0b3J5GAQgASgJUgl0ZXJyaXRv'
+    'cnkSGgoIY3VycmVuY3kYBSABKAlSCGN1cnJlbmN5Eh8KC3JveWFsdHlfYnBzGAYgASgFUgpyb3'
+    'lhbHR5QnBzEiAKC2V4Y2x1c2l2aXR5GAcgASgJUgtleGNsdXNpdml0eRIdCgp0YXhfc3RhdHVz'
+    'GAggASgJUgl0YXhTdGF0dXMSNwoJc3RhcnRzX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIIc3RhcnRzQXQSMwoHZW5kc19hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U'
+    'aW1lc3RhbXBSBmVuZHNBdBI3CglzaWduZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUghzaWduZWRBdA==');
+
+@$core.Deprecated('Use editorialReviewDescriptor instead')
+const EditorialReview$json = {
+  '1': 'EditorialReview',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'review_type', '3': 2, '4': 1, '5': 9, '10': 'reviewType'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'notes', '3': 4, '4': 1, '5': 9, '10': 'notes'},
+    {
+      '1': 'reviewed_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'reviewedAt'
+    },
+  ],
+};
+
+/// Descriptor for `EditorialReview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List editorialReviewDescriptor = $convert.base64Decode(
+    'Cg9FZGl0b3JpYWxSZXZpZXcSDgoCaWQYASABKAlSAmlkEh8KC3Jldmlld190eXBlGAIgASgJUg'
+    'pyZXZpZXdUeXBlEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEhQKBW5vdGVzGAQgASgJUgVub3Rl'
+    'cxI7CgtyZXZpZXdlZF9hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnJldm'
+    'lld2VkQXQ=');
+
+@$core.Deprecated('Use editorialCommentDescriptor instead')
+const EditorialComment$json = {
+  '1': 'EditorialComment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'passage_key', '3': 2, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'resolved', '3': 4, '4': 1, '5': 8, '10': 'resolved'},
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `EditorialComment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List editorialCommentDescriptor = $convert.base64Decode(
+    'ChBFZGl0b3JpYWxDb21tZW50Eg4KAmlkGAEgASgJUgJpZBIfCgtwYXNzYWdlX2tleRgCIAEoCV'
+    'IKcGFzc2FnZUtleRISCgRib2R5GAMgASgJUgRib2R5EhoKCHJlc29sdmVkGAQgASgIUghyZXNv'
+    'bHZlZBI5CgpjcmVhdGVkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3'
+    'JlYXRlZEF0');
+
+@$core.Deprecated('Use editorialProjectDescriptor instead')
+const EditorialProject$json = {
+  '1': 'EditorialProject',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'pitch_title', '3': 3, '4': 1, '5': 9, '10': 'pitchTitle'},
+    {'1': 'pitch_summary', '3': 4, '4': 1, '5': 9, '10': 'pitchSummary'},
+    {'1': 'format', '3': 5, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'audience', '3': 6, '4': 1, '5': 9, '10': 'audience'},
+    {'1': 'body_markdown', '3': 7, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'priority', '3': 9, '4': 1, '5': 5, '10': 'priority'},
+    {'1': 'version', '3': 10, '4': 1, '5': 5, '10': 'version'},
+    {
+      '1': 'submitted_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'submittedAt'
+    },
+    {
+      '1': 'publish_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishAt'
+    },
+    {
+      '1': 'rights_expire_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'rightsExpireAt'
+    },
+    {
+      '1': 'published_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+    {
+      '1': 'correction_summary',
+      '3': 15,
+      '4': 1,
+      '5': 9,
+      '10': 'correctionSummary'
+    },
+    {
+      '1': 'reviews',
+      '3': 16,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialReview',
+      '10': 'reviews'
+    },
+    {
+      '1': 'comments',
+      '3': 17,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialComment',
+      '10': 'comments'
+    },
+    {
+      '1': 'updated_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `EditorialProject`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List editorialProjectDescriptor = $convert.base64Decode(
+    'ChBFZGl0b3JpYWxQcm9qZWN0Eg4KAmlkGAEgASgJUgJpZBIdCgpjb250ZW50X2lkGAIgASgJUg'
+    'ljb250ZW50SWQSHwoLcGl0Y2hfdGl0bGUYAyABKAlSCnBpdGNoVGl0bGUSIwoNcGl0Y2hfc3Vt'
+    'bWFyeRgEIAEoCVIMcGl0Y2hTdW1tYXJ5EhYKBmZvcm1hdBgFIAEoCVIGZm9ybWF0EhoKCGF1ZG'
+    'llbmNlGAYgASgJUghhdWRpZW5jZRIjCg1ib2R5X21hcmtkb3duGAcgASgJUgxib2R5TWFya2Rv'
+    'd24SFgoGc3RhdHVzGAggASgJUgZzdGF0dXMSGgoIcHJpb3JpdHkYCSABKAVSCHByaW9yaXR5Eh'
+    'gKB3ZlcnNpb24YCiABKAVSB3ZlcnNpb24SPQoMc3VibWl0dGVkX2F0GAsgASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcFILc3VibWl0dGVkQXQSOQoKcHVibGlzaF9hdBgMIAEoCzIaLm'
+    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXB1Ymxpc2hBdBJEChByaWdodHNfZXhwaXJlX2F0'
+    'GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIOcmlnaHRzRXhwaXJlQXQSPQoMcH'
+    'VibGlzaGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILcHVibGlzaGVk'
+    'QXQSLQoSY29ycmVjdGlvbl9zdW1tYXJ5GA8gASgJUhFjb3JyZWN0aW9uU3VtbWFyeRI7CgdyZX'
+    'ZpZXdzGBAgAygLMiEuc3R0YXR0dXMub255eC52MS5FZGl0b3JpYWxSZXZpZXdSB3Jldmlld3MS'
+    'PgoIY29tbWVudHMYESADKAsyIi5zdHRhdHR1cy5vbnl4LnYxLkVkaXRvcmlhbENvbW1lbnRSCG'
+    'NvbW1lbnRzEjkKCnVwZGF0ZWRfYXQYEiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w'
+    'Ugl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use creatorStatementDescriptor instead')
+const CreatorStatement$json = {
+  '1': 'CreatorStatement',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'period_start', '3': 2, '4': 1, '5': 9, '10': 'periodStart'},
+    {'1': 'period_end', '3': 3, '4': 1, '5': 9, '10': 'periodEnd'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'currency', '3': 5, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'gross_minor', '3': 6, '4': 1, '5': 3, '10': 'grossMinor'},
+    {'1': 'expenses_minor', '3': 7, '4': 1, '5': 3, '10': 'expensesMinor'},
+    {'1': 'reserve_minor', '3': 8, '4': 1, '5': 3, '10': 'reserveMinor'},
+    {'1': 'tax_minor', '3': 9, '4': 1, '5': 3, '10': 'taxMinor'},
+    {'1': 'net_minor', '3': 10, '4': 1, '5': 3, '10': 'netMinor'},
+    {'1': 'pdf_url', '3': 11, '4': 1, '5': 9, '10': 'pdfUrl'},
+    {
+      '1': 'paid_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'paidAt'
+    },
+  ],
+};
+
+/// Descriptor for `CreatorStatement`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List creatorStatementDescriptor = $convert.base64Decode(
+    'ChBDcmVhdG9yU3RhdGVtZW50Eg4KAmlkGAEgASgJUgJpZBIhCgxwZXJpb2Rfc3RhcnQYAiABKA'
+    'lSC3BlcmlvZFN0YXJ0Eh0KCnBlcmlvZF9lbmQYAyABKAlSCXBlcmlvZEVuZBIWCgZzdGF0dXMY'
+    'BCABKAlSBnN0YXR1cxIaCghjdXJyZW5jeRgFIAEoCVIIY3VycmVuY3kSHwoLZ3Jvc3NfbWlub3'
+    'IYBiABKANSCmdyb3NzTWlub3ISJQoOZXhwZW5zZXNfbWlub3IYByABKANSDWV4cGVuc2VzTWlu'
+    'b3ISIwoNcmVzZXJ2ZV9taW5vchgIIAEoA1IMcmVzZXJ2ZU1pbm9yEhsKCXRheF9taW5vchgJIA'
+    'EoA1IIdGF4TWlub3ISGwoJbmV0X21pbm9yGAogASgDUghuZXRNaW5vchIXCgdwZGZfdXJsGAsg'
+    'ASgJUgZwZGZVcmwSMwoHcGFpZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbX'
+    'BSBnBhaWRBdA==');
+
+@$core.Deprecated('Use creatorMetricDescriptor instead')
+const CreatorMetric$json = {
+  '1': 'CreatorMetric',
+  '2': [
+    {'1': 'metric_date', '3': 1, '4': 1, '5': 9, '10': 'metricDate'},
+    {'1': 'impressions', '3': 2, '4': 1, '5': 5, '10': 'impressions'},
+    {'1': 'qualified_views', '3': 3, '4': 1, '5': 5, '10': 'qualifiedViews'},
+    {'1': 'completions', '3': 4, '4': 1, '5': 5, '10': 'completions'},
+    {'1': 'new_followers', '3': 5, '4': 1, '5': 5, '10': 'newFollowers'},
+    {'1': 'new_subscribers', '3': 6, '4': 1, '5': 5, '10': 'newSubscribers'},
+    {'1': 'gross_minor', '3': 7, '4': 1, '5': 3, '10': 'grossMinor'},
+    {'1': 'creator_net_minor', '3': 8, '4': 1, '5': 3, '10': 'creatorNetMinor'},
+    {
+      '1': 'privacy_threshold_met',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'privacyThresholdMet'
+    },
+  ],
+};
+
+/// Descriptor for `CreatorMetric`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List creatorMetricDescriptor = $convert.base64Decode(
+    'Cg1DcmVhdG9yTWV0cmljEh8KC21ldHJpY19kYXRlGAEgASgJUgptZXRyaWNEYXRlEiAKC2ltcH'
+    'Jlc3Npb25zGAIgASgFUgtpbXByZXNzaW9ucxInCg9xdWFsaWZpZWRfdmlld3MYAyABKAVSDnF1'
+    'YWxpZmllZFZpZXdzEiAKC2NvbXBsZXRpb25zGAQgASgFUgtjb21wbGV0aW9ucxIjCg1uZXdfZm'
+    '9sbG93ZXJzGAUgASgFUgxuZXdGb2xsb3dlcnMSJwoPbmV3X3N1YnNjcmliZXJzGAYgASgFUg5u'
+    'ZXdTdWJzY3JpYmVycxIfCgtncm9zc19taW5vchgHIAEoA1IKZ3Jvc3NNaW5vchIqChFjcmVhdG'
+    '9yX25ldF9taW5vchgIIAEoA1IPY3JlYXRvck5ldE1pbm9yEjIKFXByaXZhY3lfdGhyZXNob2xk'
+    'X21ldBgJIAEoCFITcHJpdmFjeVRocmVzaG9sZE1ldA==');
+
+@$core.Deprecated('Use creatorStudioDescriptor instead')
+const CreatorStudio$json = {
+  '1': 'CreatorStudio',
+  '2': [
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProfile',
+      '10': 'profile'
+    },
+    {'1': 'eligible', '3': 2, '4': 1, '5': 8, '10': 'eligible'},
+    {
+      '1': 'eligibility_message',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'eligibilityMessage'
+    },
+    {
+      '1': 'contracts',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CreatorContract',
+      '10': 'contracts'
+    },
+    {
+      '1': 'projects',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialProject',
+      '10': 'projects'
+    },
+    {
+      '1': 'statements',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CreatorStatement',
+      '10': 'statements'
+    },
+    {
+      '1': 'metrics',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CreatorMetric',
+      '10': 'metrics'
+    },
+    {
+      '1': 'active_subscribers',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'activeSubscribers'
+    },
+    {'1': 'followers', '3': 9, '4': 1, '5': 5, '10': 'followers'},
+  ],
+};
+
+/// Descriptor for `CreatorStudio`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List creatorStudioDescriptor = $convert.base64Decode(
+    'Cg1DcmVhdG9yU3R1ZGlvEjcKB3Byb2ZpbGUYASABKAsyHS5zdHRhdHR1cy5vbnl4LnYxLk9ueX'
+    'hQcm9maWxlUgdwcm9maWxlEhoKCGVsaWdpYmxlGAIgASgIUghlbGlnaWJsZRIvChNlbGlnaWJp'
+    'bGl0eV9tZXNzYWdlGAMgASgJUhJlbGlnaWJpbGl0eU1lc3NhZ2USPwoJY29udHJhY3RzGAQgAy'
+    'gLMiEuc3R0YXR0dXMub255eC52MS5DcmVhdG9yQ29udHJhY3RSCWNvbnRyYWN0cxI+Cghwcm9q'
+    'ZWN0cxgFIAMoCzIiLnN0dGF0dHVzLm9ueXgudjEuRWRpdG9yaWFsUHJvamVjdFIIcHJvamVjdH'
+    'MSQgoKc3RhdGVtZW50cxgGIAMoCzIiLnN0dGF0dHVzLm9ueXgudjEuQ3JlYXRvclN0YXRlbWVu'
+    'dFIKc3RhdGVtZW50cxI5CgdtZXRyaWNzGAcgAygLMh8uc3R0YXR0dXMub255eC52MS5DcmVhdG'
+    '9yTWV0cmljUgdtZXRyaWNzEi0KEmFjdGl2ZV9zdWJzY3JpYmVycxgIIAEoBVIRYWN0aXZlU3Vi'
+    'c2NyaWJlcnMSHAoJZm9sbG93ZXJzGAkgASgFUglmb2xsb3dlcnM=');
+
+@$core.Deprecated('Use getCreatorStudioRequestDescriptor instead')
+const GetCreatorStudioRequest$json = {
+  '1': 'GetCreatorStudioRequest',
+};
+
+/// Descriptor for `GetCreatorStudioRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCreatorStudioRequestDescriptor =
+    $convert.base64Decode('ChdHZXRDcmVhdG9yU3R1ZGlvUmVxdWVzdA==');
+
+@$core.Deprecated('Use getCreatorStudioResponseDescriptor instead')
+const GetCreatorStudioResponse$json = {
+  '1': 'GetCreatorStudioResponse',
+  '2': [
+    {
+      '1': 'studio',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CreatorStudio',
+      '10': 'studio'
+    },
+  ],
+};
+
+/// Descriptor for `GetCreatorStudioResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCreatorStudioResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRDcmVhdG9yU3R1ZGlvUmVzcG9uc2USNwoGc3R1ZGlvGAEgASgLMh8uc3R0YXR0dXMub2'
+        '55eC52MS5DcmVhdG9yU3R1ZGlvUgZzdHVkaW8=');
+
+@$core.Deprecated('Use submitCreatorPitchRequestDescriptor instead')
+const SubmitCreatorPitchRequest$json = {
+  '1': 'SubmitCreatorPitchRequest',
+  '2': [
+    {'1': 'pitch_title', '3': 1, '4': 1, '5': 9, '10': 'pitchTitle'},
+    {'1': 'pitch_summary', '3': 2, '4': 1, '5': 9, '10': 'pitchSummary'},
+    {'1': 'format', '3': 3, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'audience', '3': 4, '4': 1, '5': 9, '10': 'audience'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCreatorPitchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCreatorPitchRequestDescriptor = $convert.base64Decode(
+    'ChlTdWJtaXRDcmVhdG9yUGl0Y2hSZXF1ZXN0Eh8KC3BpdGNoX3RpdGxlGAEgASgJUgpwaXRjaF'
+    'RpdGxlEiMKDXBpdGNoX3N1bW1hcnkYAiABKAlSDHBpdGNoU3VtbWFyeRIWCgZmb3JtYXQYAyAB'
+    'KAlSBmZvcm1hdBIaCghhdWRpZW5jZRgEIAEoCVIIYXVkaWVuY2USLAoSY2xpZW50X211dGF0aW'
+    '9uX2lkGAUgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use submitCreatorPitchResponseDescriptor instead')
+const SubmitCreatorPitchResponse$json = {
+  '1': 'SubmitCreatorPitchResponse',
+  '2': [
+    {
+      '1': 'project',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialProject',
+      '10': 'project'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCreatorPitchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCreatorPitchResponseDescriptor =
+    $convert.base64Decode(
+        'ChpTdWJtaXRDcmVhdG9yUGl0Y2hSZXNwb25zZRI8Cgdwcm9qZWN0GAEgASgLMiIuc3R0YXR0dX'
+        'Mub255eC52MS5FZGl0b3JpYWxQcm9qZWN0Ugdwcm9qZWN0');
+
+@$core.Deprecated('Use updateCreatorProjectRequestDescriptor instead')
+const UpdateCreatorProjectRequest$json = {
+  '1': 'UpdateCreatorProjectRequest',
+  '2': [
+    {'1': 'project_id', '3': 1, '4': 1, '5': 9, '10': 'projectId'},
+    {'1': 'pitch_title', '3': 2, '4': 1, '5': 9, '10': 'pitchTitle'},
+    {'1': 'pitch_summary', '3': 3, '4': 1, '5': 9, '10': 'pitchSummary'},
+    {'1': 'body_markdown', '3': 4, '4': 1, '5': 9, '10': 'bodyMarkdown'},
+    {'1': 'audience', '3': 5, '4': 1, '5': 9, '10': 'audience'},
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateCreatorProjectRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCreatorProjectRequestDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVDcmVhdG9yUHJvamVjdFJlcXVlc3QSHQoKcHJvamVjdF9pZBgBIAEoCVIJcHJvam'
+    'VjdElkEh8KC3BpdGNoX3RpdGxlGAIgASgJUgpwaXRjaFRpdGxlEiMKDXBpdGNoX3N1bW1hcnkY'
+    'AyABKAlSDHBpdGNoU3VtbWFyeRIjCg1ib2R5X21hcmtkb3duGAQgASgJUgxib2R5TWFya2Rvd2'
+    '4SGgoIYXVkaWVuY2UYBSABKAlSCGF1ZGllbmNlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEo'
+    'CVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use updateCreatorProjectResponseDescriptor instead')
+const UpdateCreatorProjectResponse$json = {
+  '1': 'UpdateCreatorProjectResponse',
+  '2': [
+    {
+      '1': 'project',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialProject',
+      '10': 'project'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateCreatorProjectResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateCreatorProjectResponseDescriptor =
+    $convert.base64Decode(
+        'ChxVcGRhdGVDcmVhdG9yUHJvamVjdFJlc3BvbnNlEjwKB3Byb2plY3QYASABKAsyIi5zdHRhdH'
+        'R1cy5vbnl4LnYxLkVkaXRvcmlhbFByb2plY3RSB3Byb2plY3Q=');
+
+@$core.Deprecated('Use submitCreatorProjectRequestDescriptor instead')
+const SubmitCreatorProjectRequest$json = {
+  '1': 'SubmitCreatorProjectRequest',
+  '2': [
+    {'1': 'project_id', '3': 1, '4': 1, '5': 9, '10': 'projectId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCreatorProjectRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCreatorProjectRequestDescriptor =
+    $convert.base64Decode(
+        'ChtTdWJtaXRDcmVhdG9yUHJvamVjdFJlcXVlc3QSHQoKcHJvamVjdF9pZBgBIAEoCVIJcHJvam'
+        'VjdElkEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgCIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use submitCreatorProjectResponseDescriptor instead')
+const SubmitCreatorProjectResponse$json = {
+  '1': 'SubmitCreatorProjectResponse',
+  '2': [
+    {
+      '1': 'project',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EditorialProject',
+      '10': 'project'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCreatorProjectResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCreatorProjectResponseDescriptor =
+    $convert.base64Decode(
+        'ChxTdWJtaXRDcmVhdG9yUHJvamVjdFJlc3BvbnNlEjwKB3Byb2plY3QYASABKAsyIi5zdHRhdH'
+        'R1cy5vbnl4LnYxLkVkaXRvcmlhbFByb2plY3RSB3Byb2plY3Q=');
+
+@$core.Deprecated('Use signCreatorContractRequestDescriptor instead')
+const SignCreatorContractRequest$json = {
+  '1': 'SignCreatorContractRequest',
+  '2': [
+    {'1': 'contract_id', '3': 1, '4': 1, '5': 9, '10': 'contractId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SignCreatorContractRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signCreatorContractRequestDescriptor =
+    $convert.base64Decode(
+        'ChpTaWduQ3JlYXRvckNvbnRyYWN0UmVxdWVzdBIfCgtjb250cmFjdF9pZBgBIAEoCVIKY29udH'
+        'JhY3RJZBIsChJjbGllbnRfbXV0YXRpb25faWQYAiABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use signCreatorContractResponseDescriptor instead')
+const SignCreatorContractResponse$json = {
+  '1': 'SignCreatorContractResponse',
+  '2': [
+    {
+      '1': 'contract',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CreatorContract',
+      '10': 'contract'
+    },
+  ],
+};
+
+/// Descriptor for `SignCreatorContractResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signCreatorContractResponseDescriptor =
+    $convert.base64Decode(
+        'ChtTaWduQ3JlYXRvckNvbnRyYWN0UmVzcG9uc2USPQoIY29udHJhY3QYASABKAsyIS5zdHRhdH'
+        'R1cy5vbnl4LnYxLkNyZWF0b3JDb250cmFjdFIIY29udHJhY3Q=');
+
+@$core.Deprecated(
+    'Use listMyCreatorSubscriptionsDetailedRequestDescriptor instead')
+const ListMyCreatorSubscriptionsDetailedRequest$json = {
+  '1': 'ListMyCreatorSubscriptionsDetailedRequest',
+};
+
+/// Descriptor for `ListMyCreatorSubscriptionsDetailedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    listMyCreatorSubscriptionsDetailedRequestDescriptor = $convert.base64Decode(
+        'CilMaXN0TXlDcmVhdG9yU3Vic2NyaXB0aW9uc0RldGFpbGVkUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use listMyCreatorSubscriptionsDetailedResponseDescriptor instead')
+const ListMyCreatorSubscriptionsDetailedResponse$json = {
+  '1': 'ListMyCreatorSubscriptionsDetailedResponse',
+  '2': [
+    {
+      '1': 'subscriptions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.Subscription',
+      '10': 'subscriptions'
+    },
+  ],
+};
+
+/// Descriptor for `ListMyCreatorSubscriptionsDetailedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    listMyCreatorSubscriptionsDetailedResponseDescriptor =
+    $convert.base64Decode(
+        'CipMaXN0TXlDcmVhdG9yU3Vic2NyaXB0aW9uc0RldGFpbGVkUmVzcG9uc2USRAoNc3Vic2NyaX'
+        'B0aW9ucxgBIAMoCzIeLnN0dGF0dHVzLm9ueXgudjEuU3Vic2NyaXB0aW9uUg1zdWJzY3JpcHRp'
+        'b25z');
+
+@$core.Deprecated('Use cancelCreatorSubscriptionRequestDescriptor instead')
+const CancelCreatorSubscriptionRequest$json = {
+  '1': 'CancelCreatorSubscriptionRequest',
+  '2': [
+    {'1': 'creator_id', '3': 1, '4': 1, '5': 9, '10': 'creatorId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CancelCreatorSubscriptionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelCreatorSubscriptionRequestDescriptor =
+    $convert.base64Decode(
+        'CiBDYW5jZWxDcmVhdG9yU3Vic2NyaXB0aW9uUmVxdWVzdBIdCgpjcmVhdG9yX2lkGAEgASgJUg'
+        'ljcmVhdG9ySWQSLAoSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use cancelCreatorSubscriptionResponseDescriptor instead')
+const CancelCreatorSubscriptionResponse$json = {
+  '1': 'CancelCreatorSubscriptionResponse',
+  '2': [
+    {
+      '1': 'subscription',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.Subscription',
+      '10': 'subscription'
+    },
+  ],
+};
+
+/// Descriptor for `CancelCreatorSubscriptionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelCreatorSubscriptionResponseDescriptor =
+    $convert.base64Decode(
+        'CiFDYW5jZWxDcmVhdG9yU3Vic2NyaXB0aW9uUmVzcG9uc2USQgoMc3Vic2NyaXB0aW9uGAEgAS'
+        'gLMh4uc3R0YXR0dXMub255eC52MS5TdWJzY3JpcHRpb25SDHN1YnNjcmlwdGlvbg==');
+
+@$core.Deprecated('Use commerceInvoiceDescriptor instead')
+const CommerceInvoice$json = {
+  '1': 'CommerceInvoice',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'subscription_id', '3': 2, '4': 1, '5': 9, '10': 'subscriptionId'},
+    {'1': 'amount_total', '3': 3, '4': 1, '5': 3, '10': 'amountTotal'},
+    {'1': 'amount_paid', '3': 4, '4': 1, '5': 3, '10': 'amountPaid'},
+    {'1': 'currency', '3': 5, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'issued_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'issuedAt'
+    },
+    {
+      '1': 'paid_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'paidAt'
+    },
+    {'1': 'pdf_url', '3': 9, '4': 1, '5': 9, '10': 'pdfUrl'},
+    {
+      '1': 'hosted_invoice_url',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'hostedInvoiceUrl'
+    },
+  ],
+};
+
+/// Descriptor for `CommerceInvoice`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commerceInvoiceDescriptor = $convert.base64Decode(
+    'Cg9Db21tZXJjZUludm9pY2USDgoCaWQYASABKAlSAmlkEicKD3N1YnNjcmlwdGlvbl9pZBgCIA'
+    'EoCVIOc3Vic2NyaXB0aW9uSWQSIQoMYW1vdW50X3RvdGFsGAMgASgDUgthbW91bnRUb3RhbBIf'
+    'CgthbW91bnRfcGFpZBgEIAEoA1IKYW1vdW50UGFpZBIaCghjdXJyZW5jeRgFIAEoCVIIY3Vycm'
+    'VuY3kSFgoGc3RhdHVzGAYgASgJUgZzdGF0dXMSNwoJaXNzdWVkX2F0GAcgASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcFIIaXNzdWVkQXQSMwoHcGFpZF9hdBgIIAEoCzIaLmdvb2dsZS'
+    '5wcm90b2J1Zi5UaW1lc3RhbXBSBnBhaWRBdBIXCgdwZGZfdXJsGAkgASgJUgZwZGZVcmwSLAoS'
+    'aG9zdGVkX2ludm9pY2VfdXJsGAogASgJUhBob3N0ZWRJbnZvaWNlVXJs');
+
+@$core.Deprecated('Use commerceCaseDescriptor instead')
+const CommerceCase$json = {
+  '1': 'CommerceCase',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'invoice_id', '3': 4, '4': 1, '5': 9, '10': 'invoiceId'},
+    {'1': 'subscription_id', '3': 5, '4': 1, '5': 9, '10': 'subscriptionId'},
+    {'1': 'creator_id', '3': 6, '4': 1, '5': 9, '10': 'creatorId'},
+    {'1': 'amount_minor', '3': 7, '4': 1, '5': 3, '10': 'amountMinor'},
+    {'1': 'currency', '3': 8, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'reason', '3': 9, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'resolution', '3': 10, '4': 1, '5': 9, '10': 'resolution'},
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `CommerceCase`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commerceCaseDescriptor = $convert.base64Decode(
+    'CgxDb21tZXJjZUNhc2USDgoCaWQYASABKAlSAmlkEhIKBGtpbmQYAiABKAlSBGtpbmQSFgoGc3'
+    'RhdHVzGAMgASgJUgZzdGF0dXMSHQoKaW52b2ljZV9pZBgEIAEoCVIJaW52b2ljZUlkEicKD3N1'
+    'YnNjcmlwdGlvbl9pZBgFIAEoCVIOc3Vic2NyaXB0aW9uSWQSHQoKY3JlYXRvcl9pZBgGIAEoCV'
+    'IJY3JlYXRvcklkEiEKDGFtb3VudF9taW5vchgHIAEoA1ILYW1vdW50TWlub3ISGgoIY3VycmVu'
+    'Y3kYCCABKAlSCGN1cnJlbmN5EhYKBnJlYXNvbhgJIAEoCVIGcmVhc29uEh4KCnJlc29sdXRpb2'
+    '4YCiABKAlSCnJlc29sdXRpb24SOQoKY3JlYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1'
+    'Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI7CgtyZXNvbHZlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm'
+    '90b2J1Zi5UaW1lc3RhbXBSCnJlc29sdmVkQXQ=');
+
+@$core.Deprecated('Use getMyCommerceRequestDescriptor instead')
+const GetMyCommerceRequest$json = {
+  '1': 'GetMyCommerceRequest',
+};
+
+/// Descriptor for `GetMyCommerceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyCommerceRequestDescriptor =
+    $convert.base64Decode('ChRHZXRNeUNvbW1lcmNlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getMyCommerceResponseDescriptor instead')
+const GetMyCommerceResponse$json = {
+  '1': 'GetMyCommerceResponse',
+  '2': [
+    {
+      '1': 'invoices',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CommerceInvoice',
+      '10': 'invoices'
+    },
+    {
+      '1': 'cases',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CommerceCase',
+      '10': 'cases'
+    },
+    {
+      '1': 'creator_subscriptions',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.Subscription',
+      '10': 'creatorSubscriptions'
+    },
+    {
+      '1': 'has_network_subscription',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'hasNetworkSubscription'
+    },
+  ],
+};
+
+/// Descriptor for `GetMyCommerceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMyCommerceResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRNeUNvbW1lcmNlUmVzcG9uc2USPQoIaW52b2ljZXMYASADKAsyIS5zdHRhdHR1cy5vbn'
+    'l4LnYxLkNvbW1lcmNlSW52b2ljZVIIaW52b2ljZXMSNAoFY2FzZXMYAiADKAsyHi5zdHRhdHR1'
+    'cy5vbnl4LnYxLkNvbW1lcmNlQ2FzZVIFY2FzZXMSUwoVY3JlYXRvcl9zdWJzY3JpcHRpb25zGA'
+    'MgAygLMh4uc3R0YXR0dXMub255eC52MS5TdWJzY3JpcHRpb25SFGNyZWF0b3JTdWJzY3JpcHRp'
+    'b25zEjgKGGhhc19uZXR3b3JrX3N1YnNjcmlwdGlvbhgEIAEoCFIWaGFzTmV0d29ya1N1YnNjcm'
+    'lwdGlvbg==');
+
+@$core.Deprecated('Use createCommerceCaseRequestDescriptor instead')
+const CreateCommerceCaseRequest$json = {
+  '1': 'CreateCommerceCaseRequest',
+  '2': [
+    {'1': 'kind', '3': 1, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'invoice_id', '3': 2, '4': 1, '5': 9, '10': 'invoiceId'},
+    {'1': 'subscription_id', '3': 3, '4': 1, '5': 9, '10': 'subscriptionId'},
+    {'1': 'creator_id', '3': 4, '4': 1, '5': 9, '10': 'creatorId'},
+    {'1': 'reason', '3': 5, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateCommerceCaseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createCommerceCaseRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVDb21tZXJjZUNhc2VSZXF1ZXN0EhIKBGtpbmQYASABKAlSBGtpbmQSHQoKaW52b2'
+    'ljZV9pZBgCIAEoCVIJaW52b2ljZUlkEicKD3N1YnNjcmlwdGlvbl9pZBgDIAEoCVIOc3Vic2Ny'
+    'aXB0aW9uSWQSHQoKY3JlYXRvcl9pZBgEIAEoCVIJY3JlYXRvcklkEhYKBnJlYXNvbhgFIAEoCV'
+    'IGcmVhc29uEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use createCommerceCaseResponseDescriptor instead')
+const CreateCommerceCaseResponse$json = {
+  '1': 'CreateCommerceCaseResponse',
+  '2': [
+    {
+      '1': 'commerce_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CommerceCase',
+      '10': 'commerceCase'
+    },
+  ],
+};
+
+/// Descriptor for `CreateCommerceCaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createCommerceCaseResponseDescriptor =
+    $convert.base64Decode(
+        'ChpDcmVhdGVDb21tZXJjZUNhc2VSZXNwb25zZRJDCg1jb21tZXJjZV9jYXNlGAEgASgLMh4uc3'
+        'R0YXR0dXMub255eC52MS5Db21tZXJjZUNhc2VSDGNvbW1lcmNlQ2FzZQ==');

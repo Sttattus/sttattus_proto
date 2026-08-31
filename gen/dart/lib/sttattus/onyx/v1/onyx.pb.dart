@@ -125,6 +125,8 @@ class OnyxProfile extends $pb.GeneratedMessage {
     $core.double? minEntryScore,
     $1.Timestamp? verifiedAt,
     $core.bool? hasNetworkSubscription,
+    $core.String? creatorStatus,
+    $core.String? creatorSlug,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -135,6 +137,8 @@ class OnyxProfile extends $pb.GeneratedMessage {
     if (verifiedAt != null) result.verifiedAt = verifiedAt;
     if (hasNetworkSubscription != null)
       result.hasNetworkSubscription = hasNetworkSubscription;
+    if (creatorStatus != null) result.creatorStatus = creatorStatus;
+    if (creatorSlug != null) result.creatorSlug = creatorSlug;
     return result;
   }
 
@@ -160,6 +164,8 @@ class OnyxProfile extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'verifiedAt',
         subBuilder: $1.Timestamp.create)
     ..aOB(7, _omitFieldNames ? '' : 'hasNetworkSubscription')
+    ..aOS(8, _omitFieldNames ? '' : 'creatorStatus')
+    ..aOS(9, _omitFieldNames ? '' : 'creatorSlug')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -247,6 +253,24 @@ class OnyxProfile extends $pb.GeneratedMessage {
   $core.bool hasHasNetworkSubscription() => $_has(6);
   @$pb.TagNumber(7)
   void clearHasNetworkSubscription() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get creatorStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set creatorStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatorStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatorStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get creatorSlug => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set creatorSlug($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatorSlug() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatorSlug() => $_clearField(9);
 }
 
 /// OnyxContent represents an exclusive media item.
@@ -805,12 +829,28 @@ class Subscription extends $pb.GeneratedMessage {
     $core.String? status,
     $1.Timestamp? grantedAt,
     $1.Timestamp? expiresAt,
+    $core.String? creatorName,
+    $core.String? productId,
+    $core.String? priceId,
+    $core.int? pointsPaid,
+    $core.bool? cancelAtPeriodEnd,
+    $core.bool? canCancel,
+    $core.String? clientMutationId,
+    $1.Timestamp? updatedAt,
   }) {
     final result = create();
     if (creatorId != null) result.creatorId = creatorId;
     if (status != null) result.status = status;
     if (grantedAt != null) result.grantedAt = grantedAt;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (creatorName != null) result.creatorName = creatorName;
+    if (productId != null) result.productId = productId;
+    if (priceId != null) result.priceId = priceId;
+    if (pointsPaid != null) result.pointsPaid = pointsPaid;
+    if (cancelAtPeriodEnd != null) result.cancelAtPeriodEnd = cancelAtPeriodEnd;
+    if (canCancel != null) result.canCancel = canCancel;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (updatedAt != null) result.updatedAt = updatedAt;
     return result;
   }
 
@@ -833,6 +873,15 @@ class Subscription extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'grantedAt',
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(5, _omitFieldNames ? '' : 'creatorName')
+    ..aOS(6, _omitFieldNames ? '' : 'productId')
+    ..aOS(7, _omitFieldNames ? '' : 'priceId')
+    ..aI(8, _omitFieldNames ? '' : 'pointsPaid')
+    ..aOB(9, _omitFieldNames ? '' : 'cancelAtPeriodEnd')
+    ..aOB(10, _omitFieldNames ? '' : 'canCancel')
+    ..aOS(11, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt',
         subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
@@ -894,6 +943,80 @@ class Subscription extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(4);
   @$pb.TagNumber(4)
   $1.Timestamp ensureExpiresAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get creatorName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set creatorName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatorName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get productId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set productId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProductId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProductId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get priceId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set priceId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPriceId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPriceId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get pointsPaid => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set pointsPaid($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPointsPaid() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPointsPaid() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get cancelAtPeriodEnd => $_getBF(8);
+  @$pb.TagNumber(9)
+  set cancelAtPeriodEnd($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCancelAtPeriodEnd() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCancelAtPeriodEnd() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get canCancel => $_getBF(9);
+  @$pb.TagNumber(10)
+  set canCancel($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCanCancel() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCanCancel() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get clientMutationId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set clientMutationId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasClientMutationId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearClientMutationId() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
 }
 
 /// REQ/RES
@@ -1244,9 +1367,11 @@ class ListContentResponse extends $pb.GeneratedMessage {
 class SubscribeRequest extends $pb.GeneratedMessage {
   factory SubscribeRequest({
     $core.String? creatorId,
+    $core.String? clientMutationId,
   }) {
     final result = create();
     if (creatorId != null) result.creatorId = creatorId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
     return result;
   }
 
@@ -1265,6 +1390,7 @@ class SubscribeRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'creatorId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1294,6 +1420,15 @@ class SubscribeRequest extends $pb.GeneratedMessage {
   $core.bool hasCreatorId() => $_has(0);
   @$pb.TagNumber(1)
   void clearCreatorId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
 }
 
 class SubscribeResponse extends $pb.GeneratedMessage {
@@ -2148,9 +2283,11 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
 class RedeemContentRequest extends $pb.GeneratedMessage {
   factory RedeemContentRequest({
     $core.String? contentId,
+    $core.String? clientMutationId,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
     return result;
   }
 
@@ -2169,6 +2306,7 @@ class RedeemContentRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2198,6 +2336,15 @@ class RedeemContentRequest extends $pb.GeneratedMessage {
   $core.bool hasContentId() => $_has(0);
   @$pb.TagNumber(1)
   void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
 }
 
 class RedeemContentResponse extends $pb.GeneratedMessage {
@@ -2272,10 +2419,14 @@ class CreateSubscriptionCheckoutRequest extends $pb.GeneratedMessage {
   factory CreateSubscriptionCheckoutRequest({
     $core.String? successUrl,
     $core.String? cancelUrl,
+    $core.String? clientMutationId,
+    $core.String? productCode,
   }) {
     final result = create();
     if (successUrl != null) result.successUrl = successUrl;
     if (cancelUrl != null) result.cancelUrl = cancelUrl;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (productCode != null) result.productCode = productCode;
     return result;
   }
 
@@ -2296,6 +2447,8 @@ class CreateSubscriptionCheckoutRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'successUrl')
     ..aOS(2, _omitFieldNames ? '' : 'cancelUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(4, _omitFieldNames ? '' : 'productCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2338,14 +2491,38 @@ class CreateSubscriptionCheckoutRequest extends $pb.GeneratedMessage {
   $core.bool hasCancelUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearCancelUrl() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get productCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set productCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProductCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProductCode() => $_clearField(4);
 }
 
 class CreateSubscriptionCheckoutResponse extends $pb.GeneratedMessage {
   factory CreateSubscriptionCheckoutResponse({
     $core.String? checkoutUrl,
+    $core.String? checkoutIntentId,
+    $core.String? stripeSessionId,
+    $core.String? status,
   }) {
     final result = create();
     if (checkoutUrl != null) result.checkoutUrl = checkoutUrl;
+    if (checkoutIntentId != null) result.checkoutIntentId = checkoutIntentId;
+    if (stripeSessionId != null) result.stripeSessionId = stripeSessionId;
+    if (status != null) result.status = status;
     return result;
   }
 
@@ -2365,6 +2542,9 @@ class CreateSubscriptionCheckoutResponse extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'checkoutUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'checkoutIntentId')
+    ..aOS(3, _omitFieldNames ? '' : 'stripeSessionId')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2399,6 +2579,33 @@ class CreateSubscriptionCheckoutResponse extends $pb.GeneratedMessage {
   $core.bool hasCheckoutUrl() => $_has(0);
   @$pb.TagNumber(1)
   void clearCheckoutUrl() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get checkoutIntentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set checkoutIntentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCheckoutIntentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCheckoutIntentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get stripeSessionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set stripeSessionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStripeSessionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStripeSessionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
 }
 
 /// CreatorProfile is the public surface for a named editor / filmmaker /
@@ -2413,6 +2620,9 @@ class CreatorProfile extends $pb.GeneratedMessage {
     $core.int? followerCount,
     $core.bool? isFollowing,
     $core.bool? isSubscribed,
+    $core.String? creatorStatus,
+    $core.double? minEntryScore,
+    $core.int? subscriptionPointPrice,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -2423,6 +2633,10 @@ class CreatorProfile extends $pb.GeneratedMessage {
     if (followerCount != null) result.followerCount = followerCount;
     if (isFollowing != null) result.isFollowing = isFollowing;
     if (isSubscribed != null) result.isSubscribed = isSubscribed;
+    if (creatorStatus != null) result.creatorStatus = creatorStatus;
+    if (minEntryScore != null) result.minEntryScore = minEntryScore;
+    if (subscriptionPointPrice != null)
+      result.subscriptionPointPrice = subscriptionPointPrice;
     return result;
   }
 
@@ -2448,6 +2662,9 @@ class CreatorProfile extends $pb.GeneratedMessage {
     ..aI(6, _omitFieldNames ? '' : 'followerCount')
     ..aOB(7, _omitFieldNames ? '' : 'isFollowing')
     ..aOB(8, _omitFieldNames ? '' : 'isSubscribed')
+    ..aOS(9, _omitFieldNames ? '' : 'creatorStatus')
+    ..aD(10, _omitFieldNames ? '' : 'minEntryScore')
+    ..aI(11, _omitFieldNames ? '' : 'subscriptionPointPrice')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2540,6 +2757,33 @@ class CreatorProfile extends $pb.GeneratedMessage {
   $core.bool hasIsSubscribed() => $_has(7);
   @$pb.TagNumber(8)
   void clearIsSubscribed() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get creatorStatus => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set creatorStatus($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatorStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatorStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get minEntryScore => $_getN(9);
+  @$pb.TagNumber(10)
+  set minEntryScore($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMinEntryScore() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMinEntryScore() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get subscriptionPointPrice => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set subscriptionPointPrice($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSubscriptionPointPrice() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSubscriptionPointPrice() => $_clearField(11);
 }
 
 class GetCreatorRequest extends $pb.GeneratedMessage {
@@ -16678,6 +16922,2736 @@ class GetEvidenceBriefResponse extends $pb.GeneratedMessage {
   void clearBrief() => $_clearField(1);
   @$pb.TagNumber(1)
   EvidenceBrief ensureBrief() => $_ensure(0);
+}
+
+class CreatorContract extends $pb.GeneratedMessage {
+  factory CreatorContract({
+    $core.String? id,
+    $core.int? version,
+    $core.String? status,
+    $core.String? territory,
+    $core.String? currency,
+    $core.int? royaltyBps,
+    $core.String? exclusivity,
+    $core.String? taxStatus,
+    $1.Timestamp? startsAt,
+    $1.Timestamp? endsAt,
+    $1.Timestamp? signedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (version != null) result.version = version;
+    if (status != null) result.status = status;
+    if (territory != null) result.territory = territory;
+    if (currency != null) result.currency = currency;
+    if (royaltyBps != null) result.royaltyBps = royaltyBps;
+    if (exclusivity != null) result.exclusivity = exclusivity;
+    if (taxStatus != null) result.taxStatus = taxStatus;
+    if (startsAt != null) result.startsAt = startsAt;
+    if (endsAt != null) result.endsAt = endsAt;
+    if (signedAt != null) result.signedAt = signedAt;
+    return result;
+  }
+
+  CreatorContract._();
+
+  factory CreatorContract.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreatorContract.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreatorContract',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aI(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'territory')
+    ..aOS(5, _omitFieldNames ? '' : 'currency')
+    ..aI(6, _omitFieldNames ? '' : 'royaltyBps')
+    ..aOS(7, _omitFieldNames ? '' : 'exclusivity')
+    ..aOS(8, _omitFieldNames ? '' : 'taxStatus')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'startsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'endsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'signedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorContract clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorContract copyWith(void Function(CreatorContract) updates) =>
+      super.copyWith((message) => updates(message as CreatorContract))
+          as CreatorContract;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatorContract create() => CreatorContract._();
+  @$core.override
+  CreatorContract createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreatorContract getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreatorContract>(create);
+  static CreatorContract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get version => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set version($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get territory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set territory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTerritory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTerritory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get currency => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set currency($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCurrency() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCurrency() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get royaltyBps => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set royaltyBps($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRoyaltyBps() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRoyaltyBps() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get exclusivity => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set exclusivity($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExclusivity() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExclusivity() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get taxStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set taxStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTaxStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaxStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get startsAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set startsAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStartsAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStartsAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureStartsAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get endsAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set endsAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasEndsAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEndsAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureEndsAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get signedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set signedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSignedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSignedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureSignedAt() => $_ensure(10);
+}
+
+class EditorialReview extends $pb.GeneratedMessage {
+  factory EditorialReview({
+    $core.String? id,
+    $core.String? reviewType,
+    $core.String? status,
+    $core.String? notes,
+    $1.Timestamp? reviewedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (reviewType != null) result.reviewType = reviewType;
+    if (status != null) result.status = status;
+    if (notes != null) result.notes = notes;
+    if (reviewedAt != null) result.reviewedAt = reviewedAt;
+    return result;
+  }
+
+  EditorialReview._();
+
+  factory EditorialReview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EditorialReview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EditorialReview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'reviewType')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'notes')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'reviewedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialReview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialReview copyWith(void Function(EditorialReview) updates) =>
+      super.copyWith((message) => updates(message as EditorialReview))
+          as EditorialReview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditorialReview create() => EditorialReview._();
+  @$core.override
+  EditorialReview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EditorialReview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EditorialReview>(create);
+  static EditorialReview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reviewType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reviewType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReviewType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReviewType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get notes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set notes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get reviewedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set reviewedAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReviewedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReviewedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureReviewedAt() => $_ensure(4);
+}
+
+class EditorialComment extends $pb.GeneratedMessage {
+  factory EditorialComment({
+    $core.String? id,
+    $core.String? passageKey,
+    $core.String? body,
+    $core.bool? resolved,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (body != null) result.body = body;
+    if (resolved != null) result.resolved = resolved;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EditorialComment._();
+
+  factory EditorialComment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EditorialComment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EditorialComment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOB(4, _omitFieldNames ? '' : 'resolved')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialComment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialComment copyWith(void Function(EditorialComment) updates) =>
+      super.copyWith((message) => updates(message as EditorialComment))
+          as EditorialComment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditorialComment create() => EditorialComment._();
+  @$core.override
+  EditorialComment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EditorialComment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EditorialComment>(create);
+  static EditorialComment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get passageKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set passageKey($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPassageKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPassageKey() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get resolved => $_getBF(3);
+  @$pb.TagNumber(4)
+  set resolved($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResolved() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResolved() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureCreatedAt() => $_ensure(4);
+}
+
+class EditorialProject extends $pb.GeneratedMessage {
+  factory EditorialProject({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? pitchTitle,
+    $core.String? pitchSummary,
+    $core.String? format,
+    $core.String? audience,
+    $core.String? bodyMarkdown,
+    $core.String? status,
+    $core.int? priority,
+    $core.int? version,
+    $1.Timestamp? submittedAt,
+    $1.Timestamp? publishAt,
+    $1.Timestamp? rightsExpireAt,
+    $1.Timestamp? publishedAt,
+    $core.String? correctionSummary,
+    $core.Iterable<EditorialReview>? reviews,
+    $core.Iterable<EditorialComment>? comments,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (pitchTitle != null) result.pitchTitle = pitchTitle;
+    if (pitchSummary != null) result.pitchSummary = pitchSummary;
+    if (format != null) result.format = format;
+    if (audience != null) result.audience = audience;
+    if (bodyMarkdown != null) result.bodyMarkdown = bodyMarkdown;
+    if (status != null) result.status = status;
+    if (priority != null) result.priority = priority;
+    if (version != null) result.version = version;
+    if (submittedAt != null) result.submittedAt = submittedAt;
+    if (publishAt != null) result.publishAt = publishAt;
+    if (rightsExpireAt != null) result.rightsExpireAt = rightsExpireAt;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    if (correctionSummary != null) result.correctionSummary = correctionSummary;
+    if (reviews != null) result.reviews.addAll(reviews);
+    if (comments != null) result.comments.addAll(comments);
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EditorialProject._();
+
+  factory EditorialProject.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EditorialProject.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EditorialProject',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'pitchTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'pitchSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'format')
+    ..aOS(6, _omitFieldNames ? '' : 'audience')
+    ..aOS(7, _omitFieldNames ? '' : 'bodyMarkdown')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aI(9, _omitFieldNames ? '' : 'priority')
+    ..aI(10, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'submittedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'publishAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'rightsExpireAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(15, _omitFieldNames ? '' : 'correctionSummary')
+    ..pPM<EditorialReview>(16, _omitFieldNames ? '' : 'reviews',
+        subBuilder: EditorialReview.create)
+    ..pPM<EditorialComment>(17, _omitFieldNames ? '' : 'comments',
+        subBuilder: EditorialComment.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialProject clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditorialProject copyWith(void Function(EditorialProject) updates) =>
+      super.copyWith((message) => updates(message as EditorialProject))
+          as EditorialProject;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditorialProject create() => EditorialProject._();
+  @$core.override
+  EditorialProject createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EditorialProject getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EditorialProject>(create);
+  static EditorialProject? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pitchTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pitchTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPitchTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPitchTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get pitchSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set pitchSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPitchSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPitchSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get format => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set format($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFormat() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFormat() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get audience => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set audience($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAudience() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAudience() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get bodyMarkdown => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set bodyMarkdown($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBodyMarkdown() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBodyMarkdown() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get priority => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set priority($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPriority() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPriority() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get version => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set version($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get submittedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set submittedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSubmittedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSubmittedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureSubmittedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get publishAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set publishAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPublishAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPublishAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensurePublishAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get rightsExpireAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set rightsExpireAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasRightsExpireAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearRightsExpireAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureRightsExpireAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get publishedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set publishedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasPublishedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPublishedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensurePublishedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.String get correctionSummary => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set correctionSummary($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCorrectionSummary() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCorrectionSummary() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $pb.PbList<EditorialReview> get reviews => $_getList(15);
+
+  @$pb.TagNumber(17)
+  $pb.PbList<EditorialComment> get comments => $_getList(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get updatedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set updatedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasUpdatedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearUpdatedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(17);
+}
+
+class CreatorStatement extends $pb.GeneratedMessage {
+  factory CreatorStatement({
+    $core.String? id,
+    $core.String? periodStart,
+    $core.String? periodEnd,
+    $core.String? status,
+    $core.String? currency,
+    $fixnum.Int64? grossMinor,
+    $fixnum.Int64? expensesMinor,
+    $fixnum.Int64? reserveMinor,
+    $fixnum.Int64? taxMinor,
+    $fixnum.Int64? netMinor,
+    $core.String? pdfUrl,
+    $1.Timestamp? paidAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (periodStart != null) result.periodStart = periodStart;
+    if (periodEnd != null) result.periodEnd = periodEnd;
+    if (status != null) result.status = status;
+    if (currency != null) result.currency = currency;
+    if (grossMinor != null) result.grossMinor = grossMinor;
+    if (expensesMinor != null) result.expensesMinor = expensesMinor;
+    if (reserveMinor != null) result.reserveMinor = reserveMinor;
+    if (taxMinor != null) result.taxMinor = taxMinor;
+    if (netMinor != null) result.netMinor = netMinor;
+    if (pdfUrl != null) result.pdfUrl = pdfUrl;
+    if (paidAt != null) result.paidAt = paidAt;
+    return result;
+  }
+
+  CreatorStatement._();
+
+  factory CreatorStatement.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreatorStatement.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreatorStatement',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'periodStart')
+    ..aOS(3, _omitFieldNames ? '' : 'periodEnd')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'currency')
+    ..aInt64(6, _omitFieldNames ? '' : 'grossMinor')
+    ..aInt64(7, _omitFieldNames ? '' : 'expensesMinor')
+    ..aInt64(8, _omitFieldNames ? '' : 'reserveMinor')
+    ..aInt64(9, _omitFieldNames ? '' : 'taxMinor')
+    ..aInt64(10, _omitFieldNames ? '' : 'netMinor')
+    ..aOS(11, _omitFieldNames ? '' : 'pdfUrl')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'paidAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorStatement clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorStatement copyWith(void Function(CreatorStatement) updates) =>
+      super.copyWith((message) => updates(message as CreatorStatement))
+          as CreatorStatement;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatorStatement create() => CreatorStatement._();
+  @$core.override
+  CreatorStatement createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreatorStatement getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreatorStatement>(create);
+  static CreatorStatement? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get periodStart => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set periodStart($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPeriodStart() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPeriodStart() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get periodEnd => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set periodEnd($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPeriodEnd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPeriodEnd() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get currency => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set currency($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCurrency() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCurrency() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get grossMinor => $_getI64(5);
+  @$pb.TagNumber(6)
+  set grossMinor($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrossMinor() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrossMinor() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get expensesMinor => $_getI64(6);
+  @$pb.TagNumber(7)
+  set expensesMinor($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExpensesMinor() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpensesMinor() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get reserveMinor => $_getI64(7);
+  @$pb.TagNumber(8)
+  set reserveMinor($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReserveMinor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReserveMinor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get taxMinor => $_getI64(8);
+  @$pb.TagNumber(9)
+  set taxMinor($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTaxMinor() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTaxMinor() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get netMinor => $_getI64(9);
+  @$pb.TagNumber(10)
+  set netMinor($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNetMinor() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNetMinor() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get pdfUrl => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set pdfUrl($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPdfUrl() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPdfUrl() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get paidAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set paidAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPaidAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPaidAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensurePaidAt() => $_ensure(11);
+}
+
+class CreatorMetric extends $pb.GeneratedMessage {
+  factory CreatorMetric({
+    $core.String? metricDate,
+    $core.int? impressions,
+    $core.int? qualifiedViews,
+    $core.int? completions,
+    $core.int? newFollowers,
+    $core.int? newSubscribers,
+    $fixnum.Int64? grossMinor,
+    $fixnum.Int64? creatorNetMinor,
+    $core.bool? privacyThresholdMet,
+  }) {
+    final result = create();
+    if (metricDate != null) result.metricDate = metricDate;
+    if (impressions != null) result.impressions = impressions;
+    if (qualifiedViews != null) result.qualifiedViews = qualifiedViews;
+    if (completions != null) result.completions = completions;
+    if (newFollowers != null) result.newFollowers = newFollowers;
+    if (newSubscribers != null) result.newSubscribers = newSubscribers;
+    if (grossMinor != null) result.grossMinor = grossMinor;
+    if (creatorNetMinor != null) result.creatorNetMinor = creatorNetMinor;
+    if (privacyThresholdMet != null)
+      result.privacyThresholdMet = privacyThresholdMet;
+    return result;
+  }
+
+  CreatorMetric._();
+
+  factory CreatorMetric.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreatorMetric.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreatorMetric',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'metricDate')
+    ..aI(2, _omitFieldNames ? '' : 'impressions')
+    ..aI(3, _omitFieldNames ? '' : 'qualifiedViews')
+    ..aI(4, _omitFieldNames ? '' : 'completions')
+    ..aI(5, _omitFieldNames ? '' : 'newFollowers')
+    ..aI(6, _omitFieldNames ? '' : 'newSubscribers')
+    ..aInt64(7, _omitFieldNames ? '' : 'grossMinor')
+    ..aInt64(8, _omitFieldNames ? '' : 'creatorNetMinor')
+    ..aOB(9, _omitFieldNames ? '' : 'privacyThresholdMet')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorMetric clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorMetric copyWith(void Function(CreatorMetric) updates) =>
+      super.copyWith((message) => updates(message as CreatorMetric))
+          as CreatorMetric;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatorMetric create() => CreatorMetric._();
+  @$core.override
+  CreatorMetric createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreatorMetric getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreatorMetric>(create);
+  static CreatorMetric? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get metricDate => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set metricDate($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMetricDate() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMetricDate() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get impressions => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set impressions($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasImpressions() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearImpressions() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get qualifiedViews => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set qualifiedViews($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQualifiedViews() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQualifiedViews() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get completions => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set completions($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCompletions() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCompletions() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get newFollowers => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set newFollowers($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNewFollowers() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNewFollowers() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get newSubscribers => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set newSubscribers($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNewSubscribers() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNewSubscribers() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get grossMinor => $_getI64(6);
+  @$pb.TagNumber(7)
+  set grossMinor($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGrossMinor() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGrossMinor() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get creatorNetMinor => $_getI64(7);
+  @$pb.TagNumber(8)
+  set creatorNetMinor($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatorNetMinor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatorNetMinor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get privacyThresholdMet => $_getBF(8);
+  @$pb.TagNumber(9)
+  set privacyThresholdMet($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPrivacyThresholdMet() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPrivacyThresholdMet() => $_clearField(9);
+}
+
+class CreatorStudio extends $pb.GeneratedMessage {
+  factory CreatorStudio({
+    OnyxProfile? profile,
+    $core.bool? eligible,
+    $core.String? eligibilityMessage,
+    $core.Iterable<CreatorContract>? contracts,
+    $core.Iterable<EditorialProject>? projects,
+    $core.Iterable<CreatorStatement>? statements,
+    $core.Iterable<CreatorMetric>? metrics,
+    $core.int? activeSubscribers,
+    $core.int? followers,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    if (eligible != null) result.eligible = eligible;
+    if (eligibilityMessage != null)
+      result.eligibilityMessage = eligibilityMessage;
+    if (contracts != null) result.contracts.addAll(contracts);
+    if (projects != null) result.projects.addAll(projects);
+    if (statements != null) result.statements.addAll(statements);
+    if (metrics != null) result.metrics.addAll(metrics);
+    if (activeSubscribers != null) result.activeSubscribers = activeSubscribers;
+    if (followers != null) result.followers = followers;
+    return result;
+  }
+
+  CreatorStudio._();
+
+  factory CreatorStudio.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreatorStudio.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreatorStudio',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: OnyxProfile.create)
+    ..aOB(2, _omitFieldNames ? '' : 'eligible')
+    ..aOS(3, _omitFieldNames ? '' : 'eligibilityMessage')
+    ..pPM<CreatorContract>(4, _omitFieldNames ? '' : 'contracts',
+        subBuilder: CreatorContract.create)
+    ..pPM<EditorialProject>(5, _omitFieldNames ? '' : 'projects',
+        subBuilder: EditorialProject.create)
+    ..pPM<CreatorStatement>(6, _omitFieldNames ? '' : 'statements',
+        subBuilder: CreatorStatement.create)
+    ..pPM<CreatorMetric>(7, _omitFieldNames ? '' : 'metrics',
+        subBuilder: CreatorMetric.create)
+    ..aI(8, _omitFieldNames ? '' : 'activeSubscribers')
+    ..aI(9, _omitFieldNames ? '' : 'followers')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorStudio clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreatorStudio copyWith(void Function(CreatorStudio) updates) =>
+      super.copyWith((message) => updates(message as CreatorStudio))
+          as CreatorStudio;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreatorStudio create() => CreatorStudio._();
+  @$core.override
+  CreatorStudio createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreatorStudio getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreatorStudio>(create);
+  static CreatorStudio? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(OnyxProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxProfile ensureProfile() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get eligible => $_getBF(1);
+  @$pb.TagNumber(2)
+  set eligible($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEligible() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEligible() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get eligibilityMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set eligibilityMessage($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEligibilityMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEligibilityMessage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<CreatorContract> get contracts => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<EditorialProject> get projects => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<CreatorStatement> get statements => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<CreatorMetric> get metrics => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.int get activeSubscribers => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set activeSubscribers($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasActiveSubscribers() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearActiveSubscribers() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get followers => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set followers($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasFollowers() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFollowers() => $_clearField(9);
+}
+
+class GetCreatorStudioRequest extends $pb.GeneratedMessage {
+  factory GetCreatorStudioRequest() => create();
+
+  GetCreatorStudioRequest._();
+
+  factory GetCreatorStudioRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCreatorStudioRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCreatorStudioRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCreatorStudioRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCreatorStudioRequest copyWith(
+          void Function(GetCreatorStudioRequest) updates) =>
+      super.copyWith((message) => updates(message as GetCreatorStudioRequest))
+          as GetCreatorStudioRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCreatorStudioRequest create() => GetCreatorStudioRequest._();
+  @$core.override
+  GetCreatorStudioRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCreatorStudioRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCreatorStudioRequest>(create);
+  static GetCreatorStudioRequest? _defaultInstance;
+}
+
+class GetCreatorStudioResponse extends $pb.GeneratedMessage {
+  factory GetCreatorStudioResponse({
+    CreatorStudio? studio,
+  }) {
+    final result = create();
+    if (studio != null) result.studio = studio;
+    return result;
+  }
+
+  GetCreatorStudioResponse._();
+
+  factory GetCreatorStudioResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCreatorStudioResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCreatorStudioResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<CreatorStudio>(1, _omitFieldNames ? '' : 'studio',
+        subBuilder: CreatorStudio.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCreatorStudioResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCreatorStudioResponse copyWith(
+          void Function(GetCreatorStudioResponse) updates) =>
+      super.copyWith((message) => updates(message as GetCreatorStudioResponse))
+          as GetCreatorStudioResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCreatorStudioResponse create() => GetCreatorStudioResponse._();
+  @$core.override
+  GetCreatorStudioResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCreatorStudioResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCreatorStudioResponse>(create);
+  static GetCreatorStudioResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CreatorStudio get studio => $_getN(0);
+  @$pb.TagNumber(1)
+  set studio(CreatorStudio value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStudio() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStudio() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CreatorStudio ensureStudio() => $_ensure(0);
+}
+
+class SubmitCreatorPitchRequest extends $pb.GeneratedMessage {
+  factory SubmitCreatorPitchRequest({
+    $core.String? pitchTitle,
+    $core.String? pitchSummary,
+    $core.String? format,
+    $core.String? audience,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (pitchTitle != null) result.pitchTitle = pitchTitle;
+    if (pitchSummary != null) result.pitchSummary = pitchSummary;
+    if (format != null) result.format = format;
+    if (audience != null) result.audience = audience;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SubmitCreatorPitchRequest._();
+
+  factory SubmitCreatorPitchRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitCreatorPitchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitCreatorPitchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pitchTitle')
+    ..aOS(2, _omitFieldNames ? '' : 'pitchSummary')
+    ..aOS(3, _omitFieldNames ? '' : 'format')
+    ..aOS(4, _omitFieldNames ? '' : 'audience')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorPitchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorPitchRequest copyWith(
+          void Function(SubmitCreatorPitchRequest) updates) =>
+      super.copyWith((message) => updates(message as SubmitCreatorPitchRequest))
+          as SubmitCreatorPitchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorPitchRequest create() => SubmitCreatorPitchRequest._();
+  @$core.override
+  SubmitCreatorPitchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorPitchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitCreatorPitchRequest>(create);
+  static SubmitCreatorPitchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pitchTitle => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pitchTitle($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPitchTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPitchTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pitchSummary => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pitchSummary($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPitchSummary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPitchSummary() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get format => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set format($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get audience => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set audience($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAudience() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAudience() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SubmitCreatorPitchResponse extends $pb.GeneratedMessage {
+  factory SubmitCreatorPitchResponse({
+    EditorialProject? project,
+  }) {
+    final result = create();
+    if (project != null) result.project = project;
+    return result;
+  }
+
+  SubmitCreatorPitchResponse._();
+
+  factory SubmitCreatorPitchResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitCreatorPitchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitCreatorPitchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<EditorialProject>(1, _omitFieldNames ? '' : 'project',
+        subBuilder: EditorialProject.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorPitchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorPitchResponse copyWith(
+          void Function(SubmitCreatorPitchResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitCreatorPitchResponse))
+          as SubmitCreatorPitchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorPitchResponse create() => SubmitCreatorPitchResponse._();
+  @$core.override
+  SubmitCreatorPitchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorPitchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitCreatorPitchResponse>(create);
+  static SubmitCreatorPitchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EditorialProject get project => $_getN(0);
+  @$pb.TagNumber(1)
+  set project(EditorialProject value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProject() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProject() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EditorialProject ensureProject() => $_ensure(0);
+}
+
+class UpdateCreatorProjectRequest extends $pb.GeneratedMessage {
+  factory UpdateCreatorProjectRequest({
+    $core.String? projectId,
+    $core.String? pitchTitle,
+    $core.String? pitchSummary,
+    $core.String? bodyMarkdown,
+    $core.String? audience,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (projectId != null) result.projectId = projectId;
+    if (pitchTitle != null) result.pitchTitle = pitchTitle;
+    if (pitchSummary != null) result.pitchSummary = pitchSummary;
+    if (bodyMarkdown != null) result.bodyMarkdown = bodyMarkdown;
+    if (audience != null) result.audience = audience;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpdateCreatorProjectRequest._();
+
+  factory UpdateCreatorProjectRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateCreatorProjectRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateCreatorProjectRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'projectId')
+    ..aOS(2, _omitFieldNames ? '' : 'pitchTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'pitchSummary')
+    ..aOS(4, _omitFieldNames ? '' : 'bodyMarkdown')
+    ..aOS(5, _omitFieldNames ? '' : 'audience')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCreatorProjectRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCreatorProjectRequest copyWith(
+          void Function(UpdateCreatorProjectRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateCreatorProjectRequest))
+          as UpdateCreatorProjectRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCreatorProjectRequest create() =>
+      UpdateCreatorProjectRequest._();
+  @$core.override
+  UpdateCreatorProjectRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCreatorProjectRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateCreatorProjectRequest>(create);
+  static UpdateCreatorProjectRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get projectId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set projectId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProjectId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProjectId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get pitchTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set pitchTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPitchTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPitchTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pitchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pitchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPitchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPitchSummary() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get bodyMarkdown => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set bodyMarkdown($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBodyMarkdown() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBodyMarkdown() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get audience => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set audience($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAudience() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAudience() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class UpdateCreatorProjectResponse extends $pb.GeneratedMessage {
+  factory UpdateCreatorProjectResponse({
+    EditorialProject? project,
+  }) {
+    final result = create();
+    if (project != null) result.project = project;
+    return result;
+  }
+
+  UpdateCreatorProjectResponse._();
+
+  factory UpdateCreatorProjectResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateCreatorProjectResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateCreatorProjectResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<EditorialProject>(1, _omitFieldNames ? '' : 'project',
+        subBuilder: EditorialProject.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCreatorProjectResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCreatorProjectResponse copyWith(
+          void Function(UpdateCreatorProjectResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateCreatorProjectResponse))
+          as UpdateCreatorProjectResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCreatorProjectResponse create() =>
+      UpdateCreatorProjectResponse._();
+  @$core.override
+  UpdateCreatorProjectResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCreatorProjectResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateCreatorProjectResponse>(create);
+  static UpdateCreatorProjectResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EditorialProject get project => $_getN(0);
+  @$pb.TagNumber(1)
+  set project(EditorialProject value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProject() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProject() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EditorialProject ensureProject() => $_ensure(0);
+}
+
+class SubmitCreatorProjectRequest extends $pb.GeneratedMessage {
+  factory SubmitCreatorProjectRequest({
+    $core.String? projectId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (projectId != null) result.projectId = projectId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SubmitCreatorProjectRequest._();
+
+  factory SubmitCreatorProjectRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitCreatorProjectRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitCreatorProjectRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'projectId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorProjectRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorProjectRequest copyWith(
+          void Function(SubmitCreatorProjectRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitCreatorProjectRequest))
+          as SubmitCreatorProjectRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorProjectRequest create() =>
+      SubmitCreatorProjectRequest._();
+  @$core.override
+  SubmitCreatorProjectRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorProjectRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitCreatorProjectRequest>(create);
+  static SubmitCreatorProjectRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get projectId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set projectId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProjectId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProjectId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class SubmitCreatorProjectResponse extends $pb.GeneratedMessage {
+  factory SubmitCreatorProjectResponse({
+    EditorialProject? project,
+  }) {
+    final result = create();
+    if (project != null) result.project = project;
+    return result;
+  }
+
+  SubmitCreatorProjectResponse._();
+
+  factory SubmitCreatorProjectResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitCreatorProjectResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitCreatorProjectResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<EditorialProject>(1, _omitFieldNames ? '' : 'project',
+        subBuilder: EditorialProject.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorProjectResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitCreatorProjectResponse copyWith(
+          void Function(SubmitCreatorProjectResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitCreatorProjectResponse))
+          as SubmitCreatorProjectResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorProjectResponse create() =>
+      SubmitCreatorProjectResponse._();
+  @$core.override
+  SubmitCreatorProjectResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitCreatorProjectResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitCreatorProjectResponse>(create);
+  static SubmitCreatorProjectResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EditorialProject get project => $_getN(0);
+  @$pb.TagNumber(1)
+  set project(EditorialProject value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProject() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProject() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EditorialProject ensureProject() => $_ensure(0);
+}
+
+class SignCreatorContractRequest extends $pb.GeneratedMessage {
+  factory SignCreatorContractRequest({
+    $core.String? contractId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contractId != null) result.contractId = contractId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SignCreatorContractRequest._();
+
+  factory SignCreatorContractRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SignCreatorContractRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SignCreatorContractRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contractId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignCreatorContractRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignCreatorContractRequest copyWith(
+          void Function(SignCreatorContractRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SignCreatorContractRequest))
+          as SignCreatorContractRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignCreatorContractRequest create() => SignCreatorContractRequest._();
+  @$core.override
+  SignCreatorContractRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SignCreatorContractRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SignCreatorContractRequest>(create);
+  static SignCreatorContractRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contractId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contractId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContractId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContractId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class SignCreatorContractResponse extends $pb.GeneratedMessage {
+  factory SignCreatorContractResponse({
+    CreatorContract? contract,
+  }) {
+    final result = create();
+    if (contract != null) result.contract = contract;
+    return result;
+  }
+
+  SignCreatorContractResponse._();
+
+  factory SignCreatorContractResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SignCreatorContractResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SignCreatorContractResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<CreatorContract>(1, _omitFieldNames ? '' : 'contract',
+        subBuilder: CreatorContract.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignCreatorContractResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignCreatorContractResponse copyWith(
+          void Function(SignCreatorContractResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SignCreatorContractResponse))
+          as SignCreatorContractResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignCreatorContractResponse create() =>
+      SignCreatorContractResponse._();
+  @$core.override
+  SignCreatorContractResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SignCreatorContractResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SignCreatorContractResponse>(create);
+  static SignCreatorContractResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CreatorContract get contract => $_getN(0);
+  @$pb.TagNumber(1)
+  set contract(CreatorContract value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContract() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContract() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CreatorContract ensureContract() => $_ensure(0);
+}
+
+class ListMyCreatorSubscriptionsDetailedRequest extends $pb.GeneratedMessage {
+  factory ListMyCreatorSubscriptionsDetailedRequest() => create();
+
+  ListMyCreatorSubscriptionsDetailedRequest._();
+
+  factory ListMyCreatorSubscriptionsDetailedRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyCreatorSubscriptionsDetailedRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyCreatorSubscriptionsDetailedRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCreatorSubscriptionsDetailedRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCreatorSubscriptionsDetailedRequest copyWith(
+          void Function(ListMyCreatorSubscriptionsDetailedRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyCreatorSubscriptionsDetailedRequest))
+          as ListMyCreatorSubscriptionsDetailedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCreatorSubscriptionsDetailedRequest create() =>
+      ListMyCreatorSubscriptionsDetailedRequest._();
+  @$core.override
+  ListMyCreatorSubscriptionsDetailedRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCreatorSubscriptionsDetailedRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyCreatorSubscriptionsDetailedRequest>(create);
+  static ListMyCreatorSubscriptionsDetailedRequest? _defaultInstance;
+}
+
+class ListMyCreatorSubscriptionsDetailedResponse extends $pb.GeneratedMessage {
+  factory ListMyCreatorSubscriptionsDetailedResponse({
+    $core.Iterable<Subscription>? subscriptions,
+  }) {
+    final result = create();
+    if (subscriptions != null) result.subscriptions.addAll(subscriptions);
+    return result;
+  }
+
+  ListMyCreatorSubscriptionsDetailedResponse._();
+
+  factory ListMyCreatorSubscriptionsDetailedResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyCreatorSubscriptionsDetailedResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyCreatorSubscriptionsDetailedResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<Subscription>(1, _omitFieldNames ? '' : 'subscriptions',
+        subBuilder: Subscription.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCreatorSubscriptionsDetailedResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyCreatorSubscriptionsDetailedResponse copyWith(
+          void Function(ListMyCreatorSubscriptionsDetailedResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListMyCreatorSubscriptionsDetailedResponse))
+          as ListMyCreatorSubscriptionsDetailedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyCreatorSubscriptionsDetailedResponse create() =>
+      ListMyCreatorSubscriptionsDetailedResponse._();
+  @$core.override
+  ListMyCreatorSubscriptionsDetailedResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyCreatorSubscriptionsDetailedResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListMyCreatorSubscriptionsDetailedResponse>(create);
+  static ListMyCreatorSubscriptionsDetailedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<Subscription> get subscriptions => $_getList(0);
+}
+
+class CancelCreatorSubscriptionRequest extends $pb.GeneratedMessage {
+  factory CancelCreatorSubscriptionRequest({
+    $core.String? creatorId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (creatorId != null) result.creatorId = creatorId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CancelCreatorSubscriptionRequest._();
+
+  factory CancelCreatorSubscriptionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelCreatorSubscriptionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelCreatorSubscriptionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'creatorId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelCreatorSubscriptionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelCreatorSubscriptionRequest copyWith(
+          void Function(CancelCreatorSubscriptionRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CancelCreatorSubscriptionRequest))
+          as CancelCreatorSubscriptionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelCreatorSubscriptionRequest create() =>
+      CancelCreatorSubscriptionRequest._();
+  @$core.override
+  CancelCreatorSubscriptionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelCreatorSubscriptionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelCreatorSubscriptionRequest>(
+          create);
+  static CancelCreatorSubscriptionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get creatorId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set creatorId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCreatorId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCreatorId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class CancelCreatorSubscriptionResponse extends $pb.GeneratedMessage {
+  factory CancelCreatorSubscriptionResponse({
+    Subscription? subscription,
+  }) {
+    final result = create();
+    if (subscription != null) result.subscription = subscription;
+    return result;
+  }
+
+  CancelCreatorSubscriptionResponse._();
+
+  factory CancelCreatorSubscriptionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelCreatorSubscriptionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelCreatorSubscriptionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<Subscription>(1, _omitFieldNames ? '' : 'subscription',
+        subBuilder: Subscription.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelCreatorSubscriptionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelCreatorSubscriptionResponse copyWith(
+          void Function(CancelCreatorSubscriptionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CancelCreatorSubscriptionResponse))
+          as CancelCreatorSubscriptionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelCreatorSubscriptionResponse create() =>
+      CancelCreatorSubscriptionResponse._();
+  @$core.override
+  CancelCreatorSubscriptionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelCreatorSubscriptionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CancelCreatorSubscriptionResponse>(
+          create);
+  static CancelCreatorSubscriptionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Subscription get subscription => $_getN(0);
+  @$pb.TagNumber(1)
+  set subscription(Subscription value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubscription() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubscription() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Subscription ensureSubscription() => $_ensure(0);
+}
+
+class CommerceInvoice extends $pb.GeneratedMessage {
+  factory CommerceInvoice({
+    $core.String? id,
+    $core.String? subscriptionId,
+    $fixnum.Int64? amountTotal,
+    $fixnum.Int64? amountPaid,
+    $core.String? currency,
+    $core.String? status,
+    $1.Timestamp? issuedAt,
+    $1.Timestamp? paidAt,
+    $core.String? pdfUrl,
+    $core.String? hostedInvoiceUrl,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (subscriptionId != null) result.subscriptionId = subscriptionId;
+    if (amountTotal != null) result.amountTotal = amountTotal;
+    if (amountPaid != null) result.amountPaid = amountPaid;
+    if (currency != null) result.currency = currency;
+    if (status != null) result.status = status;
+    if (issuedAt != null) result.issuedAt = issuedAt;
+    if (paidAt != null) result.paidAt = paidAt;
+    if (pdfUrl != null) result.pdfUrl = pdfUrl;
+    if (hostedInvoiceUrl != null) result.hostedInvoiceUrl = hostedInvoiceUrl;
+    return result;
+  }
+
+  CommerceInvoice._();
+
+  factory CommerceInvoice.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CommerceInvoice.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CommerceInvoice',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'subscriptionId')
+    ..aInt64(3, _omitFieldNames ? '' : 'amountTotal')
+    ..aInt64(4, _omitFieldNames ? '' : 'amountPaid')
+    ..aOS(5, _omitFieldNames ? '' : 'currency')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'issuedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'paidAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(9, _omitFieldNames ? '' : 'pdfUrl')
+    ..aOS(10, _omitFieldNames ? '' : 'hostedInvoiceUrl')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CommerceInvoice clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CommerceInvoice copyWith(void Function(CommerceInvoice) updates) =>
+      super.copyWith((message) => updates(message as CommerceInvoice))
+          as CommerceInvoice;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CommerceInvoice create() => CommerceInvoice._();
+  @$core.override
+  CommerceInvoice createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CommerceInvoice getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CommerceInvoice>(create);
+  static CommerceInvoice? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get subscriptionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set subscriptionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSubscriptionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSubscriptionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get amountTotal => $_getI64(2);
+  @$pb.TagNumber(3)
+  set amountTotal($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAmountTotal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAmountTotal() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get amountPaid => $_getI64(3);
+  @$pb.TagNumber(4)
+  set amountPaid($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAmountPaid() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAmountPaid() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get currency => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set currency($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCurrency() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCurrency() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get issuedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set issuedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIssuedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIssuedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureIssuedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get paidAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set paidAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPaidAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPaidAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensurePaidAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get pdfUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set pdfUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPdfUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPdfUrl() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get hostedInvoiceUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set hostedInvoiceUrl($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasHostedInvoiceUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearHostedInvoiceUrl() => $_clearField(10);
+}
+
+class CommerceCase extends $pb.GeneratedMessage {
+  factory CommerceCase({
+    $core.String? id,
+    $core.String? kind,
+    $core.String? status,
+    $core.String? invoiceId,
+    $core.String? subscriptionId,
+    $core.String? creatorId,
+    $fixnum.Int64? amountMinor,
+    $core.String? currency,
+    $core.String? reason,
+    $core.String? resolution,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (status != null) result.status = status;
+    if (invoiceId != null) result.invoiceId = invoiceId;
+    if (subscriptionId != null) result.subscriptionId = subscriptionId;
+    if (creatorId != null) result.creatorId = creatorId;
+    if (amountMinor != null) result.amountMinor = amountMinor;
+    if (currency != null) result.currency = currency;
+    if (reason != null) result.reason = reason;
+    if (resolution != null) result.resolution = resolution;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  CommerceCase._();
+
+  factory CommerceCase.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CommerceCase.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CommerceCase',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'invoiceId')
+    ..aOS(5, _omitFieldNames ? '' : 'subscriptionId')
+    ..aOS(6, _omitFieldNames ? '' : 'creatorId')
+    ..aInt64(7, _omitFieldNames ? '' : 'amountMinor')
+    ..aOS(8, _omitFieldNames ? '' : 'currency')
+    ..aOS(9, _omitFieldNames ? '' : 'reason')
+    ..aOS(10, _omitFieldNames ? '' : 'resolution')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CommerceCase clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CommerceCase copyWith(void Function(CommerceCase) updates) =>
+      super.copyWith((message) => updates(message as CommerceCase))
+          as CommerceCase;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CommerceCase create() => CommerceCase._();
+  @$core.override
+  CommerceCase createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CommerceCase getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CommerceCase>(create);
+  static CommerceCase? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get invoiceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set invoiceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInvoiceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInvoiceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get subscriptionId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set subscriptionId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSubscriptionId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSubscriptionId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get creatorId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set creatorId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatorId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatorId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get amountMinor => $_getI64(6);
+  @$pb.TagNumber(7)
+  set amountMinor($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAmountMinor() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAmountMinor() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get currency => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set currency($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCurrency() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCurrency() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get reason => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set reason($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReason() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReason() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get resolution => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set resolution($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolution() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolution() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get resolvedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set resolvedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasResolvedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearResolvedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureResolvedAt() => $_ensure(11);
+}
+
+class GetMyCommerceRequest extends $pb.GeneratedMessage {
+  factory GetMyCommerceRequest() => create();
+
+  GetMyCommerceRequest._();
+
+  factory GetMyCommerceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMyCommerceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMyCommerceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyCommerceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyCommerceRequest copyWith(void Function(GetMyCommerceRequest) updates) =>
+      super.copyWith((message) => updates(message as GetMyCommerceRequest))
+          as GetMyCommerceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyCommerceRequest create() => GetMyCommerceRequest._();
+  @$core.override
+  GetMyCommerceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMyCommerceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMyCommerceRequest>(create);
+  static GetMyCommerceRequest? _defaultInstance;
+}
+
+class GetMyCommerceResponse extends $pb.GeneratedMessage {
+  factory GetMyCommerceResponse({
+    $core.Iterable<CommerceInvoice>? invoices,
+    $core.Iterable<CommerceCase>? cases,
+    $core.Iterable<Subscription>? creatorSubscriptions,
+    $core.bool? hasNetworkSubscription,
+  }) {
+    final result = create();
+    if (invoices != null) result.invoices.addAll(invoices);
+    if (cases != null) result.cases.addAll(cases);
+    if (creatorSubscriptions != null)
+      result.creatorSubscriptions.addAll(creatorSubscriptions);
+    if (hasNetworkSubscription != null)
+      result.hasNetworkSubscription = hasNetworkSubscription;
+    return result;
+  }
+
+  GetMyCommerceResponse._();
+
+  factory GetMyCommerceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMyCommerceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMyCommerceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<CommerceInvoice>(1, _omitFieldNames ? '' : 'invoices',
+        subBuilder: CommerceInvoice.create)
+    ..pPM<CommerceCase>(2, _omitFieldNames ? '' : 'cases',
+        subBuilder: CommerceCase.create)
+    ..pPM<Subscription>(3, _omitFieldNames ? '' : 'creatorSubscriptions',
+        subBuilder: Subscription.create)
+    ..aOB(4, _omitFieldNames ? '' : 'hasNetworkSubscription')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyCommerceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMyCommerceResponse copyWith(
+          void Function(GetMyCommerceResponse) updates) =>
+      super.copyWith((message) => updates(message as GetMyCommerceResponse))
+          as GetMyCommerceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMyCommerceResponse create() => GetMyCommerceResponse._();
+  @$core.override
+  GetMyCommerceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMyCommerceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMyCommerceResponse>(create);
+  static GetMyCommerceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CommerceInvoice> get invoices => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<CommerceCase> get cases => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<Subscription> get creatorSubscriptions => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.bool get hasNetworkSubscription => $_getBF(3);
+  @$pb.TagNumber(4)
+  set hasNetworkSubscription($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHasNetworkSubscription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHasNetworkSubscription() => $_clearField(4);
+}
+
+class CreateCommerceCaseRequest extends $pb.GeneratedMessage {
+  factory CreateCommerceCaseRequest({
+    $core.String? kind,
+    $core.String? invoiceId,
+    $core.String? subscriptionId,
+    $core.String? creatorId,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (kind != null) result.kind = kind;
+    if (invoiceId != null) result.invoiceId = invoiceId;
+    if (subscriptionId != null) result.subscriptionId = subscriptionId;
+    if (creatorId != null) result.creatorId = creatorId;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateCommerceCaseRequest._();
+
+  factory CreateCommerceCaseRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateCommerceCaseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateCommerceCaseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'kind')
+    ..aOS(2, _omitFieldNames ? '' : 'invoiceId')
+    ..aOS(3, _omitFieldNames ? '' : 'subscriptionId')
+    ..aOS(4, _omitFieldNames ? '' : 'creatorId')
+    ..aOS(5, _omitFieldNames ? '' : 'reason')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCommerceCaseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCommerceCaseRequest copyWith(
+          void Function(CreateCommerceCaseRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateCommerceCaseRequest))
+          as CreateCommerceCaseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateCommerceCaseRequest create() => CreateCommerceCaseRequest._();
+  @$core.override
+  CreateCommerceCaseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateCommerceCaseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateCommerceCaseRequest>(create);
+  static CreateCommerceCaseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get invoiceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set invoiceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInvoiceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInvoiceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get subscriptionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subscriptionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSubscriptionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubscriptionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get creatorId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set creatorId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCreatorId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatorId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reason => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reason($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReason() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReason() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class CreateCommerceCaseResponse extends $pb.GeneratedMessage {
+  factory CreateCommerceCaseResponse({
+    CommerceCase? commerceCase,
+  }) {
+    final result = create();
+    if (commerceCase != null) result.commerceCase = commerceCase;
+    return result;
+  }
+
+  CreateCommerceCaseResponse._();
+
+  factory CreateCommerceCaseResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateCommerceCaseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateCommerceCaseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<CommerceCase>(1, _omitFieldNames ? '' : 'commerceCase',
+        subBuilder: CommerceCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCommerceCaseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateCommerceCaseResponse copyWith(
+          void Function(CreateCommerceCaseResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateCommerceCaseResponse))
+          as CreateCommerceCaseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateCommerceCaseResponse create() => CreateCommerceCaseResponse._();
+  @$core.override
+  CreateCommerceCaseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateCommerceCaseResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateCommerceCaseResponse>(create);
+  static CreateCommerceCaseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CommerceCase get commerceCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set commerceCase(CommerceCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommerceCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommerceCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CommerceCase ensureCommerceCase() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =

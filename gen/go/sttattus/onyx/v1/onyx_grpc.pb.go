@@ -19,89 +19,98 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OnyxService_CreateProfile_FullMethodName               = "/sttattus.onyx.v1.OnyxService/CreateProfile"
-	OnyxService_GetProfile_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetProfile"
-	OnyxService_ListContent_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListContent"
-	OnyxService_Subscribe_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/Subscribe"
-	OnyxService_GetContent_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetContent"
-	OnyxService_ListShelf_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListShelf"
-	OnyxService_ListContinue_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListContinue"
-	OnyxService_GetShelves_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetShelves"
-	OnyxService_RecordProgress_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RecordProgress"
-	OnyxService_RedeemContent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RedeemContent"
-	OnyxService_CreateSubscriptionCheckout_FullMethodName  = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
-	OnyxService_GetCreator_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetCreator"
-	OnyxService_ListCreatorWorks_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
-	OnyxService_FollowCreator_FullMethodName               = "/sttattus.onyx.v1.OnyxService/FollowCreator"
-	OnyxService_SearchContent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SearchContent"
-	OnyxService_AddNote_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/AddNote"
-	OnyxService_ListMyNotes_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
-	OnyxService_DeleteNote_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/DeleteNote"
-	OnyxService_UpsertReaderAnnotation_FullMethodName      = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
-	OnyxService_DeleteReaderAnnotation_FullMethodName      = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
-	OnyxService_ListMyReaderAnnotations_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
-	OnyxService_SearchReader_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SearchReader"
-	OnyxService_ExportReaderData_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
-	OnyxService_ListReaderSyncChanges_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
-	OnyxService_ListMyUnlocks_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
-	OnyxService_ListMySubscriptions_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
-	OnyxService_ListMyFollows_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
-	OnyxService_ListSovereignWindow_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
-	OnyxService_ListSeries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListSeries"
-	OnyxService_GetSeries_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetSeries"
-	OnyxService_GenerateCaptions_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
-	OnyxService_GetCaptionJob_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
-	OnyxService_GetListeningPreferences_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
-	OnyxService_UpdateListeningPreferences_FullMethodName  = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
-	OnyxService_CreateListeningBookmark_FullMethodName     = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
-	OnyxService_ListListeningBookmarks_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListListeningBookmarks"
-	OnyxService_DeleteListeningBookmark_FullMethodName     = "/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark"
-	OnyxService_ListListeningQueue_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListListeningQueue"
-	OnyxService_SetListeningQueue_FullMethodName           = "/sttattus.onyx.v1.OnyxService/SetListeningQueue"
-	OnyxService_CreateAudioOverview_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateAudioOverview"
-	OnyxService_ListAudioOverviews_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListAudioOverviews"
-	OnyxService_GetAudioOverview_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetAudioOverview"
-	OnyxService_DeleteAudioOverview_FullMethodName         = "/sttattus.onyx.v1.OnyxService/DeleteAudioOverview"
-	OnyxService_ListListeningPronunciations_FullMethodName = "/sttattus.onyx.v1.OnyxService/ListListeningPronunciations"
-	OnyxService_GetTodaySummary_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
-	OnyxService_GetCrossPillarUnlocks_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
-	OnyxService_StartConciergeThread_FullMethodName        = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
-	OnyxService_ListMyConciergeThreads_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
-	OnyxService_GetConciergeThread_FullMethodName          = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
-	OnyxService_PostConciergeMessage_FullMethodName        = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
-	OnyxService_ListLiveEvents_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
-	OnyxService_GetLiveEvent_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
-	OnyxService_RsvpLiveEvent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
-	OnyxService_SetPosthumousArchive_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
-	OnyxService_GetPosthumousArchive_FullMethodName        = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
-	OnyxService_ListAnthologies_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
-	OnyxService_GetAnthology_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetAnthology"
-	OnyxService_CreateShareLink_FullMethodName             = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
-	OnyxService_ListMyShareLinks_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
-	OnyxService_RevokeShareLink_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
-	OnyxService_GetOfflineManifest_FullMethodName          = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
-	OnyxService_RegisterDevice_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
-	OnyxService_AcknowledgePurge_FullMethodName            = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
-	OnyxService_GetDeviceGrants_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
-	OnyxService_RevokeMyDevice_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
-	OnyxService_MarkMyDeviceLost_FullMethodName            = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
-	OnyxService_GetPurgeReceipt_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
-	OnyxService_ListOfflineManifestItems_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
-	OnyxService_RefreshOfflineRenditions_FullMethodName    = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
-	OnyxService_RecordOfflineEvent_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
-	OnyxService_GetYearInOnyx_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
-	OnyxService_GenerateAnnualArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
-	OnyxService_ReactToContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ReactToContent"
-	OnyxService_CreateIngestionItem_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
-	OnyxService_ListMyIngestionItems_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
-	OnyxService_GetIngestionItem_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
-	OnyxService_RetryIngestionItem_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
-	OnyxService_SetIngestionItemState_FullMethodName       = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
-	OnyxService_ResolveIngestionDuplicate_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
-	OnyxService_GetEvidenceWorkspace_FullMethodName        = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
-	OnyxService_CreateEvidenceBrief_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
-	OnyxService_ListMyEvidenceBriefs_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
-	OnyxService_GetEvidenceBrief_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
+	OnyxService_CreateProfile_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/CreateProfile"
+	OnyxService_GetProfile_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetProfile"
+	OnyxService_ListContent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListContent"
+	OnyxService_Subscribe_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_GetContent_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetContent"
+	OnyxService_ListShelf_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/ListShelf"
+	OnyxService_ListContinue_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListContinue"
+	OnyxService_GetShelves_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetShelves"
+	OnyxService_RecordProgress_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/RecordProgress"
+	OnyxService_RedeemContent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RedeemContent"
+	OnyxService_CreateSubscriptionCheckout_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
+	OnyxService_GetCreator_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetCreator"
+	OnyxService_ListCreatorWorks_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
+	OnyxService_FollowCreator_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/FollowCreator"
+	OnyxService_SearchContent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/SearchContent"
+	OnyxService_AddNote_FullMethodName                            = "/sttattus.onyx.v1.OnyxService/AddNote"
+	OnyxService_ListMyNotes_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
+	OnyxService_DeleteNote_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/DeleteNote"
+	OnyxService_UpsertReaderAnnotation_FullMethodName             = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
+	OnyxService_DeleteReaderAnnotation_FullMethodName             = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
+	OnyxService_ListMyReaderAnnotations_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
+	OnyxService_SearchReader_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/SearchReader"
+	OnyxService_ExportReaderData_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
+	OnyxService_ListReaderSyncChanges_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
+	OnyxService_ListMyUnlocks_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
+	OnyxService_ListMySubscriptions_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
+	OnyxService_ListMyFollows_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
+	OnyxService_ListSovereignWindow_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
+	OnyxService_ListSeries_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/ListSeries"
+	OnyxService_GetSeries_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/GetSeries"
+	OnyxService_GenerateCaptions_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
+	OnyxService_GetCaptionJob_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
+	OnyxService_GetListeningPreferences_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
+	OnyxService_UpdateListeningPreferences_FullMethodName         = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
+	OnyxService_CreateListeningBookmark_FullMethodName            = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
+	OnyxService_ListListeningBookmarks_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListListeningBookmarks"
+	OnyxService_DeleteListeningBookmark_FullMethodName            = "/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark"
+	OnyxService_ListListeningQueue_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListListeningQueue"
+	OnyxService_SetListeningQueue_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/SetListeningQueue"
+	OnyxService_CreateAudioOverview_FullMethodName                = "/sttattus.onyx.v1.OnyxService/CreateAudioOverview"
+	OnyxService_ListAudioOverviews_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListAudioOverviews"
+	OnyxService_GetAudioOverview_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetAudioOverview"
+	OnyxService_DeleteAudioOverview_FullMethodName                = "/sttattus.onyx.v1.OnyxService/DeleteAudioOverview"
+	OnyxService_ListListeningPronunciations_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListListeningPronunciations"
+	OnyxService_GetTodaySummary_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
+	OnyxService_GetCrossPillarUnlocks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
+	OnyxService_StartConciergeThread_FullMethodName               = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
+	OnyxService_ListMyConciergeThreads_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
+	OnyxService_GetConciergeThread_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
+	OnyxService_PostConciergeMessage_FullMethodName               = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
+	OnyxService_ListLiveEvents_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
+	OnyxService_GetLiveEvent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
+	OnyxService_RsvpLiveEvent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
+	OnyxService_SetPosthumousArchive_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
+	OnyxService_GetPosthumousArchive_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
+	OnyxService_ListAnthologies_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
+	OnyxService_GetAnthology_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetAnthology"
+	OnyxService_CreateShareLink_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
+	OnyxService_ListMyShareLinks_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
+	OnyxService_RevokeShareLink_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
+	OnyxService_GetOfflineManifest_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
+	OnyxService_RegisterDevice_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
+	OnyxService_AcknowledgePurge_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
+	OnyxService_GetDeviceGrants_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
+	OnyxService_RevokeMyDevice_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
+	OnyxService_MarkMyDeviceLost_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
+	OnyxService_GetPurgeReceipt_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
+	OnyxService_ListOfflineManifestItems_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
+	OnyxService_RefreshOfflineRenditions_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
+	OnyxService_RecordOfflineEvent_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
+	OnyxService_GetYearInOnyx_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
+	OnyxService_GenerateAnnualArchive_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
+	OnyxService_ReactToContent_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ReactToContent"
+	OnyxService_CreateIngestionItem_FullMethodName                = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
+	OnyxService_ListMyIngestionItems_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
+	OnyxService_GetIngestionItem_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
+	OnyxService_RetryIngestionItem_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
+	OnyxService_SetIngestionItemState_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
+	OnyxService_ResolveIngestionDuplicate_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
+	OnyxService_GetEvidenceWorkspace_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
+	OnyxService_CreateEvidenceBrief_FullMethodName                = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
+	OnyxService_ListMyEvidenceBriefs_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
+	OnyxService_GetEvidenceBrief_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
+	OnyxService_GetCreatorStudio_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetCreatorStudio"
+	OnyxService_SubmitCreatorPitch_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SubmitCreatorPitch"
+	OnyxService_UpdateCreatorProject_FullMethodName               = "/sttattus.onyx.v1.OnyxService/UpdateCreatorProject"
+	OnyxService_SubmitCreatorProject_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SubmitCreatorProject"
+	OnyxService_SignCreatorContract_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SignCreatorContract"
+	OnyxService_ListMyCreatorSubscriptionsDetailed_FullMethodName = "/sttattus.onyx.v1.OnyxService/ListMyCreatorSubscriptionsDetailed"
+	OnyxService_CancelCreatorSubscription_FullMethodName          = "/sttattus.onyx.v1.OnyxService/CancelCreatorSubscription"
+	OnyxService_GetMyCommerce_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetMyCommerce"
+	OnyxService_CreateCommerceCase_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateCommerceCase"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -216,6 +225,17 @@ type OnyxServiceClient interface {
 	CreateEvidenceBrief(ctx context.Context, in *CreateEvidenceBriefRequest, opts ...grpc.CallOption) (*CreateEvidenceBriefResponse, error)
 	ListMyEvidenceBriefs(ctx context.Context, in *ListMyEvidenceBriefsRequest, opts ...grpc.CallOption) (*ListMyEvidenceBriefsResponse, error)
 	GetEvidenceBrief(ctx context.Context, in *GetEvidenceBriefRequest, opts ...grpc.CallOption) (*GetEvidenceBriefResponse, error)
+	// Choice 6 — a creator submits and revises work while editorial, rights,
+	// accessibility, contracts, statements and member commerce remain auditable.
+	GetCreatorStudio(ctx context.Context, in *GetCreatorStudioRequest, opts ...grpc.CallOption) (*GetCreatorStudioResponse, error)
+	SubmitCreatorPitch(ctx context.Context, in *SubmitCreatorPitchRequest, opts ...grpc.CallOption) (*SubmitCreatorPitchResponse, error)
+	UpdateCreatorProject(ctx context.Context, in *UpdateCreatorProjectRequest, opts ...grpc.CallOption) (*UpdateCreatorProjectResponse, error)
+	SubmitCreatorProject(ctx context.Context, in *SubmitCreatorProjectRequest, opts ...grpc.CallOption) (*SubmitCreatorProjectResponse, error)
+	SignCreatorContract(ctx context.Context, in *SignCreatorContractRequest, opts ...grpc.CallOption) (*SignCreatorContractResponse, error)
+	ListMyCreatorSubscriptionsDetailed(ctx context.Context, in *ListMyCreatorSubscriptionsDetailedRequest, opts ...grpc.CallOption) (*ListMyCreatorSubscriptionsDetailedResponse, error)
+	CancelCreatorSubscription(ctx context.Context, in *CancelCreatorSubscriptionRequest, opts ...grpc.CallOption) (*CancelCreatorSubscriptionResponse, error)
+	GetMyCommerce(ctx context.Context, in *GetMyCommerceRequest, opts ...grpc.CallOption) (*GetMyCommerceResponse, error)
+	CreateCommerceCase(ctx context.Context, in *CreateCommerceCaseRequest, opts ...grpc.CallOption) (*CreateCommerceCaseResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -1056,6 +1076,96 @@ func (c *onyxServiceClient) GetEvidenceBrief(ctx context.Context, in *GetEvidenc
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetCreatorStudio(ctx context.Context, in *GetCreatorStudioRequest, opts ...grpc.CallOption) (*GetCreatorStudioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCreatorStudioResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetCreatorStudio_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitCreatorPitch(ctx context.Context, in *SubmitCreatorPitchRequest, opts ...grpc.CallOption) (*SubmitCreatorPitchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCreatorPitchResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitCreatorPitch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdateCreatorProject(ctx context.Context, in *UpdateCreatorProjectRequest, opts ...grpc.CallOption) (*UpdateCreatorProjectResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCreatorProjectResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdateCreatorProject_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitCreatorProject(ctx context.Context, in *SubmitCreatorProjectRequest, opts ...grpc.CallOption) (*SubmitCreatorProjectResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCreatorProjectResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitCreatorProject_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SignCreatorContract(ctx context.Context, in *SignCreatorContractRequest, opts ...grpc.CallOption) (*SignCreatorContractResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SignCreatorContractResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SignCreatorContract_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMyCreatorSubscriptionsDetailed(ctx context.Context, in *ListMyCreatorSubscriptionsDetailedRequest, opts ...grpc.CallOption) (*ListMyCreatorSubscriptionsDetailedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyCreatorSubscriptionsDetailedResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMyCreatorSubscriptionsDetailed_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CancelCreatorSubscription(ctx context.Context, in *CancelCreatorSubscriptionRequest, opts ...grpc.CallOption) (*CancelCreatorSubscriptionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelCreatorSubscriptionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CancelCreatorSubscription_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetMyCommerce(ctx context.Context, in *GetMyCommerceRequest, opts ...grpc.CallOption) (*GetMyCommerceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMyCommerceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetMyCommerce_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateCommerceCase(ctx context.Context, in *CreateCommerceCaseRequest, opts ...grpc.CallOption) (*CreateCommerceCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateCommerceCaseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateCommerceCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -1168,6 +1278,17 @@ type OnyxServiceServer interface {
 	CreateEvidenceBrief(context.Context, *CreateEvidenceBriefRequest) (*CreateEvidenceBriefResponse, error)
 	ListMyEvidenceBriefs(context.Context, *ListMyEvidenceBriefsRequest) (*ListMyEvidenceBriefsResponse, error)
 	GetEvidenceBrief(context.Context, *GetEvidenceBriefRequest) (*GetEvidenceBriefResponse, error)
+	// Choice 6 — a creator submits and revises work while editorial, rights,
+	// accessibility, contracts, statements and member commerce remain auditable.
+	GetCreatorStudio(context.Context, *GetCreatorStudioRequest) (*GetCreatorStudioResponse, error)
+	SubmitCreatorPitch(context.Context, *SubmitCreatorPitchRequest) (*SubmitCreatorPitchResponse, error)
+	UpdateCreatorProject(context.Context, *UpdateCreatorProjectRequest) (*UpdateCreatorProjectResponse, error)
+	SubmitCreatorProject(context.Context, *SubmitCreatorProjectRequest) (*SubmitCreatorProjectResponse, error)
+	SignCreatorContract(context.Context, *SignCreatorContractRequest) (*SignCreatorContractResponse, error)
+	ListMyCreatorSubscriptionsDetailed(context.Context, *ListMyCreatorSubscriptionsDetailedRequest) (*ListMyCreatorSubscriptionsDetailedResponse, error)
+	CancelCreatorSubscription(context.Context, *CancelCreatorSubscriptionRequest) (*CancelCreatorSubscriptionResponse, error)
+	GetMyCommerce(context.Context, *GetMyCommerceRequest) (*GetMyCommerceResponse, error)
+	CreateCommerceCase(context.Context, *CreateCommerceCaseRequest) (*CreateCommerceCaseResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -1426,6 +1547,33 @@ func (UnimplementedOnyxServiceServer) ListMyEvidenceBriefs(context.Context, *Lis
 }
 func (UnimplementedOnyxServiceServer) GetEvidenceBrief(context.Context, *GetEvidenceBriefRequest) (*GetEvidenceBriefResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetEvidenceBrief not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetCreatorStudio(context.Context, *GetCreatorStudioRequest) (*GetCreatorStudioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCreatorStudio not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitCreatorPitch(context.Context, *SubmitCreatorPitchRequest) (*SubmitCreatorPitchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCreatorPitch not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdateCreatorProject(context.Context, *UpdateCreatorProjectRequest) (*UpdateCreatorProjectResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCreatorProject not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitCreatorProject(context.Context, *SubmitCreatorProjectRequest) (*SubmitCreatorProjectResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCreatorProject not implemented")
+}
+func (UnimplementedOnyxServiceServer) SignCreatorContract(context.Context, *SignCreatorContractRequest) (*SignCreatorContractResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SignCreatorContract not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMyCreatorSubscriptionsDetailed(context.Context, *ListMyCreatorSubscriptionsDetailedRequest) (*ListMyCreatorSubscriptionsDetailedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyCreatorSubscriptionsDetailed not implemented")
+}
+func (UnimplementedOnyxServiceServer) CancelCreatorSubscription(context.Context, *CancelCreatorSubscriptionRequest) (*CancelCreatorSubscriptionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelCreatorSubscription not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetMyCommerce(context.Context, *GetMyCommerceRequest) (*GetMyCommerceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMyCommerce not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateCommerceCase(context.Context, *CreateCommerceCaseRequest) (*CreateCommerceCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateCommerceCase not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -2942,6 +3090,168 @@ func _OnyxService_GetEvidenceBrief_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetCreatorStudio_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCreatorStudioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetCreatorStudio(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetCreatorStudio_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetCreatorStudio(ctx, req.(*GetCreatorStudioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitCreatorPitch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCreatorPitchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitCreatorPitch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitCreatorPitch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitCreatorPitch(ctx, req.(*SubmitCreatorPitchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdateCreatorProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCreatorProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdateCreatorProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdateCreatorProject_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdateCreatorProject(ctx, req.(*UpdateCreatorProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitCreatorProject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCreatorProjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitCreatorProject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitCreatorProject_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitCreatorProject(ctx, req.(*SubmitCreatorProjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SignCreatorContract_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SignCreatorContractRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SignCreatorContract(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SignCreatorContract_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SignCreatorContract(ctx, req.(*SignCreatorContractRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMyCreatorSubscriptionsDetailed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyCreatorSubscriptionsDetailedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMyCreatorSubscriptionsDetailed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMyCreatorSubscriptionsDetailed_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMyCreatorSubscriptionsDetailed(ctx, req.(*ListMyCreatorSubscriptionsDetailedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CancelCreatorSubscription_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelCreatorSubscriptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CancelCreatorSubscription(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CancelCreatorSubscription_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CancelCreatorSubscription(ctx, req.(*CancelCreatorSubscriptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetMyCommerce_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyCommerceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetMyCommerce(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetMyCommerce_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetMyCommerce(ctx, req.(*GetMyCommerceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateCommerceCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCommerceCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateCommerceCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateCommerceCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateCommerceCase(ctx, req.(*CreateCommerceCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -3280,6 +3590,42 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEvidenceBrief",
 			Handler:    _OnyxService_GetEvidenceBrief_Handler,
+		},
+		{
+			MethodName: "GetCreatorStudio",
+			Handler:    _OnyxService_GetCreatorStudio_Handler,
+		},
+		{
+			MethodName: "SubmitCreatorPitch",
+			Handler:    _OnyxService_SubmitCreatorPitch_Handler,
+		},
+		{
+			MethodName: "UpdateCreatorProject",
+			Handler:    _OnyxService_UpdateCreatorProject_Handler,
+		},
+		{
+			MethodName: "SubmitCreatorProject",
+			Handler:    _OnyxService_SubmitCreatorProject_Handler,
+		},
+		{
+			MethodName: "SignCreatorContract",
+			Handler:    _OnyxService_SignCreatorContract_Handler,
+		},
+		{
+			MethodName: "ListMyCreatorSubscriptionsDetailed",
+			Handler:    _OnyxService_ListMyCreatorSubscriptionsDetailed_Handler,
+		},
+		{
+			MethodName: "CancelCreatorSubscription",
+			Handler:    _OnyxService_CancelCreatorSubscription_Handler,
+		},
+		{
+			MethodName: "GetMyCommerce",
+			Handler:    _OnyxService_GetMyCommerce_Handler,
+		},
+		{
+			MethodName: "CreateCommerceCase",
+			Handler:    _OnyxService_CreateCommerceCase_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

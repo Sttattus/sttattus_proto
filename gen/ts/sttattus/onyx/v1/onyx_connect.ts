@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AcknowledgePurgeRequest, AcknowledgePurgeResponse, AddNoteRequest, AddNoteResponse, CreateAudioOverviewRequest, CreateAudioOverviewResponse, CreateEvidenceBriefRequest, CreateEvidenceBriefResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateListeningBookmarkRequest, CreateListeningBookmarkResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteAudioOverviewRequest, DeleteAudioOverviewResponse, DeleteListeningBookmarkRequest, DeleteListeningBookmarkResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, ExportReaderDataRequest, ExportReaderDataResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetAudioOverviewRequest, GetAudioOverviewResponse, GetCaptionJobRequest, GetCaptionJobResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetDeviceGrantsRequest, GetDeviceGrantsResponse, GetEvidenceBriefRequest, GetEvidenceBriefResponse, GetEvidenceWorkspaceRequest, GetEvidenceWorkspaceResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetListeningPreferencesRequest, GetListeningPreferencesResponse, GetLiveEventRequest, GetLiveEventResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetPurgeReceiptRequest, GetPurgeReceiptResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListAudioOverviewsRequest, ListAudioOverviewsResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListListeningBookmarksRequest, ListListeningBookmarksResponse, ListListeningPronunciationsRequest, ListListeningPronunciationsResponse, ListListeningQueueRequest, ListListeningQueueResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEvidenceBriefsRequest, ListMyEvidenceBriefsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListOfflineManifestItemsRequest, ListOfflineManifestItemsResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, MarkMyDeviceLostRequest, MarkMyDeviceLostResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordOfflineEventRequest, RecordOfflineEventResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, RefreshOfflineRenditionsRequest, RefreshOfflineRenditionsResponse, RegisterDeviceRequest, RegisterDeviceResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeMyDeviceRequest, RevokeMyDeviceResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SearchReaderRequest, SearchReaderResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetListeningQueueRequest, SetListeningQueueResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubscribeRequest, SubscribeResponse, UpdateListeningPreferencesRequest, UpdateListeningPreferencesResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse } from "./onyx_pb.js";
+import { AcknowledgePurgeRequest, AcknowledgePurgeResponse, AddNoteRequest, AddNoteResponse, CancelCreatorSubscriptionRequest, CancelCreatorSubscriptionResponse, CreateAudioOverviewRequest, CreateAudioOverviewResponse, CreateCommerceCaseRequest, CreateCommerceCaseResponse, CreateEvidenceBriefRequest, CreateEvidenceBriefResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateListeningBookmarkRequest, CreateListeningBookmarkResponse, CreateProfileRequest, CreateProfileResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, DeleteAudioOverviewRequest, DeleteAudioOverviewResponse, DeleteListeningBookmarkRequest, DeleteListeningBookmarkResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, ExportReaderDataRequest, ExportReaderDataResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GetAnthologyRequest, GetAnthologyResponse, GetAudioOverviewRequest, GetAudioOverviewResponse, GetCaptionJobRequest, GetCaptionJobResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCreatorStudioRequest, GetCreatorStudioResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetDeviceGrantsRequest, GetDeviceGrantsResponse, GetEvidenceBriefRequest, GetEvidenceBriefResponse, GetEvidenceWorkspaceRequest, GetEvidenceWorkspaceResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetListeningPreferencesRequest, GetListeningPreferencesResponse, GetLiveEventRequest, GetLiveEventResponse, GetMyCommerceRequest, GetMyCommerceResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetPurgeReceiptRequest, GetPurgeReceiptResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListAudioOverviewsRequest, ListAudioOverviewsResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListListeningBookmarksRequest, ListListeningBookmarksResponse, ListListeningPronunciationsRequest, ListListeningPronunciationsResponse, ListListeningQueueRequest, ListListeningQueueResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCreatorSubscriptionsDetailedRequest, ListMyCreatorSubscriptionsDetailedResponse, ListMyEvidenceBriefsRequest, ListMyEvidenceBriefsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListOfflineManifestItemsRequest, ListOfflineManifestItemsResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, MarkMyDeviceLostRequest, MarkMyDeviceLostResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReactToContentRequest, ReactToContentResponse, RecordOfflineEventRequest, RecordOfflineEventResponse, RecordProgressRequest, RecordProgressResponse, RedeemContentRequest, RedeemContentResponse, RefreshOfflineRenditionsRequest, RefreshOfflineRenditionsResponse, RegisterDeviceRequest, RegisterDeviceResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeMyDeviceRequest, RevokeMyDeviceResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, SearchContentRequest, SearchContentResponse, SearchReaderRequest, SearchReaderResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetListeningQueueRequest, SetListeningQueueResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, SignCreatorContractRequest, SignCreatorContractResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCreatorPitchRequest, SubmitCreatorPitchResponse, SubmitCreatorProjectRequest, SubmitCreatorProjectResponse, SubscribeRequest, SubscribeResponse, UpdateCreatorProjectRequest, UpdateCreatorProjectResponse, UpdateListeningPreferencesRequest, UpdateListeningPreferencesResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -804,6 +804,90 @@ export const OnyxService = {
       name: "GetEvidenceBrief",
       I: GetEvidenceBriefRequest,
       O: GetEvidenceBriefResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 — a creator submits and revises work while editorial, rights,
+     * accessibility, contracts, statements and member commerce remain auditable.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetCreatorStudio
+     */
+    getCreatorStudio: {
+      name: "GetCreatorStudio",
+      I: GetCreatorStudioRequest,
+      O: GetCreatorStudioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SubmitCreatorPitch
+     */
+    submitCreatorPitch: {
+      name: "SubmitCreatorPitch",
+      I: SubmitCreatorPitchRequest,
+      O: SubmitCreatorPitchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.UpdateCreatorProject
+     */
+    updateCreatorProject: {
+      name: "UpdateCreatorProject",
+      I: UpdateCreatorProjectRequest,
+      O: UpdateCreatorProjectResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SubmitCreatorProject
+     */
+    submitCreatorProject: {
+      name: "SubmitCreatorProject",
+      I: SubmitCreatorProjectRequest,
+      O: SubmitCreatorProjectResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SignCreatorContract
+     */
+    signCreatorContract: {
+      name: "SignCreatorContract",
+      I: SignCreatorContractRequest,
+      O: SignCreatorContractResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed
+     */
+    listMyCreatorSubscriptionsDetailed: {
+      name: "ListMyCreatorSubscriptionsDetailed",
+      I: ListMyCreatorSubscriptionsDetailedRequest,
+      O: ListMyCreatorSubscriptionsDetailedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CancelCreatorSubscription
+     */
+    cancelCreatorSubscription: {
+      name: "CancelCreatorSubscription",
+      I: CancelCreatorSubscriptionRequest,
+      O: CancelCreatorSubscriptionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetMyCommerce
+     */
+    getMyCommerce: {
+      name: "GetMyCommerce",
+      I: GetMyCommerceRequest,
+      O: GetMyCommerceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateCommerceCase
+     */
+    createCommerceCase: {
+      name: "CreateCommerceCase",
+      I: CreateCommerceCaseRequest,
+      O: CreateCommerceCaseResponse,
       kind: MethodKind.Unary,
     },
   }

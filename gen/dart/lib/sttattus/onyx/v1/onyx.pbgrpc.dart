@@ -666,6 +666,75 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getEvidenceBrief, request, options: options);
   }
 
+  /// Choice 6 — a creator submits and revises work while editorial, rights,
+  /// accessibility, contracts, statements and member commerce remain auditable.
+  $grpc.ResponseFuture<$0.GetCreatorStudioResponse> getCreatorStudio(
+    $0.GetCreatorStudioRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCreatorStudio, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCreatorPitchResponse> submitCreatorPitch(
+    $0.SubmitCreatorPitchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitCreatorPitch, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCreatorProjectResponse> updateCreatorProject(
+    $0.UpdateCreatorProjectRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCreatorProject, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCreatorProjectResponse> submitCreatorProject(
+    $0.SubmitCreatorProjectRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitCreatorProject, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SignCreatorContractResponse> signCreatorContract(
+    $0.SignCreatorContractRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$signCreatorContract, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyCreatorSubscriptionsDetailedResponse>
+      listMyCreatorSubscriptionsDetailed(
+    $0.ListMyCreatorSubscriptionsDetailedRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyCreatorSubscriptionsDetailed, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CancelCreatorSubscriptionResponse>
+      cancelCreatorSubscription(
+    $0.CancelCreatorSubscriptionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$cancelCreatorSubscription, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMyCommerceResponse> getMyCommerce(
+    $0.GetMyCommerceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMyCommerce, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateCommerceCaseResponse> createCommerceCase(
+    $0.CreateCommerceCaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createCommerceCase, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -1093,6 +1162,54 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GetEvidenceBrief',
       ($0.GetEvidenceBriefRequest value) => value.writeToBuffer(),
       $0.GetEvidenceBriefResponse.fromBuffer);
+  static final _$getCreatorStudio = $grpc.ClientMethod<
+          $0.GetCreatorStudioRequest, $0.GetCreatorStudioResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetCreatorStudio',
+      ($0.GetCreatorStudioRequest value) => value.writeToBuffer(),
+      $0.GetCreatorStudioResponse.fromBuffer);
+  static final _$submitCreatorPitch = $grpc.ClientMethod<
+          $0.SubmitCreatorPitchRequest, $0.SubmitCreatorPitchResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitCreatorPitch',
+      ($0.SubmitCreatorPitchRequest value) => value.writeToBuffer(),
+      $0.SubmitCreatorPitchResponse.fromBuffer);
+  static final _$updateCreatorProject = $grpc.ClientMethod<
+          $0.UpdateCreatorProjectRequest, $0.UpdateCreatorProjectResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdateCreatorProject',
+      ($0.UpdateCreatorProjectRequest value) => value.writeToBuffer(),
+      $0.UpdateCreatorProjectResponse.fromBuffer);
+  static final _$submitCreatorProject = $grpc.ClientMethod<
+          $0.SubmitCreatorProjectRequest, $0.SubmitCreatorProjectResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitCreatorProject',
+      ($0.SubmitCreatorProjectRequest value) => value.writeToBuffer(),
+      $0.SubmitCreatorProjectResponse.fromBuffer);
+  static final _$signCreatorContract = $grpc.ClientMethod<
+          $0.SignCreatorContractRequest, $0.SignCreatorContractResponse>(
+      '/sttattus.onyx.v1.OnyxService/SignCreatorContract',
+      ($0.SignCreatorContractRequest value) => value.writeToBuffer(),
+      $0.SignCreatorContractResponse.fromBuffer);
+  static final _$listMyCreatorSubscriptionsDetailed = $grpc.ClientMethod<
+          $0.ListMyCreatorSubscriptionsDetailedRequest,
+          $0.ListMyCreatorSubscriptionsDetailedResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListMyCreatorSubscriptionsDetailed',
+      ($0.ListMyCreatorSubscriptionsDetailedRequest value) =>
+          value.writeToBuffer(),
+      $0.ListMyCreatorSubscriptionsDetailedResponse.fromBuffer);
+  static final _$cancelCreatorSubscription = $grpc.ClientMethod<
+          $0.CancelCreatorSubscriptionRequest,
+          $0.CancelCreatorSubscriptionResponse>(
+      '/sttattus.onyx.v1.OnyxService/CancelCreatorSubscription',
+      ($0.CancelCreatorSubscriptionRequest value) => value.writeToBuffer(),
+      $0.CancelCreatorSubscriptionResponse.fromBuffer);
+  static final _$getMyCommerce =
+      $grpc.ClientMethod<$0.GetMyCommerceRequest, $0.GetMyCommerceResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetMyCommerce',
+          ($0.GetMyCommerceRequest value) => value.writeToBuffer(),
+          $0.GetMyCommerceResponse.fromBuffer);
+  static final _$createCommerceCase = $grpc.ClientMethod<
+          $0.CreateCommerceCaseRequest, $0.CreateCommerceCaseResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateCommerceCase',
+      ($0.CreateCommerceCaseRequest value) => value.writeToBuffer(),
+      $0.CreateCommerceCaseResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -1830,6 +1947,88 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetEvidenceBriefRequest.fromBuffer(value),
         ($0.GetEvidenceBriefResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCreatorStudioRequest,
+            $0.GetCreatorStudioResponse>(
+        'GetCreatorStudio',
+        getCreatorStudio_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCreatorStudioRequest.fromBuffer(value),
+        ($0.GetCreatorStudioResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCreatorPitchRequest,
+            $0.SubmitCreatorPitchResponse>(
+        'SubmitCreatorPitch',
+        submitCreatorPitch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitCreatorPitchRequest.fromBuffer(value),
+        ($0.SubmitCreatorPitchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCreatorProjectRequest,
+            $0.UpdateCreatorProjectResponse>(
+        'UpdateCreatorProject',
+        updateCreatorProject_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCreatorProjectRequest.fromBuffer(value),
+        ($0.UpdateCreatorProjectResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCreatorProjectRequest,
+            $0.SubmitCreatorProjectResponse>(
+        'SubmitCreatorProject',
+        submitCreatorProject_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitCreatorProjectRequest.fromBuffer(value),
+        ($0.SubmitCreatorProjectResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SignCreatorContractRequest,
+            $0.SignCreatorContractResponse>(
+        'SignCreatorContract',
+        signCreatorContract_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SignCreatorContractRequest.fromBuffer(value),
+        ($0.SignCreatorContractResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyCreatorSubscriptionsDetailedRequest,
+            $0.ListMyCreatorSubscriptionsDetailedResponse>(
+        'ListMyCreatorSubscriptionsDetailed',
+        listMyCreatorSubscriptionsDetailed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyCreatorSubscriptionsDetailedRequest.fromBuffer(value),
+        ($0.ListMyCreatorSubscriptionsDetailedResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CancelCreatorSubscriptionRequest,
+            $0.CancelCreatorSubscriptionResponse>(
+        'CancelCreatorSubscription',
+        cancelCreatorSubscription_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CancelCreatorSubscriptionRequest.fromBuffer(value),
+        ($0.CancelCreatorSubscriptionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetMyCommerceRequest, $0.GetMyCommerceResponse>(
+            'GetMyCommerce',
+            getMyCommerce_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetMyCommerceRequest.fromBuffer(value),
+            ($0.GetMyCommerceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateCommerceCaseRequest,
+            $0.CreateCommerceCaseResponse>(
+        'CreateCommerceCase',
+        createCommerceCase_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateCommerceCaseRequest.fromBuffer(value),
+        ($0.CreateCommerceCaseResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -2569,4 +2768,88 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetEvidenceBriefResponse> getEvidenceBrief(
       $grpc.ServiceCall call, $0.GetEvidenceBriefRequest request);
+
+  $async.Future<$0.GetCreatorStudioResponse> getCreatorStudio_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetCreatorStudioRequest> $request) async {
+    return getCreatorStudio($call, await $request);
+  }
+
+  $async.Future<$0.GetCreatorStudioResponse> getCreatorStudio(
+      $grpc.ServiceCall call, $0.GetCreatorStudioRequest request);
+
+  $async.Future<$0.SubmitCreatorPitchResponse> submitCreatorPitch_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SubmitCreatorPitchRequest> $request) async {
+    return submitCreatorPitch($call, await $request);
+  }
+
+  $async.Future<$0.SubmitCreatorPitchResponse> submitCreatorPitch(
+      $grpc.ServiceCall call, $0.SubmitCreatorPitchRequest request);
+
+  $async.Future<$0.UpdateCreatorProjectResponse> updateCreatorProject_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpdateCreatorProjectRequest> $request) async {
+    return updateCreatorProject($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCreatorProjectResponse> updateCreatorProject(
+      $grpc.ServiceCall call, $0.UpdateCreatorProjectRequest request);
+
+  $async.Future<$0.SubmitCreatorProjectResponse> submitCreatorProject_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SubmitCreatorProjectRequest> $request) async {
+    return submitCreatorProject($call, await $request);
+  }
+
+  $async.Future<$0.SubmitCreatorProjectResponse> submitCreatorProject(
+      $grpc.ServiceCall call, $0.SubmitCreatorProjectRequest request);
+
+  $async.Future<$0.SignCreatorContractResponse> signCreatorContract_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SignCreatorContractRequest> $request) async {
+    return signCreatorContract($call, await $request);
+  }
+
+  $async.Future<$0.SignCreatorContractResponse> signCreatorContract(
+      $grpc.ServiceCall call, $0.SignCreatorContractRequest request);
+
+  $async.Future<$0.ListMyCreatorSubscriptionsDetailedResponse>
+      listMyCreatorSubscriptionsDetailed_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListMyCreatorSubscriptionsDetailedRequest>
+              $request) async {
+    return listMyCreatorSubscriptionsDetailed($call, await $request);
+  }
+
+  $async.Future<$0.ListMyCreatorSubscriptionsDetailedResponse>
+      listMyCreatorSubscriptionsDetailed($grpc.ServiceCall call,
+          $0.ListMyCreatorSubscriptionsDetailedRequest request);
+
+  $async.Future<$0.CancelCreatorSubscriptionResponse>
+      cancelCreatorSubscription_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CancelCreatorSubscriptionRequest> $request) async {
+    return cancelCreatorSubscription($call, await $request);
+  }
+
+  $async.Future<$0.CancelCreatorSubscriptionResponse> cancelCreatorSubscription(
+      $grpc.ServiceCall call, $0.CancelCreatorSubscriptionRequest request);
+
+  $async.Future<$0.GetMyCommerceResponse> getMyCommerce_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetMyCommerceRequest> $request) async {
+    return getMyCommerce($call, await $request);
+  }
+
+  $async.Future<$0.GetMyCommerceResponse> getMyCommerce(
+      $grpc.ServiceCall call, $0.GetMyCommerceRequest request);
+
+  $async.Future<$0.CreateCommerceCaseResponse> createCommerceCase_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateCommerceCaseRequest> $request) async {
+    return createCommerceCase($call, await $request);
+  }
+
+  $async.Future<$0.CreateCommerceCaseResponse> createCommerceCase(
+      $grpc.ServiceCall call, $0.CreateCommerceCaseRequest request);
 }
