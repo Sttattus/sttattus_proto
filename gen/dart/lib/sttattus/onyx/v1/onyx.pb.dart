@@ -1872,6 +1872,9 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
     $core.int? positionSeconds,
     $core.String? passageKey,
     $core.int? offset,
+    $1.Timestamp? observedAt,
+    $core.String? clientMutationId,
+    $core.String? mode,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
@@ -1879,6 +1882,9 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
     if (positionSeconds != null) result.positionSeconds = positionSeconds;
     if (passageKey != null) result.passageKey = passageKey;
     if (offset != null) result.offset = offset;
+    if (observedAt != null) result.observedAt = observedAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (mode != null) result.mode = mode;
     return result;
   }
 
@@ -1901,6 +1907,10 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
     ..aI(3, _omitFieldNames ? '' : 'positionSeconds')
     ..aOS(4, _omitFieldNames ? '' : 'passageKey')
     ..aI(5, _omitFieldNames ? '' : 'offset')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'observedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(8, _omitFieldNames ? '' : 'mode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1968,6 +1978,40 @@ class RecordProgressRequest extends $pb.GeneratedMessage {
   $core.bool hasOffset() => $_has(4);
   @$pb.TagNumber(5)
   void clearOffset() => $_clearField(5);
+
+  /// Device observation time, retained while offline so an older device can
+  /// never overwrite the newer read/listen locator during reconciliation.
+  @$pb.TagNumber(6)
+  $1.Timestamp get observedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set observedAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasObservedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearObservedAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureObservedAt() => $_ensure(5);
+
+  /// Idempotency identity for an offline journal entry.
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+
+  /// read | listen. Both share one canonical passage locator so switching
+  /// modes resumes the same source position.
+  @$pb.TagNumber(8)
+  $core.String get mode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set mode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMode() => $_clearField(8);
 }
 
 class RecordProgressResponse extends $pb.GeneratedMessage {
@@ -1976,12 +2020,18 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
     $core.int? positionSeconds,
     $core.String? passageKey,
     $core.int? offset,
+    $1.Timestamp? observedAt,
+    $core.String? clientMutationId,
+    $core.String? mode,
   }) {
     final result = create();
     if (completion != null) result.completion = completion;
     if (positionSeconds != null) result.positionSeconds = positionSeconds;
     if (passageKey != null) result.passageKey = passageKey;
     if (offset != null) result.offset = offset;
+    if (observedAt != null) result.observedAt = observedAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (mode != null) result.mode = mode;
     return result;
   }
 
@@ -2003,6 +2053,10 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
     ..aI(2, _omitFieldNames ? '' : 'positionSeconds')
     ..aOS(3, _omitFieldNames ? '' : 'passageKey')
     ..aI(4, _omitFieldNames ? '' : 'offset')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'observedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(7, _omitFieldNames ? '' : 'mode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2060,6 +2114,35 @@ class RecordProgressResponse extends $pb.GeneratedMessage {
   $core.bool hasOffset() => $_has(3);
   @$pb.TagNumber(4)
   void clearOffset() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get observedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set observedAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasObservedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearObservedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureObservedAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get mode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set mode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMode() => $_clearField(7);
 }
 
 class RedeemContentRequest extends $pb.GeneratedMessage {
@@ -5727,12 +5810,24 @@ class CaptionJob extends $pb.GeneratedMessage {
     $core.String? status,
     $core.String? captionsUrl,
     $core.String? error,
+    $core.String? jobId,
+    $core.String? languageCode,
+    $core.String? errorCode,
+    $core.int? attemptCount,
+    $core.int? maxAttempts,
+    $1.Timestamp? nextAttemptAt,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
     if (status != null) result.status = status;
     if (captionsUrl != null) result.captionsUrl = captionsUrl;
     if (error != null) result.error = error;
+    if (jobId != null) result.jobId = jobId;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (attemptCount != null) result.attemptCount = attemptCount;
+    if (maxAttempts != null) result.maxAttempts = maxAttempts;
+    if (nextAttemptAt != null) result.nextAttemptAt = nextAttemptAt;
     return result;
   }
 
@@ -5754,6 +5849,13 @@ class CaptionJob extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'status')
     ..aOS(3, _omitFieldNames ? '' : 'captionsUrl')
     ..aOS(4, _omitFieldNames ? '' : 'error')
+    ..aOS(5, _omitFieldNames ? '' : 'jobId')
+    ..aOS(6, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(7, _omitFieldNames ? '' : 'errorCode')
+    ..aI(8, _omitFieldNames ? '' : 'attemptCount')
+    ..aI(9, _omitFieldNames ? '' : 'maxAttempts')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'nextAttemptAt',
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5809,14 +5911,77 @@ class CaptionJob extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(3);
   @$pb.TagNumber(4)
   void clearError() => $_clearField(4);
+
+  /// Durable job identity. Empty only for captions created before the durable
+  /// queue contract was introduced.
+  @$pb.TagNumber(5)
+  $core.String get jobId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jobId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJobId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJobId() => $_clearField(5);
+
+  /// Normalized BCP-47 language tag used by the transcriber.
+  @$pb.TagNumber(6)
+  $core.String get languageCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set languageCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLanguageCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLanguageCode() => $_clearField(6);
+
+  /// Stable, bounded machine-readable failure code. `error` remains safe
+  /// member-facing copy and never carries a raw provider response.
+  @$pb.TagNumber(7)
+  $core.String get errorCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set errorCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasErrorCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearErrorCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get attemptCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set attemptCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAttemptCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAttemptCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get maxAttempts => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set maxAttempts($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMaxAttempts() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMaxAttempts() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get nextAttemptAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set nextAttemptAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNextAttemptAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNextAttemptAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureNextAttemptAt() => $_ensure(9);
 }
 
 class GenerateCaptionsRequest extends $pb.GeneratedMessage {
   factory GenerateCaptionsRequest({
     $core.String? contentId,
+    $core.String? languageCode,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
+    if (languageCode != null) result.languageCode = languageCode;
     return result;
   }
 
@@ -5835,6 +6000,7 @@ class GenerateCaptionsRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'languageCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5865,6 +6031,17 @@ class GenerateCaptionsRequest extends $pb.GeneratedMessage {
   $core.bool hasContentId() => $_has(0);
   @$pb.TagNumber(1)
   void clearContentId() => $_clearField(1);
+
+  /// Optional BCP-47 language tag. Empty defaults to English for wire
+  /// compatibility with older clients.
+  @$pb.TagNumber(2)
+  $core.String get languageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set languageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguageCode() => $_clearField(2);
 }
 
 class GenerateCaptionsResponse extends $pb.GeneratedMessage {
@@ -5924,6 +6101,2590 @@ class GenerateCaptionsResponse extends $pb.GeneratedMessage {
   void clearJob() => $_clearField(1);
   @$pb.TagNumber(1)
   CaptionJob ensureJob() => $_ensure(0);
+}
+
+class GetCaptionJobRequest extends $pb.GeneratedMessage {
+  factory GetCaptionJobRequest({
+    $core.String? jobId,
+  }) {
+    final result = create();
+    if (jobId != null) result.jobId = jobId;
+    return result;
+  }
+
+  GetCaptionJobRequest._();
+
+  factory GetCaptionJobRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCaptionJobRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCaptionJobRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCaptionJobRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCaptionJobRequest copyWith(void Function(GetCaptionJobRequest) updates) =>
+      super.copyWith((message) => updates(message as GetCaptionJobRequest))
+          as GetCaptionJobRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCaptionJobRequest create() => GetCaptionJobRequest._();
+  @$core.override
+  GetCaptionJobRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCaptionJobRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCaptionJobRequest>(create);
+  static GetCaptionJobRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasJobId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobId() => $_clearField(1);
+}
+
+class GetCaptionJobResponse extends $pb.GeneratedMessage {
+  factory GetCaptionJobResponse({
+    CaptionJob? job,
+  }) {
+    final result = create();
+    if (job != null) result.job = job;
+    return result;
+  }
+
+  GetCaptionJobResponse._();
+
+  factory GetCaptionJobResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCaptionJobResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCaptionJobResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<CaptionJob>(1, _omitFieldNames ? '' : 'job',
+        subBuilder: CaptionJob.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCaptionJobResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCaptionJobResponse copyWith(
+          void Function(GetCaptionJobResponse) updates) =>
+      super.copyWith((message) => updates(message as GetCaptionJobResponse))
+          as GetCaptionJobResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCaptionJobResponse create() => GetCaptionJobResponse._();
+  @$core.override
+  GetCaptionJobResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCaptionJobResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCaptionJobResponse>(create);
+  static GetCaptionJobResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CaptionJob get job => $_getN(0);
+  @$pb.TagNumber(1)
+  set job(CaptionJob value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasJob() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJob() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CaptionJob ensureJob() => $_ensure(0);
+}
+
+class ListeningPreferences extends $pb.GeneratedMessage {
+  factory ListeningPreferences({
+    $core.String? voiceName,
+    $core.String? voiceLocale,
+    $core.double? speed,
+    $core.double? pitch,
+    $core.bool? skipHeadings,
+    $core.bool? skipCitations,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (voiceName != null) result.voiceName = voiceName;
+    if (voiceLocale != null) result.voiceLocale = voiceLocale;
+    if (speed != null) result.speed = speed;
+    if (pitch != null) result.pitch = pitch;
+    if (skipHeadings != null) result.skipHeadings = skipHeadings;
+    if (skipCitations != null) result.skipCitations = skipCitations;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  ListeningPreferences._();
+
+  factory ListeningPreferences.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListeningPreferences.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListeningPreferences',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'voiceName')
+    ..aOS(2, _omitFieldNames ? '' : 'voiceLocale')
+    ..aD(3, _omitFieldNames ? '' : 'speed')
+    ..aD(4, _omitFieldNames ? '' : 'pitch')
+    ..aOB(5, _omitFieldNames ? '' : 'skipHeadings')
+    ..aOB(6, _omitFieldNames ? '' : 'skipCitations')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningPreferences clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningPreferences copyWith(void Function(ListeningPreferences) updates) =>
+      super.copyWith((message) => updates(message as ListeningPreferences))
+          as ListeningPreferences;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListeningPreferences create() => ListeningPreferences._();
+  @$core.override
+  ListeningPreferences createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListeningPreferences getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListeningPreferences>(create);
+  static ListeningPreferences? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get voiceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set voiceName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVoiceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVoiceName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get voiceLocale => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set voiceLocale($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVoiceLocale() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVoiceLocale() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get speed => $_getN(2);
+  @$pb.TagNumber(3)
+  set speed($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSpeed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSpeed() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get pitch => $_getN(3);
+  @$pb.TagNumber(4)
+  set pitch($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPitch() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPitch() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get skipHeadings => $_getBF(4);
+  @$pb.TagNumber(5)
+  set skipHeadings($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSkipHeadings() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSkipHeadings() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get skipCitations => $_getBF(5);
+  @$pb.TagNumber(6)
+  set skipCitations($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSkipCitations() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSkipCitations() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get updatedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set updatedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasUpdatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(6);
+}
+
+class GetListeningPreferencesRequest extends $pb.GeneratedMessage {
+  factory GetListeningPreferencesRequest() => create();
+
+  GetListeningPreferencesRequest._();
+
+  factory GetListeningPreferencesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetListeningPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetListeningPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetListeningPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetListeningPreferencesRequest copyWith(
+          void Function(GetListeningPreferencesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetListeningPreferencesRequest))
+          as GetListeningPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetListeningPreferencesRequest create() =>
+      GetListeningPreferencesRequest._();
+  @$core.override
+  GetListeningPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetListeningPreferencesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetListeningPreferencesRequest>(create);
+  static GetListeningPreferencesRequest? _defaultInstance;
+}
+
+class GetListeningPreferencesResponse extends $pb.GeneratedMessage {
+  factory GetListeningPreferencesResponse({
+    ListeningPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  GetListeningPreferencesResponse._();
+
+  factory GetListeningPreferencesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetListeningPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetListeningPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ListeningPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: ListeningPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetListeningPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetListeningPreferencesResponse copyWith(
+          void Function(GetListeningPreferencesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetListeningPreferencesResponse))
+          as GetListeningPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetListeningPreferencesResponse create() =>
+      GetListeningPreferencesResponse._();
+  @$core.override
+  GetListeningPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetListeningPreferencesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetListeningPreferencesResponse>(
+          create);
+  static GetListeningPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ListeningPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(ListeningPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ListeningPreferences ensurePreferences() => $_ensure(0);
+}
+
+class UpdateListeningPreferencesRequest extends $pb.GeneratedMessage {
+  factory UpdateListeningPreferencesRequest({
+    $core.String? voiceName,
+    $core.String? voiceLocale,
+    $core.double? speed,
+    $core.double? pitch,
+    $core.bool? skipHeadings,
+    $core.bool? skipCitations,
+  }) {
+    final result = create();
+    if (voiceName != null) result.voiceName = voiceName;
+    if (voiceLocale != null) result.voiceLocale = voiceLocale;
+    if (speed != null) result.speed = speed;
+    if (pitch != null) result.pitch = pitch;
+    if (skipHeadings != null) result.skipHeadings = skipHeadings;
+    if (skipCitations != null) result.skipCitations = skipCitations;
+    return result;
+  }
+
+  UpdateListeningPreferencesRequest._();
+
+  factory UpdateListeningPreferencesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateListeningPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateListeningPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'voiceName')
+    ..aOS(2, _omitFieldNames ? '' : 'voiceLocale')
+    ..aD(3, _omitFieldNames ? '' : 'speed')
+    ..aD(4, _omitFieldNames ? '' : 'pitch')
+    ..aOB(5, _omitFieldNames ? '' : 'skipHeadings')
+    ..aOB(6, _omitFieldNames ? '' : 'skipCitations')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateListeningPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateListeningPreferencesRequest copyWith(
+          void Function(UpdateListeningPreferencesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateListeningPreferencesRequest))
+          as UpdateListeningPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateListeningPreferencesRequest create() =>
+      UpdateListeningPreferencesRequest._();
+  @$core.override
+  UpdateListeningPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateListeningPreferencesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateListeningPreferencesRequest>(
+          create);
+  static UpdateListeningPreferencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get voiceName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set voiceName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVoiceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVoiceName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get voiceLocale => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set voiceLocale($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVoiceLocale() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVoiceLocale() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get speed => $_getN(2);
+  @$pb.TagNumber(3)
+  set speed($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSpeed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSpeed() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get pitch => $_getN(3);
+  @$pb.TagNumber(4)
+  set pitch($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPitch() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPitch() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get skipHeadings => $_getBF(4);
+  @$pb.TagNumber(5)
+  set skipHeadings($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSkipHeadings() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSkipHeadings() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get skipCitations => $_getBF(5);
+  @$pb.TagNumber(6)
+  set skipCitations($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSkipCitations() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSkipCitations() => $_clearField(6);
+}
+
+class UpdateListeningPreferencesResponse extends $pb.GeneratedMessage {
+  factory UpdateListeningPreferencesResponse({
+    ListeningPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdateListeningPreferencesResponse._();
+
+  factory UpdateListeningPreferencesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateListeningPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateListeningPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ListeningPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: ListeningPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateListeningPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateListeningPreferencesResponse copyWith(
+          void Function(UpdateListeningPreferencesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateListeningPreferencesResponse))
+          as UpdateListeningPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateListeningPreferencesResponse create() =>
+      UpdateListeningPreferencesResponse._();
+  @$core.override
+  UpdateListeningPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateListeningPreferencesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateListeningPreferencesResponse>(
+          create);
+  static UpdateListeningPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ListeningPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(ListeningPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ListeningPreferences ensurePreferences() => $_ensure(0);
+}
+
+class ListeningBookmark extends $pb.GeneratedMessage {
+  factory ListeningBookmark({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? kind,
+    $core.int? positionSeconds,
+    $core.int? endPositionSeconds,
+    $core.String? passageKey,
+    $core.int? passageOffset,
+    $core.String? label,
+    $core.String? note,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (kind != null) result.kind = kind;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (endPositionSeconds != null)
+      result.endPositionSeconds = endPositionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (passageOffset != null) result.passageOffset = passageOffset;
+    if (label != null) result.label = label;
+    if (note != null) result.note = note;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  ListeningBookmark._();
+
+  factory ListeningBookmark.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListeningBookmark.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListeningBookmark',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aI(4, _omitFieldNames ? '' : 'positionSeconds')
+    ..aI(5, _omitFieldNames ? '' : 'endPositionSeconds')
+    ..aOS(6, _omitFieldNames ? '' : 'passageKey')
+    ..aI(7, _omitFieldNames ? '' : 'passageOffset')
+    ..aOS(8, _omitFieldNames ? '' : 'label')
+    ..aOS(9, _omitFieldNames ? '' : 'note')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningBookmark clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningBookmark copyWith(void Function(ListeningBookmark) updates) =>
+      super.copyWith((message) => updates(message as ListeningBookmark))
+          as ListeningBookmark;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListeningBookmark create() => ListeningBookmark._();
+  @$core.override
+  ListeningBookmark createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListeningBookmark getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListeningBookmark>(create);
+  static ListeningBookmark? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get positionSeconds => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set positionSeconds($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPositionSeconds() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPositionSeconds() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get endPositionSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set endPositionSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEndPositionSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndPositionSeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get passageKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set passageKey($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPassageKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassageKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get passageOffset => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set passageOffset($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPassageOffset() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPassageOffset() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get label => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set label($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLabel() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLabel() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get note => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set note($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNote() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNote() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get createdAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set createdAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get updatedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
+}
+
+class CreateListeningBookmarkRequest extends $pb.GeneratedMessage {
+  factory CreateListeningBookmarkRequest({
+    $core.String? contentId,
+    $core.String? kind,
+    $core.int? positionSeconds,
+    $core.int? endPositionSeconds,
+    $core.String? passageKey,
+    $core.int? passageOffset,
+    $core.String? label,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (kind != null) result.kind = kind;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (endPositionSeconds != null)
+      result.endPositionSeconds = endPositionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (passageOffset != null) result.passageOffset = passageOffset;
+    if (label != null) result.label = label;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  CreateListeningBookmarkRequest._();
+
+  factory CreateListeningBookmarkRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateListeningBookmarkRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateListeningBookmarkRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aI(3, _omitFieldNames ? '' : 'positionSeconds')
+    ..aI(4, _omitFieldNames ? '' : 'endPositionSeconds')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aI(6, _omitFieldNames ? '' : 'passageOffset')
+    ..aOS(7, _omitFieldNames ? '' : 'label')
+    ..aOS(8, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateListeningBookmarkRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateListeningBookmarkRequest copyWith(
+          void Function(CreateListeningBookmarkRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateListeningBookmarkRequest))
+          as CreateListeningBookmarkRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateListeningBookmarkRequest create() =>
+      CreateListeningBookmarkRequest._();
+  @$core.override
+  CreateListeningBookmarkRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateListeningBookmarkRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateListeningBookmarkRequest>(create);
+  static CreateListeningBookmarkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get positionSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set positionSeconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPositionSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPositionSeconds() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get endPositionSeconds => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set endPositionSeconds($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEndPositionSeconds() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEndPositionSeconds() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get passageOffset => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set passageOffset($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPassageOffset() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassageOffset() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get label => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set label($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLabel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLabel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get note => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set note($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNote() => $_clearField(8);
+}
+
+class CreateListeningBookmarkResponse extends $pb.GeneratedMessage {
+  factory CreateListeningBookmarkResponse({
+    ListeningBookmark? bookmark,
+  }) {
+    final result = create();
+    if (bookmark != null) result.bookmark = bookmark;
+    return result;
+  }
+
+  CreateListeningBookmarkResponse._();
+
+  factory CreateListeningBookmarkResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateListeningBookmarkResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateListeningBookmarkResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ListeningBookmark>(1, _omitFieldNames ? '' : 'bookmark',
+        subBuilder: ListeningBookmark.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateListeningBookmarkResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateListeningBookmarkResponse copyWith(
+          void Function(CreateListeningBookmarkResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateListeningBookmarkResponse))
+          as CreateListeningBookmarkResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateListeningBookmarkResponse create() =>
+      CreateListeningBookmarkResponse._();
+  @$core.override
+  CreateListeningBookmarkResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateListeningBookmarkResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateListeningBookmarkResponse>(
+          create);
+  static CreateListeningBookmarkResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ListeningBookmark get bookmark => $_getN(0);
+  @$pb.TagNumber(1)
+  set bookmark(ListeningBookmark value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBookmark() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBookmark() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ListeningBookmark ensureBookmark() => $_ensure(0);
+}
+
+class ListListeningBookmarksRequest extends $pb.GeneratedMessage {
+  factory ListListeningBookmarksRequest({
+    $core.String? contentId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    return result;
+  }
+
+  ListListeningBookmarksRequest._();
+
+  factory ListListeningBookmarksRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningBookmarksRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningBookmarksRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningBookmarksRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningBookmarksRequest copyWith(
+          void Function(ListListeningBookmarksRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListListeningBookmarksRequest))
+          as ListListeningBookmarksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningBookmarksRequest create() =>
+      ListListeningBookmarksRequest._();
+  @$core.override
+  ListListeningBookmarksRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningBookmarksRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListListeningBookmarksRequest>(create);
+  static ListListeningBookmarksRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+}
+
+class ListListeningBookmarksResponse extends $pb.GeneratedMessage {
+  factory ListListeningBookmarksResponse({
+    $core.Iterable<ListeningBookmark>? bookmarks,
+  }) {
+    final result = create();
+    if (bookmarks != null) result.bookmarks.addAll(bookmarks);
+    return result;
+  }
+
+  ListListeningBookmarksResponse._();
+
+  factory ListListeningBookmarksResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningBookmarksResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningBookmarksResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ListeningBookmark>(1, _omitFieldNames ? '' : 'bookmarks',
+        subBuilder: ListeningBookmark.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningBookmarksResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningBookmarksResponse copyWith(
+          void Function(ListListeningBookmarksResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListListeningBookmarksResponse))
+          as ListListeningBookmarksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningBookmarksResponse create() =>
+      ListListeningBookmarksResponse._();
+  @$core.override
+  ListListeningBookmarksResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningBookmarksResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListListeningBookmarksResponse>(create);
+  static ListListeningBookmarksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ListeningBookmark> get bookmarks => $_getList(0);
+}
+
+class DeleteListeningBookmarkRequest extends $pb.GeneratedMessage {
+  factory DeleteListeningBookmarkRequest({
+    $core.String? bookmarkId,
+  }) {
+    final result = create();
+    if (bookmarkId != null) result.bookmarkId = bookmarkId;
+    return result;
+  }
+
+  DeleteListeningBookmarkRequest._();
+
+  factory DeleteListeningBookmarkRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteListeningBookmarkRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteListeningBookmarkRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'bookmarkId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteListeningBookmarkRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteListeningBookmarkRequest copyWith(
+          void Function(DeleteListeningBookmarkRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteListeningBookmarkRequest))
+          as DeleteListeningBookmarkRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteListeningBookmarkRequest create() =>
+      DeleteListeningBookmarkRequest._();
+  @$core.override
+  DeleteListeningBookmarkRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteListeningBookmarkRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteListeningBookmarkRequest>(create);
+  static DeleteListeningBookmarkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get bookmarkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set bookmarkId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBookmarkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBookmarkId() => $_clearField(1);
+}
+
+class DeleteListeningBookmarkResponse extends $pb.GeneratedMessage {
+  factory DeleteListeningBookmarkResponse() => create();
+
+  DeleteListeningBookmarkResponse._();
+
+  factory DeleteListeningBookmarkResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteListeningBookmarkResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteListeningBookmarkResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteListeningBookmarkResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteListeningBookmarkResponse copyWith(
+          void Function(DeleteListeningBookmarkResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteListeningBookmarkResponse))
+          as DeleteListeningBookmarkResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteListeningBookmarkResponse create() =>
+      DeleteListeningBookmarkResponse._();
+  @$core.override
+  DeleteListeningBookmarkResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteListeningBookmarkResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteListeningBookmarkResponse>(
+          create);
+  static DeleteListeningBookmarkResponse? _defaultInstance;
+}
+
+class ListeningQueueEntry extends $pb.GeneratedMessage {
+  factory ListeningQueueEntry({
+    OnyxContent? content,
+    $core.int? ordinal,
+    $1.Timestamp? addedAt,
+  }) {
+    final result = create();
+    if (content != null) result.content = content;
+    if (ordinal != null) result.ordinal = ordinal;
+    if (addedAt != null) result.addedAt = addedAt;
+    return result;
+  }
+
+  ListeningQueueEntry._();
+
+  factory ListeningQueueEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListeningQueueEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListeningQueueEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxContent>(1, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aI(2, _omitFieldNames ? '' : 'ordinal')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'addedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningQueueEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningQueueEntry copyWith(void Function(ListeningQueueEntry) updates) =>
+      super.copyWith((message) => updates(message as ListeningQueueEntry))
+          as ListeningQueueEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListeningQueueEntry create() => ListeningQueueEntry._();
+  @$core.override
+  ListeningQueueEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListeningQueueEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListeningQueueEntry>(create);
+  static ListeningQueueEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxContent get content => $_getN(0);
+  @$pb.TagNumber(1)
+  set content(OnyxContent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxContent ensureContent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get ordinal => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set ordinal($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrdinal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrdinal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get addedAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set addedAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAddedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAddedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureAddedAt() => $_ensure(2);
+}
+
+class ListListeningQueueRequest extends $pb.GeneratedMessage {
+  factory ListListeningQueueRequest() => create();
+
+  ListListeningQueueRequest._();
+
+  factory ListListeningQueueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningQueueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningQueueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningQueueRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningQueueRequest copyWith(
+          void Function(ListListeningQueueRequest) updates) =>
+      super.copyWith((message) => updates(message as ListListeningQueueRequest))
+          as ListListeningQueueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningQueueRequest create() => ListListeningQueueRequest._();
+  @$core.override
+  ListListeningQueueRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningQueueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListListeningQueueRequest>(create);
+  static ListListeningQueueRequest? _defaultInstance;
+}
+
+class ListListeningQueueResponse extends $pb.GeneratedMessage {
+  factory ListListeningQueueResponse({
+    $core.Iterable<ListeningQueueEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListListeningQueueResponse._();
+
+  factory ListListeningQueueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningQueueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningQueueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ListeningQueueEntry>(1, _omitFieldNames ? '' : 'entries',
+        subBuilder: ListeningQueueEntry.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningQueueResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningQueueResponse copyWith(
+          void Function(ListListeningQueueResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListListeningQueueResponse))
+          as ListListeningQueueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningQueueResponse create() => ListListeningQueueResponse._();
+  @$core.override
+  ListListeningQueueResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningQueueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListListeningQueueResponse>(create);
+  static ListListeningQueueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ListeningQueueEntry> get entries => $_getList(0);
+}
+
+class SetListeningQueueRequest extends $pb.GeneratedMessage {
+  factory SetListeningQueueRequest({
+    $core.Iterable<$core.String>? contentIds,
+  }) {
+    final result = create();
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    return result;
+  }
+
+  SetListeningQueueRequest._();
+
+  factory SetListeningQueueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetListeningQueueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetListeningQueueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'contentIds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetListeningQueueRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetListeningQueueRequest copyWith(
+          void Function(SetListeningQueueRequest) updates) =>
+      super.copyWith((message) => updates(message as SetListeningQueueRequest))
+          as SetListeningQueueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetListeningQueueRequest create() => SetListeningQueueRequest._();
+  @$core.override
+  SetListeningQueueRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetListeningQueueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetListeningQueueRequest>(create);
+  static SetListeningQueueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get contentIds => $_getList(0);
+}
+
+class SetListeningQueueResponse extends $pb.GeneratedMessage {
+  factory SetListeningQueueResponse({
+    $core.Iterable<ListeningQueueEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  SetListeningQueueResponse._();
+
+  factory SetListeningQueueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetListeningQueueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetListeningQueueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ListeningQueueEntry>(1, _omitFieldNames ? '' : 'entries',
+        subBuilder: ListeningQueueEntry.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetListeningQueueResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetListeningQueueResponse copyWith(
+          void Function(SetListeningQueueResponse) updates) =>
+      super.copyWith((message) => updates(message as SetListeningQueueResponse))
+          as SetListeningQueueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetListeningQueueResponse create() => SetListeningQueueResponse._();
+  @$core.override
+  SetListeningQueueResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetListeningQueueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetListeningQueueResponse>(create);
+  static SetListeningQueueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ListeningQueueEntry> get entries => $_getList(0);
+}
+
+class AudioOverviewCitation extends $pb.GeneratedMessage {
+  factory AudioOverviewCitation({
+    $core.String? sourceContentId,
+    $core.String? sourceRevisionId,
+    $core.String? passageKey,
+    $core.String? quote,
+    $core.String? relation,
+  }) {
+    final result = create();
+    if (sourceContentId != null) result.sourceContentId = sourceContentId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (quote != null) result.quote = quote;
+    if (relation != null) result.relation = relation;
+    return result;
+  }
+
+  AudioOverviewCitation._();
+
+  factory AudioOverviewCitation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AudioOverviewCitation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AudioOverviewCitation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceContentId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aOS(3, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(4, _omitFieldNames ? '' : 'quote')
+    ..aOS(5, _omitFieldNames ? '' : 'relation')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverviewCitation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverviewCitation copyWith(
+          void Function(AudioOverviewCitation) updates) =>
+      super.copyWith((message) => updates(message as AudioOverviewCitation))
+          as AudioOverviewCitation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AudioOverviewCitation create() => AudioOverviewCitation._();
+  @$core.override
+  AudioOverviewCitation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AudioOverviewCitation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AudioOverviewCitation>(create);
+  static AudioOverviewCitation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceContentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceContentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceRevisionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceRevisionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceRevisionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceRevisionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get passageKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set passageKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPassageKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPassageKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get quote => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set quote($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuote() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get relation => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set relation($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRelation() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRelation() => $_clearField(5);
+}
+
+class AudioOverviewSegment extends $pb.GeneratedMessage {
+  factory AudioOverviewSegment({
+    $core.String? id,
+    $core.int? ordinal,
+    $core.String? chapterTitle,
+    $core.String? speakerLabel,
+    $core.int? startMs,
+    $core.int? endMs,
+    $core.String? transcriptText,
+    $core.Iterable<AudioOverviewCitation>? citations,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (ordinal != null) result.ordinal = ordinal;
+    if (chapterTitle != null) result.chapterTitle = chapterTitle;
+    if (speakerLabel != null) result.speakerLabel = speakerLabel;
+    if (startMs != null) result.startMs = startMs;
+    if (endMs != null) result.endMs = endMs;
+    if (transcriptText != null) result.transcriptText = transcriptText;
+    if (citations != null) result.citations.addAll(citations);
+    return result;
+  }
+
+  AudioOverviewSegment._();
+
+  factory AudioOverviewSegment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AudioOverviewSegment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AudioOverviewSegment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aI(2, _omitFieldNames ? '' : 'ordinal')
+    ..aOS(3, _omitFieldNames ? '' : 'chapterTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'speakerLabel')
+    ..aI(5, _omitFieldNames ? '' : 'startMs')
+    ..aI(6, _omitFieldNames ? '' : 'endMs')
+    ..aOS(7, _omitFieldNames ? '' : 'transcriptText')
+    ..pPM<AudioOverviewCitation>(8, _omitFieldNames ? '' : 'citations',
+        subBuilder: AudioOverviewCitation.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverviewSegment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverviewSegment copyWith(void Function(AudioOverviewSegment) updates) =>
+      super.copyWith((message) => updates(message as AudioOverviewSegment))
+          as AudioOverviewSegment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AudioOverviewSegment create() => AudioOverviewSegment._();
+  @$core.override
+  AudioOverviewSegment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AudioOverviewSegment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AudioOverviewSegment>(create);
+  static AudioOverviewSegment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get ordinal => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set ordinal($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrdinal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrdinal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get chapterTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set chapterTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChapterTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChapterTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get speakerLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set speakerLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSpeakerLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSpeakerLabel() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get startMs => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set startMs($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStartMs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartMs() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get endMs => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set endMs($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEndMs() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEndMs() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get transcriptText => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set transcriptText($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTranscriptText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTranscriptText() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<AudioOverviewCitation> get citations => $_getList(7);
+}
+
+class AudioOverview extends $pb.GeneratedMessage {
+  factory AudioOverview({
+    $core.String? id,
+    $core.String? title,
+    $core.String? status,
+    $core.String? languageCode,
+    $core.String? sourceSetFingerprint,
+    $core.String? transcriptText,
+    $core.String? provider,
+    $core.String? model,
+    $core.String? errorCode,
+    $core.int? costMinor,
+    $core.String? currency,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $core.Iterable<AudioOverviewSegment>? segments,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (sourceSetFingerprint != null)
+      result.sourceSetFingerprint = sourceSetFingerprint;
+    if (transcriptText != null) result.transcriptText = transcriptText;
+    if (provider != null) result.provider = provider;
+    if (model != null) result.model = model;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (costMinor != null) result.costMinor = costMinor;
+    if (currency != null) result.currency = currency;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (segments != null) result.segments.addAll(segments);
+    return result;
+  }
+
+  AudioOverview._();
+
+  factory AudioOverview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AudioOverview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AudioOverview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceSetFingerprint')
+    ..aOS(6, _omitFieldNames ? '' : 'transcriptText')
+    ..aOS(7, _omitFieldNames ? '' : 'provider')
+    ..aOS(8, _omitFieldNames ? '' : 'model')
+    ..aOS(9, _omitFieldNames ? '' : 'errorCode')
+    ..aI(10, _omitFieldNames ? '' : 'costMinor')
+    ..aOS(11, _omitFieldNames ? '' : 'currency')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<AudioOverviewSegment>(14, _omitFieldNames ? '' : 'segments',
+        subBuilder: AudioOverviewSegment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AudioOverview copyWith(void Function(AudioOverview) updates) =>
+      super.copyWith((message) => updates(message as AudioOverview))
+          as AudioOverview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AudioOverview create() => AudioOverview._();
+  @$core.override
+  AudioOverview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AudioOverview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AudioOverview>(create);
+  static AudioOverview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get languageCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set languageCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLanguageCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguageCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceSetFingerprint => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceSetFingerprint($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceSetFingerprint() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceSetFingerprint() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get transcriptText => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set transcriptText($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTranscriptText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTranscriptText() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get provider => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set provider($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProvider() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProvider() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get model => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set model($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasModel() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearModel() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get errorCode => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set errorCode($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasErrorCode() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearErrorCode() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get costMinor => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set costMinor($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCostMinor() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCostMinor() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get currency => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set currency($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCurrency() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCurrency() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get updatedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set updatedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $pb.PbList<AudioOverviewSegment> get segments => $_getList(13);
+}
+
+class CreateAudioOverviewRequest extends $pb.GeneratedMessage {
+  factory CreateAudioOverviewRequest({
+    $core.String? title,
+    $core.Iterable<$core.String>? contentIds,
+    $core.String? languageCode,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (title != null) result.title = title;
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    if (languageCode != null) result.languageCode = languageCode;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateAudioOverviewRequest._();
+
+  factory CreateAudioOverviewRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateAudioOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateAudioOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..pPS(2, _omitFieldNames ? '' : 'contentIds')
+    ..aOS(3, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAudioOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAudioOverviewRequest copyWith(
+          void Function(CreateAudioOverviewRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateAudioOverviewRequest))
+          as CreateAudioOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAudioOverviewRequest create() => CreateAudioOverviewRequest._();
+  @$core.override
+  CreateAudioOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateAudioOverviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateAudioOverviewRequest>(create);
+  static CreateAudioOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get contentIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get languageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set languageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLanguageCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class CreateAudioOverviewResponse extends $pb.GeneratedMessage {
+  factory CreateAudioOverviewResponse({
+    AudioOverview? overview,
+  }) {
+    final result = create();
+    if (overview != null) result.overview = overview;
+    return result;
+  }
+
+  CreateAudioOverviewResponse._();
+
+  factory CreateAudioOverviewResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateAudioOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateAudioOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AudioOverview>(1, _omitFieldNames ? '' : 'overview',
+        subBuilder: AudioOverview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAudioOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAudioOverviewResponse copyWith(
+          void Function(CreateAudioOverviewResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateAudioOverviewResponse))
+          as CreateAudioOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAudioOverviewResponse create() =>
+      CreateAudioOverviewResponse._();
+  @$core.override
+  CreateAudioOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateAudioOverviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateAudioOverviewResponse>(create);
+  static CreateAudioOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AudioOverview get overview => $_getN(0);
+  @$pb.TagNumber(1)
+  set overview(AudioOverview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AudioOverview ensureOverview() => $_ensure(0);
+}
+
+class ListAudioOverviewsRequest extends $pb.GeneratedMessage {
+  factory ListAudioOverviewsRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListAudioOverviewsRequest._();
+
+  factory ListAudioOverviewsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAudioOverviewsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAudioOverviewsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAudioOverviewsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAudioOverviewsRequest copyWith(
+          void Function(ListAudioOverviewsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListAudioOverviewsRequest))
+          as ListAudioOverviewsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAudioOverviewsRequest create() => ListAudioOverviewsRequest._();
+  @$core.override
+  ListAudioOverviewsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListAudioOverviewsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAudioOverviewsRequest>(create);
+  static ListAudioOverviewsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class ListAudioOverviewsResponse extends $pb.GeneratedMessage {
+  factory ListAudioOverviewsResponse({
+    $core.Iterable<AudioOverview>? overviews,
+  }) {
+    final result = create();
+    if (overviews != null) result.overviews.addAll(overviews);
+    return result;
+  }
+
+  ListAudioOverviewsResponse._();
+
+  factory ListAudioOverviewsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAudioOverviewsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAudioOverviewsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<AudioOverview>(1, _omitFieldNames ? '' : 'overviews',
+        subBuilder: AudioOverview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAudioOverviewsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAudioOverviewsResponse copyWith(
+          void Function(ListAudioOverviewsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListAudioOverviewsResponse))
+          as ListAudioOverviewsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAudioOverviewsResponse create() => ListAudioOverviewsResponse._();
+  @$core.override
+  ListAudioOverviewsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListAudioOverviewsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAudioOverviewsResponse>(create);
+  static ListAudioOverviewsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AudioOverview> get overviews => $_getList(0);
+}
+
+class GetAudioOverviewRequest extends $pb.GeneratedMessage {
+  factory GetAudioOverviewRequest({
+    $core.String? overviewId,
+  }) {
+    final result = create();
+    if (overviewId != null) result.overviewId = overviewId;
+    return result;
+  }
+
+  GetAudioOverviewRequest._();
+
+  factory GetAudioOverviewRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAudioOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAudioOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'overviewId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAudioOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAudioOverviewRequest copyWith(
+          void Function(GetAudioOverviewRequest) updates) =>
+      super.copyWith((message) => updates(message as GetAudioOverviewRequest))
+          as GetAudioOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAudioOverviewRequest create() => GetAudioOverviewRequest._();
+  @$core.override
+  GetAudioOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAudioOverviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAudioOverviewRequest>(create);
+  static GetAudioOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get overviewId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set overviewId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverviewId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverviewId() => $_clearField(1);
+}
+
+class GetAudioOverviewResponse extends $pb.GeneratedMessage {
+  factory GetAudioOverviewResponse({
+    AudioOverview? overview,
+  }) {
+    final result = create();
+    if (overview != null) result.overview = overview;
+    return result;
+  }
+
+  GetAudioOverviewResponse._();
+
+  factory GetAudioOverviewResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAudioOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAudioOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AudioOverview>(1, _omitFieldNames ? '' : 'overview',
+        subBuilder: AudioOverview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAudioOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAudioOverviewResponse copyWith(
+          void Function(GetAudioOverviewResponse) updates) =>
+      super.copyWith((message) => updates(message as GetAudioOverviewResponse))
+          as GetAudioOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAudioOverviewResponse create() => GetAudioOverviewResponse._();
+  @$core.override
+  GetAudioOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAudioOverviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAudioOverviewResponse>(create);
+  static GetAudioOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AudioOverview get overview => $_getN(0);
+  @$pb.TagNumber(1)
+  set overview(AudioOverview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AudioOverview ensureOverview() => $_ensure(0);
+}
+
+class DeleteAudioOverviewRequest extends $pb.GeneratedMessage {
+  factory DeleteAudioOverviewRequest({
+    $core.String? overviewId,
+  }) {
+    final result = create();
+    if (overviewId != null) result.overviewId = overviewId;
+    return result;
+  }
+
+  DeleteAudioOverviewRequest._();
+
+  factory DeleteAudioOverviewRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteAudioOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteAudioOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'overviewId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAudioOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAudioOverviewRequest copyWith(
+          void Function(DeleteAudioOverviewRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteAudioOverviewRequest))
+          as DeleteAudioOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAudioOverviewRequest create() => DeleteAudioOverviewRequest._();
+  @$core.override
+  DeleteAudioOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAudioOverviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteAudioOverviewRequest>(create);
+  static DeleteAudioOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get overviewId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set overviewId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverviewId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverviewId() => $_clearField(1);
+}
+
+class DeleteAudioOverviewResponse extends $pb.GeneratedMessage {
+  factory DeleteAudioOverviewResponse() => create();
+
+  DeleteAudioOverviewResponse._();
+
+  factory DeleteAudioOverviewResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteAudioOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteAudioOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAudioOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAudioOverviewResponse copyWith(
+          void Function(DeleteAudioOverviewResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as DeleteAudioOverviewResponse))
+          as DeleteAudioOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAudioOverviewResponse create() =>
+      DeleteAudioOverviewResponse._();
+  @$core.override
+  DeleteAudioOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAudioOverviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteAudioOverviewResponse>(create);
+  static DeleteAudioOverviewResponse? _defaultInstance;
+}
+
+class ListeningPronunciation extends $pb.GeneratedMessage {
+  factory ListeningPronunciation({
+    $core.String? id,
+    $core.String? phrase,
+    $core.String? pronunciation,
+    $core.String? languageCode,
+    $core.String? scope,
+    $core.bool? matchCase,
+    $core.int? version,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (phrase != null) result.phrase = phrase;
+    if (pronunciation != null) result.pronunciation = pronunciation;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (scope != null) result.scope = scope;
+    if (matchCase != null) result.matchCase = matchCase;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  ListeningPronunciation._();
+
+  factory ListeningPronunciation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListeningPronunciation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListeningPronunciation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'phrase')
+    ..aOS(3, _omitFieldNames ? '' : 'pronunciation')
+    ..aOS(4, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(5, _omitFieldNames ? '' : 'scope')
+    ..aOB(6, _omitFieldNames ? '' : 'matchCase')
+    ..aI(7, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningPronunciation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListeningPronunciation copyWith(
+          void Function(ListeningPronunciation) updates) =>
+      super.copyWith((message) => updates(message as ListeningPronunciation))
+          as ListeningPronunciation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListeningPronunciation create() => ListeningPronunciation._();
+  @$core.override
+  ListeningPronunciation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListeningPronunciation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListeningPronunciation>(create);
+  static ListeningPronunciation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get phrase => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set phrase($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPhrase() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPhrase() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get pronunciation => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pronunciation($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPronunciation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPronunciation() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get languageCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set languageCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLanguageCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguageCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get scope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set scope($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScope() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get matchCase => $_getBF(5);
+  @$pb.TagNumber(6)
+  set matchCase($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMatchCase() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMatchCase() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get version => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set version($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVersion() => $_clearField(7);
+}
+
+class ListListeningPronunciationsRequest extends $pb.GeneratedMessage {
+  factory ListListeningPronunciationsRequest({
+    $core.String? contentId,
+    $core.String? languageCode,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (languageCode != null) result.languageCode = languageCode;
+    return result;
+  }
+
+  ListListeningPronunciationsRequest._();
+
+  factory ListListeningPronunciationsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningPronunciationsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningPronunciationsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'languageCode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningPronunciationsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningPronunciationsRequest copyWith(
+          void Function(ListListeningPronunciationsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListListeningPronunciationsRequest))
+          as ListListeningPronunciationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningPronunciationsRequest create() =>
+      ListListeningPronunciationsRequest._();
+  @$core.override
+  ListListeningPronunciationsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningPronunciationsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListListeningPronunciationsRequest>(
+          create);
+  static ListListeningPronunciationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get languageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set languageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguageCode() => $_clearField(2);
+}
+
+class ListListeningPronunciationsResponse extends $pb.GeneratedMessage {
+  factory ListListeningPronunciationsResponse({
+    $core.Iterable<ListeningPronunciation>? pronunciations,
+  }) {
+    final result = create();
+    if (pronunciations != null) result.pronunciations.addAll(pronunciations);
+    return result;
+  }
+
+  ListListeningPronunciationsResponse._();
+
+  factory ListListeningPronunciationsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListListeningPronunciationsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListListeningPronunciationsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ListeningPronunciation>(1, _omitFieldNames ? '' : 'pronunciations',
+        subBuilder: ListeningPronunciation.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningPronunciationsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListListeningPronunciationsResponse copyWith(
+          void Function(ListListeningPronunciationsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListListeningPronunciationsResponse))
+          as ListListeningPronunciationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListListeningPronunciationsResponse create() =>
+      ListListeningPronunciationsResponse._();
+  @$core.override
+  ListListeningPronunciationsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListListeningPronunciationsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListListeningPronunciationsResponse>(create);
+  static ListListeningPronunciationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ListeningPronunciation> get pronunciations => $_getList(0);
 }
 
 class GetTodaySummaryRequest extends $pb.GeneratedMessage {

@@ -178,6 +178,14 @@ message RecordProgressRequest {
   int32 position_seconds = 3;
   string passage_key = 4;
   int32 offset = 5;
+  // Device observation time, retained while offline so an older device can
+  // never overwrite the newer read/listen locator during reconciliation.
+  google.protobuf.Timestamp observed_at = 6;
+  // Idempotency identity for an offline journal entry.
+  string client_mutation_id = 7;
+  // read | listen. Both share one canonical passage locator so switching
+  // modes resumes the same source position.
+  string mode = 8;
 }
 
 message RecordProgressResponse {
@@ -185,6 +193,9 @@ message RecordProgressResponse {
   int32 position_seconds = 2;
   string passage_key = 3;
   int32 offset = 4;
+  google.protobuf.Timestamp observed_at = 5;
+  string client_mutation_id = 6;
+  string mode = 7;
 }
 
 // === P6.6 — subscription + points redemption ===
@@ -457,12 +468,186 @@ message CaptionJob {
   string status = 2; // queued | running | done | unavailable | failed
   string captions_url = 3; // populated when status == done
   string error = 4; // honest reason when status == unavailable / failed
+  // Durable job identity. Empty only for captions created before the durable
+  // queue contract was introduced.
+  string job_id = 5;
+  // Normalized BCP-47 language tag used by the transcriber.
+  string language_code = 6;
+  // Stable, bounded machine-readable failure code. `error` remains safe
+  // member-facing copy and never carries a raw provider response.
+  string error_code = 7;
+  int32 attempt_count = 8;
+  int32 max_attempts = 9;
+  google.protobuf.Timestamp next_attempt_at = 10;
 }
 message GenerateCaptionsRequest {
   string content_id = 1;
+  // Optional BCP-47 language tag. Empty defaults to English for wire
+  // compatibility with older clients.
+  string language_code = 2;
 }
 message GenerateCaptionsResponse {
   CaptionJob job = 1;
+}
+message GetCaptionJobRequest {
+  string job_id = 1;
+}
+message GetCaptionJobResponse {
+  CaptionJob job = 1;
+}
+
+message ListeningPreferences {
+  string voice_name = 1;
+  string voice_locale = 2;
+  double speed = 3;
+  double pitch = 4;
+  bool skip_headings = 5;
+  bool skip_citations = 6;
+  google.protobuf.Timestamp updated_at = 7;
+}
+message GetListeningPreferencesRequest {}
+message GetListeningPreferencesResponse {
+  ListeningPreferences preferences = 1;
+}
+message UpdateListeningPreferencesRequest {
+  string voice_name = 1;
+  string voice_locale = 2;
+  double speed = 3;
+  double pitch = 4;
+  bool skip_headings = 5;
+  bool skip_citations = 6;
+}
+message UpdateListeningPreferencesResponse {
+  ListeningPreferences preferences = 1;
+}
+
+message ListeningBookmark {
+  string id = 1;
+  string content_id = 2;
+  string kind = 3; // bookmark | clip
+  int32 position_seconds = 4;
+  int32 end_position_seconds = 5;
+  string passage_key = 6;
+  int32 passage_offset = 7;
+  string label = 8;
+  string note = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+message CreateListeningBookmarkRequest {
+  string content_id = 1;
+  string kind = 2;
+  int32 position_seconds = 3;
+  int32 end_position_seconds = 4;
+  string passage_key = 5;
+  int32 passage_offset = 6;
+  string label = 7;
+  string note = 8;
+}
+message CreateListeningBookmarkResponse {
+  ListeningBookmark bookmark = 1;
+}
+message ListListeningBookmarksRequest {
+  string content_id = 1;
+}
+message ListListeningBookmarksResponse {
+  repeated ListeningBookmark bookmarks = 1;
+}
+message DeleteListeningBookmarkRequest {
+  string bookmark_id = 1;
+}
+message DeleteListeningBookmarkResponse {}
+
+message ListeningQueueEntry {
+  OnyxContent content = 1;
+  int32 ordinal = 2;
+  google.protobuf.Timestamp added_at = 3;
+}
+message ListListeningQueueRequest {}
+message ListListeningQueueResponse {
+  repeated ListeningQueueEntry entries = 1;
+}
+message SetListeningQueueRequest {
+  repeated string content_ids = 1;
+}
+message SetListeningQueueResponse {
+  repeated ListeningQueueEntry entries = 1;
+}
+
+message AudioOverviewCitation {
+  string source_content_id = 1;
+  string source_revision_id = 2;
+  string passage_key = 3;
+  string quote = 4;
+  string relation = 5;
+}
+message AudioOverviewSegment {
+  string id = 1;
+  int32 ordinal = 2;
+  string chapter_title = 3;
+  string speaker_label = 4;
+  int32 start_ms = 5;
+  int32 end_ms = 6;
+  string transcript_text = 7;
+  repeated AudioOverviewCitation citations = 8;
+}
+message AudioOverview {
+  string id = 1;
+  string title = 2;
+  string status = 3;
+  string language_code = 4;
+  string source_set_fingerprint = 5;
+  string transcript_text = 6;
+  string provider = 7;
+  string model = 8;
+  string error_code = 9;
+  int32 cost_minor = 10;
+  string currency = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+  repeated AudioOverviewSegment segments = 14;
+}
+message CreateAudioOverviewRequest {
+  string title = 1;
+  repeated string content_ids = 2;
+  string language_code = 3;
+  string client_mutation_id = 4;
+}
+message CreateAudioOverviewResponse {
+  AudioOverview overview = 1;
+}
+message ListAudioOverviewsRequest {
+  int32 limit = 1;
+}
+message ListAudioOverviewsResponse {
+  repeated AudioOverview overviews = 1;
+}
+message GetAudioOverviewRequest {
+  string overview_id = 1;
+}
+message GetAudioOverviewResponse {
+  AudioOverview overview = 1;
+}
+message DeleteAudioOverviewRequest {
+  string overview_id = 1;
+}
+message DeleteAudioOverviewResponse {}
+
+message ListeningPronunciation {
+  string id = 1;
+  string phrase = 2;
+  string pronunciation = 3;
+  string language_code = 4;
+  string scope = 5;
+  bool match_case = 6;
+  int32 version = 7;
+}
+message ListListeningPronunciationsRequest {
+  string content_id = 1;
+  string language_code = 2;
+}
+message ListListeningPronunciationsResponse {
+  repeated ListeningPronunciation pronunciations = 1;
 }
 
 message GetTodaySummaryRequest {}
@@ -1129,6 +1314,19 @@ service OnyxService {
 
   // P2.5 — captions, today summary, cross-pillar unlock bus.
   rpc GenerateCaptions(GenerateCaptionsRequest) returns (GenerateCaptionsResponse);
+  rpc GetCaptionJob(GetCaptionJobRequest) returns (GetCaptionJobResponse);
+  rpc GetListeningPreferences(GetListeningPreferencesRequest) returns (GetListeningPreferencesResponse);
+  rpc UpdateListeningPreferences(UpdateListeningPreferencesRequest) returns (UpdateListeningPreferencesResponse);
+  rpc CreateListeningBookmark(CreateListeningBookmarkRequest) returns (CreateListeningBookmarkResponse);
+  rpc ListListeningBookmarks(ListListeningBookmarksRequest) returns (ListListeningBookmarksResponse);
+  rpc DeleteListeningBookmark(DeleteListeningBookmarkRequest) returns (DeleteListeningBookmarkResponse);
+  rpc ListListeningQueue(ListListeningQueueRequest) returns (ListListeningQueueResponse);
+  rpc SetListeningQueue(SetListeningQueueRequest) returns (SetListeningQueueResponse);
+  rpc CreateAudioOverview(CreateAudioOverviewRequest) returns (CreateAudioOverviewResponse);
+  rpc ListAudioOverviews(ListAudioOverviewsRequest) returns (ListAudioOverviewsResponse);
+  rpc GetAudioOverview(GetAudioOverviewRequest) returns (GetAudioOverviewResponse);
+  rpc DeleteAudioOverview(DeleteAudioOverviewRequest) returns (DeleteAudioOverviewResponse);
+  rpc ListListeningPronunciations(ListListeningPronunciationsRequest) returns (ListListeningPronunciationsResponse);
   rpc GetTodaySummary(GetTodaySummaryRequest) returns (GetTodaySummaryResponse);
   rpc GetCrossPillarUnlocks(GetCrossPillarUnlocksRequest) returns (GetCrossPillarUnlocksResponse);
 

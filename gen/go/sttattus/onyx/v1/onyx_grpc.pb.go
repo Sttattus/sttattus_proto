@@ -19,76 +19,89 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OnyxService_CreateProfile_FullMethodName              = "/sttattus.onyx.v1.OnyxService/CreateProfile"
-	OnyxService_GetProfile_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetProfile"
-	OnyxService_ListContent_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListContent"
-	OnyxService_Subscribe_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/Subscribe"
-	OnyxService_GetContent_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetContent"
-	OnyxService_ListShelf_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListShelf"
-	OnyxService_ListContinue_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListContinue"
-	OnyxService_GetShelves_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetShelves"
-	OnyxService_RecordProgress_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RecordProgress"
-	OnyxService_RedeemContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RedeemContent"
-	OnyxService_CreateSubscriptionCheckout_FullMethodName = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
-	OnyxService_GetCreator_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetCreator"
-	OnyxService_ListCreatorWorks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
-	OnyxService_FollowCreator_FullMethodName              = "/sttattus.onyx.v1.OnyxService/FollowCreator"
-	OnyxService_SearchContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SearchContent"
-	OnyxService_AddNote_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/AddNote"
-	OnyxService_ListMyNotes_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
-	OnyxService_DeleteNote_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/DeleteNote"
-	OnyxService_UpsertReaderAnnotation_FullMethodName     = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
-	OnyxService_DeleteReaderAnnotation_FullMethodName     = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
-	OnyxService_ListMyReaderAnnotations_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
-	OnyxService_SearchReader_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SearchReader"
-	OnyxService_ExportReaderData_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
-	OnyxService_ListReaderSyncChanges_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
-	OnyxService_ListMyUnlocks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
-	OnyxService_ListMySubscriptions_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
-	OnyxService_ListMyFollows_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
-	OnyxService_ListSovereignWindow_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
-	OnyxService_ListSeries_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListSeries"
-	OnyxService_GetSeries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetSeries"
-	OnyxService_GenerateCaptions_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
-	OnyxService_GetTodaySummary_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
-	OnyxService_GetCrossPillarUnlocks_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
-	OnyxService_StartConciergeThread_FullMethodName       = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
-	OnyxService_ListMyConciergeThreads_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
-	OnyxService_GetConciergeThread_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
-	OnyxService_PostConciergeMessage_FullMethodName       = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
-	OnyxService_ListLiveEvents_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
-	OnyxService_GetLiveEvent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
-	OnyxService_RsvpLiveEvent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
-	OnyxService_SetPosthumousArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
-	OnyxService_GetPosthumousArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
-	OnyxService_ListAnthologies_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
-	OnyxService_GetAnthology_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetAnthology"
-	OnyxService_CreateShareLink_FullMethodName            = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
-	OnyxService_ListMyShareLinks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
-	OnyxService_RevokeShareLink_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
-	OnyxService_GetOfflineManifest_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
-	OnyxService_RegisterDevice_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
-	OnyxService_AcknowledgePurge_FullMethodName           = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
-	OnyxService_GetDeviceGrants_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
-	OnyxService_RevokeMyDevice_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
-	OnyxService_MarkMyDeviceLost_FullMethodName           = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
-	OnyxService_GetPurgeReceipt_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
-	OnyxService_ListOfflineManifestItems_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
-	OnyxService_RefreshOfflineRenditions_FullMethodName   = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
-	OnyxService_RecordOfflineEvent_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
-	OnyxService_GetYearInOnyx_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
-	OnyxService_GenerateAnnualArchive_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
-	OnyxService_ReactToContent_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReactToContent"
-	OnyxService_CreateIngestionItem_FullMethodName        = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
-	OnyxService_ListMyIngestionItems_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
-	OnyxService_GetIngestionItem_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
-	OnyxService_RetryIngestionItem_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
-	OnyxService_SetIngestionItemState_FullMethodName      = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
-	OnyxService_ResolveIngestionDuplicate_FullMethodName  = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
-	OnyxService_GetEvidenceWorkspace_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
-	OnyxService_CreateEvidenceBrief_FullMethodName        = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
-	OnyxService_ListMyEvidenceBriefs_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
-	OnyxService_GetEvidenceBrief_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
+	OnyxService_CreateProfile_FullMethodName               = "/sttattus.onyx.v1.OnyxService/CreateProfile"
+	OnyxService_GetProfile_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetProfile"
+	OnyxService_ListContent_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListContent"
+	OnyxService_Subscribe_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_GetContent_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetContent"
+	OnyxService_ListShelf_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListShelf"
+	OnyxService_ListContinue_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListContinue"
+	OnyxService_GetShelves_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetShelves"
+	OnyxService_RecordProgress_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RecordProgress"
+	OnyxService_RedeemContent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RedeemContent"
+	OnyxService_CreateSubscriptionCheckout_FullMethodName  = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
+	OnyxService_GetCreator_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetCreator"
+	OnyxService_ListCreatorWorks_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
+	OnyxService_FollowCreator_FullMethodName               = "/sttattus.onyx.v1.OnyxService/FollowCreator"
+	OnyxService_SearchContent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SearchContent"
+	OnyxService_AddNote_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/AddNote"
+	OnyxService_ListMyNotes_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
+	OnyxService_DeleteNote_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/DeleteNote"
+	OnyxService_UpsertReaderAnnotation_FullMethodName      = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
+	OnyxService_DeleteReaderAnnotation_FullMethodName      = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
+	OnyxService_ListMyReaderAnnotations_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
+	OnyxService_SearchReader_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SearchReader"
+	OnyxService_ExportReaderData_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
+	OnyxService_ListReaderSyncChanges_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
+	OnyxService_ListMyUnlocks_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
+	OnyxService_ListMySubscriptions_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
+	OnyxService_ListMyFollows_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
+	OnyxService_ListSovereignWindow_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
+	OnyxService_ListSeries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListSeries"
+	OnyxService_GetSeries_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetSeries"
+	OnyxService_GenerateCaptions_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
+	OnyxService_GetCaptionJob_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
+	OnyxService_GetListeningPreferences_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
+	OnyxService_UpdateListeningPreferences_FullMethodName  = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
+	OnyxService_CreateListeningBookmark_FullMethodName     = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
+	OnyxService_ListListeningBookmarks_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListListeningBookmarks"
+	OnyxService_DeleteListeningBookmark_FullMethodName     = "/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark"
+	OnyxService_ListListeningQueue_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListListeningQueue"
+	OnyxService_SetListeningQueue_FullMethodName           = "/sttattus.onyx.v1.OnyxService/SetListeningQueue"
+	OnyxService_CreateAudioOverview_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateAudioOverview"
+	OnyxService_ListAudioOverviews_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListAudioOverviews"
+	OnyxService_GetAudioOverview_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetAudioOverview"
+	OnyxService_DeleteAudioOverview_FullMethodName         = "/sttattus.onyx.v1.OnyxService/DeleteAudioOverview"
+	OnyxService_ListListeningPronunciations_FullMethodName = "/sttattus.onyx.v1.OnyxService/ListListeningPronunciations"
+	OnyxService_GetTodaySummary_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
+	OnyxService_GetCrossPillarUnlocks_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
+	OnyxService_StartConciergeThread_FullMethodName        = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
+	OnyxService_ListMyConciergeThreads_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
+	OnyxService_GetConciergeThread_FullMethodName          = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
+	OnyxService_PostConciergeMessage_FullMethodName        = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
+	OnyxService_ListLiveEvents_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
+	OnyxService_GetLiveEvent_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
+	OnyxService_RsvpLiveEvent_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
+	OnyxService_SetPosthumousArchive_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
+	OnyxService_GetPosthumousArchive_FullMethodName        = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
+	OnyxService_ListAnthologies_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
+	OnyxService_GetAnthology_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetAnthology"
+	OnyxService_CreateShareLink_FullMethodName             = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
+	OnyxService_ListMyShareLinks_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
+	OnyxService_RevokeShareLink_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
+	OnyxService_GetOfflineManifest_FullMethodName          = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
+	OnyxService_RegisterDevice_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
+	OnyxService_AcknowledgePurge_FullMethodName            = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
+	OnyxService_GetDeviceGrants_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
+	OnyxService_RevokeMyDevice_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
+	OnyxService_MarkMyDeviceLost_FullMethodName            = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
+	OnyxService_GetPurgeReceipt_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
+	OnyxService_ListOfflineManifestItems_FullMethodName    = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
+	OnyxService_RefreshOfflineRenditions_FullMethodName    = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
+	OnyxService_RecordOfflineEvent_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
+	OnyxService_GetYearInOnyx_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
+	OnyxService_GenerateAnnualArchive_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
+	OnyxService_ReactToContent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ReactToContent"
+	OnyxService_CreateIngestionItem_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
+	OnyxService_ListMyIngestionItems_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
+	OnyxService_GetIngestionItem_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
+	OnyxService_RetryIngestionItem_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
+	OnyxService_SetIngestionItemState_FullMethodName       = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
+	OnyxService_ResolveIngestionDuplicate_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
+	OnyxService_GetEvidenceWorkspace_FullMethodName        = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
+	OnyxService_CreateEvidenceBrief_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
+	OnyxService_ListMyEvidenceBriefs_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
+	OnyxService_GetEvidenceBrief_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -141,6 +154,19 @@ type OnyxServiceClient interface {
 	GetSeries(ctx context.Context, in *GetSeriesRequest, opts ...grpc.CallOption) (*GetSeriesResponse, error)
 	// P2.5 — captions, today summary, cross-pillar unlock bus.
 	GenerateCaptions(ctx context.Context, in *GenerateCaptionsRequest, opts ...grpc.CallOption) (*GenerateCaptionsResponse, error)
+	GetCaptionJob(ctx context.Context, in *GetCaptionJobRequest, opts ...grpc.CallOption) (*GetCaptionJobResponse, error)
+	GetListeningPreferences(ctx context.Context, in *GetListeningPreferencesRequest, opts ...grpc.CallOption) (*GetListeningPreferencesResponse, error)
+	UpdateListeningPreferences(ctx context.Context, in *UpdateListeningPreferencesRequest, opts ...grpc.CallOption) (*UpdateListeningPreferencesResponse, error)
+	CreateListeningBookmark(ctx context.Context, in *CreateListeningBookmarkRequest, opts ...grpc.CallOption) (*CreateListeningBookmarkResponse, error)
+	ListListeningBookmarks(ctx context.Context, in *ListListeningBookmarksRequest, opts ...grpc.CallOption) (*ListListeningBookmarksResponse, error)
+	DeleteListeningBookmark(ctx context.Context, in *DeleteListeningBookmarkRequest, opts ...grpc.CallOption) (*DeleteListeningBookmarkResponse, error)
+	ListListeningQueue(ctx context.Context, in *ListListeningQueueRequest, opts ...grpc.CallOption) (*ListListeningQueueResponse, error)
+	SetListeningQueue(ctx context.Context, in *SetListeningQueueRequest, opts ...grpc.CallOption) (*SetListeningQueueResponse, error)
+	CreateAudioOverview(ctx context.Context, in *CreateAudioOverviewRequest, opts ...grpc.CallOption) (*CreateAudioOverviewResponse, error)
+	ListAudioOverviews(ctx context.Context, in *ListAudioOverviewsRequest, opts ...grpc.CallOption) (*ListAudioOverviewsResponse, error)
+	GetAudioOverview(ctx context.Context, in *GetAudioOverviewRequest, opts ...grpc.CallOption) (*GetAudioOverviewResponse, error)
+	DeleteAudioOverview(ctx context.Context, in *DeleteAudioOverviewRequest, opts ...grpc.CallOption) (*DeleteAudioOverviewResponse, error)
+	ListListeningPronunciations(ctx context.Context, in *ListListeningPronunciationsRequest, opts ...grpc.CallOption) (*ListListeningPronunciationsResponse, error)
 	GetTodaySummary(ctx context.Context, in *GetTodaySummaryRequest, opts ...grpc.CallOption) (*GetTodaySummaryResponse, error)
 	GetCrossPillarUnlocks(ctx context.Context, in *GetCrossPillarUnlocksRequest, opts ...grpc.CallOption) (*GetCrossPillarUnlocksResponse, error)
 	// P3 — curator concierge desk.
@@ -504,6 +530,136 @@ func (c *onyxServiceClient) GenerateCaptions(ctx context.Context, in *GenerateCa
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GenerateCaptionsResponse)
 	err := c.cc.Invoke(ctx, OnyxService_GenerateCaptions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetCaptionJob(ctx context.Context, in *GetCaptionJobRequest, opts ...grpc.CallOption) (*GetCaptionJobResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCaptionJobResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetCaptionJob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetListeningPreferences(ctx context.Context, in *GetListeningPreferencesRequest, opts ...grpc.CallOption) (*GetListeningPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetListeningPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetListeningPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdateListeningPreferences(ctx context.Context, in *UpdateListeningPreferencesRequest, opts ...grpc.CallOption) (*UpdateListeningPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateListeningPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdateListeningPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateListeningBookmark(ctx context.Context, in *CreateListeningBookmarkRequest, opts ...grpc.CallOption) (*CreateListeningBookmarkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateListeningBookmarkResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateListeningBookmark_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListListeningBookmarks(ctx context.Context, in *ListListeningBookmarksRequest, opts ...grpc.CallOption) (*ListListeningBookmarksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListListeningBookmarksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListListeningBookmarks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteListeningBookmark(ctx context.Context, in *DeleteListeningBookmarkRequest, opts ...grpc.CallOption) (*DeleteListeningBookmarkResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteListeningBookmarkResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteListeningBookmark_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListListeningQueue(ctx context.Context, in *ListListeningQueueRequest, opts ...grpc.CallOption) (*ListListeningQueueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListListeningQueueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListListeningQueue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetListeningQueue(ctx context.Context, in *SetListeningQueueRequest, opts ...grpc.CallOption) (*SetListeningQueueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetListeningQueueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetListeningQueue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateAudioOverview(ctx context.Context, in *CreateAudioOverviewRequest, opts ...grpc.CallOption) (*CreateAudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateAudioOverviewResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateAudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListAudioOverviews(ctx context.Context, in *ListAudioOverviewsRequest, opts ...grpc.CallOption) (*ListAudioOverviewsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAudioOverviewsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListAudioOverviews_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetAudioOverview(ctx context.Context, in *GetAudioOverviewRequest, opts ...grpc.CallOption) (*GetAudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAudioOverviewResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetAudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteAudioOverview(ctx context.Context, in *DeleteAudioOverviewRequest, opts ...grpc.CallOption) (*DeleteAudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteAudioOverviewResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteAudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListListeningPronunciations(ctx context.Context, in *ListListeningPronunciationsRequest, opts ...grpc.CallOption) (*ListListeningPronunciationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListListeningPronunciationsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListListeningPronunciations_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -950,6 +1106,19 @@ type OnyxServiceServer interface {
 	GetSeries(context.Context, *GetSeriesRequest) (*GetSeriesResponse, error)
 	// P2.5 — captions, today summary, cross-pillar unlock bus.
 	GenerateCaptions(context.Context, *GenerateCaptionsRequest) (*GenerateCaptionsResponse, error)
+	GetCaptionJob(context.Context, *GetCaptionJobRequest) (*GetCaptionJobResponse, error)
+	GetListeningPreferences(context.Context, *GetListeningPreferencesRequest) (*GetListeningPreferencesResponse, error)
+	UpdateListeningPreferences(context.Context, *UpdateListeningPreferencesRequest) (*UpdateListeningPreferencesResponse, error)
+	CreateListeningBookmark(context.Context, *CreateListeningBookmarkRequest) (*CreateListeningBookmarkResponse, error)
+	ListListeningBookmarks(context.Context, *ListListeningBookmarksRequest) (*ListListeningBookmarksResponse, error)
+	DeleteListeningBookmark(context.Context, *DeleteListeningBookmarkRequest) (*DeleteListeningBookmarkResponse, error)
+	ListListeningQueue(context.Context, *ListListeningQueueRequest) (*ListListeningQueueResponse, error)
+	SetListeningQueue(context.Context, *SetListeningQueueRequest) (*SetListeningQueueResponse, error)
+	CreateAudioOverview(context.Context, *CreateAudioOverviewRequest) (*CreateAudioOverviewResponse, error)
+	ListAudioOverviews(context.Context, *ListAudioOverviewsRequest) (*ListAudioOverviewsResponse, error)
+	GetAudioOverview(context.Context, *GetAudioOverviewRequest) (*GetAudioOverviewResponse, error)
+	DeleteAudioOverview(context.Context, *DeleteAudioOverviewRequest) (*DeleteAudioOverviewResponse, error)
+	ListListeningPronunciations(context.Context, *ListListeningPronunciationsRequest) (*ListListeningPronunciationsResponse, error)
 	GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error)
 	GetCrossPillarUnlocks(context.Context, *GetCrossPillarUnlocksRequest) (*GetCrossPillarUnlocksResponse, error)
 	// P3 — curator concierge desk.
@@ -1101,6 +1270,45 @@ func (UnimplementedOnyxServiceServer) GetSeries(context.Context, *GetSeriesReque
 }
 func (UnimplementedOnyxServiceServer) GenerateCaptions(context.Context, *GenerateCaptionsRequest) (*GenerateCaptionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateCaptions not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetCaptionJob(context.Context, *GetCaptionJobRequest) (*GetCaptionJobResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCaptionJob not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetListeningPreferences(context.Context, *GetListeningPreferencesRequest) (*GetListeningPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetListeningPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdateListeningPreferences(context.Context, *UpdateListeningPreferencesRequest) (*UpdateListeningPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateListeningPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateListeningBookmark(context.Context, *CreateListeningBookmarkRequest) (*CreateListeningBookmarkResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateListeningBookmark not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListListeningBookmarks(context.Context, *ListListeningBookmarksRequest) (*ListListeningBookmarksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListListeningBookmarks not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteListeningBookmark(context.Context, *DeleteListeningBookmarkRequest) (*DeleteListeningBookmarkResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteListeningBookmark not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListListeningQueue(context.Context, *ListListeningQueueRequest) (*ListListeningQueueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListListeningQueue not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetListeningQueue(context.Context, *SetListeningQueueRequest) (*SetListeningQueueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetListeningQueue not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateAudioOverview(context.Context, *CreateAudioOverviewRequest) (*CreateAudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateAudioOverview not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListAudioOverviews(context.Context, *ListAudioOverviewsRequest) (*ListAudioOverviewsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAudioOverviews not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetAudioOverview(context.Context, *GetAudioOverviewRequest) (*GetAudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAudioOverview not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteAudioOverview(context.Context, *DeleteAudioOverviewRequest) (*DeleteAudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteAudioOverview not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListListeningPronunciations(context.Context, *ListListeningPronunciationsRequest) (*ListListeningPronunciationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListListeningPronunciations not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetTodaySummary(context.Context, *GetTodaySummaryRequest) (*GetTodaySummaryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetTodaySummary not implemented")
@@ -1794,6 +2002,240 @@ func _OnyxService_GenerateCaptions_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).GenerateCaptions(ctx, req.(*GenerateCaptionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetCaptionJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCaptionJobRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetCaptionJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetCaptionJob_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetCaptionJob(ctx, req.(*GetCaptionJobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetListeningPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetListeningPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetListeningPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetListeningPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetListeningPreferences(ctx, req.(*GetListeningPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdateListeningPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateListeningPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdateListeningPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdateListeningPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdateListeningPreferences(ctx, req.(*UpdateListeningPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateListeningBookmark_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateListeningBookmarkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateListeningBookmark(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateListeningBookmark_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateListeningBookmark(ctx, req.(*CreateListeningBookmarkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListListeningBookmarks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListListeningBookmarksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListListeningBookmarks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListListeningBookmarks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListListeningBookmarks(ctx, req.(*ListListeningBookmarksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteListeningBookmark_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteListeningBookmarkRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteListeningBookmark(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteListeningBookmark_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteListeningBookmark(ctx, req.(*DeleteListeningBookmarkRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListListeningQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListListeningQueueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListListeningQueue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListListeningQueue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListListeningQueue(ctx, req.(*ListListeningQueueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetListeningQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetListeningQueueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetListeningQueue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetListeningQueue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetListeningQueue(ctx, req.(*SetListeningQueueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateAudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateAudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateAudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateAudioOverview(ctx, req.(*CreateAudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListAudioOverviews_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAudioOverviewsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListAudioOverviews(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListAudioOverviews_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListAudioOverviews(ctx, req.(*ListAudioOverviewsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetAudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetAudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetAudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetAudioOverview(ctx, req.(*GetAudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteAudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteAudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteAudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteAudioOverview(ctx, req.(*DeleteAudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListListeningPronunciations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListListeningPronunciationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListListeningPronunciations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListListeningPronunciations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListListeningPronunciations(ctx, req.(*ListListeningPronunciationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2630,6 +3072,58 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateCaptions",
 			Handler:    _OnyxService_GenerateCaptions_Handler,
+		},
+		{
+			MethodName: "GetCaptionJob",
+			Handler:    _OnyxService_GetCaptionJob_Handler,
+		},
+		{
+			MethodName: "GetListeningPreferences",
+			Handler:    _OnyxService_GetListeningPreferences_Handler,
+		},
+		{
+			MethodName: "UpdateListeningPreferences",
+			Handler:    _OnyxService_UpdateListeningPreferences_Handler,
+		},
+		{
+			MethodName: "CreateListeningBookmark",
+			Handler:    _OnyxService_CreateListeningBookmark_Handler,
+		},
+		{
+			MethodName: "ListListeningBookmarks",
+			Handler:    _OnyxService_ListListeningBookmarks_Handler,
+		},
+		{
+			MethodName: "DeleteListeningBookmark",
+			Handler:    _OnyxService_DeleteListeningBookmark_Handler,
+		},
+		{
+			MethodName: "ListListeningQueue",
+			Handler:    _OnyxService_ListListeningQueue_Handler,
+		},
+		{
+			MethodName: "SetListeningQueue",
+			Handler:    _OnyxService_SetListeningQueue_Handler,
+		},
+		{
+			MethodName: "CreateAudioOverview",
+			Handler:    _OnyxService_CreateAudioOverview_Handler,
+		},
+		{
+			MethodName: "ListAudioOverviews",
+			Handler:    _OnyxService_ListAudioOverviews_Handler,
+		},
+		{
+			MethodName: "GetAudioOverview",
+			Handler:    _OnyxService_GetAudioOverview_Handler,
+		},
+		{
+			MethodName: "DeleteAudioOverview",
+			Handler:    _OnyxService_DeleteAudioOverview_Handler,
+		},
+		{
+			MethodName: "ListListeningPronunciations",
+			Handler:    _OnyxService_ListListeningPronunciations_Handler,
 		},
 		{
 			MethodName: "GetTodaySummary",

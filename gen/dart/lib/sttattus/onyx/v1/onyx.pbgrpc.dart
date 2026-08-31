@@ -272,6 +272,109 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$generateCaptions, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetCaptionJobResponse> getCaptionJob(
+    $0.GetCaptionJobRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCaptionJob, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetListeningPreferencesResponse>
+      getListeningPreferences(
+    $0.GetListeningPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getListeningPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateListeningPreferencesResponse>
+      updateListeningPreferences(
+    $0.UpdateListeningPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateListeningPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateListeningBookmarkResponse>
+      createListeningBookmark(
+    $0.CreateListeningBookmarkRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createListeningBookmark, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListListeningBookmarksResponse>
+      listListeningBookmarks(
+    $0.ListListeningBookmarksRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listListeningBookmarks, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteListeningBookmarkResponse>
+      deleteListeningBookmark(
+    $0.DeleteListeningBookmarkRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteListeningBookmark, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListListeningQueueResponse> listListeningQueue(
+    $0.ListListeningQueueRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listListeningQueue, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetListeningQueueResponse> setListeningQueue(
+    $0.SetListeningQueueRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setListeningQueue, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateAudioOverviewResponse> createAudioOverview(
+    $0.CreateAudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createAudioOverview, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListAudioOverviewsResponse> listAudioOverviews(
+    $0.ListAudioOverviewsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listAudioOverviews, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAudioOverviewResponse> getAudioOverview(
+    $0.GetAudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAudioOverview, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteAudioOverviewResponse> deleteAudioOverview(
+    $0.DeleteAudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteAudioOverview, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListListeningPronunciationsResponse>
+      listListeningPronunciations(
+    $0.ListListeningPronunciationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listListeningPronunciations, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.GetTodaySummaryResponse> getTodaySummary(
     $0.GetTodaySummaryRequest request, {
     $grpc.CallOptions? options,
@@ -722,6 +825,76 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GenerateCaptions',
       ($0.GenerateCaptionsRequest value) => value.writeToBuffer(),
       $0.GenerateCaptionsResponse.fromBuffer);
+  static final _$getCaptionJob =
+      $grpc.ClientMethod<$0.GetCaptionJobRequest, $0.GetCaptionJobResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetCaptionJob',
+          ($0.GetCaptionJobRequest value) => value.writeToBuffer(),
+          $0.GetCaptionJobResponse.fromBuffer);
+  static final _$getListeningPreferences = $grpc.ClientMethod<
+          $0.GetListeningPreferencesRequest,
+          $0.GetListeningPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetListeningPreferences',
+      ($0.GetListeningPreferencesRequest value) => value.writeToBuffer(),
+      $0.GetListeningPreferencesResponse.fromBuffer);
+  static final _$updateListeningPreferences = $grpc.ClientMethod<
+          $0.UpdateListeningPreferencesRequest,
+          $0.UpdateListeningPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences',
+      ($0.UpdateListeningPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdateListeningPreferencesResponse.fromBuffer);
+  static final _$createListeningBookmark = $grpc.ClientMethod<
+          $0.CreateListeningBookmarkRequest,
+          $0.CreateListeningBookmarkResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateListeningBookmark',
+      ($0.CreateListeningBookmarkRequest value) => value.writeToBuffer(),
+      $0.CreateListeningBookmarkResponse.fromBuffer);
+  static final _$listListeningBookmarks = $grpc.ClientMethod<
+          $0.ListListeningBookmarksRequest, $0.ListListeningBookmarksResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListListeningBookmarks',
+      ($0.ListListeningBookmarksRequest value) => value.writeToBuffer(),
+      $0.ListListeningBookmarksResponse.fromBuffer);
+  static final _$deleteListeningBookmark = $grpc.ClientMethod<
+          $0.DeleteListeningBookmarkRequest,
+          $0.DeleteListeningBookmarkResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark',
+      ($0.DeleteListeningBookmarkRequest value) => value.writeToBuffer(),
+      $0.DeleteListeningBookmarkResponse.fromBuffer);
+  static final _$listListeningQueue = $grpc.ClientMethod<
+          $0.ListListeningQueueRequest, $0.ListListeningQueueResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListListeningQueue',
+      ($0.ListListeningQueueRequest value) => value.writeToBuffer(),
+      $0.ListListeningQueueResponse.fromBuffer);
+  static final _$setListeningQueue = $grpc.ClientMethod<
+          $0.SetListeningQueueRequest, $0.SetListeningQueueResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetListeningQueue',
+      ($0.SetListeningQueueRequest value) => value.writeToBuffer(),
+      $0.SetListeningQueueResponse.fromBuffer);
+  static final _$createAudioOverview = $grpc.ClientMethod<
+          $0.CreateAudioOverviewRequest, $0.CreateAudioOverviewResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateAudioOverview',
+      ($0.CreateAudioOverviewRequest value) => value.writeToBuffer(),
+      $0.CreateAudioOverviewResponse.fromBuffer);
+  static final _$listAudioOverviews = $grpc.ClientMethod<
+          $0.ListAudioOverviewsRequest, $0.ListAudioOverviewsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListAudioOverviews',
+      ($0.ListAudioOverviewsRequest value) => value.writeToBuffer(),
+      $0.ListAudioOverviewsResponse.fromBuffer);
+  static final _$getAudioOverview = $grpc.ClientMethod<
+          $0.GetAudioOverviewRequest, $0.GetAudioOverviewResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetAudioOverview',
+      ($0.GetAudioOverviewRequest value) => value.writeToBuffer(),
+      $0.GetAudioOverviewResponse.fromBuffer);
+  static final _$deleteAudioOverview = $grpc.ClientMethod<
+          $0.DeleteAudioOverviewRequest, $0.DeleteAudioOverviewResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteAudioOverview',
+      ($0.DeleteAudioOverviewRequest value) => value.writeToBuffer(),
+      $0.DeleteAudioOverviewResponse.fromBuffer);
+  static final _$listListeningPronunciations = $grpc.ClientMethod<
+          $0.ListListeningPronunciationsRequest,
+          $0.ListListeningPronunciationsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListListeningPronunciations',
+      ($0.ListListeningPronunciationsRequest value) => value.writeToBuffer(),
+      $0.ListListeningPronunciationsResponse.fromBuffer);
   static final _$getTodaySummary =
       $grpc.ClientMethod<$0.GetTodaySummaryRequest, $0.GetTodaySummaryResponse>(
           '/sttattus.onyx.v1.OnyxService/GetTodaySummary',
@@ -1187,6 +1360,125 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GenerateCaptionsRequest.fromBuffer(value),
         ($0.GenerateCaptionsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetCaptionJobRequest, $0.GetCaptionJobResponse>(
+            'GetCaptionJob',
+            getCaptionJob_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetCaptionJobRequest.fromBuffer(value),
+            ($0.GetCaptionJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetListeningPreferencesRequest,
+            $0.GetListeningPreferencesResponse>(
+        'GetListeningPreferences',
+        getListeningPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetListeningPreferencesRequest.fromBuffer(value),
+        ($0.GetListeningPreferencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateListeningPreferencesRequest,
+            $0.UpdateListeningPreferencesResponse>(
+        'UpdateListeningPreferences',
+        updateListeningPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateListeningPreferencesRequest.fromBuffer(value),
+        ($0.UpdateListeningPreferencesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateListeningBookmarkRequest,
+            $0.CreateListeningBookmarkResponse>(
+        'CreateListeningBookmark',
+        createListeningBookmark_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateListeningBookmarkRequest.fromBuffer(value),
+        ($0.CreateListeningBookmarkResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListListeningBookmarksRequest,
+            $0.ListListeningBookmarksResponse>(
+        'ListListeningBookmarks',
+        listListeningBookmarks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListListeningBookmarksRequest.fromBuffer(value),
+        ($0.ListListeningBookmarksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteListeningBookmarkRequest,
+            $0.DeleteListeningBookmarkResponse>(
+        'DeleteListeningBookmark',
+        deleteListeningBookmark_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteListeningBookmarkRequest.fromBuffer(value),
+        ($0.DeleteListeningBookmarkResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListListeningQueueRequest,
+            $0.ListListeningQueueResponse>(
+        'ListListeningQueue',
+        listListeningQueue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListListeningQueueRequest.fromBuffer(value),
+        ($0.ListListeningQueueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetListeningQueueRequest,
+            $0.SetListeningQueueResponse>(
+        'SetListeningQueue',
+        setListeningQueue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetListeningQueueRequest.fromBuffer(value),
+        ($0.SetListeningQueueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateAudioOverviewRequest,
+            $0.CreateAudioOverviewResponse>(
+        'CreateAudioOverview',
+        createAudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateAudioOverviewRequest.fromBuffer(value),
+        ($0.CreateAudioOverviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAudioOverviewsRequest,
+            $0.ListAudioOverviewsResponse>(
+        'ListAudioOverviews',
+        listAudioOverviews_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListAudioOverviewsRequest.fromBuffer(value),
+        ($0.ListAudioOverviewsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAudioOverviewRequest,
+            $0.GetAudioOverviewResponse>(
+        'GetAudioOverview',
+        getAudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAudioOverviewRequest.fromBuffer(value),
+        ($0.GetAudioOverviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteAudioOverviewRequest,
+            $0.DeleteAudioOverviewResponse>(
+        'DeleteAudioOverview',
+        deleteAudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteAudioOverviewRequest.fromBuffer(value),
+        ($0.DeleteAudioOverviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListListeningPronunciationsRequest,
+            $0.ListListeningPronunciationsResponse>(
+        'ListListeningPronunciations',
+        listListeningPronunciations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListListeningPronunciationsRequest.fromBuffer(value),
+        ($0.ListListeningPronunciationsResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetTodaySummaryRequest,
             $0.GetTodaySummaryResponse>(
         'GetTodaySummary',
@@ -1807,6 +2099,125 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GenerateCaptionsResponse> generateCaptions(
       $grpc.ServiceCall call, $0.GenerateCaptionsRequest request);
+
+  $async.Future<$0.GetCaptionJobResponse> getCaptionJob_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetCaptionJobRequest> $request) async {
+    return getCaptionJob($call, await $request);
+  }
+
+  $async.Future<$0.GetCaptionJobResponse> getCaptionJob(
+      $grpc.ServiceCall call, $0.GetCaptionJobRequest request);
+
+  $async.Future<$0.GetListeningPreferencesResponse> getListeningPreferences_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetListeningPreferencesRequest> $request) async {
+    return getListeningPreferences($call, await $request);
+  }
+
+  $async.Future<$0.GetListeningPreferencesResponse> getListeningPreferences(
+      $grpc.ServiceCall call, $0.GetListeningPreferencesRequest request);
+
+  $async.Future<$0.UpdateListeningPreferencesResponse>
+      updateListeningPreferences_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdateListeningPreferencesRequest> $request) async {
+    return updateListeningPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdateListeningPreferencesResponse>
+      updateListeningPreferences(
+          $grpc.ServiceCall call, $0.UpdateListeningPreferencesRequest request);
+
+  $async.Future<$0.CreateListeningBookmarkResponse> createListeningBookmark_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateListeningBookmarkRequest> $request) async {
+    return createListeningBookmark($call, await $request);
+  }
+
+  $async.Future<$0.CreateListeningBookmarkResponse> createListeningBookmark(
+      $grpc.ServiceCall call, $0.CreateListeningBookmarkRequest request);
+
+  $async.Future<$0.ListListeningBookmarksResponse> listListeningBookmarks_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListListeningBookmarksRequest> $request) async {
+    return listListeningBookmarks($call, await $request);
+  }
+
+  $async.Future<$0.ListListeningBookmarksResponse> listListeningBookmarks(
+      $grpc.ServiceCall call, $0.ListListeningBookmarksRequest request);
+
+  $async.Future<$0.DeleteListeningBookmarkResponse> deleteListeningBookmark_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteListeningBookmarkRequest> $request) async {
+    return deleteListeningBookmark($call, await $request);
+  }
+
+  $async.Future<$0.DeleteListeningBookmarkResponse> deleteListeningBookmark(
+      $grpc.ServiceCall call, $0.DeleteListeningBookmarkRequest request);
+
+  $async.Future<$0.ListListeningQueueResponse> listListeningQueue_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListListeningQueueRequest> $request) async {
+    return listListeningQueue($call, await $request);
+  }
+
+  $async.Future<$0.ListListeningQueueResponse> listListeningQueue(
+      $grpc.ServiceCall call, $0.ListListeningQueueRequest request);
+
+  $async.Future<$0.SetListeningQueueResponse> setListeningQueue_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetListeningQueueRequest> $request) async {
+    return setListeningQueue($call, await $request);
+  }
+
+  $async.Future<$0.SetListeningQueueResponse> setListeningQueue(
+      $grpc.ServiceCall call, $0.SetListeningQueueRequest request);
+
+  $async.Future<$0.CreateAudioOverviewResponse> createAudioOverview_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateAudioOverviewRequest> $request) async {
+    return createAudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.CreateAudioOverviewResponse> createAudioOverview(
+      $grpc.ServiceCall call, $0.CreateAudioOverviewRequest request);
+
+  $async.Future<$0.ListAudioOverviewsResponse> listAudioOverviews_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListAudioOverviewsRequest> $request) async {
+    return listAudioOverviews($call, await $request);
+  }
+
+  $async.Future<$0.ListAudioOverviewsResponse> listAudioOverviews(
+      $grpc.ServiceCall call, $0.ListAudioOverviewsRequest request);
+
+  $async.Future<$0.GetAudioOverviewResponse> getAudioOverview_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetAudioOverviewRequest> $request) async {
+    return getAudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetAudioOverviewResponse> getAudioOverview(
+      $grpc.ServiceCall call, $0.GetAudioOverviewRequest request);
+
+  $async.Future<$0.DeleteAudioOverviewResponse> deleteAudioOverview_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteAudioOverviewRequest> $request) async {
+    return deleteAudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.DeleteAudioOverviewResponse> deleteAudioOverview(
+      $grpc.ServiceCall call, $0.DeleteAudioOverviewRequest request);
+
+  $async.Future<$0.ListListeningPronunciationsResponse>
+      listListeningPronunciations_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListListeningPronunciationsRequest> $request) async {
+    return listListeningPronunciations($call, await $request);
+  }
+
+  $async.Future<$0.ListListeningPronunciationsResponse>
+      listListeningPronunciations($grpc.ServiceCall call,
+          $0.ListListeningPronunciationsRequest request);
 
   $async.Future<$0.GetTodaySummaryResponse> getTodaySummary_Pre(
       $grpc.ServiceCall $call,

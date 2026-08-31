@@ -540,6 +540,22 @@ const RecordProgressRequest$json = {
     {'1': 'position_seconds', '3': 3, '4': 1, '5': 5, '10': 'positionSeconds'},
     {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
     {'1': 'offset', '3': 5, '4': 1, '5': 5, '10': 'offset'},
+    {
+      '1': 'observed_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'observedAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'mode', '3': 8, '4': 1, '5': 9, '10': 'mode'},
   ],
 };
 
@@ -548,7 +564,9 @@ final $typed_data.Uint8List recordProgressRequestDescriptor = $convert.base64Dec
     'ChVSZWNvcmRQcm9ncmVzc1JlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY29udGVudElkEh'
     '4KCmNvbXBsZXRpb24YAiABKAFSCmNvbXBsZXRpb24SKQoQcG9zaXRpb25fc2Vjb25kcxgDIAEo'
     'BVIPcG9zaXRpb25TZWNvbmRzEh8KC3Bhc3NhZ2Vfa2V5GAQgASgJUgpwYXNzYWdlS2V5EhYKBm'
-    '9mZnNldBgFIAEoBVIGb2Zmc2V0');
+    '9mZnNldBgFIAEoBVIGb2Zmc2V0EjsKC29ic2VydmVkX2F0GAYgASgLMhouZ29vZ2xlLnByb3Rv'
+    'YnVmLlRpbWVzdGFtcFIKb2JzZXJ2ZWRBdBIsChJjbGllbnRfbXV0YXRpb25faWQYByABKAlSEG'
+    'NsaWVudE11dGF0aW9uSWQSEgoEbW9kZRgIIAEoCVIEbW9kZQ==');
 
 @$core.Deprecated('Use recordProgressResponseDescriptor instead')
 const RecordProgressResponse$json = {
@@ -558,6 +576,22 @@ const RecordProgressResponse$json = {
     {'1': 'position_seconds', '3': 2, '4': 1, '5': 5, '10': 'positionSeconds'},
     {'1': 'passage_key', '3': 3, '4': 1, '5': 9, '10': 'passageKey'},
     {'1': 'offset', '3': 4, '4': 1, '5': 5, '10': 'offset'},
+    {
+      '1': 'observed_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'observedAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'mode', '3': 7, '4': 1, '5': 9, '10': 'mode'},
   ],
 };
 
@@ -565,7 +599,10 @@ const RecordProgressResponse$json = {
 final $typed_data.Uint8List recordProgressResponseDescriptor = $convert.base64Decode(
     'ChZSZWNvcmRQcm9ncmVzc1Jlc3BvbnNlEh4KCmNvbXBsZXRpb24YASABKAFSCmNvbXBsZXRpb2'
     '4SKQoQcG9zaXRpb25fc2Vjb25kcxgCIAEoBVIPcG9zaXRpb25TZWNvbmRzEh8KC3Bhc3NhZ2Vf'
-    'a2V5GAMgASgJUgpwYXNzYWdlS2V5EhYKBm9mZnNldBgEIAEoBVIGb2Zmc2V0');
+    'a2V5GAMgASgJUgpwYXNzYWdlS2V5EhYKBm9mZnNldBgEIAEoBVIGb2Zmc2V0EjsKC29ic2Vydm'
+    'VkX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKb2JzZXJ2ZWRBdBIsChJj'
+    'bGllbnRfbXV0YXRpb25faWQYBiABKAlSEGNsaWVudE11dGF0aW9uSWQSEgoEbW9kZRgHIAEoCV'
+    'IEbW9kZQ==');
 
 @$core.Deprecated('Use redeemContentRequestDescriptor instead')
 const RedeemContentRequest$json = {
@@ -1517,6 +1554,19 @@ const CaptionJob$json = {
     {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
     {'1': 'captions_url', '3': 3, '4': 1, '5': 9, '10': 'captionsUrl'},
     {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
+    {'1': 'job_id', '3': 5, '4': 1, '5': 9, '10': 'jobId'},
+    {'1': 'language_code', '3': 6, '4': 1, '5': 9, '10': 'languageCode'},
+    {'1': 'error_code', '3': 7, '4': 1, '5': 9, '10': 'errorCode'},
+    {'1': 'attempt_count', '3': 8, '4': 1, '5': 5, '10': 'attemptCount'},
+    {'1': 'max_attempts', '3': 9, '4': 1, '5': 5, '10': 'maxAttempts'},
+    {
+      '1': 'next_attempt_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'nextAttemptAt'
+    },
   ],
 };
 
@@ -1524,13 +1574,18 @@ const CaptionJob$json = {
 final $typed_data.Uint8List captionJobDescriptor = $convert.base64Decode(
     'CgpDYXB0aW9uSm9iEh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbnRlbnRJZBIWCgZzdGF0dXMYAi'
     'ABKAlSBnN0YXR1cxIhCgxjYXB0aW9uc191cmwYAyABKAlSC2NhcHRpb25zVXJsEhQKBWVycm9y'
-    'GAQgASgJUgVlcnJvcg==');
+    'GAQgASgJUgVlcnJvchIVCgZqb2JfaWQYBSABKAlSBWpvYklkEiMKDWxhbmd1YWdlX2NvZGUYBi'
+    'ABKAlSDGxhbmd1YWdlQ29kZRIdCgplcnJvcl9jb2RlGAcgASgJUgllcnJvckNvZGUSIwoNYXR0'
+    'ZW1wdF9jb3VudBgIIAEoBVIMYXR0ZW1wdENvdW50EiEKDG1heF9hdHRlbXB0cxgJIAEoBVILbW'
+    'F4QXR0ZW1wdHMSQgoPbmV4dF9hdHRlbXB0X2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp'
+    'bWVzdGFtcFINbmV4dEF0dGVtcHRBdA==');
 
 @$core.Deprecated('Use generateCaptionsRequestDescriptor instead')
 const GenerateCaptionsRequest$json = {
   '1': 'GenerateCaptionsRequest',
   '2': [
     {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'language_code', '3': 2, '4': 1, '5': 9, '10': 'languageCode'},
   ],
 };
 
@@ -1538,7 +1593,7 @@ const GenerateCaptionsRequest$json = {
 final $typed_data.Uint8List generateCaptionsRequestDescriptor =
     $convert.base64Decode(
         'ChdHZW5lcmF0ZUNhcHRpb25zUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SW'
-        'Q=');
+        'QSIwoNbGFuZ3VhZ2VfY29kZRgCIAEoCVIMbGFuZ3VhZ2VDb2Rl');
 
 @$core.Deprecated('Use generateCaptionsResponseDescriptor instead')
 const GenerateCaptionsResponse$json = {
@@ -1560,6 +1615,704 @@ final $typed_data.Uint8List generateCaptionsResponseDescriptor =
     $convert.base64Decode(
         'ChhHZW5lcmF0ZUNhcHRpb25zUmVzcG9uc2USLgoDam9iGAEgASgLMhwuc3R0YXR0dXMub255eC'
         '52MS5DYXB0aW9uSm9iUgNqb2I=');
+
+@$core.Deprecated('Use getCaptionJobRequestDescriptor instead')
+const GetCaptionJobRequest$json = {
+  '1': 'GetCaptionJobRequest',
+  '2': [
+    {'1': 'job_id', '3': 1, '4': 1, '5': 9, '10': 'jobId'},
+  ],
+};
+
+/// Descriptor for `GetCaptionJobRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCaptionJobRequestDescriptor =
+    $convert.base64Decode(
+        'ChRHZXRDYXB0aW9uSm9iUmVxdWVzdBIVCgZqb2JfaWQYASABKAlSBWpvYklk');
+
+@$core.Deprecated('Use getCaptionJobResponseDescriptor instead')
+const GetCaptionJobResponse$json = {
+  '1': 'GetCaptionJobResponse',
+  '2': [
+    {
+      '1': 'job',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.CaptionJob',
+      '10': 'job'
+    },
+  ],
+};
+
+/// Descriptor for `GetCaptionJobResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getCaptionJobResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRDYXB0aW9uSm9iUmVzcG9uc2USLgoDam9iGAEgASgLMhwuc3R0YXR0dXMub255eC52MS'
+    '5DYXB0aW9uSm9iUgNqb2I=');
+
+@$core.Deprecated('Use listeningPreferencesDescriptor instead')
+const ListeningPreferences$json = {
+  '1': 'ListeningPreferences',
+  '2': [
+    {'1': 'voice_name', '3': 1, '4': 1, '5': 9, '10': 'voiceName'},
+    {'1': 'voice_locale', '3': 2, '4': 1, '5': 9, '10': 'voiceLocale'},
+    {'1': 'speed', '3': 3, '4': 1, '5': 1, '10': 'speed'},
+    {'1': 'pitch', '3': 4, '4': 1, '5': 1, '10': 'pitch'},
+    {'1': 'skip_headings', '3': 5, '4': 1, '5': 8, '10': 'skipHeadings'},
+    {'1': 'skip_citations', '3': 6, '4': 1, '5': 8, '10': 'skipCitations'},
+    {
+      '1': 'updated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ListeningPreferences`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listeningPreferencesDescriptor = $convert.base64Decode(
+    'ChRMaXN0ZW5pbmdQcmVmZXJlbmNlcxIdCgp2b2ljZV9uYW1lGAEgASgJUgl2b2ljZU5hbWUSIQ'
+    'oMdm9pY2VfbG9jYWxlGAIgASgJUgt2b2ljZUxvY2FsZRIUCgVzcGVlZBgDIAEoAVIFc3BlZWQS'
+    'FAoFcGl0Y2gYBCABKAFSBXBpdGNoEiMKDXNraXBfaGVhZGluZ3MYBSABKAhSDHNraXBIZWFkaW'
+    '5ncxIlCg5za2lwX2NpdGF0aW9ucxgGIAEoCFINc2tpcENpdGF0aW9ucxI5Cgp1cGRhdGVkX2F0'
+    'GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use getListeningPreferencesRequestDescriptor instead')
+const GetListeningPreferencesRequest$json = {
+  '1': 'GetListeningPreferencesRequest',
+};
+
+/// Descriptor for `GetListeningPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getListeningPreferencesRequestDescriptor =
+    $convert.base64Decode('Ch5HZXRMaXN0ZW5pbmdQcmVmZXJlbmNlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getListeningPreferencesResponseDescriptor instead')
+const GetListeningPreferencesResponse$json = {
+  '1': 'GetListeningPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `GetListeningPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getListeningPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9HZXRMaXN0ZW5pbmdQcmVmZXJlbmNlc1Jlc3BvbnNlEkgKC3ByZWZlcmVuY2VzGAEgASgLMi'
+        'Yuc3R0YXR0dXMub255eC52MS5MaXN0ZW5pbmdQcmVmZXJlbmNlc1ILcHJlZmVyZW5jZXM=');
+
+@$core.Deprecated('Use updateListeningPreferencesRequestDescriptor instead')
+const UpdateListeningPreferencesRequest$json = {
+  '1': 'UpdateListeningPreferencesRequest',
+  '2': [
+    {'1': 'voice_name', '3': 1, '4': 1, '5': 9, '10': 'voiceName'},
+    {'1': 'voice_locale', '3': 2, '4': 1, '5': 9, '10': 'voiceLocale'},
+    {'1': 'speed', '3': 3, '4': 1, '5': 1, '10': 'speed'},
+    {'1': 'pitch', '3': 4, '4': 1, '5': 1, '10': 'pitch'},
+    {'1': 'skip_headings', '3': 5, '4': 1, '5': 8, '10': 'skipHeadings'},
+    {'1': 'skip_citations', '3': 6, '4': 1, '5': 8, '10': 'skipCitations'},
+  ],
+};
+
+/// Descriptor for `UpdateListeningPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateListeningPreferencesRequestDescriptor = $convert.base64Decode(
+    'CiFVcGRhdGVMaXN0ZW5pbmdQcmVmZXJlbmNlc1JlcXVlc3QSHQoKdm9pY2VfbmFtZRgBIAEoCV'
+    'IJdm9pY2VOYW1lEiEKDHZvaWNlX2xvY2FsZRgCIAEoCVILdm9pY2VMb2NhbGUSFAoFc3BlZWQY'
+    'AyABKAFSBXNwZWVkEhQKBXBpdGNoGAQgASgBUgVwaXRjaBIjCg1za2lwX2hlYWRpbmdzGAUgAS'
+    'gIUgxza2lwSGVhZGluZ3MSJQoOc2tpcF9jaXRhdGlvbnMYBiABKAhSDXNraXBDaXRhdGlvbnM=');
+
+@$core.Deprecated('Use updateListeningPreferencesResponseDescriptor instead')
+const UpdateListeningPreferencesResponse$json = {
+  '1': 'UpdateListeningPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateListeningPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateListeningPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'CiJVcGRhdGVMaXN0ZW5pbmdQcmVmZXJlbmNlc1Jlc3BvbnNlEkgKC3ByZWZlcmVuY2VzGAEgAS'
+        'gLMiYuc3R0YXR0dXMub255eC52MS5MaXN0ZW5pbmdQcmVmZXJlbmNlc1ILcHJlZmVyZW5jZXM=');
+
+@$core.Deprecated('Use listeningBookmarkDescriptor instead')
+const ListeningBookmark$json = {
+  '1': 'ListeningBookmark',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'position_seconds', '3': 4, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {
+      '1': 'end_position_seconds',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'endPositionSeconds'
+    },
+    {'1': 'passage_key', '3': 6, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'passage_offset', '3': 7, '4': 1, '5': 5, '10': 'passageOffset'},
+    {'1': 'label', '3': 8, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'note', '3': 9, '4': 1, '5': 9, '10': 'note'},
+    {
+      '1': 'created_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ListeningBookmark`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listeningBookmarkDescriptor = $convert.base64Decode(
+    'ChFMaXN0ZW5pbmdCb29rbWFyaxIOCgJpZBgBIAEoCVICaWQSHQoKY29udGVudF9pZBgCIAEoCV'
+    'IJY29udGVudElkEhIKBGtpbmQYAyABKAlSBGtpbmQSKQoQcG9zaXRpb25fc2Vjb25kcxgEIAEo'
+    'BVIPcG9zaXRpb25TZWNvbmRzEjAKFGVuZF9wb3NpdGlvbl9zZWNvbmRzGAUgASgFUhJlbmRQb3'
+    'NpdGlvblNlY29uZHMSHwoLcGFzc2FnZV9rZXkYBiABKAlSCnBhc3NhZ2VLZXkSJQoOcGFzc2Fn'
+    'ZV9vZmZzZXQYByABKAVSDXBhc3NhZ2VPZmZzZXQSFAoFbGFiZWwYCCABKAlSBWxhYmVsEhIKBG'
+    '5vdGUYCSABKAlSBG5vdGUSOQoKY3JlYXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U'
+    'aW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use createListeningBookmarkRequestDescriptor instead')
+const CreateListeningBookmarkRequest$json = {
+  '1': 'CreateListeningBookmarkRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'position_seconds', '3': 3, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {
+      '1': 'end_position_seconds',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'endPositionSeconds'
+    },
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'passage_offset', '3': 6, '4': 1, '5': 5, '10': 'passageOffset'},
+    {'1': 'label', '3': 7, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'note', '3': 8, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `CreateListeningBookmarkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createListeningBookmarkRequestDescriptor = $convert.base64Decode(
+    'Ch5DcmVhdGVMaXN0ZW5pbmdCb29rbWFya1JlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY2'
+    '9udGVudElkEhIKBGtpbmQYAiABKAlSBGtpbmQSKQoQcG9zaXRpb25fc2Vjb25kcxgDIAEoBVIP'
+    'cG9zaXRpb25TZWNvbmRzEjAKFGVuZF9wb3NpdGlvbl9zZWNvbmRzGAQgASgFUhJlbmRQb3NpdG'
+    'lvblNlY29uZHMSHwoLcGFzc2FnZV9rZXkYBSABKAlSCnBhc3NhZ2VLZXkSJQoOcGFzc2FnZV9v'
+    'ZmZzZXQYBiABKAVSDXBhc3NhZ2VPZmZzZXQSFAoFbGFiZWwYByABKAlSBWxhYmVsEhIKBG5vdG'
+    'UYCCABKAlSBG5vdGU=');
+
+@$core.Deprecated('Use createListeningBookmarkResponseDescriptor instead')
+const CreateListeningBookmarkResponse$json = {
+  '1': 'CreateListeningBookmarkResponse',
+  '2': [
+    {
+      '1': 'bookmark',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningBookmark',
+      '10': 'bookmark'
+    },
+  ],
+};
+
+/// Descriptor for `CreateListeningBookmarkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createListeningBookmarkResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9DcmVhdGVMaXN0ZW5pbmdCb29rbWFya1Jlc3BvbnNlEj8KCGJvb2ttYXJrGAEgASgLMiMuc3'
+        'R0YXR0dXMub255eC52MS5MaXN0ZW5pbmdCb29rbWFya1IIYm9va21hcms=');
+
+@$core.Deprecated('Use listListeningBookmarksRequestDescriptor instead')
+const ListListeningBookmarksRequest$json = {
+  '1': 'ListListeningBookmarksRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+  ],
+};
+
+/// Descriptor for `ListListeningBookmarksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningBookmarksRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0TGlzdGVuaW5nQm9va21hcmtzUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb2'
+        '50ZW50SWQ=');
+
+@$core.Deprecated('Use listListeningBookmarksResponseDescriptor instead')
+const ListListeningBookmarksResponse$json = {
+  '1': 'ListListeningBookmarksResponse',
+  '2': [
+    {
+      '1': 'bookmarks',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningBookmark',
+      '10': 'bookmarks'
+    },
+  ],
+};
+
+/// Descriptor for `ListListeningBookmarksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningBookmarksResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0TGlzdGVuaW5nQm9va21hcmtzUmVzcG9uc2USQQoJYm9va21hcmtzGAEgAygLMiMuc3'
+        'R0YXR0dXMub255eC52MS5MaXN0ZW5pbmdCb29rbWFya1IJYm9va21hcmtz');
+
+@$core.Deprecated('Use deleteListeningBookmarkRequestDescriptor instead')
+const DeleteListeningBookmarkRequest$json = {
+  '1': 'DeleteListeningBookmarkRequest',
+  '2': [
+    {'1': 'bookmark_id', '3': 1, '4': 1, '5': 9, '10': 'bookmarkId'},
+  ],
+};
+
+/// Descriptor for `DeleteListeningBookmarkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteListeningBookmarkRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5EZWxldGVMaXN0ZW5pbmdCb29rbWFya1JlcXVlc3QSHwoLYm9va21hcmtfaWQYASABKAlSCm'
+        'Jvb2ttYXJrSWQ=');
+
+@$core.Deprecated('Use deleteListeningBookmarkResponseDescriptor instead')
+const DeleteListeningBookmarkResponse$json = {
+  '1': 'DeleteListeningBookmarkResponse',
+};
+
+/// Descriptor for `DeleteListeningBookmarkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteListeningBookmarkResponseDescriptor =
+    $convert.base64Decode('Ch9EZWxldGVMaXN0ZW5pbmdCb29rbWFya1Jlc3BvbnNl');
+
+@$core.Deprecated('Use listeningQueueEntryDescriptor instead')
+const ListeningQueueEntry$json = {
+  '1': 'ListeningQueueEntry',
+  '2': [
+    {
+      '1': 'content',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'content'
+    },
+    {'1': 'ordinal', '3': 2, '4': 1, '5': 5, '10': 'ordinal'},
+    {
+      '1': 'added_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'addedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ListeningQueueEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listeningQueueEntryDescriptor = $convert.base64Decode(
+    'ChNMaXN0ZW5pbmdRdWV1ZUVudHJ5EjcKB2NvbnRlbnQYASABKAsyHS5zdHRhdHR1cy5vbnl4Ln'
+    'YxLk9ueXhDb250ZW50Ugdjb250ZW50EhgKB29yZGluYWwYAiABKAVSB29yZGluYWwSNQoIYWRk'
+    'ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdhZGRlZEF0');
+
+@$core.Deprecated('Use listListeningQueueRequestDescriptor instead')
+const ListListeningQueueRequest$json = {
+  '1': 'ListListeningQueueRequest',
+};
+
+/// Descriptor for `ListListeningQueueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningQueueRequestDescriptor =
+    $convert.base64Decode('ChlMaXN0TGlzdGVuaW5nUXVldWVSZXF1ZXN0');
+
+@$core.Deprecated('Use listListeningQueueResponseDescriptor instead')
+const ListListeningQueueResponse$json = {
+  '1': 'ListListeningQueueResponse',
+  '2': [
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningQueueEntry',
+      '10': 'entries'
+    },
+  ],
+};
+
+/// Descriptor for `ListListeningQueueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningQueueResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0TGlzdGVuaW5nUXVldWVSZXNwb25zZRI/CgdlbnRyaWVzGAEgAygLMiUuc3R0YXR0dX'
+        'Mub255eC52MS5MaXN0ZW5pbmdRdWV1ZUVudHJ5UgdlbnRyaWVz');
+
+@$core.Deprecated('Use setListeningQueueRequestDescriptor instead')
+const SetListeningQueueRequest$json = {
+  '1': 'SetListeningQueueRequest',
+  '2': [
+    {'1': 'content_ids', '3': 1, '4': 3, '5': 9, '10': 'contentIds'},
+  ],
+};
+
+/// Descriptor for `SetListeningQueueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setListeningQueueRequestDescriptor =
+    $convert.base64Decode(
+        'ChhTZXRMaXN0ZW5pbmdRdWV1ZVJlcXVlc3QSHwoLY29udGVudF9pZHMYASADKAlSCmNvbnRlbn'
+        'RJZHM=');
+
+@$core.Deprecated('Use setListeningQueueResponseDescriptor instead')
+const SetListeningQueueResponse$json = {
+  '1': 'SetListeningQueueResponse',
+  '2': [
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningQueueEntry',
+      '10': 'entries'
+    },
+  ],
+};
+
+/// Descriptor for `SetListeningQueueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setListeningQueueResponseDescriptor =
+    $convert.base64Decode(
+        'ChlTZXRMaXN0ZW5pbmdRdWV1ZVJlc3BvbnNlEj8KB2VudHJpZXMYASADKAsyJS5zdHRhdHR1cy'
+        '5vbnl4LnYxLkxpc3RlbmluZ1F1ZXVlRW50cnlSB2VudHJpZXM=');
+
+@$core.Deprecated('Use audioOverviewCitationDescriptor instead')
+const AudioOverviewCitation$json = {
+  '1': 'AudioOverviewCitation',
+  '2': [
+    {'1': 'source_content_id', '3': 1, '4': 1, '5': 9, '10': 'sourceContentId'},
+    {
+      '1': 'source_revision_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {'1': 'passage_key', '3': 3, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'quote', '3': 4, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'relation', '3': 5, '4': 1, '5': 9, '10': 'relation'},
+  ],
+};
+
+/// Descriptor for `AudioOverviewCitation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List audioOverviewCitationDescriptor = $convert.base64Decode(
+    'ChVBdWRpb092ZXJ2aWV3Q2l0YXRpb24SKgoRc291cmNlX2NvbnRlbnRfaWQYASABKAlSD3NvdX'
+    'JjZUNvbnRlbnRJZBIsChJzb3VyY2VfcmV2aXNpb25faWQYAiABKAlSEHNvdXJjZVJldmlzaW9u'
+    'SWQSHwoLcGFzc2FnZV9rZXkYAyABKAlSCnBhc3NhZ2VLZXkSFAoFcXVvdGUYBCABKAlSBXF1b3'
+    'RlEhoKCHJlbGF0aW9uGAUgASgJUghyZWxhdGlvbg==');
+
+@$core.Deprecated('Use audioOverviewSegmentDescriptor instead')
+const AudioOverviewSegment$json = {
+  '1': 'AudioOverviewSegment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'ordinal', '3': 2, '4': 1, '5': 5, '10': 'ordinal'},
+    {'1': 'chapter_title', '3': 3, '4': 1, '5': 9, '10': 'chapterTitle'},
+    {'1': 'speaker_label', '3': 4, '4': 1, '5': 9, '10': 'speakerLabel'},
+    {'1': 'start_ms', '3': 5, '4': 1, '5': 5, '10': 'startMs'},
+    {'1': 'end_ms', '3': 6, '4': 1, '5': 5, '10': 'endMs'},
+    {'1': 'transcript_text', '3': 7, '4': 1, '5': 9, '10': 'transcriptText'},
+    {
+      '1': 'citations',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AudioOverviewCitation',
+      '10': 'citations'
+    },
+  ],
+};
+
+/// Descriptor for `AudioOverviewSegment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List audioOverviewSegmentDescriptor = $convert.base64Decode(
+    'ChRBdWRpb092ZXJ2aWV3U2VnbWVudBIOCgJpZBgBIAEoCVICaWQSGAoHb3JkaW5hbBgCIAEoBV'
+    'IHb3JkaW5hbBIjCg1jaGFwdGVyX3RpdGxlGAMgASgJUgxjaGFwdGVyVGl0bGUSIwoNc3BlYWtl'
+    'cl9sYWJlbBgEIAEoCVIMc3BlYWtlckxhYmVsEhkKCHN0YXJ0X21zGAUgASgFUgdzdGFydE1zEh'
+    'UKBmVuZF9tcxgGIAEoBVIFZW5kTXMSJwoPdHJhbnNjcmlwdF90ZXh0GAcgASgJUg50cmFuc2Ny'
+    'aXB0VGV4dBJFCgljaXRhdGlvbnMYCCADKAsyJy5zdHRhdHR1cy5vbnl4LnYxLkF1ZGlvT3Zlcn'
+    'ZpZXdDaXRhdGlvblIJY2l0YXRpb25z');
+
+@$core.Deprecated('Use audioOverviewDescriptor instead')
+const AudioOverview$json = {
+  '1': 'AudioOverview',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'language_code', '3': 4, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'source_set_fingerprint',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceSetFingerprint'
+    },
+    {'1': 'transcript_text', '3': 6, '4': 1, '5': 9, '10': 'transcriptText'},
+    {'1': 'provider', '3': 7, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'model', '3': 8, '4': 1, '5': 9, '10': 'model'},
+    {'1': 'error_code', '3': 9, '4': 1, '5': 9, '10': 'errorCode'},
+    {'1': 'cost_minor', '3': 10, '4': 1, '5': 5, '10': 'costMinor'},
+    {'1': 'currency', '3': 11, '4': 1, '5': 9, '10': 'currency'},
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {
+      '1': 'segments',
+      '3': 14,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AudioOverviewSegment',
+      '10': 'segments'
+    },
+  ],
+};
+
+/// Descriptor for `AudioOverview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List audioOverviewDescriptor = $convert.base64Decode(
+    'Cg1BdWRpb092ZXJ2aWV3Eg4KAmlkGAEgASgJUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSFg'
+    'oGc3RhdHVzGAMgASgJUgZzdGF0dXMSIwoNbGFuZ3VhZ2VfY29kZRgEIAEoCVIMbGFuZ3VhZ2VD'
+    'b2RlEjQKFnNvdXJjZV9zZXRfZmluZ2VycHJpbnQYBSABKAlSFHNvdXJjZVNldEZpbmdlcnByaW'
+    '50EicKD3RyYW5zY3JpcHRfdGV4dBgGIAEoCVIOdHJhbnNjcmlwdFRleHQSGgoIcHJvdmlkZXIY'
+    'ByABKAlSCHByb3ZpZGVyEhQKBW1vZGVsGAggASgJUgVtb2RlbBIdCgplcnJvcl9jb2RlGAkgAS'
+    'gJUgllcnJvckNvZGUSHQoKY29zdF9taW5vchgKIAEoBVIJY29zdE1pbm9yEhoKCGN1cnJlbmN5'
+    'GAsgASgJUghjdXJyZW5jeRI5CgpjcmVhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9i'
+    'dWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSQgoIc2VnbWVudHMYDiADKAsyJi5zdHRhdHR1cy5vbn'
+    'l4LnYxLkF1ZGlvT3ZlcnZpZXdTZWdtZW50UghzZWdtZW50cw==');
+
+@$core.Deprecated('Use createAudioOverviewRequestDescriptor instead')
+const CreateAudioOverviewRequest$json = {
+  '1': 'CreateAudioOverviewRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'content_ids', '3': 2, '4': 3, '5': 9, '10': 'contentIds'},
+    {'1': 'language_code', '3': 3, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateAudioOverviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAudioOverviewRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVBdWRpb092ZXJ2aWV3UmVxdWVzdBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSHwoLY2'
+    '9udGVudF9pZHMYAiADKAlSCmNvbnRlbnRJZHMSIwoNbGFuZ3VhZ2VfY29kZRgDIAEoCVIMbGFu'
+    'Z3VhZ2VDb2RlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA'
+    '==');
+
+@$core.Deprecated('Use createAudioOverviewResponseDescriptor instead')
+const CreateAudioOverviewResponse$json = {
+  '1': 'CreateAudioOverviewResponse',
+  '2': [
+    {
+      '1': 'overview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AudioOverview',
+      '10': 'overview'
+    },
+  ],
+};
+
+/// Descriptor for `CreateAudioOverviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAudioOverviewResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVBdWRpb092ZXJ2aWV3UmVzcG9uc2USOwoIb3ZlcnZpZXcYASABKAsyHy5zdHRhdH'
+        'R1cy5vbnl4LnYxLkF1ZGlvT3ZlcnZpZXdSCG92ZXJ2aWV3');
+
+@$core.Deprecated('Use listAudioOverviewsRequestDescriptor instead')
+const ListAudioOverviewsRequest$json = {
+  '1': 'ListAudioOverviewsRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListAudioOverviewsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAudioOverviewsRequestDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0QXVkaW9PdmVydmlld3NSZXF1ZXN0EhQKBWxpbWl0GAEgASgFUgVsaW1pdA==');
+
+@$core.Deprecated('Use listAudioOverviewsResponseDescriptor instead')
+const ListAudioOverviewsResponse$json = {
+  '1': 'ListAudioOverviewsResponse',
+  '2': [
+    {
+      '1': 'overviews',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AudioOverview',
+      '10': 'overviews'
+    },
+  ],
+};
+
+/// Descriptor for `ListAudioOverviewsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAudioOverviewsResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0QXVkaW9PdmVydmlld3NSZXNwb25zZRI9CglvdmVydmlld3MYASADKAsyHy5zdHRhdH'
+        'R1cy5vbnl4LnYxLkF1ZGlvT3ZlcnZpZXdSCW92ZXJ2aWV3cw==');
+
+@$core.Deprecated('Use getAudioOverviewRequestDescriptor instead')
+const GetAudioOverviewRequest$json = {
+  '1': 'GetAudioOverviewRequest',
+  '2': [
+    {'1': 'overview_id', '3': 1, '4': 1, '5': 9, '10': 'overviewId'},
+  ],
+};
+
+/// Descriptor for `GetAudioOverviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAudioOverviewRequestDescriptor =
+    $convert.base64Decode(
+        'ChdHZXRBdWRpb092ZXJ2aWV3UmVxdWVzdBIfCgtvdmVydmlld19pZBgBIAEoCVIKb3ZlcnZpZX'
+        'dJZA==');
+
+@$core.Deprecated('Use getAudioOverviewResponseDescriptor instead')
+const GetAudioOverviewResponse$json = {
+  '1': 'GetAudioOverviewResponse',
+  '2': [
+    {
+      '1': 'overview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AudioOverview',
+      '10': 'overview'
+    },
+  ],
+};
+
+/// Descriptor for `GetAudioOverviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAudioOverviewResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRBdWRpb092ZXJ2aWV3UmVzcG9uc2USOwoIb3ZlcnZpZXcYASABKAsyHy5zdHRhdHR1cy'
+        '5vbnl4LnYxLkF1ZGlvT3ZlcnZpZXdSCG92ZXJ2aWV3');
+
+@$core.Deprecated('Use deleteAudioOverviewRequestDescriptor instead')
+const DeleteAudioOverviewRequest$json = {
+  '1': 'DeleteAudioOverviewRequest',
+  '2': [
+    {'1': 'overview_id', '3': 1, '4': 1, '5': 9, '10': 'overviewId'},
+  ],
+};
+
+/// Descriptor for `DeleteAudioOverviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAudioOverviewRequestDescriptor =
+    $convert.base64Decode(
+        'ChpEZWxldGVBdWRpb092ZXJ2aWV3UmVxdWVzdBIfCgtvdmVydmlld19pZBgBIAEoCVIKb3Zlcn'
+        'ZpZXdJZA==');
+
+@$core.Deprecated('Use deleteAudioOverviewResponseDescriptor instead')
+const DeleteAudioOverviewResponse$json = {
+  '1': 'DeleteAudioOverviewResponse',
+};
+
+/// Descriptor for `DeleteAudioOverviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAudioOverviewResponseDescriptor =
+    $convert.base64Decode('ChtEZWxldGVBdWRpb092ZXJ2aWV3UmVzcG9uc2U=');
+
+@$core.Deprecated('Use listeningPronunciationDescriptor instead')
+const ListeningPronunciation$json = {
+  '1': 'ListeningPronunciation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'phrase', '3': 2, '4': 1, '5': 9, '10': 'phrase'},
+    {'1': 'pronunciation', '3': 3, '4': 1, '5': 9, '10': 'pronunciation'},
+    {'1': 'language_code', '3': 4, '4': 1, '5': 9, '10': 'languageCode'},
+    {'1': 'scope', '3': 5, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'match_case', '3': 6, '4': 1, '5': 8, '10': 'matchCase'},
+    {'1': 'version', '3': 7, '4': 1, '5': 5, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `ListeningPronunciation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listeningPronunciationDescriptor = $convert.base64Decode(
+    'ChZMaXN0ZW5pbmdQcm9udW5jaWF0aW9uEg4KAmlkGAEgASgJUgJpZBIWCgZwaHJhc2UYAiABKA'
+    'lSBnBocmFzZRIkCg1wcm9udW5jaWF0aW9uGAMgASgJUg1wcm9udW5jaWF0aW9uEiMKDWxhbmd1'
+    'YWdlX2NvZGUYBCABKAlSDGxhbmd1YWdlQ29kZRIUCgVzY29wZRgFIAEoCVIFc2NvcGUSHQoKbW'
+    'F0Y2hfY2FzZRgGIAEoCFIJbWF0Y2hDYXNlEhgKB3ZlcnNpb24YByABKAVSB3ZlcnNpb24=');
+
+@$core.Deprecated('Use listListeningPronunciationsRequestDescriptor instead')
+const ListListeningPronunciationsRequest$json = {
+  '1': 'ListListeningPronunciationsRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'language_code', '3': 2, '4': 1, '5': 9, '10': 'languageCode'},
+  ],
+};
+
+/// Descriptor for `ListListeningPronunciationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningPronunciationsRequestDescriptor =
+    $convert.base64Decode(
+        'CiJMaXN0TGlzdGVuaW5nUHJvbnVuY2lhdGlvbnNSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYASABKA'
+        'lSCWNvbnRlbnRJZBIjCg1sYW5ndWFnZV9jb2RlGAIgASgJUgxsYW5ndWFnZUNvZGU=');
+
+@$core.Deprecated('Use listListeningPronunciationsResponseDescriptor instead')
+const ListListeningPronunciationsResponse$json = {
+  '1': 'ListListeningPronunciationsResponse',
+  '2': [
+    {
+      '1': 'pronunciations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ListeningPronunciation',
+      '10': 'pronunciations'
+    },
+  ],
+};
+
+/// Descriptor for `ListListeningPronunciationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listListeningPronunciationsResponseDescriptor =
+    $convert.base64Decode(
+        'CiNMaXN0TGlzdGVuaW5nUHJvbnVuY2lhdGlvbnNSZXNwb25zZRJQCg5wcm9udW5jaWF0aW9ucx'
+        'gBIAMoCzIoLnN0dGF0dHVzLm9ueXgudjEuTGlzdGVuaW5nUHJvbnVuY2lhdGlvblIOcHJvbnVu'
+        'Y2lhdGlvbnM=');
 
 @$core.Deprecated('Use getTodaySummaryRequestDescriptor instead')
 const GetTodaySummaryRequest$json = {

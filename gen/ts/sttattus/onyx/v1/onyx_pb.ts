@@ -1214,6 +1214,29 @@ export class RecordProgressRequest extends Message<RecordProgressRequest> {
    */
   offset = 0;
 
+  /**
+   * Device observation time, retained while offline so an older device can
+   * never overwrite the newer read/listen locator during reconciliation.
+   *
+   * @generated from field: google.protobuf.Timestamp observed_at = 6;
+   */
+  observedAt?: Timestamp;
+
+  /**
+   * Idempotency identity for an offline journal entry.
+   *
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  /**
+   * read | listen. Both share one canonical passage locator so switching
+   * modes resumes the same source position.
+   *
+   * @generated from field: string mode = 8;
+   */
+  mode = "";
+
   constructor(data?: PartialMessage<RecordProgressRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1227,6 +1250,9 @@ export class RecordProgressRequest extends Message<RecordProgressRequest> {
     { no: 3, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "observed_at", kind: "message", T: Timestamp },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressRequest {
@@ -1270,6 +1296,21 @@ export class RecordProgressResponse extends Message<RecordProgressResponse> {
    */
   offset = 0;
 
+  /**
+   * @generated from field: google.protobuf.Timestamp observed_at = 5;
+   */
+  observedAt?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  /**
+   * @generated from field: string mode = 7;
+   */
+  mode = "";
+
   constructor(data?: PartialMessage<RecordProgressResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1282,6 +1323,9 @@ export class RecordProgressResponse extends Message<RecordProgressResponse> {
     { no: 2, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "observed_at", kind: "message", T: Timestamp },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProgressResponse {
@@ -3676,6 +3720,44 @@ export class CaptionJob extends Message<CaptionJob> {
    */
   error = "";
 
+  /**
+   * Durable job identity. Empty only for captions created before the durable
+   * queue contract was introduced.
+   *
+   * @generated from field: string job_id = 5;
+   */
+  jobId = "";
+
+  /**
+   * Normalized BCP-47 language tag used by the transcriber.
+   *
+   * @generated from field: string language_code = 6;
+   */
+  languageCode = "";
+
+  /**
+   * Stable, bounded machine-readable failure code. `error` remains safe
+   * member-facing copy and never carries a raw provider response.
+   *
+   * @generated from field: string error_code = 7;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: int32 attempt_count = 8;
+   */
+  attemptCount = 0;
+
+  /**
+   * @generated from field: int32 max_attempts = 9;
+   */
+  maxAttempts = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp next_attempt_at = 10;
+   */
+  nextAttemptAt?: Timestamp;
+
   constructor(data?: PartialMessage<CaptionJob>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3688,6 +3770,12 @@ export class CaptionJob extends Message<CaptionJob> {
     { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "captions_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "job_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "attempt_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "max_attempts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "next_attempt_at", kind: "message", T: Timestamp },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CaptionJob {
@@ -3716,6 +3804,14 @@ export class GenerateCaptionsRequest extends Message<GenerateCaptionsRequest> {
    */
   contentId = "";
 
+  /**
+   * Optional BCP-47 language tag. Empty defaults to English for wire
+   * compatibility with older clients.
+   *
+   * @generated from field: string language_code = 2;
+   */
+  languageCode = "";
+
   constructor(data?: PartialMessage<GenerateCaptionsRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3725,6 +3821,7 @@ export class GenerateCaptionsRequest extends Message<GenerateCaptionsRequest> {
   static readonly typeName = "sttattus.onyx.v1.GenerateCaptionsRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateCaptionsRequest {
@@ -3778,6 +3875,1589 @@ export class GenerateCaptionsResponse extends Message<GenerateCaptionsResponse> 
 
   static equals(a: GenerateCaptionsResponse | PlainMessage<GenerateCaptionsResponse> | undefined, b: GenerateCaptionsResponse | PlainMessage<GenerateCaptionsResponse> | undefined): boolean {
     return proto3.util.equals(GenerateCaptionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetCaptionJobRequest
+ */
+export class GetCaptionJobRequest extends Message<GetCaptionJobRequest> {
+  /**
+   * @generated from field: string job_id = 1;
+   */
+  jobId = "";
+
+  constructor(data?: PartialMessage<GetCaptionJobRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetCaptionJobRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "job_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCaptionJobRequest {
+    return new GetCaptionJobRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCaptionJobRequest {
+    return new GetCaptionJobRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCaptionJobRequest {
+    return new GetCaptionJobRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCaptionJobRequest | PlainMessage<GetCaptionJobRequest> | undefined, b: GetCaptionJobRequest | PlainMessage<GetCaptionJobRequest> | undefined): boolean {
+    return proto3.util.equals(GetCaptionJobRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetCaptionJobResponse
+ */
+export class GetCaptionJobResponse extends Message<GetCaptionJobResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.CaptionJob job = 1;
+   */
+  job?: CaptionJob;
+
+  constructor(data?: PartialMessage<GetCaptionJobResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetCaptionJobResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "job", kind: "message", T: CaptionJob },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCaptionJobResponse {
+    return new GetCaptionJobResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCaptionJobResponse {
+    return new GetCaptionJobResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCaptionJobResponse {
+    return new GetCaptionJobResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCaptionJobResponse | PlainMessage<GetCaptionJobResponse> | undefined, b: GetCaptionJobResponse | PlainMessage<GetCaptionJobResponse> | undefined): boolean {
+    return proto3.util.equals(GetCaptionJobResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListeningPreferences
+ */
+export class ListeningPreferences extends Message<ListeningPreferences> {
+  /**
+   * @generated from field: string voice_name = 1;
+   */
+  voiceName = "";
+
+  /**
+   * @generated from field: string voice_locale = 2;
+   */
+  voiceLocale = "";
+
+  /**
+   * @generated from field: double speed = 3;
+   */
+  speed = 0;
+
+  /**
+   * @generated from field: double pitch = 4;
+   */
+  pitch = 0;
+
+  /**
+   * @generated from field: bool skip_headings = 5;
+   */
+  skipHeadings = false;
+
+  /**
+   * @generated from field: bool skip_citations = 6;
+   */
+  skipCitations = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 7;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ListeningPreferences>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListeningPreferences";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "voice_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "voice_locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "pitch", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "skip_headings", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "skip_citations", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListeningPreferences {
+    return new ListeningPreferences().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListeningPreferences {
+    return new ListeningPreferences().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListeningPreferences {
+    return new ListeningPreferences().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListeningPreferences | PlainMessage<ListeningPreferences> | undefined, b: ListeningPreferences | PlainMessage<ListeningPreferences> | undefined): boolean {
+    return proto3.util.equals(ListeningPreferences, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetListeningPreferencesRequest
+ */
+export class GetListeningPreferencesRequest extends Message<GetListeningPreferencesRequest> {
+  constructor(data?: PartialMessage<GetListeningPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetListeningPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetListeningPreferencesRequest {
+    return new GetListeningPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetListeningPreferencesRequest {
+    return new GetListeningPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetListeningPreferencesRequest {
+    return new GetListeningPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetListeningPreferencesRequest | PlainMessage<GetListeningPreferencesRequest> | undefined, b: GetListeningPreferencesRequest | PlainMessage<GetListeningPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(GetListeningPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetListeningPreferencesResponse
+ */
+export class GetListeningPreferencesResponse extends Message<GetListeningPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ListeningPreferences preferences = 1;
+   */
+  preferences?: ListeningPreferences;
+
+  constructor(data?: PartialMessage<GetListeningPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetListeningPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: ListeningPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetListeningPreferencesResponse {
+    return new GetListeningPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetListeningPreferencesResponse {
+    return new GetListeningPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetListeningPreferencesResponse {
+    return new GetListeningPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetListeningPreferencesResponse | PlainMessage<GetListeningPreferencesResponse> | undefined, b: GetListeningPreferencesResponse | PlainMessage<GetListeningPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(GetListeningPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateListeningPreferencesRequest
+ */
+export class UpdateListeningPreferencesRequest extends Message<UpdateListeningPreferencesRequest> {
+  /**
+   * @generated from field: string voice_name = 1;
+   */
+  voiceName = "";
+
+  /**
+   * @generated from field: string voice_locale = 2;
+   */
+  voiceLocale = "";
+
+  /**
+   * @generated from field: double speed = 3;
+   */
+  speed = 0;
+
+  /**
+   * @generated from field: double pitch = 4;
+   */
+  pitch = 0;
+
+  /**
+   * @generated from field: bool skip_headings = 5;
+   */
+  skipHeadings = false;
+
+  /**
+   * @generated from field: bool skip_citations = 6;
+   */
+  skipCitations = false;
+
+  constructor(data?: PartialMessage<UpdateListeningPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateListeningPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "voice_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "voice_locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "pitch", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "skip_headings", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "skip_citations", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateListeningPreferencesRequest {
+    return new UpdateListeningPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateListeningPreferencesRequest {
+    return new UpdateListeningPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateListeningPreferencesRequest {
+    return new UpdateListeningPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateListeningPreferencesRequest | PlainMessage<UpdateListeningPreferencesRequest> | undefined, b: UpdateListeningPreferencesRequest | PlainMessage<UpdateListeningPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateListeningPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateListeningPreferencesResponse
+ */
+export class UpdateListeningPreferencesResponse extends Message<UpdateListeningPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ListeningPreferences preferences = 1;
+   */
+  preferences?: ListeningPreferences;
+
+  constructor(data?: PartialMessage<UpdateListeningPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateListeningPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: ListeningPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateListeningPreferencesResponse {
+    return new UpdateListeningPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateListeningPreferencesResponse {
+    return new UpdateListeningPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateListeningPreferencesResponse {
+    return new UpdateListeningPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateListeningPreferencesResponse | PlainMessage<UpdateListeningPreferencesResponse> | undefined, b: UpdateListeningPreferencesResponse | PlainMessage<UpdateListeningPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateListeningPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListeningBookmark
+ */
+export class ListeningBookmark extends Message<ListeningBookmark> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * bookmark | clip
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 position_seconds = 4;
+   */
+  positionSeconds = 0;
+
+  /**
+   * @generated from field: int32 end_position_seconds = 5;
+   */
+  endPositionSeconds = 0;
+
+  /**
+   * @generated from field: string passage_key = 6;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 passage_offset = 7;
+   */
+  passageOffset = 0;
+
+  /**
+   * @generated from field: string label = 8;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string note = 9;
+   */
+  note = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 10;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 11;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ListeningBookmark>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListeningBookmark";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "end_position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "passage_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "created_at", kind: "message", T: Timestamp },
+    { no: 11, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListeningBookmark {
+    return new ListeningBookmark().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListeningBookmark {
+    return new ListeningBookmark().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListeningBookmark {
+    return new ListeningBookmark().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListeningBookmark | PlainMessage<ListeningBookmark> | undefined, b: ListeningBookmark | PlainMessage<ListeningBookmark> | undefined): boolean {
+    return proto3.util.equals(ListeningBookmark, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateListeningBookmarkRequest
+ */
+export class CreateListeningBookmarkRequest extends Message<CreateListeningBookmarkRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 position_seconds = 3;
+   */
+  positionSeconds = 0;
+
+  /**
+   * @generated from field: int32 end_position_seconds = 4;
+   */
+  endPositionSeconds = 0;
+
+  /**
+   * @generated from field: string passage_key = 5;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 passage_offset = 6;
+   */
+  passageOffset = 0;
+
+  /**
+   * @generated from field: string label = 7;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string note = 8;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<CreateListeningBookmarkRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateListeningBookmarkRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "end_position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "passage_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateListeningBookmarkRequest {
+    return new CreateListeningBookmarkRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateListeningBookmarkRequest {
+    return new CreateListeningBookmarkRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateListeningBookmarkRequest {
+    return new CreateListeningBookmarkRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateListeningBookmarkRequest | PlainMessage<CreateListeningBookmarkRequest> | undefined, b: CreateListeningBookmarkRequest | PlainMessage<CreateListeningBookmarkRequest> | undefined): boolean {
+    return proto3.util.equals(CreateListeningBookmarkRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateListeningBookmarkResponse
+ */
+export class CreateListeningBookmarkResponse extends Message<CreateListeningBookmarkResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ListeningBookmark bookmark = 1;
+   */
+  bookmark?: ListeningBookmark;
+
+  constructor(data?: PartialMessage<CreateListeningBookmarkResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateListeningBookmarkResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bookmark", kind: "message", T: ListeningBookmark },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateListeningBookmarkResponse {
+    return new CreateListeningBookmarkResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateListeningBookmarkResponse {
+    return new CreateListeningBookmarkResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateListeningBookmarkResponse {
+    return new CreateListeningBookmarkResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateListeningBookmarkResponse | PlainMessage<CreateListeningBookmarkResponse> | undefined, b: CreateListeningBookmarkResponse | PlainMessage<CreateListeningBookmarkResponse> | undefined): boolean {
+    return proto3.util.equals(CreateListeningBookmarkResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningBookmarksRequest
+ */
+export class ListListeningBookmarksRequest extends Message<ListListeningBookmarksRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  constructor(data?: PartialMessage<ListListeningBookmarksRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningBookmarksRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningBookmarksRequest {
+    return new ListListeningBookmarksRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningBookmarksRequest {
+    return new ListListeningBookmarksRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningBookmarksRequest {
+    return new ListListeningBookmarksRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningBookmarksRequest | PlainMessage<ListListeningBookmarksRequest> | undefined, b: ListListeningBookmarksRequest | PlainMessage<ListListeningBookmarksRequest> | undefined): boolean {
+    return proto3.util.equals(ListListeningBookmarksRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningBookmarksResponse
+ */
+export class ListListeningBookmarksResponse extends Message<ListListeningBookmarksResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ListeningBookmark bookmarks = 1;
+   */
+  bookmarks: ListeningBookmark[] = [];
+
+  constructor(data?: PartialMessage<ListListeningBookmarksResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningBookmarksResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bookmarks", kind: "message", T: ListeningBookmark, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningBookmarksResponse {
+    return new ListListeningBookmarksResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningBookmarksResponse {
+    return new ListListeningBookmarksResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningBookmarksResponse {
+    return new ListListeningBookmarksResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningBookmarksResponse | PlainMessage<ListListeningBookmarksResponse> | undefined, b: ListListeningBookmarksResponse | PlainMessage<ListListeningBookmarksResponse> | undefined): boolean {
+    return proto3.util.equals(ListListeningBookmarksResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteListeningBookmarkRequest
+ */
+export class DeleteListeningBookmarkRequest extends Message<DeleteListeningBookmarkRequest> {
+  /**
+   * @generated from field: string bookmark_id = 1;
+   */
+  bookmarkId = "";
+
+  constructor(data?: PartialMessage<DeleteListeningBookmarkRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteListeningBookmarkRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bookmark_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteListeningBookmarkRequest {
+    return new DeleteListeningBookmarkRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteListeningBookmarkRequest {
+    return new DeleteListeningBookmarkRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteListeningBookmarkRequest {
+    return new DeleteListeningBookmarkRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteListeningBookmarkRequest | PlainMessage<DeleteListeningBookmarkRequest> | undefined, b: DeleteListeningBookmarkRequest | PlainMessage<DeleteListeningBookmarkRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteListeningBookmarkRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteListeningBookmarkResponse
+ */
+export class DeleteListeningBookmarkResponse extends Message<DeleteListeningBookmarkResponse> {
+  constructor(data?: PartialMessage<DeleteListeningBookmarkResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteListeningBookmarkResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteListeningBookmarkResponse {
+    return new DeleteListeningBookmarkResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteListeningBookmarkResponse {
+    return new DeleteListeningBookmarkResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteListeningBookmarkResponse {
+    return new DeleteListeningBookmarkResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteListeningBookmarkResponse | PlainMessage<DeleteListeningBookmarkResponse> | undefined, b: DeleteListeningBookmarkResponse | PlainMessage<DeleteListeningBookmarkResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteListeningBookmarkResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListeningQueueEntry
+ */
+export class ListeningQueueEntry extends Message<ListeningQueueEntry> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 1;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: int32 ordinal = 2;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp added_at = 3;
+   */
+  addedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ListeningQueueEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListeningQueueEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content", kind: "message", T: OnyxContent },
+    { no: 2, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "added_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListeningQueueEntry {
+    return new ListeningQueueEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListeningQueueEntry {
+    return new ListeningQueueEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListeningQueueEntry {
+    return new ListeningQueueEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListeningQueueEntry | PlainMessage<ListeningQueueEntry> | undefined, b: ListeningQueueEntry | PlainMessage<ListeningQueueEntry> | undefined): boolean {
+    return proto3.util.equals(ListeningQueueEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningQueueRequest
+ */
+export class ListListeningQueueRequest extends Message<ListListeningQueueRequest> {
+  constructor(data?: PartialMessage<ListListeningQueueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningQueueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningQueueRequest {
+    return new ListListeningQueueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningQueueRequest {
+    return new ListListeningQueueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningQueueRequest {
+    return new ListListeningQueueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningQueueRequest | PlainMessage<ListListeningQueueRequest> | undefined, b: ListListeningQueueRequest | PlainMessage<ListListeningQueueRequest> | undefined): boolean {
+    return proto3.util.equals(ListListeningQueueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningQueueResponse
+ */
+export class ListListeningQueueResponse extends Message<ListListeningQueueResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ListeningQueueEntry entries = 1;
+   */
+  entries: ListeningQueueEntry[] = [];
+
+  constructor(data?: PartialMessage<ListListeningQueueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningQueueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: ListeningQueueEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningQueueResponse {
+    return new ListListeningQueueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningQueueResponse {
+    return new ListListeningQueueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningQueueResponse {
+    return new ListListeningQueueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningQueueResponse | PlainMessage<ListListeningQueueResponse> | undefined, b: ListListeningQueueResponse | PlainMessage<ListListeningQueueResponse> | undefined): boolean {
+    return proto3.util.equals(ListListeningQueueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetListeningQueueRequest
+ */
+export class SetListeningQueueRequest extends Message<SetListeningQueueRequest> {
+  /**
+   * @generated from field: repeated string content_ids = 1;
+   */
+  contentIds: string[] = [];
+
+  constructor(data?: PartialMessage<SetListeningQueueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetListeningQueueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetListeningQueueRequest {
+    return new SetListeningQueueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetListeningQueueRequest {
+    return new SetListeningQueueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetListeningQueueRequest {
+    return new SetListeningQueueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetListeningQueueRequest | PlainMessage<SetListeningQueueRequest> | undefined, b: SetListeningQueueRequest | PlainMessage<SetListeningQueueRequest> | undefined): boolean {
+    return proto3.util.equals(SetListeningQueueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetListeningQueueResponse
+ */
+export class SetListeningQueueResponse extends Message<SetListeningQueueResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ListeningQueueEntry entries = 1;
+   */
+  entries: ListeningQueueEntry[] = [];
+
+  constructor(data?: PartialMessage<SetListeningQueueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetListeningQueueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: ListeningQueueEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetListeningQueueResponse {
+    return new SetListeningQueueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetListeningQueueResponse {
+    return new SetListeningQueueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetListeningQueueResponse {
+    return new SetListeningQueueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetListeningQueueResponse | PlainMessage<SetListeningQueueResponse> | undefined, b: SetListeningQueueResponse | PlainMessage<SetListeningQueueResponse> | undefined): boolean {
+    return proto3.util.equals(SetListeningQueueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AudioOverviewCitation
+ */
+export class AudioOverviewCitation extends Message<AudioOverviewCitation> {
+  /**
+   * @generated from field: string source_content_id = 1;
+   */
+  sourceContentId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 2;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 3;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string quote = 4;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string relation = 5;
+   */
+  relation = "";
+
+  constructor(data?: PartialMessage<AudioOverviewCitation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AudioOverviewCitation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AudioOverviewCitation {
+    return new AudioOverviewCitation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AudioOverviewCitation {
+    return new AudioOverviewCitation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AudioOverviewCitation {
+    return new AudioOverviewCitation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AudioOverviewCitation | PlainMessage<AudioOverviewCitation> | undefined, b: AudioOverviewCitation | PlainMessage<AudioOverviewCitation> | undefined): boolean {
+    return proto3.util.equals(AudioOverviewCitation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AudioOverviewSegment
+ */
+export class AudioOverviewSegment extends Message<AudioOverviewSegment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 ordinal = 2;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: string chapter_title = 3;
+   */
+  chapterTitle = "";
+
+  /**
+   * @generated from field: string speaker_label = 4;
+   */
+  speakerLabel = "";
+
+  /**
+   * @generated from field: int32 start_ms = 5;
+   */
+  startMs = 0;
+
+  /**
+   * @generated from field: int32 end_ms = 6;
+   */
+  endMs = 0;
+
+  /**
+   * @generated from field: string transcript_text = 7;
+   */
+  transcriptText = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.AudioOverviewCitation citations = 8;
+   */
+  citations: AudioOverviewCitation[] = [];
+
+  constructor(data?: PartialMessage<AudioOverviewSegment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AudioOverviewSegment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "chapter_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "speaker_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "start_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "end_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "transcript_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "citations", kind: "message", T: AudioOverviewCitation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AudioOverviewSegment {
+    return new AudioOverviewSegment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AudioOverviewSegment {
+    return new AudioOverviewSegment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AudioOverviewSegment {
+    return new AudioOverviewSegment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AudioOverviewSegment | PlainMessage<AudioOverviewSegment> | undefined, b: AudioOverviewSegment | PlainMessage<AudioOverviewSegment> | undefined): boolean {
+    return proto3.util.equals(AudioOverviewSegment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AudioOverview
+ */
+export class AudioOverview extends Message<AudioOverview> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string language_code = 4;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string source_set_fingerprint = 5;
+   */
+  sourceSetFingerprint = "";
+
+  /**
+   * @generated from field: string transcript_text = 6;
+   */
+  transcriptText = "";
+
+  /**
+   * @generated from field: string provider = 7;
+   */
+  provider = "";
+
+  /**
+   * @generated from field: string model = 8;
+   */
+  model = "";
+
+  /**
+   * @generated from field: string error_code = 9;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: int32 cost_minor = 10;
+   */
+  costMinor = 0;
+
+  /**
+   * @generated from field: string currency = 11;
+   */
+  currency = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 13;
+   */
+  updatedAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.AudioOverviewSegment segments = 14;
+   */
+  segments: AudioOverviewSegment[] = [];
+
+  constructor(data?: PartialMessage<AudioOverview>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AudioOverview";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_set_fingerprint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "transcript_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "cost_minor", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+    { no: 13, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 14, name: "segments", kind: "message", T: AudioOverviewSegment, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AudioOverview {
+    return new AudioOverview().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AudioOverview {
+    return new AudioOverview().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AudioOverview {
+    return new AudioOverview().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AudioOverview | PlainMessage<AudioOverview> | undefined, b: AudioOverview | PlainMessage<AudioOverview> | undefined): boolean {
+    return proto3.util.equals(AudioOverview, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateAudioOverviewRequest
+ */
+export class CreateAudioOverviewRequest extends Message<CreateAudioOverviewRequest> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: repeated string content_ids = 2;
+   */
+  contentIds: string[] = [];
+
+  /**
+   * @generated from field: string language_code = 3;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateAudioOverviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateAudioOverviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAudioOverviewRequest {
+    return new CreateAudioOverviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAudioOverviewRequest {
+    return new CreateAudioOverviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAudioOverviewRequest {
+    return new CreateAudioOverviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAudioOverviewRequest | PlainMessage<CreateAudioOverviewRequest> | undefined, b: CreateAudioOverviewRequest | PlainMessage<CreateAudioOverviewRequest> | undefined): boolean {
+    return proto3.util.equals(CreateAudioOverviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateAudioOverviewResponse
+ */
+export class CreateAudioOverviewResponse extends Message<CreateAudioOverviewResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AudioOverview overview = 1;
+   */
+  overview?: AudioOverview;
+
+  constructor(data?: PartialMessage<CreateAudioOverviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateAudioOverviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overview", kind: "message", T: AudioOverview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAudioOverviewResponse {
+    return new CreateAudioOverviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAudioOverviewResponse {
+    return new CreateAudioOverviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAudioOverviewResponse {
+    return new CreateAudioOverviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAudioOverviewResponse | PlainMessage<CreateAudioOverviewResponse> | undefined, b: CreateAudioOverviewResponse | PlainMessage<CreateAudioOverviewResponse> | undefined): boolean {
+    return proto3.util.equals(CreateAudioOverviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListAudioOverviewsRequest
+ */
+export class ListAudioOverviewsRequest extends Message<ListAudioOverviewsRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListAudioOverviewsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListAudioOverviewsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAudioOverviewsRequest {
+    return new ListAudioOverviewsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAudioOverviewsRequest {
+    return new ListAudioOverviewsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAudioOverviewsRequest {
+    return new ListAudioOverviewsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAudioOverviewsRequest | PlainMessage<ListAudioOverviewsRequest> | undefined, b: ListAudioOverviewsRequest | PlainMessage<ListAudioOverviewsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAudioOverviewsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListAudioOverviewsResponse
+ */
+export class ListAudioOverviewsResponse extends Message<ListAudioOverviewsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.AudioOverview overviews = 1;
+   */
+  overviews: AudioOverview[] = [];
+
+  constructor(data?: PartialMessage<ListAudioOverviewsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListAudioOverviewsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overviews", kind: "message", T: AudioOverview, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAudioOverviewsResponse {
+    return new ListAudioOverviewsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAudioOverviewsResponse {
+    return new ListAudioOverviewsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAudioOverviewsResponse {
+    return new ListAudioOverviewsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAudioOverviewsResponse | PlainMessage<ListAudioOverviewsResponse> | undefined, b: ListAudioOverviewsResponse | PlainMessage<ListAudioOverviewsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAudioOverviewsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAudioOverviewRequest
+ */
+export class GetAudioOverviewRequest extends Message<GetAudioOverviewRequest> {
+  /**
+   * @generated from field: string overview_id = 1;
+   */
+  overviewId = "";
+
+  constructor(data?: PartialMessage<GetAudioOverviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAudioOverviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overview_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAudioOverviewRequest {
+    return new GetAudioOverviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAudioOverviewRequest {
+    return new GetAudioOverviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAudioOverviewRequest {
+    return new GetAudioOverviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAudioOverviewRequest | PlainMessage<GetAudioOverviewRequest> | undefined, b: GetAudioOverviewRequest | PlainMessage<GetAudioOverviewRequest> | undefined): boolean {
+    return proto3.util.equals(GetAudioOverviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAudioOverviewResponse
+ */
+export class GetAudioOverviewResponse extends Message<GetAudioOverviewResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AudioOverview overview = 1;
+   */
+  overview?: AudioOverview;
+
+  constructor(data?: PartialMessage<GetAudioOverviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAudioOverviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overview", kind: "message", T: AudioOverview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAudioOverviewResponse {
+    return new GetAudioOverviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAudioOverviewResponse {
+    return new GetAudioOverviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAudioOverviewResponse {
+    return new GetAudioOverviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAudioOverviewResponse | PlainMessage<GetAudioOverviewResponse> | undefined, b: GetAudioOverviewResponse | PlainMessage<GetAudioOverviewResponse> | undefined): boolean {
+    return proto3.util.equals(GetAudioOverviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteAudioOverviewRequest
+ */
+export class DeleteAudioOverviewRequest extends Message<DeleteAudioOverviewRequest> {
+  /**
+   * @generated from field: string overview_id = 1;
+   */
+  overviewId = "";
+
+  constructor(data?: PartialMessage<DeleteAudioOverviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteAudioOverviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overview_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAudioOverviewRequest {
+    return new DeleteAudioOverviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAudioOverviewRequest {
+    return new DeleteAudioOverviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAudioOverviewRequest {
+    return new DeleteAudioOverviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAudioOverviewRequest | PlainMessage<DeleteAudioOverviewRequest> | undefined, b: DeleteAudioOverviewRequest | PlainMessage<DeleteAudioOverviewRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteAudioOverviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteAudioOverviewResponse
+ */
+export class DeleteAudioOverviewResponse extends Message<DeleteAudioOverviewResponse> {
+  constructor(data?: PartialMessage<DeleteAudioOverviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteAudioOverviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAudioOverviewResponse {
+    return new DeleteAudioOverviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAudioOverviewResponse {
+    return new DeleteAudioOverviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAudioOverviewResponse {
+    return new DeleteAudioOverviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteAudioOverviewResponse | PlainMessage<DeleteAudioOverviewResponse> | undefined, b: DeleteAudioOverviewResponse | PlainMessage<DeleteAudioOverviewResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteAudioOverviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListeningPronunciation
+ */
+export class ListeningPronunciation extends Message<ListeningPronunciation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string phrase = 2;
+   */
+  phrase = "";
+
+  /**
+   * @generated from field: string pronunciation = 3;
+   */
+  pronunciation = "";
+
+  /**
+   * @generated from field: string language_code = 4;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string scope = 5;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: bool match_case = 6;
+   */
+  matchCase = false;
+
+  /**
+   * @generated from field: int32 version = 7;
+   */
+  version = 0;
+
+  constructor(data?: PartialMessage<ListeningPronunciation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListeningPronunciation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "phrase", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "pronunciation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "match_case", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListeningPronunciation {
+    return new ListeningPronunciation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListeningPronunciation {
+    return new ListeningPronunciation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListeningPronunciation {
+    return new ListeningPronunciation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListeningPronunciation | PlainMessage<ListeningPronunciation> | undefined, b: ListeningPronunciation | PlainMessage<ListeningPronunciation> | undefined): boolean {
+    return proto3.util.equals(ListeningPronunciation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningPronunciationsRequest
+ */
+export class ListListeningPronunciationsRequest extends Message<ListListeningPronunciationsRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string language_code = 2;
+   */
+  languageCode = "";
+
+  constructor(data?: PartialMessage<ListListeningPronunciationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningPronunciationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningPronunciationsRequest {
+    return new ListListeningPronunciationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningPronunciationsRequest {
+    return new ListListeningPronunciationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningPronunciationsRequest {
+    return new ListListeningPronunciationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningPronunciationsRequest | PlainMessage<ListListeningPronunciationsRequest> | undefined, b: ListListeningPronunciationsRequest | PlainMessage<ListListeningPronunciationsRequest> | undefined): boolean {
+    return proto3.util.equals(ListListeningPronunciationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListListeningPronunciationsResponse
+ */
+export class ListListeningPronunciationsResponse extends Message<ListListeningPronunciationsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ListeningPronunciation pronunciations = 1;
+   */
+  pronunciations: ListeningPronunciation[] = [];
+
+  constructor(data?: PartialMessage<ListListeningPronunciationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListListeningPronunciationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pronunciations", kind: "message", T: ListeningPronunciation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListListeningPronunciationsResponse {
+    return new ListListeningPronunciationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListListeningPronunciationsResponse {
+    return new ListListeningPronunciationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListListeningPronunciationsResponse {
+    return new ListListeningPronunciationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListListeningPronunciationsResponse | PlainMessage<ListListeningPronunciationsResponse> | undefined, b: ListListeningPronunciationsResponse | PlainMessage<ListListeningPronunciationsResponse> | undefined): boolean {
+    return proto3.util.equals(ListListeningPronunciationsResponse, a, b);
   }
 }
 
