@@ -85,6 +85,8 @@ const (
 	DatingService_RemoveDatingPhoto_FullMethodName          = "/sttattus.dating.v1.DatingService/RemoveDatingPhoto"
 	DatingService_ReorderDatingPhotos_FullMethodName        = "/sttattus.dating.v1.DatingService/ReorderDatingPhotos"
 	DatingService_SetPrimaryDatingPhoto_FullMethodName      = "/sttattus.dating.v1.DatingService/SetPrimaryDatingPhoto"
+	DatingService_SetVoiceBaseline_FullMethodName           = "/sttattus.dating.v1.DatingService/SetVoiceBaseline"
+	DatingService_RemoveVoiceBaseline_FullMethodName        = "/sttattus.dating.v1.DatingService/RemoveVoiceBaseline"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -179,6 +181,12 @@ type DatingServiceClient interface {
 	RemoveDatingPhoto(ctx context.Context, in *RemoveDatingPhotoRequest, opts ...grpc.CallOption) (*RemoveDatingPhotoResponse, error)
 	ReorderDatingPhotos(ctx context.Context, in *ReorderDatingPhotosRequest, opts ...grpc.CallOption) (*ReorderDatingPhotosResponse, error)
 	SetPrimaryDatingPhoto(ctx context.Context, in *SetPrimaryDatingPhotoRequest, opts ...grpc.CallOption) (*SetPrimaryDatingPhotoResponse, error)
+	// --- A9.7 voice baseline ---
+	// Upload the clip through MediaService (category "atlas/voice"), then hand
+	// the asset id here. The server resolves it itself rather than trusting a
+	// client-supplied URL, exactly as AddDatingPhoto does.
+	SetVoiceBaseline(ctx context.Context, in *SetVoiceBaselineRequest, opts ...grpc.CallOption) (*SetVoiceBaselineResponse, error)
+	RemoveVoiceBaseline(ctx context.Context, in *RemoveVoiceBaselineRequest, opts ...grpc.CallOption) (*RemoveVoiceBaselineResponse, error)
 }
 
 type datingServiceClient struct {
@@ -867,6 +875,26 @@ func (c *datingServiceClient) SetPrimaryDatingPhoto(ctx context.Context, in *Set
 	return out, nil
 }
 
+func (c *datingServiceClient) SetVoiceBaseline(ctx context.Context, in *SetVoiceBaselineRequest, opts ...grpc.CallOption) (*SetVoiceBaselineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetVoiceBaselineResponse)
+	err := c.cc.Invoke(ctx, DatingService_SetVoiceBaseline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RemoveVoiceBaseline(ctx context.Context, in *RemoveVoiceBaselineRequest, opts ...grpc.CallOption) (*RemoveVoiceBaselineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveVoiceBaselineResponse)
+	err := c.cc.Invoke(ctx, DatingService_RemoveVoiceBaseline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -959,6 +987,12 @@ type DatingServiceServer interface {
 	RemoveDatingPhoto(context.Context, *RemoveDatingPhotoRequest) (*RemoveDatingPhotoResponse, error)
 	ReorderDatingPhotos(context.Context, *ReorderDatingPhotosRequest) (*ReorderDatingPhotosResponse, error)
 	SetPrimaryDatingPhoto(context.Context, *SetPrimaryDatingPhotoRequest) (*SetPrimaryDatingPhotoResponse, error)
+	// --- A9.7 voice baseline ---
+	// Upload the clip through MediaService (category "atlas/voice"), then hand
+	// the asset id here. The server resolves it itself rather than trusting a
+	// client-supplied URL, exactly as AddDatingPhoto does.
+	SetVoiceBaseline(context.Context, *SetVoiceBaselineRequest) (*SetVoiceBaselineResponse, error)
+	RemoveVoiceBaseline(context.Context, *RemoveVoiceBaselineRequest) (*RemoveVoiceBaselineResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -1166,6 +1200,12 @@ func (UnimplementedDatingServiceServer) ReorderDatingPhotos(context.Context, *Re
 }
 func (UnimplementedDatingServiceServer) SetPrimaryDatingPhoto(context.Context, *SetPrimaryDatingPhotoRequest) (*SetPrimaryDatingPhotoResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetPrimaryDatingPhoto not implemented")
+}
+func (UnimplementedDatingServiceServer) SetVoiceBaseline(context.Context, *SetVoiceBaselineRequest) (*SetVoiceBaselineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetVoiceBaseline not implemented")
+}
+func (UnimplementedDatingServiceServer) RemoveVoiceBaseline(context.Context, *RemoveVoiceBaselineRequest) (*RemoveVoiceBaselineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveVoiceBaseline not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -2362,6 +2402,42 @@ func _DatingService_SetPrimaryDatingPhoto_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_SetVoiceBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetVoiceBaselineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).SetVoiceBaseline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_SetVoiceBaseline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).SetVoiceBaseline(ctx, req.(*SetVoiceBaselineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RemoveVoiceBaseline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveVoiceBaselineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RemoveVoiceBaseline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RemoveVoiceBaseline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RemoveVoiceBaseline(ctx, req.(*RemoveVoiceBaselineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2624,6 +2700,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetPrimaryDatingPhoto",
 			Handler:    _DatingService_SetPrimaryDatingPhoto_Handler,
+		},
+		{
+			MethodName: "SetVoiceBaseline",
+			Handler:    _DatingService_SetVoiceBaseline_Handler,
+		},
+		{
+			MethodName: "RemoveVoiceBaseline",
+			Handler:    _DatingService_RemoveVoiceBaseline_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

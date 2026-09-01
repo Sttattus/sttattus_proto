@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddDatingPhotoRequest, AddDatingPhotoResponse, AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetDiscoveryPreferencesRequest, GetDiscoveryPreferencesResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListDatingPhotosRequest, ListDatingPhotosResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, RemoveDatingPhotoRequest, RemoveDatingPhotoResponse, ReorderDatingPhotosRequest, ReorderDatingPhotosResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, SetPrimaryDatingPhotoRequest, SetPrimaryDatingPhotoResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UnmatchRequest, UnmatchResponse, UpdateDiscoveryPreferencesRequest, UpdateDiscoveryPreferencesResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AddDatingPhotoRequest, AddDatingPhotoResponse, AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetDiscoveryPreferencesRequest, GetDiscoveryPreferencesResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListDatingPhotosRequest, ListDatingPhotosResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, RemoveDatingPhotoRequest, RemoveDatingPhotoResponse, RemoveVoiceBaselineRequest, RemoveVoiceBaselineResponse, ReorderDatingPhotosRequest, ReorderDatingPhotosResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, SetPrimaryDatingPhotoRequest, SetPrimaryDatingPhotoResponse, SetVoiceBaselineRequest, SetVoiceBaselineResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, UnblockUserRequest, UnblockUserResponse, UnmatchRequest, UnmatchResponse, UpdateDiscoveryPreferencesRequest, UpdateDiscoveryPreferencesResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -587,11 +587,11 @@ export const DatingService = {
     },
     /**
      * A9P6 — Dating photos.
-     *
+     * 
      * atlas_dating_photos had a read path (DatingProfile.photo_urls) and no way
      * to write one: no RPC, and nothing in members/ either. A dating profile
      * that cannot gain a photo is the gap these close.
-     *
+     * 
      * Bytes go through MediaService.RequestUpload / MarkProcessed as everywhere
      * else, so an uploaded photo is screened by the Gemini image classifier
      * before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
@@ -639,6 +639,29 @@ export const DatingService = {
       name: "SetPrimaryDatingPhoto",
       I: SetPrimaryDatingPhotoRequest,
       O: SetPrimaryDatingPhotoResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * --- A9.7 voice baseline ---
+     * Upload the clip through MediaService (category "atlas/voice"), then hand
+     * the asset id here. The server resolves it itself rather than trusting a
+     * client-supplied URL, exactly as AddDatingPhoto does.
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.SetVoiceBaseline
+     */
+    setVoiceBaseline: {
+      name: "SetVoiceBaseline",
+      I: SetVoiceBaselineRequest,
+      O: SetVoiceBaselineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.RemoveVoiceBaseline
+     */
+    removeVoiceBaseline: {
+      name: "RemoveVoiceBaseline",
+      I: RemoveVoiceBaselineRequest,
+      O: RemoveVoiceBaselineResponse,
       kind: MethodKind.Unary,
     },
   }

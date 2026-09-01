@@ -247,6 +247,33 @@ export class DatingProfile extends Message$1<DatingProfile> {
    */
   birthDate = "";
 
+  /**
+   * --- A9.7 voice baseline ---
+   * A signed, time-bound URL for the member's 60-second clip, or empty. Never
+   * the r2:// locator — signing happens server-side on read.
+   * 
+   * Only ever populated for the member themselves and for someone they have
+   * matched with. The onboarding copy promises exactly that ("only matched
+   * lifters hear it, and only after you accept"), so it is not a preference
+   * in Identity Lab; it is a guarantee the handler keeps.
+   *
+   * @generated from field: string voice_url = 23;
+   */
+  voiceUrl = "";
+
+  /**
+   * Best-effort transcript of the clip. Empty when transcription was not
+   * configured or failed; a clip with no transcript is still a valid clip.
+   *
+   * @generated from field: string voice_transcript = 24;
+   */
+  voiceTranscript = "";
+
+  /**
+   * @generated from field: int32 voice_duration_seconds = 25;
+   */
+  voiceDurationSeconds = 0;
+
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -277,6 +304,9 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 20, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 21, name: "interests", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 22, name: "birth_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "voice_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 24, name: "voice_transcript", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 25, name: "voice_duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {
@@ -5174,7 +5204,7 @@ export class ConciergeMessage extends Message$1<ConciergeMessage> {
   /**
    * The concierge who wrote it. Empty for member and system messages, and
    * for replies written before authorship was recorded.
-   *
+   * 
    * Every desk on the platform answered as an anonymous "STAFF" until
    * 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
    * and was the only one. A white-glove desk that will not say who is
@@ -7018,6 +7048,159 @@ export class ListDatingPhotosResponse extends Message$1<ListDatingPhotosResponse
 
   static equals(a: ListDatingPhotosResponse | PlainMessage<ListDatingPhotosResponse> | undefined, b: ListDatingPhotosResponse | PlainMessage<ListDatingPhotosResponse> | undefined): boolean {
     return proto3.util.equals(ListDatingPhotosResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SetVoiceBaselineRequest
+ */
+export class SetVoiceBaselineRequest extends Message$1<SetVoiceBaselineRequest> {
+  /**
+   * A media_assets row already marked processed, uploaded under the
+   * "atlas/voice" category. Must be audio.
+   *
+   * @generated from field: string media_asset_id = 1;
+   */
+  mediaAssetId = "";
+
+  /**
+   * What the recorder measured. Clamped server-side to the 60-second promise.
+   *
+   * @generated from field: int32 duration_seconds = 2;
+   */
+  durationSeconds = 0;
+
+  constructor(data?: PartialMessage<SetVoiceBaselineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SetVoiceBaselineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetVoiceBaselineRequest {
+    return new SetVoiceBaselineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetVoiceBaselineRequest {
+    return new SetVoiceBaselineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetVoiceBaselineRequest {
+    return new SetVoiceBaselineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetVoiceBaselineRequest | PlainMessage<SetVoiceBaselineRequest> | undefined, b: SetVoiceBaselineRequest | PlainMessage<SetVoiceBaselineRequest> | undefined): boolean {
+    return proto3.util.equals(SetVoiceBaselineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SetVoiceBaselineResponse
+ */
+export class SetVoiceBaselineResponse extends Message$1<SetVoiceBaselineResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.DatingProfile profile = 1;
+   */
+  profile?: DatingProfile;
+
+  constructor(data?: PartialMessage<SetVoiceBaselineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SetVoiceBaselineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: DatingProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetVoiceBaselineResponse {
+    return new SetVoiceBaselineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetVoiceBaselineResponse {
+    return new SetVoiceBaselineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetVoiceBaselineResponse {
+    return new SetVoiceBaselineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetVoiceBaselineResponse | PlainMessage<SetVoiceBaselineResponse> | undefined, b: SetVoiceBaselineResponse | PlainMessage<SetVoiceBaselineResponse> | undefined): boolean {
+    return proto3.util.equals(SetVoiceBaselineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RemoveVoiceBaselineRequest
+ */
+export class RemoveVoiceBaselineRequest extends Message$1<RemoveVoiceBaselineRequest> {
+  constructor(data?: PartialMessage<RemoveVoiceBaselineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RemoveVoiceBaselineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveVoiceBaselineRequest {
+    return new RemoveVoiceBaselineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveVoiceBaselineRequest {
+    return new RemoveVoiceBaselineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveVoiceBaselineRequest {
+    return new RemoveVoiceBaselineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveVoiceBaselineRequest | PlainMessage<RemoveVoiceBaselineRequest> | undefined, b: RemoveVoiceBaselineRequest | PlainMessage<RemoveVoiceBaselineRequest> | undefined): boolean {
+    return proto3.util.equals(RemoveVoiceBaselineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RemoveVoiceBaselineResponse
+ */
+export class RemoveVoiceBaselineResponse extends Message$1<RemoveVoiceBaselineResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.DatingProfile profile = 1;
+   */
+  profile?: DatingProfile;
+
+  constructor(data?: PartialMessage<RemoveVoiceBaselineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RemoveVoiceBaselineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: DatingProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveVoiceBaselineResponse {
+    return new RemoveVoiceBaselineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveVoiceBaselineResponse {
+    return new RemoveVoiceBaselineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveVoiceBaselineResponse {
+    return new RemoveVoiceBaselineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RemoveVoiceBaselineResponse | PlainMessage<RemoveVoiceBaselineResponse> | undefined, b: RemoveVoiceBaselineResponse | PlainMessage<RemoveVoiceBaselineResponse> | undefined): boolean {
+    return proto3.util.equals(RemoveVoiceBaselineResponse, a, b);
   }
 }
 

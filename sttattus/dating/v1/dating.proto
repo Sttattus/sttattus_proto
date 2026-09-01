@@ -55,6 +55,20 @@ message DatingProfile {
   repeated string interests = 21;
   // ISO-8601 date (YYYY-MM-DD). Writable; `age` is computed from it.
   string birth_date = 22;
+
+  // --- A9.7 voice baseline ---
+  // A signed, time-bound URL for the member's 60-second clip, or empty. Never
+  // the r2:// locator — signing happens server-side on read.
+  //
+  // Only ever populated for the member themselves and for someone they have
+  // matched with. The onboarding copy promises exactly that ("only matched
+  // lifters hear it, and only after you accept"), so it is not a preference
+  // in Identity Lab; it is a guarantee the handler keeps.
+  string voice_url = 23;
+  // Best-effort transcript of the clip. Empty when transcription was not
+  // configured or failed; a clip with no transcript is still a valid clip.
+  string voice_transcript = 24;
+  int32 voice_duration_seconds = 25;
 }
 
 // Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -903,6 +917,13 @@ service DatingService {
   rpc RemoveDatingPhoto(RemoveDatingPhotoRequest) returns (RemoveDatingPhotoResponse);
   rpc ReorderDatingPhotos(ReorderDatingPhotosRequest) returns (ReorderDatingPhotosResponse);
   rpc SetPrimaryDatingPhoto(SetPrimaryDatingPhotoRequest) returns (SetPrimaryDatingPhotoResponse);
+
+  // --- A9.7 voice baseline ---
+  // Upload the clip through MediaService (category "atlas/voice"), then hand
+  // the asset id here. The server resolves it itself rather than trusting a
+  // client-supplied URL, exactly as AddDatingPhoto does.
+  rpc SetVoiceBaseline(SetVoiceBaselineRequest) returns (SetVoiceBaselineResponse);
+  rpc RemoveVoiceBaseline(RemoveVoiceBaselineRequest) returns (RemoveVoiceBaselineResponse);
 }
 
 // --- A9P6 dating photos ---
@@ -920,6 +941,22 @@ message ListDatingPhotosResponse {
   // a profile but not to reorder or remove one — those need the row id. This
   // is the manageable view of the same gallery.
   repeated DatingPhoto photos = 1;
+}
+
+message SetVoiceBaselineRequest {
+  // A media_assets row already marked processed, uploaded under the
+  // "atlas/voice" category. Must be audio.
+  string media_asset_id = 1;
+  // What the recorder measured. Clamped server-side to the 60-second promise.
+  int32 duration_seconds = 2;
+}
+message SetVoiceBaselineResponse {
+  DatingProfile profile = 1;
+}
+
+message RemoveVoiceBaselineRequest {}
+message RemoveVoiceBaselineResponse {
+  DatingProfile profile = 1;
 }
 
 message AddDatingPhotoRequest {

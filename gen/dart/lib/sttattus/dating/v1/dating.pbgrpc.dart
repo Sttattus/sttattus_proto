@@ -534,6 +534,24 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setPrimaryDatingPhoto, request, options: options);
   }
 
+  /// --- A9.7 voice baseline ---
+  /// Upload the clip through MediaService (category "atlas/voice"), then hand
+  /// the asset id here. The server resolves it itself rather than trusting a
+  /// client-supplied URL, exactly as AddDatingPhoto does.
+  $grpc.ResponseFuture<$0.SetVoiceBaselineResponse> setVoiceBaseline(
+    $0.SetVoiceBaselineRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setVoiceBaseline, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveVoiceBaselineResponse> removeVoiceBaseline(
+    $0.RemoveVoiceBaselineRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$removeVoiceBaseline, request, options: options);
+  }
+
   // method descriptors
 
   static final _$getProfile =
@@ -869,6 +887,16 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/SetPrimaryDatingPhoto',
       ($0.SetPrimaryDatingPhotoRequest value) => value.writeToBuffer(),
       $0.SetPrimaryDatingPhotoResponse.fromBuffer);
+  static final _$setVoiceBaseline = $grpc.ClientMethod<
+          $0.SetVoiceBaselineRequest, $0.SetVoiceBaselineResponse>(
+      '/sttattus.dating.v1.DatingService/SetVoiceBaseline',
+      ($0.SetVoiceBaselineRequest value) => value.writeToBuffer(),
+      $0.SetVoiceBaselineResponse.fromBuffer);
+  static final _$removeVoiceBaseline = $grpc.ClientMethod<
+          $0.RemoveVoiceBaselineRequest, $0.RemoveVoiceBaselineResponse>(
+      '/sttattus.dating.v1.DatingService/RemoveVoiceBaseline',
+      ($0.RemoveVoiceBaselineRequest value) => value.writeToBuffer(),
+      $0.RemoveVoiceBaselineResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -1455,6 +1483,24 @@ abstract class DatingServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.SetPrimaryDatingPhotoRequest.fromBuffer(value),
         ($0.SetPrimaryDatingPhotoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetVoiceBaselineRequest,
+            $0.SetVoiceBaselineResponse>(
+        'SetVoiceBaseline',
+        setVoiceBaseline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetVoiceBaselineRequest.fromBuffer(value),
+        ($0.SetVoiceBaselineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveVoiceBaselineRequest,
+            $0.RemoveVoiceBaselineResponse>(
+        'RemoveVoiceBaseline',
+        removeVoiceBaseline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RemoveVoiceBaselineRequest.fromBuffer(value),
+        ($0.RemoveVoiceBaselineResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call,
@@ -2040,4 +2086,22 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.SetPrimaryDatingPhotoResponse> setPrimaryDatingPhoto(
       $grpc.ServiceCall call, $0.SetPrimaryDatingPhotoRequest request);
+
+  $async.Future<$0.SetVoiceBaselineResponse> setVoiceBaseline_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetVoiceBaselineRequest> $request) async {
+    return setVoiceBaseline($call, await $request);
+  }
+
+  $async.Future<$0.SetVoiceBaselineResponse> setVoiceBaseline(
+      $grpc.ServiceCall call, $0.SetVoiceBaselineRequest request);
+
+  $async.Future<$0.RemoveVoiceBaselineResponse> removeVoiceBaseline_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RemoveVoiceBaselineRequest> $request) async {
+    return removeVoiceBaseline($call, await $request);
+  }
+
+  $async.Future<$0.RemoveVoiceBaselineResponse> removeVoiceBaseline(
+      $grpc.ServiceCall call, $0.RemoveVoiceBaselineRequest request);
 }

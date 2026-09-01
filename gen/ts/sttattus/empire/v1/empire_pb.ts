@@ -40,7 +40,7 @@ export class GetScoreBreakdownRequest extends Message<GetScoreBreakdownRequest> 
 /**
  * PillarStanding is one line of the glass box: where you sit in one app,
  * measured against whoever leads it.
- * 
+ *
  * This is what the Sttattus Score is actually made of. Per app you score
  * `100 * yours / the leader's`; the global score is the mean of `standing`
  * across every app that has at least one participant.
@@ -148,13 +148,13 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
   /**
    * DEPRECATED — empire_engine's four weighted buckets (wealth 30% / bio 25%
    * / social 20% / operational 25%).
-   * 
+   *
    * These do not explain sttattus_score and never did: the buckets are
    * empire_engine's own weighting while the score is the platform composite.
    * On production they summed to 35.4 under a headline of 13.8, on a card
    * captioned "Four weighted buckets. Every weight published." The weights
    * were published; they were the weights of a different number.
-   * 
+   *
    * Kept on the wire so an older client does not break. Read
    * pillar_standings instead — it is what the score is built from and it
    * sums, by construction, to sttattus_score.
@@ -182,7 +182,7 @@ export class GetScoreBreakdownResponse extends Message<GetScoreBreakdownResponse
    * One entry per ACTIVE app — an app nobody has scored in is omitted,
    * because it is excluded from the score's denominator too. Ordered by
    * standing, strongest first.
-   * 
+   *
    * mean(standing) == sttattus_score. That identity is the whole point: the
    * glass box now explains the number it sits under.
    *
@@ -3591,7 +3591,7 @@ export class ConciergeMessage extends Message<ConciergeMessage> {
   /**
    * The concierge who wrote it. Empty for member and system messages, and
    * for replies written before authorship was recorded.
-   * 
+   *
    * Every desk on the platform answered as an anonymous "STAFF" until
    * 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
    * and was the only one. A white-glove desk that will not say who is

@@ -124,6 +124,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     $core.String? countryCode,
     $core.Iterable<$core.String>? interests,
     $core.String? birthDate,
+    $core.String? voiceUrl,
+    $core.String? voiceTranscript,
+    $core.int? voiceDurationSeconds,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -149,6 +152,10 @@ class DatingProfile extends $pb.GeneratedMessage {
     if (countryCode != null) result.countryCode = countryCode;
     if (interests != null) result.interests.addAll(interests);
     if (birthDate != null) result.birthDate = birthDate;
+    if (voiceUrl != null) result.voiceUrl = voiceUrl;
+    if (voiceTranscript != null) result.voiceTranscript = voiceTranscript;
+    if (voiceDurationSeconds != null)
+      result.voiceDurationSeconds = voiceDurationSeconds;
     return result;
   }
 
@@ -189,6 +196,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     ..aOS(20, _omitFieldNames ? '' : 'countryCode')
     ..pPS(21, _omitFieldNames ? '' : 'interests')
     ..aOS(22, _omitFieldNames ? '' : 'birthDate')
+    ..aOS(23, _omitFieldNames ? '' : 'voiceUrl')
+    ..aOS(24, _omitFieldNames ? '' : 'voiceTranscript')
+    ..aI(25, _omitFieldNames ? '' : 'voiceDurationSeconds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -401,6 +411,43 @@ class DatingProfile extends $pb.GeneratedMessage {
   $core.bool hasBirthDate() => $_has(21);
   @$pb.TagNumber(22)
   void clearBirthDate() => $_clearField(22);
+
+  /// --- A9.7 voice baseline ---
+  /// A signed, time-bound URL for the member's 60-second clip, or empty. Never
+  /// the r2:// locator — signing happens server-side on read.
+  ///
+  /// Only ever populated for the member themselves and for someone they have
+  /// matched with. The onboarding copy promises exactly that ("only matched
+  /// lifters hear it, and only after you accept"), so it is not a preference
+  /// in Identity Lab; it is a guarantee the handler keeps.
+  @$pb.TagNumber(23)
+  $core.String get voiceUrl => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set voiceUrl($core.String value) => $_setString(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasVoiceUrl() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearVoiceUrl() => $_clearField(23);
+
+  /// Best-effort transcript of the clip. Empty when transcription was not
+  /// configured or failed; a clip with no transcript is still a valid clip.
+  @$pb.TagNumber(24)
+  $core.String get voiceTranscript => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set voiceTranscript($core.String value) => $_setString(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasVoiceTranscript() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearVoiceTranscript() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.int get voiceDurationSeconds => $_getIZ(24);
+  @$pb.TagNumber(25)
+  set voiceDurationSeconds($core.int value) => $_setSignedInt32(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasVoiceDurationSeconds() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearVoiceDurationSeconds() => $_clearField(25);
 }
 
 /// Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -10950,6 +10997,238 @@ class ListDatingPhotosResponse extends $pb.GeneratedMessage {
   /// is the manageable view of the same gallery.
   @$pb.TagNumber(1)
   $pb.PbList<DatingPhoto> get photos => $_getList(0);
+}
+
+class SetVoiceBaselineRequest extends $pb.GeneratedMessage {
+  factory SetVoiceBaselineRequest({
+    $core.String? mediaAssetId,
+    $core.int? durationSeconds,
+  }) {
+    final result = create();
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    return result;
+  }
+
+  SetVoiceBaselineRequest._();
+
+  factory SetVoiceBaselineRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetVoiceBaselineRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetVoiceBaselineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aI(2, _omitFieldNames ? '' : 'durationSeconds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetVoiceBaselineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetVoiceBaselineRequest copyWith(
+          void Function(SetVoiceBaselineRequest) updates) =>
+      super.copyWith((message) => updates(message as SetVoiceBaselineRequest))
+          as SetVoiceBaselineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetVoiceBaselineRequest create() => SetVoiceBaselineRequest._();
+  @$core.override
+  SetVoiceBaselineRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetVoiceBaselineRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetVoiceBaselineRequest>(create);
+  static SetVoiceBaselineRequest? _defaultInstance;
+
+  /// A media_assets row already marked processed, uploaded under the
+  /// "atlas/voice" category. Must be audio.
+  @$pb.TagNumber(1)
+  $core.String get mediaAssetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaAssetId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaAssetId() => $_clearField(1);
+
+  /// What the recorder measured. Clamped server-side to the 60-second promise.
+  @$pb.TagNumber(2)
+  $core.int get durationSeconds => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set durationSeconds($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDurationSeconds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDurationSeconds() => $_clearField(2);
+}
+
+class SetVoiceBaselineResponse extends $pb.GeneratedMessage {
+  factory SetVoiceBaselineResponse({
+    DatingProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  SetVoiceBaselineResponse._();
+
+  factory SetVoiceBaselineResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetVoiceBaselineResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetVoiceBaselineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<DatingProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: DatingProfile.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetVoiceBaselineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetVoiceBaselineResponse copyWith(
+          void Function(SetVoiceBaselineResponse) updates) =>
+      super.copyWith((message) => updates(message as SetVoiceBaselineResponse))
+          as SetVoiceBaselineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetVoiceBaselineResponse create() => SetVoiceBaselineResponse._();
+  @$core.override
+  SetVoiceBaselineResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetVoiceBaselineResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetVoiceBaselineResponse>(create);
+  static SetVoiceBaselineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DatingProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(DatingProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DatingProfile ensureProfile() => $_ensure(0);
+}
+
+class RemoveVoiceBaselineRequest extends $pb.GeneratedMessage {
+  factory RemoveVoiceBaselineRequest() => create();
+
+  RemoveVoiceBaselineRequest._();
+
+  factory RemoveVoiceBaselineRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveVoiceBaselineRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveVoiceBaselineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveVoiceBaselineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveVoiceBaselineRequest copyWith(
+          void Function(RemoveVoiceBaselineRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RemoveVoiceBaselineRequest))
+          as RemoveVoiceBaselineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveVoiceBaselineRequest create() => RemoveVoiceBaselineRequest._();
+  @$core.override
+  RemoveVoiceBaselineRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RemoveVoiceBaselineRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveVoiceBaselineRequest>(create);
+  static RemoveVoiceBaselineRequest? _defaultInstance;
+}
+
+class RemoveVoiceBaselineResponse extends $pb.GeneratedMessage {
+  factory RemoveVoiceBaselineResponse({
+    DatingProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  RemoveVoiceBaselineResponse._();
+
+  factory RemoveVoiceBaselineResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveVoiceBaselineResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveVoiceBaselineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<DatingProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: DatingProfile.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveVoiceBaselineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveVoiceBaselineResponse copyWith(
+          void Function(RemoveVoiceBaselineResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RemoveVoiceBaselineResponse))
+          as RemoveVoiceBaselineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveVoiceBaselineResponse create() =>
+      RemoveVoiceBaselineResponse._();
+  @$core.override
+  RemoveVoiceBaselineResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RemoveVoiceBaselineResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveVoiceBaselineResponse>(create);
+  static RemoveVoiceBaselineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DatingProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(DatingProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DatingProfile ensureProfile() => $_ensure(0);
 }
 
 class AddDatingPhotoRequest extends $pb.GeneratedMessage {

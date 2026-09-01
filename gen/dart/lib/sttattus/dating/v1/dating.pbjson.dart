@@ -116,6 +116,15 @@ const DatingProfile$json = {
     {'1': 'country_code', '3': 20, '4': 1, '5': 9, '10': 'countryCode'},
     {'1': 'interests', '3': 21, '4': 3, '5': 9, '10': 'interests'},
     {'1': 'birth_date', '3': 22, '4': 1, '5': 9, '10': 'birthDate'},
+    {'1': 'voice_url', '3': 23, '4': 1, '5': 9, '10': 'voiceUrl'},
+    {'1': 'voice_transcript', '3': 24, '4': 1, '5': 9, '10': 'voiceTranscript'},
+    {
+      '1': 'voice_duration_seconds',
+      '3': 25,
+      '4': 1,
+      '5': 5,
+      '10': 'voiceDurationSeconds'
+    },
   ],
 };
 
@@ -134,7 +143,9 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'b3JnZV9yYW5rGBAgASgBUglmb3JnZVJhbmsSEAoDYWdlGBEgASgFUgNhZ2USFgoGZ2VuZGVyGB'
     'IgASgJUgZnZW5kZXISEgoEY2l0eRgTIAEoCVIEY2l0eRIhCgxjb3VudHJ5X2NvZGUYFCABKAlS'
     'C2NvdW50cnlDb2RlEhwKCWludGVyZXN0cxgVIAMoCVIJaW50ZXJlc3RzEh0KCmJpcnRoX2RhdG'
-    'UYFiABKAlSCWJpcnRoRGF0ZQ==');
+    'UYFiABKAlSCWJpcnRoRGF0ZRIbCgl2b2ljZV91cmwYFyABKAlSCHZvaWNlVXJsEikKEHZvaWNl'
+    'X3RyYW5zY3JpcHQYGCABKAlSD3ZvaWNlVHJhbnNjcmlwdBI0ChZ2b2ljZV9kdXJhdGlvbl9zZW'
+    'NvbmRzGBkgASgFUhR2b2ljZUR1cmF0aW9uU2Vjb25kcw==');
 
 @$core.Deprecated('Use discoveryPreferencesDescriptor instead')
 const DiscoveryPreferences$json = {
@@ -2887,6 +2898,71 @@ final $typed_data.Uint8List listDatingPhotosResponseDescriptor =
     $convert.base64Decode(
         'ChhMaXN0RGF0aW5nUGhvdG9zUmVzcG9uc2USNwoGcGhvdG9zGAEgAygLMh8uc3R0YXR0dXMuZG'
         'F0aW5nLnYxLkRhdGluZ1Bob3RvUgZwaG90b3M=');
+
+@$core.Deprecated('Use setVoiceBaselineRequestDescriptor instead')
+const SetVoiceBaselineRequest$json = {
+  '1': 'SetVoiceBaselineRequest',
+  '2': [
+    {'1': 'media_asset_id', '3': 1, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'duration_seconds', '3': 2, '4': 1, '5': 5, '10': 'durationSeconds'},
+  ],
+};
+
+/// Descriptor for `SetVoiceBaselineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setVoiceBaselineRequestDescriptor = $convert.base64Decode(
+    'ChdTZXRWb2ljZUJhc2VsaW5lUmVxdWVzdBIkCg5tZWRpYV9hc3NldF9pZBgBIAEoCVIMbWVkaW'
+    'FBc3NldElkEikKEGR1cmF0aW9uX3NlY29uZHMYAiABKAVSD2R1cmF0aW9uU2Vjb25kcw==');
+
+@$core.Deprecated('Use setVoiceBaselineResponseDescriptor instead')
+const SetVoiceBaselineResponse$json = {
+  '1': 'SetVoiceBaselineResponse',
+  '2': [
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.DatingProfile',
+      '10': 'profile'
+    },
+  ],
+};
+
+/// Descriptor for `SetVoiceBaselineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setVoiceBaselineResponseDescriptor =
+    $convert.base64Decode(
+        'ChhTZXRWb2ljZUJhc2VsaW5lUmVzcG9uc2USOwoHcHJvZmlsZRgBIAEoCzIhLnN0dGF0dHVzLm'
+        'RhdGluZy52MS5EYXRpbmdQcm9maWxlUgdwcm9maWxl');
+
+@$core.Deprecated('Use removeVoiceBaselineRequestDescriptor instead')
+const RemoveVoiceBaselineRequest$json = {
+  '1': 'RemoveVoiceBaselineRequest',
+};
+
+/// Descriptor for `RemoveVoiceBaselineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeVoiceBaselineRequestDescriptor =
+    $convert.base64Decode('ChpSZW1vdmVWb2ljZUJhc2VsaW5lUmVxdWVzdA==');
+
+@$core.Deprecated('Use removeVoiceBaselineResponseDescriptor instead')
+const RemoveVoiceBaselineResponse$json = {
+  '1': 'RemoveVoiceBaselineResponse',
+  '2': [
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.DatingProfile',
+      '10': 'profile'
+    },
+  ],
+};
+
+/// Descriptor for `RemoveVoiceBaselineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeVoiceBaselineResponseDescriptor =
+    $convert.base64Decode(
+        'ChtSZW1vdmVWb2ljZUJhc2VsaW5lUmVzcG9uc2USOwoHcHJvZmlsZRgBIAEoCzIhLnN0dGF0dH'
+        'VzLmRhdGluZy52MS5EYXRpbmdQcm9maWxlUgdwcm9maWxl');
 
 @$core.Deprecated('Use addDatingPhotoRequestDescriptor instead')
 const AddDatingPhotoRequest$json = {
