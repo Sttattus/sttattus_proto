@@ -205,6 +205,24 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$upsertPanicContact, request, options: options);
   }
 
+  /// The thing the Safety screen has always promised and never had. Records the
+  /// alert and tries to reach the stored contact; the response says what
+  /// actually happened, because a safety feature must never report help it did
+  /// not send.
+  $grpc.ResponseFuture<$0.TriggerPanicAlertResponse> triggerPanicAlert(
+    $0.TriggerPanicAlertRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$triggerPanicAlert, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyPanicAlertsResponse> listMyPanicAlerts(
+    $0.ListMyPanicAlertsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyPanicAlerts, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.GetPrivacyAxesResponse> getPrivacyAxes(
     $0.GetPrivacyAxesRequest request, {
     $grpc.CallOptions? options,
@@ -673,6 +691,16 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/UpsertPanicContact',
       ($0.UpsertPanicContactRequest value) => value.writeToBuffer(),
       $0.UpsertPanicContactResponse.fromBuffer);
+  static final _$triggerPanicAlert = $grpc.ClientMethod<
+          $0.TriggerPanicAlertRequest, $0.TriggerPanicAlertResponse>(
+      '/sttattus.dating.v1.DatingService/TriggerPanicAlert',
+      ($0.TriggerPanicAlertRequest value) => value.writeToBuffer(),
+      $0.TriggerPanicAlertResponse.fromBuffer);
+  static final _$listMyPanicAlerts = $grpc.ClientMethod<
+          $0.ListMyPanicAlertsRequest, $0.ListMyPanicAlertsResponse>(
+      '/sttattus.dating.v1.DatingService/ListMyPanicAlerts',
+      ($0.ListMyPanicAlertsRequest value) => value.writeToBuffer(),
+      $0.ListMyPanicAlertsResponse.fromBuffer);
   static final _$getPrivacyAxes =
       $grpc.ClientMethod<$0.GetPrivacyAxesRequest, $0.GetPrivacyAxesResponse>(
           '/sttattus.dating.v1.DatingService/GetPrivacyAxes',
@@ -1110,6 +1138,24 @@ abstract class DatingServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.UpsertPanicContactRequest.fromBuffer(value),
         ($0.UpsertPanicContactResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TriggerPanicAlertRequest,
+            $0.TriggerPanicAlertResponse>(
+        'TriggerPanicAlert',
+        triggerPanicAlert_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TriggerPanicAlertRequest.fromBuffer(value),
+        ($0.TriggerPanicAlertResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyPanicAlertsRequest,
+            $0.ListMyPanicAlertsResponse>(
+        'ListMyPanicAlerts',
+        listMyPanicAlerts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyPanicAlertsRequest.fromBuffer(value),
+        ($0.ListMyPanicAlertsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetPrivacyAxesRequest,
             $0.GetPrivacyAxesResponse>(
         'GetPrivacyAxes',
@@ -1710,6 +1756,24 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.UpsertPanicContactResponse> upsertPanicContact(
       $grpc.ServiceCall call, $0.UpsertPanicContactRequest request);
+
+  $async.Future<$0.TriggerPanicAlertResponse> triggerPanicAlert_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.TriggerPanicAlertRequest> $request) async {
+    return triggerPanicAlert($call, await $request);
+  }
+
+  $async.Future<$0.TriggerPanicAlertResponse> triggerPanicAlert(
+      $grpc.ServiceCall call, $0.TriggerPanicAlertRequest request);
+
+  $async.Future<$0.ListMyPanicAlertsResponse> listMyPanicAlerts_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMyPanicAlertsRequest> $request) async {
+    return listMyPanicAlerts($call, await $request);
+  }
+
+  $async.Future<$0.ListMyPanicAlertsResponse> listMyPanicAlerts(
+      $grpc.ServiceCall call, $0.ListMyPanicAlertsRequest request);
 
   $async.Future<$0.GetPrivacyAxesResponse> getPrivacyAxes_Pre(
       $grpc.ServiceCall $call,

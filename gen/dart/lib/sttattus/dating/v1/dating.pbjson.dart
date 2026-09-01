@@ -1138,6 +1138,98 @@ final $typed_data.Uint8List reportUserResponseDescriptor = $convert.base64Decode
     'ChJSZXBvcnRVc2VyUmVzcG9uc2USNgoGcmVwb3J0GAEgASgLMh4uc3R0YXR0dXMuZGF0aW5nLn'
     'YxLlVzZXJSZXBvcnRSBnJlcG9ydA==');
 
+@$core.Deprecated('Use panicAlertDescriptor instead')
+const PanicAlert$json = {
+  '1': 'PanicAlert',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'latitude', '3': 2, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 3, '4': 1, '5': 1, '10': 'longitude'},
+    {'1': 'note', '3': 4, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'contact_name', '3': 5, '4': 1, '5': 9, '10': 'contactName'},
+    {'1': 'notify_status', '3': 6, '4': 1, '5': 9, '10': 'notifyStatus'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 3, '10': 'createdAt'},
+    {'1': 'resolved_at', '3': 8, '4': 1, '5': 3, '10': 'resolvedAt'},
+  ],
+};
+
+/// Descriptor for `PanicAlert`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List panicAlertDescriptor = $convert.base64Decode(
+    'CgpQYW5pY0FsZXJ0Eg4KAmlkGAEgASgJUgJpZBIaCghsYXRpdHVkZRgCIAEoAVIIbGF0aXR1ZG'
+    'USHAoJbG9uZ2l0dWRlGAMgASgBUglsb25naXR1ZGUSEgoEbm90ZRgEIAEoCVIEbm90ZRIhCgxj'
+    'b250YWN0X25hbWUYBSABKAlSC2NvbnRhY3ROYW1lEiMKDW5vdGlmeV9zdGF0dXMYBiABKAlSDG'
+    '5vdGlmeVN0YXR1cxIdCgpjcmVhdGVkX2F0GAcgASgDUgljcmVhdGVkQXQSHwoLcmVzb2x2ZWRf'
+    'YXQYCCABKANSCnJlc29sdmVkQXQ=');
+
+@$core.Deprecated('Use triggerPanicAlertRequestDescriptor instead')
+const TriggerPanicAlertRequest$json = {
+  '1': 'TriggerPanicAlertRequest',
+  '2': [
+    {'1': 'latitude', '3': 1, '4': 1, '5': 1, '10': 'latitude'},
+    {'1': 'longitude', '3': 2, '4': 1, '5': 1, '10': 'longitude'},
+    {'1': 'has_location', '3': 3, '4': 1, '5': 8, '10': 'hasLocation'},
+    {'1': 'note', '3': 4, '4': 1, '5': 9, '10': 'note'},
+  ],
+};
+
+/// Descriptor for `TriggerPanicAlertRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List triggerPanicAlertRequestDescriptor = $convert.base64Decode(
+    'ChhUcmlnZ2VyUGFuaWNBbGVydFJlcXVlc3QSGgoIbGF0aXR1ZGUYASABKAFSCGxhdGl0dWRlEh'
+    'wKCWxvbmdpdHVkZRgCIAEoAVIJbG9uZ2l0dWRlEiEKDGhhc19sb2NhdGlvbhgDIAEoCFILaGFz'
+    'TG9jYXRpb24SEgoEbm90ZRgEIAEoCVIEbm90ZQ==');
+
+@$core.Deprecated('Use triggerPanicAlertResponseDescriptor instead')
+const TriggerPanicAlertResponse$json = {
+  '1': 'TriggerPanicAlertResponse',
+  '2': [
+    {
+      '1': 'alert',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.PanicAlert',
+      '10': 'alert'
+    },
+    {'1': 'notice', '3': 2, '4': 1, '5': 9, '10': 'notice'},
+  ],
+};
+
+/// Descriptor for `TriggerPanicAlertResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List triggerPanicAlertResponseDescriptor =
+    $convert.base64Decode(
+        'ChlUcmlnZ2VyUGFuaWNBbGVydFJlc3BvbnNlEjQKBWFsZXJ0GAEgASgLMh4uc3R0YXR0dXMuZG'
+        'F0aW5nLnYxLlBhbmljQWxlcnRSBWFsZXJ0EhYKBm5vdGljZRgCIAEoCVIGbm90aWNl');
+
+@$core.Deprecated('Use listMyPanicAlertsRequestDescriptor instead')
+const ListMyPanicAlertsRequest$json = {
+  '1': 'ListMyPanicAlertsRequest',
+};
+
+/// Descriptor for `ListMyPanicAlertsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPanicAlertsRequestDescriptor =
+    $convert.base64Decode('ChhMaXN0TXlQYW5pY0FsZXJ0c1JlcXVlc3Q=');
+
+@$core.Deprecated('Use listMyPanicAlertsResponseDescriptor instead')
+const ListMyPanicAlertsResponse$json = {
+  '1': 'ListMyPanicAlertsResponse',
+  '2': [
+    {
+      '1': 'alerts',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.PanicAlert',
+      '10': 'alerts'
+    },
+  ],
+};
+
+/// Descriptor for `ListMyPanicAlertsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMyPanicAlertsResponseDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0TXlQYW5pY0FsZXJ0c1Jlc3BvbnNlEjYKBmFsZXJ0cxgBIAMoCzIeLnN0dGF0dHVzLm'
+        'RhdGluZy52MS5QYW5pY0FsZXJ0UgZhbGVydHM=');
+
 @$core.Deprecated('Use panicContactDescriptor instead')
 const PanicContact$json = {
   '1': 'PanicContact',

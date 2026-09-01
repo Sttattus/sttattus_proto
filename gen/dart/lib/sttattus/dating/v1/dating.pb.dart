@@ -4146,6 +4146,404 @@ class ReportUserResponse extends $pb.GeneratedMessage {
   UserReport ensureReport() => $_ensure(0);
 }
 
+class PanicAlert extends $pb.GeneratedMessage {
+  factory PanicAlert({
+    $core.String? id,
+    $core.double? latitude,
+    $core.double? longitude,
+    $core.String? note,
+    $core.String? contactName,
+    $core.String? notifyStatus,
+    $fixnum.Int64? createdAt,
+    $fixnum.Int64? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
+    if (note != null) result.note = note;
+    if (contactName != null) result.contactName = contactName;
+    if (notifyStatus != null) result.notifyStatus = notifyStatus;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  PanicAlert._();
+
+  factory PanicAlert.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PanicAlert.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PanicAlert',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aD(2, _omitFieldNames ? '' : 'latitude')
+    ..aD(3, _omitFieldNames ? '' : 'longitude')
+    ..aOS(4, _omitFieldNames ? '' : 'note')
+    ..aOS(5, _omitFieldNames ? '' : 'contactName')
+    ..aOS(6, _omitFieldNames ? '' : 'notifyStatus')
+    ..aInt64(7, _omitFieldNames ? '' : 'createdAt')
+    ..aInt64(8, _omitFieldNames ? '' : 'resolvedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PanicAlert clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PanicAlert copyWith(void Function(PanicAlert) updates) =>
+      super.copyWith((message) => updates(message as PanicAlert)) as PanicAlert;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PanicAlert create() => PanicAlert._();
+  @$core.override
+  PanicAlert createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PanicAlert getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PanicAlert>(create);
+  static PanicAlert? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get latitude => $_getN(1);
+  @$pb.TagNumber(2)
+  set latitude($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLatitude() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatitude() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get longitude => $_getN(2);
+  @$pb.TagNumber(3)
+  set longitude($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLongitude() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLongitude() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get note => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set note($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNote() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contactName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contactName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContactName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContactName() => $_clearField(5);
+
+  /// 'sent' | 'unconfigured' | 'failed' | 'no_contact' — what happened to the
+  /// notification, not what we wish had happened.
+  @$pb.TagNumber(6)
+  $core.String get notifyStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set notifyStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNotifyStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNotifyStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get createdAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set createdAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get resolvedAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set resolvedAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolvedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolvedAt() => $_clearField(8);
+}
+
+class TriggerPanicAlertRequest extends $pb.GeneratedMessage {
+  factory TriggerPanicAlertRequest({
+    $core.double? latitude,
+    $core.double? longitude,
+    $core.bool? hasLocation,
+    $core.String? note,
+  }) {
+    final result = create();
+    if (latitude != null) result.latitude = latitude;
+    if (longitude != null) result.longitude = longitude;
+    if (hasLocation != null) result.hasLocation = hasLocation;
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  TriggerPanicAlertRequest._();
+
+  factory TriggerPanicAlertRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerPanicAlertRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerPanicAlertRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aD(1, _omitFieldNames ? '' : 'latitude')
+    ..aD(2, _omitFieldNames ? '' : 'longitude')
+    ..aOB(3, _omitFieldNames ? '' : 'hasLocation')
+    ..aOS(4, _omitFieldNames ? '' : 'note')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerPanicAlertRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerPanicAlertRequest copyWith(
+          void Function(TriggerPanicAlertRequest) updates) =>
+      super.copyWith((message) => updates(message as TriggerPanicAlertRequest))
+          as TriggerPanicAlertRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerPanicAlertRequest create() => TriggerPanicAlertRequest._();
+  @$core.override
+  TriggerPanicAlertRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerPanicAlertRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TriggerPanicAlertRequest>(create);
+  static TriggerPanicAlertRequest? _defaultInstance;
+
+  /// Optional. An alert with no location is still an alert and is never
+  /// refused for the lack of one.
+  @$pb.TagNumber(1)
+  $core.double get latitude => $_getN(0);
+  @$pb.TagNumber(1)
+  set latitude($core.double value) => $_setDouble(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLatitude() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLatitude() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get longitude => $_getN(1);
+  @$pb.TagNumber(2)
+  set longitude($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLongitude() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLongitude() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hasLocation => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hasLocation($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHasLocation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHasLocation() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get note => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set note($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNote() => $_clearField(4);
+}
+
+class TriggerPanicAlertResponse extends $pb.GeneratedMessage {
+  factory TriggerPanicAlertResponse({
+    PanicAlert? alert,
+    $core.String? notice,
+  }) {
+    final result = create();
+    if (alert != null) result.alert = alert;
+    if (notice != null) result.notice = notice;
+    return result;
+  }
+
+  TriggerPanicAlertResponse._();
+
+  factory TriggerPanicAlertResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerPanicAlertResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerPanicAlertResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<PanicAlert>(1, _omitFieldNames ? '' : 'alert',
+        subBuilder: PanicAlert.create)
+    ..aOS(2, _omitFieldNames ? '' : 'notice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerPanicAlertResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerPanicAlertResponse copyWith(
+          void Function(TriggerPanicAlertResponse) updates) =>
+      super.copyWith((message) => updates(message as TriggerPanicAlertResponse))
+          as TriggerPanicAlertResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerPanicAlertResponse create() => TriggerPanicAlertResponse._();
+  @$core.override
+  TriggerPanicAlertResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerPanicAlertResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TriggerPanicAlertResponse>(create);
+  static TriggerPanicAlertResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PanicAlert get alert => $_getN(0);
+  @$pb.TagNumber(1)
+  set alert(PanicAlert value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAlert() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAlert() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PanicAlert ensureAlert() => $_ensure(0);
+
+  /// Member-facing, and true. "We texted Ana." / "We could not text Ana —
+  /// staff have been alerted." Rendered verbatim.
+  @$pb.TagNumber(2)
+  $core.String get notice => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set notice($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNotice() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNotice() => $_clearField(2);
+}
+
+class ListMyPanicAlertsRequest extends $pb.GeneratedMessage {
+  factory ListMyPanicAlertsRequest() => create();
+
+  ListMyPanicAlertsRequest._();
+
+  factory ListMyPanicAlertsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyPanicAlertsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyPanicAlertsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPanicAlertsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPanicAlertsRequest copyWith(
+          void Function(ListMyPanicAlertsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMyPanicAlertsRequest))
+          as ListMyPanicAlertsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPanicAlertsRequest create() => ListMyPanicAlertsRequest._();
+  @$core.override
+  ListMyPanicAlertsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPanicAlertsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyPanicAlertsRequest>(create);
+  static ListMyPanicAlertsRequest? _defaultInstance;
+}
+
+class ListMyPanicAlertsResponse extends $pb.GeneratedMessage {
+  factory ListMyPanicAlertsResponse({
+    $core.Iterable<PanicAlert>? alerts,
+  }) {
+    final result = create();
+    if (alerts != null) result.alerts.addAll(alerts);
+    return result;
+  }
+
+  ListMyPanicAlertsResponse._();
+
+  factory ListMyPanicAlertsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMyPanicAlertsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMyPanicAlertsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..pPM<PanicAlert>(1, _omitFieldNames ? '' : 'alerts',
+        subBuilder: PanicAlert.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPanicAlertsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMyPanicAlertsResponse copyWith(
+          void Function(ListMyPanicAlertsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMyPanicAlertsResponse))
+          as ListMyPanicAlertsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMyPanicAlertsResponse create() => ListMyPanicAlertsResponse._();
+  @$core.override
+  ListMyPanicAlertsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMyPanicAlertsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMyPanicAlertsResponse>(create);
+  static ListMyPanicAlertsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PanicAlert> get alerts => $_getList(0);
+}
+
 class PanicContact extends $pb.GeneratedMessage {
   factory PanicContact({
     $core.String? contactPhoneE164,

@@ -319,6 +319,39 @@ message ReportUserResponse {
   UserReport report = 1;
 }
 
+message PanicAlert {
+  string id = 1;
+  double latitude = 2;
+  double longitude = 3;
+  string note = 4;
+  string contact_name = 5;
+  // 'sent' | 'unconfigured' | 'failed' | 'no_contact' — what happened to the
+  // notification, not what we wish had happened.
+  string notify_status = 6;
+  int64 created_at = 7;
+  int64 resolved_at = 8;
+}
+
+message TriggerPanicAlertRequest {
+  // Optional. An alert with no location is still an alert and is never
+  // refused for the lack of one.
+  double latitude = 1;
+  double longitude = 2;
+  bool has_location = 3;
+  string note = 4;
+}
+message TriggerPanicAlertResponse {
+  PanicAlert alert = 1;
+  // Member-facing, and true. "We texted Ana." / "We could not text Ana —
+  // staff have been alerted." Rendered verbatim.
+  string notice = 2;
+}
+
+message ListMyPanicAlertsRequest {}
+message ListMyPanicAlertsResponse {
+  repeated PanicAlert alerts = 1;
+}
+
 message PanicContact {
   string contact_phone_e164 = 1;
   string contact_name = 2;
@@ -837,6 +870,12 @@ service DatingService {
   rpc ReportUser(ReportUserRequest) returns (ReportUserResponse);
   rpc GetPanicContact(GetPanicContactRequest) returns (GetPanicContactResponse);
   rpc UpsertPanicContact(UpsertPanicContactRequest) returns (UpsertPanicContactResponse);
+  // The thing the Safety screen has always promised and never had. Records the
+  // alert and tries to reach the stored contact; the response says what
+  // actually happened, because a safety feature must never report help it did
+  // not send.
+  rpc TriggerPanicAlert(TriggerPanicAlertRequest) returns (TriggerPanicAlertResponse);
+  rpc ListMyPanicAlerts(ListMyPanicAlertsRequest) returns (ListMyPanicAlertsResponse);
 
   rpc GetPrivacyAxes(GetPrivacyAxesRequest) returns (GetPrivacyAxesResponse);
   rpc UpsertPrivacyAxes(UpsertPrivacyAxesRequest) returns (UpsertPrivacyAxesResponse);

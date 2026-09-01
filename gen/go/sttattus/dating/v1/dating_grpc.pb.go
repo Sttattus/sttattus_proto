@@ -43,6 +43,8 @@ const (
 	DatingService_ReportUser_FullMethodName                 = "/sttattus.dating.v1.DatingService/ReportUser"
 	DatingService_GetPanicContact_FullMethodName            = "/sttattus.dating.v1.DatingService/GetPanicContact"
 	DatingService_UpsertPanicContact_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_TriggerPanicAlert_FullMethodName          = "/sttattus.dating.v1.DatingService/TriggerPanicAlert"
+	DatingService_ListMyPanicAlerts_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyPanicAlerts"
 	DatingService_GetPrivacyAxes_FullMethodName             = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
 	DatingService_UpsertPrivacyAxes_FullMethodName          = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
 	DatingService_ListAtlasMapPoints_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
@@ -118,6 +120,12 @@ type DatingServiceClient interface {
 	ReportUser(ctx context.Context, in *ReportUserRequest, opts ...grpc.CallOption) (*ReportUserResponse, error)
 	GetPanicContact(ctx context.Context, in *GetPanicContactRequest, opts ...grpc.CallOption) (*GetPanicContactResponse, error)
 	UpsertPanicContact(ctx context.Context, in *UpsertPanicContactRequest, opts ...grpc.CallOption) (*UpsertPanicContactResponse, error)
+	// The thing the Safety screen has always promised and never had. Records the
+	// alert and tries to reach the stored contact; the response says what
+	// actually happened, because a safety feature must never report help it did
+	// not send.
+	TriggerPanicAlert(ctx context.Context, in *TriggerPanicAlertRequest, opts ...grpc.CallOption) (*TriggerPanicAlertResponse, error)
+	ListMyPanicAlerts(ctx context.Context, in *ListMyPanicAlertsRequest, opts ...grpc.CallOption) (*ListMyPanicAlertsResponse, error)
 	GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
 	ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error)
@@ -449,6 +457,26 @@ func (c *datingServiceClient) UpsertPanicContact(ctx context.Context, in *Upsert
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UpsertPanicContactResponse)
 	err := c.cc.Invoke(ctx, DatingService_UpsertPanicContact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) TriggerPanicAlert(ctx context.Context, in *TriggerPanicAlertRequest, opts ...grpc.CallOption) (*TriggerPanicAlertResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerPanicAlertResponse)
+	err := c.cc.Invoke(ctx, DatingService_TriggerPanicAlert_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListMyPanicAlerts(ctx context.Context, in *ListMyPanicAlertsRequest, opts ...grpc.CallOption) (*ListMyPanicAlertsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyPanicAlertsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListMyPanicAlerts_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -924,6 +952,12 @@ type DatingServiceServer interface {
 	ReportUser(context.Context, *ReportUserRequest) (*ReportUserResponse, error)
 	GetPanicContact(context.Context, *GetPanicContactRequest) (*GetPanicContactResponse, error)
 	UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error)
+	// The thing the Safety screen has always promised and never had. Records the
+	// alert and tries to reach the stored contact; the response says what
+	// actually happened, because a safety feature must never report help it did
+	// not send.
+	TriggerPanicAlert(context.Context, *TriggerPanicAlertRequest) (*TriggerPanicAlertResponse, error)
+	ListMyPanicAlerts(context.Context, *ListMyPanicAlertsRequest) (*ListMyPanicAlertsResponse, error)
 	GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
 	ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error)
@@ -1074,6 +1108,12 @@ func (UnimplementedDatingServiceServer) GetPanicContact(context.Context, *GetPan
 }
 func (UnimplementedDatingServiceServer) UpsertPanicContact(context.Context, *UpsertPanicContactRequest) (*UpsertPanicContactResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpsertPanicContact not implemented")
+}
+func (UnimplementedDatingServiceServer) TriggerPanicAlert(context.Context, *TriggerPanicAlertRequest) (*TriggerPanicAlertResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerPanicAlert not implemented")
+}
+func (UnimplementedDatingServiceServer) ListMyPanicAlerts(context.Context, *ListMyPanicAlertsRequest) (*ListMyPanicAlertsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyPanicAlerts not implemented")
 }
 func (UnimplementedDatingServiceServer) GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetPrivacyAxes not implemented")
@@ -1642,6 +1682,42 @@ func _DatingService_UpsertPanicContact_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatingServiceServer).UpsertPanicContact(ctx, req.(*UpsertPanicContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_TriggerPanicAlert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerPanicAlertRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).TriggerPanicAlert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_TriggerPanicAlert_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).TriggerPanicAlert(ctx, req.(*TriggerPanicAlertRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListMyPanicAlerts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyPanicAlertsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListMyPanicAlerts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListMyPanicAlerts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListMyPanicAlerts(ctx, req.(*ListMyPanicAlertsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2532,6 +2608,14 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpsertPanicContact",
 			Handler:    _DatingService_UpsertPanicContact_Handler,
+		},
+		{
+			MethodName: "TriggerPanicAlert",
+			Handler:    _DatingService_TriggerPanicAlert_Handler,
+		},
+		{
+			MethodName: "ListMyPanicAlerts",
+			Handler:    _DatingService_ListMyPanicAlerts_Handler,
 		},
 		{
 			MethodName: "GetPrivacyAxes",

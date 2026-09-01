@@ -2713,6 +2713,260 @@ export class ReportUserResponse extends Message$1<ReportUserResponse> {
 }
 
 /**
+ * @generated from message sttattus.dating.v1.PanicAlert
+ */
+export class PanicAlert extends Message$1<PanicAlert> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: double latitude = 2;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 3;
+   */
+  longitude = 0;
+
+  /**
+   * @generated from field: string note = 4;
+   */
+  note = "";
+
+  /**
+   * @generated from field: string contact_name = 5;
+   */
+  contactName = "";
+
+  /**
+   * 'sent' | 'unconfigured' | 'failed' | 'no_contact' — what happened to the
+   * notification, not what we wish had happened.
+   *
+   * @generated from field: string notify_status = 6;
+   */
+  notifyStatus = "";
+
+  /**
+   * @generated from field: int64 created_at = 7;
+   */
+  createdAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 resolved_at = 8;
+   */
+  resolvedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<PanicAlert>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.PanicAlert";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "contact_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "notify_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "resolved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PanicAlert {
+    return new PanicAlert().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PanicAlert {
+    return new PanicAlert().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PanicAlert {
+    return new PanicAlert().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PanicAlert | PlainMessage<PanicAlert> | undefined, b: PanicAlert | PlainMessage<PanicAlert> | undefined): boolean {
+    return proto3.util.equals(PanicAlert, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.TriggerPanicAlertRequest
+ */
+export class TriggerPanicAlertRequest extends Message$1<TriggerPanicAlertRequest> {
+  /**
+   * Optional. An alert with no location is still an alert and is never
+   * refused for the lack of one.
+   *
+   * @generated from field: double latitude = 1;
+   */
+  latitude = 0;
+
+  /**
+   * @generated from field: double longitude = 2;
+   */
+  longitude = 0;
+
+  /**
+   * @generated from field: bool has_location = 3;
+   */
+  hasLocation = false;
+
+  /**
+   * @generated from field: string note = 4;
+   */
+  note = "";
+
+  constructor(data?: PartialMessage<TriggerPanicAlertRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.TriggerPanicAlertRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "has_location", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerPanicAlertRequest {
+    return new TriggerPanicAlertRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerPanicAlertRequest {
+    return new TriggerPanicAlertRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerPanicAlertRequest {
+    return new TriggerPanicAlertRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerPanicAlertRequest | PlainMessage<TriggerPanicAlertRequest> | undefined, b: TriggerPanicAlertRequest | PlainMessage<TriggerPanicAlertRequest> | undefined): boolean {
+    return proto3.util.equals(TriggerPanicAlertRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.TriggerPanicAlertResponse
+ */
+export class TriggerPanicAlertResponse extends Message$1<TriggerPanicAlertResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.PanicAlert alert = 1;
+   */
+  alert?: PanicAlert;
+
+  /**
+   * Member-facing, and true. "We texted Ana." / "We could not text Ana —
+   * staff have been alerted." Rendered verbatim.
+   *
+   * @generated from field: string notice = 2;
+   */
+  notice = "";
+
+  constructor(data?: PartialMessage<TriggerPanicAlertResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.TriggerPanicAlertResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alert", kind: "message", T: PanicAlert },
+    { no: 2, name: "notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerPanicAlertResponse {
+    return new TriggerPanicAlertResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerPanicAlertResponse {
+    return new TriggerPanicAlertResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerPanicAlertResponse {
+    return new TriggerPanicAlertResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerPanicAlertResponse | PlainMessage<TriggerPanicAlertResponse> | undefined, b: TriggerPanicAlertResponse | PlainMessage<TriggerPanicAlertResponse> | undefined): boolean {
+    return proto3.util.equals(TriggerPanicAlertResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMyPanicAlertsRequest
+ */
+export class ListMyPanicAlertsRequest extends Message$1<ListMyPanicAlertsRequest> {
+  constructor(data?: PartialMessage<ListMyPanicAlertsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMyPanicAlertsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPanicAlertsRequest {
+    return new ListMyPanicAlertsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPanicAlertsRequest {
+    return new ListMyPanicAlertsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPanicAlertsRequest {
+    return new ListMyPanicAlertsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPanicAlertsRequest | PlainMessage<ListMyPanicAlertsRequest> | undefined, b: ListMyPanicAlertsRequest | PlainMessage<ListMyPanicAlertsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMyPanicAlertsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListMyPanicAlertsResponse
+ */
+export class ListMyPanicAlertsResponse extends Message$1<ListMyPanicAlertsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.PanicAlert alerts = 1;
+   */
+  alerts: PanicAlert[] = [];
+
+  constructor(data?: PartialMessage<ListMyPanicAlertsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListMyPanicAlertsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alerts", kind: "message", T: PanicAlert, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyPanicAlertsResponse {
+    return new ListMyPanicAlertsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyPanicAlertsResponse {
+    return new ListMyPanicAlertsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyPanicAlertsResponse {
+    return new ListMyPanicAlertsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMyPanicAlertsResponse | PlainMessage<ListMyPanicAlertsResponse> | undefined, b: ListMyPanicAlertsResponse | PlainMessage<ListMyPanicAlertsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMyPanicAlertsResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.dating.v1.PanicContact
  */
 export class PanicContact extends Message$1<PanicContact> {
