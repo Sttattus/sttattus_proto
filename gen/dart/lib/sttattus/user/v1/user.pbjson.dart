@@ -281,6 +281,14 @@ const GetSttattusResponse$json = {
       '6': '.sttattus.user.v1.SttattusBreakdown',
       '10': 'breakdown'
     },
+    {
+      '1': 'ladder',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.user.v1.TierBand',
+      '10': 'ladder'
+    },
   ],
 };
 
@@ -290,7 +298,23 @@ final $typed_data.Uint8List getSttattusResponseDescriptor = $convert.base64Decod
     'Njb3JlEh8KC2dsb2JhbF9yYW5rGAIgASgFUgpnbG9iYWxSYW5rEisKEWdsb2JhbF9wZXJjZW50'
     'aWxlGAMgASgBUhBnbG9iYWxQZXJjZW50aWxlEhIKBHRpZXIYBCABKAlSBHRpZXISHQoKYXVyYV'
     '9jb2xvchgFIAEoCVIJYXVyYUNvbG9yEkEKCWJyZWFrZG93bhgGIAEoCzIjLnN0dGF0dHVzLnVz'
-    'ZXIudjEuU3R0YXR0dXNCcmVha2Rvd25SCWJyZWFrZG93bg==');
+    'ZXIudjEuU3R0YXR0dXNCcmVha2Rvd25SCWJyZWFrZG93bhIyCgZsYWRkZXIYByADKAsyGi5zdH'
+    'RhdHR1cy51c2VyLnYxLlRpZXJCYW5kUgZsYWRkZXI=');
+
+@$core.Deprecated('Use tierBandDescriptor instead')
+const TierBand$json = {
+  '1': 'TierBand',
+  '2': [
+    {'1': 'tier', '3': 1, '4': 1, '5': 9, '10': 'tier'},
+    {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'floor', '3': 3, '4': 1, '5': 1, '10': 'floor'},
+  ],
+};
+
+/// Descriptor for `TierBand`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tierBandDescriptor = $convert.base64Decode(
+    'CghUaWVyQmFuZBISCgR0aWVyGAEgASgJUgR0aWVyEhQKBWxhYmVsGAIgASgJUgVsYWJlbBIUCg'
+    'VmbG9vchgDIAEoAVIFZmxvb3I=');
 
 @$core.Deprecated('Use listLeaderboardRequestDescriptor instead')
 const ListLeaderboardRequest$json = {

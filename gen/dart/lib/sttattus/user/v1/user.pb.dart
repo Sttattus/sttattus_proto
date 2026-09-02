@@ -1047,6 +1047,7 @@ class GetSttattusResponse extends $pb.GeneratedMessage {
     $core.String? tier,
     $core.String? auraColor,
     SttattusBreakdown? breakdown,
+    $core.Iterable<TierBand>? ladder,
   }) {
     final result = create();
     if (sttattusScore != null) result.sttattusScore = sttattusScore;
@@ -1055,6 +1056,7 @@ class GetSttattusResponse extends $pb.GeneratedMessage {
     if (tier != null) result.tier = tier;
     if (auraColor != null) result.auraColor = auraColor;
     if (breakdown != null) result.breakdown = breakdown;
+    if (ladder != null) result.ladder.addAll(ladder);
     return result;
   }
 
@@ -1079,6 +1081,8 @@ class GetSttattusResponse extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'auraColor')
     ..aOM<SttattusBreakdown>(6, _omitFieldNames ? '' : 'breakdown',
         subBuilder: SttattusBreakdown.create)
+    ..pPM<TierBand>(7, _omitFieldNames ? '' : 'ladder',
+        subBuilder: TierBand.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1155,6 +1159,95 @@ class GetSttattusResponse extends $pb.GeneratedMessage {
   void clearBreakdown() => $_clearField(6);
   @$pb.TagNumber(6)
   SttattusBreakdown ensureBreakdown() => $_ensure(5);
+
+  /// The ladder the server actually applied, so a client never has to restate
+  /// it. Atlas hardcoded sovereign=45/platinum=30/gold=18 while
+  /// sttattusTierFor uses 85/70/50, and the Membership screen told a member
+  /// scoring 58.9 that Sovereign began at 45 and then labelled them Gold.
+  /// Highest tier first.
+  @$pb.TagNumber(7)
+  $pb.PbList<TierBand> get ladder => $_getList(6);
+}
+
+/// One rung of the standing ladder. `floor` is the composite score at which the
+/// tier begins; it comes from sttattusTierFor, which is the only place the
+/// bands are defined.
+class TierBand extends $pb.GeneratedMessage {
+  factory TierBand({
+    $core.String? tier,
+    $core.String? label,
+    $core.double? floor,
+  }) {
+    final result = create();
+    if (tier != null) result.tier = tier;
+    if (label != null) result.label = label;
+    if (floor != null) result.floor = floor;
+    return result;
+  }
+
+  TierBand._();
+
+  factory TierBand.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TierBand.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TierBand',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.user.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'tier')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..aD(3, _omitFieldNames ? '' : 'floor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TierBand clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TierBand copyWith(void Function(TierBand) updates) =>
+      super.copyWith((message) => updates(message as TierBand)) as TierBand;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TierBand create() => TierBand._();
+  @$core.override
+  TierBand createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TierBand getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TierBand>(create);
+  static TierBand? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get tier => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set tier($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTier() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTier() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.double get floor => $_getN(2);
+  @$pb.TagNumber(3)
+  set floor($core.double value) => $_setDouble(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFloor() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFloor() => $_clearField(3);
 }
 
 class ListLeaderboardRequest extends $pb.GeneratedMessage {

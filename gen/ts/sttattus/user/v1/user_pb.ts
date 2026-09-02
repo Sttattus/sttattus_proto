@@ -679,6 +679,17 @@ export class GetSttattusResponse extends Message<GetSttattusResponse> {
    */
   breakdown?: SttattusBreakdown;
 
+  /**
+   * The ladder the server actually applied, so a client never has to restate
+   * it. Atlas hardcoded sovereign=45/platinum=30/gold=18 while
+   * sttattusTierFor uses 85/70/50, and the Membership screen told a member
+   * scoring 58.9 that Sovereign began at 45 and then labelled them Gold.
+   * Highest tier first.
+   *
+   * @generated from field: repeated sttattus.user.v1.TierBand ladder = 7;
+   */
+  ladder: TierBand[] = [];
+
   constructor(data?: PartialMessage<GetSttattusResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -693,6 +704,7 @@ export class GetSttattusResponse extends Message<GetSttattusResponse> {
     { no: 4, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "aura_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "breakdown", kind: "message", T: SttattusBreakdown },
+    { no: 7, name: "ladder", kind: "message", T: TierBand, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSttattusResponse {
@@ -709,6 +721,63 @@ export class GetSttattusResponse extends Message<GetSttattusResponse> {
 
   static equals(a: GetSttattusResponse | PlainMessage<GetSttattusResponse> | undefined, b: GetSttattusResponse | PlainMessage<GetSttattusResponse> | undefined): boolean {
     return proto3.util.equals(GetSttattusResponse, a, b);
+  }
+}
+
+/**
+ * One rung of the standing ladder. `floor` is the composite score at which the
+ * tier begins; it comes from sttattusTierFor, which is the only place the
+ * bands are defined.
+ *
+ * @generated from message sttattus.user.v1.TierBand
+ */
+export class TierBand extends Message<TierBand> {
+  /**
+   * "sovereign", "platinum", ...
+   *
+   * @generated from field: string tier = 1;
+   */
+  tier = "";
+
+  /**
+   * "SOVEREIGN"
+   *
+   * @generated from field: string label = 2;
+   */
+  label = "";
+
+  /**
+   * @generated from field: double floor = 3;
+   */
+  floor = 0;
+
+  constructor(data?: PartialMessage<TierBand>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.user.v1.TierBand";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "floor", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TierBand {
+    return new TierBand().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TierBand {
+    return new TierBand().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TierBand {
+    return new TierBand().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TierBand | PlainMessage<TierBand> | undefined, b: TierBand | PlainMessage<TierBand> | undefined): boolean {
+    return proto3.util.equals(TierBand, a, b);
   }
 }
 

@@ -88,6 +88,21 @@ message GetSttattusResponse {
   string tier = 4;
   string aura_color = 5;
   SttattusBreakdown breakdown = 6;
+  // The ladder the server actually applied, so a client never has to restate
+  // it. Atlas hardcoded sovereign=45/platinum=30/gold=18 while
+  // sttattusTierFor uses 85/70/50, and the Membership screen told a member
+  // scoring 58.9 that Sovereign began at 45 and then labelled them Gold.
+  // Highest tier first.
+  repeated TierBand ladder = 7;
+}
+
+// One rung of the standing ladder. `floor` is the composite score at which the
+// tier begins; it comes from sttattusTierFor, which is the only place the
+// bands are defined.
+message TierBand {
+  string tier = 1;   // "sovereign", "platinum", ...
+  string label = 2;  // "SOVEREIGN"
+  double floor = 3;
 }
 
 message ListLeaderboardRequest {
