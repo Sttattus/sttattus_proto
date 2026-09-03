@@ -4763,6 +4763,23 @@ export class CompatibilityMatrix extends Message$1<CompatibilityMatrix> {
    */
   dynamicTensionStatus = "";
 
+  /**
+   * How many of the model's dimensions had data on BOTH sides and so actually
+   * contributed. A dimension where either person has no signal (e.g. neither
+   * has opened Forge) is excluded rather than scored as perfect agreement, so
+   * aggregate_score is the mean of exactly `factors_considered` factors.
+   *
+   * @generated from field: int32 factors_considered = 6;
+   */
+  factorsConsidered = 0;
+
+  /**
+   * Dimensions in the model (currently 7): the "of N" in "across 4 of 7".
+   *
+   * @generated from field: int32 factors_total = 7;
+   */
+  factorsTotal = 0;
+
   constructor(data?: PartialMessage<CompatibilityMatrix>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4776,6 +4793,8 @@ export class CompatibilityMatrix extends Message$1<CompatibilityMatrix> {
     { no: 3, name: "aggregate_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "factors", kind: "message", T: CompatibilityFactor, repeated: true },
     { no: 5, name: "dynamic_tension_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "factors_considered", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "factors_total", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompatibilityMatrix {

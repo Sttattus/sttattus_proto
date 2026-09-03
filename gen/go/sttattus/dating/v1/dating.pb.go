@@ -5759,8 +5759,15 @@ type CompatibilityMatrix struct {
 	AggregateScore       float64                `protobuf:"fixed64,3,opt,name=aggregate_score,json=aggregateScore,proto3" json:"aggregate_score,omitempty"`
 	Factors              []*CompatibilityFactor `protobuf:"bytes,4,rep,name=factors,proto3" json:"factors,omitempty"`
 	DynamicTensionStatus string                 `protobuf:"bytes,5,opt,name=dynamic_tension_status,json=dynamicTensionStatus,proto3" json:"dynamic_tension_status,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// How many of the model's dimensions had data on BOTH sides and so actually
+	// contributed. A dimension where either person has no signal (e.g. neither
+	// has opened Forge) is excluded rather than scored as perfect agreement, so
+	// aggregate_score is the mean of exactly `factors_considered` factors.
+	FactorsConsidered int32 `protobuf:"varint,6,opt,name=factors_considered,json=factorsConsidered,proto3" json:"factors_considered,omitempty"`
+	// Dimensions in the model (currently 7): the "of N" in "across 4 of 7".
+	FactorsTotal  int32 `protobuf:"varint,7,opt,name=factors_total,json=factorsTotal,proto3" json:"factors_total,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CompatibilityMatrix) Reset() {
@@ -5826,6 +5833,20 @@ func (x *CompatibilityMatrix) GetDynamicTensionStatus() string {
 		return x.DynamicTensionStatus
 	}
 	return ""
+}
+
+func (x *CompatibilityMatrix) GetFactorsConsidered() int32 {
+	if x != nil {
+		return x.FactorsConsidered
+	}
+	return 0
+}
+
+func (x *CompatibilityMatrix) GetFactorsTotal() int32 {
+	if x != nil {
+		return x.FactorsTotal
+	}
+	return 0
 }
 
 type GetCompatibilityMatrixRequest struct {
@@ -9784,14 +9805,16 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x13CompatibilityFactor\x12\x14\n" +
 	"\x05label\x18\x01 \x01(\tR\x05label\x12\x14\n" +
 	"\x05score\x18\x02 \x01(\x01R\x05score\x12&\n" +
-	"\x0einterpretation\x18\x03 \x01(\tR\x0einterpretation\"\xfd\x01\n" +
+	"\x0einterpretation\x18\x03 \x01(\tR\x0einterpretation\"\xd1\x02\n" +
 	"\x13CompatibilityMatrix\x12 \n" +
 	"\fleft_user_id\x18\x01 \x01(\tR\n" +
 	"leftUserId\x12\"\n" +
 	"\rright_user_id\x18\x02 \x01(\tR\vrightUserId\x12'\n" +
 	"\x0faggregate_score\x18\x03 \x01(\x01R\x0eaggregateScore\x12A\n" +
 	"\afactors\x18\x04 \x03(\v2'.sttattus.dating.v1.CompatibilityFactorR\afactors\x124\n" +
-	"\x16dynamic_tension_status\x18\x05 \x01(\tR\x14dynamicTensionStatus\"C\n" +
+	"\x16dynamic_tension_status\x18\x05 \x01(\tR\x14dynamicTensionStatus\x12-\n" +
+	"\x12factors_considered\x18\x06 \x01(\x05R\x11factorsConsidered\x12#\n" +
+	"\rfactors_total\x18\a \x01(\x05R\ffactorsTotal\"C\n" +
 	"\x1dGetCompatibilityMatrixRequest\x12\"\n" +
 	"\rother_user_id\x18\x01 \x01(\tR\votherUserId\"a\n" +
 	"\x1eGetCompatibilityMatrixResponse\x12?\n" +

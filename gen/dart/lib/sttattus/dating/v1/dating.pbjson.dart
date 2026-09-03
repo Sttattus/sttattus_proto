@@ -1991,6 +1991,14 @@ const CompatibilityMatrix$json = {
       '5': 9,
       '10': 'dynamicTensionStatus'
     },
+    {
+      '1': 'factors_considered',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'factorsConsidered'
+    },
+    {'1': 'factors_total', '3': 7, '4': 1, '5': 5, '10': 'factorsTotal'},
   ],
 };
 
@@ -2000,7 +2008,9 @@ final $typed_data.Uint8List compatibilityMatrixDescriptor = $convert.base64Decod
     'IiCg1yaWdodF91c2VyX2lkGAIgASgJUgtyaWdodFVzZXJJZBInCg9hZ2dyZWdhdGVfc2NvcmUY'
     'AyABKAFSDmFnZ3JlZ2F0ZVNjb3JlEkEKB2ZhY3RvcnMYBCADKAsyJy5zdHRhdHR1cy5kYXRpbm'
     'cudjEuQ29tcGF0aWJpbGl0eUZhY3RvclIHZmFjdG9ycxI0ChZkeW5hbWljX3RlbnNpb25fc3Rh'
-    'dHVzGAUgASgJUhRkeW5hbWljVGVuc2lvblN0YXR1cw==');
+    'dHVzGAUgASgJUhRkeW5hbWljVGVuc2lvblN0YXR1cxItChJmYWN0b3JzX2NvbnNpZGVyZWQYBi'
+    'ABKAVSEWZhY3RvcnNDb25zaWRlcmVkEiMKDWZhY3RvcnNfdG90YWwYByABKAVSDGZhY3RvcnNU'
+    'b3RhbA==');
 
 @$core.Deprecated('Use getCompatibilityMatrixRequestDescriptor instead')
 const GetCompatibilityMatrixRequest$json = {

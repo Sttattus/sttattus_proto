@@ -563,6 +563,13 @@ message CompatibilityMatrix {
   double aggregate_score = 3;
   repeated CompatibilityFactor factors = 4;
   string dynamic_tension_status = 5;
+  // How many of the model's dimensions had data on BOTH sides and so actually
+  // contributed. A dimension where either person has no signal (e.g. neither
+  // has opened Forge) is excluded rather than scored as perfect agreement, so
+  // aggregate_score is the mean of exactly `factors_considered` factors.
+  int32 factors_considered = 6;
+  // Dimensions in the model (currently 7): the "of N" in "across 4 of 7".
+  int32 factors_total = 7;
 }
 
 message GetCompatibilityMatrixRequest {

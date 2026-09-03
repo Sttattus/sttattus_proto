@@ -7389,6 +7389,8 @@ class CompatibilityMatrix extends $pb.GeneratedMessage {
     $core.double? aggregateScore,
     $core.Iterable<CompatibilityFactor>? factors,
     $core.String? dynamicTensionStatus,
+    $core.int? factorsConsidered,
+    $core.int? factorsTotal,
   }) {
     final result = create();
     if (leftUserId != null) result.leftUserId = leftUserId;
@@ -7397,6 +7399,8 @@ class CompatibilityMatrix extends $pb.GeneratedMessage {
     if (factors != null) result.factors.addAll(factors);
     if (dynamicTensionStatus != null)
       result.dynamicTensionStatus = dynamicTensionStatus;
+    if (factorsConsidered != null) result.factorsConsidered = factorsConsidered;
+    if (factorsTotal != null) result.factorsTotal = factorsTotal;
     return result;
   }
 
@@ -7420,6 +7424,8 @@ class CompatibilityMatrix extends $pb.GeneratedMessage {
     ..pPM<CompatibilityFactor>(4, _omitFieldNames ? '' : 'factors',
         subBuilder: CompatibilityFactor.create)
     ..aOS(5, _omitFieldNames ? '' : 'dynamicTensionStatus')
+    ..aI(6, _omitFieldNames ? '' : 'factorsConsidered')
+    ..aI(7, _omitFieldNames ? '' : 'factorsTotal')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7479,6 +7485,29 @@ class CompatibilityMatrix extends $pb.GeneratedMessage {
   $core.bool hasDynamicTensionStatus() => $_has(4);
   @$pb.TagNumber(5)
   void clearDynamicTensionStatus() => $_clearField(5);
+
+  /// How many of the model's dimensions had data on BOTH sides and so actually
+  /// contributed. A dimension where either person has no signal (e.g. neither
+  /// has opened Forge) is excluded rather than scored as perfect agreement, so
+  /// aggregate_score is the mean of exactly `factors_considered` factors.
+  @$pb.TagNumber(6)
+  $core.int get factorsConsidered => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set factorsConsidered($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFactorsConsidered() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFactorsConsidered() => $_clearField(6);
+
+  /// Dimensions in the model (currently 7): the "of N" in "across 4 of 7".
+  @$pb.TagNumber(7)
+  $core.int get factorsTotal => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set factorsTotal($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFactorsTotal() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFactorsTotal() => $_clearField(7);
 }
 
 class GetCompatibilityMatrixRequest extends $pb.GeneratedMessage {
