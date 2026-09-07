@@ -212,6 +212,15 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$searchIntelligence, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.RecordIntelligenceSearchOutcomeResponse>
+      recordIntelligenceSearchOutcome(
+    $0.RecordIntelligenceSearchOutcomeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordIntelligenceSearchOutcome, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.ListSavedQueriesResponse> listSavedQueries(
     $0.ListSavedQueriesRequest request, {
     $grpc.CallOptions? options,
@@ -944,6 +953,13 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/SearchIntelligence',
       ($0.SearchIntelligenceRequest value) => value.writeToBuffer(),
       $0.SearchIntelligenceResponse.fromBuffer);
+  static final _$recordIntelligenceSearchOutcome = $grpc.ClientMethod<
+          $0.RecordIntelligenceSearchOutcomeRequest,
+          $0.RecordIntelligenceSearchOutcomeResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordIntelligenceSearchOutcome',
+      ($0.RecordIntelligenceSearchOutcomeRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordIntelligenceSearchOutcomeResponse.fromBuffer);
   static final _$listSavedQueries = $grpc.ClientMethod<
           $0.ListSavedQueriesRequest, $0.ListSavedQueriesResponse>(
       '/sttattus.onyx.v1.OnyxService/ListSavedQueries',
@@ -1561,6 +1577,16 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.SearchIntelligenceRequest.fromBuffer(value),
         ($0.SearchIntelligenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordIntelligenceSearchOutcomeRequest,
+            $0.RecordIntelligenceSearchOutcomeResponse>(
+        'RecordIntelligenceSearchOutcome',
+        recordIntelligenceSearchOutcome_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordIntelligenceSearchOutcomeRequest.fromBuffer(value),
+        ($0.RecordIntelligenceSearchOutcomeResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListSavedQueriesRequest,
             $0.ListSavedQueriesResponse>(
         'ListSavedQueries',
@@ -2489,6 +2515,18 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.SearchIntelligenceResponse> searchIntelligence(
       $grpc.ServiceCall call, $0.SearchIntelligenceRequest request);
+
+  $async.Future<$0.RecordIntelligenceSearchOutcomeResponse>
+      recordIntelligenceSearchOutcome_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordIntelligenceSearchOutcomeRequest>
+              $request) async {
+    return recordIntelligenceSearchOutcome($call, await $request);
+  }
+
+  $async.Future<$0.RecordIntelligenceSearchOutcomeResponse>
+      recordIntelligenceSearchOutcome($grpc.ServiceCall call,
+          $0.RecordIntelligenceSearchOutcomeRequest request);
 
   $async.Future<$0.ListSavedQueriesResponse> listSavedQueries_Pre(
       $grpc.ServiceCall $call,

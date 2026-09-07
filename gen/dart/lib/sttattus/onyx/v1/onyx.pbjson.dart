@@ -1304,6 +1304,16 @@ const IntelligenceSearchFilters$json = {
     {'1': 'entitlement', '3': 8, '4': 1, '5': 9, '10': 'entitlement'},
     {'1': 'tags', '3': 9, '4': 3, '5': 9, '10': 'tags'},
     {'1': 'sort', '3': 10, '4': 1, '5': 9, '10': 'sort'},
+    {'1': 'jurisdiction', '3': 11, '4': 1, '5': 9, '10': 'jurisdiction'},
+    {
+      '1': 'min_evidence_quality',
+      '3': 12,
+      '4': 1,
+      '5': 1,
+      '10': 'minEvidenceQuality'
+    },
+    {'1': 'change_kind', '3': 13, '4': 1, '5': 9, '10': 'changeKind'},
+    {'1': 'project_id', '3': 14, '4': 1, '5': 9, '10': 'projectId'},
   ],
 };
 
@@ -1315,7 +1325,10 @@ final $typed_data.Uint8List intelligenceSearchFiltersDescriptor = $convert.base6
     '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg5wdWJsaXNoZWRBZnRlchJFChBwdWJsaXNoZWRf'
     'YmVmb3JlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIPcHVibGlzaGVkQmVmb3'
     'JlEh0KCnJlYWRfc3RhdGUYByABKAlSCXJlYWRTdGF0ZRIgCgtlbnRpdGxlbWVudBgIIAEoCVIL'
-    'ZW50aXRsZW1lbnQSEgoEdGFncxgJIAMoCVIEdGFncxISCgRzb3J0GAogASgJUgRzb3J0');
+    'ZW50aXRsZW1lbnQSEgoEdGFncxgJIAMoCVIEdGFncxISCgRzb3J0GAogASgJUgRzb3J0EiIKDG'
+    'p1cmlzZGljdGlvbhgLIAEoCVIManVyaXNkaWN0aW9uEjAKFG1pbl9ldmlkZW5jZV9xdWFsaXR5'
+    'GAwgASgBUhJtaW5FdmlkZW5jZVF1YWxpdHkSHwoLY2hhbmdlX2tpbmQYDSABKAlSCmNoYW5nZU'
+    'tpbmQSHQoKcHJvamVjdF9pZBgOIAEoCVIJcHJvamVjdElk');
 
 @$core.Deprecated('Use searchIntelligenceRequestDescriptor instead')
 const SearchIntelligenceRequest$json = {
@@ -1399,6 +1412,7 @@ const SearchIntelligenceResponse$json = {
     {'1': 'query_digest', '3': 3, '4': 1, '5': 9, '10': 'queryDigest'},
     {'1': 'elapsed_ms', '3': 4, '4': 1, '5': 5, '10': 'elapsedMs'},
     {'1': 'ranking_version', '3': 5, '4': 1, '5': 9, '10': 'rankingVersion'},
+    {'1': 'search_event_id', '3': 6, '4': 1, '5': 9, '10': 'searchEventId'},
   ],
 };
 
@@ -1408,7 +1422,44 @@ final $typed_data.Uint8List searchIntelligenceResponseDescriptor = $convert.base
     'Mub255eC52MS5JbnRlbGxpZ2VuY2VTZWFyY2hSZXN1bHRSB3Jlc3VsdHMSFAoFdG90YWwYAiAB'
     'KAVSBXRvdGFsEiEKDHF1ZXJ5X2RpZ2VzdBgDIAEoCVILcXVlcnlEaWdlc3QSHQoKZWxhcHNlZF'
     '9tcxgEIAEoBVIJZWxhcHNlZE1zEicKD3JhbmtpbmdfdmVyc2lvbhgFIAEoCVIOcmFua2luZ1Zl'
-    'cnNpb24=');
+    'cnNpb24SJgoPc2VhcmNoX2V2ZW50X2lkGAYgASgJUg1zZWFyY2hFdmVudElk');
+
+@$core
+    .Deprecated('Use recordIntelligenceSearchOutcomeRequestDescriptor instead')
+const RecordIntelligenceSearchOutcomeRequest$json = {
+  '1': 'RecordIntelligenceSearchOutcomeRequest',
+  '2': [
+    {'1': 'search_event_id', '3': 1, '4': 1, '5': 9, '10': 'searchEventId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'result_id', '3': 3, '4': 1, '5': 9, '10': 'resultId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RecordIntelligenceSearchOutcomeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordIntelligenceSearchOutcomeRequestDescriptor =
+    $convert.base64Decode(
+        'CiZSZWNvcmRJbnRlbGxpZ2VuY2VTZWFyY2hPdXRjb21lUmVxdWVzdBImCg9zZWFyY2hfZXZlbn'
+        'RfaWQYASABKAlSDXNlYXJjaEV2ZW50SWQSFgoGYWN0aW9uGAIgASgJUgZhY3Rpb24SGwoJcmVz'
+        'dWx0X2lkGAMgASgJUghyZXN1bHRJZBIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlSEGNsaW'
+        'VudE11dGF0aW9uSWQ=');
+
+@$core
+    .Deprecated('Use recordIntelligenceSearchOutcomeResponseDescriptor instead')
+const RecordIntelligenceSearchOutcomeResponse$json = {
+  '1': 'RecordIntelligenceSearchOutcomeResponse',
+};
+
+/// Descriptor for `RecordIntelligenceSearchOutcomeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordIntelligenceSearchOutcomeResponseDescriptor =
+    $convert.base64Decode(
+        'CidSZWNvcmRJbnRlbGxpZ2VuY2VTZWFyY2hPdXRjb21lUmVzcG9uc2U=');
 
 @$core.Deprecated('Use onyxSavedQueryDescriptor instead')
 const OnyxSavedQuery$json = {
@@ -1425,8 +1476,6 @@ const OnyxSavedQuery$json = {
       '6': '.sttattus.onyx.v1.IntelligenceSearchFilters',
       '10': 'filters'
     },
-    {'1': 'alert_mode', '3': 5, '4': 1, '5': 9, '10': 'alertMode'},
-    {'1': 'threshold', '3': 6, '4': 1, '5': 1, '10': 'threshold'},
     {
       '1': 'created_at',
       '3': 7,
@@ -1444,16 +1493,19 @@ const OnyxSavedQuery$json = {
       '10': 'updatedAt'
     },
   ],
+  '9': [
+    {'1': 5, '2': 6},
+    {'1': 6, '2': 7},
+  ],
 };
 
 /// Descriptor for `OnyxSavedQuery`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List onyxSavedQueryDescriptor = $convert.base64Decode(
     'Cg5Pbnl4U2F2ZWRRdWVyeRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIUCg'
     'VxdWVyeRgDIAEoCVIFcXVlcnkSRQoHZmlsdGVycxgEIAEoCzIrLnN0dGF0dHVzLm9ueXgudjEu'
-    'SW50ZWxsaWdlbmNlU2VhcmNoRmlsdGVyc1IHZmlsdGVycxIdCgphbGVydF9tb2RlGAUgASgJUg'
-    'lhbGVydE1vZGUSHAoJdGhyZXNob2xkGAYgASgBUgl0aHJlc2hvbGQSOQoKY3JlYXRlZF9hdBgH'
-    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2'
-    'F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+    'SW50ZWxsaWdlbmNlU2VhcmNoRmlsdGVyc1IHZmlsdGVycxI5CgpjcmVhdGVkX2F0GAcgASgLMh'
+    'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCAB'
+    'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXRKBAgFEAZKBAgGEAc=');
 
 @$core.Deprecated('Use listSavedQueriesRequestDescriptor instead')
 const ListSavedQueriesRequest$json = {
@@ -1500,8 +1552,6 @@ const UpsertSavedQueryRequest$json = {
       '6': '.sttattus.onyx.v1.IntelligenceSearchFilters',
       '10': 'filters'
     },
-    {'1': 'alert_mode', '3': 5, '4': 1, '5': 9, '10': 'alertMode'},
-    {'1': 'threshold', '3': 6, '4': 1, '5': 1, '10': 'threshold'},
     {
       '1': 'client_mutation_id',
       '3': 7,
@@ -1510,15 +1560,18 @@ const UpsertSavedQueryRequest$json = {
       '10': 'clientMutationId'
     },
   ],
+  '9': [
+    {'1': 5, '2': 6},
+    {'1': 6, '2': 7},
+  ],
 };
 
 /// Descriptor for `UpsertSavedQueryRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List upsertSavedQueryRequestDescriptor = $convert.base64Decode(
     'ChdVcHNlcnRTYXZlZFF1ZXJ5UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCV'
     'IEbmFtZRIUCgVxdWVyeRgDIAEoCVIFcXVlcnkSRQoHZmlsdGVycxgEIAEoCzIrLnN0dGF0dHVz'
-    'Lm9ueXgudjEuSW50ZWxsaWdlbmNlU2VhcmNoRmlsdGVyc1IHZmlsdGVycxIdCgphbGVydF9tb2'
-    'RlGAUgASgJUglhbGVydE1vZGUSHAoJdGhyZXNob2xkGAYgASgBUgl0aHJlc2hvbGQSLAoSY2xp'
-    'ZW50X211dGF0aW9uX2lkGAcgASgJUhBjbGllbnRNdXRhdGlvbklk');
+    'Lm9ueXgudjEuSW50ZWxsaWdlbmNlU2VhcmNoRmlsdGVyc1IHZmlsdGVycxIsChJjbGllbnRfbX'
+    'V0YXRpb25faWQYByABKAlSEGNsaWVudE11dGF0aW9uSWRKBAgFEAZKBAgGEAc=');
 
 @$core.Deprecated('Use upsertSavedQueryResponseDescriptor instead')
 const UpsertSavedQueryResponse$json = {

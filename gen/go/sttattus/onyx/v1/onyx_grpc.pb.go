@@ -42,6 +42,7 @@ const (
 	OnyxService_ListMyReaderAnnotations_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
 	OnyxService_SearchReader_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/SearchReader"
 	OnyxService_SearchIntelligence_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SearchIntelligence"
+	OnyxService_RecordIntelligenceSearchOutcome_FullMethodName    = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceSearchOutcome"
 	OnyxService_ListSavedQueries_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListSavedQueries"
 	OnyxService_UpsertSavedQuery_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/UpsertSavedQuery"
 	OnyxService_DeleteSavedQuery_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/DeleteSavedQuery"
@@ -163,6 +164,7 @@ type OnyxServiceClient interface {
 	ListMyReaderAnnotations(ctx context.Context, in *ListMyReaderAnnotationsRequest, opts ...grpc.CallOption) (*ListMyReaderAnnotationsResponse, error)
 	SearchReader(ctx context.Context, in *SearchReaderRequest, opts ...grpc.CallOption) (*SearchReaderResponse, error)
 	SearchIntelligence(ctx context.Context, in *SearchIntelligenceRequest, opts ...grpc.CallOption) (*SearchIntelligenceResponse, error)
+	RecordIntelligenceSearchOutcome(ctx context.Context, in *RecordIntelligenceSearchOutcomeRequest, opts ...grpc.CallOption) (*RecordIntelligenceSearchOutcomeResponse, error)
 	ListSavedQueries(ctx context.Context, in *ListSavedQueriesRequest, opts ...grpc.CallOption) (*ListSavedQueriesResponse, error)
 	UpsertSavedQuery(ctx context.Context, in *UpsertSavedQueryRequest, opts ...grpc.CallOption) (*UpsertSavedQueryResponse, error)
 	DeleteSavedQuery(ctx context.Context, in *DeleteSavedQueryRequest, opts ...grpc.CallOption) (*DeleteSavedQueryResponse, error)
@@ -494,6 +496,16 @@ func (c *onyxServiceClient) SearchIntelligence(ctx context.Context, in *SearchIn
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SearchIntelligenceResponse)
 	err := c.cc.Invoke(ctx, OnyxService_SearchIntelligence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordIntelligenceSearchOutcome(ctx context.Context, in *RecordIntelligenceSearchOutcomeRequest, opts ...grpc.CallOption) (*RecordIntelligenceSearchOutcomeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordIntelligenceSearchOutcomeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordIntelligenceSearchOutcome_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1348,6 +1360,7 @@ type OnyxServiceServer interface {
 	ListMyReaderAnnotations(context.Context, *ListMyReaderAnnotationsRequest) (*ListMyReaderAnnotationsResponse, error)
 	SearchReader(context.Context, *SearchReaderRequest) (*SearchReaderResponse, error)
 	SearchIntelligence(context.Context, *SearchIntelligenceRequest) (*SearchIntelligenceResponse, error)
+	RecordIntelligenceSearchOutcome(context.Context, *RecordIntelligenceSearchOutcomeRequest) (*RecordIntelligenceSearchOutcomeResponse, error)
 	ListSavedQueries(context.Context, *ListSavedQueriesRequest) (*ListSavedQueriesResponse, error)
 	UpsertSavedQuery(context.Context, *UpsertSavedQueryRequest) (*UpsertSavedQueryResponse, error)
 	DeleteSavedQuery(context.Context, *DeleteSavedQueryRequest) (*DeleteSavedQueryResponse, error)
@@ -1523,6 +1536,9 @@ func (UnimplementedOnyxServiceServer) SearchReader(context.Context, *SearchReade
 }
 func (UnimplementedOnyxServiceServer) SearchIntelligence(context.Context, *SearchIntelligenceRequest) (*SearchIntelligenceResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SearchIntelligence not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordIntelligenceSearchOutcome(context.Context, *RecordIntelligenceSearchOutcomeRequest) (*RecordIntelligenceSearchOutcomeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordIntelligenceSearchOutcome not implemented")
 }
 func (UnimplementedOnyxServiceServer) ListSavedQueries(context.Context, *ListSavedQueriesRequest) (*ListSavedQueriesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListSavedQueries not implemented")
@@ -2198,6 +2214,24 @@ func _OnyxService_SearchIntelligence_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).SearchIntelligence(ctx, req.(*SearchIntelligenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordIntelligenceSearchOutcome_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordIntelligenceSearchOutcomeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordIntelligenceSearchOutcome(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordIntelligenceSearchOutcome_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordIntelligenceSearchOutcome(ctx, req.(*RecordIntelligenceSearchOutcomeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3758,6 +3792,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SearchIntelligence",
 			Handler:    _OnyxService_SearchIntelligence_Handler,
+		},
+		{
+			MethodName: "RecordIntelligenceSearchOutcome",
+			Handler:    _OnyxService_RecordIntelligenceSearchOutcome_Handler,
 		},
 		{
 			MethodName: "ListSavedQueries",

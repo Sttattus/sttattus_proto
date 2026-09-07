@@ -409,6 +409,10 @@ message IntelligenceSearchFilters {
   string entitlement = 8; // any | readable | locked
   repeated string tags = 9;
   string sort = 10; // relevance | newest | editorial
+  string jurisdiction = 11;
+  double min_evidence_quality = 12;
+  string change_kind = 13; // any | new | updated | corrected
+  string project_id = 14;
 }
 
 message SearchIntelligenceRequest {
@@ -437,15 +441,23 @@ message SearchIntelligenceResponse {
   string query_digest = 3;
   int32 elapsed_ms = 4;
   string ranking_version = 5;
+  string search_event_id = 6;
 }
+
+message RecordIntelligenceSearchOutcomeRequest {
+  string search_event_id = 1;
+  string action = 2; // open | reformulate | save | citation_open
+  string result_id = 3;
+  string client_mutation_id = 4;
+}
+message RecordIntelligenceSearchOutcomeResponse {}
 
 message OnyxSavedQuery {
   string id = 1;
   string name = 2;
   string query = 3;
   IntelligenceSearchFilters filters = 4;
-  string alert_mode = 5; // off | instant | daily
-  double threshold = 6;
+  reserved 5, 6; // alert automation belongs to typed watchlists
   google.protobuf.Timestamp created_at = 7;
   google.protobuf.Timestamp updated_at = 8;
 }
@@ -459,8 +471,7 @@ message UpsertSavedQueryRequest {
   string name = 2;
   string query = 3;
   IntelligenceSearchFilters filters = 4;
-  string alert_mode = 5;
-  double threshold = 6;
+  reserved 5, 6;
   string client_mutation_id = 7;
 }
 message UpsertSavedQueryResponse {
@@ -1707,6 +1718,7 @@ service OnyxService {
   rpc ListMyReaderAnnotations(ListMyReaderAnnotationsRequest) returns (ListMyReaderAnnotationsResponse);
   rpc SearchReader(SearchReaderRequest) returns (SearchReaderResponse);
   rpc SearchIntelligence(SearchIntelligenceRequest) returns (SearchIntelligenceResponse);
+  rpc RecordIntelligenceSearchOutcome(RecordIntelligenceSearchOutcomeRequest) returns (RecordIntelligenceSearchOutcomeResponse);
   rpc ListSavedQueries(ListSavedQueriesRequest) returns (ListSavedQueriesResponse);
   rpc UpsertSavedQuery(UpsertSavedQueryRequest) returns (UpsertSavedQueryResponse);
   rpc DeleteSavedQuery(DeleteSavedQueryRequest) returns (DeleteSavedQueryResponse);

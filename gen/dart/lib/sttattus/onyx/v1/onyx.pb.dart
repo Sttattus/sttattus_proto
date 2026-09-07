@@ -4809,6 +4809,10 @@ class IntelligenceSearchFilters extends $pb.GeneratedMessage {
     $core.String? entitlement,
     $core.Iterable<$core.String>? tags,
     $core.String? sort,
+    $core.String? jurisdiction,
+    $core.double? minEvidenceQuality,
+    $core.String? changeKind,
+    $core.String? projectId,
   }) {
     final result = create();
     if (scope != null) result.scope = scope;
@@ -4821,6 +4825,11 @@ class IntelligenceSearchFilters extends $pb.GeneratedMessage {
     if (entitlement != null) result.entitlement = entitlement;
     if (tags != null) result.tags.addAll(tags);
     if (sort != null) result.sort = sort;
+    if (jurisdiction != null) result.jurisdiction = jurisdiction;
+    if (minEvidenceQuality != null)
+      result.minEvidenceQuality = minEvidenceQuality;
+    if (changeKind != null) result.changeKind = changeKind;
+    if (projectId != null) result.projectId = projectId;
     return result;
   }
 
@@ -4850,6 +4859,10 @@ class IntelligenceSearchFilters extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'entitlement')
     ..pPS(9, _omitFieldNames ? '' : 'tags')
     ..aOS(10, _omitFieldNames ? '' : 'sort')
+    ..aOS(11, _omitFieldNames ? '' : 'jurisdiction')
+    ..aD(12, _omitFieldNames ? '' : 'minEvidenceQuality')
+    ..aOS(13, _omitFieldNames ? '' : 'changeKind')
+    ..aOS(14, _omitFieldNames ? '' : 'projectId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4953,6 +4966,42 @@ class IntelligenceSearchFilters extends $pb.GeneratedMessage {
   $core.bool hasSort() => $_has(9);
   @$pb.TagNumber(10)
   void clearSort() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get jurisdiction => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set jurisdiction($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasJurisdiction() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearJurisdiction() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.double get minEvidenceQuality => $_getN(11);
+  @$pb.TagNumber(12)
+  set minEvidenceQuality($core.double value) => $_setDouble(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasMinEvidenceQuality() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMinEvidenceQuality() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get changeKind => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set changeKind($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasChangeKind() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearChangeKind() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get projectId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set projectId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasProjectId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearProjectId() => $_clearField(14);
 }
 
 class SearchIntelligenceRequest extends $pb.GeneratedMessage {
@@ -5215,6 +5264,7 @@ class SearchIntelligenceResponse extends $pb.GeneratedMessage {
     $core.String? queryDigest,
     $core.int? elapsedMs,
     $core.String? rankingVersion,
+    $core.String? searchEventId,
   }) {
     final result = create();
     if (results != null) result.results.addAll(results);
@@ -5222,6 +5272,7 @@ class SearchIntelligenceResponse extends $pb.GeneratedMessage {
     if (queryDigest != null) result.queryDigest = queryDigest;
     if (elapsedMs != null) result.elapsedMs = elapsedMs;
     if (rankingVersion != null) result.rankingVersion = rankingVersion;
+    if (searchEventId != null) result.searchEventId = searchEventId;
     return result;
   }
 
@@ -5245,6 +5296,7 @@ class SearchIntelligenceResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'queryDigest')
     ..aI(4, _omitFieldNames ? '' : 'elapsedMs')
     ..aOS(5, _omitFieldNames ? '' : 'rankingVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'searchEventId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5306,6 +5358,155 @@ class SearchIntelligenceResponse extends $pb.GeneratedMessage {
   $core.bool hasRankingVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearRankingVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get searchEventId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set searchEventId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSearchEventId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSearchEventId() => $_clearField(6);
+}
+
+class RecordIntelligenceSearchOutcomeRequest extends $pb.GeneratedMessage {
+  factory RecordIntelligenceSearchOutcomeRequest({
+    $core.String? searchEventId,
+    $core.String? action,
+    $core.String? resultId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (searchEventId != null) result.searchEventId = searchEventId;
+    if (action != null) result.action = action;
+    if (resultId != null) result.resultId = resultId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RecordIntelligenceSearchOutcomeRequest._();
+
+  factory RecordIntelligenceSearchOutcomeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordIntelligenceSearchOutcomeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordIntelligenceSearchOutcomeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'searchEventId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'resultId')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceSearchOutcomeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceSearchOutcomeRequest copyWith(
+          void Function(RecordIntelligenceSearchOutcomeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordIntelligenceSearchOutcomeRequest))
+          as RecordIntelligenceSearchOutcomeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceSearchOutcomeRequest create() =>
+      RecordIntelligenceSearchOutcomeRequest._();
+  @$core.override
+  RecordIntelligenceSearchOutcomeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceSearchOutcomeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordIntelligenceSearchOutcomeRequest>(create);
+  static RecordIntelligenceSearchOutcomeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get searchEventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set searchEventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSearchEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSearchEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resultId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resultId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResultId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResultId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RecordIntelligenceSearchOutcomeResponse extends $pb.GeneratedMessage {
+  factory RecordIntelligenceSearchOutcomeResponse() => create();
+
+  RecordIntelligenceSearchOutcomeResponse._();
+
+  factory RecordIntelligenceSearchOutcomeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordIntelligenceSearchOutcomeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordIntelligenceSearchOutcomeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceSearchOutcomeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceSearchOutcomeResponse copyWith(
+          void Function(RecordIntelligenceSearchOutcomeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordIntelligenceSearchOutcomeResponse))
+          as RecordIntelligenceSearchOutcomeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceSearchOutcomeResponse create() =>
+      RecordIntelligenceSearchOutcomeResponse._();
+  @$core.override
+  RecordIntelligenceSearchOutcomeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceSearchOutcomeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordIntelligenceSearchOutcomeResponse>(create);
+  static RecordIntelligenceSearchOutcomeResponse? _defaultInstance;
 }
 
 class OnyxSavedQuery extends $pb.GeneratedMessage {
@@ -5314,8 +5515,6 @@ class OnyxSavedQuery extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? query,
     IntelligenceSearchFilters? filters,
-    $core.String? alertMode,
-    $core.double? threshold,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
   }) {
@@ -5324,8 +5523,6 @@ class OnyxSavedQuery extends $pb.GeneratedMessage {
     if (name != null) result.name = name;
     if (query != null) result.query = query;
     if (filters != null) result.filters = filters;
-    if (alertMode != null) result.alertMode = alertMode;
-    if (threshold != null) result.threshold = threshold;
     if (createdAt != null) result.createdAt = createdAt;
     if (updatedAt != null) result.updatedAt = updatedAt;
     return result;
@@ -5350,8 +5547,6 @@ class OnyxSavedQuery extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'query')
     ..aOM<IntelligenceSearchFilters>(4, _omitFieldNames ? '' : 'filters',
         subBuilder: IntelligenceSearchFilters.create)
-    ..aOS(5, _omitFieldNames ? '' : 'alertMode')
-    ..aD(6, _omitFieldNames ? '' : 'threshold')
     ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt',
@@ -5415,45 +5610,27 @@ class OnyxSavedQuery extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   IntelligenceSearchFilters ensureFilters() => $_ensure(3);
 
-  @$pb.TagNumber(5)
-  $core.String get alertMode => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set alertMode($core.String value) => $_setString(4, value);
-  @$pb.TagNumber(5)
-  $core.bool hasAlertMode() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearAlertMode() => $_clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.double get threshold => $_getN(5);
-  @$pb.TagNumber(6)
-  set threshold($core.double value) => $_setDouble(5, value);
-  @$pb.TagNumber(6)
-  $core.bool hasThreshold() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearThreshold() => $_clearField(6);
-
   @$pb.TagNumber(7)
-  $1.Timestamp get createdAt => $_getN(6);
+  $1.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(7)
   set createdAt($1.Timestamp value) => $_setField(7, value);
   @$pb.TagNumber(7)
-  $core.bool hasCreatedAt() => $_has(6);
+  $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(7)
   void clearCreatedAt() => $_clearField(7);
   @$pb.TagNumber(7)
-  $1.Timestamp ensureCreatedAt() => $_ensure(6);
+  $1.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(8)
-  $1.Timestamp get updatedAt => $_getN(7);
+  $1.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(8)
   set updatedAt($1.Timestamp value) => $_setField(8, value);
   @$pb.TagNumber(8)
-  $core.bool hasUpdatedAt() => $_has(7);
+  $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(8)
   void clearUpdatedAt() => $_clearField(8);
   @$pb.TagNumber(8)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
+  $1.Timestamp ensureUpdatedAt() => $_ensure(5);
 }
 
 class ListSavedQueriesRequest extends $pb.GeneratedMessage {
@@ -5553,8 +5730,6 @@ class UpsertSavedQueryRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? query,
     IntelligenceSearchFilters? filters,
-    $core.String? alertMode,
-    $core.double? threshold,
     $core.String? clientMutationId,
   }) {
     final result = create();
@@ -5562,8 +5737,6 @@ class UpsertSavedQueryRequest extends $pb.GeneratedMessage {
     if (name != null) result.name = name;
     if (query != null) result.query = query;
     if (filters != null) result.filters = filters;
-    if (alertMode != null) result.alertMode = alertMode;
-    if (threshold != null) result.threshold = threshold;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
     return result;
   }
@@ -5587,8 +5760,6 @@ class UpsertSavedQueryRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'query')
     ..aOM<IntelligenceSearchFilters>(4, _omitFieldNames ? '' : 'filters',
         subBuilder: IntelligenceSearchFilters.create)
-    ..aOS(5, _omitFieldNames ? '' : 'alertMode')
-    ..aD(6, _omitFieldNames ? '' : 'threshold')
     ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
     ..hasRequiredFields = false;
 
@@ -5650,30 +5821,12 @@ class UpsertSavedQueryRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   IntelligenceSearchFilters ensureFilters() => $_ensure(3);
 
-  @$pb.TagNumber(5)
-  $core.String get alertMode => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set alertMode($core.String value) => $_setString(4, value);
-  @$pb.TagNumber(5)
-  $core.bool hasAlertMode() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearAlertMode() => $_clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.double get threshold => $_getN(5);
-  @$pb.TagNumber(6)
-  set threshold($core.double value) => $_setDouble(5, value);
-  @$pb.TagNumber(6)
-  $core.bool hasThreshold() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearThreshold() => $_clearField(6);
-
   @$pb.TagNumber(7)
-  $core.String get clientMutationId => $_getSZ(6);
+  $core.String get clientMutationId => $_getSZ(4);
   @$pb.TagNumber(7)
-  set clientMutationId($core.String value) => $_setString(6, value);
+  set clientMutationId($core.String value) => $_setString(4, value);
   @$pb.TagNumber(7)
-  $core.bool hasClientMutationId() => $_has(6);
+  $core.bool hasClientMutationId() => $_has(4);
   @$pb.TagNumber(7)
   void clearClientMutationId() => $_clearField(7);
 }

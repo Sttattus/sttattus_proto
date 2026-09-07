@@ -3051,6 +3051,28 @@ export class IntelligenceSearchFilters extends Message<IntelligenceSearchFilters
    */
   sort = "";
 
+  /**
+   * @generated from field: string jurisdiction = 11;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: double min_evidence_quality = 12;
+   */
+  minEvidenceQuality = 0;
+
+  /**
+   * any | new | updated | corrected
+   *
+   * @generated from field: string change_kind = 13;
+   */
+  changeKind = "";
+
+  /**
+   * @generated from field: string project_id = 14;
+   */
+  projectId = "";
+
   constructor(data?: PartialMessage<IntelligenceSearchFilters>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3069,6 +3091,10 @@ export class IntelligenceSearchFilters extends Message<IntelligenceSearchFilters
     { no: 8, name: "entitlement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "tags", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 10, name: "sort", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "min_evidence_quality", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 13, name: "change_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceSearchFilters {
@@ -3267,6 +3293,11 @@ export class SearchIntelligenceResponse extends Message<SearchIntelligenceRespon
    */
   rankingVersion = "";
 
+  /**
+   * @generated from field: string search_event_id = 6;
+   */
+  searchEventId = "";
+
   constructor(data?: PartialMessage<SearchIntelligenceResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3280,6 +3311,7 @@ export class SearchIntelligenceResponse extends Message<SearchIntelligenceRespon
     { no: 3, name: "query_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "elapsed_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "ranking_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "search_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchIntelligenceResponse {
@@ -3296,6 +3328,94 @@ export class SearchIntelligenceResponse extends Message<SearchIntelligenceRespon
 
   static equals(a: SearchIntelligenceResponse | PlainMessage<SearchIntelligenceResponse> | undefined, b: SearchIntelligenceResponse | PlainMessage<SearchIntelligenceResponse> | undefined): boolean {
     return proto3.util.equals(SearchIntelligenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+ */
+export class RecordIntelligenceSearchOutcomeRequest extends Message<RecordIntelligenceSearchOutcomeRequest> {
+  /**
+   * @generated from field: string search_event_id = 1;
+   */
+  searchEventId = "";
+
+  /**
+   * open | reformulate | save | citation_open
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string result_id = 3;
+   */
+  resultId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RecordIntelligenceSearchOutcomeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "search_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "result_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordIntelligenceSearchOutcomeRequest {
+    return new RecordIntelligenceSearchOutcomeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordIntelligenceSearchOutcomeRequest {
+    return new RecordIntelligenceSearchOutcomeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordIntelligenceSearchOutcomeRequest {
+    return new RecordIntelligenceSearchOutcomeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordIntelligenceSearchOutcomeRequest | PlainMessage<RecordIntelligenceSearchOutcomeRequest> | undefined, b: RecordIntelligenceSearchOutcomeRequest | PlainMessage<RecordIntelligenceSearchOutcomeRequest> | undefined): boolean {
+    return proto3.util.equals(RecordIntelligenceSearchOutcomeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+ */
+export class RecordIntelligenceSearchOutcomeResponse extends Message<RecordIntelligenceSearchOutcomeResponse> {
+  constructor(data?: PartialMessage<RecordIntelligenceSearchOutcomeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordIntelligenceSearchOutcomeResponse {
+    return new RecordIntelligenceSearchOutcomeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordIntelligenceSearchOutcomeResponse {
+    return new RecordIntelligenceSearchOutcomeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordIntelligenceSearchOutcomeResponse {
+    return new RecordIntelligenceSearchOutcomeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordIntelligenceSearchOutcomeResponse | PlainMessage<RecordIntelligenceSearchOutcomeResponse> | undefined, b: RecordIntelligenceSearchOutcomeResponse | PlainMessage<RecordIntelligenceSearchOutcomeResponse> | undefined): boolean {
+    return proto3.util.equals(RecordIntelligenceSearchOutcomeResponse, a, b);
   }
 }
 
@@ -3324,18 +3444,6 @@ export class OnyxSavedQuery extends Message<OnyxSavedQuery> {
   filters?: IntelligenceSearchFilters;
 
   /**
-   * off | instant | daily
-   *
-   * @generated from field: string alert_mode = 5;
-   */
-  alertMode = "";
-
-  /**
-   * @generated from field: double threshold = 6;
-   */
-  threshold = 0;
-
-  /**
    * @generated from field: google.protobuf.Timestamp created_at = 7;
    */
   createdAt?: Timestamp;
@@ -3357,8 +3465,6 @@ export class OnyxSavedQuery extends Message<OnyxSavedQuery> {
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "filters", kind: "message", T: IntelligenceSearchFilters },
-    { no: 5, name: "alert_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "created_at", kind: "message", T: Timestamp },
     { no: 8, name: "updated_at", kind: "message", T: Timestamp },
   ]);
@@ -3473,16 +3579,6 @@ export class UpsertSavedQueryRequest extends Message<UpsertSavedQueryRequest> {
   filters?: IntelligenceSearchFilters;
 
   /**
-   * @generated from field: string alert_mode = 5;
-   */
-  alertMode = "";
-
-  /**
-   * @generated from field: double threshold = 6;
-   */
-  threshold = 0;
-
-  /**
    * @generated from field: string client_mutation_id = 7;
    */
   clientMutationId = "";
@@ -3499,8 +3595,6 @@ export class UpsertSavedQueryRequest extends Message<UpsertSavedQueryRequest> {
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "filters", kind: "message", T: IntelligenceSearchFilters },
-    { no: 5, name: "alert_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
