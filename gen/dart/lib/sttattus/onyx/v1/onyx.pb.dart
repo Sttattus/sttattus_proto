@@ -4794,6 +4794,2778 @@ class SearchReaderResponse extends $pb.GeneratedMessage {
   $pb.PbList<ReaderSearchResult> get results => $_getList(0);
 }
 
+/// Choice 7 — private, access-aware search, watchlists and a finite daily
+/// intelligence queue. Ranking reasons are deliberately returned to the member;
+/// a recommendation that cannot explain itself is not an Onyx recommendation.
+class IntelligenceSearchFilters extends $pb.GeneratedMessage {
+  factory IntelligenceSearchFilters({
+    $core.String? scope,
+    $core.Iterable<$core.String>? kinds,
+    $core.String? creatorId,
+    $core.String? languageCode,
+    $1.Timestamp? publishedAfter,
+    $1.Timestamp? publishedBefore,
+    $core.String? readState,
+    $core.String? entitlement,
+    $core.Iterable<$core.String>? tags,
+    $core.String? sort,
+  }) {
+    final result = create();
+    if (scope != null) result.scope = scope;
+    if (kinds != null) result.kinds.addAll(kinds);
+    if (creatorId != null) result.creatorId = creatorId;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (publishedAfter != null) result.publishedAfter = publishedAfter;
+    if (publishedBefore != null) result.publishedBefore = publishedBefore;
+    if (readState != null) result.readState = readState;
+    if (entitlement != null) result.entitlement = entitlement;
+    if (tags != null) result.tags.addAll(tags);
+    if (sort != null) result.sort = sort;
+    return result;
+  }
+
+  IntelligenceSearchFilters._();
+
+  factory IntelligenceSearchFilters.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceSearchFilters.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceSearchFilters',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scope')
+    ..pPS(2, _omitFieldNames ? '' : 'kinds')
+    ..aOS(3, _omitFieldNames ? '' : 'creatorId')
+    ..aOS(4, _omitFieldNames ? '' : 'languageCode')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'publishedAfter',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'publishedBefore',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'readState')
+    ..aOS(8, _omitFieldNames ? '' : 'entitlement')
+    ..pPS(9, _omitFieldNames ? '' : 'tags')
+    ..aOS(10, _omitFieldNames ? '' : 'sort')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceSearchFilters clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceSearchFilters copyWith(
+          void Function(IntelligenceSearchFilters) updates) =>
+      super.copyWith((message) => updates(message as IntelligenceSearchFilters))
+          as IntelligenceSearchFilters;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceSearchFilters create() => IntelligenceSearchFilters._();
+  @$core.override
+  IntelligenceSearchFilters createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceSearchFilters getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceSearchFilters>(create);
+  static IntelligenceSearchFilters? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scope => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scope($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScope() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScope() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get kinds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get creatorId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set creatorId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatorId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatorId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get languageCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set languageCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLanguageCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguageCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get publishedAfter => $_getN(4);
+  @$pb.TagNumber(5)
+  set publishedAfter($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPublishedAfter() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublishedAfter() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensurePublishedAfter() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get publishedBefore => $_getN(5);
+  @$pb.TagNumber(6)
+  set publishedBefore($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPublishedBefore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPublishedBefore() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensurePublishedBefore() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get readState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set readState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReadState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReadState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get entitlement => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set entitlement($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEntitlement() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEntitlement() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get tags => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get sort => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sort($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSort() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSort() => $_clearField(10);
+}
+
+class SearchIntelligenceRequest extends $pb.GeneratedMessage {
+  factory SearchIntelligenceRequest({
+    $core.String? query,
+    IntelligenceSearchFilters? filters,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (query != null) result.query = query;
+    if (filters != null) result.filters = filters;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  SearchIntelligenceRequest._();
+
+  factory SearchIntelligenceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchIntelligenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchIntelligenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'query')
+    ..aOM<IntelligenceSearchFilters>(2, _omitFieldNames ? '' : 'filters',
+        subBuilder: IntelligenceSearchFilters.create)
+    ..aI(3, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchIntelligenceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchIntelligenceRequest copyWith(
+          void Function(SearchIntelligenceRequest) updates) =>
+      super.copyWith((message) => updates(message as SearchIntelligenceRequest))
+          as SearchIntelligenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchIntelligenceRequest create() => SearchIntelligenceRequest._();
+  @$core.override
+  SearchIntelligenceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SearchIntelligenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchIntelligenceRequest>(create);
+  static SearchIntelligenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get query => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set query($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuery() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  IntelligenceSearchFilters get filters => $_getN(1);
+  @$pb.TagNumber(2)
+  set filters(IntelligenceSearchFilters value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFilters() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFilters() => $_clearField(2);
+  @$pb.TagNumber(2)
+  IntelligenceSearchFilters ensureFilters() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.int get limit => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set limit($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimit() => $_clearField(3);
+}
+
+class IntelligenceSearchResult extends $pb.GeneratedMessage {
+  factory IntelligenceSearchResult({
+    $core.String? resultId,
+    $core.String? scope,
+    OnyxContent? content,
+    ReaderAnnotation? annotation,
+    $core.String? snippet,
+    $core.double? score,
+    $core.Iterable<$core.String>? reasons,
+    $core.Iterable<$core.String>? matchedTerms,
+    $core.String? clusterKey,
+    $core.String? changeKind,
+    $core.bool? entitled,
+  }) {
+    final result = create();
+    if (resultId != null) result.resultId = resultId;
+    if (scope != null) result.scope = scope;
+    if (content != null) result.content = content;
+    if (annotation != null) result.annotation = annotation;
+    if (snippet != null) result.snippet = snippet;
+    if (score != null) result.score = score;
+    if (reasons != null) result.reasons.addAll(reasons);
+    if (matchedTerms != null) result.matchedTerms.addAll(matchedTerms);
+    if (clusterKey != null) result.clusterKey = clusterKey;
+    if (changeKind != null) result.changeKind = changeKind;
+    if (entitled != null) result.entitled = entitled;
+    return result;
+  }
+
+  IntelligenceSearchResult._();
+
+  factory IntelligenceSearchResult.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceSearchResult.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceSearchResult',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resultId')
+    ..aOS(2, _omitFieldNames ? '' : 'scope')
+    ..aOM<OnyxContent>(3, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aOM<ReaderAnnotation>(4, _omitFieldNames ? '' : 'annotation',
+        subBuilder: ReaderAnnotation.create)
+    ..aOS(5, _omitFieldNames ? '' : 'snippet')
+    ..aD(6, _omitFieldNames ? '' : 'score')
+    ..pPS(7, _omitFieldNames ? '' : 'reasons')
+    ..pPS(8, _omitFieldNames ? '' : 'matchedTerms')
+    ..aOS(9, _omitFieldNames ? '' : 'clusterKey')
+    ..aOS(10, _omitFieldNames ? '' : 'changeKind')
+    ..aOB(11, _omitFieldNames ? '' : 'entitled')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceSearchResult clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceSearchResult copyWith(
+          void Function(IntelligenceSearchResult) updates) =>
+      super.copyWith((message) => updates(message as IntelligenceSearchResult))
+          as IntelligenceSearchResult;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceSearchResult create() => IntelligenceSearchResult._();
+  @$core.override
+  IntelligenceSearchResult createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceSearchResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceSearchResult>(create);
+  static IntelligenceSearchResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get resultId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set resultId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasResultId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResultId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get scope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set scope($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  OnyxContent get content => $_getN(2);
+  @$pb.TagNumber(3)
+  set content(OnyxContent value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContent() => $_clearField(3);
+  @$pb.TagNumber(3)
+  OnyxContent ensureContent() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  ReaderAnnotation get annotation => $_getN(3);
+  @$pb.TagNumber(4)
+  set annotation(ReaderAnnotation value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAnnotation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnnotation() => $_clearField(4);
+  @$pb.TagNumber(4)
+  ReaderAnnotation ensureAnnotation() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get snippet => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set snippet($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSnippet() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSnippet() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get score => $_getN(5);
+  @$pb.TagNumber(6)
+  set score($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get reasons => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get matchedTerms => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get clusterKey => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clusterKey($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasClusterKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClusterKey() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get changeKind => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set changeKind($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasChangeKind() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearChangeKind() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get entitled => $_getBF(10);
+  @$pb.TagNumber(11)
+  set entitled($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEntitled() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEntitled() => $_clearField(11);
+}
+
+class SearchIntelligenceResponse extends $pb.GeneratedMessage {
+  factory SearchIntelligenceResponse({
+    $core.Iterable<IntelligenceSearchResult>? results,
+    $core.int? total,
+    $core.String? queryDigest,
+    $core.int? elapsedMs,
+    $core.String? rankingVersion,
+  }) {
+    final result = create();
+    if (results != null) result.results.addAll(results);
+    if (total != null) result.total = total;
+    if (queryDigest != null) result.queryDigest = queryDigest;
+    if (elapsedMs != null) result.elapsedMs = elapsedMs;
+    if (rankingVersion != null) result.rankingVersion = rankingVersion;
+    return result;
+  }
+
+  SearchIntelligenceResponse._();
+
+  factory SearchIntelligenceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchIntelligenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchIntelligenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IntelligenceSearchResult>(1, _omitFieldNames ? '' : 'results',
+        subBuilder: IntelligenceSearchResult.create)
+    ..aI(2, _omitFieldNames ? '' : 'total')
+    ..aOS(3, _omitFieldNames ? '' : 'queryDigest')
+    ..aI(4, _omitFieldNames ? '' : 'elapsedMs')
+    ..aOS(5, _omitFieldNames ? '' : 'rankingVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchIntelligenceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SearchIntelligenceResponse copyWith(
+          void Function(SearchIntelligenceResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SearchIntelligenceResponse))
+          as SearchIntelligenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchIntelligenceResponse create() => SearchIntelligenceResponse._();
+  @$core.override
+  SearchIntelligenceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SearchIntelligenceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchIntelligenceResponse>(create);
+  static SearchIntelligenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IntelligenceSearchResult> get results => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get total => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set total($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTotal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get queryDigest => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set queryDigest($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQueryDigest() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQueryDigest() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get elapsedMs => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set elapsedMs($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasElapsedMs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearElapsedMs() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get rankingVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set rankingVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRankingVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRankingVersion() => $_clearField(5);
+}
+
+class OnyxSavedQuery extends $pb.GeneratedMessage {
+  factory OnyxSavedQuery({
+    $core.String? id,
+    $core.String? name,
+    $core.String? query,
+    IntelligenceSearchFilters? filters,
+    $core.String? alertMode,
+    $core.double? threshold,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (query != null) result.query = query;
+    if (filters != null) result.filters = filters;
+    if (alertMode != null) result.alertMode = alertMode;
+    if (threshold != null) result.threshold = threshold;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxSavedQuery._();
+
+  factory OnyxSavedQuery.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxSavedQuery.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxSavedQuery',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'query')
+    ..aOM<IntelligenceSearchFilters>(4, _omitFieldNames ? '' : 'filters',
+        subBuilder: IntelligenceSearchFilters.create)
+    ..aOS(5, _omitFieldNames ? '' : 'alertMode')
+    ..aD(6, _omitFieldNames ? '' : 'threshold')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxSavedQuery clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxSavedQuery copyWith(void Function(OnyxSavedQuery) updates) =>
+      super.copyWith((message) => updates(message as OnyxSavedQuery))
+          as OnyxSavedQuery;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxSavedQuery create() => OnyxSavedQuery._();
+  @$core.override
+  OnyxSavedQuery createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxSavedQuery getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxSavedQuery>(create);
+  static OnyxSavedQuery? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get query => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set query($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuery() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuery() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  IntelligenceSearchFilters get filters => $_getN(3);
+  @$pb.TagNumber(4)
+  set filters(IntelligenceSearchFilters value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFilters() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFilters() => $_clearField(4);
+  @$pb.TagNumber(4)
+  IntelligenceSearchFilters ensureFilters() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get alertMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set alertMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAlertMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAlertMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get threshold => $_getN(5);
+  @$pb.TagNumber(6)
+  set threshold($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasThreshold() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearThreshold() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get createdAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get updatedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set updatedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUpdatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdatedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
+}
+
+class ListSavedQueriesRequest extends $pb.GeneratedMessage {
+  factory ListSavedQueriesRequest() => create();
+
+  ListSavedQueriesRequest._();
+
+  factory ListSavedQueriesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSavedQueriesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSavedQueriesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSavedQueriesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSavedQueriesRequest copyWith(
+          void Function(ListSavedQueriesRequest) updates) =>
+      super.copyWith((message) => updates(message as ListSavedQueriesRequest))
+          as ListSavedQueriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesRequest create() => ListSavedQueriesRequest._();
+  @$core.override
+  ListSavedQueriesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSavedQueriesRequest>(create);
+  static ListSavedQueriesRequest? _defaultInstance;
+}
+
+class ListSavedQueriesResponse extends $pb.GeneratedMessage {
+  factory ListSavedQueriesResponse({
+    $core.Iterable<OnyxSavedQuery>? queries,
+  }) {
+    final result = create();
+    if (queries != null) result.queries.addAll(queries);
+    return result;
+  }
+
+  ListSavedQueriesResponse._();
+
+  factory ListSavedQueriesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSavedQueriesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSavedQueriesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxSavedQuery>(1, _omitFieldNames ? '' : 'queries',
+        subBuilder: OnyxSavedQuery.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSavedQueriesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSavedQueriesResponse copyWith(
+          void Function(ListSavedQueriesResponse) updates) =>
+      super.copyWith((message) => updates(message as ListSavedQueriesResponse))
+          as ListSavedQueriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesResponse create() => ListSavedQueriesResponse._();
+  @$core.override
+  ListSavedQueriesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSavedQueriesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSavedQueriesResponse>(create);
+  static ListSavedQueriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxSavedQuery> get queries => $_getList(0);
+}
+
+class UpsertSavedQueryRequest extends $pb.GeneratedMessage {
+  factory UpsertSavedQueryRequest({
+    $core.String? id,
+    $core.String? name,
+    $core.String? query,
+    IntelligenceSearchFilters? filters,
+    $core.String? alertMode,
+    $core.double? threshold,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (query != null) result.query = query;
+    if (filters != null) result.filters = filters;
+    if (alertMode != null) result.alertMode = alertMode;
+    if (threshold != null) result.threshold = threshold;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertSavedQueryRequest._();
+
+  factory UpsertSavedQueryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSavedQueryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSavedQueryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'query')
+    ..aOM<IntelligenceSearchFilters>(4, _omitFieldNames ? '' : 'filters',
+        subBuilder: IntelligenceSearchFilters.create)
+    ..aOS(5, _omitFieldNames ? '' : 'alertMode')
+    ..aD(6, _omitFieldNames ? '' : 'threshold')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSavedQueryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSavedQueryRequest copyWith(
+          void Function(UpsertSavedQueryRequest) updates) =>
+      super.copyWith((message) => updates(message as UpsertSavedQueryRequest))
+          as UpsertSavedQueryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSavedQueryRequest create() => UpsertSavedQueryRequest._();
+  @$core.override
+  UpsertSavedQueryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSavedQueryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertSavedQueryRequest>(create);
+  static UpsertSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get query => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set query($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuery() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuery() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  IntelligenceSearchFilters get filters => $_getN(3);
+  @$pb.TagNumber(4)
+  set filters(IntelligenceSearchFilters value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFilters() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFilters() => $_clearField(4);
+  @$pb.TagNumber(4)
+  IntelligenceSearchFilters ensureFilters() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get alertMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set alertMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAlertMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAlertMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get threshold => $_getN(5);
+  @$pb.TagNumber(6)
+  set threshold($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasThreshold() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearThreshold() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class UpsertSavedQueryResponse extends $pb.GeneratedMessage {
+  factory UpsertSavedQueryResponse({
+    OnyxSavedQuery? query,
+  }) {
+    final result = create();
+    if (query != null) result.query = query;
+    return result;
+  }
+
+  UpsertSavedQueryResponse._();
+
+  factory UpsertSavedQueryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSavedQueryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSavedQueryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxSavedQuery>(1, _omitFieldNames ? '' : 'query',
+        subBuilder: OnyxSavedQuery.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSavedQueryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSavedQueryResponse copyWith(
+          void Function(UpsertSavedQueryResponse) updates) =>
+      super.copyWith((message) => updates(message as UpsertSavedQueryResponse))
+          as UpsertSavedQueryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSavedQueryResponse create() => UpsertSavedQueryResponse._();
+  @$core.override
+  UpsertSavedQueryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSavedQueryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertSavedQueryResponse>(create);
+  static UpsertSavedQueryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxSavedQuery get query => $_getN(0);
+  @$pb.TagNumber(1)
+  set query(OnyxSavedQuery value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuery() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxSavedQuery ensureQuery() => $_ensure(0);
+}
+
+class DeleteSavedQueryRequest extends $pb.GeneratedMessage {
+  factory DeleteSavedQueryRequest({
+    $core.String? id,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  DeleteSavedQueryRequest._();
+
+  factory DeleteSavedQueryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteSavedQueryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteSavedQueryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSavedQueryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSavedQueryRequest copyWith(
+          void Function(DeleteSavedQueryRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteSavedQueryRequest))
+          as DeleteSavedQueryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryRequest create() => DeleteSavedQueryRequest._();
+  @$core.override
+  DeleteSavedQueryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteSavedQueryRequest>(create);
+  static DeleteSavedQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class DeleteSavedQueryResponse extends $pb.GeneratedMessage {
+  factory DeleteSavedQueryResponse() => create();
+
+  DeleteSavedQueryResponse._();
+
+  factory DeleteSavedQueryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteSavedQueryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteSavedQueryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSavedQueryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteSavedQueryResponse copyWith(
+          void Function(DeleteSavedQueryResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteSavedQueryResponse))
+          as DeleteSavedQueryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryResponse create() => DeleteSavedQueryResponse._();
+  @$core.override
+  DeleteSavedQueryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSavedQueryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteSavedQueryResponse>(create);
+  static DeleteSavedQueryResponse? _defaultInstance;
+}
+
+class OnyxWatchlistTerm extends $pb.GeneratedMessage {
+  factory OnyxWatchlistTerm({
+    $core.String? kind,
+    $core.String? label,
+    $core.Iterable<$core.String>? aliases,
+    $core.double? weight,
+  }) {
+    final result = create();
+    if (kind != null) result.kind = kind;
+    if (label != null) result.label = label;
+    if (aliases != null) result.aliases.addAll(aliases);
+    if (weight != null) result.weight = weight;
+    return result;
+  }
+
+  OnyxWatchlistTerm._();
+
+  factory OnyxWatchlistTerm.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxWatchlistTerm.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxWatchlistTerm',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'kind')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..pPS(3, _omitFieldNames ? '' : 'aliases')
+    ..aD(4, _omitFieldNames ? '' : 'weight')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxWatchlistTerm clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxWatchlistTerm copyWith(void Function(OnyxWatchlistTerm) updates) =>
+      super.copyWith((message) => updates(message as OnyxWatchlistTerm))
+          as OnyxWatchlistTerm;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxWatchlistTerm create() => OnyxWatchlistTerm._();
+  @$core.override
+  OnyxWatchlistTerm createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxWatchlistTerm getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxWatchlistTerm>(create);
+  static OnyxWatchlistTerm? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get aliases => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.double get weight => $_getN(3);
+  @$pb.TagNumber(4)
+  set weight($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWeight() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWeight() => $_clearField(4);
+}
+
+class OnyxWatchlist extends $pb.GeneratedMessage {
+  factory OnyxWatchlist({
+    $core.String? id,
+    $core.String? name,
+    $core.String? description,
+    $core.Iterable<OnyxWatchlistTerm>? terms,
+    $core.double? threshold,
+    $core.String? frequency,
+    $core.bool? paused,
+    $1.Timestamp? lastRefreshedAt,
+    $core.int? unreadAlerts,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (terms != null) result.terms.addAll(terms);
+    if (threshold != null) result.threshold = threshold;
+    if (frequency != null) result.frequency = frequency;
+    if (paused != null) result.paused = paused;
+    if (lastRefreshedAt != null) result.lastRefreshedAt = lastRefreshedAt;
+    if (unreadAlerts != null) result.unreadAlerts = unreadAlerts;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxWatchlist._();
+
+  factory OnyxWatchlist.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxWatchlist.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxWatchlist',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..pPM<OnyxWatchlistTerm>(4, _omitFieldNames ? '' : 'terms',
+        subBuilder: OnyxWatchlistTerm.create)
+    ..aD(5, _omitFieldNames ? '' : 'threshold')
+    ..aOS(6, _omitFieldNames ? '' : 'frequency')
+    ..aOB(7, _omitFieldNames ? '' : 'paused')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'lastRefreshedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aI(9, _omitFieldNames ? '' : 'unreadAlerts')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxWatchlist clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxWatchlist copyWith(void Function(OnyxWatchlist) updates) =>
+      super.copyWith((message) => updates(message as OnyxWatchlist))
+          as OnyxWatchlist;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxWatchlist create() => OnyxWatchlist._();
+  @$core.override
+  OnyxWatchlist createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxWatchlist getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxWatchlist>(create);
+  static OnyxWatchlist? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxWatchlistTerm> get terms => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.double get threshold => $_getN(4);
+  @$pb.TagNumber(5)
+  set threshold($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasThreshold() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearThreshold() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get frequency => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set frequency($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFrequency() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFrequency() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get paused => $_getBF(6);
+  @$pb.TagNumber(7)
+  set paused($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPaused() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPaused() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get lastRefreshedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set lastRefreshedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLastRefreshedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastRefreshedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureLastRefreshedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.int get unreadAlerts => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set unreadAlerts($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUnreadAlerts() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUnreadAlerts() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get createdAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set createdAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get updatedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
+}
+
+class ListWatchlistsRequest extends $pb.GeneratedMessage {
+  factory ListWatchlistsRequest() => create();
+
+  ListWatchlistsRequest._();
+
+  factory ListWatchlistsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListWatchlistsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListWatchlistsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWatchlistsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWatchlistsRequest copyWith(
+          void Function(ListWatchlistsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListWatchlistsRequest))
+          as ListWatchlistsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWatchlistsRequest create() => ListWatchlistsRequest._();
+  @$core.override
+  ListWatchlistsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListWatchlistsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListWatchlistsRequest>(create);
+  static ListWatchlistsRequest? _defaultInstance;
+}
+
+class ListWatchlistsResponse extends $pb.GeneratedMessage {
+  factory ListWatchlistsResponse({
+    $core.Iterable<OnyxWatchlist>? watchlists,
+  }) {
+    final result = create();
+    if (watchlists != null) result.watchlists.addAll(watchlists);
+    return result;
+  }
+
+  ListWatchlistsResponse._();
+
+  factory ListWatchlistsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListWatchlistsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListWatchlistsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxWatchlist>(1, _omitFieldNames ? '' : 'watchlists',
+        subBuilder: OnyxWatchlist.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWatchlistsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListWatchlistsResponse copyWith(
+          void Function(ListWatchlistsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListWatchlistsResponse))
+          as ListWatchlistsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListWatchlistsResponse create() => ListWatchlistsResponse._();
+  @$core.override
+  ListWatchlistsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListWatchlistsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListWatchlistsResponse>(create);
+  static ListWatchlistsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxWatchlist> get watchlists => $_getList(0);
+}
+
+class UpsertWatchlistRequest extends $pb.GeneratedMessage {
+  factory UpsertWatchlistRequest({
+    $core.String? id,
+    $core.String? name,
+    $core.String? description,
+    $core.Iterable<OnyxWatchlistTerm>? terms,
+    $core.double? threshold,
+    $core.String? frequency,
+    $core.bool? paused,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (terms != null) result.terms.addAll(terms);
+    if (threshold != null) result.threshold = threshold;
+    if (frequency != null) result.frequency = frequency;
+    if (paused != null) result.paused = paused;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertWatchlistRequest._();
+
+  factory UpsertWatchlistRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertWatchlistRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertWatchlistRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..pPM<OnyxWatchlistTerm>(4, _omitFieldNames ? '' : 'terms',
+        subBuilder: OnyxWatchlistTerm.create)
+    ..aD(5, _omitFieldNames ? '' : 'threshold')
+    ..aOS(6, _omitFieldNames ? '' : 'frequency')
+    ..aOB(7, _omitFieldNames ? '' : 'paused')
+    ..aOS(8, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistRequest copyWith(
+          void Function(UpsertWatchlistRequest) updates) =>
+      super.copyWith((message) => updates(message as UpsertWatchlistRequest))
+          as UpsertWatchlistRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistRequest create() => UpsertWatchlistRequest._();
+  @$core.override
+  UpsertWatchlistRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertWatchlistRequest>(create);
+  static UpsertWatchlistRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxWatchlistTerm> get terms => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.double get threshold => $_getN(4);
+  @$pb.TagNumber(5)
+  set threshold($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasThreshold() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearThreshold() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get frequency => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set frequency($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFrequency() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFrequency() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get paused => $_getBF(6);
+  @$pb.TagNumber(7)
+  set paused($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPaused() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPaused() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get clientMutationId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set clientMutationId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClientMutationId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClientMutationId() => $_clearField(8);
+}
+
+class UpsertWatchlistResponse extends $pb.GeneratedMessage {
+  factory UpsertWatchlistResponse({
+    OnyxWatchlist? watchlist,
+  }) {
+    final result = create();
+    if (watchlist != null) result.watchlist = watchlist;
+    return result;
+  }
+
+  UpsertWatchlistResponse._();
+
+  factory UpsertWatchlistResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertWatchlistResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertWatchlistResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxWatchlist>(1, _omitFieldNames ? '' : 'watchlist',
+        subBuilder: OnyxWatchlist.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistResponse copyWith(
+          void Function(UpsertWatchlistResponse) updates) =>
+      super.copyWith((message) => updates(message as UpsertWatchlistResponse))
+          as UpsertWatchlistResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistResponse create() => UpsertWatchlistResponse._();
+  @$core.override
+  UpsertWatchlistResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertWatchlistResponse>(create);
+  static UpsertWatchlistResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxWatchlist get watchlist => $_getN(0);
+  @$pb.TagNumber(1)
+  set watchlist(OnyxWatchlist value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWatchlist() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWatchlist() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxWatchlist ensureWatchlist() => $_ensure(0);
+}
+
+class DeleteWatchlistRequest extends $pb.GeneratedMessage {
+  factory DeleteWatchlistRequest({
+    $core.String? id,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  DeleteWatchlistRequest._();
+
+  factory DeleteWatchlistRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteWatchlistRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteWatchlistRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWatchlistRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWatchlistRequest copyWith(
+          void Function(DeleteWatchlistRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteWatchlistRequest))
+          as DeleteWatchlistRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteWatchlistRequest create() => DeleteWatchlistRequest._();
+  @$core.override
+  DeleteWatchlistRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteWatchlistRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteWatchlistRequest>(create);
+  static DeleteWatchlistRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class DeleteWatchlistResponse extends $pb.GeneratedMessage {
+  factory DeleteWatchlistResponse() => create();
+
+  DeleteWatchlistResponse._();
+
+  factory DeleteWatchlistResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteWatchlistResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteWatchlistResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWatchlistResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteWatchlistResponse copyWith(
+          void Function(DeleteWatchlistResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteWatchlistResponse))
+          as DeleteWatchlistResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteWatchlistResponse create() => DeleteWatchlistResponse._();
+  @$core.override
+  DeleteWatchlistResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteWatchlistResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteWatchlistResponse>(create);
+  static DeleteWatchlistResponse? _defaultInstance;
+}
+
+class RefreshWatchlistRequest extends $pb.GeneratedMessage {
+  factory RefreshWatchlistRequest({
+    $core.String? id,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RefreshWatchlistRequest._();
+
+  factory RefreshWatchlistRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RefreshWatchlistRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RefreshWatchlistRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshWatchlistRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshWatchlistRequest copyWith(
+          void Function(RefreshWatchlistRequest) updates) =>
+      super.copyWith((message) => updates(message as RefreshWatchlistRequest))
+          as RefreshWatchlistRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshWatchlistRequest create() => RefreshWatchlistRequest._();
+  @$core.override
+  RefreshWatchlistRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RefreshWatchlistRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RefreshWatchlistRequest>(create);
+  static RefreshWatchlistRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class RefreshWatchlistResponse extends $pb.GeneratedMessage {
+  factory RefreshWatchlistResponse({
+    OnyxWatchlist? watchlist,
+    $core.int? newAlerts,
+  }) {
+    final result = create();
+    if (watchlist != null) result.watchlist = watchlist;
+    if (newAlerts != null) result.newAlerts = newAlerts;
+    return result;
+  }
+
+  RefreshWatchlistResponse._();
+
+  factory RefreshWatchlistResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RefreshWatchlistResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RefreshWatchlistResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxWatchlist>(1, _omitFieldNames ? '' : 'watchlist',
+        subBuilder: OnyxWatchlist.create)
+    ..aI(2, _omitFieldNames ? '' : 'newAlerts')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshWatchlistResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RefreshWatchlistResponse copyWith(
+          void Function(RefreshWatchlistResponse) updates) =>
+      super.copyWith((message) => updates(message as RefreshWatchlistResponse))
+          as RefreshWatchlistResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RefreshWatchlistResponse create() => RefreshWatchlistResponse._();
+  @$core.override
+  RefreshWatchlistResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RefreshWatchlistResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RefreshWatchlistResponse>(create);
+  static RefreshWatchlistResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxWatchlist get watchlist => $_getN(0);
+  @$pb.TagNumber(1)
+  set watchlist(OnyxWatchlist value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWatchlist() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWatchlist() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxWatchlist ensureWatchlist() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get newAlerts => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set newAlerts($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewAlerts() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewAlerts() => $_clearField(2);
+}
+
+class OnyxIntelligenceAlert extends $pb.GeneratedMessage {
+  factory OnyxIntelligenceAlert({
+    $core.String? id,
+    $core.String? watchlistId,
+    $core.String? watchlistName,
+    OnyxContent? content,
+    $core.String? signalKind,
+    $core.double? score,
+    $core.Iterable<$core.String>? reasons,
+    $core.String? state,
+    $1.Timestamp? detectedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (watchlistId != null) result.watchlistId = watchlistId;
+    if (watchlistName != null) result.watchlistName = watchlistName;
+    if (content != null) result.content = content;
+    if (signalKind != null) result.signalKind = signalKind;
+    if (score != null) result.score = score;
+    if (reasons != null) result.reasons.addAll(reasons);
+    if (state != null) result.state = state;
+    if (detectedAt != null) result.detectedAt = detectedAt;
+    return result;
+  }
+
+  OnyxIntelligenceAlert._();
+
+  factory OnyxIntelligenceAlert.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntelligenceAlert.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntelligenceAlert',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'watchlistId')
+    ..aOS(3, _omitFieldNames ? '' : 'watchlistName')
+    ..aOM<OnyxContent>(4, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aOS(5, _omitFieldNames ? '' : 'signalKind')
+    ..aD(6, _omitFieldNames ? '' : 'score')
+    ..pPS(7, _omitFieldNames ? '' : 'reasons')
+    ..aOS(8, _omitFieldNames ? '' : 'state')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'detectedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntelligenceAlert clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntelligenceAlert copyWith(
+          void Function(OnyxIntelligenceAlert) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntelligenceAlert))
+          as OnyxIntelligenceAlert;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntelligenceAlert create() => OnyxIntelligenceAlert._();
+  @$core.override
+  OnyxIntelligenceAlert createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntelligenceAlert getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntelligenceAlert>(create);
+  static OnyxIntelligenceAlert? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get watchlistId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set watchlistId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWatchlistId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWatchlistId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get watchlistName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set watchlistName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWatchlistName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWatchlistName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  OnyxContent get content => $_getN(3);
+  @$pb.TagNumber(4)
+  set content(OnyxContent value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContent() => $_clearField(4);
+  @$pb.TagNumber(4)
+  OnyxContent ensureContent() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.String get signalKind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set signalKind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSignalKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignalKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get score => $_getN(5);
+  @$pb.TagNumber(6)
+  set score($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScore() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScore() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get reasons => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get state => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set state($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get detectedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set detectedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDetectedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDetectedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureDetectedAt() => $_ensure(8);
+}
+
+class ListIntelligenceAlertsRequest extends $pb.GeneratedMessage {
+  factory ListIntelligenceAlertsRequest({
+    $core.String? watchlistId,
+    $core.String? state,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (watchlistId != null) result.watchlistId = watchlistId;
+    if (state != null) result.state = state;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListIntelligenceAlertsRequest._();
+
+  factory ListIntelligenceAlertsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceAlertsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceAlertsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'watchlistId')
+    ..aOS(2, _omitFieldNames ? '' : 'state')
+    ..aI(3, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceAlertsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceAlertsRequest copyWith(
+          void Function(ListIntelligenceAlertsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListIntelligenceAlertsRequest))
+          as ListIntelligenceAlertsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceAlertsRequest create() =>
+      ListIntelligenceAlertsRequest._();
+  @$core.override
+  ListIntelligenceAlertsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceAlertsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListIntelligenceAlertsRequest>(create);
+  static ListIntelligenceAlertsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get watchlistId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set watchlistId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWatchlistId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWatchlistId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get state => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set state($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get limit => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set limit($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimit() => $_clearField(3);
+}
+
+class ListIntelligenceAlertsResponse extends $pb.GeneratedMessage {
+  factory ListIntelligenceAlertsResponse({
+    $core.Iterable<OnyxIntelligenceAlert>? alerts,
+  }) {
+    final result = create();
+    if (alerts != null) result.alerts.addAll(alerts);
+    return result;
+  }
+
+  ListIntelligenceAlertsResponse._();
+
+  factory ListIntelligenceAlertsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceAlertsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceAlertsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxIntelligenceAlert>(1, _omitFieldNames ? '' : 'alerts',
+        subBuilder: OnyxIntelligenceAlert.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceAlertsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceAlertsResponse copyWith(
+          void Function(ListIntelligenceAlertsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListIntelligenceAlertsResponse))
+          as ListIntelligenceAlertsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceAlertsResponse create() =>
+      ListIntelligenceAlertsResponse._();
+  @$core.override
+  ListIntelligenceAlertsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceAlertsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListIntelligenceAlertsResponse>(create);
+  static ListIntelligenceAlertsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxIntelligenceAlert> get alerts => $_getList(0);
+}
+
+class SetIntelligenceAlertStateRequest extends $pb.GeneratedMessage {
+  factory SetIntelligenceAlertStateRequest({
+    $core.String? id,
+    $core.String? state,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (state != null) result.state = state;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntelligenceAlertStateRequest._();
+
+  factory SetIntelligenceAlertStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceAlertStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceAlertStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'state')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceAlertStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceAlertStateRequest copyWith(
+          void Function(SetIntelligenceAlertStateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetIntelligenceAlertStateRequest))
+          as SetIntelligenceAlertStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceAlertStateRequest create() =>
+      SetIntelligenceAlertStateRequest._();
+  @$core.override
+  SetIntelligenceAlertStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceAlertStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetIntelligenceAlertStateRequest>(
+          create);
+  static SetIntelligenceAlertStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get state => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set state($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class SetIntelligenceAlertStateResponse extends $pb.GeneratedMessage {
+  factory SetIntelligenceAlertStateResponse({
+    OnyxIntelligenceAlert? alert,
+  }) {
+    final result = create();
+    if (alert != null) result.alert = alert;
+    return result;
+  }
+
+  SetIntelligenceAlertStateResponse._();
+
+  factory SetIntelligenceAlertStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceAlertStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceAlertStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntelligenceAlert>(1, _omitFieldNames ? '' : 'alert',
+        subBuilder: OnyxIntelligenceAlert.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceAlertStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceAlertStateResponse copyWith(
+          void Function(SetIntelligenceAlertStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceAlertStateResponse))
+          as SetIntelligenceAlertStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceAlertStateResponse create() =>
+      SetIntelligenceAlertStateResponse._();
+  @$core.override
+  SetIntelligenceAlertStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceAlertStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetIntelligenceAlertStateResponse>(
+          create);
+  static SetIntelligenceAlertStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntelligenceAlert get alert => $_getN(0);
+  @$pb.TagNumber(1)
+  set alert(OnyxIntelligenceAlert value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAlert() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAlert() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntelligenceAlert ensureAlert() => $_ensure(0);
+}
+
+class OnyxIntelligenceQueueItem extends $pb.GeneratedMessage {
+  factory OnyxIntelligenceQueueItem({
+    $core.String? id,
+    OnyxContent? content,
+    $core.int? rank,
+    $core.double? score,
+    $core.Iterable<$core.String>? reasons,
+    $core.int? estimatedMinutes,
+    $core.String? clusterKey,
+    $core.bool? editorialPin,
+    $core.bool? watchlistMatch,
+    $core.String? feedback,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (content != null) result.content = content;
+    if (rank != null) result.rank = rank;
+    if (score != null) result.score = score;
+    if (reasons != null) result.reasons.addAll(reasons);
+    if (estimatedMinutes != null) result.estimatedMinutes = estimatedMinutes;
+    if (clusterKey != null) result.clusterKey = clusterKey;
+    if (editorialPin != null) result.editorialPin = editorialPin;
+    if (watchlistMatch != null) result.watchlistMatch = watchlistMatch;
+    if (feedback != null) result.feedback = feedback;
+    return result;
+  }
+
+  OnyxIntelligenceQueueItem._();
+
+  factory OnyxIntelligenceQueueItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntelligenceQueueItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntelligenceQueueItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOM<OnyxContent>(2, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aI(3, _omitFieldNames ? '' : 'rank')
+    ..aD(4, _omitFieldNames ? '' : 'score')
+    ..pPS(5, _omitFieldNames ? '' : 'reasons')
+    ..aI(6, _omitFieldNames ? '' : 'estimatedMinutes')
+    ..aOS(7, _omitFieldNames ? '' : 'clusterKey')
+    ..aOB(8, _omitFieldNames ? '' : 'editorialPin')
+    ..aOB(9, _omitFieldNames ? '' : 'watchlistMatch')
+    ..aOS(10, _omitFieldNames ? '' : 'feedback')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntelligenceQueueItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntelligenceQueueItem copyWith(
+          void Function(OnyxIntelligenceQueueItem) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntelligenceQueueItem))
+          as OnyxIntelligenceQueueItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntelligenceQueueItem create() => OnyxIntelligenceQueueItem._();
+  @$core.override
+  OnyxIntelligenceQueueItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntelligenceQueueItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntelligenceQueueItem>(create);
+  static OnyxIntelligenceQueueItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  OnyxContent get content => $_getN(1);
+  @$pb.TagNumber(2)
+  set content(OnyxContent value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContent() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxContent ensureContent() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.int get rank => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set rank($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRank() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRank() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get score => $_getN(3);
+  @$pb.TagNumber(4)
+  set score($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScore() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScore() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get reasons => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.int get estimatedMinutes => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set estimatedMinutes($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEstimatedMinutes() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEstimatedMinutes() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clusterKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clusterKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClusterKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClusterKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get editorialPin => $_getBF(7);
+  @$pb.TagNumber(8)
+  set editorialPin($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEditorialPin() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEditorialPin() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get watchlistMatch => $_getBF(8);
+  @$pb.TagNumber(9)
+  set watchlistMatch($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasWatchlistMatch() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWatchlistMatch() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get feedback => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set feedback($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasFeedback() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearFeedback() => $_clearField(10);
+}
+
+class GetIntelligenceQueueRequest extends $pb.GeneratedMessage {
+  factory GetIntelligenceQueueRequest({
+    $core.String? mode,
+    $core.int? timeBudgetMinutes,
+    $core.bool? refresh,
+  }) {
+    final result = create();
+    if (mode != null) result.mode = mode;
+    if (timeBudgetMinutes != null) result.timeBudgetMinutes = timeBudgetMinutes;
+    if (refresh != null) result.refresh = refresh;
+    return result;
+  }
+
+  GetIntelligenceQueueRequest._();
+
+  factory GetIntelligenceQueueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntelligenceQueueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntelligenceQueueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mode')
+    ..aI(2, _omitFieldNames ? '' : 'timeBudgetMinutes')
+    ..aOB(3, _omitFieldNames ? '' : 'refresh')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceQueueRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceQueueRequest copyWith(
+          void Function(GetIntelligenceQueueRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntelligenceQueueRequest))
+          as GetIntelligenceQueueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceQueueRequest create() =>
+      GetIntelligenceQueueRequest._();
+  @$core.override
+  GetIntelligenceQueueRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceQueueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntelligenceQueueRequest>(create);
+  static GetIntelligenceQueueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get timeBudgetMinutes => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set timeBudgetMinutes($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTimeBudgetMinutes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimeBudgetMinutes() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get refresh => $_getBF(2);
+  @$pb.TagNumber(3)
+  set refresh($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRefresh() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRefresh() => $_clearField(3);
+}
+
+class GetIntelligenceQueueResponse extends $pb.GeneratedMessage {
+  factory GetIntelligenceQueueResponse({
+    $core.Iterable<OnyxIntelligenceQueueItem>? items,
+    $core.String? queueDate,
+    $core.String? mode,
+    $core.int? estimatedMinutes,
+    $core.String? rankingVersion,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (queueDate != null) result.queueDate = queueDate;
+    if (mode != null) result.mode = mode;
+    if (estimatedMinutes != null) result.estimatedMinutes = estimatedMinutes;
+    if (rankingVersion != null) result.rankingVersion = rankingVersion;
+    return result;
+  }
+
+  GetIntelligenceQueueResponse._();
+
+  factory GetIntelligenceQueueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntelligenceQueueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntelligenceQueueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxIntelligenceQueueItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: OnyxIntelligenceQueueItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'queueDate')
+    ..aOS(3, _omitFieldNames ? '' : 'mode')
+    ..aI(4, _omitFieldNames ? '' : 'estimatedMinutes')
+    ..aOS(5, _omitFieldNames ? '' : 'rankingVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceQueueResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceQueueResponse copyWith(
+          void Function(GetIntelligenceQueueResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntelligenceQueueResponse))
+          as GetIntelligenceQueueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceQueueResponse create() =>
+      GetIntelligenceQueueResponse._();
+  @$core.override
+  GetIntelligenceQueueResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceQueueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntelligenceQueueResponse>(create);
+  static GetIntelligenceQueueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxIntelligenceQueueItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get queueDate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set queueDate($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasQueueDate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQueueDate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get mode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set mode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get estimatedMinutes => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set estimatedMinutes($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEstimatedMinutes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEstimatedMinutes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get rankingVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set rankingVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRankingVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRankingVersion() => $_clearField(5);
+}
+
+class RecordIntelligenceFeedbackRequest extends $pb.GeneratedMessage {
+  factory RecordIntelligenceFeedbackRequest({
+    $core.String? queueItemId,
+    $core.String? action,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (queueItemId != null) result.queueItemId = queueItemId;
+    if (action != null) result.action = action;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RecordIntelligenceFeedbackRequest._();
+
+  factory RecordIntelligenceFeedbackRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordIntelligenceFeedbackRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordIntelligenceFeedbackRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'queueItemId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceFeedbackRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceFeedbackRequest copyWith(
+          void Function(RecordIntelligenceFeedbackRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordIntelligenceFeedbackRequest))
+          as RecordIntelligenceFeedbackRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceFeedbackRequest create() =>
+      RecordIntelligenceFeedbackRequest._();
+  @$core.override
+  RecordIntelligenceFeedbackRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceFeedbackRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordIntelligenceFeedbackRequest>(
+          create);
+  static RecordIntelligenceFeedbackRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get queueItemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set queueItemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQueueItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQueueItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class RecordIntelligenceFeedbackResponse extends $pb.GeneratedMessage {
+  factory RecordIntelligenceFeedbackResponse({
+    OnyxIntelligenceQueueItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  RecordIntelligenceFeedbackResponse._();
+
+  factory RecordIntelligenceFeedbackResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordIntelligenceFeedbackResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordIntelligenceFeedbackResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntelligenceQueueItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: OnyxIntelligenceQueueItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceFeedbackResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordIntelligenceFeedbackResponse copyWith(
+          void Function(RecordIntelligenceFeedbackResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordIntelligenceFeedbackResponse))
+          as RecordIntelligenceFeedbackResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceFeedbackResponse create() =>
+      RecordIntelligenceFeedbackResponse._();
+  @$core.override
+  RecordIntelligenceFeedbackResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordIntelligenceFeedbackResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordIntelligenceFeedbackResponse>(
+          create);
+  static RecordIntelligenceFeedbackResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntelligenceQueueItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(OnyxIntelligenceQueueItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntelligenceQueueItem ensureItem() => $_ensure(0);
+}
+
 class ExportReaderDataRequest extends $pb.GeneratedMessage {
   factory ExportReaderDataRequest({
     $core.String? format,

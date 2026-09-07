@@ -205,6 +205,96 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$searchReader, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.SearchIntelligenceResponse> searchIntelligence(
+    $0.SearchIntelligenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$searchIntelligence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListSavedQueriesResponse> listSavedQueries(
+    $0.ListSavedQueriesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listSavedQueries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSavedQueryResponse> upsertSavedQuery(
+    $0.UpsertSavedQueryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteSavedQueryResponse> deleteSavedQuery(
+    $0.DeleteSavedQueryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteSavedQuery, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListWatchlistsResponse> listWatchlists(
+    $0.ListWatchlistsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listWatchlists, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertWatchlistResponse> upsertWatchlist(
+    $0.UpsertWatchlistRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertWatchlist, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteWatchlistResponse> deleteWatchlist(
+    $0.DeleteWatchlistRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteWatchlist, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RefreshWatchlistResponse> refreshWatchlist(
+    $0.RefreshWatchlistRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$refreshWatchlist, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListIntelligenceAlertsResponse>
+      listIntelligenceAlerts(
+    $0.ListIntelligenceAlertsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listIntelligenceAlerts, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntelligenceAlertStateResponse>
+      setIntelligenceAlertState(
+    $0.SetIntelligenceAlertStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntelligenceAlertState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetIntelligenceQueueResponse> getIntelligenceQueue(
+    $0.GetIntelligenceQueueRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getIntelligenceQueue, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordIntelligenceFeedbackResponse>
+      recordIntelligenceFeedback(
+    $0.RecordIntelligenceFeedbackRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordIntelligenceFeedback, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.ExportReaderDataResponse> exportReaderData(
     $0.ExportReaderDataRequest request, {
     $grpc.CallOptions? options,
@@ -849,6 +939,68 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/SearchReader',
           ($0.SearchReaderRequest value) => value.writeToBuffer(),
           $0.SearchReaderResponse.fromBuffer);
+  static final _$searchIntelligence = $grpc.ClientMethod<
+          $0.SearchIntelligenceRequest, $0.SearchIntelligenceResponse>(
+      '/sttattus.onyx.v1.OnyxService/SearchIntelligence',
+      ($0.SearchIntelligenceRequest value) => value.writeToBuffer(),
+      $0.SearchIntelligenceResponse.fromBuffer);
+  static final _$listSavedQueries = $grpc.ClientMethod<
+          $0.ListSavedQueriesRequest, $0.ListSavedQueriesResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListSavedQueries',
+      ($0.ListSavedQueriesRequest value) => value.writeToBuffer(),
+      $0.ListSavedQueriesResponse.fromBuffer);
+  static final _$upsertSavedQuery = $grpc.ClientMethod<
+          $0.UpsertSavedQueryRequest, $0.UpsertSavedQueryResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertSavedQuery',
+      ($0.UpsertSavedQueryRequest value) => value.writeToBuffer(),
+      $0.UpsertSavedQueryResponse.fromBuffer);
+  static final _$deleteSavedQuery = $grpc.ClientMethod<
+          $0.DeleteSavedQueryRequest, $0.DeleteSavedQueryResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteSavedQuery',
+      ($0.DeleteSavedQueryRequest value) => value.writeToBuffer(),
+      $0.DeleteSavedQueryResponse.fromBuffer);
+  static final _$listWatchlists =
+      $grpc.ClientMethod<$0.ListWatchlistsRequest, $0.ListWatchlistsResponse>(
+          '/sttattus.onyx.v1.OnyxService/ListWatchlists',
+          ($0.ListWatchlistsRequest value) => value.writeToBuffer(),
+          $0.ListWatchlistsResponse.fromBuffer);
+  static final _$upsertWatchlist =
+      $grpc.ClientMethod<$0.UpsertWatchlistRequest, $0.UpsertWatchlistResponse>(
+          '/sttattus.onyx.v1.OnyxService/UpsertWatchlist',
+          ($0.UpsertWatchlistRequest value) => value.writeToBuffer(),
+          $0.UpsertWatchlistResponse.fromBuffer);
+  static final _$deleteWatchlist =
+      $grpc.ClientMethod<$0.DeleteWatchlistRequest, $0.DeleteWatchlistResponse>(
+          '/sttattus.onyx.v1.OnyxService/DeleteWatchlist',
+          ($0.DeleteWatchlistRequest value) => value.writeToBuffer(),
+          $0.DeleteWatchlistResponse.fromBuffer);
+  static final _$refreshWatchlist = $grpc.ClientMethod<
+          $0.RefreshWatchlistRequest, $0.RefreshWatchlistResponse>(
+      '/sttattus.onyx.v1.OnyxService/RefreshWatchlist',
+      ($0.RefreshWatchlistRequest value) => value.writeToBuffer(),
+      $0.RefreshWatchlistResponse.fromBuffer);
+  static final _$listIntelligenceAlerts = $grpc.ClientMethod<
+          $0.ListIntelligenceAlertsRequest, $0.ListIntelligenceAlertsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListIntelligenceAlerts',
+      ($0.ListIntelligenceAlertsRequest value) => value.writeToBuffer(),
+      $0.ListIntelligenceAlertsResponse.fromBuffer);
+  static final _$setIntelligenceAlertState = $grpc.ClientMethod<
+          $0.SetIntelligenceAlertStateRequest,
+          $0.SetIntelligenceAlertStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntelligenceAlertState',
+      ($0.SetIntelligenceAlertStateRequest value) => value.writeToBuffer(),
+      $0.SetIntelligenceAlertStateResponse.fromBuffer);
+  static final _$getIntelligenceQueue = $grpc.ClientMethod<
+          $0.GetIntelligenceQueueRequest, $0.GetIntelligenceQueueResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetIntelligenceQueue',
+      ($0.GetIntelligenceQueueRequest value) => value.writeToBuffer(),
+      $0.GetIntelligenceQueueResponse.fromBuffer);
+  static final _$recordIntelligenceFeedback = $grpc.ClientMethod<
+          $0.RecordIntelligenceFeedbackRequest,
+          $0.RecordIntelligenceFeedbackResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordIntelligenceFeedback',
+      ($0.RecordIntelligenceFeedbackRequest value) => value.writeToBuffer(),
+      $0.RecordIntelligenceFeedbackResponse.fromBuffer);
   static final _$exportReaderData = $grpc.ClientMethod<
           $0.ExportReaderDataRequest, $0.ExportReaderDataResponse>(
       '/sttattus.onyx.v1.OnyxService/ExportReaderData',
@@ -1400,6 +1552,115 @@ abstract class OnyxServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.SearchReaderRequest.fromBuffer(value),
             ($0.SearchReaderResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SearchIntelligenceRequest,
+            $0.SearchIntelligenceResponse>(
+        'SearchIntelligence',
+        searchIntelligence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SearchIntelligenceRequest.fromBuffer(value),
+        ($0.SearchIntelligenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListSavedQueriesRequest,
+            $0.ListSavedQueriesResponse>(
+        'ListSavedQueries',
+        listSavedQueries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListSavedQueriesRequest.fromBuffer(value),
+        ($0.ListSavedQueriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSavedQueryRequest,
+            $0.UpsertSavedQueryResponse>(
+        'UpsertSavedQuery',
+        upsertSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSavedQueryRequest.fromBuffer(value),
+        ($0.UpsertSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteSavedQueryRequest,
+            $0.DeleteSavedQueryResponse>(
+        'DeleteSavedQuery',
+        deleteSavedQuery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteSavedQueryRequest.fromBuffer(value),
+        ($0.DeleteSavedQueryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListWatchlistsRequest,
+            $0.ListWatchlistsResponse>(
+        'ListWatchlists',
+        listWatchlists_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListWatchlistsRequest.fromBuffer(value),
+        ($0.ListWatchlistsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertWatchlistRequest,
+            $0.UpsertWatchlistResponse>(
+        'UpsertWatchlist',
+        upsertWatchlist_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertWatchlistRequest.fromBuffer(value),
+        ($0.UpsertWatchlistResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteWatchlistRequest,
+            $0.DeleteWatchlistResponse>(
+        'DeleteWatchlist',
+        deleteWatchlist_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteWatchlistRequest.fromBuffer(value),
+        ($0.DeleteWatchlistResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RefreshWatchlistRequest,
+            $0.RefreshWatchlistResponse>(
+        'RefreshWatchlist',
+        refreshWatchlist_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RefreshWatchlistRequest.fromBuffer(value),
+        ($0.RefreshWatchlistResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIntelligenceAlertsRequest,
+            $0.ListIntelligenceAlertsResponse>(
+        'ListIntelligenceAlerts',
+        listIntelligenceAlerts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListIntelligenceAlertsRequest.fromBuffer(value),
+        ($0.ListIntelligenceAlertsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetIntelligenceAlertStateRequest,
+            $0.SetIntelligenceAlertStateResponse>(
+        'SetIntelligenceAlertState',
+        setIntelligenceAlertState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntelligenceAlertStateRequest.fromBuffer(value),
+        ($0.SetIntelligenceAlertStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetIntelligenceQueueRequest,
+            $0.GetIntelligenceQueueResponse>(
+        'GetIntelligenceQueue',
+        getIntelligenceQueue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetIntelligenceQueueRequest.fromBuffer(value),
+        ($0.GetIntelligenceQueueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordIntelligenceFeedbackRequest,
+            $0.RecordIntelligenceFeedbackResponse>(
+        'RecordIntelligenceFeedback',
+        recordIntelligenceFeedback_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordIntelligenceFeedbackRequest.fromBuffer(value),
+        ($0.RecordIntelligenceFeedbackResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ExportReaderDataRequest,
             $0.ExportReaderDataResponse>(
         'ExportReaderData',
@@ -2219,6 +2480,115 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.SearchReaderResponse> searchReader(
       $grpc.ServiceCall call, $0.SearchReaderRequest request);
+
+  $async.Future<$0.SearchIntelligenceResponse> searchIntelligence_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SearchIntelligenceRequest> $request) async {
+    return searchIntelligence($call, await $request);
+  }
+
+  $async.Future<$0.SearchIntelligenceResponse> searchIntelligence(
+      $grpc.ServiceCall call, $0.SearchIntelligenceRequest request);
+
+  $async.Future<$0.ListSavedQueriesResponse> listSavedQueries_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListSavedQueriesRequest> $request) async {
+    return listSavedQueries($call, await $request);
+  }
+
+  $async.Future<$0.ListSavedQueriesResponse> listSavedQueries(
+      $grpc.ServiceCall call, $0.ListSavedQueriesRequest request);
+
+  $async.Future<$0.UpsertSavedQueryResponse> upsertSavedQuery_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertSavedQueryRequest> $request) async {
+    return upsertSavedQuery($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSavedQueryResponse> upsertSavedQuery(
+      $grpc.ServiceCall call, $0.UpsertSavedQueryRequest request);
+
+  $async.Future<$0.DeleteSavedQueryResponse> deleteSavedQuery_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteSavedQueryRequest> $request) async {
+    return deleteSavedQuery($call, await $request);
+  }
+
+  $async.Future<$0.DeleteSavedQueryResponse> deleteSavedQuery(
+      $grpc.ServiceCall call, $0.DeleteSavedQueryRequest request);
+
+  $async.Future<$0.ListWatchlistsResponse> listWatchlists_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListWatchlistsRequest> $request) async {
+    return listWatchlists($call, await $request);
+  }
+
+  $async.Future<$0.ListWatchlistsResponse> listWatchlists(
+      $grpc.ServiceCall call, $0.ListWatchlistsRequest request);
+
+  $async.Future<$0.UpsertWatchlistResponse> upsertWatchlist_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertWatchlistRequest> $request) async {
+    return upsertWatchlist($call, await $request);
+  }
+
+  $async.Future<$0.UpsertWatchlistResponse> upsertWatchlist(
+      $grpc.ServiceCall call, $0.UpsertWatchlistRequest request);
+
+  $async.Future<$0.DeleteWatchlistResponse> deleteWatchlist_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteWatchlistRequest> $request) async {
+    return deleteWatchlist($call, await $request);
+  }
+
+  $async.Future<$0.DeleteWatchlistResponse> deleteWatchlist(
+      $grpc.ServiceCall call, $0.DeleteWatchlistRequest request);
+
+  $async.Future<$0.RefreshWatchlistResponse> refreshWatchlist_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RefreshWatchlistRequest> $request) async {
+    return refreshWatchlist($call, await $request);
+  }
+
+  $async.Future<$0.RefreshWatchlistResponse> refreshWatchlist(
+      $grpc.ServiceCall call, $0.RefreshWatchlistRequest request);
+
+  $async.Future<$0.ListIntelligenceAlertsResponse> listIntelligenceAlerts_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListIntelligenceAlertsRequest> $request) async {
+    return listIntelligenceAlerts($call, await $request);
+  }
+
+  $async.Future<$0.ListIntelligenceAlertsResponse> listIntelligenceAlerts(
+      $grpc.ServiceCall call, $0.ListIntelligenceAlertsRequest request);
+
+  $async.Future<$0.SetIntelligenceAlertStateResponse>
+      setIntelligenceAlertState_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SetIntelligenceAlertStateRequest> $request) async {
+    return setIntelligenceAlertState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntelligenceAlertStateResponse> setIntelligenceAlertState(
+      $grpc.ServiceCall call, $0.SetIntelligenceAlertStateRequest request);
+
+  $async.Future<$0.GetIntelligenceQueueResponse> getIntelligenceQueue_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetIntelligenceQueueRequest> $request) async {
+    return getIntelligenceQueue($call, await $request);
+  }
+
+  $async.Future<$0.GetIntelligenceQueueResponse> getIntelligenceQueue(
+      $grpc.ServiceCall call, $0.GetIntelligenceQueueRequest request);
+
+  $async.Future<$0.RecordIntelligenceFeedbackResponse>
+      recordIntelligenceFeedback_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordIntelligenceFeedbackRequest> $request) async {
+    return recordIntelligenceFeedback($call, await $request);
+  }
+
+  $async.Future<$0.RecordIntelligenceFeedbackResponse>
+      recordIntelligenceFeedback(
+          $grpc.ServiceCall call, $0.RecordIntelligenceFeedbackRequest request);
 
   $async.Future<$0.ExportReaderDataResponse> exportReaderData_Pre(
       $grpc.ServiceCall $call,

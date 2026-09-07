@@ -41,6 +41,18 @@ const (
 	OnyxService_DeleteReaderAnnotation_FullMethodName             = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
 	OnyxService_ListMyReaderAnnotations_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
 	OnyxService_SearchReader_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/SearchReader"
+	OnyxService_SearchIntelligence_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SearchIntelligence"
+	OnyxService_ListSavedQueries_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListSavedQueries"
+	OnyxService_UpsertSavedQuery_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/UpsertSavedQuery"
+	OnyxService_DeleteSavedQuery_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/DeleteSavedQuery"
+	OnyxService_ListWatchlists_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListWatchlists"
+	OnyxService_UpsertWatchlist_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/UpsertWatchlist"
+	OnyxService_DeleteWatchlist_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/DeleteWatchlist"
+	OnyxService_RefreshWatchlist_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/RefreshWatchlist"
+	OnyxService_ListIntelligenceAlerts_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListIntelligenceAlerts"
+	OnyxService_SetIntelligenceAlertState_FullMethodName          = "/sttattus.onyx.v1.OnyxService/SetIntelligenceAlertState"
+	OnyxService_GetIntelligenceQueue_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetIntelligenceQueue"
+	OnyxService_RecordIntelligenceFeedback_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceFeedback"
 	OnyxService_ExportReaderData_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
 	OnyxService_ListReaderSyncChanges_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
 	OnyxService_ListMyUnlocks_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
@@ -150,6 +162,18 @@ type OnyxServiceClient interface {
 	DeleteReaderAnnotation(ctx context.Context, in *DeleteReaderAnnotationRequest, opts ...grpc.CallOption) (*DeleteReaderAnnotationResponse, error)
 	ListMyReaderAnnotations(ctx context.Context, in *ListMyReaderAnnotationsRequest, opts ...grpc.CallOption) (*ListMyReaderAnnotationsResponse, error)
 	SearchReader(ctx context.Context, in *SearchReaderRequest, opts ...grpc.CallOption) (*SearchReaderResponse, error)
+	SearchIntelligence(ctx context.Context, in *SearchIntelligenceRequest, opts ...grpc.CallOption) (*SearchIntelligenceResponse, error)
+	ListSavedQueries(ctx context.Context, in *ListSavedQueriesRequest, opts ...grpc.CallOption) (*ListSavedQueriesResponse, error)
+	UpsertSavedQuery(ctx context.Context, in *UpsertSavedQueryRequest, opts ...grpc.CallOption) (*UpsertSavedQueryResponse, error)
+	DeleteSavedQuery(ctx context.Context, in *DeleteSavedQueryRequest, opts ...grpc.CallOption) (*DeleteSavedQueryResponse, error)
+	ListWatchlists(ctx context.Context, in *ListWatchlistsRequest, opts ...grpc.CallOption) (*ListWatchlistsResponse, error)
+	UpsertWatchlist(ctx context.Context, in *UpsertWatchlistRequest, opts ...grpc.CallOption) (*UpsertWatchlistResponse, error)
+	DeleteWatchlist(ctx context.Context, in *DeleteWatchlistRequest, opts ...grpc.CallOption) (*DeleteWatchlistResponse, error)
+	RefreshWatchlist(ctx context.Context, in *RefreshWatchlistRequest, opts ...grpc.CallOption) (*RefreshWatchlistResponse, error)
+	ListIntelligenceAlerts(ctx context.Context, in *ListIntelligenceAlertsRequest, opts ...grpc.CallOption) (*ListIntelligenceAlertsResponse, error)
+	SetIntelligenceAlertState(ctx context.Context, in *SetIntelligenceAlertStateRequest, opts ...grpc.CallOption) (*SetIntelligenceAlertStateResponse, error)
+	GetIntelligenceQueue(ctx context.Context, in *GetIntelligenceQueueRequest, opts ...grpc.CallOption) (*GetIntelligenceQueueResponse, error)
+	RecordIntelligenceFeedback(ctx context.Context, in *RecordIntelligenceFeedbackRequest, opts ...grpc.CallOption) (*RecordIntelligenceFeedbackResponse, error)
 	ExportReaderData(ctx context.Context, in *ExportReaderDataRequest, opts ...grpc.CallOption) (*ExportReaderDataResponse, error)
 	ListReaderSyncChanges(ctx context.Context, in *ListReaderSyncChangesRequest, opts ...grpc.CallOption) (*ListReaderSyncChangesResponse, error)
 	// P2 — personal library / account.
@@ -460,6 +484,126 @@ func (c *onyxServiceClient) SearchReader(ctx context.Context, in *SearchReaderRe
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SearchReaderResponse)
 	err := c.cc.Invoke(ctx, OnyxService_SearchReader_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SearchIntelligence(ctx context.Context, in *SearchIntelligenceRequest, opts ...grpc.CallOption) (*SearchIntelligenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SearchIntelligenceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SearchIntelligence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListSavedQueries(ctx context.Context, in *ListSavedQueriesRequest, opts ...grpc.CallOption) (*ListSavedQueriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSavedQueriesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListSavedQueries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertSavedQuery(ctx context.Context, in *UpsertSavedQueryRequest, opts ...grpc.CallOption) (*UpsertSavedQueryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSavedQueryResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertSavedQuery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteSavedQuery(ctx context.Context, in *DeleteSavedQueryRequest, opts ...grpc.CallOption) (*DeleteSavedQueryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteSavedQueryResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteSavedQuery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListWatchlists(ctx context.Context, in *ListWatchlistsRequest, opts ...grpc.CallOption) (*ListWatchlistsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListWatchlistsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListWatchlists_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertWatchlist(ctx context.Context, in *UpsertWatchlistRequest, opts ...grpc.CallOption) (*UpsertWatchlistResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertWatchlistResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertWatchlist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteWatchlist(ctx context.Context, in *DeleteWatchlistRequest, opts ...grpc.CallOption) (*DeleteWatchlistResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteWatchlistResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteWatchlist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RefreshWatchlist(ctx context.Context, in *RefreshWatchlistRequest, opts ...grpc.CallOption) (*RefreshWatchlistResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RefreshWatchlistResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RefreshWatchlist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListIntelligenceAlerts(ctx context.Context, in *ListIntelligenceAlertsRequest, opts ...grpc.CallOption) (*ListIntelligenceAlertsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIntelligenceAlertsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListIntelligenceAlerts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntelligenceAlertState(ctx context.Context, in *SetIntelligenceAlertStateRequest, opts ...grpc.CallOption) (*SetIntelligenceAlertStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntelligenceAlertStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntelligenceAlertState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetIntelligenceQueue(ctx context.Context, in *GetIntelligenceQueueRequest, opts ...grpc.CallOption) (*GetIntelligenceQueueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIntelligenceQueueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetIntelligenceQueue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordIntelligenceFeedback(ctx context.Context, in *RecordIntelligenceFeedbackRequest, opts ...grpc.CallOption) (*RecordIntelligenceFeedbackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordIntelligenceFeedbackResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordIntelligenceFeedback_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1203,6 +1347,18 @@ type OnyxServiceServer interface {
 	DeleteReaderAnnotation(context.Context, *DeleteReaderAnnotationRequest) (*DeleteReaderAnnotationResponse, error)
 	ListMyReaderAnnotations(context.Context, *ListMyReaderAnnotationsRequest) (*ListMyReaderAnnotationsResponse, error)
 	SearchReader(context.Context, *SearchReaderRequest) (*SearchReaderResponse, error)
+	SearchIntelligence(context.Context, *SearchIntelligenceRequest) (*SearchIntelligenceResponse, error)
+	ListSavedQueries(context.Context, *ListSavedQueriesRequest) (*ListSavedQueriesResponse, error)
+	UpsertSavedQuery(context.Context, *UpsertSavedQueryRequest) (*UpsertSavedQueryResponse, error)
+	DeleteSavedQuery(context.Context, *DeleteSavedQueryRequest) (*DeleteSavedQueryResponse, error)
+	ListWatchlists(context.Context, *ListWatchlistsRequest) (*ListWatchlistsResponse, error)
+	UpsertWatchlist(context.Context, *UpsertWatchlistRequest) (*UpsertWatchlistResponse, error)
+	DeleteWatchlist(context.Context, *DeleteWatchlistRequest) (*DeleteWatchlistResponse, error)
+	RefreshWatchlist(context.Context, *RefreshWatchlistRequest) (*RefreshWatchlistResponse, error)
+	ListIntelligenceAlerts(context.Context, *ListIntelligenceAlertsRequest) (*ListIntelligenceAlertsResponse, error)
+	SetIntelligenceAlertState(context.Context, *SetIntelligenceAlertStateRequest) (*SetIntelligenceAlertStateResponse, error)
+	GetIntelligenceQueue(context.Context, *GetIntelligenceQueueRequest) (*GetIntelligenceQueueResponse, error)
+	RecordIntelligenceFeedback(context.Context, *RecordIntelligenceFeedbackRequest) (*RecordIntelligenceFeedbackResponse, error)
 	ExportReaderData(context.Context, *ExportReaderDataRequest) (*ExportReaderDataResponse, error)
 	ListReaderSyncChanges(context.Context, *ListReaderSyncChangesRequest) (*ListReaderSyncChangesResponse, error)
 	// P2 — personal library / account.
@@ -1364,6 +1520,42 @@ func (UnimplementedOnyxServiceServer) ListMyReaderAnnotations(context.Context, *
 }
 func (UnimplementedOnyxServiceServer) SearchReader(context.Context, *SearchReaderRequest) (*SearchReaderResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SearchReader not implemented")
+}
+func (UnimplementedOnyxServiceServer) SearchIntelligence(context.Context, *SearchIntelligenceRequest) (*SearchIntelligenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SearchIntelligence not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListSavedQueries(context.Context, *ListSavedQueriesRequest) (*ListSavedQueriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSavedQueries not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertSavedQuery(context.Context, *UpsertSavedQueryRequest) (*UpsertSavedQueryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSavedQuery not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteSavedQuery(context.Context, *DeleteSavedQueryRequest) (*DeleteSavedQueryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteSavedQuery not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListWatchlists(context.Context, *ListWatchlistsRequest) (*ListWatchlistsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListWatchlists not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertWatchlist(context.Context, *UpsertWatchlistRequest) (*UpsertWatchlistResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertWatchlist not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteWatchlist(context.Context, *DeleteWatchlistRequest) (*DeleteWatchlistResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteWatchlist not implemented")
+}
+func (UnimplementedOnyxServiceServer) RefreshWatchlist(context.Context, *RefreshWatchlistRequest) (*RefreshWatchlistResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RefreshWatchlist not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListIntelligenceAlerts(context.Context, *ListIntelligenceAlertsRequest) (*ListIntelligenceAlertsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIntelligenceAlerts not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntelligenceAlertState(context.Context, *SetIntelligenceAlertStateRequest) (*SetIntelligenceAlertStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntelligenceAlertState not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetIntelligenceQueue(context.Context, *GetIntelligenceQueueRequest) (*GetIntelligenceQueueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIntelligenceQueue not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordIntelligenceFeedback(context.Context, *RecordIntelligenceFeedbackRequest) (*RecordIntelligenceFeedbackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordIntelligenceFeedback not implemented")
 }
 func (UnimplementedOnyxServiceServer) ExportReaderData(context.Context, *ExportReaderDataRequest) (*ExportReaderDataResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ExportReaderData not implemented")
@@ -1988,6 +2180,222 @@ func _OnyxService_SearchReader_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).SearchReader(ctx, req.(*SearchReaderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SearchIntelligence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchIntelligenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SearchIntelligence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SearchIntelligence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SearchIntelligence(ctx, req.(*SearchIntelligenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListSavedQueries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSavedQueriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListSavedQueries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListSavedQueries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListSavedQueries(ctx, req.(*ListSavedQueriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertSavedQuery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSavedQueryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertSavedQuery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertSavedQuery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertSavedQuery(ctx, req.(*UpsertSavedQueryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteSavedQuery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteSavedQueryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteSavedQuery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteSavedQuery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteSavedQuery(ctx, req.(*DeleteSavedQueryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListWatchlists_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListWatchlistsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListWatchlists(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListWatchlists_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListWatchlists(ctx, req.(*ListWatchlistsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertWatchlist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertWatchlistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertWatchlist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertWatchlist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertWatchlist(ctx, req.(*UpsertWatchlistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteWatchlist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteWatchlistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteWatchlist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteWatchlist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteWatchlist(ctx, req.(*DeleteWatchlistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RefreshWatchlist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshWatchlistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RefreshWatchlist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RefreshWatchlist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RefreshWatchlist(ctx, req.(*RefreshWatchlistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListIntelligenceAlerts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntelligenceAlertsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListIntelligenceAlerts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListIntelligenceAlerts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListIntelligenceAlerts(ctx, req.(*ListIntelligenceAlertsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntelligenceAlertState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntelligenceAlertStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntelligenceAlertState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntelligenceAlertState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntelligenceAlertState(ctx, req.(*SetIntelligenceAlertStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetIntelligenceQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntelligenceQueueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetIntelligenceQueue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetIntelligenceQueue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetIntelligenceQueue(ctx, req.(*GetIntelligenceQueueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordIntelligenceFeedback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordIntelligenceFeedbackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordIntelligenceFeedback(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordIntelligenceFeedback_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordIntelligenceFeedback(ctx, req.(*RecordIntelligenceFeedbackRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3346,6 +3754,54 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SearchReader",
 			Handler:    _OnyxService_SearchReader_Handler,
+		},
+		{
+			MethodName: "SearchIntelligence",
+			Handler:    _OnyxService_SearchIntelligence_Handler,
+		},
+		{
+			MethodName: "ListSavedQueries",
+			Handler:    _OnyxService_ListSavedQueries_Handler,
+		},
+		{
+			MethodName: "UpsertSavedQuery",
+			Handler:    _OnyxService_UpsertSavedQuery_Handler,
+		},
+		{
+			MethodName: "DeleteSavedQuery",
+			Handler:    _OnyxService_DeleteSavedQuery_Handler,
+		},
+		{
+			MethodName: "ListWatchlists",
+			Handler:    _OnyxService_ListWatchlists_Handler,
+		},
+		{
+			MethodName: "UpsertWatchlist",
+			Handler:    _OnyxService_UpsertWatchlist_Handler,
+		},
+		{
+			MethodName: "DeleteWatchlist",
+			Handler:    _OnyxService_DeleteWatchlist_Handler,
+		},
+		{
+			MethodName: "RefreshWatchlist",
+			Handler:    _OnyxService_RefreshWatchlist_Handler,
+		},
+		{
+			MethodName: "ListIntelligenceAlerts",
+			Handler:    _OnyxService_ListIntelligenceAlerts_Handler,
+		},
+		{
+			MethodName: "SetIntelligenceAlertState",
+			Handler:    _OnyxService_SetIntelligenceAlertState_Handler,
+		},
+		{
+			MethodName: "GetIntelligenceQueue",
+			Handler:    _OnyxService_GetIntelligenceQueue_Handler,
+		},
+		{
+			MethodName: "RecordIntelligenceFeedback",
+			Handler:    _OnyxService_RecordIntelligenceFeedback_Handler,
 		},
 		{
 			MethodName: "ExportReaderData",

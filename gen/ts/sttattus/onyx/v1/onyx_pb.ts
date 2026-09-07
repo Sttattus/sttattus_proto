@@ -2984,6 +2984,1711 @@ export class SearchReaderResponse extends Message<SearchReaderResponse> {
 }
 
 /**
+ * Choice 7 — private, access-aware search, watchlists and a finite daily
+ * intelligence queue. Ranking reasons are deliberately returned to the member;
+ * a recommendation that cannot explain itself is not an Onyx recommendation.
+ *
+ * @generated from message sttattus.onyx.v1.IntelligenceSearchFilters
+ */
+export class IntelligenceSearchFilters extends Message<IntelligenceSearchFilters> {
+  /**
+   * all | editorial | captures | annotations
+   *
+   * @generated from field: string scope = 1;
+   */
+  scope = "";
+
+  /**
+   * article | audio | video
+   *
+   * @generated from field: repeated string kinds = 2;
+   */
+  kinds: string[] = [];
+
+  /**
+   * @generated from field: string creator_id = 3;
+   */
+  creatorId = "";
+
+  /**
+   * @generated from field: string language_code = 4;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_after = 5;
+   */
+  publishedAfter?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_before = 6;
+   */
+  publishedBefore?: Timestamp;
+
+  /**
+   * any | unread | in_progress | completed
+   *
+   * @generated from field: string read_state = 7;
+   */
+  readState = "";
+
+  /**
+   * any | readable | locked
+   *
+   * @generated from field: string entitlement = 8;
+   */
+  entitlement = "";
+
+  /**
+   * @generated from field: repeated string tags = 9;
+   */
+  tags: string[] = [];
+
+  /**
+   * relevance | newest | editorial
+   *
+   * @generated from field: string sort = 10;
+   */
+  sort = "";
+
+  constructor(data?: PartialMessage<IntelligenceSearchFilters>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceSearchFilters";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kinds", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "creator_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "published_after", kind: "message", T: Timestamp },
+    { no: 6, name: "published_before", kind: "message", T: Timestamp },
+    { no: 7, name: "read_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "entitlement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tags", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "sort", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceSearchFilters {
+    return new IntelligenceSearchFilters().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceSearchFilters {
+    return new IntelligenceSearchFilters().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceSearchFilters {
+    return new IntelligenceSearchFilters().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceSearchFilters | PlainMessage<IntelligenceSearchFilters> | undefined, b: IntelligenceSearchFilters | PlainMessage<IntelligenceSearchFilters> | undefined): boolean {
+    return proto3.util.equals(IntelligenceSearchFilters, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SearchIntelligenceRequest
+ */
+export class SearchIntelligenceRequest extends Message<SearchIntelligenceRequest> {
+  /**
+   * @generated from field: string query = 1;
+   */
+  query = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceSearchFilters filters = 2;
+   */
+  filters?: IntelligenceSearchFilters;
+
+  /**
+   * @generated from field: int32 limit = 3;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<SearchIntelligenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SearchIntelligenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "filters", kind: "message", T: IntelligenceSearchFilters },
+    { no: 3, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchIntelligenceRequest {
+    return new SearchIntelligenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchIntelligenceRequest {
+    return new SearchIntelligenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchIntelligenceRequest {
+    return new SearchIntelligenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SearchIntelligenceRequest | PlainMessage<SearchIntelligenceRequest> | undefined, b: SearchIntelligenceRequest | PlainMessage<SearchIntelligenceRequest> | undefined): boolean {
+    return proto3.util.equals(SearchIntelligenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceSearchResult
+ */
+export class IntelligenceSearchResult extends Message<IntelligenceSearchResult> {
+  /**
+   * @generated from field: string result_id = 1;
+   */
+  resultId = "";
+
+  /**
+   * content | annotation
+   *
+   * @generated from field: string scope = 2;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 3;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.ReaderAnnotation annotation = 4;
+   */
+  annotation?: ReaderAnnotation;
+
+  /**
+   * @generated from field: string snippet = 5;
+   */
+  snippet = "";
+
+  /**
+   * @generated from field: double score = 6;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: repeated string reasons = 7;
+   */
+  reasons: string[] = [];
+
+  /**
+   * @generated from field: repeated string matched_terms = 8;
+   */
+  matchedTerms: string[] = [];
+
+  /**
+   * @generated from field: string cluster_key = 9;
+   */
+  clusterKey = "";
+
+  /**
+   * new | updated | corrected
+   *
+   * @generated from field: string change_kind = 10;
+   */
+  changeKind = "";
+
+  /**
+   * @generated from field: bool entitled = 11;
+   */
+  entitled = false;
+
+  constructor(data?: PartialMessage<IntelligenceSearchResult>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceSearchResult";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "result_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content", kind: "message", T: OnyxContent },
+    { no: 4, name: "annotation", kind: "message", T: ReaderAnnotation },
+    { no: 5, name: "snippet", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "reasons", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "matched_terms", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "cluster_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "change_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "entitled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceSearchResult {
+    return new IntelligenceSearchResult().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceSearchResult {
+    return new IntelligenceSearchResult().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceSearchResult {
+    return new IntelligenceSearchResult().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceSearchResult | PlainMessage<IntelligenceSearchResult> | undefined, b: IntelligenceSearchResult | PlainMessage<IntelligenceSearchResult> | undefined): boolean {
+    return proto3.util.equals(IntelligenceSearchResult, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SearchIntelligenceResponse
+ */
+export class SearchIntelligenceResponse extends Message<SearchIntelligenceResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceSearchResult results = 1;
+   */
+  results: IntelligenceSearchResult[] = [];
+
+  /**
+   * @generated from field: int32 total = 2;
+   */
+  total = 0;
+
+  /**
+   * @generated from field: string query_digest = 3;
+   */
+  queryDigest = "";
+
+  /**
+   * @generated from field: int32 elapsed_ms = 4;
+   */
+  elapsedMs = 0;
+
+  /**
+   * @generated from field: string ranking_version = 5;
+   */
+  rankingVersion = "";
+
+  constructor(data?: PartialMessage<SearchIntelligenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SearchIntelligenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "results", kind: "message", T: IntelligenceSearchResult, repeated: true },
+    { no: 2, name: "total", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "query_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "elapsed_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "ranking_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchIntelligenceResponse {
+    return new SearchIntelligenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchIntelligenceResponse {
+    return new SearchIntelligenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchIntelligenceResponse {
+    return new SearchIntelligenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SearchIntelligenceResponse | PlainMessage<SearchIntelligenceResponse> | undefined, b: SearchIntelligenceResponse | PlainMessage<SearchIntelligenceResponse> | undefined): boolean {
+    return proto3.util.equals(SearchIntelligenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxSavedQuery
+ */
+export class OnyxSavedQuery extends Message<OnyxSavedQuery> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string query = 3;
+   */
+  query = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceSearchFilters filters = 4;
+   */
+  filters?: IntelligenceSearchFilters;
+
+  /**
+   * off | instant | daily
+   *
+   * @generated from field: string alert_mode = 5;
+   */
+  alertMode = "";
+
+  /**
+   * @generated from field: double threshold = 6;
+   */
+  threshold = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 8;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxSavedQuery>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxSavedQuery";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "filters", kind: "message", T: IntelligenceSearchFilters },
+    { no: 5, name: "alert_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "created_at", kind: "message", T: Timestamp },
+    { no: 8, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxSavedQuery {
+    return new OnyxSavedQuery().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxSavedQuery {
+    return new OnyxSavedQuery().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxSavedQuery {
+    return new OnyxSavedQuery().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxSavedQuery | PlainMessage<OnyxSavedQuery> | undefined, b: OnyxSavedQuery | PlainMessage<OnyxSavedQuery> | undefined): boolean {
+    return proto3.util.equals(OnyxSavedQuery, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListSavedQueriesRequest
+ */
+export class ListSavedQueriesRequest extends Message<ListSavedQueriesRequest> {
+  constructor(data?: PartialMessage<ListSavedQueriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListSavedQueriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSavedQueriesRequest {
+    return new ListSavedQueriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSavedQueriesRequest {
+    return new ListSavedQueriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSavedQueriesRequest {
+    return new ListSavedQueriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSavedQueriesRequest | PlainMessage<ListSavedQueriesRequest> | undefined, b: ListSavedQueriesRequest | PlainMessage<ListSavedQueriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListSavedQueriesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListSavedQueriesResponse
+ */
+export class ListSavedQueriesResponse extends Message<ListSavedQueriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxSavedQuery queries = 1;
+   */
+  queries: OnyxSavedQuery[] = [];
+
+  constructor(data?: PartialMessage<ListSavedQueriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListSavedQueriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "queries", kind: "message", T: OnyxSavedQuery, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSavedQueriesResponse {
+    return new ListSavedQueriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSavedQueriesResponse {
+    return new ListSavedQueriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSavedQueriesResponse {
+    return new ListSavedQueriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSavedQueriesResponse | PlainMessage<ListSavedQueriesResponse> | undefined, b: ListSavedQueriesResponse | PlainMessage<ListSavedQueriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListSavedQueriesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSavedQueryRequest
+ */
+export class UpsertSavedQueryRequest extends Message<UpsertSavedQueryRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string query = 3;
+   */
+  query = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceSearchFilters filters = 4;
+   */
+  filters?: IntelligenceSearchFilters;
+
+  /**
+   * @generated from field: string alert_mode = 5;
+   */
+  alertMode = "";
+
+  /**
+   * @generated from field: double threshold = 6;
+   */
+  threshold = 0;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertSavedQueryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSavedQueryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "filters", kind: "message", T: IntelligenceSearchFilters },
+    { no: 5, name: "alert_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSavedQueryRequest {
+    return new UpsertSavedQueryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSavedQueryRequest {
+    return new UpsertSavedQueryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSavedQueryRequest {
+    return new UpsertSavedQueryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSavedQueryRequest | PlainMessage<UpsertSavedQueryRequest> | undefined, b: UpsertSavedQueryRequest | PlainMessage<UpsertSavedQueryRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertSavedQueryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSavedQueryResponse
+ */
+export class UpsertSavedQueryResponse extends Message<UpsertSavedQueryResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxSavedQuery query = 1;
+   */
+  query?: OnyxSavedQuery;
+
+  constructor(data?: PartialMessage<UpsertSavedQueryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSavedQueryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "query", kind: "message", T: OnyxSavedQuery },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSavedQueryResponse {
+    return new UpsertSavedQueryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSavedQueryResponse {
+    return new UpsertSavedQueryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSavedQueryResponse {
+    return new UpsertSavedQueryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSavedQueryResponse | PlainMessage<UpsertSavedQueryResponse> | undefined, b: UpsertSavedQueryResponse | PlainMessage<UpsertSavedQueryResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertSavedQueryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteSavedQueryRequest
+ */
+export class DeleteSavedQueryRequest extends Message<DeleteSavedQueryRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<DeleteSavedQueryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteSavedQueryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteSavedQueryRequest {
+    return new DeleteSavedQueryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteSavedQueryRequest {
+    return new DeleteSavedQueryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteSavedQueryRequest {
+    return new DeleteSavedQueryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteSavedQueryRequest | PlainMessage<DeleteSavedQueryRequest> | undefined, b: DeleteSavedQueryRequest | PlainMessage<DeleteSavedQueryRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteSavedQueryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteSavedQueryResponse
+ */
+export class DeleteSavedQueryResponse extends Message<DeleteSavedQueryResponse> {
+  constructor(data?: PartialMessage<DeleteSavedQueryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteSavedQueryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteSavedQueryResponse {
+    return new DeleteSavedQueryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteSavedQueryResponse {
+    return new DeleteSavedQueryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteSavedQueryResponse {
+    return new DeleteSavedQueryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteSavedQueryResponse | PlainMessage<DeleteSavedQueryResponse> | undefined, b: DeleteSavedQueryResponse | PlainMessage<DeleteSavedQueryResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteSavedQueryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxWatchlistTerm
+ */
+export class OnyxWatchlistTerm extends Message<OnyxWatchlistTerm> {
+  /**
+   * topic | entity | company | person | place
+   *
+   * @generated from field: string kind = 1;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string label = 2;
+   */
+  label = "";
+
+  /**
+   * @generated from field: repeated string aliases = 3;
+   */
+  aliases: string[] = [];
+
+  /**
+   * @generated from field: double weight = 4;
+   */
+  weight = 0;
+
+  constructor(data?: PartialMessage<OnyxWatchlistTerm>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxWatchlistTerm";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "aliases", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "weight", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxWatchlistTerm {
+    return new OnyxWatchlistTerm().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxWatchlistTerm {
+    return new OnyxWatchlistTerm().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxWatchlistTerm {
+    return new OnyxWatchlistTerm().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxWatchlistTerm | PlainMessage<OnyxWatchlistTerm> | undefined, b: OnyxWatchlistTerm | PlainMessage<OnyxWatchlistTerm> | undefined): boolean {
+    return proto3.util.equals(OnyxWatchlistTerm, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxWatchlist
+ */
+export class OnyxWatchlist extends Message<OnyxWatchlist> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxWatchlistTerm terms = 4;
+   */
+  terms: OnyxWatchlistTerm[] = [];
+
+  /**
+   * @generated from field: double threshold = 5;
+   */
+  threshold = 0;
+
+  /**
+   * instant | daily | weekly
+   *
+   * @generated from field: string frequency = 6;
+   */
+  frequency = "";
+
+  /**
+   * @generated from field: bool paused = 7;
+   */
+  paused = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_refreshed_at = 8;
+   */
+  lastRefreshedAt?: Timestamp;
+
+  /**
+   * @generated from field: int32 unread_alerts = 9;
+   */
+  unreadAlerts = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 10;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 11;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxWatchlist>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxWatchlist";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "terms", kind: "message", T: OnyxWatchlistTerm, repeated: true },
+    { no: 5, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "frequency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "last_refreshed_at", kind: "message", T: Timestamp },
+    { no: 9, name: "unread_alerts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "created_at", kind: "message", T: Timestamp },
+    { no: 11, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxWatchlist {
+    return new OnyxWatchlist().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxWatchlist {
+    return new OnyxWatchlist().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxWatchlist {
+    return new OnyxWatchlist().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxWatchlist | PlainMessage<OnyxWatchlist> | undefined, b: OnyxWatchlist | PlainMessage<OnyxWatchlist> | undefined): boolean {
+    return proto3.util.equals(OnyxWatchlist, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListWatchlistsRequest
+ */
+export class ListWatchlistsRequest extends Message<ListWatchlistsRequest> {
+  constructor(data?: PartialMessage<ListWatchlistsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListWatchlistsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWatchlistsRequest {
+    return new ListWatchlistsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWatchlistsRequest {
+    return new ListWatchlistsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWatchlistsRequest {
+    return new ListWatchlistsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListWatchlistsRequest | PlainMessage<ListWatchlistsRequest> | undefined, b: ListWatchlistsRequest | PlainMessage<ListWatchlistsRequest> | undefined): boolean {
+    return proto3.util.equals(ListWatchlistsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListWatchlistsResponse
+ */
+export class ListWatchlistsResponse extends Message<ListWatchlistsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxWatchlist watchlists = 1;
+   */
+  watchlists: OnyxWatchlist[] = [];
+
+  constructor(data?: PartialMessage<ListWatchlistsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListWatchlistsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "watchlists", kind: "message", T: OnyxWatchlist, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWatchlistsResponse {
+    return new ListWatchlistsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWatchlistsResponse {
+    return new ListWatchlistsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWatchlistsResponse {
+    return new ListWatchlistsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListWatchlistsResponse | PlainMessage<ListWatchlistsResponse> | undefined, b: ListWatchlistsResponse | PlainMessage<ListWatchlistsResponse> | undefined): boolean {
+    return proto3.util.equals(ListWatchlistsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertWatchlistRequest
+ */
+export class UpsertWatchlistRequest extends Message<UpsertWatchlistRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxWatchlistTerm terms = 4;
+   */
+  terms: OnyxWatchlistTerm[] = [];
+
+  /**
+   * @generated from field: double threshold = 5;
+   */
+  threshold = 0;
+
+  /**
+   * @generated from field: string frequency = 6;
+   */
+  frequency = "";
+
+  /**
+   * @generated from field: bool paused = 7;
+   */
+  paused = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 8;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertWatchlistRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertWatchlistRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "terms", kind: "message", T: OnyxWatchlistTerm, repeated: true },
+    { no: 5, name: "threshold", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "frequency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWatchlistRequest {
+    return new UpsertWatchlistRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWatchlistRequest {
+    return new UpsertWatchlistRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWatchlistRequest {
+    return new UpsertWatchlistRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWatchlistRequest | PlainMessage<UpsertWatchlistRequest> | undefined, b: UpsertWatchlistRequest | PlainMessage<UpsertWatchlistRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertWatchlistRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertWatchlistResponse
+ */
+export class UpsertWatchlistResponse extends Message<UpsertWatchlistResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxWatchlist watchlist = 1;
+   */
+  watchlist?: OnyxWatchlist;
+
+  constructor(data?: PartialMessage<UpsertWatchlistResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertWatchlistResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "watchlist", kind: "message", T: OnyxWatchlist },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWatchlistResponse {
+    return new UpsertWatchlistResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWatchlistResponse {
+    return new UpsertWatchlistResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWatchlistResponse {
+    return new UpsertWatchlistResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWatchlistResponse | PlainMessage<UpsertWatchlistResponse> | undefined, b: UpsertWatchlistResponse | PlainMessage<UpsertWatchlistResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertWatchlistResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteWatchlistRequest
+ */
+export class DeleteWatchlistRequest extends Message<DeleteWatchlistRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<DeleteWatchlistRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteWatchlistRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWatchlistRequest {
+    return new DeleteWatchlistRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWatchlistRequest {
+    return new DeleteWatchlistRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWatchlistRequest {
+    return new DeleteWatchlistRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteWatchlistRequest | PlainMessage<DeleteWatchlistRequest> | undefined, b: DeleteWatchlistRequest | PlainMessage<DeleteWatchlistRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteWatchlistRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteWatchlistResponse
+ */
+export class DeleteWatchlistResponse extends Message<DeleteWatchlistResponse> {
+  constructor(data?: PartialMessage<DeleteWatchlistResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteWatchlistResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWatchlistResponse {
+    return new DeleteWatchlistResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWatchlistResponse {
+    return new DeleteWatchlistResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWatchlistResponse {
+    return new DeleteWatchlistResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteWatchlistResponse | PlainMessage<DeleteWatchlistResponse> | undefined, b: DeleteWatchlistResponse | PlainMessage<DeleteWatchlistResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteWatchlistResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RefreshWatchlistRequest
+ */
+export class RefreshWatchlistRequest extends Message<RefreshWatchlistRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RefreshWatchlistRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RefreshWatchlistRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshWatchlistRequest {
+    return new RefreshWatchlistRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshWatchlistRequest {
+    return new RefreshWatchlistRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshWatchlistRequest {
+    return new RefreshWatchlistRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshWatchlistRequest | PlainMessage<RefreshWatchlistRequest> | undefined, b: RefreshWatchlistRequest | PlainMessage<RefreshWatchlistRequest> | undefined): boolean {
+    return proto3.util.equals(RefreshWatchlistRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RefreshWatchlistResponse
+ */
+export class RefreshWatchlistResponse extends Message<RefreshWatchlistResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxWatchlist watchlist = 1;
+   */
+  watchlist?: OnyxWatchlist;
+
+  /**
+   * @generated from field: int32 new_alerts = 2;
+   */
+  newAlerts = 0;
+
+  constructor(data?: PartialMessage<RefreshWatchlistResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RefreshWatchlistResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "watchlist", kind: "message", T: OnyxWatchlist },
+    { no: 2, name: "new_alerts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshWatchlistResponse {
+    return new RefreshWatchlistResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshWatchlistResponse {
+    return new RefreshWatchlistResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshWatchlistResponse {
+    return new RefreshWatchlistResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RefreshWatchlistResponse | PlainMessage<RefreshWatchlistResponse> | undefined, b: RefreshWatchlistResponse | PlainMessage<RefreshWatchlistResponse> | undefined): boolean {
+    return proto3.util.equals(RefreshWatchlistResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntelligenceAlert
+ */
+export class OnyxIntelligenceAlert extends Message<OnyxIntelligenceAlert> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string watchlist_id = 2;
+   */
+  watchlistId = "";
+
+  /**
+   * @generated from field: string watchlist_name = 3;
+   */
+  watchlistName = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 4;
+   */
+  content?: OnyxContent;
+
+  /**
+   * new | updated | corrected
+   *
+   * @generated from field: string signal_kind = 5;
+   */
+  signalKind = "";
+
+  /**
+   * @generated from field: double score = 6;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: repeated string reasons = 7;
+   */
+  reasons: string[] = [];
+
+  /**
+   * unread | read | dismissed
+   *
+   * @generated from field: string state = 8;
+   */
+  state = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp detected_at = 9;
+   */
+  detectedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntelligenceAlert>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntelligenceAlert";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "watchlist_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "watchlist_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "content", kind: "message", T: OnyxContent },
+    { no: 5, name: "signal_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "reasons", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "detected_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntelligenceAlert {
+    return new OnyxIntelligenceAlert().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntelligenceAlert {
+    return new OnyxIntelligenceAlert().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntelligenceAlert {
+    return new OnyxIntelligenceAlert().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntelligenceAlert | PlainMessage<OnyxIntelligenceAlert> | undefined, b: OnyxIntelligenceAlert | PlainMessage<OnyxIntelligenceAlert> | undefined): boolean {
+    return proto3.util.equals(OnyxIntelligenceAlert, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceAlertsRequest
+ */
+export class ListIntelligenceAlertsRequest extends Message<ListIntelligenceAlertsRequest> {
+  /**
+   * @generated from field: string watchlist_id = 1;
+   */
+  watchlistId = "";
+
+  /**
+   * all | unread | read | dismissed
+   *
+   * @generated from field: string state = 2;
+   */
+  state = "";
+
+  /**
+   * @generated from field: int32 limit = 3;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListIntelligenceAlertsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceAlertsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "watchlist_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceAlertsRequest {
+    return new ListIntelligenceAlertsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceAlertsRequest {
+    return new ListIntelligenceAlertsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceAlertsRequest {
+    return new ListIntelligenceAlertsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceAlertsRequest | PlainMessage<ListIntelligenceAlertsRequest> | undefined, b: ListIntelligenceAlertsRequest | PlainMessage<ListIntelligenceAlertsRequest> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceAlertsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceAlertsResponse
+ */
+export class ListIntelligenceAlertsResponse extends Message<ListIntelligenceAlertsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntelligenceAlert alerts = 1;
+   */
+  alerts: OnyxIntelligenceAlert[] = [];
+
+  constructor(data?: PartialMessage<ListIntelligenceAlertsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceAlertsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alerts", kind: "message", T: OnyxIntelligenceAlert, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceAlertsResponse {
+    return new ListIntelligenceAlertsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceAlertsResponse {
+    return new ListIntelligenceAlertsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceAlertsResponse {
+    return new ListIntelligenceAlertsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceAlertsResponse | PlainMessage<ListIntelligenceAlertsResponse> | undefined, b: ListIntelligenceAlertsResponse | PlainMessage<ListIntelligenceAlertsResponse> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceAlertsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+ */
+export class SetIntelligenceAlertStateRequest extends Message<SetIntelligenceAlertStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * read | dismissed
+   *
+   * @generated from field: string state = 2;
+   */
+  state = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntelligenceAlertStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceAlertStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceAlertStateRequest {
+    return new SetIntelligenceAlertStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceAlertStateRequest {
+    return new SetIntelligenceAlertStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceAlertStateRequest {
+    return new SetIntelligenceAlertStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceAlertStateRequest | PlainMessage<SetIntelligenceAlertStateRequest> | undefined, b: SetIntelligenceAlertStateRequest | PlainMessage<SetIntelligenceAlertStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceAlertStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+ */
+export class SetIntelligenceAlertStateResponse extends Message<SetIntelligenceAlertStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntelligenceAlert alert = 1;
+   */
+  alert?: OnyxIntelligenceAlert;
+
+  constructor(data?: PartialMessage<SetIntelligenceAlertStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceAlertStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alert", kind: "message", T: OnyxIntelligenceAlert },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceAlertStateResponse {
+    return new SetIntelligenceAlertStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceAlertStateResponse {
+    return new SetIntelligenceAlertStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceAlertStateResponse {
+    return new SetIntelligenceAlertStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceAlertStateResponse | PlainMessage<SetIntelligenceAlertStateResponse> | undefined, b: SetIntelligenceAlertStateResponse | PlainMessage<SetIntelligenceAlertStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceAlertStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntelligenceQueueItem
+ */
+export class OnyxIntelligenceQueueItem extends Message<OnyxIntelligenceQueueItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 2;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: int32 rank = 3;
+   */
+  rank = 0;
+
+  /**
+   * @generated from field: double score = 4;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: repeated string reasons = 5;
+   */
+  reasons: string[] = [];
+
+  /**
+   * @generated from field: int32 estimated_minutes = 6;
+   */
+  estimatedMinutes = 0;
+
+  /**
+   * @generated from field: string cluster_key = 7;
+   */
+  clusterKey = "";
+
+  /**
+   * @generated from field: bool editorial_pin = 8;
+   */
+  editorialPin = false;
+
+  /**
+   * @generated from field: bool watchlist_match = 9;
+   */
+  watchlistMatch = false;
+
+  /**
+   * @generated from field: string feedback = 10;
+   */
+  feedback = "";
+
+  constructor(data?: PartialMessage<OnyxIntelligenceQueueItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntelligenceQueueItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content", kind: "message", T: OnyxContent },
+    { no: 3, name: "rank", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "reasons", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "estimated_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "cluster_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "editorial_pin", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "watchlist_match", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "feedback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntelligenceQueueItem {
+    return new OnyxIntelligenceQueueItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntelligenceQueueItem {
+    return new OnyxIntelligenceQueueItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntelligenceQueueItem {
+    return new OnyxIntelligenceQueueItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntelligenceQueueItem | PlainMessage<OnyxIntelligenceQueueItem> | undefined, b: OnyxIntelligenceQueueItem | PlainMessage<OnyxIntelligenceQueueItem> | undefined): boolean {
+    return proto3.util.equals(OnyxIntelligenceQueueItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntelligenceQueueRequest
+ */
+export class GetIntelligenceQueueRequest extends Message<GetIntelligenceQueueRequest> {
+  /**
+   * personalized | chronological | editorial
+   *
+   * @generated from field: string mode = 1;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: int32 time_budget_minutes = 2;
+   */
+  timeBudgetMinutes = 0;
+
+  /**
+   * @generated from field: bool refresh = 3;
+   */
+  refresh = false;
+
+  constructor(data?: PartialMessage<GetIntelligenceQueueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntelligenceQueueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "time_budget_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "refresh", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntelligenceQueueRequest {
+    return new GetIntelligenceQueueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntelligenceQueueRequest {
+    return new GetIntelligenceQueueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntelligenceQueueRequest {
+    return new GetIntelligenceQueueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntelligenceQueueRequest | PlainMessage<GetIntelligenceQueueRequest> | undefined, b: GetIntelligenceQueueRequest | PlainMessage<GetIntelligenceQueueRequest> | undefined): boolean {
+    return proto3.util.equals(GetIntelligenceQueueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntelligenceQueueResponse
+ */
+export class GetIntelligenceQueueResponse extends Message<GetIntelligenceQueueResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntelligenceQueueItem items = 1;
+   */
+  items: OnyxIntelligenceQueueItem[] = [];
+
+  /**
+   * @generated from field: string queue_date = 2;
+   */
+  queueDate = "";
+
+  /**
+   * @generated from field: string mode = 3;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: int32 estimated_minutes = 4;
+   */
+  estimatedMinutes = 0;
+
+  /**
+   * @generated from field: string ranking_version = 5;
+   */
+  rankingVersion = "";
+
+  constructor(data?: PartialMessage<GetIntelligenceQueueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntelligenceQueueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: OnyxIntelligenceQueueItem, repeated: true },
+    { no: 2, name: "queue_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "estimated_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "ranking_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntelligenceQueueResponse {
+    return new GetIntelligenceQueueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntelligenceQueueResponse {
+    return new GetIntelligenceQueueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntelligenceQueueResponse {
+    return new GetIntelligenceQueueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntelligenceQueueResponse | PlainMessage<GetIntelligenceQueueResponse> | undefined, b: GetIntelligenceQueueResponse | PlainMessage<GetIntelligenceQueueResponse> | undefined): boolean {
+    return proto3.util.equals(GetIntelligenceQueueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+ */
+export class RecordIntelligenceFeedbackRequest extends Message<RecordIntelligenceFeedbackRequest> {
+  /**
+   * @generated from field: string queue_item_id = 1;
+   */
+  queueItemId = "";
+
+  /**
+   * more | less | hide | not_relevant | open | save
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RecordIntelligenceFeedbackRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordIntelligenceFeedbackRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "queue_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordIntelligenceFeedbackRequest {
+    return new RecordIntelligenceFeedbackRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordIntelligenceFeedbackRequest {
+    return new RecordIntelligenceFeedbackRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordIntelligenceFeedbackRequest {
+    return new RecordIntelligenceFeedbackRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordIntelligenceFeedbackRequest | PlainMessage<RecordIntelligenceFeedbackRequest> | undefined, b: RecordIntelligenceFeedbackRequest | PlainMessage<RecordIntelligenceFeedbackRequest> | undefined): boolean {
+    return proto3.util.equals(RecordIntelligenceFeedbackRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+ */
+export class RecordIntelligenceFeedbackResponse extends Message<RecordIntelligenceFeedbackResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntelligenceQueueItem item = 1;
+   */
+  item?: OnyxIntelligenceQueueItem;
+
+  constructor(data?: PartialMessage<RecordIntelligenceFeedbackResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordIntelligenceFeedbackResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: OnyxIntelligenceQueueItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordIntelligenceFeedbackResponse {
+    return new RecordIntelligenceFeedbackResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordIntelligenceFeedbackResponse {
+    return new RecordIntelligenceFeedbackResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordIntelligenceFeedbackResponse {
+    return new RecordIntelligenceFeedbackResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordIntelligenceFeedbackResponse | PlainMessage<RecordIntelligenceFeedbackResponse> | undefined, b: RecordIntelligenceFeedbackResponse | PlainMessage<RecordIntelligenceFeedbackResponse> | undefined): boolean {
+    return proto3.util.equals(RecordIntelligenceFeedbackResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.onyx.v1.ExportReaderDataRequest
  */
 export class ExportReaderDataRequest extends Message<ExportReaderDataRequest> {

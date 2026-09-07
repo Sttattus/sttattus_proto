@@ -395,6 +395,198 @@ message SearchReaderResponse {
   repeated ReaderSearchResult results = 1;
 }
 
+// Choice 7 — private, access-aware search, watchlists and a finite daily
+// intelligence queue. Ranking reasons are deliberately returned to the member;
+// a recommendation that cannot explain itself is not an Onyx recommendation.
+message IntelligenceSearchFilters {
+  string scope = 1; // all | editorial | captures | annotations
+  repeated string kinds = 2; // article | audio | video
+  string creator_id = 3;
+  string language_code = 4;
+  google.protobuf.Timestamp published_after = 5;
+  google.protobuf.Timestamp published_before = 6;
+  string read_state = 7; // any | unread | in_progress | completed
+  string entitlement = 8; // any | readable | locked
+  repeated string tags = 9;
+  string sort = 10; // relevance | newest | editorial
+}
+
+message SearchIntelligenceRequest {
+  string query = 1;
+  IntelligenceSearchFilters filters = 2;
+  int32 limit = 3;
+}
+
+message IntelligenceSearchResult {
+  string result_id = 1;
+  string scope = 2; // content | annotation
+  OnyxContent content = 3;
+  ReaderAnnotation annotation = 4;
+  string snippet = 5;
+  double score = 6;
+  repeated string reasons = 7;
+  repeated string matched_terms = 8;
+  string cluster_key = 9;
+  string change_kind = 10; // new | updated | corrected
+  bool entitled = 11;
+}
+
+message SearchIntelligenceResponse {
+  repeated IntelligenceSearchResult results = 1;
+  int32 total = 2;
+  string query_digest = 3;
+  int32 elapsed_ms = 4;
+  string ranking_version = 5;
+}
+
+message OnyxSavedQuery {
+  string id = 1;
+  string name = 2;
+  string query = 3;
+  IntelligenceSearchFilters filters = 4;
+  string alert_mode = 5; // off | instant | daily
+  double threshold = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message ListSavedQueriesRequest {}
+message ListSavedQueriesResponse {
+  repeated OnyxSavedQuery queries = 1;
+}
+message UpsertSavedQueryRequest {
+  string id = 1;
+  string name = 2;
+  string query = 3;
+  IntelligenceSearchFilters filters = 4;
+  string alert_mode = 5;
+  double threshold = 6;
+  string client_mutation_id = 7;
+}
+message UpsertSavedQueryResponse {
+  OnyxSavedQuery query = 1;
+}
+message DeleteSavedQueryRequest {
+  string id = 1;
+  string client_mutation_id = 2;
+}
+message DeleteSavedQueryResponse {}
+
+message OnyxWatchlistTerm {
+  string kind = 1; // topic | entity | company | person | place
+  string label = 2;
+  repeated string aliases = 3;
+  double weight = 4;
+}
+
+message OnyxWatchlist {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated OnyxWatchlistTerm terms = 4;
+  double threshold = 5;
+  string frequency = 6; // instant | daily | weekly
+  bool paused = 7;
+  google.protobuf.Timestamp last_refreshed_at = 8;
+  int32 unread_alerts = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+message ListWatchlistsRequest {}
+message ListWatchlistsResponse {
+  repeated OnyxWatchlist watchlists = 1;
+}
+message UpsertWatchlistRequest {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated OnyxWatchlistTerm terms = 4;
+  double threshold = 5;
+  string frequency = 6;
+  bool paused = 7;
+  string client_mutation_id = 8;
+}
+message UpsertWatchlistResponse {
+  OnyxWatchlist watchlist = 1;
+}
+message DeleteWatchlistRequest {
+  string id = 1;
+  string client_mutation_id = 2;
+}
+message DeleteWatchlistResponse {}
+message RefreshWatchlistRequest {
+  string id = 1;
+  string client_mutation_id = 2;
+}
+message RefreshWatchlistResponse {
+  OnyxWatchlist watchlist = 1;
+  int32 new_alerts = 2;
+}
+
+message OnyxIntelligenceAlert {
+  string id = 1;
+  string watchlist_id = 2;
+  string watchlist_name = 3;
+  OnyxContent content = 4;
+  string signal_kind = 5; // new | updated | corrected
+  double score = 6;
+  repeated string reasons = 7;
+  string state = 8; // unread | read | dismissed
+  google.protobuf.Timestamp detected_at = 9;
+}
+
+message ListIntelligenceAlertsRequest {
+  string watchlist_id = 1;
+  string state = 2; // all | unread | read | dismissed
+  int32 limit = 3;
+}
+message ListIntelligenceAlertsResponse {
+  repeated OnyxIntelligenceAlert alerts = 1;
+}
+message SetIntelligenceAlertStateRequest {
+  string id = 1;
+  string state = 2; // read | dismissed
+  string client_mutation_id = 3;
+}
+message SetIntelligenceAlertStateResponse {
+  OnyxIntelligenceAlert alert = 1;
+}
+
+message OnyxIntelligenceQueueItem {
+  string id = 1;
+  OnyxContent content = 2;
+  int32 rank = 3;
+  double score = 4;
+  repeated string reasons = 5;
+  int32 estimated_minutes = 6;
+  string cluster_key = 7;
+  bool editorial_pin = 8;
+  bool watchlist_match = 9;
+  string feedback = 10;
+}
+
+message GetIntelligenceQueueRequest {
+  string mode = 1; // personalized | chronological | editorial
+  int32 time_budget_minutes = 2;
+  bool refresh = 3;
+}
+message GetIntelligenceQueueResponse {
+  repeated OnyxIntelligenceQueueItem items = 1;
+  string queue_date = 2;
+  string mode = 3;
+  int32 estimated_minutes = 4;
+  string ranking_version = 5;
+}
+message RecordIntelligenceFeedbackRequest {
+  string queue_item_id = 1;
+  string action = 2; // more | less | hide | not_relevant | open | save
+  string client_mutation_id = 3;
+}
+message RecordIntelligenceFeedbackResponse {
+  OnyxIntelligenceQueueItem item = 1;
+}
+
 message ExportReaderDataRequest {
   string format = 1;
 } // markdown | json
@@ -1368,7 +1560,9 @@ message CreatorStudio {
 }
 
 message GetCreatorStudioRequest {}
-message GetCreatorStudioResponse { CreatorStudio studio = 1; }
+message GetCreatorStudioResponse {
+  CreatorStudio studio = 1;
+}
 
 message SubmitCreatorPitchRequest {
   string pitch_title = 1;
@@ -1377,7 +1571,9 @@ message SubmitCreatorPitchRequest {
   string audience = 4;
   string client_mutation_id = 5;
 }
-message SubmitCreatorPitchResponse { EditorialProject project = 1; }
+message SubmitCreatorPitchResponse {
+  EditorialProject project = 1;
+}
 
 message UpdateCreatorProjectRequest {
   string project_id = 1;
@@ -1387,28 +1583,38 @@ message UpdateCreatorProjectRequest {
   string audience = 5;
   string client_mutation_id = 6;
 }
-message UpdateCreatorProjectResponse { EditorialProject project = 1; }
+message UpdateCreatorProjectResponse {
+  EditorialProject project = 1;
+}
 
 message SubmitCreatorProjectRequest {
   string project_id = 1;
   string client_mutation_id = 2;
 }
-message SubmitCreatorProjectResponse { EditorialProject project = 1; }
+message SubmitCreatorProjectResponse {
+  EditorialProject project = 1;
+}
 
 message SignCreatorContractRequest {
   string contract_id = 1;
   string client_mutation_id = 2;
 }
-message SignCreatorContractResponse { CreatorContract contract = 1; }
+message SignCreatorContractResponse {
+  CreatorContract contract = 1;
+}
 
 message ListMyCreatorSubscriptionsDetailedRequest {}
-message ListMyCreatorSubscriptionsDetailedResponse { repeated Subscription subscriptions = 1; }
+message ListMyCreatorSubscriptionsDetailedResponse {
+  repeated Subscription subscriptions = 1;
+}
 
 message CancelCreatorSubscriptionRequest {
   string creator_id = 1;
   string client_mutation_id = 2;
 }
-message CancelCreatorSubscriptionResponse { Subscription subscription = 1; }
+message CancelCreatorSubscriptionResponse {
+  Subscription subscription = 1;
+}
 
 message CommerceInvoice {
   string id = 1;
@@ -1454,7 +1660,9 @@ message CreateCommerceCaseRequest {
   string reason = 5;
   string client_mutation_id = 6;
 }
-message CreateCommerceCaseResponse { CommerceCase commerce_case = 1; }
+message CreateCommerceCaseResponse {
+  CommerceCase commerce_case = 1;
+}
 
 service OnyxService {
   // Profile Management
@@ -1498,6 +1706,18 @@ service OnyxService {
   rpc DeleteReaderAnnotation(DeleteReaderAnnotationRequest) returns (DeleteReaderAnnotationResponse);
   rpc ListMyReaderAnnotations(ListMyReaderAnnotationsRequest) returns (ListMyReaderAnnotationsResponse);
   rpc SearchReader(SearchReaderRequest) returns (SearchReaderResponse);
+  rpc SearchIntelligence(SearchIntelligenceRequest) returns (SearchIntelligenceResponse);
+  rpc ListSavedQueries(ListSavedQueriesRequest) returns (ListSavedQueriesResponse);
+  rpc UpsertSavedQuery(UpsertSavedQueryRequest) returns (UpsertSavedQueryResponse);
+  rpc DeleteSavedQuery(DeleteSavedQueryRequest) returns (DeleteSavedQueryResponse);
+  rpc ListWatchlists(ListWatchlistsRequest) returns (ListWatchlistsResponse);
+  rpc UpsertWatchlist(UpsertWatchlistRequest) returns (UpsertWatchlistResponse);
+  rpc DeleteWatchlist(DeleteWatchlistRequest) returns (DeleteWatchlistResponse);
+  rpc RefreshWatchlist(RefreshWatchlistRequest) returns (RefreshWatchlistResponse);
+  rpc ListIntelligenceAlerts(ListIntelligenceAlertsRequest) returns (ListIntelligenceAlertsResponse);
+  rpc SetIntelligenceAlertState(SetIntelligenceAlertStateRequest) returns (SetIntelligenceAlertStateResponse);
+  rpc GetIntelligenceQueue(GetIntelligenceQueueRequest) returns (GetIntelligenceQueueResponse);
+  rpc RecordIntelligenceFeedback(RecordIntelligenceFeedbackRequest) returns (RecordIntelligenceFeedbackResponse);
   rpc ExportReaderData(ExportReaderDataRequest) returns (ExportReaderDataResponse);
   rpc ListReaderSyncChanges(ListReaderSyncChangesRequest) returns (ListReaderSyncChangesResponse);
 
