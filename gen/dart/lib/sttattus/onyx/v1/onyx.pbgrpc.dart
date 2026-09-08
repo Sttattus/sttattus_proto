@@ -541,6 +541,113 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$rsvpLiveEvent, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetLiveSalonResponse> getLiveSalon(
+    $0.GetLiveSalonRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLiveSalon, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertLiveReservationResponse> upsertLiveReservation(
+    $0.UpsertLiveReservationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertLiveReservation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InviteLiveGuestResponse> inviteLiveGuest(
+    $0.InviteLiveGuestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$inviteLiveGuest, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateLiveCalendarPassResponse>
+      generateLiveCalendarPass(
+    $0.GenerateLiveCalendarPassRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateLiveCalendarPass, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.JoinLiveEventResponse> joinLiveEvent(
+    $0.JoinLiveEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$joinLiveEvent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListLiveActivityResponse> listLiveActivity(
+    $0.ListLiveActivityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listLiveActivity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostLiveMessageResponse> postLiveMessage(
+    $0.PostLiveMessageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$postLiveMessage, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpvoteLiveQuestionResponse> upvoteLiveQuestion(
+    $0.UpvoteLiveQuestionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upvoteLiveQuestion, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VoteLivePollResponse> voteLivePoll(
+    $0.VoteLivePollRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$voteLivePoll, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetLiveHandRaiseResponse> setLiveHandRaise(
+    $0.SetLiveHandRaiseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setLiveHandRaise, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReactLiveEventResponse> reactLiveEvent(
+    $0.ReactLiveEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reactLiveEvent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertLiveNoteResponse> upsertLiveNote(
+    $0.UpsertLiveNoteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertLiveNote, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListLiveNotesResponse> listLiveNotes(
+    $0.ListLiveNotesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listLiveNotes, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteLiveNoteResponse> deleteLiveNote(
+    $0.DeleteLiveNoteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteLiveNote, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetLiveReplayResponse> getLiveReplay(
+    $0.GetLiveReplayRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLiveReplay, request, options: options);
+  }
+
   /// P3 — posthumous archive (encrypted at rest).
   $grpc.ResponseFuture<$0.SetPosthumousArchiveResponse> setPosthumousArchive(
     $0.SetPosthumousArchiveRequest request, {
@@ -1177,6 +1284,82 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/RsvpLiveEvent',
           ($0.RsvpLiveEventRequest value) => value.writeToBuffer(),
           $0.RsvpLiveEventResponse.fromBuffer);
+  static final _$getLiveSalon =
+      $grpc.ClientMethod<$0.GetLiveSalonRequest, $0.GetLiveSalonResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetLiveSalon',
+          ($0.GetLiveSalonRequest value) => value.writeToBuffer(),
+          $0.GetLiveSalonResponse.fromBuffer);
+  static final _$upsertLiveReservation = $grpc.ClientMethod<
+          $0.UpsertLiveReservationRequest, $0.UpsertLiveReservationResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertLiveReservation',
+      ($0.UpsertLiveReservationRequest value) => value.writeToBuffer(),
+      $0.UpsertLiveReservationResponse.fromBuffer);
+  static final _$inviteLiveGuest =
+      $grpc.ClientMethod<$0.InviteLiveGuestRequest, $0.InviteLiveGuestResponse>(
+          '/sttattus.onyx.v1.OnyxService/InviteLiveGuest',
+          ($0.InviteLiveGuestRequest value) => value.writeToBuffer(),
+          $0.InviteLiveGuestResponse.fromBuffer);
+  static final _$generateLiveCalendarPass = $grpc.ClientMethod<
+          $0.GenerateLiveCalendarPassRequest,
+          $0.GenerateLiveCalendarPassResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateLiveCalendarPass',
+      ($0.GenerateLiveCalendarPassRequest value) => value.writeToBuffer(),
+      $0.GenerateLiveCalendarPassResponse.fromBuffer);
+  static final _$joinLiveEvent =
+      $grpc.ClientMethod<$0.JoinLiveEventRequest, $0.JoinLiveEventResponse>(
+          '/sttattus.onyx.v1.OnyxService/JoinLiveEvent',
+          ($0.JoinLiveEventRequest value) => value.writeToBuffer(),
+          $0.JoinLiveEventResponse.fromBuffer);
+  static final _$listLiveActivity = $grpc.ClientMethod<
+          $0.ListLiveActivityRequest, $0.ListLiveActivityResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListLiveActivity',
+      ($0.ListLiveActivityRequest value) => value.writeToBuffer(),
+      $0.ListLiveActivityResponse.fromBuffer);
+  static final _$postLiveMessage =
+      $grpc.ClientMethod<$0.PostLiveMessageRequest, $0.PostLiveMessageResponse>(
+          '/sttattus.onyx.v1.OnyxService/PostLiveMessage',
+          ($0.PostLiveMessageRequest value) => value.writeToBuffer(),
+          $0.PostLiveMessageResponse.fromBuffer);
+  static final _$upvoteLiveQuestion = $grpc.ClientMethod<
+          $0.UpvoteLiveQuestionRequest, $0.UpvoteLiveQuestionResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpvoteLiveQuestion',
+      ($0.UpvoteLiveQuestionRequest value) => value.writeToBuffer(),
+      $0.UpvoteLiveQuestionResponse.fromBuffer);
+  static final _$voteLivePoll =
+      $grpc.ClientMethod<$0.VoteLivePollRequest, $0.VoteLivePollResponse>(
+          '/sttattus.onyx.v1.OnyxService/VoteLivePoll',
+          ($0.VoteLivePollRequest value) => value.writeToBuffer(),
+          $0.VoteLivePollResponse.fromBuffer);
+  static final _$setLiveHandRaise = $grpc.ClientMethod<
+          $0.SetLiveHandRaiseRequest, $0.SetLiveHandRaiseResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetLiveHandRaise',
+      ($0.SetLiveHandRaiseRequest value) => value.writeToBuffer(),
+      $0.SetLiveHandRaiseResponse.fromBuffer);
+  static final _$reactLiveEvent =
+      $grpc.ClientMethod<$0.ReactLiveEventRequest, $0.ReactLiveEventResponse>(
+          '/sttattus.onyx.v1.OnyxService/ReactLiveEvent',
+          ($0.ReactLiveEventRequest value) => value.writeToBuffer(),
+          $0.ReactLiveEventResponse.fromBuffer);
+  static final _$upsertLiveNote =
+      $grpc.ClientMethod<$0.UpsertLiveNoteRequest, $0.UpsertLiveNoteResponse>(
+          '/sttattus.onyx.v1.OnyxService/UpsertLiveNote',
+          ($0.UpsertLiveNoteRequest value) => value.writeToBuffer(),
+          $0.UpsertLiveNoteResponse.fromBuffer);
+  static final _$listLiveNotes =
+      $grpc.ClientMethod<$0.ListLiveNotesRequest, $0.ListLiveNotesResponse>(
+          '/sttattus.onyx.v1.OnyxService/ListLiveNotes',
+          ($0.ListLiveNotesRequest value) => value.writeToBuffer(),
+          $0.ListLiveNotesResponse.fromBuffer);
+  static final _$deleteLiveNote =
+      $grpc.ClientMethod<$0.DeleteLiveNoteRequest, $0.DeleteLiveNoteResponse>(
+          '/sttattus.onyx.v1.OnyxService/DeleteLiveNote',
+          ($0.DeleteLiveNoteRequest value) => value.writeToBuffer(),
+          $0.DeleteLiveNoteResponse.fromBuffer);
+  static final _$getLiveReplay =
+      $grpc.ClientMethod<$0.GetLiveReplayRequest, $0.GetLiveReplayResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetLiveReplay',
+          ($0.GetLiveReplayRequest value) => value.writeToBuffer(),
+          $0.GetLiveReplayResponse.fromBuffer);
   static final _$setPosthumousArchive = $grpc.ClientMethod<
           $0.SetPosthumousArchiveRequest, $0.SetPosthumousArchiveResponse>(
       '/sttattus.onyx.v1.OnyxService/SetPosthumousArchive',
@@ -1964,6 +2147,141 @@ abstract class OnyxServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.RsvpLiveEventRequest.fromBuffer(value),
             ($0.RsvpLiveEventResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetLiveSalonRequest, $0.GetLiveSalonResponse>(
+            'GetLiveSalon',
+            getLiveSalon_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetLiveSalonRequest.fromBuffer(value),
+            ($0.GetLiveSalonResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertLiveReservationRequest,
+            $0.UpsertLiveReservationResponse>(
+        'UpsertLiveReservation',
+        upsertLiveReservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertLiveReservationRequest.fromBuffer(value),
+        ($0.UpsertLiveReservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InviteLiveGuestRequest,
+            $0.InviteLiveGuestResponse>(
+        'InviteLiveGuest',
+        inviteLiveGuest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InviteLiveGuestRequest.fromBuffer(value),
+        ($0.InviteLiveGuestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateLiveCalendarPassRequest,
+            $0.GenerateLiveCalendarPassResponse>(
+        'GenerateLiveCalendarPass',
+        generateLiveCalendarPass_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateLiveCalendarPassRequest.fromBuffer(value),
+        ($0.GenerateLiveCalendarPassResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.JoinLiveEventRequest, $0.JoinLiveEventResponse>(
+            'JoinLiveEvent',
+            joinLiveEvent_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.JoinLiveEventRequest.fromBuffer(value),
+            ($0.JoinLiveEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLiveActivityRequest,
+            $0.ListLiveActivityResponse>(
+        'ListLiveActivity',
+        listLiveActivity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListLiveActivityRequest.fromBuffer(value),
+        ($0.ListLiveActivityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostLiveMessageRequest,
+            $0.PostLiveMessageResponse>(
+        'PostLiveMessage',
+        postLiveMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PostLiveMessageRequest.fromBuffer(value),
+        ($0.PostLiveMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpvoteLiveQuestionRequest,
+            $0.UpvoteLiveQuestionResponse>(
+        'UpvoteLiveQuestion',
+        upvoteLiveQuestion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpvoteLiveQuestionRequest.fromBuffer(value),
+        ($0.UpvoteLiveQuestionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.VoteLivePollRequest, $0.VoteLivePollResponse>(
+            'VoteLivePoll',
+            voteLivePoll_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.VoteLivePollRequest.fromBuffer(value),
+            ($0.VoteLivePollResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetLiveHandRaiseRequest,
+            $0.SetLiveHandRaiseResponse>(
+        'SetLiveHandRaise',
+        setLiveHandRaise_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetLiveHandRaiseRequest.fromBuffer(value),
+        ($0.SetLiveHandRaiseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReactLiveEventRequest,
+            $0.ReactLiveEventResponse>(
+        'ReactLiveEvent',
+        reactLiveEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReactLiveEventRequest.fromBuffer(value),
+        ($0.ReactLiveEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertLiveNoteRequest,
+            $0.UpsertLiveNoteResponse>(
+        'UpsertLiveNote',
+        upsertLiveNote_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertLiveNoteRequest.fromBuffer(value),
+        ($0.UpsertLiveNoteResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.ListLiveNotesRequest, $0.ListLiveNotesResponse>(
+            'ListLiveNotes',
+            listLiveNotes_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.ListLiveNotesRequest.fromBuffer(value),
+            ($0.ListLiveNotesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteLiveNoteRequest,
+            $0.DeleteLiveNoteResponse>(
+        'DeleteLiveNote',
+        deleteLiveNote_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteLiveNoteRequest.fromBuffer(value),
+        ($0.DeleteLiveNoteResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetLiveReplayRequest, $0.GetLiveReplayResponse>(
+            'GetLiveReplay',
+            getLiveReplay_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetLiveReplayRequest.fromBuffer(value),
+            ($0.GetLiveReplayResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.SetPosthumousArchiveRequest,
             $0.SetPosthumousArchiveResponse>(
         'SetPosthumousArchive',
@@ -2906,6 +3224,141 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.RsvpLiveEventResponse> rsvpLiveEvent(
       $grpc.ServiceCall call, $0.RsvpLiveEventRequest request);
+
+  $async.Future<$0.GetLiveSalonResponse> getLiveSalon_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetLiveSalonRequest> $request) async {
+    return getLiveSalon($call, await $request);
+  }
+
+  $async.Future<$0.GetLiveSalonResponse> getLiveSalon(
+      $grpc.ServiceCall call, $0.GetLiveSalonRequest request);
+
+  $async.Future<$0.UpsertLiveReservationResponse> upsertLiveReservation_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertLiveReservationRequest> $request) async {
+    return upsertLiveReservation($call, await $request);
+  }
+
+  $async.Future<$0.UpsertLiveReservationResponse> upsertLiveReservation(
+      $grpc.ServiceCall call, $0.UpsertLiveReservationRequest request);
+
+  $async.Future<$0.InviteLiveGuestResponse> inviteLiveGuest_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.InviteLiveGuestRequest> $request) async {
+    return inviteLiveGuest($call, await $request);
+  }
+
+  $async.Future<$0.InviteLiveGuestResponse> inviteLiveGuest(
+      $grpc.ServiceCall call, $0.InviteLiveGuestRequest request);
+
+  $async.Future<$0.GenerateLiveCalendarPassResponse>
+      generateLiveCalendarPass_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GenerateLiveCalendarPassRequest> $request) async {
+    return generateLiveCalendarPass($call, await $request);
+  }
+
+  $async.Future<$0.GenerateLiveCalendarPassResponse> generateLiveCalendarPass(
+      $grpc.ServiceCall call, $0.GenerateLiveCalendarPassRequest request);
+
+  $async.Future<$0.JoinLiveEventResponse> joinLiveEvent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.JoinLiveEventRequest> $request) async {
+    return joinLiveEvent($call, await $request);
+  }
+
+  $async.Future<$0.JoinLiveEventResponse> joinLiveEvent(
+      $grpc.ServiceCall call, $0.JoinLiveEventRequest request);
+
+  $async.Future<$0.ListLiveActivityResponse> listLiveActivity_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListLiveActivityRequest> $request) async {
+    return listLiveActivity($call, await $request);
+  }
+
+  $async.Future<$0.ListLiveActivityResponse> listLiveActivity(
+      $grpc.ServiceCall call, $0.ListLiveActivityRequest request);
+
+  $async.Future<$0.PostLiveMessageResponse> postLiveMessage_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.PostLiveMessageRequest> $request) async {
+    return postLiveMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostLiveMessageResponse> postLiveMessage(
+      $grpc.ServiceCall call, $0.PostLiveMessageRequest request);
+
+  $async.Future<$0.UpvoteLiveQuestionResponse> upvoteLiveQuestion_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpvoteLiveQuestionRequest> $request) async {
+    return upvoteLiveQuestion($call, await $request);
+  }
+
+  $async.Future<$0.UpvoteLiveQuestionResponse> upvoteLiveQuestion(
+      $grpc.ServiceCall call, $0.UpvoteLiveQuestionRequest request);
+
+  $async.Future<$0.VoteLivePollResponse> voteLivePoll_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.VoteLivePollRequest> $request) async {
+    return voteLivePoll($call, await $request);
+  }
+
+  $async.Future<$0.VoteLivePollResponse> voteLivePoll(
+      $grpc.ServiceCall call, $0.VoteLivePollRequest request);
+
+  $async.Future<$0.SetLiveHandRaiseResponse> setLiveHandRaise_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetLiveHandRaiseRequest> $request) async {
+    return setLiveHandRaise($call, await $request);
+  }
+
+  $async.Future<$0.SetLiveHandRaiseResponse> setLiveHandRaise(
+      $grpc.ServiceCall call, $0.SetLiveHandRaiseRequest request);
+
+  $async.Future<$0.ReactLiveEventResponse> reactLiveEvent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReactLiveEventRequest> $request) async {
+    return reactLiveEvent($call, await $request);
+  }
+
+  $async.Future<$0.ReactLiveEventResponse> reactLiveEvent(
+      $grpc.ServiceCall call, $0.ReactLiveEventRequest request);
+
+  $async.Future<$0.UpsertLiveNoteResponse> upsertLiveNote_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertLiveNoteRequest> $request) async {
+    return upsertLiveNote($call, await $request);
+  }
+
+  $async.Future<$0.UpsertLiveNoteResponse> upsertLiveNote(
+      $grpc.ServiceCall call, $0.UpsertLiveNoteRequest request);
+
+  $async.Future<$0.ListLiveNotesResponse> listLiveNotes_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListLiveNotesRequest> $request) async {
+    return listLiveNotes($call, await $request);
+  }
+
+  $async.Future<$0.ListLiveNotesResponse> listLiveNotes(
+      $grpc.ServiceCall call, $0.ListLiveNotesRequest request);
+
+  $async.Future<$0.DeleteLiveNoteResponse> deleteLiveNote_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteLiveNoteRequest> $request) async {
+    return deleteLiveNote($call, await $request);
+  }
+
+  $async.Future<$0.DeleteLiveNoteResponse> deleteLiveNote(
+      $grpc.ServiceCall call, $0.DeleteLiveNoteRequest request);
+
+  $async.Future<$0.GetLiveReplayResponse> getLiveReplay_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetLiveReplayRequest> $request) async {
+    return getLiveReplay($call, await $request);
+  }
+
+  $async.Future<$0.GetLiveReplayResponse> getLiveReplay(
+      $grpc.ServiceCall call, $0.GetLiveReplayRequest request);
 
   $async.Future<$0.SetPosthumousArchiveResponse> setPosthumousArchive_Pre(
       $grpc.ServiceCall $call,

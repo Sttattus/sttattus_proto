@@ -3574,6 +3574,48 @@ const LiveEvent$json = {
     },
     {'1': 'hero_image_url', '3': 12, '4': 1, '5': 9, '10': 'heroImageUrl'},
     {'1': 'locked', '3': 13, '4': 1, '5': 8, '10': 'locked'},
+    {
+      '1': 'ends_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'endsAt'
+    },
+    {'1': 'timezone', '3': 15, '4': 1, '5': 9, '10': 'timezone'},
+    {'1': 'duration_minutes', '3': 16, '4': 1, '5': 5, '10': 'durationMinutes'},
+    {'1': 'language_code', '3': 17, '4': 1, '5': 9, '10': 'languageCode'},
+    {'1': 'live_mode', '3': 18, '4': 1, '5': 9, '10': 'liveMode'},
+    {
+      '1': 'reservation_status',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'reservationStatus'
+    },
+    {
+      '1': 'waitlist_position',
+      '3': 20,
+      '4': 1,
+      '5': 5,
+      '10': 'waitlistPosition'
+    },
+    {'1': 'can_join', '3': 21, '4': 1, '5': 8, '10': 'canJoin'},
+    {'1': 'join_state', '3': 22, '4': 1, '5': 9, '10': 'joinState'},
+    {'1': 'speaker_count', '3': 23, '4': 1, '5': 5, '10': 'speakerCount'},
+    {'1': 'agenda_count', '3': 24, '4': 1, '5': 5, '10': 'agendaCount'},
+    {'1': 'replay_available', '3': 25, '4': 1, '5': 8, '10': 'replayAvailable'},
+    {'1': 'guest_count', '3': 26, '4': 1, '5': 5, '10': 'guestCount'},
+    {'1': 'max_guests', '3': 27, '4': 1, '5': 5, '10': 'maxGuests'},
+    {'1': 'reminder_minutes', '3': 28, '4': 3, '5': 5, '10': 'reminderMinutes'},
+    {
+      '1': 'accessibility_requirements',
+      '3': 29,
+      '4': 1,
+      '5': 9,
+      '10': 'accessibilityRequirements'
+    },
+    {'1': 'fallback_reason', '3': 30, '4': 1, '5': 9, '10': 'fallbackReason'},
   ],
 };
 
@@ -3586,7 +3628,19 @@ final $typed_data.Uint8List liveEventDescriptor = $convert.base64Decode(
     'Eh0KCnJzdnBfY291bnQYCCABKAVSCXJzdnBDb3VudBIbCglpc19yc3ZwZWQYCSABKAhSCGlzUn'
     'N2cGVkEhYKBnN0YXR1cxgKIAEoCVIGc3RhdHVzEjAKFHJlY29yZGluZ19jb250ZW50X2lkGAsg'
     'ASgJUhJyZWNvcmRpbmdDb250ZW50SWQSJAoOaGVyb19pbWFnZV91cmwYDCABKAlSDGhlcm9JbW'
-    'FnZVVybBIWCgZsb2NrZWQYDSABKAhSBmxvY2tlZA==');
+    'FnZVVybBIWCgZsb2NrZWQYDSABKAhSBmxvY2tlZBIzCgdlbmRzX2F0GA4gASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcFIGZW5kc0F0EhoKCHRpbWV6b25lGA8gASgJUgh0aW1lem9uZR'
+    'IpChBkdXJhdGlvbl9taW51dGVzGBAgASgFUg9kdXJhdGlvbk1pbnV0ZXMSIwoNbGFuZ3VhZ2Vf'
+    'Y29kZRgRIAEoCVIMbGFuZ3VhZ2VDb2RlEhsKCWxpdmVfbW9kZRgSIAEoCVIIbGl2ZU1vZGUSLQ'
+    'oScmVzZXJ2YXRpb25fc3RhdHVzGBMgASgJUhFyZXNlcnZhdGlvblN0YXR1cxIrChF3YWl0bGlz'
+    'dF9wb3NpdGlvbhgUIAEoBVIQd2FpdGxpc3RQb3NpdGlvbhIZCghjYW5fam9pbhgVIAEoCFIHY2'
+    'FuSm9pbhIdCgpqb2luX3N0YXRlGBYgASgJUglqb2luU3RhdGUSIwoNc3BlYWtlcl9jb3VudBgX'
+    'IAEoBVIMc3BlYWtlckNvdW50EiEKDGFnZW5kYV9jb3VudBgYIAEoBVILYWdlbmRhQ291bnQSKQ'
+    'oQcmVwbGF5X2F2YWlsYWJsZRgZIAEoCFIPcmVwbGF5QXZhaWxhYmxlEh8KC2d1ZXN0X2NvdW50'
+    'GBogASgFUgpndWVzdENvdW50Eh0KCm1heF9ndWVzdHMYGyABKAVSCW1heEd1ZXN0cxIpChByZW'
+    '1pbmRlcl9taW51dGVzGBwgAygFUg9yZW1pbmRlck1pbnV0ZXMSPQoaYWNjZXNzaWJpbGl0eV9y'
+    'ZXF1aXJlbWVudHMYHSABKAlSGWFjY2Vzc2liaWxpdHlSZXF1aXJlbWVudHMSJwoPZmFsbGJhY2'
+    'tfcmVhc29uGB4gASgJUg5mYWxsYmFja1JlYXNvbg==');
 
 @$core.Deprecated('Use listLiveEventsRequestDescriptor instead')
 const ListLiveEventsRequest$json = {
@@ -3681,6 +3735,1045 @@ const RsvpLiveEventResponse$json = {
 final $typed_data.Uint8List rsvpLiveEventResponseDescriptor = $convert.base64Decode(
     'ChVSc3ZwTGl2ZUV2ZW50UmVzcG9uc2USFgoGcnN2cGVkGAEgASgIUgZyc3ZwZWQSHQoKcnN2cF'
     '9jb3VudBgCIAEoBVIJcnN2cENvdW50');
+
+@$core.Deprecated('Use liveSpeakerDescriptor instead')
+const LiveSpeaker$json = {
+  '1': 'LiveSpeaker',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'role', '3': 3, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'bio', '3': 5, '4': 1, '5': 9, '10': 'bio'},
+    {'1': 'avatar_url', '3': 6, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'consent_status', '3': 7, '4': 1, '5': 9, '10': 'consentStatus'},
+    {'1': 'is_backup', '3': 8, '4': 1, '5': 8, '10': 'isBackup'},
+    {'1': 'sort_order', '3': 9, '4': 1, '5': 5, '10': 'sortOrder'},
+  ],
+};
+
+/// Descriptor for `LiveSpeaker`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveSpeakerDescriptor = $convert.base64Decode(
+    'CgtMaXZlU3BlYWtlchIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRyb2'
+    'xlGAMgASgJUgRyb2xlEhQKBXRpdGxlGAQgASgJUgV0aXRsZRIQCgNiaW8YBSABKAlSA2JpbxId'
+    'CgphdmF0YXJfdXJsGAYgASgJUglhdmF0YXJVcmwSJQoOY29uc2VudF9zdGF0dXMYByABKAlSDW'
+    'NvbnNlbnRTdGF0dXMSGwoJaXNfYmFja3VwGAggASgIUghpc0JhY2t1cBIdCgpzb3J0X29yZGVy'
+    'GAkgASgFUglzb3J0T3JkZXI=');
+
+@$core.Deprecated('Use liveAgendaItemDescriptor instead')
+const LiveAgendaItem$json = {
+  '1': 'LiveAgendaItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'offset_minutes', '3': 5, '4': 1, '5': 5, '10': 'offsetMinutes'},
+    {'1': 'duration_minutes', '3': 6, '4': 1, '5': 5, '10': 'durationMinutes'},
+    {'1': 'speaker_id', '3': 7, '4': 1, '5': 9, '10': 'speakerId'},
+    {'1': 'passage_key', '3': 8, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'sort_order', '3': 9, '4': 1, '5': 5, '10': 'sortOrder'},
+  ],
+};
+
+/// Descriptor for `LiveAgendaItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveAgendaItemDescriptor = $convert.base64Decode(
+    'Cg5MaXZlQWdlbmRhSXRlbRIOCgJpZBgBIAEoCVICaWQSFAoFdGl0bGUYAiABKAlSBXRpdGxlEi'
+    'AKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhISCgRraW5kGAQgASgJUgRraW5kEiUK'
+    'Dm9mZnNldF9taW51dGVzGAUgASgFUg1vZmZzZXRNaW51dGVzEikKEGR1cmF0aW9uX21pbnV0ZX'
+    'MYBiABKAVSD2R1cmF0aW9uTWludXRlcxIdCgpzcGVha2VyX2lkGAcgASgJUglzcGVha2VySWQS'
+    'HwoLcGFzc2FnZV9rZXkYCCABKAlSCnBhc3NhZ2VLZXkSHQoKc29ydF9vcmRlchgJIAEoBVIJc2'
+    '9ydE9yZGVy');
+
+@$core.Deprecated('Use liveEventAssetDescriptor instead')
+const LiveEventAsset$json = {
+  '1': 'LiveEventAsset',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'url', '3': 4, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'content_id', '3': 5, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'required', '3': 6, '4': 1, '5': 8, '10': 'required'},
+    {'1': 'sort_order', '3': 7, '4': 1, '5': 5, '10': 'sortOrder'},
+  ],
+};
+
+/// Descriptor for `LiveEventAsset`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveEventAssetDescriptor = $convert.base64Decode(
+    'Cg5MaXZlRXZlbnRBc3NldBIOCgJpZBgBIAEoCVICaWQSEgoEa2luZBgCIAEoCVIEa2luZBIUCg'
+    'V0aXRsZRgDIAEoCVIFdGl0bGUSEAoDdXJsGAQgASgJUgN1cmwSHQoKY29udGVudF9pZBgFIAEo'
+    'CVIJY29udGVudElkEhoKCHJlcXVpcmVkGAYgASgIUghyZXF1aXJlZBIdCgpzb3J0X29yZGVyGA'
+    'cgASgFUglzb3J0T3JkZXI=');
+
+@$core.Deprecated('Use liveGuestInvitationDescriptor instead')
+const LiveGuestInvitation$json = {
+  '1': 'LiveGuestInvitation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'guest_name', '3': 2, '4': 1, '5': 9, '10': 'guestName'},
+    {'1': 'email_hint', '3': 3, '4': 1, '5': 9, '10': 'emailHint'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'expires_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `LiveGuestInvitation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveGuestInvitationDescriptor = $convert.base64Decode(
+    'ChNMaXZlR3Vlc3RJbnZpdGF0aW9uEg4KAmlkGAEgASgJUgJpZBIdCgpndWVzdF9uYW1lGAIgAS'
+    'gJUglndWVzdE5hbWUSHQoKZW1haWxfaGludBgDIAEoCVIJZW1haWxIaW50EhYKBnN0YXR1cxgE'
+    'IAEoCVIGc3RhdHVzEjkKCmV4cGlyZXNfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZX'
+    'N0YW1wUglleHBpcmVzQXQ=');
+
+@$core.Deprecated('Use liveReservationDescriptor instead')
+const LiveReservation$json = {
+  '1': 'LiveReservation',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'waitlist_position',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'waitlistPosition'
+    },
+    {'1': 'guest_count', '3': 4, '4': 1, '5': 5, '10': 'guestCount'},
+    {'1': 'guest_names', '3': 5, '4': 3, '5': 9, '10': 'guestNames'},
+    {
+      '1': 'accessibility_requirements',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'accessibilityRequirements'
+    },
+    {'1': 'reminder_minutes', '3': 7, '4': 3, '5': 5, '10': 'reminderMinutes'},
+    {
+      '1': 'promoted_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'promotedAt'
+    },
+    {
+      '1': 'checked_in_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'checkedInAt'
+    },
+    {
+      '1': 'guest_invitations',
+      '3': 10,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveGuestInvitation',
+      '10': 'guestInvitations'
+    },
+  ],
+};
+
+/// Descriptor for `LiveReservation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveReservationDescriptor = $convert.base64Decode(
+    'Cg9MaXZlUmVzZXJ2YXRpb24SGQoIZXZlbnRfaWQYASABKAlSB2V2ZW50SWQSFgoGc3RhdHVzGA'
+    'IgASgJUgZzdGF0dXMSKwoRd2FpdGxpc3RfcG9zaXRpb24YAyABKAVSEHdhaXRsaXN0UG9zaXRp'
+    'b24SHwoLZ3Vlc3RfY291bnQYBCABKAVSCmd1ZXN0Q291bnQSHwoLZ3Vlc3RfbmFtZXMYBSADKA'
+    'lSCmd1ZXN0TmFtZXMSPQoaYWNjZXNzaWJpbGl0eV9yZXF1aXJlbWVudHMYBiABKAlSGWFjY2Vz'
+    'c2liaWxpdHlSZXF1aXJlbWVudHMSKQoQcmVtaW5kZXJfbWludXRlcxgHIAMoBVIPcmVtaW5kZX'
+    'JNaW51dGVzEjsKC3Byb21vdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
+    'cFIKcHJvbW90ZWRBdBI+Cg1jaGVja2VkX2luX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFILY2hlY2tlZEluQXQSUgoRZ3Vlc3RfaW52aXRhdGlvbnMYCiADKAsyJS5zdHRh'
+    'dHR1cy5vbnl4LnYxLkxpdmVHdWVzdEludml0YXRpb25SEGd1ZXN0SW52aXRhdGlvbnM=');
+
+@$core.Deprecated('Use liveMessageDescriptor instead')
+const LiveMessage$json = {
+  '1': 'LiveMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'event_id', '3': 2, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'author_name', '3': 3, '4': 1, '5': 9, '10': 'authorName'},
+    {'1': 'kind', '3': 4, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'answer', '3': 7, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'answered_by', '3': 8, '4': 1, '5': 9, '10': 'answeredBy'},
+    {'1': 'upvotes', '3': 9, '4': 1, '5': 5, '10': 'upvotes'},
+    {'1': 'upvoted_by_me', '3': 10, '4': 1, '5': 8, '10': 'upvotedByMe'},
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'answered_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'answeredAt'
+    },
+  ],
+};
+
+/// Descriptor for `LiveMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveMessageDescriptor = $convert.base64Decode(
+    'CgtMaXZlTWVzc2FnZRIOCgJpZBgBIAEoCVICaWQSGQoIZXZlbnRfaWQYAiABKAlSB2V2ZW50SW'
+    'QSHwoLYXV0aG9yX25hbWUYAyABKAlSCmF1dGhvck5hbWUSEgoEa2luZBgEIAEoCVIEa2luZBIS'
+    'CgRib2R5GAUgASgJUgRib2R5EhYKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEhYKBmFuc3dlchgHIA'
+    'EoCVIGYW5zd2VyEh8KC2Fuc3dlcmVkX2J5GAggASgJUgphbnN3ZXJlZEJ5EhgKB3Vwdm90ZXMY'
+    'CSABKAVSB3Vwdm90ZXMSIgoNdXB2b3RlZF9ieV9tZRgKIAEoCFILdXB2b3RlZEJ5TWUSOQoKY3'
+    'JlYXRlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI7'
+    'CgthbnN3ZXJlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmFuc3dlcm'
+    'VkQXQ=');
+
+@$core.Deprecated('Use livePollOptionDescriptor instead')
+const LivePollOption$json = {
+  '1': 'LivePollOption',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'votes', '3': 3, '4': 1, '5': 5, '10': 'votes'},
+  ],
+};
+
+/// Descriptor for `LivePollOption`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List livePollOptionDescriptor = $convert.base64Decode(
+    'Cg5MaXZlUG9sbE9wdGlvbhIQCgNrZXkYASABKAlSA2tleRIUCgVsYWJlbBgCIAEoCVIFbGFiZW'
+    'wSFAoFdm90ZXMYAyABKAVSBXZvdGVz');
+
+@$core.Deprecated('Use livePollDescriptor instead')
+const LivePoll$json = {
+  '1': 'LivePoll',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'question', '3': 2, '4': 1, '5': 9, '10': 'question'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'options',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LivePollOption',
+      '10': 'options'
+    },
+    {'1': 'selected_option', '3': 5, '4': 1, '5': 9, '10': 'selectedOption'},
+    {'1': 'anonymous', '3': 6, '4': 1, '5': 8, '10': 'anonymous'},
+    {
+      '1': 'opened_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'openedAt'
+    },
+    {
+      '1': 'closed_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'closedAt'
+    },
+  ],
+};
+
+/// Descriptor for `LivePoll`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List livePollDescriptor = $convert.base64Decode(
+    'CghMaXZlUG9sbBIOCgJpZBgBIAEoCVICaWQSGgoIcXVlc3Rpb24YAiABKAlSCHF1ZXN0aW9uEh'
+    'YKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEjoKB29wdGlvbnMYBCADKAsyIC5zdHRhdHR1cy5vbnl4'
+    'LnYxLkxpdmVQb2xsT3B0aW9uUgdvcHRpb25zEicKD3NlbGVjdGVkX29wdGlvbhgFIAEoCVIOc2'
+    'VsZWN0ZWRPcHRpb24SHAoJYW5vbnltb3VzGAYgASgIUglhbm9ueW1vdXMSNwoJb3BlbmVkX2F0'
+    'GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIIb3BlbmVkQXQSNwoJY2xvc2VkX2'
+    'F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIIY2xvc2VkQXQ=');
+
+@$core.Deprecated('Use liveNoteDescriptor instead')
+const LiveNote$json = {
+  '1': 'LiveNote',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'event_id', '3': 2, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'position_seconds', '3': 5, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {'1': 'passage_key', '3': 6, '4': 1, '5': 9, '10': 'passageKey'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `LiveNote`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveNoteDescriptor = $convert.base64Decode(
+    'CghMaXZlTm90ZRIOCgJpZBgBIAEoCVICaWQSGQoIZXZlbnRfaWQYAiABKAlSB2V2ZW50SWQSEg'
+    'oEa2luZBgDIAEoCVIEa2luZBISCgRib2R5GAQgASgJUgRib2R5EikKEHBvc2l0aW9uX3NlY29u'
+    'ZHMYBSABKAVSD3Bvc2l0aW9uU2Vjb25kcxIfCgtwYXNzYWdlX2tleRgGIAEoCVIKcGFzc2FnZU'
+    'tleRI5CgpjcmVhdGVkX2F0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3Jl'
+    'YXRlZEF0EjkKCnVwZGF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg'
+    'l1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use liveReplaySegmentDescriptor instead')
+const LiveReplaySegment$json = {
+  '1': 'LiveReplaySegment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'starts_at_seconds', '3': 5, '4': 1, '5': 5, '10': 'startsAtSeconds'},
+    {'1': 'ends_at_seconds', '3': 6, '4': 1, '5': 5, '10': 'endsAtSeconds'},
+    {'1': 'content_id', '3': 7, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'sort_order', '3': 8, '4': 1, '5': 5, '10': 'sortOrder'},
+  ],
+};
+
+/// Descriptor for `LiveReplaySegment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveReplaySegmentDescriptor = $convert.base64Decode(
+    'ChFMaXZlUmVwbGF5U2VnbWVudBIOCgJpZBgBIAEoCVICaWQSEgoEa2luZBgCIAEoCVIEa2luZB'
+    'IUCgV0aXRsZRgDIAEoCVIFdGl0bGUSGAoHc3VtbWFyeRgEIAEoCVIHc3VtbWFyeRIqChFzdGFy'
+    'dHNfYXRfc2Vjb25kcxgFIAEoBVIPc3RhcnRzQXRTZWNvbmRzEiYKD2VuZHNfYXRfc2Vjb25kcx'
+    'gGIAEoBVINZW5kc0F0U2Vjb25kcxIdCgpjb250ZW50X2lkGAcgASgJUgljb250ZW50SWQSHQoK'
+    'c29ydF9vcmRlchgIIAEoBVIJc29ydE9yZGVy');
+
+@$core.Deprecated('Use liveReplayDescriptor instead')
+const LiveReplay$json = {
+  '1': 'LiveReplay',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'recording_content_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'recordingContentId'
+    },
+    {'1': 'playback_url', '3': 4, '4': 1, '5': 9, '10': 'playbackUrl'},
+    {'1': 'captions_url', '3': 5, '4': 1, '5': 9, '10': 'captionsUrl'},
+    {'1': 'transcript', '3': 6, '4': 1, '5': 9, '10': 'transcript'},
+    {'1': 'cited_summary', '3': 7, '4': 1, '5': 9, '10': 'citedSummary'},
+    {'1': 'citations', '3': 8, '4': 3, '5': 9, '10': 'citations'},
+    {'1': 'decisions', '3': 9, '4': 3, '5': 9, '10': 'decisions'},
+    {'1': 'actions', '3': 10, '4': 3, '5': 9, '10': 'actions'},
+    {
+      '1': 'related_content_ids',
+      '3': 11,
+      '4': 3,
+      '5': 9,
+      '10': 'relatedContentIds'
+    },
+    {
+      '1': 'segments',
+      '3': 12,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveReplaySegment',
+      '10': 'segments'
+    },
+    {'1': 'version', '3': 13, '4': 1, '5': 5, '10': 'version'},
+    {
+      '1': 'published_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+  ],
+};
+
+/// Descriptor for `LiveReplay`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveReplayDescriptor = $convert.base64Decode(
+    'CgpMaXZlUmVwbGF5EhkKCGV2ZW50X2lkGAEgASgJUgdldmVudElkEhYKBnN0YXR1cxgCIAEoCV'
+    'IGc3RhdHVzEjAKFHJlY29yZGluZ19jb250ZW50X2lkGAMgASgJUhJyZWNvcmRpbmdDb250ZW50'
+    'SWQSIQoMcGxheWJhY2tfdXJsGAQgASgJUgtwbGF5YmFja1VybBIhCgxjYXB0aW9uc191cmwYBS'
+    'ABKAlSC2NhcHRpb25zVXJsEh4KCnRyYW5zY3JpcHQYBiABKAlSCnRyYW5zY3JpcHQSIwoNY2l0'
+    'ZWRfc3VtbWFyeRgHIAEoCVIMY2l0ZWRTdW1tYXJ5EhwKCWNpdGF0aW9ucxgIIAMoCVIJY2l0YX'
+    'Rpb25zEhwKCWRlY2lzaW9ucxgJIAMoCVIJZGVjaXNpb25zEhgKB2FjdGlvbnMYCiADKAlSB2Fj'
+    'dGlvbnMSLgoTcmVsYXRlZF9jb250ZW50X2lkcxgLIAMoCVIRcmVsYXRlZENvbnRlbnRJZHMSPw'
+    'oIc2VnbWVudHMYDCADKAsyIy5zdHRhdHR1cy5vbnl4LnYxLkxpdmVSZXBsYXlTZWdtZW50Ughz'
+    'ZWdtZW50cxIYCgd2ZXJzaW9uGA0gASgFUgd2ZXJzaW9uEj0KDHB1Ymxpc2hlZF9hdBgOIAEoCz'
+    'IaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3B1Ymxpc2hlZEF0');
+
+@$core.Deprecated('Use liveSalonDescriptor instead')
+const LiveSalon$json = {
+  '1': 'LiveSalon',
+  '2': [
+    {
+      '1': 'event',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveEvent',
+      '10': 'event'
+    },
+    {
+      '1': 'speakers',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveSpeaker',
+      '10': 'speakers'
+    },
+    {
+      '1': 'agenda',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveAgendaItem',
+      '10': 'agenda'
+    },
+    {
+      '1': 'assets',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveEventAsset',
+      '10': 'assets'
+    },
+    {
+      '1': 'reservation',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveReservation',
+      '10': 'reservation'
+    },
+    {
+      '1': 'replay',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveReplay',
+      '10': 'replay'
+    },
+    {
+      '1': 'accessibility_summary',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'accessibilitySummary'
+    },
+    {
+      '1': 'attendee_guidance',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'attendeeGuidance'
+    },
+    {
+      '1': 'moderation_policy',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'moderationPolicy'
+    },
+  ],
+};
+
+/// Descriptor for `LiveSalon`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List liveSalonDescriptor = $convert.base64Decode(
+    'CglMaXZlU2Fsb24SMQoFZXZlbnQYASABKAsyGy5zdHRhdHR1cy5vbnl4LnYxLkxpdmVFdmVudF'
+    'IFZXZlbnQSOQoIc3BlYWtlcnMYAiADKAsyHS5zdHRhdHR1cy5vbnl4LnYxLkxpdmVTcGVha2Vy'
+    'UghzcGVha2VycxI4CgZhZ2VuZGEYAyADKAsyIC5zdHRhdHR1cy5vbnl4LnYxLkxpdmVBZ2VuZG'
+    'FJdGVtUgZhZ2VuZGESOAoGYXNzZXRzGAQgAygLMiAuc3R0YXR0dXMub255eC52MS5MaXZlRXZl'
+    'bnRBc3NldFIGYXNzZXRzEkMKC3Jlc2VydmF0aW9uGAUgASgLMiEuc3R0YXR0dXMub255eC52MS'
+    '5MaXZlUmVzZXJ2YXRpb25SC3Jlc2VydmF0aW9uEjQKBnJlcGxheRgGIAEoCzIcLnN0dGF0dHVz'
+    'Lm9ueXgudjEuTGl2ZVJlcGxheVIGcmVwbGF5EjMKFWFjY2Vzc2liaWxpdHlfc3VtbWFyeRgHIA'
+    'EoCVIUYWNjZXNzaWJpbGl0eVN1bW1hcnkSKwoRYXR0ZW5kZWVfZ3VpZGFuY2UYCCABKAlSEGF0'
+    'dGVuZGVlR3VpZGFuY2USKwoRbW9kZXJhdGlvbl9wb2xpY3kYCSABKAlSEG1vZGVyYXRpb25Qb2'
+    'xpY3k=');
+
+@$core.Deprecated('Use getLiveSalonRequestDescriptor instead')
+const GetLiveSalonRequest$json = {
+  '1': 'GetLiveSalonRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+  ],
+};
+
+/// Descriptor for `GetLiveSalonRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveSalonRequestDescriptor =
+    $convert.base64Decode(
+        'ChNHZXRMaXZlU2Fsb25SZXF1ZXN0EhkKCGV2ZW50X2lkGAEgASgJUgdldmVudElk');
+
+@$core.Deprecated('Use getLiveSalonResponseDescriptor instead')
+const GetLiveSalonResponse$json = {
+  '1': 'GetLiveSalonResponse',
+  '2': [
+    {
+      '1': 'salon',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveSalon',
+      '10': 'salon'
+    },
+  ],
+};
+
+/// Descriptor for `GetLiveSalonResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveSalonResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRMaXZlU2Fsb25SZXNwb25zZRIxCgVzYWxvbhgBIAEoCzIbLnN0dGF0dHVzLm9ueXgudj'
+    'EuTGl2ZVNhbG9uUgVzYWxvbg==');
+
+@$core.Deprecated('Use upsertLiveReservationRequestDescriptor instead')
+const UpsertLiveReservationRequest$json = {
+  '1': 'UpsertLiveReservationRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'guest_count', '3': 3, '4': 1, '5': 5, '10': 'guestCount'},
+    {'1': 'guest_names', '3': 4, '4': 3, '5': 9, '10': 'guestNames'},
+    {
+      '1': 'accessibility_requirements',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'accessibilityRequirements'
+    },
+    {'1': 'reminder_minutes', '3': 6, '4': 3, '5': 5, '10': 'reminderMinutes'},
+    {'1': 'request_id', '3': 7, '4': 1, '5': 9, '10': 'requestId'},
+  ],
+};
+
+/// Descriptor for `UpsertLiveReservationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLiveReservationRequestDescriptor = $convert.base64Decode(
+    'ChxVcHNlcnRMaXZlUmVzZXJ2YXRpb25SZXF1ZXN0EhkKCGV2ZW50X2lkGAEgASgJUgdldmVudE'
+    'lkEhYKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEh8KC2d1ZXN0X2NvdW50GAMgASgFUgpndWVzdENv'
+    'dW50Eh8KC2d1ZXN0X25hbWVzGAQgAygJUgpndWVzdE5hbWVzEj0KGmFjY2Vzc2liaWxpdHlfcm'
+    'VxdWlyZW1lbnRzGAUgASgJUhlhY2Nlc3NpYmlsaXR5UmVxdWlyZW1lbnRzEikKEHJlbWluZGVy'
+    'X21pbnV0ZXMYBiADKAVSD3JlbWluZGVyTWludXRlcxIdCgpyZXF1ZXN0X2lkGAcgASgJUglyZX'
+    'F1ZXN0SWQ=');
+
+@$core.Deprecated('Use upsertLiveReservationResponseDescriptor instead')
+const UpsertLiveReservationResponse$json = {
+  '1': 'UpsertLiveReservationResponse',
+  '2': [
+    {
+      '1': 'reservation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveReservation',
+      '10': 'reservation'
+    },
+    {'1': 'confirmed_count', '3': 2, '4': 1, '5': 5, '10': 'confirmedCount'},
+    {'1': 'waitlist_count', '3': 3, '4': 1, '5': 5, '10': 'waitlistCount'},
+  ],
+};
+
+/// Descriptor for `UpsertLiveReservationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLiveReservationResponseDescriptor = $convert.base64Decode(
+    'Ch1VcHNlcnRMaXZlUmVzZXJ2YXRpb25SZXNwb25zZRJDCgtyZXNlcnZhdGlvbhgBIAEoCzIhLn'
+    'N0dGF0dHVzLm9ueXgudjEuTGl2ZVJlc2VydmF0aW9uUgtyZXNlcnZhdGlvbhInCg9jb25maXJt'
+    'ZWRfY291bnQYAiABKAVSDmNvbmZpcm1lZENvdW50EiUKDndhaXRsaXN0X2NvdW50GAMgASgFUg'
+    '13YWl0bGlzdENvdW50');
+
+@$core.Deprecated('Use inviteLiveGuestRequestDescriptor instead')
+const InviteLiveGuestRequest$json = {
+  '1': 'InviteLiveGuestRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'guest_name', '3': 2, '4': 1, '5': 9, '10': 'guestName'},
+    {'1': 'guest_email', '3': 3, '4': 1, '5': 9, '10': 'guestEmail'},
+    {'1': 'request_id', '3': 4, '4': 1, '5': 9, '10': 'requestId'},
+  ],
+};
+
+/// Descriptor for `InviteLiveGuestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inviteLiveGuestRequestDescriptor = $convert.base64Decode(
+    'ChZJbnZpdGVMaXZlR3Vlc3RSZXF1ZXN0EhkKCGV2ZW50X2lkGAEgASgJUgdldmVudElkEh0KCm'
+    'd1ZXN0X25hbWUYAiABKAlSCWd1ZXN0TmFtZRIfCgtndWVzdF9lbWFpbBgDIAEoCVIKZ3Vlc3RF'
+    'bWFpbBIdCgpyZXF1ZXN0X2lkGAQgASgJUglyZXF1ZXN0SWQ=');
+
+@$core.Deprecated('Use inviteLiveGuestResponseDescriptor instead')
+const InviteLiveGuestResponse$json = {
+  '1': 'InviteLiveGuestResponse',
+  '2': [
+    {
+      '1': 'invitation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveGuestInvitation',
+      '10': 'invitation'
+    },
+    {'1': 'invite_url', '3': 2, '4': 1, '5': 9, '10': 'inviteUrl'},
+  ],
+};
+
+/// Descriptor for `InviteLiveGuestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inviteLiveGuestResponseDescriptor = $convert.base64Decode(
+    'ChdJbnZpdGVMaXZlR3Vlc3RSZXNwb25zZRJFCgppbnZpdGF0aW9uGAEgASgLMiUuc3R0YXR0dX'
+    'Mub255eC52MS5MaXZlR3Vlc3RJbnZpdGF0aW9uUgppbnZpdGF0aW9uEh0KCmludml0ZV91cmwY'
+    'AiABKAlSCWludml0ZVVybA==');
+
+@$core.Deprecated('Use generateLiveCalendarPassRequestDescriptor instead')
+const GenerateLiveCalendarPassRequest$json = {
+  '1': 'GenerateLiveCalendarPassRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+  ],
+};
+
+/// Descriptor for `GenerateLiveCalendarPassRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLiveCalendarPassRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9HZW5lcmF0ZUxpdmVDYWxlbmRhclBhc3NSZXF1ZXN0EhkKCGV2ZW50X2lkGAEgASgJUgdldm'
+        'VudElk');
+
+@$core.Deprecated('Use generateLiveCalendarPassResponseDescriptor instead')
+const GenerateLiveCalendarPassResponse$json = {
+  '1': 'GenerateLiveCalendarPassResponse',
+  '2': [
+    {'1': 'filename', '3': 1, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'contents', '3': 3, '4': 1, '5': 12, '10': 'contents'},
+  ],
+};
+
+/// Descriptor for `GenerateLiveCalendarPassResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLiveCalendarPassResponseDescriptor =
+    $convert.base64Decode(
+        'CiBHZW5lcmF0ZUxpdmVDYWxlbmRhclBhc3NSZXNwb25zZRIaCghmaWxlbmFtZRgBIAEoCVIIZm'
+        'lsZW5hbWUSGwoJbWltZV90eXBlGAIgASgJUghtaW1lVHlwZRIaCghjb250ZW50cxgDIAEoDFII'
+        'Y29udGVudHM=');
+
+@$core.Deprecated('Use joinLiveEventRequestDescriptor instead')
+const JoinLiveEventRequest$json = {
+  '1': 'JoinLiveEventRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+  ],
+};
+
+/// Descriptor for `JoinLiveEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List joinLiveEventRequestDescriptor =
+    $convert.base64Decode(
+        'ChRKb2luTGl2ZUV2ZW50UmVxdWVzdBIZCghldmVudF9pZBgBIAEoCVIHZXZlbnRJZA==');
+
+@$core.Deprecated('Use joinLiveEventResponseDescriptor instead')
+const JoinLiveEventResponse$json = {
+  '1': 'JoinLiveEventResponse',
+  '2': [
+    {'1': 'mode', '3': 1, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'ws_url', '3': 3, '4': 1, '5': 9, '10': 'wsUrl'},
+    {'1': 'playback_url', '3': 4, '4': 1, '5': 9, '10': 'playbackUrl'},
+    {
+      '1': 'fallback_playback_url',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'fallbackPlaybackUrl'
+    },
+    {'1': 'fallback_reason', '3': 6, '4': 1, '5': 9, '10': 'fallbackReason'},
+    {'1': 'dial_in_label', '3': 7, '4': 1, '5': 9, '10': 'dialInLabel'},
+    {'1': 'dial_in_number', '3': 8, '4': 1, '5': 9, '10': 'dialInNumber'},
+    {'1': 'dial_in_pin', '3': 9, '4': 1, '5': 9, '10': 'dialInPin'},
+    {'1': 'can_publish', '3': 10, '4': 1, '5': 8, '10': 'canPublish'},
+    {'1': 'room_status', '3': 11, '4': 1, '5': 9, '10': 'roomStatus'},
+    {
+      '1': 'expires_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `JoinLiveEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List joinLiveEventResponseDescriptor = $convert.base64Decode(
+    'ChVKb2luTGl2ZUV2ZW50UmVzcG9uc2USEgoEbW9kZRgBIAEoCVIEbW9kZRIUCgV0b2tlbhgCIA'
+    'EoCVIFdG9rZW4SFQoGd3NfdXJsGAMgASgJUgV3c1VybBIhCgxwbGF5YmFja191cmwYBCABKAlS'
+    'C3BsYXliYWNrVXJsEjIKFWZhbGxiYWNrX3BsYXliYWNrX3VybBgFIAEoCVITZmFsbGJhY2tQbG'
+    'F5YmFja1VybBInCg9mYWxsYmFja19yZWFzb24YBiABKAlSDmZhbGxiYWNrUmVhc29uEiIKDWRp'
+    'YWxfaW5fbGFiZWwYByABKAlSC2RpYWxJbkxhYmVsEiQKDmRpYWxfaW5fbnVtYmVyGAggASgJUg'
+    'xkaWFsSW5OdW1iZXISHgoLZGlhbF9pbl9waW4YCSABKAlSCWRpYWxJblBpbhIfCgtjYW5fcHVi'
+    'bGlzaBgKIAEoCFIKY2FuUHVibGlzaBIfCgtyb29tX3N0YXR1cxgLIAEoCVIKcm9vbVN0YXR1cx'
+    'I5CgpleHBpcmVzX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJl'
+    'c0F0');
+
+@$core.Deprecated('Use listLiveActivityRequestDescriptor instead')
+const ListLiveActivityRequest$json = {
+  '1': 'ListLiveActivityRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListLiveActivityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveActivityRequestDescriptor =
+    $convert.base64Decode(
+        'ChdMaXN0TGl2ZUFjdGl2aXR5UmVxdWVzdBIZCghldmVudF9pZBgBIAEoCVIHZXZlbnRJZBIUCg'
+        'VsaW1pdBgCIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use listLiveActivityResponseDescriptor instead')
+const ListLiveActivityResponse$json = {
+  '1': 'ListLiveActivityResponse',
+  '2': [
+    {
+      '1': 'messages',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveMessage',
+      '10': 'messages'
+    },
+    {
+      '1': 'polls',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LivePoll',
+      '10': 'polls'
+    },
+    {'1': 'hand_raised', '3': 3, '4': 1, '5': 8, '10': 'handRaised'},
+    {'1': 'hand_raise_status', '3': 4, '4': 1, '5': 9, '10': 'handRaiseStatus'},
+    {
+      '1': 'participant_count',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'participantCount'
+    },
+    {'1': 'question_count', '3': 6, '4': 1, '5': 5, '10': 'questionCount'},
+    {'1': 'unanswered_count', '3': 7, '4': 1, '5': 5, '10': 'unansweredCount'},
+  ],
+};
+
+/// Descriptor for `ListLiveActivityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveActivityResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0TGl2ZUFjdGl2aXR5UmVzcG9uc2USOQoIbWVzc2FnZXMYASADKAsyHS5zdHRhdHR1cy'
+    '5vbnl4LnYxLkxpdmVNZXNzYWdlUghtZXNzYWdlcxIwCgVwb2xscxgCIAMoCzIaLnN0dGF0dHVz'
+    'Lm9ueXgudjEuTGl2ZVBvbGxSBXBvbGxzEh8KC2hhbmRfcmFpc2VkGAMgASgIUgpoYW5kUmFpc2'
+    'VkEioKEWhhbmRfcmFpc2Vfc3RhdHVzGAQgASgJUg9oYW5kUmFpc2VTdGF0dXMSKwoRcGFydGlj'
+    'aXBhbnRfY291bnQYBSABKAVSEHBhcnRpY2lwYW50Q291bnQSJQoOcXVlc3Rpb25fY291bnQYBi'
+    'ABKAVSDXF1ZXN0aW9uQ291bnQSKQoQdW5hbnN3ZXJlZF9jb3VudBgHIAEoBVIPdW5hbnN3ZXJl'
+    'ZENvdW50');
+
+@$core.Deprecated('Use postLiveMessageRequestDescriptor instead')
+const PostLiveMessageRequest$json = {
+  '1': 'PostLiveMessageRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'request_id', '3': 4, '4': 1, '5': 9, '10': 'requestId'},
+  ],
+};
+
+/// Descriptor for `PostLiveMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postLiveMessageRequestDescriptor = $convert.base64Decode(
+    'ChZQb3N0TGl2ZU1lc3NhZ2VSZXF1ZXN0EhkKCGV2ZW50X2lkGAEgASgJUgdldmVudElkEhIKBG'
+    'tpbmQYAiABKAlSBGtpbmQSEgoEYm9keRgDIAEoCVIEYm9keRIdCgpyZXF1ZXN0X2lkGAQgASgJ'
+    'UglyZXF1ZXN0SWQ=');
+
+@$core.Deprecated('Use postLiveMessageResponseDescriptor instead')
+const PostLiveMessageResponse$json = {
+  '1': 'PostLiveMessageResponse',
+  '2': [
+    {
+      '1': 'message',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveMessage',
+      '10': 'message'
+    },
+  ],
+};
+
+/// Descriptor for `PostLiveMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postLiveMessageResponseDescriptor =
+    $convert.base64Decode(
+        'ChdQb3N0TGl2ZU1lc3NhZ2VSZXNwb25zZRI3CgdtZXNzYWdlGAEgASgLMh0uc3R0YXR0dXMub2'
+        '55eC52MS5MaXZlTWVzc2FnZVIHbWVzc2FnZQ==');
+
+@$core.Deprecated('Use upvoteLiveQuestionRequestDescriptor instead')
+const UpvoteLiveQuestionRequest$json = {
+  '1': 'UpvoteLiveQuestionRequest',
+  '2': [
+    {'1': 'message_id', '3': 1, '4': 1, '5': 9, '10': 'messageId'},
+    {'1': 'upvote', '3': 2, '4': 1, '5': 8, '10': 'upvote'},
+  ],
+};
+
+/// Descriptor for `UpvoteLiveQuestionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upvoteLiveQuestionRequestDescriptor =
+    $convert.base64Decode(
+        'ChlVcHZvdGVMaXZlUXVlc3Rpb25SZXF1ZXN0Eh0KCm1lc3NhZ2VfaWQYASABKAlSCW1lc3NhZ2'
+        'VJZBIWCgZ1cHZvdGUYAiABKAhSBnVwdm90ZQ==');
+
+@$core.Deprecated('Use upvoteLiveQuestionResponseDescriptor instead')
+const UpvoteLiveQuestionResponse$json = {
+  '1': 'UpvoteLiveQuestionResponse',
+  '2': [
+    {
+      '1': 'message',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveMessage',
+      '10': 'message'
+    },
+  ],
+};
+
+/// Descriptor for `UpvoteLiveQuestionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upvoteLiveQuestionResponseDescriptor =
+    $convert.base64Decode(
+        'ChpVcHZvdGVMaXZlUXVlc3Rpb25SZXNwb25zZRI3CgdtZXNzYWdlGAEgASgLMh0uc3R0YXR0dX'
+        'Mub255eC52MS5MaXZlTWVzc2FnZVIHbWVzc2FnZQ==');
+
+@$core.Deprecated('Use voteLivePollRequestDescriptor instead')
+const VoteLivePollRequest$json = {
+  '1': 'VoteLivePollRequest',
+  '2': [
+    {'1': 'poll_id', '3': 1, '4': 1, '5': 9, '10': 'pollId'},
+    {'1': 'option_key', '3': 2, '4': 1, '5': 9, '10': 'optionKey'},
+  ],
+};
+
+/// Descriptor for `VoteLivePollRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List voteLivePollRequestDescriptor = $convert.base64Decode(
+    'ChNWb3RlTGl2ZVBvbGxSZXF1ZXN0EhcKB3BvbGxfaWQYASABKAlSBnBvbGxJZBIdCgpvcHRpb2'
+    '5fa2V5GAIgASgJUglvcHRpb25LZXk=');
+
+@$core.Deprecated('Use voteLivePollResponseDescriptor instead')
+const VoteLivePollResponse$json = {
+  '1': 'VoteLivePollResponse',
+  '2': [
+    {
+      '1': 'poll',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LivePoll',
+      '10': 'poll'
+    },
+  ],
+};
+
+/// Descriptor for `VoteLivePollResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List voteLivePollResponseDescriptor = $convert.base64Decode(
+    'ChRWb3RlTGl2ZVBvbGxSZXNwb25zZRIuCgRwb2xsGAEgASgLMhouc3R0YXR0dXMub255eC52MS'
+    '5MaXZlUG9sbFIEcG9sbA==');
+
+@$core.Deprecated('Use setLiveHandRaiseRequestDescriptor instead')
+const SetLiveHandRaiseRequest$json = {
+  '1': 'SetLiveHandRaiseRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'raised', '3': 2, '4': 1, '5': 8, '10': 'raised'},
+  ],
+};
+
+/// Descriptor for `SetLiveHandRaiseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setLiveHandRaiseRequestDescriptor =
+    $convert.base64Decode(
+        'ChdTZXRMaXZlSGFuZFJhaXNlUmVxdWVzdBIZCghldmVudF9pZBgBIAEoCVIHZXZlbnRJZBIWCg'
+        'ZyYWlzZWQYAiABKAhSBnJhaXNlZA==');
+
+@$core.Deprecated('Use setLiveHandRaiseResponseDescriptor instead')
+const SetLiveHandRaiseResponse$json = {
+  '1': 'SetLiveHandRaiseResponse',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `SetLiveHandRaiseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setLiveHandRaiseResponseDescriptor =
+    $convert.base64Decode(
+        'ChhTZXRMaXZlSGFuZFJhaXNlUmVzcG9uc2USFgoGc3RhdHVzGAEgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use reactLiveEventRequestDescriptor instead')
+const ReactLiveEventRequest$json = {
+  '1': 'ReactLiveEventRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'emoji', '3': 2, '4': 1, '5': 9, '10': 'emoji'},
+  ],
+};
+
+/// Descriptor for `ReactLiveEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reactLiveEventRequestDescriptor = $convert.base64Decode(
+    'ChVSZWFjdExpdmVFdmVudFJlcXVlc3QSGQoIZXZlbnRfaWQYASABKAlSB2V2ZW50SWQSFAoFZW'
+    '1vamkYAiABKAlSBWVtb2pp');
+
+@$core.Deprecated('Use reactLiveEventResponseDescriptor instead')
+const ReactLiveEventResponse$json = {
+  '1': 'ReactLiveEventResponse',
+  '2': [
+    {'1': 'emoji', '3': 1, '4': 1, '5': 9, '10': 'emoji'},
+    {'1': 'count', '3': 2, '4': 1, '5': 5, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `ReactLiveEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reactLiveEventResponseDescriptor =
+    $convert.base64Decode(
+        'ChZSZWFjdExpdmVFdmVudFJlc3BvbnNlEhQKBWVtb2ppGAEgASgJUgVlbW9qaRIUCgVjb3VudB'
+        'gCIAEoBVIFY291bnQ=');
+
+@$core.Deprecated('Use upsertLiveNoteRequestDescriptor instead')
+const UpsertLiveNoteRequest$json = {
+  '1': 'UpsertLiveNoteRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'note_id', '3': 2, '4': 1, '5': 9, '10': 'noteId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'position_seconds', '3': 5, '4': 1, '5': 5, '10': 'positionSeconds'},
+    {'1': 'passage_key', '3': 6, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'request_id', '3': 7, '4': 1, '5': 9, '10': 'requestId'},
+  ],
+};
+
+/// Descriptor for `UpsertLiveNoteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLiveNoteRequestDescriptor = $convert.base64Decode(
+    'ChVVcHNlcnRMaXZlTm90ZVJlcXVlc3QSGQoIZXZlbnRfaWQYASABKAlSB2V2ZW50SWQSFwoHbm'
+    '90ZV9pZBgCIAEoCVIGbm90ZUlkEhIKBGtpbmQYAyABKAlSBGtpbmQSEgoEYm9keRgEIAEoCVIE'
+    'Ym9keRIpChBwb3NpdGlvbl9zZWNvbmRzGAUgASgFUg9wb3NpdGlvblNlY29uZHMSHwoLcGFzc2'
+    'FnZV9rZXkYBiABKAlSCnBhc3NhZ2VLZXkSHQoKcmVxdWVzdF9pZBgHIAEoCVIJcmVxdWVzdElk');
+
+@$core.Deprecated('Use upsertLiveNoteResponseDescriptor instead')
+const UpsertLiveNoteResponse$json = {
+  '1': 'UpsertLiveNoteResponse',
+  '2': [
+    {
+      '1': 'note',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveNote',
+      '10': 'note'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertLiveNoteResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLiveNoteResponseDescriptor =
+    $convert.base64Decode(
+        'ChZVcHNlcnRMaXZlTm90ZVJlc3BvbnNlEi4KBG5vdGUYASABKAsyGi5zdHRhdHR1cy5vbnl4Ln'
+        'YxLkxpdmVOb3RlUgRub3Rl');
+
+@$core.Deprecated('Use listLiveNotesRequestDescriptor instead')
+const ListLiveNotesRequest$json = {
+  '1': 'ListLiveNotesRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+  ],
+};
+
+/// Descriptor for `ListLiveNotesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveNotesRequestDescriptor =
+    $convert.base64Decode(
+        'ChRMaXN0TGl2ZU5vdGVzUmVxdWVzdBIZCghldmVudF9pZBgBIAEoCVIHZXZlbnRJZA==');
+
+@$core.Deprecated('Use listLiveNotesResponseDescriptor instead')
+const ListLiveNotesResponse$json = {
+  '1': 'ListLiveNotesResponse',
+  '2': [
+    {
+      '1': 'notes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveNote',
+      '10': 'notes'
+    },
+  ],
+};
+
+/// Descriptor for `ListLiveNotesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLiveNotesResponseDescriptor = $convert.base64Decode(
+    'ChVMaXN0TGl2ZU5vdGVzUmVzcG9uc2USMAoFbm90ZXMYASADKAsyGi5zdHRhdHR1cy5vbnl4Ln'
+    'YxLkxpdmVOb3RlUgVub3Rlcw==');
+
+@$core.Deprecated('Use deleteLiveNoteRequestDescriptor instead')
+const DeleteLiveNoteRequest$json = {
+  '1': 'DeleteLiveNoteRequest',
+  '2': [
+    {'1': 'note_id', '3': 1, '4': 1, '5': 9, '10': 'noteId'},
+  ],
+};
+
+/// Descriptor for `DeleteLiveNoteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLiveNoteRequestDescriptor =
+    $convert.base64Decode(
+        'ChVEZWxldGVMaXZlTm90ZVJlcXVlc3QSFwoHbm90ZV9pZBgBIAEoCVIGbm90ZUlk');
+
+@$core.Deprecated('Use deleteLiveNoteResponseDescriptor instead')
+const DeleteLiveNoteResponse$json = {
+  '1': 'DeleteLiveNoteResponse',
+};
+
+/// Descriptor for `DeleteLiveNoteResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLiveNoteResponseDescriptor =
+    $convert.base64Decode('ChZEZWxldGVMaXZlTm90ZVJlc3BvbnNl');
+
+@$core.Deprecated('Use getLiveReplayRequestDescriptor instead')
+const GetLiveReplayRequest$json = {
+  '1': 'GetLiveReplayRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+  ],
+};
+
+/// Descriptor for `GetLiveReplayRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveReplayRequestDescriptor =
+    $convert.base64Decode(
+        'ChRHZXRMaXZlUmVwbGF5UmVxdWVzdBIZCghldmVudF9pZBgBIAEoCVIHZXZlbnRJZA==');
+
+@$core.Deprecated('Use getLiveReplayResponseDescriptor instead')
+const GetLiveReplayResponse$json = {
+  '1': 'GetLiveReplayResponse',
+  '2': [
+    {
+      '1': 'replay',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.LiveReplay',
+      '10': 'replay'
+    },
+  ],
+};
+
+/// Descriptor for `GetLiveReplayResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLiveReplayResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRMaXZlUmVwbGF5UmVzcG9uc2USNAoGcmVwbGF5GAEgASgLMhwuc3R0YXR0dXMub255eC'
+    '52MS5MaXZlUmVwbGF5UgZyZXBsYXk=');
 
 @$core.Deprecated('Use posthumousArchiveDescriptor instead')
 const PosthumousArchive$json = {

@@ -12941,6 +12941,23 @@ class LiveEvent extends $pb.GeneratedMessage {
     $core.String? recordingContentId,
     $core.String? heroImageUrl,
     $core.bool? locked,
+    $1.Timestamp? endsAt,
+    $core.String? timezone,
+    $core.int? durationMinutes,
+    $core.String? languageCode,
+    $core.String? liveMode,
+    $core.String? reservationStatus,
+    $core.int? waitlistPosition,
+    $core.bool? canJoin,
+    $core.String? joinState,
+    $core.int? speakerCount,
+    $core.int? agendaCount,
+    $core.bool? replayAvailable,
+    $core.int? guestCount,
+    $core.int? maxGuests,
+    $core.Iterable<$core.int>? reminderMinutes,
+    $core.String? accessibilityRequirements,
+    $core.String? fallbackReason,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -12957,6 +12974,24 @@ class LiveEvent extends $pb.GeneratedMessage {
       result.recordingContentId = recordingContentId;
     if (heroImageUrl != null) result.heroImageUrl = heroImageUrl;
     if (locked != null) result.locked = locked;
+    if (endsAt != null) result.endsAt = endsAt;
+    if (timezone != null) result.timezone = timezone;
+    if (durationMinutes != null) result.durationMinutes = durationMinutes;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (liveMode != null) result.liveMode = liveMode;
+    if (reservationStatus != null) result.reservationStatus = reservationStatus;
+    if (waitlistPosition != null) result.waitlistPosition = waitlistPosition;
+    if (canJoin != null) result.canJoin = canJoin;
+    if (joinState != null) result.joinState = joinState;
+    if (speakerCount != null) result.speakerCount = speakerCount;
+    if (agendaCount != null) result.agendaCount = agendaCount;
+    if (replayAvailable != null) result.replayAvailable = replayAvailable;
+    if (guestCount != null) result.guestCount = guestCount;
+    if (maxGuests != null) result.maxGuests = maxGuests;
+    if (reminderMinutes != null) result.reminderMinutes.addAll(reminderMinutes);
+    if (accessibilityRequirements != null)
+      result.accessibilityRequirements = accessibilityRequirements;
+    if (fallbackReason != null) result.fallbackReason = fallbackReason;
     return result;
   }
 
@@ -12988,6 +13023,25 @@ class LiveEvent extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'recordingContentId')
     ..aOS(12, _omitFieldNames ? '' : 'heroImageUrl')
     ..aOB(13, _omitFieldNames ? '' : 'locked')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'endsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(15, _omitFieldNames ? '' : 'timezone')
+    ..aI(16, _omitFieldNames ? '' : 'durationMinutes')
+    ..aOS(17, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(18, _omitFieldNames ? '' : 'liveMode')
+    ..aOS(19, _omitFieldNames ? '' : 'reservationStatus')
+    ..aI(20, _omitFieldNames ? '' : 'waitlistPosition')
+    ..aOB(21, _omitFieldNames ? '' : 'canJoin')
+    ..aOS(22, _omitFieldNames ? '' : 'joinState')
+    ..aI(23, _omitFieldNames ? '' : 'speakerCount')
+    ..aI(24, _omitFieldNames ? '' : 'agendaCount')
+    ..aOB(25, _omitFieldNames ? '' : 'replayAvailable')
+    ..aI(26, _omitFieldNames ? '' : 'guestCount')
+    ..aI(27, _omitFieldNames ? '' : 'maxGuests')
+    ..p<$core.int>(
+        28, _omitFieldNames ? '' : 'reminderMinutes', $pb.PbFieldType.K3)
+    ..aOS(29, _omitFieldNames ? '' : 'accessibilityRequirements')
+    ..aOS(30, _omitFieldNames ? '' : 'fallbackReason')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -13130,6 +13184,155 @@ class LiveEvent extends $pb.GeneratedMessage {
   $core.bool hasLocked() => $_has(12);
   @$pb.TagNumber(13)
   void clearLocked() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get endsAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set endsAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasEndsAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearEndsAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureEndsAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $core.String get timezone => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set timezone($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasTimezone() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearTimezone() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.int get durationMinutes => $_getIZ(15);
+  @$pb.TagNumber(16)
+  set durationMinutes($core.int value) => $_setSignedInt32(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasDurationMinutes() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDurationMinutes() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get languageCode => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set languageCode($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasLanguageCode() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearLanguageCode() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get liveMode => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set liveMode($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasLiveMode() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearLiveMode() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get reservationStatus => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set reservationStatus($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasReservationStatus() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearReservationStatus() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.int get waitlistPosition => $_getIZ(19);
+  @$pb.TagNumber(20)
+  set waitlistPosition($core.int value) => $_setSignedInt32(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasWaitlistPosition() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearWaitlistPosition() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.bool get canJoin => $_getBF(20);
+  @$pb.TagNumber(21)
+  set canJoin($core.bool value) => $_setBool(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasCanJoin() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearCanJoin() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get joinState => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set joinState($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasJoinState() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearJoinState() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get speakerCount => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set speakerCount($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasSpeakerCount() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearSpeakerCount() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.int get agendaCount => $_getIZ(23);
+  @$pb.TagNumber(24)
+  set agendaCount($core.int value) => $_setSignedInt32(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasAgendaCount() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearAgendaCount() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.bool get replayAvailable => $_getBF(24);
+  @$pb.TagNumber(25)
+  set replayAvailable($core.bool value) => $_setBool(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasReplayAvailable() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearReplayAvailable() => $_clearField(25);
+
+  @$pb.TagNumber(26)
+  $core.int get guestCount => $_getIZ(25);
+  @$pb.TagNumber(26)
+  set guestCount($core.int value) => $_setSignedInt32(25, value);
+  @$pb.TagNumber(26)
+  $core.bool hasGuestCount() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearGuestCount() => $_clearField(26);
+
+  @$pb.TagNumber(27)
+  $core.int get maxGuests => $_getIZ(26);
+  @$pb.TagNumber(27)
+  set maxGuests($core.int value) => $_setSignedInt32(26, value);
+  @$pb.TagNumber(27)
+  $core.bool hasMaxGuests() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearMaxGuests() => $_clearField(27);
+
+  @$pb.TagNumber(28)
+  $pb.PbList<$core.int> get reminderMinutes => $_getList(27);
+
+  @$pb.TagNumber(29)
+  $core.String get accessibilityRequirements => $_getSZ(28);
+  @$pb.TagNumber(29)
+  set accessibilityRequirements($core.String value) => $_setString(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasAccessibilityRequirements() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearAccessibilityRequirements() => $_clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get fallbackReason => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set fallbackReason($core.String value) => $_setString(29, value);
+  @$pb.TagNumber(30)
+  $core.bool hasFallbackReason() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearFallbackReason() => $_clearField(30);
 }
 
 class ListLiveEventsRequest extends $pb.GeneratedMessage {
@@ -13485,6 +13688,3947 @@ class RsvpLiveEventResponse extends $pb.GeneratedMessage {
   $core.bool hasRsvpCount() => $_has(1);
   @$pb.TagNumber(2)
   void clearRsvpCount() => $_clearField(2);
+}
+
+class LiveSpeaker extends $pb.GeneratedMessage {
+  factory LiveSpeaker({
+    $core.String? id,
+    $core.String? name,
+    $core.String? role,
+    $core.String? title,
+    $core.String? bio,
+    $core.String? avatarUrl,
+    $core.String? consentStatus,
+    $core.bool? isBackup,
+    $core.int? sortOrder,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (role != null) result.role = role;
+    if (title != null) result.title = title;
+    if (bio != null) result.bio = bio;
+    if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    if (consentStatus != null) result.consentStatus = consentStatus;
+    if (isBackup != null) result.isBackup = isBackup;
+    if (sortOrder != null) result.sortOrder = sortOrder;
+    return result;
+  }
+
+  LiveSpeaker._();
+
+  factory LiveSpeaker.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveSpeaker.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveSpeaker',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'role')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'bio')
+    ..aOS(6, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'consentStatus')
+    ..aOB(8, _omitFieldNames ? '' : 'isBackup')
+    ..aI(9, _omitFieldNames ? '' : 'sortOrder')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveSpeaker clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveSpeaker copyWith(void Function(LiveSpeaker) updates) =>
+      super.copyWith((message) => updates(message as LiveSpeaker))
+          as LiveSpeaker;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveSpeaker create() => LiveSpeaker._();
+  @$core.override
+  LiveSpeaker createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveSpeaker getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveSpeaker>(create);
+  static LiveSpeaker? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get role => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set role($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRole() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get bio => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set bio($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBio() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBio() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get avatarUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set avatarUrl($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAvatarUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAvatarUrl() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get consentStatus => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set consentStatus($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConsentStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConsentStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isBackup => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isBackup($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIsBackup() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsBackup() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get sortOrder => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set sortOrder($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSortOrder() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSortOrder() => $_clearField(9);
+}
+
+class LiveAgendaItem extends $pb.GeneratedMessage {
+  factory LiveAgendaItem({
+    $core.String? id,
+    $core.String? title,
+    $core.String? description,
+    $core.String? kind,
+    $core.int? offsetMinutes,
+    $core.int? durationMinutes,
+    $core.String? speakerId,
+    $core.String? passageKey,
+    $core.int? sortOrder,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (kind != null) result.kind = kind;
+    if (offsetMinutes != null) result.offsetMinutes = offsetMinutes;
+    if (durationMinutes != null) result.durationMinutes = durationMinutes;
+    if (speakerId != null) result.speakerId = speakerId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (sortOrder != null) result.sortOrder = sortOrder;
+    return result;
+  }
+
+  LiveAgendaItem._();
+
+  factory LiveAgendaItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveAgendaItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveAgendaItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..aI(5, _omitFieldNames ? '' : 'offsetMinutes')
+    ..aI(6, _omitFieldNames ? '' : 'durationMinutes')
+    ..aOS(7, _omitFieldNames ? '' : 'speakerId')
+    ..aOS(8, _omitFieldNames ? '' : 'passageKey')
+    ..aI(9, _omitFieldNames ? '' : 'sortOrder')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveAgendaItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveAgendaItem copyWith(void Function(LiveAgendaItem) updates) =>
+      super.copyWith((message) => updates(message as LiveAgendaItem))
+          as LiveAgendaItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveAgendaItem create() => LiveAgendaItem._();
+  @$core.override
+  LiveAgendaItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveAgendaItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveAgendaItem>(create);
+  static LiveAgendaItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get offsetMinutes => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set offsetMinutes($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOffsetMinutes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOffsetMinutes() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get durationMinutes => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set durationMinutes($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDurationMinutes() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDurationMinutes() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get speakerId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set speakerId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSpeakerId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSpeakerId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get passageKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set passageKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPassageKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPassageKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get sortOrder => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set sortOrder($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSortOrder() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSortOrder() => $_clearField(9);
+}
+
+class LiveEventAsset extends $pb.GeneratedMessage {
+  factory LiveEventAsset({
+    $core.String? id,
+    $core.String? kind,
+    $core.String? title,
+    $core.String? url,
+    $core.String? contentId,
+    $core.bool? required,
+    $core.int? sortOrder,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (url != null) result.url = url;
+    if (contentId != null) result.contentId = contentId;
+    if (required != null) result.required = required;
+    if (sortOrder != null) result.sortOrder = sortOrder;
+    return result;
+  }
+
+  LiveEventAsset._();
+
+  factory LiveEventAsset.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveEventAsset.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveEventAsset',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'url')
+    ..aOS(5, _omitFieldNames ? '' : 'contentId')
+    ..aOB(6, _omitFieldNames ? '' : 'required')
+    ..aI(7, _omitFieldNames ? '' : 'sortOrder')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveEventAsset clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveEventAsset copyWith(void Function(LiveEventAsset) updates) =>
+      super.copyWith((message) => updates(message as LiveEventAsset))
+          as LiveEventAsset;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveEventAsset create() => LiveEventAsset._();
+  @$core.override
+  LiveEventAsset createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveEventAsset getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveEventAsset>(create);
+  static LiveEventAsset? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get url => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set url($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get required => $_getBF(5);
+  @$pb.TagNumber(6)
+  set required($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRequired() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRequired() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get sortOrder => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set sortOrder($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSortOrder() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSortOrder() => $_clearField(7);
+}
+
+class LiveGuestInvitation extends $pb.GeneratedMessage {
+  factory LiveGuestInvitation({
+    $core.String? id,
+    $core.String? guestName,
+    $core.String? emailHint,
+    $core.String? status,
+    $1.Timestamp? expiresAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (guestName != null) result.guestName = guestName;
+    if (emailHint != null) result.emailHint = emailHint;
+    if (status != null) result.status = status;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  LiveGuestInvitation._();
+
+  factory LiveGuestInvitation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveGuestInvitation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveGuestInvitation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'guestName')
+    ..aOS(3, _omitFieldNames ? '' : 'emailHint')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveGuestInvitation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveGuestInvitation copyWith(void Function(LiveGuestInvitation) updates) =>
+      super.copyWith((message) => updates(message as LiveGuestInvitation))
+          as LiveGuestInvitation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveGuestInvitation create() => LiveGuestInvitation._();
+  @$core.override
+  LiveGuestInvitation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveGuestInvitation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveGuestInvitation>(create);
+  static LiveGuestInvitation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get guestName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set guestName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGuestName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGuestName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get emailHint => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set emailHint($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEmailHint() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmailHint() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expiresAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set expiresAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpiresAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpiresAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpiresAt() => $_ensure(4);
+}
+
+class LiveReservation extends $pb.GeneratedMessage {
+  factory LiveReservation({
+    $core.String? eventId,
+    $core.String? status,
+    $core.int? waitlistPosition,
+    $core.int? guestCount,
+    $core.Iterable<$core.String>? guestNames,
+    $core.String? accessibilityRequirements,
+    $core.Iterable<$core.int>? reminderMinutes,
+    $1.Timestamp? promotedAt,
+    $1.Timestamp? checkedInAt,
+    $core.Iterable<LiveGuestInvitation>? guestInvitations,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (status != null) result.status = status;
+    if (waitlistPosition != null) result.waitlistPosition = waitlistPosition;
+    if (guestCount != null) result.guestCount = guestCount;
+    if (guestNames != null) result.guestNames.addAll(guestNames);
+    if (accessibilityRequirements != null)
+      result.accessibilityRequirements = accessibilityRequirements;
+    if (reminderMinutes != null) result.reminderMinutes.addAll(reminderMinutes);
+    if (promotedAt != null) result.promotedAt = promotedAt;
+    if (checkedInAt != null) result.checkedInAt = checkedInAt;
+    if (guestInvitations != null)
+      result.guestInvitations.addAll(guestInvitations);
+    return result;
+  }
+
+  LiveReservation._();
+
+  factory LiveReservation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveReservation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveReservation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aI(3, _omitFieldNames ? '' : 'waitlistPosition')
+    ..aI(4, _omitFieldNames ? '' : 'guestCount')
+    ..pPS(5, _omitFieldNames ? '' : 'guestNames')
+    ..aOS(6, _omitFieldNames ? '' : 'accessibilityRequirements')
+    ..p<$core.int>(
+        7, _omitFieldNames ? '' : 'reminderMinutes', $pb.PbFieldType.K3)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'promotedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'checkedInAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<LiveGuestInvitation>(10, _omitFieldNames ? '' : 'guestInvitations',
+        subBuilder: LiveGuestInvitation.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReservation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReservation copyWith(void Function(LiveReservation) updates) =>
+      super.copyWith((message) => updates(message as LiveReservation))
+          as LiveReservation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveReservation create() => LiveReservation._();
+  @$core.override
+  LiveReservation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveReservation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveReservation>(create);
+  static LiveReservation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get waitlistPosition => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set waitlistPosition($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWaitlistPosition() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWaitlistPosition() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get guestCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set guestCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGuestCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGuestCount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get guestNames => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get accessibilityRequirements => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set accessibilityRequirements($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAccessibilityRequirements() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAccessibilityRequirements() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.int> get reminderMinutes => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get promotedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set promotedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPromotedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPromotedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensurePromotedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get checkedInAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set checkedInAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCheckedInAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCheckedInAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCheckedInAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<LiveGuestInvitation> get guestInvitations => $_getList(9);
+}
+
+class LiveMessage extends $pb.GeneratedMessage {
+  factory LiveMessage({
+    $core.String? id,
+    $core.String? eventId,
+    $core.String? authorName,
+    $core.String? kind,
+    $core.String? body,
+    $core.String? status,
+    $core.String? answer,
+    $core.String? answeredBy,
+    $core.int? upvotes,
+    $core.bool? upvotedByMe,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? answeredAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (eventId != null) result.eventId = eventId;
+    if (authorName != null) result.authorName = authorName;
+    if (kind != null) result.kind = kind;
+    if (body != null) result.body = body;
+    if (status != null) result.status = status;
+    if (answer != null) result.answer = answer;
+    if (answeredBy != null) result.answeredBy = answeredBy;
+    if (upvotes != null) result.upvotes = upvotes;
+    if (upvotedByMe != null) result.upvotedByMe = upvotedByMe;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (answeredAt != null) result.answeredAt = answeredAt;
+    return result;
+  }
+
+  LiveMessage._();
+
+  factory LiveMessage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveMessage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveMessage',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'eventId')
+    ..aOS(3, _omitFieldNames ? '' : 'authorName')
+    ..aOS(4, _omitFieldNames ? '' : 'kind')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'answer')
+    ..aOS(8, _omitFieldNames ? '' : 'answeredBy')
+    ..aI(9, _omitFieldNames ? '' : 'upvotes')
+    ..aOB(10, _omitFieldNames ? '' : 'upvotedByMe')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'answeredAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveMessage clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveMessage copyWith(void Function(LiveMessage) updates) =>
+      super.copyWith((message) => updates(message as LiveMessage))
+          as LiveMessage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveMessage create() => LiveMessage._();
+  @$core.override
+  LiveMessage createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveMessage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveMessage>(create);
+  static LiveMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get eventId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set eventId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEventId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get authorName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authorName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAuthorName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthorName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get kind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set kind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get body => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set body($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get answer => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set answer($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAnswer() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAnswer() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get answeredBy => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set answeredBy($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAnsweredBy() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAnsweredBy() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get upvotes => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set upvotes($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpvotes() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpvotes() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get upvotedByMe => $_getBF(9);
+  @$pb.TagNumber(10)
+  set upvotedByMe($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpvotedByMe() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpvotedByMe() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get answeredAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set answeredAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasAnsweredAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAnsweredAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureAnsweredAt() => $_ensure(11);
+}
+
+class LivePollOption extends $pb.GeneratedMessage {
+  factory LivePollOption({
+    $core.String? key,
+    $core.String? label,
+    $core.int? votes,
+  }) {
+    final result = create();
+    if (key != null) result.key = key;
+    if (label != null) result.label = label;
+    if (votes != null) result.votes = votes;
+    return result;
+  }
+
+  LivePollOption._();
+
+  factory LivePollOption.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LivePollOption.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LivePollOption',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'label')
+    ..aI(3, _omitFieldNames ? '' : 'votes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LivePollOption clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LivePollOption copyWith(void Function(LivePollOption) updates) =>
+      super.copyWith((message) => updates(message as LivePollOption))
+          as LivePollOption;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LivePollOption create() => LivePollOption._();
+  @$core.override
+  LivePollOption createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LivePollOption getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LivePollOption>(create);
+  static LivePollOption? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get votes => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set votes($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVotes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVotes() => $_clearField(3);
+}
+
+class LivePoll extends $pb.GeneratedMessage {
+  factory LivePoll({
+    $core.String? id,
+    $core.String? question,
+    $core.String? status,
+    $core.Iterable<LivePollOption>? options,
+    $core.String? selectedOption,
+    $core.bool? anonymous,
+    $1.Timestamp? openedAt,
+    $1.Timestamp? closedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (question != null) result.question = question;
+    if (status != null) result.status = status;
+    if (options != null) result.options.addAll(options);
+    if (selectedOption != null) result.selectedOption = selectedOption;
+    if (anonymous != null) result.anonymous = anonymous;
+    if (openedAt != null) result.openedAt = openedAt;
+    if (closedAt != null) result.closedAt = closedAt;
+    return result;
+  }
+
+  LivePoll._();
+
+  factory LivePoll.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LivePoll.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LivePoll',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'question')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..pPM<LivePollOption>(4, _omitFieldNames ? '' : 'options',
+        subBuilder: LivePollOption.create)
+    ..aOS(5, _omitFieldNames ? '' : 'selectedOption')
+    ..aOB(6, _omitFieldNames ? '' : 'anonymous')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'openedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'closedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LivePoll clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LivePoll copyWith(void Function(LivePoll) updates) =>
+      super.copyWith((message) => updates(message as LivePoll)) as LivePoll;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LivePoll create() => LivePoll._();
+  @$core.override
+  LivePoll createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LivePoll getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LivePoll>(create);
+  static LivePoll? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get question => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set question($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasQuestion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuestion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<LivePollOption> get options => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get selectedOption => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set selectedOption($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSelectedOption() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSelectedOption() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get anonymous => $_getBF(5);
+  @$pb.TagNumber(6)
+  set anonymous($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAnonymous() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAnonymous() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get openedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set openedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOpenedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOpenedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureOpenedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get closedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set closedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClosedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClosedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureClosedAt() => $_ensure(7);
+}
+
+class LiveNote extends $pb.GeneratedMessage {
+  factory LiveNote({
+    $core.String? id,
+    $core.String? eventId,
+    $core.String? kind,
+    $core.String? body,
+    $core.int? positionSeconds,
+    $core.String? passageKey,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (eventId != null) result.eventId = eventId;
+    if (kind != null) result.kind = kind;
+    if (body != null) result.body = body;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  LiveNote._();
+
+  factory LiveNote.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveNote.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveNote',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'eventId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'body')
+    ..aI(5, _omitFieldNames ? '' : 'positionSeconds')
+    ..aOS(6, _omitFieldNames ? '' : 'passageKey')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveNote clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveNote copyWith(void Function(LiveNote) updates) =>
+      super.copyWith((message) => updates(message as LiveNote)) as LiveNote;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveNote create() => LiveNote._();
+  @$core.override
+  LiveNote createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveNote getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveNote>(create);
+  static LiveNote? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get eventId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set eventId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEventId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get body => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set body($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBody() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get positionSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set positionSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPositionSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPositionSeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get passageKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set passageKey($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPassageKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassageKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get createdAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get updatedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set updatedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUpdatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdatedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
+}
+
+class LiveReplaySegment extends $pb.GeneratedMessage {
+  factory LiveReplaySegment({
+    $core.String? id,
+    $core.String? kind,
+    $core.String? title,
+    $core.String? summary,
+    $core.int? startsAtSeconds,
+    $core.int? endsAtSeconds,
+    $core.String? contentId,
+    $core.int? sortOrder,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (startsAtSeconds != null) result.startsAtSeconds = startsAtSeconds;
+    if (endsAtSeconds != null) result.endsAtSeconds = endsAtSeconds;
+    if (contentId != null) result.contentId = contentId;
+    if (sortOrder != null) result.sortOrder = sortOrder;
+    return result;
+  }
+
+  LiveReplaySegment._();
+
+  factory LiveReplaySegment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveReplaySegment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveReplaySegment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aI(5, _omitFieldNames ? '' : 'startsAtSeconds')
+    ..aI(6, _omitFieldNames ? '' : 'endsAtSeconds')
+    ..aOS(7, _omitFieldNames ? '' : 'contentId')
+    ..aI(8, _omitFieldNames ? '' : 'sortOrder')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReplaySegment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReplaySegment copyWith(void Function(LiveReplaySegment) updates) =>
+      super.copyWith((message) => updates(message as LiveReplaySegment))
+          as LiveReplaySegment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveReplaySegment create() => LiveReplaySegment._();
+  @$core.override
+  LiveReplaySegment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveReplaySegment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveReplaySegment>(create);
+  static LiveReplaySegment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get startsAtSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set startsAtSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStartsAtSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStartsAtSeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get endsAtSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set endsAtSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEndsAtSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEndsAtSeconds() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get contentId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set contentId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasContentId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearContentId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get sortOrder => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set sortOrder($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSortOrder() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSortOrder() => $_clearField(8);
+}
+
+class LiveReplay extends $pb.GeneratedMessage {
+  factory LiveReplay({
+    $core.String? eventId,
+    $core.String? status,
+    $core.String? recordingContentId,
+    $core.String? playbackUrl,
+    $core.String? captionsUrl,
+    $core.String? transcript,
+    $core.String? citedSummary,
+    $core.Iterable<$core.String>? citations,
+    $core.Iterable<$core.String>? decisions,
+    $core.Iterable<$core.String>? actions,
+    $core.Iterable<$core.String>? relatedContentIds,
+    $core.Iterable<LiveReplaySegment>? segments,
+    $core.int? version,
+    $1.Timestamp? publishedAt,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (status != null) result.status = status;
+    if (recordingContentId != null)
+      result.recordingContentId = recordingContentId;
+    if (playbackUrl != null) result.playbackUrl = playbackUrl;
+    if (captionsUrl != null) result.captionsUrl = captionsUrl;
+    if (transcript != null) result.transcript = transcript;
+    if (citedSummary != null) result.citedSummary = citedSummary;
+    if (citations != null) result.citations.addAll(citations);
+    if (decisions != null) result.decisions.addAll(decisions);
+    if (actions != null) result.actions.addAll(actions);
+    if (relatedContentIds != null)
+      result.relatedContentIds.addAll(relatedContentIds);
+    if (segments != null) result.segments.addAll(segments);
+    if (version != null) result.version = version;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    return result;
+  }
+
+  LiveReplay._();
+
+  factory LiveReplay.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveReplay.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveReplay',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'recordingContentId')
+    ..aOS(4, _omitFieldNames ? '' : 'playbackUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'captionsUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'transcript')
+    ..aOS(7, _omitFieldNames ? '' : 'citedSummary')
+    ..pPS(8, _omitFieldNames ? '' : 'citations')
+    ..pPS(9, _omitFieldNames ? '' : 'decisions')
+    ..pPS(10, _omitFieldNames ? '' : 'actions')
+    ..pPS(11, _omitFieldNames ? '' : 'relatedContentIds')
+    ..pPM<LiveReplaySegment>(12, _omitFieldNames ? '' : 'segments',
+        subBuilder: LiveReplaySegment.create)
+    ..aI(13, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReplay clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveReplay copyWith(void Function(LiveReplay) updates) =>
+      super.copyWith((message) => updates(message as LiveReplay)) as LiveReplay;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveReplay create() => LiveReplay._();
+  @$core.override
+  LiveReplay createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveReplay getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LiveReplay>(create);
+  static LiveReplay? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get recordingContentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set recordingContentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRecordingContentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRecordingContentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get playbackUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set playbackUrl($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlaybackUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlaybackUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get captionsUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set captionsUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCaptionsUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCaptionsUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get transcript => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set transcript($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTranscript() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTranscript() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get citedSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set citedSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCitedSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCitedSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get citations => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get decisions => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get actions => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get relatedContentIds => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<LiveReplaySegment> get segments => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.int get version => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set version($core.int value) => $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get publishedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set publishedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasPublishedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPublishedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensurePublishedAt() => $_ensure(13);
+}
+
+class LiveSalon extends $pb.GeneratedMessage {
+  factory LiveSalon({
+    LiveEvent? event,
+    $core.Iterable<LiveSpeaker>? speakers,
+    $core.Iterable<LiveAgendaItem>? agenda,
+    $core.Iterable<LiveEventAsset>? assets,
+    LiveReservation? reservation,
+    LiveReplay? replay,
+    $core.String? accessibilitySummary,
+    $core.String? attendeeGuidance,
+    $core.String? moderationPolicy,
+  }) {
+    final result = create();
+    if (event != null) result.event = event;
+    if (speakers != null) result.speakers.addAll(speakers);
+    if (agenda != null) result.agenda.addAll(agenda);
+    if (assets != null) result.assets.addAll(assets);
+    if (reservation != null) result.reservation = reservation;
+    if (replay != null) result.replay = replay;
+    if (accessibilitySummary != null)
+      result.accessibilitySummary = accessibilitySummary;
+    if (attendeeGuidance != null) result.attendeeGuidance = attendeeGuidance;
+    if (moderationPolicy != null) result.moderationPolicy = moderationPolicy;
+    return result;
+  }
+
+  LiveSalon._();
+
+  factory LiveSalon.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LiveSalon.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LiveSalon',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveEvent>(1, _omitFieldNames ? '' : 'event',
+        subBuilder: LiveEvent.create)
+    ..pPM<LiveSpeaker>(2, _omitFieldNames ? '' : 'speakers',
+        subBuilder: LiveSpeaker.create)
+    ..pPM<LiveAgendaItem>(3, _omitFieldNames ? '' : 'agenda',
+        subBuilder: LiveAgendaItem.create)
+    ..pPM<LiveEventAsset>(4, _omitFieldNames ? '' : 'assets',
+        subBuilder: LiveEventAsset.create)
+    ..aOM<LiveReservation>(5, _omitFieldNames ? '' : 'reservation',
+        subBuilder: LiveReservation.create)
+    ..aOM<LiveReplay>(6, _omitFieldNames ? '' : 'replay',
+        subBuilder: LiveReplay.create)
+    ..aOS(7, _omitFieldNames ? '' : 'accessibilitySummary')
+    ..aOS(8, _omitFieldNames ? '' : 'attendeeGuidance')
+    ..aOS(9, _omitFieldNames ? '' : 'moderationPolicy')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveSalon clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LiveSalon copyWith(void Function(LiveSalon) updates) =>
+      super.copyWith((message) => updates(message as LiveSalon)) as LiveSalon;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LiveSalon create() => LiveSalon._();
+  @$core.override
+  LiveSalon createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LiveSalon getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LiveSalon>(create);
+  static LiveSalon? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveEvent get event => $_getN(0);
+  @$pb.TagNumber(1)
+  set event(LiveEvent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEvent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEvent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveEvent ensureEvent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<LiveSpeaker> get speakers => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<LiveAgendaItem> get agenda => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<LiveEventAsset> get assets => $_getList(3);
+
+  @$pb.TagNumber(5)
+  LiveReservation get reservation => $_getN(4);
+  @$pb.TagNumber(5)
+  set reservation(LiveReservation value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReservation() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReservation() => $_clearField(5);
+  @$pb.TagNumber(5)
+  LiveReservation ensureReservation() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  LiveReplay get replay => $_getN(5);
+  @$pb.TagNumber(6)
+  set replay(LiveReplay value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReplay() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReplay() => $_clearField(6);
+  @$pb.TagNumber(6)
+  LiveReplay ensureReplay() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get accessibilitySummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set accessibilitySummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAccessibilitySummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAccessibilitySummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get attendeeGuidance => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set attendeeGuidance($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAttendeeGuidance() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAttendeeGuidance() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get moderationPolicy => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set moderationPolicy($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasModerationPolicy() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearModerationPolicy() => $_clearField(9);
+}
+
+class GetLiveSalonRequest extends $pb.GeneratedMessage {
+  factory GetLiveSalonRequest({
+    $core.String? eventId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    return result;
+  }
+
+  GetLiveSalonRequest._();
+
+  factory GetLiveSalonRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveSalonRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveSalonRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveSalonRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveSalonRequest copyWith(void Function(GetLiveSalonRequest) updates) =>
+      super.copyWith((message) => updates(message as GetLiveSalonRequest))
+          as GetLiveSalonRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveSalonRequest create() => GetLiveSalonRequest._();
+  @$core.override
+  GetLiveSalonRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveSalonRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLiveSalonRequest>(create);
+  static GetLiveSalonRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+}
+
+class GetLiveSalonResponse extends $pb.GeneratedMessage {
+  factory GetLiveSalonResponse({
+    LiveSalon? salon,
+  }) {
+    final result = create();
+    if (salon != null) result.salon = salon;
+    return result;
+  }
+
+  GetLiveSalonResponse._();
+
+  factory GetLiveSalonResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveSalonResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveSalonResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveSalon>(1, _omitFieldNames ? '' : 'salon',
+        subBuilder: LiveSalon.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveSalonResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveSalonResponse copyWith(void Function(GetLiveSalonResponse) updates) =>
+      super.copyWith((message) => updates(message as GetLiveSalonResponse))
+          as GetLiveSalonResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveSalonResponse create() => GetLiveSalonResponse._();
+  @$core.override
+  GetLiveSalonResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveSalonResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLiveSalonResponse>(create);
+  static GetLiveSalonResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveSalon get salon => $_getN(0);
+  @$pb.TagNumber(1)
+  set salon(LiveSalon value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSalon() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSalon() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveSalon ensureSalon() => $_ensure(0);
+}
+
+class UpsertLiveReservationRequest extends $pb.GeneratedMessage {
+  factory UpsertLiveReservationRequest({
+    $core.String? eventId,
+    $core.String? action,
+    $core.int? guestCount,
+    $core.Iterable<$core.String>? guestNames,
+    $core.String? accessibilityRequirements,
+    $core.Iterable<$core.int>? reminderMinutes,
+    $core.String? requestId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (action != null) result.action = action;
+    if (guestCount != null) result.guestCount = guestCount;
+    if (guestNames != null) result.guestNames.addAll(guestNames);
+    if (accessibilityRequirements != null)
+      result.accessibilityRequirements = accessibilityRequirements;
+    if (reminderMinutes != null) result.reminderMinutes.addAll(reminderMinutes);
+    if (requestId != null) result.requestId = requestId;
+    return result;
+  }
+
+  UpsertLiveReservationRequest._();
+
+  factory UpsertLiveReservationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLiveReservationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLiveReservationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aI(3, _omitFieldNames ? '' : 'guestCount')
+    ..pPS(4, _omitFieldNames ? '' : 'guestNames')
+    ..aOS(5, _omitFieldNames ? '' : 'accessibilityRequirements')
+    ..p<$core.int>(
+        6, _omitFieldNames ? '' : 'reminderMinutes', $pb.PbFieldType.K3)
+    ..aOS(7, _omitFieldNames ? '' : 'requestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveReservationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveReservationRequest copyWith(
+          void Function(UpsertLiveReservationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertLiveReservationRequest))
+          as UpsertLiveReservationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveReservationRequest create() =>
+      UpsertLiveReservationRequest._();
+  @$core.override
+  UpsertLiveReservationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveReservationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLiveReservationRequest>(create);
+  static UpsertLiveReservationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get guestCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set guestCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGuestCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGuestCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get guestNames => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get accessibilityRequirements => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set accessibilityRequirements($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAccessibilityRequirements() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAccessibilityRequirements() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.int> get reminderMinutes => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get requestId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set requestId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRequestId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRequestId() => $_clearField(7);
+}
+
+class UpsertLiveReservationResponse extends $pb.GeneratedMessage {
+  factory UpsertLiveReservationResponse({
+    LiveReservation? reservation,
+    $core.int? confirmedCount,
+    $core.int? waitlistCount,
+  }) {
+    final result = create();
+    if (reservation != null) result.reservation = reservation;
+    if (confirmedCount != null) result.confirmedCount = confirmedCount;
+    if (waitlistCount != null) result.waitlistCount = waitlistCount;
+    return result;
+  }
+
+  UpsertLiveReservationResponse._();
+
+  factory UpsertLiveReservationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLiveReservationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLiveReservationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveReservation>(1, _omitFieldNames ? '' : 'reservation',
+        subBuilder: LiveReservation.create)
+    ..aI(2, _omitFieldNames ? '' : 'confirmedCount')
+    ..aI(3, _omitFieldNames ? '' : 'waitlistCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveReservationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveReservationResponse copyWith(
+          void Function(UpsertLiveReservationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertLiveReservationResponse))
+          as UpsertLiveReservationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveReservationResponse create() =>
+      UpsertLiveReservationResponse._();
+  @$core.override
+  UpsertLiveReservationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveReservationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLiveReservationResponse>(create);
+  static UpsertLiveReservationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveReservation get reservation => $_getN(0);
+  @$pb.TagNumber(1)
+  set reservation(LiveReservation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReservation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReservation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveReservation ensureReservation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get confirmedCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set confirmedCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConfirmedCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConfirmedCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get waitlistCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set waitlistCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWaitlistCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWaitlistCount() => $_clearField(3);
+}
+
+class InviteLiveGuestRequest extends $pb.GeneratedMessage {
+  factory InviteLiveGuestRequest({
+    $core.String? eventId,
+    $core.String? guestName,
+    $core.String? guestEmail,
+    $core.String? requestId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (guestName != null) result.guestName = guestName;
+    if (guestEmail != null) result.guestEmail = guestEmail;
+    if (requestId != null) result.requestId = requestId;
+    return result;
+  }
+
+  InviteLiveGuestRequest._();
+
+  factory InviteLiveGuestRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory InviteLiveGuestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'InviteLiveGuestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'guestName')
+    ..aOS(3, _omitFieldNames ? '' : 'guestEmail')
+    ..aOS(4, _omitFieldNames ? '' : 'requestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteLiveGuestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteLiveGuestRequest copyWith(
+          void Function(InviteLiveGuestRequest) updates) =>
+      super.copyWith((message) => updates(message as InviteLiveGuestRequest))
+          as InviteLiveGuestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InviteLiveGuestRequest create() => InviteLiveGuestRequest._();
+  @$core.override
+  InviteLiveGuestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static InviteLiveGuestRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<InviteLiveGuestRequest>(create);
+  static InviteLiveGuestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get guestName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set guestName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGuestName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGuestName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get guestEmail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set guestEmail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGuestEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGuestEmail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get requestId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set requestId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRequestId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequestId() => $_clearField(4);
+}
+
+class InviteLiveGuestResponse extends $pb.GeneratedMessage {
+  factory InviteLiveGuestResponse({
+    LiveGuestInvitation? invitation,
+    $core.String? inviteUrl,
+  }) {
+    final result = create();
+    if (invitation != null) result.invitation = invitation;
+    if (inviteUrl != null) result.inviteUrl = inviteUrl;
+    return result;
+  }
+
+  InviteLiveGuestResponse._();
+
+  factory InviteLiveGuestResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory InviteLiveGuestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'InviteLiveGuestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveGuestInvitation>(1, _omitFieldNames ? '' : 'invitation',
+        subBuilder: LiveGuestInvitation.create)
+    ..aOS(2, _omitFieldNames ? '' : 'inviteUrl')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteLiveGuestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteLiveGuestResponse copyWith(
+          void Function(InviteLiveGuestResponse) updates) =>
+      super.copyWith((message) => updates(message as InviteLiveGuestResponse))
+          as InviteLiveGuestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InviteLiveGuestResponse create() => InviteLiveGuestResponse._();
+  @$core.override
+  InviteLiveGuestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static InviteLiveGuestResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<InviteLiveGuestResponse>(create);
+  static InviteLiveGuestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveGuestInvitation get invitation => $_getN(0);
+  @$pb.TagNumber(1)
+  set invitation(LiveGuestInvitation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInvitation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInvitation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveGuestInvitation ensureInvitation() => $_ensure(0);
+
+  /// Returned once so the member can share it; only its digest is retained.
+  @$pb.TagNumber(2)
+  $core.String get inviteUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inviteUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInviteUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInviteUrl() => $_clearField(2);
+}
+
+class GenerateLiveCalendarPassRequest extends $pb.GeneratedMessage {
+  factory GenerateLiveCalendarPassRequest({
+    $core.String? eventId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    return result;
+  }
+
+  GenerateLiveCalendarPassRequest._();
+
+  factory GenerateLiveCalendarPassRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateLiveCalendarPassRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateLiveCalendarPassRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLiveCalendarPassRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLiveCalendarPassRequest copyWith(
+          void Function(GenerateLiveCalendarPassRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateLiveCalendarPassRequest))
+          as GenerateLiveCalendarPassRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLiveCalendarPassRequest create() =>
+      GenerateLiveCalendarPassRequest._();
+  @$core.override
+  GenerateLiveCalendarPassRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLiveCalendarPassRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateLiveCalendarPassRequest>(
+          create);
+  static GenerateLiveCalendarPassRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+}
+
+class GenerateLiveCalendarPassResponse extends $pb.GeneratedMessage {
+  factory GenerateLiveCalendarPassResponse({
+    $core.String? filename,
+    $core.String? mimeType,
+    $core.List<$core.int>? contents,
+  }) {
+    final result = create();
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (contents != null) result.contents = contents;
+    return result;
+  }
+
+  GenerateLiveCalendarPassResponse._();
+
+  factory GenerateLiveCalendarPassResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateLiveCalendarPassResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateLiveCalendarPassResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filename')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'contents', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLiveCalendarPassResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLiveCalendarPassResponse copyWith(
+          void Function(GenerateLiveCalendarPassResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateLiveCalendarPassResponse))
+          as GenerateLiveCalendarPassResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLiveCalendarPassResponse create() =>
+      GenerateLiveCalendarPassResponse._();
+  @$core.override
+  GenerateLiveCalendarPassResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLiveCalendarPassResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateLiveCalendarPassResponse>(
+          create);
+  static GenerateLiveCalendarPassResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filename => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filename($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilename() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilename() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mimeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mimeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMimeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMimeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get contents => $_getN(2);
+  @$pb.TagNumber(3)
+  set contents($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContents() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContents() => $_clearField(3);
+}
+
+class JoinLiveEventRequest extends $pb.GeneratedMessage {
+  factory JoinLiveEventRequest({
+    $core.String? eventId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    return result;
+  }
+
+  JoinLiveEventRequest._();
+
+  factory JoinLiveEventRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JoinLiveEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JoinLiveEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinLiveEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinLiveEventRequest copyWith(void Function(JoinLiveEventRequest) updates) =>
+      super.copyWith((message) => updates(message as JoinLiveEventRequest))
+          as JoinLiveEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinLiveEventRequest create() => JoinLiveEventRequest._();
+  @$core.override
+  JoinLiveEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JoinLiveEventRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JoinLiveEventRequest>(create);
+  static JoinLiveEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+}
+
+class JoinLiveEventResponse extends $pb.GeneratedMessage {
+  factory JoinLiveEventResponse({
+    $core.String? mode,
+    $core.String? token,
+    $core.String? wsUrl,
+    $core.String? playbackUrl,
+    $core.String? fallbackPlaybackUrl,
+    $core.String? fallbackReason,
+    $core.String? dialInLabel,
+    $core.String? dialInNumber,
+    $core.String? dialInPin,
+    $core.bool? canPublish,
+    $core.String? roomStatus,
+    $1.Timestamp? expiresAt,
+  }) {
+    final result = create();
+    if (mode != null) result.mode = mode;
+    if (token != null) result.token = token;
+    if (wsUrl != null) result.wsUrl = wsUrl;
+    if (playbackUrl != null) result.playbackUrl = playbackUrl;
+    if (fallbackPlaybackUrl != null)
+      result.fallbackPlaybackUrl = fallbackPlaybackUrl;
+    if (fallbackReason != null) result.fallbackReason = fallbackReason;
+    if (dialInLabel != null) result.dialInLabel = dialInLabel;
+    if (dialInNumber != null) result.dialInNumber = dialInNumber;
+    if (dialInPin != null) result.dialInPin = dialInPin;
+    if (canPublish != null) result.canPublish = canPublish;
+    if (roomStatus != null) result.roomStatus = roomStatus;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  JoinLiveEventResponse._();
+
+  factory JoinLiveEventResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JoinLiveEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JoinLiveEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mode')
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(3, _omitFieldNames ? '' : 'wsUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'playbackUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'fallbackPlaybackUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'fallbackReason')
+    ..aOS(7, _omitFieldNames ? '' : 'dialInLabel')
+    ..aOS(8, _omitFieldNames ? '' : 'dialInNumber')
+    ..aOS(9, _omitFieldNames ? '' : 'dialInPin')
+    ..aOB(10, _omitFieldNames ? '' : 'canPublish')
+    ..aOS(11, _omitFieldNames ? '' : 'roomStatus')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinLiveEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinLiveEventResponse copyWith(
+          void Function(JoinLiveEventResponse) updates) =>
+      super.copyWith((message) => updates(message as JoinLiveEventResponse))
+          as JoinLiveEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinLiveEventResponse create() => JoinLiveEventResponse._();
+  @$core.override
+  JoinLiveEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JoinLiveEventResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JoinLiveEventResponse>(create);
+  static JoinLiveEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get wsUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set wsUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWsUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWsUrl() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get playbackUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set playbackUrl($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlaybackUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlaybackUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get fallbackPlaybackUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set fallbackPlaybackUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFallbackPlaybackUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFallbackPlaybackUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get fallbackReason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set fallbackReason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFallbackReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFallbackReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get dialInLabel => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set dialInLabel($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDialInLabel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDialInLabel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get dialInNumber => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set dialInNumber($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDialInNumber() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDialInNumber() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get dialInPin => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set dialInPin($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDialInPin() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDialInPin() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get canPublish => $_getBF(9);
+  @$pb.TagNumber(10)
+  set canPublish($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCanPublish() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCanPublish() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get roomStatus => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set roomStatus($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRoomStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRoomStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get expiresAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set expiresAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExpiresAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpiresAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureExpiresAt() => $_ensure(11);
+}
+
+class ListLiveActivityRequest extends $pb.GeneratedMessage {
+  factory ListLiveActivityRequest({
+    $core.String? eventId,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListLiveActivityRequest._();
+
+  factory ListLiveActivityRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLiveActivityRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLiveActivityRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveActivityRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveActivityRequest copyWith(
+          void Function(ListLiveActivityRequest) updates) =>
+      super.copyWith((message) => updates(message as ListLiveActivityRequest))
+          as ListLiveActivityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveActivityRequest create() => ListLiveActivityRequest._();
+  @$core.override
+  ListLiveActivityRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveActivityRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLiveActivityRequest>(create);
+  static ListLiveActivityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListLiveActivityResponse extends $pb.GeneratedMessage {
+  factory ListLiveActivityResponse({
+    $core.Iterable<LiveMessage>? messages,
+    $core.Iterable<LivePoll>? polls,
+    $core.bool? handRaised,
+    $core.String? handRaiseStatus,
+    $core.int? participantCount,
+    $core.int? questionCount,
+    $core.int? unansweredCount,
+  }) {
+    final result = create();
+    if (messages != null) result.messages.addAll(messages);
+    if (polls != null) result.polls.addAll(polls);
+    if (handRaised != null) result.handRaised = handRaised;
+    if (handRaiseStatus != null) result.handRaiseStatus = handRaiseStatus;
+    if (participantCount != null) result.participantCount = participantCount;
+    if (questionCount != null) result.questionCount = questionCount;
+    if (unansweredCount != null) result.unansweredCount = unansweredCount;
+    return result;
+  }
+
+  ListLiveActivityResponse._();
+
+  factory ListLiveActivityResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLiveActivityResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLiveActivityResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<LiveMessage>(1, _omitFieldNames ? '' : 'messages',
+        subBuilder: LiveMessage.create)
+    ..pPM<LivePoll>(2, _omitFieldNames ? '' : 'polls',
+        subBuilder: LivePoll.create)
+    ..aOB(3, _omitFieldNames ? '' : 'handRaised')
+    ..aOS(4, _omitFieldNames ? '' : 'handRaiseStatus')
+    ..aI(5, _omitFieldNames ? '' : 'participantCount')
+    ..aI(6, _omitFieldNames ? '' : 'questionCount')
+    ..aI(7, _omitFieldNames ? '' : 'unansweredCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveActivityResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveActivityResponse copyWith(
+          void Function(ListLiveActivityResponse) updates) =>
+      super.copyWith((message) => updates(message as ListLiveActivityResponse))
+          as ListLiveActivityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveActivityResponse create() => ListLiveActivityResponse._();
+  @$core.override
+  ListLiveActivityResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveActivityResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLiveActivityResponse>(create);
+  static ListLiveActivityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LiveMessage> get messages => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<LivePoll> get polls => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get handRaised => $_getBF(2);
+  @$pb.TagNumber(3)
+  set handRaised($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHandRaised() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHandRaised() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get handRaiseStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set handRaiseStatus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHandRaiseStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHandRaiseStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get participantCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set participantCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasParticipantCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearParticipantCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get questionCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set questionCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuestionCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuestionCount() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get unansweredCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set unansweredCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasUnansweredCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUnansweredCount() => $_clearField(7);
+}
+
+class PostLiveMessageRequest extends $pb.GeneratedMessage {
+  factory PostLiveMessageRequest({
+    $core.String? eventId,
+    $core.String? kind,
+    $core.String? body,
+    $core.String? requestId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (kind != null) result.kind = kind;
+    if (body != null) result.body = body;
+    if (requestId != null) result.requestId = requestId;
+    return result;
+  }
+
+  PostLiveMessageRequest._();
+
+  factory PostLiveMessageRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostLiveMessageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostLiveMessageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOS(4, _omitFieldNames ? '' : 'requestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostLiveMessageRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostLiveMessageRequest copyWith(
+          void Function(PostLiveMessageRequest) updates) =>
+      super.copyWith((message) => updates(message as PostLiveMessageRequest))
+          as PostLiveMessageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostLiveMessageRequest create() => PostLiveMessageRequest._();
+  @$core.override
+  PostLiveMessageRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostLiveMessageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostLiveMessageRequest>(create);
+  static PostLiveMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get requestId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set requestId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRequestId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequestId() => $_clearField(4);
+}
+
+class PostLiveMessageResponse extends $pb.GeneratedMessage {
+  factory PostLiveMessageResponse({
+    LiveMessage? message,
+  }) {
+    final result = create();
+    if (message != null) result.message = message;
+    return result;
+  }
+
+  PostLiveMessageResponse._();
+
+  factory PostLiveMessageResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostLiveMessageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostLiveMessageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveMessage>(1, _omitFieldNames ? '' : 'message',
+        subBuilder: LiveMessage.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostLiveMessageResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostLiveMessageResponse copyWith(
+          void Function(PostLiveMessageResponse) updates) =>
+      super.copyWith((message) => updates(message as PostLiveMessageResponse))
+          as PostLiveMessageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostLiveMessageResponse create() => PostLiveMessageResponse._();
+  @$core.override
+  PostLiveMessageResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostLiveMessageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostLiveMessageResponse>(create);
+  static PostLiveMessageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveMessage get message => $_getN(0);
+  @$pb.TagNumber(1)
+  set message(LiveMessage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveMessage ensureMessage() => $_ensure(0);
+}
+
+class UpvoteLiveQuestionRequest extends $pb.GeneratedMessage {
+  factory UpvoteLiveQuestionRequest({
+    $core.String? messageId,
+    $core.bool? upvote,
+  }) {
+    final result = create();
+    if (messageId != null) result.messageId = messageId;
+    if (upvote != null) result.upvote = upvote;
+    return result;
+  }
+
+  UpvoteLiveQuestionRequest._();
+
+  factory UpvoteLiveQuestionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpvoteLiveQuestionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpvoteLiveQuestionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'messageId')
+    ..aOB(2, _omitFieldNames ? '' : 'upvote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpvoteLiveQuestionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpvoteLiveQuestionRequest copyWith(
+          void Function(UpvoteLiveQuestionRequest) updates) =>
+      super.copyWith((message) => updates(message as UpvoteLiveQuestionRequest))
+          as UpvoteLiveQuestionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpvoteLiveQuestionRequest create() => UpvoteLiveQuestionRequest._();
+  @$core.override
+  UpvoteLiveQuestionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpvoteLiveQuestionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpvoteLiveQuestionRequest>(create);
+  static UpvoteLiveQuestionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get messageId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set messageId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessageId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get upvote => $_getBF(1);
+  @$pb.TagNumber(2)
+  set upvote($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUpvote() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUpvote() => $_clearField(2);
+}
+
+class UpvoteLiveQuestionResponse extends $pb.GeneratedMessage {
+  factory UpvoteLiveQuestionResponse({
+    LiveMessage? message,
+  }) {
+    final result = create();
+    if (message != null) result.message = message;
+    return result;
+  }
+
+  UpvoteLiveQuestionResponse._();
+
+  factory UpvoteLiveQuestionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpvoteLiveQuestionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpvoteLiveQuestionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveMessage>(1, _omitFieldNames ? '' : 'message',
+        subBuilder: LiveMessage.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpvoteLiveQuestionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpvoteLiveQuestionResponse copyWith(
+          void Function(UpvoteLiveQuestionResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpvoteLiveQuestionResponse))
+          as UpvoteLiveQuestionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpvoteLiveQuestionResponse create() => UpvoteLiveQuestionResponse._();
+  @$core.override
+  UpvoteLiveQuestionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpvoteLiveQuestionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpvoteLiveQuestionResponse>(create);
+  static UpvoteLiveQuestionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveMessage get message => $_getN(0);
+  @$pb.TagNumber(1)
+  set message(LiveMessage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveMessage ensureMessage() => $_ensure(0);
+}
+
+class VoteLivePollRequest extends $pb.GeneratedMessage {
+  factory VoteLivePollRequest({
+    $core.String? pollId,
+    $core.String? optionKey,
+  }) {
+    final result = create();
+    if (pollId != null) result.pollId = pollId;
+    if (optionKey != null) result.optionKey = optionKey;
+    return result;
+  }
+
+  VoteLivePollRequest._();
+
+  factory VoteLivePollRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VoteLivePollRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VoteLivePollRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'pollId')
+    ..aOS(2, _omitFieldNames ? '' : 'optionKey')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VoteLivePollRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VoteLivePollRequest copyWith(void Function(VoteLivePollRequest) updates) =>
+      super.copyWith((message) => updates(message as VoteLivePollRequest))
+          as VoteLivePollRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VoteLivePollRequest create() => VoteLivePollRequest._();
+  @$core.override
+  VoteLivePollRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VoteLivePollRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VoteLivePollRequest>(create);
+  static VoteLivePollRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pollId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pollId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPollId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPollId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get optionKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set optionKey($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOptionKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOptionKey() => $_clearField(2);
+}
+
+class VoteLivePollResponse extends $pb.GeneratedMessage {
+  factory VoteLivePollResponse({
+    LivePoll? poll,
+  }) {
+    final result = create();
+    if (poll != null) result.poll = poll;
+    return result;
+  }
+
+  VoteLivePollResponse._();
+
+  factory VoteLivePollResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VoteLivePollResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VoteLivePollResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LivePoll>(1, _omitFieldNames ? '' : 'poll',
+        subBuilder: LivePoll.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VoteLivePollResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VoteLivePollResponse copyWith(void Function(VoteLivePollResponse) updates) =>
+      super.copyWith((message) => updates(message as VoteLivePollResponse))
+          as VoteLivePollResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VoteLivePollResponse create() => VoteLivePollResponse._();
+  @$core.override
+  VoteLivePollResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VoteLivePollResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VoteLivePollResponse>(create);
+  static VoteLivePollResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LivePoll get poll => $_getN(0);
+  @$pb.TagNumber(1)
+  set poll(LivePoll value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPoll() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPoll() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LivePoll ensurePoll() => $_ensure(0);
+}
+
+class SetLiveHandRaiseRequest extends $pb.GeneratedMessage {
+  factory SetLiveHandRaiseRequest({
+    $core.String? eventId,
+    $core.bool? raised,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (raised != null) result.raised = raised;
+    return result;
+  }
+
+  SetLiveHandRaiseRequest._();
+
+  factory SetLiveHandRaiseRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetLiveHandRaiseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetLiveHandRaiseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOB(2, _omitFieldNames ? '' : 'raised')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetLiveHandRaiseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetLiveHandRaiseRequest copyWith(
+          void Function(SetLiveHandRaiseRequest) updates) =>
+      super.copyWith((message) => updates(message as SetLiveHandRaiseRequest))
+          as SetLiveHandRaiseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetLiveHandRaiseRequest create() => SetLiveHandRaiseRequest._();
+  @$core.override
+  SetLiveHandRaiseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetLiveHandRaiseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetLiveHandRaiseRequest>(create);
+  static SetLiveHandRaiseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get raised => $_getBF(1);
+  @$pb.TagNumber(2)
+  set raised($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRaised() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRaised() => $_clearField(2);
+}
+
+class SetLiveHandRaiseResponse extends $pb.GeneratedMessage {
+  factory SetLiveHandRaiseResponse({
+    $core.String? status,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  SetLiveHandRaiseResponse._();
+
+  factory SetLiveHandRaiseResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetLiveHandRaiseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetLiveHandRaiseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetLiveHandRaiseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetLiveHandRaiseResponse copyWith(
+          void Function(SetLiveHandRaiseResponse) updates) =>
+      super.copyWith((message) => updates(message as SetLiveHandRaiseResponse))
+          as SetLiveHandRaiseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetLiveHandRaiseResponse create() => SetLiveHandRaiseResponse._();
+  @$core.override
+  SetLiveHandRaiseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetLiveHandRaiseResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetLiveHandRaiseResponse>(create);
+  static SetLiveHandRaiseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+}
+
+class ReactLiveEventRequest extends $pb.GeneratedMessage {
+  factory ReactLiveEventRequest({
+    $core.String? eventId,
+    $core.String? emoji,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (emoji != null) result.emoji = emoji;
+    return result;
+  }
+
+  ReactLiveEventRequest._();
+
+  factory ReactLiveEventRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReactLiveEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReactLiveEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'emoji')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReactLiveEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReactLiveEventRequest copyWith(
+          void Function(ReactLiveEventRequest) updates) =>
+      super.copyWith((message) => updates(message as ReactLiveEventRequest))
+          as ReactLiveEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReactLiveEventRequest create() => ReactLiveEventRequest._();
+  @$core.override
+  ReactLiveEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReactLiveEventRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReactLiveEventRequest>(create);
+  static ReactLiveEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get emoji => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set emoji($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEmoji() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmoji() => $_clearField(2);
+}
+
+class ReactLiveEventResponse extends $pb.GeneratedMessage {
+  factory ReactLiveEventResponse({
+    $core.String? emoji,
+    $core.int? count,
+  }) {
+    final result = create();
+    if (emoji != null) result.emoji = emoji;
+    if (count != null) result.count = count;
+    return result;
+  }
+
+  ReactLiveEventResponse._();
+
+  factory ReactLiveEventResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReactLiveEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReactLiveEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'emoji')
+    ..aI(2, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReactLiveEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReactLiveEventResponse copyWith(
+          void Function(ReactLiveEventResponse) updates) =>
+      super.copyWith((message) => updates(message as ReactLiveEventResponse))
+          as ReactLiveEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReactLiveEventResponse create() => ReactLiveEventResponse._();
+  @$core.override
+  ReactLiveEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReactLiveEventResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReactLiveEventResponse>(create);
+  static ReactLiveEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get emoji => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set emoji($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEmoji() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEmoji() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get count => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set count($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => $_clearField(2);
+}
+
+class UpsertLiveNoteRequest extends $pb.GeneratedMessage {
+  factory UpsertLiveNoteRequest({
+    $core.String? eventId,
+    $core.String? noteId,
+    $core.String? kind,
+    $core.String? body,
+    $core.int? positionSeconds,
+    $core.String? passageKey,
+    $core.String? requestId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (noteId != null) result.noteId = noteId;
+    if (kind != null) result.kind = kind;
+    if (body != null) result.body = body;
+    if (positionSeconds != null) result.positionSeconds = positionSeconds;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (requestId != null) result.requestId = requestId;
+    return result;
+  }
+
+  UpsertLiveNoteRequest._();
+
+  factory UpsertLiveNoteRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLiveNoteRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLiveNoteRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'noteId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'body')
+    ..aI(5, _omitFieldNames ? '' : 'positionSeconds')
+    ..aOS(6, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(7, _omitFieldNames ? '' : 'requestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveNoteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveNoteRequest copyWith(
+          void Function(UpsertLiveNoteRequest) updates) =>
+      super.copyWith((message) => updates(message as UpsertLiveNoteRequest))
+          as UpsertLiveNoteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveNoteRequest create() => UpsertLiveNoteRequest._();
+  @$core.override
+  UpsertLiveNoteRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveNoteRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLiveNoteRequest>(create);
+  static UpsertLiveNoteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get noteId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set noteId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNoteId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNoteId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get body => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set body($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBody() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get positionSeconds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set positionSeconds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPositionSeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPositionSeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get passageKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set passageKey($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPassageKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassageKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get requestId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set requestId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRequestId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRequestId() => $_clearField(7);
+}
+
+class UpsertLiveNoteResponse extends $pb.GeneratedMessage {
+  factory UpsertLiveNoteResponse({
+    LiveNote? note,
+  }) {
+    final result = create();
+    if (note != null) result.note = note;
+    return result;
+  }
+
+  UpsertLiveNoteResponse._();
+
+  factory UpsertLiveNoteResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLiveNoteResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLiveNoteResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveNote>(1, _omitFieldNames ? '' : 'note',
+        subBuilder: LiveNote.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveNoteResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLiveNoteResponse copyWith(
+          void Function(UpsertLiveNoteResponse) updates) =>
+      super.copyWith((message) => updates(message as UpsertLiveNoteResponse))
+          as UpsertLiveNoteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveNoteResponse create() => UpsertLiveNoteResponse._();
+  @$core.override
+  UpsertLiveNoteResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLiveNoteResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLiveNoteResponse>(create);
+  static UpsertLiveNoteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveNote get note => $_getN(0);
+  @$pb.TagNumber(1)
+  set note(LiveNote value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNote() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNote() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveNote ensureNote() => $_ensure(0);
+}
+
+class ListLiveNotesRequest extends $pb.GeneratedMessage {
+  factory ListLiveNotesRequest({
+    $core.String? eventId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    return result;
+  }
+
+  ListLiveNotesRequest._();
+
+  factory ListLiveNotesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLiveNotesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLiveNotesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveNotesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveNotesRequest copyWith(void Function(ListLiveNotesRequest) updates) =>
+      super.copyWith((message) => updates(message as ListLiveNotesRequest))
+          as ListLiveNotesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveNotesRequest create() => ListLiveNotesRequest._();
+  @$core.override
+  ListLiveNotesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveNotesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLiveNotesRequest>(create);
+  static ListLiveNotesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+}
+
+class ListLiveNotesResponse extends $pb.GeneratedMessage {
+  factory ListLiveNotesResponse({
+    $core.Iterable<LiveNote>? notes,
+  }) {
+    final result = create();
+    if (notes != null) result.notes.addAll(notes);
+    return result;
+  }
+
+  ListLiveNotesResponse._();
+
+  factory ListLiveNotesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLiveNotesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLiveNotesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<LiveNote>(1, _omitFieldNames ? '' : 'notes',
+        subBuilder: LiveNote.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveNotesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLiveNotesResponse copyWith(
+          void Function(ListLiveNotesResponse) updates) =>
+      super.copyWith((message) => updates(message as ListLiveNotesResponse))
+          as ListLiveNotesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLiveNotesResponse create() => ListLiveNotesResponse._();
+  @$core.override
+  ListLiveNotesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLiveNotesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLiveNotesResponse>(create);
+  static ListLiveNotesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LiveNote> get notes => $_getList(0);
+}
+
+class DeleteLiveNoteRequest extends $pb.GeneratedMessage {
+  factory DeleteLiveNoteRequest({
+    $core.String? noteId,
+  }) {
+    final result = create();
+    if (noteId != null) result.noteId = noteId;
+    return result;
+  }
+
+  DeleteLiveNoteRequest._();
+
+  factory DeleteLiveNoteRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteLiveNoteRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteLiveNoteRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'noteId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLiveNoteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLiveNoteRequest copyWith(
+          void Function(DeleteLiveNoteRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteLiveNoteRequest))
+          as DeleteLiveNoteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLiveNoteRequest create() => DeleteLiveNoteRequest._();
+  @$core.override
+  DeleteLiveNoteRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLiveNoteRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteLiveNoteRequest>(create);
+  static DeleteLiveNoteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get noteId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set noteId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNoteId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNoteId() => $_clearField(1);
+}
+
+class DeleteLiveNoteResponse extends $pb.GeneratedMessage {
+  factory DeleteLiveNoteResponse() => create();
+
+  DeleteLiveNoteResponse._();
+
+  factory DeleteLiveNoteResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteLiveNoteResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteLiveNoteResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLiveNoteResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLiveNoteResponse copyWith(
+          void Function(DeleteLiveNoteResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteLiveNoteResponse))
+          as DeleteLiveNoteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLiveNoteResponse create() => DeleteLiveNoteResponse._();
+  @$core.override
+  DeleteLiveNoteResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLiveNoteResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteLiveNoteResponse>(create);
+  static DeleteLiveNoteResponse? _defaultInstance;
+}
+
+class GetLiveReplayRequest extends $pb.GeneratedMessage {
+  factory GetLiveReplayRequest({
+    $core.String? eventId,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    return result;
+  }
+
+  GetLiveReplayRequest._();
+
+  factory GetLiveReplayRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveReplayRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveReplayRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveReplayRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveReplayRequest copyWith(void Function(GetLiveReplayRequest) updates) =>
+      super.copyWith((message) => updates(message as GetLiveReplayRequest))
+          as GetLiveReplayRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveReplayRequest create() => GetLiveReplayRequest._();
+  @$core.override
+  GetLiveReplayRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveReplayRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLiveReplayRequest>(create);
+  static GetLiveReplayRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+}
+
+class GetLiveReplayResponse extends $pb.GeneratedMessage {
+  factory GetLiveReplayResponse({
+    LiveReplay? replay,
+  }) {
+    final result = create();
+    if (replay != null) result.replay = replay;
+    return result;
+  }
+
+  GetLiveReplayResponse._();
+
+  factory GetLiveReplayResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveReplayResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveReplayResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<LiveReplay>(1, _omitFieldNames ? '' : 'replay',
+        subBuilder: LiveReplay.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveReplayResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveReplayResponse copyWith(
+          void Function(GetLiveReplayResponse) updates) =>
+      super.copyWith((message) => updates(message as GetLiveReplayResponse))
+          as GetLiveReplayResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveReplayResponse create() => GetLiveReplayResponse._();
+  @$core.override
+  GetLiveReplayResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveReplayResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLiveReplayResponse>(create);
+  static GetLiveReplayResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LiveReplay get replay => $_getN(0);
+  @$pb.TagNumber(1)
+  set replay(LiveReplay value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReplay() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReplay() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LiveReplay ensureReplay() => $_ensure(0);
 }
 
 class PosthumousArchive extends $pb.GeneratedMessage {

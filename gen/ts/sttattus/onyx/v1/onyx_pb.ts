@@ -8143,6 +8143,99 @@ export class LiveEvent extends Message<LiveEvent> {
    */
   locked = false;
 
+  /**
+   * @generated from field: google.protobuf.Timestamp ends_at = 14;
+   */
+  endsAt?: Timestamp;
+
+  /**
+   * IANA name used for programme copy and calendar passes
+   *
+   * @generated from field: string timezone = 15;
+   */
+  timezone = "";
+
+  /**
+   * @generated from field: int32 duration_minutes = 16;
+   */
+  durationMinutes = 0;
+
+  /**
+   * @generated from field: string language_code = 17;
+   */
+  languageCode = "";
+
+  /**
+   * interactive | broadcast | recorded_only
+   *
+   * @generated from field: string live_mode = 18;
+   */
+  liveMode = "";
+
+  /**
+   * none | confirmed | waitlisted | cancelled | attended | no_show
+   *
+   * @generated from field: string reservation_status = 19;
+   */
+  reservationStatus = "";
+
+  /**
+   * @generated from field: int32 waitlist_position = 20;
+   */
+  waitlistPosition = 0;
+
+  /**
+   * @generated from field: bool can_join = 21;
+   */
+  canJoin = false;
+
+  /**
+   * unavailable | lobby | live | degraded | replay
+   *
+   * @generated from field: string join_state = 22;
+   */
+  joinState = "";
+
+  /**
+   * @generated from field: int32 speaker_count = 23;
+   */
+  speakerCount = 0;
+
+  /**
+   * @generated from field: int32 agenda_count = 24;
+   */
+  agendaCount = 0;
+
+  /**
+   * @generated from field: bool replay_available = 25;
+   */
+  replayAvailable = false;
+
+  /**
+   * @generated from field: int32 guest_count = 26;
+   */
+  guestCount = 0;
+
+  /**
+   * @generated from field: int32 max_guests = 27;
+   */
+  maxGuests = 0;
+
+  /**
+   * @generated from field: repeated int32 reminder_minutes = 28;
+   */
+  reminderMinutes: number[] = [];
+
+  /**
+   * @generated from field: string accessibility_requirements = 29;
+   */
+  accessibilityRequirements = "";
+
+  /**
+   * @generated from field: string fallback_reason = 30;
+   */
+  fallbackReason = "";
+
   constructor(data?: PartialMessage<LiveEvent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -8164,6 +8257,23 @@ export class LiveEvent extends Message<LiveEvent> {
     { no: 11, name: "recording_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "hero_image_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "ends_at", kind: "message", T: Timestamp },
+    { no: 15, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 17, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "live_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "reservation_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "waitlist_position", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 21, name: "can_join", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 22, name: "join_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "speaker_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "agenda_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "replay_available", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 26, name: "guest_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 27, name: "max_guests", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 28, name: "reminder_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 29, name: "accessibility_requirements", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 30, name: "fallback_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveEvent {
@@ -8416,6 +8526,2402 @@ export class RsvpLiveEventResponse extends Message<RsvpLiveEventResponse> {
 
   static equals(a: RsvpLiveEventResponse | PlainMessage<RsvpLiveEventResponse> | undefined, b: RsvpLiveEventResponse | PlainMessage<RsvpLiveEventResponse> | undefined): boolean {
     return proto3.util.equals(RsvpLiveEventResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveSpeaker
+ */
+export class LiveSpeaker extends Message<LiveSpeaker> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * host | speaker | moderator | interpreter | backup
+   *
+   * @generated from field: string role = 3;
+   */
+  role = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string bio = 5;
+   */
+  bio = "";
+
+  /**
+   * @generated from field: string avatar_url = 6;
+   */
+  avatarUrl = "";
+
+  /**
+   * pending | accepted | revoked
+   *
+   * @generated from field: string consent_status = 7;
+   */
+  consentStatus = "";
+
+  /**
+   * @generated from field: bool is_backup = 8;
+   */
+  isBackup = false;
+
+  /**
+   * @generated from field: int32 sort_order = 9;
+   */
+  sortOrder = 0;
+
+  constructor(data?: PartialMessage<LiveSpeaker>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveSpeaker";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "bio", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "avatar_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "consent_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "is_backup", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveSpeaker {
+    return new LiveSpeaker().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveSpeaker {
+    return new LiveSpeaker().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveSpeaker {
+    return new LiveSpeaker().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveSpeaker | PlainMessage<LiveSpeaker> | undefined, b: LiveSpeaker | PlainMessage<LiveSpeaker> | undefined): boolean {
+    return proto3.util.equals(LiveSpeaker, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveAgendaItem
+ */
+export class LiveAgendaItem extends Message<LiveAgendaItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * opening | talk | discussion | poll | q_and_a | break | closing
+   *
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: int32 offset_minutes = 5;
+   */
+  offsetMinutes = 0;
+
+  /**
+   * @generated from field: int32 duration_minutes = 6;
+   */
+  durationMinutes = 0;
+
+  /**
+   * @generated from field: string speaker_id = 7;
+   */
+  speakerId = "";
+
+  /**
+   * @generated from field: string passage_key = 8;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: int32 sort_order = 9;
+   */
+  sortOrder = 0;
+
+  constructor(data?: PartialMessage<LiveAgendaItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveAgendaItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "offset_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "speaker_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveAgendaItem {
+    return new LiveAgendaItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveAgendaItem {
+    return new LiveAgendaItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveAgendaItem {
+    return new LiveAgendaItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveAgendaItem | PlainMessage<LiveAgendaItem> | undefined, b: LiveAgendaItem | PlainMessage<LiveAgendaItem> | undefined): boolean {
+    return proto3.util.equals(LiveAgendaItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveEventAsset
+ */
+export class LiveEventAsset extends Message<LiveEventAsset> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * prep | reading | worksheet | accessibility | follow_up
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string url = 4;
+   */
+  url = "";
+
+  /**
+   * @generated from field: string content_id = 5;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: bool required = 6;
+   */
+  required = false;
+
+  /**
+   * @generated from field: int32 sort_order = 7;
+   */
+  sortOrder = 0;
+
+  constructor(data?: PartialMessage<LiveEventAsset>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveEventAsset";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveEventAsset {
+    return new LiveEventAsset().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveEventAsset {
+    return new LiveEventAsset().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveEventAsset {
+    return new LiveEventAsset().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveEventAsset | PlainMessage<LiveEventAsset> | undefined, b: LiveEventAsset | PlainMessage<LiveEventAsset> | undefined): boolean {
+    return proto3.util.equals(LiveEventAsset, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveGuestInvitation
+ */
+export class LiveGuestInvitation extends Message<LiveGuestInvitation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string guest_name = 2;
+   */
+  guestName = "";
+
+  /**
+   * @generated from field: string email_hint = 3;
+   */
+  emailHint = "";
+
+  /**
+   * pending | accepted | revoked | expired
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 5;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LiveGuestInvitation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveGuestInvitation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "guest_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "email_hint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveGuestInvitation {
+    return new LiveGuestInvitation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveGuestInvitation {
+    return new LiveGuestInvitation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveGuestInvitation {
+    return new LiveGuestInvitation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveGuestInvitation | PlainMessage<LiveGuestInvitation> | undefined, b: LiveGuestInvitation | PlainMessage<LiveGuestInvitation> | undefined): boolean {
+    return proto3.util.equals(LiveGuestInvitation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveReservation
+ */
+export class LiveReservation extends Message<LiveReservation> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 waitlist_position = 3;
+   */
+  waitlistPosition = 0;
+
+  /**
+   * @generated from field: int32 guest_count = 4;
+   */
+  guestCount = 0;
+
+  /**
+   * @generated from field: repeated string guest_names = 5;
+   */
+  guestNames: string[] = [];
+
+  /**
+   * @generated from field: string accessibility_requirements = 6;
+   */
+  accessibilityRequirements = "";
+
+  /**
+   * @generated from field: repeated int32 reminder_minutes = 7;
+   */
+  reminderMinutes: number[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp promoted_at = 8;
+   */
+  promotedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp checked_in_at = 9;
+   */
+  checkedInAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveGuestInvitation guest_invitations = 10;
+   */
+  guestInvitations: LiveGuestInvitation[] = [];
+
+  constructor(data?: PartialMessage<LiveReservation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveReservation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "waitlist_position", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "guest_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "guest_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "accessibility_requirements", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "reminder_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 8, name: "promoted_at", kind: "message", T: Timestamp },
+    { no: 9, name: "checked_in_at", kind: "message", T: Timestamp },
+    { no: 10, name: "guest_invitations", kind: "message", T: LiveGuestInvitation, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveReservation {
+    return new LiveReservation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveReservation {
+    return new LiveReservation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveReservation {
+    return new LiveReservation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveReservation | PlainMessage<LiveReservation> | undefined, b: LiveReservation | PlainMessage<LiveReservation> | undefined): boolean {
+    return proto3.util.equals(LiveReservation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveMessage
+ */
+export class LiveMessage extends Message<LiveMessage> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string event_id = 2;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string author_name = 3;
+   */
+  authorName = "";
+
+  /**
+   * chat | question | system
+   *
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string body = 5;
+   */
+  body = "";
+
+  /**
+   * visible | hidden | answered
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string answer = 7;
+   */
+  answer = "";
+
+  /**
+   * @generated from field: string answered_by = 8;
+   */
+  answeredBy = "";
+
+  /**
+   * @generated from field: int32 upvotes = 9;
+   */
+  upvotes = 0;
+
+  /**
+   * @generated from field: bool upvoted_by_me = 10;
+   */
+  upvotedByMe = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp answered_at = 12;
+   */
+  answeredAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LiveMessage>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveMessage";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "author_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "answered_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "upvotes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "upvoted_by_me", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "answered_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveMessage {
+    return new LiveMessage().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveMessage {
+    return new LiveMessage().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveMessage {
+    return new LiveMessage().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveMessage | PlainMessage<LiveMessage> | undefined, b: LiveMessage | PlainMessage<LiveMessage> | undefined): boolean {
+    return proto3.util.equals(LiveMessage, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LivePollOption
+ */
+export class LivePollOption extends Message<LivePollOption> {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key = "";
+
+  /**
+   * @generated from field: string label = 2;
+   */
+  label = "";
+
+  /**
+   * @generated from field: int32 votes = 3;
+   */
+  votes = 0;
+
+  constructor(data?: PartialMessage<LivePollOption>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LivePollOption";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "votes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LivePollOption {
+    return new LivePollOption().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LivePollOption {
+    return new LivePollOption().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LivePollOption {
+    return new LivePollOption().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LivePollOption | PlainMessage<LivePollOption> | undefined, b: LivePollOption | PlainMessage<LivePollOption> | undefined): boolean {
+    return proto3.util.equals(LivePollOption, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LivePoll
+ */
+export class LivePoll extends Message<LivePoll> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string question = 2;
+   */
+  question = "";
+
+  /**
+   * draft | open | closed
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LivePollOption options = 4;
+   */
+  options: LivePollOption[] = [];
+
+  /**
+   * @generated from field: string selected_option = 5;
+   */
+  selectedOption = "";
+
+  /**
+   * @generated from field: bool anonymous = 6;
+   */
+  anonymous = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp opened_at = 7;
+   */
+  openedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp closed_at = 8;
+   */
+  closedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LivePoll>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LivePoll";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "question", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "options", kind: "message", T: LivePollOption, repeated: true },
+    { no: 5, name: "selected_option", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "anonymous", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "opened_at", kind: "message", T: Timestamp },
+    { no: 8, name: "closed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LivePoll {
+    return new LivePoll().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LivePoll {
+    return new LivePoll().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LivePoll {
+    return new LivePoll().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LivePoll | PlainMessage<LivePoll> | undefined, b: LivePoll | PlainMessage<LivePoll> | undefined): boolean {
+    return proto3.util.equals(LivePoll, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveNote
+ */
+export class LiveNote extends Message<LiveNote> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string event_id = 2;
+   */
+  eventId = "";
+
+  /**
+   * note | bookmark
+   *
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string body = 4;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int32 position_seconds = 5;
+   */
+  positionSeconds = 0;
+
+  /**
+   * @generated from field: string passage_key = 6;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 8;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LiveNote>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveNote";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "message", T: Timestamp },
+    { no: 8, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveNote {
+    return new LiveNote().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveNote {
+    return new LiveNote().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveNote {
+    return new LiveNote().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveNote | PlainMessage<LiveNote> | undefined, b: LiveNote | PlainMessage<LiveNote> | undefined): boolean {
+    return proto3.util.equals(LiveNote, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveReplaySegment
+ */
+export class LiveReplaySegment extends Message<LiveReplaySegment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * chapter | clip
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: int32 starts_at_seconds = 5;
+   */
+  startsAtSeconds = 0;
+
+  /**
+   * @generated from field: int32 ends_at_seconds = 6;
+   */
+  endsAtSeconds = 0;
+
+  /**
+   * @generated from field: string content_id = 7;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: int32 sort_order = 8;
+   */
+  sortOrder = 0;
+
+  constructor(data?: PartialMessage<LiveReplaySegment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveReplaySegment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "starts_at_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "ends_at_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveReplaySegment {
+    return new LiveReplaySegment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveReplaySegment {
+    return new LiveReplaySegment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveReplaySegment {
+    return new LiveReplaySegment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveReplaySegment | PlainMessage<LiveReplaySegment> | undefined, b: LiveReplaySegment | PlainMessage<LiveReplaySegment> | undefined): boolean {
+    return proto3.util.equals(LiveReplaySegment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveReplay
+ */
+export class LiveReplay extends Message<LiveReplay> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * processing | review | published | unavailable
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string recording_content_id = 3;
+   */
+  recordingContentId = "";
+
+  /**
+   * @generated from field: string playback_url = 4;
+   */
+  playbackUrl = "";
+
+  /**
+   * @generated from field: string captions_url = 5;
+   */
+  captionsUrl = "";
+
+  /**
+   * @generated from field: string transcript = 6;
+   */
+  transcript = "";
+
+  /**
+   * @generated from field: string cited_summary = 7;
+   */
+  citedSummary = "";
+
+  /**
+   * @generated from field: repeated string citations = 8;
+   */
+  citations: string[] = [];
+
+  /**
+   * @generated from field: repeated string decisions = 9;
+   */
+  decisions: string[] = [];
+
+  /**
+   * @generated from field: repeated string actions = 10;
+   */
+  actions: string[] = [];
+
+  /**
+   * @generated from field: repeated string related_content_ids = 11;
+   */
+  relatedContentIds: string[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveReplaySegment segments = 12;
+   */
+  segments: LiveReplaySegment[] = [];
+
+  /**
+   * @generated from field: int32 version = 13;
+   */
+  version = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 14;
+   */
+  publishedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<LiveReplay>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveReplay";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "recording_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "playback_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "captions_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "transcript", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "cited_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "citations", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "decisions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "actions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "related_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 12, name: "segments", kind: "message", T: LiveReplaySegment, repeated: true },
+    { no: 13, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "published_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveReplay {
+    return new LiveReplay().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveReplay {
+    return new LiveReplay().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveReplay {
+    return new LiveReplay().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveReplay | PlainMessage<LiveReplay> | undefined, b: LiveReplay | PlainMessage<LiveReplay> | undefined): boolean {
+    return proto3.util.equals(LiveReplay, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LiveSalon
+ */
+export class LiveSalon extends Message<LiveSalon> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveEvent event = 1;
+   */
+  event?: LiveEvent;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveSpeaker speakers = 2;
+   */
+  speakers: LiveSpeaker[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveAgendaItem agenda = 3;
+   */
+  agenda: LiveAgendaItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveEventAsset assets = 4;
+   */
+  assets: LiveEventAsset[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveReservation reservation = 5;
+   */
+  reservation?: LiveReservation;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveReplay replay = 6;
+   */
+  replay?: LiveReplay;
+
+  /**
+   * @generated from field: string accessibility_summary = 7;
+   */
+  accessibilitySummary = "";
+
+  /**
+   * @generated from field: string attendee_guidance = 8;
+   */
+  attendeeGuidance = "";
+
+  /**
+   * @generated from field: string moderation_policy = 9;
+   */
+  moderationPolicy = "";
+
+  constructor(data?: PartialMessage<LiveSalon>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LiveSalon";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event", kind: "message", T: LiveEvent },
+    { no: 2, name: "speakers", kind: "message", T: LiveSpeaker, repeated: true },
+    { no: 3, name: "agenda", kind: "message", T: LiveAgendaItem, repeated: true },
+    { no: 4, name: "assets", kind: "message", T: LiveEventAsset, repeated: true },
+    { no: 5, name: "reservation", kind: "message", T: LiveReservation },
+    { no: 6, name: "replay", kind: "message", T: LiveReplay },
+    { no: 7, name: "accessibility_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "attendee_guidance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "moderation_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LiveSalon {
+    return new LiveSalon().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LiveSalon {
+    return new LiveSalon().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LiveSalon {
+    return new LiveSalon().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LiveSalon | PlainMessage<LiveSalon> | undefined, b: LiveSalon | PlainMessage<LiveSalon> | undefined): boolean {
+    return proto3.util.equals(LiveSalon, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLiveSalonRequest
+ */
+export class GetLiveSalonRequest extends Message<GetLiveSalonRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  constructor(data?: PartialMessage<GetLiveSalonRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLiveSalonRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLiveSalonRequest {
+    return new GetLiveSalonRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLiveSalonRequest {
+    return new GetLiveSalonRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLiveSalonRequest {
+    return new GetLiveSalonRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLiveSalonRequest | PlainMessage<GetLiveSalonRequest> | undefined, b: GetLiveSalonRequest | PlainMessage<GetLiveSalonRequest> | undefined): boolean {
+    return proto3.util.equals(GetLiveSalonRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLiveSalonResponse
+ */
+export class GetLiveSalonResponse extends Message<GetLiveSalonResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveSalon salon = 1;
+   */
+  salon?: LiveSalon;
+
+  constructor(data?: PartialMessage<GetLiveSalonResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLiveSalonResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "salon", kind: "message", T: LiveSalon },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLiveSalonResponse {
+    return new GetLiveSalonResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLiveSalonResponse {
+    return new GetLiveSalonResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLiveSalonResponse {
+    return new GetLiveSalonResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLiveSalonResponse | PlainMessage<GetLiveSalonResponse> | undefined, b: GetLiveSalonResponse | PlainMessage<GetLiveSalonResponse> | undefined): boolean {
+    return proto3.util.equals(GetLiveSalonResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLiveReservationRequest
+ */
+export class UpsertLiveReservationRequest extends Message<UpsertLiveReservationRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * reserve | cancel
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: int32 guest_count = 3;
+   */
+  guestCount = 0;
+
+  /**
+   * @generated from field: repeated string guest_names = 4;
+   */
+  guestNames: string[] = [];
+
+  /**
+   * @generated from field: string accessibility_requirements = 5;
+   */
+  accessibilityRequirements = "";
+
+  /**
+   * @generated from field: repeated int32 reminder_minutes = 6;
+   */
+  reminderMinutes: number[] = [];
+
+  /**
+   * @generated from field: string request_id = 7;
+   */
+  requestId = "";
+
+  constructor(data?: PartialMessage<UpsertLiveReservationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLiveReservationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "guest_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "guest_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "accessibility_requirements", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "reminder_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 7, name: "request_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLiveReservationRequest {
+    return new UpsertLiveReservationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLiveReservationRequest {
+    return new UpsertLiveReservationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLiveReservationRequest {
+    return new UpsertLiveReservationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLiveReservationRequest | PlainMessage<UpsertLiveReservationRequest> | undefined, b: UpsertLiveReservationRequest | PlainMessage<UpsertLiveReservationRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertLiveReservationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLiveReservationResponse
+ */
+export class UpsertLiveReservationResponse extends Message<UpsertLiveReservationResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveReservation reservation = 1;
+   */
+  reservation?: LiveReservation;
+
+  /**
+   * @generated from field: int32 confirmed_count = 2;
+   */
+  confirmedCount = 0;
+
+  /**
+   * @generated from field: int32 waitlist_count = 3;
+   */
+  waitlistCount = 0;
+
+  constructor(data?: PartialMessage<UpsertLiveReservationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLiveReservationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reservation", kind: "message", T: LiveReservation },
+    { no: 2, name: "confirmed_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "waitlist_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLiveReservationResponse {
+    return new UpsertLiveReservationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLiveReservationResponse {
+    return new UpsertLiveReservationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLiveReservationResponse {
+    return new UpsertLiveReservationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLiveReservationResponse | PlainMessage<UpsertLiveReservationResponse> | undefined, b: UpsertLiveReservationResponse | PlainMessage<UpsertLiveReservationResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertLiveReservationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.InviteLiveGuestRequest
+ */
+export class InviteLiveGuestRequest extends Message<InviteLiveGuestRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string guest_name = 2;
+   */
+  guestName = "";
+
+  /**
+   * @generated from field: string guest_email = 3;
+   */
+  guestEmail = "";
+
+  /**
+   * @generated from field: string request_id = 4;
+   */
+  requestId = "";
+
+  constructor(data?: PartialMessage<InviteLiveGuestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.InviteLiveGuestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "guest_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "guest_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "request_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InviteLiveGuestRequest {
+    return new InviteLiveGuestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InviteLiveGuestRequest {
+    return new InviteLiveGuestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InviteLiveGuestRequest {
+    return new InviteLiveGuestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: InviteLiveGuestRequest | PlainMessage<InviteLiveGuestRequest> | undefined, b: InviteLiveGuestRequest | PlainMessage<InviteLiveGuestRequest> | undefined): boolean {
+    return proto3.util.equals(InviteLiveGuestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.InviteLiveGuestResponse
+ */
+export class InviteLiveGuestResponse extends Message<InviteLiveGuestResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveGuestInvitation invitation = 1;
+   */
+  invitation?: LiveGuestInvitation;
+
+  /**
+   * Returned once so the member can share it; only its digest is retained.
+   *
+   * @generated from field: string invite_url = 2;
+   */
+  inviteUrl = "";
+
+  constructor(data?: PartialMessage<InviteLiveGuestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.InviteLiveGuestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "invitation", kind: "message", T: LiveGuestInvitation },
+    { no: 2, name: "invite_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InviteLiveGuestResponse {
+    return new InviteLiveGuestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InviteLiveGuestResponse {
+    return new InviteLiveGuestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InviteLiveGuestResponse {
+    return new InviteLiveGuestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: InviteLiveGuestResponse | PlainMessage<InviteLiveGuestResponse> | undefined, b: InviteLiveGuestResponse | PlainMessage<InviteLiveGuestResponse> | undefined): boolean {
+    return proto3.util.equals(InviteLiveGuestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+ */
+export class GenerateLiveCalendarPassRequest extends Message<GenerateLiveCalendarPassRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  constructor(data?: PartialMessage<GenerateLiveCalendarPassRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateLiveCalendarPassRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateLiveCalendarPassRequest {
+    return new GenerateLiveCalendarPassRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateLiveCalendarPassRequest {
+    return new GenerateLiveCalendarPassRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateLiveCalendarPassRequest {
+    return new GenerateLiveCalendarPassRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateLiveCalendarPassRequest | PlainMessage<GenerateLiveCalendarPassRequest> | undefined, b: GenerateLiveCalendarPassRequest | PlainMessage<GenerateLiveCalendarPassRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateLiveCalendarPassRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+ */
+export class GenerateLiveCalendarPassResponse extends Message<GenerateLiveCalendarPassResponse> {
+  /**
+   * @generated from field: string filename = 1;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 2;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: bytes contents = 3;
+   */
+  contents = new Uint8Array(0);
+
+  constructor(data?: PartialMessage<GenerateLiveCalendarPassResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateLiveCalendarPassResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "contents", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateLiveCalendarPassResponse {
+    return new GenerateLiveCalendarPassResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateLiveCalendarPassResponse {
+    return new GenerateLiveCalendarPassResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateLiveCalendarPassResponse {
+    return new GenerateLiveCalendarPassResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateLiveCalendarPassResponse | PlainMessage<GenerateLiveCalendarPassResponse> | undefined, b: GenerateLiveCalendarPassResponse | PlainMessage<GenerateLiveCalendarPassResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateLiveCalendarPassResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.JoinLiveEventRequest
+ */
+export class JoinLiveEventRequest extends Message<JoinLiveEventRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  constructor(data?: PartialMessage<JoinLiveEventRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.JoinLiveEventRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinLiveEventRequest {
+    return new JoinLiveEventRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinLiveEventRequest {
+    return new JoinLiveEventRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinLiveEventRequest {
+    return new JoinLiveEventRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinLiveEventRequest | PlainMessage<JoinLiveEventRequest> | undefined, b: JoinLiveEventRequest | PlainMessage<JoinLiveEventRequest> | undefined): boolean {
+    return proto3.util.equals(JoinLiveEventRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.JoinLiveEventResponse
+ */
+export class JoinLiveEventResponse extends Message<JoinLiveEventResponse> {
+  /**
+   * livekit | broadcast | recorded_only | unavailable
+   *
+   * @generated from field: string mode = 1;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: string token = 2;
+   */
+  token = "";
+
+  /**
+   * @generated from field: string ws_url = 3;
+   */
+  wsUrl = "";
+
+  /**
+   * @generated from field: string playback_url = 4;
+   */
+  playbackUrl = "";
+
+  /**
+   * @generated from field: string fallback_playback_url = 5;
+   */
+  fallbackPlaybackUrl = "";
+
+  /**
+   * @generated from field: string fallback_reason = 6;
+   */
+  fallbackReason = "";
+
+  /**
+   * @generated from field: string dial_in_label = 7;
+   */
+  dialInLabel = "";
+
+  /**
+   * @generated from field: string dial_in_number = 8;
+   */
+  dialInNumber = "";
+
+  /**
+   * @generated from field: string dial_in_pin = 9;
+   */
+  dialInPin = "";
+
+  /**
+   * @generated from field: bool can_publish = 10;
+   */
+  canPublish = false;
+
+  /**
+   * @generated from field: string room_status = 11;
+   */
+  roomStatus = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 12;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<JoinLiveEventResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.JoinLiveEventResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "ws_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "playback_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "fallback_playback_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "fallback_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "dial_in_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "dial_in_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "dial_in_pin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "can_publish", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "room_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinLiveEventResponse {
+    return new JoinLiveEventResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinLiveEventResponse {
+    return new JoinLiveEventResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinLiveEventResponse {
+    return new JoinLiveEventResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinLiveEventResponse | PlainMessage<JoinLiveEventResponse> | undefined, b: JoinLiveEventResponse | PlainMessage<JoinLiveEventResponse> | undefined): boolean {
+    return proto3.util.equals(JoinLiveEventResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLiveActivityRequest
+ */
+export class ListLiveActivityRequest extends Message<ListLiveActivityRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListLiveActivityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLiveActivityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveActivityRequest {
+    return new ListLiveActivityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveActivityRequest {
+    return new ListLiveActivityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveActivityRequest {
+    return new ListLiveActivityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveActivityRequest | PlainMessage<ListLiveActivityRequest> | undefined, b: ListLiveActivityRequest | PlainMessage<ListLiveActivityRequest> | undefined): boolean {
+    return proto3.util.equals(ListLiveActivityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLiveActivityResponse
+ */
+export class ListLiveActivityResponse extends Message<ListLiveActivityResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveMessage messages = 1;
+   */
+  messages: LiveMessage[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LivePoll polls = 2;
+   */
+  polls: LivePoll[] = [];
+
+  /**
+   * @generated from field: bool hand_raised = 3;
+   */
+  handRaised = false;
+
+  /**
+   * none | raised | invited | dismissed
+   *
+   * @generated from field: string hand_raise_status = 4;
+   */
+  handRaiseStatus = "";
+
+  /**
+   * @generated from field: int32 participant_count = 5;
+   */
+  participantCount = 0;
+
+  /**
+   * @generated from field: int32 question_count = 6;
+   */
+  questionCount = 0;
+
+  /**
+   * @generated from field: int32 unanswered_count = 7;
+   */
+  unansweredCount = 0;
+
+  constructor(data?: PartialMessage<ListLiveActivityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLiveActivityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "messages", kind: "message", T: LiveMessage, repeated: true },
+    { no: 2, name: "polls", kind: "message", T: LivePoll, repeated: true },
+    { no: 3, name: "hand_raised", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "hand_raise_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "participant_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "question_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "unanswered_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveActivityResponse {
+    return new ListLiveActivityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveActivityResponse {
+    return new ListLiveActivityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveActivityResponse {
+    return new ListLiveActivityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveActivityResponse | PlainMessage<ListLiveActivityResponse> | undefined, b: ListLiveActivityResponse | PlainMessage<ListLiveActivityResponse> | undefined): boolean {
+    return proto3.util.equals(ListLiveActivityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PostLiveMessageRequest
+ */
+export class PostLiveMessageRequest extends Message<PostLiveMessageRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * chat | question
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string request_id = 4;
+   */
+  requestId = "";
+
+  constructor(data?: PartialMessage<PostLiveMessageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PostLiveMessageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "request_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PostLiveMessageRequest {
+    return new PostLiveMessageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PostLiveMessageRequest {
+    return new PostLiveMessageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PostLiveMessageRequest {
+    return new PostLiveMessageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PostLiveMessageRequest | PlainMessage<PostLiveMessageRequest> | undefined, b: PostLiveMessageRequest | PlainMessage<PostLiveMessageRequest> | undefined): boolean {
+    return proto3.util.equals(PostLiveMessageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PostLiveMessageResponse
+ */
+export class PostLiveMessageResponse extends Message<PostLiveMessageResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveMessage message = 1;
+   */
+  message?: LiveMessage;
+
+  constructor(data?: PartialMessage<PostLiveMessageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PostLiveMessageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "message", T: LiveMessage },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PostLiveMessageResponse {
+    return new PostLiveMessageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PostLiveMessageResponse {
+    return new PostLiveMessageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PostLiveMessageResponse {
+    return new PostLiveMessageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PostLiveMessageResponse | PlainMessage<PostLiveMessageResponse> | undefined, b: PostLiveMessageResponse | PlainMessage<PostLiveMessageResponse> | undefined): boolean {
+    return proto3.util.equals(PostLiveMessageResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpvoteLiveQuestionRequest
+ */
+export class UpvoteLiveQuestionRequest extends Message<UpvoteLiveQuestionRequest> {
+  /**
+   * @generated from field: string message_id = 1;
+   */
+  messageId = "";
+
+  /**
+   * @generated from field: bool upvote = 2;
+   */
+  upvote = false;
+
+  constructor(data?: PartialMessage<UpvoteLiveQuestionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpvoteLiveQuestionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "upvote", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpvoteLiveQuestionRequest {
+    return new UpvoteLiveQuestionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpvoteLiveQuestionRequest {
+    return new UpvoteLiveQuestionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpvoteLiveQuestionRequest {
+    return new UpvoteLiveQuestionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpvoteLiveQuestionRequest | PlainMessage<UpvoteLiveQuestionRequest> | undefined, b: UpvoteLiveQuestionRequest | PlainMessage<UpvoteLiveQuestionRequest> | undefined): boolean {
+    return proto3.util.equals(UpvoteLiveQuestionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpvoteLiveQuestionResponse
+ */
+export class UpvoteLiveQuestionResponse extends Message<UpvoteLiveQuestionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveMessage message = 1;
+   */
+  message?: LiveMessage;
+
+  constructor(data?: PartialMessage<UpvoteLiveQuestionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpvoteLiveQuestionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "message", kind: "message", T: LiveMessage },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpvoteLiveQuestionResponse {
+    return new UpvoteLiveQuestionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpvoteLiveQuestionResponse {
+    return new UpvoteLiveQuestionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpvoteLiveQuestionResponse {
+    return new UpvoteLiveQuestionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpvoteLiveQuestionResponse | PlainMessage<UpvoteLiveQuestionResponse> | undefined, b: UpvoteLiveQuestionResponse | PlainMessage<UpvoteLiveQuestionResponse> | undefined): boolean {
+    return proto3.util.equals(UpvoteLiveQuestionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.VoteLivePollRequest
+ */
+export class VoteLivePollRequest extends Message<VoteLivePollRequest> {
+  /**
+   * @generated from field: string poll_id = 1;
+   */
+  pollId = "";
+
+  /**
+   * @generated from field: string option_key = 2;
+   */
+  optionKey = "";
+
+  constructor(data?: PartialMessage<VoteLivePollRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.VoteLivePollRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "poll_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "option_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VoteLivePollRequest {
+    return new VoteLivePollRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VoteLivePollRequest {
+    return new VoteLivePollRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VoteLivePollRequest {
+    return new VoteLivePollRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VoteLivePollRequest | PlainMessage<VoteLivePollRequest> | undefined, b: VoteLivePollRequest | PlainMessage<VoteLivePollRequest> | undefined): boolean {
+    return proto3.util.equals(VoteLivePollRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.VoteLivePollResponse
+ */
+export class VoteLivePollResponse extends Message<VoteLivePollResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LivePoll poll = 1;
+   */
+  poll?: LivePoll;
+
+  constructor(data?: PartialMessage<VoteLivePollResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.VoteLivePollResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "poll", kind: "message", T: LivePoll },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VoteLivePollResponse {
+    return new VoteLivePollResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VoteLivePollResponse {
+    return new VoteLivePollResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VoteLivePollResponse {
+    return new VoteLivePollResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VoteLivePollResponse | PlainMessage<VoteLivePollResponse> | undefined, b: VoteLivePollResponse | PlainMessage<VoteLivePollResponse> | undefined): boolean {
+    return proto3.util.equals(VoteLivePollResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetLiveHandRaiseRequest
+ */
+export class SetLiveHandRaiseRequest extends Message<SetLiveHandRaiseRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: bool raised = 2;
+   */
+  raised = false;
+
+  constructor(data?: PartialMessage<SetLiveHandRaiseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetLiveHandRaiseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "raised", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLiveHandRaiseRequest {
+    return new SetLiveHandRaiseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLiveHandRaiseRequest {
+    return new SetLiveHandRaiseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLiveHandRaiseRequest {
+    return new SetLiveHandRaiseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetLiveHandRaiseRequest | PlainMessage<SetLiveHandRaiseRequest> | undefined, b: SetLiveHandRaiseRequest | PlainMessage<SetLiveHandRaiseRequest> | undefined): boolean {
+    return proto3.util.equals(SetLiveHandRaiseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetLiveHandRaiseResponse
+ */
+export class SetLiveHandRaiseResponse extends Message<SetLiveHandRaiseResponse> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<SetLiveHandRaiseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetLiveHandRaiseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLiveHandRaiseResponse {
+    return new SetLiveHandRaiseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLiveHandRaiseResponse {
+    return new SetLiveHandRaiseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLiveHandRaiseResponse {
+    return new SetLiveHandRaiseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetLiveHandRaiseResponse | PlainMessage<SetLiveHandRaiseResponse> | undefined, b: SetLiveHandRaiseResponse | PlainMessage<SetLiveHandRaiseResponse> | undefined): boolean {
+    return proto3.util.equals(SetLiveHandRaiseResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReactLiveEventRequest
+ */
+export class ReactLiveEventRequest extends Message<ReactLiveEventRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string emoji = 2;
+   */
+  emoji = "";
+
+  constructor(data?: PartialMessage<ReactLiveEventRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReactLiveEventRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "emoji", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReactLiveEventRequest {
+    return new ReactLiveEventRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReactLiveEventRequest {
+    return new ReactLiveEventRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReactLiveEventRequest {
+    return new ReactLiveEventRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReactLiveEventRequest | PlainMessage<ReactLiveEventRequest> | undefined, b: ReactLiveEventRequest | PlainMessage<ReactLiveEventRequest> | undefined): boolean {
+    return proto3.util.equals(ReactLiveEventRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReactLiveEventResponse
+ */
+export class ReactLiveEventResponse extends Message<ReactLiveEventResponse> {
+  /**
+   * @generated from field: string emoji = 1;
+   */
+  emoji = "";
+
+  /**
+   * @generated from field: int32 count = 2;
+   */
+  count = 0;
+
+  constructor(data?: PartialMessage<ReactLiveEventResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReactLiveEventResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "emoji", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReactLiveEventResponse {
+    return new ReactLiveEventResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReactLiveEventResponse {
+    return new ReactLiveEventResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReactLiveEventResponse {
+    return new ReactLiveEventResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReactLiveEventResponse | PlainMessage<ReactLiveEventResponse> | undefined, b: ReactLiveEventResponse | PlainMessage<ReactLiveEventResponse> | undefined): boolean {
+    return proto3.util.equals(ReactLiveEventResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLiveNoteRequest
+ */
+export class UpsertLiveNoteRequest extends Message<UpsertLiveNoteRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string note_id = 2;
+   */
+  noteId = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string body = 4;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int32 position_seconds = 5;
+   */
+  positionSeconds = 0;
+
+  /**
+   * @generated from field: string passage_key = 6;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string request_id = 7;
+   */
+  requestId = "";
+
+  constructor(data?: PartialMessage<UpsertLiveNoteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLiveNoteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "note_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "position_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "request_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLiveNoteRequest {
+    return new UpsertLiveNoteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLiveNoteRequest {
+    return new UpsertLiveNoteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLiveNoteRequest {
+    return new UpsertLiveNoteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLiveNoteRequest | PlainMessage<UpsertLiveNoteRequest> | undefined, b: UpsertLiveNoteRequest | PlainMessage<UpsertLiveNoteRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertLiveNoteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLiveNoteResponse
+ */
+export class UpsertLiveNoteResponse extends Message<UpsertLiveNoteResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveNote note = 1;
+   */
+  note?: LiveNote;
+
+  constructor(data?: PartialMessage<UpsertLiveNoteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLiveNoteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "note", kind: "message", T: LiveNote },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLiveNoteResponse {
+    return new UpsertLiveNoteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLiveNoteResponse {
+    return new UpsertLiveNoteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLiveNoteResponse {
+    return new UpsertLiveNoteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLiveNoteResponse | PlainMessage<UpsertLiveNoteResponse> | undefined, b: UpsertLiveNoteResponse | PlainMessage<UpsertLiveNoteResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertLiveNoteResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLiveNotesRequest
+ */
+export class ListLiveNotesRequest extends Message<ListLiveNotesRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  constructor(data?: PartialMessage<ListLiveNotesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLiveNotesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveNotesRequest {
+    return new ListLiveNotesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveNotesRequest {
+    return new ListLiveNotesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveNotesRequest {
+    return new ListLiveNotesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveNotesRequest | PlainMessage<ListLiveNotesRequest> | undefined, b: ListLiveNotesRequest | PlainMessage<ListLiveNotesRequest> | undefined): boolean {
+    return proto3.util.equals(ListLiveNotesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLiveNotesResponse
+ */
+export class ListLiveNotesResponse extends Message<ListLiveNotesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.LiveNote notes = 1;
+   */
+  notes: LiveNote[] = [];
+
+  constructor(data?: PartialMessage<ListLiveNotesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLiveNotesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "notes", kind: "message", T: LiveNote, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLiveNotesResponse {
+    return new ListLiveNotesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLiveNotesResponse {
+    return new ListLiveNotesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLiveNotesResponse {
+    return new ListLiveNotesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLiveNotesResponse | PlainMessage<ListLiveNotesResponse> | undefined, b: ListLiveNotesResponse | PlainMessage<ListLiveNotesResponse> | undefined): boolean {
+    return proto3.util.equals(ListLiveNotesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteLiveNoteRequest
+ */
+export class DeleteLiveNoteRequest extends Message<DeleteLiveNoteRequest> {
+  /**
+   * @generated from field: string note_id = 1;
+   */
+  noteId = "";
+
+  constructor(data?: PartialMessage<DeleteLiveNoteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteLiveNoteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "note_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLiveNoteRequest {
+    return new DeleteLiveNoteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLiveNoteRequest {
+    return new DeleteLiveNoteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLiveNoteRequest {
+    return new DeleteLiveNoteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteLiveNoteRequest | PlainMessage<DeleteLiveNoteRequest> | undefined, b: DeleteLiveNoteRequest | PlainMessage<DeleteLiveNoteRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteLiveNoteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteLiveNoteResponse
+ */
+export class DeleteLiveNoteResponse extends Message<DeleteLiveNoteResponse> {
+  constructor(data?: PartialMessage<DeleteLiveNoteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteLiveNoteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLiveNoteResponse {
+    return new DeleteLiveNoteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLiveNoteResponse {
+    return new DeleteLiveNoteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLiveNoteResponse {
+    return new DeleteLiveNoteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteLiveNoteResponse | PlainMessage<DeleteLiveNoteResponse> | undefined, b: DeleteLiveNoteResponse | PlainMessage<DeleteLiveNoteResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteLiveNoteResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLiveReplayRequest
+ */
+export class GetLiveReplayRequest extends Message<GetLiveReplayRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  constructor(data?: PartialMessage<GetLiveReplayRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLiveReplayRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLiveReplayRequest {
+    return new GetLiveReplayRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLiveReplayRequest {
+    return new GetLiveReplayRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLiveReplayRequest {
+    return new GetLiveReplayRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLiveReplayRequest | PlainMessage<GetLiveReplayRequest> | undefined, b: GetLiveReplayRequest | PlainMessage<GetLiveReplayRequest> | undefined): boolean {
+    return proto3.util.equals(GetLiveReplayRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLiveReplayResponse
+ */
+export class GetLiveReplayResponse extends Message<GetLiveReplayResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.LiveReplay replay = 1;
+   */
+  replay?: LiveReplay;
+
+  constructor(data?: PartialMessage<GetLiveReplayResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLiveReplayResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "replay", kind: "message", T: LiveReplay },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLiveReplayResponse {
+    return new GetLiveReplayResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLiveReplayResponse {
+    return new GetLiveReplayResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLiveReplayResponse {
+    return new GetLiveReplayResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLiveReplayResponse | PlainMessage<GetLiveReplayResponse> | undefined, b: GetLiveReplayResponse | PlainMessage<GetLiveReplayResponse> | undefined): boolean {
+    return proto3.util.equals(GetLiveReplayResponse, a, b);
   }
 }
 

@@ -968,6 +968,23 @@ message LiveEvent {
   // refuses the RSVP either way; this is so the client can say why instead of
   // offering a button it knows will be refused. Mirrors Programme.locked.
   bool locked = 13;
+  google.protobuf.Timestamp ends_at = 14;
+  string timezone = 15; // IANA name used for programme copy and calendar passes
+  int32 duration_minutes = 16;
+  string language_code = 17;
+  string live_mode = 18; // interactive | broadcast | recorded_only
+  string reservation_status = 19; // none | confirmed | waitlisted | cancelled | attended | no_show
+  int32 waitlist_position = 20;
+  bool can_join = 21;
+  string join_state = 22; // unavailable | lobby | live | degraded | replay
+  int32 speaker_count = 23;
+  int32 agenda_count = 24;
+  bool replay_available = 25;
+  int32 guest_count = 26;
+  int32 max_guests = 27;
+  repeated int32 reminder_minutes = 28;
+  string accessibility_requirements = 29;
+  string fallback_reason = 30;
 }
 message ListLiveEventsRequest {
   int32 limit = 1;
@@ -989,6 +1006,264 @@ message RsvpLiveEventResponse {
   bool rsvped = 1;
   int32 rsvp_count = 2;
 }
+
+message LiveSpeaker {
+  string id = 1;
+  string name = 2;
+  string role = 3; // host | speaker | moderator | interpreter | backup
+  string title = 4;
+  string bio = 5;
+  string avatar_url = 6;
+  string consent_status = 7; // pending | accepted | revoked
+  bool is_backup = 8;
+  int32 sort_order = 9;
+}
+
+message LiveAgendaItem {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string kind = 4; // opening | talk | discussion | poll | q_and_a | break | closing
+  int32 offset_minutes = 5;
+  int32 duration_minutes = 6;
+  string speaker_id = 7;
+  string passage_key = 8;
+  int32 sort_order = 9;
+}
+
+message LiveEventAsset {
+  string id = 1;
+  string kind = 2; // prep | reading | worksheet | accessibility | follow_up
+  string title = 3;
+  string url = 4;
+  string content_id = 5;
+  bool required = 6;
+  int32 sort_order = 7;
+}
+
+message LiveGuestInvitation {
+  string id = 1;
+  string guest_name = 2;
+  string email_hint = 3;
+  string status = 4; // pending | accepted | revoked | expired
+  google.protobuf.Timestamp expires_at = 5;
+}
+
+message LiveReservation {
+  string event_id = 1;
+  string status = 2;
+  int32 waitlist_position = 3;
+  int32 guest_count = 4;
+  repeated string guest_names = 5;
+  string accessibility_requirements = 6;
+  repeated int32 reminder_minutes = 7;
+  google.protobuf.Timestamp promoted_at = 8;
+  google.protobuf.Timestamp checked_in_at = 9;
+  repeated LiveGuestInvitation guest_invitations = 10;
+}
+
+message LiveMessage {
+  string id = 1;
+  string event_id = 2;
+  string author_name = 3;
+  string kind = 4; // chat | question | system
+  string body = 5;
+  string status = 6; // visible | hidden | answered
+  string answer = 7;
+  string answered_by = 8;
+  int32 upvotes = 9;
+  bool upvoted_by_me = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp answered_at = 12;
+}
+
+message LivePollOption {
+  string key = 1;
+  string label = 2;
+  int32 votes = 3;
+}
+
+message LivePoll {
+  string id = 1;
+  string question = 2;
+  string status = 3; // draft | open | closed
+  repeated LivePollOption options = 4;
+  string selected_option = 5;
+  bool anonymous = 6;
+  google.protobuf.Timestamp opened_at = 7;
+  google.protobuf.Timestamp closed_at = 8;
+}
+
+message LiveNote {
+  string id = 1;
+  string event_id = 2;
+  string kind = 3; // note | bookmark
+  string body = 4;
+  int32 position_seconds = 5;
+  string passage_key = 6;
+  google.protobuf.Timestamp created_at = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message LiveReplaySegment {
+  string id = 1;
+  string kind = 2; // chapter | clip
+  string title = 3;
+  string summary = 4;
+  int32 starts_at_seconds = 5;
+  int32 ends_at_seconds = 6;
+  string content_id = 7;
+  int32 sort_order = 8;
+}
+
+message LiveReplay {
+  string event_id = 1;
+  string status = 2; // processing | review | published | unavailable
+  string recording_content_id = 3;
+  string playback_url = 4;
+  string captions_url = 5;
+  string transcript = 6;
+  string cited_summary = 7;
+  repeated string citations = 8;
+  repeated string decisions = 9;
+  repeated string actions = 10;
+  repeated string related_content_ids = 11;
+  repeated LiveReplaySegment segments = 12;
+  int32 version = 13;
+  google.protobuf.Timestamp published_at = 14;
+}
+
+message LiveSalon {
+  LiveEvent event = 1;
+  repeated LiveSpeaker speakers = 2;
+  repeated LiveAgendaItem agenda = 3;
+  repeated LiveEventAsset assets = 4;
+  LiveReservation reservation = 5;
+  LiveReplay replay = 6;
+  string accessibility_summary = 7;
+  string attendee_guidance = 8;
+  string moderation_policy = 9;
+}
+
+message GetLiveSalonRequest { string event_id = 1; }
+message GetLiveSalonResponse { LiveSalon salon = 1; }
+
+message UpsertLiveReservationRequest {
+  string event_id = 1;
+  string action = 2; // reserve | cancel
+  int32 guest_count = 3;
+  repeated string guest_names = 4;
+  string accessibility_requirements = 5;
+  repeated int32 reminder_minutes = 6;
+  string request_id = 7;
+}
+message UpsertLiveReservationResponse {
+  LiveReservation reservation = 1;
+  int32 confirmed_count = 2;
+  int32 waitlist_count = 3;
+}
+
+message InviteLiveGuestRequest {
+  string event_id = 1;
+  string guest_name = 2;
+  string guest_email = 3;
+  string request_id = 4;
+}
+message InviteLiveGuestResponse {
+  LiveGuestInvitation invitation = 1;
+  // Returned once so the member can share it; only its digest is retained.
+  string invite_url = 2;
+}
+
+message GenerateLiveCalendarPassRequest { string event_id = 1; }
+message GenerateLiveCalendarPassResponse {
+  string filename = 1;
+  string mime_type = 2;
+  bytes contents = 3;
+}
+
+message JoinLiveEventRequest { string event_id = 1; }
+message JoinLiveEventResponse {
+  string mode = 1; // livekit | broadcast | recorded_only | unavailable
+  string token = 2;
+  string ws_url = 3;
+  string playback_url = 4;
+  string fallback_playback_url = 5;
+  string fallback_reason = 6;
+  string dial_in_label = 7;
+  string dial_in_number = 8;
+  string dial_in_pin = 9;
+  bool can_publish = 10;
+  string room_status = 11;
+  google.protobuf.Timestamp expires_at = 12;
+}
+
+message ListLiveActivityRequest {
+  string event_id = 1;
+  int32 limit = 2;
+}
+message ListLiveActivityResponse {
+  repeated LiveMessage messages = 1;
+  repeated LivePoll polls = 2;
+  bool hand_raised = 3;
+  string hand_raise_status = 4; // none | raised | invited | dismissed
+  int32 participant_count = 5;
+  int32 question_count = 6;
+  int32 unanswered_count = 7;
+}
+
+message PostLiveMessageRequest {
+  string event_id = 1;
+  string kind = 2; // chat | question
+  string body = 3;
+  string request_id = 4;
+}
+message PostLiveMessageResponse { LiveMessage message = 1; }
+
+message UpvoteLiveQuestionRequest {
+  string message_id = 1;
+  bool upvote = 2;
+}
+message UpvoteLiveQuestionResponse { LiveMessage message = 1; }
+
+message VoteLivePollRequest {
+  string poll_id = 1;
+  string option_key = 2;
+}
+message VoteLivePollResponse { LivePoll poll = 1; }
+
+message SetLiveHandRaiseRequest {
+  string event_id = 1;
+  bool raised = 2;
+}
+message SetLiveHandRaiseResponse { string status = 1; }
+
+message ReactLiveEventRequest {
+  string event_id = 1;
+  string emoji = 2;
+}
+message ReactLiveEventResponse {
+  string emoji = 1;
+  int32 count = 2;
+}
+
+message UpsertLiveNoteRequest {
+  string event_id = 1;
+  string note_id = 2;
+  string kind = 3;
+  string body = 4;
+  int32 position_seconds = 5;
+  string passage_key = 6;
+  string request_id = 7;
+}
+message UpsertLiveNoteResponse { LiveNote note = 1; }
+message ListLiveNotesRequest { string event_id = 1; }
+message ListLiveNotesResponse { repeated LiveNote notes = 1; }
+message DeleteLiveNoteRequest { string note_id = 1; }
+message DeleteLiveNoteResponse {}
+
+message GetLiveReplayRequest { string event_id = 1; }
+message GetLiveReplayResponse { LiveReplay replay = 1; }
 
 message PosthumousArchive {
   // The pieces designated to drop to heirs on the Legacy trigger.
@@ -1773,6 +2048,21 @@ service OnyxService {
   rpc ListLiveEvents(ListLiveEventsRequest) returns (ListLiveEventsResponse);
   rpc GetLiveEvent(GetLiveEventRequest) returns (GetLiveEventResponse);
   rpc RsvpLiveEvent(RsvpLiveEventRequest) returns (RsvpLiveEventResponse);
+  rpc GetLiveSalon(GetLiveSalonRequest) returns (GetLiveSalonResponse);
+  rpc UpsertLiveReservation(UpsertLiveReservationRequest) returns (UpsertLiveReservationResponse);
+  rpc InviteLiveGuest(InviteLiveGuestRequest) returns (InviteLiveGuestResponse);
+  rpc GenerateLiveCalendarPass(GenerateLiveCalendarPassRequest) returns (GenerateLiveCalendarPassResponse);
+  rpc JoinLiveEvent(JoinLiveEventRequest) returns (JoinLiveEventResponse);
+  rpc ListLiveActivity(ListLiveActivityRequest) returns (ListLiveActivityResponse);
+  rpc PostLiveMessage(PostLiveMessageRequest) returns (PostLiveMessageResponse);
+  rpc UpvoteLiveQuestion(UpvoteLiveQuestionRequest) returns (UpvoteLiveQuestionResponse);
+  rpc VoteLivePoll(VoteLivePollRequest) returns (VoteLivePollResponse);
+  rpc SetLiveHandRaise(SetLiveHandRaiseRequest) returns (SetLiveHandRaiseResponse);
+  rpc ReactLiveEvent(ReactLiveEventRequest) returns (ReactLiveEventResponse);
+  rpc UpsertLiveNote(UpsertLiveNoteRequest) returns (UpsertLiveNoteResponse);
+  rpc ListLiveNotes(ListLiveNotesRequest) returns (ListLiveNotesResponse);
+  rpc DeleteLiveNote(DeleteLiveNoteRequest) returns (DeleteLiveNoteResponse);
+  rpc GetLiveReplay(GetLiveReplayRequest) returns (GetLiveReplayResponse);
 
   // P3 — posthumous archive (encrypted at rest).
   rpc SetPosthumousArchive(SetPosthumousArchiveRequest) returns (SetPosthumousArchiveResponse);

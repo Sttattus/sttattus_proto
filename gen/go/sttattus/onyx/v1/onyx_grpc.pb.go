@@ -85,6 +85,21 @@ const (
 	OnyxService_ListLiveEvents_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
 	OnyxService_GetLiveEvent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
 	OnyxService_RsvpLiveEvent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
+	OnyxService_GetLiveSalon_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetLiveSalon"
+	OnyxService_UpsertLiveReservation_FullMethodName              = "/sttattus.onyx.v1.OnyxService/UpsertLiveReservation"
+	OnyxService_InviteLiveGuest_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/InviteLiveGuest"
+	OnyxService_GenerateLiveCalendarPass_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GenerateLiveCalendarPass"
+	OnyxService_JoinLiveEvent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/JoinLiveEvent"
+	OnyxService_ListLiveActivity_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListLiveActivity"
+	OnyxService_PostLiveMessage_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/PostLiveMessage"
+	OnyxService_UpvoteLiveQuestion_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/UpvoteLiveQuestion"
+	OnyxService_VoteLivePoll_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/VoteLivePoll"
+	OnyxService_SetLiveHandRaise_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SetLiveHandRaise"
+	OnyxService_ReactLiveEvent_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ReactLiveEvent"
+	OnyxService_UpsertLiveNote_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertLiveNote"
+	OnyxService_ListLiveNotes_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListLiveNotes"
+	OnyxService_DeleteLiveNote_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteLiveNote"
+	OnyxService_GetLiveReplay_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetLiveReplay"
 	OnyxService_SetPosthumousArchive_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
 	OnyxService_GetPosthumousArchive_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
 	OnyxService_ListAnthologies_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
@@ -213,6 +228,21 @@ type OnyxServiceClient interface {
 	ListLiveEvents(ctx context.Context, in *ListLiveEventsRequest, opts ...grpc.CallOption) (*ListLiveEventsResponse, error)
 	GetLiveEvent(ctx context.Context, in *GetLiveEventRequest, opts ...grpc.CallOption) (*GetLiveEventResponse, error)
 	RsvpLiveEvent(ctx context.Context, in *RsvpLiveEventRequest, opts ...grpc.CallOption) (*RsvpLiveEventResponse, error)
+	GetLiveSalon(ctx context.Context, in *GetLiveSalonRequest, opts ...grpc.CallOption) (*GetLiveSalonResponse, error)
+	UpsertLiveReservation(ctx context.Context, in *UpsertLiveReservationRequest, opts ...grpc.CallOption) (*UpsertLiveReservationResponse, error)
+	InviteLiveGuest(ctx context.Context, in *InviteLiveGuestRequest, opts ...grpc.CallOption) (*InviteLiveGuestResponse, error)
+	GenerateLiveCalendarPass(ctx context.Context, in *GenerateLiveCalendarPassRequest, opts ...grpc.CallOption) (*GenerateLiveCalendarPassResponse, error)
+	JoinLiveEvent(ctx context.Context, in *JoinLiveEventRequest, opts ...grpc.CallOption) (*JoinLiveEventResponse, error)
+	ListLiveActivity(ctx context.Context, in *ListLiveActivityRequest, opts ...grpc.CallOption) (*ListLiveActivityResponse, error)
+	PostLiveMessage(ctx context.Context, in *PostLiveMessageRequest, opts ...grpc.CallOption) (*PostLiveMessageResponse, error)
+	UpvoteLiveQuestion(ctx context.Context, in *UpvoteLiveQuestionRequest, opts ...grpc.CallOption) (*UpvoteLiveQuestionResponse, error)
+	VoteLivePoll(ctx context.Context, in *VoteLivePollRequest, opts ...grpc.CallOption) (*VoteLivePollResponse, error)
+	SetLiveHandRaise(ctx context.Context, in *SetLiveHandRaiseRequest, opts ...grpc.CallOption) (*SetLiveHandRaiseResponse, error)
+	ReactLiveEvent(ctx context.Context, in *ReactLiveEventRequest, opts ...grpc.CallOption) (*ReactLiveEventResponse, error)
+	UpsertLiveNote(ctx context.Context, in *UpsertLiveNoteRequest, opts ...grpc.CallOption) (*UpsertLiveNoteResponse, error)
+	ListLiveNotes(ctx context.Context, in *ListLiveNotesRequest, opts ...grpc.CallOption) (*ListLiveNotesResponse, error)
+	DeleteLiveNote(ctx context.Context, in *DeleteLiveNoteRequest, opts ...grpc.CallOption) (*DeleteLiveNoteResponse, error)
+	GetLiveReplay(ctx context.Context, in *GetLiveReplayRequest, opts ...grpc.CallOption) (*GetLiveReplayResponse, error)
 	// P3 — posthumous archive (encrypted at rest).
 	SetPosthumousArchive(ctx context.Context, in *SetPosthumousArchiveRequest, opts ...grpc.CallOption) (*SetPosthumousArchiveResponse, error)
 	GetPosthumousArchive(ctx context.Context, in *GetPosthumousArchiveRequest, opts ...grpc.CallOption) (*GetPosthumousArchiveResponse, error)
@@ -932,6 +962,156 @@ func (c *onyxServiceClient) RsvpLiveEvent(ctx context.Context, in *RsvpLiveEvent
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetLiveSalon(ctx context.Context, in *GetLiveSalonRequest, opts ...grpc.CallOption) (*GetLiveSalonResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLiveSalonResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetLiveSalon_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertLiveReservation(ctx context.Context, in *UpsertLiveReservationRequest, opts ...grpc.CallOption) (*UpsertLiveReservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertLiveReservationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertLiveReservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) InviteLiveGuest(ctx context.Context, in *InviteLiveGuestRequest, opts ...grpc.CallOption) (*InviteLiveGuestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InviteLiveGuestResponse)
+	err := c.cc.Invoke(ctx, OnyxService_InviteLiveGuest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateLiveCalendarPass(ctx context.Context, in *GenerateLiveCalendarPassRequest, opts ...grpc.CallOption) (*GenerateLiveCalendarPassResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateLiveCalendarPassResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateLiveCalendarPass_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) JoinLiveEvent(ctx context.Context, in *JoinLiveEventRequest, opts ...grpc.CallOption) (*JoinLiveEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(JoinLiveEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_JoinLiveEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListLiveActivity(ctx context.Context, in *ListLiveActivityRequest, opts ...grpc.CallOption) (*ListLiveActivityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLiveActivityResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListLiveActivity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PostLiveMessage(ctx context.Context, in *PostLiveMessageRequest, opts ...grpc.CallOption) (*PostLiveMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostLiveMessageResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PostLiveMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpvoteLiveQuestion(ctx context.Context, in *UpvoteLiveQuestionRequest, opts ...grpc.CallOption) (*UpvoteLiveQuestionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpvoteLiveQuestionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpvoteLiveQuestion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) VoteLivePoll(ctx context.Context, in *VoteLivePollRequest, opts ...grpc.CallOption) (*VoteLivePollResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VoteLivePollResponse)
+	err := c.cc.Invoke(ctx, OnyxService_VoteLivePoll_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetLiveHandRaise(ctx context.Context, in *SetLiveHandRaiseRequest, opts ...grpc.CallOption) (*SetLiveHandRaiseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetLiveHandRaiseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetLiveHandRaise_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReactLiveEvent(ctx context.Context, in *ReactLiveEventRequest, opts ...grpc.CallOption) (*ReactLiveEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReactLiveEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReactLiveEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertLiveNote(ctx context.Context, in *UpsertLiveNoteRequest, opts ...grpc.CallOption) (*UpsertLiveNoteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertLiveNoteResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertLiveNote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListLiveNotes(ctx context.Context, in *ListLiveNotesRequest, opts ...grpc.CallOption) (*ListLiveNotesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLiveNotesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListLiveNotes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteLiveNote(ctx context.Context, in *DeleteLiveNoteRequest, opts ...grpc.CallOption) (*DeleteLiveNoteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteLiveNoteResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteLiveNote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetLiveReplay(ctx context.Context, in *GetLiveReplayRequest, opts ...grpc.CallOption) (*GetLiveReplayResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLiveReplayResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetLiveReplay_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) SetPosthumousArchive(ctx context.Context, in *SetPosthumousArchiveRequest, opts ...grpc.CallOption) (*SetPosthumousArchiveResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(SetPosthumousArchiveResponse)
@@ -1409,6 +1589,21 @@ type OnyxServiceServer interface {
 	ListLiveEvents(context.Context, *ListLiveEventsRequest) (*ListLiveEventsResponse, error)
 	GetLiveEvent(context.Context, *GetLiveEventRequest) (*GetLiveEventResponse, error)
 	RsvpLiveEvent(context.Context, *RsvpLiveEventRequest) (*RsvpLiveEventResponse, error)
+	GetLiveSalon(context.Context, *GetLiveSalonRequest) (*GetLiveSalonResponse, error)
+	UpsertLiveReservation(context.Context, *UpsertLiveReservationRequest) (*UpsertLiveReservationResponse, error)
+	InviteLiveGuest(context.Context, *InviteLiveGuestRequest) (*InviteLiveGuestResponse, error)
+	GenerateLiveCalendarPass(context.Context, *GenerateLiveCalendarPassRequest) (*GenerateLiveCalendarPassResponse, error)
+	JoinLiveEvent(context.Context, *JoinLiveEventRequest) (*JoinLiveEventResponse, error)
+	ListLiveActivity(context.Context, *ListLiveActivityRequest) (*ListLiveActivityResponse, error)
+	PostLiveMessage(context.Context, *PostLiveMessageRequest) (*PostLiveMessageResponse, error)
+	UpvoteLiveQuestion(context.Context, *UpvoteLiveQuestionRequest) (*UpvoteLiveQuestionResponse, error)
+	VoteLivePoll(context.Context, *VoteLivePollRequest) (*VoteLivePollResponse, error)
+	SetLiveHandRaise(context.Context, *SetLiveHandRaiseRequest) (*SetLiveHandRaiseResponse, error)
+	ReactLiveEvent(context.Context, *ReactLiveEventRequest) (*ReactLiveEventResponse, error)
+	UpsertLiveNote(context.Context, *UpsertLiveNoteRequest) (*UpsertLiveNoteResponse, error)
+	ListLiveNotes(context.Context, *ListLiveNotesRequest) (*ListLiveNotesResponse, error)
+	DeleteLiveNote(context.Context, *DeleteLiveNoteRequest) (*DeleteLiveNoteResponse, error)
+	GetLiveReplay(context.Context, *GetLiveReplayRequest) (*GetLiveReplayResponse, error)
 	// P3 — posthumous archive (encrypted at rest).
 	SetPosthumousArchive(context.Context, *SetPosthumousArchiveRequest) (*SetPosthumousArchiveResponse, error)
 	GetPosthumousArchive(context.Context, *GetPosthumousArchiveRequest) (*GetPosthumousArchiveResponse, error)
@@ -1665,6 +1860,51 @@ func (UnimplementedOnyxServiceServer) GetLiveEvent(context.Context, *GetLiveEven
 }
 func (UnimplementedOnyxServiceServer) RsvpLiveEvent(context.Context, *RsvpLiveEventRequest) (*RsvpLiveEventResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RsvpLiveEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetLiveSalon(context.Context, *GetLiveSalonRequest) (*GetLiveSalonResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLiveSalon not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertLiveReservation(context.Context, *UpsertLiveReservationRequest) (*UpsertLiveReservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertLiveReservation not implemented")
+}
+func (UnimplementedOnyxServiceServer) InviteLiveGuest(context.Context, *InviteLiveGuestRequest) (*InviteLiveGuestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method InviteLiveGuest not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateLiveCalendarPass(context.Context, *GenerateLiveCalendarPassRequest) (*GenerateLiveCalendarPassResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateLiveCalendarPass not implemented")
+}
+func (UnimplementedOnyxServiceServer) JoinLiveEvent(context.Context, *JoinLiveEventRequest) (*JoinLiveEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method JoinLiveEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListLiveActivity(context.Context, *ListLiveActivityRequest) (*ListLiveActivityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLiveActivity not implemented")
+}
+func (UnimplementedOnyxServiceServer) PostLiveMessage(context.Context, *PostLiveMessageRequest) (*PostLiveMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostLiveMessage not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpvoteLiveQuestion(context.Context, *UpvoteLiveQuestionRequest) (*UpvoteLiveQuestionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpvoteLiveQuestion not implemented")
+}
+func (UnimplementedOnyxServiceServer) VoteLivePoll(context.Context, *VoteLivePollRequest) (*VoteLivePollResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VoteLivePoll not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetLiveHandRaise(context.Context, *SetLiveHandRaiseRequest) (*SetLiveHandRaiseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetLiveHandRaise not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReactLiveEvent(context.Context, *ReactLiveEventRequest) (*ReactLiveEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReactLiveEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertLiveNote(context.Context, *UpsertLiveNoteRequest) (*UpsertLiveNoteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertLiveNote not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListLiveNotes(context.Context, *ListLiveNotesRequest) (*ListLiveNotesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLiveNotes not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteLiveNote(context.Context, *DeleteLiveNoteRequest) (*DeleteLiveNoteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteLiveNote not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetLiveReplay(context.Context, *GetLiveReplayRequest) (*GetLiveReplayResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLiveReplay not implemented")
 }
 func (UnimplementedOnyxServiceServer) SetPosthumousArchive(context.Context, *SetPosthumousArchiveRequest) (*SetPosthumousArchiveResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetPosthumousArchive not implemented")
@@ -2992,6 +3232,276 @@ func _OnyxService_RsvpLiveEvent_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetLiveSalon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLiveSalonRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetLiveSalon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetLiveSalon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetLiveSalon(ctx, req.(*GetLiveSalonRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertLiveReservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertLiveReservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertLiveReservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertLiveReservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertLiveReservation(ctx, req.(*UpsertLiveReservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_InviteLiveGuest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InviteLiveGuestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).InviteLiveGuest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_InviteLiveGuest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).InviteLiveGuest(ctx, req.(*InviteLiveGuestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateLiveCalendarPass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateLiveCalendarPassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateLiveCalendarPass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateLiveCalendarPass_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateLiveCalendarPass(ctx, req.(*GenerateLiveCalendarPassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_JoinLiveEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(JoinLiveEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).JoinLiveEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_JoinLiveEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).JoinLiveEvent(ctx, req.(*JoinLiveEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListLiveActivity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLiveActivityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListLiveActivity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListLiveActivity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListLiveActivity(ctx, req.(*ListLiveActivityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PostLiveMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostLiveMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PostLiveMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PostLiveMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PostLiveMessage(ctx, req.(*PostLiveMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpvoteLiveQuestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpvoteLiveQuestionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpvoteLiveQuestion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpvoteLiveQuestion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpvoteLiveQuestion(ctx, req.(*UpvoteLiveQuestionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_VoteLivePoll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VoteLivePollRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).VoteLivePoll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_VoteLivePoll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).VoteLivePoll(ctx, req.(*VoteLivePollRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetLiveHandRaise_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetLiveHandRaiseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetLiveHandRaise(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetLiveHandRaise_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetLiveHandRaise(ctx, req.(*SetLiveHandRaiseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReactLiveEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReactLiveEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReactLiveEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReactLiveEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReactLiveEvent(ctx, req.(*ReactLiveEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertLiveNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertLiveNoteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertLiveNote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertLiveNote_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertLiveNote(ctx, req.(*UpsertLiveNoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListLiveNotes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLiveNotesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListLiveNotes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListLiveNotes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListLiveNotes(ctx, req.(*ListLiveNotesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteLiveNote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteLiveNoteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteLiveNote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteLiveNote_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteLiveNote(ctx, req.(*DeleteLiveNoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetLiveReplay_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLiveReplayRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetLiveReplay(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetLiveReplay_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetLiveReplay(ctx, req.(*GetLiveReplayRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_SetPosthumousArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SetPosthumousArchiveRequest)
 	if err := dec(in); err != nil {
@@ -3964,6 +4474,66 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RsvpLiveEvent",
 			Handler:    _OnyxService_RsvpLiveEvent_Handler,
+		},
+		{
+			MethodName: "GetLiveSalon",
+			Handler:    _OnyxService_GetLiveSalon_Handler,
+		},
+		{
+			MethodName: "UpsertLiveReservation",
+			Handler:    _OnyxService_UpsertLiveReservation_Handler,
+		},
+		{
+			MethodName: "InviteLiveGuest",
+			Handler:    _OnyxService_InviteLiveGuest_Handler,
+		},
+		{
+			MethodName: "GenerateLiveCalendarPass",
+			Handler:    _OnyxService_GenerateLiveCalendarPass_Handler,
+		},
+		{
+			MethodName: "JoinLiveEvent",
+			Handler:    _OnyxService_JoinLiveEvent_Handler,
+		},
+		{
+			MethodName: "ListLiveActivity",
+			Handler:    _OnyxService_ListLiveActivity_Handler,
+		},
+		{
+			MethodName: "PostLiveMessage",
+			Handler:    _OnyxService_PostLiveMessage_Handler,
+		},
+		{
+			MethodName: "UpvoteLiveQuestion",
+			Handler:    _OnyxService_UpvoteLiveQuestion_Handler,
+		},
+		{
+			MethodName: "VoteLivePoll",
+			Handler:    _OnyxService_VoteLivePoll_Handler,
+		},
+		{
+			MethodName: "SetLiveHandRaise",
+			Handler:    _OnyxService_SetLiveHandRaise_Handler,
+		},
+		{
+			MethodName: "ReactLiveEvent",
+			Handler:    _OnyxService_ReactLiveEvent_Handler,
+		},
+		{
+			MethodName: "UpsertLiveNote",
+			Handler:    _OnyxService_UpsertLiveNote_Handler,
+		},
+		{
+			MethodName: "ListLiveNotes",
+			Handler:    _OnyxService_ListLiveNotes_Handler,
+		},
+		{
+			MethodName: "DeleteLiveNote",
+			Handler:    _OnyxService_DeleteLiveNote_Handler,
+		},
+		{
+			MethodName: "GetLiveReplay",
+			Handler:    _OnyxService_GetLiveReplay_Handler,
 		},
 		{
 			MethodName: "SetPosthumousArchive",
