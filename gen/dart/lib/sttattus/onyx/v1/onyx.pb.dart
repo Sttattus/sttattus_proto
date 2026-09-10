@@ -23411,6 +23411,12 @@ class EvidenceBrief extends $pb.GeneratedMessage {
     $1.Timestamp? generatedAt,
     $core.Iterable<EvidenceCorrection>? corrections,
     $core.int? sourceCount,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.String? roomItemId,
+    $core.String? createdByUserId,
+    $fixnum.Int64? roomAuthorizationEpoch,
+    $fixnum.Int64? membershipAccessVersion,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -23428,6 +23434,14 @@ class EvidenceBrief extends $pb.GeneratedMessage {
     if (generatedAt != null) result.generatedAt = generatedAt;
     if (corrections != null) result.corrections.addAll(corrections);
     if (sourceCount != null) result.sourceCount = sourceCount;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (roomItemId != null) result.roomItemId = roomItemId;
+    if (createdByUserId != null) result.createdByUserId = createdByUserId;
+    if (roomAuthorizationEpoch != null)
+      result.roomAuthorizationEpoch = roomAuthorizationEpoch;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
     return result;
   }
 
@@ -23463,6 +23477,12 @@ class EvidenceBrief extends $pb.GeneratedMessage {
     ..pPM<EvidenceCorrection>(13, _omitFieldNames ? '' : 'corrections',
         subBuilder: EvidenceCorrection.create)
     ..aI(14, _omitFieldNames ? '' : 'sourceCount')
+    ..aOS(15, _omitFieldNames ? '' : 'scope')
+    ..aOS(16, _omitFieldNames ? '' : 'roomId')
+    ..aOS(17, _omitFieldNames ? '' : 'roomItemId')
+    ..aOS(18, _omitFieldNames ? '' : 'createdByUserId')
+    ..aInt64(19, _omitFieldNames ? '' : 'roomAuthorizationEpoch')
+    ..aInt64(20, _omitFieldNames ? '' : 'membershipAccessVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -23601,6 +23621,60 @@ class EvidenceBrief extends $pb.GeneratedMessage {
   $core.bool hasSourceCount() => $_has(13);
   @$pb.TagNumber(14)
   void clearSourceCount() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get scope => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set scope($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasScope() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearScope() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get roomId => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set roomId($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasRoomId() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearRoomId() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get roomItemId => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set roomItemId($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasRoomItemId() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearRoomItemId() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get createdByUserId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set createdByUserId($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasCreatedByUserId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearCreatedByUserId() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $fixnum.Int64 get roomAuthorizationEpoch => $_getI64(18);
+  @$pb.TagNumber(19)
+  set roomAuthorizationEpoch($fixnum.Int64 value) => $_setInt64(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasRoomAuthorizationEpoch() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRoomAuthorizationEpoch() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(19);
+  @$pb.TagNumber(20)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasMembershipAccessVersion() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearMembershipAccessVersion() => $_clearField(20);
 }
 
 class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
@@ -23611,6 +23685,8 @@ class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? pinnedSourceIds,
     $core.Iterable<$core.String>? excludedSourceIds,
     $1.Timestamp? cutoffAt,
+    $core.String? roomId,
+    $core.String? clientMutationId,
   }) {
     final result = create();
     if (contentIds != null) result.contentIds.addAll(contentIds);
@@ -23620,6 +23696,8 @@ class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
     if (excludedSourceIds != null)
       result.excludedSourceIds.addAll(excludedSourceIds);
     if (cutoffAt != null) result.cutoffAt = cutoffAt;
+    if (roomId != null) result.roomId = roomId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
     return result;
   }
 
@@ -23644,6 +23722,8 @@ class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
     ..pPS(5, _omitFieldNames ? '' : 'excludedSourceIds')
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'cutoffAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'roomId')
+    ..aOS(8, _omitFieldNames ? '' : 'clientMutationId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -23704,6 +23784,24 @@ class CreateEvidenceBriefRequest extends $pb.GeneratedMessage {
   void clearCutoffAt() => $_clearField(6);
   @$pb.TagNumber(6)
   $1.Timestamp ensureCutoffAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get roomId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get clientMutationId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set clientMutationId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClientMutationId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClientMutationId() => $_clearField(8);
 }
 
 class CreateEvidenceBriefResponse extends $pb.GeneratedMessage {
@@ -27528,6 +27626,7 @@ class ResearchRoomThread extends $pb.GeneratedMessage {
     $1.Timestamp? resolvedAt,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
+    $core.String? decisionId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -27543,6 +27642,7 @@ class ResearchRoomThread extends $pb.GeneratedMessage {
     if (resolvedAt != null) result.resolvedAt = resolvedAt;
     if (createdAt != null) result.createdAt = createdAt;
     if (updatedAt != null) result.updatedAt = updatedAt;
+    if (decisionId != null) result.decisionId = decisionId;
     return result;
   }
 
@@ -27576,6 +27676,7 @@ class ResearchRoomThread extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(14, _omitFieldNames ? '' : 'decisionId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -27719,6 +27820,15 @@ class ResearchRoomThread extends $pb.GeneratedMessage {
   void clearUpdatedAt() => $_clearField(13);
   @$pb.TagNumber(13)
   $1.Timestamp ensureUpdatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $core.String get decisionId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set decisionId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasDecisionId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearDecisionId() => $_clearField(14);
 }
 
 class ResearchRoomComment extends $pb.GeneratedMessage {
@@ -28767,6 +28877,7 @@ class ResearchRoomExport extends $pb.GeneratedMessage {
     $1.Timestamp? expiresAt,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
+    $fixnum.Int64? membershipAccessVersion,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -28784,6 +28895,8 @@ class ResearchRoomExport extends $pb.GeneratedMessage {
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (createdAt != null) result.createdAt = createdAt;
     if (updatedAt != null) result.updatedAt = updatedAt;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
     return result;
   }
 
@@ -28819,6 +28932,7 @@ class ResearchRoomExport extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'updatedAt',
         subBuilder: $1.Timestamp.create)
+    ..aInt64(16, _omitFieldNames ? '' : 'membershipAccessVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -28980,6 +29094,15 @@ class ResearchRoomExport extends $pb.GeneratedMessage {
   void clearUpdatedAt() => $_clearField(15);
   @$pb.TagNumber(15)
   $1.Timestamp ensureUpdatedAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(15);
+  @$pb.TagNumber(16)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasMembershipAccessVersion() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearMembershipAccessVersion() => $_clearField(16);
 }
 
 class ResearchRoomAuditEvent extends $pb.GeneratedMessage {
@@ -29147,6 +29270,757 @@ class ResearchRoomAuditEvent extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureCreatedAt() => $_ensure(9);
+}
+
+class ResearchRoomGrant extends $pb.GeneratedMessage {
+  factory ResearchRoomGrant({
+    $core.String? id,
+    $core.String? roomId,
+    $core.String? subjectUserId,
+    $core.String? subjectName,
+    $core.String? resourceType,
+    $core.String? resourceId,
+    $core.String? passageKey,
+    $core.String? effect,
+    $core.String? role,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? revokedAt,
+    $core.String? grantedByUserId,
+    $core.String? grantedByName,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (roomId != null) result.roomId = roomId;
+    if (subjectUserId != null) result.subjectUserId = subjectUserId;
+    if (subjectName != null) result.subjectName = subjectName;
+    if (resourceType != null) result.resourceType = resourceType;
+    if (resourceId != null) result.resourceId = resourceId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (effect != null) result.effect = effect;
+    if (role != null) result.role = role;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (grantedByUserId != null) result.grantedByUserId = grantedByUserId;
+    if (grantedByName != null) result.grantedByName = grantedByName;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ResearchRoomGrant._();
+
+  factory ResearchRoomGrant.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResearchRoomGrant.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResearchRoomGrant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'roomId')
+    ..aOS(3, _omitFieldNames ? '' : 'subjectUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'subjectName')
+    ..aOS(5, _omitFieldNames ? '' : 'resourceType')
+    ..aOS(6, _omitFieldNames ? '' : 'resourceId')
+    ..aOS(7, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(8, _omitFieldNames ? '' : 'effect')
+    ..aOS(9, _omitFieldNames ? '' : 'role')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(12, _omitFieldNames ? '' : 'grantedByUserId')
+    ..aOS(13, _omitFieldNames ? '' : 'grantedByName')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomGrant clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomGrant copyWith(void Function(ResearchRoomGrant) updates) =>
+      super.copyWith((message) => updates(message as ResearchRoomGrant))
+          as ResearchRoomGrant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomGrant create() => ResearchRoomGrant._();
+  @$core.override
+  ResearchRoomGrant createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomGrant getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResearchRoomGrant>(create);
+  static ResearchRoomGrant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get roomId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set roomId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoomId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get subjectUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set subjectUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSubjectUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSubjectUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get subjectName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set subjectName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSubjectName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSubjectName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get resourceType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set resourceType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasResourceType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearResourceType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get resourceId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set resourceId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasResourceId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResourceId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get passageKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set passageKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPassageKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPassageKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get effect => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set effect($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEffect() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEffect() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get role => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set role($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRole() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRole() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get expiresAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set expiresAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExpiresAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExpiresAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureExpiresAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get revokedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set revokedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRevokedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRevokedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureRevokedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.String get grantedByUserId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set grantedByUserId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasGrantedByUserId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearGrantedByUserId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get grantedByName => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set grantedByName($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasGrantedByName() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearGrantedByName() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get createdAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set createdAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureCreatedAt() => $_ensure(13);
+}
+
+class ResearchRoomShareLink extends $pb.GeneratedMessage {
+  factory ResearchRoomShareLink({
+    $core.String? id,
+    $core.String? roomId,
+    $core.String? itemId,
+    $core.String? recipientUserId,
+    $core.String? recipientName,
+    $core.String? status,
+    $core.bool? allowDownload,
+    $core.String? watermark,
+    $fixnum.Int64? membershipAccessVersion,
+    $fixnum.Int64? roomAuthorizationEpoch,
+    $fixnum.Int64? accessCount,
+    $1.Timestamp? lastAccessedAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? revokedAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (roomId != null) result.roomId = roomId;
+    if (itemId != null) result.itemId = itemId;
+    if (recipientUserId != null) result.recipientUserId = recipientUserId;
+    if (recipientName != null) result.recipientName = recipientName;
+    if (status != null) result.status = status;
+    if (allowDownload != null) result.allowDownload = allowDownload;
+    if (watermark != null) result.watermark = watermark;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
+    if (roomAuthorizationEpoch != null)
+      result.roomAuthorizationEpoch = roomAuthorizationEpoch;
+    if (accessCount != null) result.accessCount = accessCount;
+    if (lastAccessedAt != null) result.lastAccessedAt = lastAccessedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ResearchRoomShareLink._();
+
+  factory ResearchRoomShareLink.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResearchRoomShareLink.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResearchRoomShareLink',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'roomId')
+    ..aOS(3, _omitFieldNames ? '' : 'itemId')
+    ..aOS(4, _omitFieldNames ? '' : 'recipientUserId')
+    ..aOS(5, _omitFieldNames ? '' : 'recipientName')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOB(7, _omitFieldNames ? '' : 'allowDownload')
+    ..aOS(8, _omitFieldNames ? '' : 'watermark')
+    ..aInt64(9, _omitFieldNames ? '' : 'membershipAccessVersion')
+    ..aInt64(10, _omitFieldNames ? '' : 'roomAuthorizationEpoch')
+    ..aInt64(11, _omitFieldNames ? '' : 'accessCount')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'lastAccessedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomShareLink clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomShareLink copyWith(
+          void Function(ResearchRoomShareLink) updates) =>
+      super.copyWith((message) => updates(message as ResearchRoomShareLink))
+          as ResearchRoomShareLink;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomShareLink create() => ResearchRoomShareLink._();
+  @$core.override
+  ResearchRoomShareLink createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomShareLink getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResearchRoomShareLink>(create);
+  static ResearchRoomShareLink? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get roomId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set roomId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoomId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get itemId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set itemId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasItemId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearItemId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientUserId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientUserId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientUserId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get recipientName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set recipientName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRecipientName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRecipientName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get allowDownload => $_getBF(6);
+  @$pb.TagNumber(7)
+  set allowDownload($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAllowDownload() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowDownload() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get watermark => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set watermark($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWatermark() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWatermark() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(8);
+  @$pb.TagNumber(9)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMembershipAccessVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMembershipAccessVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get roomAuthorizationEpoch => $_getI64(9);
+  @$pb.TagNumber(10)
+  set roomAuthorizationEpoch($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRoomAuthorizationEpoch() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRoomAuthorizationEpoch() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get accessCount => $_getI64(10);
+  @$pb.TagNumber(11)
+  set accessCount($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasAccessCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAccessCount() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get lastAccessedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set lastAccessedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLastAccessedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLastAccessedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureLastAccessedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get expiresAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set expiresAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasExpiresAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearExpiresAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureExpiresAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get revokedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set revokedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRevokedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRevokedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureRevokedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get createdAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set createdAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCreatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCreatedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureCreatedAt() => $_ensure(14);
+}
+
+class ResearchRoomOfflineManifest extends $pb.GeneratedMessage {
+  factory ResearchRoomOfflineManifest({
+    $core.String? roomId,
+    $core.String? deviceId,
+    $core.Iterable<OnyxContent>? items,
+    $core.Iterable<EncryptedRendition>? encryptedRenditions,
+    $core.Iterable<$core.String>? purgeContentIds,
+    $core.String? purgeChallenge,
+    $core.String? watermarkPolicy,
+    $fixnum.Int64? membershipAccessVersion,
+    $fixnum.Int64? roomAuthorizationEpoch,
+    $1.Timestamp? grantExpiresAt,
+    $core.bool? requiresPurge,
+    $core.String? manifestId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (items != null) result.items.addAll(items);
+    if (encryptedRenditions != null)
+      result.encryptedRenditions.addAll(encryptedRenditions);
+    if (purgeContentIds != null) result.purgeContentIds.addAll(purgeContentIds);
+    if (purgeChallenge != null) result.purgeChallenge = purgeChallenge;
+    if (watermarkPolicy != null) result.watermarkPolicy = watermarkPolicy;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
+    if (roomAuthorizationEpoch != null)
+      result.roomAuthorizationEpoch = roomAuthorizationEpoch;
+    if (grantExpiresAt != null) result.grantExpiresAt = grantExpiresAt;
+    if (requiresPurge != null) result.requiresPurge = requiresPurge;
+    if (manifestId != null) result.manifestId = manifestId;
+    return result;
+  }
+
+  ResearchRoomOfflineManifest._();
+
+  factory ResearchRoomOfflineManifest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResearchRoomOfflineManifest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResearchRoomOfflineManifest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..pPM<OnyxContent>(3, _omitFieldNames ? '' : 'items',
+        subBuilder: OnyxContent.create)
+    ..pPM<EncryptedRendition>(4, _omitFieldNames ? '' : 'encryptedRenditions',
+        subBuilder: EncryptedRendition.create)
+    ..pPS(5, _omitFieldNames ? '' : 'purgeContentIds')
+    ..aOS(6, _omitFieldNames ? '' : 'purgeChallenge')
+    ..aOS(7, _omitFieldNames ? '' : 'watermarkPolicy')
+    ..aInt64(8, _omitFieldNames ? '' : 'membershipAccessVersion')
+    ..aInt64(9, _omitFieldNames ? '' : 'roomAuthorizationEpoch')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'grantExpiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOB(11, _omitFieldNames ? '' : 'requiresPurge')
+    ..aOS(12, _omitFieldNames ? '' : 'manifestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomOfflineManifest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomOfflineManifest copyWith(
+          void Function(ResearchRoomOfflineManifest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ResearchRoomOfflineManifest))
+          as ResearchRoomOfflineManifest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomOfflineManifest create() =>
+      ResearchRoomOfflineManifest._();
+  @$core.override
+  ResearchRoomOfflineManifest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomOfflineManifest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResearchRoomOfflineManifest>(create);
+  static ResearchRoomOfflineManifest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxContent> get items => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<EncryptedRendition> get encryptedRenditions => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get purgeContentIds => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get purgeChallenge => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set purgeChallenge($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPurgeChallenge() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPurgeChallenge() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get watermarkPolicy => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set watermarkPolicy($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWatermarkPolicy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWatermarkPolicy() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(7);
+  @$pb.TagNumber(8)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMembershipAccessVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMembershipAccessVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get roomAuthorizationEpoch => $_getI64(8);
+  @$pb.TagNumber(9)
+  set roomAuthorizationEpoch($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRoomAuthorizationEpoch() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRoomAuthorizationEpoch() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get grantExpiresAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set grantExpiresAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasGrantExpiresAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearGrantExpiresAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureGrantExpiresAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $core.bool get requiresPurge => $_getBF(10);
+  @$pb.TagNumber(11)
+  set requiresPurge($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRequiresPurge() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRequiresPurge() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get manifestId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set manifestId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasManifestId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearManifestId() => $_clearField(12);
+}
+
+class ResearchRoomPurgeReceipt extends $pb.GeneratedMessage {
+  factory ResearchRoomPurgeReceipt({
+    $core.String? id,
+    $core.String? roomId,
+    $core.String? deviceId,
+    $core.Iterable<$core.String>? contentIds,
+    $1.Timestamp? createdAt,
+    $core.String? manifestId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (roomId != null) result.roomId = roomId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    if (createdAt != null) result.createdAt = createdAt;
+    if (manifestId != null) result.manifestId = manifestId;
+    return result;
+  }
+
+  ResearchRoomPurgeReceipt._();
+
+  factory ResearchRoomPurgeReceipt.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResearchRoomPurgeReceipt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResearchRoomPurgeReceipt',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'roomId')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceId')
+    ..pPS(4, _omitFieldNames ? '' : 'contentIds')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'manifestId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomPurgeReceipt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResearchRoomPurgeReceipt copyWith(
+          void Function(ResearchRoomPurgeReceipt) updates) =>
+      super.copyWith((message) => updates(message as ResearchRoomPurgeReceipt))
+          as ResearchRoomPurgeReceipt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomPurgeReceipt create() => ResearchRoomPurgeReceipt._();
+  @$core.override
+  ResearchRoomPurgeReceipt createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResearchRoomPurgeReceipt getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResearchRoomPurgeReceipt>(create);
+  static ResearchRoomPurgeReceipt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get roomId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set roomId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoomId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get contentIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureCreatedAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get manifestId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set manifestId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasManifestId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearManifestId() => $_clearField(6);
 }
 
 class ResearchRoomDetail extends $pb.GeneratedMessage {
@@ -30910,6 +31784,7 @@ class PostResearchRoomCommentRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? mentionUserIds,
     $core.String? visibility,
     $core.String? clientMutationId,
+    $core.String? decisionId,
   }) {
     final result = create();
     if (roomId != null) result.roomId = roomId;
@@ -30924,6 +31799,7 @@ class PostResearchRoomCommentRequest extends $pb.GeneratedMessage {
     if (mentionUserIds != null) result.mentionUserIds.addAll(mentionUserIds);
     if (visibility != null) result.visibility = visibility;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (decisionId != null) result.decisionId = decisionId;
     return result;
   }
 
@@ -30953,6 +31829,7 @@ class PostResearchRoomCommentRequest extends $pb.GeneratedMessage {
     ..pPS(10, _omitFieldNames ? '' : 'mentionUserIds')
     ..aOS(11, _omitFieldNames ? '' : 'visibility')
     ..aOS(12, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(13, _omitFieldNames ? '' : 'decisionId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -31078,6 +31955,15 @@ class PostResearchRoomCommentRequest extends $pb.GeneratedMessage {
   $core.bool hasClientMutationId() => $_has(11);
   @$pb.TagNumber(12)
   void clearClientMutationId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get decisionId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set decisionId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasDecisionId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearDecisionId() => $_clearField(13);
 }
 
 class PostResearchRoomCommentResponse extends $pb.GeneratedMessage {
@@ -32303,6 +33189,11 @@ class SearchResearchRoomResult extends $pb.GeneratedMessage {
     $core.String? snippet,
     $core.String? itemId,
     $core.String? passageKey,
+    $core.String? contentId,
+    $core.String? sourceId,
+    $core.String? revisionId,
+    $fixnum.Int64? roomAuthorizationEpoch,
+    $fixnum.Int64? membershipAccessVersion,
   }) {
     final result = create();
     if (objectType != null) result.objectType = objectType;
@@ -32311,6 +33202,13 @@ class SearchResearchRoomResult extends $pb.GeneratedMessage {
     if (snippet != null) result.snippet = snippet;
     if (itemId != null) result.itemId = itemId;
     if (passageKey != null) result.passageKey = passageKey;
+    if (contentId != null) result.contentId = contentId;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (roomAuthorizationEpoch != null)
+      result.roomAuthorizationEpoch = roomAuthorizationEpoch;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
     return result;
   }
 
@@ -32334,6 +33232,11 @@ class SearchResearchRoomResult extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'snippet')
     ..aOS(5, _omitFieldNames ? '' : 'itemId')
     ..aOS(6, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(7, _omitFieldNames ? '' : 'contentId')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(9, _omitFieldNames ? '' : 'revisionId')
+    ..aInt64(10, _omitFieldNames ? '' : 'roomAuthorizationEpoch')
+    ..aInt64(11, _omitFieldNames ? '' : 'membershipAccessVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -32409,6 +33312,51 @@ class SearchResearchRoomResult extends $pb.GeneratedMessage {
   $core.bool hasPassageKey() => $_has(5);
   @$pb.TagNumber(6)
   void clearPassageKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get contentId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set contentId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasContentId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearContentId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get revisionId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set revisionId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRevisionId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRevisionId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get roomAuthorizationEpoch => $_getI64(9);
+  @$pb.TagNumber(10)
+  set roomAuthorizationEpoch($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRoomAuthorizationEpoch() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRoomAuthorizationEpoch() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(10);
+  @$pb.TagNumber(11)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasMembershipAccessVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMembershipAccessVersion() => $_clearField(11);
 }
 
 class SearchResearchRoomResponse extends $pb.GeneratedMessage {
@@ -32920,6 +33868,1695 @@ class ListResearchRoomAuditResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<ResearchRoomAuditEvent> get events => $_getList(0);
+}
+
+class ListResearchRoomGrantsRequest extends $pb.GeneratedMessage {
+  factory ListResearchRoomGrantsRequest({
+    $core.String? roomId,
+    $core.String? resourceType,
+    $core.String? resourceId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (resourceType != null) result.resourceType = resourceType;
+    if (resourceId != null) result.resourceId = resourceId;
+    return result;
+  }
+
+  ListResearchRoomGrantsRequest._();
+
+  factory ListResearchRoomGrantsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomGrantsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomGrantsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'resourceType')
+    ..aOS(3, _omitFieldNames ? '' : 'resourceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomGrantsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomGrantsRequest copyWith(
+          void Function(ListResearchRoomGrantsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListResearchRoomGrantsRequest))
+          as ListResearchRoomGrantsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomGrantsRequest create() =>
+      ListResearchRoomGrantsRequest._();
+  @$core.override
+  ListResearchRoomGrantsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomGrantsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListResearchRoomGrantsRequest>(create);
+  static ListResearchRoomGrantsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resourceType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resourceType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasResourceType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResourceType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resourceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resourceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResourceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResourceId() => $_clearField(3);
+}
+
+class ListResearchRoomGrantsResponse extends $pb.GeneratedMessage {
+  factory ListResearchRoomGrantsResponse({
+    $core.Iterable<ResearchRoomGrant>? grants,
+  }) {
+    final result = create();
+    if (grants != null) result.grants.addAll(grants);
+    return result;
+  }
+
+  ListResearchRoomGrantsResponse._();
+
+  factory ListResearchRoomGrantsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomGrantsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomGrantsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ResearchRoomGrant>(1, _omitFieldNames ? '' : 'grants',
+        subBuilder: ResearchRoomGrant.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomGrantsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomGrantsResponse copyWith(
+          void Function(ListResearchRoomGrantsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListResearchRoomGrantsResponse))
+          as ListResearchRoomGrantsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomGrantsResponse create() =>
+      ListResearchRoomGrantsResponse._();
+  @$core.override
+  ListResearchRoomGrantsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomGrantsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListResearchRoomGrantsResponse>(create);
+  static ListResearchRoomGrantsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ResearchRoomGrant> get grants => $_getList(0);
+}
+
+class UpsertResearchRoomGrantRequest extends $pb.GeneratedMessage {
+  factory UpsertResearchRoomGrantRequest({
+    $core.String? roomId,
+    $core.String? subjectUserId,
+    $core.String? resourceType,
+    $core.String? resourceId,
+    $core.String? passageKey,
+    $core.String? effect,
+    $core.String? role,
+    $1.Timestamp? expiresAt,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (subjectUserId != null) result.subjectUserId = subjectUserId;
+    if (resourceType != null) result.resourceType = resourceType;
+    if (resourceId != null) result.resourceId = resourceId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (effect != null) result.effect = effect;
+    if (role != null) result.role = role;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertResearchRoomGrantRequest._();
+
+  factory UpsertResearchRoomGrantRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertResearchRoomGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertResearchRoomGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'subjectUserId')
+    ..aOS(3, _omitFieldNames ? '' : 'resourceType')
+    ..aOS(4, _omitFieldNames ? '' : 'resourceId')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(6, _omitFieldNames ? '' : 'effect')
+    ..aOS(7, _omitFieldNames ? '' : 'role')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(9, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResearchRoomGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResearchRoomGrantRequest copyWith(
+          void Function(UpsertResearchRoomGrantRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertResearchRoomGrantRequest))
+          as UpsertResearchRoomGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertResearchRoomGrantRequest create() =>
+      UpsertResearchRoomGrantRequest._();
+  @$core.override
+  UpsertResearchRoomGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertResearchRoomGrantRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertResearchRoomGrantRequest>(create);
+  static UpsertResearchRoomGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get subjectUserId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set subjectUserId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSubjectUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSubjectUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resourceType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resourceType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResourceType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResourceType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resourceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resourceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResourceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get effect => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set effect($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEffect() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEffect() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get role => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set role($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRole() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRole() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get expiresAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set expiresAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExpiresAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExpiresAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureExpiresAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get clientMutationId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clientMutationId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasClientMutationId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClientMutationId() => $_clearField(9);
+}
+
+class UpsertResearchRoomGrantResponse extends $pb.GeneratedMessage {
+  factory UpsertResearchRoomGrantResponse({
+    ResearchRoomGrant? grant,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    return result;
+  }
+
+  UpsertResearchRoomGrantResponse._();
+
+  factory UpsertResearchRoomGrantResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertResearchRoomGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertResearchRoomGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResearchRoomGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: ResearchRoomGrant.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResearchRoomGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResearchRoomGrantResponse copyWith(
+          void Function(UpsertResearchRoomGrantResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertResearchRoomGrantResponse))
+          as UpsertResearchRoomGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertResearchRoomGrantResponse create() =>
+      UpsertResearchRoomGrantResponse._();
+  @$core.override
+  UpsertResearchRoomGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertResearchRoomGrantResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertResearchRoomGrantResponse>(
+          create);
+  static UpsertResearchRoomGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResearchRoomGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(ResearchRoomGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResearchRoomGrant ensureGrant() => $_ensure(0);
+}
+
+class RevokeResearchRoomGrantRequest extends $pb.GeneratedMessage {
+  factory RevokeResearchRoomGrantRequest({
+    $core.String? roomId,
+    $core.String? grantId,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (grantId != null) result.grantId = grantId;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeResearchRoomGrantRequest._();
+
+  factory RevokeResearchRoomGrantRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeResearchRoomGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeResearchRoomGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomGrantRequest copyWith(
+          void Function(RevokeResearchRoomGrantRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeResearchRoomGrantRequest))
+          as RevokeResearchRoomGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomGrantRequest create() =>
+      RevokeResearchRoomGrantRequest._();
+  @$core.override
+  RevokeResearchRoomGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomGrantRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeResearchRoomGrantRequest>(create);
+  static RevokeResearchRoomGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RevokeResearchRoomGrantResponse extends $pb.GeneratedMessage {
+  factory RevokeResearchRoomGrantResponse({
+    $fixnum.Int64? roomAuthorizationEpoch,
+  }) {
+    final result = create();
+    if (roomAuthorizationEpoch != null)
+      result.roomAuthorizationEpoch = roomAuthorizationEpoch;
+    return result;
+  }
+
+  RevokeResearchRoomGrantResponse._();
+
+  factory RevokeResearchRoomGrantResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeResearchRoomGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeResearchRoomGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'roomAuthorizationEpoch')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomGrantResponse copyWith(
+          void Function(RevokeResearchRoomGrantResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeResearchRoomGrantResponse))
+          as RevokeResearchRoomGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomGrantResponse create() =>
+      RevokeResearchRoomGrantResponse._();
+  @$core.override
+  RevokeResearchRoomGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomGrantResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeResearchRoomGrantResponse>(
+          create);
+  static RevokeResearchRoomGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get roomAuthorizationEpoch => $_getI64(0);
+  @$pb.TagNumber(1)
+  set roomAuthorizationEpoch($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomAuthorizationEpoch() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomAuthorizationEpoch() => $_clearField(1);
+}
+
+class CreateResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
+  factory CreateResearchRoomShareLinkRequest({
+    $core.String? roomId,
+    $core.String? itemId,
+    $core.String? recipientUserId,
+    $core.bool? allowDownload,
+    $1.Timestamp? expiresAt,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (itemId != null) result.itemId = itemId;
+    if (recipientUserId != null) result.recipientUserId = recipientUserId;
+    if (allowDownload != null) result.allowDownload = allowDownload;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateResearchRoomShareLinkRequest._();
+
+  factory CreateResearchRoomShareLinkRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateResearchRoomShareLinkRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateResearchRoomShareLinkRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'itemId')
+    ..aOS(3, _omitFieldNames ? '' : 'recipientUserId')
+    ..aOB(4, _omitFieldNames ? '' : 'allowDownload')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateResearchRoomShareLinkRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateResearchRoomShareLinkRequest copyWith(
+          void Function(CreateResearchRoomShareLinkRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateResearchRoomShareLinkRequest))
+          as CreateResearchRoomShareLinkRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateResearchRoomShareLinkRequest create() =>
+      CreateResearchRoomShareLinkRequest._();
+  @$core.override
+  CreateResearchRoomShareLinkRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateResearchRoomShareLinkRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateResearchRoomShareLinkRequest>(
+          create);
+  static CreateResearchRoomShareLinkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get recipientUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set recipientUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRecipientUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRecipientUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get allowDownload => $_getBF(3);
+  @$pb.TagNumber(4)
+  set allowDownload($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAllowDownload() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAllowDownload() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expiresAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set expiresAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpiresAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpiresAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpiresAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class CreateResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
+  factory CreateResearchRoomShareLinkResponse({
+    ResearchRoomShareLink? shareLink,
+    $core.String? token,
+  }) {
+    final result = create();
+    if (shareLink != null) result.shareLink = shareLink;
+    if (token != null) result.token = token;
+    return result;
+  }
+
+  CreateResearchRoomShareLinkResponse._();
+
+  factory CreateResearchRoomShareLinkResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateResearchRoomShareLinkResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateResearchRoomShareLinkResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResearchRoomShareLink>(1, _omitFieldNames ? '' : 'shareLink',
+        subBuilder: ResearchRoomShareLink.create)
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateResearchRoomShareLinkResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateResearchRoomShareLinkResponse copyWith(
+          void Function(CreateResearchRoomShareLinkResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateResearchRoomShareLinkResponse))
+          as CreateResearchRoomShareLinkResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateResearchRoomShareLinkResponse create() =>
+      CreateResearchRoomShareLinkResponse._();
+  @$core.override
+  CreateResearchRoomShareLinkResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateResearchRoomShareLinkResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateResearchRoomShareLinkResponse>(create);
+  static CreateResearchRoomShareLinkResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResearchRoomShareLink get shareLink => $_getN(0);
+  @$pb.TagNumber(1)
+  set shareLink(ResearchRoomShareLink value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShareLink() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShareLink() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResearchRoomShareLink ensureShareLink() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => $_clearField(2);
+}
+
+class ListResearchRoomShareLinksRequest extends $pb.GeneratedMessage {
+  factory ListResearchRoomShareLinksRequest({
+    $core.String? roomId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    return result;
+  }
+
+  ListResearchRoomShareLinksRequest._();
+
+  factory ListResearchRoomShareLinksRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomShareLinksRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomShareLinksRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomShareLinksRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomShareLinksRequest copyWith(
+          void Function(ListResearchRoomShareLinksRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListResearchRoomShareLinksRequest))
+          as ListResearchRoomShareLinksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomShareLinksRequest create() =>
+      ListResearchRoomShareLinksRequest._();
+  @$core.override
+  ListResearchRoomShareLinksRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomShareLinksRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListResearchRoomShareLinksRequest>(
+          create);
+  static ListResearchRoomShareLinksRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+}
+
+class ListResearchRoomShareLinksResponse extends $pb.GeneratedMessage {
+  factory ListResearchRoomShareLinksResponse({
+    $core.Iterable<ResearchRoomShareLink>? shareLinks,
+  }) {
+    final result = create();
+    if (shareLinks != null) result.shareLinks.addAll(shareLinks);
+    return result;
+  }
+
+  ListResearchRoomShareLinksResponse._();
+
+  factory ListResearchRoomShareLinksResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomShareLinksResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomShareLinksResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ResearchRoomShareLink>(1, _omitFieldNames ? '' : 'shareLinks',
+        subBuilder: ResearchRoomShareLink.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomShareLinksResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomShareLinksResponse copyWith(
+          void Function(ListResearchRoomShareLinksResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListResearchRoomShareLinksResponse))
+          as ListResearchRoomShareLinksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomShareLinksResponse create() =>
+      ListResearchRoomShareLinksResponse._();
+  @$core.override
+  ListResearchRoomShareLinksResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomShareLinksResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListResearchRoomShareLinksResponse>(
+          create);
+  static ListResearchRoomShareLinksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ResearchRoomShareLink> get shareLinks => $_getList(0);
+}
+
+class RevokeResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
+  factory RevokeResearchRoomShareLinkRequest({
+    $core.String? roomId,
+    $core.String? shareLinkId,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (shareLinkId != null) result.shareLinkId = shareLinkId;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeResearchRoomShareLinkRequest._();
+
+  factory RevokeResearchRoomShareLinkRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeResearchRoomShareLinkRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeResearchRoomShareLinkRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'shareLinkId')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomShareLinkRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomShareLinkRequest copyWith(
+          void Function(RevokeResearchRoomShareLinkRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeResearchRoomShareLinkRequest))
+          as RevokeResearchRoomShareLinkRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomShareLinkRequest create() =>
+      RevokeResearchRoomShareLinkRequest._();
+  @$core.override
+  RevokeResearchRoomShareLinkRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomShareLinkRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeResearchRoomShareLinkRequest>(
+          create);
+  static RevokeResearchRoomShareLinkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get shareLinkId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set shareLinkId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasShareLinkId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShareLinkId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RevokeResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
+  factory RevokeResearchRoomShareLinkResponse() => create();
+
+  RevokeResearchRoomShareLinkResponse._();
+
+  factory RevokeResearchRoomShareLinkResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeResearchRoomShareLinkResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeResearchRoomShareLinkResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomShareLinkResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeResearchRoomShareLinkResponse copyWith(
+          void Function(RevokeResearchRoomShareLinkResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeResearchRoomShareLinkResponse))
+          as RevokeResearchRoomShareLinkResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomShareLinkResponse create() =>
+      RevokeResearchRoomShareLinkResponse._();
+  @$core.override
+  RevokeResearchRoomShareLinkResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeResearchRoomShareLinkResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RevokeResearchRoomShareLinkResponse>(create);
+  static RevokeResearchRoomShareLinkResponse? _defaultInstance;
+}
+
+class ResolveResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
+  factory ResolveResearchRoomShareLinkRequest({
+    $core.String? token,
+  }) {
+    final result = create();
+    if (token != null) result.token = token;
+    return result;
+  }
+
+  ResolveResearchRoomShareLinkRequest._();
+
+  factory ResolveResearchRoomShareLinkRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveResearchRoomShareLinkRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveResearchRoomShareLinkRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveResearchRoomShareLinkRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveResearchRoomShareLinkRequest copyWith(
+          void Function(ResolveResearchRoomShareLinkRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveResearchRoomShareLinkRequest))
+          as ResolveResearchRoomShareLinkRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveResearchRoomShareLinkRequest create() =>
+      ResolveResearchRoomShareLinkRequest._();
+  @$core.override
+  ResolveResearchRoomShareLinkRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveResearchRoomShareLinkRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ResolveResearchRoomShareLinkRequest>(create);
+  static ResolveResearchRoomShareLinkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => $_clearField(1);
+}
+
+class ResolveResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
+  factory ResolveResearchRoomShareLinkResponse({
+    ResearchRoom? room,
+    ResearchRoomItem? item,
+    OnyxContent? content,
+    $core.bool? allowDownload,
+    $core.String? watermark,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    if (item != null) result.item = item;
+    if (content != null) result.content = content;
+    if (allowDownload != null) result.allowDownload = allowDownload;
+    if (watermark != null) result.watermark = watermark;
+    return result;
+  }
+
+  ResolveResearchRoomShareLinkResponse._();
+
+  factory ResolveResearchRoomShareLinkResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveResearchRoomShareLinkResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveResearchRoomShareLinkResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResearchRoom>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: ResearchRoom.create)
+    ..aOM<ResearchRoomItem>(2, _omitFieldNames ? '' : 'item',
+        subBuilder: ResearchRoomItem.create)
+    ..aOM<OnyxContent>(3, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aOB(4, _omitFieldNames ? '' : 'allowDownload')
+    ..aOS(5, _omitFieldNames ? '' : 'watermark')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveResearchRoomShareLinkResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveResearchRoomShareLinkResponse copyWith(
+          void Function(ResolveResearchRoomShareLinkResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveResearchRoomShareLinkResponse))
+          as ResolveResearchRoomShareLinkResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveResearchRoomShareLinkResponse create() =>
+      ResolveResearchRoomShareLinkResponse._();
+  @$core.override
+  ResolveResearchRoomShareLinkResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveResearchRoomShareLinkResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ResolveResearchRoomShareLinkResponse>(create);
+  static ResolveResearchRoomShareLinkResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResearchRoom get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(ResearchRoom value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResearchRoom ensureRoom() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  ResearchRoomItem get item => $_getN(1);
+  @$pb.TagNumber(2)
+  set item(ResearchRoomItem value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItem() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItem() => $_clearField(2);
+  @$pb.TagNumber(2)
+  ResearchRoomItem ensureItem() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  OnyxContent get content => $_getN(2);
+  @$pb.TagNumber(3)
+  set content(OnyxContent value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContent() => $_clearField(3);
+  @$pb.TagNumber(3)
+  OnyxContent ensureContent() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.bool get allowDownload => $_getBF(3);
+  @$pb.TagNumber(4)
+  set allowDownload($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAllowDownload() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAllowDownload() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get watermark => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set watermark($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWatermark() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWatermark() => $_clearField(5);
+}
+
+class GetResearchRoomOfflineManifestRequest extends $pb.GeneratedMessage {
+  factory GetResearchRoomOfflineManifestRequest({
+    $core.String? roomId,
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  GetResearchRoomOfflineManifestRequest._();
+
+  factory GetResearchRoomOfflineManifestRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetResearchRoomOfflineManifestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetResearchRoomOfflineManifestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResearchRoomOfflineManifestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResearchRoomOfflineManifestRequest copyWith(
+          void Function(GetResearchRoomOfflineManifestRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetResearchRoomOfflineManifestRequest))
+          as GetResearchRoomOfflineManifestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetResearchRoomOfflineManifestRequest create() =>
+      GetResearchRoomOfflineManifestRequest._();
+  @$core.override
+  GetResearchRoomOfflineManifestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetResearchRoomOfflineManifestRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetResearchRoomOfflineManifestRequest>(create);
+  static GetResearchRoomOfflineManifestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+}
+
+class GetResearchRoomOfflineManifestResponse extends $pb.GeneratedMessage {
+  factory GetResearchRoomOfflineManifestResponse({
+    ResearchRoomOfflineManifest? manifest,
+  }) {
+    final result = create();
+    if (manifest != null) result.manifest = manifest;
+    return result;
+  }
+
+  GetResearchRoomOfflineManifestResponse._();
+
+  factory GetResearchRoomOfflineManifestResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetResearchRoomOfflineManifestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetResearchRoomOfflineManifestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResearchRoomOfflineManifest>(1, _omitFieldNames ? '' : 'manifest',
+        subBuilder: ResearchRoomOfflineManifest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResearchRoomOfflineManifestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResearchRoomOfflineManifestResponse copyWith(
+          void Function(GetResearchRoomOfflineManifestResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetResearchRoomOfflineManifestResponse))
+          as GetResearchRoomOfflineManifestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetResearchRoomOfflineManifestResponse create() =>
+      GetResearchRoomOfflineManifestResponse._();
+  @$core.override
+  GetResearchRoomOfflineManifestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetResearchRoomOfflineManifestResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetResearchRoomOfflineManifestResponse>(create);
+  static GetResearchRoomOfflineManifestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResearchRoomOfflineManifest get manifest => $_getN(0);
+  @$pb.TagNumber(1)
+  set manifest(ResearchRoomOfflineManifest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResearchRoomOfflineManifest ensureManifest() => $_ensure(0);
+}
+
+class AcknowledgeResearchRoomOfflinePurgeRequest extends $pb.GeneratedMessage {
+  factory AcknowledgeResearchRoomOfflinePurgeRequest({
+    $core.String? roomId,
+    $core.String? deviceId,
+    $core.Iterable<$core.String>? purgedContentIds,
+    $core.String? purgeChallenge,
+    $core.String? challengeSignature,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (purgedContentIds != null)
+      result.purgedContentIds.addAll(purgedContentIds);
+    if (purgeChallenge != null) result.purgeChallenge = purgeChallenge;
+    if (challengeSignature != null)
+      result.challengeSignature = challengeSignature;
+    return result;
+  }
+
+  AcknowledgeResearchRoomOfflinePurgeRequest._();
+
+  factory AcknowledgeResearchRoomOfflinePurgeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeResearchRoomOfflinePurgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeResearchRoomOfflinePurgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..pPS(3, _omitFieldNames ? '' : 'purgedContentIds')
+    ..aOS(4, _omitFieldNames ? '' : 'purgeChallenge')
+    ..aOS(5, _omitFieldNames ? '' : 'challengeSignature')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeResearchRoomOfflinePurgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeResearchRoomOfflinePurgeRequest copyWith(
+          void Function(AcknowledgeResearchRoomOfflinePurgeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcknowledgeResearchRoomOfflinePurgeRequest))
+          as AcknowledgeResearchRoomOfflinePurgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeResearchRoomOfflinePurgeRequest create() =>
+      AcknowledgeResearchRoomOfflinePurgeRequest._();
+  @$core.override
+  AcknowledgeResearchRoomOfflinePurgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeResearchRoomOfflinePurgeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeResearchRoomOfflinePurgeRequest>(create);
+  static AcknowledgeResearchRoomOfflinePurgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get purgedContentIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get purgeChallenge => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set purgeChallenge($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPurgeChallenge() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPurgeChallenge() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get challengeSignature => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set challengeSignature($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasChallengeSignature() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChallengeSignature() => $_clearField(5);
+}
+
+class AcknowledgeResearchRoomOfflinePurgeResponse extends $pb.GeneratedMessage {
+  factory AcknowledgeResearchRoomOfflinePurgeResponse({
+    ResearchRoomPurgeReceipt? receipt,
+  }) {
+    final result = create();
+    if (receipt != null) result.receipt = receipt;
+    return result;
+  }
+
+  AcknowledgeResearchRoomOfflinePurgeResponse._();
+
+  factory AcknowledgeResearchRoomOfflinePurgeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeResearchRoomOfflinePurgeResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeResearchRoomOfflinePurgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResearchRoomPurgeReceipt>(1, _omitFieldNames ? '' : 'receipt',
+        subBuilder: ResearchRoomPurgeReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeResearchRoomOfflinePurgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeResearchRoomOfflinePurgeResponse copyWith(
+          void Function(AcknowledgeResearchRoomOfflinePurgeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcknowledgeResearchRoomOfflinePurgeResponse))
+          as AcknowledgeResearchRoomOfflinePurgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeResearchRoomOfflinePurgeResponse create() =>
+      AcknowledgeResearchRoomOfflinePurgeResponse._();
+  @$core.override
+  AcknowledgeResearchRoomOfflinePurgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeResearchRoomOfflinePurgeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeResearchRoomOfflinePurgeResponse>(create);
+  static AcknowledgeResearchRoomOfflinePurgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResearchRoomPurgeReceipt get receipt => $_getN(0);
+  @$pb.TagNumber(1)
+  set receipt(ResearchRoomPurgeReceipt value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceipt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceipt() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResearchRoomPurgeReceipt ensureReceipt() => $_ensure(0);
+}
+
+class ListResearchRoomOfflinePurgesRequest extends $pb.GeneratedMessage {
+  factory ListResearchRoomOfflinePurgesRequest({
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  ListResearchRoomOfflinePurgesRequest._();
+
+  factory ListResearchRoomOfflinePurgesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomOfflinePurgesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomOfflinePurgesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomOfflinePurgesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomOfflinePurgesRequest copyWith(
+          void Function(ListResearchRoomOfflinePurgesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListResearchRoomOfflinePurgesRequest))
+          as ListResearchRoomOfflinePurgesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomOfflinePurgesRequest create() =>
+      ListResearchRoomOfflinePurgesRequest._();
+  @$core.override
+  ListResearchRoomOfflinePurgesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomOfflinePurgesRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListResearchRoomOfflinePurgesRequest>(create);
+  static ListResearchRoomOfflinePurgesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+}
+
+class ListResearchRoomOfflinePurgesResponse extends $pb.GeneratedMessage {
+  factory ListResearchRoomOfflinePurgesResponse({
+    $core.Iterable<ResearchRoomOfflineManifest>? manifests,
+  }) {
+    final result = create();
+    if (manifests != null) result.manifests.addAll(manifests);
+    return result;
+  }
+
+  ListResearchRoomOfflinePurgesResponse._();
+
+  factory ListResearchRoomOfflinePurgesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListResearchRoomOfflinePurgesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListResearchRoomOfflinePurgesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<ResearchRoomOfflineManifest>(1, _omitFieldNames ? '' : 'manifests',
+        subBuilder: ResearchRoomOfflineManifest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomOfflinePurgesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListResearchRoomOfflinePurgesResponse copyWith(
+          void Function(ListResearchRoomOfflinePurgesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListResearchRoomOfflinePurgesResponse))
+          as ListResearchRoomOfflinePurgesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomOfflinePurgesResponse create() =>
+      ListResearchRoomOfflinePurgesResponse._();
+  @$core.override
+  ListResearchRoomOfflinePurgesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListResearchRoomOfflinePurgesResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListResearchRoomOfflinePurgesResponse>(create);
+  static ListResearchRoomOfflinePurgesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ResearchRoomOfflineManifest> get manifests => $_getList(0);
+}
+
+class LeaveResearchRoomRequest extends $pb.GeneratedMessage {
+  factory LeaveResearchRoomRequest({
+    $core.String? roomId,
+    $core.String? reason,
+    $fixnum.Int64? expectedAccessVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (roomId != null) result.roomId = roomId;
+    if (reason != null) result.reason = reason;
+    if (expectedAccessVersion != null)
+      result.expectedAccessVersion = expectedAccessVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  LeaveResearchRoomRequest._();
+
+  factory LeaveResearchRoomRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LeaveResearchRoomRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LeaveResearchRoomRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedAccessVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveResearchRoomRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveResearchRoomRequest copyWith(
+          void Function(LeaveResearchRoomRequest) updates) =>
+      super.copyWith((message) => updates(message as LeaveResearchRoomRequest))
+          as LeaveResearchRoomRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LeaveResearchRoomRequest create() => LeaveResearchRoomRequest._();
+  @$core.override
+  LeaveResearchRoomRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LeaveResearchRoomRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LeaveResearchRoomRequest>(create);
+  static LeaveResearchRoomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedAccessVersion => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedAccessVersion($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedAccessVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedAccessVersion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class LeaveResearchRoomResponse extends $pb.GeneratedMessage {
+  factory LeaveResearchRoomResponse() => create();
+
+  LeaveResearchRoomResponse._();
+
+  factory LeaveResearchRoomResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LeaveResearchRoomResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LeaveResearchRoomResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveResearchRoomResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveResearchRoomResponse copyWith(
+          void Function(LeaveResearchRoomResponse) updates) =>
+      super.copyWith((message) => updates(message as LeaveResearchRoomResponse))
+          as LeaveResearchRoomResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LeaveResearchRoomResponse create() => LeaveResearchRoomResponse._();
+  @$core.override
+  LeaveResearchRoomResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LeaveResearchRoomResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LeaveResearchRoomResponse>(create);
+  static LeaveResearchRoomResponse? _defaultInstance;
 }
 
 const $core.bool _omitFieldNames =

@@ -14639,6 +14639,38 @@ export class EvidenceBrief extends Message<EvidenceBrief> {
    */
   sourceCount = 0;
 
+  /**
+   * personal | room
+   *
+   * @generated from field: string scope = 15;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 16;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string room_item_id = 17;
+   */
+  roomItemId = "";
+
+  /**
+   * @generated from field: string created_by_user_id = 18;
+   */
+  createdByUserId = "";
+
+  /**
+   * @generated from field: int64 room_authorization_epoch = 19;
+   */
+  roomAuthorizationEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 membership_access_version = 20;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
   constructor(data?: PartialMessage<EvidenceBrief>) {
     super();
     proto3.util.initPartial(data, this);
@@ -14661,6 +14693,12 @@ export class EvidenceBrief extends Message<EvidenceBrief> {
     { no: 12, name: "generated_at", kind: "message", T: Timestamp },
     { no: 13, name: "corrections", kind: "message", T: EvidenceCorrection, repeated: true },
     { no: 14, name: "source_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "room_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "created_by_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "room_authorization_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 20, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceBrief {
@@ -14714,6 +14752,16 @@ export class CreateEvidenceBriefRequest extends Message<CreateEvidenceBriefReque
    */
   cutoffAt?: Timestamp;
 
+  /**
+   * @generated from field: string room_id = 7;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 8;
+   */
+  clientMutationId = "";
+
   constructor(data?: PartialMessage<CreateEvidenceBriefRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -14728,6 +14776,8 @@ export class CreateEvidenceBriefRequest extends Message<CreateEvidenceBriefReque
     { no: 4, name: "pinned_source_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 5, name: "excluded_source_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 6, name: "cutoff_at", kind: "message", T: Timestamp },
+    { no: 7, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEvidenceBriefRequest {
@@ -17030,6 +17080,11 @@ export class ResearchRoomThread extends Message<ResearchRoomThread> {
    */
   updatedAt?: Timestamp;
 
+  /**
+   * @generated from field: string decision_id = 14;
+   */
+  decisionId = "";
+
   constructor(data?: PartialMessage<ResearchRoomThread>) {
     super();
     proto3.util.initPartial(data, this);
@@ -17051,6 +17106,7 @@ export class ResearchRoomThread extends Message<ResearchRoomThread> {
     { no: 11, name: "resolved_at", kind: "message", T: Timestamp },
     { no: 12, name: "created_at", kind: "message", T: Timestamp },
     { no: 13, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 14, name: "decision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomThread {
@@ -17720,6 +17776,11 @@ export class ResearchRoomExport extends Message<ResearchRoomExport> {
    */
   updatedAt?: Timestamp;
 
+  /**
+   * @generated from field: int64 membership_access_version = 16;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
   constructor(data?: PartialMessage<ResearchRoomExport>) {
     super();
     proto3.util.initPartial(data, this);
@@ -17743,6 +17804,7 @@ export class ResearchRoomExport extends Message<ResearchRoomExport> {
     { no: 13, name: "expires_at", kind: "message", T: Timestamp },
     { no: 14, name: "created_at", kind: "message", T: Timestamp },
     { no: 15, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 16, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomExport {
@@ -17850,6 +17912,416 @@ export class ResearchRoomAuditEvent extends Message<ResearchRoomAuditEvent> {
 
   static equals(a: ResearchRoomAuditEvent | PlainMessage<ResearchRoomAuditEvent> | undefined, b: ResearchRoomAuditEvent | PlainMessage<ResearchRoomAuditEvent> | undefined): boolean {
     return proto3.util.equals(ResearchRoomAuditEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResearchRoomGrant
+ */
+export class ResearchRoomGrant extends Message<ResearchRoomGrant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string room_id = 2;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string subject_user_id = 3;
+   */
+  subjectUserId = "";
+
+  /**
+   * @generated from field: string subject_name = 4;
+   */
+  subjectName = "";
+
+  /**
+   * @generated from field: string resource_type = 5;
+   */
+  resourceType = "";
+
+  /**
+   * @generated from field: string resource_id = 6;
+   */
+  resourceId = "";
+
+  /**
+   * @generated from field: string passage_key = 7;
+   */
+  passageKey = "";
+
+  /**
+   * allow | deny
+   *
+   * @generated from field: string effect = 8;
+   */
+  effect = "";
+
+  /**
+   * @generated from field: string role = 9;
+   */
+  role = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 10;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 11;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: string granted_by_user_id = 12;
+   */
+  grantedByUserId = "";
+
+  /**
+   * @generated from field: string granted_by_name = 13;
+   */
+  grantedByName = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 14;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ResearchRoomGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResearchRoomGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "subject_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "subject_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "resource_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "effect", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 11, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 12, name: "granted_by_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "granted_by_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomGrant {
+    return new ResearchRoomGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResearchRoomGrant {
+    return new ResearchRoomGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResearchRoomGrant {
+    return new ResearchRoomGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResearchRoomGrant | PlainMessage<ResearchRoomGrant> | undefined, b: ResearchRoomGrant | PlainMessage<ResearchRoomGrant> | undefined): boolean {
+    return proto3.util.equals(ResearchRoomGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResearchRoomShareLink
+ */
+export class ResearchRoomShareLink extends Message<ResearchRoomShareLink> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string room_id = 2;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string item_id = 3;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string recipient_user_id = 4;
+   */
+  recipientUserId = "";
+
+  /**
+   * @generated from field: string recipient_name = 5;
+   */
+  recipientName = "";
+
+  /**
+   * active | revoked | expired | stale
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: bool allow_download = 7;
+   */
+  allowDownload = false;
+
+  /**
+   * @generated from field: string watermark = 8;
+   */
+  watermark = "";
+
+  /**
+   * @generated from field: int64 membership_access_version = 9;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 room_authorization_epoch = 10;
+   */
+  roomAuthorizationEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 access_count = 11;
+   */
+  accessCount = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_accessed_at = 12;
+   */
+  lastAccessedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 13;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 14;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 15;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ResearchRoomShareLink>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResearchRoomShareLink";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "recipient_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "recipient_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "allow_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "watermark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "room_authorization_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "access_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "last_accessed_at", kind: "message", T: Timestamp },
+    { no: 13, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 14, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 15, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomShareLink {
+    return new ResearchRoomShareLink().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResearchRoomShareLink {
+    return new ResearchRoomShareLink().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResearchRoomShareLink {
+    return new ResearchRoomShareLink().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResearchRoomShareLink | PlainMessage<ResearchRoomShareLink> | undefined, b: ResearchRoomShareLink | PlainMessage<ResearchRoomShareLink> | undefined): boolean {
+    return proto3.util.equals(ResearchRoomShareLink, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResearchRoomOfflineManifest
+ */
+export class ResearchRoomOfflineManifest extends Message<ResearchRoomOfflineManifest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContent items = 3;
+   */
+  items: OnyxContent[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EncryptedRendition encrypted_renditions = 4;
+   */
+  encryptedRenditions: EncryptedRendition[] = [];
+
+  /**
+   * @generated from field: repeated string purge_content_ids = 5;
+   */
+  purgeContentIds: string[] = [];
+
+  /**
+   * @generated from field: string purge_challenge = 6;
+   */
+  purgeChallenge = "";
+
+  /**
+   * @generated from field: string watermark_policy = 7;
+   */
+  watermarkPolicy = "";
+
+  /**
+   * @generated from field: int64 membership_access_version = 8;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 room_authorization_epoch = 9;
+   */
+  roomAuthorizationEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp grant_expires_at = 10;
+   */
+  grantExpiresAt?: Timestamp;
+
+  /**
+   * @generated from field: bool requires_purge = 11;
+   */
+  requiresPurge = false;
+
+  /**
+   * @generated from field: string manifest_id = 12;
+   */
+  manifestId = "";
+
+  constructor(data?: PartialMessage<ResearchRoomOfflineManifest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResearchRoomOfflineManifest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "items", kind: "message", T: OnyxContent, repeated: true },
+    { no: 4, name: "encrypted_renditions", kind: "message", T: EncryptedRendition, repeated: true },
+    { no: 5, name: "purge_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "purge_challenge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "watermark_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "room_authorization_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "grant_expires_at", kind: "message", T: Timestamp },
+    { no: 11, name: "requires_purge", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomOfflineManifest {
+    return new ResearchRoomOfflineManifest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResearchRoomOfflineManifest {
+    return new ResearchRoomOfflineManifest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResearchRoomOfflineManifest {
+    return new ResearchRoomOfflineManifest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResearchRoomOfflineManifest | PlainMessage<ResearchRoomOfflineManifest> | undefined, b: ResearchRoomOfflineManifest | PlainMessage<ResearchRoomOfflineManifest> | undefined): boolean {
+    return proto3.util.equals(ResearchRoomOfflineManifest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResearchRoomPurgeReceipt
+ */
+export class ResearchRoomPurgeReceipt extends Message<ResearchRoomPurgeReceipt> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string room_id = 2;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string device_id = 3;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated string content_ids = 4;
+   */
+  contentIds: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 5;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: string manifest_id = 6;
+   */
+  manifestId = "";
+
+  constructor(data?: PartialMessage<ResearchRoomPurgeReceipt>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResearchRoomPurgeReceipt";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "created_at", kind: "message", T: Timestamp },
+    { no: 6, name: "manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomPurgeReceipt {
+    return new ResearchRoomPurgeReceipt().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResearchRoomPurgeReceipt {
+    return new ResearchRoomPurgeReceipt().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResearchRoomPurgeReceipt {
+    return new ResearchRoomPurgeReceipt().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResearchRoomPurgeReceipt | PlainMessage<ResearchRoomPurgeReceipt> | undefined, b: ResearchRoomPurgeReceipt | PlainMessage<ResearchRoomPurgeReceipt> | undefined): boolean {
+    return proto3.util.equals(ResearchRoomPurgeReceipt, a, b);
   }
 }
 
@@ -18970,6 +19442,11 @@ export class PostResearchRoomCommentRequest extends Message<PostResearchRoomComm
    */
   clientMutationId = "";
 
+  /**
+   * @generated from field: string decision_id = 13;
+   */
+  decisionId = "";
+
   constructor(data?: PartialMessage<PostResearchRoomCommentRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -18990,6 +19467,7 @@ export class PostResearchRoomCommentRequest extends Message<PostResearchRoomComm
     { no: 10, name: "mention_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 11, name: "visibility", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "decision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PostResearchRoomCommentRequest {
@@ -19727,6 +20205,31 @@ export class SearchResearchRoomResult extends Message<SearchResearchRoomResult> 
    */
   passageKey = "";
 
+  /**
+   * @generated from field: string content_id = 7;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string source_id = 8;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string revision_id = 9;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: int64 room_authorization_epoch = 10;
+   */
+  roomAuthorizationEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 membership_access_version = 11;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
   constructor(data?: PartialMessage<SearchResearchRoomResult>) {
     super();
     proto3.util.initPartial(data, this);
@@ -19741,6 +20244,11 @@ export class SearchResearchRoomResult extends Message<SearchResearchRoomResult> 
     { no: 4, name: "snippet", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "room_authorization_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchResearchRoomResult {
@@ -20070,6 +20578,1014 @@ export class ListResearchRoomAuditResponse extends Message<ListResearchRoomAudit
 
   static equals(a: ListResearchRoomAuditResponse | PlainMessage<ListResearchRoomAuditResponse> | undefined, b: ListResearchRoomAuditResponse | PlainMessage<ListResearchRoomAuditResponse> | undefined): boolean {
     return proto3.util.equals(ListResearchRoomAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomGrantsRequest
+ */
+export class ListResearchRoomGrantsRequest extends Message<ListResearchRoomGrantsRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string resource_type = 2;
+   */
+  resourceType = "";
+
+  /**
+   * @generated from field: string resource_id = 3;
+   */
+  resourceId = "";
+
+  constructor(data?: PartialMessage<ListResearchRoomGrantsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomGrantsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resource_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomGrantsRequest {
+    return new ListResearchRoomGrantsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomGrantsRequest {
+    return new ListResearchRoomGrantsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomGrantsRequest {
+    return new ListResearchRoomGrantsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomGrantsRequest | PlainMessage<ListResearchRoomGrantsRequest> | undefined, b: ListResearchRoomGrantsRequest | PlainMessage<ListResearchRoomGrantsRequest> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomGrantsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomGrantsResponse
+ */
+export class ListResearchRoomGrantsResponse extends Message<ListResearchRoomGrantsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ResearchRoomGrant grants = 1;
+   */
+  grants: ResearchRoomGrant[] = [];
+
+  constructor(data?: PartialMessage<ListResearchRoomGrantsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomGrantsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grants", kind: "message", T: ResearchRoomGrant, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomGrantsResponse {
+    return new ListResearchRoomGrantsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomGrantsResponse {
+    return new ListResearchRoomGrantsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomGrantsResponse {
+    return new ListResearchRoomGrantsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomGrantsResponse | PlainMessage<ListResearchRoomGrantsResponse> | undefined, b: ListResearchRoomGrantsResponse | PlainMessage<ListResearchRoomGrantsResponse> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomGrantsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+ */
+export class UpsertResearchRoomGrantRequest extends Message<UpsertResearchRoomGrantRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string subject_user_id = 2;
+   */
+  subjectUserId = "";
+
+  /**
+   * @generated from field: string resource_type = 3;
+   */
+  resourceType = "";
+
+  /**
+   * @generated from field: string resource_id = 4;
+   */
+  resourceId = "";
+
+  /**
+   * @generated from field: string passage_key = 5;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string effect = 6;
+   */
+  effect = "";
+
+  /**
+   * @generated from field: string role = 7;
+   */
+  role = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 8;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 9;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertResearchRoomGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertResearchRoomGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "subject_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "resource_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "effect", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 9, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertResearchRoomGrantRequest {
+    return new UpsertResearchRoomGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertResearchRoomGrantRequest {
+    return new UpsertResearchRoomGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertResearchRoomGrantRequest {
+    return new UpsertResearchRoomGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertResearchRoomGrantRequest | PlainMessage<UpsertResearchRoomGrantRequest> | undefined, b: UpsertResearchRoomGrantRequest | PlainMessage<UpsertResearchRoomGrantRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertResearchRoomGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+ */
+export class UpsertResearchRoomGrantResponse extends Message<UpsertResearchRoomGrantResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoomGrant grant = 1;
+   */
+  grant?: ResearchRoomGrant;
+
+  constructor(data?: PartialMessage<UpsertResearchRoomGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertResearchRoomGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: ResearchRoomGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertResearchRoomGrantResponse {
+    return new UpsertResearchRoomGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertResearchRoomGrantResponse {
+    return new UpsertResearchRoomGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertResearchRoomGrantResponse {
+    return new UpsertResearchRoomGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertResearchRoomGrantResponse | PlainMessage<UpsertResearchRoomGrantResponse> | undefined, b: UpsertResearchRoomGrantResponse | PlainMessage<UpsertResearchRoomGrantResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertResearchRoomGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+ */
+export class RevokeResearchRoomGrantRequest extends Message<RevokeResearchRoomGrantRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeResearchRoomGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeResearchRoomGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeResearchRoomGrantRequest {
+    return new RevokeResearchRoomGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeResearchRoomGrantRequest {
+    return new RevokeResearchRoomGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeResearchRoomGrantRequest {
+    return new RevokeResearchRoomGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeResearchRoomGrantRequest | PlainMessage<RevokeResearchRoomGrantRequest> | undefined, b: RevokeResearchRoomGrantRequest | PlainMessage<RevokeResearchRoomGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeResearchRoomGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+ */
+export class RevokeResearchRoomGrantResponse extends Message<RevokeResearchRoomGrantResponse> {
+  /**
+   * @generated from field: int64 room_authorization_epoch = 1;
+   */
+  roomAuthorizationEpoch = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RevokeResearchRoomGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeResearchRoomGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_authorization_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeResearchRoomGrantResponse {
+    return new RevokeResearchRoomGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeResearchRoomGrantResponse {
+    return new RevokeResearchRoomGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeResearchRoomGrantResponse {
+    return new RevokeResearchRoomGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeResearchRoomGrantResponse | PlainMessage<RevokeResearchRoomGrantResponse> | undefined, b: RevokeResearchRoomGrantResponse | PlainMessage<RevokeResearchRoomGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeResearchRoomGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+ */
+export class CreateResearchRoomShareLinkRequest extends Message<CreateResearchRoomShareLinkRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string item_id = 2;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string recipient_user_id = 3;
+   */
+  recipientUserId = "";
+
+  /**
+   * @generated from field: bool allow_download = 4;
+   */
+  allowDownload = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 5;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateResearchRoomShareLinkRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateResearchRoomShareLinkRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "recipient_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "allow_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateResearchRoomShareLinkRequest {
+    return new CreateResearchRoomShareLinkRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateResearchRoomShareLinkRequest {
+    return new CreateResearchRoomShareLinkRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateResearchRoomShareLinkRequest {
+    return new CreateResearchRoomShareLinkRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateResearchRoomShareLinkRequest | PlainMessage<CreateResearchRoomShareLinkRequest> | undefined, b: CreateResearchRoomShareLinkRequest | PlainMessage<CreateResearchRoomShareLinkRequest> | undefined): boolean {
+    return proto3.util.equals(CreateResearchRoomShareLinkRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+ */
+export class CreateResearchRoomShareLinkResponse extends Message<CreateResearchRoomShareLinkResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoomShareLink share_link = 1;
+   */
+  shareLink?: ResearchRoomShareLink;
+
+  /**
+   * returned once; only its digest is stored
+   *
+   * @generated from field: string token = 2;
+   */
+  token = "";
+
+  constructor(data?: PartialMessage<CreateResearchRoomShareLinkResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateResearchRoomShareLinkResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "share_link", kind: "message", T: ResearchRoomShareLink },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateResearchRoomShareLinkResponse {
+    return new CreateResearchRoomShareLinkResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateResearchRoomShareLinkResponse {
+    return new CreateResearchRoomShareLinkResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateResearchRoomShareLinkResponse {
+    return new CreateResearchRoomShareLinkResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateResearchRoomShareLinkResponse | PlainMessage<CreateResearchRoomShareLinkResponse> | undefined, b: CreateResearchRoomShareLinkResponse | PlainMessage<CreateResearchRoomShareLinkResponse> | undefined): boolean {
+    return proto3.util.equals(CreateResearchRoomShareLinkResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+ */
+export class ListResearchRoomShareLinksRequest extends Message<ListResearchRoomShareLinksRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  constructor(data?: PartialMessage<ListResearchRoomShareLinksRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomShareLinksRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomShareLinksRequest {
+    return new ListResearchRoomShareLinksRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomShareLinksRequest {
+    return new ListResearchRoomShareLinksRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomShareLinksRequest {
+    return new ListResearchRoomShareLinksRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomShareLinksRequest | PlainMessage<ListResearchRoomShareLinksRequest> | undefined, b: ListResearchRoomShareLinksRequest | PlainMessage<ListResearchRoomShareLinksRequest> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomShareLinksRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+ */
+export class ListResearchRoomShareLinksResponse extends Message<ListResearchRoomShareLinksResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ResearchRoomShareLink share_links = 1;
+   */
+  shareLinks: ResearchRoomShareLink[] = [];
+
+  constructor(data?: PartialMessage<ListResearchRoomShareLinksResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomShareLinksResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "share_links", kind: "message", T: ResearchRoomShareLink, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomShareLinksResponse {
+    return new ListResearchRoomShareLinksResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomShareLinksResponse {
+    return new ListResearchRoomShareLinksResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomShareLinksResponse {
+    return new ListResearchRoomShareLinksResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomShareLinksResponse | PlainMessage<ListResearchRoomShareLinksResponse> | undefined, b: ListResearchRoomShareLinksResponse | PlainMessage<ListResearchRoomShareLinksResponse> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomShareLinksResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+ */
+export class RevokeResearchRoomShareLinkRequest extends Message<RevokeResearchRoomShareLinkRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string share_link_id = 2;
+   */
+  shareLinkId = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeResearchRoomShareLinkRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "share_link_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeResearchRoomShareLinkRequest {
+    return new RevokeResearchRoomShareLinkRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeResearchRoomShareLinkRequest {
+    return new RevokeResearchRoomShareLinkRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeResearchRoomShareLinkRequest {
+    return new RevokeResearchRoomShareLinkRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeResearchRoomShareLinkRequest | PlainMessage<RevokeResearchRoomShareLinkRequest> | undefined, b: RevokeResearchRoomShareLinkRequest | PlainMessage<RevokeResearchRoomShareLinkRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeResearchRoomShareLinkRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+ */
+export class RevokeResearchRoomShareLinkResponse extends Message<RevokeResearchRoomShareLinkResponse> {
+  constructor(data?: PartialMessage<RevokeResearchRoomShareLinkResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeResearchRoomShareLinkResponse {
+    return new RevokeResearchRoomShareLinkResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeResearchRoomShareLinkResponse {
+    return new RevokeResearchRoomShareLinkResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeResearchRoomShareLinkResponse {
+    return new RevokeResearchRoomShareLinkResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeResearchRoomShareLinkResponse | PlainMessage<RevokeResearchRoomShareLinkResponse> | undefined, b: RevokeResearchRoomShareLinkResponse | PlainMessage<RevokeResearchRoomShareLinkResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeResearchRoomShareLinkResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+ */
+export class ResolveResearchRoomShareLinkRequest extends Message<ResolveResearchRoomShareLinkRequest> {
+  /**
+   * @generated from field: string token = 1;
+   */
+  token = "";
+
+  constructor(data?: PartialMessage<ResolveResearchRoomShareLinkRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveResearchRoomShareLinkRequest {
+    return new ResolveResearchRoomShareLinkRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveResearchRoomShareLinkRequest {
+    return new ResolveResearchRoomShareLinkRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveResearchRoomShareLinkRequest {
+    return new ResolveResearchRoomShareLinkRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveResearchRoomShareLinkRequest | PlainMessage<ResolveResearchRoomShareLinkRequest> | undefined, b: ResolveResearchRoomShareLinkRequest | PlainMessage<ResolveResearchRoomShareLinkRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveResearchRoomShareLinkRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+ */
+export class ResolveResearchRoomShareLinkResponse extends Message<ResolveResearchRoomShareLinkResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoom room = 1;
+   */
+  room?: ResearchRoom;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoomItem item = 2;
+   */
+  item?: ResearchRoomItem;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 3;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: bool allow_download = 4;
+   */
+  allowDownload = false;
+
+  /**
+   * @generated from field: string watermark = 5;
+   */
+  watermark = "";
+
+  constructor(data?: PartialMessage<ResolveResearchRoomShareLinkResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: ResearchRoom },
+    { no: 2, name: "item", kind: "message", T: ResearchRoomItem },
+    { no: 3, name: "content", kind: "message", T: OnyxContent },
+    { no: 4, name: "allow_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "watermark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveResearchRoomShareLinkResponse {
+    return new ResolveResearchRoomShareLinkResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveResearchRoomShareLinkResponse {
+    return new ResolveResearchRoomShareLinkResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveResearchRoomShareLinkResponse {
+    return new ResolveResearchRoomShareLinkResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveResearchRoomShareLinkResponse | PlainMessage<ResolveResearchRoomShareLinkResponse> | undefined, b: ResolveResearchRoomShareLinkResponse | PlainMessage<ResolveResearchRoomShareLinkResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveResearchRoomShareLinkResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+ */
+export class GetResearchRoomOfflineManifestRequest extends Message<GetResearchRoomOfflineManifestRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<GetResearchRoomOfflineManifestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetResearchRoomOfflineManifestRequest {
+    return new GetResearchRoomOfflineManifestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetResearchRoomOfflineManifestRequest {
+    return new GetResearchRoomOfflineManifestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetResearchRoomOfflineManifestRequest {
+    return new GetResearchRoomOfflineManifestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetResearchRoomOfflineManifestRequest | PlainMessage<GetResearchRoomOfflineManifestRequest> | undefined, b: GetResearchRoomOfflineManifestRequest | PlainMessage<GetResearchRoomOfflineManifestRequest> | undefined): boolean {
+    return proto3.util.equals(GetResearchRoomOfflineManifestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+ */
+export class GetResearchRoomOfflineManifestResponse extends Message<GetResearchRoomOfflineManifestResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoomOfflineManifest manifest = 1;
+   */
+  manifest?: ResearchRoomOfflineManifest;
+
+  constructor(data?: PartialMessage<GetResearchRoomOfflineManifestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest", kind: "message", T: ResearchRoomOfflineManifest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetResearchRoomOfflineManifestResponse {
+    return new GetResearchRoomOfflineManifestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetResearchRoomOfflineManifestResponse {
+    return new GetResearchRoomOfflineManifestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetResearchRoomOfflineManifestResponse {
+    return new GetResearchRoomOfflineManifestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetResearchRoomOfflineManifestResponse | PlainMessage<GetResearchRoomOfflineManifestResponse> | undefined, b: GetResearchRoomOfflineManifestResponse | PlainMessage<GetResearchRoomOfflineManifestResponse> | undefined): boolean {
+    return proto3.util.equals(GetResearchRoomOfflineManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+ */
+export class AcknowledgeResearchRoomOfflinePurgeRequest extends Message<AcknowledgeResearchRoomOfflinePurgeRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: repeated string purged_content_ids = 3;
+   */
+  purgedContentIds: string[] = [];
+
+  /**
+   * @generated from field: string purge_challenge = 4;
+   */
+  purgeChallenge = "";
+
+  /**
+   * @generated from field: string challenge_signature = 5;
+   */
+  challengeSignature = "";
+
+  constructor(data?: PartialMessage<AcknowledgeResearchRoomOfflinePurgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "purged_content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "purge_challenge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "challenge_signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgeResearchRoomOfflinePurgeRequest {
+    return new AcknowledgeResearchRoomOfflinePurgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgeResearchRoomOfflinePurgeRequest {
+    return new AcknowledgeResearchRoomOfflinePurgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgeResearchRoomOfflinePurgeRequest {
+    return new AcknowledgeResearchRoomOfflinePurgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgeResearchRoomOfflinePurgeRequest | PlainMessage<AcknowledgeResearchRoomOfflinePurgeRequest> | undefined, b: AcknowledgeResearchRoomOfflinePurgeRequest | PlainMessage<AcknowledgeResearchRoomOfflinePurgeRequest> | undefined): boolean {
+    return proto3.util.equals(AcknowledgeResearchRoomOfflinePurgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+ */
+export class AcknowledgeResearchRoomOfflinePurgeResponse extends Message<AcknowledgeResearchRoomOfflinePurgeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.ResearchRoomPurgeReceipt receipt = 1;
+   */
+  receipt?: ResearchRoomPurgeReceipt;
+
+  constructor(data?: PartialMessage<AcknowledgeResearchRoomOfflinePurgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt", kind: "message", T: ResearchRoomPurgeReceipt },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgeResearchRoomOfflinePurgeResponse {
+    return new AcknowledgeResearchRoomOfflinePurgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgeResearchRoomOfflinePurgeResponse {
+    return new AcknowledgeResearchRoomOfflinePurgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgeResearchRoomOfflinePurgeResponse {
+    return new AcknowledgeResearchRoomOfflinePurgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgeResearchRoomOfflinePurgeResponse | PlainMessage<AcknowledgeResearchRoomOfflinePurgeResponse> | undefined, b: AcknowledgeResearchRoomOfflinePurgeResponse | PlainMessage<AcknowledgeResearchRoomOfflinePurgeResponse> | undefined): boolean {
+    return proto3.util.equals(AcknowledgeResearchRoomOfflinePurgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+ */
+export class ListResearchRoomOfflinePurgesRequest extends Message<ListResearchRoomOfflinePurgesRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<ListResearchRoomOfflinePurgesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomOfflinePurgesRequest {
+    return new ListResearchRoomOfflinePurgesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomOfflinePurgesRequest {
+    return new ListResearchRoomOfflinePurgesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomOfflinePurgesRequest {
+    return new ListResearchRoomOfflinePurgesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomOfflinePurgesRequest | PlainMessage<ListResearchRoomOfflinePurgesRequest> | undefined, b: ListResearchRoomOfflinePurgesRequest | PlainMessage<ListResearchRoomOfflinePurgesRequest> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomOfflinePurgesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+ */
+export class ListResearchRoomOfflinePurgesResponse extends Message<ListResearchRoomOfflinePurgesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.ResearchRoomOfflineManifest manifests = 1;
+   */
+  manifests: ResearchRoomOfflineManifest[] = [];
+
+  constructor(data?: PartialMessage<ListResearchRoomOfflinePurgesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifests", kind: "message", T: ResearchRoomOfflineManifest, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListResearchRoomOfflinePurgesResponse {
+    return new ListResearchRoomOfflinePurgesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListResearchRoomOfflinePurgesResponse {
+    return new ListResearchRoomOfflinePurgesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListResearchRoomOfflinePurgesResponse {
+    return new ListResearchRoomOfflinePurgesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListResearchRoomOfflinePurgesResponse | PlainMessage<ListResearchRoomOfflinePurgesResponse> | undefined, b: ListResearchRoomOfflinePurgesResponse | PlainMessage<ListResearchRoomOfflinePurgesResponse> | undefined): boolean {
+    return proto3.util.equals(ListResearchRoomOfflinePurgesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LeaveResearchRoomRequest
+ */
+export class LeaveResearchRoomRequest extends Message<LeaveResearchRoomRequest> {
+  /**
+   * @generated from field: string room_id = 1;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string reason = 2;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 expected_access_version = 3;
+   */
+  expectedAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<LeaveResearchRoomRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LeaveResearchRoomRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveResearchRoomRequest {
+    return new LeaveResearchRoomRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveResearchRoomRequest {
+    return new LeaveResearchRoomRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveResearchRoomRequest {
+    return new LeaveResearchRoomRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveResearchRoomRequest | PlainMessage<LeaveResearchRoomRequest> | undefined, b: LeaveResearchRoomRequest | PlainMessage<LeaveResearchRoomRequest> | undefined): boolean {
+    return proto3.util.equals(LeaveResearchRoomRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LeaveResearchRoomResponse
+ */
+export class LeaveResearchRoomResponse extends Message<LeaveResearchRoomResponse> {
+  constructor(data?: PartialMessage<LeaveResearchRoomResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LeaveResearchRoomResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveResearchRoomResponse {
+    return new LeaveResearchRoomResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveResearchRoomResponse {
+    return new LeaveResearchRoomResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveResearchRoomResponse {
+    return new LeaveResearchRoomResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveResearchRoomResponse | PlainMessage<LeaveResearchRoomResponse> | undefined, b: LeaveResearchRoomResponse | PlainMessage<LeaveResearchRoomResponse> | undefined): boolean {
+    return proto3.util.equals(LeaveResearchRoomResponse, a, b);
   }
 }
 

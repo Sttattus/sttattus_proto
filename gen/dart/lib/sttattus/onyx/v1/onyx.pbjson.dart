@@ -6407,6 +6407,30 @@ const EvidenceBrief$json = {
       '10': 'corrections'
     },
     {'1': 'source_count', '3': 14, '4': 1, '5': 5, '10': 'sourceCount'},
+    {'1': 'scope', '3': 15, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 16, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'room_item_id', '3': 17, '4': 1, '5': 9, '10': 'roomItemId'},
+    {
+      '1': 'created_by_user_id',
+      '3': 18,
+      '4': 1,
+      '5': 9,
+      '10': 'createdByUserId'
+    },
+    {
+      '1': 'room_authorization_epoch',
+      '3': 19,
+      '4': 1,
+      '5': 3,
+      '10': 'roomAuthorizationEpoch'
+    },
+    {
+      '1': 'membership_access_version',
+      '3': 20,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
   ],
 };
 
@@ -6422,7 +6446,11 @@ final $typed_data.Uint8List evidenceBriefDescriptor = $convert.base64Decode(
     '9mZkF0Ej0KDGdlbmVyYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
     'C2dlbmVyYXRlZEF0EkYKC2NvcnJlY3Rpb25zGA0gAygLMiQuc3R0YXR0dXMub255eC52MS5Fdm'
     'lkZW5jZUNvcnJlY3Rpb25SC2NvcnJlY3Rpb25zEiEKDHNvdXJjZV9jb3VudBgOIAEoBVILc291'
-    'cmNlQ291bnQ=');
+    'cmNlQ291bnQSFAoFc2NvcGUYDyABKAlSBXNjb3BlEhcKB3Jvb21faWQYECABKAlSBnJvb21JZB'
+    'IgCgxyb29tX2l0ZW1faWQYESABKAlSCnJvb21JdGVtSWQSKwoSY3JlYXRlZF9ieV91c2VyX2lk'
+    'GBIgASgJUg9jcmVhdGVkQnlVc2VySWQSOAoYcm9vbV9hdXRob3JpemF0aW9uX2Vwb2NoGBMgAS'
+    'gDUhZyb29tQXV0aG9yaXphdGlvbkVwb2NoEjoKGW1lbWJlcnNoaXBfYWNjZXNzX3ZlcnNpb24Y'
+    'FCABKANSF21lbWJlcnNoaXBBY2Nlc3NWZXJzaW9u');
 
 @$core.Deprecated('Use createEvidenceBriefRequestDescriptor instead')
 const CreateEvidenceBriefRequest$json = {
@@ -6447,6 +6475,14 @@ const CreateEvidenceBriefRequest$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'cutoffAt'
     },
+    {'1': 'room_id', '3': 7, '4': 1, '5': 9, '10': 'roomId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
   ],
 };
 
@@ -6456,7 +6492,8 @@ final $typed_data.Uint8List createEvidenceBriefRequestDescriptor = $convert.base
     'VudElkcxISCgRtb2RlGAIgASgJUgRtb2RlEhoKCHF1ZXN0aW9uGAMgASgJUghxdWVzdGlvbhIq'
     'ChFwaW5uZWRfc291cmNlX2lkcxgEIAMoCVIPcGlubmVkU291cmNlSWRzEi4KE2V4Y2x1ZGVkX3'
     'NvdXJjZV9pZHMYBSADKAlSEWV4Y2x1ZGVkU291cmNlSWRzEjcKCWN1dG9mZl9hdBgGIAEoCzIa'
-    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGN1dG9mZkF0');
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGN1dG9mZkF0EhcKB3Jvb21faWQYByABKAlSBn'
+    'Jvb21JZBIsChJjbGllbnRfbXV0YXRpb25faWQYCCABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
 
 @$core.Deprecated('Use createEvidenceBriefResponseDescriptor instead')
 const CreateEvidenceBriefResponse$json = {
@@ -7638,6 +7675,7 @@ const ResearchRoomThread$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'updatedAt'
     },
+    {'1': 'decision_id', '3': 14, '4': 1, '5': 9, '10': 'decisionId'},
   ],
 };
 
@@ -7651,7 +7689,8 @@ final $typed_data.Uint8List researchRoomThreadDescriptor = $convert.base64Decode
     '1lbnRfY291bnQYCiABKAVSDGNvbW1lbnRDb3VudBI7CgtyZXNvbHZlZF9hdBgLIAEoCzIaLmdv'
     'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnJlc29sdmVkQXQSOQoKY3JlYXRlZF9hdBgMIAEoCz'
     'IaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GA0g'
-    'ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+    'ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0Eh8KC2RlY2lzaW9uX2'
+    'lkGA4gASgJUgpkZWNpc2lvbklk');
 
 @$core.Deprecated('Use researchRoomCommentDescriptor instead')
 const ResearchRoomComment$json = {
@@ -7989,6 +8028,13 @@ const ResearchRoomExport$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'updatedAt'
     },
+    {
+      '1': 'membership_access_version',
+      '3': 16,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
   ],
 };
 
@@ -8004,7 +8050,8 @@ final $typed_data.Uint8List researchRoomExportDescriptor = $convert.base64Decode
     'Npb25fdmVyc2lvbhgMIAEoA1IRcGVybWlzc2lvblZlcnNpb24SOQoKZXhwaXJlc19hdBgNIAEo'
     'CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBI5CgpjcmVhdGVkX2F0GA'
     '4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRf'
-    'YXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+    'YXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSOgoZbWVtYm'
+    'Vyc2hpcF9hY2Nlc3NfdmVyc2lvbhgQIAEoA1IXbWVtYmVyc2hpcEFjY2Vzc1ZlcnNpb24=');
 
 @$core.Deprecated('Use researchRoomAuditEventDescriptor instead')
 const ResearchRoomAuditEvent$json = {
@@ -8045,6 +8092,238 @@ final $typed_data.Uint8List researchRoomAuditEventDescriptor = $convert.base64De
     'EhgKB3N1bW1hcnkYCCABKAlSB3N1bW1hcnkSLQoScGVybWlzc2lvbl92ZXJzaW9uGAkgASgDUh'
     'FwZXJtaXNzaW9uVmVyc2lvbhI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVm'
     'LlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use researchRoomGrantDescriptor instead')
+const ResearchRoomGrant$json = {
+  '1': 'ResearchRoomGrant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'subject_user_id', '3': 3, '4': 1, '5': 9, '10': 'subjectUserId'},
+    {'1': 'subject_name', '3': 4, '4': 1, '5': 9, '10': 'subjectName'},
+    {'1': 'resource_type', '3': 5, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_id', '3': 6, '4': 1, '5': 9, '10': 'resourceId'},
+    {'1': 'passage_key', '3': 7, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'effect', '3': 8, '4': 1, '5': 9, '10': 'effect'},
+    {'1': 'role', '3': 9, '4': 1, '5': 9, '10': 'role'},
+    {
+      '1': 'expires_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'granted_by_user_id',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'grantedByUserId'
+    },
+    {'1': 'granted_by_name', '3': 13, '4': 1, '5': 9, '10': 'grantedByName'},
+    {
+      '1': 'created_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `ResearchRoomGrant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List researchRoomGrantDescriptor = $convert.base64Decode(
+    'ChFSZXNlYXJjaFJvb21HcmFudBIOCgJpZBgBIAEoCVICaWQSFwoHcm9vbV9pZBgCIAEoCVIGcm'
+    '9vbUlkEiYKD3N1YmplY3RfdXNlcl9pZBgDIAEoCVINc3ViamVjdFVzZXJJZBIhCgxzdWJqZWN0'
+    'X25hbWUYBCABKAlSC3N1YmplY3ROYW1lEiMKDXJlc291cmNlX3R5cGUYBSABKAlSDHJlc291cm'
+    'NlVHlwZRIfCgtyZXNvdXJjZV9pZBgGIAEoCVIKcmVzb3VyY2VJZBIfCgtwYXNzYWdlX2tleRgH'
+    'IAEoCVIKcGFzc2FnZUtleRIWCgZlZmZlY3QYCCABKAlSBmVmZmVjdBISCgRyb2xlGAkgASgJUg'
+    'Ryb2xlEjkKCmV4cGlyZXNfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgll'
+    'eHBpcmVzQXQSOQoKcmV2b2tlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbX'
+    'BSCXJldm9rZWRBdBIrChJncmFudGVkX2J5X3VzZXJfaWQYDCABKAlSD2dyYW50ZWRCeVVzZXJJ'
+    'ZBImCg9ncmFudGVkX2J5X25hbWUYDSABKAlSDWdyYW50ZWRCeU5hbWUSOQoKY3JlYXRlZF9hdB'
+    'gOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use researchRoomShareLinkDescriptor instead')
+const ResearchRoomShareLink$json = {
+  '1': 'ResearchRoomShareLink',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'item_id', '3': 3, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'recipient_user_id', '3': 4, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'recipient_name', '3': 5, '4': 1, '5': 9, '10': 'recipientName'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'allow_download', '3': 7, '4': 1, '5': 8, '10': 'allowDownload'},
+    {'1': 'watermark', '3': 8, '4': 1, '5': 9, '10': 'watermark'},
+    {
+      '1': 'membership_access_version',
+      '3': 9,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
+    {
+      '1': 'room_authorization_epoch',
+      '3': 10,
+      '4': 1,
+      '5': 3,
+      '10': 'roomAuthorizationEpoch'
+    },
+    {'1': 'access_count', '3': 11, '4': 1, '5': 3, '10': 'accessCount'},
+    {
+      '1': 'last_accessed_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastAccessedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `ResearchRoomShareLink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List researchRoomShareLinkDescriptor = $convert.base64Decode(
+    'ChVSZXNlYXJjaFJvb21TaGFyZUxpbmsSDgoCaWQYASABKAlSAmlkEhcKB3Jvb21faWQYAiABKA'
+    'lSBnJvb21JZBIXCgdpdGVtX2lkGAMgASgJUgZpdGVtSWQSKgoRcmVjaXBpZW50X3VzZXJfaWQY'
+    'BCABKAlSD3JlY2lwaWVudFVzZXJJZBIlCg5yZWNpcGllbnRfbmFtZRgFIAEoCVINcmVjaXBpZW'
+    '50TmFtZRIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cxIlCg5hbGxvd19kb3dubG9hZBgHIAEoCFIN'
+    'YWxsb3dEb3dubG9hZBIcCgl3YXRlcm1hcmsYCCABKAlSCXdhdGVybWFyaxI6ChltZW1iZXJzaG'
+    'lwX2FjY2Vzc192ZXJzaW9uGAkgASgDUhdtZW1iZXJzaGlwQWNjZXNzVmVyc2lvbhI4Chhyb29t'
+    'X2F1dGhvcml6YXRpb25fZXBvY2gYCiABKANSFnJvb21BdXRob3JpemF0aW9uRXBvY2gSIQoMYW'
+    'NjZXNzX2NvdW50GAsgASgDUgthY2Nlc3NDb3VudBJEChBsYXN0X2FjY2Vzc2VkX2F0GAwgASgL'
+    'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIObGFzdEFjY2Vzc2VkQXQSOQoKZXhwaXJlc1'
+    '9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBI5CgpyZXZv'
+    'a2VkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJcmV2b2tlZEF0EjkKCm'
+    'NyZWF0ZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use researchRoomOfflineManifestDescriptor instead')
+const ResearchRoomOfflineManifest$json = {
+  '1': 'ResearchRoomOfflineManifest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'items',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'items'
+    },
+    {
+      '1': 'encrypted_renditions',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EncryptedRendition',
+      '10': 'encryptedRenditions'
+    },
+    {'1': 'purge_content_ids', '3': 5, '4': 3, '5': 9, '10': 'purgeContentIds'},
+    {'1': 'purge_challenge', '3': 6, '4': 1, '5': 9, '10': 'purgeChallenge'},
+    {'1': 'watermark_policy', '3': 7, '4': 1, '5': 9, '10': 'watermarkPolicy'},
+    {
+      '1': 'membership_access_version',
+      '3': 8,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
+    {
+      '1': 'room_authorization_epoch',
+      '3': 9,
+      '4': 1,
+      '5': 3,
+      '10': 'roomAuthorizationEpoch'
+    },
+    {
+      '1': 'grant_expires_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'grantExpiresAt'
+    },
+    {'1': 'requires_purge', '3': 11, '4': 1, '5': 8, '10': 'requiresPurge'},
+    {'1': 'manifest_id', '3': 12, '4': 1, '5': 9, '10': 'manifestId'},
+  ],
+};
+
+/// Descriptor for `ResearchRoomOfflineManifest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List researchRoomOfflineManifestDescriptor = $convert.base64Decode(
+    'ChtSZXNlYXJjaFJvb21PZmZsaW5lTWFuaWZlc3QSFwoHcm9vbV9pZBgBIAEoCVIGcm9vbUlkEh'
+    'sKCWRldmljZV9pZBgCIAEoCVIIZGV2aWNlSWQSMwoFaXRlbXMYAyADKAsyHS5zdHRhdHR1cy5v'
+    'bnl4LnYxLk9ueXhDb250ZW50UgVpdGVtcxJXChRlbmNyeXB0ZWRfcmVuZGl0aW9ucxgEIAMoCz'
+    'IkLnN0dGF0dHVzLm9ueXgudjEuRW5jcnlwdGVkUmVuZGl0aW9uUhNlbmNyeXB0ZWRSZW5kaXRp'
+    'b25zEioKEXB1cmdlX2NvbnRlbnRfaWRzGAUgAygJUg9wdXJnZUNvbnRlbnRJZHMSJwoPcHVyZ2'
+    'VfY2hhbGxlbmdlGAYgASgJUg5wdXJnZUNoYWxsZW5nZRIpChB3YXRlcm1hcmtfcG9saWN5GAcg'
+    'ASgJUg93YXRlcm1hcmtQb2xpY3kSOgoZbWVtYmVyc2hpcF9hY2Nlc3NfdmVyc2lvbhgIIAEoA1'
+    'IXbWVtYmVyc2hpcEFjY2Vzc1ZlcnNpb24SOAoYcm9vbV9hdXRob3JpemF0aW9uX2Vwb2NoGAkg'
+    'ASgDUhZyb29tQXV0aG9yaXphdGlvbkVwb2NoEkQKEGdyYW50X2V4cGlyZXNfYXQYCiABKAsyGi'
+    '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg5ncmFudEV4cGlyZXNBdBIlCg5yZXF1aXJlc19w'
+    'dXJnZRgLIAEoCFINcmVxdWlyZXNQdXJnZRIfCgttYW5pZmVzdF9pZBgMIAEoCVIKbWFuaWZlc3'
+    'RJZA==');
+
+@$core.Deprecated('Use researchRoomPurgeReceiptDescriptor instead')
+const ResearchRoomPurgeReceipt$json = {
+  '1': 'ResearchRoomPurgeReceipt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'device_id', '3': 3, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'content_ids', '3': 4, '4': 3, '5': 9, '10': 'contentIds'},
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {'1': 'manifest_id', '3': 6, '4': 1, '5': 9, '10': 'manifestId'},
+  ],
+};
+
+/// Descriptor for `ResearchRoomPurgeReceipt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List researchRoomPurgeReceiptDescriptor = $convert.base64Decode(
+    'ChhSZXNlYXJjaFJvb21QdXJnZVJlY2VpcHQSDgoCaWQYASABKAlSAmlkEhcKB3Jvb21faWQYAi'
+    'ABKAlSBnJvb21JZBIbCglkZXZpY2VfaWQYAyABKAlSCGRldmljZUlkEh8KC2NvbnRlbnRfaWRz'
+    'GAQgAygJUgpjb250ZW50SWRzEjkKCmNyZWF0ZWRfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idW'
+    'YuVGltZXN0YW1wUgljcmVhdGVkQXQSHwoLbWFuaWZlc3RfaWQYBiABKAlSCm1hbmlmZXN0SWQ=');
 
 @$core.Deprecated('Use researchRoomDetailDescriptor instead')
 const ResearchRoomDetail$json = {
@@ -8646,6 +8925,7 @@ const PostResearchRoomCommentRequest$json = {
       '5': 9,
       '10': 'clientMutationId'
     },
+    {'1': 'decision_id', '3': 13, '4': 1, '5': 9, '10': 'decisionId'},
   ],
 };
 
@@ -8658,7 +8938,8 @@ final $typed_data.Uint8List postResearchRoomCommentRequestDescriptor = $convert.
     'X2NvbW1lbnRfaWQYByABKAlSD3BhcmVudENvbW1lbnRJZBIhCgxjb21tZW50X2tpbmQYCCABKA'
     'lSC2NvbW1lbnRLaW5kEhIKBGJvZHkYCSABKAlSBGJvZHkSKAoQbWVudGlvbl91c2VyX2lkcxgK'
     'IAMoCVIObWVudGlvblVzZXJJZHMSHgoKdmlzaWJpbGl0eRgLIAEoCVIKdmlzaWJpbGl0eRIsCh'
-    'JjbGllbnRfbXV0YXRpb25faWQYDCABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+    'JjbGllbnRfbXV0YXRpb25faWQYDCABKAlSEGNsaWVudE11dGF0aW9uSWQSHwoLZGVjaXNpb25f'
+    'aWQYDSABKAlSCmRlY2lzaW9uSWQ=');
 
 @$core.Deprecated('Use postResearchRoomCommentResponseDescriptor instead')
 const PostResearchRoomCommentResponse$json = {
@@ -8995,6 +9276,23 @@ const SearchResearchRoomResult$json = {
     {'1': 'snippet', '3': 4, '4': 1, '5': 9, '10': 'snippet'},
     {'1': 'item_id', '3': 5, '4': 1, '5': 9, '10': 'itemId'},
     {'1': 'passage_key', '3': 6, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'content_id', '3': 7, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'source_id', '3': 8, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'revision_id', '3': 9, '4': 1, '5': 9, '10': 'revisionId'},
+    {
+      '1': 'room_authorization_epoch',
+      '3': 10,
+      '4': 1,
+      '5': 3,
+      '10': 'roomAuthorizationEpoch'
+    },
+    {
+      '1': 'membership_access_version',
+      '3': 11,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
   ],
 };
 
@@ -9003,7 +9301,11 @@ final $typed_data.Uint8List searchResearchRoomResultDescriptor = $convert.base64
     'ChhTZWFyY2hSZXNlYXJjaFJvb21SZXN1bHQSHwoLb2JqZWN0X3R5cGUYASABKAlSCm9iamVjdF'
     'R5cGUSGwoJb2JqZWN0X2lkGAIgASgJUghvYmplY3RJZBIUCgV0aXRsZRgDIAEoCVIFdGl0bGUS'
     'GAoHc25pcHBldBgEIAEoCVIHc25pcHBldBIXCgdpdGVtX2lkGAUgASgJUgZpdGVtSWQSHwoLcG'
-    'Fzc2FnZV9rZXkYBiABKAlSCnBhc3NhZ2VLZXk=');
+    'Fzc2FnZV9rZXkYBiABKAlSCnBhc3NhZ2VLZXkSHQoKY29udGVudF9pZBgHIAEoCVIJY29udGVu'
+    'dElkEhsKCXNvdXJjZV9pZBgIIAEoCVIIc291cmNlSWQSHwoLcmV2aXNpb25faWQYCSABKAlSCn'
+    'JldmlzaW9uSWQSOAoYcm9vbV9hdXRob3JpemF0aW9uX2Vwb2NoGAogASgDUhZyb29tQXV0aG9y'
+    'aXphdGlvbkVwb2NoEjoKGW1lbWJlcnNoaXBfYWNjZXNzX3ZlcnNpb24YCyABKANSF21lbWJlcn'
+    'NoaXBBY2Nlc3NWZXJzaW9u');
 
 @$core.Deprecated('Use searchResearchRoomResponseDescriptor instead')
 const SearchResearchRoomResponse$json = {
@@ -9147,3 +9449,500 @@ final $typed_data.Uint8List listResearchRoomAuditResponseDescriptor =
     $convert.base64Decode(
         'Ch1MaXN0UmVzZWFyY2hSb29tQXVkaXRSZXNwb25zZRJACgZldmVudHMYASADKAsyKC5zdHRhdH'
         'R1cy5vbnl4LnYxLlJlc2VhcmNoUm9vbUF1ZGl0RXZlbnRSBmV2ZW50cw==');
+
+@$core.Deprecated('Use listResearchRoomGrantsRequestDescriptor instead')
+const ListResearchRoomGrantsRequest$json = {
+  '1': 'ListResearchRoomGrantsRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'resource_type', '3': 2, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_id', '3': 3, '4': 1, '5': 9, '10': 'resourceId'},
+  ],
+};
+
+/// Descriptor for `ListResearchRoomGrantsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomGrantsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0UmVzZWFyY2hSb29tR3JhbnRzUmVxdWVzdBIXCgdyb29tX2lkGAEgASgJUgZyb29tSW'
+        'QSIwoNcmVzb3VyY2VfdHlwZRgCIAEoCVIMcmVzb3VyY2VUeXBlEh8KC3Jlc291cmNlX2lkGAMg'
+        'ASgJUgpyZXNvdXJjZUlk');
+
+@$core.Deprecated('Use listResearchRoomGrantsResponseDescriptor instead')
+const ListResearchRoomGrantsResponse$json = {
+  '1': 'ListResearchRoomGrantsResponse',
+  '2': [
+    {
+      '1': 'grants',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomGrant',
+      '10': 'grants'
+    },
+  ],
+};
+
+/// Descriptor for `ListResearchRoomGrantsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomGrantsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0UmVzZWFyY2hSb29tR3JhbnRzUmVzcG9uc2USOwoGZ3JhbnRzGAEgAygLMiMuc3R0YX'
+        'R0dXMub255eC52MS5SZXNlYXJjaFJvb21HcmFudFIGZ3JhbnRz');
+
+@$core.Deprecated('Use upsertResearchRoomGrantRequestDescriptor instead')
+const UpsertResearchRoomGrantRequest$json = {
+  '1': 'UpsertResearchRoomGrantRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'subject_user_id', '3': 2, '4': 1, '5': 9, '10': 'subjectUserId'},
+    {'1': 'resource_type', '3': 3, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_id', '3': 4, '4': 1, '5': 9, '10': 'resourceId'},
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'effect', '3': 6, '4': 1, '5': 9, '10': 'effect'},
+    {'1': 'role', '3': 7, '4': 1, '5': 9, '10': 'role'},
+    {
+      '1': 'expires_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertResearchRoomGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertResearchRoomGrantRequestDescriptor = $convert.base64Decode(
+    'Ch5VcHNlcnRSZXNlYXJjaFJvb21HcmFudFJlcXVlc3QSFwoHcm9vbV9pZBgBIAEoCVIGcm9vbU'
+    'lkEiYKD3N1YmplY3RfdXNlcl9pZBgCIAEoCVINc3ViamVjdFVzZXJJZBIjCg1yZXNvdXJjZV90'
+    'eXBlGAMgASgJUgxyZXNvdXJjZVR5cGUSHwoLcmVzb3VyY2VfaWQYBCABKAlSCnJlc291cmNlSW'
+    'QSHwoLcGFzc2FnZV9rZXkYBSABKAlSCnBhc3NhZ2VLZXkSFgoGZWZmZWN0GAYgASgJUgZlZmZl'
+    'Y3QSEgoEcm9sZRgHIAEoCVIEcm9sZRI5CgpleHBpcmVzX2F0GAggASgLMhouZ29vZ2xlLnByb3'
+    'RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgJIAEoCVIQ'
+    'Y2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use upsertResearchRoomGrantResponseDescriptor instead')
+const UpsertResearchRoomGrantResponse$json = {
+  '1': 'UpsertResearchRoomGrantResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomGrant',
+      '10': 'grant'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertResearchRoomGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertResearchRoomGrantResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9VcHNlcnRSZXNlYXJjaFJvb21HcmFudFJlc3BvbnNlEjkKBWdyYW50GAEgASgLMiMuc3R0YX'
+        'R0dXMub255eC52MS5SZXNlYXJjaFJvb21HcmFudFIFZ3JhbnQ=');
+
+@$core.Deprecated('Use revokeResearchRoomGrantRequestDescriptor instead')
+const RevokeResearchRoomGrantRequest$json = {
+  '1': 'RevokeResearchRoomGrantRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeResearchRoomGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeResearchRoomGrantRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5SZXZva2VSZXNlYXJjaFJvb21HcmFudFJlcXVlc3QSFwoHcm9vbV9pZBgBIAEoCVIGcm9vbU'
+        'lkEhkKCGdyYW50X2lkGAIgASgJUgdncmFudElkEhYKBnJlYXNvbhgDIAEoCVIGcmVhc29uEiwK'
+        'EmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use revokeResearchRoomGrantResponseDescriptor instead')
+const RevokeResearchRoomGrantResponse$json = {
+  '1': 'RevokeResearchRoomGrantResponse',
+  '2': [
+    {
+      '1': 'room_authorization_epoch',
+      '3': 1,
+      '4': 1,
+      '5': 3,
+      '10': 'roomAuthorizationEpoch'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeResearchRoomGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeResearchRoomGrantResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9SZXZva2VSZXNlYXJjaFJvb21HcmFudFJlc3BvbnNlEjgKGHJvb21fYXV0aG9yaXphdGlvbl'
+        '9lcG9jaBgBIAEoA1IWcm9vbUF1dGhvcml6YXRpb25FcG9jaA==');
+
+@$core.Deprecated('Use createResearchRoomShareLinkRequestDescriptor instead')
+const CreateResearchRoomShareLinkRequest$json = {
+  '1': 'CreateResearchRoomShareLinkRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'item_id', '3': 2, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'recipient_user_id', '3': 3, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'allow_download', '3': 4, '4': 1, '5': 8, '10': 'allowDownload'},
+    {
+      '1': 'expires_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateResearchRoomShareLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createResearchRoomShareLinkRequestDescriptor = $convert.base64Decode(
+    'CiJDcmVhdGVSZXNlYXJjaFJvb21TaGFyZUxpbmtSZXF1ZXN0EhcKB3Jvb21faWQYASABKAlSBn'
+    'Jvb21JZBIXCgdpdGVtX2lkGAIgASgJUgZpdGVtSWQSKgoRcmVjaXBpZW50X3VzZXJfaWQYAyAB'
+    'KAlSD3JlY2lwaWVudFVzZXJJZBIlCg5hbGxvd19kb3dubG9hZBgEIAEoCFINYWxsb3dEb3dubG'
+    '9hZBI5CgpleHBpcmVzX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhw'
+    'aXJlc0F0EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use createResearchRoomShareLinkResponseDescriptor instead')
+const CreateResearchRoomShareLinkResponse$json = {
+  '1': 'CreateResearchRoomShareLinkResponse',
+  '2': [
+    {
+      '1': 'share_link',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomShareLink',
+      '10': 'shareLink'
+    },
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `CreateResearchRoomShareLinkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createResearchRoomShareLinkResponseDescriptor =
+    $convert.base64Decode(
+        'CiNDcmVhdGVSZXNlYXJjaFJvb21TaGFyZUxpbmtSZXNwb25zZRJGCgpzaGFyZV9saW5rGAEgAS'
+        'gLMicuc3R0YXR0dXMub255eC52MS5SZXNlYXJjaFJvb21TaGFyZUxpbmtSCXNoYXJlTGluaxIU'
+        'CgV0b2tlbhgCIAEoCVIFdG9rZW4=');
+
+@$core.Deprecated('Use listResearchRoomShareLinksRequestDescriptor instead')
+const ListResearchRoomShareLinksRequest$json = {
+  '1': 'ListResearchRoomShareLinksRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+  ],
+};
+
+/// Descriptor for `ListResearchRoomShareLinksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomShareLinksRequestDescriptor =
+    $convert.base64Decode(
+        'CiFMaXN0UmVzZWFyY2hSb29tU2hhcmVMaW5rc1JlcXVlc3QSFwoHcm9vbV9pZBgBIAEoCVIGcm'
+        '9vbUlk');
+
+@$core.Deprecated('Use listResearchRoomShareLinksResponseDescriptor instead')
+const ListResearchRoomShareLinksResponse$json = {
+  '1': 'ListResearchRoomShareLinksResponse',
+  '2': [
+    {
+      '1': 'share_links',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomShareLink',
+      '10': 'shareLinks'
+    },
+  ],
+};
+
+/// Descriptor for `ListResearchRoomShareLinksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomShareLinksResponseDescriptor =
+    $convert.base64Decode(
+        'CiJMaXN0UmVzZWFyY2hSb29tU2hhcmVMaW5rc1Jlc3BvbnNlEkgKC3NoYXJlX2xpbmtzGAEgAy'
+        'gLMicuc3R0YXR0dXMub255eC52MS5SZXNlYXJjaFJvb21TaGFyZUxpbmtSCnNoYXJlTGlua3M=');
+
+@$core.Deprecated('Use revokeResearchRoomShareLinkRequestDescriptor instead')
+const RevokeResearchRoomShareLinkRequest$json = {
+  '1': 'RevokeResearchRoomShareLinkRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'share_link_id', '3': 2, '4': 1, '5': 9, '10': 'shareLinkId'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeResearchRoomShareLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeResearchRoomShareLinkRequestDescriptor =
+    $convert.base64Decode(
+        'CiJSZXZva2VSZXNlYXJjaFJvb21TaGFyZUxpbmtSZXF1ZXN0EhcKB3Jvb21faWQYASABKAlSBn'
+        'Jvb21JZBIiCg1zaGFyZV9saW5rX2lkGAIgASgJUgtzaGFyZUxpbmtJZBIWCgZyZWFzb24YAyAB'
+        'KAlSBnJlYXNvbhIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlSEGNsaWVudE11dGF0aW9uSW'
+        'Q=');
+
+@$core.Deprecated('Use revokeResearchRoomShareLinkResponseDescriptor instead')
+const RevokeResearchRoomShareLinkResponse$json = {
+  '1': 'RevokeResearchRoomShareLinkResponse',
+};
+
+/// Descriptor for `RevokeResearchRoomShareLinkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeResearchRoomShareLinkResponseDescriptor =
+    $convert
+        .base64Decode('CiNSZXZva2VSZXNlYXJjaFJvb21TaGFyZUxpbmtSZXNwb25zZQ==');
+
+@$core.Deprecated('Use resolveResearchRoomShareLinkRequestDescriptor instead')
+const ResolveResearchRoomShareLinkRequest$json = {
+  '1': 'ResolveResearchRoomShareLinkRequest',
+  '2': [
+    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `ResolveResearchRoomShareLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveResearchRoomShareLinkRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXNvbHZlUmVzZWFyY2hSb29tU2hhcmVMaW5rUmVxdWVzdBIUCgV0b2tlbhgBIAEoCVIFdG'
+        '9rZW4=');
+
+@$core.Deprecated('Use resolveResearchRoomShareLinkResponseDescriptor instead')
+const ResolveResearchRoomShareLinkResponse$json = {
+  '1': 'ResolveResearchRoomShareLinkResponse',
+  '2': [
+    {
+      '1': 'room',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoom',
+      '10': 'room'
+    },
+    {
+      '1': 'item',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomItem',
+      '10': 'item'
+    },
+    {
+      '1': 'content',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'content'
+    },
+    {'1': 'allow_download', '3': 4, '4': 1, '5': 8, '10': 'allowDownload'},
+    {'1': 'watermark', '3': 5, '4': 1, '5': 9, '10': 'watermark'},
+  ],
+};
+
+/// Descriptor for `ResolveResearchRoomShareLinkResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveResearchRoomShareLinkResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXNvbHZlUmVzZWFyY2hSb29tU2hhcmVMaW5rUmVzcG9uc2USMgoEcm9vbRgBIAEoCzIeLn'
+        'N0dGF0dHVzLm9ueXgudjEuUmVzZWFyY2hSb29tUgRyb29tEjYKBGl0ZW0YAiABKAsyIi5zdHRh'
+        'dHR1cy5vbnl4LnYxLlJlc2VhcmNoUm9vbUl0ZW1SBGl0ZW0SNwoHY29udGVudBgDIAEoCzIdLn'
+        'N0dGF0dHVzLm9ueXgudjEuT255eENvbnRlbnRSB2NvbnRlbnQSJQoOYWxsb3dfZG93bmxvYWQY'
+        'BCABKAhSDWFsbG93RG93bmxvYWQSHAoJd2F0ZXJtYXJrGAUgASgJUgl3YXRlcm1hcms=');
+
+@$core.Deprecated('Use getResearchRoomOfflineManifestRequestDescriptor instead')
+const GetResearchRoomOfflineManifestRequest$json = {
+  '1': 'GetResearchRoomOfflineManifestRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `GetResearchRoomOfflineManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getResearchRoomOfflineManifestRequestDescriptor =
+    $convert.base64Decode(
+        'CiVHZXRSZXNlYXJjaFJvb21PZmZsaW5lTWFuaWZlc3RSZXF1ZXN0EhcKB3Jvb21faWQYASABKA'
+        'lSBnJvb21JZBIbCglkZXZpY2VfaWQYAiABKAlSCGRldmljZUlk');
+
+@$core
+    .Deprecated('Use getResearchRoomOfflineManifestResponseDescriptor instead')
+const GetResearchRoomOfflineManifestResponse$json = {
+  '1': 'GetResearchRoomOfflineManifestResponse',
+  '2': [
+    {
+      '1': 'manifest',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomOfflineManifest',
+      '10': 'manifest'
+    },
+  ],
+};
+
+/// Descriptor for `GetResearchRoomOfflineManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getResearchRoomOfflineManifestResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRSZXNlYXJjaFJvb21PZmZsaW5lTWFuaWZlc3RSZXNwb25zZRJJCghtYW5pZmVzdBgBIA'
+        'EoCzItLnN0dGF0dHVzLm9ueXgudjEuUmVzZWFyY2hSb29tT2ZmbGluZU1hbmlmZXN0UghtYW5p'
+        'ZmVzdA==');
+
+@$core.Deprecated(
+    'Use acknowledgeResearchRoomOfflinePurgeRequestDescriptor instead')
+const AcknowledgeResearchRoomOfflinePurgeRequest$json = {
+  '1': 'AcknowledgeResearchRoomOfflinePurgeRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'purged_content_ids',
+      '3': 3,
+      '4': 3,
+      '5': 9,
+      '10': 'purgedContentIds'
+    },
+    {'1': 'purge_challenge', '3': 4, '4': 1, '5': 9, '10': 'purgeChallenge'},
+    {
+      '1': 'challenge_signature',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'challengeSignature'
+    },
+  ],
+};
+
+/// Descriptor for `AcknowledgeResearchRoomOfflinePurgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    acknowledgeResearchRoomOfflinePurgeRequestDescriptor =
+    $convert.base64Decode(
+        'CipBY2tub3dsZWRnZVJlc2VhcmNoUm9vbU9mZmxpbmVQdXJnZVJlcXVlc3QSFwoHcm9vbV9pZB'
+        'gBIAEoCVIGcm9vbUlkEhsKCWRldmljZV9pZBgCIAEoCVIIZGV2aWNlSWQSLAoScHVyZ2VkX2Nv'
+        'bnRlbnRfaWRzGAMgAygJUhBwdXJnZWRDb250ZW50SWRzEicKD3B1cmdlX2NoYWxsZW5nZRgEIA'
+        'EoCVIOcHVyZ2VDaGFsbGVuZ2USLwoTY2hhbGxlbmdlX3NpZ25hdHVyZRgFIAEoCVISY2hhbGxl'
+        'bmdlU2lnbmF0dXJl');
+
+@$core.Deprecated(
+    'Use acknowledgeResearchRoomOfflinePurgeResponseDescriptor instead')
+const AcknowledgeResearchRoomOfflinePurgeResponse$json = {
+  '1': 'AcknowledgeResearchRoomOfflinePurgeResponse',
+  '2': [
+    {
+      '1': 'receipt',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomPurgeReceipt',
+      '10': 'receipt'
+    },
+  ],
+};
+
+/// Descriptor for `AcknowledgeResearchRoomOfflinePurgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    acknowledgeResearchRoomOfflinePurgeResponseDescriptor =
+    $convert.base64Decode(
+        'CitBY2tub3dsZWRnZVJlc2VhcmNoUm9vbU9mZmxpbmVQdXJnZVJlc3BvbnNlEkQKB3JlY2VpcH'
+        'QYASABKAsyKi5zdHRhdHR1cy5vbnl4LnYxLlJlc2VhcmNoUm9vbVB1cmdlUmVjZWlwdFIHcmVj'
+        'ZWlwdA==');
+
+@$core.Deprecated('Use listResearchRoomOfflinePurgesRequestDescriptor instead')
+const ListResearchRoomOfflinePurgesRequest$json = {
+  '1': 'ListResearchRoomOfflinePurgesRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `ListResearchRoomOfflinePurgesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomOfflinePurgesRequestDescriptor =
+    $convert.base64Decode(
+        'CiRMaXN0UmVzZWFyY2hSb29tT2ZmbGluZVB1cmdlc1JlcXVlc3QSGwoJZGV2aWNlX2lkGAEgAS'
+        'gJUghkZXZpY2VJZA==');
+
+@$core.Deprecated('Use listResearchRoomOfflinePurgesResponseDescriptor instead')
+const ListResearchRoomOfflinePurgesResponse$json = {
+  '1': 'ListResearchRoomOfflinePurgesResponse',
+  '2': [
+    {
+      '1': 'manifests',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.ResearchRoomOfflineManifest',
+      '10': 'manifests'
+    },
+  ],
+};
+
+/// Descriptor for `ListResearchRoomOfflinePurgesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listResearchRoomOfflinePurgesResponseDescriptor =
+    $convert.base64Decode(
+        'CiVMaXN0UmVzZWFyY2hSb29tT2ZmbGluZVB1cmdlc1Jlc3BvbnNlEksKCW1hbmlmZXN0cxgBIA'
+        'MoCzItLnN0dGF0dHVzLm9ueXgudjEuUmVzZWFyY2hSb29tT2ZmbGluZU1hbmlmZXN0UgltYW5p'
+        'ZmVzdHM=');
+
+@$core.Deprecated('Use leaveResearchRoomRequestDescriptor instead')
+const LeaveResearchRoomRequest$json = {
+  '1': 'LeaveResearchRoomRequest',
+  '2': [
+    {'1': 'room_id', '3': 1, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'expected_access_version',
+      '3': 3,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedAccessVersion'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `LeaveResearchRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List leaveResearchRoomRequestDescriptor = $convert.base64Decode(
+    'ChhMZWF2ZVJlc2VhcmNoUm9vbVJlcXVlc3QSFwoHcm9vbV9pZBgBIAEoCVIGcm9vbUlkEhYKBn'
+    'JlYXNvbhgCIAEoCVIGcmVhc29uEjYKF2V4cGVjdGVkX2FjY2Vzc192ZXJzaW9uGAMgASgDUhVl'
+    'eHBlY3RlZEFjY2Vzc1ZlcnNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbn'
+    'RNdXRhdGlvbklk');
+
+@$core.Deprecated('Use leaveResearchRoomResponseDescriptor instead')
+const LeaveResearchRoomResponse$json = {
+  '1': 'LeaveResearchRoomResponse',
+};
+
+/// Descriptor for `LeaveResearchRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List leaveResearchRoomResponseDescriptor =
+    $convert.base64Decode('ChlMZWF2ZVJlc2VhcmNoUm9vbVJlc3BvbnNl');

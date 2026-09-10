@@ -1108,6 +1108,103 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listResearchRoomAudit, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ListResearchRoomGrantsResponse>
+      listResearchRoomGrants(
+    $0.ListResearchRoomGrantsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listResearchRoomGrants, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertResearchRoomGrantResponse>
+      upsertResearchRoomGrant(
+    $0.UpsertResearchRoomGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertResearchRoomGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeResearchRoomGrantResponse>
+      revokeResearchRoomGrant(
+    $0.RevokeResearchRoomGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeResearchRoomGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateResearchRoomShareLinkResponse>
+      createResearchRoomShareLink(
+    $0.CreateResearchRoomShareLinkRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createResearchRoomShareLink, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListResearchRoomShareLinksResponse>
+      listResearchRoomShareLinks(
+    $0.ListResearchRoomShareLinksRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listResearchRoomShareLinks, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeResearchRoomShareLinkResponse>
+      revokeResearchRoomShareLink(
+    $0.RevokeResearchRoomShareLinkRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeResearchRoomShareLink, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveResearchRoomShareLinkResponse>
+      resolveResearchRoomShareLink(
+    $0.ResolveResearchRoomShareLinkRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveResearchRoomShareLink, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetResearchRoomOfflineManifestResponse>
+      getResearchRoomOfflineManifest(
+    $0.GetResearchRoomOfflineManifestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getResearchRoomOfflineManifest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AcknowledgeResearchRoomOfflinePurgeResponse>
+      acknowledgeResearchRoomOfflinePurge(
+    $0.AcknowledgeResearchRoomOfflinePurgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$acknowledgeResearchRoomOfflinePurge, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListResearchRoomOfflinePurgesResponse>
+      listResearchRoomOfflinePurges(
+    $0.ListResearchRoomOfflinePurgesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listResearchRoomOfflinePurges, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LeaveResearchRoomResponse> leaveResearchRoom(
+    $0.LeaveResearchRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$leaveResearchRoom, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -1839,6 +1936,71 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ListResearchRoomAudit',
       ($0.ListResearchRoomAuditRequest value) => value.writeToBuffer(),
       $0.ListResearchRoomAuditResponse.fromBuffer);
+  static final _$listResearchRoomGrants = $grpc.ClientMethod<
+          $0.ListResearchRoomGrantsRequest, $0.ListResearchRoomGrantsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListResearchRoomGrants',
+      ($0.ListResearchRoomGrantsRequest value) => value.writeToBuffer(),
+      $0.ListResearchRoomGrantsResponse.fromBuffer);
+  static final _$upsertResearchRoomGrant = $grpc.ClientMethod<
+          $0.UpsertResearchRoomGrantRequest,
+          $0.UpsertResearchRoomGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertResearchRoomGrant',
+      ($0.UpsertResearchRoomGrantRequest value) => value.writeToBuffer(),
+      $0.UpsertResearchRoomGrantResponse.fromBuffer);
+  static final _$revokeResearchRoomGrant = $grpc.ClientMethod<
+          $0.RevokeResearchRoomGrantRequest,
+          $0.RevokeResearchRoomGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeResearchRoomGrant',
+      ($0.RevokeResearchRoomGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeResearchRoomGrantResponse.fromBuffer);
+  static final _$createResearchRoomShareLink = $grpc.ClientMethod<
+          $0.CreateResearchRoomShareLinkRequest,
+          $0.CreateResearchRoomShareLinkResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateResearchRoomShareLink',
+      ($0.CreateResearchRoomShareLinkRequest value) => value.writeToBuffer(),
+      $0.CreateResearchRoomShareLinkResponse.fromBuffer);
+  static final _$listResearchRoomShareLinks = $grpc.ClientMethod<
+          $0.ListResearchRoomShareLinksRequest,
+          $0.ListResearchRoomShareLinksResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListResearchRoomShareLinks',
+      ($0.ListResearchRoomShareLinksRequest value) => value.writeToBuffer(),
+      $0.ListResearchRoomShareLinksResponse.fromBuffer);
+  static final _$revokeResearchRoomShareLink = $grpc.ClientMethod<
+          $0.RevokeResearchRoomShareLinkRequest,
+          $0.RevokeResearchRoomShareLinkResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeResearchRoomShareLink',
+      ($0.RevokeResearchRoomShareLinkRequest value) => value.writeToBuffer(),
+      $0.RevokeResearchRoomShareLinkResponse.fromBuffer);
+  static final _$resolveResearchRoomShareLink = $grpc.ClientMethod<
+          $0.ResolveResearchRoomShareLinkRequest,
+          $0.ResolveResearchRoomShareLinkResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveResearchRoomShareLink',
+      ($0.ResolveResearchRoomShareLinkRequest value) => value.writeToBuffer(),
+      $0.ResolveResearchRoomShareLinkResponse.fromBuffer);
+  static final _$getResearchRoomOfflineManifest = $grpc.ClientMethod<
+          $0.GetResearchRoomOfflineManifestRequest,
+          $0.GetResearchRoomOfflineManifestResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetResearchRoomOfflineManifest',
+      ($0.GetResearchRoomOfflineManifestRequest value) => value.writeToBuffer(),
+      $0.GetResearchRoomOfflineManifestResponse.fromBuffer);
+  static final _$acknowledgeResearchRoomOfflinePurge = $grpc.ClientMethod<
+          $0.AcknowledgeResearchRoomOfflinePurgeRequest,
+          $0.AcknowledgeResearchRoomOfflinePurgeResponse>(
+      '/sttattus.onyx.v1.OnyxService/AcknowledgeResearchRoomOfflinePurge',
+      ($0.AcknowledgeResearchRoomOfflinePurgeRequest value) =>
+          value.writeToBuffer(),
+      $0.AcknowledgeResearchRoomOfflinePurgeResponse.fromBuffer);
+  static final _$listResearchRoomOfflinePurges = $grpc.ClientMethod<
+          $0.ListResearchRoomOfflinePurgesRequest,
+          $0.ListResearchRoomOfflinePurgesResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListResearchRoomOfflinePurges',
+      ($0.ListResearchRoomOfflinePurgesRequest value) => value.writeToBuffer(),
+      $0.ListResearchRoomOfflinePurgesResponse.fromBuffer);
+  static final _$leaveResearchRoom = $grpc.ClientMethod<
+          $0.LeaveResearchRoomRequest, $0.LeaveResearchRoomResponse>(
+      '/sttattus.onyx.v1.OnyxService/LeaveResearchRoom',
+      ($0.LeaveResearchRoomRequest value) => value.writeToBuffer(),
+      $0.LeaveResearchRoomResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -3095,6 +3257,113 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ListResearchRoomAuditRequest.fromBuffer(value),
         ($0.ListResearchRoomAuditResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListResearchRoomGrantsRequest,
+            $0.ListResearchRoomGrantsResponse>(
+        'ListResearchRoomGrants',
+        listResearchRoomGrants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListResearchRoomGrantsRequest.fromBuffer(value),
+        ($0.ListResearchRoomGrantsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertResearchRoomGrantRequest,
+            $0.UpsertResearchRoomGrantResponse>(
+        'UpsertResearchRoomGrant',
+        upsertResearchRoomGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertResearchRoomGrantRequest.fromBuffer(value),
+        ($0.UpsertResearchRoomGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeResearchRoomGrantRequest,
+            $0.RevokeResearchRoomGrantResponse>(
+        'RevokeResearchRoomGrant',
+        revokeResearchRoomGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeResearchRoomGrantRequest.fromBuffer(value),
+        ($0.RevokeResearchRoomGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateResearchRoomShareLinkRequest,
+            $0.CreateResearchRoomShareLinkResponse>(
+        'CreateResearchRoomShareLink',
+        createResearchRoomShareLink_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateResearchRoomShareLinkRequest.fromBuffer(value),
+        ($0.CreateResearchRoomShareLinkResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListResearchRoomShareLinksRequest,
+            $0.ListResearchRoomShareLinksResponse>(
+        'ListResearchRoomShareLinks',
+        listResearchRoomShareLinks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListResearchRoomShareLinksRequest.fromBuffer(value),
+        ($0.ListResearchRoomShareLinksResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeResearchRoomShareLinkRequest,
+            $0.RevokeResearchRoomShareLinkResponse>(
+        'RevokeResearchRoomShareLink',
+        revokeResearchRoomShareLink_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeResearchRoomShareLinkRequest.fromBuffer(value),
+        ($0.RevokeResearchRoomShareLinkResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveResearchRoomShareLinkRequest,
+            $0.ResolveResearchRoomShareLinkResponse>(
+        'ResolveResearchRoomShareLink',
+        resolveResearchRoomShareLink_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveResearchRoomShareLinkRequest.fromBuffer(value),
+        ($0.ResolveResearchRoomShareLinkResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetResearchRoomOfflineManifestRequest,
+            $0.GetResearchRoomOfflineManifestResponse>(
+        'GetResearchRoomOfflineManifest',
+        getResearchRoomOfflineManifest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetResearchRoomOfflineManifestRequest.fromBuffer(value),
+        ($0.GetResearchRoomOfflineManifestResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AcknowledgeResearchRoomOfflinePurgeRequest,
+            $0.AcknowledgeResearchRoomOfflinePurgeResponse>(
+        'AcknowledgeResearchRoomOfflinePurge',
+        acknowledgeResearchRoomOfflinePurge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AcknowledgeResearchRoomOfflinePurgeRequest.fromBuffer(value),
+        ($0.AcknowledgeResearchRoomOfflinePurgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListResearchRoomOfflinePurgesRequest,
+            $0.ListResearchRoomOfflinePurgesResponse>(
+        'ListResearchRoomOfflinePurges',
+        listResearchRoomOfflinePurges_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListResearchRoomOfflinePurgesRequest.fromBuffer(value),
+        ($0.ListResearchRoomOfflinePurgesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LeaveResearchRoomRequest,
+            $0.LeaveResearchRoomResponse>(
+        'LeaveResearchRoom',
+        leaveResearchRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LeaveResearchRoomRequest.fromBuffer(value),
+        ($0.LeaveResearchRoomResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -4357,4 +4626,118 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListResearchRoomAuditResponse> listResearchRoomAudit(
       $grpc.ServiceCall call, $0.ListResearchRoomAuditRequest request);
+
+  $async.Future<$0.ListResearchRoomGrantsResponse> listResearchRoomGrants_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListResearchRoomGrantsRequest> $request) async {
+    return listResearchRoomGrants($call, await $request);
+  }
+
+  $async.Future<$0.ListResearchRoomGrantsResponse> listResearchRoomGrants(
+      $grpc.ServiceCall call, $0.ListResearchRoomGrantsRequest request);
+
+  $async.Future<$0.UpsertResearchRoomGrantResponse> upsertResearchRoomGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertResearchRoomGrantRequest> $request) async {
+    return upsertResearchRoomGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpsertResearchRoomGrantResponse> upsertResearchRoomGrant(
+      $grpc.ServiceCall call, $0.UpsertResearchRoomGrantRequest request);
+
+  $async.Future<$0.RevokeResearchRoomGrantResponse> revokeResearchRoomGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeResearchRoomGrantRequest> $request) async {
+    return revokeResearchRoomGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeResearchRoomGrantResponse> revokeResearchRoomGrant(
+      $grpc.ServiceCall call, $0.RevokeResearchRoomGrantRequest request);
+
+  $async.Future<$0.CreateResearchRoomShareLinkResponse>
+      createResearchRoomShareLink_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CreateResearchRoomShareLinkRequest> $request) async {
+    return createResearchRoomShareLink($call, await $request);
+  }
+
+  $async.Future<$0.CreateResearchRoomShareLinkResponse>
+      createResearchRoomShareLink($grpc.ServiceCall call,
+          $0.CreateResearchRoomShareLinkRequest request);
+
+  $async.Future<$0.ListResearchRoomShareLinksResponse>
+      listResearchRoomShareLinks_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListResearchRoomShareLinksRequest> $request) async {
+    return listResearchRoomShareLinks($call, await $request);
+  }
+
+  $async.Future<$0.ListResearchRoomShareLinksResponse>
+      listResearchRoomShareLinks(
+          $grpc.ServiceCall call, $0.ListResearchRoomShareLinksRequest request);
+
+  $async.Future<$0.RevokeResearchRoomShareLinkResponse>
+      revokeResearchRoomShareLink_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeResearchRoomShareLinkRequest> $request) async {
+    return revokeResearchRoomShareLink($call, await $request);
+  }
+
+  $async.Future<$0.RevokeResearchRoomShareLinkResponse>
+      revokeResearchRoomShareLink($grpc.ServiceCall call,
+          $0.RevokeResearchRoomShareLinkRequest request);
+
+  $async.Future<$0.ResolveResearchRoomShareLinkResponse>
+      resolveResearchRoomShareLink_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ResolveResearchRoomShareLinkRequest>
+              $request) async {
+    return resolveResearchRoomShareLink($call, await $request);
+  }
+
+  $async.Future<$0.ResolveResearchRoomShareLinkResponse>
+      resolveResearchRoomShareLink($grpc.ServiceCall call,
+          $0.ResolveResearchRoomShareLinkRequest request);
+
+  $async.Future<$0.GetResearchRoomOfflineManifestResponse>
+      getResearchRoomOfflineManifest_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetResearchRoomOfflineManifestRequest>
+              $request) async {
+    return getResearchRoomOfflineManifest($call, await $request);
+  }
+
+  $async.Future<$0.GetResearchRoomOfflineManifestResponse>
+      getResearchRoomOfflineManifest($grpc.ServiceCall call,
+          $0.GetResearchRoomOfflineManifestRequest request);
+
+  $async.Future<$0.AcknowledgeResearchRoomOfflinePurgeResponse>
+      acknowledgeResearchRoomOfflinePurge_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AcknowledgeResearchRoomOfflinePurgeRequest>
+              $request) async {
+    return acknowledgeResearchRoomOfflinePurge($call, await $request);
+  }
+
+  $async.Future<$0.AcknowledgeResearchRoomOfflinePurgeResponse>
+      acknowledgeResearchRoomOfflinePurge($grpc.ServiceCall call,
+          $0.AcknowledgeResearchRoomOfflinePurgeRequest request);
+
+  $async.Future<$0.ListResearchRoomOfflinePurgesResponse>
+      listResearchRoomOfflinePurges_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListResearchRoomOfflinePurgesRequest>
+              $request) async {
+    return listResearchRoomOfflinePurges($call, await $request);
+  }
+
+  $async.Future<$0.ListResearchRoomOfflinePurgesResponse>
+      listResearchRoomOfflinePurges($grpc.ServiceCall call,
+          $0.ListResearchRoomOfflinePurgesRequest request);
+
+  $async.Future<$0.LeaveResearchRoomResponse> leaveResearchRoom_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.LeaveResearchRoomRequest> $request) async {
+    return leaveResearchRoom($call, await $request);
+  }
+
+  $async.Future<$0.LeaveResearchRoomResponse> leaveResearchRoom(
+      $grpc.ServiceCall call, $0.LeaveResearchRoomRequest request);
 }

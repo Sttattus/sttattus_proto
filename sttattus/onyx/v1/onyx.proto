@@ -1755,6 +1755,12 @@ message EvidenceBrief {
   google.protobuf.Timestamp generated_at = 12;
   repeated EvidenceCorrection corrections = 13;
   int32 source_count = 14;
+  string scope = 15; // personal | room
+  string room_id = 16;
+  string room_item_id = 17;
+  string created_by_user_id = 18;
+  int64 room_authorization_epoch = 19;
+  int64 membership_access_version = 20;
 }
 
 message CreateEvidenceBriefRequest {
@@ -1764,6 +1770,8 @@ message CreateEvidenceBriefRequest {
   repeated string pinned_source_ids = 4;
   repeated string excluded_source_ids = 5;
   google.protobuf.Timestamp cutoff_at = 6;
+  string room_id = 7;
+  string client_mutation_id = 8;
 }
 message CreateEvidenceBriefResponse {
   EvidenceBrief brief = 1;
@@ -2055,6 +2063,7 @@ message ResearchRoomThread {
   google.protobuf.Timestamp resolved_at = 11;
   google.protobuf.Timestamp created_at = 12;
   google.protobuf.Timestamp updated_at = 13;
+  string decision_id = 14;
 }
 
 message ResearchRoomComment {
@@ -2154,6 +2163,7 @@ message ResearchRoomExport {
   google.protobuf.Timestamp expires_at = 13;
   google.protobuf.Timestamp created_at = 14;
   google.protobuf.Timestamp updated_at = 15;
+  int64 membership_access_version = 16;
 }
 
 message ResearchRoomAuditEvent {
@@ -2167,6 +2177,65 @@ message ResearchRoomAuditEvent {
   string summary = 8;
   int64 permission_version = 9;
   google.protobuf.Timestamp created_at = 10;
+}
+
+message ResearchRoomGrant {
+  string id = 1;
+  string room_id = 2;
+  string subject_user_id = 3;
+  string subject_name = 4;
+  string resource_type = 5;
+  string resource_id = 6;
+  string passage_key = 7;
+  string effect = 8; // allow | deny
+  string role = 9;
+  google.protobuf.Timestamp expires_at = 10;
+  google.protobuf.Timestamp revoked_at = 11;
+  string granted_by_user_id = 12;
+  string granted_by_name = 13;
+  google.protobuf.Timestamp created_at = 14;
+}
+
+message ResearchRoomShareLink {
+  string id = 1;
+  string room_id = 2;
+  string item_id = 3;
+  string recipient_user_id = 4;
+  string recipient_name = 5;
+  string status = 6; // active | revoked | expired | stale
+  bool allow_download = 7;
+  string watermark = 8;
+  int64 membership_access_version = 9;
+  int64 room_authorization_epoch = 10;
+  int64 access_count = 11;
+  google.protobuf.Timestamp last_accessed_at = 12;
+  google.protobuf.Timestamp expires_at = 13;
+  google.protobuf.Timestamp revoked_at = 14;
+  google.protobuf.Timestamp created_at = 15;
+}
+
+message ResearchRoomOfflineManifest {
+  string room_id = 1;
+  string device_id = 2;
+  repeated OnyxContent items = 3;
+  repeated EncryptedRendition encrypted_renditions = 4;
+  repeated string purge_content_ids = 5;
+  string purge_challenge = 6;
+  string watermark_policy = 7;
+  int64 membership_access_version = 8;
+  int64 room_authorization_epoch = 9;
+  google.protobuf.Timestamp grant_expires_at = 10;
+  bool requires_purge = 11;
+  string manifest_id = 12;
+}
+
+message ResearchRoomPurgeReceipt {
+  string id = 1;
+  string room_id = 2;
+  string device_id = 3;
+  repeated string content_ids = 4;
+  google.protobuf.Timestamp created_at = 5;
+  string manifest_id = 6;
 }
 
 message ResearchRoomDetail {
@@ -2299,6 +2368,7 @@ message PostResearchRoomCommentRequest {
   repeated string mention_user_ids = 10;
   string visibility = 11;
   string client_mutation_id = 12;
+  string decision_id = 13;
 }
 message PostResearchRoomCommentResponse {
   ResearchRoomThread thread = 1;
@@ -2388,6 +2458,11 @@ message SearchResearchRoomResult {
   string snippet = 4;
   string item_id = 5;
   string passage_key = 6;
+  string content_id = 7;
+  string source_id = 8;
+  string revision_id = 9;
+  int64 room_authorization_epoch = 10;
+  int64 membership_access_version = 11;
 }
 message SearchResearchRoomResponse {
   repeated SearchResearchRoomResult results = 1;
@@ -2422,6 +2497,106 @@ message ListResearchRoomAuditRequest {
 message ListResearchRoomAuditResponse {
   repeated ResearchRoomAuditEvent events = 1;
 }
+
+message ListResearchRoomGrantsRequest {
+  string room_id = 1;
+  string resource_type = 2;
+  string resource_id = 3;
+}
+message ListResearchRoomGrantsResponse {
+  repeated ResearchRoomGrant grants = 1;
+}
+message UpsertResearchRoomGrantRequest {
+  string room_id = 1;
+  string subject_user_id = 2;
+  string resource_type = 3;
+  string resource_id = 4;
+  string passage_key = 5;
+  string effect = 6;
+  string role = 7;
+  google.protobuf.Timestamp expires_at = 8;
+  string client_mutation_id = 9;
+}
+message UpsertResearchRoomGrantResponse {
+  ResearchRoomGrant grant = 1;
+}
+message RevokeResearchRoomGrantRequest {
+  string room_id = 1;
+  string grant_id = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message RevokeResearchRoomGrantResponse {
+  int64 room_authorization_epoch = 1;
+}
+
+message CreateResearchRoomShareLinkRequest {
+  string room_id = 1;
+  string item_id = 2;
+  string recipient_user_id = 3;
+  bool allow_download = 4;
+  google.protobuf.Timestamp expires_at = 5;
+  string client_mutation_id = 6;
+}
+message CreateResearchRoomShareLinkResponse {
+  ResearchRoomShareLink share_link = 1;
+  string token = 2; // returned once; only its digest is stored
+}
+message ListResearchRoomShareLinksRequest {
+  string room_id = 1;
+}
+message ListResearchRoomShareLinksResponse {
+  repeated ResearchRoomShareLink share_links = 1;
+}
+message RevokeResearchRoomShareLinkRequest {
+  string room_id = 1;
+  string share_link_id = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message RevokeResearchRoomShareLinkResponse {}
+message ResolveResearchRoomShareLinkRequest {
+  string token = 1;
+}
+message ResolveResearchRoomShareLinkResponse {
+  ResearchRoom room = 1;
+  ResearchRoomItem item = 2;
+  OnyxContent content = 3;
+  bool allow_download = 4;
+  string watermark = 5;
+}
+
+message GetResearchRoomOfflineManifestRequest {
+  string room_id = 1;
+  string device_id = 2;
+}
+message GetResearchRoomOfflineManifestResponse {
+  ResearchRoomOfflineManifest manifest = 1;
+}
+message AcknowledgeResearchRoomOfflinePurgeRequest {
+  string room_id = 1;
+  string device_id = 2;
+  repeated string purged_content_ids = 3;
+  string purge_challenge = 4;
+  string challenge_signature = 5;
+}
+message AcknowledgeResearchRoomOfflinePurgeResponse {
+  ResearchRoomPurgeReceipt receipt = 1;
+}
+message ListResearchRoomOfflinePurgesRequest {
+  string device_id = 1;
+}
+message ListResearchRoomOfflinePurgesResponse {
+  repeated ResearchRoomOfflineManifest manifests = 1;
+}
+
+message LeaveResearchRoomRequest {
+  string room_id = 1;
+  string reason = 2;
+  int64 expected_access_version = 3;
+  string client_mutation_id = 4;
+}
+message LeaveResearchRoomResponse {}
 
 service OnyxService {
   // Profile Management
@@ -2614,4 +2789,15 @@ service OnyxService {
   rpc RequestResearchRoomExport(RequestResearchRoomExportRequest) returns (RequestResearchRoomExportResponse);
   rpc ReportResearchRoomAbuse(ReportResearchRoomAbuseRequest) returns (ReportResearchRoomAbuseResponse);
   rpc ListResearchRoomAudit(ListResearchRoomAuditRequest) returns (ListResearchRoomAuditResponse);
+  rpc ListResearchRoomGrants(ListResearchRoomGrantsRequest) returns (ListResearchRoomGrantsResponse);
+  rpc UpsertResearchRoomGrant(UpsertResearchRoomGrantRequest) returns (UpsertResearchRoomGrantResponse);
+  rpc RevokeResearchRoomGrant(RevokeResearchRoomGrantRequest) returns (RevokeResearchRoomGrantResponse);
+  rpc CreateResearchRoomShareLink(CreateResearchRoomShareLinkRequest) returns (CreateResearchRoomShareLinkResponse);
+  rpc ListResearchRoomShareLinks(ListResearchRoomShareLinksRequest) returns (ListResearchRoomShareLinksResponse);
+  rpc RevokeResearchRoomShareLink(RevokeResearchRoomShareLinkRequest) returns (RevokeResearchRoomShareLinkResponse);
+  rpc ResolveResearchRoomShareLink(ResolveResearchRoomShareLinkRequest) returns (ResolveResearchRoomShareLinkResponse);
+  rpc GetResearchRoomOfflineManifest(GetResearchRoomOfflineManifestRequest) returns (GetResearchRoomOfflineManifestResponse);
+  rpc AcknowledgeResearchRoomOfflinePurge(AcknowledgeResearchRoomOfflinePurgeRequest) returns (AcknowledgeResearchRoomOfflinePurgeResponse);
+  rpc ListResearchRoomOfflinePurges(ListResearchRoomOfflinePurgesRequest) returns (ListResearchRoomOfflinePurgesResponse);
+  rpc LeaveResearchRoom(LeaveResearchRoomRequest) returns (LeaveResearchRoomResponse);
 }
