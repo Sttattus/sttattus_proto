@@ -941,6 +941,173 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createCommerceCase, request, options: options);
   }
 
+  /// Choice 9 — governed, invite-only research and decision rooms.
+  $grpc.ResponseFuture<$0.ListResearchRoomsResponse> listResearchRooms(
+    $0.ListResearchRoomsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listResearchRooms, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetResearchRoomResponse> getResearchRoom(
+    $0.GetResearchRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getResearchRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateResearchRoomResponse> createResearchRoom(
+    $0.CreateResearchRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createResearchRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateResearchRoomResponse> updateResearchRoom(
+    $0.UpdateResearchRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateResearchRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InviteResearchRoomMemberResponse>
+      inviteResearchRoomMember(
+    $0.InviteResearchRoomMemberRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$inviteResearchRoomMember, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RespondResearchRoomInviteResponse>
+      respondResearchRoomInvite(
+    $0.RespondResearchRoomInviteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$respondResearchRoomInvite, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ChangeResearchRoomMemberResponse>
+      changeResearchRoomMember(
+    $0.ChangeResearchRoomMemberRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$changeResearchRoomMember, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeResearchRoomMemberResponse>
+      revokeResearchRoomMember(
+    $0.RevokeResearchRoomMemberRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeResearchRoomMember, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddResearchRoomItemResponse> addResearchRoomItem(
+    $0.AddResearchRoomItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$addResearchRoomItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveResearchRoomItemResponse>
+      removeResearchRoomItem(
+    $0.RemoveResearchRoomItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$removeResearchRoomItem, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostResearchRoomCommentResponse>
+      postResearchRoomComment(
+    $0.PostResearchRoomCommentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$postResearchRoomComment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetResearchRoomThreadStatusResponse>
+      setResearchRoomThreadStatus(
+    $0.SetResearchRoomThreadStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setResearchRoomThreadStatus, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertResearchRoomTaskResponse>
+      upsertResearchRoomTask(
+    $0.UpsertResearchRoomTaskRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertResearchRoomTask, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertResearchRoomMeetingResponse>
+      upsertResearchRoomMeeting(
+    $0.UpsertResearchRoomMeetingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertResearchRoomMeeting, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertResearchRoomDecisionResponse>
+      upsertResearchRoomDecision(
+    $0.UpsertResearchRoomDecisionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertResearchRoomDecision, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordResearchRoomApprovalResponse>
+      recordResearchRoomApproval(
+    $0.RecordResearchRoomApprovalRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordResearchRoomApproval, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SearchResearchRoomResponse> searchResearchRoom(
+    $0.SearchResearchRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$searchResearchRoom, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestResearchRoomExportResponse>
+      requestResearchRoomExport(
+    $0.RequestResearchRoomExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestResearchRoomExport, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportResearchRoomAbuseResponse>
+      reportResearchRoomAbuse(
+    $0.ReportResearchRoomAbuseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportResearchRoomAbuse, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListResearchRoomAuditResponse> listResearchRoomAudit(
+    $0.ListResearchRoomAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listResearchRoomAudit, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -1561,6 +1728,117 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/CreateCommerceCase',
       ($0.CreateCommerceCaseRequest value) => value.writeToBuffer(),
       $0.CreateCommerceCaseResponse.fromBuffer);
+  static final _$listResearchRooms = $grpc.ClientMethod<
+          $0.ListResearchRoomsRequest, $0.ListResearchRoomsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListResearchRooms',
+      ($0.ListResearchRoomsRequest value) => value.writeToBuffer(),
+      $0.ListResearchRoomsResponse.fromBuffer);
+  static final _$getResearchRoom =
+      $grpc.ClientMethod<$0.GetResearchRoomRequest, $0.GetResearchRoomResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetResearchRoom',
+          ($0.GetResearchRoomRequest value) => value.writeToBuffer(),
+          $0.GetResearchRoomResponse.fromBuffer);
+  static final _$createResearchRoom = $grpc.ClientMethod<
+          $0.CreateResearchRoomRequest, $0.CreateResearchRoomResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateResearchRoom',
+      ($0.CreateResearchRoomRequest value) => value.writeToBuffer(),
+      $0.CreateResearchRoomResponse.fromBuffer);
+  static final _$updateResearchRoom = $grpc.ClientMethod<
+          $0.UpdateResearchRoomRequest, $0.UpdateResearchRoomResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdateResearchRoom',
+      ($0.UpdateResearchRoomRequest value) => value.writeToBuffer(),
+      $0.UpdateResearchRoomResponse.fromBuffer);
+  static final _$inviteResearchRoomMember = $grpc.ClientMethod<
+          $0.InviteResearchRoomMemberRequest,
+          $0.InviteResearchRoomMemberResponse>(
+      '/sttattus.onyx.v1.OnyxService/InviteResearchRoomMember',
+      ($0.InviteResearchRoomMemberRequest value) => value.writeToBuffer(),
+      $0.InviteResearchRoomMemberResponse.fromBuffer);
+  static final _$respondResearchRoomInvite = $grpc.ClientMethod<
+          $0.RespondResearchRoomInviteRequest,
+          $0.RespondResearchRoomInviteResponse>(
+      '/sttattus.onyx.v1.OnyxService/RespondResearchRoomInvite',
+      ($0.RespondResearchRoomInviteRequest value) => value.writeToBuffer(),
+      $0.RespondResearchRoomInviteResponse.fromBuffer);
+  static final _$changeResearchRoomMember = $grpc.ClientMethod<
+          $0.ChangeResearchRoomMemberRequest,
+          $0.ChangeResearchRoomMemberResponse>(
+      '/sttattus.onyx.v1.OnyxService/ChangeResearchRoomMember',
+      ($0.ChangeResearchRoomMemberRequest value) => value.writeToBuffer(),
+      $0.ChangeResearchRoomMemberResponse.fromBuffer);
+  static final _$revokeResearchRoomMember = $grpc.ClientMethod<
+          $0.RevokeResearchRoomMemberRequest,
+          $0.RevokeResearchRoomMemberResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeResearchRoomMember',
+      ($0.RevokeResearchRoomMemberRequest value) => value.writeToBuffer(),
+      $0.RevokeResearchRoomMemberResponse.fromBuffer);
+  static final _$addResearchRoomItem = $grpc.ClientMethod<
+          $0.AddResearchRoomItemRequest, $0.AddResearchRoomItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/AddResearchRoomItem',
+      ($0.AddResearchRoomItemRequest value) => value.writeToBuffer(),
+      $0.AddResearchRoomItemResponse.fromBuffer);
+  static final _$removeResearchRoomItem = $grpc.ClientMethod<
+          $0.RemoveResearchRoomItemRequest, $0.RemoveResearchRoomItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/RemoveResearchRoomItem',
+      ($0.RemoveResearchRoomItemRequest value) => value.writeToBuffer(),
+      $0.RemoveResearchRoomItemResponse.fromBuffer);
+  static final _$postResearchRoomComment = $grpc.ClientMethod<
+          $0.PostResearchRoomCommentRequest,
+          $0.PostResearchRoomCommentResponse>(
+      '/sttattus.onyx.v1.OnyxService/PostResearchRoomComment',
+      ($0.PostResearchRoomCommentRequest value) => value.writeToBuffer(),
+      $0.PostResearchRoomCommentResponse.fromBuffer);
+  static final _$setResearchRoomThreadStatus = $grpc.ClientMethod<
+          $0.SetResearchRoomThreadStatusRequest,
+          $0.SetResearchRoomThreadStatusResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetResearchRoomThreadStatus',
+      ($0.SetResearchRoomThreadStatusRequest value) => value.writeToBuffer(),
+      $0.SetResearchRoomThreadStatusResponse.fromBuffer);
+  static final _$upsertResearchRoomTask = $grpc.ClientMethod<
+          $0.UpsertResearchRoomTaskRequest, $0.UpsertResearchRoomTaskResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertResearchRoomTask',
+      ($0.UpsertResearchRoomTaskRequest value) => value.writeToBuffer(),
+      $0.UpsertResearchRoomTaskResponse.fromBuffer);
+  static final _$upsertResearchRoomMeeting = $grpc.ClientMethod<
+          $0.UpsertResearchRoomMeetingRequest,
+          $0.UpsertResearchRoomMeetingResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertResearchRoomMeeting',
+      ($0.UpsertResearchRoomMeetingRequest value) => value.writeToBuffer(),
+      $0.UpsertResearchRoomMeetingResponse.fromBuffer);
+  static final _$upsertResearchRoomDecision = $grpc.ClientMethod<
+          $0.UpsertResearchRoomDecisionRequest,
+          $0.UpsertResearchRoomDecisionResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertResearchRoomDecision',
+      ($0.UpsertResearchRoomDecisionRequest value) => value.writeToBuffer(),
+      $0.UpsertResearchRoomDecisionResponse.fromBuffer);
+  static final _$recordResearchRoomApproval = $grpc.ClientMethod<
+          $0.RecordResearchRoomApprovalRequest,
+          $0.RecordResearchRoomApprovalResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordResearchRoomApproval',
+      ($0.RecordResearchRoomApprovalRequest value) => value.writeToBuffer(),
+      $0.RecordResearchRoomApprovalResponse.fromBuffer);
+  static final _$searchResearchRoom = $grpc.ClientMethod<
+          $0.SearchResearchRoomRequest, $0.SearchResearchRoomResponse>(
+      '/sttattus.onyx.v1.OnyxService/SearchResearchRoom',
+      ($0.SearchResearchRoomRequest value) => value.writeToBuffer(),
+      $0.SearchResearchRoomResponse.fromBuffer);
+  static final _$requestResearchRoomExport = $grpc.ClientMethod<
+          $0.RequestResearchRoomExportRequest,
+          $0.RequestResearchRoomExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestResearchRoomExport',
+      ($0.RequestResearchRoomExportRequest value) => value.writeToBuffer(),
+      $0.RequestResearchRoomExportResponse.fromBuffer);
+  static final _$reportResearchRoomAbuse = $grpc.ClientMethod<
+          $0.ReportResearchRoomAbuseRequest,
+          $0.ReportResearchRoomAbuseResponse>(
+      '/sttattus.onyx.v1.OnyxService/ReportResearchRoomAbuse',
+      ($0.ReportResearchRoomAbuseRequest value) => value.writeToBuffer(),
+      $0.ReportResearchRoomAbuseResponse.fromBuffer);
+  static final _$listResearchRoomAudit = $grpc.ClientMethod<
+          $0.ListResearchRoomAuditRequest, $0.ListResearchRoomAuditResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListResearchRoomAudit',
+      ($0.ListResearchRoomAuditRequest value) => value.writeToBuffer(),
+      $0.ListResearchRoomAuditResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -2634,6 +2912,189 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.CreateCommerceCaseRequest.fromBuffer(value),
         ($0.CreateCommerceCaseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListResearchRoomsRequest,
+            $0.ListResearchRoomsResponse>(
+        'ListResearchRooms',
+        listResearchRooms_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListResearchRoomsRequest.fromBuffer(value),
+        ($0.ListResearchRoomsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetResearchRoomRequest,
+            $0.GetResearchRoomResponse>(
+        'GetResearchRoom',
+        getResearchRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetResearchRoomRequest.fromBuffer(value),
+        ($0.GetResearchRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateResearchRoomRequest,
+            $0.CreateResearchRoomResponse>(
+        'CreateResearchRoom',
+        createResearchRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateResearchRoomRequest.fromBuffer(value),
+        ($0.CreateResearchRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateResearchRoomRequest,
+            $0.UpdateResearchRoomResponse>(
+        'UpdateResearchRoom',
+        updateResearchRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateResearchRoomRequest.fromBuffer(value),
+        ($0.UpdateResearchRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InviteResearchRoomMemberRequest,
+            $0.InviteResearchRoomMemberResponse>(
+        'InviteResearchRoomMember',
+        inviteResearchRoomMember_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InviteResearchRoomMemberRequest.fromBuffer(value),
+        ($0.InviteResearchRoomMemberResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RespondResearchRoomInviteRequest,
+            $0.RespondResearchRoomInviteResponse>(
+        'RespondResearchRoomInvite',
+        respondResearchRoomInvite_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RespondResearchRoomInviteRequest.fromBuffer(value),
+        ($0.RespondResearchRoomInviteResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ChangeResearchRoomMemberRequest,
+            $0.ChangeResearchRoomMemberResponse>(
+        'ChangeResearchRoomMember',
+        changeResearchRoomMember_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ChangeResearchRoomMemberRequest.fromBuffer(value),
+        ($0.ChangeResearchRoomMemberResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeResearchRoomMemberRequest,
+            $0.RevokeResearchRoomMemberResponse>(
+        'RevokeResearchRoomMember',
+        revokeResearchRoomMember_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeResearchRoomMemberRequest.fromBuffer(value),
+        ($0.RevokeResearchRoomMemberResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddResearchRoomItemRequest,
+            $0.AddResearchRoomItemResponse>(
+        'AddResearchRoomItem',
+        addResearchRoomItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AddResearchRoomItemRequest.fromBuffer(value),
+        ($0.AddResearchRoomItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveResearchRoomItemRequest,
+            $0.RemoveResearchRoomItemResponse>(
+        'RemoveResearchRoomItem',
+        removeResearchRoomItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RemoveResearchRoomItemRequest.fromBuffer(value),
+        ($0.RemoveResearchRoomItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostResearchRoomCommentRequest,
+            $0.PostResearchRoomCommentResponse>(
+        'PostResearchRoomComment',
+        postResearchRoomComment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PostResearchRoomCommentRequest.fromBuffer(value),
+        ($0.PostResearchRoomCommentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetResearchRoomThreadStatusRequest,
+            $0.SetResearchRoomThreadStatusResponse>(
+        'SetResearchRoomThreadStatus',
+        setResearchRoomThreadStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetResearchRoomThreadStatusRequest.fromBuffer(value),
+        ($0.SetResearchRoomThreadStatusResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertResearchRoomTaskRequest,
+            $0.UpsertResearchRoomTaskResponse>(
+        'UpsertResearchRoomTask',
+        upsertResearchRoomTask_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertResearchRoomTaskRequest.fromBuffer(value),
+        ($0.UpsertResearchRoomTaskResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertResearchRoomMeetingRequest,
+            $0.UpsertResearchRoomMeetingResponse>(
+        'UpsertResearchRoomMeeting',
+        upsertResearchRoomMeeting_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertResearchRoomMeetingRequest.fromBuffer(value),
+        ($0.UpsertResearchRoomMeetingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertResearchRoomDecisionRequest,
+            $0.UpsertResearchRoomDecisionResponse>(
+        'UpsertResearchRoomDecision',
+        upsertResearchRoomDecision_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertResearchRoomDecisionRequest.fromBuffer(value),
+        ($0.UpsertResearchRoomDecisionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordResearchRoomApprovalRequest,
+            $0.RecordResearchRoomApprovalResponse>(
+        'RecordResearchRoomApproval',
+        recordResearchRoomApproval_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordResearchRoomApprovalRequest.fromBuffer(value),
+        ($0.RecordResearchRoomApprovalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SearchResearchRoomRequest,
+            $0.SearchResearchRoomResponse>(
+        'SearchResearchRoom',
+        searchResearchRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SearchResearchRoomRequest.fromBuffer(value),
+        ($0.SearchResearchRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestResearchRoomExportRequest,
+            $0.RequestResearchRoomExportResponse>(
+        'RequestResearchRoomExport',
+        requestResearchRoomExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestResearchRoomExportRequest.fromBuffer(value),
+        ($0.RequestResearchRoomExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportResearchRoomAbuseRequest,
+            $0.ReportResearchRoomAbuseResponse>(
+        'ReportResearchRoomAbuse',
+        reportResearchRoomAbuse_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportResearchRoomAbuseRequest.fromBuffer(value),
+        ($0.ReportResearchRoomAbuseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListResearchRoomAuditRequest,
+            $0.ListResearchRoomAuditResponse>(
+        'ListResearchRoomAudit',
+        listResearchRoomAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListResearchRoomAuditRequest.fromBuffer(value),
+        ($0.ListResearchRoomAuditResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -3713,4 +4174,187 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.CreateCommerceCaseResponse> createCommerceCase(
       $grpc.ServiceCall call, $0.CreateCommerceCaseRequest request);
+
+  $async.Future<$0.ListResearchRoomsResponse> listResearchRooms_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListResearchRoomsRequest> $request) async {
+    return listResearchRooms($call, await $request);
+  }
+
+  $async.Future<$0.ListResearchRoomsResponse> listResearchRooms(
+      $grpc.ServiceCall call, $0.ListResearchRoomsRequest request);
+
+  $async.Future<$0.GetResearchRoomResponse> getResearchRoom_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetResearchRoomRequest> $request) async {
+    return getResearchRoom($call, await $request);
+  }
+
+  $async.Future<$0.GetResearchRoomResponse> getResearchRoom(
+      $grpc.ServiceCall call, $0.GetResearchRoomRequest request);
+
+  $async.Future<$0.CreateResearchRoomResponse> createResearchRoom_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateResearchRoomRequest> $request) async {
+    return createResearchRoom($call, await $request);
+  }
+
+  $async.Future<$0.CreateResearchRoomResponse> createResearchRoom(
+      $grpc.ServiceCall call, $0.CreateResearchRoomRequest request);
+
+  $async.Future<$0.UpdateResearchRoomResponse> updateResearchRoom_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpdateResearchRoomRequest> $request) async {
+    return updateResearchRoom($call, await $request);
+  }
+
+  $async.Future<$0.UpdateResearchRoomResponse> updateResearchRoom(
+      $grpc.ServiceCall call, $0.UpdateResearchRoomRequest request);
+
+  $async.Future<$0.InviteResearchRoomMemberResponse>
+      inviteResearchRoomMember_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.InviteResearchRoomMemberRequest> $request) async {
+    return inviteResearchRoomMember($call, await $request);
+  }
+
+  $async.Future<$0.InviteResearchRoomMemberResponse> inviteResearchRoomMember(
+      $grpc.ServiceCall call, $0.InviteResearchRoomMemberRequest request);
+
+  $async.Future<$0.RespondResearchRoomInviteResponse>
+      respondResearchRoomInvite_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RespondResearchRoomInviteRequest> $request) async {
+    return respondResearchRoomInvite($call, await $request);
+  }
+
+  $async.Future<$0.RespondResearchRoomInviteResponse> respondResearchRoomInvite(
+      $grpc.ServiceCall call, $0.RespondResearchRoomInviteRequest request);
+
+  $async.Future<$0.ChangeResearchRoomMemberResponse>
+      changeResearchRoomMember_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ChangeResearchRoomMemberRequest> $request) async {
+    return changeResearchRoomMember($call, await $request);
+  }
+
+  $async.Future<$0.ChangeResearchRoomMemberResponse> changeResearchRoomMember(
+      $grpc.ServiceCall call, $0.ChangeResearchRoomMemberRequest request);
+
+  $async.Future<$0.RevokeResearchRoomMemberResponse>
+      revokeResearchRoomMember_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeResearchRoomMemberRequest> $request) async {
+    return revokeResearchRoomMember($call, await $request);
+  }
+
+  $async.Future<$0.RevokeResearchRoomMemberResponse> revokeResearchRoomMember(
+      $grpc.ServiceCall call, $0.RevokeResearchRoomMemberRequest request);
+
+  $async.Future<$0.AddResearchRoomItemResponse> addResearchRoomItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.AddResearchRoomItemRequest> $request) async {
+    return addResearchRoomItem($call, await $request);
+  }
+
+  $async.Future<$0.AddResearchRoomItemResponse> addResearchRoomItem(
+      $grpc.ServiceCall call, $0.AddResearchRoomItemRequest request);
+
+  $async.Future<$0.RemoveResearchRoomItemResponse> removeResearchRoomItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RemoveResearchRoomItemRequest> $request) async {
+    return removeResearchRoomItem($call, await $request);
+  }
+
+  $async.Future<$0.RemoveResearchRoomItemResponse> removeResearchRoomItem(
+      $grpc.ServiceCall call, $0.RemoveResearchRoomItemRequest request);
+
+  $async.Future<$0.PostResearchRoomCommentResponse> postResearchRoomComment_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.PostResearchRoomCommentRequest> $request) async {
+    return postResearchRoomComment($call, await $request);
+  }
+
+  $async.Future<$0.PostResearchRoomCommentResponse> postResearchRoomComment(
+      $grpc.ServiceCall call, $0.PostResearchRoomCommentRequest request);
+
+  $async.Future<$0.SetResearchRoomThreadStatusResponse>
+      setResearchRoomThreadStatus_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SetResearchRoomThreadStatusRequest> $request) async {
+    return setResearchRoomThreadStatus($call, await $request);
+  }
+
+  $async.Future<$0.SetResearchRoomThreadStatusResponse>
+      setResearchRoomThreadStatus($grpc.ServiceCall call,
+          $0.SetResearchRoomThreadStatusRequest request);
+
+  $async.Future<$0.UpsertResearchRoomTaskResponse> upsertResearchRoomTask_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertResearchRoomTaskRequest> $request) async {
+    return upsertResearchRoomTask($call, await $request);
+  }
+
+  $async.Future<$0.UpsertResearchRoomTaskResponse> upsertResearchRoomTask(
+      $grpc.ServiceCall call, $0.UpsertResearchRoomTaskRequest request);
+
+  $async.Future<$0.UpsertResearchRoomMeetingResponse>
+      upsertResearchRoomMeeting_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertResearchRoomMeetingRequest> $request) async {
+    return upsertResearchRoomMeeting($call, await $request);
+  }
+
+  $async.Future<$0.UpsertResearchRoomMeetingResponse> upsertResearchRoomMeeting(
+      $grpc.ServiceCall call, $0.UpsertResearchRoomMeetingRequest request);
+
+  $async.Future<$0.UpsertResearchRoomDecisionResponse>
+      upsertResearchRoomDecision_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertResearchRoomDecisionRequest> $request) async {
+    return upsertResearchRoomDecision($call, await $request);
+  }
+
+  $async.Future<$0.UpsertResearchRoomDecisionResponse>
+      upsertResearchRoomDecision(
+          $grpc.ServiceCall call, $0.UpsertResearchRoomDecisionRequest request);
+
+  $async.Future<$0.RecordResearchRoomApprovalResponse>
+      recordResearchRoomApproval_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordResearchRoomApprovalRequest> $request) async {
+    return recordResearchRoomApproval($call, await $request);
+  }
+
+  $async.Future<$0.RecordResearchRoomApprovalResponse>
+      recordResearchRoomApproval(
+          $grpc.ServiceCall call, $0.RecordResearchRoomApprovalRequest request);
+
+  $async.Future<$0.SearchResearchRoomResponse> searchResearchRoom_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SearchResearchRoomRequest> $request) async {
+    return searchResearchRoom($call, await $request);
+  }
+
+  $async.Future<$0.SearchResearchRoomResponse> searchResearchRoom(
+      $grpc.ServiceCall call, $0.SearchResearchRoomRequest request);
+
+  $async.Future<$0.RequestResearchRoomExportResponse>
+      requestResearchRoomExport_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RequestResearchRoomExportRequest> $request) async {
+    return requestResearchRoomExport($call, await $request);
+  }
+
+  $async.Future<$0.RequestResearchRoomExportResponse> requestResearchRoomExport(
+      $grpc.ServiceCall call, $0.RequestResearchRoomExportRequest request);
+
+  $async.Future<$0.ReportResearchRoomAbuseResponse> reportResearchRoomAbuse_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportResearchRoomAbuseRequest> $request) async {
+    return reportResearchRoomAbuse($call, await $request);
+  }
+
+  $async.Future<$0.ReportResearchRoomAbuseResponse> reportResearchRoomAbuse(
+      $grpc.ServiceCall call, $0.ReportResearchRoomAbuseRequest request);
+
+  $async.Future<$0.ListResearchRoomAuditResponse> listResearchRoomAudit_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListResearchRoomAuditRequest> $request) async {
+    return listResearchRoomAudit($call, await $request);
+  }
+
+  $async.Future<$0.ListResearchRoomAuditResponse> listResearchRoomAudit(
+      $grpc.ServiceCall call, $0.ListResearchRoomAuditRequest request);
 }

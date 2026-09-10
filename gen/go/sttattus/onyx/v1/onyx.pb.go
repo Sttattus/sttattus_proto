@@ -20052,6 +20052,4398 @@ func (x *CreateCommerceCaseResponse) GetCommerceCase() *CommerceCase {
 	return nil
 }
 
+type ResearchRoomPolicy struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	DownloadPolicy        string                 `protobuf:"bytes,1,opt,name=download_policy,json=downloadPolicy,proto3" json:"download_policy,omitempty"` // disabled | members | editors
+	ExportPolicy          string                 `protobuf:"bytes,2,opt,name=export_policy,json=exportPolicy,proto3" json:"export_policy,omitempty"`       // disabled | owner | approval
+	WatermarkMode         string                 `protobuf:"bytes,3,opt,name=watermark_mode,json=watermarkMode,proto3" json:"watermark_mode,omitempty"`    // member | room_member | forensic
+	AllowGuests           bool                   `protobuf:"varint,4,opt,name=allow_guests,json=allowGuests,proto3" json:"allow_guests,omitempty"`
+	DefaultGuestDays      int32                  `protobuf:"varint,5,opt,name=default_guest_days,json=defaultGuestDays,proto3" json:"default_guest_days,omitempty"`
+	RequireExportApproval bool                   `protobuf:"varint,6,opt,name=require_export_approval,json=requireExportApproval,proto3" json:"require_export_approval,omitempty"`
+	AllowExternalLinks    bool                   `protobuf:"varint,7,opt,name=allow_external_links,json=allowExternalLinks,proto3" json:"allow_external_links,omitempty"`
+	Version               int64                  `protobuf:"varint,8,opt,name=version,proto3" json:"version,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ResearchRoomPolicy) Reset() {
+	*x = ResearchRoomPolicy{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomPolicy) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomPolicy) ProtoMessage() {}
+
+func (x *ResearchRoomPolicy) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomPolicy.ProtoReflect.Descriptor instead.
+func (*ResearchRoomPolicy) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{308}
+}
+
+func (x *ResearchRoomPolicy) GetDownloadPolicy() string {
+	if x != nil {
+		return x.DownloadPolicy
+	}
+	return ""
+}
+
+func (x *ResearchRoomPolicy) GetExportPolicy() string {
+	if x != nil {
+		return x.ExportPolicy
+	}
+	return ""
+}
+
+func (x *ResearchRoomPolicy) GetWatermarkMode() string {
+	if x != nil {
+		return x.WatermarkMode
+	}
+	return ""
+}
+
+func (x *ResearchRoomPolicy) GetAllowGuests() bool {
+	if x != nil {
+		return x.AllowGuests
+	}
+	return false
+}
+
+func (x *ResearchRoomPolicy) GetDefaultGuestDays() int32 {
+	if x != nil {
+		return x.DefaultGuestDays
+	}
+	return 0
+}
+
+func (x *ResearchRoomPolicy) GetRequireExportApproval() bool {
+	if x != nil {
+		return x.RequireExportApproval
+	}
+	return false
+}
+
+func (x *ResearchRoomPolicy) GetAllowExternalLinks() bool {
+	if x != nil {
+		return x.AllowExternalLinks
+	}
+	return false
+}
+
+func (x *ResearchRoomPolicy) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+type ResearchRoomMember struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DisplayName   string                 `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	EmailHint     string                 `protobuf:"bytes,3,opt,name=email_hint,json=emailHint,proto3" json:"email_hint,omitempty"`
+	Role          string                 `protobuf:"bytes,4,opt,name=role,proto3" json:"role,omitempty"`     // owner | steward | editor | reviewer | contributor | commenter | viewer
+	Status        string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // invited | active | declined | revoked | expired
+	IsGuest       bool                   `protobuf:"varint,6,opt,name=is_guest,json=isGuest,proto3" json:"is_guest,omitempty"`
+	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	InvitedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=invited_at,json=invitedAt,proto3" json:"invited_at,omitempty"`
+	JoinedAt      *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=joined_at,json=joinedAt,proto3" json:"joined_at,omitempty"`
+	RevokedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=revoked_at,json=revokedAt,proto3" json:"revoked_at,omitempty"`
+	AccessVersion int64                  `protobuf:"varint,11,opt,name=access_version,json=accessVersion,proto3" json:"access_version,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResearchRoomMember) Reset() {
+	*x = ResearchRoomMember{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomMember) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomMember) ProtoMessage() {}
+
+func (x *ResearchRoomMember) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomMember.ProtoReflect.Descriptor instead.
+func (*ResearchRoomMember) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{309}
+}
+
+func (x *ResearchRoomMember) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomMember) GetDisplayName() string {
+	if x != nil {
+		return x.DisplayName
+	}
+	return ""
+}
+
+func (x *ResearchRoomMember) GetEmailHint() string {
+	if x != nil {
+		return x.EmailHint
+	}
+	return ""
+}
+
+func (x *ResearchRoomMember) GetRole() string {
+	if x != nil {
+		return x.Role
+	}
+	return ""
+}
+
+func (x *ResearchRoomMember) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomMember) GetIsGuest() bool {
+	if x != nil {
+		return x.IsGuest
+	}
+	return false
+}
+
+func (x *ResearchRoomMember) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMember) GetInvitedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.InvitedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMember) GetJoinedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.JoinedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMember) GetRevokedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.RevokedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMember) GetAccessVersion() int64 {
+	if x != nil {
+		return x.AccessVersion
+	}
+	return 0
+}
+
+type ResearchRoom struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title              string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Purpose            string                 `protobuf:"bytes,3,opt,name=purpose,proto3" json:"purpose,omitempty"`
+	Description        string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Status             string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // active | archived | frozen
+	MyRole             string                 `protobuf:"bytes,6,opt,name=my_role,json=myRole,proto3" json:"my_role,omitempty"`
+	MyMembershipStatus string                 `protobuf:"bytes,7,opt,name=my_membership_status,json=myMembershipStatus,proto3" json:"my_membership_status,omitempty"`
+	MemberCount        int32                  `protobuf:"varint,8,opt,name=member_count,json=memberCount,proto3" json:"member_count,omitempty"`
+	GuestCount         int32                  `protobuf:"varint,9,opt,name=guest_count,json=guestCount,proto3" json:"guest_count,omitempty"`
+	OpenTaskCount      int32                  `protobuf:"varint,10,opt,name=open_task_count,json=openTaskCount,proto3" json:"open_task_count,omitempty"`
+	OpenQuestionCount  int32                  `protobuf:"varint,11,opt,name=open_question_count,json=openQuestionCount,proto3" json:"open_question_count,omitempty"`
+	UnreadCount        int32                  `protobuf:"varint,12,opt,name=unread_count,json=unreadCount,proto3" json:"unread_count,omitempty"`
+	Policy             *ResearchRoomPolicy    `protobuf:"bytes,13,opt,name=policy,proto3" json:"policy,omitempty"`
+	PermissionVersion  int64                  `protobuf:"varint,14,opt,name=permission_version,json=permissionVersion,proto3" json:"permission_version,omitempty"`
+	CreatedAt          *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt          *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ResearchRoom) Reset() {
+	*x = ResearchRoom{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoom) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoom) ProtoMessage() {}
+
+func (x *ResearchRoom) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoom.ProtoReflect.Descriptor instead.
+func (*ResearchRoom) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{310}
+}
+
+func (x *ResearchRoom) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetPurpose() string {
+	if x != nil {
+		return x.Purpose
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetMyRole() string {
+	if x != nil {
+		return x.MyRole
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetMyMembershipStatus() string {
+	if x != nil {
+		return x.MyMembershipStatus
+	}
+	return ""
+}
+
+func (x *ResearchRoom) GetMemberCount() int32 {
+	if x != nil {
+		return x.MemberCount
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetGuestCount() int32 {
+	if x != nil {
+		return x.GuestCount
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetOpenTaskCount() int32 {
+	if x != nil {
+		return x.OpenTaskCount
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetOpenQuestionCount() int32 {
+	if x != nil {
+		return x.OpenQuestionCount
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetUnreadCount() int32 {
+	if x != nil {
+		return x.UnreadCount
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetPolicy() *ResearchRoomPolicy {
+	if x != nil {
+		return x.Policy
+	}
+	return nil
+}
+
+func (x *ResearchRoom) GetPermissionVersion() int64 {
+	if x != nil {
+		return x.PermissionVersion
+	}
+	return 0
+}
+
+func (x *ResearchRoom) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoom) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomItem struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId        string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ItemType      string                 `protobuf:"bytes,3,opt,name=item_type,json=itemType,proto3" json:"item_type,omitempty"` // content | brief | annotation | source | passage | link
+	ObjectId      string                 `protobuf:"bytes,4,opt,name=object_id,json=objectId,proto3" json:"object_id,omitempty"`
+	ContentId     string                 `protobuf:"bytes,5,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	PassageKey    string                 `protobuf:"bytes,6,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	Title         string                 `protobuf:"bytes,7,opt,name=title,proto3" json:"title,omitempty"`
+	Summary       string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
+	RequiredRole  string                 `protobuf:"bytes,9,opt,name=required_role,json=requiredRole,proto3" json:"required_role,omitempty"`
+	AddedByUserId string                 `protobuf:"bytes,10,opt,name=added_by_user_id,json=addedByUserId,proto3" json:"added_by_user_id,omitempty"`
+	AddedByName   string                 `protobuf:"bytes,11,opt,name=added_by_name,json=addedByName,proto3" json:"added_by_name,omitempty"`
+	Version       int64                  `protobuf:"varint,12,opt,name=version,proto3" json:"version,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResearchRoomItem) Reset() {
+	*x = ResearchRoomItem{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomItem) ProtoMessage() {}
+
+func (x *ResearchRoomItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomItem.ProtoReflect.Descriptor instead.
+func (*ResearchRoomItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{311}
+}
+
+func (x *ResearchRoomItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetItemType() string {
+	if x != nil {
+		return x.ItemType
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetObjectId() string {
+	if x != nil {
+		return x.ObjectId
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetContentId() string {
+	if x != nil {
+		return x.ContentId
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetRequiredRole() string {
+	if x != nil {
+		return x.RequiredRole
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetAddedByUserId() string {
+	if x != nil {
+		return x.AddedByUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetAddedByName() string {
+	if x != nil {
+		return x.AddedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomItem) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *ResearchRoomItem) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomItem) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomThread struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId          string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ItemId          string                 `protobuf:"bytes,3,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	PassageKey      string                 `protobuf:"bytes,4,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	Kind            string                 `protobuf:"bytes,5,opt,name=kind,proto3" json:"kind,omitempty"` // discussion | question | review
+	Title           string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	Status          string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"` // open | resolved
+	CreatedByUserId string                 `protobuf:"bytes,8,opt,name=created_by_user_id,json=createdByUserId,proto3" json:"created_by_user_id,omitempty"`
+	CreatedByName   string                 `protobuf:"bytes,9,opt,name=created_by_name,json=createdByName,proto3" json:"created_by_name,omitempty"`
+	CommentCount    int32                  `protobuf:"varint,10,opt,name=comment_count,json=commentCount,proto3" json:"comment_count,omitempty"`
+	ResolvedAt      *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=resolved_at,json=resolvedAt,proto3" json:"resolved_at,omitempty"`
+	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt       *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ResearchRoomThread) Reset() {
+	*x = ResearchRoomThread{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomThread) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomThread) ProtoMessage() {}
+
+func (x *ResearchRoomThread) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomThread.ProtoReflect.Descriptor instead.
+func (*ResearchRoomThread) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{312}
+}
+
+func (x *ResearchRoomThread) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetCreatedByUserId() string {
+	if x != nil {
+		return x.CreatedByUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetCreatedByName() string {
+	if x != nil {
+		return x.CreatedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomThread) GetCommentCount() int32 {
+	if x != nil {
+		return x.CommentCount
+	}
+	return 0
+}
+
+func (x *ResearchRoomThread) GetResolvedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ResolvedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomThread) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomThread) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomComment struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId          string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ThreadId        string                 `protobuf:"bytes,3,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	ParentCommentId string                 `protobuf:"bytes,4,opt,name=parent_comment_id,json=parentCommentId,proto3" json:"parent_comment_id,omitempty"`
+	Kind            string                 `protobuf:"bytes,5,opt,name=kind,proto3" json:"kind,omitempty"` // comment | answer | dissent | rationale
+	Body            string                 `protobuf:"bytes,6,opt,name=body,proto3" json:"body,omitempty"`
+	MentionUserIds  []string               `protobuf:"bytes,7,rep,name=mention_user_ids,json=mentionUserIds,proto3" json:"mention_user_ids,omitempty"`
+	Visibility      string                 `protobuf:"bytes,8,opt,name=visibility,proto3" json:"visibility,omitempty"` // shared | private_draft
+	AuthorUserId    string                 `protobuf:"bytes,9,opt,name=author_user_id,json=authorUserId,proto3" json:"author_user_id,omitempty"`
+	AuthorName      string                 `protobuf:"bytes,10,opt,name=author_name,json=authorName,proto3" json:"author_name,omitempty"`
+	Version         int64                  `protobuf:"varint,11,opt,name=version,proto3" json:"version,omitempty"`
+	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt       *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ResearchRoomComment) Reset() {
+	*x = ResearchRoomComment{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomComment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomComment) ProtoMessage() {}
+
+func (x *ResearchRoomComment) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomComment.ProtoReflect.Descriptor instead.
+func (*ResearchRoomComment) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{313}
+}
+
+func (x *ResearchRoomComment) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetParentCommentId() string {
+	if x != nil {
+		return x.ParentCommentId
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetMentionUserIds() []string {
+	if x != nil {
+		return x.MentionUserIds
+	}
+	return nil
+}
+
+func (x *ResearchRoomComment) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetAuthorUserId() string {
+	if x != nil {
+		return x.AuthorUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetAuthorName() string {
+	if x != nil {
+		return x.AuthorName
+	}
+	return ""
+}
+
+func (x *ResearchRoomComment) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *ResearchRoomComment) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomComment) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomTask struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId        string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Description   string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Status        string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`     // open | in_progress | blocked | done | cancelled
+	Priority      string                 `protobuf:"bytes,6,opt,name=priority,proto3" json:"priority,omitempty"` // low | normal | high | critical
+	OwnerUserId   string                 `protobuf:"bytes,7,opt,name=owner_user_id,json=ownerUserId,proto3" json:"owner_user_id,omitempty"`
+	OwnerName     string                 `protobuf:"bytes,8,opt,name=owner_name,json=ownerName,proto3" json:"owner_name,omitempty"`
+	SourceItemId  string                 `protobuf:"bytes,9,opt,name=source_item_id,json=sourceItemId,proto3" json:"source_item_id,omitempty"`
+	DecisionId    string                 `protobuf:"bytes,10,opt,name=decision_id,json=decisionId,proto3" json:"decision_id,omitempty"`
+	DueAt         *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=due_at,json=dueAt,proto3" json:"due_at,omitempty"`
+	Version       int64                  `protobuf:"varint,12,opt,name=version,proto3" json:"version,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResearchRoomTask) Reset() {
+	*x = ResearchRoomTask{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomTask) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomTask) ProtoMessage() {}
+
+func (x *ResearchRoomTask) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomTask.ProtoReflect.Descriptor instead.
+func (*ResearchRoomTask) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{314}
+}
+
+func (x *ResearchRoomTask) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetPriority() string {
+	if x != nil {
+		return x.Priority
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetOwnerUserId() string {
+	if x != nil {
+		return x.OwnerUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetOwnerName() string {
+	if x != nil {
+		return x.OwnerName
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetSourceItemId() string {
+	if x != nil {
+		return x.SourceItemId
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetDecisionId() string {
+	if x != nil {
+		return x.DecisionId
+	}
+	return ""
+}
+
+func (x *ResearchRoomTask) GetDueAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DueAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomTask) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *ResearchRoomTask) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomTask) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomMeeting struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId          string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Agenda          string                 `protobuf:"bytes,4,opt,name=agenda,proto3" json:"agenda,omitempty"`
+	Minutes         string                 `protobuf:"bytes,5,opt,name=minutes,proto3" json:"minutes,omitempty"`
+	Status          string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // planned | held | cancelled
+	StartsAt        *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=starts_at,json=startsAt,proto3" json:"starts_at,omitempty"`
+	EndsAt          *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=ends_at,json=endsAt,proto3" json:"ends_at,omitempty"`
+	AttendeeUserIds []string               `protobuf:"bytes,9,rep,name=attendee_user_ids,json=attendeeUserIds,proto3" json:"attendee_user_ids,omitempty"`
+	Version         int64                  `protobuf:"varint,10,opt,name=version,proto3" json:"version,omitempty"`
+	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt       *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ResearchRoomMeeting) Reset() {
+	*x = ResearchRoomMeeting{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomMeeting) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomMeeting) ProtoMessage() {}
+
+func (x *ResearchRoomMeeting) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomMeeting.ProtoReflect.Descriptor instead.
+func (*ResearchRoomMeeting) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{315}
+}
+
+func (x *ResearchRoomMeeting) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetAgenda() string {
+	if x != nil {
+		return x.Agenda
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetMinutes() string {
+	if x != nil {
+		return x.Minutes
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomMeeting) GetStartsAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.StartsAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMeeting) GetEndsAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EndsAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMeeting) GetAttendeeUserIds() []string {
+	if x != nil {
+		return x.AttendeeUserIds
+	}
+	return nil
+}
+
+func (x *ResearchRoomMeeting) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *ResearchRoomMeeting) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomMeeting) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomDecision struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId            string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Title             string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Statement         string                 `protobuf:"bytes,4,opt,name=statement,proto3" json:"statement,omitempty"`
+	Rationale         string                 `protobuf:"bytes,5,opt,name=rationale,proto3" json:"rationale,omitempty"`
+	Status            string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // proposed | review | approved | rejected | superseded
+	ProposedByUserId  string                 `protobuf:"bytes,7,opt,name=proposed_by_user_id,json=proposedByUserId,proto3" json:"proposed_by_user_id,omitempty"`
+	ProposedByName    string                 `protobuf:"bytes,8,opt,name=proposed_by_name,json=proposedByName,proto3" json:"proposed_by_name,omitempty"`
+	DecidedByUserId   string                 `protobuf:"bytes,9,opt,name=decided_by_user_id,json=decidedByUserId,proto3" json:"decided_by_user_id,omitempty"`
+	DecidedByName     string                 `protobuf:"bytes,10,opt,name=decided_by_name,json=decidedByName,proto3" json:"decided_by_name,omitempty"`
+	DissentCommentIds []string               `protobuf:"bytes,11,rep,name=dissent_comment_ids,json=dissentCommentIds,proto3" json:"dissent_comment_ids,omitempty"`
+	ApprovalCount     int32                  `protobuf:"varint,12,opt,name=approval_count,json=approvalCount,proto3" json:"approval_count,omitempty"`
+	RejectionCount    int32                  `protobuf:"varint,13,opt,name=rejection_count,json=rejectionCount,proto3" json:"rejection_count,omitempty"`
+	SnapshotChecksum  string                 `protobuf:"bytes,14,opt,name=snapshot_checksum,json=snapshotChecksum,proto3" json:"snapshot_checksum,omitempty"`
+	Version           int64                  `protobuf:"varint,15,opt,name=version,proto3" json:"version,omitempty"`
+	DecidedAt         *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
+	CreatedAt         *timestamppb.Timestamp `protobuf:"bytes,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt         *timestamppb.Timestamp `protobuf:"bytes,18,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ResearchRoomDecision) Reset() {
+	*x = ResearchRoomDecision{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomDecision) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomDecision) ProtoMessage() {}
+
+func (x *ResearchRoomDecision) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomDecision.ProtoReflect.Descriptor instead.
+func (*ResearchRoomDecision) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{316}
+}
+
+func (x *ResearchRoomDecision) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetStatement() string {
+	if x != nil {
+		return x.Statement
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetRationale() string {
+	if x != nil {
+		return x.Rationale
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetProposedByUserId() string {
+	if x != nil {
+		return x.ProposedByUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetProposedByName() string {
+	if x != nil {
+		return x.ProposedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetDecidedByUserId() string {
+	if x != nil {
+		return x.DecidedByUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetDecidedByName() string {
+	if x != nil {
+		return x.DecidedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetDissentCommentIds() []string {
+	if x != nil {
+		return x.DissentCommentIds
+	}
+	return nil
+}
+
+func (x *ResearchRoomDecision) GetApprovalCount() int32 {
+	if x != nil {
+		return x.ApprovalCount
+	}
+	return 0
+}
+
+func (x *ResearchRoomDecision) GetRejectionCount() int32 {
+	if x != nil {
+		return x.RejectionCount
+	}
+	return 0
+}
+
+func (x *ResearchRoomDecision) GetSnapshotChecksum() string {
+	if x != nil {
+		return x.SnapshotChecksum
+	}
+	return ""
+}
+
+func (x *ResearchRoomDecision) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *ResearchRoomDecision) GetDecidedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DecidedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomDecision) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomDecision) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomApproval struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId         string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ObjectType     string                 `protobuf:"bytes,3,opt,name=object_type,json=objectType,proto3" json:"object_type,omitempty"` // decision | export | item
+	ObjectId       string                 `protobuf:"bytes,4,opt,name=object_id,json=objectId,proto3" json:"object_id,omitempty"`
+	ReviewerUserId string                 `protobuf:"bytes,5,opt,name=reviewer_user_id,json=reviewerUserId,proto3" json:"reviewer_user_id,omitempty"`
+	ReviewerName   string                 `protobuf:"bytes,6,opt,name=reviewer_name,json=reviewerName,proto3" json:"reviewer_name,omitempty"`
+	Status         string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"` // approved | rejected
+	Note           string                 `protobuf:"bytes,8,opt,name=note,proto3" json:"note,omitempty"`
+	CreatedAt      *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *ResearchRoomApproval) Reset() {
+	*x = ResearchRoomApproval{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomApproval) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomApproval) ProtoMessage() {}
+
+func (x *ResearchRoomApproval) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomApproval.ProtoReflect.Descriptor instead.
+func (*ResearchRoomApproval) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{317}
+}
+
+func (x *ResearchRoomApproval) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetObjectType() string {
+	if x != nil {
+		return x.ObjectType
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetObjectId() string {
+	if x != nil {
+		return x.ObjectId
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetReviewerUserId() string {
+	if x != nil {
+		return x.ReviewerUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetReviewerName() string {
+	if x != nil {
+		return x.ReviewerName
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *ResearchRoomApproval) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type ResearchRoomExport struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId            string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Format            string                 `protobuf:"bytes,3,opt,name=format,proto3" json:"format,omitempty"` // decision_pack_md | decision_pack_json | evidence_csv
+	Status            string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"` // pending | approved | rejected | ready | revoked | expired
+	RequestedByUserId string                 `protobuf:"bytes,5,opt,name=requested_by_user_id,json=requestedByUserId,proto3" json:"requested_by_user_id,omitempty"`
+	RequestedByName   string                 `protobuf:"bytes,6,opt,name=requested_by_name,json=requestedByName,proto3" json:"requested_by_name,omitempty"`
+	ReviewedByName    string                 `protobuf:"bytes,7,opt,name=reviewed_by_name,json=reviewedByName,proto3" json:"reviewed_by_name,omitempty"`
+	Reason            string                 `protobuf:"bytes,8,opt,name=reason,proto3" json:"reason,omitempty"`
+	Watermark         string                 `protobuf:"bytes,9,opt,name=watermark,proto3" json:"watermark,omitempty"`
+	ManifestChecksum  string                 `protobuf:"bytes,10,opt,name=manifest_checksum,json=manifestChecksum,proto3" json:"manifest_checksum,omitempty"`
+	DownloadUrl       string                 `protobuf:"bytes,11,opt,name=download_url,json=downloadUrl,proto3" json:"download_url,omitempty"`
+	PermissionVersion int64                  `protobuf:"varint,12,opt,name=permission_version,json=permissionVersion,proto3" json:"permission_version,omitempty"`
+	ExpiresAt         *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	CreatedAt         *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt         *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ResearchRoomExport) Reset() {
+	*x = ResearchRoomExport{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomExport) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomExport) ProtoMessage() {}
+
+func (x *ResearchRoomExport) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomExport.ProtoReflect.Descriptor instead.
+func (*ResearchRoomExport) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{318}
+}
+
+func (x *ResearchRoomExport) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetFormat() string {
+	if x != nil {
+		return x.Format
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetRequestedByUserId() string {
+	if x != nil {
+		return x.RequestedByUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetRequestedByName() string {
+	if x != nil {
+		return x.RequestedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetReviewedByName() string {
+	if x != nil {
+		return x.ReviewedByName
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetWatermark() string {
+	if x != nil {
+		return x.Watermark
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetManifestChecksum() string {
+	if x != nil {
+		return x.ManifestChecksum
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetDownloadUrl() string {
+	if x != nil {
+		return x.DownloadUrl
+	}
+	return ""
+}
+
+func (x *ResearchRoomExport) GetPermissionVersion() int64 {
+	if x != nil {
+		return x.PermissionVersion
+	}
+	return 0
+}
+
+func (x *ResearchRoomExport) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomExport) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *ResearchRoomExport) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type ResearchRoomAuditEvent struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RoomId            string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Action            string                 `protobuf:"bytes,3,opt,name=action,proto3" json:"action,omitempty"`
+	ActorUserId       string                 `protobuf:"bytes,4,opt,name=actor_user_id,json=actorUserId,proto3" json:"actor_user_id,omitempty"`
+	ActorName         string                 `protobuf:"bytes,5,opt,name=actor_name,json=actorName,proto3" json:"actor_name,omitempty"`
+	SubjectType       string                 `protobuf:"bytes,6,opt,name=subject_type,json=subjectType,proto3" json:"subject_type,omitempty"`
+	SubjectId         string                 `protobuf:"bytes,7,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
+	Summary           string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
+	PermissionVersion int64                  `protobuf:"varint,9,opt,name=permission_version,json=permissionVersion,proto3" json:"permission_version,omitempty"`
+	CreatedAt         *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ResearchRoomAuditEvent) Reset() {
+	*x = ResearchRoomAuditEvent{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomAuditEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomAuditEvent) ProtoMessage() {}
+
+func (x *ResearchRoomAuditEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomAuditEvent.ProtoReflect.Descriptor instead.
+func (*ResearchRoomAuditEvent) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{319}
+}
+
+func (x *ResearchRoomAuditEvent) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetAction() string {
+	if x != nil {
+		return x.Action
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetActorUserId() string {
+	if x != nil {
+		return x.ActorUserId
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetActorName() string {
+	if x != nil {
+		return x.ActorName
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetSubjectType() string {
+	if x != nil {
+		return x.SubjectType
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetSubjectId() string {
+	if x != nil {
+		return x.SubjectId
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *ResearchRoomAuditEvent) GetPermissionVersion() int64 {
+	if x != nil {
+		return x.PermissionVersion
+	}
+	return 0
+}
+
+func (x *ResearchRoomAuditEvent) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type ResearchRoomDetail struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Room          *ResearchRoom           `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	Members       []*ResearchRoomMember   `protobuf:"bytes,2,rep,name=members,proto3" json:"members,omitempty"`
+	Items         []*ResearchRoomItem     `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`
+	Threads       []*ResearchRoomThread   `protobuf:"bytes,4,rep,name=threads,proto3" json:"threads,omitempty"`
+	Comments      []*ResearchRoomComment  `protobuf:"bytes,5,rep,name=comments,proto3" json:"comments,omitempty"`
+	Tasks         []*ResearchRoomTask     `protobuf:"bytes,6,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	Meetings      []*ResearchRoomMeeting  `protobuf:"bytes,7,rep,name=meetings,proto3" json:"meetings,omitempty"`
+	Decisions     []*ResearchRoomDecision `protobuf:"bytes,8,rep,name=decisions,proto3" json:"decisions,omitempty"`
+	Approvals     []*ResearchRoomApproval `protobuf:"bytes,9,rep,name=approvals,proto3" json:"approvals,omitempty"`
+	Exports       []*ResearchRoomExport   `protobuf:"bytes,10,rep,name=exports,proto3" json:"exports,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResearchRoomDetail) Reset() {
+	*x = ResearchRoomDetail{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResearchRoomDetail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResearchRoomDetail) ProtoMessage() {}
+
+func (x *ResearchRoomDetail) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResearchRoomDetail.ProtoReflect.Descriptor instead.
+func (*ResearchRoomDetail) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{320}
+}
+
+func (x *ResearchRoomDetail) GetRoom() *ResearchRoom {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetMembers() []*ResearchRoomMember {
+	if x != nil {
+		return x.Members
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetItems() []*ResearchRoomItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetThreads() []*ResearchRoomThread {
+	if x != nil {
+		return x.Threads
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetComments() []*ResearchRoomComment {
+	if x != nil {
+		return x.Comments
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetTasks() []*ResearchRoomTask {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetMeetings() []*ResearchRoomMeeting {
+	if x != nil {
+		return x.Meetings
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetDecisions() []*ResearchRoomDecision {
+	if x != nil {
+		return x.Decisions
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetApprovals() []*ResearchRoomApproval {
+	if x != nil {
+		return x.Approvals
+	}
+	return nil
+}
+
+func (x *ResearchRoomDetail) GetExports() []*ResearchRoomExport {
+	if x != nil {
+		return x.Exports
+	}
+	return nil
+}
+
+type ListResearchRoomsRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	IncludeArchived bool                   `protobuf:"varint,1,opt,name=include_archived,json=includeArchived,proto3" json:"include_archived,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ListResearchRoomsRequest) Reset() {
+	*x = ListResearchRoomsRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListResearchRoomsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListResearchRoomsRequest) ProtoMessage() {}
+
+func (x *ListResearchRoomsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListResearchRoomsRequest.ProtoReflect.Descriptor instead.
+func (*ListResearchRoomsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{321}
+}
+
+func (x *ListResearchRoomsRequest) GetIncludeArchived() bool {
+	if x != nil {
+		return x.IncludeArchived
+	}
+	return false
+}
+
+type ListResearchRoomsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rooms         []*ResearchRoom        `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListResearchRoomsResponse) Reset() {
+	*x = ListResearchRoomsResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListResearchRoomsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListResearchRoomsResponse) ProtoMessage() {}
+
+func (x *ListResearchRoomsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListResearchRoomsResponse.ProtoReflect.Descriptor instead.
+func (*ListResearchRoomsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{322}
+}
+
+func (x *ListResearchRoomsResponse) GetRooms() []*ResearchRoom {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+type GetResearchRoomRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetResearchRoomRequest) Reset() {
+	*x = GetResearchRoomRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetResearchRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetResearchRoomRequest) ProtoMessage() {}
+
+func (x *GetResearchRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetResearchRoomRequest.ProtoReflect.Descriptor instead.
+func (*GetResearchRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{323}
+}
+
+func (x *GetResearchRoomRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+type GetResearchRoomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Detail        *ResearchRoomDetail    `protobuf:"bytes,1,opt,name=detail,proto3" json:"detail,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetResearchRoomResponse) Reset() {
+	*x = GetResearchRoomResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetResearchRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetResearchRoomResponse) ProtoMessage() {}
+
+func (x *GetResearchRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetResearchRoomResponse.ProtoReflect.Descriptor instead.
+func (*GetResearchRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{324}
+}
+
+func (x *GetResearchRoomResponse) GetDetail() *ResearchRoomDetail {
+	if x != nil {
+		return x.Detail
+	}
+	return nil
+}
+
+type CreateResearchRoomRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Title            string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Purpose          string                 `protobuf:"bytes,2,opt,name=purpose,proto3" json:"purpose,omitempty"`
+	Description      string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Policy           *ResearchRoomPolicy    `protobuf:"bytes,4,opt,name=policy,proto3" json:"policy,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CreateResearchRoomRequest) Reset() {
+	*x = CreateResearchRoomRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateResearchRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateResearchRoomRequest) ProtoMessage() {}
+
+func (x *CreateResearchRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateResearchRoomRequest.ProtoReflect.Descriptor instead.
+func (*CreateResearchRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{325}
+}
+
+func (x *CreateResearchRoomRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateResearchRoomRequest) GetPurpose() string {
+	if x != nil {
+		return x.Purpose
+	}
+	return ""
+}
+
+func (x *CreateResearchRoomRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *CreateResearchRoomRequest) GetPolicy() *ResearchRoomPolicy {
+	if x != nil {
+		return x.Policy
+	}
+	return nil
+}
+
+func (x *CreateResearchRoomRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type CreateResearchRoomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Room          *ResearchRoom          `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateResearchRoomResponse) Reset() {
+	*x = CreateResearchRoomResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateResearchRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateResearchRoomResponse) ProtoMessage() {}
+
+func (x *CreateResearchRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateResearchRoomResponse.ProtoReflect.Descriptor instead.
+func (*CreateResearchRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{326}
+}
+
+func (x *CreateResearchRoomResponse) GetRoom() *ResearchRoom {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type UpdateResearchRoomRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	RoomId                    string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Title                     string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Purpose                   string                 `protobuf:"bytes,3,opt,name=purpose,proto3" json:"purpose,omitempty"`
+	Description               string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Status                    string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	Policy                    *ResearchRoomPolicy    `protobuf:"bytes,6,opt,name=policy,proto3" json:"policy,omitempty"`
+	ExpectedPermissionVersion int64                  `protobuf:"varint,7,opt,name=expected_permission_version,json=expectedPermissionVersion,proto3" json:"expected_permission_version,omitempty"`
+	ClientMutationId          string                 `protobuf:"bytes,8,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *UpdateResearchRoomRequest) Reset() {
+	*x = UpdateResearchRoomRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateResearchRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateResearchRoomRequest) ProtoMessage() {}
+
+func (x *UpdateResearchRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateResearchRoomRequest.ProtoReflect.Descriptor instead.
+func (*UpdateResearchRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{327}
+}
+
+func (x *UpdateResearchRoomRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpdateResearchRoomRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpdateResearchRoomRequest) GetPurpose() string {
+	if x != nil {
+		return x.Purpose
+	}
+	return ""
+}
+
+func (x *UpdateResearchRoomRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *UpdateResearchRoomRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UpdateResearchRoomRequest) GetPolicy() *ResearchRoomPolicy {
+	if x != nil {
+		return x.Policy
+	}
+	return nil
+}
+
+func (x *UpdateResearchRoomRequest) GetExpectedPermissionVersion() int64 {
+	if x != nil {
+		return x.ExpectedPermissionVersion
+	}
+	return 0
+}
+
+func (x *UpdateResearchRoomRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpdateResearchRoomResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Room          *ResearchRoom          `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateResearchRoomResponse) Reset() {
+	*x = UpdateResearchRoomResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateResearchRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateResearchRoomResponse) ProtoMessage() {}
+
+func (x *UpdateResearchRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateResearchRoomResponse.ProtoReflect.Descriptor instead.
+func (*UpdateResearchRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{328}
+}
+
+func (x *UpdateResearchRoomResponse) GetRoom() *ResearchRoom {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type InviteResearchRoomMemberRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Email            string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Role             string                 `protobuf:"bytes,3,opt,name=role,proto3" json:"role,omitempty"`
+	IsGuest          bool                   `protobuf:"varint,4,opt,name=is_guest,json=isGuest,proto3" json:"is_guest,omitempty"`
+	GuestDays        int32                  `protobuf:"varint,5,opt,name=guest_days,json=guestDays,proto3" json:"guest_days,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *InviteResearchRoomMemberRequest) Reset() {
+	*x = InviteResearchRoomMemberRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InviteResearchRoomMemberRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InviteResearchRoomMemberRequest) ProtoMessage() {}
+
+func (x *InviteResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InviteResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
+func (*InviteResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{329}
+}
+
+func (x *InviteResearchRoomMemberRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *InviteResearchRoomMemberRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *InviteResearchRoomMemberRequest) GetRole() string {
+	if x != nil {
+		return x.Role
+	}
+	return ""
+}
+
+func (x *InviteResearchRoomMemberRequest) GetIsGuest() bool {
+	if x != nil {
+		return x.IsGuest
+	}
+	return false
+}
+
+func (x *InviteResearchRoomMemberRequest) GetGuestDays() int32 {
+	if x != nil {
+		return x.GuestDays
+	}
+	return 0
+}
+
+func (x *InviteResearchRoomMemberRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type InviteResearchRoomMemberResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Member        *ResearchRoomMember    `protobuf:"bytes,1,opt,name=member,proto3" json:"member,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *InviteResearchRoomMemberResponse) Reset() {
+	*x = InviteResearchRoomMemberResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InviteResearchRoomMemberResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InviteResearchRoomMemberResponse) ProtoMessage() {}
+
+func (x *InviteResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InviteResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
+func (*InviteResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{330}
+}
+
+func (x *InviteResearchRoomMemberResponse) GetMember() *ResearchRoomMember {
+	if x != nil {
+		return x.Member
+	}
+	return nil
+}
+
+type RespondResearchRoomInviteRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Accept           bool                   `protobuf:"varint,2,opt,name=accept,proto3" json:"accept,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,3,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RespondResearchRoomInviteRequest) Reset() {
+	*x = RespondResearchRoomInviteRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondResearchRoomInviteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondResearchRoomInviteRequest) ProtoMessage() {}
+
+func (x *RespondResearchRoomInviteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondResearchRoomInviteRequest.ProtoReflect.Descriptor instead.
+func (*RespondResearchRoomInviteRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{331}
+}
+
+func (x *RespondResearchRoomInviteRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *RespondResearchRoomInviteRequest) GetAccept() bool {
+	if x != nil {
+		return x.Accept
+	}
+	return false
+}
+
+func (x *RespondResearchRoomInviteRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RespondResearchRoomInviteResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Member        *ResearchRoomMember    `protobuf:"bytes,1,opt,name=member,proto3" json:"member,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RespondResearchRoomInviteResponse) Reset() {
+	*x = RespondResearchRoomInviteResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondResearchRoomInviteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondResearchRoomInviteResponse) ProtoMessage() {}
+
+func (x *RespondResearchRoomInviteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondResearchRoomInviteResponse.ProtoReflect.Descriptor instead.
+func (*RespondResearchRoomInviteResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{332}
+}
+
+func (x *RespondResearchRoomInviteResponse) GetMember() *ResearchRoomMember {
+	if x != nil {
+		return x.Member
+	}
+	return nil
+}
+
+type ChangeResearchRoomMemberRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	RoomId                string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	UserId                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Role                  string                 `protobuf:"bytes,3,opt,name=role,proto3" json:"role,omitempty"`
+	ExpiresAt             *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	ExpectedAccessVersion int64                  `protobuf:"varint,5,opt,name=expected_access_version,json=expectedAccessVersion,proto3" json:"expected_access_version,omitempty"`
+	ClientMutationId      string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *ChangeResearchRoomMemberRequest) Reset() {
+	*x = ChangeResearchRoomMemberRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChangeResearchRoomMemberRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangeResearchRoomMemberRequest) ProtoMessage() {}
+
+func (x *ChangeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangeResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
+func (*ChangeResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{333}
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetRole() string {
+	if x != nil {
+		return x.Role
+	}
+	return ""
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetExpectedAccessVersion() int64 {
+	if x != nil {
+		return x.ExpectedAccessVersion
+	}
+	return 0
+}
+
+func (x *ChangeResearchRoomMemberRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type ChangeResearchRoomMemberResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Member        *ResearchRoomMember    `protobuf:"bytes,1,opt,name=member,proto3" json:"member,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChangeResearchRoomMemberResponse) Reset() {
+	*x = ChangeResearchRoomMemberResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChangeResearchRoomMemberResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangeResearchRoomMemberResponse) ProtoMessage() {}
+
+func (x *ChangeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangeResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
+func (*ChangeResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{334}
+}
+
+func (x *ChangeResearchRoomMemberResponse) GetMember() *ResearchRoomMember {
+	if x != nil {
+		return x.Member
+	}
+	return nil
+}
+
+type RevokeResearchRoomMemberRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	RoomId                string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	UserId                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Reason                string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	ExpectedAccessVersion int64                  `protobuf:"varint,4,opt,name=expected_access_version,json=expectedAccessVersion,proto3" json:"expected_access_version,omitempty"`
+	ClientMutationId      string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *RevokeResearchRoomMemberRequest) Reset() {
+	*x = RevokeResearchRoomMemberRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeResearchRoomMemberRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeResearchRoomMemberRequest) ProtoMessage() {}
+
+func (x *RevokeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
+func (*RevokeResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{335}
+}
+
+func (x *RevokeResearchRoomMemberRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *RevokeResearchRoomMemberRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RevokeResearchRoomMemberRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *RevokeResearchRoomMemberRequest) GetExpectedAccessVersion() int64 {
+	if x != nil {
+		return x.ExpectedAccessVersion
+	}
+	return 0
+}
+
+func (x *RevokeResearchRoomMemberRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RevokeResearchRoomMemberResponse struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	PermissionVersion int64                  `protobuf:"varint,1,opt,name=permission_version,json=permissionVersion,proto3" json:"permission_version,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *RevokeResearchRoomMemberResponse) Reset() {
+	*x = RevokeResearchRoomMemberResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeResearchRoomMemberResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeResearchRoomMemberResponse) ProtoMessage() {}
+
+func (x *RevokeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
+func (*RevokeResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{336}
+}
+
+func (x *RevokeResearchRoomMemberResponse) GetPermissionVersion() int64 {
+	if x != nil {
+		return x.PermissionVersion
+	}
+	return 0
+}
+
+type AddResearchRoomItemRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ItemType         string                 `protobuf:"bytes,2,opt,name=item_type,json=itemType,proto3" json:"item_type,omitempty"`
+	ObjectId         string                 `protobuf:"bytes,3,opt,name=object_id,json=objectId,proto3" json:"object_id,omitempty"`
+	ContentId        string                 `protobuf:"bytes,4,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	PassageKey       string                 `protobuf:"bytes,5,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	Title            string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	Summary          string                 `protobuf:"bytes,7,opt,name=summary,proto3" json:"summary,omitempty"`
+	RequiredRole     string                 `protobuf:"bytes,8,opt,name=required_role,json=requiredRole,proto3" json:"required_role,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,9,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *AddResearchRoomItemRequest) Reset() {
+	*x = AddResearchRoomItemRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddResearchRoomItemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddResearchRoomItemRequest) ProtoMessage() {}
+
+func (x *AddResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddResearchRoomItemRequest.ProtoReflect.Descriptor instead.
+func (*AddResearchRoomItemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{337}
+}
+
+func (x *AddResearchRoomItemRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetItemType() string {
+	if x != nil {
+		return x.ItemType
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetObjectId() string {
+	if x != nil {
+		return x.ObjectId
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetContentId() string {
+	if x != nil {
+		return x.ContentId
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetRequiredRole() string {
+	if x != nil {
+		return x.RequiredRole
+	}
+	return ""
+}
+
+func (x *AddResearchRoomItemRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type AddResearchRoomItemResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ResearchRoomItem      `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddResearchRoomItemResponse) Reset() {
+	*x = AddResearchRoomItemResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddResearchRoomItemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddResearchRoomItemResponse) ProtoMessage() {}
+
+func (x *AddResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddResearchRoomItemResponse.ProtoReflect.Descriptor instead.
+func (*AddResearchRoomItemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{338}
+}
+
+func (x *AddResearchRoomItemResponse) GetItem() *ResearchRoomItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RemoveResearchRoomItemRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ItemId           string                 `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,3,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RemoveResearchRoomItemRequest) Reset() {
+	*x = RemoveResearchRoomItemRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveResearchRoomItemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveResearchRoomItemRequest) ProtoMessage() {}
+
+func (x *RemoveResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveResearchRoomItemRequest.ProtoReflect.Descriptor instead.
+func (*RemoveResearchRoomItemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{339}
+}
+
+func (x *RemoveResearchRoomItemRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *RemoveResearchRoomItemRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RemoveResearchRoomItemRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *RemoveResearchRoomItemRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RemoveResearchRoomItemResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveResearchRoomItemResponse) Reset() {
+	*x = RemoveResearchRoomItemResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveResearchRoomItemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveResearchRoomItemResponse) ProtoMessage() {}
+
+func (x *RemoveResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveResearchRoomItemResponse.ProtoReflect.Descriptor instead.
+func (*RemoveResearchRoomItemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{340}
+}
+
+type PostResearchRoomCommentRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ThreadId         string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	ItemId           string                 `protobuf:"bytes,3,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	PassageKey       string                 `protobuf:"bytes,4,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	ThreadKind       string                 `protobuf:"bytes,5,opt,name=thread_kind,json=threadKind,proto3" json:"thread_kind,omitempty"`
+	ThreadTitle      string                 `protobuf:"bytes,6,opt,name=thread_title,json=threadTitle,proto3" json:"thread_title,omitempty"`
+	ParentCommentId  string                 `protobuf:"bytes,7,opt,name=parent_comment_id,json=parentCommentId,proto3" json:"parent_comment_id,omitempty"`
+	CommentKind      string                 `protobuf:"bytes,8,opt,name=comment_kind,json=commentKind,proto3" json:"comment_kind,omitempty"`
+	Body             string                 `protobuf:"bytes,9,opt,name=body,proto3" json:"body,omitempty"`
+	MentionUserIds   []string               `protobuf:"bytes,10,rep,name=mention_user_ids,json=mentionUserIds,proto3" json:"mention_user_ids,omitempty"`
+	Visibility       string                 `protobuf:"bytes,11,opt,name=visibility,proto3" json:"visibility,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,12,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *PostResearchRoomCommentRequest) Reset() {
+	*x = PostResearchRoomCommentRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostResearchRoomCommentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostResearchRoomCommentRequest) ProtoMessage() {}
+
+func (x *PostResearchRoomCommentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostResearchRoomCommentRequest.ProtoReflect.Descriptor instead.
+func (*PostResearchRoomCommentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{341}
+}
+
+func (x *PostResearchRoomCommentRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetThreadKind() string {
+	if x != nil {
+		return x.ThreadKind
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetThreadTitle() string {
+	if x != nil {
+		return x.ThreadTitle
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetParentCommentId() string {
+	if x != nil {
+		return x.ParentCommentId
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetCommentKind() string {
+	if x != nil {
+		return x.CommentKind
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetMentionUserIds() []string {
+	if x != nil {
+		return x.MentionUserIds
+	}
+	return nil
+}
+
+func (x *PostResearchRoomCommentRequest) GetVisibility() string {
+	if x != nil {
+		return x.Visibility
+	}
+	return ""
+}
+
+func (x *PostResearchRoomCommentRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type PostResearchRoomCommentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ResearchRoomThread    `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	Comment       *ResearchRoomComment   `protobuf:"bytes,2,opt,name=comment,proto3" json:"comment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PostResearchRoomCommentResponse) Reset() {
+	*x = PostResearchRoomCommentResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PostResearchRoomCommentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PostResearchRoomCommentResponse) ProtoMessage() {}
+
+func (x *PostResearchRoomCommentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PostResearchRoomCommentResponse.ProtoReflect.Descriptor instead.
+func (*PostResearchRoomCommentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{342}
+}
+
+func (x *PostResearchRoomCommentResponse) GetThread() *ResearchRoomThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+func (x *PostResearchRoomCommentResponse) GetComment() *ResearchRoomComment {
+	if x != nil {
+		return x.Comment
+	}
+	return nil
+}
+
+type SetResearchRoomThreadStatusRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ThreadId         string                 `protobuf:"bytes,2,opt,name=thread_id,json=threadId,proto3" json:"thread_id,omitempty"`
+	Status           string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SetResearchRoomThreadStatusRequest) Reset() {
+	*x = SetResearchRoomThreadStatusRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetResearchRoomThreadStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetResearchRoomThreadStatusRequest) ProtoMessage() {}
+
+func (x *SetResearchRoomThreadStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetResearchRoomThreadStatusRequest.ProtoReflect.Descriptor instead.
+func (*SetResearchRoomThreadStatusRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{343}
+}
+
+func (x *SetResearchRoomThreadStatusRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *SetResearchRoomThreadStatusRequest) GetThreadId() string {
+	if x != nil {
+		return x.ThreadId
+	}
+	return ""
+}
+
+func (x *SetResearchRoomThreadStatusRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SetResearchRoomThreadStatusRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SetResearchRoomThreadStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Thread        *ResearchRoomThread    `protobuf:"bytes,1,opt,name=thread,proto3" json:"thread,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetResearchRoomThreadStatusResponse) Reset() {
+	*x = SetResearchRoomThreadStatusResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetResearchRoomThreadStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetResearchRoomThreadStatusResponse) ProtoMessage() {}
+
+func (x *SetResearchRoomThreadStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetResearchRoomThreadStatusResponse.ProtoReflect.Descriptor instead.
+func (*SetResearchRoomThreadStatusResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{344}
+}
+
+func (x *SetResearchRoomThreadStatusResponse) GetThread() *ResearchRoomThread {
+	if x != nil {
+		return x.Thread
+	}
+	return nil
+}
+
+type UpsertResearchRoomTaskRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	TaskId           string                 `protobuf:"bytes,2,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	Title            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Description      string                 `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
+	Status           string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	Priority         string                 `protobuf:"bytes,6,opt,name=priority,proto3" json:"priority,omitempty"`
+	OwnerUserId      string                 `protobuf:"bytes,7,opt,name=owner_user_id,json=ownerUserId,proto3" json:"owner_user_id,omitempty"`
+	SourceItemId     string                 `protobuf:"bytes,8,opt,name=source_item_id,json=sourceItemId,proto3" json:"source_item_id,omitempty"`
+	DecisionId       string                 `protobuf:"bytes,9,opt,name=decision_id,json=decisionId,proto3" json:"decision_id,omitempty"`
+	DueAt            *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=due_at,json=dueAt,proto3" json:"due_at,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,11,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,12,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomTaskRequest) Reset() {
+	*x = UpsertResearchRoomTaskRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomTaskRequest) ProtoMessage() {}
+
+func (x *UpsertResearchRoomTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomTaskRequest.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomTaskRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{345}
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetPriority() string {
+	if x != nil {
+		return x.Priority
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetOwnerUserId() string {
+	if x != nil {
+		return x.OwnerUserId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetSourceItemId() string {
+	if x != nil {
+		return x.SourceItemId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetDecisionId() string {
+	if x != nil {
+		return x.DecisionId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetDueAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DueAt
+	}
+	return nil
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *UpsertResearchRoomTaskRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpsertResearchRoomTaskResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Task          *ResearchRoomTask      `protobuf:"bytes,1,opt,name=task,proto3" json:"task,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomTaskResponse) Reset() {
+	*x = UpsertResearchRoomTaskResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomTaskResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomTaskResponse) ProtoMessage() {}
+
+func (x *UpsertResearchRoomTaskResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomTaskResponse.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomTaskResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{346}
+}
+
+func (x *UpsertResearchRoomTaskResponse) GetTask() *ResearchRoomTask {
+	if x != nil {
+		return x.Task
+	}
+	return nil
+}
+
+type UpsertResearchRoomMeetingRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	MeetingId        string                 `protobuf:"bytes,2,opt,name=meeting_id,json=meetingId,proto3" json:"meeting_id,omitempty"`
+	Title            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Agenda           string                 `protobuf:"bytes,4,opt,name=agenda,proto3" json:"agenda,omitempty"`
+	Minutes          string                 `protobuf:"bytes,5,opt,name=minutes,proto3" json:"minutes,omitempty"`
+	Status           string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	StartsAt         *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=starts_at,json=startsAt,proto3" json:"starts_at,omitempty"`
+	EndsAt           *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=ends_at,json=endsAt,proto3" json:"ends_at,omitempty"`
+	AttendeeUserIds  []string               `protobuf:"bytes,9,rep,name=attendee_user_ids,json=attendeeUserIds,proto3" json:"attendee_user_ids,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,10,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,11,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomMeetingRequest) Reset() {
+	*x = UpsertResearchRoomMeetingRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomMeetingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomMeetingRequest) ProtoMessage() {}
+
+func (x *UpsertResearchRoomMeetingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomMeetingRequest.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomMeetingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{347}
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetMeetingId() string {
+	if x != nil {
+		return x.MeetingId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetAgenda() string {
+	if x != nil {
+		return x.Agenda
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetMinutes() string {
+	if x != nil {
+		return x.Minutes
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetStartsAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.StartsAt
+	}
+	return nil
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetEndsAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EndsAt
+	}
+	return nil
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetAttendeeUserIds() []string {
+	if x != nil {
+		return x.AttendeeUserIds
+	}
+	return nil
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *UpsertResearchRoomMeetingRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpsertResearchRoomMeetingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Meeting       *ResearchRoomMeeting   `protobuf:"bytes,1,opt,name=meeting,proto3" json:"meeting,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomMeetingResponse) Reset() {
+	*x = UpsertResearchRoomMeetingResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomMeetingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomMeetingResponse) ProtoMessage() {}
+
+func (x *UpsertResearchRoomMeetingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomMeetingResponse.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomMeetingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{348}
+}
+
+func (x *UpsertResearchRoomMeetingResponse) GetMeeting() *ResearchRoomMeeting {
+	if x != nil {
+		return x.Meeting
+	}
+	return nil
+}
+
+type UpsertResearchRoomDecisionRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	DecisionId       string                 `protobuf:"bytes,2,opt,name=decision_id,json=decisionId,proto3" json:"decision_id,omitempty"`
+	Title            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Statement        string                 `protobuf:"bytes,4,opt,name=statement,proto3" json:"statement,omitempty"`
+	Rationale        string                 `protobuf:"bytes,5,opt,name=rationale,proto3" json:"rationale,omitempty"`
+	Status           string                 `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,7,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,8,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomDecisionRequest) Reset() {
+	*x = UpsertResearchRoomDecisionRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomDecisionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomDecisionRequest) ProtoMessage() {}
+
+func (x *UpsertResearchRoomDecisionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomDecisionRequest.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomDecisionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{349}
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetDecisionId() string {
+	if x != nil {
+		return x.DecisionId
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetStatement() string {
+	if x != nil {
+		return x.Statement
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetRationale() string {
+	if x != nil {
+		return x.Rationale
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *UpsertResearchRoomDecisionRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpsertResearchRoomDecisionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Decision      *ResearchRoomDecision  `protobuf:"bytes,1,opt,name=decision,proto3" json:"decision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertResearchRoomDecisionResponse) Reset() {
+	*x = UpsertResearchRoomDecisionResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertResearchRoomDecisionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertResearchRoomDecisionResponse) ProtoMessage() {}
+
+func (x *UpsertResearchRoomDecisionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertResearchRoomDecisionResponse.ProtoReflect.Descriptor instead.
+func (*UpsertResearchRoomDecisionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{350}
+}
+
+func (x *UpsertResearchRoomDecisionResponse) GetDecision() *ResearchRoomDecision {
+	if x != nil {
+		return x.Decision
+	}
+	return nil
+}
+
+type RecordResearchRoomApprovalRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	ObjectType       string                 `protobuf:"bytes,2,opt,name=object_type,json=objectType,proto3" json:"object_type,omitempty"`
+	ObjectId         string                 `protobuf:"bytes,3,opt,name=object_id,json=objectId,proto3" json:"object_id,omitempty"`
+	Status           string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	Note             string                 `protobuf:"bytes,5,opt,name=note,proto3" json:"note,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RecordResearchRoomApprovalRequest) Reset() {
+	*x = RecordResearchRoomApprovalRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordResearchRoomApprovalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordResearchRoomApprovalRequest) ProtoMessage() {}
+
+func (x *RecordResearchRoomApprovalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordResearchRoomApprovalRequest.ProtoReflect.Descriptor instead.
+func (*RecordResearchRoomApprovalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{351}
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetObjectType() string {
+	if x != nil {
+		return x.ObjectType
+	}
+	return ""
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetObjectId() string {
+	if x != nil {
+		return x.ObjectId
+	}
+	return ""
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *RecordResearchRoomApprovalRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RecordResearchRoomApprovalResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Approval      *ResearchRoomApproval  `protobuf:"bytes,1,opt,name=approval,proto3" json:"approval,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordResearchRoomApprovalResponse) Reset() {
+	*x = RecordResearchRoomApprovalResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordResearchRoomApprovalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordResearchRoomApprovalResponse) ProtoMessage() {}
+
+func (x *RecordResearchRoomApprovalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordResearchRoomApprovalResponse.ProtoReflect.Descriptor instead.
+func (*RecordResearchRoomApprovalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{352}
+}
+
+func (x *RecordResearchRoomApprovalResponse) GetApproval() *ResearchRoomApproval {
+	if x != nil {
+		return x.Approval
+	}
+	return nil
+}
+
+type SearchResearchRoomRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Query         string                 `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
+	ObjectType    string                 `protobuf:"bytes,3,opt,name=object_type,json=objectType,proto3" json:"object_type,omitempty"`
+	Limit         int32                  `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SearchResearchRoomRequest) Reset() {
+	*x = SearchResearchRoomRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SearchResearchRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SearchResearchRoomRequest) ProtoMessage() {}
+
+func (x *SearchResearchRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SearchResearchRoomRequest.ProtoReflect.Descriptor instead.
+func (*SearchResearchRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{353}
+}
+
+func (x *SearchResearchRoomRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomRequest) GetQuery() string {
+	if x != nil {
+		return x.Query
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomRequest) GetObjectType() string {
+	if x != nil {
+		return x.ObjectType
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type SearchResearchRoomResult struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ObjectType    string                 `protobuf:"bytes,1,opt,name=object_type,json=objectType,proto3" json:"object_type,omitempty"`
+	ObjectId      string                 `protobuf:"bytes,2,opt,name=object_id,json=objectId,proto3" json:"object_id,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Snippet       string                 `protobuf:"bytes,4,opt,name=snippet,proto3" json:"snippet,omitempty"`
+	ItemId        string                 `protobuf:"bytes,5,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	PassageKey    string                 `protobuf:"bytes,6,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SearchResearchRoomResult) Reset() {
+	*x = SearchResearchRoomResult{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SearchResearchRoomResult) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SearchResearchRoomResult) ProtoMessage() {}
+
+func (x *SearchResearchRoomResult) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SearchResearchRoomResult.ProtoReflect.Descriptor instead.
+func (*SearchResearchRoomResult) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{354}
+}
+
+func (x *SearchResearchRoomResult) GetObjectType() string {
+	if x != nil {
+		return x.ObjectType
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomResult) GetObjectId() string {
+	if x != nil {
+		return x.ObjectId
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomResult) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomResult) GetSnippet() string {
+	if x != nil {
+		return x.Snippet
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomResult) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *SearchResearchRoomResult) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+type SearchResearchRoomResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Results       []*SearchResearchRoomResult `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SearchResearchRoomResponse) Reset() {
+	*x = SearchResearchRoomResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SearchResearchRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SearchResearchRoomResponse) ProtoMessage() {}
+
+func (x *SearchResearchRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SearchResearchRoomResponse.ProtoReflect.Descriptor instead.
+func (*SearchResearchRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{355}
+}
+
+func (x *SearchResearchRoomResponse) GetResults() []*SearchResearchRoomResult {
+	if x != nil {
+		return x.Results
+	}
+	return nil
+}
+
+type RequestResearchRoomExportRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Format           string                 `protobuf:"bytes,2,opt,name=format,proto3" json:"format,omitempty"`
+	Reason           string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RequestResearchRoomExportRequest) Reset() {
+	*x = RequestResearchRoomExportRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestResearchRoomExportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestResearchRoomExportRequest) ProtoMessage() {}
+
+func (x *RequestResearchRoomExportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestResearchRoomExportRequest.ProtoReflect.Descriptor instead.
+func (*RequestResearchRoomExportRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{356}
+}
+
+func (x *RequestResearchRoomExportRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *RequestResearchRoomExportRequest) GetFormat() string {
+	if x != nil {
+		return x.Format
+	}
+	return ""
+}
+
+func (x *RequestResearchRoomExportRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *RequestResearchRoomExportRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RequestResearchRoomExportResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Export        *ResearchRoomExport    `protobuf:"bytes,1,opt,name=export,proto3" json:"export,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestResearchRoomExportResponse) Reset() {
+	*x = RequestResearchRoomExportResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestResearchRoomExportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestResearchRoomExportResponse) ProtoMessage() {}
+
+func (x *RequestResearchRoomExportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestResearchRoomExportResponse.ProtoReflect.Descriptor instead.
+func (*RequestResearchRoomExportResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{357}
+}
+
+func (x *RequestResearchRoomExportResponse) GetExport() *ResearchRoomExport {
+	if x != nil {
+		return x.Export
+	}
+	return nil
+}
+
+type ReportResearchRoomAbuseRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RoomId           string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Category         string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
+	Summary          string                 `protobuf:"bytes,3,opt,name=summary,proto3" json:"summary,omitempty"`
+	SubjectType      string                 `protobuf:"bytes,4,opt,name=subject_type,json=subjectType,proto3" json:"subject_type,omitempty"`
+	SubjectId        string                 `protobuf:"bytes,5,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ReportResearchRoomAbuseRequest) Reset() {
+	*x = ReportResearchRoomAbuseRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportResearchRoomAbuseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportResearchRoomAbuseRequest) ProtoMessage() {}
+
+func (x *ReportResearchRoomAbuseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportResearchRoomAbuseRequest.ProtoReflect.Descriptor instead.
+func (*ReportResearchRoomAbuseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{358}
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetSubjectType() string {
+	if x != nil {
+		return x.SubjectType
+	}
+	return ""
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetSubjectId() string {
+	if x != nil {
+		return x.SubjectId
+	}
+	return ""
+}
+
+func (x *ReportResearchRoomAbuseRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type ReportResearchRoomAbuseResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ReportId      string                 `protobuf:"bytes,1,opt,name=report_id,json=reportId,proto3" json:"report_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReportResearchRoomAbuseResponse) Reset() {
+	*x = ReportResearchRoomAbuseResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportResearchRoomAbuseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportResearchRoomAbuseResponse) ProtoMessage() {}
+
+func (x *ReportResearchRoomAbuseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportResearchRoomAbuseResponse.ProtoReflect.Descriptor instead.
+func (*ReportResearchRoomAbuseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{359}
+}
+
+func (x *ReportResearchRoomAbuseResponse) GetReportId() string {
+	if x != nil {
+		return x.ReportId
+	}
+	return ""
+}
+
+type ListResearchRoomAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RoomId        string                 `protobuf:"bytes,1,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListResearchRoomAuditRequest) Reset() {
+	*x = ListResearchRoomAuditRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListResearchRoomAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListResearchRoomAuditRequest) ProtoMessage() {}
+
+func (x *ListResearchRoomAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListResearchRoomAuditRequest.ProtoReflect.Descriptor instead.
+func (*ListResearchRoomAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{360}
+}
+
+func (x *ListResearchRoomAuditRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *ListResearchRoomAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListResearchRoomAuditResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Events        []*ResearchRoomAuditEvent `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListResearchRoomAuditResponse) Reset() {
+	*x = ListResearchRoomAuditResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListResearchRoomAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListResearchRoomAuditResponse) ProtoMessage() {}
+
+func (x *ListResearchRoomAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListResearchRoomAuditResponse.ProtoReflect.Descriptor instead.
+func (*ListResearchRoomAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{361}
+}
+
+func (x *ListResearchRoomAuditResponse) GetEvents() []*ResearchRoomAuditEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
 var File_sttattus_onyx_v1_onyx_proto protoreflect.FileDescriptor
 
 const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
@@ -21756,7 +26148,434 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x06reason\x18\x05 \x01(\tR\x06reason\x12,\n" +
 	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"a\n" +
 	"\x1aCreateCommerceCaseResponse\x12C\n" +
-	"\rcommerce_case\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.CommerceCaseR\fcommerceCase2\xb2g\n" +
+	"\rcommerce_case\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.CommerceCaseR\fcommerceCase\"\xde\x02\n" +
+	"\x12ResearchRoomPolicy\x12'\n" +
+	"\x0fdownload_policy\x18\x01 \x01(\tR\x0edownloadPolicy\x12#\n" +
+	"\rexport_policy\x18\x02 \x01(\tR\fexportPolicy\x12%\n" +
+	"\x0ewatermark_mode\x18\x03 \x01(\tR\rwatermarkMode\x12!\n" +
+	"\fallow_guests\x18\x04 \x01(\bR\vallowGuests\x12,\n" +
+	"\x12default_guest_days\x18\x05 \x01(\x05R\x10defaultGuestDays\x126\n" +
+	"\x17require_export_approval\x18\x06 \x01(\bR\x15requireExportApproval\x120\n" +
+	"\x14allow_external_links\x18\a \x01(\bR\x12allowExternalLinks\x12\x18\n" +
+	"\aversion\x18\b \x01(\x03R\aversion\"\xc7\x03\n" +
+	"\x12ResearchRoomMember\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
+	"\fdisplay_name\x18\x02 \x01(\tR\vdisplayName\x12\x1d\n" +
+	"\n" +
+	"email_hint\x18\x03 \x01(\tR\temailHint\x12\x12\n" +
+	"\x04role\x18\x04 \x01(\tR\x04role\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x19\n" +
+	"\bis_guest\x18\x06 \x01(\bR\aisGuest\x129\n" +
+	"\n" +
+	"expires_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x129\n" +
+	"\n" +
+	"invited_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tinvitedAt\x127\n" +
+	"\tjoined_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\bjoinedAt\x129\n" +
+	"\n" +
+	"revoked_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\trevokedAt\x12%\n" +
+	"\x0eaccess_version\x18\v \x01(\x03R\raccessVersion\"\xf5\x04\n" +
+	"\fResearchRoom\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
+	"\apurpose\x18\x03 \x01(\tR\apurpose\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x17\n" +
+	"\amy_role\x18\x06 \x01(\tR\x06myRole\x120\n" +
+	"\x14my_membership_status\x18\a \x01(\tR\x12myMembershipStatus\x12!\n" +
+	"\fmember_count\x18\b \x01(\x05R\vmemberCount\x12\x1f\n" +
+	"\vguest_count\x18\t \x01(\x05R\n" +
+	"guestCount\x12&\n" +
+	"\x0fopen_task_count\x18\n" +
+	" \x01(\x05R\ropenTaskCount\x12.\n" +
+	"\x13open_question_count\x18\v \x01(\x05R\x11openQuestionCount\x12!\n" +
+	"\funread_count\x18\f \x01(\x05R\vunreadCount\x12<\n" +
+	"\x06policy\x18\r \x01(\v2$.sttattus.onyx.v1.ResearchRoomPolicyR\x06policy\x12-\n" +
+	"\x12permission_version\x18\x0e \x01(\x03R\x11permissionVersion\x129\n" +
+	"\n" +
+	"created_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xe7\x03\n" +
+	"\x10ResearchRoomItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x1b\n" +
+	"\titem_type\x18\x03 \x01(\tR\bitemType\x12\x1b\n" +
+	"\tobject_id\x18\x04 \x01(\tR\bobjectId\x12\x1d\n" +
+	"\n" +
+	"content_id\x18\x05 \x01(\tR\tcontentId\x12\x1f\n" +
+	"\vpassage_key\x18\x06 \x01(\tR\n" +
+	"passageKey\x12\x14\n" +
+	"\x05title\x18\a \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\b \x01(\tR\asummary\x12#\n" +
+	"\rrequired_role\x18\t \x01(\tR\frequiredRole\x12'\n" +
+	"\x10added_by_user_id\x18\n" +
+	" \x01(\tR\raddedByUserId\x12\"\n" +
+	"\radded_by_name\x18\v \x01(\tR\vaddedByName\x12\x18\n" +
+	"\aversion\x18\f \x01(\x03R\aversion\x129\n" +
+	"\n" +
+	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xe6\x03\n" +
+	"\x12ResearchRoomThread\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x17\n" +
+	"\aitem_id\x18\x03 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vpassage_key\x18\x04 \x01(\tR\n" +
+	"passageKey\x12\x12\n" +
+	"\x04kind\x18\x05 \x01(\tR\x04kind\x12\x14\n" +
+	"\x05title\x18\x06 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\a \x01(\tR\x06status\x12+\n" +
+	"\x12created_by_user_id\x18\b \x01(\tR\x0fcreatedByUserId\x12&\n" +
+	"\x0fcreated_by_name\x18\t \x01(\tR\rcreatedByName\x12#\n" +
+	"\rcomment_count\x18\n" +
+	" \x01(\x05R\fcommentCount\x12;\n" +
+	"\vresolved_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"resolvedAt\x129\n" +
+	"\n" +
+	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xd0\x03\n" +
+	"\x13ResearchRoomComment\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x1b\n" +
+	"\tthread_id\x18\x03 \x01(\tR\bthreadId\x12*\n" +
+	"\x11parent_comment_id\x18\x04 \x01(\tR\x0fparentCommentId\x12\x12\n" +
+	"\x04kind\x18\x05 \x01(\tR\x04kind\x12\x12\n" +
+	"\x04body\x18\x06 \x01(\tR\x04body\x12(\n" +
+	"\x10mention_user_ids\x18\a \x03(\tR\x0ementionUserIds\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\b \x01(\tR\n" +
+	"visibility\x12$\n" +
+	"\x0eauthor_user_id\x18\t \x01(\tR\fauthorUserId\x12\x1f\n" +
+	"\vauthor_name\x18\n" +
+	" \x01(\tR\n" +
+	"authorName\x12\x18\n" +
+	"\aversion\x18\v \x01(\x03R\aversion\x129\n" +
+	"\n" +
+	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xf4\x03\n" +
+	"\x10ResearchRoomTask\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1a\n" +
+	"\bpriority\x18\x06 \x01(\tR\bpriority\x12\"\n" +
+	"\rowner_user_id\x18\a \x01(\tR\vownerUserId\x12\x1d\n" +
+	"\n" +
+	"owner_name\x18\b \x01(\tR\townerName\x12$\n" +
+	"\x0esource_item_id\x18\t \x01(\tR\fsourceItemId\x12\x1f\n" +
+	"\vdecision_id\x18\n" +
+	" \x01(\tR\n" +
+	"decisionId\x121\n" +
+	"\x06due_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\x05dueAt\x12\x18\n" +
+	"\aversion\x18\f \x01(\x03R\aversion\x129\n" +
+	"\n" +
+	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xc8\x03\n" +
+	"\x13ResearchRoomMeeting\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06agenda\x18\x04 \x01(\tR\x06agenda\x12\x18\n" +
+	"\aminutes\x18\x05 \x01(\tR\aminutes\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x127\n" +
+	"\tstarts_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\bstartsAt\x123\n" +
+	"\aends_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x06endsAt\x12*\n" +
+	"\x11attendee_user_ids\x18\t \x03(\tR\x0fattendeeUserIds\x12\x18\n" +
+	"\aversion\x18\n" +
+	" \x01(\x03R\aversion\x129\n" +
+	"\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xcf\x05\n" +
+	"\x14ResearchRoomDecision\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1c\n" +
+	"\tstatement\x18\x04 \x01(\tR\tstatement\x12\x1c\n" +
+	"\trationale\x18\x05 \x01(\tR\trationale\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x12-\n" +
+	"\x13proposed_by_user_id\x18\a \x01(\tR\x10proposedByUserId\x12(\n" +
+	"\x10proposed_by_name\x18\b \x01(\tR\x0eproposedByName\x12+\n" +
+	"\x12decided_by_user_id\x18\t \x01(\tR\x0fdecidedByUserId\x12&\n" +
+	"\x0fdecided_by_name\x18\n" +
+	" \x01(\tR\rdecidedByName\x12.\n" +
+	"\x13dissent_comment_ids\x18\v \x03(\tR\x11dissentCommentIds\x12%\n" +
+	"\x0eapproval_count\x18\f \x01(\x05R\rapprovalCount\x12'\n" +
+	"\x0frejection_count\x18\r \x01(\x05R\x0erejectionCount\x12+\n" +
+	"\x11snapshot_checksum\x18\x0e \x01(\tR\x10snapshotChecksum\x12\x18\n" +
+	"\aversion\x18\x0f \x01(\x03R\aversion\x129\n" +
+	"\n" +
+	"decided_at\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tdecidedAt\x129\n" +
+	"\n" +
+	"created_at\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x12 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xb3\x02\n" +
+	"\x14ResearchRoomApproval\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x1f\n" +
+	"\vobject_type\x18\x03 \x01(\tR\n" +
+	"objectType\x12\x1b\n" +
+	"\tobject_id\x18\x04 \x01(\tR\bobjectId\x12(\n" +
+	"\x10reviewer_user_id\x18\x05 \x01(\tR\x0ereviewerUserId\x12#\n" +
+	"\rreviewer_name\x18\x06 \x01(\tR\freviewerName\x12\x16\n" +
+	"\x06status\x18\a \x01(\tR\x06status\x12\x12\n" +
+	"\x04note\x18\b \x01(\tR\x04note\x129\n" +
+	"\n" +
+	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xda\x04\n" +
+	"\x12ResearchRoomExport\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06format\x18\x03 \x01(\tR\x06format\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12/\n" +
+	"\x14requested_by_user_id\x18\x05 \x01(\tR\x11requestedByUserId\x12*\n" +
+	"\x11requested_by_name\x18\x06 \x01(\tR\x0frequestedByName\x12(\n" +
+	"\x10reviewed_by_name\x18\a \x01(\tR\x0ereviewedByName\x12\x16\n" +
+	"\x06reason\x18\b \x01(\tR\x06reason\x12\x1c\n" +
+	"\twatermark\x18\t \x01(\tR\twatermark\x12+\n" +
+	"\x11manifest_checksum\x18\n" +
+	" \x01(\tR\x10manifestChecksum\x12!\n" +
+	"\fdownload_url\x18\v \x01(\tR\vdownloadUrl\x12-\n" +
+	"\x12permission_version\x18\f \x01(\x03R\x11permissionVersion\x129\n" +
+	"\n" +
+	"expires_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x129\n" +
+	"\n" +
+	"created_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xe2\x02\n" +
+	"\x16ResearchRoomAuditEvent\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06action\x18\x03 \x01(\tR\x06action\x12\"\n" +
+	"\ractor_user_id\x18\x04 \x01(\tR\vactorUserId\x12\x1d\n" +
+	"\n" +
+	"actor_name\x18\x05 \x01(\tR\tactorName\x12!\n" +
+	"\fsubject_type\x18\x06 \x01(\tR\vsubjectType\x12\x1d\n" +
+	"\n" +
+	"subject_id\x18\a \x01(\tR\tsubjectId\x12\x18\n" +
+	"\asummary\x18\b \x01(\tR\asummary\x12-\n" +
+	"\x12permission_version\x18\t \x01(\x03R\x11permissionVersion\x129\n" +
+	"\n" +
+	"created_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x8e\x05\n" +
+	"\x12ResearchRoomDetail\x122\n" +
+	"\x04room\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.ResearchRoomR\x04room\x12>\n" +
+	"\amembers\x18\x02 \x03(\v2$.sttattus.onyx.v1.ResearchRoomMemberR\amembers\x128\n" +
+	"\x05items\x18\x03 \x03(\v2\".sttattus.onyx.v1.ResearchRoomItemR\x05items\x12>\n" +
+	"\athreads\x18\x04 \x03(\v2$.sttattus.onyx.v1.ResearchRoomThreadR\athreads\x12A\n" +
+	"\bcomments\x18\x05 \x03(\v2%.sttattus.onyx.v1.ResearchRoomCommentR\bcomments\x128\n" +
+	"\x05tasks\x18\x06 \x03(\v2\".sttattus.onyx.v1.ResearchRoomTaskR\x05tasks\x12A\n" +
+	"\bmeetings\x18\a \x03(\v2%.sttattus.onyx.v1.ResearchRoomMeetingR\bmeetings\x12D\n" +
+	"\tdecisions\x18\b \x03(\v2&.sttattus.onyx.v1.ResearchRoomDecisionR\tdecisions\x12D\n" +
+	"\tapprovals\x18\t \x03(\v2&.sttattus.onyx.v1.ResearchRoomApprovalR\tapprovals\x12>\n" +
+	"\aexports\x18\n" +
+	" \x03(\v2$.sttattus.onyx.v1.ResearchRoomExportR\aexports\"E\n" +
+	"\x18ListResearchRoomsRequest\x12)\n" +
+	"\x10include_archived\x18\x01 \x01(\bR\x0fincludeArchived\"Q\n" +
+	"\x19ListResearchRoomsResponse\x124\n" +
+	"\x05rooms\x18\x01 \x03(\v2\x1e.sttattus.onyx.v1.ResearchRoomR\x05rooms\"1\n" +
+	"\x16GetResearchRoomRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\"W\n" +
+	"\x17GetResearchRoomResponse\x12<\n" +
+	"\x06detail\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomDetailR\x06detail\"\xd9\x01\n" +
+	"\x19CreateResearchRoomRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
+	"\apurpose\x18\x02 \x01(\tR\apurpose\x12 \n" +
+	"\vdescription\x18\x03 \x01(\tR\vdescription\x12<\n" +
+	"\x06policy\x18\x04 \x01(\v2$.sttattus.onyx.v1.ResearchRoomPolicyR\x06policy\x12,\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"P\n" +
+	"\x1aCreateResearchRoomResponse\x122\n" +
+	"\x04room\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.ResearchRoomR\x04room\"\xca\x02\n" +
+	"\x19UpdateResearchRoomRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
+	"\apurpose\x18\x03 \x01(\tR\apurpose\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12<\n" +
+	"\x06policy\x18\x06 \x01(\v2$.sttattus.onyx.v1.ResearchRoomPolicyR\x06policy\x12>\n" +
+	"\x1bexpected_permission_version\x18\a \x01(\x03R\x19expectedPermissionVersion\x12,\n" +
+	"\x12client_mutation_id\x18\b \x01(\tR\x10clientMutationId\"P\n" +
+	"\x1aUpdateResearchRoomResponse\x122\n" +
+	"\x04room\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.ResearchRoomR\x04room\"\xcc\x01\n" +
+	"\x1fInviteResearchRoomMemberRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\x12\x12\n" +
+	"\x04role\x18\x03 \x01(\tR\x04role\x12\x19\n" +
+	"\bis_guest\x18\x04 \x01(\bR\aisGuest\x12\x1d\n" +
+	"\n" +
+	"guest_days\x18\x05 \x01(\x05R\tguestDays\x12,\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"`\n" +
+	" InviteResearchRoomMemberResponse\x12<\n" +
+	"\x06member\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomMemberR\x06member\"\x81\x01\n" +
+	" RespondResearchRoomInviteRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06accept\x18\x02 \x01(\bR\x06accept\x12,\n" +
+	"\x12client_mutation_id\x18\x03 \x01(\tR\x10clientMutationId\"a\n" +
+	"!RespondResearchRoomInviteResponse\x12<\n" +
+	"\x06member\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomMemberR\x06member\"\x88\x02\n" +
+	"\x1fChangeResearchRoomMemberRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x12\n" +
+	"\x04role\x18\x03 \x01(\tR\x04role\x129\n" +
+	"\n" +
+	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x126\n" +
+	"\x17expected_access_version\x18\x05 \x01(\x03R\x15expectedAccessVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"`\n" +
+	" ChangeResearchRoomMemberResponse\x12<\n" +
+	"\x06member\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomMemberR\x06member\"\xd1\x01\n" +
+	"\x1fRevokeResearchRoomMemberRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x126\n" +
+	"\x17expected_access_version\x18\x04 \x01(\x03R\x15expectedAccessVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"Q\n" +
+	" RevokeResearchRoomMemberResponse\x12-\n" +
+	"\x12permission_version\x18\x01 \x01(\x03R\x11permissionVersion\"\xb2\x02\n" +
+	"\x1aAddResearchRoomItemRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
+	"\titem_type\x18\x02 \x01(\tR\bitemType\x12\x1b\n" +
+	"\tobject_id\x18\x03 \x01(\tR\bobjectId\x12\x1d\n" +
+	"\n" +
+	"content_id\x18\x04 \x01(\tR\tcontentId\x12\x1f\n" +
+	"\vpassage_key\x18\x05 \x01(\tR\n" +
+	"passageKey\x12\x14\n" +
+	"\x05title\x18\x06 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\a \x01(\tR\asummary\x12#\n" +
+	"\rrequired_role\x18\b \x01(\tR\frequiredRole\x12,\n" +
+	"\x12client_mutation_id\x18\t \x01(\tR\x10clientMutationId\"U\n" +
+	"\x1bAddResearchRoomItemResponse\x126\n" +
+	"\x04item\x18\x01 \x01(\v2\".sttattus.onyx.v1.ResearchRoomItemR\x04item\"\xaa\x01\n" +
+	"\x1dRemoveResearchRoomItemRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x17\n" +
+	"\aitem_id\x18\x02 \x01(\tR\x06itemId\x12)\n" +
+	"\x10expected_version\x18\x03 \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\" \n" +
+	"\x1eRemoveResearchRoomItemResponse\"\xaf\x03\n" +
+	"\x1ePostResearchRoomCommentRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
+	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x17\n" +
+	"\aitem_id\x18\x03 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vpassage_key\x18\x04 \x01(\tR\n" +
+	"passageKey\x12\x1f\n" +
+	"\vthread_kind\x18\x05 \x01(\tR\n" +
+	"threadKind\x12!\n" +
+	"\fthread_title\x18\x06 \x01(\tR\vthreadTitle\x12*\n" +
+	"\x11parent_comment_id\x18\a \x01(\tR\x0fparentCommentId\x12!\n" +
+	"\fcomment_kind\x18\b \x01(\tR\vcommentKind\x12\x12\n" +
+	"\x04body\x18\t \x01(\tR\x04body\x12(\n" +
+	"\x10mention_user_ids\x18\n" +
+	" \x03(\tR\x0ementionUserIds\x12\x1e\n" +
+	"\n" +
+	"visibility\x18\v \x01(\tR\n" +
+	"visibility\x12,\n" +
+	"\x12client_mutation_id\x18\f \x01(\tR\x10clientMutationId\"\xa0\x01\n" +
+	"\x1fPostResearchRoomCommentResponse\x12<\n" +
+	"\x06thread\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomThreadR\x06thread\x12?\n" +
+	"\acomment\x18\x02 \x01(\v2%.sttattus.onyx.v1.ResearchRoomCommentR\acomment\"\xa0\x01\n" +
+	"\"SetResearchRoomThreadStatusRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
+	"\tthread_id\x18\x02 \x01(\tR\bthreadId\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"c\n" +
+	"#SetResearchRoomThreadStatusResponse\x12<\n" +
+	"\x06thread\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomThreadR\x06thread\"\xb4\x03\n" +
+	"\x1dUpsertResearchRoomTaskRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x17\n" +
+	"\atask_id\x18\x02 \x01(\tR\x06taskId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12 \n" +
+	"\vdescription\x18\x04 \x01(\tR\vdescription\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1a\n" +
+	"\bpriority\x18\x06 \x01(\tR\bpriority\x12\"\n" +
+	"\rowner_user_id\x18\a \x01(\tR\vownerUserId\x12$\n" +
+	"\x0esource_item_id\x18\b \x01(\tR\fsourceItemId\x12\x1f\n" +
+	"\vdecision_id\x18\t \x01(\tR\n" +
+	"decisionId\x121\n" +
+	"\x06due_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\x05dueAt\x12)\n" +
+	"\x10expected_version\x18\v \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\f \x01(\tR\x10clientMutationId\"X\n" +
+	"\x1eUpsertResearchRoomTaskResponse\x126\n" +
+	"\x04task\x18\x01 \x01(\v2\".sttattus.onyx.v1.ResearchRoomTaskR\x04task\"\xad\x03\n" +
+	" UpsertResearchRoomMeetingRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1d\n" +
+	"\n" +
+	"meeting_id\x18\x02 \x01(\tR\tmeetingId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06agenda\x18\x04 \x01(\tR\x06agenda\x12\x18\n" +
+	"\aminutes\x18\x05 \x01(\tR\aminutes\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x127\n" +
+	"\tstarts_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\bstartsAt\x123\n" +
+	"\aends_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x06endsAt\x12*\n" +
+	"\x11attendee_user_ids\x18\t \x03(\tR\x0fattendeeUserIds\x12)\n" +
+	"\x10expected_version\x18\n" +
+	" \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\v \x01(\tR\x10clientMutationId\"d\n" +
+	"!UpsertResearchRoomMeetingResponse\x12?\n" +
+	"\ameeting\x18\x01 \x01(\v2%.sttattus.onyx.v1.ResearchRoomMeetingR\ameeting\"\xa0\x02\n" +
+	"!UpsertResearchRoomDecisionRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1f\n" +
+	"\vdecision_id\x18\x02 \x01(\tR\n" +
+	"decisionId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1c\n" +
+	"\tstatement\x18\x04 \x01(\tR\tstatement\x12\x1c\n" +
+	"\trationale\x18\x05 \x01(\tR\trationale\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x12)\n" +
+	"\x10expected_version\x18\a \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\b \x01(\tR\x10clientMutationId\"h\n" +
+	"\"UpsertResearchRoomDecisionResponse\x12B\n" +
+	"\bdecision\x18\x01 \x01(\v2&.sttattus.onyx.v1.ResearchRoomDecisionR\bdecision\"\xd4\x01\n" +
+	"!RecordResearchRoomApprovalRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1f\n" +
+	"\vobject_type\x18\x02 \x01(\tR\n" +
+	"objectType\x12\x1b\n" +
+	"\tobject_id\x18\x03 \x01(\tR\bobjectId\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x12\n" +
+	"\x04note\x18\x05 \x01(\tR\x04note\x12,\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"h\n" +
+	"\"RecordResearchRoomApprovalResponse\x12B\n" +
+	"\bapproval\x18\x01 \x01(\v2&.sttattus.onyx.v1.ResearchRoomApprovalR\bapproval\"\x81\x01\n" +
+	"\x19SearchResearchRoomRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05query\x18\x02 \x01(\tR\x05query\x12\x1f\n" +
+	"\vobject_type\x18\x03 \x01(\tR\n" +
+	"objectType\x12\x14\n" +
+	"\x05limit\x18\x04 \x01(\x05R\x05limit\"\xc2\x01\n" +
+	"\x18SearchResearchRoomResult\x12\x1f\n" +
+	"\vobject_type\x18\x01 \x01(\tR\n" +
+	"objectType\x12\x1b\n" +
+	"\tobject_id\x18\x02 \x01(\tR\bobjectId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asnippet\x18\x04 \x01(\tR\asnippet\x12\x17\n" +
+	"\aitem_id\x18\x05 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vpassage_key\x18\x06 \x01(\tR\n" +
+	"passageKey\"b\n" +
+	"\x1aSearchResearchRoomResponse\x12D\n" +
+	"\aresults\x18\x01 \x03(\v2*.sttattus.onyx.v1.SearchResearchRoomResultR\aresults\"\x99\x01\n" +
+	" RequestResearchRoomExportRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06format\x18\x02 \x01(\tR\x06format\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"a\n" +
+	"!RequestResearchRoomExportResponse\x12<\n" +
+	"\x06export\x18\x01 \x01(\v2$.sttattus.onyx.v1.ResearchRoomExportR\x06export\"\xdf\x01\n" +
+	"\x1eReportResearchRoomAbuseRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1a\n" +
+	"\bcategory\x18\x02 \x01(\tR\bcategory\x12\x18\n" +
+	"\asummary\x18\x03 \x01(\tR\asummary\x12!\n" +
+	"\fsubject_type\x18\x04 \x01(\tR\vsubjectType\x12\x1d\n" +
+	"\n" +
+	"subject_id\x18\x05 \x01(\tR\tsubjectId\x12,\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\">\n" +
+	"\x1fReportResearchRoomAbuseResponse\x12\x1b\n" +
+	"\treport_id\x18\x01 \x01(\tR\breportId\"M\n" +
+	"\x1cListResearchRoomAuditRequest\x12\x17\n" +
+	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"a\n" +
+	"\x1dListResearchRoomAuditResponse\x12@\n" +
+	"\x06events\x18\x01 \x03(\v2(.sttattus.onyx.v1.ResearchRoomAuditEventR\x06events2\x85{\n" +
 	"\vOnyxService\x12`\n" +
 	"\rCreateProfile\x12&.sttattus.onyx.v1.CreateProfileRequest\x1a'.sttattus.onyx.v1.CreateProfileResponse\x12W\n" +
 	"\n" +
@@ -21883,7 +26702,27 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\"ListMyCreatorSubscriptionsDetailed\x12;.sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest\x1a<.sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse\x12\x84\x01\n" +
 	"\x19CancelCreatorSubscription\x122.sttattus.onyx.v1.CancelCreatorSubscriptionRequest\x1a3.sttattus.onyx.v1.CancelCreatorSubscriptionResponse\x12`\n" +
 	"\rGetMyCommerce\x12&.sttattus.onyx.v1.GetMyCommerceRequest\x1a'.sttattus.onyx.v1.GetMyCommerceResponse\x12o\n" +
-	"\x12CreateCommerceCase\x12+.sttattus.onyx.v1.CreateCommerceCaseRequest\x1a,.sttattus.onyx.v1.CreateCommerceCaseResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
+	"\x12CreateCommerceCase\x12+.sttattus.onyx.v1.CreateCommerceCaseRequest\x1a,.sttattus.onyx.v1.CreateCommerceCaseResponse\x12l\n" +
+	"\x11ListResearchRooms\x12*.sttattus.onyx.v1.ListResearchRoomsRequest\x1a+.sttattus.onyx.v1.ListResearchRoomsResponse\x12f\n" +
+	"\x0fGetResearchRoom\x12(.sttattus.onyx.v1.GetResearchRoomRequest\x1a).sttattus.onyx.v1.GetResearchRoomResponse\x12o\n" +
+	"\x12CreateResearchRoom\x12+.sttattus.onyx.v1.CreateResearchRoomRequest\x1a,.sttattus.onyx.v1.CreateResearchRoomResponse\x12o\n" +
+	"\x12UpdateResearchRoom\x12+.sttattus.onyx.v1.UpdateResearchRoomRequest\x1a,.sttattus.onyx.v1.UpdateResearchRoomResponse\x12\x81\x01\n" +
+	"\x18InviteResearchRoomMember\x121.sttattus.onyx.v1.InviteResearchRoomMemberRequest\x1a2.sttattus.onyx.v1.InviteResearchRoomMemberResponse\x12\x84\x01\n" +
+	"\x19RespondResearchRoomInvite\x122.sttattus.onyx.v1.RespondResearchRoomInviteRequest\x1a3.sttattus.onyx.v1.RespondResearchRoomInviteResponse\x12\x81\x01\n" +
+	"\x18ChangeResearchRoomMember\x121.sttattus.onyx.v1.ChangeResearchRoomMemberRequest\x1a2.sttattus.onyx.v1.ChangeResearchRoomMemberResponse\x12\x81\x01\n" +
+	"\x18RevokeResearchRoomMember\x121.sttattus.onyx.v1.RevokeResearchRoomMemberRequest\x1a2.sttattus.onyx.v1.RevokeResearchRoomMemberResponse\x12r\n" +
+	"\x13AddResearchRoomItem\x12,.sttattus.onyx.v1.AddResearchRoomItemRequest\x1a-.sttattus.onyx.v1.AddResearchRoomItemResponse\x12{\n" +
+	"\x16RemoveResearchRoomItem\x12/.sttattus.onyx.v1.RemoveResearchRoomItemRequest\x1a0.sttattus.onyx.v1.RemoveResearchRoomItemResponse\x12~\n" +
+	"\x17PostResearchRoomComment\x120.sttattus.onyx.v1.PostResearchRoomCommentRequest\x1a1.sttattus.onyx.v1.PostResearchRoomCommentResponse\x12\x8a\x01\n" +
+	"\x1bSetResearchRoomThreadStatus\x124.sttattus.onyx.v1.SetResearchRoomThreadStatusRequest\x1a5.sttattus.onyx.v1.SetResearchRoomThreadStatusResponse\x12{\n" +
+	"\x16UpsertResearchRoomTask\x12/.sttattus.onyx.v1.UpsertResearchRoomTaskRequest\x1a0.sttattus.onyx.v1.UpsertResearchRoomTaskResponse\x12\x84\x01\n" +
+	"\x19UpsertResearchRoomMeeting\x122.sttattus.onyx.v1.UpsertResearchRoomMeetingRequest\x1a3.sttattus.onyx.v1.UpsertResearchRoomMeetingResponse\x12\x87\x01\n" +
+	"\x1aUpsertResearchRoomDecision\x123.sttattus.onyx.v1.UpsertResearchRoomDecisionRequest\x1a4.sttattus.onyx.v1.UpsertResearchRoomDecisionResponse\x12\x87\x01\n" +
+	"\x1aRecordResearchRoomApproval\x123.sttattus.onyx.v1.RecordResearchRoomApprovalRequest\x1a4.sttattus.onyx.v1.RecordResearchRoomApprovalResponse\x12o\n" +
+	"\x12SearchResearchRoom\x12+.sttattus.onyx.v1.SearchResearchRoomRequest\x1a,.sttattus.onyx.v1.SearchResearchRoomResponse\x12\x84\x01\n" +
+	"\x19RequestResearchRoomExport\x122.sttattus.onyx.v1.RequestResearchRoomExportRequest\x1a3.sttattus.onyx.v1.RequestResearchRoomExportResponse\x12~\n" +
+	"\x17ReportResearchRoomAbuse\x120.sttattus.onyx.v1.ReportResearchRoomAbuseRequest\x1a1.sttattus.onyx.v1.ReportResearchRoomAbuseResponse\x12x\n" +
+	"\x15ListResearchRoomAudit\x12..sttattus.onyx.v1.ListResearchRoomAuditRequest\x1a/.sttattus.onyx.v1.ListResearchRoomAuditResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
 
 var (
 	file_sttattus_onyx_v1_onyx_proto_rawDescOnce sync.Once
@@ -21898,7 +26737,7 @@ func file_sttattus_onyx_v1_onyx_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_onyx_v1_onyx_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 308)
+var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 362)
 var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(EncryptedRendition_RenditionStatus)(0),            // 0: sttattus.onyx.v1.EncryptedRendition.RenditionStatus
 	(EncryptedRendition_OfflinePackageType)(0),         // 1: sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
@@ -22210,17 +27049,71 @@ var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(*GetMyCommerceResponse)(nil),                      // 307: sttattus.onyx.v1.GetMyCommerceResponse
 	(*CreateCommerceCaseRequest)(nil),                  // 308: sttattus.onyx.v1.CreateCommerceCaseRequest
 	(*CreateCommerceCaseResponse)(nil),                 // 309: sttattus.onyx.v1.CreateCommerceCaseResponse
-	(*timestamppb.Timestamp)(nil),                      // 310: google.protobuf.Timestamp
+	(*ResearchRoomPolicy)(nil),                         // 310: sttattus.onyx.v1.ResearchRoomPolicy
+	(*ResearchRoomMember)(nil),                         // 311: sttattus.onyx.v1.ResearchRoomMember
+	(*ResearchRoom)(nil),                               // 312: sttattus.onyx.v1.ResearchRoom
+	(*ResearchRoomItem)(nil),                           // 313: sttattus.onyx.v1.ResearchRoomItem
+	(*ResearchRoomThread)(nil),                         // 314: sttattus.onyx.v1.ResearchRoomThread
+	(*ResearchRoomComment)(nil),                        // 315: sttattus.onyx.v1.ResearchRoomComment
+	(*ResearchRoomTask)(nil),                           // 316: sttattus.onyx.v1.ResearchRoomTask
+	(*ResearchRoomMeeting)(nil),                        // 317: sttattus.onyx.v1.ResearchRoomMeeting
+	(*ResearchRoomDecision)(nil),                       // 318: sttattus.onyx.v1.ResearchRoomDecision
+	(*ResearchRoomApproval)(nil),                       // 319: sttattus.onyx.v1.ResearchRoomApproval
+	(*ResearchRoomExport)(nil),                         // 320: sttattus.onyx.v1.ResearchRoomExport
+	(*ResearchRoomAuditEvent)(nil),                     // 321: sttattus.onyx.v1.ResearchRoomAuditEvent
+	(*ResearchRoomDetail)(nil),                         // 322: sttattus.onyx.v1.ResearchRoomDetail
+	(*ListResearchRoomsRequest)(nil),                   // 323: sttattus.onyx.v1.ListResearchRoomsRequest
+	(*ListResearchRoomsResponse)(nil),                  // 324: sttattus.onyx.v1.ListResearchRoomsResponse
+	(*GetResearchRoomRequest)(nil),                     // 325: sttattus.onyx.v1.GetResearchRoomRequest
+	(*GetResearchRoomResponse)(nil),                    // 326: sttattus.onyx.v1.GetResearchRoomResponse
+	(*CreateResearchRoomRequest)(nil),                  // 327: sttattus.onyx.v1.CreateResearchRoomRequest
+	(*CreateResearchRoomResponse)(nil),                 // 328: sttattus.onyx.v1.CreateResearchRoomResponse
+	(*UpdateResearchRoomRequest)(nil),                  // 329: sttattus.onyx.v1.UpdateResearchRoomRequest
+	(*UpdateResearchRoomResponse)(nil),                 // 330: sttattus.onyx.v1.UpdateResearchRoomResponse
+	(*InviteResearchRoomMemberRequest)(nil),            // 331: sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	(*InviteResearchRoomMemberResponse)(nil),           // 332: sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	(*RespondResearchRoomInviteRequest)(nil),           // 333: sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	(*RespondResearchRoomInviteResponse)(nil),          // 334: sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	(*ChangeResearchRoomMemberRequest)(nil),            // 335: sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	(*ChangeResearchRoomMemberResponse)(nil),           // 336: sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	(*RevokeResearchRoomMemberRequest)(nil),            // 337: sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	(*RevokeResearchRoomMemberResponse)(nil),           // 338: sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	(*AddResearchRoomItemRequest)(nil),                 // 339: sttattus.onyx.v1.AddResearchRoomItemRequest
+	(*AddResearchRoomItemResponse)(nil),                // 340: sttattus.onyx.v1.AddResearchRoomItemResponse
+	(*RemoveResearchRoomItemRequest)(nil),              // 341: sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	(*RemoveResearchRoomItemResponse)(nil),             // 342: sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	(*PostResearchRoomCommentRequest)(nil),             // 343: sttattus.onyx.v1.PostResearchRoomCommentRequest
+	(*PostResearchRoomCommentResponse)(nil),            // 344: sttattus.onyx.v1.PostResearchRoomCommentResponse
+	(*SetResearchRoomThreadStatusRequest)(nil),         // 345: sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	(*SetResearchRoomThreadStatusResponse)(nil),        // 346: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	(*UpsertResearchRoomTaskRequest)(nil),              // 347: sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	(*UpsertResearchRoomTaskResponse)(nil),             // 348: sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	(*UpsertResearchRoomMeetingRequest)(nil),           // 349: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	(*UpsertResearchRoomMeetingResponse)(nil),          // 350: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	(*UpsertResearchRoomDecisionRequest)(nil),          // 351: sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	(*UpsertResearchRoomDecisionResponse)(nil),         // 352: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	(*RecordResearchRoomApprovalRequest)(nil),          // 353: sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	(*RecordResearchRoomApprovalResponse)(nil),         // 354: sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	(*SearchResearchRoomRequest)(nil),                  // 355: sttattus.onyx.v1.SearchResearchRoomRequest
+	(*SearchResearchRoomResult)(nil),                   // 356: sttattus.onyx.v1.SearchResearchRoomResult
+	(*SearchResearchRoomResponse)(nil),                 // 357: sttattus.onyx.v1.SearchResearchRoomResponse
+	(*RequestResearchRoomExportRequest)(nil),           // 358: sttattus.onyx.v1.RequestResearchRoomExportRequest
+	(*RequestResearchRoomExportResponse)(nil),          // 359: sttattus.onyx.v1.RequestResearchRoomExportResponse
+	(*ReportResearchRoomAbuseRequest)(nil),             // 360: sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	(*ReportResearchRoomAbuseResponse)(nil),            // 361: sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	(*ListResearchRoomAuditRequest)(nil),               // 362: sttattus.onyx.v1.ListResearchRoomAuditRequest
+	(*ListResearchRoomAuditResponse)(nil),              // 363: sttattus.onyx.v1.ListResearchRoomAuditResponse
+	(*timestamppb.Timestamp)(nil),                      // 364: google.protobuf.Timestamp
 }
 var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
-	310, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
+	364, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
 	2,   // 1: sttattus.onyx.v1.OnyxContent.gating:type_name -> sttattus.onyx.v1.GatingCriteria
-	310, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
-	310, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
+	364, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
 	5,   // 4: sttattus.onyx.v1.OnyxContent.document_blocks:type_name -> sttattus.onyx.v1.DocumentBlock
-	310, // 5: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
-	310, // 6: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
-	310, // 7: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 5: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
+	364, // 6: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 7: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
 	3,   // 8: sttattus.onyx.v1.CreateProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	3,   // 9: sttattus.onyx.v1.GetProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	4,   // 10: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
@@ -22230,50 +27123,50 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 14: sttattus.onyx.v1.ListContinueResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 15: sttattus.onyx.v1.Shelf.items:type_name -> sttattus.onyx.v1.OnyxContent
 	22,  // 16: sttattus.onyx.v1.GetShelvesResponse.shelves:type_name -> sttattus.onyx.v1.Shelf
-	310, // 17: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
-	310, // 18: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
+	364, // 17: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
+	364, // 18: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
 	30,  // 19: sttattus.onyx.v1.GetCreatorResponse.creator:type_name -> sttattus.onyx.v1.CreatorProfile
 	4,   // 20: sttattus.onyx.v1.ListCreatorWorksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 21: sttattus.onyx.v1.SearchContentResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
-	310, // 22: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
+	364, // 22: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
 	39,  // 23: sttattus.onyx.v1.AddNoteResponse.note:type_name -> sttattus.onyx.v1.Note
 	39,  // 24: sttattus.onyx.v1.ListMyNotesResponse.notes:type_name -> sttattus.onyx.v1.Note
-	310, // 25: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
-	310, // 26: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 25: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
+	364, // 26: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
 	46,  // 27: sttattus.onyx.v1.UpsertReaderAnnotationResponse.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	46,  // 28: sttattus.onyx.v1.ListMyReaderAnnotationsResponse.annotations:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	4,   // 29: sttattus.onyx.v1.ReaderSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	46,  // 30: sttattus.onyx.v1.ReaderSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	53,  // 31: sttattus.onyx.v1.SearchReaderResponse.results:type_name -> sttattus.onyx.v1.ReaderSearchResult
-	310, // 32: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
-	310, // 33: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
+	364, // 32: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
+	364, // 33: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
 	56,  // 34: sttattus.onyx.v1.SearchIntelligenceRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	4,   // 35: sttattus.onyx.v1.IntelligenceSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	46,  // 36: sttattus.onyx.v1.IntelligenceSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	58,  // 37: sttattus.onyx.v1.SearchIntelligenceResponse.results:type_name -> sttattus.onyx.v1.IntelligenceSearchResult
 	56,  // 38: sttattus.onyx.v1.OnyxSavedQuery.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
-	310, // 39: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
-	310, // 40: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 39: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
+	364, // 40: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
 	62,  // 41: sttattus.onyx.v1.ListSavedQueriesResponse.queries:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	56,  // 42: sttattus.onyx.v1.UpsertSavedQueryRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	62,  // 43: sttattus.onyx.v1.UpsertSavedQueryResponse.query:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	69,  // 44: sttattus.onyx.v1.OnyxWatchlist.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
-	310, // 45: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
-	310, // 46: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
-	310, // 47: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 45: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
+	364, // 46: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
+	364, // 47: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
 	70,  // 48: sttattus.onyx.v1.ListWatchlistsResponse.watchlists:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	69,  // 49: sttattus.onyx.v1.UpsertWatchlistRequest.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
 	70,  // 50: sttattus.onyx.v1.UpsertWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	70,  // 51: sttattus.onyx.v1.RefreshWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	4,   // 52: sttattus.onyx.v1.OnyxIntelligenceAlert.content:type_name -> sttattus.onyx.v1.OnyxContent
-	310, // 53: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
+	364, // 53: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
 	79,  // 54: sttattus.onyx.v1.ListIntelligenceAlertsResponse.alerts:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	79,  // 55: sttattus.onyx.v1.SetIntelligenceAlertStateResponse.alert:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	4,   // 56: sttattus.onyx.v1.OnyxIntelligenceQueueItem.content:type_name -> sttattus.onyx.v1.OnyxContent
 	84,  // 57: sttattus.onyx.v1.GetIntelligenceQueueResponse.items:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
 	84,  // 58: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse.item:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
-	310, // 59: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
-	310, // 60: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
+	364, // 59: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
+	364, // 60: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
 	91,  // 61: sttattus.onyx.v1.ListReaderSyncChangesResponse.changes:type_name -> sttattus.onyx.v1.ReaderSyncChange
 	4,   // 62: sttattus.onyx.v1.ListMyUnlocksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	30,  // 63: sttattus.onyx.v1.ListMySubscriptionsResponse.creators:type_name -> sttattus.onyx.v1.CreatorProfile
@@ -22283,23 +27176,23 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 67: sttattus.onyx.v1.Series.parts:type_name -> sttattus.onyx.v1.OnyxContent
 	103, // 68: sttattus.onyx.v1.ListSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
 	103, // 69: sttattus.onyx.v1.GetSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
-	310, // 70: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
+	364, // 70: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
 	108, // 71: sttattus.onyx.v1.GenerateCaptionsResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
 	108, // 72: sttattus.onyx.v1.GetCaptionJobResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
-	310, // 73: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 73: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
 	113, // 74: sttattus.onyx.v1.GetListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
 	113, // 75: sttattus.onyx.v1.UpdateListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
-	310, // 76: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
-	310, // 77: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 76: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
+	364, // 77: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
 	118, // 78: sttattus.onyx.v1.CreateListeningBookmarkResponse.bookmark:type_name -> sttattus.onyx.v1.ListeningBookmark
 	118, // 79: sttattus.onyx.v1.ListListeningBookmarksResponse.bookmarks:type_name -> sttattus.onyx.v1.ListeningBookmark
 	4,   // 80: sttattus.onyx.v1.ListeningQueueEntry.content:type_name -> sttattus.onyx.v1.OnyxContent
-	310, // 81: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
+	364, // 81: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
 	125, // 82: sttattus.onyx.v1.ListListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	125, // 83: sttattus.onyx.v1.SetListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	130, // 84: sttattus.onyx.v1.AudioOverviewSegment.citations:type_name -> sttattus.onyx.v1.AudioOverviewCitation
-	310, // 85: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
-	310, // 86: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 85: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
+	364, // 86: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
 	131, // 87: sttattus.onyx.v1.AudioOverview.segments:type_name -> sttattus.onyx.v1.AudioOverviewSegment
 	132, // 88: sttattus.onyx.v1.CreateAudioOverviewResponse.overview:type_name -> sttattus.onyx.v1.AudioOverview
 	132, // 89: sttattus.onyx.v1.ListAudioOverviewsResponse.overviews:type_name -> sttattus.onyx.v1.AudioOverview
@@ -22308,31 +27201,31 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 92: sttattus.onyx.v1.GetTodaySummaryResponse.todays_drop:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 93: sttattus.onyx.v1.CrossPillarUnlock.content:type_name -> sttattus.onyx.v1.OnyxContent
 	146, // 94: sttattus.onyx.v1.GetCrossPillarUnlocksResponse.unlocks:type_name -> sttattus.onyx.v1.CrossPillarUnlock
-	310, // 95: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
-	310, // 96: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
-	310, // 97: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
+	364, // 95: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
+	364, // 96: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	364, // 97: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
 	149, // 98: sttattus.onyx.v1.ConciergeThread.messages:type_name -> sttattus.onyx.v1.ConciergeMessage
 	150, // 99: sttattus.onyx.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	150, // 100: sttattus.onyx.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.onyx.v1.ConciergeThread
 	150, // 101: sttattus.onyx.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	149, // 102: sttattus.onyx.v1.PostConciergeMessageResponse.message:type_name -> sttattus.onyx.v1.ConciergeMessage
-	310, // 103: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
-	310, // 104: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
+	364, // 103: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
+	364, // 104: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
 	159, // 105: sttattus.onyx.v1.ListLiveEventsResponse.events:type_name -> sttattus.onyx.v1.LiveEvent
 	159, // 106: sttattus.onyx.v1.GetLiveEventResponse.event:type_name -> sttattus.onyx.v1.LiveEvent
-	310, // 107: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
-	310, // 108: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
-	310, // 109: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
+	364, // 107: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 108: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
+	364, // 109: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
 	169, // 110: sttattus.onyx.v1.LiveReservation.guest_invitations:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	310, // 111: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
-	310, // 112: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
+	364, // 111: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
+	364, // 112: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
 	172, // 113: sttattus.onyx.v1.LivePoll.options:type_name -> sttattus.onyx.v1.LivePollOption
-	310, // 114: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
-	310, // 115: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
-	310, // 116: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
-	310, // 117: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 114: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
+	364, // 115: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
+	364, // 116: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
+	364, // 117: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
 	175, // 118: sttattus.onyx.v1.LiveReplay.segments:type_name -> sttattus.onyx.v1.LiveReplaySegment
-	310, // 119: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
+	364, // 119: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
 	159, // 120: sttattus.onyx.v1.LiveSalon.event:type_name -> sttattus.onyx.v1.LiveEvent
 	166, // 121: sttattus.onyx.v1.LiveSalon.speakers:type_name -> sttattus.onyx.v1.LiveSpeaker
 	167, // 122: sttattus.onyx.v1.LiveSalon.agenda:type_name -> sttattus.onyx.v1.LiveAgendaItem
@@ -22342,7 +27235,7 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	177, // 126: sttattus.onyx.v1.GetLiveSalonResponse.salon:type_name -> sttattus.onyx.v1.LiveSalon
 	170, // 127: sttattus.onyx.v1.UpsertLiveReservationResponse.reservation:type_name -> sttattus.onyx.v1.LiveReservation
 	169, // 128: sttattus.onyx.v1.InviteLiveGuestResponse.invitation:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	310, // 129: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 129: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
 	171, // 130: sttattus.onyx.v1.ListLiveActivityResponse.messages:type_name -> sttattus.onyx.v1.LiveMessage
 	173, // 131: sttattus.onyx.v1.ListLiveActivityResponse.polls:type_name -> sttattus.onyx.v1.LivePoll
 	171, // 132: sttattus.onyx.v1.PostLiveMessageResponse.message:type_name -> sttattus.onyx.v1.LiveMessage
@@ -22351,72 +27244,72 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	174, // 135: sttattus.onyx.v1.UpsertLiveNoteResponse.note:type_name -> sttattus.onyx.v1.LiveNote
 	174, // 136: sttattus.onyx.v1.ListLiveNotesResponse.notes:type_name -> sttattus.onyx.v1.LiveNote
 	176, // 137: sttattus.onyx.v1.GetLiveReplayResponse.replay:type_name -> sttattus.onyx.v1.LiveReplay
-	310, // 138: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 138: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
 	208, // 139: sttattus.onyx.v1.SetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	208, // 140: sttattus.onyx.v1.GetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	4,   // 141: sttattus.onyx.v1.Anthology.pieces:type_name -> sttattus.onyx.v1.OnyxContent
 	213, // 142: sttattus.onyx.v1.ListAnthologiesResponse.anthologies:type_name -> sttattus.onyx.v1.Anthology
 	213, // 143: sttattus.onyx.v1.GetAnthologyResponse.anthology:type_name -> sttattus.onyx.v1.Anthology
-	310, // 144: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 144: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
 	218, // 145: sttattus.onyx.v1.CreateShareLinkResponse.link:type_name -> sttattus.onyx.v1.ShareLink
 	218, // 146: sttattus.onyx.v1.ListMyShareLinksResponse.links:type_name -> sttattus.onyx.v1.ShareLink
 	0,   // 147: sttattus.onyx.v1.EncryptedRendition.status:type_name -> sttattus.onyx.v1.EncryptedRendition.RenditionStatus
-	310, // 148: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
+	364, // 148: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
 	1,   // 149: sttattus.onyx.v1.EncryptedRendition.package_type:type_name -> sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
 	4,   // 150: sttattus.onyx.v1.GetOfflineManifestResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	225, // 151: sttattus.onyx.v1.GetOfflineManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	310, // 152: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
-	310, // 153: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
-	310, // 154: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
-	310, // 155: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
-	310, // 156: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
+	364, // 152: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
+	364, // 153: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 154: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
+	364, // 155: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 156: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
 	233, // 157: sttattus.onyx.v1.GetDeviceGrantsResponse.grants:type_name -> sttattus.onyx.v1.DeviceGrantInfo
-	310, // 158: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
-	310, // 159: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
+	364, // 158: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
+	364, // 159: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
 	242, // 160: sttattus.onyx.v1.ListOfflineManifestItemsResponse.items:type_name -> sttattus.onyx.v1.OfflineManifestItemInfo
-	310, // 161: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 161: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
 	245, // 162: sttattus.onyx.v1.RefreshOfflineRenditionsResponse.renditions:type_name -> sttattus.onyx.v1.RefreshedRendition
 	251, // 163: sttattus.onyx.v1.GetYearInOnyxResponse.latest_archive:type_name -> sttattus.onyx.v1.AnnualArchive
-	310, // 164: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
-	310, // 165: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
-	310, // 166: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
-	310, // 167: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 164: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
+	364, // 165: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
+	364, // 166: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
+	364, // 167: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
 	256, // 168: sttattus.onyx.v1.CreateIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 169: sttattus.onyx.v1.ListMyIngestionItemsResponse.items:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 170: sttattus.onyx.v1.GetIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 171: sttattus.onyx.v1.RetryIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 172: sttattus.onyx.v1.SetIngestionItemStateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 173: sttattus.onyx.v1.ResolveIngestionDuplicateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
-	310, // 174: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
-	310, // 175: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
+	364, // 174: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
+	364, // 175: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
 	270, // 176: sttattus.onyx.v1.EvidenceClaim.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
-	310, // 177: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
-	310, // 178: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
+	364, // 177: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
+	364, // 178: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
 	269, // 179: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.sources:type_name -> sttattus.onyx.v1.EvidenceSource
 	271, // 180: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.claims:type_name -> sttattus.onyx.v1.EvidenceClaim
 	272, // 181: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
 	270, // 182: sttattus.onyx.v1.BriefPoint.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
 	275, // 183: sttattus.onyx.v1.EvidenceBrief.points:type_name -> sttattus.onyx.v1.BriefPoint
-	310, // 184: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
-	310, // 185: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
+	364, // 184: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
+	364, // 185: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
 	272, // 186: sttattus.onyx.v1.EvidenceBrief.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	310, // 187: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
+	364, // 187: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
 	276, // 188: sttattus.onyx.v1.CreateEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
 	276, // 189: sttattus.onyx.v1.ListMyEvidenceBriefsResponse.briefs:type_name -> sttattus.onyx.v1.EvidenceBrief
 	276, // 190: sttattus.onyx.v1.GetEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
-	310, // 191: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
-	310, // 192: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
-	310, // 193: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
-	310, // 194: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
-	310, // 195: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
-	310, // 196: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
-	310, // 197: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
-	310, // 198: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
-	310, // 199: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
+	364, // 191: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
+	364, // 192: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
+	364, // 193: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
+	364, // 194: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
+	364, // 195: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
+	364, // 196: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
+	364, // 197: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
+	364, // 198: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
+	364, // 199: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
 	284, // 200: sttattus.onyx.v1.EditorialProject.reviews:type_name -> sttattus.onyx.v1.EditorialReview
 	285, // 201: sttattus.onyx.v1.EditorialProject.comments:type_name -> sttattus.onyx.v1.EditorialComment
-	310, // 202: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
-	310, // 203: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
+	364, // 202: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 203: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
 	3,   // 204: sttattus.onyx.v1.CreatorStudio.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	283, // 205: sttattus.onyx.v1.CreatorStudio.contracts:type_name -> sttattus.onyx.v1.CreatorContract
 	286, // 206: sttattus.onyx.v1.CreatorStudio.projects:type_name -> sttattus.onyx.v1.EditorialProject
@@ -22429,259 +27322,362 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	283, // 213: sttattus.onyx.v1.SignCreatorContractResponse.contract:type_name -> sttattus.onyx.v1.CreatorContract
 	6,   // 214: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse.subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	6,   // 215: sttattus.onyx.v1.CancelCreatorSubscriptionResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
-	310, // 216: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
-	310, // 217: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
-	310, // 218: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
-	310, // 219: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
+	364, // 216: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
+	364, // 217: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
+	364, // 218: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
+	364, // 219: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
 	304, // 220: sttattus.onyx.v1.GetMyCommerceResponse.invoices:type_name -> sttattus.onyx.v1.CommerceInvoice
 	305, // 221: sttattus.onyx.v1.GetMyCommerceResponse.cases:type_name -> sttattus.onyx.v1.CommerceCase
 	6,   // 222: sttattus.onyx.v1.GetMyCommerceResponse.creator_subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	305, // 223: sttattus.onyx.v1.CreateCommerceCaseResponse.commerce_case:type_name -> sttattus.onyx.v1.CommerceCase
-	7,   // 224: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
-	9,   // 225: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
-	11,  // 226: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
-	13,  // 227: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
-	15,  // 228: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
-	17,  // 229: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
-	19,  // 230: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
-	21,  // 231: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
-	24,  // 232: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
-	26,  // 233: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
-	28,  // 234: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
-	31,  // 235: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
-	33,  // 236: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
-	35,  // 237: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
-	37,  // 238: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
-	40,  // 239: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
-	42,  // 240: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
-	44,  // 241: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
-	47,  // 242: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
-	49,  // 243: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
-	51,  // 244: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
-	54,  // 245: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
-	57,  // 246: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
-	60,  // 247: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
-	63,  // 248: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
-	65,  // 249: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
-	67,  // 250: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
-	71,  // 251: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
-	73,  // 252: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
-	75,  // 253: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
-	77,  // 254: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
-	80,  // 255: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
-	82,  // 256: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
-	85,  // 257: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
-	87,  // 258: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
-	89,  // 259: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
-	92,  // 260: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
-	94,  // 261: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
-	96,  // 262: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
-	98,  // 263: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
-	101, // 264: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
-	104, // 265: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
-	106, // 266: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
-	109, // 267: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
-	111, // 268: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
-	114, // 269: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
-	116, // 270: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
-	119, // 271: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
-	121, // 272: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
-	123, // 273: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
-	126, // 274: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
-	128, // 275: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
-	133, // 276: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
-	135, // 277: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
-	137, // 278: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
-	139, // 279: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
-	142, // 280: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
-	144, // 281: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
-	147, // 282: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
-	151, // 283: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
-	153, // 284: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
-	155, // 285: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
-	157, // 286: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
-	160, // 287: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
-	162, // 288: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
-	164, // 289: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
-	178, // 290: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
-	180, // 291: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
-	182, // 292: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
-	184, // 293: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
-	186, // 294: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
-	188, // 295: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
-	190, // 296: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
-	192, // 297: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
-	194, // 298: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
-	196, // 299: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
-	198, // 300: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
-	200, // 301: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
-	202, // 302: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
-	204, // 303: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
-	206, // 304: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
-	209, // 305: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
-	211, // 306: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
-	214, // 307: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
-	216, // 308: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
-	219, // 309: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
-	221, // 310: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
-	223, // 311: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
-	226, // 312: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
-	228, // 313: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
-	230, // 314: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
-	232, // 315: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
-	235, // 316: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
-	237, // 317: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
-	239, // 318: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
-	241, // 319: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
-	244, // 320: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
-	247, // 321: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
-	249, // 322: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
-	252, // 323: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
-	254, // 324: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
-	257, // 325: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
-	259, // 326: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
-	261, // 327: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
-	263, // 328: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
-	265, // 329: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
-	267, // 330: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
-	273, // 331: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
-	277, // 332: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
-	279, // 333: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	281, // 334: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
-	290, // 335: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
-	292, // 336: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
-	294, // 337: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
-	296, // 338: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
-	298, // 339: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
-	300, // 340: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	302, // 341: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	306, // 342: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
-	308, // 343: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
-	8,   // 344: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
-	10,  // 345: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
-	12,  // 346: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
-	14,  // 347: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
-	16,  // 348: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
-	18,  // 349: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
-	20,  // 350: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
-	23,  // 351: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
-	25,  // 352: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
-	27,  // 353: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
-	29,  // 354: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
-	32,  // 355: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
-	34,  // 356: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
-	36,  // 357: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
-	38,  // 358: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
-	41,  // 359: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
-	43,  // 360: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
-	45,  // 361: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
-	48,  // 362: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
-	50,  // 363: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
-	52,  // 364: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
-	55,  // 365: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
-	59,  // 366: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
-	61,  // 367: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
-	64,  // 368: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
-	66,  // 369: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
-	68,  // 370: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
-	72,  // 371: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
-	74,  // 372: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
-	76,  // 373: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
-	78,  // 374: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
-	81,  // 375: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
-	83,  // 376: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
-	86,  // 377: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
-	88,  // 378: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
-	90,  // 379: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
-	93,  // 380: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
-	95,  // 381: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
-	97,  // 382: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
-	99,  // 383: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
-	102, // 384: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
-	105, // 385: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
-	107, // 386: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
-	110, // 387: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
-	112, // 388: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
-	115, // 389: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
-	117, // 390: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
-	120, // 391: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
-	122, // 392: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
-	124, // 393: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
-	127, // 394: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
-	129, // 395: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
-	134, // 396: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
-	136, // 397: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
-	138, // 398: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
-	140, // 399: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
-	143, // 400: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
-	145, // 401: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
-	148, // 402: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
-	152, // 403: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
-	154, // 404: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
-	156, // 405: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
-	158, // 406: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
-	161, // 407: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
-	163, // 408: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
-	165, // 409: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
-	179, // 410: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
-	181, // 411: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
-	183, // 412: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
-	185, // 413: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
-	187, // 414: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
-	189, // 415: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
-	191, // 416: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
-	193, // 417: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
-	195, // 418: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
-	197, // 419: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
-	199, // 420: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
-	201, // 421: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
-	203, // 422: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
-	205, // 423: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
-	207, // 424: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
-	210, // 425: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
-	212, // 426: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
-	215, // 427: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
-	217, // 428: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
-	220, // 429: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
-	222, // 430: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
-	224, // 431: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
-	227, // 432: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
-	229, // 433: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
-	231, // 434: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
-	234, // 435: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
-	236, // 436: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
-	238, // 437: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
-	240, // 438: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
-	243, // 439: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
-	246, // 440: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
-	248, // 441: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
-	250, // 442: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
-	253, // 443: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
-	255, // 444: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
-	258, // 445: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
-	260, // 446: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
-	262, // 447: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
-	264, // 448: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
-	266, // 449: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
-	268, // 450: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
-	274, // 451: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	278, // 452: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
-	280, // 453: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	282, // 454: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
-	291, // 455: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
-	293, // 456: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
-	295, // 457: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
-	297, // 458: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
-	299, // 459: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
-	301, // 460: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	303, // 461: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	307, // 462: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
-	309, // 463: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
-	344, // [344:464] is the sub-list for method output_type
-	224, // [224:344] is the sub-list for method input_type
-	224, // [224:224] is the sub-list for extension type_name
-	224, // [224:224] is the sub-list for extension extendee
-	0,   // [0:224] is the sub-list for field type_name
+	364, // 224: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 225: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
+	364, // 226: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
+	364, // 227: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
+	310, // 228: sttattus.onyx.v1.ResearchRoom.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	364, // 229: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
+	364, // 230: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 231: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
+	364, // 232: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 233: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
+	364, // 234: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
+	364, // 235: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 236: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
+	364, // 237: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 238: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
+	364, // 239: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
+	364, // 240: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 241: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
+	364, // 242: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
+	364, // 243: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
+	364, // 244: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 245: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
+	364, // 246: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
+	364, // 247: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 248: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
+	364, // 249: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
+	364, // 250: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
+	364, // 251: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
+	364, // 252: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
+	312, // 253: sttattus.onyx.v1.ResearchRoomDetail.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	311, // 254: sttattus.onyx.v1.ResearchRoomDetail.members:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	313, // 255: sttattus.onyx.v1.ResearchRoomDetail.items:type_name -> sttattus.onyx.v1.ResearchRoomItem
+	314, // 256: sttattus.onyx.v1.ResearchRoomDetail.threads:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	315, // 257: sttattus.onyx.v1.ResearchRoomDetail.comments:type_name -> sttattus.onyx.v1.ResearchRoomComment
+	316, // 258: sttattus.onyx.v1.ResearchRoomDetail.tasks:type_name -> sttattus.onyx.v1.ResearchRoomTask
+	317, // 259: sttattus.onyx.v1.ResearchRoomDetail.meetings:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
+	318, // 260: sttattus.onyx.v1.ResearchRoomDetail.decisions:type_name -> sttattus.onyx.v1.ResearchRoomDecision
+	319, // 261: sttattus.onyx.v1.ResearchRoomDetail.approvals:type_name -> sttattus.onyx.v1.ResearchRoomApproval
+	320, // 262: sttattus.onyx.v1.ResearchRoomDetail.exports:type_name -> sttattus.onyx.v1.ResearchRoomExport
+	312, // 263: sttattus.onyx.v1.ListResearchRoomsResponse.rooms:type_name -> sttattus.onyx.v1.ResearchRoom
+	322, // 264: sttattus.onyx.v1.GetResearchRoomResponse.detail:type_name -> sttattus.onyx.v1.ResearchRoomDetail
+	310, // 265: sttattus.onyx.v1.CreateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	312, // 266: sttattus.onyx.v1.CreateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	310, // 267: sttattus.onyx.v1.UpdateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	312, // 268: sttattus.onyx.v1.UpdateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	311, // 269: sttattus.onyx.v1.InviteResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	311, // 270: sttattus.onyx.v1.RespondResearchRoomInviteResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	364, // 271: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
+	311, // 272: sttattus.onyx.v1.ChangeResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	313, // 273: sttattus.onyx.v1.AddResearchRoomItemResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
+	314, // 274: sttattus.onyx.v1.PostResearchRoomCommentResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	315, // 275: sttattus.onyx.v1.PostResearchRoomCommentResponse.comment:type_name -> sttattus.onyx.v1.ResearchRoomComment
+	314, // 276: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	364, // 277: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
+	316, // 278: sttattus.onyx.v1.UpsertResearchRoomTaskResponse.task:type_name -> sttattus.onyx.v1.ResearchRoomTask
+	364, // 279: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
+	364, // 280: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
+	317, // 281: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse.meeting:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
+	318, // 282: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse.decision:type_name -> sttattus.onyx.v1.ResearchRoomDecision
+	319, // 283: sttattus.onyx.v1.RecordResearchRoomApprovalResponse.approval:type_name -> sttattus.onyx.v1.ResearchRoomApproval
+	356, // 284: sttattus.onyx.v1.SearchResearchRoomResponse.results:type_name -> sttattus.onyx.v1.SearchResearchRoomResult
+	320, // 285: sttattus.onyx.v1.RequestResearchRoomExportResponse.export:type_name -> sttattus.onyx.v1.ResearchRoomExport
+	321, // 286: sttattus.onyx.v1.ListResearchRoomAuditResponse.events:type_name -> sttattus.onyx.v1.ResearchRoomAuditEvent
+	7,   // 287: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
+	9,   // 288: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
+	11,  // 289: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
+	13,  // 290: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
+	15,  // 291: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
+	17,  // 292: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
+	19,  // 293: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
+	21,  // 294: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
+	24,  // 295: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
+	26,  // 296: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
+	28,  // 297: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	31,  // 298: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
+	33,  // 299: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
+	35,  // 300: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
+	37,  // 301: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
+	40,  // 302: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
+	42,  // 303: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
+	44,  // 304: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
+	47,  // 305: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
+	49,  // 306: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
+	51,  // 307: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+	54,  // 308: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
+	57,  // 309: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
+	60,  // 310: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+	63,  // 311: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
+	65,  // 312: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
+	67,  // 313: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
+	71,  // 314: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
+	73,  // 315: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
+	75,  // 316: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
+	77,  // 317: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
+	80,  // 318: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
+	82,  // 319: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+	85,  // 320: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
+	87,  // 321: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+	89,  // 322: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
+	92,  // 323: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
+	94,  // 324: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
+	96,  // 325: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
+	98,  // 326: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
+	101, // 327: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
+	104, // 328: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
+	106, // 329: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
+	109, // 330: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
+	111, // 331: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
+	114, // 332: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
+	116, // 333: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
+	119, // 334: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
+	121, // 335: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
+	123, // 336: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
+	126, // 337: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
+	128, // 338: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
+	133, // 339: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
+	135, // 340: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
+	137, // 341: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
+	139, // 342: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
+	142, // 343: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
+	144, // 344: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
+	147, // 345: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
+	151, // 346: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
+	153, // 347: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
+	155, // 348: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
+	157, // 349: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
+	160, // 350: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
+	162, // 351: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
+	164, // 352: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
+	178, // 353: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
+	180, // 354: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
+	182, // 355: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
+	184, // 356: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+	186, // 357: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
+	188, // 358: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
+	190, // 359: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
+	192, // 360: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
+	194, // 361: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
+	196, // 362: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
+	198, // 363: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
+	200, // 364: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
+	202, // 365: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
+	204, // 366: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
+	206, // 367: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
+	209, // 368: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
+	211, // 369: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
+	214, // 370: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
+	216, // 371: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
+	219, // 372: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
+	221, // 373: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
+	223, // 374: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
+	226, // 375: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
+	228, // 376: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
+	230, // 377: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
+	232, // 378: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
+	235, // 379: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
+	237, // 380: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
+	239, // 381: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
+	241, // 382: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
+	244, // 383: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+	247, // 384: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
+	249, // 385: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
+	252, // 386: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
+	254, // 387: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
+	257, // 388: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
+	259, // 389: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
+	261, // 390: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
+	263, // 391: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
+	265, // 392: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
+	267, // 393: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+	273, // 394: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+	277, // 395: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
+	279, // 396: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	281, // 397: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
+	290, // 398: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
+	292, // 399: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
+	294, // 400: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
+	296, // 401: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
+	298, // 402: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
+	300, // 403: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	302, // 404: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	306, // 405: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
+	308, // 406: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
+	323, // 407: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
+	325, // 408: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
+	327, // 409: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
+	329, // 410: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
+	331, // 411: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	333, // 412: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	335, // 413: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	337, // 414: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	339, // 415: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
+	341, // 416: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	343, // 417: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
+	345, // 418: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	347, // 419: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	349, // 420: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	351, // 421: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	353, // 422: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	355, // 423: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
+	358, // 424: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
+	360, // 425: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	362, // 426: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
+	8,   // 427: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
+	10,  // 428: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
+	12,  // 429: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
+	14,  // 430: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
+	16,  // 431: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
+	18,  // 432: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
+	20,  // 433: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
+	23,  // 434: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
+	25,  // 435: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
+	27,  // 436: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
+	29,  // 437: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	32,  // 438: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
+	34,  // 439: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
+	36,  // 440: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
+	38,  // 441: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
+	41,  // 442: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
+	43,  // 443: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
+	45,  // 444: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
+	48,  // 445: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
+	50,  // 446: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
+	52,  // 447: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+	55,  // 448: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
+	59,  // 449: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
+	61,  // 450: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+	64,  // 451: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
+	66,  // 452: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
+	68,  // 453: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
+	72,  // 454: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
+	74,  // 455: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
+	76,  // 456: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
+	78,  // 457: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
+	81,  // 458: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
+	83,  // 459: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+	86,  // 460: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
+	88,  // 461: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+	90,  // 462: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
+	93,  // 463: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
+	95,  // 464: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
+	97,  // 465: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
+	99,  // 466: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
+	102, // 467: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
+	105, // 468: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
+	107, // 469: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
+	110, // 470: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
+	112, // 471: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
+	115, // 472: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
+	117, // 473: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
+	120, // 474: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
+	122, // 475: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
+	124, // 476: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
+	127, // 477: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
+	129, // 478: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
+	134, // 479: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
+	136, // 480: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
+	138, // 481: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
+	140, // 482: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
+	143, // 483: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
+	145, // 484: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
+	148, // 485: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
+	152, // 486: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
+	154, // 487: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
+	156, // 488: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
+	158, // 489: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
+	161, // 490: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
+	163, // 491: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
+	165, // 492: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
+	179, // 493: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
+	181, // 494: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
+	183, // 495: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
+	185, // 496: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+	187, // 497: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
+	189, // 498: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
+	191, // 499: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
+	193, // 500: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
+	195, // 501: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
+	197, // 502: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
+	199, // 503: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
+	201, // 504: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
+	203, // 505: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
+	205, // 506: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
+	207, // 507: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
+	210, // 508: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
+	212, // 509: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
+	215, // 510: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
+	217, // 511: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
+	220, // 512: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
+	222, // 513: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
+	224, // 514: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
+	227, // 515: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
+	229, // 516: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
+	231, // 517: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
+	234, // 518: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
+	236, // 519: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
+	238, // 520: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
+	240, // 521: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
+	243, // 522: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
+	246, // 523: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+	248, // 524: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
+	250, // 525: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
+	253, // 526: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
+	255, // 527: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
+	258, // 528: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
+	260, // 529: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
+	262, // 530: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
+	264, // 531: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
+	266, // 532: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
+	268, // 533: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+	274, // 534: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+	278, // 535: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
+	280, // 536: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	282, // 537: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
+	291, // 538: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
+	293, // 539: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
+	295, // 540: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
+	297, // 541: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
+	299, // 542: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
+	301, // 543: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	303, // 544: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	307, // 545: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
+	309, // 546: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
+	324, // 547: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
+	326, // 548: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
+	328, // 549: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
+	330, // 550: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
+	332, // 551: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	334, // 552: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	336, // 553: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	338, // 554: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	340, // 555: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
+	342, // 556: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	344, // 557: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
+	346, // 558: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	348, // 559: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	350, // 560: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	352, // 561: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	354, // 562: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	357, // 563: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
+	359, // 564: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
+	361, // 565: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	363, // 566: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
+	427, // [427:567] is the sub-list for method output_type
+	287, // [287:427] is the sub-list for method input_type
+	287, // [287:287] is the sub-list for extension type_name
+	287, // [287:287] is the sub-list for extension extendee
+	0,   // [0:287] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_onyx_v1_onyx_proto_init() }
@@ -22695,7 +27691,7 @@ func file_sttattus_onyx_v1_onyx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_onyx_v1_onyx_proto_rawDesc), len(file_sttattus_onyx_v1_onyx_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   308,
+			NumMessages:   362,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

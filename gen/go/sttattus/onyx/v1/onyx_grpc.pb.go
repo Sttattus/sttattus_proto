@@ -139,6 +139,26 @@ const (
 	OnyxService_CancelCreatorSubscription_FullMethodName          = "/sttattus.onyx.v1.OnyxService/CancelCreatorSubscription"
 	OnyxService_GetMyCommerce_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetMyCommerce"
 	OnyxService_CreateCommerceCase_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateCommerceCase"
+	OnyxService_ListResearchRooms_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListResearchRooms"
+	OnyxService_GetResearchRoom_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetResearchRoom"
+	OnyxService_CreateResearchRoom_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateResearchRoom"
+	OnyxService_UpdateResearchRoom_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/UpdateResearchRoom"
+	OnyxService_InviteResearchRoomMember_FullMethodName           = "/sttattus.onyx.v1.OnyxService/InviteResearchRoomMember"
+	OnyxService_RespondResearchRoomInvite_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RespondResearchRoomInvite"
+	OnyxService_ChangeResearchRoomMember_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ChangeResearchRoomMember"
+	OnyxService_RevokeResearchRoomMember_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomMember"
+	OnyxService_AddResearchRoomItem_FullMethodName                = "/sttattus.onyx.v1.OnyxService/AddResearchRoomItem"
+	OnyxService_RemoveResearchRoomItem_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RemoveResearchRoomItem"
+	OnyxService_PostResearchRoomComment_FullMethodName            = "/sttattus.onyx.v1.OnyxService/PostResearchRoomComment"
+	OnyxService_SetResearchRoomThreadStatus_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetResearchRoomThreadStatus"
+	OnyxService_UpsertResearchRoomTask_FullMethodName             = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomTask"
+	OnyxService_UpsertResearchRoomMeeting_FullMethodName          = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomMeeting"
+	OnyxService_UpsertResearchRoomDecision_FullMethodName         = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomDecision"
+	OnyxService_RecordResearchRoomApproval_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordResearchRoomApproval"
+	OnyxService_SearchResearchRoom_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SearchResearchRoom"
+	OnyxService_RequestResearchRoomExport_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RequestResearchRoomExport"
+	OnyxService_ReportResearchRoomAbuse_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ReportResearchRoomAbuse"
+	OnyxService_ListResearchRoomAudit_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListResearchRoomAudit"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -292,6 +312,27 @@ type OnyxServiceClient interface {
 	CancelCreatorSubscription(ctx context.Context, in *CancelCreatorSubscriptionRequest, opts ...grpc.CallOption) (*CancelCreatorSubscriptionResponse, error)
 	GetMyCommerce(ctx context.Context, in *GetMyCommerceRequest, opts ...grpc.CallOption) (*GetMyCommerceResponse, error)
 	CreateCommerceCase(ctx context.Context, in *CreateCommerceCaseRequest, opts ...grpc.CallOption) (*CreateCommerceCaseResponse, error)
+	// Choice 9 — governed, invite-only research and decision rooms.
+	ListResearchRooms(ctx context.Context, in *ListResearchRoomsRequest, opts ...grpc.CallOption) (*ListResearchRoomsResponse, error)
+	GetResearchRoom(ctx context.Context, in *GetResearchRoomRequest, opts ...grpc.CallOption) (*GetResearchRoomResponse, error)
+	CreateResearchRoom(ctx context.Context, in *CreateResearchRoomRequest, opts ...grpc.CallOption) (*CreateResearchRoomResponse, error)
+	UpdateResearchRoom(ctx context.Context, in *UpdateResearchRoomRequest, opts ...grpc.CallOption) (*UpdateResearchRoomResponse, error)
+	InviteResearchRoomMember(ctx context.Context, in *InviteResearchRoomMemberRequest, opts ...grpc.CallOption) (*InviteResearchRoomMemberResponse, error)
+	RespondResearchRoomInvite(ctx context.Context, in *RespondResearchRoomInviteRequest, opts ...grpc.CallOption) (*RespondResearchRoomInviteResponse, error)
+	ChangeResearchRoomMember(ctx context.Context, in *ChangeResearchRoomMemberRequest, opts ...grpc.CallOption) (*ChangeResearchRoomMemberResponse, error)
+	RevokeResearchRoomMember(ctx context.Context, in *RevokeResearchRoomMemberRequest, opts ...grpc.CallOption) (*RevokeResearchRoomMemberResponse, error)
+	AddResearchRoomItem(ctx context.Context, in *AddResearchRoomItemRequest, opts ...grpc.CallOption) (*AddResearchRoomItemResponse, error)
+	RemoveResearchRoomItem(ctx context.Context, in *RemoveResearchRoomItemRequest, opts ...grpc.CallOption) (*RemoveResearchRoomItemResponse, error)
+	PostResearchRoomComment(ctx context.Context, in *PostResearchRoomCommentRequest, opts ...grpc.CallOption) (*PostResearchRoomCommentResponse, error)
+	SetResearchRoomThreadStatus(ctx context.Context, in *SetResearchRoomThreadStatusRequest, opts ...grpc.CallOption) (*SetResearchRoomThreadStatusResponse, error)
+	UpsertResearchRoomTask(ctx context.Context, in *UpsertResearchRoomTaskRequest, opts ...grpc.CallOption) (*UpsertResearchRoomTaskResponse, error)
+	UpsertResearchRoomMeeting(ctx context.Context, in *UpsertResearchRoomMeetingRequest, opts ...grpc.CallOption) (*UpsertResearchRoomMeetingResponse, error)
+	UpsertResearchRoomDecision(ctx context.Context, in *UpsertResearchRoomDecisionRequest, opts ...grpc.CallOption) (*UpsertResearchRoomDecisionResponse, error)
+	RecordResearchRoomApproval(ctx context.Context, in *RecordResearchRoomApprovalRequest, opts ...grpc.CallOption) (*RecordResearchRoomApprovalResponse, error)
+	SearchResearchRoom(ctx context.Context, in *SearchResearchRoomRequest, opts ...grpc.CallOption) (*SearchResearchRoomResponse, error)
+	RequestResearchRoomExport(ctx context.Context, in *RequestResearchRoomExportRequest, opts ...grpc.CallOption) (*RequestResearchRoomExportResponse, error)
+	ReportResearchRoomAbuse(ctx context.Context, in *ReportResearchRoomAbuseRequest, opts ...grpc.CallOption) (*ReportResearchRoomAbuseResponse, error)
+	ListResearchRoomAudit(ctx context.Context, in *ListResearchRoomAuditRequest, opts ...grpc.CallOption) (*ListResearchRoomAuditResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -1502,6 +1543,206 @@ func (c *onyxServiceClient) CreateCommerceCase(ctx context.Context, in *CreateCo
 	return out, nil
 }
 
+func (c *onyxServiceClient) ListResearchRooms(ctx context.Context, in *ListResearchRoomsRequest, opts ...grpc.CallOption) (*ListResearchRoomsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListResearchRoomsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListResearchRooms_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetResearchRoom(ctx context.Context, in *GetResearchRoomRequest, opts ...grpc.CallOption) (*GetResearchRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetResearchRoomResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetResearchRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateResearchRoom(ctx context.Context, in *CreateResearchRoomRequest, opts ...grpc.CallOption) (*CreateResearchRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateResearchRoomResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateResearchRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdateResearchRoom(ctx context.Context, in *UpdateResearchRoomRequest, opts ...grpc.CallOption) (*UpdateResearchRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateResearchRoomResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdateResearchRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) InviteResearchRoomMember(ctx context.Context, in *InviteResearchRoomMemberRequest, opts ...grpc.CallOption) (*InviteResearchRoomMemberResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InviteResearchRoomMemberResponse)
+	err := c.cc.Invoke(ctx, OnyxService_InviteResearchRoomMember_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RespondResearchRoomInvite(ctx context.Context, in *RespondResearchRoomInviteRequest, opts ...grpc.CallOption) (*RespondResearchRoomInviteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondResearchRoomInviteResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RespondResearchRoomInvite_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ChangeResearchRoomMember(ctx context.Context, in *ChangeResearchRoomMemberRequest, opts ...grpc.CallOption) (*ChangeResearchRoomMemberResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ChangeResearchRoomMemberResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ChangeResearchRoomMember_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeResearchRoomMember(ctx context.Context, in *RevokeResearchRoomMemberRequest, opts ...grpc.CallOption) (*RevokeResearchRoomMemberResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeResearchRoomMemberResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeResearchRoomMember_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) AddResearchRoomItem(ctx context.Context, in *AddResearchRoomItemRequest, opts ...grpc.CallOption) (*AddResearchRoomItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddResearchRoomItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_AddResearchRoomItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RemoveResearchRoomItem(ctx context.Context, in *RemoveResearchRoomItemRequest, opts ...grpc.CallOption) (*RemoveResearchRoomItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveResearchRoomItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RemoveResearchRoomItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PostResearchRoomComment(ctx context.Context, in *PostResearchRoomCommentRequest, opts ...grpc.CallOption) (*PostResearchRoomCommentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostResearchRoomCommentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PostResearchRoomComment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetResearchRoomThreadStatus(ctx context.Context, in *SetResearchRoomThreadStatusRequest, opts ...grpc.CallOption) (*SetResearchRoomThreadStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetResearchRoomThreadStatusResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetResearchRoomThreadStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertResearchRoomTask(ctx context.Context, in *UpsertResearchRoomTaskRequest, opts ...grpc.CallOption) (*UpsertResearchRoomTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertResearchRoomTaskResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertResearchRoomTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertResearchRoomMeeting(ctx context.Context, in *UpsertResearchRoomMeetingRequest, opts ...grpc.CallOption) (*UpsertResearchRoomMeetingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertResearchRoomMeetingResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertResearchRoomMeeting_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertResearchRoomDecision(ctx context.Context, in *UpsertResearchRoomDecisionRequest, opts ...grpc.CallOption) (*UpsertResearchRoomDecisionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertResearchRoomDecisionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertResearchRoomDecision_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordResearchRoomApproval(ctx context.Context, in *RecordResearchRoomApprovalRequest, opts ...grpc.CallOption) (*RecordResearchRoomApprovalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordResearchRoomApprovalResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordResearchRoomApproval_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SearchResearchRoom(ctx context.Context, in *SearchResearchRoomRequest, opts ...grpc.CallOption) (*SearchResearchRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SearchResearchRoomResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SearchResearchRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestResearchRoomExport(ctx context.Context, in *RequestResearchRoomExportRequest, opts ...grpc.CallOption) (*RequestResearchRoomExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestResearchRoomExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestResearchRoomExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReportResearchRoomAbuse(ctx context.Context, in *ReportResearchRoomAbuseRequest, opts ...grpc.CallOption) (*ReportResearchRoomAbuseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportResearchRoomAbuseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReportResearchRoomAbuse_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListResearchRoomAudit(ctx context.Context, in *ListResearchRoomAuditRequest, opts ...grpc.CallOption) (*ListResearchRoomAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListResearchRoomAuditResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListResearchRoomAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -1653,6 +1894,27 @@ type OnyxServiceServer interface {
 	CancelCreatorSubscription(context.Context, *CancelCreatorSubscriptionRequest) (*CancelCreatorSubscriptionResponse, error)
 	GetMyCommerce(context.Context, *GetMyCommerceRequest) (*GetMyCommerceResponse, error)
 	CreateCommerceCase(context.Context, *CreateCommerceCaseRequest) (*CreateCommerceCaseResponse, error)
+	// Choice 9 — governed, invite-only research and decision rooms.
+	ListResearchRooms(context.Context, *ListResearchRoomsRequest) (*ListResearchRoomsResponse, error)
+	GetResearchRoom(context.Context, *GetResearchRoomRequest) (*GetResearchRoomResponse, error)
+	CreateResearchRoom(context.Context, *CreateResearchRoomRequest) (*CreateResearchRoomResponse, error)
+	UpdateResearchRoom(context.Context, *UpdateResearchRoomRequest) (*UpdateResearchRoomResponse, error)
+	InviteResearchRoomMember(context.Context, *InviteResearchRoomMemberRequest) (*InviteResearchRoomMemberResponse, error)
+	RespondResearchRoomInvite(context.Context, *RespondResearchRoomInviteRequest) (*RespondResearchRoomInviteResponse, error)
+	ChangeResearchRoomMember(context.Context, *ChangeResearchRoomMemberRequest) (*ChangeResearchRoomMemberResponse, error)
+	RevokeResearchRoomMember(context.Context, *RevokeResearchRoomMemberRequest) (*RevokeResearchRoomMemberResponse, error)
+	AddResearchRoomItem(context.Context, *AddResearchRoomItemRequest) (*AddResearchRoomItemResponse, error)
+	RemoveResearchRoomItem(context.Context, *RemoveResearchRoomItemRequest) (*RemoveResearchRoomItemResponse, error)
+	PostResearchRoomComment(context.Context, *PostResearchRoomCommentRequest) (*PostResearchRoomCommentResponse, error)
+	SetResearchRoomThreadStatus(context.Context, *SetResearchRoomThreadStatusRequest) (*SetResearchRoomThreadStatusResponse, error)
+	UpsertResearchRoomTask(context.Context, *UpsertResearchRoomTaskRequest) (*UpsertResearchRoomTaskResponse, error)
+	UpsertResearchRoomMeeting(context.Context, *UpsertResearchRoomMeetingRequest) (*UpsertResearchRoomMeetingResponse, error)
+	UpsertResearchRoomDecision(context.Context, *UpsertResearchRoomDecisionRequest) (*UpsertResearchRoomDecisionResponse, error)
+	RecordResearchRoomApproval(context.Context, *RecordResearchRoomApprovalRequest) (*RecordResearchRoomApprovalResponse, error)
+	SearchResearchRoom(context.Context, *SearchResearchRoomRequest) (*SearchResearchRoomResponse, error)
+	RequestResearchRoomExport(context.Context, *RequestResearchRoomExportRequest) (*RequestResearchRoomExportResponse, error)
+	ReportResearchRoomAbuse(context.Context, *ReportResearchRoomAbuseRequest) (*ReportResearchRoomAbuseResponse, error)
+	ListResearchRoomAudit(context.Context, *ListResearchRoomAuditRequest) (*ListResearchRoomAuditResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -2022,6 +2284,66 @@ func (UnimplementedOnyxServiceServer) GetMyCommerce(context.Context, *GetMyComme
 }
 func (UnimplementedOnyxServiceServer) CreateCommerceCase(context.Context, *CreateCommerceCaseRequest) (*CreateCommerceCaseResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateCommerceCase not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListResearchRooms(context.Context, *ListResearchRoomsRequest) (*ListResearchRoomsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListResearchRooms not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetResearchRoom(context.Context, *GetResearchRoomRequest) (*GetResearchRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetResearchRoom not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateResearchRoom(context.Context, *CreateResearchRoomRequest) (*CreateResearchRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateResearchRoom not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdateResearchRoom(context.Context, *UpdateResearchRoomRequest) (*UpdateResearchRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateResearchRoom not implemented")
+}
+func (UnimplementedOnyxServiceServer) InviteResearchRoomMember(context.Context, *InviteResearchRoomMemberRequest) (*InviteResearchRoomMemberResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method InviteResearchRoomMember not implemented")
+}
+func (UnimplementedOnyxServiceServer) RespondResearchRoomInvite(context.Context, *RespondResearchRoomInviteRequest) (*RespondResearchRoomInviteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondResearchRoomInvite not implemented")
+}
+func (UnimplementedOnyxServiceServer) ChangeResearchRoomMember(context.Context, *ChangeResearchRoomMemberRequest) (*ChangeResearchRoomMemberResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ChangeResearchRoomMember not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeResearchRoomMember(context.Context, *RevokeResearchRoomMemberRequest) (*RevokeResearchRoomMemberResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeResearchRoomMember not implemented")
+}
+func (UnimplementedOnyxServiceServer) AddResearchRoomItem(context.Context, *AddResearchRoomItemRequest) (*AddResearchRoomItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddResearchRoomItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) RemoveResearchRoomItem(context.Context, *RemoveResearchRoomItemRequest) (*RemoveResearchRoomItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveResearchRoomItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) PostResearchRoomComment(context.Context, *PostResearchRoomCommentRequest) (*PostResearchRoomCommentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostResearchRoomComment not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetResearchRoomThreadStatus(context.Context, *SetResearchRoomThreadStatusRequest) (*SetResearchRoomThreadStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetResearchRoomThreadStatus not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertResearchRoomTask(context.Context, *UpsertResearchRoomTaskRequest) (*UpsertResearchRoomTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertResearchRoomTask not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertResearchRoomMeeting(context.Context, *UpsertResearchRoomMeetingRequest) (*UpsertResearchRoomMeetingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertResearchRoomMeeting not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertResearchRoomDecision(context.Context, *UpsertResearchRoomDecisionRequest) (*UpsertResearchRoomDecisionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertResearchRoomDecision not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordResearchRoomApproval(context.Context, *RecordResearchRoomApprovalRequest) (*RecordResearchRoomApprovalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordResearchRoomApproval not implemented")
+}
+func (UnimplementedOnyxServiceServer) SearchResearchRoom(context.Context, *SearchResearchRoomRequest) (*SearchResearchRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SearchResearchRoom not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestResearchRoomExport(context.Context, *RequestResearchRoomExportRequest) (*RequestResearchRoomExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestResearchRoomExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReportResearchRoomAbuse(context.Context, *ReportResearchRoomAbuseRequest) (*ReportResearchRoomAbuseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportResearchRoomAbuse not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListResearchRoomAudit(context.Context, *ListResearchRoomAuditRequest) (*ListResearchRoomAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListResearchRoomAudit not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -4204,6 +4526,366 @@ func _OnyxService_CreateCommerceCase_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_ListResearchRooms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListResearchRoomsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListResearchRooms(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListResearchRooms_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListResearchRooms(ctx, req.(*ListResearchRoomsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetResearchRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetResearchRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetResearchRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetResearchRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetResearchRoom(ctx, req.(*GetResearchRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateResearchRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateResearchRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateResearchRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateResearchRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateResearchRoom(ctx, req.(*CreateResearchRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdateResearchRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateResearchRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdateResearchRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdateResearchRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdateResearchRoom(ctx, req.(*UpdateResearchRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_InviteResearchRoomMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InviteResearchRoomMemberRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).InviteResearchRoomMember(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_InviteResearchRoomMember_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).InviteResearchRoomMember(ctx, req.(*InviteResearchRoomMemberRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RespondResearchRoomInvite_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondResearchRoomInviteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RespondResearchRoomInvite(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RespondResearchRoomInvite_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RespondResearchRoomInvite(ctx, req.(*RespondResearchRoomInviteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ChangeResearchRoomMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ChangeResearchRoomMemberRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ChangeResearchRoomMember(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ChangeResearchRoomMember_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ChangeResearchRoomMember(ctx, req.(*ChangeResearchRoomMemberRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeResearchRoomMember_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeResearchRoomMemberRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeResearchRoomMember(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeResearchRoomMember_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeResearchRoomMember(ctx, req.(*RevokeResearchRoomMemberRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_AddResearchRoomItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddResearchRoomItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).AddResearchRoomItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_AddResearchRoomItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).AddResearchRoomItem(ctx, req.(*AddResearchRoomItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RemoveResearchRoomItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveResearchRoomItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RemoveResearchRoomItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RemoveResearchRoomItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RemoveResearchRoomItem(ctx, req.(*RemoveResearchRoomItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PostResearchRoomComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostResearchRoomCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PostResearchRoomComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PostResearchRoomComment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PostResearchRoomComment(ctx, req.(*PostResearchRoomCommentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetResearchRoomThreadStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetResearchRoomThreadStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetResearchRoomThreadStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetResearchRoomThreadStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetResearchRoomThreadStatus(ctx, req.(*SetResearchRoomThreadStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertResearchRoomTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertResearchRoomTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertResearchRoomTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertResearchRoomTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertResearchRoomTask(ctx, req.(*UpsertResearchRoomTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertResearchRoomMeeting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertResearchRoomMeetingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertResearchRoomMeeting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertResearchRoomMeeting_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertResearchRoomMeeting(ctx, req.(*UpsertResearchRoomMeetingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertResearchRoomDecision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertResearchRoomDecisionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertResearchRoomDecision(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertResearchRoomDecision_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertResearchRoomDecision(ctx, req.(*UpsertResearchRoomDecisionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordResearchRoomApproval_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordResearchRoomApprovalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordResearchRoomApproval(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordResearchRoomApproval_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordResearchRoomApproval(ctx, req.(*RecordResearchRoomApprovalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SearchResearchRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchResearchRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SearchResearchRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SearchResearchRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SearchResearchRoom(ctx, req.(*SearchResearchRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestResearchRoomExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestResearchRoomExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestResearchRoomExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestResearchRoomExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestResearchRoomExport(ctx, req.(*RequestResearchRoomExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReportResearchRoomAbuse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportResearchRoomAbuseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReportResearchRoomAbuse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReportResearchRoomAbuse_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReportResearchRoomAbuse(ctx, req.(*ReportResearchRoomAbuseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListResearchRoomAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListResearchRoomAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListResearchRoomAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListResearchRoomAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListResearchRoomAudit(ctx, req.(*ListResearchRoomAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -4690,6 +5372,86 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateCommerceCase",
 			Handler:    _OnyxService_CreateCommerceCase_Handler,
+		},
+		{
+			MethodName: "ListResearchRooms",
+			Handler:    _OnyxService_ListResearchRooms_Handler,
+		},
+		{
+			MethodName: "GetResearchRoom",
+			Handler:    _OnyxService_GetResearchRoom_Handler,
+		},
+		{
+			MethodName: "CreateResearchRoom",
+			Handler:    _OnyxService_CreateResearchRoom_Handler,
+		},
+		{
+			MethodName: "UpdateResearchRoom",
+			Handler:    _OnyxService_UpdateResearchRoom_Handler,
+		},
+		{
+			MethodName: "InviteResearchRoomMember",
+			Handler:    _OnyxService_InviteResearchRoomMember_Handler,
+		},
+		{
+			MethodName: "RespondResearchRoomInvite",
+			Handler:    _OnyxService_RespondResearchRoomInvite_Handler,
+		},
+		{
+			MethodName: "ChangeResearchRoomMember",
+			Handler:    _OnyxService_ChangeResearchRoomMember_Handler,
+		},
+		{
+			MethodName: "RevokeResearchRoomMember",
+			Handler:    _OnyxService_RevokeResearchRoomMember_Handler,
+		},
+		{
+			MethodName: "AddResearchRoomItem",
+			Handler:    _OnyxService_AddResearchRoomItem_Handler,
+		},
+		{
+			MethodName: "RemoveResearchRoomItem",
+			Handler:    _OnyxService_RemoveResearchRoomItem_Handler,
+		},
+		{
+			MethodName: "PostResearchRoomComment",
+			Handler:    _OnyxService_PostResearchRoomComment_Handler,
+		},
+		{
+			MethodName: "SetResearchRoomThreadStatus",
+			Handler:    _OnyxService_SetResearchRoomThreadStatus_Handler,
+		},
+		{
+			MethodName: "UpsertResearchRoomTask",
+			Handler:    _OnyxService_UpsertResearchRoomTask_Handler,
+		},
+		{
+			MethodName: "UpsertResearchRoomMeeting",
+			Handler:    _OnyxService_UpsertResearchRoomMeeting_Handler,
+		},
+		{
+			MethodName: "UpsertResearchRoomDecision",
+			Handler:    _OnyxService_UpsertResearchRoomDecision_Handler,
+		},
+		{
+			MethodName: "RecordResearchRoomApproval",
+			Handler:    _OnyxService_RecordResearchRoomApproval_Handler,
+		},
+		{
+			MethodName: "SearchResearchRoom",
+			Handler:    _OnyxService_SearchResearchRoom_Handler,
+		},
+		{
+			MethodName: "RequestResearchRoomExport",
+			Handler:    _OnyxService_RequestResearchRoomExport_Handler,
+		},
+		{
+			MethodName: "ReportResearchRoomAbuse",
+			Handler:    _OnyxService_ReportResearchRoomAbuse_Handler,
+		},
+		{
+			MethodName: "ListResearchRoomAudit",
+			Handler:    _OnyxService_ListResearchRoomAudit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

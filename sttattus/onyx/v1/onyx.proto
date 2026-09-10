@@ -1145,8 +1145,12 @@ message LiveSalon {
   string moderation_policy = 9;
 }
 
-message GetLiveSalonRequest { string event_id = 1; }
-message GetLiveSalonResponse { LiveSalon salon = 1; }
+message GetLiveSalonRequest {
+  string event_id = 1;
+}
+message GetLiveSalonResponse {
+  LiveSalon salon = 1;
+}
 
 message UpsertLiveReservationRequest {
   string event_id = 1;
@@ -1175,14 +1179,18 @@ message InviteLiveGuestResponse {
   string invite_url = 2;
 }
 
-message GenerateLiveCalendarPassRequest { string event_id = 1; }
+message GenerateLiveCalendarPassRequest {
+  string event_id = 1;
+}
 message GenerateLiveCalendarPassResponse {
   string filename = 1;
   string mime_type = 2;
   bytes contents = 3;
 }
 
-message JoinLiveEventRequest { string event_id = 1; }
+message JoinLiveEventRequest {
+  string event_id = 1;
+}
 message JoinLiveEventResponse {
   string mode = 1; // livekit | broadcast | recorded_only | unavailable
   string token = 2;
@@ -1218,25 +1226,33 @@ message PostLiveMessageRequest {
   string body = 3;
   string request_id = 4;
 }
-message PostLiveMessageResponse { LiveMessage message = 1; }
+message PostLiveMessageResponse {
+  LiveMessage message = 1;
+}
 
 message UpvoteLiveQuestionRequest {
   string message_id = 1;
   bool upvote = 2;
 }
-message UpvoteLiveQuestionResponse { LiveMessage message = 1; }
+message UpvoteLiveQuestionResponse {
+  LiveMessage message = 1;
+}
 
 message VoteLivePollRequest {
   string poll_id = 1;
   string option_key = 2;
 }
-message VoteLivePollResponse { LivePoll poll = 1; }
+message VoteLivePollResponse {
+  LivePoll poll = 1;
+}
 
 message SetLiveHandRaiseRequest {
   string event_id = 1;
   bool raised = 2;
 }
-message SetLiveHandRaiseResponse { string status = 1; }
+message SetLiveHandRaiseResponse {
+  string status = 1;
+}
 
 message ReactLiveEventRequest {
   string event_id = 1;
@@ -1256,14 +1272,26 @@ message UpsertLiveNoteRequest {
   string passage_key = 6;
   string request_id = 7;
 }
-message UpsertLiveNoteResponse { LiveNote note = 1; }
-message ListLiveNotesRequest { string event_id = 1; }
-message ListLiveNotesResponse { repeated LiveNote notes = 1; }
-message DeleteLiveNoteRequest { string note_id = 1; }
+message UpsertLiveNoteResponse {
+  LiveNote note = 1;
+}
+message ListLiveNotesRequest {
+  string event_id = 1;
+}
+message ListLiveNotesResponse {
+  repeated LiveNote notes = 1;
+}
+message DeleteLiveNoteRequest {
+  string note_id = 1;
+}
 message DeleteLiveNoteResponse {}
 
-message GetLiveReplayRequest { string event_id = 1; }
-message GetLiveReplayResponse { LiveReplay replay = 1; }
+message GetLiveReplayRequest {
+  string event_id = 1;
+}
+message GetLiveReplayResponse {
+  LiveReplay replay = 1;
+}
 
 message PosthumousArchive {
   // The pieces designated to drop to heirs on the Legacy trigger.
@@ -1950,6 +1978,451 @@ message CreateCommerceCaseResponse {
   CommerceCase commerce_case = 1;
 }
 
+// === Choice 9 — private research rooms and governed collaboration ===
+
+message ResearchRoomPolicy {
+  string download_policy = 1; // disabled | members | editors
+  string export_policy = 2; // disabled | owner | approval
+  string watermark_mode = 3; // member | room_member | forensic
+  bool allow_guests = 4;
+  int32 default_guest_days = 5;
+  bool require_export_approval = 6;
+  bool allow_external_links = 7;
+  int64 version = 8;
+}
+
+message ResearchRoomMember {
+  string user_id = 1;
+  string display_name = 2;
+  string email_hint = 3;
+  string role = 4; // owner | steward | editor | reviewer | contributor | commenter | viewer
+  string status = 5; // invited | active | declined | revoked | expired
+  bool is_guest = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp invited_at = 8;
+  google.protobuf.Timestamp joined_at = 9;
+  google.protobuf.Timestamp revoked_at = 10;
+  int64 access_version = 11;
+}
+
+message ResearchRoom {
+  string id = 1;
+  string title = 2;
+  string purpose = 3;
+  string description = 4;
+  string status = 5; // active | archived | frozen
+  string my_role = 6;
+  string my_membership_status = 7;
+  int32 member_count = 8;
+  int32 guest_count = 9;
+  int32 open_task_count = 10;
+  int32 open_question_count = 11;
+  int32 unread_count = 12;
+  ResearchRoomPolicy policy = 13;
+  int64 permission_version = 14;
+  google.protobuf.Timestamp created_at = 15;
+  google.protobuf.Timestamp updated_at = 16;
+}
+
+message ResearchRoomItem {
+  string id = 1;
+  string room_id = 2;
+  string item_type = 3; // content | brief | annotation | source | passage | link
+  string object_id = 4;
+  string content_id = 5;
+  string passage_key = 6;
+  string title = 7;
+  string summary = 8;
+  string required_role = 9;
+  string added_by_user_id = 10;
+  string added_by_name = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message ResearchRoomThread {
+  string id = 1;
+  string room_id = 2;
+  string item_id = 3;
+  string passage_key = 4;
+  string kind = 5; // discussion | question | review
+  string title = 6;
+  string status = 7; // open | resolved
+  string created_by_user_id = 8;
+  string created_by_name = 9;
+  int32 comment_count = 10;
+  google.protobuf.Timestamp resolved_at = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message ResearchRoomComment {
+  string id = 1;
+  string room_id = 2;
+  string thread_id = 3;
+  string parent_comment_id = 4;
+  string kind = 5; // comment | answer | dissent | rationale
+  string body = 6;
+  repeated string mention_user_ids = 7;
+  string visibility = 8; // shared | private_draft
+  string author_user_id = 9;
+  string author_name = 10;
+  int64 version = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message ResearchRoomTask {
+  string id = 1;
+  string room_id = 2;
+  string title = 3;
+  string description = 4;
+  string status = 5; // open | in_progress | blocked | done | cancelled
+  string priority = 6; // low | normal | high | critical
+  string owner_user_id = 7;
+  string owner_name = 8;
+  string source_item_id = 9;
+  string decision_id = 10;
+  google.protobuf.Timestamp due_at = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message ResearchRoomMeeting {
+  string id = 1;
+  string room_id = 2;
+  string title = 3;
+  string agenda = 4;
+  string minutes = 5;
+  string status = 6; // planned | held | cancelled
+  google.protobuf.Timestamp starts_at = 7;
+  google.protobuf.Timestamp ends_at = 8;
+  repeated string attendee_user_ids = 9;
+  int64 version = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message ResearchRoomDecision {
+  string id = 1;
+  string room_id = 2;
+  string title = 3;
+  string statement = 4;
+  string rationale = 5;
+  string status = 6; // proposed | review | approved | rejected | superseded
+  string proposed_by_user_id = 7;
+  string proposed_by_name = 8;
+  string decided_by_user_id = 9;
+  string decided_by_name = 10;
+  repeated string dissent_comment_ids = 11;
+  int32 approval_count = 12;
+  int32 rejection_count = 13;
+  string snapshot_checksum = 14;
+  int64 version = 15;
+  google.protobuf.Timestamp decided_at = 16;
+  google.protobuf.Timestamp created_at = 17;
+  google.protobuf.Timestamp updated_at = 18;
+}
+
+message ResearchRoomApproval {
+  string id = 1;
+  string room_id = 2;
+  string object_type = 3; // decision | export | item
+  string object_id = 4;
+  string reviewer_user_id = 5;
+  string reviewer_name = 6;
+  string status = 7; // approved | rejected
+  string note = 8;
+  google.protobuf.Timestamp created_at = 9;
+}
+
+message ResearchRoomExport {
+  string id = 1;
+  string room_id = 2;
+  string format = 3; // decision_pack_md | decision_pack_json | evidence_csv
+  string status = 4; // pending | approved | rejected | ready | revoked | expired
+  string requested_by_user_id = 5;
+  string requested_by_name = 6;
+  string reviewed_by_name = 7;
+  string reason = 8;
+  string watermark = 9;
+  string manifest_checksum = 10;
+  string download_url = 11;
+  int64 permission_version = 12;
+  google.protobuf.Timestamp expires_at = 13;
+  google.protobuf.Timestamp created_at = 14;
+  google.protobuf.Timestamp updated_at = 15;
+}
+
+message ResearchRoomAuditEvent {
+  string id = 1;
+  string room_id = 2;
+  string action = 3;
+  string actor_user_id = 4;
+  string actor_name = 5;
+  string subject_type = 6;
+  string subject_id = 7;
+  string summary = 8;
+  int64 permission_version = 9;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message ResearchRoomDetail {
+  ResearchRoom room = 1;
+  repeated ResearchRoomMember members = 2;
+  repeated ResearchRoomItem items = 3;
+  repeated ResearchRoomThread threads = 4;
+  repeated ResearchRoomComment comments = 5;
+  repeated ResearchRoomTask tasks = 6;
+  repeated ResearchRoomMeeting meetings = 7;
+  repeated ResearchRoomDecision decisions = 8;
+  repeated ResearchRoomApproval approvals = 9;
+  repeated ResearchRoomExport exports = 10;
+}
+
+message ListResearchRoomsRequest {
+  bool include_archived = 1;
+}
+message ListResearchRoomsResponse {
+  repeated ResearchRoom rooms = 1;
+}
+message GetResearchRoomRequest {
+  string room_id = 1;
+}
+message GetResearchRoomResponse {
+  ResearchRoomDetail detail = 1;
+}
+
+message CreateResearchRoomRequest {
+  string title = 1;
+  string purpose = 2;
+  string description = 3;
+  ResearchRoomPolicy policy = 4;
+  string client_mutation_id = 5;
+}
+message CreateResearchRoomResponse {
+  ResearchRoom room = 1;
+}
+
+message UpdateResearchRoomRequest {
+  string room_id = 1;
+  string title = 2;
+  string purpose = 3;
+  string description = 4;
+  string status = 5;
+  ResearchRoomPolicy policy = 6;
+  int64 expected_permission_version = 7;
+  string client_mutation_id = 8;
+}
+message UpdateResearchRoomResponse {
+  ResearchRoom room = 1;
+}
+
+message InviteResearchRoomMemberRequest {
+  string room_id = 1;
+  string email = 2;
+  string role = 3;
+  bool is_guest = 4;
+  int32 guest_days = 5;
+  string client_mutation_id = 6;
+}
+message InviteResearchRoomMemberResponse {
+  ResearchRoomMember member = 1;
+}
+
+message RespondResearchRoomInviteRequest {
+  string room_id = 1;
+  bool accept = 2;
+  string client_mutation_id = 3;
+}
+message RespondResearchRoomInviteResponse {
+  ResearchRoomMember member = 1;
+}
+
+message ChangeResearchRoomMemberRequest {
+  string room_id = 1;
+  string user_id = 2;
+  string role = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  int64 expected_access_version = 5;
+  string client_mutation_id = 6;
+}
+message ChangeResearchRoomMemberResponse {
+  ResearchRoomMember member = 1;
+}
+
+message RevokeResearchRoomMemberRequest {
+  string room_id = 1;
+  string user_id = 2;
+  string reason = 3;
+  int64 expected_access_version = 4;
+  string client_mutation_id = 5;
+}
+message RevokeResearchRoomMemberResponse {
+  int64 permission_version = 1;
+}
+
+message AddResearchRoomItemRequest {
+  string room_id = 1;
+  string item_type = 2;
+  string object_id = 3;
+  string content_id = 4;
+  string passage_key = 5;
+  string title = 6;
+  string summary = 7;
+  string required_role = 8;
+  string client_mutation_id = 9;
+}
+message AddResearchRoomItemResponse {
+  ResearchRoomItem item = 1;
+}
+message RemoveResearchRoomItemRequest {
+  string room_id = 1;
+  string item_id = 2;
+  int64 expected_version = 3;
+  string client_mutation_id = 4;
+}
+message RemoveResearchRoomItemResponse {}
+
+message PostResearchRoomCommentRequest {
+  string room_id = 1;
+  string thread_id = 2;
+  string item_id = 3;
+  string passage_key = 4;
+  string thread_kind = 5;
+  string thread_title = 6;
+  string parent_comment_id = 7;
+  string comment_kind = 8;
+  string body = 9;
+  repeated string mention_user_ids = 10;
+  string visibility = 11;
+  string client_mutation_id = 12;
+}
+message PostResearchRoomCommentResponse {
+  ResearchRoomThread thread = 1;
+  ResearchRoomComment comment = 2;
+}
+message SetResearchRoomThreadStatusRequest {
+  string room_id = 1;
+  string thread_id = 2;
+  string status = 3;
+  string client_mutation_id = 4;
+}
+message SetResearchRoomThreadStatusResponse {
+  ResearchRoomThread thread = 1;
+}
+
+message UpsertResearchRoomTaskRequest {
+  string room_id = 1;
+  string task_id = 2;
+  string title = 3;
+  string description = 4;
+  string status = 5;
+  string priority = 6;
+  string owner_user_id = 7;
+  string source_item_id = 8;
+  string decision_id = 9;
+  google.protobuf.Timestamp due_at = 10;
+  int64 expected_version = 11;
+  string client_mutation_id = 12;
+}
+message UpsertResearchRoomTaskResponse {
+  ResearchRoomTask task = 1;
+}
+
+message UpsertResearchRoomMeetingRequest {
+  string room_id = 1;
+  string meeting_id = 2;
+  string title = 3;
+  string agenda = 4;
+  string minutes = 5;
+  string status = 6;
+  google.protobuf.Timestamp starts_at = 7;
+  google.protobuf.Timestamp ends_at = 8;
+  repeated string attendee_user_ids = 9;
+  int64 expected_version = 10;
+  string client_mutation_id = 11;
+}
+message UpsertResearchRoomMeetingResponse {
+  ResearchRoomMeeting meeting = 1;
+}
+
+message UpsertResearchRoomDecisionRequest {
+  string room_id = 1;
+  string decision_id = 2;
+  string title = 3;
+  string statement = 4;
+  string rationale = 5;
+  string status = 6;
+  int64 expected_version = 7;
+  string client_mutation_id = 8;
+}
+message UpsertResearchRoomDecisionResponse {
+  ResearchRoomDecision decision = 1;
+}
+
+message RecordResearchRoomApprovalRequest {
+  string room_id = 1;
+  string object_type = 2;
+  string object_id = 3;
+  string status = 4;
+  string note = 5;
+  string client_mutation_id = 6;
+}
+message RecordResearchRoomApprovalResponse {
+  ResearchRoomApproval approval = 1;
+}
+
+message SearchResearchRoomRequest {
+  string room_id = 1;
+  string query = 2;
+  string object_type = 3;
+  int32 limit = 4;
+}
+message SearchResearchRoomResult {
+  string object_type = 1;
+  string object_id = 2;
+  string title = 3;
+  string snippet = 4;
+  string item_id = 5;
+  string passage_key = 6;
+}
+message SearchResearchRoomResponse {
+  repeated SearchResearchRoomResult results = 1;
+}
+
+message RequestResearchRoomExportRequest {
+  string room_id = 1;
+  string format = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message RequestResearchRoomExportResponse {
+  ResearchRoomExport export = 1;
+}
+
+message ReportResearchRoomAbuseRequest {
+  string room_id = 1;
+  string category = 2;
+  string summary = 3;
+  string subject_type = 4;
+  string subject_id = 5;
+  string client_mutation_id = 6;
+}
+message ReportResearchRoomAbuseResponse {
+  string report_id = 1;
+}
+
+message ListResearchRoomAuditRequest {
+  string room_id = 1;
+  int32 limit = 2;
+}
+message ListResearchRoomAuditResponse {
+  repeated ResearchRoomAuditEvent events = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -2119,4 +2592,26 @@ service OnyxService {
   rpc CancelCreatorSubscription(CancelCreatorSubscriptionRequest) returns (CancelCreatorSubscriptionResponse);
   rpc GetMyCommerce(GetMyCommerceRequest) returns (GetMyCommerceResponse);
   rpc CreateCommerceCase(CreateCommerceCaseRequest) returns (CreateCommerceCaseResponse);
+
+  // Choice 9 — governed, invite-only research and decision rooms.
+  rpc ListResearchRooms(ListResearchRoomsRequest) returns (ListResearchRoomsResponse);
+  rpc GetResearchRoom(GetResearchRoomRequest) returns (GetResearchRoomResponse);
+  rpc CreateResearchRoom(CreateResearchRoomRequest) returns (CreateResearchRoomResponse);
+  rpc UpdateResearchRoom(UpdateResearchRoomRequest) returns (UpdateResearchRoomResponse);
+  rpc InviteResearchRoomMember(InviteResearchRoomMemberRequest) returns (InviteResearchRoomMemberResponse);
+  rpc RespondResearchRoomInvite(RespondResearchRoomInviteRequest) returns (RespondResearchRoomInviteResponse);
+  rpc ChangeResearchRoomMember(ChangeResearchRoomMemberRequest) returns (ChangeResearchRoomMemberResponse);
+  rpc RevokeResearchRoomMember(RevokeResearchRoomMemberRequest) returns (RevokeResearchRoomMemberResponse);
+  rpc AddResearchRoomItem(AddResearchRoomItemRequest) returns (AddResearchRoomItemResponse);
+  rpc RemoveResearchRoomItem(RemoveResearchRoomItemRequest) returns (RemoveResearchRoomItemResponse);
+  rpc PostResearchRoomComment(PostResearchRoomCommentRequest) returns (PostResearchRoomCommentResponse);
+  rpc SetResearchRoomThreadStatus(SetResearchRoomThreadStatusRequest) returns (SetResearchRoomThreadStatusResponse);
+  rpc UpsertResearchRoomTask(UpsertResearchRoomTaskRequest) returns (UpsertResearchRoomTaskResponse);
+  rpc UpsertResearchRoomMeeting(UpsertResearchRoomMeetingRequest) returns (UpsertResearchRoomMeetingResponse);
+  rpc UpsertResearchRoomDecision(UpsertResearchRoomDecisionRequest) returns (UpsertResearchRoomDecisionResponse);
+  rpc RecordResearchRoomApproval(RecordResearchRoomApprovalRequest) returns (RecordResearchRoomApprovalResponse);
+  rpc SearchResearchRoom(SearchResearchRoomRequest) returns (SearchResearchRoomResponse);
+  rpc RequestResearchRoomExport(RequestResearchRoomExportRequest) returns (RequestResearchRoomExportResponse);
+  rpc ReportResearchRoomAbuse(ReportResearchRoomAbuseRequest) returns (ReportResearchRoomAbuseResponse);
+  rpc ListResearchRoomAudit(ListResearchRoomAuditRequest) returns (ListResearchRoomAuditResponse);
 }
