@@ -19,157 +19,175 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OnyxService_CreateProfile_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/CreateProfile"
-	OnyxService_GetProfile_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/GetProfile"
-	OnyxService_ListContent_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/ListContent"
-	OnyxService_Subscribe_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/Subscribe"
-	OnyxService_GetContent_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/GetContent"
-	OnyxService_ListShelf_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/ListShelf"
-	OnyxService_ListContinue_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListContinue"
-	OnyxService_GetShelves_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/GetShelves"
-	OnyxService_RecordProgress_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RecordProgress"
-	OnyxService_RedeemContent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/RedeemContent"
-	OnyxService_CreateSubscriptionCheckout_FullMethodName          = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
-	OnyxService_GetCreator_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/GetCreator"
-	OnyxService_ListCreatorWorks_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
-	OnyxService_FollowCreator_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/FollowCreator"
-	OnyxService_SearchContent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/SearchContent"
-	OnyxService_AddNote_FullMethodName                             = "/sttattus.onyx.v1.OnyxService/AddNote"
-	OnyxService_ListMyNotes_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
-	OnyxService_DeleteNote_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/DeleteNote"
-	OnyxService_UpsertReaderAnnotation_FullMethodName              = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
-	OnyxService_DeleteReaderAnnotation_FullMethodName              = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
-	OnyxService_ListMyReaderAnnotations_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
-	OnyxService_SearchReader_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/SearchReader"
-	OnyxService_SearchIntelligence_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/SearchIntelligence"
-	OnyxService_RecordIntelligenceSearchOutcome_FullMethodName     = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceSearchOutcome"
-	OnyxService_ListSavedQueries_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListSavedQueries"
-	OnyxService_UpsertSavedQuery_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/UpsertSavedQuery"
-	OnyxService_DeleteSavedQuery_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/DeleteSavedQuery"
-	OnyxService_ListWatchlists_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListWatchlists"
-	OnyxService_UpsertWatchlist_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertWatchlist"
-	OnyxService_DeleteWatchlist_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteWatchlist"
-	OnyxService_RefreshWatchlist_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/RefreshWatchlist"
-	OnyxService_ListIntelligenceAlerts_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListIntelligenceAlerts"
-	OnyxService_SetIntelligenceAlertState_FullMethodName           = "/sttattus.onyx.v1.OnyxService/SetIntelligenceAlertState"
-	OnyxService_GetIntelligenceQueue_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetIntelligenceQueue"
-	OnyxService_RecordIntelligenceFeedback_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceFeedback"
-	OnyxService_ExportReaderData_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
-	OnyxService_ListReaderSyncChanges_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
-	OnyxService_ListMyUnlocks_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
-	OnyxService_ListMySubscriptions_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
-	OnyxService_ListMyFollows_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
-	OnyxService_ListSovereignWindow_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
-	OnyxService_ListSeries_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/ListSeries"
-	OnyxService_GetSeries_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/GetSeries"
-	OnyxService_GenerateCaptions_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
-	OnyxService_GetCaptionJob_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
-	OnyxService_GetListeningPreferences_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
-	OnyxService_UpdateListeningPreferences_FullMethodName          = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
-	OnyxService_CreateListeningBookmark_FullMethodName             = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
-	OnyxService_ListListeningBookmarks_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListListeningBookmarks"
-	OnyxService_DeleteListeningBookmark_FullMethodName             = "/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark"
-	OnyxService_ListListeningQueue_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListListeningQueue"
-	OnyxService_SetListeningQueue_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SetListeningQueue"
-	OnyxService_CreateAudioOverview_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateAudioOverview"
-	OnyxService_ListAudioOverviews_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListAudioOverviews"
-	OnyxService_GetAudioOverview_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetAudioOverview"
-	OnyxService_DeleteAudioOverview_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/DeleteAudioOverview"
-	OnyxService_ListListeningPronunciations_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ListListeningPronunciations"
-	OnyxService_GetTodaySummary_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
-	OnyxService_GetCrossPillarUnlocks_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
-	OnyxService_StartConciergeThread_FullMethodName                = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
-	OnyxService_ListMyConciergeThreads_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
-	OnyxService_GetConciergeThread_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
-	OnyxService_PostConciergeMessage_FullMethodName                = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
-	OnyxService_ListLiveEvents_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
-	OnyxService_GetLiveEvent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
-	OnyxService_RsvpLiveEvent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
-	OnyxService_GetLiveSalon_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetLiveSalon"
-	OnyxService_UpsertLiveReservation_FullMethodName               = "/sttattus.onyx.v1.OnyxService/UpsertLiveReservation"
-	OnyxService_InviteLiveGuest_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/InviteLiveGuest"
-	OnyxService_GenerateLiveCalendarPass_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GenerateLiveCalendarPass"
-	OnyxService_JoinLiveEvent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/JoinLiveEvent"
-	OnyxService_ListLiveActivity_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListLiveActivity"
-	OnyxService_PostLiveMessage_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/PostLiveMessage"
-	OnyxService_UpvoteLiveQuestion_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/UpvoteLiveQuestion"
-	OnyxService_VoteLivePoll_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/VoteLivePoll"
-	OnyxService_SetLiveHandRaise_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/SetLiveHandRaise"
-	OnyxService_ReactLiveEvent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ReactLiveEvent"
-	OnyxService_UpsertLiveNote_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/UpsertLiveNote"
-	OnyxService_ListLiveNotes_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListLiveNotes"
-	OnyxService_DeleteLiveNote_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/DeleteLiveNote"
-	OnyxService_GetLiveReplay_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetLiveReplay"
-	OnyxService_SetPosthumousArchive_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
-	OnyxService_GetPosthumousArchive_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
-	OnyxService_ListAnthologies_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
-	OnyxService_GetAnthology_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetAnthology"
-	OnyxService_CreateShareLink_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
-	OnyxService_ListMyShareLinks_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
-	OnyxService_RevokeShareLink_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
-	OnyxService_GetOfflineManifest_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
-	OnyxService_RegisterDevice_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
-	OnyxService_AcknowledgePurge_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
-	OnyxService_GetDeviceGrants_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
-	OnyxService_RevokeMyDevice_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
-	OnyxService_MarkMyDeviceLost_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
-	OnyxService_GetPurgeReceipt_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
-	OnyxService_ListOfflineManifestItems_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
-	OnyxService_RefreshOfflineRenditions_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
-	OnyxService_RecordOfflineEvent_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
-	OnyxService_GetYearInOnyx_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
-	OnyxService_GenerateAnnualArchive_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
-	OnyxService_ReactToContent_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ReactToContent"
-	OnyxService_CreateIngestionItem_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
-	OnyxService_ListMyIngestionItems_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
-	OnyxService_GetIngestionItem_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
-	OnyxService_RetryIngestionItem_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
-	OnyxService_SetIngestionItemState_FullMethodName               = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
-	OnyxService_ResolveIngestionDuplicate_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
-	OnyxService_GetEvidenceWorkspace_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
-	OnyxService_CreateEvidenceBrief_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
-	OnyxService_ListMyEvidenceBriefs_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
-	OnyxService_GetEvidenceBrief_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
-	OnyxService_GetCreatorStudio_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/GetCreatorStudio"
-	OnyxService_SubmitCreatorPitch_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/SubmitCreatorPitch"
-	OnyxService_UpdateCreatorProject_FullMethodName                = "/sttattus.onyx.v1.OnyxService/UpdateCreatorProject"
-	OnyxService_SubmitCreatorProject_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SubmitCreatorProject"
-	OnyxService_SignCreatorContract_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SignCreatorContract"
-	OnyxService_ListMyCreatorSubscriptionsDetailed_FullMethodName  = "/sttattus.onyx.v1.OnyxService/ListMyCreatorSubscriptionsDetailed"
-	OnyxService_CancelCreatorSubscription_FullMethodName           = "/sttattus.onyx.v1.OnyxService/CancelCreatorSubscription"
-	OnyxService_GetMyCommerce_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetMyCommerce"
-	OnyxService_CreateCommerceCase_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateCommerceCase"
-	OnyxService_ListResearchRooms_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListResearchRooms"
-	OnyxService_GetResearchRoom_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetResearchRoom"
-	OnyxService_CreateResearchRoom_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateResearchRoom"
-	OnyxService_UpdateResearchRoom_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/UpdateResearchRoom"
-	OnyxService_InviteResearchRoomMember_FullMethodName            = "/sttattus.onyx.v1.OnyxService/InviteResearchRoomMember"
-	OnyxService_RespondResearchRoomInvite_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RespondResearchRoomInvite"
-	OnyxService_ChangeResearchRoomMember_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ChangeResearchRoomMember"
-	OnyxService_RevokeResearchRoomMember_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomMember"
-	OnyxService_AddResearchRoomItem_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/AddResearchRoomItem"
-	OnyxService_RemoveResearchRoomItem_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RemoveResearchRoomItem"
-	OnyxService_PostResearchRoomComment_FullMethodName             = "/sttattus.onyx.v1.OnyxService/PostResearchRoomComment"
-	OnyxService_SetResearchRoomThreadStatus_FullMethodName         = "/sttattus.onyx.v1.OnyxService/SetResearchRoomThreadStatus"
-	OnyxService_UpsertResearchRoomTask_FullMethodName              = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomTask"
-	OnyxService_UpsertResearchRoomMeeting_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomMeeting"
-	OnyxService_UpsertResearchRoomDecision_FullMethodName          = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomDecision"
-	OnyxService_RecordResearchRoomApproval_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RecordResearchRoomApproval"
-	OnyxService_SearchResearchRoom_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/SearchResearchRoom"
-	OnyxService_RequestResearchRoomExport_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RequestResearchRoomExport"
-	OnyxService_ReportResearchRoomAbuse_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReportResearchRoomAbuse"
-	OnyxService_ListResearchRoomAudit_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListResearchRoomAudit"
-	OnyxService_ListResearchRoomGrants_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListResearchRoomGrants"
-	OnyxService_UpsertResearchRoomGrant_FullMethodName             = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomGrant"
-	OnyxService_RevokeResearchRoomGrant_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomGrant"
-	OnyxService_CreateResearchRoomShareLink_FullMethodName         = "/sttattus.onyx.v1.OnyxService/CreateResearchRoomShareLink"
-	OnyxService_ListResearchRoomShareLinks_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListResearchRoomShareLinks"
-	OnyxService_RevokeResearchRoomShareLink_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomShareLink"
-	OnyxService_ResolveResearchRoomShareLink_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ResolveResearchRoomShareLink"
-	OnyxService_GetResearchRoomOfflineManifest_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GetResearchRoomOfflineManifest"
-	OnyxService_AcknowledgeResearchRoomOfflinePurge_FullMethodName = "/sttattus.onyx.v1.OnyxService/AcknowledgeResearchRoomOfflinePurge"
-	OnyxService_ListResearchRoomOfflinePurges_FullMethodName       = "/sttattus.onyx.v1.OnyxService/ListResearchRoomOfflinePurges"
-	OnyxService_LeaveResearchRoom_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/LeaveResearchRoom"
+	OnyxService_CreateProfile_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/CreateProfile"
+	OnyxService_GetProfile_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/GetProfile"
+	OnyxService_ListContent_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/ListContent"
+	OnyxService_Subscribe_FullMethodName                            = "/sttattus.onyx.v1.OnyxService/Subscribe"
+	OnyxService_GetContent_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/GetContent"
+	OnyxService_ListShelf_FullMethodName                            = "/sttattus.onyx.v1.OnyxService/ListShelf"
+	OnyxService_ListContinue_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/ListContinue"
+	OnyxService_GetShelves_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/GetShelves"
+	OnyxService_RecordProgress_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/RecordProgress"
+	OnyxService_RedeemContent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/RedeemContent"
+	OnyxService_CreateSubscriptionCheckout_FullMethodName           = "/sttattus.onyx.v1.OnyxService/CreateSubscriptionCheckout"
+	OnyxService_GetCreator_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/GetCreator"
+	OnyxService_ListCreatorWorks_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListCreatorWorks"
+	OnyxService_FollowCreator_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/FollowCreator"
+	OnyxService_SearchContent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/SearchContent"
+	OnyxService_AddNote_FullMethodName                              = "/sttattus.onyx.v1.OnyxService/AddNote"
+	OnyxService_ListMyNotes_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/ListMyNotes"
+	OnyxService_DeleteNote_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/DeleteNote"
+	OnyxService_UpsertReaderAnnotation_FullMethodName               = "/sttattus.onyx.v1.OnyxService/UpsertReaderAnnotation"
+	OnyxService_DeleteReaderAnnotation_FullMethodName               = "/sttattus.onyx.v1.OnyxService/DeleteReaderAnnotation"
+	OnyxService_ListMyReaderAnnotations_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ListMyReaderAnnotations"
+	OnyxService_SearchReader_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/SearchReader"
+	OnyxService_SearchIntelligence_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SearchIntelligence"
+	OnyxService_RecordIntelligenceSearchOutcome_FullMethodName      = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceSearchOutcome"
+	OnyxService_ListSavedQueries_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListSavedQueries"
+	OnyxService_UpsertSavedQuery_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertSavedQuery"
+	OnyxService_DeleteSavedQuery_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteSavedQuery"
+	OnyxService_ListWatchlists_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListWatchlists"
+	OnyxService_UpsertWatchlist_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/UpsertWatchlist"
+	OnyxService_DeleteWatchlist_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/DeleteWatchlist"
+	OnyxService_RefreshWatchlist_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/RefreshWatchlist"
+	OnyxService_ListIntelligenceAlerts_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListIntelligenceAlerts"
+	OnyxService_SetIntelligenceAlertState_FullMethodName            = "/sttattus.onyx.v1.OnyxService/SetIntelligenceAlertState"
+	OnyxService_GetIntelligenceQueue_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetIntelligenceQueue"
+	OnyxService_RecordIntelligenceFeedback_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RecordIntelligenceFeedback"
+	OnyxService_ExportReaderData_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ExportReaderData"
+	OnyxService_ListReaderSyncChanges_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListReaderSyncChanges"
+	OnyxService_ListMyUnlocks_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListMyUnlocks"
+	OnyxService_ListMySubscriptions_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListMySubscriptions"
+	OnyxService_ListMyFollows_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListMyFollows"
+	OnyxService_ListSovereignWindow_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListSovereignWindow"
+	OnyxService_ListSeries_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/ListSeries"
+	OnyxService_GetSeries_FullMethodName                            = "/sttattus.onyx.v1.OnyxService/GetSeries"
+	OnyxService_GenerateCaptions_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
+	OnyxService_GetCaptionJob_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
+	OnyxService_GetListeningPreferences_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
+	OnyxService_UpdateListeningPreferences_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
+	OnyxService_CreateListeningBookmark_FullMethodName              = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
+	OnyxService_ListListeningBookmarks_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListListeningBookmarks"
+	OnyxService_DeleteListeningBookmark_FullMethodName              = "/sttattus.onyx.v1.OnyxService/DeleteListeningBookmark"
+	OnyxService_ListListeningQueue_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListListeningQueue"
+	OnyxService_SetListeningQueue_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/SetListeningQueue"
+	OnyxService_CreateAudioOverview_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateAudioOverview"
+	OnyxService_ListAudioOverviews_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListAudioOverviews"
+	OnyxService_GetAudioOverview_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetAudioOverview"
+	OnyxService_DeleteAudioOverview_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/DeleteAudioOverview"
+	OnyxService_ListListeningPronunciations_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ListListeningPronunciations"
+	OnyxService_GetTodaySummary_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetTodaySummary"
+	OnyxService_GetCrossPillarUnlocks_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetCrossPillarUnlocks"
+	OnyxService_StartConciergeThread_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/StartConciergeThread"
+	OnyxService_ListMyConciergeThreads_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListMyConciergeThreads"
+	OnyxService_GetConciergeThread_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetConciergeThread"
+	OnyxService_PostConciergeMessage_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/PostConciergeMessage"
+	OnyxService_ListLiveEvents_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ListLiveEvents"
+	OnyxService_GetLiveEvent_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetLiveEvent"
+	OnyxService_RsvpLiveEvent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/RsvpLiveEvent"
+	OnyxService_GetLiveSalon_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetLiveSalon"
+	OnyxService_UpsertLiveReservation_FullMethodName                = "/sttattus.onyx.v1.OnyxService/UpsertLiveReservation"
+	OnyxService_InviteLiveGuest_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/InviteLiveGuest"
+	OnyxService_GenerateLiveCalendarPass_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GenerateLiveCalendarPass"
+	OnyxService_JoinLiveEvent_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/JoinLiveEvent"
+	OnyxService_ListLiveActivity_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListLiveActivity"
+	OnyxService_PostLiveMessage_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/PostLiveMessage"
+	OnyxService_UpvoteLiveQuestion_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/UpvoteLiveQuestion"
+	OnyxService_VoteLivePoll_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/VoteLivePoll"
+	OnyxService_SetLiveHandRaise_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/SetLiveHandRaise"
+	OnyxService_ReactLiveEvent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ReactLiveEvent"
+	OnyxService_UpsertLiveNote_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/UpsertLiveNote"
+	OnyxService_ListLiveNotes_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/ListLiveNotes"
+	OnyxService_DeleteLiveNote_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/DeleteLiveNote"
+	OnyxService_GetLiveReplay_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetLiveReplay"
+	OnyxService_SetPosthumousArchive_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SetPosthumousArchive"
+	OnyxService_GetPosthumousArchive_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetPosthumousArchive"
+	OnyxService_ListAnthologies_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListAnthologies"
+	OnyxService_GetAnthology_FullMethodName                         = "/sttattus.onyx.v1.OnyxService/GetAnthology"
+	OnyxService_CreateShareLink_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/CreateShareLink"
+	OnyxService_ListMyShareLinks_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ListMyShareLinks"
+	OnyxService_RevokeShareLink_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/RevokeShareLink"
+	OnyxService_GetOfflineManifest_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetOfflineManifest"
+	OnyxService_RegisterDevice_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/RegisterDevice"
+	OnyxService_AcknowledgePurge_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/AcknowledgePurge"
+	OnyxService_GetDeviceGrants_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetDeviceGrants"
+	OnyxService_RevokeMyDevice_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/RevokeMyDevice"
+	OnyxService_MarkMyDeviceLost_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/MarkMyDeviceLost"
+	OnyxService_GetPurgeReceipt_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetPurgeReceipt"
+	OnyxService_ListOfflineManifestItems_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
+	OnyxService_RefreshOfflineRenditions_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
+	OnyxService_RecordOfflineEvent_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
+	OnyxService_GetYearInOnyx_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
+	OnyxService_GenerateAnnualArchive_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
+	OnyxService_ReactToContent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ReactToContent"
+	OnyxService_CreateIngestionItem_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
+	OnyxService_ListMyIngestionItems_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
+	OnyxService_GetIngestionItem_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetIngestionItem"
+	OnyxService_RetryIngestionItem_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/RetryIngestionItem"
+	OnyxService_SetIngestionItemState_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
+	OnyxService_ResolveIngestionDuplicate_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
+	OnyxService_GetEvidenceWorkspace_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
+	OnyxService_CreateEvidenceBrief_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
+	OnyxService_ListMyEvidenceBriefs_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
+	OnyxService_GetEvidenceBrief_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
+	OnyxService_GetCreatorStudio_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetCreatorStudio"
+	OnyxService_SubmitCreatorPitch_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SubmitCreatorPitch"
+	OnyxService_UpdateCreatorProject_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/UpdateCreatorProject"
+	OnyxService_SubmitCreatorProject_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/SubmitCreatorProject"
+	OnyxService_SignCreatorContract_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/SignCreatorContract"
+	OnyxService_ListMyCreatorSubscriptionsDetailed_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListMyCreatorSubscriptionsDetailed"
+	OnyxService_CancelCreatorSubscription_FullMethodName            = "/sttattus.onyx.v1.OnyxService/CancelCreatorSubscription"
+	OnyxService_GetMyCommerce_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetMyCommerce"
+	OnyxService_CreateCommerceCase_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/CreateCommerceCase"
+	OnyxService_ListResearchRooms_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/ListResearchRooms"
+	OnyxService_GetResearchRoom_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/GetResearchRoom"
+	OnyxService_CreateResearchRoom_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/CreateResearchRoom"
+	OnyxService_UpdateResearchRoom_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/UpdateResearchRoom"
+	OnyxService_InviteResearchRoomMember_FullMethodName             = "/sttattus.onyx.v1.OnyxService/InviteResearchRoomMember"
+	OnyxService_RespondResearchRoomInvite_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RespondResearchRoomInvite"
+	OnyxService_ChangeResearchRoomMember_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ChangeResearchRoomMember"
+	OnyxService_RevokeResearchRoomMember_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomMember"
+	OnyxService_AddResearchRoomItem_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/AddResearchRoomItem"
+	OnyxService_RemoveResearchRoomItem_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RemoveResearchRoomItem"
+	OnyxService_PostResearchRoomComment_FullMethodName              = "/sttattus.onyx.v1.OnyxService/PostResearchRoomComment"
+	OnyxService_SetResearchRoomThreadStatus_FullMethodName          = "/sttattus.onyx.v1.OnyxService/SetResearchRoomThreadStatus"
+	OnyxService_UpsertResearchRoomTask_FullMethodName               = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomTask"
+	OnyxService_UpsertResearchRoomMeeting_FullMethodName            = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomMeeting"
+	OnyxService_UpsertResearchRoomDecision_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomDecision"
+	OnyxService_RecordResearchRoomApproval_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RecordResearchRoomApproval"
+	OnyxService_SearchResearchRoom_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SearchResearchRoom"
+	OnyxService_RequestResearchRoomExport_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RequestResearchRoomExport"
+	OnyxService_ReportResearchRoomAbuse_FullMethodName              = "/sttattus.onyx.v1.OnyxService/ReportResearchRoomAbuse"
+	OnyxService_ListResearchRoomAudit_FullMethodName                = "/sttattus.onyx.v1.OnyxService/ListResearchRoomAudit"
+	OnyxService_ListResearchRoomGrants_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListResearchRoomGrants"
+	OnyxService_UpsertResearchRoomGrant_FullMethodName              = "/sttattus.onyx.v1.OnyxService/UpsertResearchRoomGrant"
+	OnyxService_RevokeResearchRoomGrant_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomGrant"
+	OnyxService_CreateResearchRoomShareLink_FullMethodName          = "/sttattus.onyx.v1.OnyxService/CreateResearchRoomShareLink"
+	OnyxService_ListResearchRoomShareLinks_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListResearchRoomShareLinks"
+	OnyxService_RevokeResearchRoomShareLink_FullMethodName          = "/sttattus.onyx.v1.OnyxService/RevokeResearchRoomShareLink"
+	OnyxService_ResolveResearchRoomShareLink_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ResolveResearchRoomShareLink"
+	OnyxService_GetResearchRoomOfflineManifest_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetResearchRoomOfflineManifest"
+	OnyxService_AcknowledgeResearchRoomOfflinePurge_FullMethodName  = "/sttattus.onyx.v1.OnyxService/AcknowledgeResearchRoomOfflinePurge"
+	OnyxService_ListResearchRoomOfflinePurges_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListResearchRoomOfflinePurges"
+	OnyxService_LeaveResearchRoom_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/LeaveResearchRoom"
+	OnyxService_GetPersonalIntelligenceGraph_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GetPersonalIntelligenceGraph"
+	OnyxService_UpsertIntelligenceGraphNode_FullMethodName          = "/sttattus.onyx.v1.OnyxService/UpsertIntelligenceGraphNode"
+	OnyxService_SetIntelligenceGraphNodeState_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphNodeState"
+	OnyxService_MergeIntelligenceGraphNodes_FullMethodName          = "/sttattus.onyx.v1.OnyxService/MergeIntelligenceGraphNodes"
+	OnyxService_SplitIntelligenceGraphNode_FullMethodName           = "/sttattus.onyx.v1.OnyxService/SplitIntelligenceGraphNode"
+	OnyxService_UpsertIntelligenceGraphEdge_FullMethodName          = "/sttattus.onyx.v1.OnyxService/UpsertIntelligenceGraphEdge"
+	OnyxService_SetIntelligenceGraphEdgeState_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphEdgeState"
+	OnyxService_GenerateIntelligenceGraphSuggestions_FullMethodName = "/sttattus.onyx.v1.OnyxService/GenerateIntelligenceGraphSuggestions"
+	OnyxService_ListIntelligenceGraphSuggestions_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphSuggestions"
+	OnyxService_SetIntelligenceGraphSuggestionState_FullMethodName  = "/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphSuggestionState"
+	OnyxService_ListIntelligenceGraphTimeline_FullMethodName        = "/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphTimeline"
+	OnyxService_ListIntelligenceGraphResurfacing_FullMethodName     = "/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphResurfacing"
+	OnyxService_SetIntelligenceGraphResurfacingState_FullMethodName = "/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphResurfacingState"
+	OnyxService_CreateIntelligenceGraphMeetingBrief_FullMethodName  = "/sttattus.onyx.v1.OnyxService/CreateIntelligenceGraphMeetingBrief"
+	OnyxService_GetIntelligenceGraphMeetingBrief_FullMethodName     = "/sttattus.onyx.v1.OnyxService/GetIntelligenceGraphMeetingBrief"
+	OnyxService_ListIntelligenceGraphMeetingBriefs_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphMeetingBriefs"
+	OnyxService_ExportPersonalIntelligenceGraph_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ExportPersonalIntelligenceGraph"
+	OnyxService_RebuildPersonalIntelligenceGraph_FullMethodName     = "/sttattus.onyx.v1.OnyxService/RebuildPersonalIntelligenceGraph"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -355,6 +373,25 @@ type OnyxServiceClient interface {
 	AcknowledgeResearchRoomOfflinePurge(ctx context.Context, in *AcknowledgeResearchRoomOfflinePurgeRequest, opts ...grpc.CallOption) (*AcknowledgeResearchRoomOfflinePurgeResponse, error)
 	ListResearchRoomOfflinePurges(ctx context.Context, in *ListResearchRoomOfflinePurgesRequest, opts ...grpc.CallOption) (*ListResearchRoomOfflinePurgesResponse, error)
 	LeaveResearchRoom(ctx context.Context, in *LeaveResearchRoomRequest, opts ...grpc.CallOption) (*LeaveResearchRoomResponse, error)
+	// Choice 10 — private, member-owned intelligence graph.
+	GetPersonalIntelligenceGraph(ctx context.Context, in *GetPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*GetPersonalIntelligenceGraphResponse, error)
+	UpsertIntelligenceGraphNode(ctx context.Context, in *UpsertIntelligenceGraphNodeRequest, opts ...grpc.CallOption) (*UpsertIntelligenceGraphNodeResponse, error)
+	SetIntelligenceGraphNodeState(ctx context.Context, in *SetIntelligenceGraphNodeStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphNodeStateResponse, error)
+	MergeIntelligenceGraphNodes(ctx context.Context, in *MergeIntelligenceGraphNodesRequest, opts ...grpc.CallOption) (*MergeIntelligenceGraphNodesResponse, error)
+	SplitIntelligenceGraphNode(ctx context.Context, in *SplitIntelligenceGraphNodeRequest, opts ...grpc.CallOption) (*SplitIntelligenceGraphNodeResponse, error)
+	UpsertIntelligenceGraphEdge(ctx context.Context, in *UpsertIntelligenceGraphEdgeRequest, opts ...grpc.CallOption) (*UpsertIntelligenceGraphEdgeResponse, error)
+	SetIntelligenceGraphEdgeState(ctx context.Context, in *SetIntelligenceGraphEdgeStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphEdgeStateResponse, error)
+	GenerateIntelligenceGraphSuggestions(ctx context.Context, in *GenerateIntelligenceGraphSuggestionsRequest, opts ...grpc.CallOption) (*GenerateIntelligenceGraphSuggestionsResponse, error)
+	ListIntelligenceGraphSuggestions(ctx context.Context, in *ListIntelligenceGraphSuggestionsRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphSuggestionsResponse, error)
+	SetIntelligenceGraphSuggestionState(ctx context.Context, in *SetIntelligenceGraphSuggestionStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphSuggestionStateResponse, error)
+	ListIntelligenceGraphTimeline(ctx context.Context, in *ListIntelligenceGraphTimelineRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphTimelineResponse, error)
+	ListIntelligenceGraphResurfacing(ctx context.Context, in *ListIntelligenceGraphResurfacingRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphResurfacingResponse, error)
+	SetIntelligenceGraphResurfacingState(ctx context.Context, in *SetIntelligenceGraphResurfacingStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphResurfacingStateResponse, error)
+	CreateIntelligenceGraphMeetingBrief(ctx context.Context, in *CreateIntelligenceGraphMeetingBriefRequest, opts ...grpc.CallOption) (*CreateIntelligenceGraphMeetingBriefResponse, error)
+	GetIntelligenceGraphMeetingBrief(ctx context.Context, in *GetIntelligenceGraphMeetingBriefRequest, opts ...grpc.CallOption) (*GetIntelligenceGraphMeetingBriefResponse, error)
+	ListIntelligenceGraphMeetingBriefs(ctx context.Context, in *ListIntelligenceGraphMeetingBriefsRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphMeetingBriefsResponse, error)
+	ExportPersonalIntelligenceGraph(ctx context.Context, in *ExportPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*ExportPersonalIntelligenceGraphResponse, error)
+	RebuildPersonalIntelligenceGraph(ctx context.Context, in *RebuildPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*RebuildPersonalIntelligenceGraphResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -1875,6 +1912,186 @@ func (c *onyxServiceClient) LeaveResearchRoom(ctx context.Context, in *LeaveRese
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetPersonalIntelligenceGraph(ctx context.Context, in *GetPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*GetPersonalIntelligenceGraphResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPersonalIntelligenceGraphResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetPersonalIntelligenceGraph_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertIntelligenceGraphNode(ctx context.Context, in *UpsertIntelligenceGraphNodeRequest, opts ...grpc.CallOption) (*UpsertIntelligenceGraphNodeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertIntelligenceGraphNodeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertIntelligenceGraphNode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntelligenceGraphNodeState(ctx context.Context, in *SetIntelligenceGraphNodeStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphNodeStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntelligenceGraphNodeStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntelligenceGraphNodeState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) MergeIntelligenceGraphNodes(ctx context.Context, in *MergeIntelligenceGraphNodesRequest, opts ...grpc.CallOption) (*MergeIntelligenceGraphNodesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MergeIntelligenceGraphNodesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_MergeIntelligenceGraphNodes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SplitIntelligenceGraphNode(ctx context.Context, in *SplitIntelligenceGraphNodeRequest, opts ...grpc.CallOption) (*SplitIntelligenceGraphNodeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SplitIntelligenceGraphNodeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SplitIntelligenceGraphNode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertIntelligenceGraphEdge(ctx context.Context, in *UpsertIntelligenceGraphEdgeRequest, opts ...grpc.CallOption) (*UpsertIntelligenceGraphEdgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertIntelligenceGraphEdgeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertIntelligenceGraphEdge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntelligenceGraphEdgeState(ctx context.Context, in *SetIntelligenceGraphEdgeStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphEdgeStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntelligenceGraphEdgeStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntelligenceGraphEdgeState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateIntelligenceGraphSuggestions(ctx context.Context, in *GenerateIntelligenceGraphSuggestionsRequest, opts ...grpc.CallOption) (*GenerateIntelligenceGraphSuggestionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateIntelligenceGraphSuggestionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateIntelligenceGraphSuggestions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListIntelligenceGraphSuggestions(ctx context.Context, in *ListIntelligenceGraphSuggestionsRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphSuggestionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIntelligenceGraphSuggestionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListIntelligenceGraphSuggestions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntelligenceGraphSuggestionState(ctx context.Context, in *SetIntelligenceGraphSuggestionStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphSuggestionStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntelligenceGraphSuggestionStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntelligenceGraphSuggestionState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListIntelligenceGraphTimeline(ctx context.Context, in *ListIntelligenceGraphTimelineRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphTimelineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIntelligenceGraphTimelineResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListIntelligenceGraphTimeline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListIntelligenceGraphResurfacing(ctx context.Context, in *ListIntelligenceGraphResurfacingRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphResurfacingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIntelligenceGraphResurfacingResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListIntelligenceGraphResurfacing_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntelligenceGraphResurfacingState(ctx context.Context, in *SetIntelligenceGraphResurfacingStateRequest, opts ...grpc.CallOption) (*SetIntelligenceGraphResurfacingStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntelligenceGraphResurfacingStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntelligenceGraphResurfacingState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateIntelligenceGraphMeetingBrief(ctx context.Context, in *CreateIntelligenceGraphMeetingBriefRequest, opts ...grpc.CallOption) (*CreateIntelligenceGraphMeetingBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateIntelligenceGraphMeetingBriefResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateIntelligenceGraphMeetingBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetIntelligenceGraphMeetingBrief(ctx context.Context, in *GetIntelligenceGraphMeetingBriefRequest, opts ...grpc.CallOption) (*GetIntelligenceGraphMeetingBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIntelligenceGraphMeetingBriefResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetIntelligenceGraphMeetingBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListIntelligenceGraphMeetingBriefs(ctx context.Context, in *ListIntelligenceGraphMeetingBriefsRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphMeetingBriefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListIntelligenceGraphMeetingBriefsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListIntelligenceGraphMeetingBriefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ExportPersonalIntelligenceGraph(ctx context.Context, in *ExportPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*ExportPersonalIntelligenceGraphResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportPersonalIntelligenceGraphResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ExportPersonalIntelligenceGraph_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RebuildPersonalIntelligenceGraph(ctx context.Context, in *RebuildPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*RebuildPersonalIntelligenceGraphResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RebuildPersonalIntelligenceGraphResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RebuildPersonalIntelligenceGraph_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2058,6 +2275,25 @@ type OnyxServiceServer interface {
 	AcknowledgeResearchRoomOfflinePurge(context.Context, *AcknowledgeResearchRoomOfflinePurgeRequest) (*AcknowledgeResearchRoomOfflinePurgeResponse, error)
 	ListResearchRoomOfflinePurges(context.Context, *ListResearchRoomOfflinePurgesRequest) (*ListResearchRoomOfflinePurgesResponse, error)
 	LeaveResearchRoom(context.Context, *LeaveResearchRoomRequest) (*LeaveResearchRoomResponse, error)
+	// Choice 10 — private, member-owned intelligence graph.
+	GetPersonalIntelligenceGraph(context.Context, *GetPersonalIntelligenceGraphRequest) (*GetPersonalIntelligenceGraphResponse, error)
+	UpsertIntelligenceGraphNode(context.Context, *UpsertIntelligenceGraphNodeRequest) (*UpsertIntelligenceGraphNodeResponse, error)
+	SetIntelligenceGraphNodeState(context.Context, *SetIntelligenceGraphNodeStateRequest) (*SetIntelligenceGraphNodeStateResponse, error)
+	MergeIntelligenceGraphNodes(context.Context, *MergeIntelligenceGraphNodesRequest) (*MergeIntelligenceGraphNodesResponse, error)
+	SplitIntelligenceGraphNode(context.Context, *SplitIntelligenceGraphNodeRequest) (*SplitIntelligenceGraphNodeResponse, error)
+	UpsertIntelligenceGraphEdge(context.Context, *UpsertIntelligenceGraphEdgeRequest) (*UpsertIntelligenceGraphEdgeResponse, error)
+	SetIntelligenceGraphEdgeState(context.Context, *SetIntelligenceGraphEdgeStateRequest) (*SetIntelligenceGraphEdgeStateResponse, error)
+	GenerateIntelligenceGraphSuggestions(context.Context, *GenerateIntelligenceGraphSuggestionsRequest) (*GenerateIntelligenceGraphSuggestionsResponse, error)
+	ListIntelligenceGraphSuggestions(context.Context, *ListIntelligenceGraphSuggestionsRequest) (*ListIntelligenceGraphSuggestionsResponse, error)
+	SetIntelligenceGraphSuggestionState(context.Context, *SetIntelligenceGraphSuggestionStateRequest) (*SetIntelligenceGraphSuggestionStateResponse, error)
+	ListIntelligenceGraphTimeline(context.Context, *ListIntelligenceGraphTimelineRequest) (*ListIntelligenceGraphTimelineResponse, error)
+	ListIntelligenceGraphResurfacing(context.Context, *ListIntelligenceGraphResurfacingRequest) (*ListIntelligenceGraphResurfacingResponse, error)
+	SetIntelligenceGraphResurfacingState(context.Context, *SetIntelligenceGraphResurfacingStateRequest) (*SetIntelligenceGraphResurfacingStateResponse, error)
+	CreateIntelligenceGraphMeetingBrief(context.Context, *CreateIntelligenceGraphMeetingBriefRequest) (*CreateIntelligenceGraphMeetingBriefResponse, error)
+	GetIntelligenceGraphMeetingBrief(context.Context, *GetIntelligenceGraphMeetingBriefRequest) (*GetIntelligenceGraphMeetingBriefResponse, error)
+	ListIntelligenceGraphMeetingBriefs(context.Context, *ListIntelligenceGraphMeetingBriefsRequest) (*ListIntelligenceGraphMeetingBriefsResponse, error)
+	ExportPersonalIntelligenceGraph(context.Context, *ExportPersonalIntelligenceGraphRequest) (*ExportPersonalIntelligenceGraphResponse, error)
+	RebuildPersonalIntelligenceGraph(context.Context, *RebuildPersonalIntelligenceGraphRequest) (*RebuildPersonalIntelligenceGraphResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -2520,6 +2756,60 @@ func (UnimplementedOnyxServiceServer) ListResearchRoomOfflinePurges(context.Cont
 }
 func (UnimplementedOnyxServiceServer) LeaveResearchRoom(context.Context, *LeaveResearchRoomRequest) (*LeaveResearchRoomResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method LeaveResearchRoom not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetPersonalIntelligenceGraph(context.Context, *GetPersonalIntelligenceGraphRequest) (*GetPersonalIntelligenceGraphResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPersonalIntelligenceGraph not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertIntelligenceGraphNode(context.Context, *UpsertIntelligenceGraphNodeRequest) (*UpsertIntelligenceGraphNodeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertIntelligenceGraphNode not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntelligenceGraphNodeState(context.Context, *SetIntelligenceGraphNodeStateRequest) (*SetIntelligenceGraphNodeStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntelligenceGraphNodeState not implemented")
+}
+func (UnimplementedOnyxServiceServer) MergeIntelligenceGraphNodes(context.Context, *MergeIntelligenceGraphNodesRequest) (*MergeIntelligenceGraphNodesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MergeIntelligenceGraphNodes not implemented")
+}
+func (UnimplementedOnyxServiceServer) SplitIntelligenceGraphNode(context.Context, *SplitIntelligenceGraphNodeRequest) (*SplitIntelligenceGraphNodeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SplitIntelligenceGraphNode not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertIntelligenceGraphEdge(context.Context, *UpsertIntelligenceGraphEdgeRequest) (*UpsertIntelligenceGraphEdgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertIntelligenceGraphEdge not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntelligenceGraphEdgeState(context.Context, *SetIntelligenceGraphEdgeStateRequest) (*SetIntelligenceGraphEdgeStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntelligenceGraphEdgeState not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateIntelligenceGraphSuggestions(context.Context, *GenerateIntelligenceGraphSuggestionsRequest) (*GenerateIntelligenceGraphSuggestionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateIntelligenceGraphSuggestions not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListIntelligenceGraphSuggestions(context.Context, *ListIntelligenceGraphSuggestionsRequest) (*ListIntelligenceGraphSuggestionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIntelligenceGraphSuggestions not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntelligenceGraphSuggestionState(context.Context, *SetIntelligenceGraphSuggestionStateRequest) (*SetIntelligenceGraphSuggestionStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntelligenceGraphSuggestionState not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListIntelligenceGraphTimeline(context.Context, *ListIntelligenceGraphTimelineRequest) (*ListIntelligenceGraphTimelineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIntelligenceGraphTimeline not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListIntelligenceGraphResurfacing(context.Context, *ListIntelligenceGraphResurfacingRequest) (*ListIntelligenceGraphResurfacingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIntelligenceGraphResurfacing not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntelligenceGraphResurfacingState(context.Context, *SetIntelligenceGraphResurfacingStateRequest) (*SetIntelligenceGraphResurfacingStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntelligenceGraphResurfacingState not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateIntelligenceGraphMeetingBrief(context.Context, *CreateIntelligenceGraphMeetingBriefRequest) (*CreateIntelligenceGraphMeetingBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateIntelligenceGraphMeetingBrief not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetIntelligenceGraphMeetingBrief(context.Context, *GetIntelligenceGraphMeetingBriefRequest) (*GetIntelligenceGraphMeetingBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIntelligenceGraphMeetingBrief not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListIntelligenceGraphMeetingBriefs(context.Context, *ListIntelligenceGraphMeetingBriefsRequest) (*ListIntelligenceGraphMeetingBriefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListIntelligenceGraphMeetingBriefs not implemented")
+}
+func (UnimplementedOnyxServiceServer) ExportPersonalIntelligenceGraph(context.Context, *ExportPersonalIntelligenceGraphRequest) (*ExportPersonalIntelligenceGraphResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportPersonalIntelligenceGraph not implemented")
+}
+func (UnimplementedOnyxServiceServer) RebuildPersonalIntelligenceGraph(context.Context, *RebuildPersonalIntelligenceGraphRequest) (*RebuildPersonalIntelligenceGraphResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RebuildPersonalIntelligenceGraph not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -5260,6 +5550,330 @@ func _OnyxService_LeaveResearchRoom_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetPersonalIntelligenceGraph_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPersonalIntelligenceGraphRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetPersonalIntelligenceGraph(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetPersonalIntelligenceGraph_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetPersonalIntelligenceGraph(ctx, req.(*GetPersonalIntelligenceGraphRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertIntelligenceGraphNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertIntelligenceGraphNodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertIntelligenceGraphNode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertIntelligenceGraphNode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertIntelligenceGraphNode(ctx, req.(*UpsertIntelligenceGraphNodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntelligenceGraphNodeState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntelligenceGraphNodeStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphNodeState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntelligenceGraphNodeState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphNodeState(ctx, req.(*SetIntelligenceGraphNodeStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_MergeIntelligenceGraphNodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MergeIntelligenceGraphNodesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).MergeIntelligenceGraphNodes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_MergeIntelligenceGraphNodes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).MergeIntelligenceGraphNodes(ctx, req.(*MergeIntelligenceGraphNodesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SplitIntelligenceGraphNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SplitIntelligenceGraphNodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SplitIntelligenceGraphNode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SplitIntelligenceGraphNode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SplitIntelligenceGraphNode(ctx, req.(*SplitIntelligenceGraphNodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertIntelligenceGraphEdge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertIntelligenceGraphEdgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertIntelligenceGraphEdge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertIntelligenceGraphEdge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertIntelligenceGraphEdge(ctx, req.(*UpsertIntelligenceGraphEdgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntelligenceGraphEdgeState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntelligenceGraphEdgeStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphEdgeState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntelligenceGraphEdgeState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphEdgeState(ctx, req.(*SetIntelligenceGraphEdgeStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateIntelligenceGraphSuggestions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateIntelligenceGraphSuggestionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateIntelligenceGraphSuggestions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateIntelligenceGraphSuggestions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateIntelligenceGraphSuggestions(ctx, req.(*GenerateIntelligenceGraphSuggestionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListIntelligenceGraphSuggestions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntelligenceGraphSuggestionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphSuggestions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListIntelligenceGraphSuggestions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphSuggestions(ctx, req.(*ListIntelligenceGraphSuggestionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntelligenceGraphSuggestionState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntelligenceGraphSuggestionStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphSuggestionState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntelligenceGraphSuggestionState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphSuggestionState(ctx, req.(*SetIntelligenceGraphSuggestionStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListIntelligenceGraphTimeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntelligenceGraphTimelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphTimeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListIntelligenceGraphTimeline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphTimeline(ctx, req.(*ListIntelligenceGraphTimelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListIntelligenceGraphResurfacing_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntelligenceGraphResurfacingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphResurfacing(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListIntelligenceGraphResurfacing_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphResurfacing(ctx, req.(*ListIntelligenceGraphResurfacingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntelligenceGraphResurfacingState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntelligenceGraphResurfacingStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphResurfacingState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntelligenceGraphResurfacingState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntelligenceGraphResurfacingState(ctx, req.(*SetIntelligenceGraphResurfacingStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateIntelligenceGraphMeetingBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIntelligenceGraphMeetingBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateIntelligenceGraphMeetingBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateIntelligenceGraphMeetingBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateIntelligenceGraphMeetingBrief(ctx, req.(*CreateIntelligenceGraphMeetingBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetIntelligenceGraphMeetingBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntelligenceGraphMeetingBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetIntelligenceGraphMeetingBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetIntelligenceGraphMeetingBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetIntelligenceGraphMeetingBrief(ctx, req.(*GetIntelligenceGraphMeetingBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListIntelligenceGraphMeetingBriefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntelligenceGraphMeetingBriefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphMeetingBriefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListIntelligenceGraphMeetingBriefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListIntelligenceGraphMeetingBriefs(ctx, req.(*ListIntelligenceGraphMeetingBriefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ExportPersonalIntelligenceGraph_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportPersonalIntelligenceGraphRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ExportPersonalIntelligenceGraph(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ExportPersonalIntelligenceGraph_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ExportPersonalIntelligenceGraph(ctx, req.(*ExportPersonalIntelligenceGraphRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RebuildPersonalIntelligenceGraph_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RebuildPersonalIntelligenceGraphRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RebuildPersonalIntelligenceGraph(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RebuildPersonalIntelligenceGraph_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RebuildPersonalIntelligenceGraph(ctx, req.(*RebuildPersonalIntelligenceGraphRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -5870,6 +6484,78 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "LeaveResearchRoom",
 			Handler:    _OnyxService_LeaveResearchRoom_Handler,
+		},
+		{
+			MethodName: "GetPersonalIntelligenceGraph",
+			Handler:    _OnyxService_GetPersonalIntelligenceGraph_Handler,
+		},
+		{
+			MethodName: "UpsertIntelligenceGraphNode",
+			Handler:    _OnyxService_UpsertIntelligenceGraphNode_Handler,
+		},
+		{
+			MethodName: "SetIntelligenceGraphNodeState",
+			Handler:    _OnyxService_SetIntelligenceGraphNodeState_Handler,
+		},
+		{
+			MethodName: "MergeIntelligenceGraphNodes",
+			Handler:    _OnyxService_MergeIntelligenceGraphNodes_Handler,
+		},
+		{
+			MethodName: "SplitIntelligenceGraphNode",
+			Handler:    _OnyxService_SplitIntelligenceGraphNode_Handler,
+		},
+		{
+			MethodName: "UpsertIntelligenceGraphEdge",
+			Handler:    _OnyxService_UpsertIntelligenceGraphEdge_Handler,
+		},
+		{
+			MethodName: "SetIntelligenceGraphEdgeState",
+			Handler:    _OnyxService_SetIntelligenceGraphEdgeState_Handler,
+		},
+		{
+			MethodName: "GenerateIntelligenceGraphSuggestions",
+			Handler:    _OnyxService_GenerateIntelligenceGraphSuggestions_Handler,
+		},
+		{
+			MethodName: "ListIntelligenceGraphSuggestions",
+			Handler:    _OnyxService_ListIntelligenceGraphSuggestions_Handler,
+		},
+		{
+			MethodName: "SetIntelligenceGraphSuggestionState",
+			Handler:    _OnyxService_SetIntelligenceGraphSuggestionState_Handler,
+		},
+		{
+			MethodName: "ListIntelligenceGraphTimeline",
+			Handler:    _OnyxService_ListIntelligenceGraphTimeline_Handler,
+		},
+		{
+			MethodName: "ListIntelligenceGraphResurfacing",
+			Handler:    _OnyxService_ListIntelligenceGraphResurfacing_Handler,
+		},
+		{
+			MethodName: "SetIntelligenceGraphResurfacingState",
+			Handler:    _OnyxService_SetIntelligenceGraphResurfacingState_Handler,
+		},
+		{
+			MethodName: "CreateIntelligenceGraphMeetingBrief",
+			Handler:    _OnyxService_CreateIntelligenceGraphMeetingBrief_Handler,
+		},
+		{
+			MethodName: "GetIntelligenceGraphMeetingBrief",
+			Handler:    _OnyxService_GetIntelligenceGraphMeetingBrief_Handler,
+		},
+		{
+			MethodName: "ListIntelligenceGraphMeetingBriefs",
+			Handler:    _OnyxService_ListIntelligenceGraphMeetingBriefs_Handler,
+		},
+		{
+			MethodName: "ExportPersonalIntelligenceGraph",
+			Handler:    _OnyxService_ExportPersonalIntelligenceGraph_Handler,
+		},
+		{
+			MethodName: "RebuildPersonalIntelligenceGraph",
+			Handler:    _OnyxService_RebuildPersonalIntelligenceGraph_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

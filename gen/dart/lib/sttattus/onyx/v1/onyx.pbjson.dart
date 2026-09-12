@@ -9946,3 +9946,1562 @@ const LeaveResearchRoomResponse$json = {
 /// Descriptor for `LeaveResearchRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List leaveResearchRoomResponseDescriptor =
     $convert.base64Decode('ChlMZWF2ZVJlc2VhcmNoUm9vbVJlc3BvbnNl');
+
+@$core.Deprecated('Use intelligenceGraphSourceAnchorDescriptor instead')
+const IntelligenceGraphSourceAnchor$json = {
+  '1': 'IntelligenceGraphSourceAnchor',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_type', '3': 2, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'source_id', '3': 3, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'source_version', '3': 4, '4': 1, '5': 9, '10': 'sourceVersion'},
+    {'1': 'content_id', '3': 5, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 6, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 7, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'quote', '3': 8, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'room_id', '3': 9, '4': 1, '5': 9, '10': 'roomId'},
+    {
+      '1': 'room_permission_version',
+      '3': 10,
+      '4': 1,
+      '5': 3,
+      '10': 'roomPermissionVersion'
+    },
+    {
+      '1': 'membership_access_version',
+      '3': 11,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphSourceAnchor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphSourceAnchorDescriptor = $convert.base64Decode(
+    'Ch1JbnRlbGxpZ2VuY2VHcmFwaFNvdXJjZUFuY2hvchIOCgJpZBgBIAEoCVICaWQSHwoLc291cm'
+    'NlX3R5cGUYAiABKAlSCnNvdXJjZVR5cGUSGwoJc291cmNlX2lkGAMgASgJUghzb3VyY2VJZBIl'
+    'Cg5zb3VyY2VfdmVyc2lvbhgEIAEoCVINc291cmNlVmVyc2lvbhIdCgpjb250ZW50X2lkGAUgAS'
+    'gJUgljb250ZW50SWQSHwoLcmV2aXNpb25faWQYBiABKAlSCnJldmlzaW9uSWQSHwoLcGFzc2Fn'
+    'ZV9rZXkYByABKAlSCnBhc3NhZ2VLZXkSFAoFcXVvdGUYCCABKAlSBXF1b3RlEhcKB3Jvb21faW'
+    'QYCSABKAlSBnJvb21JZBI2Chdyb29tX3Blcm1pc3Npb25fdmVyc2lvbhgKIAEoA1IVcm9vbVBl'
+    'cm1pc3Npb25WZXJzaW9uEjoKGW1lbWJlcnNoaXBfYWNjZXNzX3ZlcnNpb24YCyABKANSF21lbW'
+    'JlcnNoaXBBY2Nlc3NWZXJzaW9uEjkKCmNyZWF0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9i'
+    'dWYuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use intelligenceGraphNodeDescriptor instead')
+const IntelligenceGraphNode$json = {
+  '1': 'IntelligenceGraphNode',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'node_type', '3': 2, '4': 1, '5': 9, '10': 'nodeType'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'scope', '3': 6, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 7, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'origin', '3': 8, '4': 1, '5': 9, '10': 'origin'},
+    {
+      '1': 'verification_status',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {'1': 'confidence', '3': 10, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'confidence_basis', '3': 11, '4': 1, '5': 9, '10': 'confidenceBasis'},
+    {
+      '1': 'valid_from',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'validFrom'
+    },
+    {
+      '1': 'valid_to',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'validTo'
+    },
+    {
+      '1': 'merged_into_node_id',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'mergedIntoNodeId'
+    },
+    {'1': 'version', '3': 15, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'room_permission_version',
+      '3': 16,
+      '4': 1,
+      '5': 3,
+      '10': 'roomPermissionVersion'
+    },
+    {
+      '1': 'membership_access_version',
+      '3': 17,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
+    {
+      '1': 'anchors',
+      '3': 18,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSourceAnchor',
+      '10': 'anchors'
+    },
+    {
+      '1': 'inbound_edge_count',
+      '3': 19,
+      '4': 1,
+      '5': 5,
+      '10': 'inboundEdgeCount'
+    },
+    {
+      '1': 'outbound_edge_count',
+      '3': 20,
+      '4': 1,
+      '5': 5,
+      '10': 'outboundEdgeCount'
+    },
+    {
+      '1': 'created_at',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 22,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphNode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphNodeDescriptor = $convert.base64Decode(
+    'ChVJbnRlbGxpZ2VuY2VHcmFwaE5vZGUSDgoCaWQYASABKAlSAmlkEhsKCW5vZGVfdHlwZRgCIA'
+    'EoCVIIbm9kZVR5cGUSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhgKB3N1bW1hcnkYBCABKAlSB3N1'
+    'bW1hcnkSFgoGc3RhdHVzGAUgASgJUgZzdGF0dXMSFAoFc2NvcGUYBiABKAlSBXNjb3BlEhcKB3'
+    'Jvb21faWQYByABKAlSBnJvb21JZBIWCgZvcmlnaW4YCCABKAlSBm9yaWdpbhIvChN2ZXJpZmlj'
+    'YXRpb25fc3RhdHVzGAkgASgJUhJ2ZXJpZmljYXRpb25TdGF0dXMSHgoKY29uZmlkZW5jZRgKIA'
+    'EoAVIKY29uZmlkZW5jZRIpChBjb25maWRlbmNlX2Jhc2lzGAsgASgJUg9jb25maWRlbmNlQmFz'
+    'aXMSOQoKdmFsaWRfZnJvbRgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXZhbG'
+    'lkRnJvbRI1Cgh2YWxpZF90bxgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSB3Zh'
+    'bGlkVG8SLQoTbWVyZ2VkX2ludG9fbm9kZV9pZBgOIAEoCVIQbWVyZ2VkSW50b05vZGVJZBIYCg'
+    'd2ZXJzaW9uGA8gASgDUgd2ZXJzaW9uEjYKF3Jvb21fcGVybWlzc2lvbl92ZXJzaW9uGBAgASgD'
+    'UhVyb29tUGVybWlzc2lvblZlcnNpb24SOgoZbWVtYmVyc2hpcF9hY2Nlc3NfdmVyc2lvbhgRIA'
+    'EoA1IXbWVtYmVyc2hpcEFjY2Vzc1ZlcnNpb24SSQoHYW5jaG9ycxgSIAMoCzIvLnN0dGF0dHVz'
+    'Lm9ueXgudjEuSW50ZWxsaWdlbmNlR3JhcGhTb3VyY2VBbmNob3JSB2FuY2hvcnMSLAoSaW5ib3'
+    'VuZF9lZGdlX2NvdW50GBMgASgFUhBpbmJvdW5kRWRnZUNvdW50Ei4KE291dGJvdW5kX2VkZ2Vf'
+    'Y291bnQYFCABKAVSEW91dGJvdW5kRWRnZUNvdW50EjkKCmNyZWF0ZWRfYXQYFSABKAsyGi5nb2'
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgWIAEoCzIa'
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use intelligenceGraphEdgeDescriptor instead')
+const IntelligenceGraphEdge$json = {
+  '1': 'IntelligenceGraphEdge',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_node_id', '3': 2, '4': 1, '5': 9, '10': 'sourceNodeId'},
+    {'1': 'target_node_id', '3': 3, '4': 1, '5': 9, '10': 'targetNodeId'},
+    {'1': 'relation', '3': 4, '4': 1, '5': 9, '10': 'relation'},
+    {'1': 'label', '3': 5, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'scope', '3': 7, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 8, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'origin', '3': 9, '4': 1, '5': 9, '10': 'origin'},
+    {'1': 'confidence', '3': 10, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'confidence_basis', '3': 11, '4': 1, '5': 9, '10': 'confidenceBasis'},
+    {'1': 'explanation', '3': 12, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'model_key', '3': 13, '4': 1, '5': 9, '10': 'modelKey'},
+    {'1': 'model_version', '3': 14, '4': 1, '5': 9, '10': 'modelVersion'},
+    {'1': 'version', '3': 15, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'room_permission_version',
+      '3': 16,
+      '4': 1,
+      '5': 3,
+      '10': 'roomPermissionVersion'
+    },
+    {
+      '1': 'membership_access_version',
+      '3': 17,
+      '4': 1,
+      '5': 3,
+      '10': 'membershipAccessVersion'
+    },
+    {
+      '1': 'anchors',
+      '3': 18,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSourceAnchor',
+      '10': 'anchors'
+    },
+    {
+      '1': 'created_at',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphEdge`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphEdgeDescriptor = $convert.base64Decode(
+    'ChVJbnRlbGxpZ2VuY2VHcmFwaEVkZ2USDgoCaWQYASABKAlSAmlkEiQKDnNvdXJjZV9ub2RlX2'
+    'lkGAIgASgJUgxzb3VyY2VOb2RlSWQSJAoOdGFyZ2V0X25vZGVfaWQYAyABKAlSDHRhcmdldE5v'
+    'ZGVJZBIaCghyZWxhdGlvbhgEIAEoCVIIcmVsYXRpb24SFAoFbGFiZWwYBSABKAlSBWxhYmVsEh'
+    'YKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEhQKBXNjb3BlGAcgASgJUgVzY29wZRIXCgdyb29tX2lk'
+    'GAggASgJUgZyb29tSWQSFgoGb3JpZ2luGAkgASgJUgZvcmlnaW4SHgoKY29uZmlkZW5jZRgKIA'
+    'EoAVIKY29uZmlkZW5jZRIpChBjb25maWRlbmNlX2Jhc2lzGAsgASgJUg9jb25maWRlbmNlQmFz'
+    'aXMSIAoLZXhwbGFuYXRpb24YDCABKAlSC2V4cGxhbmF0aW9uEhsKCW1vZGVsX2tleRgNIAEoCV'
+    'IIbW9kZWxLZXkSIwoNbW9kZWxfdmVyc2lvbhgOIAEoCVIMbW9kZWxWZXJzaW9uEhgKB3ZlcnNp'
+    'b24YDyABKANSB3ZlcnNpb24SNgoXcm9vbV9wZXJtaXNzaW9uX3ZlcnNpb24YECABKANSFXJvb2'
+    '1QZXJtaXNzaW9uVmVyc2lvbhI6ChltZW1iZXJzaGlwX2FjY2Vzc192ZXJzaW9uGBEgASgDUhdt'
+    'ZW1iZXJzaGlwQWNjZXNzVmVyc2lvbhJJCgdhbmNob3JzGBIgAygLMi8uc3R0YXR0dXMub255eC'
+    '52MS5JbnRlbGxpZ2VuY2VHcmFwaFNvdXJjZUFuY2hvclIHYW5jaG9ycxI5CgpjcmVhdGVkX2F0'
+    'GBMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZW'
+    'RfYXQYFCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use intelligenceGraphSuggestionDescriptor instead')
+const IntelligenceGraphSuggestion$json = {
+  '1': 'IntelligenceGraphSuggestion',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'proposal_type', '3': 2, '4': 1, '5': 9, '10': 'proposalType'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'proposed_node',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'proposedNode'
+    },
+    {
+      '1': 'proposed_edge',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphEdge',
+      '10': 'proposedEdge'
+    },
+    {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'confidence', '3': 7, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'model_key', '3': 8, '4': 1, '5': 9, '10': 'modelKey'},
+    {'1': 'model_version', '3': 9, '4': 1, '5': 9, '10': 'modelVersion'},
+    {'1': 'source_digest', '3': 10, '4': 1, '5': 9, '10': 'sourceDigest'},
+    {'1': 'disposition_note', '3': 11, '4': 1, '5': 9, '10': 'dispositionNote'},
+    {
+      '1': 'expires_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'decided_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'decidedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphSuggestion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphSuggestionDescriptor = $convert.base64Decode(
+    'ChtJbnRlbGxpZ2VuY2VHcmFwaFN1Z2dlc3Rpb24SDgoCaWQYASABKAlSAmlkEiMKDXByb3Bvc2'
+    'FsX3R5cGUYAiABKAlSDHByb3Bvc2FsVHlwZRIWCgZzdGF0dXMYAyABKAlSBnN0YXR1cxJMCg1w'
+    'cm9wb3NlZF9ub2RlGAQgASgLMicuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE'
+    '5vZGVSDHByb3Bvc2VkTm9kZRJMCg1wcm9wb3NlZF9lZGdlGAUgASgLMicuc3R0YXR0dXMub255'
+    'eC52MS5JbnRlbGxpZ2VuY2VHcmFwaEVkZ2VSDHByb3Bvc2VkRWRnZRIWCgZyZWFzb24YBiABKA'
+    'lSBnJlYXNvbhIeCgpjb25maWRlbmNlGAcgASgBUgpjb25maWRlbmNlEhsKCW1vZGVsX2tleRgI'
+    'IAEoCVIIbW9kZWxLZXkSIwoNbW9kZWxfdmVyc2lvbhgJIAEoCVIMbW9kZWxWZXJzaW9uEiMKDX'
+    'NvdXJjZV9kaWdlc3QYCiABKAlSDHNvdXJjZURpZ2VzdBIpChBkaXNwb3NpdGlvbl9ub3RlGAsg'
+    'ASgJUg9kaXNwb3NpdGlvbk5vdGUSOQoKZXhwaXJlc19hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBI5CgpjcmVhdGVkX2F0GA0gASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCmRlY2lkZWRfYXQYDiABKAsyGi5nb29nbG'
+    'UucHJvdG9idWYuVGltZXN0YW1wUglkZWNpZGVkQXQ=');
+
+@$core.Deprecated('Use intelligenceGraphTimelineEventDescriptor instead')
+const IntelligenceGraphTimelineEvent$json = {
+  '1': 'IntelligenceGraphTimelineEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'event_type', '3': 2, '4': 1, '5': 9, '10': 'eventType'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'node_id', '3': 5, '4': 1, '5': 9, '10': 'nodeId'},
+    {'1': 'edge_id', '3': 6, '4': 1, '5': 9, '10': 'edgeId'},
+    {'1': 'source_type', '3': 7, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'source_id', '3': 8, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'scope', '3': 9, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 10, '4': 1, '5': 9, '10': 'roomId'},
+    {
+      '1': 'event_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'eventAt'
+    },
+    {
+      '1': 'recorded_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'recordedAt'
+    },
+    {'1': 'approximate_time', '3': 13, '4': 1, '5': 8, '10': 'approximateTime'},
+    {'1': 'version', '3': 14, '4': 1, '5': 3, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphTimelineEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphTimelineEventDescriptor = $convert.base64Decode(
+    'Ch5JbnRlbGxpZ2VuY2VHcmFwaFRpbWVsaW5lRXZlbnQSDgoCaWQYASABKAlSAmlkEh0KCmV2ZW'
+    '50X3R5cGUYAiABKAlSCWV2ZW50VHlwZRIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSGAoHc3VtbWFy'
+    'eRgEIAEoCVIHc3VtbWFyeRIXCgdub2RlX2lkGAUgASgJUgZub2RlSWQSFwoHZWRnZV9pZBgGIA'
+    'EoCVIGZWRnZUlkEh8KC3NvdXJjZV90eXBlGAcgASgJUgpzb3VyY2VUeXBlEhsKCXNvdXJjZV9p'
+    'ZBgIIAEoCVIIc291cmNlSWQSFAoFc2NvcGUYCSABKAlSBXNjb3BlEhcKB3Jvb21faWQYCiABKA'
+    'lSBnJvb21JZBI1CghldmVudF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'B2V2ZW50QXQSOwoLcmVjb3JkZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
+    '1wUgpyZWNvcmRlZEF0EikKEGFwcHJveGltYXRlX3RpbWUYDSABKAhSD2FwcHJveGltYXRlVGlt'
+    'ZRIYCgd2ZXJzaW9uGA4gASgDUgd2ZXJzaW9u');
+
+@$core.Deprecated('Use intelligenceGraphResurfacingItemDescriptor instead')
+const IntelligenceGraphResurfacingItem$json = {
+  '1': 'IntelligenceGraphResurfacingItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'state', '3': 5, '4': 1, '5': 9, '10': 'state'},
+    {'1': 'node_id', '3': 6, '4': 1, '5': 9, '10': 'nodeId'},
+    {'1': 'related_node_id', '3': 7, '4': 1, '5': 9, '10': 'relatedNodeId'},
+    {'1': 'source_id', '3': 8, '4': 1, '5': 9, '10': 'sourceId'},
+    {
+      '1': 'due_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'dueAt'
+    },
+    {
+      '1': 'snoozed_until',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'snoozedUntil'
+    },
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphResurfacingItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphResurfacingItemDescriptor = $convert.base64Decode(
+    'CiBJbnRlbGxpZ2VuY2VHcmFwaFJlc3VyZmFjaW5nSXRlbRIOCgJpZBgBIAEoCVICaWQSEgoEa2'
+    'luZBgCIAEoCVIEa2luZBIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSFgoGcmVhc29uGAQgASgJUgZy'
+    'ZWFzb24SFAoFc3RhdGUYBSABKAlSBXN0YXRlEhcKB25vZGVfaWQYBiABKAlSBm5vZGVJZBImCg'
+    '9yZWxhdGVkX25vZGVfaWQYByABKAlSDXJlbGF0ZWROb2RlSWQSGwoJc291cmNlX2lkGAggASgJ'
+    'Ughzb3VyY2VJZBIxCgZkdWVfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg'
+    'VkdWVBdBI/Cg1zbm9vemVkX3VudGlsGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
+    'cFIMc25vb3plZFVudGlsEjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1'
+    'Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use intelligenceGraphMeetingBriefSectionDescriptor instead')
+const IntelligenceGraphMeetingBriefSection$json = {
+  '1': 'IntelligenceGraphMeetingBriefSection',
+  '2': [
+    {'1': 'kind', '3': 1, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'node_ids', '3': 4, '4': 3, '5': 9, '10': 'nodeIds'},
+    {
+      '1': 'citations',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSourceAnchor',
+      '10': 'citations'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphMeetingBriefSection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphMeetingBriefSectionDescriptor =
+    $convert.base64Decode(
+        'CiRJbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlNlY3Rpb24SEgoEa2luZBgBIAEoCVIEa2'
+        'luZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSEgoEYm9keRgDIAEoCVIEYm9keRIZCghub2RlX2lk'
+        'cxgEIAMoCVIHbm9kZUlkcxJNCgljaXRhdGlvbnMYBSADKAsyLy5zdHRhdHR1cy5vbnl4LnYxLk'
+        'ludGVsbGlnZW5jZUdyYXBoU291cmNlQW5jaG9yUgljaXRhdGlvbnM=');
+
+@$core.Deprecated('Use intelligenceGraphMeetingBriefDescriptor instead')
+const IntelligenceGraphMeetingBrief$json = {
+  '1': 'IntelligenceGraphMeetingBrief',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'purpose', '3': 3, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'scope', '3': 5, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 6, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'selected_node_ids', '3': 7, '4': 3, '5': 9, '10': 'selectedNodeIds'},
+    {
+      '1': 'sections',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection',
+      '10': 'sections'
+    },
+    {
+      '1': 'manifest_checksum',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'manifestChecksum'
+    },
+    {'1': 'version', '3': 10, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'window_start',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'windowStart'
+    },
+    {
+      '1': 'window_end',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'windowEnd'
+    },
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphMeetingBrief`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphMeetingBriefDescriptor = $convert.base64Decode(
+    'Ch1JbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZhIOCgJpZBgBIAEoCVICaWQSFAoFdGl0bG'
+    'UYAiABKAlSBXRpdGxlEhgKB3B1cnBvc2UYAyABKAlSB3B1cnBvc2USFgoGc3RhdHVzGAQgASgJ'
+    'UgZzdGF0dXMSFAoFc2NvcGUYBSABKAlSBXNjb3BlEhcKB3Jvb21faWQYBiABKAlSBnJvb21JZB'
+    'IqChFzZWxlY3RlZF9ub2RlX2lkcxgHIAMoCVIPc2VsZWN0ZWROb2RlSWRzElIKCHNlY3Rpb25z'
+    'GAggAygLMjYuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZl'
+    'NlY3Rpb25SCHNlY3Rpb25zEisKEW1hbmlmZXN0X2NoZWNrc3VtGAkgASgJUhBtYW5pZmVzdENo'
+    'ZWNrc3VtEhgKB3ZlcnNpb24YCiABKANSB3ZlcnNpb24SPQoMd2luZG93X3N0YXJ0GAsgASgLMh'
+    'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILd2luZG93U3RhcnQSOQoKd2luZG93X2VuZBgM'
+    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXdpbmRvd0VuZBI5CgpjcmVhdGVkX2'
+    'F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0'
+    'ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use intelligenceGraphOverviewDescriptor instead')
+const IntelligenceGraphOverview$json = {
+  '1': 'IntelligenceGraphOverview',
+  '2': [
+    {'1': 'active_nodes', '3': 1, '4': 1, '5': 5, '10': 'activeNodes'},
+    {'1': 'active_edges', '3': 2, '4': 1, '5': 5, '10': 'activeEdges'},
+    {
+      '1': 'pending_suggestions',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'pendingSuggestions'
+    },
+    {
+      '1': 'unresolved_questions',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'unresolvedQuestions'
+    },
+    {'1': 'contradictions', '3': 5, '4': 1, '5': 5, '10': 'contradictions'},
+    {'1': 'due_resurfacing', '3': 6, '4': 1, '5': 5, '10': 'dueResurfacing'},
+    {'1': 'meeting_briefs', '3': 7, '4': 1, '5': 5, '10': 'meetingBriefs'},
+    {
+      '1': 'last_changed_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastChangedAt'
+    },
+  ],
+};
+
+/// Descriptor for `IntelligenceGraphOverview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List intelligenceGraphOverviewDescriptor = $convert.base64Decode(
+    'ChlJbnRlbGxpZ2VuY2VHcmFwaE92ZXJ2aWV3EiEKDGFjdGl2ZV9ub2RlcxgBIAEoBVILYWN0aX'
+    'ZlTm9kZXMSIQoMYWN0aXZlX2VkZ2VzGAIgASgFUgthY3RpdmVFZGdlcxIvChNwZW5kaW5nX3N1'
+    'Z2dlc3Rpb25zGAMgASgFUhJwZW5kaW5nU3VnZ2VzdGlvbnMSMQoUdW5yZXNvbHZlZF9xdWVzdG'
+    'lvbnMYBCABKAVSE3VucmVzb2x2ZWRRdWVzdGlvbnMSJgoOY29udHJhZGljdGlvbnMYBSABKAVS'
+    'DmNvbnRyYWRpY3Rpb25zEicKD2R1ZV9yZXN1cmZhY2luZxgGIAEoBVIOZHVlUmVzdXJmYWNpbm'
+    'cSJQoObWVldGluZ19icmllZnMYByABKAVSDW1lZXRpbmdCcmllZnMSQgoPbGFzdF9jaGFuZ2Vk'
+    'X2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFINbGFzdENoYW5nZWRBdA==');
+
+@$core.Deprecated('Use getPersonalIntelligenceGraphRequestDescriptor instead')
+const GetPersonalIntelligenceGraphRequest$json = {
+  '1': 'GetPersonalIntelligenceGraphRequest',
+  '2': [
+    {'1': 'query', '3': 1, '4': 1, '5': 9, '10': 'query'},
+    {'1': 'node_types', '3': 2, '4': 3, '5': 9, '10': 'nodeTypes'},
+    {'1': 'relations', '3': 3, '4': 3, '5': 9, '10': 'relations'},
+    {'1': 'scope', '3': 4, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 5, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'include_archived', '3': 6, '4': 1, '5': 8, '10': 'includeArchived'},
+    {'1': 'limit', '3': 7, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `GetPersonalIntelligenceGraphRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPersonalIntelligenceGraphRequestDescriptor =
+    $convert.base64Decode(
+        'CiNHZXRQZXJzb25hbEludGVsbGlnZW5jZUdyYXBoUmVxdWVzdBIUCgVxdWVyeRgBIAEoCVIFcX'
+        'VlcnkSHQoKbm9kZV90eXBlcxgCIAMoCVIJbm9kZVR5cGVzEhwKCXJlbGF0aW9ucxgDIAMoCVIJ'
+        'cmVsYXRpb25zEhQKBXNjb3BlGAQgASgJUgVzY29wZRIXCgdyb29tX2lkGAUgASgJUgZyb29tSW'
+        'QSKQoQaW5jbHVkZV9hcmNoaXZlZBgGIAEoCFIPaW5jbHVkZUFyY2hpdmVkEhQKBWxpbWl0GAcg'
+        'ASgFUgVsaW1pdA==');
+
+@$core.Deprecated('Use getPersonalIntelligenceGraphResponseDescriptor instead')
+const GetPersonalIntelligenceGraphResponse$json = {
+  '1': 'GetPersonalIntelligenceGraphResponse',
+  '2': [
+    {
+      '1': 'overview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphOverview',
+      '10': 'overview'
+    },
+    {
+      '1': 'nodes',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'nodes'
+    },
+    {
+      '1': 'edges',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphEdge',
+      '10': 'edges'
+    },
+  ],
+};
+
+/// Descriptor for `GetPersonalIntelligenceGraphResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPersonalIntelligenceGraphResponseDescriptor =
+    $convert.base64Decode(
+        'CiRHZXRQZXJzb25hbEludGVsbGlnZW5jZUdyYXBoUmVzcG9uc2USRwoIb3ZlcnZpZXcYASABKA'
+        'syKy5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoT3ZlcnZpZXdSCG92ZXJ2aWV3'
+        'Ej0KBW5vZGVzGAIgAygLMicuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE5vZG'
+        'VSBW5vZGVzEj0KBWVkZ2VzGAMgAygLMicuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VH'
+        'cmFwaEVkZ2VSBWVkZ2Vz');
+
+@$core.Deprecated('Use upsertIntelligenceGraphNodeRequestDescriptor instead')
+const UpsertIntelligenceGraphNodeRequest$json = {
+  '1': 'UpsertIntelligenceGraphNodeRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'node_type', '3': 2, '4': 1, '5': 9, '10': 'nodeType'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'scope', '3': 5, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 6, '4': 1, '5': 9, '10': 'roomId'},
+    {
+      '1': 'verification_status',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {'1': 'confidence', '3': 8, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'confidence_basis', '3': 9, '4': 1, '5': 9, '10': 'confidenceBasis'},
+    {
+      '1': 'valid_from',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'validFrom'
+    },
+    {
+      '1': 'valid_to',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'validTo'
+    },
+    {
+      '1': 'anchors',
+      '3': 12,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSourceAnchor',
+      '10': 'anchors'
+    },
+    {'1': 'expected_version', '3': 13, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntelligenceGraphNodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntelligenceGraphNodeRequestDescriptor = $convert.base64Decode(
+    'CiJVcHNlcnRJbnRlbGxpZ2VuY2VHcmFwaE5vZGVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIbCg'
+    'lub2RlX3R5cGUYAiABKAlSCG5vZGVUeXBlEhQKBXRpdGxlGAMgASgJUgV0aXRsZRIYCgdzdW1t'
+    'YXJ5GAQgASgJUgdzdW1tYXJ5EhQKBXNjb3BlGAUgASgJUgVzY29wZRIXCgdyb29tX2lkGAYgAS'
+    'gJUgZyb29tSWQSLwoTdmVyaWZpY2F0aW9uX3N0YXR1cxgHIAEoCVISdmVyaWZpY2F0aW9uU3Rh'
+    'dHVzEh4KCmNvbmZpZGVuY2UYCCABKAFSCmNvbmZpZGVuY2USKQoQY29uZmlkZW5jZV9iYXNpcx'
+    'gJIAEoCVIPY29uZmlkZW5jZUJhc2lzEjkKCnZhbGlkX2Zyb20YCiABKAsyGi5nb29nbGUucHJv'
+    'dG9idWYuVGltZXN0YW1wUgl2YWxpZEZyb20SNQoIdmFsaWRfdG8YCyABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wUgd2YWxpZFRvEkkKB2FuY2hvcnMYDCADKAsyLy5zdHRhdHR1cy5v'
+    'bnl4LnYxLkludGVsbGlnZW5jZUdyYXBoU291cmNlQW5jaG9yUgdhbmNob3JzEikKEGV4cGVjdG'
+    'VkX3ZlcnNpb24YDSABKANSD2V4cGVjdGVkVmVyc2lvbhIsChJjbGllbnRfbXV0YXRpb25faWQY'
+    'DiABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use upsertIntelligenceGraphNodeResponseDescriptor instead')
+const UpsertIntelligenceGraphNodeResponse$json = {
+  '1': 'UpsertIntelligenceGraphNodeResponse',
+  '2': [
+    {
+      '1': 'node',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'node'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntelligenceGraphNodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntelligenceGraphNodeResponseDescriptor =
+    $convert.base64Decode(
+        'CiNVcHNlcnRJbnRlbGxpZ2VuY2VHcmFwaE5vZGVSZXNwb25zZRI7CgRub2RlGAEgASgLMicuc3'
+        'R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE5vZGVSBG5vZGU=');
+
+@$core.Deprecated('Use setIntelligenceGraphNodeStateRequestDescriptor instead')
+const SetIntelligenceGraphNodeStateRequest$json = {
+  '1': 'SetIntelligenceGraphNodeStateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'expected_version', '3': 4, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphNodeStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntelligenceGraphNodeStateRequestDescriptor =
+    $convert.base64Decode(
+        'CiRTZXRJbnRlbGxpZ2VuY2VHcmFwaE5vZGVTdGF0ZVJlcXVlc3QSDgoCaWQYASABKAlSAmlkEh'
+        'YKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEhYKBnJlYXNvbhgDIAEoCVIGcmVhc29uEikKEGV4cGVj'
+        'dGVkX3ZlcnNpb24YBCABKANSD2V4cGVjdGVkVmVyc2lvbhIsChJjbGllbnRfbXV0YXRpb25faW'
+        'QYBSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setIntelligenceGraphNodeStateResponseDescriptor instead')
+const SetIntelligenceGraphNodeStateResponse$json = {
+  '1': 'SetIntelligenceGraphNodeStateResponse',
+  '2': [
+    {
+      '1': 'node',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'node'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphNodeStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntelligenceGraphNodeStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTZXRJbnRlbGxpZ2VuY2VHcmFwaE5vZGVTdGF0ZVJlc3BvbnNlEjsKBG5vZGUYASABKAsyJy'
+        '5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoTm9kZVIEbm9kZQ==');
+
+@$core.Deprecated('Use mergeIntelligenceGraphNodesRequestDescriptor instead')
+const MergeIntelligenceGraphNodesRequest$json = {
+  '1': 'MergeIntelligenceGraphNodesRequest',
+  '2': [
+    {'1': 'primary_node_id', '3': 1, '4': 1, '5': 9, '10': 'primaryNodeId'},
+    {'1': 'duplicate_node_id', '3': 2, '4': 1, '5': 9, '10': 'duplicateNodeId'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'expected_primary_version',
+      '3': 4,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedPrimaryVersion'
+    },
+    {
+      '1': 'expected_duplicate_version',
+      '3': 5,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedDuplicateVersion'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `MergeIntelligenceGraphNodesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mergeIntelligenceGraphNodesRequestDescriptor = $convert.base64Decode(
+    'CiJNZXJnZUludGVsbGlnZW5jZUdyYXBoTm9kZXNSZXF1ZXN0EiYKD3ByaW1hcnlfbm9kZV9pZB'
+    'gBIAEoCVINcHJpbWFyeU5vZGVJZBIqChFkdXBsaWNhdGVfbm9kZV9pZBgCIAEoCVIPZHVwbGlj'
+    'YXRlTm9kZUlkEhYKBnJlYXNvbhgDIAEoCVIGcmVhc29uEjgKGGV4cGVjdGVkX3ByaW1hcnlfdm'
+    'Vyc2lvbhgEIAEoA1IWZXhwZWN0ZWRQcmltYXJ5VmVyc2lvbhI8ChpleHBlY3RlZF9kdXBsaWNh'
+    'dGVfdmVyc2lvbhgFIAEoA1IYZXhwZWN0ZWREdXBsaWNhdGVWZXJzaW9uEiwKEmNsaWVudF9tdX'
+    'RhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use mergeIntelligenceGraphNodesResponseDescriptor instead')
+const MergeIntelligenceGraphNodesResponse$json = {
+  '1': 'MergeIntelligenceGraphNodesResponse',
+  '2': [
+    {
+      '1': 'primary_node',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'primaryNode'
+    },
+    {
+      '1': 'merged_node',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'mergedNode'
+    },
+  ],
+};
+
+/// Descriptor for `MergeIntelligenceGraphNodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mergeIntelligenceGraphNodesResponseDescriptor =
+    $convert.base64Decode(
+        'CiNNZXJnZUludGVsbGlnZW5jZUdyYXBoTm9kZXNSZXNwb25zZRJKCgxwcmltYXJ5X25vZGUYAS'
+        'ABKAsyJy5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoTm9kZVILcHJpbWFyeU5v'
+        'ZGUSSAoLbWVyZ2VkX25vZGUYAiABKAsyJy5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZU'
+        'dyYXBoTm9kZVIKbWVyZ2VkTm9kZQ==');
+
+@$core.Deprecated('Use splitIntelligenceGraphNodeRequestDescriptor instead')
+const SplitIntelligenceGraphNodeRequest$json = {
+  '1': 'SplitIntelligenceGraphNodeRequest',
+  '2': [
+    {'1': 'source_node_id', '3': 1, '4': 1, '5': 9, '10': 'sourceNodeId'},
+    {'1': 'new_title', '3': 2, '4': 1, '5': 9, '10': 'newTitle'},
+    {'1': 'new_summary', '3': 3, '4': 1, '5': 9, '10': 'newSummary'},
+    {'1': 'move_anchor_ids', '3': 4, '4': 3, '5': 9, '10': 'moveAnchorIds'},
+    {'1': 'move_edge_ids', '3': 5, '4': 3, '5': 9, '10': 'moveEdgeIds'},
+    {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'expected_version', '3': 7, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SplitIntelligenceGraphNodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List splitIntelligenceGraphNodeRequestDescriptor = $convert.base64Decode(
+    'CiFTcGxpdEludGVsbGlnZW5jZUdyYXBoTm9kZVJlcXVlc3QSJAoOc291cmNlX25vZGVfaWQYAS'
+    'ABKAlSDHNvdXJjZU5vZGVJZBIbCgluZXdfdGl0bGUYAiABKAlSCG5ld1RpdGxlEh8KC25ld19z'
+    'dW1tYXJ5GAMgASgJUgpuZXdTdW1tYXJ5EiYKD21vdmVfYW5jaG9yX2lkcxgEIAMoCVINbW92ZU'
+    'FuY2hvcklkcxIiCg1tb3ZlX2VkZ2VfaWRzGAUgAygJUgttb3ZlRWRnZUlkcxIWCgZyZWFzb24Y'
+    'BiABKAlSBnJlYXNvbhIpChBleHBlY3RlZF92ZXJzaW9uGAcgASgDUg9leHBlY3RlZFZlcnNpb2'
+    '4SLAoSY2xpZW50X211dGF0aW9uX2lkGAggASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use splitIntelligenceGraphNodeResponseDescriptor instead')
+const SplitIntelligenceGraphNodeResponse$json = {
+  '1': 'SplitIntelligenceGraphNodeResponse',
+  '2': [
+    {
+      '1': 'source_node',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'sourceNode'
+    },
+    {
+      '1': 'new_node',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'newNode'
+    },
+  ],
+};
+
+/// Descriptor for `SplitIntelligenceGraphNodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List splitIntelligenceGraphNodeResponseDescriptor =
+    $convert.base64Decode(
+        'CiJTcGxpdEludGVsbGlnZW5jZUdyYXBoTm9kZVJlc3BvbnNlEkgKC3NvdXJjZV9ub2RlGAEgAS'
+        'gLMicuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE5vZGVSCnNvdXJjZU5vZGUS'
+        'QgoIbmV3X25vZGUYAiABKAsyJy5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoTm'
+        '9kZVIHbmV3Tm9kZQ==');
+
+@$core.Deprecated('Use upsertIntelligenceGraphEdgeRequestDescriptor instead')
+const UpsertIntelligenceGraphEdgeRequest$json = {
+  '1': 'UpsertIntelligenceGraphEdgeRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_node_id', '3': 2, '4': 1, '5': 9, '10': 'sourceNodeId'},
+    {'1': 'target_node_id', '3': 3, '4': 1, '5': 9, '10': 'targetNodeId'},
+    {'1': 'relation', '3': 4, '4': 1, '5': 9, '10': 'relation'},
+    {'1': 'label', '3': 5, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'scope', '3': 6, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 7, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'confidence', '3': 8, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'confidence_basis', '3': 9, '4': 1, '5': 9, '10': 'confidenceBasis'},
+    {'1': 'explanation', '3': 10, '4': 1, '5': 9, '10': 'explanation'},
+    {
+      '1': 'anchors',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSourceAnchor',
+      '10': 'anchors'
+    },
+    {'1': 'expected_version', '3': 12, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntelligenceGraphEdgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntelligenceGraphEdgeRequestDescriptor = $convert.base64Decode(
+    'CiJVcHNlcnRJbnRlbGxpZ2VuY2VHcmFwaEVkZ2VSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIkCg'
+    '5zb3VyY2Vfbm9kZV9pZBgCIAEoCVIMc291cmNlTm9kZUlkEiQKDnRhcmdldF9ub2RlX2lkGAMg'
+    'ASgJUgx0YXJnZXROb2RlSWQSGgoIcmVsYXRpb24YBCABKAlSCHJlbGF0aW9uEhQKBWxhYmVsGA'
+    'UgASgJUgVsYWJlbBIUCgVzY29wZRgGIAEoCVIFc2NvcGUSFwoHcm9vbV9pZBgHIAEoCVIGcm9v'
+    'bUlkEh4KCmNvbmZpZGVuY2UYCCABKAFSCmNvbmZpZGVuY2USKQoQY29uZmlkZW5jZV9iYXNpcx'
+    'gJIAEoCVIPY29uZmlkZW5jZUJhc2lzEiAKC2V4cGxhbmF0aW9uGAogASgJUgtleHBsYW5hdGlv'
+    'bhJJCgdhbmNob3JzGAsgAygLMi8uc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaF'
+    'NvdXJjZUFuY2hvclIHYW5jaG9ycxIpChBleHBlY3RlZF92ZXJzaW9uGAwgASgDUg9leHBlY3Rl'
+    'ZFZlcnNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGA0gASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use upsertIntelligenceGraphEdgeResponseDescriptor instead')
+const UpsertIntelligenceGraphEdgeResponse$json = {
+  '1': 'UpsertIntelligenceGraphEdgeResponse',
+  '2': [
+    {
+      '1': 'edge',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphEdge',
+      '10': 'edge'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntelligenceGraphEdgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntelligenceGraphEdgeResponseDescriptor =
+    $convert.base64Decode(
+        'CiNVcHNlcnRJbnRlbGxpZ2VuY2VHcmFwaEVkZ2VSZXNwb25zZRI7CgRlZGdlGAEgASgLMicuc3'
+        'R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaEVkZ2VSBGVkZ2U=');
+
+@$core.Deprecated('Use setIntelligenceGraphEdgeStateRequestDescriptor instead')
+const SetIntelligenceGraphEdgeStateRequest$json = {
+  '1': 'SetIntelligenceGraphEdgeStateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'expected_version', '3': 4, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphEdgeStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntelligenceGraphEdgeStateRequestDescriptor =
+    $convert.base64Decode(
+        'CiRTZXRJbnRlbGxpZ2VuY2VHcmFwaEVkZ2VTdGF0ZVJlcXVlc3QSDgoCaWQYASABKAlSAmlkEh'
+        'YKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEhYKBnJlYXNvbhgDIAEoCVIGcmVhc29uEikKEGV4cGVj'
+        'dGVkX3ZlcnNpb24YBCABKANSD2V4cGVjdGVkVmVyc2lvbhIsChJjbGllbnRfbXV0YXRpb25faW'
+        'QYBSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setIntelligenceGraphEdgeStateResponseDescriptor instead')
+const SetIntelligenceGraphEdgeStateResponse$json = {
+  '1': 'SetIntelligenceGraphEdgeStateResponse',
+  '2': [
+    {
+      '1': 'edge',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphEdge',
+      '10': 'edge'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphEdgeStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntelligenceGraphEdgeStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTZXRJbnRlbGxpZ2VuY2VHcmFwaEVkZ2VTdGF0ZVJlc3BvbnNlEjsKBGVkZ2UYASABKAsyJy'
+        '5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoRWRnZVIEZWRnZQ==');
+
+@$core.Deprecated(
+    'Use generateIntelligenceGraphSuggestionsRequestDescriptor instead')
+const GenerateIntelligenceGraphSuggestionsRequest$json = {
+  '1': 'GenerateIntelligenceGraphSuggestionsRequest',
+  '2': [
+    {'1': 'scope', '3': 1, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 2, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'limit', '3': 3, '4': 1, '5': 5, '10': 'limit'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateIntelligenceGraphSuggestionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    generateIntelligenceGraphSuggestionsRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZW5lcmF0ZUludGVsbGlnZW5jZUdyYXBoU3VnZ2VzdGlvbnNSZXF1ZXN0EhQKBXNjb3BlGA'
+        'EgASgJUgVzY29wZRIXCgdyb29tX2lkGAIgASgJUgZyb29tSWQSFAoFbGltaXQYAyABKAVSBWxp'
+        'bWl0EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated(
+    'Use generateIntelligenceGraphSuggestionsResponseDescriptor instead')
+const GenerateIntelligenceGraphSuggestionsResponse$json = {
+  '1': 'GenerateIntelligenceGraphSuggestionsResponse',
+  '2': [
+    {'1': 'generated', '3': 1, '4': 1, '5': 5, '10': 'generated'},
+    {
+      '1': 'suggestions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSuggestion',
+      '10': 'suggestions'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateIntelligenceGraphSuggestionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    generateIntelligenceGraphSuggestionsResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZW5lcmF0ZUludGVsbGlnZW5jZUdyYXBoU3VnZ2VzdGlvbnNSZXNwb25zZRIcCglnZW5lcm'
+        'F0ZWQYASABKAVSCWdlbmVyYXRlZBJPCgtzdWdnZXN0aW9ucxgCIAMoCzItLnN0dGF0dHVzLm9u'
+        'eXgudjEuSW50ZWxsaWdlbmNlR3JhcGhTdWdnZXN0aW9uUgtzdWdnZXN0aW9ucw==');
+
+@$core
+    .Deprecated('Use listIntelligenceGraphSuggestionsRequestDescriptor instead')
+const ListIntelligenceGraphSuggestionsRequest$json = {
+  '1': 'ListIntelligenceGraphSuggestionsRequest',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphSuggestionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphSuggestionsRequestDescriptor =
+    $convert.base64Decode(
+        'CidMaXN0SW50ZWxsaWdlbmNlR3JhcGhTdWdnZXN0aW9uc1JlcXVlc3QSFgoGc3RhdHVzGAEgAS'
+        'gJUgZzdGF0dXMSFAoFbGltaXQYAiABKAVSBWxpbWl0');
+
+@$core.Deprecated(
+    'Use listIntelligenceGraphSuggestionsResponseDescriptor instead')
+const ListIntelligenceGraphSuggestionsResponse$json = {
+  '1': 'ListIntelligenceGraphSuggestionsResponse',
+  '2': [
+    {
+      '1': 'suggestions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSuggestion',
+      '10': 'suggestions'
+    },
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphSuggestionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphSuggestionsResponseDescriptor =
+    $convert.base64Decode(
+        'CihMaXN0SW50ZWxsaWdlbmNlR3JhcGhTdWdnZXN0aW9uc1Jlc3BvbnNlEk8KC3N1Z2dlc3Rpb2'
+        '5zGAEgAygLMi0uc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaFN1Z2dlc3Rpb25S'
+        'C3N1Z2dlc3Rpb25z');
+
+@$core.Deprecated(
+    'Use setIntelligenceGraphSuggestionStateRequestDescriptor instead')
+const SetIntelligenceGraphSuggestionStateRequest$json = {
+  '1': 'SetIntelligenceGraphSuggestionStateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'note', '3': 3, '4': 1, '5': 9, '10': 'note'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphSuggestionStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    setIntelligenceGraphSuggestionStateRequestDescriptor =
+    $convert.base64Decode(
+        'CipTZXRJbnRlbGxpZ2VuY2VHcmFwaFN1Z2dlc3Rpb25TdGF0ZVJlcXVlc3QSDgoCaWQYASABKA'
+        'lSAmlkEhYKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEhIKBG5vdGUYAyABKAlSBG5vdGUSLAoSY2xp'
+        'ZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated(
+    'Use setIntelligenceGraphSuggestionStateResponseDescriptor instead')
+const SetIntelligenceGraphSuggestionStateResponse$json = {
+  '1': 'SetIntelligenceGraphSuggestionStateResponse',
+  '2': [
+    {
+      '1': 'suggestion',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphSuggestion',
+      '10': 'suggestion'
+    },
+    {
+      '1': 'accepted_node',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphNode',
+      '10': 'acceptedNode'
+    },
+    {
+      '1': 'accepted_edge',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphEdge',
+      '10': 'acceptedEdge'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphSuggestionStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    setIntelligenceGraphSuggestionStateResponseDescriptor =
+    $convert.base64Decode(
+        'CitTZXRJbnRlbGxpZ2VuY2VHcmFwaFN1Z2dlc3Rpb25TdGF0ZVJlc3BvbnNlEk0KCnN1Z2dlc3'
+        'Rpb24YASABKAsyLS5zdHRhdHR1cy5vbnl4LnYxLkludGVsbGlnZW5jZUdyYXBoU3VnZ2VzdGlv'
+        'blIKc3VnZ2VzdGlvbhJMCg1hY2NlcHRlZF9ub2RlGAIgASgLMicuc3R0YXR0dXMub255eC52MS'
+        '5JbnRlbGxpZ2VuY2VHcmFwaE5vZGVSDGFjY2VwdGVkTm9kZRJMCg1hY2NlcHRlZF9lZGdlGAMg'
+        'ASgLMicuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaEVkZ2VSDGFjY2VwdGVkRW'
+        'RnZQ==');
+
+@$core.Deprecated('Use listIntelligenceGraphTimelineRequestDescriptor instead')
+const ListIntelligenceGraphTimelineRequest$json = {
+  '1': 'ListIntelligenceGraphTimelineRequest',
+  '2': [
+    {'1': 'node_ids', '3': 1, '4': 3, '5': 9, '10': 'nodeIds'},
+    {
+      '1': 'from',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'from'
+    },
+    {
+      '1': 'to',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'to'
+    },
+    {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphTimelineRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphTimelineRequestDescriptor =
+    $convert.base64Decode(
+        'CiRMaXN0SW50ZWxsaWdlbmNlR3JhcGhUaW1lbGluZVJlcXVlc3QSGQoIbm9kZV9pZHMYASADKA'
+        'lSB25vZGVJZHMSLgoEZnJvbRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGZy'
+        'b20SKgoCdG8YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgJ0bxIUCgVsaW1pdB'
+        'gEIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated('Use listIntelligenceGraphTimelineResponseDescriptor instead')
+const ListIntelligenceGraphTimelineResponse$json = {
+  '1': 'ListIntelligenceGraphTimelineResponse',
+  '2': [
+    {
+      '1': 'events',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphTimelineEvent',
+      '10': 'events'
+    },
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphTimelineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphTimelineResponseDescriptor =
+    $convert.base64Decode(
+        'CiVMaXN0SW50ZWxsaWdlbmNlR3JhcGhUaW1lbGluZVJlc3BvbnNlEkgKBmV2ZW50cxgBIAMoCz'
+        'IwLnN0dGF0dHVzLm9ueXgudjEuSW50ZWxsaWdlbmNlR3JhcGhUaW1lbGluZUV2ZW50UgZldmVu'
+        'dHM=');
+
+@$core
+    .Deprecated('Use listIntelligenceGraphResurfacingRequestDescriptor instead')
+const ListIntelligenceGraphResurfacingRequest$json = {
+  '1': 'ListIntelligenceGraphResurfacingRequest',
+  '2': [
+    {'1': 'state', '3': 1, '4': 1, '5': 9, '10': 'state'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphResurfacingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphResurfacingRequestDescriptor =
+    $convert.base64Decode(
+        'CidMaXN0SW50ZWxsaWdlbmNlR3JhcGhSZXN1cmZhY2luZ1JlcXVlc3QSFAoFc3RhdGUYASABKA'
+        'lSBXN0YXRlEhQKBWxpbWl0GAIgASgFUgVsaW1pdA==');
+
+@$core.Deprecated(
+    'Use listIntelligenceGraphResurfacingResponseDescriptor instead')
+const ListIntelligenceGraphResurfacingResponse$json = {
+  '1': 'ListIntelligenceGraphResurfacingResponse',
+  '2': [
+    {
+      '1': 'items',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphResurfacingItem',
+      '10': 'items'
+    },
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphResurfacingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listIntelligenceGraphResurfacingResponseDescriptor =
+    $convert.base64Decode(
+        'CihMaXN0SW50ZWxsaWdlbmNlR3JhcGhSZXN1cmZhY2luZ1Jlc3BvbnNlEkgKBWl0ZW1zGAEgAy'
+        'gLMjIuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaFJlc3VyZmFjaW5nSXRlbVIF'
+        'aXRlbXM=');
+
+@$core.Deprecated(
+    'Use setIntelligenceGraphResurfacingStateRequestDescriptor instead')
+const SetIntelligenceGraphResurfacingStateRequest$json = {
+  '1': 'SetIntelligenceGraphResurfacingStateRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'snoozed_until',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'snoozedUntil'
+    },
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphResurfacingStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    setIntelligenceGraphResurfacingStateRequestDescriptor =
+    $convert.base64Decode(
+        'CitTZXRJbnRlbGxpZ2VuY2VHcmFwaFJlc3VyZmFjaW5nU3RhdGVSZXF1ZXN0Eg4KAmlkGAEgAS'
+        'gJUgJpZBIWCgZhY3Rpb24YAiABKAlSBmFjdGlvbhI/Cg1zbm9vemVkX3VudGlsGAMgASgLMhou'
+        'Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMc25vb3plZFVudGlsEhYKBnJlYXNvbhgEIAEoCV'
+        'IGcmVhc29uEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgFIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated(
+    'Use setIntelligenceGraphResurfacingStateResponseDescriptor instead')
+const SetIntelligenceGraphResurfacingStateResponse$json = {
+  '1': 'SetIntelligenceGraphResurfacingStateResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphResurfacingItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntelligenceGraphResurfacingStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    setIntelligenceGraphResurfacingStateResponseDescriptor =
+    $convert.base64Decode(
+        'CixTZXRJbnRlbGxpZ2VuY2VHcmFwaFJlc3VyZmFjaW5nU3RhdGVSZXNwb25zZRJGCgRpdGVtGA'
+        'EgASgLMjIuc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaFJlc3VyZmFjaW5nSXRl'
+        'bVIEaXRlbQ==');
+
+@$core.Deprecated(
+    'Use createIntelligenceGraphMeetingBriefRequestDescriptor instead')
+const CreateIntelligenceGraphMeetingBriefRequest$json = {
+  '1': 'CreateIntelligenceGraphMeetingBriefRequest',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'purpose', '3': 2, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'scope', '3': 3, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'room_id', '3': 4, '4': 1, '5': 9, '10': 'roomId'},
+    {'1': 'node_ids', '3': 5, '4': 3, '5': 9, '10': 'nodeIds'},
+    {
+      '1': 'window_start',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'windowStart'
+    },
+    {
+      '1': 'window_end',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'windowEnd'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateIntelligenceGraphMeetingBriefRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    createIntelligenceGraphMeetingBriefRequestDescriptor =
+    $convert.base64Decode(
+        'CipDcmVhdGVJbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlJlcXVlc3QSFAoFdGl0bGUYAS'
+        'ABKAlSBXRpdGxlEhgKB3B1cnBvc2UYAiABKAlSB3B1cnBvc2USFAoFc2NvcGUYAyABKAlSBXNj'
+        'b3BlEhcKB3Jvb21faWQYBCABKAlSBnJvb21JZBIZCghub2RlX2lkcxgFIAMoCVIHbm9kZUlkcx'
+        'I9Cgx3aW5kb3dfc3RhcnQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgt3aW5k'
+        'b3dTdGFydBI5Cgp3aW5kb3dfZW5kGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcF'
+        'IJd2luZG93RW5kEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgIIAEoCVIQY2xpZW50TXV0YXRpb25J'
+        'ZA==');
+
+@$core.Deprecated(
+    'Use createIntelligenceGraphMeetingBriefResponseDescriptor instead')
+const CreateIntelligenceGraphMeetingBriefResponse$json = {
+  '1': 'CreateIntelligenceGraphMeetingBriefResponse',
+  '2': [
+    {
+      '1': 'brief',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphMeetingBrief',
+      '10': 'brief'
+    },
+  ],
+};
+
+/// Descriptor for `CreateIntelligenceGraphMeetingBriefResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    createIntelligenceGraphMeetingBriefResponseDescriptor =
+    $convert.base64Decode(
+        'CitDcmVhdGVJbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlJlc3BvbnNlEkUKBWJyaWVmGA'
+        'EgASgLMi8uc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlIF'
+        'YnJpZWY=');
+
+@$core
+    .Deprecated('Use getIntelligenceGraphMeetingBriefRequestDescriptor instead')
+const GetIntelligenceGraphMeetingBriefRequest$json = {
+  '1': 'GetIntelligenceGraphMeetingBriefRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetIntelligenceGraphMeetingBriefRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntelligenceGraphMeetingBriefRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZXRJbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlJlcXVlc3QSDgoCaWQYASABKAlSAm'
+        'lk');
+
+@$core.Deprecated(
+    'Use getIntelligenceGraphMeetingBriefResponseDescriptor instead')
+const GetIntelligenceGraphMeetingBriefResponse$json = {
+  '1': 'GetIntelligenceGraphMeetingBriefResponse',
+  '2': [
+    {
+      '1': 'brief',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphMeetingBrief',
+      '10': 'brief'
+    },
+  ],
+};
+
+/// Descriptor for `GetIntelligenceGraphMeetingBriefResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntelligenceGraphMeetingBriefResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZXRJbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlJlc3BvbnNlEkUKBWJyaWVmGAEgAS'
+        'gLMi8uc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlIFYnJp'
+        'ZWY=');
+
+@$core.Deprecated(
+    'Use listIntelligenceGraphMeetingBriefsRequestDescriptor instead')
+const ListIntelligenceGraphMeetingBriefsRequest$json = {
+  '1': 'ListIntelligenceGraphMeetingBriefsRequest',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphMeetingBriefsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    listIntelligenceGraphMeetingBriefsRequestDescriptor = $convert.base64Decode(
+        'CilMaXN0SW50ZWxsaWdlbmNlR3JhcGhNZWV0aW5nQnJpZWZzUmVxdWVzdBIWCgZzdGF0dXMYAS'
+        'ABKAlSBnN0YXR1cxIUCgVsaW1pdBgCIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated(
+    'Use listIntelligenceGraphMeetingBriefsResponseDescriptor instead')
+const ListIntelligenceGraphMeetingBriefsResponse$json = {
+  '1': 'ListIntelligenceGraphMeetingBriefsResponse',
+  '2': [
+    {
+      '1': 'briefs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.IntelligenceGraphMeetingBrief',
+      '10': 'briefs'
+    },
+  ],
+};
+
+/// Descriptor for `ListIntelligenceGraphMeetingBriefsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    listIntelligenceGraphMeetingBriefsResponseDescriptor =
+    $convert.base64Decode(
+        'CipMaXN0SW50ZWxsaWdlbmNlR3JhcGhNZWV0aW5nQnJpZWZzUmVzcG9uc2USRwoGYnJpZWZzGA'
+        'EgAygLMi8uc3R0YXR0dXMub255eC52MS5JbnRlbGxpZ2VuY2VHcmFwaE1lZXRpbmdCcmllZlIG'
+        'YnJpZWZz');
+
+@$core
+    .Deprecated('Use exportPersonalIntelligenceGraphRequestDescriptor instead')
+const ExportPersonalIntelligenceGraphRequest$json = {
+  '1': 'ExportPersonalIntelligenceGraphRequest',
+  '2': [
+    {'1': 'format', '3': 1, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'include_archived', '3': 2, '4': 1, '5': 8, '10': 'includeArchived'},
+  ],
+};
+
+/// Descriptor for `ExportPersonalIntelligenceGraphRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportPersonalIntelligenceGraphRequestDescriptor =
+    $convert.base64Decode(
+        'CiZFeHBvcnRQZXJzb25hbEludGVsbGlnZW5jZUdyYXBoUmVxdWVzdBIWCgZmb3JtYXQYASABKA'
+        'lSBmZvcm1hdBIpChBpbmNsdWRlX2FyY2hpdmVkGAIgASgIUg9pbmNsdWRlQXJjaGl2ZWQ=');
+
+@$core
+    .Deprecated('Use exportPersonalIntelligenceGraphResponseDescriptor instead')
+const ExportPersonalIntelligenceGraphResponse$json = {
+  '1': 'ExportPersonalIntelligenceGraphResponse',
+  '2': [
+    {'1': 'filename', '3': 1, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'data', '3': 3, '4': 1, '5': 12, '10': 'data'},
+    {'1': 'checksum', '3': 4, '4': 1, '5': 9, '10': 'checksum'},
+    {
+      '1': 'generated_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ExportPersonalIntelligenceGraphResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportPersonalIntelligenceGraphResponseDescriptor =
+    $convert.base64Decode(
+        'CidFeHBvcnRQZXJzb25hbEludGVsbGlnZW5jZUdyYXBoUmVzcG9uc2USGgoIZmlsZW5hbWUYAS'
+        'ABKAlSCGZpbGVuYW1lEhsKCW1pbWVfdHlwZRgCIAEoCVIIbWltZVR5cGUSEgoEZGF0YRgDIAEo'
+        'DFIEZGF0YRIaCghjaGVja3N1bRgEIAEoCVIIY2hlY2tzdW0SPQoMZ2VuZXJhdGVkX2F0GAUgAS'
+        'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZ2VuZXJhdGVkQXQ=');
+
+@$core
+    .Deprecated('Use rebuildPersonalIntelligenceGraphRequestDescriptor instead')
+const RebuildPersonalIntelligenceGraphRequest$json = {
+  '1': 'RebuildPersonalIntelligenceGraphRequest',
+  '2': [
+    {'1': 'reason', '3': 1, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RebuildPersonalIntelligenceGraphRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rebuildPersonalIntelligenceGraphRequestDescriptor =
+    $convert.base64Decode(
+        'CidSZWJ1aWxkUGVyc29uYWxJbnRlbGxpZ2VuY2VHcmFwaFJlcXVlc3QSFgoGcmVhc29uGAEgAS'
+        'gJUgZyZWFzb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated(
+    'Use rebuildPersonalIntelligenceGraphResponseDescriptor instead')
+const RebuildPersonalIntelligenceGraphResponse$json = {
+  '1': 'RebuildPersonalIntelligenceGraphResponse',
+  '2': [
+    {'1': 'job_id', '3': 1, '4': 1, '5': 9, '10': 'jobId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `RebuildPersonalIntelligenceGraphResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rebuildPersonalIntelligenceGraphResponseDescriptor =
+    $convert.base64Decode(
+        'CihSZWJ1aWxkUGVyc29uYWxJbnRlbGxpZ2VuY2VHcmFwaFJlc3BvbnNlEhUKBmpvYl9pZBgBIA'
+        'EoCVIFam9iSWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXM=');

@@ -2598,6 +2598,365 @@ message LeaveResearchRoomRequest {
 }
 message LeaveResearchRoomResponse {}
 
+// === Choice 10 — private, provenance-first personal intelligence graph ===
+
+message IntelligenceGraphSourceAnchor {
+  string id = 1;
+  string source_type = 2; // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+  string source_id = 3;
+  string source_version = 4;
+  string content_id = 5;
+  string revision_id = 6;
+  string passage_key = 7;
+  string quote = 8; // never copied from room-scoped sources
+  string room_id = 9;
+  int64 room_permission_version = 10;
+  int64 membership_access_version = 11;
+  google.protobuf.Timestamp created_at = 12;
+}
+
+message IntelligenceGraphNode {
+  string id = 1;
+  string node_type = 2; // entity | topic | claim | question | source | annotation | brief | decision | meeting | task | listening_moment
+  string title = 3;
+  string summary = 4;
+  string status = 5; // active | archived | merged | deleted
+  string scope = 6; // private | room
+  string room_id = 7;
+  string origin = 8; // manual | imported | suggestion
+  string verification_status = 9; // authored | accepted | disputed | corrected | provisional
+  double confidence = 10;
+  string confidence_basis = 11;
+  google.protobuf.Timestamp valid_from = 12;
+  google.protobuf.Timestamp valid_to = 13;
+  string merged_into_node_id = 14;
+  int64 version = 15;
+  int64 room_permission_version = 16;
+  int64 membership_access_version = 17;
+  repeated IntelligenceGraphSourceAnchor anchors = 18;
+  int32 inbound_edge_count = 19;
+  int32 outbound_edge_count = 20;
+  google.protobuf.Timestamp created_at = 21;
+  google.protobuf.Timestamp updated_at = 22;
+}
+
+message IntelligenceGraphEdge {
+  string id = 1;
+  string source_node_id = 2;
+  string target_node_id = 3;
+  string relation = 4; // mentions | about | supports | contradicts | qualifies | depends_on | informs | decided_in | assigned_to | precedes | supersedes | related
+  string label = 5;
+  string status = 6; // active | archived | deleted
+  string scope = 7; // private | room
+  string room_id = 8;
+  string origin = 9; // manual | imported | suggestion
+  double confidence = 10;
+  string confidence_basis = 11;
+  string explanation = 12;
+  string model_key = 13;
+  string model_version = 14;
+  int64 version = 15;
+  int64 room_permission_version = 16;
+  int64 membership_access_version = 17;
+  repeated IntelligenceGraphSourceAnchor anchors = 18;
+  google.protobuf.Timestamp created_at = 19;
+  google.protobuf.Timestamp updated_at = 20;
+}
+
+message IntelligenceGraphSuggestion {
+  string id = 1;
+  string proposal_type = 2; // node | edge
+  string status = 3; // pending | accepted | rejected | expired
+  IntelligenceGraphNode proposed_node = 4;
+  IntelligenceGraphEdge proposed_edge = 5;
+  string reason = 6;
+  double confidence = 7;
+  string model_key = 8;
+  string model_version = 9;
+  string source_digest = 10;
+  string disposition_note = 11;
+  google.protobuf.Timestamp expires_at = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp decided_at = 14;
+}
+
+message IntelligenceGraphTimelineEvent {
+  string id = 1;
+  string event_type = 2;
+  string title = 3;
+  string summary = 4;
+  string node_id = 5;
+  string edge_id = 6;
+  string source_type = 7;
+  string source_id = 8;
+  string scope = 9;
+  string room_id = 10;
+  google.protobuf.Timestamp event_at = 11;
+  google.protobuf.Timestamp recorded_at = 12;
+  bool approximate_time = 13;
+  int64 version = 14;
+}
+
+message IntelligenceGraphResurfacingItem {
+  string id = 1;
+  string kind = 2; // unresolved_question | contradiction | correction | stale_decision | open_task | related_source | revisit
+  string title = 3;
+  string reason = 4;
+  string state = 5; // pending | snoozed | completed | dismissed
+  string node_id = 6;
+  string related_node_id = 7;
+  string source_id = 8;
+  google.protobuf.Timestamp due_at = 9;
+  google.protobuf.Timestamp snoozed_until = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message IntelligenceGraphMeetingBriefSection {
+  string kind = 1; // context | claims | contradictions | decisions | questions | tasks | changes
+  string title = 2;
+  string body = 3;
+  repeated string node_ids = 4;
+  repeated IntelligenceGraphSourceAnchor citations = 5;
+}
+
+message IntelligenceGraphMeetingBrief {
+  string id = 1;
+  string title = 2;
+  string purpose = 3;
+  string status = 4; // draft | reviewed | archived
+  string scope = 5; // private | room
+  string room_id = 6;
+  repeated string selected_node_ids = 7;
+  repeated IntelligenceGraphMeetingBriefSection sections = 8;
+  string manifest_checksum = 9;
+  int64 version = 10;
+  google.protobuf.Timestamp window_start = 11;
+  google.protobuf.Timestamp window_end = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message IntelligenceGraphOverview {
+  int32 active_nodes = 1;
+  int32 active_edges = 2;
+  int32 pending_suggestions = 3;
+  int32 unresolved_questions = 4;
+  int32 contradictions = 5;
+  int32 due_resurfacing = 6;
+  int32 meeting_briefs = 7;
+  google.protobuf.Timestamp last_changed_at = 8;
+}
+
+message GetPersonalIntelligenceGraphRequest {
+  string query = 1;
+  repeated string node_types = 2;
+  repeated string relations = 3;
+  string scope = 4; // all | private | room
+  string room_id = 5;
+  bool include_archived = 6;
+  int32 limit = 7;
+}
+message GetPersonalIntelligenceGraphResponse {
+  IntelligenceGraphOverview overview = 1;
+  repeated IntelligenceGraphNode nodes = 2;
+  repeated IntelligenceGraphEdge edges = 3;
+}
+
+message UpsertIntelligenceGraphNodeRequest {
+  string id = 1;
+  string node_type = 2;
+  string title = 3;
+  string summary = 4;
+  string scope = 5;
+  string room_id = 6;
+  string verification_status = 7;
+  double confidence = 8;
+  string confidence_basis = 9;
+  google.protobuf.Timestamp valid_from = 10;
+  google.protobuf.Timestamp valid_to = 11;
+  repeated IntelligenceGraphSourceAnchor anchors = 12;
+  int64 expected_version = 13;
+  string client_mutation_id = 14;
+}
+message UpsertIntelligenceGraphNodeResponse {
+  IntelligenceGraphNode node = 1;
+}
+
+message SetIntelligenceGraphNodeStateRequest {
+  string id = 1;
+  string action = 2; // archive | restore | delete
+  string reason = 3;
+  int64 expected_version = 4;
+  string client_mutation_id = 5;
+}
+message SetIntelligenceGraphNodeStateResponse {
+  IntelligenceGraphNode node = 1;
+}
+
+message MergeIntelligenceGraphNodesRequest {
+  string primary_node_id = 1;
+  string duplicate_node_id = 2;
+  string reason = 3;
+  int64 expected_primary_version = 4;
+  int64 expected_duplicate_version = 5;
+  string client_mutation_id = 6;
+}
+message MergeIntelligenceGraphNodesResponse {
+  IntelligenceGraphNode primary_node = 1;
+  IntelligenceGraphNode merged_node = 2;
+}
+
+message SplitIntelligenceGraphNodeRequest {
+  string source_node_id = 1;
+  string new_title = 2;
+  string new_summary = 3;
+  repeated string move_anchor_ids = 4;
+  repeated string move_edge_ids = 5;
+  string reason = 6;
+  int64 expected_version = 7;
+  string client_mutation_id = 8;
+}
+message SplitIntelligenceGraphNodeResponse {
+  IntelligenceGraphNode source_node = 1;
+  IntelligenceGraphNode new_node = 2;
+}
+
+message UpsertIntelligenceGraphEdgeRequest {
+  string id = 1;
+  string source_node_id = 2;
+  string target_node_id = 3;
+  string relation = 4;
+  string label = 5;
+  string scope = 6;
+  string room_id = 7;
+  double confidence = 8;
+  string confidence_basis = 9;
+  string explanation = 10;
+  repeated IntelligenceGraphSourceAnchor anchors = 11;
+  int64 expected_version = 12;
+  string client_mutation_id = 13;
+}
+message UpsertIntelligenceGraphEdgeResponse {
+  IntelligenceGraphEdge edge = 1;
+}
+
+message SetIntelligenceGraphEdgeStateRequest {
+  string id = 1;
+  string action = 2; // archive | restore | delete
+  string reason = 3;
+  int64 expected_version = 4;
+  string client_mutation_id = 5;
+}
+message SetIntelligenceGraphEdgeStateResponse {
+  IntelligenceGraphEdge edge = 1;
+}
+
+message GenerateIntelligenceGraphSuggestionsRequest {
+  string scope = 1; // all | annotations | watchlists | briefs | rooms
+  string room_id = 2;
+  int32 limit = 3;
+  string client_mutation_id = 4;
+}
+message GenerateIntelligenceGraphSuggestionsResponse {
+  int32 generated = 1;
+  repeated IntelligenceGraphSuggestion suggestions = 2;
+}
+message ListIntelligenceGraphSuggestionsRequest {
+  string status = 1; // pending | accepted | rejected | expired | all
+  int32 limit = 2;
+}
+message ListIntelligenceGraphSuggestionsResponse {
+  repeated IntelligenceGraphSuggestion suggestions = 1;
+}
+message SetIntelligenceGraphSuggestionStateRequest {
+  string id = 1;
+  string action = 2; // accept | reject
+  string note = 3;
+  string client_mutation_id = 4;
+}
+message SetIntelligenceGraphSuggestionStateResponse {
+  IntelligenceGraphSuggestion suggestion = 1;
+  IntelligenceGraphNode accepted_node = 2;
+  IntelligenceGraphEdge accepted_edge = 3;
+}
+
+message ListIntelligenceGraphTimelineRequest {
+  repeated string node_ids = 1;
+  google.protobuf.Timestamp from = 2;
+  google.protobuf.Timestamp to = 3;
+  int32 limit = 4;
+}
+message ListIntelligenceGraphTimelineResponse {
+  repeated IntelligenceGraphTimelineEvent events = 1;
+}
+
+message ListIntelligenceGraphResurfacingRequest {
+  string state = 1; // pending | snoozed | completed | dismissed | all
+  int32 limit = 2;
+}
+message ListIntelligenceGraphResurfacingResponse {
+  repeated IntelligenceGraphResurfacingItem items = 1;
+}
+message SetIntelligenceGraphResurfacingStateRequest {
+  string id = 1;
+  string action = 2; // snooze | complete | dismiss | reopen
+  google.protobuf.Timestamp snoozed_until = 3;
+  string reason = 4;
+  string client_mutation_id = 5;
+}
+message SetIntelligenceGraphResurfacingStateResponse {
+  IntelligenceGraphResurfacingItem item = 1;
+}
+
+message CreateIntelligenceGraphMeetingBriefRequest {
+  string title = 1;
+  string purpose = 2;
+  string scope = 3;
+  string room_id = 4;
+  repeated string node_ids = 5;
+  google.protobuf.Timestamp window_start = 6;
+  google.protobuf.Timestamp window_end = 7;
+  string client_mutation_id = 8;
+}
+message CreateIntelligenceGraphMeetingBriefResponse {
+  IntelligenceGraphMeetingBrief brief = 1;
+}
+message GetIntelligenceGraphMeetingBriefRequest {
+  string id = 1;
+}
+message GetIntelligenceGraphMeetingBriefResponse {
+  IntelligenceGraphMeetingBrief brief = 1;
+}
+message ListIntelligenceGraphMeetingBriefsRequest {
+  string status = 1;
+  int32 limit = 2;
+}
+message ListIntelligenceGraphMeetingBriefsResponse {
+  repeated IntelligenceGraphMeetingBrief briefs = 1;
+}
+
+message ExportPersonalIntelligenceGraphRequest {
+  string format = 1; // json | markdown | csv
+  bool include_archived = 2;
+}
+message ExportPersonalIntelligenceGraphResponse {
+  string filename = 1;
+  string mime_type = 2;
+  bytes data = 3;
+  string checksum = 4;
+  google.protobuf.Timestamp generated_at = 5;
+}
+
+message RebuildPersonalIntelligenceGraphRequest {
+  string reason = 1;
+  string client_mutation_id = 2;
+}
+message RebuildPersonalIntelligenceGraphResponse {
+  string job_id = 1;
+  string status = 2;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -2800,4 +3159,24 @@ service OnyxService {
   rpc AcknowledgeResearchRoomOfflinePurge(AcknowledgeResearchRoomOfflinePurgeRequest) returns (AcknowledgeResearchRoomOfflinePurgeResponse);
   rpc ListResearchRoomOfflinePurges(ListResearchRoomOfflinePurgesRequest) returns (ListResearchRoomOfflinePurgesResponse);
   rpc LeaveResearchRoom(LeaveResearchRoomRequest) returns (LeaveResearchRoomResponse);
+
+  // Choice 10 — private, member-owned intelligence graph.
+  rpc GetPersonalIntelligenceGraph(GetPersonalIntelligenceGraphRequest) returns (GetPersonalIntelligenceGraphResponse);
+  rpc UpsertIntelligenceGraphNode(UpsertIntelligenceGraphNodeRequest) returns (UpsertIntelligenceGraphNodeResponse);
+  rpc SetIntelligenceGraphNodeState(SetIntelligenceGraphNodeStateRequest) returns (SetIntelligenceGraphNodeStateResponse);
+  rpc MergeIntelligenceGraphNodes(MergeIntelligenceGraphNodesRequest) returns (MergeIntelligenceGraphNodesResponse);
+  rpc SplitIntelligenceGraphNode(SplitIntelligenceGraphNodeRequest) returns (SplitIntelligenceGraphNodeResponse);
+  rpc UpsertIntelligenceGraphEdge(UpsertIntelligenceGraphEdgeRequest) returns (UpsertIntelligenceGraphEdgeResponse);
+  rpc SetIntelligenceGraphEdgeState(SetIntelligenceGraphEdgeStateRequest) returns (SetIntelligenceGraphEdgeStateResponse);
+  rpc GenerateIntelligenceGraphSuggestions(GenerateIntelligenceGraphSuggestionsRequest) returns (GenerateIntelligenceGraphSuggestionsResponse);
+  rpc ListIntelligenceGraphSuggestions(ListIntelligenceGraphSuggestionsRequest) returns (ListIntelligenceGraphSuggestionsResponse);
+  rpc SetIntelligenceGraphSuggestionState(SetIntelligenceGraphSuggestionStateRequest) returns (SetIntelligenceGraphSuggestionStateResponse);
+  rpc ListIntelligenceGraphTimeline(ListIntelligenceGraphTimelineRequest) returns (ListIntelligenceGraphTimelineResponse);
+  rpc ListIntelligenceGraphResurfacing(ListIntelligenceGraphResurfacingRequest) returns (ListIntelligenceGraphResurfacingResponse);
+  rpc SetIntelligenceGraphResurfacingState(SetIntelligenceGraphResurfacingStateRequest) returns (SetIntelligenceGraphResurfacingStateResponse);
+  rpc CreateIntelligenceGraphMeetingBrief(CreateIntelligenceGraphMeetingBriefRequest) returns (CreateIntelligenceGraphMeetingBriefResponse);
+  rpc GetIntelligenceGraphMeetingBrief(GetIntelligenceGraphMeetingBriefRequest) returns (GetIntelligenceGraphMeetingBriefResponse);
+  rpc ListIntelligenceGraphMeetingBriefs(ListIntelligenceGraphMeetingBriefsRequest) returns (ListIntelligenceGraphMeetingBriefsResponse);
+  rpc ExportPersonalIntelligenceGraph(ExportPersonalIntelligenceGraphRequest) returns (ExportPersonalIntelligenceGraphResponse);
+  rpc RebuildPersonalIntelligenceGraph(RebuildPersonalIntelligenceGraphRequest) returns (RebuildPersonalIntelligenceGraphResponse);
 }

@@ -1205,6 +1205,169 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$leaveResearchRoom, request, options: options);
   }
 
+  /// Choice 10 — private, member-owned intelligence graph.
+  $grpc.ResponseFuture<$0.GetPersonalIntelligenceGraphResponse>
+      getPersonalIntelligenceGraph(
+    $0.GetPersonalIntelligenceGraphRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPersonalIntelligenceGraph, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertIntelligenceGraphNodeResponse>
+      upsertIntelligenceGraphNode(
+    $0.UpsertIntelligenceGraphNodeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertIntelligenceGraphNode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntelligenceGraphNodeStateResponse>
+      setIntelligenceGraphNodeState(
+    $0.SetIntelligenceGraphNodeStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntelligenceGraphNodeState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MergeIntelligenceGraphNodesResponse>
+      mergeIntelligenceGraphNodes(
+    $0.MergeIntelligenceGraphNodesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$mergeIntelligenceGraphNodes, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SplitIntelligenceGraphNodeResponse>
+      splitIntelligenceGraphNode(
+    $0.SplitIntelligenceGraphNodeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$splitIntelligenceGraphNode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertIntelligenceGraphEdgeResponse>
+      upsertIntelligenceGraphEdge(
+    $0.UpsertIntelligenceGraphEdgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertIntelligenceGraphEdge, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntelligenceGraphEdgeStateResponse>
+      setIntelligenceGraphEdgeState(
+    $0.SetIntelligenceGraphEdgeStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntelligenceGraphEdgeState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateIntelligenceGraphSuggestionsResponse>
+      generateIntelligenceGraphSuggestions(
+    $0.GenerateIntelligenceGraphSuggestionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateIntelligenceGraphSuggestions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListIntelligenceGraphSuggestionsResponse>
+      listIntelligenceGraphSuggestions(
+    $0.ListIntelligenceGraphSuggestionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listIntelligenceGraphSuggestions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntelligenceGraphSuggestionStateResponse>
+      setIntelligenceGraphSuggestionState(
+    $0.SetIntelligenceGraphSuggestionStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntelligenceGraphSuggestionState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListIntelligenceGraphTimelineResponse>
+      listIntelligenceGraphTimeline(
+    $0.ListIntelligenceGraphTimelineRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listIntelligenceGraphTimeline, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListIntelligenceGraphResurfacingResponse>
+      listIntelligenceGraphResurfacing(
+    $0.ListIntelligenceGraphResurfacingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listIntelligenceGraphResurfacing, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntelligenceGraphResurfacingStateResponse>
+      setIntelligenceGraphResurfacingState(
+    $0.SetIntelligenceGraphResurfacingStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntelligenceGraphResurfacingState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateIntelligenceGraphMeetingBriefResponse>
+      createIntelligenceGraphMeetingBrief(
+    $0.CreateIntelligenceGraphMeetingBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createIntelligenceGraphMeetingBrief, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetIntelligenceGraphMeetingBriefResponse>
+      getIntelligenceGraphMeetingBrief(
+    $0.GetIntelligenceGraphMeetingBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getIntelligenceGraphMeetingBrief, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListIntelligenceGraphMeetingBriefsResponse>
+      listIntelligenceGraphMeetingBriefs(
+    $0.ListIntelligenceGraphMeetingBriefsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listIntelligenceGraphMeetingBriefs, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportPersonalIntelligenceGraphResponse>
+      exportPersonalIntelligenceGraph(
+    $0.ExportPersonalIntelligenceGraphRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportPersonalIntelligenceGraph, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RebuildPersonalIntelligenceGraphResponse>
+      rebuildPersonalIntelligenceGraph(
+    $0.RebuildPersonalIntelligenceGraphRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$rebuildPersonalIntelligenceGraph, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2001,6 +2164,124 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/LeaveResearchRoom',
       ($0.LeaveResearchRoomRequest value) => value.writeToBuffer(),
       $0.LeaveResearchRoomResponse.fromBuffer);
+  static final _$getPersonalIntelligenceGraph = $grpc.ClientMethod<
+          $0.GetPersonalIntelligenceGraphRequest,
+          $0.GetPersonalIntelligenceGraphResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetPersonalIntelligenceGraph',
+      ($0.GetPersonalIntelligenceGraphRequest value) => value.writeToBuffer(),
+      $0.GetPersonalIntelligenceGraphResponse.fromBuffer);
+  static final _$upsertIntelligenceGraphNode = $grpc.ClientMethod<
+          $0.UpsertIntelligenceGraphNodeRequest,
+          $0.UpsertIntelligenceGraphNodeResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertIntelligenceGraphNode',
+      ($0.UpsertIntelligenceGraphNodeRequest value) => value.writeToBuffer(),
+      $0.UpsertIntelligenceGraphNodeResponse.fromBuffer);
+  static final _$setIntelligenceGraphNodeState = $grpc.ClientMethod<
+          $0.SetIntelligenceGraphNodeStateRequest,
+          $0.SetIntelligenceGraphNodeStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphNodeState',
+      ($0.SetIntelligenceGraphNodeStateRequest value) => value.writeToBuffer(),
+      $0.SetIntelligenceGraphNodeStateResponse.fromBuffer);
+  static final _$mergeIntelligenceGraphNodes = $grpc.ClientMethod<
+          $0.MergeIntelligenceGraphNodesRequest,
+          $0.MergeIntelligenceGraphNodesResponse>(
+      '/sttattus.onyx.v1.OnyxService/MergeIntelligenceGraphNodes',
+      ($0.MergeIntelligenceGraphNodesRequest value) => value.writeToBuffer(),
+      $0.MergeIntelligenceGraphNodesResponse.fromBuffer);
+  static final _$splitIntelligenceGraphNode = $grpc.ClientMethod<
+          $0.SplitIntelligenceGraphNodeRequest,
+          $0.SplitIntelligenceGraphNodeResponse>(
+      '/sttattus.onyx.v1.OnyxService/SplitIntelligenceGraphNode',
+      ($0.SplitIntelligenceGraphNodeRequest value) => value.writeToBuffer(),
+      $0.SplitIntelligenceGraphNodeResponse.fromBuffer);
+  static final _$upsertIntelligenceGraphEdge = $grpc.ClientMethod<
+          $0.UpsertIntelligenceGraphEdgeRequest,
+          $0.UpsertIntelligenceGraphEdgeResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertIntelligenceGraphEdge',
+      ($0.UpsertIntelligenceGraphEdgeRequest value) => value.writeToBuffer(),
+      $0.UpsertIntelligenceGraphEdgeResponse.fromBuffer);
+  static final _$setIntelligenceGraphEdgeState = $grpc.ClientMethod<
+          $0.SetIntelligenceGraphEdgeStateRequest,
+          $0.SetIntelligenceGraphEdgeStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphEdgeState',
+      ($0.SetIntelligenceGraphEdgeStateRequest value) => value.writeToBuffer(),
+      $0.SetIntelligenceGraphEdgeStateResponse.fromBuffer);
+  static final _$generateIntelligenceGraphSuggestions = $grpc.ClientMethod<
+          $0.GenerateIntelligenceGraphSuggestionsRequest,
+          $0.GenerateIntelligenceGraphSuggestionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateIntelligenceGraphSuggestions',
+      ($0.GenerateIntelligenceGraphSuggestionsRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateIntelligenceGraphSuggestionsResponse.fromBuffer);
+  static final _$listIntelligenceGraphSuggestions = $grpc.ClientMethod<
+          $0.ListIntelligenceGraphSuggestionsRequest,
+          $0.ListIntelligenceGraphSuggestionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphSuggestions',
+      ($0.ListIntelligenceGraphSuggestionsRequest value) =>
+          value.writeToBuffer(),
+      $0.ListIntelligenceGraphSuggestionsResponse.fromBuffer);
+  static final _$setIntelligenceGraphSuggestionState = $grpc.ClientMethod<
+          $0.SetIntelligenceGraphSuggestionStateRequest,
+          $0.SetIntelligenceGraphSuggestionStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphSuggestionState',
+      ($0.SetIntelligenceGraphSuggestionStateRequest value) =>
+          value.writeToBuffer(),
+      $0.SetIntelligenceGraphSuggestionStateResponse.fromBuffer);
+  static final _$listIntelligenceGraphTimeline = $grpc.ClientMethod<
+          $0.ListIntelligenceGraphTimelineRequest,
+          $0.ListIntelligenceGraphTimelineResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphTimeline',
+      ($0.ListIntelligenceGraphTimelineRequest value) => value.writeToBuffer(),
+      $0.ListIntelligenceGraphTimelineResponse.fromBuffer);
+  static final _$listIntelligenceGraphResurfacing = $grpc.ClientMethod<
+          $0.ListIntelligenceGraphResurfacingRequest,
+          $0.ListIntelligenceGraphResurfacingResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphResurfacing',
+      ($0.ListIntelligenceGraphResurfacingRequest value) =>
+          value.writeToBuffer(),
+      $0.ListIntelligenceGraphResurfacingResponse.fromBuffer);
+  static final _$setIntelligenceGraphResurfacingState = $grpc.ClientMethod<
+          $0.SetIntelligenceGraphResurfacingStateRequest,
+          $0.SetIntelligenceGraphResurfacingStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntelligenceGraphResurfacingState',
+      ($0.SetIntelligenceGraphResurfacingStateRequest value) =>
+          value.writeToBuffer(),
+      $0.SetIntelligenceGraphResurfacingStateResponse.fromBuffer);
+  static final _$createIntelligenceGraphMeetingBrief = $grpc.ClientMethod<
+          $0.CreateIntelligenceGraphMeetingBriefRequest,
+          $0.CreateIntelligenceGraphMeetingBriefResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateIntelligenceGraphMeetingBrief',
+      ($0.CreateIntelligenceGraphMeetingBriefRequest value) =>
+          value.writeToBuffer(),
+      $0.CreateIntelligenceGraphMeetingBriefResponse.fromBuffer);
+  static final _$getIntelligenceGraphMeetingBrief = $grpc.ClientMethod<
+          $0.GetIntelligenceGraphMeetingBriefRequest,
+          $0.GetIntelligenceGraphMeetingBriefResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetIntelligenceGraphMeetingBrief',
+      ($0.GetIntelligenceGraphMeetingBriefRequest value) =>
+          value.writeToBuffer(),
+      $0.GetIntelligenceGraphMeetingBriefResponse.fromBuffer);
+  static final _$listIntelligenceGraphMeetingBriefs = $grpc.ClientMethod<
+          $0.ListIntelligenceGraphMeetingBriefsRequest,
+          $0.ListIntelligenceGraphMeetingBriefsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphMeetingBriefs',
+      ($0.ListIntelligenceGraphMeetingBriefsRequest value) =>
+          value.writeToBuffer(),
+      $0.ListIntelligenceGraphMeetingBriefsResponse.fromBuffer);
+  static final _$exportPersonalIntelligenceGraph = $grpc.ClientMethod<
+          $0.ExportPersonalIntelligenceGraphRequest,
+          $0.ExportPersonalIntelligenceGraphResponse>(
+      '/sttattus.onyx.v1.OnyxService/ExportPersonalIntelligenceGraph',
+      ($0.ExportPersonalIntelligenceGraphRequest value) =>
+          value.writeToBuffer(),
+      $0.ExportPersonalIntelligenceGraphResponse.fromBuffer);
+  static final _$rebuildPersonalIntelligenceGraph = $grpc.ClientMethod<
+          $0.RebuildPersonalIntelligenceGraphRequest,
+          $0.RebuildPersonalIntelligenceGraphResponse>(
+      '/sttattus.onyx.v1.OnyxService/RebuildPersonalIntelligenceGraph',
+      ($0.RebuildPersonalIntelligenceGraphRequest value) =>
+          value.writeToBuffer(),
+      $0.RebuildPersonalIntelligenceGraphResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -3364,6 +3645,190 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.LeaveResearchRoomRequest.fromBuffer(value),
         ($0.LeaveResearchRoomResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPersonalIntelligenceGraphRequest,
+            $0.GetPersonalIntelligenceGraphResponse>(
+        'GetPersonalIntelligenceGraph',
+        getPersonalIntelligenceGraph_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPersonalIntelligenceGraphRequest.fromBuffer(value),
+        ($0.GetPersonalIntelligenceGraphResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertIntelligenceGraphNodeRequest,
+            $0.UpsertIntelligenceGraphNodeResponse>(
+        'UpsertIntelligenceGraphNode',
+        upsertIntelligenceGraphNode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertIntelligenceGraphNodeRequest.fromBuffer(value),
+        ($0.UpsertIntelligenceGraphNodeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetIntelligenceGraphNodeStateRequest,
+            $0.SetIntelligenceGraphNodeStateResponse>(
+        'SetIntelligenceGraphNodeState',
+        setIntelligenceGraphNodeState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntelligenceGraphNodeStateRequest.fromBuffer(value),
+        ($0.SetIntelligenceGraphNodeStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MergeIntelligenceGraphNodesRequest,
+            $0.MergeIntelligenceGraphNodesResponse>(
+        'MergeIntelligenceGraphNodes',
+        mergeIntelligenceGraphNodes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MergeIntelligenceGraphNodesRequest.fromBuffer(value),
+        ($0.MergeIntelligenceGraphNodesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SplitIntelligenceGraphNodeRequest,
+            $0.SplitIntelligenceGraphNodeResponse>(
+        'SplitIntelligenceGraphNode',
+        splitIntelligenceGraphNode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SplitIntelligenceGraphNodeRequest.fromBuffer(value),
+        ($0.SplitIntelligenceGraphNodeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertIntelligenceGraphEdgeRequest,
+            $0.UpsertIntelligenceGraphEdgeResponse>(
+        'UpsertIntelligenceGraphEdge',
+        upsertIntelligenceGraphEdge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertIntelligenceGraphEdgeRequest.fromBuffer(value),
+        ($0.UpsertIntelligenceGraphEdgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetIntelligenceGraphEdgeStateRequest,
+            $0.SetIntelligenceGraphEdgeStateResponse>(
+        'SetIntelligenceGraphEdgeState',
+        setIntelligenceGraphEdgeState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntelligenceGraphEdgeStateRequest.fromBuffer(value),
+        ($0.SetIntelligenceGraphEdgeStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GenerateIntelligenceGraphSuggestionsRequest,
+            $0.GenerateIntelligenceGraphSuggestionsResponse>(
+        'GenerateIntelligenceGraphSuggestions',
+        generateIntelligenceGraphSuggestions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateIntelligenceGraphSuggestionsRequest.fromBuffer(value),
+        ($0.GenerateIntelligenceGraphSuggestionsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIntelligenceGraphSuggestionsRequest,
+            $0.ListIntelligenceGraphSuggestionsResponse>(
+        'ListIntelligenceGraphSuggestions',
+        listIntelligenceGraphSuggestions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListIntelligenceGraphSuggestionsRequest.fromBuffer(value),
+        ($0.ListIntelligenceGraphSuggestionsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SetIntelligenceGraphSuggestionStateRequest,
+            $0.SetIntelligenceGraphSuggestionStateResponse>(
+        'SetIntelligenceGraphSuggestionState',
+        setIntelligenceGraphSuggestionState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntelligenceGraphSuggestionStateRequest.fromBuffer(value),
+        ($0.SetIntelligenceGraphSuggestionStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIntelligenceGraphTimelineRequest,
+            $0.ListIntelligenceGraphTimelineResponse>(
+        'ListIntelligenceGraphTimeline',
+        listIntelligenceGraphTimeline_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListIntelligenceGraphTimelineRequest.fromBuffer(value),
+        ($0.ListIntelligenceGraphTimelineResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIntelligenceGraphResurfacingRequest,
+            $0.ListIntelligenceGraphResurfacingResponse>(
+        'ListIntelligenceGraphResurfacing',
+        listIntelligenceGraphResurfacing_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListIntelligenceGraphResurfacingRequest.fromBuffer(value),
+        ($0.ListIntelligenceGraphResurfacingResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SetIntelligenceGraphResurfacingStateRequest,
+            $0.SetIntelligenceGraphResurfacingStateResponse>(
+        'SetIntelligenceGraphResurfacingState',
+        setIntelligenceGraphResurfacingState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntelligenceGraphResurfacingStateRequest.fromBuffer(value),
+        ($0.SetIntelligenceGraphResurfacingStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.CreateIntelligenceGraphMeetingBriefRequest,
+            $0.CreateIntelligenceGraphMeetingBriefResponse>(
+        'CreateIntelligenceGraphMeetingBrief',
+        createIntelligenceGraphMeetingBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateIntelligenceGraphMeetingBriefRequest.fromBuffer(value),
+        ($0.CreateIntelligenceGraphMeetingBriefResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetIntelligenceGraphMeetingBriefRequest,
+            $0.GetIntelligenceGraphMeetingBriefResponse>(
+        'GetIntelligenceGraphMeetingBrief',
+        getIntelligenceGraphMeetingBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetIntelligenceGraphMeetingBriefRequest.fromBuffer(value),
+        ($0.GetIntelligenceGraphMeetingBriefResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListIntelligenceGraphMeetingBriefsRequest,
+            $0.ListIntelligenceGraphMeetingBriefsResponse>(
+        'ListIntelligenceGraphMeetingBriefs',
+        listIntelligenceGraphMeetingBriefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListIntelligenceGraphMeetingBriefsRequest.fromBuffer(value),
+        ($0.ListIntelligenceGraphMeetingBriefsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportPersonalIntelligenceGraphRequest,
+            $0.ExportPersonalIntelligenceGraphResponse>(
+        'ExportPersonalIntelligenceGraph',
+        exportPersonalIntelligenceGraph_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportPersonalIntelligenceGraphRequest.fromBuffer(value),
+        ($0.ExportPersonalIntelligenceGraphResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RebuildPersonalIntelligenceGraphRequest,
+            $0.RebuildPersonalIntelligenceGraphResponse>(
+        'RebuildPersonalIntelligenceGraph',
+        rebuildPersonalIntelligenceGraph_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RebuildPersonalIntelligenceGraphRequest.fromBuffer(value),
+        ($0.RebuildPersonalIntelligenceGraphResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -4740,4 +5205,212 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.LeaveResearchRoomResponse> leaveResearchRoom(
       $grpc.ServiceCall call, $0.LeaveResearchRoomRequest request);
+
+  $async.Future<$0.GetPersonalIntelligenceGraphResponse>
+      getPersonalIntelligenceGraph_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPersonalIntelligenceGraphRequest>
+              $request) async {
+    return getPersonalIntelligenceGraph($call, await $request);
+  }
+
+  $async.Future<$0.GetPersonalIntelligenceGraphResponse>
+      getPersonalIntelligenceGraph($grpc.ServiceCall call,
+          $0.GetPersonalIntelligenceGraphRequest request);
+
+  $async.Future<$0.UpsertIntelligenceGraphNodeResponse>
+      upsertIntelligenceGraphNode_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertIntelligenceGraphNodeRequest> $request) async {
+    return upsertIntelligenceGraphNode($call, await $request);
+  }
+
+  $async.Future<$0.UpsertIntelligenceGraphNodeResponse>
+      upsertIntelligenceGraphNode($grpc.ServiceCall call,
+          $0.UpsertIntelligenceGraphNodeRequest request);
+
+  $async.Future<$0.SetIntelligenceGraphNodeStateResponse>
+      setIntelligenceGraphNodeState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetIntelligenceGraphNodeStateRequest>
+              $request) async {
+    return setIntelligenceGraphNodeState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntelligenceGraphNodeStateResponse>
+      setIntelligenceGraphNodeState($grpc.ServiceCall call,
+          $0.SetIntelligenceGraphNodeStateRequest request);
+
+  $async.Future<$0.MergeIntelligenceGraphNodesResponse>
+      mergeIntelligenceGraphNodes_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.MergeIntelligenceGraphNodesRequest> $request) async {
+    return mergeIntelligenceGraphNodes($call, await $request);
+  }
+
+  $async.Future<$0.MergeIntelligenceGraphNodesResponse>
+      mergeIntelligenceGraphNodes($grpc.ServiceCall call,
+          $0.MergeIntelligenceGraphNodesRequest request);
+
+  $async.Future<$0.SplitIntelligenceGraphNodeResponse>
+      splitIntelligenceGraphNode_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SplitIntelligenceGraphNodeRequest> $request) async {
+    return splitIntelligenceGraphNode($call, await $request);
+  }
+
+  $async.Future<$0.SplitIntelligenceGraphNodeResponse>
+      splitIntelligenceGraphNode(
+          $grpc.ServiceCall call, $0.SplitIntelligenceGraphNodeRequest request);
+
+  $async.Future<$0.UpsertIntelligenceGraphEdgeResponse>
+      upsertIntelligenceGraphEdge_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertIntelligenceGraphEdgeRequest> $request) async {
+    return upsertIntelligenceGraphEdge($call, await $request);
+  }
+
+  $async.Future<$0.UpsertIntelligenceGraphEdgeResponse>
+      upsertIntelligenceGraphEdge($grpc.ServiceCall call,
+          $0.UpsertIntelligenceGraphEdgeRequest request);
+
+  $async.Future<$0.SetIntelligenceGraphEdgeStateResponse>
+      setIntelligenceGraphEdgeState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetIntelligenceGraphEdgeStateRequest>
+              $request) async {
+    return setIntelligenceGraphEdgeState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntelligenceGraphEdgeStateResponse>
+      setIntelligenceGraphEdgeState($grpc.ServiceCall call,
+          $0.SetIntelligenceGraphEdgeStateRequest request);
+
+  $async.Future<$0.GenerateIntelligenceGraphSuggestionsResponse>
+      generateIntelligenceGraphSuggestions_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateIntelligenceGraphSuggestionsRequest>
+              $request) async {
+    return generateIntelligenceGraphSuggestions($call, await $request);
+  }
+
+  $async.Future<$0.GenerateIntelligenceGraphSuggestionsResponse>
+      generateIntelligenceGraphSuggestions($grpc.ServiceCall call,
+          $0.GenerateIntelligenceGraphSuggestionsRequest request);
+
+  $async.Future<$0.ListIntelligenceGraphSuggestionsResponse>
+      listIntelligenceGraphSuggestions_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListIntelligenceGraphSuggestionsRequest>
+              $request) async {
+    return listIntelligenceGraphSuggestions($call, await $request);
+  }
+
+  $async.Future<$0.ListIntelligenceGraphSuggestionsResponse>
+      listIntelligenceGraphSuggestions($grpc.ServiceCall call,
+          $0.ListIntelligenceGraphSuggestionsRequest request);
+
+  $async.Future<$0.SetIntelligenceGraphSuggestionStateResponse>
+      setIntelligenceGraphSuggestionState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetIntelligenceGraphSuggestionStateRequest>
+              $request) async {
+    return setIntelligenceGraphSuggestionState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntelligenceGraphSuggestionStateResponse>
+      setIntelligenceGraphSuggestionState($grpc.ServiceCall call,
+          $0.SetIntelligenceGraphSuggestionStateRequest request);
+
+  $async.Future<$0.ListIntelligenceGraphTimelineResponse>
+      listIntelligenceGraphTimeline_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListIntelligenceGraphTimelineRequest>
+              $request) async {
+    return listIntelligenceGraphTimeline($call, await $request);
+  }
+
+  $async.Future<$0.ListIntelligenceGraphTimelineResponse>
+      listIntelligenceGraphTimeline($grpc.ServiceCall call,
+          $0.ListIntelligenceGraphTimelineRequest request);
+
+  $async.Future<$0.ListIntelligenceGraphResurfacingResponse>
+      listIntelligenceGraphResurfacing_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListIntelligenceGraphResurfacingRequest>
+              $request) async {
+    return listIntelligenceGraphResurfacing($call, await $request);
+  }
+
+  $async.Future<$0.ListIntelligenceGraphResurfacingResponse>
+      listIntelligenceGraphResurfacing($grpc.ServiceCall call,
+          $0.ListIntelligenceGraphResurfacingRequest request);
+
+  $async.Future<$0.SetIntelligenceGraphResurfacingStateResponse>
+      setIntelligenceGraphResurfacingState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetIntelligenceGraphResurfacingStateRequest>
+              $request) async {
+    return setIntelligenceGraphResurfacingState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntelligenceGraphResurfacingStateResponse>
+      setIntelligenceGraphResurfacingState($grpc.ServiceCall call,
+          $0.SetIntelligenceGraphResurfacingStateRequest request);
+
+  $async.Future<$0.CreateIntelligenceGraphMeetingBriefResponse>
+      createIntelligenceGraphMeetingBrief_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateIntelligenceGraphMeetingBriefRequest>
+              $request) async {
+    return createIntelligenceGraphMeetingBrief($call, await $request);
+  }
+
+  $async.Future<$0.CreateIntelligenceGraphMeetingBriefResponse>
+      createIntelligenceGraphMeetingBrief($grpc.ServiceCall call,
+          $0.CreateIntelligenceGraphMeetingBriefRequest request);
+
+  $async.Future<$0.GetIntelligenceGraphMeetingBriefResponse>
+      getIntelligenceGraphMeetingBrief_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetIntelligenceGraphMeetingBriefRequest>
+              $request) async {
+    return getIntelligenceGraphMeetingBrief($call, await $request);
+  }
+
+  $async.Future<$0.GetIntelligenceGraphMeetingBriefResponse>
+      getIntelligenceGraphMeetingBrief($grpc.ServiceCall call,
+          $0.GetIntelligenceGraphMeetingBriefRequest request);
+
+  $async.Future<$0.ListIntelligenceGraphMeetingBriefsResponse>
+      listIntelligenceGraphMeetingBriefs_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ListIntelligenceGraphMeetingBriefsRequest>
+              $request) async {
+    return listIntelligenceGraphMeetingBriefs($call, await $request);
+  }
+
+  $async.Future<$0.ListIntelligenceGraphMeetingBriefsResponse>
+      listIntelligenceGraphMeetingBriefs($grpc.ServiceCall call,
+          $0.ListIntelligenceGraphMeetingBriefsRequest request);
+
+  $async.Future<$0.ExportPersonalIntelligenceGraphResponse>
+      exportPersonalIntelligenceGraph_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ExportPersonalIntelligenceGraphRequest>
+              $request) async {
+    return exportPersonalIntelligenceGraph($call, await $request);
+  }
+
+  $async.Future<$0.ExportPersonalIntelligenceGraphResponse>
+      exportPersonalIntelligenceGraph($grpc.ServiceCall call,
+          $0.ExportPersonalIntelligenceGraphRequest request);
+
+  $async.Future<$0.RebuildPersonalIntelligenceGraphResponse>
+      rebuildPersonalIntelligenceGraph_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RebuildPersonalIntelligenceGraphRequest>
+              $request) async {
+    return rebuildPersonalIntelligenceGraph($call, await $request);
+  }
+
+  $async.Future<$0.RebuildPersonalIntelligenceGraphResponse>
+      rebuildPersonalIntelligenceGraph($grpc.ServiceCall call,
+          $0.RebuildPersonalIntelligenceGraphRequest request);
 }

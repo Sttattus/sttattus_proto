@@ -26316,6 +26316,3586 @@ func (*LeaveResearchRoomResponse) Descriptor() ([]byte, []int) {
 	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{387}
 }
 
+type IntelligenceGraphSourceAnchor struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceType              string                 `protobuf:"bytes,2,opt,name=source_type,json=sourceType,proto3" json:"source_type,omitempty"` // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+	SourceId                string                 `protobuf:"bytes,3,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	SourceVersion           string                 `protobuf:"bytes,4,opt,name=source_version,json=sourceVersion,proto3" json:"source_version,omitempty"`
+	ContentId               string                 `protobuf:"bytes,5,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	RevisionId              string                 `protobuf:"bytes,6,opt,name=revision_id,json=revisionId,proto3" json:"revision_id,omitempty"`
+	PassageKey              string                 `protobuf:"bytes,7,opt,name=passage_key,json=passageKey,proto3" json:"passage_key,omitempty"`
+	Quote                   string                 `protobuf:"bytes,8,opt,name=quote,proto3" json:"quote,omitempty"` // never copied from room-scoped sources
+	RoomId                  string                 `protobuf:"bytes,9,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	RoomPermissionVersion   int64                  `protobuf:"varint,10,opt,name=room_permission_version,json=roomPermissionVersion,proto3" json:"room_permission_version,omitempty"`
+	MembershipAccessVersion int64                  `protobuf:"varint,11,opt,name=membership_access_version,json=membershipAccessVersion,proto3" json:"membership_access_version,omitempty"`
+	CreatedAt               *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphSourceAnchor) Reset() {
+	*x = IntelligenceGraphSourceAnchor{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphSourceAnchor) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphSourceAnchor) ProtoMessage() {}
+
+func (x *IntelligenceGraphSourceAnchor) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphSourceAnchor.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphSourceAnchor) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{388}
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetSourceType() string {
+	if x != nil {
+		return x.SourceType
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetSourceVersion() string {
+	if x != nil {
+		return x.SourceVersion
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetContentId() string {
+	if x != nil {
+		return x.ContentId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetRevisionId() string {
+	if x != nil {
+		return x.RevisionId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetPassageKey() string {
+	if x != nil {
+		return x.PassageKey
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetQuote() string {
+	if x != nil {
+		return x.Quote
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetRoomPermissionVersion() int64 {
+	if x != nil {
+		return x.RoomPermissionVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetMembershipAccessVersion() int64 {
+	if x != nil {
+		return x.MembershipAccessVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphSourceAnchor) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphNode struct {
+	state                   protoimpl.MessageState           `protogen:"open.v1"`
+	Id                      string                           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	NodeType                string                           `protobuf:"bytes,2,opt,name=node_type,json=nodeType,proto3" json:"node_type,omitempty"` // entity | topic | claim | question | source | annotation | brief | decision | meeting | task | listening_moment
+	Title                   string                           `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Summary                 string                           `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	Status                  string                           `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"` // active | archived | merged | deleted
+	Scope                   string                           `protobuf:"bytes,6,opt,name=scope,proto3" json:"scope,omitempty"`   // private | room
+	RoomId                  string                           `protobuf:"bytes,7,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Origin                  string                           `protobuf:"bytes,8,opt,name=origin,proto3" json:"origin,omitempty"`                                                   // manual | imported | suggestion
+	VerificationStatus      string                           `protobuf:"bytes,9,opt,name=verification_status,json=verificationStatus,proto3" json:"verification_status,omitempty"` // authored | accepted | disputed | corrected | provisional
+	Confidence              float64                          `protobuf:"fixed64,10,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	ConfidenceBasis         string                           `protobuf:"bytes,11,opt,name=confidence_basis,json=confidenceBasis,proto3" json:"confidence_basis,omitempty"`
+	ValidFrom               *timestamppb.Timestamp           `protobuf:"bytes,12,opt,name=valid_from,json=validFrom,proto3" json:"valid_from,omitempty"`
+	ValidTo                 *timestamppb.Timestamp           `protobuf:"bytes,13,opt,name=valid_to,json=validTo,proto3" json:"valid_to,omitempty"`
+	MergedIntoNodeId        string                           `protobuf:"bytes,14,opt,name=merged_into_node_id,json=mergedIntoNodeId,proto3" json:"merged_into_node_id,omitempty"`
+	Version                 int64                            `protobuf:"varint,15,opt,name=version,proto3" json:"version,omitempty"`
+	RoomPermissionVersion   int64                            `protobuf:"varint,16,opt,name=room_permission_version,json=roomPermissionVersion,proto3" json:"room_permission_version,omitempty"`
+	MembershipAccessVersion int64                            `protobuf:"varint,17,opt,name=membership_access_version,json=membershipAccessVersion,proto3" json:"membership_access_version,omitempty"`
+	Anchors                 []*IntelligenceGraphSourceAnchor `protobuf:"bytes,18,rep,name=anchors,proto3" json:"anchors,omitempty"`
+	InboundEdgeCount        int32                            `protobuf:"varint,19,opt,name=inbound_edge_count,json=inboundEdgeCount,proto3" json:"inbound_edge_count,omitempty"`
+	OutboundEdgeCount       int32                            `protobuf:"varint,20,opt,name=outbound_edge_count,json=outboundEdgeCount,proto3" json:"outbound_edge_count,omitempty"`
+	CreatedAt               *timestamppb.Timestamp           `protobuf:"bytes,21,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt               *timestamppb.Timestamp           `protobuf:"bytes,22,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphNode) Reset() {
+	*x = IntelligenceGraphNode{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphNode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphNode) ProtoMessage() {}
+
+func (x *IntelligenceGraphNode) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphNode.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphNode) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{389}
+}
+
+func (x *IntelligenceGraphNode) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetNodeType() string {
+	if x != nil {
+		return x.NodeType
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetOrigin() string {
+	if x != nil {
+		return x.Origin
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetVerificationStatus() string {
+	if x != nil {
+		return x.VerificationStatus
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetConfidenceBasis() string {
+	if x != nil {
+		return x.ConfidenceBasis
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetValidFrom() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ValidFrom
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphNode) GetValidTo() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ValidTo
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphNode) GetMergedIntoNodeId() string {
+	if x != nil {
+		return x.MergedIntoNodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphNode) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetRoomPermissionVersion() int64 {
+	if x != nil {
+		return x.RoomPermissionVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetMembershipAccessVersion() int64 {
+	if x != nil {
+		return x.MembershipAccessVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetAnchors() []*IntelligenceGraphSourceAnchor {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphNode) GetInboundEdgeCount() int32 {
+	if x != nil {
+		return x.InboundEdgeCount
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetOutboundEdgeCount() int32 {
+	if x != nil {
+		return x.OutboundEdgeCount
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphNode) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphNode) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphEdge struct {
+	state                   protoimpl.MessageState           `protogen:"open.v1"`
+	Id                      string                           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceNodeId            string                           `protobuf:"bytes,2,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`
+	TargetNodeId            string                           `protobuf:"bytes,3,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`
+	Relation                string                           `protobuf:"bytes,4,opt,name=relation,proto3" json:"relation,omitempty"` // mentions | about | supports | contradicts | qualifies | depends_on | informs | decided_in | assigned_to | precedes | supersedes | related
+	Label                   string                           `protobuf:"bytes,5,opt,name=label,proto3" json:"label,omitempty"`
+	Status                  string                           `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"` // active | archived | deleted
+	Scope                   string                           `protobuf:"bytes,7,opt,name=scope,proto3" json:"scope,omitempty"`   // private | room
+	RoomId                  string                           `protobuf:"bytes,8,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Origin                  string                           `protobuf:"bytes,9,opt,name=origin,proto3" json:"origin,omitempty"` // manual | imported | suggestion
+	Confidence              float64                          `protobuf:"fixed64,10,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	ConfidenceBasis         string                           `protobuf:"bytes,11,opt,name=confidence_basis,json=confidenceBasis,proto3" json:"confidence_basis,omitempty"`
+	Explanation             string                           `protobuf:"bytes,12,opt,name=explanation,proto3" json:"explanation,omitempty"`
+	ModelKey                string                           `protobuf:"bytes,13,opt,name=model_key,json=modelKey,proto3" json:"model_key,omitempty"`
+	ModelVersion            string                           `protobuf:"bytes,14,opt,name=model_version,json=modelVersion,proto3" json:"model_version,omitempty"`
+	Version                 int64                            `protobuf:"varint,15,opt,name=version,proto3" json:"version,omitempty"`
+	RoomPermissionVersion   int64                            `protobuf:"varint,16,opt,name=room_permission_version,json=roomPermissionVersion,proto3" json:"room_permission_version,omitempty"`
+	MembershipAccessVersion int64                            `protobuf:"varint,17,opt,name=membership_access_version,json=membershipAccessVersion,proto3" json:"membership_access_version,omitempty"`
+	Anchors                 []*IntelligenceGraphSourceAnchor `protobuf:"bytes,18,rep,name=anchors,proto3" json:"anchors,omitempty"`
+	CreatedAt               *timestamppb.Timestamp           `protobuf:"bytes,19,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt               *timestamppb.Timestamp           `protobuf:"bytes,20,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphEdge) Reset() {
+	*x = IntelligenceGraphEdge{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphEdge) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphEdge) ProtoMessage() {}
+
+func (x *IntelligenceGraphEdge) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphEdge.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphEdge) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{390}
+}
+
+func (x *IntelligenceGraphEdge) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetSourceNodeId() string {
+	if x != nil {
+		return x.SourceNodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetTargetNodeId() string {
+	if x != nil {
+		return x.TargetNodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetRelation() string {
+	if x != nil {
+		return x.Relation
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetOrigin() string {
+	if x != nil {
+		return x.Origin
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphEdge) GetConfidenceBasis() string {
+	if x != nil {
+		return x.ConfidenceBasis
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetExplanation() string {
+	if x != nil {
+		return x.Explanation
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetModelKey() string {
+	if x != nil {
+		return x.ModelKey
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetModelVersion() string {
+	if x != nil {
+		return x.ModelVersion
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphEdge) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphEdge) GetRoomPermissionVersion() int64 {
+	if x != nil {
+		return x.RoomPermissionVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphEdge) GetMembershipAccessVersion() int64 {
+	if x != nil {
+		return x.MembershipAccessVersion
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphEdge) GetAnchors() []*IntelligenceGraphSourceAnchor {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphEdge) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphEdge) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphSuggestion struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ProposalType    string                 `protobuf:"bytes,2,opt,name=proposal_type,json=proposalType,proto3" json:"proposal_type,omitempty"` // node | edge
+	Status          string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`                                 // pending | accepted | rejected | expired
+	ProposedNode    *IntelligenceGraphNode `protobuf:"bytes,4,opt,name=proposed_node,json=proposedNode,proto3" json:"proposed_node,omitempty"`
+	ProposedEdge    *IntelligenceGraphEdge `protobuf:"bytes,5,opt,name=proposed_edge,json=proposedEdge,proto3" json:"proposed_edge,omitempty"`
+	Reason          string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
+	Confidence      float64                `protobuf:"fixed64,7,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	ModelKey        string                 `protobuf:"bytes,8,opt,name=model_key,json=modelKey,proto3" json:"model_key,omitempty"`
+	ModelVersion    string                 `protobuf:"bytes,9,opt,name=model_version,json=modelVersion,proto3" json:"model_version,omitempty"`
+	SourceDigest    string                 `protobuf:"bytes,10,opt,name=source_digest,json=sourceDigest,proto3" json:"source_digest,omitempty"`
+	DispositionNote string                 `protobuf:"bytes,11,opt,name=disposition_note,json=dispositionNote,proto3" json:"disposition_note,omitempty"`
+	ExpiresAt       *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	DecidedAt       *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=decided_at,json=decidedAt,proto3" json:"decided_at,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphSuggestion) Reset() {
+	*x = IntelligenceGraphSuggestion{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphSuggestion) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphSuggestion) ProtoMessage() {}
+
+func (x *IntelligenceGraphSuggestion) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphSuggestion.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphSuggestion) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{391}
+}
+
+func (x *IntelligenceGraphSuggestion) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetProposalType() string {
+	if x != nil {
+		return x.ProposalType
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetProposedNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.ProposedNode
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphSuggestion) GetProposedEdge() *IntelligenceGraphEdge {
+	if x != nil {
+		return x.ProposedEdge
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphSuggestion) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphSuggestion) GetModelKey() string {
+	if x != nil {
+		return x.ModelKey
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetModelVersion() string {
+	if x != nil {
+		return x.ModelVersion
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetSourceDigest() string {
+	if x != nil {
+		return x.SourceDigest
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetDispositionNote() string {
+	if x != nil {
+		return x.DispositionNote
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphSuggestion) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphSuggestion) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphSuggestion) GetDecidedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DecidedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphTimelineEvent struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	EventType       string                 `protobuf:"bytes,2,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
+	Title           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Summary         string                 `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	NodeId          string                 `protobuf:"bytes,5,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
+	EdgeId          string                 `protobuf:"bytes,6,opt,name=edge_id,json=edgeId,proto3" json:"edge_id,omitempty"`
+	SourceType      string                 `protobuf:"bytes,7,opt,name=source_type,json=sourceType,proto3" json:"source_type,omitempty"`
+	SourceId        string                 `protobuf:"bytes,8,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	Scope           string                 `protobuf:"bytes,9,opt,name=scope,proto3" json:"scope,omitempty"`
+	RoomId          string                 `protobuf:"bytes,10,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	EventAt         *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=event_at,json=eventAt,proto3" json:"event_at,omitempty"`
+	RecordedAt      *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=recorded_at,json=recordedAt,proto3" json:"recorded_at,omitempty"`
+	ApproximateTime bool                   `protobuf:"varint,13,opt,name=approximate_time,json=approximateTime,proto3" json:"approximate_time,omitempty"`
+	Version         int64                  `protobuf:"varint,14,opt,name=version,proto3" json:"version,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphTimelineEvent) Reset() {
+	*x = IntelligenceGraphTimelineEvent{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphTimelineEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphTimelineEvent) ProtoMessage() {}
+
+func (x *IntelligenceGraphTimelineEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphTimelineEvent.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphTimelineEvent) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{392}
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetEventType() string {
+	if x != nil {
+		return x.EventType
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetNodeId() string {
+	if x != nil {
+		return x.NodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetEdgeId() string {
+	if x != nil {
+		return x.EdgeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetSourceType() string {
+	if x != nil {
+		return x.SourceType
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetEventAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.EventAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetRecordedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.RecordedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetApproximateTime() bool {
+	if x != nil {
+		return x.ApproximateTime
+	}
+	return false
+}
+
+func (x *IntelligenceGraphTimelineEvent) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+type IntelligenceGraphResurfacingItem struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Kind          string                 `protobuf:"bytes,2,opt,name=kind,proto3" json:"kind,omitempty"` // unresolved_question | contradiction | correction | stale_decision | open_task | related_source | revisit
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Reason        string                 `protobuf:"bytes,4,opt,name=reason,proto3" json:"reason,omitempty"`
+	State         string                 `protobuf:"bytes,5,opt,name=state,proto3" json:"state,omitempty"` // pending | snoozed | completed | dismissed
+	NodeId        string                 `protobuf:"bytes,6,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
+	RelatedNodeId string                 `protobuf:"bytes,7,opt,name=related_node_id,json=relatedNodeId,proto3" json:"related_node_id,omitempty"`
+	SourceId      string                 `protobuf:"bytes,8,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	DueAt         *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=due_at,json=dueAt,proto3" json:"due_at,omitempty"`
+	SnoozedUntil  *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=snoozed_until,json=snoozedUntil,proto3" json:"snoozed_until,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphResurfacingItem) Reset() {
+	*x = IntelligenceGraphResurfacingItem{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphResurfacingItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphResurfacingItem) ProtoMessage() {}
+
+func (x *IntelligenceGraphResurfacingItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphResurfacingItem.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphResurfacingItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{393}
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetNodeId() string {
+	if x != nil {
+		return x.NodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetRelatedNodeId() string {
+	if x != nil {
+		return x.RelatedNodeId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetDueAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.DueAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetSnoozedUntil() *timestamppb.Timestamp {
+	if x != nil {
+		return x.SnoozedUntil
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphResurfacingItem) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphMeetingBriefSection struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Kind          string                           `protobuf:"bytes,1,opt,name=kind,proto3" json:"kind,omitempty"` // context | claims | contradictions | decisions | questions | tasks | changes
+	Title         string                           `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Body          string                           `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
+	NodeIds       []string                         `protobuf:"bytes,4,rep,name=node_ids,json=nodeIds,proto3" json:"node_ids,omitempty"`
+	Citations     []*IntelligenceGraphSourceAnchor `protobuf:"bytes,5,rep,name=citations,proto3" json:"citations,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) Reset() {
+	*x = IntelligenceGraphMeetingBriefSection{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphMeetingBriefSection) ProtoMessage() {}
+
+func (x *IntelligenceGraphMeetingBriefSection) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphMeetingBriefSection.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphMeetingBriefSection) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{394}
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) GetKind() string {
+	if x != nil {
+		return x.Kind
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) GetBody() string {
+	if x != nil {
+		return x.Body
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) GetNodeIds() []string {
+	if x != nil {
+		return x.NodeIds
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBriefSection) GetCitations() []*IntelligenceGraphSourceAnchor {
+	if x != nil {
+		return x.Citations
+	}
+	return nil
+}
+
+type IntelligenceGraphMeetingBrief struct {
+	state            protoimpl.MessageState                  `protogen:"open.v1"`
+	Id               string                                  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title            string                                  `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Purpose          string                                  `protobuf:"bytes,3,opt,name=purpose,proto3" json:"purpose,omitempty"`
+	Status           string                                  `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"` // draft | reviewed | archived
+	Scope            string                                  `protobuf:"bytes,5,opt,name=scope,proto3" json:"scope,omitempty"`   // private | room
+	RoomId           string                                  `protobuf:"bytes,6,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	SelectedNodeIds  []string                                `protobuf:"bytes,7,rep,name=selected_node_ids,json=selectedNodeIds,proto3" json:"selected_node_ids,omitempty"`
+	Sections         []*IntelligenceGraphMeetingBriefSection `protobuf:"bytes,8,rep,name=sections,proto3" json:"sections,omitempty"`
+	ManifestChecksum string                                  `protobuf:"bytes,9,opt,name=manifest_checksum,json=manifestChecksum,proto3" json:"manifest_checksum,omitempty"`
+	Version          int64                                   `protobuf:"varint,10,opt,name=version,proto3" json:"version,omitempty"`
+	WindowStart      *timestamppb.Timestamp                  `protobuf:"bytes,11,opt,name=window_start,json=windowStart,proto3" json:"window_start,omitempty"`
+	WindowEnd        *timestamppb.Timestamp                  `protobuf:"bytes,12,opt,name=window_end,json=windowEnd,proto3" json:"window_end,omitempty"`
+	CreatedAt        *timestamppb.Timestamp                  `protobuf:"bytes,13,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt        *timestamppb.Timestamp                  `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphMeetingBrief) Reset() {
+	*x = IntelligenceGraphMeetingBrief{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphMeetingBrief) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphMeetingBrief) ProtoMessage() {}
+
+func (x *IntelligenceGraphMeetingBrief) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphMeetingBrief.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphMeetingBrief) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{395}
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetPurpose() string {
+	if x != nil {
+		return x.Purpose
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetSelectedNodeIds() []string {
+	if x != nil {
+		return x.SelectedNodeIds
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetSections() []*IntelligenceGraphMeetingBriefSection {
+	if x != nil {
+		return x.Sections
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetManifestChecksum() string {
+	if x != nil {
+		return x.ManifestChecksum
+	}
+	return ""
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetVersion() int64 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetWindowStart() *timestamppb.Timestamp {
+	if x != nil {
+		return x.WindowStart
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetWindowEnd() *timestamppb.Timestamp {
+	if x != nil {
+		return x.WindowEnd
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *IntelligenceGraphMeetingBrief) GetUpdatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return nil
+}
+
+type IntelligenceGraphOverview struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	ActiveNodes         int32                  `protobuf:"varint,1,opt,name=active_nodes,json=activeNodes,proto3" json:"active_nodes,omitempty"`
+	ActiveEdges         int32                  `protobuf:"varint,2,opt,name=active_edges,json=activeEdges,proto3" json:"active_edges,omitempty"`
+	PendingSuggestions  int32                  `protobuf:"varint,3,opt,name=pending_suggestions,json=pendingSuggestions,proto3" json:"pending_suggestions,omitempty"`
+	UnresolvedQuestions int32                  `protobuf:"varint,4,opt,name=unresolved_questions,json=unresolvedQuestions,proto3" json:"unresolved_questions,omitempty"`
+	Contradictions      int32                  `protobuf:"varint,5,opt,name=contradictions,proto3" json:"contradictions,omitempty"`
+	DueResurfacing      int32                  `protobuf:"varint,6,opt,name=due_resurfacing,json=dueResurfacing,proto3" json:"due_resurfacing,omitempty"`
+	MeetingBriefs       int32                  `protobuf:"varint,7,opt,name=meeting_briefs,json=meetingBriefs,proto3" json:"meeting_briefs,omitempty"`
+	LastChangedAt       *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=last_changed_at,json=lastChangedAt,proto3" json:"last_changed_at,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *IntelligenceGraphOverview) Reset() {
+	*x = IntelligenceGraphOverview{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IntelligenceGraphOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntelligenceGraphOverview) ProtoMessage() {}
+
+func (x *IntelligenceGraphOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntelligenceGraphOverview.ProtoReflect.Descriptor instead.
+func (*IntelligenceGraphOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{396}
+}
+
+func (x *IntelligenceGraphOverview) GetActiveNodes() int32 {
+	if x != nil {
+		return x.ActiveNodes
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetActiveEdges() int32 {
+	if x != nil {
+		return x.ActiveEdges
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetPendingSuggestions() int32 {
+	if x != nil {
+		return x.PendingSuggestions
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetUnresolvedQuestions() int32 {
+	if x != nil {
+		return x.UnresolvedQuestions
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetContradictions() int32 {
+	if x != nil {
+		return x.Contradictions
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetDueResurfacing() int32 {
+	if x != nil {
+		return x.DueResurfacing
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetMeetingBriefs() int32 {
+	if x != nil {
+		return x.MeetingBriefs
+	}
+	return 0
+}
+
+func (x *IntelligenceGraphOverview) GetLastChangedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.LastChangedAt
+	}
+	return nil
+}
+
+type GetPersonalIntelligenceGraphRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Query           string                 `protobuf:"bytes,1,opt,name=query,proto3" json:"query,omitempty"`
+	NodeTypes       []string               `protobuf:"bytes,2,rep,name=node_types,json=nodeTypes,proto3" json:"node_types,omitempty"`
+	Relations       []string               `protobuf:"bytes,3,rep,name=relations,proto3" json:"relations,omitempty"`
+	Scope           string                 `protobuf:"bytes,4,opt,name=scope,proto3" json:"scope,omitempty"` // all | private | room
+	RoomId          string                 `protobuf:"bytes,5,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	IncludeArchived bool                   `protobuf:"varint,6,opt,name=include_archived,json=includeArchived,proto3" json:"include_archived,omitempty"`
+	Limit           int32                  `protobuf:"varint,7,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) Reset() {
+	*x = GetPersonalIntelligenceGraphRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPersonalIntelligenceGraphRequest) ProtoMessage() {}
+
+func (x *GetPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
+func (*GetPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{397}
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetQuery() string {
+	if x != nil {
+		return x.Query
+	}
+	return ""
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetNodeTypes() []string {
+	if x != nil {
+		return x.NodeTypes
+	}
+	return nil
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetRelations() []string {
+	if x != nil {
+		return x.Relations
+	}
+	return nil
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetIncludeArchived() bool {
+	if x != nil {
+		return x.IncludeArchived
+	}
+	return false
+}
+
+func (x *GetPersonalIntelligenceGraphRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetPersonalIntelligenceGraphResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Overview      *IntelligenceGraphOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	Nodes         []*IntelligenceGraphNode   `protobuf:"bytes,2,rep,name=nodes,proto3" json:"nodes,omitempty"`
+	Edges         []*IntelligenceGraphEdge   `protobuf:"bytes,3,rep,name=edges,proto3" json:"edges,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPersonalIntelligenceGraphResponse) Reset() {
+	*x = GetPersonalIntelligenceGraphResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPersonalIntelligenceGraphResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPersonalIntelligenceGraphResponse) ProtoMessage() {}
+
+func (x *GetPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
+func (*GetPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{398}
+}
+
+func (x *GetPersonalIntelligenceGraphResponse) GetOverview() *IntelligenceGraphOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+func (x *GetPersonalIntelligenceGraphResponse) GetNodes() []*IntelligenceGraphNode {
+	if x != nil {
+		return x.Nodes
+	}
+	return nil
+}
+
+func (x *GetPersonalIntelligenceGraphResponse) GetEdges() []*IntelligenceGraphEdge {
+	if x != nil {
+		return x.Edges
+	}
+	return nil
+}
+
+type UpsertIntelligenceGraphNodeRequest struct {
+	state              protoimpl.MessageState           `protogen:"open.v1"`
+	Id                 string                           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	NodeType           string                           `protobuf:"bytes,2,opt,name=node_type,json=nodeType,proto3" json:"node_type,omitempty"`
+	Title              string                           `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Summary            string                           `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	Scope              string                           `protobuf:"bytes,5,opt,name=scope,proto3" json:"scope,omitempty"`
+	RoomId             string                           `protobuf:"bytes,6,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	VerificationStatus string                           `protobuf:"bytes,7,opt,name=verification_status,json=verificationStatus,proto3" json:"verification_status,omitempty"`
+	Confidence         float64                          `protobuf:"fixed64,8,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	ConfidenceBasis    string                           `protobuf:"bytes,9,opt,name=confidence_basis,json=confidenceBasis,proto3" json:"confidence_basis,omitempty"`
+	ValidFrom          *timestamppb.Timestamp           `protobuf:"bytes,10,opt,name=valid_from,json=validFrom,proto3" json:"valid_from,omitempty"`
+	ValidTo            *timestamppb.Timestamp           `protobuf:"bytes,11,opt,name=valid_to,json=validTo,proto3" json:"valid_to,omitempty"`
+	Anchors            []*IntelligenceGraphSourceAnchor `protobuf:"bytes,12,rep,name=anchors,proto3" json:"anchors,omitempty"`
+	ExpectedVersion    int64                            `protobuf:"varint,13,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId   string                           `protobuf:"bytes,14,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) Reset() {
+	*x = UpsertIntelligenceGraphNodeRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertIntelligenceGraphNodeRequest) ProtoMessage() {}
+
+func (x *UpsertIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertIntelligenceGraphNodeRequest.ProtoReflect.Descriptor instead.
+func (*UpsertIntelligenceGraphNodeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{399}
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetNodeType() string {
+	if x != nil {
+		return x.NodeType
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetVerificationStatus() string {
+	if x != nil {
+		return x.VerificationStatus
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetConfidenceBasis() string {
+	if x != nil {
+		return x.ConfidenceBasis
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetValidFrom() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ValidFrom
+	}
+	return nil
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetValidTo() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ValidTo
+	}
+	return nil
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetAnchors() []*IntelligenceGraphSourceAnchor {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *UpsertIntelligenceGraphNodeRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpsertIntelligenceGraphNodeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Node          *IntelligenceGraphNode `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertIntelligenceGraphNodeResponse) Reset() {
+	*x = UpsertIntelligenceGraphNodeResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertIntelligenceGraphNodeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertIntelligenceGraphNodeResponse) ProtoMessage() {}
+
+func (x *UpsertIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertIntelligenceGraphNodeResponse.ProtoReflect.Descriptor instead.
+func (*UpsertIntelligenceGraphNodeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{400}
+}
+
+func (x *UpsertIntelligenceGraphNodeResponse) GetNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.Node
+	}
+	return nil
+}
+
+type SetIntelligenceGraphNodeStateRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Action           string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"` // archive | restore | delete
+	Reason           string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,4,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) Reset() {
+	*x = SetIntelligenceGraphNodeStateRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphNodeStateRequest) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphNodeStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphNodeStateRequest.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphNodeStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{401}
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) GetAction() string {
+	if x != nil {
+		return x.Action
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *SetIntelligenceGraphNodeStateRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SetIntelligenceGraphNodeStateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Node          *IntelligenceGraphNode `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphNodeStateResponse) Reset() {
+	*x = SetIntelligenceGraphNodeStateResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphNodeStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphNodeStateResponse) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphNodeStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphNodeStateResponse.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphNodeStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{402}
+}
+
+func (x *SetIntelligenceGraphNodeStateResponse) GetNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.Node
+	}
+	return nil
+}
+
+type MergeIntelligenceGraphNodesRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	PrimaryNodeId            string                 `protobuf:"bytes,1,opt,name=primary_node_id,json=primaryNodeId,proto3" json:"primary_node_id,omitempty"`
+	DuplicateNodeId          string                 `protobuf:"bytes,2,opt,name=duplicate_node_id,json=duplicateNodeId,proto3" json:"duplicate_node_id,omitempty"`
+	Reason                   string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	ExpectedPrimaryVersion   int64                  `protobuf:"varint,4,opt,name=expected_primary_version,json=expectedPrimaryVersion,proto3" json:"expected_primary_version,omitempty"`
+	ExpectedDuplicateVersion int64                  `protobuf:"varint,5,opt,name=expected_duplicate_version,json=expectedDuplicateVersion,proto3" json:"expected_duplicate_version,omitempty"`
+	ClientMutationId         string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) Reset() {
+	*x = MergeIntelligenceGraphNodesRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MergeIntelligenceGraphNodesRequest) ProtoMessage() {}
+
+func (x *MergeIntelligenceGraphNodesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MergeIntelligenceGraphNodesRequest.ProtoReflect.Descriptor instead.
+func (*MergeIntelligenceGraphNodesRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{403}
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetPrimaryNodeId() string {
+	if x != nil {
+		return x.PrimaryNodeId
+	}
+	return ""
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetDuplicateNodeId() string {
+	if x != nil {
+		return x.DuplicateNodeId
+	}
+	return ""
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetExpectedPrimaryVersion() int64 {
+	if x != nil {
+		return x.ExpectedPrimaryVersion
+	}
+	return 0
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetExpectedDuplicateVersion() int64 {
+	if x != nil {
+		return x.ExpectedDuplicateVersion
+	}
+	return 0
+}
+
+func (x *MergeIntelligenceGraphNodesRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type MergeIntelligenceGraphNodesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PrimaryNode   *IntelligenceGraphNode `protobuf:"bytes,1,opt,name=primary_node,json=primaryNode,proto3" json:"primary_node,omitempty"`
+	MergedNode    *IntelligenceGraphNode `protobuf:"bytes,2,opt,name=merged_node,json=mergedNode,proto3" json:"merged_node,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MergeIntelligenceGraphNodesResponse) Reset() {
+	*x = MergeIntelligenceGraphNodesResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MergeIntelligenceGraphNodesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MergeIntelligenceGraphNodesResponse) ProtoMessage() {}
+
+func (x *MergeIntelligenceGraphNodesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MergeIntelligenceGraphNodesResponse.ProtoReflect.Descriptor instead.
+func (*MergeIntelligenceGraphNodesResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{404}
+}
+
+func (x *MergeIntelligenceGraphNodesResponse) GetPrimaryNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.PrimaryNode
+	}
+	return nil
+}
+
+func (x *MergeIntelligenceGraphNodesResponse) GetMergedNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.MergedNode
+	}
+	return nil
+}
+
+type SplitIntelligenceGraphNodeRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	SourceNodeId     string                 `protobuf:"bytes,1,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`
+	NewTitle         string                 `protobuf:"bytes,2,opt,name=new_title,json=newTitle,proto3" json:"new_title,omitempty"`
+	NewSummary       string                 `protobuf:"bytes,3,opt,name=new_summary,json=newSummary,proto3" json:"new_summary,omitempty"`
+	MoveAnchorIds    []string               `protobuf:"bytes,4,rep,name=move_anchor_ids,json=moveAnchorIds,proto3" json:"move_anchor_ids,omitempty"`
+	MoveEdgeIds      []string               `protobuf:"bytes,5,rep,name=move_edge_ids,json=moveEdgeIds,proto3" json:"move_edge_ids,omitempty"`
+	Reason           string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,7,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,8,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) Reset() {
+	*x = SplitIntelligenceGraphNodeRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SplitIntelligenceGraphNodeRequest) ProtoMessage() {}
+
+func (x *SplitIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SplitIntelligenceGraphNodeRequest.ProtoReflect.Descriptor instead.
+func (*SplitIntelligenceGraphNodeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{405}
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetSourceNodeId() string {
+	if x != nil {
+		return x.SourceNodeId
+	}
+	return ""
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetNewTitle() string {
+	if x != nil {
+		return x.NewTitle
+	}
+	return ""
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetNewSummary() string {
+	if x != nil {
+		return x.NewSummary
+	}
+	return ""
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetMoveAnchorIds() []string {
+	if x != nil {
+		return x.MoveAnchorIds
+	}
+	return nil
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetMoveEdgeIds() []string {
+	if x != nil {
+		return x.MoveEdgeIds
+	}
+	return nil
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *SplitIntelligenceGraphNodeRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SplitIntelligenceGraphNodeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SourceNode    *IntelligenceGraphNode `protobuf:"bytes,1,opt,name=source_node,json=sourceNode,proto3" json:"source_node,omitempty"`
+	NewNode       *IntelligenceGraphNode `protobuf:"bytes,2,opt,name=new_node,json=newNode,proto3" json:"new_node,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SplitIntelligenceGraphNodeResponse) Reset() {
+	*x = SplitIntelligenceGraphNodeResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SplitIntelligenceGraphNodeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SplitIntelligenceGraphNodeResponse) ProtoMessage() {}
+
+func (x *SplitIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SplitIntelligenceGraphNodeResponse.ProtoReflect.Descriptor instead.
+func (*SplitIntelligenceGraphNodeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{406}
+}
+
+func (x *SplitIntelligenceGraphNodeResponse) GetSourceNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.SourceNode
+	}
+	return nil
+}
+
+func (x *SplitIntelligenceGraphNodeResponse) GetNewNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.NewNode
+	}
+	return nil
+}
+
+type UpsertIntelligenceGraphEdgeRequest struct {
+	state            protoimpl.MessageState           `protogen:"open.v1"`
+	Id               string                           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceNodeId     string                           `protobuf:"bytes,2,opt,name=source_node_id,json=sourceNodeId,proto3" json:"source_node_id,omitempty"`
+	TargetNodeId     string                           `protobuf:"bytes,3,opt,name=target_node_id,json=targetNodeId,proto3" json:"target_node_id,omitempty"`
+	Relation         string                           `protobuf:"bytes,4,opt,name=relation,proto3" json:"relation,omitempty"`
+	Label            string                           `protobuf:"bytes,5,opt,name=label,proto3" json:"label,omitempty"`
+	Scope            string                           `protobuf:"bytes,6,opt,name=scope,proto3" json:"scope,omitempty"`
+	RoomId           string                           `protobuf:"bytes,7,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Confidence       float64                          `protobuf:"fixed64,8,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	ConfidenceBasis  string                           `protobuf:"bytes,9,opt,name=confidence_basis,json=confidenceBasis,proto3" json:"confidence_basis,omitempty"`
+	Explanation      string                           `protobuf:"bytes,10,opt,name=explanation,proto3" json:"explanation,omitempty"`
+	Anchors          []*IntelligenceGraphSourceAnchor `protobuf:"bytes,11,rep,name=anchors,proto3" json:"anchors,omitempty"`
+	ExpectedVersion  int64                            `protobuf:"varint,12,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                           `protobuf:"bytes,13,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) Reset() {
+	*x = UpsertIntelligenceGraphEdgeRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertIntelligenceGraphEdgeRequest) ProtoMessage() {}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertIntelligenceGraphEdgeRequest.ProtoReflect.Descriptor instead.
+func (*UpsertIntelligenceGraphEdgeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{407}
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetSourceNodeId() string {
+	if x != nil {
+		return x.SourceNodeId
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetTargetNodeId() string {
+	if x != nil {
+		return x.TargetNodeId
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetRelation() string {
+	if x != nil {
+		return x.Relation
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetConfidenceBasis() string {
+	if x != nil {
+		return x.ConfidenceBasis
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetExplanation() string {
+	if x != nil {
+		return x.Explanation
+	}
+	return ""
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetAnchors() []*IntelligenceGraphSourceAnchor {
+	if x != nil {
+		return x.Anchors
+	}
+	return nil
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *UpsertIntelligenceGraphEdgeRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type UpsertIntelligenceGraphEdgeResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Edge          *IntelligenceGraphEdge `protobuf:"bytes,1,opt,name=edge,proto3" json:"edge,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertIntelligenceGraphEdgeResponse) Reset() {
+	*x = UpsertIntelligenceGraphEdgeResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertIntelligenceGraphEdgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertIntelligenceGraphEdgeResponse) ProtoMessage() {}
+
+func (x *UpsertIntelligenceGraphEdgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertIntelligenceGraphEdgeResponse.ProtoReflect.Descriptor instead.
+func (*UpsertIntelligenceGraphEdgeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{408}
+}
+
+func (x *UpsertIntelligenceGraphEdgeResponse) GetEdge() *IntelligenceGraphEdge {
+	if x != nil {
+		return x.Edge
+	}
+	return nil
+}
+
+type SetIntelligenceGraphEdgeStateRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Action           string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"` // archive | restore | delete
+	Reason           string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	ExpectedVersion  int64                  `protobuf:"varint,4,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) Reset() {
+	*x = SetIntelligenceGraphEdgeStateRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphEdgeStateRequest) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphEdgeStateRequest.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphEdgeStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{409}
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) GetAction() string {
+	if x != nil {
+		return x.Action
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) GetExpectedVersion() int64 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *SetIntelligenceGraphEdgeStateRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SetIntelligenceGraphEdgeStateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Edge          *IntelligenceGraphEdge `protobuf:"bytes,1,opt,name=edge,proto3" json:"edge,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphEdgeStateResponse) Reset() {
+	*x = SetIntelligenceGraphEdgeStateResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphEdgeStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphEdgeStateResponse) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphEdgeStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphEdgeStateResponse.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphEdgeStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{410}
+}
+
+func (x *SetIntelligenceGraphEdgeStateResponse) GetEdge() *IntelligenceGraphEdge {
+	if x != nil {
+		return x.Edge
+	}
+	return nil
+}
+
+type GenerateIntelligenceGraphSuggestionsRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Scope            string                 `protobuf:"bytes,1,opt,name=scope,proto3" json:"scope,omitempty"` // all | annotations | watchlists | briefs | rooms
+	RoomId           string                 `protobuf:"bytes,2,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	Limit            int32                  `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) Reset() {
+	*x = GenerateIntelligenceGraphSuggestionsRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateIntelligenceGraphSuggestionsRequest) ProtoMessage() {}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateIntelligenceGraphSuggestionsRequest.ProtoReflect.Descriptor instead.
+func (*GenerateIntelligenceGraphSuggestionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{411}
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type GenerateIntelligenceGraphSuggestionsResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Generated     int32                          `protobuf:"varint,1,opt,name=generated,proto3" json:"generated,omitempty"`
+	Suggestions   []*IntelligenceGraphSuggestion `protobuf:"bytes,2,rep,name=suggestions,proto3" json:"suggestions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsResponse) Reset() {
+	*x = GenerateIntelligenceGraphSuggestionsResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateIntelligenceGraphSuggestionsResponse) ProtoMessage() {}
+
+func (x *GenerateIntelligenceGraphSuggestionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateIntelligenceGraphSuggestionsResponse.ProtoReflect.Descriptor instead.
+func (*GenerateIntelligenceGraphSuggestionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{412}
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsResponse) GetGenerated() int32 {
+	if x != nil {
+		return x.Generated
+	}
+	return 0
+}
+
+func (x *GenerateIntelligenceGraphSuggestionsResponse) GetSuggestions() []*IntelligenceGraphSuggestion {
+	if x != nil {
+		return x.Suggestions
+	}
+	return nil
+}
+
+type ListIntelligenceGraphSuggestionsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // pending | accepted | rejected | expired | all
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphSuggestionsRequest) Reset() {
+	*x = ListIntelligenceGraphSuggestionsRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphSuggestionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphSuggestionsRequest) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphSuggestionsRequest.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphSuggestionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{413}
+}
+
+func (x *ListIntelligenceGraphSuggestionsRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ListIntelligenceGraphSuggestionsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListIntelligenceGraphSuggestionsResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Suggestions   []*IntelligenceGraphSuggestion `protobuf:"bytes,1,rep,name=suggestions,proto3" json:"suggestions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphSuggestionsResponse) Reset() {
+	*x = ListIntelligenceGraphSuggestionsResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphSuggestionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphSuggestionsResponse) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphSuggestionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphSuggestionsResponse.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphSuggestionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{414}
+}
+
+func (x *ListIntelligenceGraphSuggestionsResponse) GetSuggestions() []*IntelligenceGraphSuggestion {
+	if x != nil {
+		return x.Suggestions
+	}
+	return nil
+}
+
+type SetIntelligenceGraphSuggestionStateRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Action           string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"` // accept | reject
+	Note             string                 `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) Reset() {
+	*x = SetIntelligenceGraphSuggestionStateRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphSuggestionStateRequest) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphSuggestionStateRequest.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphSuggestionStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{415}
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) GetAction() string {
+	if x != nil {
+		return x.Action
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphSuggestionStateRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SetIntelligenceGraphSuggestionStateResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Suggestion    *IntelligenceGraphSuggestion `protobuf:"bytes,1,opt,name=suggestion,proto3" json:"suggestion,omitempty"`
+	AcceptedNode  *IntelligenceGraphNode       `protobuf:"bytes,2,opt,name=accepted_node,json=acceptedNode,proto3" json:"accepted_node,omitempty"`
+	AcceptedEdge  *IntelligenceGraphEdge       `protobuf:"bytes,3,opt,name=accepted_edge,json=acceptedEdge,proto3" json:"accepted_edge,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) Reset() {
+	*x = SetIntelligenceGraphSuggestionStateResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphSuggestionStateResponse) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphSuggestionStateResponse.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphSuggestionStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{416}
+}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) GetSuggestion() *IntelligenceGraphSuggestion {
+	if x != nil {
+		return x.Suggestion
+	}
+	return nil
+}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) GetAcceptedNode() *IntelligenceGraphNode {
+	if x != nil {
+		return x.AcceptedNode
+	}
+	return nil
+}
+
+func (x *SetIntelligenceGraphSuggestionStateResponse) GetAcceptedEdge() *IntelligenceGraphEdge {
+	if x != nil {
+		return x.AcceptedEdge
+	}
+	return nil
+}
+
+type ListIntelligenceGraphTimelineRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NodeIds       []string               `protobuf:"bytes,1,rep,name=node_ids,json=nodeIds,proto3" json:"node_ids,omitempty"`
+	From          *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
+	To            *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=to,proto3" json:"to,omitempty"`
+	Limit         int32                  `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) Reset() {
+	*x = ListIntelligenceGraphTimelineRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphTimelineRequest) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphTimelineRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphTimelineRequest.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphTimelineRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{417}
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) GetNodeIds() []string {
+	if x != nil {
+		return x.NodeIds
+	}
+	return nil
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) GetFrom() *timestamppb.Timestamp {
+	if x != nil {
+		return x.From
+	}
+	return nil
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) GetTo() *timestamppb.Timestamp {
+	if x != nil {
+		return x.To
+	}
+	return nil
+}
+
+func (x *ListIntelligenceGraphTimelineRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListIntelligenceGraphTimelineResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Events        []*IntelligenceGraphTimelineEvent `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphTimelineResponse) Reset() {
+	*x = ListIntelligenceGraphTimelineResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphTimelineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphTimelineResponse) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphTimelineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphTimelineResponse.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphTimelineResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{418}
+}
+
+func (x *ListIntelligenceGraphTimelineResponse) GetEvents() []*IntelligenceGraphTimelineEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
+type ListIntelligenceGraphResurfacingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	State         string                 `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"` // pending | snoozed | completed | dismissed | all
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphResurfacingRequest) Reset() {
+	*x = ListIntelligenceGraphResurfacingRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphResurfacingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphResurfacingRequest) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphResurfacingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphResurfacingRequest.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphResurfacingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{419}
+}
+
+func (x *ListIntelligenceGraphResurfacingRequest) GetState() string {
+	if x != nil {
+		return x.State
+	}
+	return ""
+}
+
+func (x *ListIntelligenceGraphResurfacingRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListIntelligenceGraphResurfacingResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Items         []*IntelligenceGraphResurfacingItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphResurfacingResponse) Reset() {
+	*x = ListIntelligenceGraphResurfacingResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphResurfacingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphResurfacingResponse) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphResurfacingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphResurfacingResponse.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphResurfacingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{420}
+}
+
+func (x *ListIntelligenceGraphResurfacingResponse) GetItems() []*IntelligenceGraphResurfacingItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+type SetIntelligenceGraphResurfacingStateRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Action           string                 `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"` // snooze | complete | dismiss | reopen
+	SnoozedUntil     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=snoozed_until,json=snoozedUntil,proto3" json:"snoozed_until,omitempty"`
+	Reason           string                 `protobuf:"bytes,4,opt,name=reason,proto3" json:"reason,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) Reset() {
+	*x = SetIntelligenceGraphResurfacingStateRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphResurfacingStateRequest) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphResurfacingStateRequest.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphResurfacingStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{421}
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) GetAction() string {
+	if x != nil {
+		return x.Action
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) GetSnoozedUntil() *timestamppb.Timestamp {
+	if x != nil {
+		return x.SnoozedUntil
+	}
+	return nil
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *SetIntelligenceGraphResurfacingStateRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type SetIntelligenceGraphResurfacingStateResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Item          *IntelligenceGraphResurfacingItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetIntelligenceGraphResurfacingStateResponse) Reset() {
+	*x = SetIntelligenceGraphResurfacingStateResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetIntelligenceGraphResurfacingStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetIntelligenceGraphResurfacingStateResponse) ProtoMessage() {}
+
+func (x *SetIntelligenceGraphResurfacingStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetIntelligenceGraphResurfacingStateResponse.ProtoReflect.Descriptor instead.
+func (*SetIntelligenceGraphResurfacingStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{422}
+}
+
+func (x *SetIntelligenceGraphResurfacingStateResponse) GetItem() *IntelligenceGraphResurfacingItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CreateIntelligenceGraphMeetingBriefRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Title            string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Purpose          string                 `protobuf:"bytes,2,opt,name=purpose,proto3" json:"purpose,omitempty"`
+	Scope            string                 `protobuf:"bytes,3,opt,name=scope,proto3" json:"scope,omitempty"`
+	RoomId           string                 `protobuf:"bytes,4,opt,name=room_id,json=roomId,proto3" json:"room_id,omitempty"`
+	NodeIds          []string               `protobuf:"bytes,5,rep,name=node_ids,json=nodeIds,proto3" json:"node_ids,omitempty"`
+	WindowStart      *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=window_start,json=windowStart,proto3" json:"window_start,omitempty"`
+	WindowEnd        *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=window_end,json=windowEnd,proto3" json:"window_end,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,8,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) Reset() {
+	*x = CreateIntelligenceGraphMeetingBriefRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateIntelligenceGraphMeetingBriefRequest) ProtoMessage() {}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateIntelligenceGraphMeetingBriefRequest.ProtoReflect.Descriptor instead.
+func (*CreateIntelligenceGraphMeetingBriefRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{423}
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetPurpose() string {
+	if x != nil {
+		return x.Purpose
+	}
+	return ""
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetScope() string {
+	if x != nil {
+		return x.Scope
+	}
+	return ""
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetRoomId() string {
+	if x != nil {
+		return x.RoomId
+	}
+	return ""
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetNodeIds() []string {
+	if x != nil {
+		return x.NodeIds
+	}
+	return nil
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetWindowStart() *timestamppb.Timestamp {
+	if x != nil {
+		return x.WindowStart
+	}
+	return nil
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetWindowEnd() *timestamppb.Timestamp {
+	if x != nil {
+		return x.WindowEnd
+	}
+	return nil
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type CreateIntelligenceGraphMeetingBriefResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Brief         *IntelligenceGraphMeetingBrief `protobuf:"bytes,1,opt,name=brief,proto3" json:"brief,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefResponse) Reset() {
+	*x = CreateIntelligenceGraphMeetingBriefResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateIntelligenceGraphMeetingBriefResponse) ProtoMessage() {}
+
+func (x *CreateIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateIntelligenceGraphMeetingBriefResponse.ProtoReflect.Descriptor instead.
+func (*CreateIntelligenceGraphMeetingBriefResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{424}
+}
+
+func (x *CreateIntelligenceGraphMeetingBriefResponse) GetBrief() *IntelligenceGraphMeetingBrief {
+	if x != nil {
+		return x.Brief
+	}
+	return nil
+}
+
+type GetIntelligenceGraphMeetingBriefRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetIntelligenceGraphMeetingBriefRequest) Reset() {
+	*x = GetIntelligenceGraphMeetingBriefRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetIntelligenceGraphMeetingBriefRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIntelligenceGraphMeetingBriefRequest) ProtoMessage() {}
+
+func (x *GetIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIntelligenceGraphMeetingBriefRequest.ProtoReflect.Descriptor instead.
+func (*GetIntelligenceGraphMeetingBriefRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{425}
+}
+
+func (x *GetIntelligenceGraphMeetingBriefRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetIntelligenceGraphMeetingBriefResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Brief         *IntelligenceGraphMeetingBrief `protobuf:"bytes,1,opt,name=brief,proto3" json:"brief,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetIntelligenceGraphMeetingBriefResponse) Reset() {
+	*x = GetIntelligenceGraphMeetingBriefResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetIntelligenceGraphMeetingBriefResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIntelligenceGraphMeetingBriefResponse) ProtoMessage() {}
+
+func (x *GetIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIntelligenceGraphMeetingBriefResponse.ProtoReflect.Descriptor instead.
+func (*GetIntelligenceGraphMeetingBriefResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{426}
+}
+
+func (x *GetIntelligenceGraphMeetingBriefResponse) GetBrief() *IntelligenceGraphMeetingBrief {
+	if x != nil {
+		return x.Brief
+	}
+	return nil
+}
+
+type ListIntelligenceGraphMeetingBriefsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsRequest) Reset() {
+	*x = ListIntelligenceGraphMeetingBriefsRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphMeetingBriefsRequest) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphMeetingBriefsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphMeetingBriefsRequest.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphMeetingBriefsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{427}
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListIntelligenceGraphMeetingBriefsResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Briefs        []*IntelligenceGraphMeetingBrief `protobuf:"bytes,1,rep,name=briefs,proto3" json:"briefs,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsResponse) Reset() {
+	*x = ListIntelligenceGraphMeetingBriefsResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntelligenceGraphMeetingBriefsResponse) ProtoMessage() {}
+
+func (x *ListIntelligenceGraphMeetingBriefsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntelligenceGraphMeetingBriefsResponse.ProtoReflect.Descriptor instead.
+func (*ListIntelligenceGraphMeetingBriefsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{428}
+}
+
+func (x *ListIntelligenceGraphMeetingBriefsResponse) GetBriefs() []*IntelligenceGraphMeetingBrief {
+	if x != nil {
+		return x.Briefs
+	}
+	return nil
+}
+
+type ExportPersonalIntelligenceGraphRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Format          string                 `protobuf:"bytes,1,opt,name=format,proto3" json:"format,omitempty"` // json | markdown | csv
+	IncludeArchived bool                   `protobuf:"varint,2,opt,name=include_archived,json=includeArchived,proto3" json:"include_archived,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ExportPersonalIntelligenceGraphRequest) Reset() {
+	*x = ExportPersonalIntelligenceGraphRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExportPersonalIntelligenceGraphRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExportPersonalIntelligenceGraphRequest) ProtoMessage() {}
+
+func (x *ExportPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExportPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
+func (*ExportPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{429}
+}
+
+func (x *ExportPersonalIntelligenceGraphRequest) GetFormat() string {
+	if x != nil {
+		return x.Format
+	}
+	return ""
+}
+
+func (x *ExportPersonalIntelligenceGraphRequest) GetIncludeArchived() bool {
+	if x != nil {
+		return x.IncludeArchived
+	}
+	return false
+}
+
+type ExportPersonalIntelligenceGraphResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Filename      string                 `protobuf:"bytes,1,opt,name=filename,proto3" json:"filename,omitempty"`
+	MimeType      string                 `protobuf:"bytes,2,opt,name=mime_type,json=mimeType,proto3" json:"mime_type,omitempty"`
+	Data          []byte                 `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Checksum      string                 `protobuf:"bytes,4,opt,name=checksum,proto3" json:"checksum,omitempty"`
+	GeneratedAt   *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=generated_at,json=generatedAt,proto3" json:"generated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) Reset() {
+	*x = ExportPersonalIntelligenceGraphResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExportPersonalIntelligenceGraphResponse) ProtoMessage() {}
+
+func (x *ExportPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExportPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
+func (*ExportPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{430}
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) GetFilename() string {
+	if x != nil {
+		return x.Filename
+	}
+	return ""
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) GetMimeType() string {
+	if x != nil {
+		return x.MimeType
+	}
+	return ""
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) GetData() []byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) GetChecksum() string {
+	if x != nil {
+		return x.Checksum
+	}
+	return ""
+}
+
+func (x *ExportPersonalIntelligenceGraphResponse) GetGeneratedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.GeneratedAt
+	}
+	return nil
+}
+
+type RebuildPersonalIntelligenceGraphRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Reason           string                 `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
+	ClientMutationId string                 `protobuf:"bytes,2,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RebuildPersonalIntelligenceGraphRequest) Reset() {
+	*x = RebuildPersonalIntelligenceGraphRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RebuildPersonalIntelligenceGraphRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RebuildPersonalIntelligenceGraphRequest) ProtoMessage() {}
+
+func (x *RebuildPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RebuildPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
+func (*RebuildPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{431}
+}
+
+func (x *RebuildPersonalIntelligenceGraphRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *RebuildPersonalIntelligenceGraphRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+type RebuildPersonalIntelligenceGraphResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	JobId         string                 `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RebuildPersonalIntelligenceGraphResponse) Reset() {
+	*x = RebuildPersonalIntelligenceGraphResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RebuildPersonalIntelligenceGraphResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RebuildPersonalIntelligenceGraphResponse) ProtoMessage() {}
+
+func (x *RebuildPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RebuildPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
+func (*RebuildPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{432}
+}
+
+func (x *RebuildPersonalIntelligenceGraphResponse) GetJobId() string {
+	if x != nil {
+		return x.JobId
+	}
+	return ""
+}
+
+func (x *RebuildPersonalIntelligenceGraphResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 var File_sttattus_onyx_v1_onyx_proto protoreflect.FileDescriptor
 
 const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
@@ -28618,7 +32198,345 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x06reason\x18\x02 \x01(\tR\x06reason\x126\n" +
 	"\x17expected_access_version\x18\x03 \x01(\x03R\x15expectedAccessVersion\x12,\n" +
 	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"\x1b\n" +
-	"\x19LeaveResearchRoomResponse2\xf2\x86\x01\n" +
+	"\x19LeaveResearchRoomResponse\"\xd3\x03\n" +
+	"\x1dIntelligenceGraphSourceAnchor\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vsource_type\x18\x02 \x01(\tR\n" +
+	"sourceType\x12\x1b\n" +
+	"\tsource_id\x18\x03 \x01(\tR\bsourceId\x12%\n" +
+	"\x0esource_version\x18\x04 \x01(\tR\rsourceVersion\x12\x1d\n" +
+	"\n" +
+	"content_id\x18\x05 \x01(\tR\tcontentId\x12\x1f\n" +
+	"\vrevision_id\x18\x06 \x01(\tR\n" +
+	"revisionId\x12\x1f\n" +
+	"\vpassage_key\x18\a \x01(\tR\n" +
+	"passageKey\x12\x14\n" +
+	"\x05quote\x18\b \x01(\tR\x05quote\x12\x17\n" +
+	"\aroom_id\x18\t \x01(\tR\x06roomId\x126\n" +
+	"\x17room_permission_version\x18\n" +
+	" \x01(\x03R\x15roomPermissionVersion\x12:\n" +
+	"\x19membership_access_version\x18\v \x01(\x03R\x17membershipAccessVersion\x129\n" +
+	"\n" +
+	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x9d\a\n" +
+	"\x15IntelligenceGraphNode\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tnode_type\x18\x02 \x01(\tR\bnodeType\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x14\n" +
+	"\x05scope\x18\x06 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\a \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06origin\x18\b \x01(\tR\x06origin\x12/\n" +
+	"\x13verification_status\x18\t \x01(\tR\x12verificationStatus\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\n" +
+	" \x01(\x01R\n" +
+	"confidence\x12)\n" +
+	"\x10confidence_basis\x18\v \x01(\tR\x0fconfidenceBasis\x129\n" +
+	"\n" +
+	"valid_from\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tvalidFrom\x125\n" +
+	"\bvalid_to\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\avalidTo\x12-\n" +
+	"\x13merged_into_node_id\x18\x0e \x01(\tR\x10mergedIntoNodeId\x12\x18\n" +
+	"\aversion\x18\x0f \x01(\x03R\aversion\x126\n" +
+	"\x17room_permission_version\x18\x10 \x01(\x03R\x15roomPermissionVersion\x12:\n" +
+	"\x19membership_access_version\x18\x11 \x01(\x03R\x17membershipAccessVersion\x12I\n" +
+	"\aanchors\x18\x12 \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphSourceAnchorR\aanchors\x12,\n" +
+	"\x12inbound_edge_count\x18\x13 \x01(\x05R\x10inboundEdgeCount\x12.\n" +
+	"\x13outbound_edge_count\x18\x14 \x01(\x05R\x11outboundEdgeCount\x129\n" +
+	"\n" +
+	"created_at\x18\x15 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x16 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\x82\x06\n" +
+	"\x15IntelligenceGraphEdge\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12$\n" +
+	"\x0esource_node_id\x18\x02 \x01(\tR\fsourceNodeId\x12$\n" +
+	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x12\x1a\n" +
+	"\brelation\x18\x04 \x01(\tR\brelation\x12\x14\n" +
+	"\x05label\x18\x05 \x01(\tR\x05label\x12\x16\n" +
+	"\x06status\x18\x06 \x01(\tR\x06status\x12\x14\n" +
+	"\x05scope\x18\a \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\b \x01(\tR\x06roomId\x12\x16\n" +
+	"\x06origin\x18\t \x01(\tR\x06origin\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\n" +
+	" \x01(\x01R\n" +
+	"confidence\x12)\n" +
+	"\x10confidence_basis\x18\v \x01(\tR\x0fconfidenceBasis\x12 \n" +
+	"\vexplanation\x18\f \x01(\tR\vexplanation\x12\x1b\n" +
+	"\tmodel_key\x18\r \x01(\tR\bmodelKey\x12#\n" +
+	"\rmodel_version\x18\x0e \x01(\tR\fmodelVersion\x12\x18\n" +
+	"\aversion\x18\x0f \x01(\x03R\aversion\x126\n" +
+	"\x17room_permission_version\x18\x10 \x01(\x03R\x15roomPermissionVersion\x12:\n" +
+	"\x19membership_access_version\x18\x11 \x01(\x03R\x17membershipAccessVersion\x12I\n" +
+	"\aanchors\x18\x12 \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphSourceAnchorR\aanchors\x129\n" +
+	"\n" +
+	"created_at\x18\x13 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x14 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\x81\x05\n" +
+	"\x1bIntelligenceGraphSuggestion\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rproposal_type\x18\x02 \x01(\tR\fproposalType\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12L\n" +
+	"\rproposed_node\x18\x04 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\fproposedNode\x12L\n" +
+	"\rproposed_edge\x18\x05 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphEdgeR\fproposedEdge\x12\x16\n" +
+	"\x06reason\x18\x06 \x01(\tR\x06reason\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\a \x01(\x01R\n" +
+	"confidence\x12\x1b\n" +
+	"\tmodel_key\x18\b \x01(\tR\bmodelKey\x12#\n" +
+	"\rmodel_version\x18\t \x01(\tR\fmodelVersion\x12#\n" +
+	"\rsource_digest\x18\n" +
+	" \x01(\tR\fsourceDigest\x12)\n" +
+	"\x10disposition_note\x18\v \x01(\tR\x0fdispositionNote\x129\n" +
+	"\n" +
+	"expires_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x129\n" +
+	"\n" +
+	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"decided_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tdecidedAt\"\xd7\x03\n" +
+	"\x1eIntelligenceGraphTimelineEvent\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"event_type\x18\x02 \x01(\tR\teventType\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\x12\x17\n" +
+	"\anode_id\x18\x05 \x01(\tR\x06nodeId\x12\x17\n" +
+	"\aedge_id\x18\x06 \x01(\tR\x06edgeId\x12\x1f\n" +
+	"\vsource_type\x18\a \x01(\tR\n" +
+	"sourceType\x12\x1b\n" +
+	"\tsource_id\x18\b \x01(\tR\bsourceId\x12\x14\n" +
+	"\x05scope\x18\t \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\n" +
+	" \x01(\tR\x06roomId\x125\n" +
+	"\bevent_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\aeventAt\x12;\n" +
+	"\vrecorded_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"recordedAt\x12)\n" +
+	"\x10approximate_time\x18\r \x01(\bR\x0fapproximateTime\x12\x18\n" +
+	"\aversion\x18\x0e \x01(\x03R\aversion\"\xd2\x03\n" +
+	" IntelligenceGraphResurfacingItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04kind\x18\x02 \x01(\tR\x04kind\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06reason\x18\x04 \x01(\tR\x06reason\x12\x14\n" +
+	"\x05state\x18\x05 \x01(\tR\x05state\x12\x17\n" +
+	"\anode_id\x18\x06 \x01(\tR\x06nodeId\x12&\n" +
+	"\x0frelated_node_id\x18\a \x01(\tR\rrelatedNodeId\x12\x1b\n" +
+	"\tsource_id\x18\b \x01(\tR\bsourceId\x121\n" +
+	"\x06due_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\x05dueAt\x12?\n" +
+	"\rsnoozed_until\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\fsnoozedUntil\x129\n" +
+	"\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\xce\x01\n" +
+	"$IntelligenceGraphMeetingBriefSection\x12\x12\n" +
+	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x12\n" +
+	"\x04body\x18\x03 \x01(\tR\x04body\x12\x19\n" +
+	"\bnode_ids\x18\x04 \x03(\tR\anodeIds\x12M\n" +
+	"\tcitations\x18\x05 \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphSourceAnchorR\tcitations\"\xdd\x04\n" +
+	"\x1dIntelligenceGraphMeetingBrief\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x18\n" +
+	"\apurpose\x18\x03 \x01(\tR\apurpose\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x14\n" +
+	"\x05scope\x18\x05 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\x06 \x01(\tR\x06roomId\x12*\n" +
+	"\x11selected_node_ids\x18\a \x03(\tR\x0fselectedNodeIds\x12R\n" +
+	"\bsections\x18\b \x03(\v26.sttattus.onyx.v1.IntelligenceGraphMeetingBriefSectionR\bsections\x12+\n" +
+	"\x11manifest_checksum\x18\t \x01(\tR\x10manifestChecksum\x12\x18\n" +
+	"\aversion\x18\n" +
+	" \x01(\x03R\aversion\x12=\n" +
+	"\fwindow_start\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\vwindowStart\x129\n" +
+	"\n" +
+	"window_end\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\twindowEnd\x129\n" +
+	"\n" +
+	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"\x81\x03\n" +
+	"\x19IntelligenceGraphOverview\x12!\n" +
+	"\factive_nodes\x18\x01 \x01(\x05R\vactiveNodes\x12!\n" +
+	"\factive_edges\x18\x02 \x01(\x05R\vactiveEdges\x12/\n" +
+	"\x13pending_suggestions\x18\x03 \x01(\x05R\x12pendingSuggestions\x121\n" +
+	"\x14unresolved_questions\x18\x04 \x01(\x05R\x13unresolvedQuestions\x12&\n" +
+	"\x0econtradictions\x18\x05 \x01(\x05R\x0econtradictions\x12'\n" +
+	"\x0fdue_resurfacing\x18\x06 \x01(\x05R\x0edueResurfacing\x12%\n" +
+	"\x0emeeting_briefs\x18\a \x01(\x05R\rmeetingBriefs\x12B\n" +
+	"\x0flast_changed_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\rlastChangedAt\"\xe8\x01\n" +
+	"#GetPersonalIntelligenceGraphRequest\x12\x14\n" +
+	"\x05query\x18\x01 \x01(\tR\x05query\x12\x1d\n" +
+	"\n" +
+	"node_types\x18\x02 \x03(\tR\tnodeTypes\x12\x1c\n" +
+	"\trelations\x18\x03 \x03(\tR\trelations\x12\x14\n" +
+	"\x05scope\x18\x04 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\x05 \x01(\tR\x06roomId\x12)\n" +
+	"\x10include_archived\x18\x06 \x01(\bR\x0fincludeArchived\x12\x14\n" +
+	"\x05limit\x18\a \x01(\x05R\x05limit\"\xed\x01\n" +
+	"$GetPersonalIntelligenceGraphResponse\x12G\n" +
+	"\boverview\x18\x01 \x01(\v2+.sttattus.onyx.v1.IntelligenceGraphOverviewR\boverview\x12=\n" +
+	"\x05nodes\x18\x02 \x03(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\x05nodes\x12=\n" +
+	"\x05edges\x18\x03 \x03(\v2'.sttattus.onyx.v1.IntelligenceGraphEdgeR\x05edges\"\xc2\x04\n" +
+	"\"UpsertIntelligenceGraphNodeRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tnode_type\x18\x02 \x01(\tR\bnodeType\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\x12\x14\n" +
+	"\x05scope\x18\x05 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\x06 \x01(\tR\x06roomId\x12/\n" +
+	"\x13verification_status\x18\a \x01(\tR\x12verificationStatus\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\b \x01(\x01R\n" +
+	"confidence\x12)\n" +
+	"\x10confidence_basis\x18\t \x01(\tR\x0fconfidenceBasis\x129\n" +
+	"\n" +
+	"valid_from\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tvalidFrom\x125\n" +
+	"\bvalid_to\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\avalidTo\x12I\n" +
+	"\aanchors\x18\f \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphSourceAnchorR\aanchors\x12)\n" +
+	"\x10expected_version\x18\r \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x0e \x01(\tR\x10clientMutationId\"b\n" +
+	"#UpsertIntelligenceGraphNodeResponse\x12;\n" +
+	"\x04node\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\x04node\"\xbf\x01\n" +
+	"$SetIntelligenceGraphNodeStateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06action\x18\x02 \x01(\tR\x06action\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x12)\n" +
+	"\x10expected_version\x18\x04 \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"d\n" +
+	"%SetIntelligenceGraphNodeStateResponse\x12;\n" +
+	"\x04node\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\x04node\"\xb6\x02\n" +
+	"\"MergeIntelligenceGraphNodesRequest\x12&\n" +
+	"\x0fprimary_node_id\x18\x01 \x01(\tR\rprimaryNodeId\x12*\n" +
+	"\x11duplicate_node_id\x18\x02 \x01(\tR\x0fduplicateNodeId\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x128\n" +
+	"\x18expected_primary_version\x18\x04 \x01(\x03R\x16expectedPrimaryVersion\x12<\n" +
+	"\x1aexpected_duplicate_version\x18\x05 \x01(\x03R\x18expectedDuplicateVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"\xbb\x01\n" +
+	"#MergeIntelligenceGraphNodesResponse\x12J\n" +
+	"\fprimary_node\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\vprimaryNode\x12H\n" +
+	"\vmerged_node\x18\x02 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\n" +
+	"mergedNode\"\xc4\x02\n" +
+	"!SplitIntelligenceGraphNodeRequest\x12$\n" +
+	"\x0esource_node_id\x18\x01 \x01(\tR\fsourceNodeId\x12\x1b\n" +
+	"\tnew_title\x18\x02 \x01(\tR\bnewTitle\x12\x1f\n" +
+	"\vnew_summary\x18\x03 \x01(\tR\n" +
+	"newSummary\x12&\n" +
+	"\x0fmove_anchor_ids\x18\x04 \x03(\tR\rmoveAnchorIds\x12\"\n" +
+	"\rmove_edge_ids\x18\x05 \x03(\tR\vmoveEdgeIds\x12\x16\n" +
+	"\x06reason\x18\x06 \x01(\tR\x06reason\x12)\n" +
+	"\x10expected_version\x18\a \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\b \x01(\tR\x10clientMutationId\"\xb2\x01\n" +
+	"\"SplitIntelligenceGraphNodeResponse\x12H\n" +
+	"\vsource_node\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\n" +
+	"sourceNode\x12B\n" +
+	"\bnew_node\x18\x02 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\anewNode\"\xf2\x03\n" +
+	"\"UpsertIntelligenceGraphEdgeRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12$\n" +
+	"\x0esource_node_id\x18\x02 \x01(\tR\fsourceNodeId\x12$\n" +
+	"\x0etarget_node_id\x18\x03 \x01(\tR\ftargetNodeId\x12\x1a\n" +
+	"\brelation\x18\x04 \x01(\tR\brelation\x12\x14\n" +
+	"\x05label\x18\x05 \x01(\tR\x05label\x12\x14\n" +
+	"\x05scope\x18\x06 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\a \x01(\tR\x06roomId\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\b \x01(\x01R\n" +
+	"confidence\x12)\n" +
+	"\x10confidence_basis\x18\t \x01(\tR\x0fconfidenceBasis\x12 \n" +
+	"\vexplanation\x18\n" +
+	" \x01(\tR\vexplanation\x12I\n" +
+	"\aanchors\x18\v \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphSourceAnchorR\aanchors\x12)\n" +
+	"\x10expected_version\x18\f \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\r \x01(\tR\x10clientMutationId\"b\n" +
+	"#UpsertIntelligenceGraphEdgeResponse\x12;\n" +
+	"\x04edge\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphEdgeR\x04edge\"\xbf\x01\n" +
+	"$SetIntelligenceGraphEdgeStateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06action\x18\x02 \x01(\tR\x06action\x12\x16\n" +
+	"\x06reason\x18\x03 \x01(\tR\x06reason\x12)\n" +
+	"\x10expected_version\x18\x04 \x01(\x03R\x0fexpectedVersion\x12,\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"d\n" +
+	"%SetIntelligenceGraphEdgeStateResponse\x12;\n" +
+	"\x04edge\x18\x01 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphEdgeR\x04edge\"\xa0\x01\n" +
+	"+GenerateIntelligenceGraphSuggestionsRequest\x12\x14\n" +
+	"\x05scope\x18\x01 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x14\n" +
+	"\x05limit\x18\x03 \x01(\x05R\x05limit\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"\x9d\x01\n" +
+	",GenerateIntelligenceGraphSuggestionsResponse\x12\x1c\n" +
+	"\tgenerated\x18\x01 \x01(\x05R\tgenerated\x12O\n" +
+	"\vsuggestions\x18\x02 \x03(\v2-.sttattus.onyx.v1.IntelligenceGraphSuggestionR\vsuggestions\"W\n" +
+	"'ListIntelligenceGraphSuggestionsRequest\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"{\n" +
+	"(ListIntelligenceGraphSuggestionsResponse\x12O\n" +
+	"\vsuggestions\x18\x01 \x03(\v2-.sttattus.onyx.v1.IntelligenceGraphSuggestionR\vsuggestions\"\x96\x01\n" +
+	"*SetIntelligenceGraphSuggestionStateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06action\x18\x02 \x01(\tR\x06action\x12\x12\n" +
+	"\x04note\x18\x03 \x01(\tR\x04note\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"\x98\x02\n" +
+	"+SetIntelligenceGraphSuggestionStateResponse\x12M\n" +
+	"\n" +
+	"suggestion\x18\x01 \x01(\v2-.sttattus.onyx.v1.IntelligenceGraphSuggestionR\n" +
+	"suggestion\x12L\n" +
+	"\raccepted_node\x18\x02 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphNodeR\facceptedNode\x12L\n" +
+	"\raccepted_edge\x18\x03 \x01(\v2'.sttattus.onyx.v1.IntelligenceGraphEdgeR\facceptedEdge\"\xb3\x01\n" +
+	"$ListIntelligenceGraphTimelineRequest\x12\x19\n" +
+	"\bnode_ids\x18\x01 \x03(\tR\anodeIds\x12.\n" +
+	"\x04from\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x04from\x12*\n" +
+	"\x02to\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x02to\x12\x14\n" +
+	"\x05limit\x18\x04 \x01(\x05R\x05limit\"q\n" +
+	"%ListIntelligenceGraphTimelineResponse\x12H\n" +
+	"\x06events\x18\x01 \x03(\v20.sttattus.onyx.v1.IntelligenceGraphTimelineEventR\x06events\"U\n" +
+	"'ListIntelligenceGraphResurfacingRequest\x12\x14\n" +
+	"\x05state\x18\x01 \x01(\tR\x05state\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"t\n" +
+	"(ListIntelligenceGraphResurfacingResponse\x12H\n" +
+	"\x05items\x18\x01 \x03(\v22.sttattus.onyx.v1.IntelligenceGraphResurfacingItemR\x05items\"\xdc\x01\n" +
+	"+SetIntelligenceGraphResurfacingStateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
+	"\x06action\x18\x02 \x01(\tR\x06action\x12?\n" +
+	"\rsnoozed_until\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\fsnoozedUntil\x12\x16\n" +
+	"\x06reason\x18\x04 \x01(\tR\x06reason\x12,\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"v\n" +
+	",SetIntelligenceGraphResurfacingStateResponse\x12F\n" +
+	"\x04item\x18\x01 \x01(\v22.sttattus.onyx.v1.IntelligenceGraphResurfacingItemR\x04item\"\xce\x02\n" +
+	"*CreateIntelligenceGraphMeetingBriefRequest\x12\x14\n" +
+	"\x05title\x18\x01 \x01(\tR\x05title\x12\x18\n" +
+	"\apurpose\x18\x02 \x01(\tR\apurpose\x12\x14\n" +
+	"\x05scope\x18\x03 \x01(\tR\x05scope\x12\x17\n" +
+	"\aroom_id\x18\x04 \x01(\tR\x06roomId\x12\x19\n" +
+	"\bnode_ids\x18\x05 \x03(\tR\anodeIds\x12=\n" +
+	"\fwindow_start\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\vwindowStart\x129\n" +
+	"\n" +
+	"window_end\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\twindowEnd\x12,\n" +
+	"\x12client_mutation_id\x18\b \x01(\tR\x10clientMutationId\"t\n" +
+	"+CreateIntelligenceGraphMeetingBriefResponse\x12E\n" +
+	"\x05brief\x18\x01 \x01(\v2/.sttattus.onyx.v1.IntelligenceGraphMeetingBriefR\x05brief\"9\n" +
+	"'GetIntelligenceGraphMeetingBriefRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"q\n" +
+	"(GetIntelligenceGraphMeetingBriefResponse\x12E\n" +
+	"\x05brief\x18\x01 \x01(\v2/.sttattus.onyx.v1.IntelligenceGraphMeetingBriefR\x05brief\"Y\n" +
+	")ListIntelligenceGraphMeetingBriefsRequest\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"u\n" +
+	"*ListIntelligenceGraphMeetingBriefsResponse\x12G\n" +
+	"\x06briefs\x18\x01 \x03(\v2/.sttattus.onyx.v1.IntelligenceGraphMeetingBriefR\x06briefs\"k\n" +
+	"&ExportPersonalIntelligenceGraphRequest\x12\x16\n" +
+	"\x06format\x18\x01 \x01(\tR\x06format\x12)\n" +
+	"\x10include_archived\x18\x02 \x01(\bR\x0fincludeArchived\"\xd1\x01\n" +
+	"'ExportPersonalIntelligenceGraphResponse\x12\x1a\n" +
+	"\bfilename\x18\x01 \x01(\tR\bfilename\x12\x1b\n" +
+	"\tmime_type\x18\x02 \x01(\tR\bmimeType\x12\x12\n" +
+	"\x04data\x18\x03 \x01(\fR\x04data\x12\x1a\n" +
+	"\bchecksum\x18\x04 \x01(\tR\bchecksum\x12=\n" +
+	"\fgenerated_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\vgeneratedAt\"o\n" +
+	"'RebuildPersonalIntelligenceGraphRequest\x12\x16\n" +
+	"\x06reason\x18\x01 \x01(\tR\x06reason\x12,\n" +
+	"\x12client_mutation_id\x18\x02 \x01(\tR\x10clientMutationId\"Y\n" +
+	"(RebuildPersonalIntelligenceGraphResponse\x12\x15\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x05jobId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status2\xb1\x9c\x01\n" +
 	"\vOnyxService\x12`\n" +
 	"\rCreateProfile\x12&.sttattus.onyx.v1.CreateProfileRequest\x1a'.sttattus.onyx.v1.CreateProfileResponse\x12W\n" +
 	"\n" +
@@ -28776,7 +32694,25 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x1eGetResearchRoomOfflineManifest\x127.sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest\x1a8.sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse\x12\xa2\x01\n" +
 	"#AcknowledgeResearchRoomOfflinePurge\x12<.sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest\x1a=.sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse\x12\x90\x01\n" +
 	"\x1dListResearchRoomOfflinePurges\x126.sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest\x1a7.sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse\x12l\n" +
-	"\x11LeaveResearchRoom\x12*.sttattus.onyx.v1.LeaveResearchRoomRequest\x1a+.sttattus.onyx.v1.LeaveResearchRoomResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
+	"\x11LeaveResearchRoom\x12*.sttattus.onyx.v1.LeaveResearchRoomRequest\x1a+.sttattus.onyx.v1.LeaveResearchRoomResponse\x12\x8d\x01\n" +
+	"\x1cGetPersonalIntelligenceGraph\x125.sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest\x1a6.sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse\x12\x8a\x01\n" +
+	"\x1bUpsertIntelligenceGraphNode\x124.sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest\x1a5.sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse\x12\x90\x01\n" +
+	"\x1dSetIntelligenceGraphNodeState\x126.sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest\x1a7.sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse\x12\x8a\x01\n" +
+	"\x1bMergeIntelligenceGraphNodes\x124.sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest\x1a5.sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse\x12\x87\x01\n" +
+	"\x1aSplitIntelligenceGraphNode\x123.sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest\x1a4.sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse\x12\x8a\x01\n" +
+	"\x1bUpsertIntelligenceGraphEdge\x124.sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest\x1a5.sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse\x12\x90\x01\n" +
+	"\x1dSetIntelligenceGraphEdgeState\x126.sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest\x1a7.sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse\x12\xa5\x01\n" +
+	"$GenerateIntelligenceGraphSuggestions\x12=.sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest\x1a>.sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse\x12\x99\x01\n" +
+	" ListIntelligenceGraphSuggestions\x129.sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest\x1a:.sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse\x12\xa2\x01\n" +
+	"#SetIntelligenceGraphSuggestionState\x12<.sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest\x1a=.sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse\x12\x90\x01\n" +
+	"\x1dListIntelligenceGraphTimeline\x126.sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest\x1a7.sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse\x12\x99\x01\n" +
+	" ListIntelligenceGraphResurfacing\x129.sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest\x1a:.sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse\x12\xa5\x01\n" +
+	"$SetIntelligenceGraphResurfacingState\x12=.sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest\x1a>.sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse\x12\xa2\x01\n" +
+	"#CreateIntelligenceGraphMeetingBrief\x12<.sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest\x1a=.sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse\x12\x99\x01\n" +
+	" GetIntelligenceGraphMeetingBrief\x129.sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest\x1a:.sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse\x12\x9f\x01\n" +
+	"\"ListIntelligenceGraphMeetingBriefs\x12;.sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest\x1a<.sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse\x12\x96\x01\n" +
+	"\x1fExportPersonalIntelligenceGraph\x128.sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest\x1a9.sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse\x12\x99\x01\n" +
+	" RebuildPersonalIntelligenceGraph\x129.sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest\x1a:.sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponseB:Z8github.com/sttattus/proto/gen/go/sttattus/onyx/v1;onyxv1b\x06proto3"
 
 var (
 	file_sttattus_onyx_v1_onyx_proto_rawDescOnce sync.Once
@@ -28791,409 +32727,454 @@ func file_sttattus_onyx_v1_onyx_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_onyx_v1_onyx_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 388)
+var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 433)
 var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
-	(EncryptedRendition_RenditionStatus)(0),             // 0: sttattus.onyx.v1.EncryptedRendition.RenditionStatus
-	(EncryptedRendition_OfflinePackageType)(0),          // 1: sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
-	(*GatingCriteria)(nil),                              // 2: sttattus.onyx.v1.GatingCriteria
-	(*OnyxProfile)(nil),                                 // 3: sttattus.onyx.v1.OnyxProfile
-	(*OnyxContent)(nil),                                 // 4: sttattus.onyx.v1.OnyxContent
-	(*DocumentBlock)(nil),                               // 5: sttattus.onyx.v1.DocumentBlock
-	(*Subscription)(nil),                                // 6: sttattus.onyx.v1.Subscription
-	(*CreateProfileRequest)(nil),                        // 7: sttattus.onyx.v1.CreateProfileRequest
-	(*CreateProfileResponse)(nil),                       // 8: sttattus.onyx.v1.CreateProfileResponse
-	(*GetProfileRequest)(nil),                           // 9: sttattus.onyx.v1.GetProfileRequest
-	(*GetProfileResponse)(nil),                          // 10: sttattus.onyx.v1.GetProfileResponse
-	(*ListContentRequest)(nil),                          // 11: sttattus.onyx.v1.ListContentRequest
-	(*ListContentResponse)(nil),                         // 12: sttattus.onyx.v1.ListContentResponse
-	(*SubscribeRequest)(nil),                            // 13: sttattus.onyx.v1.SubscribeRequest
-	(*SubscribeResponse)(nil),                           // 14: sttattus.onyx.v1.SubscribeResponse
-	(*GetContentRequest)(nil),                           // 15: sttattus.onyx.v1.GetContentRequest
-	(*GetContentResponse)(nil),                          // 16: sttattus.onyx.v1.GetContentResponse
-	(*ListShelfRequest)(nil),                            // 17: sttattus.onyx.v1.ListShelfRequest
-	(*ListShelfResponse)(nil),                           // 18: sttattus.onyx.v1.ListShelfResponse
-	(*ListContinueRequest)(nil),                         // 19: sttattus.onyx.v1.ListContinueRequest
-	(*ListContinueResponse)(nil),                        // 20: sttattus.onyx.v1.ListContinueResponse
-	(*GetShelvesRequest)(nil),                           // 21: sttattus.onyx.v1.GetShelvesRequest
-	(*Shelf)(nil),                                       // 22: sttattus.onyx.v1.Shelf
-	(*GetShelvesResponse)(nil),                          // 23: sttattus.onyx.v1.GetShelvesResponse
-	(*RecordProgressRequest)(nil),                       // 24: sttattus.onyx.v1.RecordProgressRequest
-	(*RecordProgressResponse)(nil),                      // 25: sttattus.onyx.v1.RecordProgressResponse
-	(*RedeemContentRequest)(nil),                        // 26: sttattus.onyx.v1.RedeemContentRequest
-	(*RedeemContentResponse)(nil),                       // 27: sttattus.onyx.v1.RedeemContentResponse
-	(*CreateSubscriptionCheckoutRequest)(nil),           // 28: sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
-	(*CreateSubscriptionCheckoutResponse)(nil),          // 29: sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
-	(*CreatorProfile)(nil),                              // 30: sttattus.onyx.v1.CreatorProfile
-	(*GetCreatorRequest)(nil),                           // 31: sttattus.onyx.v1.GetCreatorRequest
-	(*GetCreatorResponse)(nil),                          // 32: sttattus.onyx.v1.GetCreatorResponse
-	(*ListCreatorWorksRequest)(nil),                     // 33: sttattus.onyx.v1.ListCreatorWorksRequest
-	(*ListCreatorWorksResponse)(nil),                    // 34: sttattus.onyx.v1.ListCreatorWorksResponse
-	(*FollowCreatorRequest)(nil),                        // 35: sttattus.onyx.v1.FollowCreatorRequest
-	(*FollowCreatorResponse)(nil),                       // 36: sttattus.onyx.v1.FollowCreatorResponse
-	(*SearchContentRequest)(nil),                        // 37: sttattus.onyx.v1.SearchContentRequest
-	(*SearchContentResponse)(nil),                       // 38: sttattus.onyx.v1.SearchContentResponse
-	(*Note)(nil),                                        // 39: sttattus.onyx.v1.Note
-	(*AddNoteRequest)(nil),                              // 40: sttattus.onyx.v1.AddNoteRequest
-	(*AddNoteResponse)(nil),                             // 41: sttattus.onyx.v1.AddNoteResponse
-	(*ListMyNotesRequest)(nil),                          // 42: sttattus.onyx.v1.ListMyNotesRequest
-	(*ListMyNotesResponse)(nil),                         // 43: sttattus.onyx.v1.ListMyNotesResponse
-	(*DeleteNoteRequest)(nil),                           // 44: sttattus.onyx.v1.DeleteNoteRequest
-	(*DeleteNoteResponse)(nil),                          // 45: sttattus.onyx.v1.DeleteNoteResponse
-	(*ReaderAnnotation)(nil),                            // 46: sttattus.onyx.v1.ReaderAnnotation
-	(*UpsertReaderAnnotationRequest)(nil),               // 47: sttattus.onyx.v1.UpsertReaderAnnotationRequest
-	(*UpsertReaderAnnotationResponse)(nil),              // 48: sttattus.onyx.v1.UpsertReaderAnnotationResponse
-	(*DeleteReaderAnnotationRequest)(nil),               // 49: sttattus.onyx.v1.DeleteReaderAnnotationRequest
-	(*DeleteReaderAnnotationResponse)(nil),              // 50: sttattus.onyx.v1.DeleteReaderAnnotationResponse
-	(*ListMyReaderAnnotationsRequest)(nil),              // 51: sttattus.onyx.v1.ListMyReaderAnnotationsRequest
-	(*ListMyReaderAnnotationsResponse)(nil),             // 52: sttattus.onyx.v1.ListMyReaderAnnotationsResponse
-	(*ReaderSearchResult)(nil),                          // 53: sttattus.onyx.v1.ReaderSearchResult
-	(*SearchReaderRequest)(nil),                         // 54: sttattus.onyx.v1.SearchReaderRequest
-	(*SearchReaderResponse)(nil),                        // 55: sttattus.onyx.v1.SearchReaderResponse
-	(*IntelligenceSearchFilters)(nil),                   // 56: sttattus.onyx.v1.IntelligenceSearchFilters
-	(*SearchIntelligenceRequest)(nil),                   // 57: sttattus.onyx.v1.SearchIntelligenceRequest
-	(*IntelligenceSearchResult)(nil),                    // 58: sttattus.onyx.v1.IntelligenceSearchResult
-	(*SearchIntelligenceResponse)(nil),                  // 59: sttattus.onyx.v1.SearchIntelligenceResponse
-	(*RecordIntelligenceSearchOutcomeRequest)(nil),      // 60: sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
-	(*RecordIntelligenceSearchOutcomeResponse)(nil),     // 61: sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
-	(*OnyxSavedQuery)(nil),                              // 62: sttattus.onyx.v1.OnyxSavedQuery
-	(*ListSavedQueriesRequest)(nil),                     // 63: sttattus.onyx.v1.ListSavedQueriesRequest
-	(*ListSavedQueriesResponse)(nil),                    // 64: sttattus.onyx.v1.ListSavedQueriesResponse
-	(*UpsertSavedQueryRequest)(nil),                     // 65: sttattus.onyx.v1.UpsertSavedQueryRequest
-	(*UpsertSavedQueryResponse)(nil),                    // 66: sttattus.onyx.v1.UpsertSavedQueryResponse
-	(*DeleteSavedQueryRequest)(nil),                     // 67: sttattus.onyx.v1.DeleteSavedQueryRequest
-	(*DeleteSavedQueryResponse)(nil),                    // 68: sttattus.onyx.v1.DeleteSavedQueryResponse
-	(*OnyxWatchlistTerm)(nil),                           // 69: sttattus.onyx.v1.OnyxWatchlistTerm
-	(*OnyxWatchlist)(nil),                               // 70: sttattus.onyx.v1.OnyxWatchlist
-	(*ListWatchlistsRequest)(nil),                       // 71: sttattus.onyx.v1.ListWatchlistsRequest
-	(*ListWatchlistsResponse)(nil),                      // 72: sttattus.onyx.v1.ListWatchlistsResponse
-	(*UpsertWatchlistRequest)(nil),                      // 73: sttattus.onyx.v1.UpsertWatchlistRequest
-	(*UpsertWatchlistResponse)(nil),                     // 74: sttattus.onyx.v1.UpsertWatchlistResponse
-	(*DeleteWatchlistRequest)(nil),                      // 75: sttattus.onyx.v1.DeleteWatchlistRequest
-	(*DeleteWatchlistResponse)(nil),                     // 76: sttattus.onyx.v1.DeleteWatchlistResponse
-	(*RefreshWatchlistRequest)(nil),                     // 77: sttattus.onyx.v1.RefreshWatchlistRequest
-	(*RefreshWatchlistResponse)(nil),                    // 78: sttattus.onyx.v1.RefreshWatchlistResponse
-	(*OnyxIntelligenceAlert)(nil),                       // 79: sttattus.onyx.v1.OnyxIntelligenceAlert
-	(*ListIntelligenceAlertsRequest)(nil),               // 80: sttattus.onyx.v1.ListIntelligenceAlertsRequest
-	(*ListIntelligenceAlertsResponse)(nil),              // 81: sttattus.onyx.v1.ListIntelligenceAlertsResponse
-	(*SetIntelligenceAlertStateRequest)(nil),            // 82: sttattus.onyx.v1.SetIntelligenceAlertStateRequest
-	(*SetIntelligenceAlertStateResponse)(nil),           // 83: sttattus.onyx.v1.SetIntelligenceAlertStateResponse
-	(*OnyxIntelligenceQueueItem)(nil),                   // 84: sttattus.onyx.v1.OnyxIntelligenceQueueItem
-	(*GetIntelligenceQueueRequest)(nil),                 // 85: sttattus.onyx.v1.GetIntelligenceQueueRequest
-	(*GetIntelligenceQueueResponse)(nil),                // 86: sttattus.onyx.v1.GetIntelligenceQueueResponse
-	(*RecordIntelligenceFeedbackRequest)(nil),           // 87: sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
-	(*RecordIntelligenceFeedbackResponse)(nil),          // 88: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
-	(*ExportReaderDataRequest)(nil),                     // 89: sttattus.onyx.v1.ExportReaderDataRequest
-	(*ExportReaderDataResponse)(nil),                    // 90: sttattus.onyx.v1.ExportReaderDataResponse
-	(*ReaderSyncChange)(nil),                            // 91: sttattus.onyx.v1.ReaderSyncChange
-	(*ListReaderSyncChangesRequest)(nil),                // 92: sttattus.onyx.v1.ListReaderSyncChangesRequest
-	(*ListReaderSyncChangesResponse)(nil),               // 93: sttattus.onyx.v1.ListReaderSyncChangesResponse
-	(*ListMyUnlocksRequest)(nil),                        // 94: sttattus.onyx.v1.ListMyUnlocksRequest
-	(*ListMyUnlocksResponse)(nil),                       // 95: sttattus.onyx.v1.ListMyUnlocksResponse
-	(*ListMySubscriptionsRequest)(nil),                  // 96: sttattus.onyx.v1.ListMySubscriptionsRequest
-	(*ListMySubscriptionsResponse)(nil),                 // 97: sttattus.onyx.v1.ListMySubscriptionsResponse
-	(*ListMyFollowsRequest)(nil),                        // 98: sttattus.onyx.v1.ListMyFollowsRequest
-	(*ListMyFollowsResponse)(nil),                       // 99: sttattus.onyx.v1.ListMyFollowsResponse
-	(*WindowEntry)(nil),                                 // 100: sttattus.onyx.v1.WindowEntry
-	(*ListSovereignWindowRequest)(nil),                  // 101: sttattus.onyx.v1.ListSovereignWindowRequest
-	(*ListSovereignWindowResponse)(nil),                 // 102: sttattus.onyx.v1.ListSovereignWindowResponse
-	(*Series)(nil),                                      // 103: sttattus.onyx.v1.Series
-	(*ListSeriesRequest)(nil),                           // 104: sttattus.onyx.v1.ListSeriesRequest
-	(*ListSeriesResponse)(nil),                          // 105: sttattus.onyx.v1.ListSeriesResponse
-	(*GetSeriesRequest)(nil),                            // 106: sttattus.onyx.v1.GetSeriesRequest
-	(*GetSeriesResponse)(nil),                           // 107: sttattus.onyx.v1.GetSeriesResponse
-	(*CaptionJob)(nil),                                  // 108: sttattus.onyx.v1.CaptionJob
-	(*GenerateCaptionsRequest)(nil),                     // 109: sttattus.onyx.v1.GenerateCaptionsRequest
-	(*GenerateCaptionsResponse)(nil),                    // 110: sttattus.onyx.v1.GenerateCaptionsResponse
-	(*GetCaptionJobRequest)(nil),                        // 111: sttattus.onyx.v1.GetCaptionJobRequest
-	(*GetCaptionJobResponse)(nil),                       // 112: sttattus.onyx.v1.GetCaptionJobResponse
-	(*ListeningPreferences)(nil),                        // 113: sttattus.onyx.v1.ListeningPreferences
-	(*GetListeningPreferencesRequest)(nil),              // 114: sttattus.onyx.v1.GetListeningPreferencesRequest
-	(*GetListeningPreferencesResponse)(nil),             // 115: sttattus.onyx.v1.GetListeningPreferencesResponse
-	(*UpdateListeningPreferencesRequest)(nil),           // 116: sttattus.onyx.v1.UpdateListeningPreferencesRequest
-	(*UpdateListeningPreferencesResponse)(nil),          // 117: sttattus.onyx.v1.UpdateListeningPreferencesResponse
-	(*ListeningBookmark)(nil),                           // 118: sttattus.onyx.v1.ListeningBookmark
-	(*CreateListeningBookmarkRequest)(nil),              // 119: sttattus.onyx.v1.CreateListeningBookmarkRequest
-	(*CreateListeningBookmarkResponse)(nil),             // 120: sttattus.onyx.v1.CreateListeningBookmarkResponse
-	(*ListListeningBookmarksRequest)(nil),               // 121: sttattus.onyx.v1.ListListeningBookmarksRequest
-	(*ListListeningBookmarksResponse)(nil),              // 122: sttattus.onyx.v1.ListListeningBookmarksResponse
-	(*DeleteListeningBookmarkRequest)(nil),              // 123: sttattus.onyx.v1.DeleteListeningBookmarkRequest
-	(*DeleteListeningBookmarkResponse)(nil),             // 124: sttattus.onyx.v1.DeleteListeningBookmarkResponse
-	(*ListeningQueueEntry)(nil),                         // 125: sttattus.onyx.v1.ListeningQueueEntry
-	(*ListListeningQueueRequest)(nil),                   // 126: sttattus.onyx.v1.ListListeningQueueRequest
-	(*ListListeningQueueResponse)(nil),                  // 127: sttattus.onyx.v1.ListListeningQueueResponse
-	(*SetListeningQueueRequest)(nil),                    // 128: sttattus.onyx.v1.SetListeningQueueRequest
-	(*SetListeningQueueResponse)(nil),                   // 129: sttattus.onyx.v1.SetListeningQueueResponse
-	(*AudioOverviewCitation)(nil),                       // 130: sttattus.onyx.v1.AudioOverviewCitation
-	(*AudioOverviewSegment)(nil),                        // 131: sttattus.onyx.v1.AudioOverviewSegment
-	(*AudioOverview)(nil),                               // 132: sttattus.onyx.v1.AudioOverview
-	(*CreateAudioOverviewRequest)(nil),                  // 133: sttattus.onyx.v1.CreateAudioOverviewRequest
-	(*CreateAudioOverviewResponse)(nil),                 // 134: sttattus.onyx.v1.CreateAudioOverviewResponse
-	(*ListAudioOverviewsRequest)(nil),                   // 135: sttattus.onyx.v1.ListAudioOverviewsRequest
-	(*ListAudioOverviewsResponse)(nil),                  // 136: sttattus.onyx.v1.ListAudioOverviewsResponse
-	(*GetAudioOverviewRequest)(nil),                     // 137: sttattus.onyx.v1.GetAudioOverviewRequest
-	(*GetAudioOverviewResponse)(nil),                    // 138: sttattus.onyx.v1.GetAudioOverviewResponse
-	(*DeleteAudioOverviewRequest)(nil),                  // 139: sttattus.onyx.v1.DeleteAudioOverviewRequest
-	(*DeleteAudioOverviewResponse)(nil),                 // 140: sttattus.onyx.v1.DeleteAudioOverviewResponse
-	(*ListeningPronunciation)(nil),                      // 141: sttattus.onyx.v1.ListeningPronunciation
-	(*ListListeningPronunciationsRequest)(nil),          // 142: sttattus.onyx.v1.ListListeningPronunciationsRequest
-	(*ListListeningPronunciationsResponse)(nil),         // 143: sttattus.onyx.v1.ListListeningPronunciationsResponse
-	(*GetTodaySummaryRequest)(nil),                      // 144: sttattus.onyx.v1.GetTodaySummaryRequest
-	(*GetTodaySummaryResponse)(nil),                     // 145: sttattus.onyx.v1.GetTodaySummaryResponse
-	(*CrossPillarUnlock)(nil),                           // 146: sttattus.onyx.v1.CrossPillarUnlock
-	(*GetCrossPillarUnlocksRequest)(nil),                // 147: sttattus.onyx.v1.GetCrossPillarUnlocksRequest
-	(*GetCrossPillarUnlocksResponse)(nil),               // 148: sttattus.onyx.v1.GetCrossPillarUnlocksResponse
-	(*ConciergeMessage)(nil),                            // 149: sttattus.onyx.v1.ConciergeMessage
-	(*ConciergeThread)(nil),                             // 150: sttattus.onyx.v1.ConciergeThread
-	(*StartConciergeThreadRequest)(nil),                 // 151: sttattus.onyx.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),                // 152: sttattus.onyx.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),               // 153: sttattus.onyx.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),              // 154: sttattus.onyx.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),                   // 155: sttattus.onyx.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),                  // 156: sttattus.onyx.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),                 // 157: sttattus.onyx.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),                // 158: sttattus.onyx.v1.PostConciergeMessageResponse
-	(*LiveEvent)(nil),                                   // 159: sttattus.onyx.v1.LiveEvent
-	(*ListLiveEventsRequest)(nil),                       // 160: sttattus.onyx.v1.ListLiveEventsRequest
-	(*ListLiveEventsResponse)(nil),                      // 161: sttattus.onyx.v1.ListLiveEventsResponse
-	(*GetLiveEventRequest)(nil),                         // 162: sttattus.onyx.v1.GetLiveEventRequest
-	(*GetLiveEventResponse)(nil),                        // 163: sttattus.onyx.v1.GetLiveEventResponse
-	(*RsvpLiveEventRequest)(nil),                        // 164: sttattus.onyx.v1.RsvpLiveEventRequest
-	(*RsvpLiveEventResponse)(nil),                       // 165: sttattus.onyx.v1.RsvpLiveEventResponse
-	(*LiveSpeaker)(nil),                                 // 166: sttattus.onyx.v1.LiveSpeaker
-	(*LiveAgendaItem)(nil),                              // 167: sttattus.onyx.v1.LiveAgendaItem
-	(*LiveEventAsset)(nil),                              // 168: sttattus.onyx.v1.LiveEventAsset
-	(*LiveGuestInvitation)(nil),                         // 169: sttattus.onyx.v1.LiveGuestInvitation
-	(*LiveReservation)(nil),                             // 170: sttattus.onyx.v1.LiveReservation
-	(*LiveMessage)(nil),                                 // 171: sttattus.onyx.v1.LiveMessage
-	(*LivePollOption)(nil),                              // 172: sttattus.onyx.v1.LivePollOption
-	(*LivePoll)(nil),                                    // 173: sttattus.onyx.v1.LivePoll
-	(*LiveNote)(nil),                                    // 174: sttattus.onyx.v1.LiveNote
-	(*LiveReplaySegment)(nil),                           // 175: sttattus.onyx.v1.LiveReplaySegment
-	(*LiveReplay)(nil),                                  // 176: sttattus.onyx.v1.LiveReplay
-	(*LiveSalon)(nil),                                   // 177: sttattus.onyx.v1.LiveSalon
-	(*GetLiveSalonRequest)(nil),                         // 178: sttattus.onyx.v1.GetLiveSalonRequest
-	(*GetLiveSalonResponse)(nil),                        // 179: sttattus.onyx.v1.GetLiveSalonResponse
-	(*UpsertLiveReservationRequest)(nil),                // 180: sttattus.onyx.v1.UpsertLiveReservationRequest
-	(*UpsertLiveReservationResponse)(nil),               // 181: sttattus.onyx.v1.UpsertLiveReservationResponse
-	(*InviteLiveGuestRequest)(nil),                      // 182: sttattus.onyx.v1.InviteLiveGuestRequest
-	(*InviteLiveGuestResponse)(nil),                     // 183: sttattus.onyx.v1.InviteLiveGuestResponse
-	(*GenerateLiveCalendarPassRequest)(nil),             // 184: sttattus.onyx.v1.GenerateLiveCalendarPassRequest
-	(*GenerateLiveCalendarPassResponse)(nil),            // 185: sttattus.onyx.v1.GenerateLiveCalendarPassResponse
-	(*JoinLiveEventRequest)(nil),                        // 186: sttattus.onyx.v1.JoinLiveEventRequest
-	(*JoinLiveEventResponse)(nil),                       // 187: sttattus.onyx.v1.JoinLiveEventResponse
-	(*ListLiveActivityRequest)(nil),                     // 188: sttattus.onyx.v1.ListLiveActivityRequest
-	(*ListLiveActivityResponse)(nil),                    // 189: sttattus.onyx.v1.ListLiveActivityResponse
-	(*PostLiveMessageRequest)(nil),                      // 190: sttattus.onyx.v1.PostLiveMessageRequest
-	(*PostLiveMessageResponse)(nil),                     // 191: sttattus.onyx.v1.PostLiveMessageResponse
-	(*UpvoteLiveQuestionRequest)(nil),                   // 192: sttattus.onyx.v1.UpvoteLiveQuestionRequest
-	(*UpvoteLiveQuestionResponse)(nil),                  // 193: sttattus.onyx.v1.UpvoteLiveQuestionResponse
-	(*VoteLivePollRequest)(nil),                         // 194: sttattus.onyx.v1.VoteLivePollRequest
-	(*VoteLivePollResponse)(nil),                        // 195: sttattus.onyx.v1.VoteLivePollResponse
-	(*SetLiveHandRaiseRequest)(nil),                     // 196: sttattus.onyx.v1.SetLiveHandRaiseRequest
-	(*SetLiveHandRaiseResponse)(nil),                    // 197: sttattus.onyx.v1.SetLiveHandRaiseResponse
-	(*ReactLiveEventRequest)(nil),                       // 198: sttattus.onyx.v1.ReactLiveEventRequest
-	(*ReactLiveEventResponse)(nil),                      // 199: sttattus.onyx.v1.ReactLiveEventResponse
-	(*UpsertLiveNoteRequest)(nil),                       // 200: sttattus.onyx.v1.UpsertLiveNoteRequest
-	(*UpsertLiveNoteResponse)(nil),                      // 201: sttattus.onyx.v1.UpsertLiveNoteResponse
-	(*ListLiveNotesRequest)(nil),                        // 202: sttattus.onyx.v1.ListLiveNotesRequest
-	(*ListLiveNotesResponse)(nil),                       // 203: sttattus.onyx.v1.ListLiveNotesResponse
-	(*DeleteLiveNoteRequest)(nil),                       // 204: sttattus.onyx.v1.DeleteLiveNoteRequest
-	(*DeleteLiveNoteResponse)(nil),                      // 205: sttattus.onyx.v1.DeleteLiveNoteResponse
-	(*GetLiveReplayRequest)(nil),                        // 206: sttattus.onyx.v1.GetLiveReplayRequest
-	(*GetLiveReplayResponse)(nil),                       // 207: sttattus.onyx.v1.GetLiveReplayResponse
-	(*PosthumousArchive)(nil),                           // 208: sttattus.onyx.v1.PosthumousArchive
-	(*SetPosthumousArchiveRequest)(nil),                 // 209: sttattus.onyx.v1.SetPosthumousArchiveRequest
-	(*SetPosthumousArchiveResponse)(nil),                // 210: sttattus.onyx.v1.SetPosthumousArchiveResponse
-	(*GetPosthumousArchiveRequest)(nil),                 // 211: sttattus.onyx.v1.GetPosthumousArchiveRequest
-	(*GetPosthumousArchiveResponse)(nil),                // 212: sttattus.onyx.v1.GetPosthumousArchiveResponse
-	(*Anthology)(nil),                                   // 213: sttattus.onyx.v1.Anthology
-	(*ListAnthologiesRequest)(nil),                      // 214: sttattus.onyx.v1.ListAnthologiesRequest
-	(*ListAnthologiesResponse)(nil),                     // 215: sttattus.onyx.v1.ListAnthologiesResponse
-	(*GetAnthologyRequest)(nil),                         // 216: sttattus.onyx.v1.GetAnthologyRequest
-	(*GetAnthologyResponse)(nil),                        // 217: sttattus.onyx.v1.GetAnthologyResponse
-	(*ShareLink)(nil),                                   // 218: sttattus.onyx.v1.ShareLink
-	(*CreateShareLinkRequest)(nil),                      // 219: sttattus.onyx.v1.CreateShareLinkRequest
-	(*CreateShareLinkResponse)(nil),                     // 220: sttattus.onyx.v1.CreateShareLinkResponse
-	(*ListMyShareLinksRequest)(nil),                     // 221: sttattus.onyx.v1.ListMyShareLinksRequest
-	(*ListMyShareLinksResponse)(nil),                    // 222: sttattus.onyx.v1.ListMyShareLinksResponse
-	(*RevokeShareLinkRequest)(nil),                      // 223: sttattus.onyx.v1.RevokeShareLinkRequest
-	(*RevokeShareLinkResponse)(nil),                     // 224: sttattus.onyx.v1.RevokeShareLinkResponse
-	(*EncryptedRendition)(nil),                          // 225: sttattus.onyx.v1.EncryptedRendition
-	(*GetOfflineManifestRequest)(nil),                   // 226: sttattus.onyx.v1.GetOfflineManifestRequest
-	(*GetOfflineManifestResponse)(nil),                  // 227: sttattus.onyx.v1.GetOfflineManifestResponse
-	(*RegisterDeviceRequest)(nil),                       // 228: sttattus.onyx.v1.RegisterDeviceRequest
-	(*RegisterDeviceResponse)(nil),                      // 229: sttattus.onyx.v1.RegisterDeviceResponse
-	(*AcknowledgePurgeRequest)(nil),                     // 230: sttattus.onyx.v1.AcknowledgePurgeRequest
-	(*AcknowledgePurgeResponse)(nil),                    // 231: sttattus.onyx.v1.AcknowledgePurgeResponse
-	(*GetDeviceGrantsRequest)(nil),                      // 232: sttattus.onyx.v1.GetDeviceGrantsRequest
-	(*DeviceGrantInfo)(nil),                             // 233: sttattus.onyx.v1.DeviceGrantInfo
-	(*GetDeviceGrantsResponse)(nil),                     // 234: sttattus.onyx.v1.GetDeviceGrantsResponse
-	(*RevokeMyDeviceRequest)(nil),                       // 235: sttattus.onyx.v1.RevokeMyDeviceRequest
-	(*RevokeMyDeviceResponse)(nil),                      // 236: sttattus.onyx.v1.RevokeMyDeviceResponse
-	(*MarkMyDeviceLostRequest)(nil),                     // 237: sttattus.onyx.v1.MarkMyDeviceLostRequest
-	(*MarkMyDeviceLostResponse)(nil),                    // 238: sttattus.onyx.v1.MarkMyDeviceLostResponse
-	(*GetPurgeReceiptRequest)(nil),                      // 239: sttattus.onyx.v1.GetPurgeReceiptRequest
-	(*GetPurgeReceiptResponse)(nil),                     // 240: sttattus.onyx.v1.GetPurgeReceiptResponse
-	(*ListOfflineManifestItemsRequest)(nil),             // 241: sttattus.onyx.v1.ListOfflineManifestItemsRequest
-	(*OfflineManifestItemInfo)(nil),                     // 242: sttattus.onyx.v1.OfflineManifestItemInfo
-	(*ListOfflineManifestItemsResponse)(nil),            // 243: sttattus.onyx.v1.ListOfflineManifestItemsResponse
-	(*RefreshOfflineRenditionsRequest)(nil),             // 244: sttattus.onyx.v1.RefreshOfflineRenditionsRequest
-	(*RefreshedRendition)(nil),                          // 245: sttattus.onyx.v1.RefreshedRendition
-	(*RefreshOfflineRenditionsResponse)(nil),            // 246: sttattus.onyx.v1.RefreshOfflineRenditionsResponse
-	(*RecordOfflineEventRequest)(nil),                   // 247: sttattus.onyx.v1.RecordOfflineEventRequest
-	(*RecordOfflineEventResponse)(nil),                  // 248: sttattus.onyx.v1.RecordOfflineEventResponse
-	(*GetYearInOnyxRequest)(nil),                        // 249: sttattus.onyx.v1.GetYearInOnyxRequest
-	(*GetYearInOnyxResponse)(nil),                       // 250: sttattus.onyx.v1.GetYearInOnyxResponse
-	(*AnnualArchive)(nil),                               // 251: sttattus.onyx.v1.AnnualArchive
-	(*GenerateAnnualArchiveRequest)(nil),                // 252: sttattus.onyx.v1.GenerateAnnualArchiveRequest
-	(*GenerateAnnualArchiveResponse)(nil),               // 253: sttattus.onyx.v1.GenerateAnnualArchiveResponse
-	(*ReactToContentRequest)(nil),                       // 254: sttattus.onyx.v1.ReactToContentRequest
-	(*ReactToContentResponse)(nil),                      // 255: sttattus.onyx.v1.ReactToContentResponse
-	(*IngestionItem)(nil),                               // 256: sttattus.onyx.v1.IngestionItem
-	(*CreateIngestionItemRequest)(nil),                  // 257: sttattus.onyx.v1.CreateIngestionItemRequest
-	(*CreateIngestionItemResponse)(nil),                 // 258: sttattus.onyx.v1.CreateIngestionItemResponse
-	(*ListMyIngestionItemsRequest)(nil),                 // 259: sttattus.onyx.v1.ListMyIngestionItemsRequest
-	(*ListMyIngestionItemsResponse)(nil),                // 260: sttattus.onyx.v1.ListMyIngestionItemsResponse
-	(*GetIngestionItemRequest)(nil),                     // 261: sttattus.onyx.v1.GetIngestionItemRequest
-	(*GetIngestionItemResponse)(nil),                    // 262: sttattus.onyx.v1.GetIngestionItemResponse
-	(*RetryIngestionItemRequest)(nil),                   // 263: sttattus.onyx.v1.RetryIngestionItemRequest
-	(*RetryIngestionItemResponse)(nil),                  // 264: sttattus.onyx.v1.RetryIngestionItemResponse
-	(*SetIngestionItemStateRequest)(nil),                // 265: sttattus.onyx.v1.SetIngestionItemStateRequest
-	(*SetIngestionItemStateResponse)(nil),               // 266: sttattus.onyx.v1.SetIngestionItemStateResponse
-	(*ResolveIngestionDuplicateRequest)(nil),            // 267: sttattus.onyx.v1.ResolveIngestionDuplicateRequest
-	(*ResolveIngestionDuplicateResponse)(nil),           // 268: sttattus.onyx.v1.ResolveIngestionDuplicateResponse
-	(*EvidenceSource)(nil),                              // 269: sttattus.onyx.v1.EvidenceSource
-	(*EvidenceCitation)(nil),                            // 270: sttattus.onyx.v1.EvidenceCitation
-	(*EvidenceClaim)(nil),                               // 271: sttattus.onyx.v1.EvidenceClaim
-	(*EvidenceCorrection)(nil),                          // 272: sttattus.onyx.v1.EvidenceCorrection
-	(*GetEvidenceWorkspaceRequest)(nil),                 // 273: sttattus.onyx.v1.GetEvidenceWorkspaceRequest
-	(*GetEvidenceWorkspaceResponse)(nil),                // 274: sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	(*BriefPoint)(nil),                                  // 275: sttattus.onyx.v1.BriefPoint
-	(*EvidenceBrief)(nil),                               // 276: sttattus.onyx.v1.EvidenceBrief
-	(*CreateEvidenceBriefRequest)(nil),                  // 277: sttattus.onyx.v1.CreateEvidenceBriefRequest
-	(*CreateEvidenceBriefResponse)(nil),                 // 278: sttattus.onyx.v1.CreateEvidenceBriefResponse
-	(*ListMyEvidenceBriefsRequest)(nil),                 // 279: sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	(*ListMyEvidenceBriefsResponse)(nil),                // 280: sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	(*GetEvidenceBriefRequest)(nil),                     // 281: sttattus.onyx.v1.GetEvidenceBriefRequest
-	(*GetEvidenceBriefResponse)(nil),                    // 282: sttattus.onyx.v1.GetEvidenceBriefResponse
-	(*CreatorContract)(nil),                             // 283: sttattus.onyx.v1.CreatorContract
-	(*EditorialReview)(nil),                             // 284: sttattus.onyx.v1.EditorialReview
-	(*EditorialComment)(nil),                            // 285: sttattus.onyx.v1.EditorialComment
-	(*EditorialProject)(nil),                            // 286: sttattus.onyx.v1.EditorialProject
-	(*CreatorStatement)(nil),                            // 287: sttattus.onyx.v1.CreatorStatement
-	(*CreatorMetric)(nil),                               // 288: sttattus.onyx.v1.CreatorMetric
-	(*CreatorStudio)(nil),                               // 289: sttattus.onyx.v1.CreatorStudio
-	(*GetCreatorStudioRequest)(nil),                     // 290: sttattus.onyx.v1.GetCreatorStudioRequest
-	(*GetCreatorStudioResponse)(nil),                    // 291: sttattus.onyx.v1.GetCreatorStudioResponse
-	(*SubmitCreatorPitchRequest)(nil),                   // 292: sttattus.onyx.v1.SubmitCreatorPitchRequest
-	(*SubmitCreatorPitchResponse)(nil),                  // 293: sttattus.onyx.v1.SubmitCreatorPitchResponse
-	(*UpdateCreatorProjectRequest)(nil),                 // 294: sttattus.onyx.v1.UpdateCreatorProjectRequest
-	(*UpdateCreatorProjectResponse)(nil),                // 295: sttattus.onyx.v1.UpdateCreatorProjectResponse
-	(*SubmitCreatorProjectRequest)(nil),                 // 296: sttattus.onyx.v1.SubmitCreatorProjectRequest
-	(*SubmitCreatorProjectResponse)(nil),                // 297: sttattus.onyx.v1.SubmitCreatorProjectResponse
-	(*SignCreatorContractRequest)(nil),                  // 298: sttattus.onyx.v1.SignCreatorContractRequest
-	(*SignCreatorContractResponse)(nil),                 // 299: sttattus.onyx.v1.SignCreatorContractResponse
-	(*ListMyCreatorSubscriptionsDetailedRequest)(nil),   // 300: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	(*ListMyCreatorSubscriptionsDetailedResponse)(nil),  // 301: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	(*CancelCreatorSubscriptionRequest)(nil),            // 302: sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	(*CancelCreatorSubscriptionResponse)(nil),           // 303: sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	(*CommerceInvoice)(nil),                             // 304: sttattus.onyx.v1.CommerceInvoice
-	(*CommerceCase)(nil),                                // 305: sttattus.onyx.v1.CommerceCase
-	(*GetMyCommerceRequest)(nil),                        // 306: sttattus.onyx.v1.GetMyCommerceRequest
-	(*GetMyCommerceResponse)(nil),                       // 307: sttattus.onyx.v1.GetMyCommerceResponse
-	(*CreateCommerceCaseRequest)(nil),                   // 308: sttattus.onyx.v1.CreateCommerceCaseRequest
-	(*CreateCommerceCaseResponse)(nil),                  // 309: sttattus.onyx.v1.CreateCommerceCaseResponse
-	(*ResearchRoomPolicy)(nil),                          // 310: sttattus.onyx.v1.ResearchRoomPolicy
-	(*ResearchRoomMember)(nil),                          // 311: sttattus.onyx.v1.ResearchRoomMember
-	(*ResearchRoom)(nil),                                // 312: sttattus.onyx.v1.ResearchRoom
-	(*ResearchRoomItem)(nil),                            // 313: sttattus.onyx.v1.ResearchRoomItem
-	(*ResearchRoomThread)(nil),                          // 314: sttattus.onyx.v1.ResearchRoomThread
-	(*ResearchRoomComment)(nil),                         // 315: sttattus.onyx.v1.ResearchRoomComment
-	(*ResearchRoomTask)(nil),                            // 316: sttattus.onyx.v1.ResearchRoomTask
-	(*ResearchRoomMeeting)(nil),                         // 317: sttattus.onyx.v1.ResearchRoomMeeting
-	(*ResearchRoomDecision)(nil),                        // 318: sttattus.onyx.v1.ResearchRoomDecision
-	(*ResearchRoomApproval)(nil),                        // 319: sttattus.onyx.v1.ResearchRoomApproval
-	(*ResearchRoomExport)(nil),                          // 320: sttattus.onyx.v1.ResearchRoomExport
-	(*ResearchRoomAuditEvent)(nil),                      // 321: sttattus.onyx.v1.ResearchRoomAuditEvent
-	(*ResearchRoomGrant)(nil),                           // 322: sttattus.onyx.v1.ResearchRoomGrant
-	(*ResearchRoomShareLink)(nil),                       // 323: sttattus.onyx.v1.ResearchRoomShareLink
-	(*ResearchRoomOfflineManifest)(nil),                 // 324: sttattus.onyx.v1.ResearchRoomOfflineManifest
-	(*ResearchRoomPurgeReceipt)(nil),                    // 325: sttattus.onyx.v1.ResearchRoomPurgeReceipt
-	(*ResearchRoomDetail)(nil),                          // 326: sttattus.onyx.v1.ResearchRoomDetail
-	(*ListResearchRoomsRequest)(nil),                    // 327: sttattus.onyx.v1.ListResearchRoomsRequest
-	(*ListResearchRoomsResponse)(nil),                   // 328: sttattus.onyx.v1.ListResearchRoomsResponse
-	(*GetResearchRoomRequest)(nil),                      // 329: sttattus.onyx.v1.GetResearchRoomRequest
-	(*GetResearchRoomResponse)(nil),                     // 330: sttattus.onyx.v1.GetResearchRoomResponse
-	(*CreateResearchRoomRequest)(nil),                   // 331: sttattus.onyx.v1.CreateResearchRoomRequest
-	(*CreateResearchRoomResponse)(nil),                  // 332: sttattus.onyx.v1.CreateResearchRoomResponse
-	(*UpdateResearchRoomRequest)(nil),                   // 333: sttattus.onyx.v1.UpdateResearchRoomRequest
-	(*UpdateResearchRoomResponse)(nil),                  // 334: sttattus.onyx.v1.UpdateResearchRoomResponse
-	(*InviteResearchRoomMemberRequest)(nil),             // 335: sttattus.onyx.v1.InviteResearchRoomMemberRequest
-	(*InviteResearchRoomMemberResponse)(nil),            // 336: sttattus.onyx.v1.InviteResearchRoomMemberResponse
-	(*RespondResearchRoomInviteRequest)(nil),            // 337: sttattus.onyx.v1.RespondResearchRoomInviteRequest
-	(*RespondResearchRoomInviteResponse)(nil),           // 338: sttattus.onyx.v1.RespondResearchRoomInviteResponse
-	(*ChangeResearchRoomMemberRequest)(nil),             // 339: sttattus.onyx.v1.ChangeResearchRoomMemberRequest
-	(*ChangeResearchRoomMemberResponse)(nil),            // 340: sttattus.onyx.v1.ChangeResearchRoomMemberResponse
-	(*RevokeResearchRoomMemberRequest)(nil),             // 341: sttattus.onyx.v1.RevokeResearchRoomMemberRequest
-	(*RevokeResearchRoomMemberResponse)(nil),            // 342: sttattus.onyx.v1.RevokeResearchRoomMemberResponse
-	(*AddResearchRoomItemRequest)(nil),                  // 343: sttattus.onyx.v1.AddResearchRoomItemRequest
-	(*AddResearchRoomItemResponse)(nil),                 // 344: sttattus.onyx.v1.AddResearchRoomItemResponse
-	(*RemoveResearchRoomItemRequest)(nil),               // 345: sttattus.onyx.v1.RemoveResearchRoomItemRequest
-	(*RemoveResearchRoomItemResponse)(nil),              // 346: sttattus.onyx.v1.RemoveResearchRoomItemResponse
-	(*PostResearchRoomCommentRequest)(nil),              // 347: sttattus.onyx.v1.PostResearchRoomCommentRequest
-	(*PostResearchRoomCommentResponse)(nil),             // 348: sttattus.onyx.v1.PostResearchRoomCommentResponse
-	(*SetResearchRoomThreadStatusRequest)(nil),          // 349: sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
-	(*SetResearchRoomThreadStatusResponse)(nil),         // 350: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
-	(*UpsertResearchRoomTaskRequest)(nil),               // 351: sttattus.onyx.v1.UpsertResearchRoomTaskRequest
-	(*UpsertResearchRoomTaskResponse)(nil),              // 352: sttattus.onyx.v1.UpsertResearchRoomTaskResponse
-	(*UpsertResearchRoomMeetingRequest)(nil),            // 353: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
-	(*UpsertResearchRoomMeetingResponse)(nil),           // 354: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
-	(*UpsertResearchRoomDecisionRequest)(nil),           // 355: sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
-	(*UpsertResearchRoomDecisionResponse)(nil),          // 356: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
-	(*RecordResearchRoomApprovalRequest)(nil),           // 357: sttattus.onyx.v1.RecordResearchRoomApprovalRequest
-	(*RecordResearchRoomApprovalResponse)(nil),          // 358: sttattus.onyx.v1.RecordResearchRoomApprovalResponse
-	(*SearchResearchRoomRequest)(nil),                   // 359: sttattus.onyx.v1.SearchResearchRoomRequest
-	(*SearchResearchRoomResult)(nil),                    // 360: sttattus.onyx.v1.SearchResearchRoomResult
-	(*SearchResearchRoomResponse)(nil),                  // 361: sttattus.onyx.v1.SearchResearchRoomResponse
-	(*RequestResearchRoomExportRequest)(nil),            // 362: sttattus.onyx.v1.RequestResearchRoomExportRequest
-	(*RequestResearchRoomExportResponse)(nil),           // 363: sttattus.onyx.v1.RequestResearchRoomExportResponse
-	(*ReportResearchRoomAbuseRequest)(nil),              // 364: sttattus.onyx.v1.ReportResearchRoomAbuseRequest
-	(*ReportResearchRoomAbuseResponse)(nil),             // 365: sttattus.onyx.v1.ReportResearchRoomAbuseResponse
-	(*ListResearchRoomAuditRequest)(nil),                // 366: sttattus.onyx.v1.ListResearchRoomAuditRequest
-	(*ListResearchRoomAuditResponse)(nil),               // 367: sttattus.onyx.v1.ListResearchRoomAuditResponse
-	(*ListResearchRoomGrantsRequest)(nil),               // 368: sttattus.onyx.v1.ListResearchRoomGrantsRequest
-	(*ListResearchRoomGrantsResponse)(nil),              // 369: sttattus.onyx.v1.ListResearchRoomGrantsResponse
-	(*UpsertResearchRoomGrantRequest)(nil),              // 370: sttattus.onyx.v1.UpsertResearchRoomGrantRequest
-	(*UpsertResearchRoomGrantResponse)(nil),             // 371: sttattus.onyx.v1.UpsertResearchRoomGrantResponse
-	(*RevokeResearchRoomGrantRequest)(nil),              // 372: sttattus.onyx.v1.RevokeResearchRoomGrantRequest
-	(*RevokeResearchRoomGrantResponse)(nil),             // 373: sttattus.onyx.v1.RevokeResearchRoomGrantResponse
-	(*CreateResearchRoomShareLinkRequest)(nil),          // 374: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
-	(*CreateResearchRoomShareLinkResponse)(nil),         // 375: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
-	(*ListResearchRoomShareLinksRequest)(nil),           // 376: sttattus.onyx.v1.ListResearchRoomShareLinksRequest
-	(*ListResearchRoomShareLinksResponse)(nil),          // 377: sttattus.onyx.v1.ListResearchRoomShareLinksResponse
-	(*RevokeResearchRoomShareLinkRequest)(nil),          // 378: sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
-	(*RevokeResearchRoomShareLinkResponse)(nil),         // 379: sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
-	(*ResolveResearchRoomShareLinkRequest)(nil),         // 380: sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
-	(*ResolveResearchRoomShareLinkResponse)(nil),        // 381: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
-	(*GetResearchRoomOfflineManifestRequest)(nil),       // 382: sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
-	(*GetResearchRoomOfflineManifestResponse)(nil),      // 383: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
-	(*AcknowledgeResearchRoomOfflinePurgeRequest)(nil),  // 384: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
-	(*AcknowledgeResearchRoomOfflinePurgeResponse)(nil), // 385: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
-	(*ListResearchRoomOfflinePurgesRequest)(nil),        // 386: sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
-	(*ListResearchRoomOfflinePurgesResponse)(nil),       // 387: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
-	(*LeaveResearchRoomRequest)(nil),                    // 388: sttattus.onyx.v1.LeaveResearchRoomRequest
-	(*LeaveResearchRoomResponse)(nil),                   // 389: sttattus.onyx.v1.LeaveResearchRoomResponse
-	(*timestamppb.Timestamp)(nil),                       // 390: google.protobuf.Timestamp
+	(EncryptedRendition_RenditionStatus)(0),              // 0: sttattus.onyx.v1.EncryptedRendition.RenditionStatus
+	(EncryptedRendition_OfflinePackageType)(0),           // 1: sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
+	(*GatingCriteria)(nil),                               // 2: sttattus.onyx.v1.GatingCriteria
+	(*OnyxProfile)(nil),                                  // 3: sttattus.onyx.v1.OnyxProfile
+	(*OnyxContent)(nil),                                  // 4: sttattus.onyx.v1.OnyxContent
+	(*DocumentBlock)(nil),                                // 5: sttattus.onyx.v1.DocumentBlock
+	(*Subscription)(nil),                                 // 6: sttattus.onyx.v1.Subscription
+	(*CreateProfileRequest)(nil),                         // 7: sttattus.onyx.v1.CreateProfileRequest
+	(*CreateProfileResponse)(nil),                        // 8: sttattus.onyx.v1.CreateProfileResponse
+	(*GetProfileRequest)(nil),                            // 9: sttattus.onyx.v1.GetProfileRequest
+	(*GetProfileResponse)(nil),                           // 10: sttattus.onyx.v1.GetProfileResponse
+	(*ListContentRequest)(nil),                           // 11: sttattus.onyx.v1.ListContentRequest
+	(*ListContentResponse)(nil),                          // 12: sttattus.onyx.v1.ListContentResponse
+	(*SubscribeRequest)(nil),                             // 13: sttattus.onyx.v1.SubscribeRequest
+	(*SubscribeResponse)(nil),                            // 14: sttattus.onyx.v1.SubscribeResponse
+	(*GetContentRequest)(nil),                            // 15: sttattus.onyx.v1.GetContentRequest
+	(*GetContentResponse)(nil),                           // 16: sttattus.onyx.v1.GetContentResponse
+	(*ListShelfRequest)(nil),                             // 17: sttattus.onyx.v1.ListShelfRequest
+	(*ListShelfResponse)(nil),                            // 18: sttattus.onyx.v1.ListShelfResponse
+	(*ListContinueRequest)(nil),                          // 19: sttattus.onyx.v1.ListContinueRequest
+	(*ListContinueResponse)(nil),                         // 20: sttattus.onyx.v1.ListContinueResponse
+	(*GetShelvesRequest)(nil),                            // 21: sttattus.onyx.v1.GetShelvesRequest
+	(*Shelf)(nil),                                        // 22: sttattus.onyx.v1.Shelf
+	(*GetShelvesResponse)(nil),                           // 23: sttattus.onyx.v1.GetShelvesResponse
+	(*RecordProgressRequest)(nil),                        // 24: sttattus.onyx.v1.RecordProgressRequest
+	(*RecordProgressResponse)(nil),                       // 25: sttattus.onyx.v1.RecordProgressResponse
+	(*RedeemContentRequest)(nil),                         // 26: sttattus.onyx.v1.RedeemContentRequest
+	(*RedeemContentResponse)(nil),                        // 27: sttattus.onyx.v1.RedeemContentResponse
+	(*CreateSubscriptionCheckoutRequest)(nil),            // 28: sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	(*CreateSubscriptionCheckoutResponse)(nil),           // 29: sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	(*CreatorProfile)(nil),                               // 30: sttattus.onyx.v1.CreatorProfile
+	(*GetCreatorRequest)(nil),                            // 31: sttattus.onyx.v1.GetCreatorRequest
+	(*GetCreatorResponse)(nil),                           // 32: sttattus.onyx.v1.GetCreatorResponse
+	(*ListCreatorWorksRequest)(nil),                      // 33: sttattus.onyx.v1.ListCreatorWorksRequest
+	(*ListCreatorWorksResponse)(nil),                     // 34: sttattus.onyx.v1.ListCreatorWorksResponse
+	(*FollowCreatorRequest)(nil),                         // 35: sttattus.onyx.v1.FollowCreatorRequest
+	(*FollowCreatorResponse)(nil),                        // 36: sttattus.onyx.v1.FollowCreatorResponse
+	(*SearchContentRequest)(nil),                         // 37: sttattus.onyx.v1.SearchContentRequest
+	(*SearchContentResponse)(nil),                        // 38: sttattus.onyx.v1.SearchContentResponse
+	(*Note)(nil),                                         // 39: sttattus.onyx.v1.Note
+	(*AddNoteRequest)(nil),                               // 40: sttattus.onyx.v1.AddNoteRequest
+	(*AddNoteResponse)(nil),                              // 41: sttattus.onyx.v1.AddNoteResponse
+	(*ListMyNotesRequest)(nil),                           // 42: sttattus.onyx.v1.ListMyNotesRequest
+	(*ListMyNotesResponse)(nil),                          // 43: sttattus.onyx.v1.ListMyNotesResponse
+	(*DeleteNoteRequest)(nil),                            // 44: sttattus.onyx.v1.DeleteNoteRequest
+	(*DeleteNoteResponse)(nil),                           // 45: sttattus.onyx.v1.DeleteNoteResponse
+	(*ReaderAnnotation)(nil),                             // 46: sttattus.onyx.v1.ReaderAnnotation
+	(*UpsertReaderAnnotationRequest)(nil),                // 47: sttattus.onyx.v1.UpsertReaderAnnotationRequest
+	(*UpsertReaderAnnotationResponse)(nil),               // 48: sttattus.onyx.v1.UpsertReaderAnnotationResponse
+	(*DeleteReaderAnnotationRequest)(nil),                // 49: sttattus.onyx.v1.DeleteReaderAnnotationRequest
+	(*DeleteReaderAnnotationResponse)(nil),               // 50: sttattus.onyx.v1.DeleteReaderAnnotationResponse
+	(*ListMyReaderAnnotationsRequest)(nil),               // 51: sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+	(*ListMyReaderAnnotationsResponse)(nil),              // 52: sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+	(*ReaderSearchResult)(nil),                           // 53: sttattus.onyx.v1.ReaderSearchResult
+	(*SearchReaderRequest)(nil),                          // 54: sttattus.onyx.v1.SearchReaderRequest
+	(*SearchReaderResponse)(nil),                         // 55: sttattus.onyx.v1.SearchReaderResponse
+	(*IntelligenceSearchFilters)(nil),                    // 56: sttattus.onyx.v1.IntelligenceSearchFilters
+	(*SearchIntelligenceRequest)(nil),                    // 57: sttattus.onyx.v1.SearchIntelligenceRequest
+	(*IntelligenceSearchResult)(nil),                     // 58: sttattus.onyx.v1.IntelligenceSearchResult
+	(*SearchIntelligenceResponse)(nil),                   // 59: sttattus.onyx.v1.SearchIntelligenceResponse
+	(*RecordIntelligenceSearchOutcomeRequest)(nil),       // 60: sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+	(*RecordIntelligenceSearchOutcomeResponse)(nil),      // 61: sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+	(*OnyxSavedQuery)(nil),                               // 62: sttattus.onyx.v1.OnyxSavedQuery
+	(*ListSavedQueriesRequest)(nil),                      // 63: sttattus.onyx.v1.ListSavedQueriesRequest
+	(*ListSavedQueriesResponse)(nil),                     // 64: sttattus.onyx.v1.ListSavedQueriesResponse
+	(*UpsertSavedQueryRequest)(nil),                      // 65: sttattus.onyx.v1.UpsertSavedQueryRequest
+	(*UpsertSavedQueryResponse)(nil),                     // 66: sttattus.onyx.v1.UpsertSavedQueryResponse
+	(*DeleteSavedQueryRequest)(nil),                      // 67: sttattus.onyx.v1.DeleteSavedQueryRequest
+	(*DeleteSavedQueryResponse)(nil),                     // 68: sttattus.onyx.v1.DeleteSavedQueryResponse
+	(*OnyxWatchlistTerm)(nil),                            // 69: sttattus.onyx.v1.OnyxWatchlistTerm
+	(*OnyxWatchlist)(nil),                                // 70: sttattus.onyx.v1.OnyxWatchlist
+	(*ListWatchlistsRequest)(nil),                        // 71: sttattus.onyx.v1.ListWatchlistsRequest
+	(*ListWatchlistsResponse)(nil),                       // 72: sttattus.onyx.v1.ListWatchlistsResponse
+	(*UpsertWatchlistRequest)(nil),                       // 73: sttattus.onyx.v1.UpsertWatchlistRequest
+	(*UpsertWatchlistResponse)(nil),                      // 74: sttattus.onyx.v1.UpsertWatchlistResponse
+	(*DeleteWatchlistRequest)(nil),                       // 75: sttattus.onyx.v1.DeleteWatchlistRequest
+	(*DeleteWatchlistResponse)(nil),                      // 76: sttattus.onyx.v1.DeleteWatchlistResponse
+	(*RefreshWatchlistRequest)(nil),                      // 77: sttattus.onyx.v1.RefreshWatchlistRequest
+	(*RefreshWatchlistResponse)(nil),                     // 78: sttattus.onyx.v1.RefreshWatchlistResponse
+	(*OnyxIntelligenceAlert)(nil),                        // 79: sttattus.onyx.v1.OnyxIntelligenceAlert
+	(*ListIntelligenceAlertsRequest)(nil),                // 80: sttattus.onyx.v1.ListIntelligenceAlertsRequest
+	(*ListIntelligenceAlertsResponse)(nil),               // 81: sttattus.onyx.v1.ListIntelligenceAlertsResponse
+	(*SetIntelligenceAlertStateRequest)(nil),             // 82: sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+	(*SetIntelligenceAlertStateResponse)(nil),            // 83: sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+	(*OnyxIntelligenceQueueItem)(nil),                    // 84: sttattus.onyx.v1.OnyxIntelligenceQueueItem
+	(*GetIntelligenceQueueRequest)(nil),                  // 85: sttattus.onyx.v1.GetIntelligenceQueueRequest
+	(*GetIntelligenceQueueResponse)(nil),                 // 86: sttattus.onyx.v1.GetIntelligenceQueueResponse
+	(*RecordIntelligenceFeedbackRequest)(nil),            // 87: sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+	(*RecordIntelligenceFeedbackResponse)(nil),           // 88: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+	(*ExportReaderDataRequest)(nil),                      // 89: sttattus.onyx.v1.ExportReaderDataRequest
+	(*ExportReaderDataResponse)(nil),                     // 90: sttattus.onyx.v1.ExportReaderDataResponse
+	(*ReaderSyncChange)(nil),                             // 91: sttattus.onyx.v1.ReaderSyncChange
+	(*ListReaderSyncChangesRequest)(nil),                 // 92: sttattus.onyx.v1.ListReaderSyncChangesRequest
+	(*ListReaderSyncChangesResponse)(nil),                // 93: sttattus.onyx.v1.ListReaderSyncChangesResponse
+	(*ListMyUnlocksRequest)(nil),                         // 94: sttattus.onyx.v1.ListMyUnlocksRequest
+	(*ListMyUnlocksResponse)(nil),                        // 95: sttattus.onyx.v1.ListMyUnlocksResponse
+	(*ListMySubscriptionsRequest)(nil),                   // 96: sttattus.onyx.v1.ListMySubscriptionsRequest
+	(*ListMySubscriptionsResponse)(nil),                  // 97: sttattus.onyx.v1.ListMySubscriptionsResponse
+	(*ListMyFollowsRequest)(nil),                         // 98: sttattus.onyx.v1.ListMyFollowsRequest
+	(*ListMyFollowsResponse)(nil),                        // 99: sttattus.onyx.v1.ListMyFollowsResponse
+	(*WindowEntry)(nil),                                  // 100: sttattus.onyx.v1.WindowEntry
+	(*ListSovereignWindowRequest)(nil),                   // 101: sttattus.onyx.v1.ListSovereignWindowRequest
+	(*ListSovereignWindowResponse)(nil),                  // 102: sttattus.onyx.v1.ListSovereignWindowResponse
+	(*Series)(nil),                                       // 103: sttattus.onyx.v1.Series
+	(*ListSeriesRequest)(nil),                            // 104: sttattus.onyx.v1.ListSeriesRequest
+	(*ListSeriesResponse)(nil),                           // 105: sttattus.onyx.v1.ListSeriesResponse
+	(*GetSeriesRequest)(nil),                             // 106: sttattus.onyx.v1.GetSeriesRequest
+	(*GetSeriesResponse)(nil),                            // 107: sttattus.onyx.v1.GetSeriesResponse
+	(*CaptionJob)(nil),                                   // 108: sttattus.onyx.v1.CaptionJob
+	(*GenerateCaptionsRequest)(nil),                      // 109: sttattus.onyx.v1.GenerateCaptionsRequest
+	(*GenerateCaptionsResponse)(nil),                     // 110: sttattus.onyx.v1.GenerateCaptionsResponse
+	(*GetCaptionJobRequest)(nil),                         // 111: sttattus.onyx.v1.GetCaptionJobRequest
+	(*GetCaptionJobResponse)(nil),                        // 112: sttattus.onyx.v1.GetCaptionJobResponse
+	(*ListeningPreferences)(nil),                         // 113: sttattus.onyx.v1.ListeningPreferences
+	(*GetListeningPreferencesRequest)(nil),               // 114: sttattus.onyx.v1.GetListeningPreferencesRequest
+	(*GetListeningPreferencesResponse)(nil),              // 115: sttattus.onyx.v1.GetListeningPreferencesResponse
+	(*UpdateListeningPreferencesRequest)(nil),            // 116: sttattus.onyx.v1.UpdateListeningPreferencesRequest
+	(*UpdateListeningPreferencesResponse)(nil),           // 117: sttattus.onyx.v1.UpdateListeningPreferencesResponse
+	(*ListeningBookmark)(nil),                            // 118: sttattus.onyx.v1.ListeningBookmark
+	(*CreateListeningBookmarkRequest)(nil),               // 119: sttattus.onyx.v1.CreateListeningBookmarkRequest
+	(*CreateListeningBookmarkResponse)(nil),              // 120: sttattus.onyx.v1.CreateListeningBookmarkResponse
+	(*ListListeningBookmarksRequest)(nil),                // 121: sttattus.onyx.v1.ListListeningBookmarksRequest
+	(*ListListeningBookmarksResponse)(nil),               // 122: sttattus.onyx.v1.ListListeningBookmarksResponse
+	(*DeleteListeningBookmarkRequest)(nil),               // 123: sttattus.onyx.v1.DeleteListeningBookmarkRequest
+	(*DeleteListeningBookmarkResponse)(nil),              // 124: sttattus.onyx.v1.DeleteListeningBookmarkResponse
+	(*ListeningQueueEntry)(nil),                          // 125: sttattus.onyx.v1.ListeningQueueEntry
+	(*ListListeningQueueRequest)(nil),                    // 126: sttattus.onyx.v1.ListListeningQueueRequest
+	(*ListListeningQueueResponse)(nil),                   // 127: sttattus.onyx.v1.ListListeningQueueResponse
+	(*SetListeningQueueRequest)(nil),                     // 128: sttattus.onyx.v1.SetListeningQueueRequest
+	(*SetListeningQueueResponse)(nil),                    // 129: sttattus.onyx.v1.SetListeningQueueResponse
+	(*AudioOverviewCitation)(nil),                        // 130: sttattus.onyx.v1.AudioOverviewCitation
+	(*AudioOverviewSegment)(nil),                         // 131: sttattus.onyx.v1.AudioOverviewSegment
+	(*AudioOverview)(nil),                                // 132: sttattus.onyx.v1.AudioOverview
+	(*CreateAudioOverviewRequest)(nil),                   // 133: sttattus.onyx.v1.CreateAudioOverviewRequest
+	(*CreateAudioOverviewResponse)(nil),                  // 134: sttattus.onyx.v1.CreateAudioOverviewResponse
+	(*ListAudioOverviewsRequest)(nil),                    // 135: sttattus.onyx.v1.ListAudioOverviewsRequest
+	(*ListAudioOverviewsResponse)(nil),                   // 136: sttattus.onyx.v1.ListAudioOverviewsResponse
+	(*GetAudioOverviewRequest)(nil),                      // 137: sttattus.onyx.v1.GetAudioOverviewRequest
+	(*GetAudioOverviewResponse)(nil),                     // 138: sttattus.onyx.v1.GetAudioOverviewResponse
+	(*DeleteAudioOverviewRequest)(nil),                   // 139: sttattus.onyx.v1.DeleteAudioOverviewRequest
+	(*DeleteAudioOverviewResponse)(nil),                  // 140: sttattus.onyx.v1.DeleteAudioOverviewResponse
+	(*ListeningPronunciation)(nil),                       // 141: sttattus.onyx.v1.ListeningPronunciation
+	(*ListListeningPronunciationsRequest)(nil),           // 142: sttattus.onyx.v1.ListListeningPronunciationsRequest
+	(*ListListeningPronunciationsResponse)(nil),          // 143: sttattus.onyx.v1.ListListeningPronunciationsResponse
+	(*GetTodaySummaryRequest)(nil),                       // 144: sttattus.onyx.v1.GetTodaySummaryRequest
+	(*GetTodaySummaryResponse)(nil),                      // 145: sttattus.onyx.v1.GetTodaySummaryResponse
+	(*CrossPillarUnlock)(nil),                            // 146: sttattus.onyx.v1.CrossPillarUnlock
+	(*GetCrossPillarUnlocksRequest)(nil),                 // 147: sttattus.onyx.v1.GetCrossPillarUnlocksRequest
+	(*GetCrossPillarUnlocksResponse)(nil),                // 148: sttattus.onyx.v1.GetCrossPillarUnlocksResponse
+	(*ConciergeMessage)(nil),                             // 149: sttattus.onyx.v1.ConciergeMessage
+	(*ConciergeThread)(nil),                              // 150: sttattus.onyx.v1.ConciergeThread
+	(*StartConciergeThreadRequest)(nil),                  // 151: sttattus.onyx.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                 // 152: sttattus.onyx.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                // 153: sttattus.onyx.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),               // 154: sttattus.onyx.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                    // 155: sttattus.onyx.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                   // 156: sttattus.onyx.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                  // 157: sttattus.onyx.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                 // 158: sttattus.onyx.v1.PostConciergeMessageResponse
+	(*LiveEvent)(nil),                                    // 159: sttattus.onyx.v1.LiveEvent
+	(*ListLiveEventsRequest)(nil),                        // 160: sttattus.onyx.v1.ListLiveEventsRequest
+	(*ListLiveEventsResponse)(nil),                       // 161: sttattus.onyx.v1.ListLiveEventsResponse
+	(*GetLiveEventRequest)(nil),                          // 162: sttattus.onyx.v1.GetLiveEventRequest
+	(*GetLiveEventResponse)(nil),                         // 163: sttattus.onyx.v1.GetLiveEventResponse
+	(*RsvpLiveEventRequest)(nil),                         // 164: sttattus.onyx.v1.RsvpLiveEventRequest
+	(*RsvpLiveEventResponse)(nil),                        // 165: sttattus.onyx.v1.RsvpLiveEventResponse
+	(*LiveSpeaker)(nil),                                  // 166: sttattus.onyx.v1.LiveSpeaker
+	(*LiveAgendaItem)(nil),                               // 167: sttattus.onyx.v1.LiveAgendaItem
+	(*LiveEventAsset)(nil),                               // 168: sttattus.onyx.v1.LiveEventAsset
+	(*LiveGuestInvitation)(nil),                          // 169: sttattus.onyx.v1.LiveGuestInvitation
+	(*LiveReservation)(nil),                              // 170: sttattus.onyx.v1.LiveReservation
+	(*LiveMessage)(nil),                                  // 171: sttattus.onyx.v1.LiveMessage
+	(*LivePollOption)(nil),                               // 172: sttattus.onyx.v1.LivePollOption
+	(*LivePoll)(nil),                                     // 173: sttattus.onyx.v1.LivePoll
+	(*LiveNote)(nil),                                     // 174: sttattus.onyx.v1.LiveNote
+	(*LiveReplaySegment)(nil),                            // 175: sttattus.onyx.v1.LiveReplaySegment
+	(*LiveReplay)(nil),                                   // 176: sttattus.onyx.v1.LiveReplay
+	(*LiveSalon)(nil),                                    // 177: sttattus.onyx.v1.LiveSalon
+	(*GetLiveSalonRequest)(nil),                          // 178: sttattus.onyx.v1.GetLiveSalonRequest
+	(*GetLiveSalonResponse)(nil),                         // 179: sttattus.onyx.v1.GetLiveSalonResponse
+	(*UpsertLiveReservationRequest)(nil),                 // 180: sttattus.onyx.v1.UpsertLiveReservationRequest
+	(*UpsertLiveReservationResponse)(nil),                // 181: sttattus.onyx.v1.UpsertLiveReservationResponse
+	(*InviteLiveGuestRequest)(nil),                       // 182: sttattus.onyx.v1.InviteLiveGuestRequest
+	(*InviteLiveGuestResponse)(nil),                      // 183: sttattus.onyx.v1.InviteLiveGuestResponse
+	(*GenerateLiveCalendarPassRequest)(nil),              // 184: sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+	(*GenerateLiveCalendarPassResponse)(nil),             // 185: sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+	(*JoinLiveEventRequest)(nil),                         // 186: sttattus.onyx.v1.JoinLiveEventRequest
+	(*JoinLiveEventResponse)(nil),                        // 187: sttattus.onyx.v1.JoinLiveEventResponse
+	(*ListLiveActivityRequest)(nil),                      // 188: sttattus.onyx.v1.ListLiveActivityRequest
+	(*ListLiveActivityResponse)(nil),                     // 189: sttattus.onyx.v1.ListLiveActivityResponse
+	(*PostLiveMessageRequest)(nil),                       // 190: sttattus.onyx.v1.PostLiveMessageRequest
+	(*PostLiveMessageResponse)(nil),                      // 191: sttattus.onyx.v1.PostLiveMessageResponse
+	(*UpvoteLiveQuestionRequest)(nil),                    // 192: sttattus.onyx.v1.UpvoteLiveQuestionRequest
+	(*UpvoteLiveQuestionResponse)(nil),                   // 193: sttattus.onyx.v1.UpvoteLiveQuestionResponse
+	(*VoteLivePollRequest)(nil),                          // 194: sttattus.onyx.v1.VoteLivePollRequest
+	(*VoteLivePollResponse)(nil),                         // 195: sttattus.onyx.v1.VoteLivePollResponse
+	(*SetLiveHandRaiseRequest)(nil),                      // 196: sttattus.onyx.v1.SetLiveHandRaiseRequest
+	(*SetLiveHandRaiseResponse)(nil),                     // 197: sttattus.onyx.v1.SetLiveHandRaiseResponse
+	(*ReactLiveEventRequest)(nil),                        // 198: sttattus.onyx.v1.ReactLiveEventRequest
+	(*ReactLiveEventResponse)(nil),                       // 199: sttattus.onyx.v1.ReactLiveEventResponse
+	(*UpsertLiveNoteRequest)(nil),                        // 200: sttattus.onyx.v1.UpsertLiveNoteRequest
+	(*UpsertLiveNoteResponse)(nil),                       // 201: sttattus.onyx.v1.UpsertLiveNoteResponse
+	(*ListLiveNotesRequest)(nil),                         // 202: sttattus.onyx.v1.ListLiveNotesRequest
+	(*ListLiveNotesResponse)(nil),                        // 203: sttattus.onyx.v1.ListLiveNotesResponse
+	(*DeleteLiveNoteRequest)(nil),                        // 204: sttattus.onyx.v1.DeleteLiveNoteRequest
+	(*DeleteLiveNoteResponse)(nil),                       // 205: sttattus.onyx.v1.DeleteLiveNoteResponse
+	(*GetLiveReplayRequest)(nil),                         // 206: sttattus.onyx.v1.GetLiveReplayRequest
+	(*GetLiveReplayResponse)(nil),                        // 207: sttattus.onyx.v1.GetLiveReplayResponse
+	(*PosthumousArchive)(nil),                            // 208: sttattus.onyx.v1.PosthumousArchive
+	(*SetPosthumousArchiveRequest)(nil),                  // 209: sttattus.onyx.v1.SetPosthumousArchiveRequest
+	(*SetPosthumousArchiveResponse)(nil),                 // 210: sttattus.onyx.v1.SetPosthumousArchiveResponse
+	(*GetPosthumousArchiveRequest)(nil),                  // 211: sttattus.onyx.v1.GetPosthumousArchiveRequest
+	(*GetPosthumousArchiveResponse)(nil),                 // 212: sttattus.onyx.v1.GetPosthumousArchiveResponse
+	(*Anthology)(nil),                                    // 213: sttattus.onyx.v1.Anthology
+	(*ListAnthologiesRequest)(nil),                       // 214: sttattus.onyx.v1.ListAnthologiesRequest
+	(*ListAnthologiesResponse)(nil),                      // 215: sttattus.onyx.v1.ListAnthologiesResponse
+	(*GetAnthologyRequest)(nil),                          // 216: sttattus.onyx.v1.GetAnthologyRequest
+	(*GetAnthologyResponse)(nil),                         // 217: sttattus.onyx.v1.GetAnthologyResponse
+	(*ShareLink)(nil),                                    // 218: sttattus.onyx.v1.ShareLink
+	(*CreateShareLinkRequest)(nil),                       // 219: sttattus.onyx.v1.CreateShareLinkRequest
+	(*CreateShareLinkResponse)(nil),                      // 220: sttattus.onyx.v1.CreateShareLinkResponse
+	(*ListMyShareLinksRequest)(nil),                      // 221: sttattus.onyx.v1.ListMyShareLinksRequest
+	(*ListMyShareLinksResponse)(nil),                     // 222: sttattus.onyx.v1.ListMyShareLinksResponse
+	(*RevokeShareLinkRequest)(nil),                       // 223: sttattus.onyx.v1.RevokeShareLinkRequest
+	(*RevokeShareLinkResponse)(nil),                      // 224: sttattus.onyx.v1.RevokeShareLinkResponse
+	(*EncryptedRendition)(nil),                           // 225: sttattus.onyx.v1.EncryptedRendition
+	(*GetOfflineManifestRequest)(nil),                    // 226: sttattus.onyx.v1.GetOfflineManifestRequest
+	(*GetOfflineManifestResponse)(nil),                   // 227: sttattus.onyx.v1.GetOfflineManifestResponse
+	(*RegisterDeviceRequest)(nil),                        // 228: sttattus.onyx.v1.RegisterDeviceRequest
+	(*RegisterDeviceResponse)(nil),                       // 229: sttattus.onyx.v1.RegisterDeviceResponse
+	(*AcknowledgePurgeRequest)(nil),                      // 230: sttattus.onyx.v1.AcknowledgePurgeRequest
+	(*AcknowledgePurgeResponse)(nil),                     // 231: sttattus.onyx.v1.AcknowledgePurgeResponse
+	(*GetDeviceGrantsRequest)(nil),                       // 232: sttattus.onyx.v1.GetDeviceGrantsRequest
+	(*DeviceGrantInfo)(nil),                              // 233: sttattus.onyx.v1.DeviceGrantInfo
+	(*GetDeviceGrantsResponse)(nil),                      // 234: sttattus.onyx.v1.GetDeviceGrantsResponse
+	(*RevokeMyDeviceRequest)(nil),                        // 235: sttattus.onyx.v1.RevokeMyDeviceRequest
+	(*RevokeMyDeviceResponse)(nil),                       // 236: sttattus.onyx.v1.RevokeMyDeviceResponse
+	(*MarkMyDeviceLostRequest)(nil),                      // 237: sttattus.onyx.v1.MarkMyDeviceLostRequest
+	(*MarkMyDeviceLostResponse)(nil),                     // 238: sttattus.onyx.v1.MarkMyDeviceLostResponse
+	(*GetPurgeReceiptRequest)(nil),                       // 239: sttattus.onyx.v1.GetPurgeReceiptRequest
+	(*GetPurgeReceiptResponse)(nil),                      // 240: sttattus.onyx.v1.GetPurgeReceiptResponse
+	(*ListOfflineManifestItemsRequest)(nil),              // 241: sttattus.onyx.v1.ListOfflineManifestItemsRequest
+	(*OfflineManifestItemInfo)(nil),                      // 242: sttattus.onyx.v1.OfflineManifestItemInfo
+	(*ListOfflineManifestItemsResponse)(nil),             // 243: sttattus.onyx.v1.ListOfflineManifestItemsResponse
+	(*RefreshOfflineRenditionsRequest)(nil),              // 244: sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+	(*RefreshedRendition)(nil),                           // 245: sttattus.onyx.v1.RefreshedRendition
+	(*RefreshOfflineRenditionsResponse)(nil),             // 246: sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+	(*RecordOfflineEventRequest)(nil),                    // 247: sttattus.onyx.v1.RecordOfflineEventRequest
+	(*RecordOfflineEventResponse)(nil),                   // 248: sttattus.onyx.v1.RecordOfflineEventResponse
+	(*GetYearInOnyxRequest)(nil),                         // 249: sttattus.onyx.v1.GetYearInOnyxRequest
+	(*GetYearInOnyxResponse)(nil),                        // 250: sttattus.onyx.v1.GetYearInOnyxResponse
+	(*AnnualArchive)(nil),                                // 251: sttattus.onyx.v1.AnnualArchive
+	(*GenerateAnnualArchiveRequest)(nil),                 // 252: sttattus.onyx.v1.GenerateAnnualArchiveRequest
+	(*GenerateAnnualArchiveResponse)(nil),                // 253: sttattus.onyx.v1.GenerateAnnualArchiveResponse
+	(*ReactToContentRequest)(nil),                        // 254: sttattus.onyx.v1.ReactToContentRequest
+	(*ReactToContentResponse)(nil),                       // 255: sttattus.onyx.v1.ReactToContentResponse
+	(*IngestionItem)(nil),                                // 256: sttattus.onyx.v1.IngestionItem
+	(*CreateIngestionItemRequest)(nil),                   // 257: sttattus.onyx.v1.CreateIngestionItemRequest
+	(*CreateIngestionItemResponse)(nil),                  // 258: sttattus.onyx.v1.CreateIngestionItemResponse
+	(*ListMyIngestionItemsRequest)(nil),                  // 259: sttattus.onyx.v1.ListMyIngestionItemsRequest
+	(*ListMyIngestionItemsResponse)(nil),                 // 260: sttattus.onyx.v1.ListMyIngestionItemsResponse
+	(*GetIngestionItemRequest)(nil),                      // 261: sttattus.onyx.v1.GetIngestionItemRequest
+	(*GetIngestionItemResponse)(nil),                     // 262: sttattus.onyx.v1.GetIngestionItemResponse
+	(*RetryIngestionItemRequest)(nil),                    // 263: sttattus.onyx.v1.RetryIngestionItemRequest
+	(*RetryIngestionItemResponse)(nil),                   // 264: sttattus.onyx.v1.RetryIngestionItemResponse
+	(*SetIngestionItemStateRequest)(nil),                 // 265: sttattus.onyx.v1.SetIngestionItemStateRequest
+	(*SetIngestionItemStateResponse)(nil),                // 266: sttattus.onyx.v1.SetIngestionItemStateResponse
+	(*ResolveIngestionDuplicateRequest)(nil),             // 267: sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+	(*ResolveIngestionDuplicateResponse)(nil),            // 268: sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+	(*EvidenceSource)(nil),                               // 269: sttattus.onyx.v1.EvidenceSource
+	(*EvidenceCitation)(nil),                             // 270: sttattus.onyx.v1.EvidenceCitation
+	(*EvidenceClaim)(nil),                                // 271: sttattus.onyx.v1.EvidenceClaim
+	(*EvidenceCorrection)(nil),                           // 272: sttattus.onyx.v1.EvidenceCorrection
+	(*GetEvidenceWorkspaceRequest)(nil),                  // 273: sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+	(*GetEvidenceWorkspaceResponse)(nil),                 // 274: sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+	(*BriefPoint)(nil),                                   // 275: sttattus.onyx.v1.BriefPoint
+	(*EvidenceBrief)(nil),                                // 276: sttattus.onyx.v1.EvidenceBrief
+	(*CreateEvidenceBriefRequest)(nil),                   // 277: sttattus.onyx.v1.CreateEvidenceBriefRequest
+	(*CreateEvidenceBriefResponse)(nil),                  // 278: sttattus.onyx.v1.CreateEvidenceBriefResponse
+	(*ListMyEvidenceBriefsRequest)(nil),                  // 279: sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	(*ListMyEvidenceBriefsResponse)(nil),                 // 280: sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	(*GetEvidenceBriefRequest)(nil),                      // 281: sttattus.onyx.v1.GetEvidenceBriefRequest
+	(*GetEvidenceBriefResponse)(nil),                     // 282: sttattus.onyx.v1.GetEvidenceBriefResponse
+	(*CreatorContract)(nil),                              // 283: sttattus.onyx.v1.CreatorContract
+	(*EditorialReview)(nil),                              // 284: sttattus.onyx.v1.EditorialReview
+	(*EditorialComment)(nil),                             // 285: sttattus.onyx.v1.EditorialComment
+	(*EditorialProject)(nil),                             // 286: sttattus.onyx.v1.EditorialProject
+	(*CreatorStatement)(nil),                             // 287: sttattus.onyx.v1.CreatorStatement
+	(*CreatorMetric)(nil),                                // 288: sttattus.onyx.v1.CreatorMetric
+	(*CreatorStudio)(nil),                                // 289: sttattus.onyx.v1.CreatorStudio
+	(*GetCreatorStudioRequest)(nil),                      // 290: sttattus.onyx.v1.GetCreatorStudioRequest
+	(*GetCreatorStudioResponse)(nil),                     // 291: sttattus.onyx.v1.GetCreatorStudioResponse
+	(*SubmitCreatorPitchRequest)(nil),                    // 292: sttattus.onyx.v1.SubmitCreatorPitchRequest
+	(*SubmitCreatorPitchResponse)(nil),                   // 293: sttattus.onyx.v1.SubmitCreatorPitchResponse
+	(*UpdateCreatorProjectRequest)(nil),                  // 294: sttattus.onyx.v1.UpdateCreatorProjectRequest
+	(*UpdateCreatorProjectResponse)(nil),                 // 295: sttattus.onyx.v1.UpdateCreatorProjectResponse
+	(*SubmitCreatorProjectRequest)(nil),                  // 296: sttattus.onyx.v1.SubmitCreatorProjectRequest
+	(*SubmitCreatorProjectResponse)(nil),                 // 297: sttattus.onyx.v1.SubmitCreatorProjectResponse
+	(*SignCreatorContractRequest)(nil),                   // 298: sttattus.onyx.v1.SignCreatorContractRequest
+	(*SignCreatorContractResponse)(nil),                  // 299: sttattus.onyx.v1.SignCreatorContractResponse
+	(*ListMyCreatorSubscriptionsDetailedRequest)(nil),    // 300: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	(*ListMyCreatorSubscriptionsDetailedResponse)(nil),   // 301: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	(*CancelCreatorSubscriptionRequest)(nil),             // 302: sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	(*CancelCreatorSubscriptionResponse)(nil),            // 303: sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	(*CommerceInvoice)(nil),                              // 304: sttattus.onyx.v1.CommerceInvoice
+	(*CommerceCase)(nil),                                 // 305: sttattus.onyx.v1.CommerceCase
+	(*GetMyCommerceRequest)(nil),                         // 306: sttattus.onyx.v1.GetMyCommerceRequest
+	(*GetMyCommerceResponse)(nil),                        // 307: sttattus.onyx.v1.GetMyCommerceResponse
+	(*CreateCommerceCaseRequest)(nil),                    // 308: sttattus.onyx.v1.CreateCommerceCaseRequest
+	(*CreateCommerceCaseResponse)(nil),                   // 309: sttattus.onyx.v1.CreateCommerceCaseResponse
+	(*ResearchRoomPolicy)(nil),                           // 310: sttattus.onyx.v1.ResearchRoomPolicy
+	(*ResearchRoomMember)(nil),                           // 311: sttattus.onyx.v1.ResearchRoomMember
+	(*ResearchRoom)(nil),                                 // 312: sttattus.onyx.v1.ResearchRoom
+	(*ResearchRoomItem)(nil),                             // 313: sttattus.onyx.v1.ResearchRoomItem
+	(*ResearchRoomThread)(nil),                           // 314: sttattus.onyx.v1.ResearchRoomThread
+	(*ResearchRoomComment)(nil),                          // 315: sttattus.onyx.v1.ResearchRoomComment
+	(*ResearchRoomTask)(nil),                             // 316: sttattus.onyx.v1.ResearchRoomTask
+	(*ResearchRoomMeeting)(nil),                          // 317: sttattus.onyx.v1.ResearchRoomMeeting
+	(*ResearchRoomDecision)(nil),                         // 318: sttattus.onyx.v1.ResearchRoomDecision
+	(*ResearchRoomApproval)(nil),                         // 319: sttattus.onyx.v1.ResearchRoomApproval
+	(*ResearchRoomExport)(nil),                           // 320: sttattus.onyx.v1.ResearchRoomExport
+	(*ResearchRoomAuditEvent)(nil),                       // 321: sttattus.onyx.v1.ResearchRoomAuditEvent
+	(*ResearchRoomGrant)(nil),                            // 322: sttattus.onyx.v1.ResearchRoomGrant
+	(*ResearchRoomShareLink)(nil),                        // 323: sttattus.onyx.v1.ResearchRoomShareLink
+	(*ResearchRoomOfflineManifest)(nil),                  // 324: sttattus.onyx.v1.ResearchRoomOfflineManifest
+	(*ResearchRoomPurgeReceipt)(nil),                     // 325: sttattus.onyx.v1.ResearchRoomPurgeReceipt
+	(*ResearchRoomDetail)(nil),                           // 326: sttattus.onyx.v1.ResearchRoomDetail
+	(*ListResearchRoomsRequest)(nil),                     // 327: sttattus.onyx.v1.ListResearchRoomsRequest
+	(*ListResearchRoomsResponse)(nil),                    // 328: sttattus.onyx.v1.ListResearchRoomsResponse
+	(*GetResearchRoomRequest)(nil),                       // 329: sttattus.onyx.v1.GetResearchRoomRequest
+	(*GetResearchRoomResponse)(nil),                      // 330: sttattus.onyx.v1.GetResearchRoomResponse
+	(*CreateResearchRoomRequest)(nil),                    // 331: sttattus.onyx.v1.CreateResearchRoomRequest
+	(*CreateResearchRoomResponse)(nil),                   // 332: sttattus.onyx.v1.CreateResearchRoomResponse
+	(*UpdateResearchRoomRequest)(nil),                    // 333: sttattus.onyx.v1.UpdateResearchRoomRequest
+	(*UpdateResearchRoomResponse)(nil),                   // 334: sttattus.onyx.v1.UpdateResearchRoomResponse
+	(*InviteResearchRoomMemberRequest)(nil),              // 335: sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	(*InviteResearchRoomMemberResponse)(nil),             // 336: sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	(*RespondResearchRoomInviteRequest)(nil),             // 337: sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	(*RespondResearchRoomInviteResponse)(nil),            // 338: sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	(*ChangeResearchRoomMemberRequest)(nil),              // 339: sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	(*ChangeResearchRoomMemberResponse)(nil),             // 340: sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	(*RevokeResearchRoomMemberRequest)(nil),              // 341: sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	(*RevokeResearchRoomMemberResponse)(nil),             // 342: sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	(*AddResearchRoomItemRequest)(nil),                   // 343: sttattus.onyx.v1.AddResearchRoomItemRequest
+	(*AddResearchRoomItemResponse)(nil),                  // 344: sttattus.onyx.v1.AddResearchRoomItemResponse
+	(*RemoveResearchRoomItemRequest)(nil),                // 345: sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	(*RemoveResearchRoomItemResponse)(nil),               // 346: sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	(*PostResearchRoomCommentRequest)(nil),               // 347: sttattus.onyx.v1.PostResearchRoomCommentRequest
+	(*PostResearchRoomCommentResponse)(nil),              // 348: sttattus.onyx.v1.PostResearchRoomCommentResponse
+	(*SetResearchRoomThreadStatusRequest)(nil),           // 349: sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	(*SetResearchRoomThreadStatusResponse)(nil),          // 350: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	(*UpsertResearchRoomTaskRequest)(nil),                // 351: sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	(*UpsertResearchRoomTaskResponse)(nil),               // 352: sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	(*UpsertResearchRoomMeetingRequest)(nil),             // 353: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	(*UpsertResearchRoomMeetingResponse)(nil),            // 354: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	(*UpsertResearchRoomDecisionRequest)(nil),            // 355: sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	(*UpsertResearchRoomDecisionResponse)(nil),           // 356: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	(*RecordResearchRoomApprovalRequest)(nil),            // 357: sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	(*RecordResearchRoomApprovalResponse)(nil),           // 358: sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	(*SearchResearchRoomRequest)(nil),                    // 359: sttattus.onyx.v1.SearchResearchRoomRequest
+	(*SearchResearchRoomResult)(nil),                     // 360: sttattus.onyx.v1.SearchResearchRoomResult
+	(*SearchResearchRoomResponse)(nil),                   // 361: sttattus.onyx.v1.SearchResearchRoomResponse
+	(*RequestResearchRoomExportRequest)(nil),             // 362: sttattus.onyx.v1.RequestResearchRoomExportRequest
+	(*RequestResearchRoomExportResponse)(nil),            // 363: sttattus.onyx.v1.RequestResearchRoomExportResponse
+	(*ReportResearchRoomAbuseRequest)(nil),               // 364: sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	(*ReportResearchRoomAbuseResponse)(nil),              // 365: sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	(*ListResearchRoomAuditRequest)(nil),                 // 366: sttattus.onyx.v1.ListResearchRoomAuditRequest
+	(*ListResearchRoomAuditResponse)(nil),                // 367: sttattus.onyx.v1.ListResearchRoomAuditResponse
+	(*ListResearchRoomGrantsRequest)(nil),                // 368: sttattus.onyx.v1.ListResearchRoomGrantsRequest
+	(*ListResearchRoomGrantsResponse)(nil),               // 369: sttattus.onyx.v1.ListResearchRoomGrantsResponse
+	(*UpsertResearchRoomGrantRequest)(nil),               // 370: sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+	(*UpsertResearchRoomGrantResponse)(nil),              // 371: sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+	(*RevokeResearchRoomGrantRequest)(nil),               // 372: sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+	(*RevokeResearchRoomGrantResponse)(nil),              // 373: sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+	(*CreateResearchRoomShareLinkRequest)(nil),           // 374: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+	(*CreateResearchRoomShareLinkResponse)(nil),          // 375: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+	(*ListResearchRoomShareLinksRequest)(nil),            // 376: sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+	(*ListResearchRoomShareLinksResponse)(nil),           // 377: sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+	(*RevokeResearchRoomShareLinkRequest)(nil),           // 378: sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+	(*RevokeResearchRoomShareLinkResponse)(nil),          // 379: sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+	(*ResolveResearchRoomShareLinkRequest)(nil),          // 380: sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+	(*ResolveResearchRoomShareLinkResponse)(nil),         // 381: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+	(*GetResearchRoomOfflineManifestRequest)(nil),        // 382: sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+	(*GetResearchRoomOfflineManifestResponse)(nil),       // 383: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+	(*AcknowledgeResearchRoomOfflinePurgeRequest)(nil),   // 384: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+	(*AcknowledgeResearchRoomOfflinePurgeResponse)(nil),  // 385: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+	(*ListResearchRoomOfflinePurgesRequest)(nil),         // 386: sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+	(*ListResearchRoomOfflinePurgesResponse)(nil),        // 387: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+	(*LeaveResearchRoomRequest)(nil),                     // 388: sttattus.onyx.v1.LeaveResearchRoomRequest
+	(*LeaveResearchRoomResponse)(nil),                    // 389: sttattus.onyx.v1.LeaveResearchRoomResponse
+	(*IntelligenceGraphSourceAnchor)(nil),                // 390: sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	(*IntelligenceGraphNode)(nil),                        // 391: sttattus.onyx.v1.IntelligenceGraphNode
+	(*IntelligenceGraphEdge)(nil),                        // 392: sttattus.onyx.v1.IntelligenceGraphEdge
+	(*IntelligenceGraphSuggestion)(nil),                  // 393: sttattus.onyx.v1.IntelligenceGraphSuggestion
+	(*IntelligenceGraphTimelineEvent)(nil),               // 394: sttattus.onyx.v1.IntelligenceGraphTimelineEvent
+	(*IntelligenceGraphResurfacingItem)(nil),             // 395: sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	(*IntelligenceGraphMeetingBriefSection)(nil),         // 396: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
+	(*IntelligenceGraphMeetingBrief)(nil),                // 397: sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	(*IntelligenceGraphOverview)(nil),                    // 398: sttattus.onyx.v1.IntelligenceGraphOverview
+	(*GetPersonalIntelligenceGraphRequest)(nil),          // 399: sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+	(*GetPersonalIntelligenceGraphResponse)(nil),         // 400: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+	(*UpsertIntelligenceGraphNodeRequest)(nil),           // 401: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+	(*UpsertIntelligenceGraphNodeResponse)(nil),          // 402: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+	(*SetIntelligenceGraphNodeStateRequest)(nil),         // 403: sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+	(*SetIntelligenceGraphNodeStateResponse)(nil),        // 404: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+	(*MergeIntelligenceGraphNodesRequest)(nil),           // 405: sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+	(*MergeIntelligenceGraphNodesResponse)(nil),          // 406: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+	(*SplitIntelligenceGraphNodeRequest)(nil),            // 407: sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+	(*SplitIntelligenceGraphNodeResponse)(nil),           // 408: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+	(*UpsertIntelligenceGraphEdgeRequest)(nil),           // 409: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+	(*UpsertIntelligenceGraphEdgeResponse)(nil),          // 410: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+	(*SetIntelligenceGraphEdgeStateRequest)(nil),         // 411: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+	(*SetIntelligenceGraphEdgeStateResponse)(nil),        // 412: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+	(*GenerateIntelligenceGraphSuggestionsRequest)(nil),  // 413: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+	(*GenerateIntelligenceGraphSuggestionsResponse)(nil), // 414: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+	(*ListIntelligenceGraphSuggestionsRequest)(nil),      // 415: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+	(*ListIntelligenceGraphSuggestionsResponse)(nil),     // 416: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+	(*SetIntelligenceGraphSuggestionStateRequest)(nil),   // 417: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+	(*SetIntelligenceGraphSuggestionStateResponse)(nil),  // 418: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+	(*ListIntelligenceGraphTimelineRequest)(nil),         // 419: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+	(*ListIntelligenceGraphTimelineResponse)(nil),        // 420: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+	(*ListIntelligenceGraphResurfacingRequest)(nil),      // 421: sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+	(*ListIntelligenceGraphResurfacingResponse)(nil),     // 422: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+	(*SetIntelligenceGraphResurfacingStateRequest)(nil),  // 423: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+	(*SetIntelligenceGraphResurfacingStateResponse)(nil), // 424: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+	(*CreateIntelligenceGraphMeetingBriefRequest)(nil),   // 425: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+	(*CreateIntelligenceGraphMeetingBriefResponse)(nil),  // 426: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+	(*GetIntelligenceGraphMeetingBriefRequest)(nil),      // 427: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+	(*GetIntelligenceGraphMeetingBriefResponse)(nil),     // 428: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+	(*ListIntelligenceGraphMeetingBriefsRequest)(nil),    // 429: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+	(*ListIntelligenceGraphMeetingBriefsResponse)(nil),   // 430: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+	(*ExportPersonalIntelligenceGraphRequest)(nil),       // 431: sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+	(*ExportPersonalIntelligenceGraphResponse)(nil),      // 432: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+	(*RebuildPersonalIntelligenceGraphRequest)(nil),      // 433: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+	(*RebuildPersonalIntelligenceGraphResponse)(nil),     // 434: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+	(*timestamppb.Timestamp)(nil),                        // 435: google.protobuf.Timestamp
 }
 var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
-	390, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
+	435, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
 	2,   // 1: sttattus.onyx.v1.OnyxContent.gating:type_name -> sttattus.onyx.v1.GatingCriteria
-	390, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
-	390, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
+	435, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
 	5,   // 4: sttattus.onyx.v1.OnyxContent.document_blocks:type_name -> sttattus.onyx.v1.DocumentBlock
-	390, // 5: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
-	390, // 6: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 7: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 5: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
+	435, // 6: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 7: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
 	3,   // 8: sttattus.onyx.v1.CreateProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	3,   // 9: sttattus.onyx.v1.GetProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	4,   // 10: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
@@ -29203,50 +33184,50 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 14: sttattus.onyx.v1.ListContinueResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 15: sttattus.onyx.v1.Shelf.items:type_name -> sttattus.onyx.v1.OnyxContent
 	22,  // 16: sttattus.onyx.v1.GetShelvesResponse.shelves:type_name -> sttattus.onyx.v1.Shelf
-	390, // 17: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
-	390, // 18: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
+	435, // 17: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
+	435, // 18: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
 	30,  // 19: sttattus.onyx.v1.GetCreatorResponse.creator:type_name -> sttattus.onyx.v1.CreatorProfile
 	4,   // 20: sttattus.onyx.v1.ListCreatorWorksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 21: sttattus.onyx.v1.SearchContentResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
-	390, // 22: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
+	435, // 22: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
 	39,  // 23: sttattus.onyx.v1.AddNoteResponse.note:type_name -> sttattus.onyx.v1.Note
 	39,  // 24: sttattus.onyx.v1.ListMyNotesResponse.notes:type_name -> sttattus.onyx.v1.Note
-	390, // 25: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
-	390, // 26: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 25: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
+	435, // 26: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
 	46,  // 27: sttattus.onyx.v1.UpsertReaderAnnotationResponse.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	46,  // 28: sttattus.onyx.v1.ListMyReaderAnnotationsResponse.annotations:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	4,   // 29: sttattus.onyx.v1.ReaderSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	46,  // 30: sttattus.onyx.v1.ReaderSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	53,  // 31: sttattus.onyx.v1.SearchReaderResponse.results:type_name -> sttattus.onyx.v1.ReaderSearchResult
-	390, // 32: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
-	390, // 33: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
+	435, // 32: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
+	435, // 33: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
 	56,  // 34: sttattus.onyx.v1.SearchIntelligenceRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	4,   // 35: sttattus.onyx.v1.IntelligenceSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	46,  // 36: sttattus.onyx.v1.IntelligenceSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	58,  // 37: sttattus.onyx.v1.SearchIntelligenceResponse.results:type_name -> sttattus.onyx.v1.IntelligenceSearchResult
 	56,  // 38: sttattus.onyx.v1.OnyxSavedQuery.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
-	390, // 39: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
-	390, // 40: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 39: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
+	435, // 40: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
 	62,  // 41: sttattus.onyx.v1.ListSavedQueriesResponse.queries:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	56,  // 42: sttattus.onyx.v1.UpsertSavedQueryRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	62,  // 43: sttattus.onyx.v1.UpsertSavedQueryResponse.query:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	69,  // 44: sttattus.onyx.v1.OnyxWatchlist.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
-	390, // 45: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
-	390, // 46: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
-	390, // 47: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 45: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
+	435, // 46: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
+	435, // 47: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
 	70,  // 48: sttattus.onyx.v1.ListWatchlistsResponse.watchlists:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	69,  // 49: sttattus.onyx.v1.UpsertWatchlistRequest.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
 	70,  // 50: sttattus.onyx.v1.UpsertWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	70,  // 51: sttattus.onyx.v1.RefreshWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	4,   // 52: sttattus.onyx.v1.OnyxIntelligenceAlert.content:type_name -> sttattus.onyx.v1.OnyxContent
-	390, // 53: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
+	435, // 53: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
 	79,  // 54: sttattus.onyx.v1.ListIntelligenceAlertsResponse.alerts:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	79,  // 55: sttattus.onyx.v1.SetIntelligenceAlertStateResponse.alert:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	4,   // 56: sttattus.onyx.v1.OnyxIntelligenceQueueItem.content:type_name -> sttattus.onyx.v1.OnyxContent
 	84,  // 57: sttattus.onyx.v1.GetIntelligenceQueueResponse.items:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
 	84,  // 58: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse.item:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
-	390, // 59: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
-	390, // 60: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
+	435, // 59: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
+	435, // 60: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
 	91,  // 61: sttattus.onyx.v1.ListReaderSyncChangesResponse.changes:type_name -> sttattus.onyx.v1.ReaderSyncChange
 	4,   // 62: sttattus.onyx.v1.ListMyUnlocksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	30,  // 63: sttattus.onyx.v1.ListMySubscriptionsResponse.creators:type_name -> sttattus.onyx.v1.CreatorProfile
@@ -29256,23 +33237,23 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 67: sttattus.onyx.v1.Series.parts:type_name -> sttattus.onyx.v1.OnyxContent
 	103, // 68: sttattus.onyx.v1.ListSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
 	103, // 69: sttattus.onyx.v1.GetSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
-	390, // 70: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
+	435, // 70: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
 	108, // 71: sttattus.onyx.v1.GenerateCaptionsResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
 	108, // 72: sttattus.onyx.v1.GetCaptionJobResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
-	390, // 73: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 73: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
 	113, // 74: sttattus.onyx.v1.GetListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
 	113, // 75: sttattus.onyx.v1.UpdateListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
-	390, // 76: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
-	390, // 77: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 76: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
+	435, // 77: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
 	118, // 78: sttattus.onyx.v1.CreateListeningBookmarkResponse.bookmark:type_name -> sttattus.onyx.v1.ListeningBookmark
 	118, // 79: sttattus.onyx.v1.ListListeningBookmarksResponse.bookmarks:type_name -> sttattus.onyx.v1.ListeningBookmark
 	4,   // 80: sttattus.onyx.v1.ListeningQueueEntry.content:type_name -> sttattus.onyx.v1.OnyxContent
-	390, // 81: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
+	435, // 81: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
 	125, // 82: sttattus.onyx.v1.ListListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	125, // 83: sttattus.onyx.v1.SetListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	130, // 84: sttattus.onyx.v1.AudioOverviewSegment.citations:type_name -> sttattus.onyx.v1.AudioOverviewCitation
-	390, // 85: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
-	390, // 86: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 85: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
+	435, // 86: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
 	131, // 87: sttattus.onyx.v1.AudioOverview.segments:type_name -> sttattus.onyx.v1.AudioOverviewSegment
 	132, // 88: sttattus.onyx.v1.CreateAudioOverviewResponse.overview:type_name -> sttattus.onyx.v1.AudioOverview
 	132, // 89: sttattus.onyx.v1.ListAudioOverviewsResponse.overviews:type_name -> sttattus.onyx.v1.AudioOverview
@@ -29281,31 +33262,31 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	4,   // 92: sttattus.onyx.v1.GetTodaySummaryResponse.todays_drop:type_name -> sttattus.onyx.v1.OnyxContent
 	4,   // 93: sttattus.onyx.v1.CrossPillarUnlock.content:type_name -> sttattus.onyx.v1.OnyxContent
 	146, // 94: sttattus.onyx.v1.GetCrossPillarUnlocksResponse.unlocks:type_name -> sttattus.onyx.v1.CrossPillarUnlock
-	390, // 95: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
-	390, // 96: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
-	390, // 97: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
+	435, // 95: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
+	435, // 96: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	435, // 97: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
 	149, // 98: sttattus.onyx.v1.ConciergeThread.messages:type_name -> sttattus.onyx.v1.ConciergeMessage
 	150, // 99: sttattus.onyx.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	150, // 100: sttattus.onyx.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.onyx.v1.ConciergeThread
 	150, // 101: sttattus.onyx.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	149, // 102: sttattus.onyx.v1.PostConciergeMessageResponse.message:type_name -> sttattus.onyx.v1.ConciergeMessage
-	390, // 103: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
-	390, // 104: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
+	435, // 103: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
+	435, // 104: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
 	159, // 105: sttattus.onyx.v1.ListLiveEventsResponse.events:type_name -> sttattus.onyx.v1.LiveEvent
 	159, // 106: sttattus.onyx.v1.GetLiveEventResponse.event:type_name -> sttattus.onyx.v1.LiveEvent
-	390, // 107: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 108: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
-	390, // 109: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
+	435, // 107: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 108: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
+	435, // 109: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
 	169, // 110: sttattus.onyx.v1.LiveReservation.guest_invitations:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	390, // 111: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
-	390, // 112: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
+	435, // 111: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
+	435, // 112: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
 	172, // 113: sttattus.onyx.v1.LivePoll.options:type_name -> sttattus.onyx.v1.LivePollOption
-	390, // 114: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
-	390, // 115: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
-	390, // 116: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
-	390, // 117: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 114: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
+	435, // 115: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
+	435, // 116: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
+	435, // 117: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
 	175, // 118: sttattus.onyx.v1.LiveReplay.segments:type_name -> sttattus.onyx.v1.LiveReplaySegment
-	390, // 119: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
+	435, // 119: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
 	159, // 120: sttattus.onyx.v1.LiveSalon.event:type_name -> sttattus.onyx.v1.LiveEvent
 	166, // 121: sttattus.onyx.v1.LiveSalon.speakers:type_name -> sttattus.onyx.v1.LiveSpeaker
 	167, // 122: sttattus.onyx.v1.LiveSalon.agenda:type_name -> sttattus.onyx.v1.LiveAgendaItem
@@ -29315,7 +33296,7 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	177, // 126: sttattus.onyx.v1.GetLiveSalonResponse.salon:type_name -> sttattus.onyx.v1.LiveSalon
 	170, // 127: sttattus.onyx.v1.UpsertLiveReservationResponse.reservation:type_name -> sttattus.onyx.v1.LiveReservation
 	169, // 128: sttattus.onyx.v1.InviteLiveGuestResponse.invitation:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	390, // 129: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 129: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
 	171, // 130: sttattus.onyx.v1.ListLiveActivityResponse.messages:type_name -> sttattus.onyx.v1.LiveMessage
 	173, // 131: sttattus.onyx.v1.ListLiveActivityResponse.polls:type_name -> sttattus.onyx.v1.LivePoll
 	171, // 132: sttattus.onyx.v1.PostLiveMessageResponse.message:type_name -> sttattus.onyx.v1.LiveMessage
@@ -29324,72 +33305,72 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	174, // 135: sttattus.onyx.v1.UpsertLiveNoteResponse.note:type_name -> sttattus.onyx.v1.LiveNote
 	174, // 136: sttattus.onyx.v1.ListLiveNotesResponse.notes:type_name -> sttattus.onyx.v1.LiveNote
 	176, // 137: sttattus.onyx.v1.GetLiveReplayResponse.replay:type_name -> sttattus.onyx.v1.LiveReplay
-	390, // 138: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 138: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
 	208, // 139: sttattus.onyx.v1.SetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	208, // 140: sttattus.onyx.v1.GetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	4,   // 141: sttattus.onyx.v1.Anthology.pieces:type_name -> sttattus.onyx.v1.OnyxContent
 	213, // 142: sttattus.onyx.v1.ListAnthologiesResponse.anthologies:type_name -> sttattus.onyx.v1.Anthology
 	213, // 143: sttattus.onyx.v1.GetAnthologyResponse.anthology:type_name -> sttattus.onyx.v1.Anthology
-	390, // 144: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 144: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
 	218, // 145: sttattus.onyx.v1.CreateShareLinkResponse.link:type_name -> sttattus.onyx.v1.ShareLink
 	218, // 146: sttattus.onyx.v1.ListMyShareLinksResponse.links:type_name -> sttattus.onyx.v1.ShareLink
 	0,   // 147: sttattus.onyx.v1.EncryptedRendition.status:type_name -> sttattus.onyx.v1.EncryptedRendition.RenditionStatus
-	390, // 148: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
+	435, // 148: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
 	1,   // 149: sttattus.onyx.v1.EncryptedRendition.package_type:type_name -> sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
 	4,   // 150: sttattus.onyx.v1.GetOfflineManifestResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	225, // 151: sttattus.onyx.v1.GetOfflineManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	390, // 152: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
-	390, // 153: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 154: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
-	390, // 155: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 156: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
+	435, // 152: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
+	435, // 153: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 154: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
+	435, // 155: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 156: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
 	233, // 157: sttattus.onyx.v1.GetDeviceGrantsResponse.grants:type_name -> sttattus.onyx.v1.DeviceGrantInfo
-	390, // 158: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
-	390, // 159: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
+	435, // 158: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
+	435, // 159: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
 	242, // 160: sttattus.onyx.v1.ListOfflineManifestItemsResponse.items:type_name -> sttattus.onyx.v1.OfflineManifestItemInfo
-	390, // 161: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 161: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
 	245, // 162: sttattus.onyx.v1.RefreshOfflineRenditionsResponse.renditions:type_name -> sttattus.onyx.v1.RefreshedRendition
 	251, // 163: sttattus.onyx.v1.GetYearInOnyxResponse.latest_archive:type_name -> sttattus.onyx.v1.AnnualArchive
-	390, // 164: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
-	390, // 165: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
-	390, // 166: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
-	390, // 167: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 164: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
+	435, // 165: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
+	435, // 166: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
+	435, // 167: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
 	256, // 168: sttattus.onyx.v1.CreateIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 169: sttattus.onyx.v1.ListMyIngestionItemsResponse.items:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 170: sttattus.onyx.v1.GetIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 171: sttattus.onyx.v1.RetryIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 172: sttattus.onyx.v1.SetIngestionItemStateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	256, // 173: sttattus.onyx.v1.ResolveIngestionDuplicateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
-	390, // 174: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
-	390, // 175: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
+	435, // 174: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
+	435, // 175: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
 	270, // 176: sttattus.onyx.v1.EvidenceClaim.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
-	390, // 177: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
-	390, // 178: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
+	435, // 177: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
+	435, // 178: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
 	269, // 179: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.sources:type_name -> sttattus.onyx.v1.EvidenceSource
 	271, // 180: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.claims:type_name -> sttattus.onyx.v1.EvidenceClaim
 	272, // 181: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
 	270, // 182: sttattus.onyx.v1.BriefPoint.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
 	275, // 183: sttattus.onyx.v1.EvidenceBrief.points:type_name -> sttattus.onyx.v1.BriefPoint
-	390, // 184: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
-	390, // 185: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
+	435, // 184: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
+	435, // 185: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
 	272, // 186: sttattus.onyx.v1.EvidenceBrief.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	390, // 187: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
+	435, // 187: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
 	276, // 188: sttattus.onyx.v1.CreateEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
 	276, // 189: sttattus.onyx.v1.ListMyEvidenceBriefsResponse.briefs:type_name -> sttattus.onyx.v1.EvidenceBrief
 	276, // 190: sttattus.onyx.v1.GetEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
-	390, // 191: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
-	390, // 192: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
-	390, // 193: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
-	390, // 194: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
-	390, // 195: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
-	390, // 196: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
-	390, // 197: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
-	390, // 198: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
-	390, // 199: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
+	435, // 191: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
+	435, // 192: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
+	435, // 193: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
+	435, // 194: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
+	435, // 195: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
+	435, // 196: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
+	435, // 197: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
+	435, // 198: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
+	435, // 199: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
 	284, // 200: sttattus.onyx.v1.EditorialProject.reviews:type_name -> sttattus.onyx.v1.EditorialReview
 	285, // 201: sttattus.onyx.v1.EditorialProject.comments:type_name -> sttattus.onyx.v1.EditorialComment
-	390, // 202: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 203: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
+	435, // 202: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 203: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
 	3,   // 204: sttattus.onyx.v1.CreatorStudio.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	283, // 205: sttattus.onyx.v1.CreatorStudio.contracts:type_name -> sttattus.onyx.v1.CreatorContract
 	286, // 206: sttattus.onyx.v1.CreatorStudio.projects:type_name -> sttattus.onyx.v1.EditorialProject
@@ -29402,54 +33383,54 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	283, // 213: sttattus.onyx.v1.SignCreatorContractResponse.contract:type_name -> sttattus.onyx.v1.CreatorContract
 	6,   // 214: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse.subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	6,   // 215: sttattus.onyx.v1.CancelCreatorSubscriptionResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
-	390, // 216: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
-	390, // 217: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
-	390, // 218: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
-	390, // 219: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
+	435, // 216: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
+	435, // 217: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
+	435, // 218: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
+	435, // 219: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
 	304, // 220: sttattus.onyx.v1.GetMyCommerceResponse.invoices:type_name -> sttattus.onyx.v1.CommerceInvoice
 	305, // 221: sttattus.onyx.v1.GetMyCommerceResponse.cases:type_name -> sttattus.onyx.v1.CommerceCase
 	6,   // 222: sttattus.onyx.v1.GetMyCommerceResponse.creator_subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	305, // 223: sttattus.onyx.v1.CreateCommerceCaseResponse.commerce_case:type_name -> sttattus.onyx.v1.CommerceCase
-	390, // 224: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 225: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
-	390, // 226: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
-	390, // 227: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
+	435, // 224: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 225: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
+	435, // 226: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
+	435, // 227: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
 	310, // 228: sttattus.onyx.v1.ResearchRoom.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
-	390, // 229: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
-	390, // 230: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 231: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
-	390, // 232: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 233: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
-	390, // 234: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
-	390, // 235: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 236: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
-	390, // 237: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 238: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
-	390, // 239: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
-	390, // 240: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 241: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
-	390, // 242: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
-	390, // 243: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
-	390, // 244: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 245: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
-	390, // 246: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
-	390, // 247: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 248: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
-	390, // 249: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 250: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
-	390, // 251: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
-	390, // 252: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
-	390, // 253: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 254: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
-	390, // 255: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
-	390, // 256: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
-	390, // 257: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
-	390, // 258: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
-	390, // 259: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
+	435, // 229: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
+	435, // 230: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 231: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
+	435, // 232: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 233: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
+	435, // 234: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
+	435, // 235: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 236: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
+	435, // 237: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 238: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
+	435, // 239: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
+	435, // 240: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 241: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
+	435, // 242: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
+	435, // 243: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
+	435, // 244: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 245: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
+	435, // 246: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
+	435, // 247: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 248: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
+	435, // 249: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 250: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
+	435, // 251: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 252: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
+	435, // 253: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 254: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
+	435, // 255: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
+	435, // 256: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
+	435, // 257: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 258: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
+	435, // 259: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
 	4,   // 260: sttattus.onyx.v1.ResearchRoomOfflineManifest.items:type_name -> sttattus.onyx.v1.OnyxContent
 	225, // 261: sttattus.onyx.v1.ResearchRoomOfflineManifest.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	390, // 262: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
-	390, // 263: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
+	435, // 262: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
+	435, // 263: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
 	312, // 264: sttattus.onyx.v1.ResearchRoomDetail.room:type_name -> sttattus.onyx.v1.ResearchRoom
 	311, // 265: sttattus.onyx.v1.ResearchRoomDetail.members:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	313, // 266: sttattus.onyx.v1.ResearchRoomDetail.items:type_name -> sttattus.onyx.v1.ResearchRoomItem
@@ -29468,16 +33449,16 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	312, // 279: sttattus.onyx.v1.UpdateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
 	311, // 280: sttattus.onyx.v1.InviteResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	311, // 281: sttattus.onyx.v1.RespondResearchRoomInviteResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	390, // 282: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 282: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
 	311, // 283: sttattus.onyx.v1.ChangeResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	313, // 284: sttattus.onyx.v1.AddResearchRoomItemResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
 	314, // 285: sttattus.onyx.v1.PostResearchRoomCommentResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
 	315, // 286: sttattus.onyx.v1.PostResearchRoomCommentResponse.comment:type_name -> sttattus.onyx.v1.ResearchRoomComment
 	314, // 287: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
-	390, // 288: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
+	435, // 288: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
 	316, // 289: sttattus.onyx.v1.UpsertResearchRoomTaskResponse.task:type_name -> sttattus.onyx.v1.ResearchRoomTask
-	390, // 290: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
-	390, // 291: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
+	435, // 290: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
+	435, // 291: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
 	317, // 292: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse.meeting:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
 	318, // 293: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse.decision:type_name -> sttattus.onyx.v1.ResearchRoomDecision
 	319, // 294: sttattus.onyx.v1.RecordResearchRoomApprovalResponse.approval:type_name -> sttattus.onyx.v1.ResearchRoomApproval
@@ -29485,9 +33466,9 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	320, // 296: sttattus.onyx.v1.RequestResearchRoomExportResponse.export:type_name -> sttattus.onyx.v1.ResearchRoomExport
 	321, // 297: sttattus.onyx.v1.ListResearchRoomAuditResponse.events:type_name -> sttattus.onyx.v1.ResearchRoomAuditEvent
 	322, // 298: sttattus.onyx.v1.ListResearchRoomGrantsResponse.grants:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	390, // 299: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 299: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
 	322, // 300: sttattus.onyx.v1.UpsertResearchRoomGrantResponse.grant:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	390, // 301: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 301: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
 	323, // 302: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse.share_link:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
 	323, // 303: sttattus.onyx.v1.ListResearchRoomShareLinksResponse.share_links:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
 	312, // 304: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
@@ -29496,313 +33477,408 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	324, // 307: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
 	325, // 308: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse.receipt:type_name -> sttattus.onyx.v1.ResearchRoomPurgeReceipt
 	324, // 309: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse.manifests:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
-	7,   // 310: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
-	9,   // 311: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
-	11,  // 312: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
-	13,  // 313: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
-	15,  // 314: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
-	17,  // 315: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
-	19,  // 316: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
-	21,  // 317: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
-	24,  // 318: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
-	26,  // 319: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
-	28,  // 320: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
-	31,  // 321: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
-	33,  // 322: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
-	35,  // 323: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
-	37,  // 324: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
-	40,  // 325: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
-	42,  // 326: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
-	44,  // 327: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
-	47,  // 328: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
-	49,  // 329: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
-	51,  // 330: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
-	54,  // 331: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
-	57,  // 332: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
-	60,  // 333: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
-	63,  // 334: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
-	65,  // 335: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
-	67,  // 336: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
-	71,  // 337: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
-	73,  // 338: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
-	75,  // 339: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
-	77,  // 340: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
-	80,  // 341: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
-	82,  // 342: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
-	85,  // 343: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
-	87,  // 344: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
-	89,  // 345: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
-	92,  // 346: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
-	94,  // 347: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
-	96,  // 348: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
-	98,  // 349: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
-	101, // 350: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
-	104, // 351: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
-	106, // 352: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
-	109, // 353: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
-	111, // 354: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
-	114, // 355: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
-	116, // 356: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
-	119, // 357: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
-	121, // 358: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
-	123, // 359: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
-	126, // 360: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
-	128, // 361: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
-	133, // 362: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
-	135, // 363: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
-	137, // 364: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
-	139, // 365: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
-	142, // 366: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
-	144, // 367: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
-	147, // 368: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
-	151, // 369: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
-	153, // 370: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
-	155, // 371: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
-	157, // 372: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
-	160, // 373: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
-	162, // 374: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
-	164, // 375: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
-	178, // 376: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
-	180, // 377: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
-	182, // 378: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
-	184, // 379: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
-	186, // 380: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
-	188, // 381: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
-	190, // 382: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
-	192, // 383: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
-	194, // 384: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
-	196, // 385: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
-	198, // 386: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
-	200, // 387: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
-	202, // 388: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
-	204, // 389: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
-	206, // 390: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
-	209, // 391: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
-	211, // 392: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
-	214, // 393: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
-	216, // 394: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
-	219, // 395: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
-	221, // 396: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
-	223, // 397: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
-	226, // 398: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
-	228, // 399: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
-	230, // 400: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
-	232, // 401: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
-	235, // 402: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
-	237, // 403: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
-	239, // 404: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
-	241, // 405: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
-	244, // 406: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
-	247, // 407: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
-	249, // 408: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
-	252, // 409: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
-	254, // 410: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
-	257, // 411: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
-	259, // 412: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
-	261, // 413: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
-	263, // 414: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
-	265, // 415: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
-	267, // 416: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
-	273, // 417: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
-	277, // 418: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
-	279, // 419: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	281, // 420: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
-	290, // 421: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
-	292, // 422: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
-	294, // 423: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
-	296, // 424: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
-	298, // 425: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
-	300, // 426: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	302, // 427: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	306, // 428: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
-	308, // 429: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
-	327, // 430: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
-	329, // 431: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
-	331, // 432: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
-	333, // 433: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
-	335, // 434: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
-	337, // 435: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
-	339, // 436: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
-	341, // 437: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
-	343, // 438: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
-	345, // 439: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
-	347, // 440: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
-	349, // 441: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
-	351, // 442: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
-	353, // 443: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
-	355, // 444: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
-	357, // 445: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
-	359, // 446: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
-	362, // 447: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
-	364, // 448: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
-	366, // 449: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
-	368, // 450: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
-	370, // 451: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
-	372, // 452: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
-	374, // 453: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
-	376, // 454: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
-	378, // 455: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
-	380, // 456: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
-	382, // 457: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
-	384, // 458: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
-	386, // 459: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
-	388, // 460: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
-	8,   // 461: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
-	10,  // 462: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
-	12,  // 463: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
-	14,  // 464: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
-	16,  // 465: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
-	18,  // 466: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
-	20,  // 467: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
-	23,  // 468: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
-	25,  // 469: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
-	27,  // 470: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
-	29,  // 471: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
-	32,  // 472: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
-	34,  // 473: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
-	36,  // 474: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
-	38,  // 475: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
-	41,  // 476: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
-	43,  // 477: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
-	45,  // 478: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
-	48,  // 479: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
-	50,  // 480: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
-	52,  // 481: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
-	55,  // 482: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
-	59,  // 483: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
-	61,  // 484: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
-	64,  // 485: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
-	66,  // 486: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
-	68,  // 487: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
-	72,  // 488: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
-	74,  // 489: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
-	76,  // 490: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
-	78,  // 491: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
-	81,  // 492: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
-	83,  // 493: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
-	86,  // 494: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
-	88,  // 495: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
-	90,  // 496: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
-	93,  // 497: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
-	95,  // 498: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
-	97,  // 499: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
-	99,  // 500: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
-	102, // 501: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
-	105, // 502: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
-	107, // 503: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
-	110, // 504: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
-	112, // 505: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
-	115, // 506: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
-	117, // 507: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
-	120, // 508: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
-	122, // 509: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
-	124, // 510: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
-	127, // 511: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
-	129, // 512: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
-	134, // 513: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
-	136, // 514: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
-	138, // 515: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
-	140, // 516: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
-	143, // 517: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
-	145, // 518: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
-	148, // 519: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
-	152, // 520: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
-	154, // 521: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
-	156, // 522: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
-	158, // 523: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
-	161, // 524: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
-	163, // 525: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
-	165, // 526: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
-	179, // 527: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
-	181, // 528: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
-	183, // 529: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
-	185, // 530: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
-	187, // 531: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
-	189, // 532: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
-	191, // 533: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
-	193, // 534: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
-	195, // 535: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
-	197, // 536: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
-	199, // 537: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
-	201, // 538: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
-	203, // 539: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
-	205, // 540: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
-	207, // 541: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
-	210, // 542: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
-	212, // 543: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
-	215, // 544: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
-	217, // 545: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
-	220, // 546: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
-	222, // 547: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
-	224, // 548: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
-	227, // 549: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
-	229, // 550: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
-	231, // 551: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
-	234, // 552: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
-	236, // 553: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
-	238, // 554: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
-	240, // 555: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
-	243, // 556: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
-	246, // 557: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
-	248, // 558: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
-	250, // 559: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
-	253, // 560: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
-	255, // 561: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
-	258, // 562: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
-	260, // 563: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
-	262, // 564: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
-	264, // 565: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
-	266, // 566: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
-	268, // 567: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
-	274, // 568: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	278, // 569: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
-	280, // 570: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	282, // 571: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
-	291, // 572: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
-	293, // 573: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
-	295, // 574: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
-	297, // 575: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
-	299, // 576: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
-	301, // 577: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	303, // 578: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	307, // 579: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
-	309, // 580: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
-	328, // 581: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
-	330, // 582: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
-	332, // 583: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
-	334, // 584: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
-	336, // 585: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
-	338, // 586: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
-	340, // 587: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
-	342, // 588: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
-	344, // 589: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
-	346, // 590: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
-	348, // 591: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
-	350, // 592: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
-	352, // 593: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
-	354, // 594: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
-	356, // 595: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
-	358, // 596: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
-	361, // 597: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
-	363, // 598: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
-	365, // 599: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
-	367, // 600: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
-	369, // 601: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
-	371, // 602: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
-	373, // 603: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
-	375, // 604: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
-	377, // 605: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
-	379, // 606: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
-	381, // 607: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
-	383, // 608: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
-	385, // 609: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
-	387, // 610: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
-	389, // 611: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
-	461, // [461:612] is the sub-list for method output_type
-	310, // [310:461] is the sub-list for method input_type
-	310, // [310:310] is the sub-list for extension type_name
-	310, // [310:310] is the sub-list for extension extendee
-	0,   // [0:310] is the sub-list for field type_name
+	435, // 310: sttattus.onyx.v1.IntelligenceGraphSourceAnchor.created_at:type_name -> google.protobuf.Timestamp
+	435, // 311: sttattus.onyx.v1.IntelligenceGraphNode.valid_from:type_name -> google.protobuf.Timestamp
+	435, // 312: sttattus.onyx.v1.IntelligenceGraphNode.valid_to:type_name -> google.protobuf.Timestamp
+	390, // 313: sttattus.onyx.v1.IntelligenceGraphNode.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	435, // 314: sttattus.onyx.v1.IntelligenceGraphNode.created_at:type_name -> google.protobuf.Timestamp
+	435, // 315: sttattus.onyx.v1.IntelligenceGraphNode.updated_at:type_name -> google.protobuf.Timestamp
+	390, // 316: sttattus.onyx.v1.IntelligenceGraphEdge.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	435, // 317: sttattus.onyx.v1.IntelligenceGraphEdge.created_at:type_name -> google.protobuf.Timestamp
+	435, // 318: sttattus.onyx.v1.IntelligenceGraphEdge.updated_at:type_name -> google.protobuf.Timestamp
+	391, // 319: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	392, // 320: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	435, // 321: sttattus.onyx.v1.IntelligenceGraphSuggestion.expires_at:type_name -> google.protobuf.Timestamp
+	435, // 322: sttattus.onyx.v1.IntelligenceGraphSuggestion.created_at:type_name -> google.protobuf.Timestamp
+	435, // 323: sttattus.onyx.v1.IntelligenceGraphSuggestion.decided_at:type_name -> google.protobuf.Timestamp
+	435, // 324: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.event_at:type_name -> google.protobuf.Timestamp
+	435, // 325: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.recorded_at:type_name -> google.protobuf.Timestamp
+	435, // 326: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.due_at:type_name -> google.protobuf.Timestamp
+	435, // 327: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.snoozed_until:type_name -> google.protobuf.Timestamp
+	435, // 328: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.created_at:type_name -> google.protobuf.Timestamp
+	435, // 329: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.updated_at:type_name -> google.protobuf.Timestamp
+	390, // 330: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection.citations:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	396, // 331: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.sections:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
+	435, // 332: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_start:type_name -> google.protobuf.Timestamp
+	435, // 333: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_end:type_name -> google.protobuf.Timestamp
+	435, // 334: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.created_at:type_name -> google.protobuf.Timestamp
+	435, // 335: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.updated_at:type_name -> google.protobuf.Timestamp
+	435, // 336: sttattus.onyx.v1.IntelligenceGraphOverview.last_changed_at:type_name -> google.protobuf.Timestamp
+	398, // 337: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.overview:type_name -> sttattus.onyx.v1.IntelligenceGraphOverview
+	391, // 338: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.nodes:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	392, // 339: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.edges:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	435, // 340: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_from:type_name -> google.protobuf.Timestamp
+	435, // 341: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_to:type_name -> google.protobuf.Timestamp
+	390, // 342: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	391, // 343: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	391, // 344: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	391, // 345: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.primary_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	391, // 346: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.merged_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	391, // 347: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.source_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	391, // 348: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.new_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	390, // 349: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	392, // 350: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	392, // 351: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	393, // 352: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	393, // 353: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	393, // 354: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	391, // 355: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	392, // 356: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	435, // 357: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.from:type_name -> google.protobuf.Timestamp
+	435, // 358: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.to:type_name -> google.protobuf.Timestamp
+	394, // 359: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse.events:type_name -> sttattus.onyx.v1.IntelligenceGraphTimelineEvent
+	395, // 360: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse.items:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	435, // 361: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest.snoozed_until:type_name -> google.protobuf.Timestamp
+	395, // 362: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse.item:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	435, // 363: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_start:type_name -> google.protobuf.Timestamp
+	435, // 364: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_end:type_name -> google.protobuf.Timestamp
+	397, // 365: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	397, // 366: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	397, // 367: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse.briefs:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	435, // 368: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse.generated_at:type_name -> google.protobuf.Timestamp
+	7,   // 369: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
+	9,   // 370: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
+	11,  // 371: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
+	13,  // 372: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
+	15,  // 373: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
+	17,  // 374: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
+	19,  // 375: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
+	21,  // 376: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
+	24,  // 377: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
+	26,  // 378: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
+	28,  // 379: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	31,  // 380: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
+	33,  // 381: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
+	35,  // 382: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
+	37,  // 383: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
+	40,  // 384: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
+	42,  // 385: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
+	44,  // 386: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
+	47,  // 387: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
+	49,  // 388: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
+	51,  // 389: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+	54,  // 390: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
+	57,  // 391: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
+	60,  // 392: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+	63,  // 393: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
+	65,  // 394: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
+	67,  // 395: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
+	71,  // 396: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
+	73,  // 397: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
+	75,  // 398: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
+	77,  // 399: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
+	80,  // 400: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
+	82,  // 401: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+	85,  // 402: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
+	87,  // 403: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+	89,  // 404: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
+	92,  // 405: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
+	94,  // 406: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
+	96,  // 407: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
+	98,  // 408: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
+	101, // 409: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
+	104, // 410: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
+	106, // 411: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
+	109, // 412: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
+	111, // 413: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
+	114, // 414: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
+	116, // 415: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
+	119, // 416: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
+	121, // 417: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
+	123, // 418: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
+	126, // 419: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
+	128, // 420: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
+	133, // 421: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
+	135, // 422: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
+	137, // 423: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
+	139, // 424: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
+	142, // 425: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
+	144, // 426: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
+	147, // 427: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
+	151, // 428: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
+	153, // 429: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
+	155, // 430: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
+	157, // 431: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
+	160, // 432: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
+	162, // 433: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
+	164, // 434: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
+	178, // 435: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
+	180, // 436: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
+	182, // 437: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
+	184, // 438: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+	186, // 439: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
+	188, // 440: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
+	190, // 441: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
+	192, // 442: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
+	194, // 443: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
+	196, // 444: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
+	198, // 445: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
+	200, // 446: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
+	202, // 447: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
+	204, // 448: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
+	206, // 449: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
+	209, // 450: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
+	211, // 451: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
+	214, // 452: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
+	216, // 453: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
+	219, // 454: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
+	221, // 455: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
+	223, // 456: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
+	226, // 457: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
+	228, // 458: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
+	230, // 459: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
+	232, // 460: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
+	235, // 461: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
+	237, // 462: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
+	239, // 463: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
+	241, // 464: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
+	244, // 465: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+	247, // 466: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
+	249, // 467: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
+	252, // 468: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
+	254, // 469: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
+	257, // 470: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
+	259, // 471: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
+	261, // 472: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
+	263, // 473: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
+	265, // 474: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
+	267, // 475: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+	273, // 476: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+	277, // 477: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
+	279, // 478: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	281, // 479: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
+	290, // 480: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
+	292, // 481: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
+	294, // 482: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
+	296, // 483: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
+	298, // 484: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
+	300, // 485: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	302, // 486: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	306, // 487: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
+	308, // 488: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
+	327, // 489: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
+	329, // 490: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
+	331, // 491: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
+	333, // 492: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
+	335, // 493: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	337, // 494: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	339, // 495: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	341, // 496: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	343, // 497: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
+	345, // 498: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	347, // 499: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
+	349, // 500: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	351, // 501: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	353, // 502: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	355, // 503: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	357, // 504: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	359, // 505: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
+	362, // 506: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
+	364, // 507: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	366, // 508: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
+	368, // 509: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
+	370, // 510: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+	372, // 511: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+	374, // 512: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+	376, // 513: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+	378, // 514: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+	380, // 515: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+	382, // 516: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+	384, // 517: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+	386, // 518: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+	388, // 519: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
+	399, // 520: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+	401, // 521: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+	403, // 522: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+	405, // 523: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:input_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+	407, // 524: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:input_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+	409, // 525: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+	411, // 526: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+	413, // 527: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+	415, // 528: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+	417, // 529: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+	419, // 530: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:input_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+	421, // 531: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:input_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+	423, // 532: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+	425, // 533: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+	427, // 534: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+	429, // 535: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:input_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+	431, // 536: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+	433, // 537: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+	8,   // 538: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
+	10,  // 539: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
+	12,  // 540: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
+	14,  // 541: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
+	16,  // 542: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
+	18,  // 543: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
+	20,  // 544: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
+	23,  // 545: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
+	25,  // 546: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
+	27,  // 547: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
+	29,  // 548: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	32,  // 549: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
+	34,  // 550: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
+	36,  // 551: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
+	38,  // 552: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
+	41,  // 553: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
+	43,  // 554: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
+	45,  // 555: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
+	48,  // 556: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
+	50,  // 557: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
+	52,  // 558: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+	55,  // 559: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
+	59,  // 560: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
+	61,  // 561: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+	64,  // 562: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
+	66,  // 563: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
+	68,  // 564: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
+	72,  // 565: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
+	74,  // 566: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
+	76,  // 567: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
+	78,  // 568: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
+	81,  // 569: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
+	83,  // 570: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+	86,  // 571: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
+	88,  // 572: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+	90,  // 573: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
+	93,  // 574: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
+	95,  // 575: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
+	97,  // 576: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
+	99,  // 577: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
+	102, // 578: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
+	105, // 579: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
+	107, // 580: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
+	110, // 581: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
+	112, // 582: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
+	115, // 583: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
+	117, // 584: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
+	120, // 585: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
+	122, // 586: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
+	124, // 587: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
+	127, // 588: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
+	129, // 589: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
+	134, // 590: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
+	136, // 591: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
+	138, // 592: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
+	140, // 593: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
+	143, // 594: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
+	145, // 595: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
+	148, // 596: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
+	152, // 597: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
+	154, // 598: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
+	156, // 599: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
+	158, // 600: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
+	161, // 601: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
+	163, // 602: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
+	165, // 603: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
+	179, // 604: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
+	181, // 605: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
+	183, // 606: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
+	185, // 607: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+	187, // 608: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
+	189, // 609: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
+	191, // 610: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
+	193, // 611: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
+	195, // 612: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
+	197, // 613: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
+	199, // 614: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
+	201, // 615: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
+	203, // 616: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
+	205, // 617: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
+	207, // 618: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
+	210, // 619: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
+	212, // 620: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
+	215, // 621: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
+	217, // 622: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
+	220, // 623: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
+	222, // 624: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
+	224, // 625: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
+	227, // 626: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
+	229, // 627: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
+	231, // 628: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
+	234, // 629: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
+	236, // 630: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
+	238, // 631: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
+	240, // 632: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
+	243, // 633: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
+	246, // 634: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+	248, // 635: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
+	250, // 636: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
+	253, // 637: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
+	255, // 638: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
+	258, // 639: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
+	260, // 640: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
+	262, // 641: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
+	264, // 642: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
+	266, // 643: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
+	268, // 644: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+	274, // 645: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+	278, // 646: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
+	280, // 647: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	282, // 648: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
+	291, // 649: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
+	293, // 650: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
+	295, // 651: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
+	297, // 652: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
+	299, // 653: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
+	301, // 654: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	303, // 655: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	307, // 656: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
+	309, // 657: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
+	328, // 658: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
+	330, // 659: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
+	332, // 660: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
+	334, // 661: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
+	336, // 662: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	338, // 663: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	340, // 664: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	342, // 665: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	344, // 666: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
+	346, // 667: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	348, // 668: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
+	350, // 669: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	352, // 670: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	354, // 671: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	356, // 672: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	358, // 673: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	361, // 674: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
+	363, // 675: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
+	365, // 676: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	367, // 677: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
+	369, // 678: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
+	371, // 679: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+	373, // 680: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+	375, // 681: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+	377, // 682: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+	379, // 683: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+	381, // 684: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+	383, // 685: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+	385, // 686: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+	387, // 687: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+	389, // 688: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
+	400, // 689: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+	402, // 690: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+	404, // 691: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+	406, // 692: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:output_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+	408, // 693: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:output_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+	410, // 694: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+	412, // 695: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+	414, // 696: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+	416, // 697: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+	418, // 698: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+	420, // 699: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:output_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+	422, // 700: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:output_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+	424, // 701: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+	426, // 702: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+	428, // 703: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+	430, // 704: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:output_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+	432, // 705: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+	434, // 706: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+	538, // [538:707] is the sub-list for method output_type
+	369, // [369:538] is the sub-list for method input_type
+	369, // [369:369] is the sub-list for extension type_name
+	369, // [369:369] is the sub-list for extension extendee
+	0,   // [0:369] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_onyx_v1_onyx_proto_init() }
@@ -29816,7 +33892,7 @@ func file_sttattus_onyx_v1_onyx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_onyx_v1_onyx_proto_rawDesc), len(file_sttattus_onyx_v1_onyx_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   388,
+			NumMessages:   433,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

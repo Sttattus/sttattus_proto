@@ -21589,3 +21589,2922 @@ export class LeaveResearchRoomResponse extends Message<LeaveResearchRoomResponse
   }
 }
 
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+ */
+export class IntelligenceGraphSourceAnchor extends Message<IntelligenceGraphSourceAnchor> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+   *
+   * @generated from field: string source_type = 2;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 3;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string source_version = 4;
+   */
+  sourceVersion = "";
+
+  /**
+   * @generated from field: string content_id = 5;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 6;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 7;
+   */
+  passageKey = "";
+
+  /**
+   * never copied from room-scoped sources
+   *
+   * @generated from field: string quote = 8;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string room_id = 9;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: int64 room_permission_version = 10;
+   */
+  roomPermissionVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 membership_access_version = 11;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphSourceAnchor>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphSourceAnchor";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "room_permission_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphSourceAnchor {
+    return new IntelligenceGraphSourceAnchor().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphSourceAnchor {
+    return new IntelligenceGraphSourceAnchor().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphSourceAnchor {
+    return new IntelligenceGraphSourceAnchor().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphSourceAnchor | PlainMessage<IntelligenceGraphSourceAnchor> | undefined, b: IntelligenceGraphSourceAnchor | PlainMessage<IntelligenceGraphSourceAnchor> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphSourceAnchor, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphNode
+ */
+export class IntelligenceGraphNode extends Message<IntelligenceGraphNode> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * entity | topic | claim | question | source | annotation | brief | decision | meeting | task | listening_moment
+   *
+   * @generated from field: string node_type = 2;
+   */
+  nodeType = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * active | archived | merged | deleted
+   *
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * private | room
+   *
+   * @generated from field: string scope = 6;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 7;
+   */
+  roomId = "";
+
+  /**
+   * manual | imported | suggestion
+   *
+   * @generated from field: string origin = 8;
+   */
+  origin = "";
+
+  /**
+   * authored | accepted | disputed | corrected | provisional
+   *
+   * @generated from field: string verification_status = 9;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: double confidence = 10;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string confidence_basis = 11;
+   */
+  confidenceBasis = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp valid_from = 12;
+   */
+  validFrom?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp valid_to = 13;
+   */
+  validTo?: Timestamp;
+
+  /**
+   * @generated from field: string merged_into_node_id = 14;
+   */
+  mergedIntoNodeId = "";
+
+  /**
+   * @generated from field: int64 version = 15;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 room_permission_version = 16;
+   */
+  roomPermissionVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 membership_access_version = 17;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSourceAnchor anchors = 18;
+   */
+  anchors: IntelligenceGraphSourceAnchor[] = [];
+
+  /**
+   * @generated from field: int32 inbound_edge_count = 19;
+   */
+  inboundEdgeCount = 0;
+
+  /**
+   * @generated from field: int32 outbound_edge_count = 20;
+   */
+  outboundEdgeCount = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 21;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 22;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphNode>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphNode";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "node_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "confidence_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "valid_from", kind: "message", T: Timestamp },
+    { no: 13, name: "valid_to", kind: "message", T: Timestamp },
+    { no: 14, name: "merged_into_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 16, name: "room_permission_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 17, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 18, name: "anchors", kind: "message", T: IntelligenceGraphSourceAnchor, repeated: true },
+    { no: 19, name: "inbound_edge_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 20, name: "outbound_edge_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 21, name: "created_at", kind: "message", T: Timestamp },
+    { no: 22, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphNode {
+    return new IntelligenceGraphNode().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphNode {
+    return new IntelligenceGraphNode().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphNode {
+    return new IntelligenceGraphNode().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphNode | PlainMessage<IntelligenceGraphNode> | undefined, b: IntelligenceGraphNode | PlainMessage<IntelligenceGraphNode> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphNode, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphEdge
+ */
+export class IntelligenceGraphEdge extends Message<IntelligenceGraphEdge> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_node_id = 2;
+   */
+  sourceNodeId = "";
+
+  /**
+   * @generated from field: string target_node_id = 3;
+   */
+  targetNodeId = "";
+
+  /**
+   * mentions | about | supports | contradicts | qualifies | depends_on | informs | decided_in | assigned_to | precedes | supersedes | related
+   *
+   * @generated from field: string relation = 4;
+   */
+  relation = "";
+
+  /**
+   * @generated from field: string label = 5;
+   */
+  label = "";
+
+  /**
+   * active | archived | deleted
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * private | room
+   *
+   * @generated from field: string scope = 7;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 8;
+   */
+  roomId = "";
+
+  /**
+   * manual | imported | suggestion
+   *
+   * @generated from field: string origin = 9;
+   */
+  origin = "";
+
+  /**
+   * @generated from field: double confidence = 10;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string confidence_basis = 11;
+   */
+  confidenceBasis = "";
+
+  /**
+   * @generated from field: string explanation = 12;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: string model_key = 13;
+   */
+  modelKey = "";
+
+  /**
+   * @generated from field: string model_version = 14;
+   */
+  modelVersion = "";
+
+  /**
+   * @generated from field: int64 version = 15;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 room_permission_version = 16;
+   */
+  roomPermissionVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 membership_access_version = 17;
+   */
+  membershipAccessVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSourceAnchor anchors = 18;
+   */
+  anchors: IntelligenceGraphSourceAnchor[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 19;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 20;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphEdge>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphEdge";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "confidence_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "model_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "model_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 16, name: "room_permission_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 17, name: "membership_access_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 18, name: "anchors", kind: "message", T: IntelligenceGraphSourceAnchor, repeated: true },
+    { no: 19, name: "created_at", kind: "message", T: Timestamp },
+    { no: 20, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphEdge {
+    return new IntelligenceGraphEdge().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphEdge {
+    return new IntelligenceGraphEdge().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphEdge {
+    return new IntelligenceGraphEdge().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphEdge | PlainMessage<IntelligenceGraphEdge> | undefined, b: IntelligenceGraphEdge | PlainMessage<IntelligenceGraphEdge> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphEdge, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphSuggestion
+ */
+export class IntelligenceGraphSuggestion extends Message<IntelligenceGraphSuggestion> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * node | edge
+   *
+   * @generated from field: string proposal_type = 2;
+   */
+  proposalType = "";
+
+  /**
+   * pending | accepted | rejected | expired
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode proposed_node = 4;
+   */
+  proposedNode?: IntelligenceGraphNode;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphEdge proposed_edge = 5;
+   */
+  proposedEdge?: IntelligenceGraphEdge;
+
+  /**
+   * @generated from field: string reason = 6;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: double confidence = 7;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string model_key = 8;
+   */
+  modelKey = "";
+
+  /**
+   * @generated from field: string model_version = 9;
+   */
+  modelVersion = "";
+
+  /**
+   * @generated from field: string source_digest = 10;
+   */
+  sourceDigest = "";
+
+  /**
+   * @generated from field: string disposition_note = 11;
+   */
+  dispositionNote = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 12;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp decided_at = 14;
+   */
+  decidedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphSuggestion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphSuggestion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "proposal_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "proposed_node", kind: "message", T: IntelligenceGraphNode },
+    { no: 5, name: "proposed_edge", kind: "message", T: IntelligenceGraphEdge },
+    { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "model_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "model_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "source_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "disposition_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+    { no: 14, name: "decided_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphSuggestion {
+    return new IntelligenceGraphSuggestion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphSuggestion {
+    return new IntelligenceGraphSuggestion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphSuggestion {
+    return new IntelligenceGraphSuggestion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphSuggestion | PlainMessage<IntelligenceGraphSuggestion> | undefined, b: IntelligenceGraphSuggestion | PlainMessage<IntelligenceGraphSuggestion> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphSuggestion, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphTimelineEvent
+ */
+export class IntelligenceGraphTimelineEvent extends Message<IntelligenceGraphTimelineEvent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string event_type = 2;
+   */
+  eventType = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string node_id = 5;
+   */
+  nodeId = "";
+
+  /**
+   * @generated from field: string edge_id = 6;
+   */
+  edgeId = "";
+
+  /**
+   * @generated from field: string source_type = 7;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 8;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string scope = 9;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 10;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp event_at = 11;
+   */
+  eventAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp recorded_at = 12;
+   */
+  recordedAt?: Timestamp;
+
+  /**
+   * @generated from field: bool approximate_time = 13;
+   */
+  approximateTime = false;
+
+  /**
+   * @generated from field: int64 version = 14;
+   */
+  version = protoInt64.zero;
+
+  constructor(data?: PartialMessage<IntelligenceGraphTimelineEvent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphTimelineEvent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "event_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "edge_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "event_at", kind: "message", T: Timestamp },
+    { no: 12, name: "recorded_at", kind: "message", T: Timestamp },
+    { no: 13, name: "approximate_time", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphTimelineEvent {
+    return new IntelligenceGraphTimelineEvent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphTimelineEvent {
+    return new IntelligenceGraphTimelineEvent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphTimelineEvent {
+    return new IntelligenceGraphTimelineEvent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphTimelineEvent | PlainMessage<IntelligenceGraphTimelineEvent> | undefined, b: IntelligenceGraphTimelineEvent | PlainMessage<IntelligenceGraphTimelineEvent> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphTimelineEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+ */
+export class IntelligenceGraphResurfacingItem extends Message<IntelligenceGraphResurfacingItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * unresolved_question | contradiction | correction | stale_decision | open_task | related_source | revisit
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * pending | snoozed | completed | dismissed
+   *
+   * @generated from field: string state = 5;
+   */
+  state = "";
+
+  /**
+   * @generated from field: string node_id = 6;
+   */
+  nodeId = "";
+
+  /**
+   * @generated from field: string related_node_id = 7;
+   */
+  relatedNodeId = "";
+
+  /**
+   * @generated from field: string source_id = 8;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp due_at = 9;
+   */
+  dueAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp snoozed_until = 10;
+   */
+  snoozedUntil?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 12;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphResurfacingItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphResurfacingItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "related_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "due_at", kind: "message", T: Timestamp },
+    { no: 10, name: "snoozed_until", kind: "message", T: Timestamp },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphResurfacingItem {
+    return new IntelligenceGraphResurfacingItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphResurfacingItem {
+    return new IntelligenceGraphResurfacingItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphResurfacingItem {
+    return new IntelligenceGraphResurfacingItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphResurfacingItem | PlainMessage<IntelligenceGraphResurfacingItem> | undefined, b: IntelligenceGraphResurfacingItem | PlainMessage<IntelligenceGraphResurfacingItem> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphResurfacingItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
+ */
+export class IntelligenceGraphMeetingBriefSection extends Message<IntelligenceGraphMeetingBriefSection> {
+  /**
+   * context | claims | contradictions | decisions | questions | tasks | changes
+   *
+   * @generated from field: string kind = 1;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: repeated string node_ids = 4;
+   */
+  nodeIds: string[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSourceAnchor citations = 5;
+   */
+  citations: IntelligenceGraphSourceAnchor[] = [];
+
+  constructor(data?: PartialMessage<IntelligenceGraphMeetingBriefSection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "node_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "citations", kind: "message", T: IntelligenceGraphSourceAnchor, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphMeetingBriefSection {
+    return new IntelligenceGraphMeetingBriefSection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphMeetingBriefSection {
+    return new IntelligenceGraphMeetingBriefSection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphMeetingBriefSection {
+    return new IntelligenceGraphMeetingBriefSection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphMeetingBriefSection | PlainMessage<IntelligenceGraphMeetingBriefSection> | undefined, b: IntelligenceGraphMeetingBriefSection | PlainMessage<IntelligenceGraphMeetingBriefSection> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphMeetingBriefSection, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+ */
+export class IntelligenceGraphMeetingBrief extends Message<IntelligenceGraphMeetingBrief> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string purpose = 3;
+   */
+  purpose = "";
+
+  /**
+   * draft | reviewed | archived
+   *
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * private | room
+   *
+   * @generated from field: string scope = 5;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 6;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: repeated string selected_node_ids = 7;
+   */
+  selectedNodeIds: string[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection sections = 8;
+   */
+  sections: IntelligenceGraphMeetingBriefSection[] = [];
+
+  /**
+   * @generated from field: string manifest_checksum = 9;
+   */
+  manifestChecksum = "";
+
+  /**
+   * @generated from field: int64 version = 10;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp window_start = 11;
+   */
+  windowStart?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp window_end = 12;
+   */
+  windowEnd?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphMeetingBrief>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphMeetingBrief";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "selected_node_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "sections", kind: "message", T: IntelligenceGraphMeetingBriefSection, repeated: true },
+    { no: 9, name: "manifest_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "window_start", kind: "message", T: Timestamp },
+    { no: 12, name: "window_end", kind: "message", T: Timestamp },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+    { no: 14, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphMeetingBrief {
+    return new IntelligenceGraphMeetingBrief().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphMeetingBrief {
+    return new IntelligenceGraphMeetingBrief().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphMeetingBrief {
+    return new IntelligenceGraphMeetingBrief().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphMeetingBrief | PlainMessage<IntelligenceGraphMeetingBrief> | undefined, b: IntelligenceGraphMeetingBrief | PlainMessage<IntelligenceGraphMeetingBrief> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphMeetingBrief, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IntelligenceGraphOverview
+ */
+export class IntelligenceGraphOverview extends Message<IntelligenceGraphOverview> {
+  /**
+   * @generated from field: int32 active_nodes = 1;
+   */
+  activeNodes = 0;
+
+  /**
+   * @generated from field: int32 active_edges = 2;
+   */
+  activeEdges = 0;
+
+  /**
+   * @generated from field: int32 pending_suggestions = 3;
+   */
+  pendingSuggestions = 0;
+
+  /**
+   * @generated from field: int32 unresolved_questions = 4;
+   */
+  unresolvedQuestions = 0;
+
+  /**
+   * @generated from field: int32 contradictions = 5;
+   */
+  contradictions = 0;
+
+  /**
+   * @generated from field: int32 due_resurfacing = 6;
+   */
+  dueResurfacing = 0;
+
+  /**
+   * @generated from field: int32 meeting_briefs = 7;
+   */
+  meetingBriefs = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_changed_at = 8;
+   */
+  lastChangedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<IntelligenceGraphOverview>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IntelligenceGraphOverview";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "active_nodes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "active_edges", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "pending_suggestions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "unresolved_questions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "contradictions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "due_resurfacing", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "meeting_briefs", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "last_changed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IntelligenceGraphOverview {
+    return new IntelligenceGraphOverview().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IntelligenceGraphOverview {
+    return new IntelligenceGraphOverview().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IntelligenceGraphOverview {
+    return new IntelligenceGraphOverview().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IntelligenceGraphOverview | PlainMessage<IntelligenceGraphOverview> | undefined, b: IntelligenceGraphOverview | PlainMessage<IntelligenceGraphOverview> | undefined): boolean {
+    return proto3.util.equals(IntelligenceGraphOverview, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+ */
+export class GetPersonalIntelligenceGraphRequest extends Message<GetPersonalIntelligenceGraphRequest> {
+  /**
+   * @generated from field: string query = 1;
+   */
+  query = "";
+
+  /**
+   * @generated from field: repeated string node_types = 2;
+   */
+  nodeTypes: string[] = [];
+
+  /**
+   * @generated from field: repeated string relations = 3;
+   */
+  relations: string[] = [];
+
+  /**
+   * all | private | room
+   *
+   * @generated from field: string scope = 4;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 5;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: bool include_archived = 6;
+   */
+  includeArchived = false;
+
+  /**
+   * @generated from field: int32 limit = 7;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<GetPersonalIntelligenceGraphRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "node_types", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "relations", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "include_archived", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonalIntelligenceGraphRequest {
+    return new GetPersonalIntelligenceGraphRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonalIntelligenceGraphRequest {
+    return new GetPersonalIntelligenceGraphRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonalIntelligenceGraphRequest {
+    return new GetPersonalIntelligenceGraphRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPersonalIntelligenceGraphRequest | PlainMessage<GetPersonalIntelligenceGraphRequest> | undefined, b: GetPersonalIntelligenceGraphRequest | PlainMessage<GetPersonalIntelligenceGraphRequest> | undefined): boolean {
+    return proto3.util.equals(GetPersonalIntelligenceGraphRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+ */
+export class GetPersonalIntelligenceGraphResponse extends Message<GetPersonalIntelligenceGraphResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphOverview overview = 1;
+   */
+  overview?: IntelligenceGraphOverview;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphNode nodes = 2;
+   */
+  nodes: IntelligenceGraphNode[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphEdge edges = 3;
+   */
+  edges: IntelligenceGraphEdge[] = [];
+
+  constructor(data?: PartialMessage<GetPersonalIntelligenceGraphResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "overview", kind: "message", T: IntelligenceGraphOverview },
+    { no: 2, name: "nodes", kind: "message", T: IntelligenceGraphNode, repeated: true },
+    { no: 3, name: "edges", kind: "message", T: IntelligenceGraphEdge, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonalIntelligenceGraphResponse {
+    return new GetPersonalIntelligenceGraphResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonalIntelligenceGraphResponse {
+    return new GetPersonalIntelligenceGraphResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonalIntelligenceGraphResponse {
+    return new GetPersonalIntelligenceGraphResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPersonalIntelligenceGraphResponse | PlainMessage<GetPersonalIntelligenceGraphResponse> | undefined, b: GetPersonalIntelligenceGraphResponse | PlainMessage<GetPersonalIntelligenceGraphResponse> | undefined): boolean {
+    return proto3.util.equals(GetPersonalIntelligenceGraphResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+ */
+export class UpsertIntelligenceGraphNodeRequest extends Message<UpsertIntelligenceGraphNodeRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string node_type = 2;
+   */
+  nodeType = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string scope = 5;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 6;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string verification_status = 7;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: double confidence = 8;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string confidence_basis = 9;
+   */
+  confidenceBasis = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp valid_from = 10;
+   */
+  validFrom?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp valid_to = 11;
+   */
+  validTo?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSourceAnchor anchors = 12;
+   */
+  anchors: IntelligenceGraphSourceAnchor[] = [];
+
+  /**
+   * @generated from field: int64 expected_version = 13;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 14;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertIntelligenceGraphNodeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "node_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "confidence_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "valid_from", kind: "message", T: Timestamp },
+    { no: 11, name: "valid_to", kind: "message", T: Timestamp },
+    { no: 12, name: "anchors", kind: "message", T: IntelligenceGraphSourceAnchor, repeated: true },
+    { no: 13, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntelligenceGraphNodeRequest {
+    return new UpsertIntelligenceGraphNodeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphNodeRequest {
+    return new UpsertIntelligenceGraphNodeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphNodeRequest {
+    return new UpsertIntelligenceGraphNodeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntelligenceGraphNodeRequest | PlainMessage<UpsertIntelligenceGraphNodeRequest> | undefined, b: UpsertIntelligenceGraphNodeRequest | PlainMessage<UpsertIntelligenceGraphNodeRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertIntelligenceGraphNodeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+ */
+export class UpsertIntelligenceGraphNodeResponse extends Message<UpsertIntelligenceGraphNodeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode node = 1;
+   */
+  node?: IntelligenceGraphNode;
+
+  constructor(data?: PartialMessage<UpsertIntelligenceGraphNodeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "node", kind: "message", T: IntelligenceGraphNode },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntelligenceGraphNodeResponse {
+    return new UpsertIntelligenceGraphNodeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphNodeResponse {
+    return new UpsertIntelligenceGraphNodeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphNodeResponse {
+    return new UpsertIntelligenceGraphNodeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntelligenceGraphNodeResponse | PlainMessage<UpsertIntelligenceGraphNodeResponse> | undefined, b: UpsertIntelligenceGraphNodeResponse | PlainMessage<UpsertIntelligenceGraphNodeResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertIntelligenceGraphNodeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+ */
+export class SetIntelligenceGraphNodeStateRequest extends Message<SetIntelligenceGraphNodeStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * archive | restore | delete
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 expected_version = 4;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphNodeStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphNodeStateRequest {
+    return new SetIntelligenceGraphNodeStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphNodeStateRequest {
+    return new SetIntelligenceGraphNodeStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphNodeStateRequest {
+    return new SetIntelligenceGraphNodeStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphNodeStateRequest | PlainMessage<SetIntelligenceGraphNodeStateRequest> | undefined, b: SetIntelligenceGraphNodeStateRequest | PlainMessage<SetIntelligenceGraphNodeStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphNodeStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+ */
+export class SetIntelligenceGraphNodeStateResponse extends Message<SetIntelligenceGraphNodeStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode node = 1;
+   */
+  node?: IntelligenceGraphNode;
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphNodeStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "node", kind: "message", T: IntelligenceGraphNode },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphNodeStateResponse {
+    return new SetIntelligenceGraphNodeStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphNodeStateResponse {
+    return new SetIntelligenceGraphNodeStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphNodeStateResponse {
+    return new SetIntelligenceGraphNodeStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphNodeStateResponse | PlainMessage<SetIntelligenceGraphNodeStateResponse> | undefined, b: SetIntelligenceGraphNodeStateResponse | PlainMessage<SetIntelligenceGraphNodeStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphNodeStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+ */
+export class MergeIntelligenceGraphNodesRequest extends Message<MergeIntelligenceGraphNodesRequest> {
+  /**
+   * @generated from field: string primary_node_id = 1;
+   */
+  primaryNodeId = "";
+
+  /**
+   * @generated from field: string duplicate_node_id = 2;
+   */
+  duplicateNodeId = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 expected_primary_version = 4;
+   */
+  expectedPrimaryVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 expected_duplicate_version = 5;
+   */
+  expectedDuplicateVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<MergeIntelligenceGraphNodesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "primary_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "duplicate_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "expected_primary_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "expected_duplicate_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MergeIntelligenceGraphNodesRequest {
+    return new MergeIntelligenceGraphNodesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MergeIntelligenceGraphNodesRequest {
+    return new MergeIntelligenceGraphNodesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MergeIntelligenceGraphNodesRequest {
+    return new MergeIntelligenceGraphNodesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MergeIntelligenceGraphNodesRequest | PlainMessage<MergeIntelligenceGraphNodesRequest> | undefined, b: MergeIntelligenceGraphNodesRequest | PlainMessage<MergeIntelligenceGraphNodesRequest> | undefined): boolean {
+    return proto3.util.equals(MergeIntelligenceGraphNodesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+ */
+export class MergeIntelligenceGraphNodesResponse extends Message<MergeIntelligenceGraphNodesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode primary_node = 1;
+   */
+  primaryNode?: IntelligenceGraphNode;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode merged_node = 2;
+   */
+  mergedNode?: IntelligenceGraphNode;
+
+  constructor(data?: PartialMessage<MergeIntelligenceGraphNodesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "primary_node", kind: "message", T: IntelligenceGraphNode },
+    { no: 2, name: "merged_node", kind: "message", T: IntelligenceGraphNode },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MergeIntelligenceGraphNodesResponse {
+    return new MergeIntelligenceGraphNodesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MergeIntelligenceGraphNodesResponse {
+    return new MergeIntelligenceGraphNodesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MergeIntelligenceGraphNodesResponse {
+    return new MergeIntelligenceGraphNodesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MergeIntelligenceGraphNodesResponse | PlainMessage<MergeIntelligenceGraphNodesResponse> | undefined, b: MergeIntelligenceGraphNodesResponse | PlainMessage<MergeIntelligenceGraphNodesResponse> | undefined): boolean {
+    return proto3.util.equals(MergeIntelligenceGraphNodesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+ */
+export class SplitIntelligenceGraphNodeRequest extends Message<SplitIntelligenceGraphNodeRequest> {
+  /**
+   * @generated from field: string source_node_id = 1;
+   */
+  sourceNodeId = "";
+
+  /**
+   * @generated from field: string new_title = 2;
+   */
+  newTitle = "";
+
+  /**
+   * @generated from field: string new_summary = 3;
+   */
+  newSummary = "";
+
+  /**
+   * @generated from field: repeated string move_anchor_ids = 4;
+   */
+  moveAnchorIds: string[] = [];
+
+  /**
+   * @generated from field: repeated string move_edge_ids = 5;
+   */
+  moveEdgeIds: string[] = [];
+
+  /**
+   * @generated from field: string reason = 6;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 expected_version = 7;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 8;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SplitIntelligenceGraphNodeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "new_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "move_anchor_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "move_edge_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitIntelligenceGraphNodeRequest {
+    return new SplitIntelligenceGraphNodeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitIntelligenceGraphNodeRequest {
+    return new SplitIntelligenceGraphNodeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitIntelligenceGraphNodeRequest {
+    return new SplitIntelligenceGraphNodeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SplitIntelligenceGraphNodeRequest | PlainMessage<SplitIntelligenceGraphNodeRequest> | undefined, b: SplitIntelligenceGraphNodeRequest | PlainMessage<SplitIntelligenceGraphNodeRequest> | undefined): boolean {
+    return proto3.util.equals(SplitIntelligenceGraphNodeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+ */
+export class SplitIntelligenceGraphNodeResponse extends Message<SplitIntelligenceGraphNodeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode source_node = 1;
+   */
+  sourceNode?: IntelligenceGraphNode;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode new_node = 2;
+   */
+  newNode?: IntelligenceGraphNode;
+
+  constructor(data?: PartialMessage<SplitIntelligenceGraphNodeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_node", kind: "message", T: IntelligenceGraphNode },
+    { no: 2, name: "new_node", kind: "message", T: IntelligenceGraphNode },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitIntelligenceGraphNodeResponse {
+    return new SplitIntelligenceGraphNodeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitIntelligenceGraphNodeResponse {
+    return new SplitIntelligenceGraphNodeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitIntelligenceGraphNodeResponse {
+    return new SplitIntelligenceGraphNodeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SplitIntelligenceGraphNodeResponse | PlainMessage<SplitIntelligenceGraphNodeResponse> | undefined, b: SplitIntelligenceGraphNodeResponse | PlainMessage<SplitIntelligenceGraphNodeResponse> | undefined): boolean {
+    return proto3.util.equals(SplitIntelligenceGraphNodeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+ */
+export class UpsertIntelligenceGraphEdgeRequest extends Message<UpsertIntelligenceGraphEdgeRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_node_id = 2;
+   */
+  sourceNodeId = "";
+
+  /**
+   * @generated from field: string target_node_id = 3;
+   */
+  targetNodeId = "";
+
+  /**
+   * @generated from field: string relation = 4;
+   */
+  relation = "";
+
+  /**
+   * @generated from field: string label = 5;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string scope = 6;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 7;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: double confidence = 8;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string confidence_basis = 9;
+   */
+  confidenceBasis = "";
+
+  /**
+   * @generated from field: string explanation = 10;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSourceAnchor anchors = 11;
+   */
+  anchors: IntelligenceGraphSourceAnchor[] = [];
+
+  /**
+   * @generated from field: int64 expected_version = 12;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 13;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertIntelligenceGraphEdgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "relation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "confidence_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "anchors", kind: "message", T: IntelligenceGraphSourceAnchor, repeated: true },
+    { no: 12, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntelligenceGraphEdgeRequest {
+    return new UpsertIntelligenceGraphEdgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphEdgeRequest {
+    return new UpsertIntelligenceGraphEdgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphEdgeRequest {
+    return new UpsertIntelligenceGraphEdgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntelligenceGraphEdgeRequest | PlainMessage<UpsertIntelligenceGraphEdgeRequest> | undefined, b: UpsertIntelligenceGraphEdgeRequest | PlainMessage<UpsertIntelligenceGraphEdgeRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertIntelligenceGraphEdgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+ */
+export class UpsertIntelligenceGraphEdgeResponse extends Message<UpsertIntelligenceGraphEdgeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphEdge edge = 1;
+   */
+  edge?: IntelligenceGraphEdge;
+
+  constructor(data?: PartialMessage<UpsertIntelligenceGraphEdgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edge", kind: "message", T: IntelligenceGraphEdge },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntelligenceGraphEdgeResponse {
+    return new UpsertIntelligenceGraphEdgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphEdgeResponse {
+    return new UpsertIntelligenceGraphEdgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntelligenceGraphEdgeResponse {
+    return new UpsertIntelligenceGraphEdgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntelligenceGraphEdgeResponse | PlainMessage<UpsertIntelligenceGraphEdgeResponse> | undefined, b: UpsertIntelligenceGraphEdgeResponse | PlainMessage<UpsertIntelligenceGraphEdgeResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertIntelligenceGraphEdgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+ */
+export class SetIntelligenceGraphEdgeStateRequest extends Message<SetIntelligenceGraphEdgeStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * archive | restore | delete
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 expected_version = 4;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphEdgeStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphEdgeStateRequest {
+    return new SetIntelligenceGraphEdgeStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphEdgeStateRequest {
+    return new SetIntelligenceGraphEdgeStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphEdgeStateRequest {
+    return new SetIntelligenceGraphEdgeStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphEdgeStateRequest | PlainMessage<SetIntelligenceGraphEdgeStateRequest> | undefined, b: SetIntelligenceGraphEdgeStateRequest | PlainMessage<SetIntelligenceGraphEdgeStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphEdgeStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+ */
+export class SetIntelligenceGraphEdgeStateResponse extends Message<SetIntelligenceGraphEdgeStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphEdge edge = 1;
+   */
+  edge?: IntelligenceGraphEdge;
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphEdgeStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edge", kind: "message", T: IntelligenceGraphEdge },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphEdgeStateResponse {
+    return new SetIntelligenceGraphEdgeStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphEdgeStateResponse {
+    return new SetIntelligenceGraphEdgeStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphEdgeStateResponse {
+    return new SetIntelligenceGraphEdgeStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphEdgeStateResponse | PlainMessage<SetIntelligenceGraphEdgeStateResponse> | undefined, b: SetIntelligenceGraphEdgeStateResponse | PlainMessage<SetIntelligenceGraphEdgeStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphEdgeStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+ */
+export class GenerateIntelligenceGraphSuggestionsRequest extends Message<GenerateIntelligenceGraphSuggestionsRequest> {
+  /**
+   * all | annotations | watchlists | briefs | rooms
+   *
+   * @generated from field: string scope = 1;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 2;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: int32 limit = 3;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<GenerateIntelligenceGraphSuggestionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateIntelligenceGraphSuggestionsRequest {
+    return new GenerateIntelligenceGraphSuggestionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateIntelligenceGraphSuggestionsRequest {
+    return new GenerateIntelligenceGraphSuggestionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateIntelligenceGraphSuggestionsRequest {
+    return new GenerateIntelligenceGraphSuggestionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateIntelligenceGraphSuggestionsRequest | PlainMessage<GenerateIntelligenceGraphSuggestionsRequest> | undefined, b: GenerateIntelligenceGraphSuggestionsRequest | PlainMessage<GenerateIntelligenceGraphSuggestionsRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateIntelligenceGraphSuggestionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+ */
+export class GenerateIntelligenceGraphSuggestionsResponse extends Message<GenerateIntelligenceGraphSuggestionsResponse> {
+  /**
+   * @generated from field: int32 generated = 1;
+   */
+  generated = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSuggestion suggestions = 2;
+   */
+  suggestions: IntelligenceGraphSuggestion[] = [];
+
+  constructor(data?: PartialMessage<GenerateIntelligenceGraphSuggestionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "generated", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "suggestions", kind: "message", T: IntelligenceGraphSuggestion, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateIntelligenceGraphSuggestionsResponse {
+    return new GenerateIntelligenceGraphSuggestionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateIntelligenceGraphSuggestionsResponse {
+    return new GenerateIntelligenceGraphSuggestionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateIntelligenceGraphSuggestionsResponse {
+    return new GenerateIntelligenceGraphSuggestionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateIntelligenceGraphSuggestionsResponse | PlainMessage<GenerateIntelligenceGraphSuggestionsResponse> | undefined, b: GenerateIntelligenceGraphSuggestionsResponse | PlainMessage<GenerateIntelligenceGraphSuggestionsResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateIntelligenceGraphSuggestionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+ */
+export class ListIntelligenceGraphSuggestionsRequest extends Message<ListIntelligenceGraphSuggestionsRequest> {
+  /**
+   * pending | accepted | rejected | expired | all
+   *
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphSuggestionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphSuggestionsRequest {
+    return new ListIntelligenceGraphSuggestionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphSuggestionsRequest {
+    return new ListIntelligenceGraphSuggestionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphSuggestionsRequest {
+    return new ListIntelligenceGraphSuggestionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphSuggestionsRequest | PlainMessage<ListIntelligenceGraphSuggestionsRequest> | undefined, b: ListIntelligenceGraphSuggestionsRequest | PlainMessage<ListIntelligenceGraphSuggestionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphSuggestionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+ */
+export class ListIntelligenceGraphSuggestionsResponse extends Message<ListIntelligenceGraphSuggestionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphSuggestion suggestions = 1;
+   */
+  suggestions: IntelligenceGraphSuggestion[] = [];
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphSuggestionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "suggestions", kind: "message", T: IntelligenceGraphSuggestion, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphSuggestionsResponse {
+    return new ListIntelligenceGraphSuggestionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphSuggestionsResponse {
+    return new ListIntelligenceGraphSuggestionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphSuggestionsResponse {
+    return new ListIntelligenceGraphSuggestionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphSuggestionsResponse | PlainMessage<ListIntelligenceGraphSuggestionsResponse> | undefined, b: ListIntelligenceGraphSuggestionsResponse | PlainMessage<ListIntelligenceGraphSuggestionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphSuggestionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+ */
+export class SetIntelligenceGraphSuggestionStateRequest extends Message<SetIntelligenceGraphSuggestionStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * accept | reject
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string note = 3;
+   */
+  note = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphSuggestionStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphSuggestionStateRequest {
+    return new SetIntelligenceGraphSuggestionStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphSuggestionStateRequest {
+    return new SetIntelligenceGraphSuggestionStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphSuggestionStateRequest {
+    return new SetIntelligenceGraphSuggestionStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphSuggestionStateRequest | PlainMessage<SetIntelligenceGraphSuggestionStateRequest> | undefined, b: SetIntelligenceGraphSuggestionStateRequest | PlainMessage<SetIntelligenceGraphSuggestionStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphSuggestionStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+ */
+export class SetIntelligenceGraphSuggestionStateResponse extends Message<SetIntelligenceGraphSuggestionStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphSuggestion suggestion = 1;
+   */
+  suggestion?: IntelligenceGraphSuggestion;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphNode accepted_node = 2;
+   */
+  acceptedNode?: IntelligenceGraphNode;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphEdge accepted_edge = 3;
+   */
+  acceptedEdge?: IntelligenceGraphEdge;
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphSuggestionStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "suggestion", kind: "message", T: IntelligenceGraphSuggestion },
+    { no: 2, name: "accepted_node", kind: "message", T: IntelligenceGraphNode },
+    { no: 3, name: "accepted_edge", kind: "message", T: IntelligenceGraphEdge },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphSuggestionStateResponse {
+    return new SetIntelligenceGraphSuggestionStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphSuggestionStateResponse {
+    return new SetIntelligenceGraphSuggestionStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphSuggestionStateResponse {
+    return new SetIntelligenceGraphSuggestionStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphSuggestionStateResponse | PlainMessage<SetIntelligenceGraphSuggestionStateResponse> | undefined, b: SetIntelligenceGraphSuggestionStateResponse | PlainMessage<SetIntelligenceGraphSuggestionStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphSuggestionStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+ */
+export class ListIntelligenceGraphTimelineRequest extends Message<ListIntelligenceGraphTimelineRequest> {
+  /**
+   * @generated from field: repeated string node_ids = 1;
+   */
+  nodeIds: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp from = 2;
+   */
+  from?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp to = 3;
+   */
+  to?: Timestamp;
+
+  /**
+   * @generated from field: int32 limit = 4;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphTimelineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "node_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "from", kind: "message", T: Timestamp },
+    { no: 3, name: "to", kind: "message", T: Timestamp },
+    { no: 4, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphTimelineRequest {
+    return new ListIntelligenceGraphTimelineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphTimelineRequest {
+    return new ListIntelligenceGraphTimelineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphTimelineRequest {
+    return new ListIntelligenceGraphTimelineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphTimelineRequest | PlainMessage<ListIntelligenceGraphTimelineRequest> | undefined, b: ListIntelligenceGraphTimelineRequest | PlainMessage<ListIntelligenceGraphTimelineRequest> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphTimelineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+ */
+export class ListIntelligenceGraphTimelineResponse extends Message<ListIntelligenceGraphTimelineResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphTimelineEvent events = 1;
+   */
+  events: IntelligenceGraphTimelineEvent[] = [];
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphTimelineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "events", kind: "message", T: IntelligenceGraphTimelineEvent, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphTimelineResponse {
+    return new ListIntelligenceGraphTimelineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphTimelineResponse {
+    return new ListIntelligenceGraphTimelineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphTimelineResponse {
+    return new ListIntelligenceGraphTimelineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphTimelineResponse | PlainMessage<ListIntelligenceGraphTimelineResponse> | undefined, b: ListIntelligenceGraphTimelineResponse | PlainMessage<ListIntelligenceGraphTimelineResponse> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphTimelineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+ */
+export class ListIntelligenceGraphResurfacingRequest extends Message<ListIntelligenceGraphResurfacingRequest> {
+  /**
+   * pending | snoozed | completed | dismissed | all
+   *
+   * @generated from field: string state = 1;
+   */
+  state = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphResurfacingRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphResurfacingRequest {
+    return new ListIntelligenceGraphResurfacingRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphResurfacingRequest {
+    return new ListIntelligenceGraphResurfacingRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphResurfacingRequest {
+    return new ListIntelligenceGraphResurfacingRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphResurfacingRequest | PlainMessage<ListIntelligenceGraphResurfacingRequest> | undefined, b: ListIntelligenceGraphResurfacingRequest | PlainMessage<ListIntelligenceGraphResurfacingRequest> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphResurfacingRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+ */
+export class ListIntelligenceGraphResurfacingResponse extends Message<ListIntelligenceGraphResurfacingResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphResurfacingItem items = 1;
+   */
+  items: IntelligenceGraphResurfacingItem[] = [];
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphResurfacingResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: IntelligenceGraphResurfacingItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphResurfacingResponse {
+    return new ListIntelligenceGraphResurfacingResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphResurfacingResponse {
+    return new ListIntelligenceGraphResurfacingResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphResurfacingResponse {
+    return new ListIntelligenceGraphResurfacingResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphResurfacingResponse | PlainMessage<ListIntelligenceGraphResurfacingResponse> | undefined, b: ListIntelligenceGraphResurfacingResponse | PlainMessage<ListIntelligenceGraphResurfacingResponse> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphResurfacingResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+ */
+export class SetIntelligenceGraphResurfacingStateRequest extends Message<SetIntelligenceGraphResurfacingStateRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * snooze | complete | dismiss | reopen
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp snoozed_until = 3;
+   */
+  snoozedUntil?: Timestamp;
+
+  /**
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphResurfacingStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "snoozed_until", kind: "message", T: Timestamp },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphResurfacingStateRequest {
+    return new SetIntelligenceGraphResurfacingStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphResurfacingStateRequest {
+    return new SetIntelligenceGraphResurfacingStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphResurfacingStateRequest {
+    return new SetIntelligenceGraphResurfacingStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphResurfacingStateRequest | PlainMessage<SetIntelligenceGraphResurfacingStateRequest> | undefined, b: SetIntelligenceGraphResurfacingStateRequest | PlainMessage<SetIntelligenceGraphResurfacingStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphResurfacingStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+ */
+export class SetIntelligenceGraphResurfacingStateResponse extends Message<SetIntelligenceGraphResurfacingStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphResurfacingItem item = 1;
+   */
+  item?: IntelligenceGraphResurfacingItem;
+
+  constructor(data?: PartialMessage<SetIntelligenceGraphResurfacingStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: IntelligenceGraphResurfacingItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntelligenceGraphResurfacingStateResponse {
+    return new SetIntelligenceGraphResurfacingStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntelligenceGraphResurfacingStateResponse {
+    return new SetIntelligenceGraphResurfacingStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntelligenceGraphResurfacingStateResponse {
+    return new SetIntelligenceGraphResurfacingStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntelligenceGraphResurfacingStateResponse | PlainMessage<SetIntelligenceGraphResurfacingStateResponse> | undefined, b: SetIntelligenceGraphResurfacingStateResponse | PlainMessage<SetIntelligenceGraphResurfacingStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntelligenceGraphResurfacingStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+ */
+export class CreateIntelligenceGraphMeetingBriefRequest extends Message<CreateIntelligenceGraphMeetingBriefRequest> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string purpose = 2;
+   */
+  purpose = "";
+
+  /**
+   * @generated from field: string scope = 3;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 4;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: repeated string node_ids = 5;
+   */
+  nodeIds: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp window_start = 6;
+   */
+  windowStart?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp window_end = 7;
+   */
+  windowEnd?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 8;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateIntelligenceGraphMeetingBriefRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "node_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "window_start", kind: "message", T: Timestamp },
+    { no: 7, name: "window_end", kind: "message", T: Timestamp },
+    { no: 8, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateIntelligenceGraphMeetingBriefRequest {
+    return new CreateIntelligenceGraphMeetingBriefRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateIntelligenceGraphMeetingBriefRequest {
+    return new CreateIntelligenceGraphMeetingBriefRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateIntelligenceGraphMeetingBriefRequest {
+    return new CreateIntelligenceGraphMeetingBriefRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateIntelligenceGraphMeetingBriefRequest | PlainMessage<CreateIntelligenceGraphMeetingBriefRequest> | undefined, b: CreateIntelligenceGraphMeetingBriefRequest | PlainMessage<CreateIntelligenceGraphMeetingBriefRequest> | undefined): boolean {
+    return proto3.util.equals(CreateIntelligenceGraphMeetingBriefRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+ */
+export class CreateIntelligenceGraphMeetingBriefResponse extends Message<CreateIntelligenceGraphMeetingBriefResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphMeetingBrief brief = 1;
+   */
+  brief?: IntelligenceGraphMeetingBrief;
+
+  constructor(data?: PartialMessage<CreateIntelligenceGraphMeetingBriefResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: IntelligenceGraphMeetingBrief },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateIntelligenceGraphMeetingBriefResponse {
+    return new CreateIntelligenceGraphMeetingBriefResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateIntelligenceGraphMeetingBriefResponse {
+    return new CreateIntelligenceGraphMeetingBriefResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateIntelligenceGraphMeetingBriefResponse {
+    return new CreateIntelligenceGraphMeetingBriefResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateIntelligenceGraphMeetingBriefResponse | PlainMessage<CreateIntelligenceGraphMeetingBriefResponse> | undefined, b: CreateIntelligenceGraphMeetingBriefResponse | PlainMessage<CreateIntelligenceGraphMeetingBriefResponse> | undefined): boolean {
+    return proto3.util.equals(CreateIntelligenceGraphMeetingBriefResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+ */
+export class GetIntelligenceGraphMeetingBriefRequest extends Message<GetIntelligenceGraphMeetingBriefRequest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetIntelligenceGraphMeetingBriefRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntelligenceGraphMeetingBriefRequest {
+    return new GetIntelligenceGraphMeetingBriefRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntelligenceGraphMeetingBriefRequest {
+    return new GetIntelligenceGraphMeetingBriefRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntelligenceGraphMeetingBriefRequest {
+    return new GetIntelligenceGraphMeetingBriefRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntelligenceGraphMeetingBriefRequest | PlainMessage<GetIntelligenceGraphMeetingBriefRequest> | undefined, b: GetIntelligenceGraphMeetingBriefRequest | PlainMessage<GetIntelligenceGraphMeetingBriefRequest> | undefined): boolean {
+    return proto3.util.equals(GetIntelligenceGraphMeetingBriefRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+ */
+export class GetIntelligenceGraphMeetingBriefResponse extends Message<GetIntelligenceGraphMeetingBriefResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.IntelligenceGraphMeetingBrief brief = 1;
+   */
+  brief?: IntelligenceGraphMeetingBrief;
+
+  constructor(data?: PartialMessage<GetIntelligenceGraphMeetingBriefResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: IntelligenceGraphMeetingBrief },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntelligenceGraphMeetingBriefResponse {
+    return new GetIntelligenceGraphMeetingBriefResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntelligenceGraphMeetingBriefResponse {
+    return new GetIntelligenceGraphMeetingBriefResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntelligenceGraphMeetingBriefResponse {
+    return new GetIntelligenceGraphMeetingBriefResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntelligenceGraphMeetingBriefResponse | PlainMessage<GetIntelligenceGraphMeetingBriefResponse> | undefined, b: GetIntelligenceGraphMeetingBriefResponse | PlainMessage<GetIntelligenceGraphMeetingBriefResponse> | undefined): boolean {
+    return proto3.util.equals(GetIntelligenceGraphMeetingBriefResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+ */
+export class ListIntelligenceGraphMeetingBriefsRequest extends Message<ListIntelligenceGraphMeetingBriefsRequest> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphMeetingBriefsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphMeetingBriefsRequest {
+    return new ListIntelligenceGraphMeetingBriefsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphMeetingBriefsRequest {
+    return new ListIntelligenceGraphMeetingBriefsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphMeetingBriefsRequest {
+    return new ListIntelligenceGraphMeetingBriefsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphMeetingBriefsRequest | PlainMessage<ListIntelligenceGraphMeetingBriefsRequest> | undefined, b: ListIntelligenceGraphMeetingBriefsRequest | PlainMessage<ListIntelligenceGraphMeetingBriefsRequest> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphMeetingBriefsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+ */
+export class ListIntelligenceGraphMeetingBriefsResponse extends Message<ListIntelligenceGraphMeetingBriefsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.IntelligenceGraphMeetingBrief briefs = 1;
+   */
+  briefs: IntelligenceGraphMeetingBrief[] = [];
+
+  constructor(data?: PartialMessage<ListIntelligenceGraphMeetingBriefsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "briefs", kind: "message", T: IntelligenceGraphMeetingBrief, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntelligenceGraphMeetingBriefsResponse {
+    return new ListIntelligenceGraphMeetingBriefsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntelligenceGraphMeetingBriefsResponse {
+    return new ListIntelligenceGraphMeetingBriefsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntelligenceGraphMeetingBriefsResponse {
+    return new ListIntelligenceGraphMeetingBriefsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListIntelligenceGraphMeetingBriefsResponse | PlainMessage<ListIntelligenceGraphMeetingBriefsResponse> | undefined, b: ListIntelligenceGraphMeetingBriefsResponse | PlainMessage<ListIntelligenceGraphMeetingBriefsResponse> | undefined): boolean {
+    return proto3.util.equals(ListIntelligenceGraphMeetingBriefsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+ */
+export class ExportPersonalIntelligenceGraphRequest extends Message<ExportPersonalIntelligenceGraphRequest> {
+  /**
+   * json | markdown | csv
+   *
+   * @generated from field: string format = 1;
+   */
+  format = "";
+
+  /**
+   * @generated from field: bool include_archived = 2;
+   */
+  includeArchived = false;
+
+  constructor(data?: PartialMessage<ExportPersonalIntelligenceGraphRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "include_archived", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportPersonalIntelligenceGraphRequest {
+    return new ExportPersonalIntelligenceGraphRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportPersonalIntelligenceGraphRequest {
+    return new ExportPersonalIntelligenceGraphRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportPersonalIntelligenceGraphRequest {
+    return new ExportPersonalIntelligenceGraphRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportPersonalIntelligenceGraphRequest | PlainMessage<ExportPersonalIntelligenceGraphRequest> | undefined, b: ExportPersonalIntelligenceGraphRequest | PlainMessage<ExportPersonalIntelligenceGraphRequest> | undefined): boolean {
+    return proto3.util.equals(ExportPersonalIntelligenceGraphRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+ */
+export class ExportPersonalIntelligenceGraphResponse extends Message<ExportPersonalIntelligenceGraphResponse> {
+  /**
+   * @generated from field: string filename = 1;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 2;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: bytes data = 3;
+   */
+  data = new Uint8Array(0);
+
+  /**
+   * @generated from field: string checksum = 4;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 5;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ExportPersonalIntelligenceGraphResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 4, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportPersonalIntelligenceGraphResponse {
+    return new ExportPersonalIntelligenceGraphResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportPersonalIntelligenceGraphResponse {
+    return new ExportPersonalIntelligenceGraphResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportPersonalIntelligenceGraphResponse {
+    return new ExportPersonalIntelligenceGraphResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportPersonalIntelligenceGraphResponse | PlainMessage<ExportPersonalIntelligenceGraphResponse> | undefined, b: ExportPersonalIntelligenceGraphResponse | PlainMessage<ExportPersonalIntelligenceGraphResponse> | undefined): boolean {
+    return proto3.util.equals(ExportPersonalIntelligenceGraphResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+ */
+export class RebuildPersonalIntelligenceGraphRequest extends Message<RebuildPersonalIntelligenceGraphRequest> {
+  /**
+   * @generated from field: string reason = 1;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RebuildPersonalIntelligenceGraphRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RebuildPersonalIntelligenceGraphRequest {
+    return new RebuildPersonalIntelligenceGraphRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RebuildPersonalIntelligenceGraphRequest {
+    return new RebuildPersonalIntelligenceGraphRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RebuildPersonalIntelligenceGraphRequest {
+    return new RebuildPersonalIntelligenceGraphRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RebuildPersonalIntelligenceGraphRequest | PlainMessage<RebuildPersonalIntelligenceGraphRequest> | undefined, b: RebuildPersonalIntelligenceGraphRequest | PlainMessage<RebuildPersonalIntelligenceGraphRequest> | undefined): boolean {
+    return proto3.util.equals(RebuildPersonalIntelligenceGraphRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+ */
+export class RebuildPersonalIntelligenceGraphResponse extends Message<RebuildPersonalIntelligenceGraphResponse> {
+  /**
+   * @generated from field: string job_id = 1;
+   */
+  jobId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<RebuildPersonalIntelligenceGraphResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "job_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RebuildPersonalIntelligenceGraphResponse {
+    return new RebuildPersonalIntelligenceGraphResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RebuildPersonalIntelligenceGraphResponse {
+    return new RebuildPersonalIntelligenceGraphResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RebuildPersonalIntelligenceGraphResponse {
+    return new RebuildPersonalIntelligenceGraphResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RebuildPersonalIntelligenceGraphResponse | PlainMessage<RebuildPersonalIntelligenceGraphResponse> | undefined, b: RebuildPersonalIntelligenceGraphResponse | PlainMessage<RebuildPersonalIntelligenceGraphResponse> | undefined): boolean {
+    return proto3.util.equals(RebuildPersonalIntelligenceGraphResponse, a, b);
+  }
+}
+

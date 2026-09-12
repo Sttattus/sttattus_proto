@@ -35559,6 +35559,5137 @@ class LeaveResearchRoomResponse extends $pb.GeneratedMessage {
   static LeaveResearchRoomResponse? _defaultInstance;
 }
 
+class IntelligenceGraphSourceAnchor extends $pb.GeneratedMessage {
+  factory IntelligenceGraphSourceAnchor({
+    $core.String? id,
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.String? sourceVersion,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? quote,
+    $core.String? roomId,
+    $fixnum.Int64? roomPermissionVersion,
+    $fixnum.Int64? membershipAccessVersion,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (sourceVersion != null) result.sourceVersion = sourceVersion;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (quote != null) result.quote = quote;
+    if (roomId != null) result.roomId = roomId;
+    if (roomPermissionVersion != null)
+      result.roomPermissionVersion = roomPermissionVersion;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  IntelligenceGraphSourceAnchor._();
+
+  factory IntelligenceGraphSourceAnchor.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphSourceAnchor.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphSourceAnchor',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'contentId')
+    ..aOS(6, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(7, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(8, _omitFieldNames ? '' : 'quote')
+    ..aOS(9, _omitFieldNames ? '' : 'roomId')
+    ..aInt64(10, _omitFieldNames ? '' : 'roomPermissionVersion')
+    ..aInt64(11, _omitFieldNames ? '' : 'membershipAccessVersion')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphSourceAnchor clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphSourceAnchor copyWith(
+          void Function(IntelligenceGraphSourceAnchor) updates) =>
+      super.copyWith(
+              (message) => updates(message as IntelligenceGraphSourceAnchor))
+          as IntelligenceGraphSourceAnchor;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphSourceAnchor create() =>
+      IntelligenceGraphSourceAnchor._();
+  @$core.override
+  IntelligenceGraphSourceAnchor createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphSourceAnchor getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphSourceAnchor>(create);
+  static IntelligenceGraphSourceAnchor? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get revisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set revisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get passageKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set passageKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPassageKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPassageKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get quote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set quote($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasQuote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearQuote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get roomId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set roomId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRoomId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRoomId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get roomPermissionVersion => $_getI64(9);
+  @$pb.TagNumber(10)
+  set roomPermissionVersion($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRoomPermissionVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRoomPermissionVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(10);
+  @$pb.TagNumber(11)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasMembershipAccessVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMembershipAccessVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+}
+
+class IntelligenceGraphNode extends $pb.GeneratedMessage {
+  factory IntelligenceGraphNode({
+    $core.String? id,
+    $core.String? nodeType,
+    $core.String? title,
+    $core.String? summary,
+    $core.String? status,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.String? origin,
+    $core.String? verificationStatus,
+    $core.double? confidence,
+    $core.String? confidenceBasis,
+    $1.Timestamp? validFrom,
+    $1.Timestamp? validTo,
+    $core.String? mergedIntoNodeId,
+    $fixnum.Int64? version,
+    $fixnum.Int64? roomPermissionVersion,
+    $fixnum.Int64? membershipAccessVersion,
+    $core.Iterable<IntelligenceGraphSourceAnchor>? anchors,
+    $core.int? inboundEdgeCount,
+    $core.int? outboundEdgeCount,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (nodeType != null) result.nodeType = nodeType;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (status != null) result.status = status;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (origin != null) result.origin = origin;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    if (confidence != null) result.confidence = confidence;
+    if (confidenceBasis != null) result.confidenceBasis = confidenceBasis;
+    if (validFrom != null) result.validFrom = validFrom;
+    if (validTo != null) result.validTo = validTo;
+    if (mergedIntoNodeId != null) result.mergedIntoNodeId = mergedIntoNodeId;
+    if (version != null) result.version = version;
+    if (roomPermissionVersion != null)
+      result.roomPermissionVersion = roomPermissionVersion;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
+    if (anchors != null) result.anchors.addAll(anchors);
+    if (inboundEdgeCount != null) result.inboundEdgeCount = inboundEdgeCount;
+    if (outboundEdgeCount != null) result.outboundEdgeCount = outboundEdgeCount;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  IntelligenceGraphNode._();
+
+  factory IntelligenceGraphNode.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphNode.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphNode',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'scope')
+    ..aOS(7, _omitFieldNames ? '' : 'roomId')
+    ..aOS(8, _omitFieldNames ? '' : 'origin')
+    ..aOS(9, _omitFieldNames ? '' : 'verificationStatus')
+    ..aD(10, _omitFieldNames ? '' : 'confidence')
+    ..aOS(11, _omitFieldNames ? '' : 'confidenceBasis')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'validFrom',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'validTo',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(14, _omitFieldNames ? '' : 'mergedIntoNodeId')
+    ..aInt64(15, _omitFieldNames ? '' : 'version')
+    ..aInt64(16, _omitFieldNames ? '' : 'roomPermissionVersion')
+    ..aInt64(17, _omitFieldNames ? '' : 'membershipAccessVersion')
+    ..pPM<IntelligenceGraphSourceAnchor>(18, _omitFieldNames ? '' : 'anchors',
+        subBuilder: IntelligenceGraphSourceAnchor.create)
+    ..aI(19, _omitFieldNames ? '' : 'inboundEdgeCount')
+    ..aI(20, _omitFieldNames ? '' : 'outboundEdgeCount')
+    ..aOM<$1.Timestamp>(21, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(22, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphNode clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphNode copyWith(
+          void Function(IntelligenceGraphNode) updates) =>
+      super.copyWith((message) => updates(message as IntelligenceGraphNode))
+          as IntelligenceGraphNode;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphNode create() => IntelligenceGraphNode._();
+  @$core.override
+  IntelligenceGraphNode createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphNode getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphNode>(create);
+  static IntelligenceGraphNode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get scope => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set scope($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScope() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScope() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get roomId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get origin => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set origin($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOrigin() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOrigin() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get verificationStatus => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set verificationStatus($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVerificationStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVerificationStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get confidence => $_getN(9);
+  @$pb.TagNumber(10)
+  set confidence($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasConfidence() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearConfidence() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get confidenceBasis => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set confidenceBasis($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasConfidenceBasis() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearConfidenceBasis() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get validFrom => $_getN(11);
+  @$pb.TagNumber(12)
+  set validFrom($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasValidFrom() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearValidFrom() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureValidFrom() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get validTo => $_getN(12);
+  @$pb.TagNumber(13)
+  set validTo($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasValidTo() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearValidTo() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureValidTo() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $core.String get mergedIntoNodeId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set mergedIntoNodeId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasMergedIntoNodeId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMergedIntoNodeId() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get version => $_getI64(14);
+  @$pb.TagNumber(15)
+  set version($fixnum.Int64 value) => $_setInt64(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasVersion() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearVersion() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get roomPermissionVersion => $_getI64(15);
+  @$pb.TagNumber(16)
+  set roomPermissionVersion($fixnum.Int64 value) => $_setInt64(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasRoomPermissionVersion() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearRoomPermissionVersion() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(16);
+  @$pb.TagNumber(17)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasMembershipAccessVersion() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearMembershipAccessVersion() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $pb.PbList<IntelligenceGraphSourceAnchor> get anchors => $_getList(17);
+
+  @$pb.TagNumber(19)
+  $core.int get inboundEdgeCount => $_getIZ(18);
+  @$pb.TagNumber(19)
+  set inboundEdgeCount($core.int value) => $_setSignedInt32(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasInboundEdgeCount() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearInboundEdgeCount() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.int get outboundEdgeCount => $_getIZ(19);
+  @$pb.TagNumber(20)
+  set outboundEdgeCount($core.int value) => $_setSignedInt32(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasOutboundEdgeCount() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearOutboundEdgeCount() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $1.Timestamp get createdAt => $_getN(20);
+  @$pb.TagNumber(21)
+  set createdAt($1.Timestamp value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasCreatedAt() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearCreatedAt() => $_clearField(21);
+  @$pb.TagNumber(21)
+  $1.Timestamp ensureCreatedAt() => $_ensure(20);
+
+  @$pb.TagNumber(22)
+  $1.Timestamp get updatedAt => $_getN(21);
+  @$pb.TagNumber(22)
+  set updatedAt($1.Timestamp value) => $_setField(22, value);
+  @$pb.TagNumber(22)
+  $core.bool hasUpdatedAt() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearUpdatedAt() => $_clearField(22);
+  @$pb.TagNumber(22)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(21);
+}
+
+class IntelligenceGraphEdge extends $pb.GeneratedMessage {
+  factory IntelligenceGraphEdge({
+    $core.String? id,
+    $core.String? sourceNodeId,
+    $core.String? targetNodeId,
+    $core.String? relation,
+    $core.String? label,
+    $core.String? status,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.String? origin,
+    $core.double? confidence,
+    $core.String? confidenceBasis,
+    $core.String? explanation,
+    $core.String? modelKey,
+    $core.String? modelVersion,
+    $fixnum.Int64? version,
+    $fixnum.Int64? roomPermissionVersion,
+    $fixnum.Int64? membershipAccessVersion,
+    $core.Iterable<IntelligenceGraphSourceAnchor>? anchors,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceNodeId != null) result.sourceNodeId = sourceNodeId;
+    if (targetNodeId != null) result.targetNodeId = targetNodeId;
+    if (relation != null) result.relation = relation;
+    if (label != null) result.label = label;
+    if (status != null) result.status = status;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (origin != null) result.origin = origin;
+    if (confidence != null) result.confidence = confidence;
+    if (confidenceBasis != null) result.confidenceBasis = confidenceBasis;
+    if (explanation != null) result.explanation = explanation;
+    if (modelKey != null) result.modelKey = modelKey;
+    if (modelVersion != null) result.modelVersion = modelVersion;
+    if (version != null) result.version = version;
+    if (roomPermissionVersion != null)
+      result.roomPermissionVersion = roomPermissionVersion;
+    if (membershipAccessVersion != null)
+      result.membershipAccessVersion = membershipAccessVersion;
+    if (anchors != null) result.anchors.addAll(anchors);
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  IntelligenceGraphEdge._();
+
+  factory IntelligenceGraphEdge.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphEdge.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphEdge',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceNodeId')
+    ..aOS(3, _omitFieldNames ? '' : 'targetNodeId')
+    ..aOS(4, _omitFieldNames ? '' : 'relation')
+    ..aOS(5, _omitFieldNames ? '' : 'label')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'scope')
+    ..aOS(8, _omitFieldNames ? '' : 'roomId')
+    ..aOS(9, _omitFieldNames ? '' : 'origin')
+    ..aD(10, _omitFieldNames ? '' : 'confidence')
+    ..aOS(11, _omitFieldNames ? '' : 'confidenceBasis')
+    ..aOS(12, _omitFieldNames ? '' : 'explanation')
+    ..aOS(13, _omitFieldNames ? '' : 'modelKey')
+    ..aOS(14, _omitFieldNames ? '' : 'modelVersion')
+    ..aInt64(15, _omitFieldNames ? '' : 'version')
+    ..aInt64(16, _omitFieldNames ? '' : 'roomPermissionVersion')
+    ..aInt64(17, _omitFieldNames ? '' : 'membershipAccessVersion')
+    ..pPM<IntelligenceGraphSourceAnchor>(18, _omitFieldNames ? '' : 'anchors',
+        subBuilder: IntelligenceGraphSourceAnchor.create)
+    ..aOM<$1.Timestamp>(19, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphEdge clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphEdge copyWith(
+          void Function(IntelligenceGraphEdge) updates) =>
+      super.copyWith((message) => updates(message as IntelligenceGraphEdge))
+          as IntelligenceGraphEdge;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphEdge create() => IntelligenceGraphEdge._();
+  @$core.override
+  IntelligenceGraphEdge createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphEdge getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphEdge>(create);
+  static IntelligenceGraphEdge? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceNodeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceNodeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetNodeId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetNodeId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetNodeId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get relation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set relation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRelation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRelation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get label => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set label($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get scope => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set scope($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScope() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScope() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get roomId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set roomId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRoomId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRoomId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get origin => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set origin($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasOrigin() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOrigin() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get confidence => $_getN(9);
+  @$pb.TagNumber(10)
+  set confidence($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasConfidence() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearConfidence() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get confidenceBasis => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set confidenceBasis($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasConfidenceBasis() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearConfidenceBasis() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get explanation => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set explanation($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExplanation() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExplanation() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get modelKey => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set modelKey($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasModelKey() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearModelKey() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get modelVersion => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set modelVersion($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasModelVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearModelVersion() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get version => $_getI64(14);
+  @$pb.TagNumber(15)
+  set version($fixnum.Int64 value) => $_setInt64(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasVersion() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearVersion() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get roomPermissionVersion => $_getI64(15);
+  @$pb.TagNumber(16)
+  set roomPermissionVersion($fixnum.Int64 value) => $_setInt64(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasRoomPermissionVersion() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearRoomPermissionVersion() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $fixnum.Int64 get membershipAccessVersion => $_getI64(16);
+  @$pb.TagNumber(17)
+  set membershipAccessVersion($fixnum.Int64 value) => $_setInt64(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasMembershipAccessVersion() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearMembershipAccessVersion() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $pb.PbList<IntelligenceGraphSourceAnchor> get anchors => $_getList(17);
+
+  @$pb.TagNumber(19)
+  $1.Timestamp get createdAt => $_getN(18);
+  @$pb.TagNumber(19)
+  set createdAt($1.Timestamp value) => $_setField(19, value);
+  @$pb.TagNumber(19)
+  $core.bool hasCreatedAt() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearCreatedAt() => $_clearField(19);
+  @$pb.TagNumber(19)
+  $1.Timestamp ensureCreatedAt() => $_ensure(18);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get updatedAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set updatedAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasUpdatedAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearUpdatedAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(19);
+}
+
+class IntelligenceGraphSuggestion extends $pb.GeneratedMessage {
+  factory IntelligenceGraphSuggestion({
+    $core.String? id,
+    $core.String? proposalType,
+    $core.String? status,
+    IntelligenceGraphNode? proposedNode,
+    IntelligenceGraphEdge? proposedEdge,
+    $core.String? reason,
+    $core.double? confidence,
+    $core.String? modelKey,
+    $core.String? modelVersion,
+    $core.String? sourceDigest,
+    $core.String? dispositionNote,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? decidedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (proposalType != null) result.proposalType = proposalType;
+    if (status != null) result.status = status;
+    if (proposedNode != null) result.proposedNode = proposedNode;
+    if (proposedEdge != null) result.proposedEdge = proposedEdge;
+    if (reason != null) result.reason = reason;
+    if (confidence != null) result.confidence = confidence;
+    if (modelKey != null) result.modelKey = modelKey;
+    if (modelVersion != null) result.modelVersion = modelVersion;
+    if (sourceDigest != null) result.sourceDigest = sourceDigest;
+    if (dispositionNote != null) result.dispositionNote = dispositionNote;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    return result;
+  }
+
+  IntelligenceGraphSuggestion._();
+
+  factory IntelligenceGraphSuggestion.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphSuggestion.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphSuggestion',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'proposalType')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOM<IntelligenceGraphNode>(4, _omitFieldNames ? '' : 'proposedNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..aOM<IntelligenceGraphEdge>(5, _omitFieldNames ? '' : 'proposedEdge',
+        subBuilder: IntelligenceGraphEdge.create)
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aD(7, _omitFieldNames ? '' : 'confidence')
+    ..aOS(8, _omitFieldNames ? '' : 'modelKey')
+    ..aOS(9, _omitFieldNames ? '' : 'modelVersion')
+    ..aOS(10, _omitFieldNames ? '' : 'sourceDigest')
+    ..aOS(11, _omitFieldNames ? '' : 'dispositionNote')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'decidedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphSuggestion clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphSuggestion copyWith(
+          void Function(IntelligenceGraphSuggestion) updates) =>
+      super.copyWith(
+              (message) => updates(message as IntelligenceGraphSuggestion))
+          as IntelligenceGraphSuggestion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphSuggestion create() =>
+      IntelligenceGraphSuggestion._();
+  @$core.override
+  IntelligenceGraphSuggestion createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphSuggestion getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphSuggestion>(create);
+  static IntelligenceGraphSuggestion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get proposalType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set proposalType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProposalType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProposalType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  IntelligenceGraphNode get proposedNode => $_getN(3);
+  @$pb.TagNumber(4)
+  set proposedNode(IntelligenceGraphNode value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProposedNode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProposedNode() => $_clearField(4);
+  @$pb.TagNumber(4)
+  IntelligenceGraphNode ensureProposedNode() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  IntelligenceGraphEdge get proposedEdge => $_getN(4);
+  @$pb.TagNumber(5)
+  set proposedEdge(IntelligenceGraphEdge value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProposedEdge() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposedEdge() => $_clearField(5);
+  @$pb.TagNumber(5)
+  IntelligenceGraphEdge ensureProposedEdge() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get confidence => $_getN(6);
+  @$pb.TagNumber(7)
+  set confidence($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConfidence() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfidence() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get modelKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set modelKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasModelKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearModelKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get modelVersion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set modelVersion($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasModelVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearModelVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sourceDigest => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sourceDigest($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceDigest() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceDigest() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get dispositionNote => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set dispositionNote($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDispositionNote() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDispositionNote() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get expiresAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set expiresAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExpiresAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpiresAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureExpiresAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get decidedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set decidedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasDecidedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearDecidedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureDecidedAt() => $_ensure(13);
+}
+
+class IntelligenceGraphTimelineEvent extends $pb.GeneratedMessage {
+  factory IntelligenceGraphTimelineEvent({
+    $core.String? id,
+    $core.String? eventType,
+    $core.String? title,
+    $core.String? summary,
+    $core.String? nodeId,
+    $core.String? edgeId,
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.String? scope,
+    $core.String? roomId,
+    $1.Timestamp? eventAt,
+    $1.Timestamp? recordedAt,
+    $core.bool? approximateTime,
+    $fixnum.Int64? version,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (eventType != null) result.eventType = eventType;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (edgeId != null) result.edgeId = edgeId;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (eventAt != null) result.eventAt = eventAt;
+    if (recordedAt != null) result.recordedAt = recordedAt;
+    if (approximateTime != null) result.approximateTime = approximateTime;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  IntelligenceGraphTimelineEvent._();
+
+  factory IntelligenceGraphTimelineEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphTimelineEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphTimelineEvent',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'eventType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aOS(5, _omitFieldNames ? '' : 'nodeId')
+    ..aOS(6, _omitFieldNames ? '' : 'edgeId')
+    ..aOS(7, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(9, _omitFieldNames ? '' : 'scope')
+    ..aOS(10, _omitFieldNames ? '' : 'roomId')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'eventAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'recordedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOB(13, _omitFieldNames ? '' : 'approximateTime')
+    ..aInt64(14, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphTimelineEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphTimelineEvent copyWith(
+          void Function(IntelligenceGraphTimelineEvent) updates) =>
+      super.copyWith(
+              (message) => updates(message as IntelligenceGraphTimelineEvent))
+          as IntelligenceGraphTimelineEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphTimelineEvent create() =>
+      IntelligenceGraphTimelineEvent._();
+  @$core.override
+  IntelligenceGraphTimelineEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphTimelineEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphTimelineEvent>(create);
+  static IntelligenceGraphTimelineEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get eventType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set eventType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEventType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get nodeId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set nodeId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNodeId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNodeId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get edgeId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set edgeId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEdgeId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEdgeId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sourceType => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sourceType($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSourceType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourceType() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get scope => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set scope($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasScope() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearScope() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get roomId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set roomId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRoomId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRoomId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get eventAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set eventAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEventAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEventAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureEventAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get recordedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set recordedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRecordedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRecordedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureRecordedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $core.bool get approximateTime => $_getBF(12);
+  @$pb.TagNumber(13)
+  set approximateTime($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasApproximateTime() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearApproximateTime() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get version => $_getI64(13);
+  @$pb.TagNumber(14)
+  set version($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearVersion() => $_clearField(14);
+}
+
+class IntelligenceGraphResurfacingItem extends $pb.GeneratedMessage {
+  factory IntelligenceGraphResurfacingItem({
+    $core.String? id,
+    $core.String? kind,
+    $core.String? title,
+    $core.String? reason,
+    $core.String? state,
+    $core.String? nodeId,
+    $core.String? relatedNodeId,
+    $core.String? sourceId,
+    $1.Timestamp? dueAt,
+    $1.Timestamp? snoozedUntil,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (reason != null) result.reason = reason;
+    if (state != null) result.state = state;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (relatedNodeId != null) result.relatedNodeId = relatedNodeId;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (dueAt != null) result.dueAt = dueAt;
+    if (snoozedUntil != null) result.snoozedUntil = snoozedUntil;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  IntelligenceGraphResurfacingItem._();
+
+  factory IntelligenceGraphResurfacingItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphResurfacingItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphResurfacingItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'state')
+    ..aOS(6, _omitFieldNames ? '' : 'nodeId')
+    ..aOS(7, _omitFieldNames ? '' : 'relatedNodeId')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceId')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'dueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'snoozedUntil',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphResurfacingItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphResurfacingItem copyWith(
+          void Function(IntelligenceGraphResurfacingItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as IntelligenceGraphResurfacingItem))
+          as IntelligenceGraphResurfacingItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphResurfacingItem create() =>
+      IntelligenceGraphResurfacingItem._();
+  @$core.override
+  IntelligenceGraphResurfacingItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphResurfacingItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphResurfacingItem>(
+          create);
+  static IntelligenceGraphResurfacingItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get state => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set state($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get nodeId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nodeId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNodeId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNodeId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get relatedNodeId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set relatedNodeId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRelatedNodeId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRelatedNodeId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get dueAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set dueAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDueAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDueAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureDueAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get snoozedUntil => $_getN(9);
+  @$pb.TagNumber(10)
+  set snoozedUntil($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSnoozedUntil() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSnoozedUntil() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureSnoozedUntil() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+}
+
+class IntelligenceGraphMeetingBriefSection extends $pb.GeneratedMessage {
+  factory IntelligenceGraphMeetingBriefSection({
+    $core.String? kind,
+    $core.String? title,
+    $core.String? body,
+    $core.Iterable<$core.String>? nodeIds,
+    $core.Iterable<IntelligenceGraphSourceAnchor>? citations,
+  }) {
+    final result = create();
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (body != null) result.body = body;
+    if (nodeIds != null) result.nodeIds.addAll(nodeIds);
+    if (citations != null) result.citations.addAll(citations);
+    return result;
+  }
+
+  IntelligenceGraphMeetingBriefSection._();
+
+  factory IntelligenceGraphMeetingBriefSection.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphMeetingBriefSection.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphMeetingBriefSection',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'kind')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..pPS(4, _omitFieldNames ? '' : 'nodeIds')
+    ..pPM<IntelligenceGraphSourceAnchor>(5, _omitFieldNames ? '' : 'citations',
+        subBuilder: IntelligenceGraphSourceAnchor.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphMeetingBriefSection clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphMeetingBriefSection copyWith(
+          void Function(IntelligenceGraphMeetingBriefSection) updates) =>
+      super.copyWith((message) =>
+              updates(message as IntelligenceGraphMeetingBriefSection))
+          as IntelligenceGraphMeetingBriefSection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphMeetingBriefSection create() =>
+      IntelligenceGraphMeetingBriefSection._();
+  @$core.override
+  IntelligenceGraphMeetingBriefSection createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphMeetingBriefSection getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          IntelligenceGraphMeetingBriefSection>(create);
+  static IntelligenceGraphMeetingBriefSection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get nodeIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<IntelligenceGraphSourceAnchor> get citations => $_getList(4);
+}
+
+class IntelligenceGraphMeetingBrief extends $pb.GeneratedMessage {
+  factory IntelligenceGraphMeetingBrief({
+    $core.String? id,
+    $core.String? title,
+    $core.String? purpose,
+    $core.String? status,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.Iterable<$core.String>? selectedNodeIds,
+    $core.Iterable<IntelligenceGraphMeetingBriefSection>? sections,
+    $core.String? manifestChecksum,
+    $fixnum.Int64? version,
+    $1.Timestamp? windowStart,
+    $1.Timestamp? windowEnd,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (purpose != null) result.purpose = purpose;
+    if (status != null) result.status = status;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (selectedNodeIds != null) result.selectedNodeIds.addAll(selectedNodeIds);
+    if (sections != null) result.sections.addAll(sections);
+    if (manifestChecksum != null) result.manifestChecksum = manifestChecksum;
+    if (version != null) result.version = version;
+    if (windowStart != null) result.windowStart = windowStart;
+    if (windowEnd != null) result.windowEnd = windowEnd;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  IntelligenceGraphMeetingBrief._();
+
+  factory IntelligenceGraphMeetingBrief.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphMeetingBrief.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphMeetingBrief',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'purpose')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'scope')
+    ..aOS(6, _omitFieldNames ? '' : 'roomId')
+    ..pPS(7, _omitFieldNames ? '' : 'selectedNodeIds')
+    ..pPM<IntelligenceGraphMeetingBriefSection>(
+        8, _omitFieldNames ? '' : 'sections',
+        subBuilder: IntelligenceGraphMeetingBriefSection.create)
+    ..aOS(9, _omitFieldNames ? '' : 'manifestChecksum')
+    ..aInt64(10, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'windowStart',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'windowEnd',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphMeetingBrief clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphMeetingBrief copyWith(
+          void Function(IntelligenceGraphMeetingBrief) updates) =>
+      super.copyWith(
+              (message) => updates(message as IntelligenceGraphMeetingBrief))
+          as IntelligenceGraphMeetingBrief;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphMeetingBrief create() =>
+      IntelligenceGraphMeetingBrief._();
+  @$core.override
+  IntelligenceGraphMeetingBrief createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphMeetingBrief getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphMeetingBrief>(create);
+  static IntelligenceGraphMeetingBrief? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get purpose => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set purpose($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPurpose() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPurpose() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get scope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set scope($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScope() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get roomId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set roomId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRoomId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRoomId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get selectedNodeIds => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<IntelligenceGraphMeetingBriefSection> get sections => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get manifestChecksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set manifestChecksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasManifestChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearManifestChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get version => $_getI64(9);
+  @$pb.TagNumber(10)
+  set version($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get windowStart => $_getN(10);
+  @$pb.TagNumber(11)
+  set windowStart($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasWindowStart() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearWindowStart() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureWindowStart() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get windowEnd => $_getN(11);
+  @$pb.TagNumber(12)
+  set windowEnd($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasWindowEnd() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearWindowEnd() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureWindowEnd() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+}
+
+class IntelligenceGraphOverview extends $pb.GeneratedMessage {
+  factory IntelligenceGraphOverview({
+    $core.int? activeNodes,
+    $core.int? activeEdges,
+    $core.int? pendingSuggestions,
+    $core.int? unresolvedQuestions,
+    $core.int? contradictions,
+    $core.int? dueResurfacing,
+    $core.int? meetingBriefs,
+    $1.Timestamp? lastChangedAt,
+  }) {
+    final result = create();
+    if (activeNodes != null) result.activeNodes = activeNodes;
+    if (activeEdges != null) result.activeEdges = activeEdges;
+    if (pendingSuggestions != null)
+      result.pendingSuggestions = pendingSuggestions;
+    if (unresolvedQuestions != null)
+      result.unresolvedQuestions = unresolvedQuestions;
+    if (contradictions != null) result.contradictions = contradictions;
+    if (dueResurfacing != null) result.dueResurfacing = dueResurfacing;
+    if (meetingBriefs != null) result.meetingBriefs = meetingBriefs;
+    if (lastChangedAt != null) result.lastChangedAt = lastChangedAt;
+    return result;
+  }
+
+  IntelligenceGraphOverview._();
+
+  factory IntelligenceGraphOverview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IntelligenceGraphOverview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IntelligenceGraphOverview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'activeNodes')
+    ..aI(2, _omitFieldNames ? '' : 'activeEdges')
+    ..aI(3, _omitFieldNames ? '' : 'pendingSuggestions')
+    ..aI(4, _omitFieldNames ? '' : 'unresolvedQuestions')
+    ..aI(5, _omitFieldNames ? '' : 'contradictions')
+    ..aI(6, _omitFieldNames ? '' : 'dueResurfacing')
+    ..aI(7, _omitFieldNames ? '' : 'meetingBriefs')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'lastChangedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphOverview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IntelligenceGraphOverview copyWith(
+          void Function(IntelligenceGraphOverview) updates) =>
+      super.copyWith((message) => updates(message as IntelligenceGraphOverview))
+          as IntelligenceGraphOverview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphOverview create() => IntelligenceGraphOverview._();
+  @$core.override
+  IntelligenceGraphOverview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IntelligenceGraphOverview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IntelligenceGraphOverview>(create);
+  static IntelligenceGraphOverview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get activeNodes => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set activeNodes($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasActiveNodes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearActiveNodes() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get activeEdges => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set activeEdges($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActiveEdges() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActiveEdges() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pendingSuggestions => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pendingSuggestions($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPendingSuggestions() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPendingSuggestions() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get unresolvedQuestions => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set unresolvedQuestions($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUnresolvedQuestions() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUnresolvedQuestions() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get contradictions => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set contradictions($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContradictions() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContradictions() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get dueResurfacing => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set dueResurfacing($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDueResurfacing() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDueResurfacing() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get meetingBriefs => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set meetingBriefs($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMeetingBriefs() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMeetingBriefs() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get lastChangedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set lastChangedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLastChangedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastChangedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureLastChangedAt() => $_ensure(7);
+}
+
+class GetPersonalIntelligenceGraphRequest extends $pb.GeneratedMessage {
+  factory GetPersonalIntelligenceGraphRequest({
+    $core.String? query,
+    $core.Iterable<$core.String>? nodeTypes,
+    $core.Iterable<$core.String>? relations,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.bool? includeArchived,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (query != null) result.query = query;
+    if (nodeTypes != null) result.nodeTypes.addAll(nodeTypes);
+    if (relations != null) result.relations.addAll(relations);
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (includeArchived != null) result.includeArchived = includeArchived;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  GetPersonalIntelligenceGraphRequest._();
+
+  factory GetPersonalIntelligenceGraphRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPersonalIntelligenceGraphRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPersonalIntelligenceGraphRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'query')
+    ..pPS(2, _omitFieldNames ? '' : 'nodeTypes')
+    ..pPS(3, _omitFieldNames ? '' : 'relations')
+    ..aOS(4, _omitFieldNames ? '' : 'scope')
+    ..aOS(5, _omitFieldNames ? '' : 'roomId')
+    ..aOB(6, _omitFieldNames ? '' : 'includeArchived')
+    ..aI(7, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalIntelligenceGraphRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalIntelligenceGraphRequest copyWith(
+          void Function(GetPersonalIntelligenceGraphRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPersonalIntelligenceGraphRequest))
+          as GetPersonalIntelligenceGraphRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalIntelligenceGraphRequest create() =>
+      GetPersonalIntelligenceGraphRequest._();
+  @$core.override
+  GetPersonalIntelligenceGraphRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalIntelligenceGraphRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPersonalIntelligenceGraphRequest>(create);
+  static GetPersonalIntelligenceGraphRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get query => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set query($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuery() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get nodeTypes => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get relations => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get scope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get roomId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set roomId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRoomId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRoomId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get includeArchived => $_getBF(5);
+  @$pb.TagNumber(6)
+  set includeArchived($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIncludeArchived() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIncludeArchived() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get limit => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set limit($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLimit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLimit() => $_clearField(7);
+}
+
+class GetPersonalIntelligenceGraphResponse extends $pb.GeneratedMessage {
+  factory GetPersonalIntelligenceGraphResponse({
+    IntelligenceGraphOverview? overview,
+    $core.Iterable<IntelligenceGraphNode>? nodes,
+    $core.Iterable<IntelligenceGraphEdge>? edges,
+  }) {
+    final result = create();
+    if (overview != null) result.overview = overview;
+    if (nodes != null) result.nodes.addAll(nodes);
+    if (edges != null) result.edges.addAll(edges);
+    return result;
+  }
+
+  GetPersonalIntelligenceGraphResponse._();
+
+  factory GetPersonalIntelligenceGraphResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPersonalIntelligenceGraphResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPersonalIntelligenceGraphResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphOverview>(1, _omitFieldNames ? '' : 'overview',
+        subBuilder: IntelligenceGraphOverview.create)
+    ..pPM<IntelligenceGraphNode>(2, _omitFieldNames ? '' : 'nodes',
+        subBuilder: IntelligenceGraphNode.create)
+    ..pPM<IntelligenceGraphEdge>(3, _omitFieldNames ? '' : 'edges',
+        subBuilder: IntelligenceGraphEdge.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalIntelligenceGraphResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalIntelligenceGraphResponse copyWith(
+          void Function(GetPersonalIntelligenceGraphResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPersonalIntelligenceGraphResponse))
+          as GetPersonalIntelligenceGraphResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalIntelligenceGraphResponse create() =>
+      GetPersonalIntelligenceGraphResponse._();
+  @$core.override
+  GetPersonalIntelligenceGraphResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalIntelligenceGraphResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPersonalIntelligenceGraphResponse>(create);
+  static GetPersonalIntelligenceGraphResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphOverview get overview => $_getN(0);
+  @$pb.TagNumber(1)
+  set overview(IntelligenceGraphOverview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOverview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOverview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphOverview ensureOverview() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<IntelligenceGraphNode> get nodes => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<IntelligenceGraphEdge> get edges => $_getList(2);
+}
+
+class UpsertIntelligenceGraphNodeRequest extends $pb.GeneratedMessage {
+  factory UpsertIntelligenceGraphNodeRequest({
+    $core.String? id,
+    $core.String? nodeType,
+    $core.String? title,
+    $core.String? summary,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.String? verificationStatus,
+    $core.double? confidence,
+    $core.String? confidenceBasis,
+    $1.Timestamp? validFrom,
+    $1.Timestamp? validTo,
+    $core.Iterable<IntelligenceGraphSourceAnchor>? anchors,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (nodeType != null) result.nodeType = nodeType;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    if (confidence != null) result.confidence = confidence;
+    if (confidenceBasis != null) result.confidenceBasis = confidenceBasis;
+    if (validFrom != null) result.validFrom = validFrom;
+    if (validTo != null) result.validTo = validTo;
+    if (anchors != null) result.anchors.addAll(anchors);
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertIntelligenceGraphNodeRequest._();
+
+  factory UpsertIntelligenceGraphNodeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntelligenceGraphNodeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntelligenceGraphNodeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aOS(5, _omitFieldNames ? '' : 'scope')
+    ..aOS(6, _omitFieldNames ? '' : 'roomId')
+    ..aOS(7, _omitFieldNames ? '' : 'verificationStatus')
+    ..aD(8, _omitFieldNames ? '' : 'confidence')
+    ..aOS(9, _omitFieldNames ? '' : 'confidenceBasis')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'validFrom',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'validTo',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<IntelligenceGraphSourceAnchor>(12, _omitFieldNames ? '' : 'anchors',
+        subBuilder: IntelligenceGraphSourceAnchor.create)
+    ..aInt64(13, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(14, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphNodeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphNodeRequest copyWith(
+          void Function(UpsertIntelligenceGraphNodeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntelligenceGraphNodeRequest))
+          as UpsertIntelligenceGraphNodeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphNodeRequest create() =>
+      UpsertIntelligenceGraphNodeRequest._();
+  @$core.override
+  UpsertIntelligenceGraphNodeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphNodeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertIntelligenceGraphNodeRequest>(
+          create);
+  static UpsertIntelligenceGraphNodeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get scope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set scope($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScope() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get roomId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set roomId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRoomId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRoomId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get verificationStatus => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set verificationStatus($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVerificationStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVerificationStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get confidence => $_getN(7);
+  @$pb.TagNumber(8)
+  set confidence($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasConfidence() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConfidence() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get confidenceBasis => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set confidenceBasis($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasConfidenceBasis() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConfidenceBasis() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get validFrom => $_getN(9);
+  @$pb.TagNumber(10)
+  set validFrom($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasValidFrom() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearValidFrom() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureValidFrom() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get validTo => $_getN(10);
+  @$pb.TagNumber(11)
+  set validTo($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasValidTo() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearValidTo() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureValidTo() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<IntelligenceGraphSourceAnchor> get anchors => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get expectedVersion => $_getI64(12);
+  @$pb.TagNumber(13)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasExpectedVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearExpectedVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get clientMutationId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set clientMutationId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasClientMutationId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearClientMutationId() => $_clearField(14);
+}
+
+class UpsertIntelligenceGraphNodeResponse extends $pb.GeneratedMessage {
+  factory UpsertIntelligenceGraphNodeResponse({
+    IntelligenceGraphNode? node,
+  }) {
+    final result = create();
+    if (node != null) result.node = node;
+    return result;
+  }
+
+  UpsertIntelligenceGraphNodeResponse._();
+
+  factory UpsertIntelligenceGraphNodeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntelligenceGraphNodeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntelligenceGraphNodeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphNode>(1, _omitFieldNames ? '' : 'node',
+        subBuilder: IntelligenceGraphNode.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphNodeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphNodeResponse copyWith(
+          void Function(UpsertIntelligenceGraphNodeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntelligenceGraphNodeResponse))
+          as UpsertIntelligenceGraphNodeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphNodeResponse create() =>
+      UpsertIntelligenceGraphNodeResponse._();
+  @$core.override
+  UpsertIntelligenceGraphNodeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphNodeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertIntelligenceGraphNodeResponse>(create);
+  static UpsertIntelligenceGraphNodeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode get node => $_getN(0);
+  @$pb.TagNumber(1)
+  set node(IntelligenceGraphNode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNode() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode ensureNode() => $_ensure(0);
+}
+
+class SetIntelligenceGraphNodeStateRequest extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphNodeStateRequest({
+    $core.String? id,
+    $core.String? action,
+    $core.String? reason,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (reason != null) result.reason = reason;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntelligenceGraphNodeStateRequest._();
+
+  factory SetIntelligenceGraphNodeStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphNodeStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphNodeStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aInt64(4, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphNodeStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphNodeStateRequest copyWith(
+          void Function(SetIntelligenceGraphNodeStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphNodeStateRequest))
+          as SetIntelligenceGraphNodeStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphNodeStateRequest create() =>
+      SetIntelligenceGraphNodeStateRequest._();
+  @$core.override
+  SetIntelligenceGraphNodeStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphNodeStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphNodeStateRequest>(create);
+  static SetIntelligenceGraphNodeStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get expectedVersion => $_getI64(3);
+  @$pb.TagNumber(4)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExpectedVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpectedVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SetIntelligenceGraphNodeStateResponse extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphNodeStateResponse({
+    IntelligenceGraphNode? node,
+  }) {
+    final result = create();
+    if (node != null) result.node = node;
+    return result;
+  }
+
+  SetIntelligenceGraphNodeStateResponse._();
+
+  factory SetIntelligenceGraphNodeStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphNodeStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphNodeStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphNode>(1, _omitFieldNames ? '' : 'node',
+        subBuilder: IntelligenceGraphNode.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphNodeStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphNodeStateResponse copyWith(
+          void Function(SetIntelligenceGraphNodeStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphNodeStateResponse))
+          as SetIntelligenceGraphNodeStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphNodeStateResponse create() =>
+      SetIntelligenceGraphNodeStateResponse._();
+  @$core.override
+  SetIntelligenceGraphNodeStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphNodeStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphNodeStateResponse>(create);
+  static SetIntelligenceGraphNodeStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode get node => $_getN(0);
+  @$pb.TagNumber(1)
+  set node(IntelligenceGraphNode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNode() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode ensureNode() => $_ensure(0);
+}
+
+class MergeIntelligenceGraphNodesRequest extends $pb.GeneratedMessage {
+  factory MergeIntelligenceGraphNodesRequest({
+    $core.String? primaryNodeId,
+    $core.String? duplicateNodeId,
+    $core.String? reason,
+    $fixnum.Int64? expectedPrimaryVersion,
+    $fixnum.Int64? expectedDuplicateVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (primaryNodeId != null) result.primaryNodeId = primaryNodeId;
+    if (duplicateNodeId != null) result.duplicateNodeId = duplicateNodeId;
+    if (reason != null) result.reason = reason;
+    if (expectedPrimaryVersion != null)
+      result.expectedPrimaryVersion = expectedPrimaryVersion;
+    if (expectedDuplicateVersion != null)
+      result.expectedDuplicateVersion = expectedDuplicateVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  MergeIntelligenceGraphNodesRequest._();
+
+  factory MergeIntelligenceGraphNodesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MergeIntelligenceGraphNodesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MergeIntelligenceGraphNodesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'primaryNodeId')
+    ..aOS(2, _omitFieldNames ? '' : 'duplicateNodeId')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aInt64(4, _omitFieldNames ? '' : 'expectedPrimaryVersion')
+    ..aInt64(5, _omitFieldNames ? '' : 'expectedDuplicateVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MergeIntelligenceGraphNodesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MergeIntelligenceGraphNodesRequest copyWith(
+          void Function(MergeIntelligenceGraphNodesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as MergeIntelligenceGraphNodesRequest))
+          as MergeIntelligenceGraphNodesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MergeIntelligenceGraphNodesRequest create() =>
+      MergeIntelligenceGraphNodesRequest._();
+  @$core.override
+  MergeIntelligenceGraphNodesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MergeIntelligenceGraphNodesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MergeIntelligenceGraphNodesRequest>(
+          create);
+  static MergeIntelligenceGraphNodesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get primaryNodeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set primaryNodeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrimaryNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrimaryNodeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get duplicateNodeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set duplicateNodeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDuplicateNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDuplicateNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get expectedPrimaryVersion => $_getI64(3);
+  @$pb.TagNumber(4)
+  set expectedPrimaryVersion($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExpectedPrimaryVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpectedPrimaryVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get expectedDuplicateVersion => $_getI64(4);
+  @$pb.TagNumber(5)
+  set expectedDuplicateVersion($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpectedDuplicateVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpectedDuplicateVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class MergeIntelligenceGraphNodesResponse extends $pb.GeneratedMessage {
+  factory MergeIntelligenceGraphNodesResponse({
+    IntelligenceGraphNode? primaryNode,
+    IntelligenceGraphNode? mergedNode,
+  }) {
+    final result = create();
+    if (primaryNode != null) result.primaryNode = primaryNode;
+    if (mergedNode != null) result.mergedNode = mergedNode;
+    return result;
+  }
+
+  MergeIntelligenceGraphNodesResponse._();
+
+  factory MergeIntelligenceGraphNodesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MergeIntelligenceGraphNodesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MergeIntelligenceGraphNodesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphNode>(1, _omitFieldNames ? '' : 'primaryNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..aOM<IntelligenceGraphNode>(2, _omitFieldNames ? '' : 'mergedNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MergeIntelligenceGraphNodesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MergeIntelligenceGraphNodesResponse copyWith(
+          void Function(MergeIntelligenceGraphNodesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MergeIntelligenceGraphNodesResponse))
+          as MergeIntelligenceGraphNodesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MergeIntelligenceGraphNodesResponse create() =>
+      MergeIntelligenceGraphNodesResponse._();
+  @$core.override
+  MergeIntelligenceGraphNodesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MergeIntelligenceGraphNodesResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MergeIntelligenceGraphNodesResponse>(create);
+  static MergeIntelligenceGraphNodesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode get primaryNode => $_getN(0);
+  @$pb.TagNumber(1)
+  set primaryNode(IntelligenceGraphNode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrimaryNode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrimaryNode() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode ensurePrimaryNode() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode get mergedNode => $_getN(1);
+  @$pb.TagNumber(2)
+  set mergedNode(IntelligenceGraphNode value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMergedNode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMergedNode() => $_clearField(2);
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode ensureMergedNode() => $_ensure(1);
+}
+
+class SplitIntelligenceGraphNodeRequest extends $pb.GeneratedMessage {
+  factory SplitIntelligenceGraphNodeRequest({
+    $core.String? sourceNodeId,
+    $core.String? newTitle,
+    $core.String? newSummary,
+    $core.Iterable<$core.String>? moveAnchorIds,
+    $core.Iterable<$core.String>? moveEdgeIds,
+    $core.String? reason,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (sourceNodeId != null) result.sourceNodeId = sourceNodeId;
+    if (newTitle != null) result.newTitle = newTitle;
+    if (newSummary != null) result.newSummary = newSummary;
+    if (moveAnchorIds != null) result.moveAnchorIds.addAll(moveAnchorIds);
+    if (moveEdgeIds != null) result.moveEdgeIds.addAll(moveEdgeIds);
+    if (reason != null) result.reason = reason;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SplitIntelligenceGraphNodeRequest._();
+
+  factory SplitIntelligenceGraphNodeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SplitIntelligenceGraphNodeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SplitIntelligenceGraphNodeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceNodeId')
+    ..aOS(2, _omitFieldNames ? '' : 'newTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'newSummary')
+    ..pPS(4, _omitFieldNames ? '' : 'moveAnchorIds')
+    ..pPS(5, _omitFieldNames ? '' : 'moveEdgeIds')
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aInt64(7, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(8, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SplitIntelligenceGraphNodeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SplitIntelligenceGraphNodeRequest copyWith(
+          void Function(SplitIntelligenceGraphNodeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SplitIntelligenceGraphNodeRequest))
+          as SplitIntelligenceGraphNodeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SplitIntelligenceGraphNodeRequest create() =>
+      SplitIntelligenceGraphNodeRequest._();
+  @$core.override
+  SplitIntelligenceGraphNodeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SplitIntelligenceGraphNodeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SplitIntelligenceGraphNodeRequest>(
+          create);
+  static SplitIntelligenceGraphNodeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceNodeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceNodeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceNodeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get newTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get newSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set newSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNewSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNewSummary() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get moveAnchorIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get moveEdgeIds => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get expectedVersion => $_getI64(6);
+  @$pb.TagNumber(7)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExpectedVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpectedVersion() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get clientMutationId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set clientMutationId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClientMutationId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClientMutationId() => $_clearField(8);
+}
+
+class SplitIntelligenceGraphNodeResponse extends $pb.GeneratedMessage {
+  factory SplitIntelligenceGraphNodeResponse({
+    IntelligenceGraphNode? sourceNode,
+    IntelligenceGraphNode? newNode,
+  }) {
+    final result = create();
+    if (sourceNode != null) result.sourceNode = sourceNode;
+    if (newNode != null) result.newNode = newNode;
+    return result;
+  }
+
+  SplitIntelligenceGraphNodeResponse._();
+
+  factory SplitIntelligenceGraphNodeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SplitIntelligenceGraphNodeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SplitIntelligenceGraphNodeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphNode>(1, _omitFieldNames ? '' : 'sourceNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..aOM<IntelligenceGraphNode>(2, _omitFieldNames ? '' : 'newNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SplitIntelligenceGraphNodeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SplitIntelligenceGraphNodeResponse copyWith(
+          void Function(SplitIntelligenceGraphNodeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SplitIntelligenceGraphNodeResponse))
+          as SplitIntelligenceGraphNodeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SplitIntelligenceGraphNodeResponse create() =>
+      SplitIntelligenceGraphNodeResponse._();
+  @$core.override
+  SplitIntelligenceGraphNodeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SplitIntelligenceGraphNodeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SplitIntelligenceGraphNodeResponse>(
+          create);
+  static SplitIntelligenceGraphNodeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode get sourceNode => $_getN(0);
+  @$pb.TagNumber(1)
+  set sourceNode(IntelligenceGraphNode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceNode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceNode() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphNode ensureSourceNode() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode get newNode => $_getN(1);
+  @$pb.TagNumber(2)
+  set newNode(IntelligenceGraphNode value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewNode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewNode() => $_clearField(2);
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode ensureNewNode() => $_ensure(1);
+}
+
+class UpsertIntelligenceGraphEdgeRequest extends $pb.GeneratedMessage {
+  factory UpsertIntelligenceGraphEdgeRequest({
+    $core.String? id,
+    $core.String? sourceNodeId,
+    $core.String? targetNodeId,
+    $core.String? relation,
+    $core.String? label,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.double? confidence,
+    $core.String? confidenceBasis,
+    $core.String? explanation,
+    $core.Iterable<IntelligenceGraphSourceAnchor>? anchors,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceNodeId != null) result.sourceNodeId = sourceNodeId;
+    if (targetNodeId != null) result.targetNodeId = targetNodeId;
+    if (relation != null) result.relation = relation;
+    if (label != null) result.label = label;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (confidence != null) result.confidence = confidence;
+    if (confidenceBasis != null) result.confidenceBasis = confidenceBasis;
+    if (explanation != null) result.explanation = explanation;
+    if (anchors != null) result.anchors.addAll(anchors);
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertIntelligenceGraphEdgeRequest._();
+
+  factory UpsertIntelligenceGraphEdgeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntelligenceGraphEdgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntelligenceGraphEdgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceNodeId')
+    ..aOS(3, _omitFieldNames ? '' : 'targetNodeId')
+    ..aOS(4, _omitFieldNames ? '' : 'relation')
+    ..aOS(5, _omitFieldNames ? '' : 'label')
+    ..aOS(6, _omitFieldNames ? '' : 'scope')
+    ..aOS(7, _omitFieldNames ? '' : 'roomId')
+    ..aD(8, _omitFieldNames ? '' : 'confidence')
+    ..aOS(9, _omitFieldNames ? '' : 'confidenceBasis')
+    ..aOS(10, _omitFieldNames ? '' : 'explanation')
+    ..pPM<IntelligenceGraphSourceAnchor>(11, _omitFieldNames ? '' : 'anchors',
+        subBuilder: IntelligenceGraphSourceAnchor.create)
+    ..aInt64(12, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(13, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphEdgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphEdgeRequest copyWith(
+          void Function(UpsertIntelligenceGraphEdgeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntelligenceGraphEdgeRequest))
+          as UpsertIntelligenceGraphEdgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphEdgeRequest create() =>
+      UpsertIntelligenceGraphEdgeRequest._();
+  @$core.override
+  UpsertIntelligenceGraphEdgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphEdgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertIntelligenceGraphEdgeRequest>(
+          create);
+  static UpsertIntelligenceGraphEdgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceNodeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceNodeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetNodeId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetNodeId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetNodeId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get relation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set relation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRelation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRelation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get label => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set label($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get scope => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set scope($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScope() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScope() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get roomId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get confidence => $_getN(7);
+  @$pb.TagNumber(8)
+  set confidence($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasConfidence() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConfidence() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get confidenceBasis => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set confidenceBasis($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasConfidenceBasis() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConfidenceBasis() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get explanation => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set explanation($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExplanation() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExplanation() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<IntelligenceGraphSourceAnchor> get anchors => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get expectedVersion => $_getI64(11);
+  @$pb.TagNumber(12)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExpectedVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpectedVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get clientMutationId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set clientMutationId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasClientMutationId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearClientMutationId() => $_clearField(13);
+}
+
+class UpsertIntelligenceGraphEdgeResponse extends $pb.GeneratedMessage {
+  factory UpsertIntelligenceGraphEdgeResponse({
+    IntelligenceGraphEdge? edge,
+  }) {
+    final result = create();
+    if (edge != null) result.edge = edge;
+    return result;
+  }
+
+  UpsertIntelligenceGraphEdgeResponse._();
+
+  factory UpsertIntelligenceGraphEdgeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntelligenceGraphEdgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntelligenceGraphEdgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphEdge>(1, _omitFieldNames ? '' : 'edge',
+        subBuilder: IntelligenceGraphEdge.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphEdgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntelligenceGraphEdgeResponse copyWith(
+          void Function(UpsertIntelligenceGraphEdgeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntelligenceGraphEdgeResponse))
+          as UpsertIntelligenceGraphEdgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphEdgeResponse create() =>
+      UpsertIntelligenceGraphEdgeResponse._();
+  @$core.override
+  UpsertIntelligenceGraphEdgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntelligenceGraphEdgeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertIntelligenceGraphEdgeResponse>(create);
+  static UpsertIntelligenceGraphEdgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphEdge get edge => $_getN(0);
+  @$pb.TagNumber(1)
+  set edge(IntelligenceGraphEdge value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEdge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdge() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphEdge ensureEdge() => $_ensure(0);
+}
+
+class SetIntelligenceGraphEdgeStateRequest extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphEdgeStateRequest({
+    $core.String? id,
+    $core.String? action,
+    $core.String? reason,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (reason != null) result.reason = reason;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntelligenceGraphEdgeStateRequest._();
+
+  factory SetIntelligenceGraphEdgeStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphEdgeStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphEdgeStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aInt64(4, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphEdgeStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphEdgeStateRequest copyWith(
+          void Function(SetIntelligenceGraphEdgeStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphEdgeStateRequest))
+          as SetIntelligenceGraphEdgeStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphEdgeStateRequest create() =>
+      SetIntelligenceGraphEdgeStateRequest._();
+  @$core.override
+  SetIntelligenceGraphEdgeStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphEdgeStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphEdgeStateRequest>(create);
+  static SetIntelligenceGraphEdgeStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get expectedVersion => $_getI64(3);
+  @$pb.TagNumber(4)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExpectedVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpectedVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SetIntelligenceGraphEdgeStateResponse extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphEdgeStateResponse({
+    IntelligenceGraphEdge? edge,
+  }) {
+    final result = create();
+    if (edge != null) result.edge = edge;
+    return result;
+  }
+
+  SetIntelligenceGraphEdgeStateResponse._();
+
+  factory SetIntelligenceGraphEdgeStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphEdgeStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphEdgeStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphEdge>(1, _omitFieldNames ? '' : 'edge',
+        subBuilder: IntelligenceGraphEdge.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphEdgeStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphEdgeStateResponse copyWith(
+          void Function(SetIntelligenceGraphEdgeStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphEdgeStateResponse))
+          as SetIntelligenceGraphEdgeStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphEdgeStateResponse create() =>
+      SetIntelligenceGraphEdgeStateResponse._();
+  @$core.override
+  SetIntelligenceGraphEdgeStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphEdgeStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphEdgeStateResponse>(create);
+  static SetIntelligenceGraphEdgeStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphEdge get edge => $_getN(0);
+  @$pb.TagNumber(1)
+  set edge(IntelligenceGraphEdge value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEdge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdge() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphEdge ensureEdge() => $_ensure(0);
+}
+
+class GenerateIntelligenceGraphSuggestionsRequest extends $pb.GeneratedMessage {
+  factory GenerateIntelligenceGraphSuggestionsRequest({
+    $core.String? scope,
+    $core.String? roomId,
+    $core.int? limit,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (limit != null) result.limit = limit;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  GenerateIntelligenceGraphSuggestionsRequest._();
+
+  factory GenerateIntelligenceGraphSuggestionsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateIntelligenceGraphSuggestionsRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateIntelligenceGraphSuggestionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scope')
+    ..aOS(2, _omitFieldNames ? '' : 'roomId')
+    ..aI(3, _omitFieldNames ? '' : 'limit')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateIntelligenceGraphSuggestionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateIntelligenceGraphSuggestionsRequest copyWith(
+          void Function(GenerateIntelligenceGraphSuggestionsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateIntelligenceGraphSuggestionsRequest))
+          as GenerateIntelligenceGraphSuggestionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateIntelligenceGraphSuggestionsRequest create() =>
+      GenerateIntelligenceGraphSuggestionsRequest._();
+  @$core.override
+  GenerateIntelligenceGraphSuggestionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateIntelligenceGraphSuggestionsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateIntelligenceGraphSuggestionsRequest>(create);
+  static GenerateIntelligenceGraphSuggestionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scope => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scope($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScope() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScope() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get roomId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set roomId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoomId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get limit => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set limit($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimit() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class GenerateIntelligenceGraphSuggestionsResponse
+    extends $pb.GeneratedMessage {
+  factory GenerateIntelligenceGraphSuggestionsResponse({
+    $core.int? generated,
+    $core.Iterable<IntelligenceGraphSuggestion>? suggestions,
+  }) {
+    final result = create();
+    if (generated != null) result.generated = generated;
+    if (suggestions != null) result.suggestions.addAll(suggestions);
+    return result;
+  }
+
+  GenerateIntelligenceGraphSuggestionsResponse._();
+
+  factory GenerateIntelligenceGraphSuggestionsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateIntelligenceGraphSuggestionsResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateIntelligenceGraphSuggestionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'generated')
+    ..pPM<IntelligenceGraphSuggestion>(2, _omitFieldNames ? '' : 'suggestions',
+        subBuilder: IntelligenceGraphSuggestion.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateIntelligenceGraphSuggestionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateIntelligenceGraphSuggestionsResponse copyWith(
+          void Function(GenerateIntelligenceGraphSuggestionsResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateIntelligenceGraphSuggestionsResponse))
+          as GenerateIntelligenceGraphSuggestionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateIntelligenceGraphSuggestionsResponse create() =>
+      GenerateIntelligenceGraphSuggestionsResponse._();
+  @$core.override
+  GenerateIntelligenceGraphSuggestionsResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateIntelligenceGraphSuggestionsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateIntelligenceGraphSuggestionsResponse>(create);
+  static GenerateIntelligenceGraphSuggestionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get generated => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set generated($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGenerated() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGenerated() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<IntelligenceGraphSuggestion> get suggestions => $_getList(1);
+}
+
+class ListIntelligenceGraphSuggestionsRequest extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphSuggestionsRequest({
+    $core.String? status,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListIntelligenceGraphSuggestionsRequest._();
+
+  factory ListIntelligenceGraphSuggestionsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphSuggestionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphSuggestionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphSuggestionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphSuggestionsRequest copyWith(
+          void Function(ListIntelligenceGraphSuggestionsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphSuggestionsRequest))
+          as ListIntelligenceGraphSuggestionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphSuggestionsRequest create() =>
+      ListIntelligenceGraphSuggestionsRequest._();
+  @$core.override
+  ListIntelligenceGraphSuggestionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphSuggestionsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphSuggestionsRequest>(create);
+  static ListIntelligenceGraphSuggestionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListIntelligenceGraphSuggestionsResponse extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphSuggestionsResponse({
+    $core.Iterable<IntelligenceGraphSuggestion>? suggestions,
+  }) {
+    final result = create();
+    if (suggestions != null) result.suggestions.addAll(suggestions);
+    return result;
+  }
+
+  ListIntelligenceGraphSuggestionsResponse._();
+
+  factory ListIntelligenceGraphSuggestionsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphSuggestionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphSuggestionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IntelligenceGraphSuggestion>(1, _omitFieldNames ? '' : 'suggestions',
+        subBuilder: IntelligenceGraphSuggestion.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphSuggestionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphSuggestionsResponse copyWith(
+          void Function(ListIntelligenceGraphSuggestionsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphSuggestionsResponse))
+          as ListIntelligenceGraphSuggestionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphSuggestionsResponse create() =>
+      ListIntelligenceGraphSuggestionsResponse._();
+  @$core.override
+  ListIntelligenceGraphSuggestionsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphSuggestionsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphSuggestionsResponse>(create);
+  static ListIntelligenceGraphSuggestionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IntelligenceGraphSuggestion> get suggestions => $_getList(0);
+}
+
+class SetIntelligenceGraphSuggestionStateRequest extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphSuggestionStateRequest({
+    $core.String? id,
+    $core.String? action,
+    $core.String? note,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (note != null) result.note = note;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntelligenceGraphSuggestionStateRequest._();
+
+  factory SetIntelligenceGraphSuggestionStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphSuggestionStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphSuggestionStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'note')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphSuggestionStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphSuggestionStateRequest copyWith(
+          void Function(SetIntelligenceGraphSuggestionStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphSuggestionStateRequest))
+          as SetIntelligenceGraphSuggestionStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphSuggestionStateRequest create() =>
+      SetIntelligenceGraphSuggestionStateRequest._();
+  @$core.override
+  SetIntelligenceGraphSuggestionStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphSuggestionStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphSuggestionStateRequest>(create);
+  static SetIntelligenceGraphSuggestionStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get note => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set note($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class SetIntelligenceGraphSuggestionStateResponse extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphSuggestionStateResponse({
+    IntelligenceGraphSuggestion? suggestion,
+    IntelligenceGraphNode? acceptedNode,
+    IntelligenceGraphEdge? acceptedEdge,
+  }) {
+    final result = create();
+    if (suggestion != null) result.suggestion = suggestion;
+    if (acceptedNode != null) result.acceptedNode = acceptedNode;
+    if (acceptedEdge != null) result.acceptedEdge = acceptedEdge;
+    return result;
+  }
+
+  SetIntelligenceGraphSuggestionStateResponse._();
+
+  factory SetIntelligenceGraphSuggestionStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphSuggestionStateResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphSuggestionStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphSuggestion>(1, _omitFieldNames ? '' : 'suggestion',
+        subBuilder: IntelligenceGraphSuggestion.create)
+    ..aOM<IntelligenceGraphNode>(2, _omitFieldNames ? '' : 'acceptedNode',
+        subBuilder: IntelligenceGraphNode.create)
+    ..aOM<IntelligenceGraphEdge>(3, _omitFieldNames ? '' : 'acceptedEdge',
+        subBuilder: IntelligenceGraphEdge.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphSuggestionStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphSuggestionStateResponse copyWith(
+          void Function(SetIntelligenceGraphSuggestionStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphSuggestionStateResponse))
+          as SetIntelligenceGraphSuggestionStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphSuggestionStateResponse create() =>
+      SetIntelligenceGraphSuggestionStateResponse._();
+  @$core.override
+  SetIntelligenceGraphSuggestionStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphSuggestionStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphSuggestionStateResponse>(create);
+  static SetIntelligenceGraphSuggestionStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphSuggestion get suggestion => $_getN(0);
+  @$pb.TagNumber(1)
+  set suggestion(IntelligenceGraphSuggestion value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuggestion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuggestion() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphSuggestion ensureSuggestion() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode get acceptedNode => $_getN(1);
+  @$pb.TagNumber(2)
+  set acceptedNode(IntelligenceGraphNode value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAcceptedNode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAcceptedNode() => $_clearField(2);
+  @$pb.TagNumber(2)
+  IntelligenceGraphNode ensureAcceptedNode() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  IntelligenceGraphEdge get acceptedEdge => $_getN(2);
+  @$pb.TagNumber(3)
+  set acceptedEdge(IntelligenceGraphEdge value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAcceptedEdge() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAcceptedEdge() => $_clearField(3);
+  @$pb.TagNumber(3)
+  IntelligenceGraphEdge ensureAcceptedEdge() => $_ensure(2);
+}
+
+class ListIntelligenceGraphTimelineRequest extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphTimelineRequest({
+    $core.Iterable<$core.String>? nodeIds,
+    $1.Timestamp? from,
+    $1.Timestamp? to,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (nodeIds != null) result.nodeIds.addAll(nodeIds);
+    if (from != null) result.from = from;
+    if (to != null) result.to = to;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListIntelligenceGraphTimelineRequest._();
+
+  factory ListIntelligenceGraphTimelineRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphTimelineRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphTimelineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'nodeIds')
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'from',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'to',
+        subBuilder: $1.Timestamp.create)
+    ..aI(4, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphTimelineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphTimelineRequest copyWith(
+          void Function(ListIntelligenceGraphTimelineRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphTimelineRequest))
+          as ListIntelligenceGraphTimelineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphTimelineRequest create() =>
+      ListIntelligenceGraphTimelineRequest._();
+  @$core.override
+  ListIntelligenceGraphTimelineRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphTimelineRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphTimelineRequest>(create);
+  static ListIntelligenceGraphTimelineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get nodeIds => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $1.Timestamp get from => $_getN(1);
+  @$pb.TagNumber(2)
+  set from($1.Timestamp value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFrom() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFrom() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $1.Timestamp ensureFrom() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get to => $_getN(2);
+  @$pb.TagNumber(3)
+  set to($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTo() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureTo() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.int get limit => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set limit($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLimit() => $_clearField(4);
+}
+
+class ListIntelligenceGraphTimelineResponse extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphTimelineResponse({
+    $core.Iterable<IntelligenceGraphTimelineEvent>? events,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    return result;
+  }
+
+  ListIntelligenceGraphTimelineResponse._();
+
+  factory ListIntelligenceGraphTimelineResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphTimelineResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphTimelineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IntelligenceGraphTimelineEvent>(1, _omitFieldNames ? '' : 'events',
+        subBuilder: IntelligenceGraphTimelineEvent.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphTimelineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphTimelineResponse copyWith(
+          void Function(ListIntelligenceGraphTimelineResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphTimelineResponse))
+          as ListIntelligenceGraphTimelineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphTimelineResponse create() =>
+      ListIntelligenceGraphTimelineResponse._();
+  @$core.override
+  ListIntelligenceGraphTimelineResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphTimelineResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphTimelineResponse>(create);
+  static ListIntelligenceGraphTimelineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IntelligenceGraphTimelineEvent> get events => $_getList(0);
+}
+
+class ListIntelligenceGraphResurfacingRequest extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphResurfacingRequest({
+    $core.String? state,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (state != null) result.state = state;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListIntelligenceGraphResurfacingRequest._();
+
+  factory ListIntelligenceGraphResurfacingRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphResurfacingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphResurfacingRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'state')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphResurfacingRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphResurfacingRequest copyWith(
+          void Function(ListIntelligenceGraphResurfacingRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphResurfacingRequest))
+          as ListIntelligenceGraphResurfacingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphResurfacingRequest create() =>
+      ListIntelligenceGraphResurfacingRequest._();
+  @$core.override
+  ListIntelligenceGraphResurfacingRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphResurfacingRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphResurfacingRequest>(create);
+  static ListIntelligenceGraphResurfacingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get state => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set state($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasState() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearState() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListIntelligenceGraphResurfacingResponse extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphResurfacingResponse({
+    $core.Iterable<IntelligenceGraphResurfacingItem>? items,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    return result;
+  }
+
+  ListIntelligenceGraphResurfacingResponse._();
+
+  factory ListIntelligenceGraphResurfacingResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphResurfacingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphResurfacingResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IntelligenceGraphResurfacingItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: IntelligenceGraphResurfacingItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphResurfacingResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphResurfacingResponse copyWith(
+          void Function(ListIntelligenceGraphResurfacingResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphResurfacingResponse))
+          as ListIntelligenceGraphResurfacingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphResurfacingResponse create() =>
+      ListIntelligenceGraphResurfacingResponse._();
+  @$core.override
+  ListIntelligenceGraphResurfacingResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphResurfacingResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphResurfacingResponse>(create);
+  static ListIntelligenceGraphResurfacingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IntelligenceGraphResurfacingItem> get items => $_getList(0);
+}
+
+class SetIntelligenceGraphResurfacingStateRequest extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphResurfacingStateRequest({
+    $core.String? id,
+    $core.String? action,
+    $1.Timestamp? snoozedUntil,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (snoozedUntil != null) result.snoozedUntil = snoozedUntil;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntelligenceGraphResurfacingStateRequest._();
+
+  factory SetIntelligenceGraphResurfacingStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphResurfacingStateRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphResurfacingStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'snoozedUntil',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphResurfacingStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphResurfacingStateRequest copyWith(
+          void Function(SetIntelligenceGraphResurfacingStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphResurfacingStateRequest))
+          as SetIntelligenceGraphResurfacingStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphResurfacingStateRequest create() =>
+      SetIntelligenceGraphResurfacingStateRequest._();
+  @$core.override
+  SetIntelligenceGraphResurfacingStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphResurfacingStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphResurfacingStateRequest>(create);
+  static SetIntelligenceGraphResurfacingStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get snoozedUntil => $_getN(2);
+  @$pb.TagNumber(3)
+  set snoozedUntil($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSnoozedUntil() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSnoozedUntil() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureSnoozedUntil() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SetIntelligenceGraphResurfacingStateResponse
+    extends $pb.GeneratedMessage {
+  factory SetIntelligenceGraphResurfacingStateResponse({
+    IntelligenceGraphResurfacingItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SetIntelligenceGraphResurfacingStateResponse._();
+
+  factory SetIntelligenceGraphResurfacingStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntelligenceGraphResurfacingStateResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntelligenceGraphResurfacingStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphResurfacingItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: IntelligenceGraphResurfacingItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphResurfacingStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntelligenceGraphResurfacingStateResponse copyWith(
+          void Function(SetIntelligenceGraphResurfacingStateResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntelligenceGraphResurfacingStateResponse))
+          as SetIntelligenceGraphResurfacingStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphResurfacingStateResponse create() =>
+      SetIntelligenceGraphResurfacingStateResponse._();
+  @$core.override
+  SetIntelligenceGraphResurfacingStateResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntelligenceGraphResurfacingStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntelligenceGraphResurfacingStateResponse>(create);
+  static SetIntelligenceGraphResurfacingStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphResurfacingItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(IntelligenceGraphResurfacingItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphResurfacingItem ensureItem() => $_ensure(0);
+}
+
+class CreateIntelligenceGraphMeetingBriefRequest extends $pb.GeneratedMessage {
+  factory CreateIntelligenceGraphMeetingBriefRequest({
+    $core.String? title,
+    $core.String? purpose,
+    $core.String? scope,
+    $core.String? roomId,
+    $core.Iterable<$core.String>? nodeIds,
+    $1.Timestamp? windowStart,
+    $1.Timestamp? windowEnd,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (title != null) result.title = title;
+    if (purpose != null) result.purpose = purpose;
+    if (scope != null) result.scope = scope;
+    if (roomId != null) result.roomId = roomId;
+    if (nodeIds != null) result.nodeIds.addAll(nodeIds);
+    if (windowStart != null) result.windowStart = windowStart;
+    if (windowEnd != null) result.windowEnd = windowEnd;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateIntelligenceGraphMeetingBriefRequest._();
+
+  factory CreateIntelligenceGraphMeetingBriefRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateIntelligenceGraphMeetingBriefRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateIntelligenceGraphMeetingBriefRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'purpose')
+    ..aOS(3, _omitFieldNames ? '' : 'scope')
+    ..aOS(4, _omitFieldNames ? '' : 'roomId')
+    ..pPS(5, _omitFieldNames ? '' : 'nodeIds')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'windowStart',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'windowEnd',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIntelligenceGraphMeetingBriefRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIntelligenceGraphMeetingBriefRequest copyWith(
+          void Function(CreateIntelligenceGraphMeetingBriefRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateIntelligenceGraphMeetingBriefRequest))
+          as CreateIntelligenceGraphMeetingBriefRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIntelligenceGraphMeetingBriefRequest create() =>
+      CreateIntelligenceGraphMeetingBriefRequest._();
+  @$core.override
+  CreateIntelligenceGraphMeetingBriefRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateIntelligenceGraphMeetingBriefRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateIntelligenceGraphMeetingBriefRequest>(create);
+  static CreateIntelligenceGraphMeetingBriefRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get purpose => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set purpose($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPurpose() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPurpose() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get roomId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set roomId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRoomId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRoomId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get nodeIds => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get windowStart => $_getN(5);
+  @$pb.TagNumber(6)
+  set windowStart($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWindowStart() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWindowStart() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureWindowStart() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get windowEnd => $_getN(6);
+  @$pb.TagNumber(7)
+  set windowEnd($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWindowEnd() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWindowEnd() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureWindowEnd() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get clientMutationId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set clientMutationId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClientMutationId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClientMutationId() => $_clearField(8);
+}
+
+class CreateIntelligenceGraphMeetingBriefResponse extends $pb.GeneratedMessage {
+  factory CreateIntelligenceGraphMeetingBriefResponse({
+    IntelligenceGraphMeetingBrief? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  CreateIntelligenceGraphMeetingBriefResponse._();
+
+  factory CreateIntelligenceGraphMeetingBriefResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateIntelligenceGraphMeetingBriefResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateIntelligenceGraphMeetingBriefResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphMeetingBrief>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: IntelligenceGraphMeetingBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIntelligenceGraphMeetingBriefResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateIntelligenceGraphMeetingBriefResponse copyWith(
+          void Function(CreateIntelligenceGraphMeetingBriefResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateIntelligenceGraphMeetingBriefResponse))
+          as CreateIntelligenceGraphMeetingBriefResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateIntelligenceGraphMeetingBriefResponse create() =>
+      CreateIntelligenceGraphMeetingBriefResponse._();
+  @$core.override
+  CreateIntelligenceGraphMeetingBriefResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateIntelligenceGraphMeetingBriefResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateIntelligenceGraphMeetingBriefResponse>(create);
+  static CreateIntelligenceGraphMeetingBriefResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphMeetingBrief get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(IntelligenceGraphMeetingBrief value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphMeetingBrief ensureBrief() => $_ensure(0);
+}
+
+class GetIntelligenceGraphMeetingBriefRequest extends $pb.GeneratedMessage {
+  factory GetIntelligenceGraphMeetingBriefRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetIntelligenceGraphMeetingBriefRequest._();
+
+  factory GetIntelligenceGraphMeetingBriefRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntelligenceGraphMeetingBriefRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntelligenceGraphMeetingBriefRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceGraphMeetingBriefRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceGraphMeetingBriefRequest copyWith(
+          void Function(GetIntelligenceGraphMeetingBriefRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetIntelligenceGraphMeetingBriefRequest))
+          as GetIntelligenceGraphMeetingBriefRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceGraphMeetingBriefRequest create() =>
+      GetIntelligenceGraphMeetingBriefRequest._();
+  @$core.override
+  GetIntelligenceGraphMeetingBriefRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceGraphMeetingBriefRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetIntelligenceGraphMeetingBriefRequest>(create);
+  static GetIntelligenceGraphMeetingBriefRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetIntelligenceGraphMeetingBriefResponse extends $pb.GeneratedMessage {
+  factory GetIntelligenceGraphMeetingBriefResponse({
+    IntelligenceGraphMeetingBrief? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  GetIntelligenceGraphMeetingBriefResponse._();
+
+  factory GetIntelligenceGraphMeetingBriefResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntelligenceGraphMeetingBriefResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntelligenceGraphMeetingBriefResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<IntelligenceGraphMeetingBrief>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: IntelligenceGraphMeetingBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceGraphMeetingBriefResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntelligenceGraphMeetingBriefResponse copyWith(
+          void Function(GetIntelligenceGraphMeetingBriefResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetIntelligenceGraphMeetingBriefResponse))
+          as GetIntelligenceGraphMeetingBriefResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceGraphMeetingBriefResponse create() =>
+      GetIntelligenceGraphMeetingBriefResponse._();
+  @$core.override
+  GetIntelligenceGraphMeetingBriefResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntelligenceGraphMeetingBriefResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetIntelligenceGraphMeetingBriefResponse>(create);
+  static GetIntelligenceGraphMeetingBriefResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  IntelligenceGraphMeetingBrief get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(IntelligenceGraphMeetingBrief value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  IntelligenceGraphMeetingBrief ensureBrief() => $_ensure(0);
+}
+
+class ListIntelligenceGraphMeetingBriefsRequest extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphMeetingBriefsRequest({
+    $core.String? status,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListIntelligenceGraphMeetingBriefsRequest._();
+
+  factory ListIntelligenceGraphMeetingBriefsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphMeetingBriefsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphMeetingBriefsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aI(2, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphMeetingBriefsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphMeetingBriefsRequest copyWith(
+          void Function(ListIntelligenceGraphMeetingBriefsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphMeetingBriefsRequest))
+          as ListIntelligenceGraphMeetingBriefsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphMeetingBriefsRequest create() =>
+      ListIntelligenceGraphMeetingBriefsRequest._();
+  @$core.override
+  ListIntelligenceGraphMeetingBriefsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphMeetingBriefsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphMeetingBriefsRequest>(create);
+  static ListIntelligenceGraphMeetingBriefsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get limit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set limit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLimit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLimit() => $_clearField(2);
+}
+
+class ListIntelligenceGraphMeetingBriefsResponse extends $pb.GeneratedMessage {
+  factory ListIntelligenceGraphMeetingBriefsResponse({
+    $core.Iterable<IntelligenceGraphMeetingBrief>? briefs,
+  }) {
+    final result = create();
+    if (briefs != null) result.briefs.addAll(briefs);
+    return result;
+  }
+
+  ListIntelligenceGraphMeetingBriefsResponse._();
+
+  factory ListIntelligenceGraphMeetingBriefsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListIntelligenceGraphMeetingBriefsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListIntelligenceGraphMeetingBriefsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<IntelligenceGraphMeetingBrief>(1, _omitFieldNames ? '' : 'briefs',
+        subBuilder: IntelligenceGraphMeetingBrief.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphMeetingBriefsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListIntelligenceGraphMeetingBriefsResponse copyWith(
+          void Function(ListIntelligenceGraphMeetingBriefsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListIntelligenceGraphMeetingBriefsResponse))
+          as ListIntelligenceGraphMeetingBriefsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphMeetingBriefsResponse create() =>
+      ListIntelligenceGraphMeetingBriefsResponse._();
+  @$core.override
+  ListIntelligenceGraphMeetingBriefsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListIntelligenceGraphMeetingBriefsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ListIntelligenceGraphMeetingBriefsResponse>(create);
+  static ListIntelligenceGraphMeetingBriefsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<IntelligenceGraphMeetingBrief> get briefs => $_getList(0);
+}
+
+class ExportPersonalIntelligenceGraphRequest extends $pb.GeneratedMessage {
+  factory ExportPersonalIntelligenceGraphRequest({
+    $core.String? format,
+    $core.bool? includeArchived,
+  }) {
+    final result = create();
+    if (format != null) result.format = format;
+    if (includeArchived != null) result.includeArchived = includeArchived;
+    return result;
+  }
+
+  ExportPersonalIntelligenceGraphRequest._();
+
+  factory ExportPersonalIntelligenceGraphRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportPersonalIntelligenceGraphRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportPersonalIntelligenceGraphRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'format')
+    ..aOB(2, _omitFieldNames ? '' : 'includeArchived')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportPersonalIntelligenceGraphRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportPersonalIntelligenceGraphRequest copyWith(
+          void Function(ExportPersonalIntelligenceGraphRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ExportPersonalIntelligenceGraphRequest))
+          as ExportPersonalIntelligenceGraphRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportPersonalIntelligenceGraphRequest create() =>
+      ExportPersonalIntelligenceGraphRequest._();
+  @$core.override
+  ExportPersonalIntelligenceGraphRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportPersonalIntelligenceGraphRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ExportPersonalIntelligenceGraphRequest>(create);
+  static ExportPersonalIntelligenceGraphRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get format => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set format($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFormat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFormat() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeArchived => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeArchived($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeArchived() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeArchived() => $_clearField(2);
+}
+
+class ExportPersonalIntelligenceGraphResponse extends $pb.GeneratedMessage {
+  factory ExportPersonalIntelligenceGraphResponse({
+    $core.String? filename,
+    $core.String? mimeType,
+    $core.List<$core.int>? data,
+    $core.String? checksum,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (data != null) result.data = data;
+    if (checksum != null) result.checksum = checksum;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  ExportPersonalIntelligenceGraphResponse._();
+
+  factory ExportPersonalIntelligenceGraphResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportPersonalIntelligenceGraphResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportPersonalIntelligenceGraphResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filename')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..aOS(4, _omitFieldNames ? '' : 'checksum')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportPersonalIntelligenceGraphResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportPersonalIntelligenceGraphResponse copyWith(
+          void Function(ExportPersonalIntelligenceGraphResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ExportPersonalIntelligenceGraphResponse))
+          as ExportPersonalIntelligenceGraphResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportPersonalIntelligenceGraphResponse create() =>
+      ExportPersonalIntelligenceGraphResponse._();
+  @$core.override
+  ExportPersonalIntelligenceGraphResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportPersonalIntelligenceGraphResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ExportPersonalIntelligenceGraphResponse>(create);
+  static ExportPersonalIntelligenceGraphResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filename => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filename($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilename() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilename() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mimeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mimeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMimeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMimeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get data => $_getN(2);
+  @$pb.TagNumber(3)
+  set data($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasData() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearData() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get checksum => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set checksum($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasChecksum() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearChecksum() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get generatedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set generatedAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGeneratedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGeneratedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(4);
+}
+
+class RebuildPersonalIntelligenceGraphRequest extends $pb.GeneratedMessage {
+  factory RebuildPersonalIntelligenceGraphRequest({
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RebuildPersonalIntelligenceGraphRequest._();
+
+  factory RebuildPersonalIntelligenceGraphRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RebuildPersonalIntelligenceGraphRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RebuildPersonalIntelligenceGraphRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'reason')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RebuildPersonalIntelligenceGraphRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RebuildPersonalIntelligenceGraphRequest copyWith(
+          void Function(RebuildPersonalIntelligenceGraphRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RebuildPersonalIntelligenceGraphRequest))
+          as RebuildPersonalIntelligenceGraphRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RebuildPersonalIntelligenceGraphRequest create() =>
+      RebuildPersonalIntelligenceGraphRequest._();
+  @$core.override
+  RebuildPersonalIntelligenceGraphRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RebuildPersonalIntelligenceGraphRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RebuildPersonalIntelligenceGraphRequest>(create);
+  static RebuildPersonalIntelligenceGraphRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get reason => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set reason($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReason() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReason() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class RebuildPersonalIntelligenceGraphResponse extends $pb.GeneratedMessage {
+  factory RebuildPersonalIntelligenceGraphResponse({
+    $core.String? jobId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (jobId != null) result.jobId = jobId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  RebuildPersonalIntelligenceGraphResponse._();
+
+  factory RebuildPersonalIntelligenceGraphResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RebuildPersonalIntelligenceGraphResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RebuildPersonalIntelligenceGraphResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'jobId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RebuildPersonalIntelligenceGraphResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RebuildPersonalIntelligenceGraphResponse copyWith(
+          void Function(RebuildPersonalIntelligenceGraphResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RebuildPersonalIntelligenceGraphResponse))
+          as RebuildPersonalIntelligenceGraphResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RebuildPersonalIntelligenceGraphResponse create() =>
+      RebuildPersonalIntelligenceGraphResponse._();
+  @$core.override
+  RebuildPersonalIntelligenceGraphResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RebuildPersonalIntelligenceGraphResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RebuildPersonalIntelligenceGraphResponse>(create);
+  static RebuildPersonalIntelligenceGraphResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get jobId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set jobId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasJobId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJobId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =
