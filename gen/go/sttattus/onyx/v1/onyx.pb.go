@@ -26319,7 +26319,7 @@ func (*LeaveResearchRoomResponse) Descriptor() ([]byte, []int) {
 type IntelligenceGraphSourceAnchor struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
 	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	SourceType              string                 `protobuf:"bytes,2,opt,name=source_type,json=sourceType,proto3" json:"source_type,omitempty"` // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+	SourceType              string                 `protobuf:"bytes,2,opt,name=source_type,json=sourceType,proto3" json:"source_type,omitempty"` // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | watchlist_term | saved_query | room_item | room_decision | room_task | room_meeting | capture | manual
 	SourceId                string                 `protobuf:"bytes,3,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
 	SourceVersion           string                 `protobuf:"bytes,4,opt,name=source_version,json=sourceVersion,proto3" json:"source_version,omitempty"`
 	ContentId               string                 `protobuf:"bytes,5,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`

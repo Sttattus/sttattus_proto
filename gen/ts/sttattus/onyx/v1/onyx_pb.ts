@@ -21599,7 +21599,7 @@ export class IntelligenceGraphSourceAnchor extends Message<IntelligenceGraphSour
   id = "";
 
   /**
-   * content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+   * content | passage | annotation | brief_point | evidence_claim | listening_bookmark | watchlist_term | saved_query | room_item | room_decision | room_task | room_meeting | capture | manual
    *
    * @generated from field: string source_type = 2;
    */

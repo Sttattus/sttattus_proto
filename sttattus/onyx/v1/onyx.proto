@@ -2602,7 +2602,7 @@ message LeaveResearchRoomResponse {}
 
 message IntelligenceGraphSourceAnchor {
   string id = 1;
-  string source_type = 2; // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | room_item | room_decision | room_task | room_meeting | capture | manual
+  string source_type = 2; // content | passage | annotation | brief_point | evidence_claim | listening_bookmark | watchlist_term | saved_query | room_item | room_decision | room_task | room_meeting | capture | manual
   string source_id = 3;
   string source_version = 4;
   string content_id = 5;
