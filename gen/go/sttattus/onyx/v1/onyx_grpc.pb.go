@@ -188,6 +188,18 @@ const (
 	OnyxService_ListIntelligenceGraphMeetingBriefs_FullMethodName   = "/sttattus.onyx.v1.OnyxService/ListIntelligenceGraphMeetingBriefs"
 	OnyxService_ExportPersonalIntelligenceGraph_FullMethodName      = "/sttattus.onyx.v1.OnyxService/ExportPersonalIntelligenceGraph"
 	OnyxService_RebuildPersonalIntelligenceGraph_FullMethodName     = "/sttattus.onyx.v1.OnyxService/RebuildPersonalIntelligenceGraph"
+	OnyxService_ListLanguageConfigs_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListLanguageConfigs"
+	OnyxService_ListContentEditions_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListContentEditions"
+	OnyxService_GetAlignedBlocks_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetAlignedBlocks"
+	OnyxService_ListTermbaseEntries_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ListTermbaseEntries"
+	OnyxService_CrossLanguageSearch_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CrossLanguageSearch"
+	OnyxService_GetMultilingualPreferences_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetMultilingualPreferences"
+	OnyxService_UpdateMultilingualPreferences_FullMethodName        = "/sttattus.onyx.v1.OnyxService/UpdateMultilingualPreferences"
+	OnyxService_GetMultilingualAudioVideo_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetMultilingualAudioVideo"
+	OnyxService_GetMultilingualOfflineManifest_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetMultilingualOfflineManifest"
+	OnyxService_ReportTranslationIssue_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ReportTranslationIssue"
+	OnyxService_RequestMultilingualExport_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RequestMultilingualExport"
+	OnyxService_GetMultilingualExport_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetMultilingualExport"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -392,6 +404,19 @@ type OnyxServiceClient interface {
 	ListIntelligenceGraphMeetingBriefs(ctx context.Context, in *ListIntelligenceGraphMeetingBriefsRequest, opts ...grpc.CallOption) (*ListIntelligenceGraphMeetingBriefsResponse, error)
 	ExportPersonalIntelligenceGraph(ctx context.Context, in *ExportPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*ExportPersonalIntelligenceGraphResponse, error)
 	RebuildPersonalIntelligenceGraph(ctx context.Context, in *RebuildPersonalIntelligenceGraphRequest, opts ...grpc.CallOption) (*RebuildPersonalIntelligenceGraphResponse, error)
+	// Choice 11 — authorized member-facing multilingual editions.
+	ListLanguageConfigs(ctx context.Context, in *ListLanguageConfigsRequest, opts ...grpc.CallOption) (*ListLanguageConfigsResponse, error)
+	ListContentEditions(ctx context.Context, in *ListContentEditionsRequest, opts ...grpc.CallOption) (*ListContentEditionsResponse, error)
+	GetAlignedBlocks(ctx context.Context, in *GetAlignedBlocksRequest, opts ...grpc.CallOption) (*GetAlignedBlocksResponse, error)
+	ListTermbaseEntries(ctx context.Context, in *ListTermbaseEntriesRequest, opts ...grpc.CallOption) (*ListTermbaseEntriesResponse, error)
+	CrossLanguageSearch(ctx context.Context, in *CrossLanguageSearchRequest, opts ...grpc.CallOption) (*CrossLanguageSearchResponse, error)
+	GetMultilingualPreferences(ctx context.Context, in *GetMultilingualPreferencesRequest, opts ...grpc.CallOption) (*GetMultilingualPreferencesResponse, error)
+	UpdateMultilingualPreferences(ctx context.Context, in *UpdateMultilingualPreferencesRequest, opts ...grpc.CallOption) (*UpdateMultilingualPreferencesResponse, error)
+	GetMultilingualAudioVideo(ctx context.Context, in *GetMultilingualAudioVideoRequest, opts ...grpc.CallOption) (*GetMultilingualAudioVideoResponse, error)
+	GetMultilingualOfflineManifest(ctx context.Context, in *GetMultilingualOfflineManifestRequest, opts ...grpc.CallOption) (*GetMultilingualOfflineManifestResponse, error)
+	ReportTranslationIssue(ctx context.Context, in *ReportTranslationIssueRequest, opts ...grpc.CallOption) (*ReportTranslationIssueResponse, error)
+	RequestMultilingualExport(ctx context.Context, in *RequestMultilingualExportRequest, opts ...grpc.CallOption) (*RequestMultilingualExportResponse, error)
+	GetMultilingualExport(ctx context.Context, in *GetMultilingualExportRequest, opts ...grpc.CallOption) (*GetMultilingualExportResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2092,6 +2117,126 @@ func (c *onyxServiceClient) RebuildPersonalIntelligenceGraph(ctx context.Context
 	return out, nil
 }
 
+func (c *onyxServiceClient) ListLanguageConfigs(ctx context.Context, in *ListLanguageConfigsRequest, opts ...grpc.CallOption) (*ListLanguageConfigsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListLanguageConfigsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListLanguageConfigs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListContentEditions(ctx context.Context, in *ListContentEditionsRequest, opts ...grpc.CallOption) (*ListContentEditionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListContentEditionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListContentEditions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetAlignedBlocks(ctx context.Context, in *GetAlignedBlocksRequest, opts ...grpc.CallOption) (*GetAlignedBlocksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAlignedBlocksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetAlignedBlocks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListTermbaseEntries(ctx context.Context, in *ListTermbaseEntriesRequest, opts ...grpc.CallOption) (*ListTermbaseEntriesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListTermbaseEntriesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListTermbaseEntries_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CrossLanguageSearch(ctx context.Context, in *CrossLanguageSearchRequest, opts ...grpc.CallOption) (*CrossLanguageSearchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CrossLanguageSearchResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CrossLanguageSearch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetMultilingualPreferences(ctx context.Context, in *GetMultilingualPreferencesRequest, opts ...grpc.CallOption) (*GetMultilingualPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMultilingualPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetMultilingualPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdateMultilingualPreferences(ctx context.Context, in *UpdateMultilingualPreferencesRequest, opts ...grpc.CallOption) (*UpdateMultilingualPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateMultilingualPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdateMultilingualPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetMultilingualAudioVideo(ctx context.Context, in *GetMultilingualAudioVideoRequest, opts ...grpc.CallOption) (*GetMultilingualAudioVideoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMultilingualAudioVideoResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetMultilingualAudioVideo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetMultilingualOfflineManifest(ctx context.Context, in *GetMultilingualOfflineManifestRequest, opts ...grpc.CallOption) (*GetMultilingualOfflineManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMultilingualOfflineManifestResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetMultilingualOfflineManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReportTranslationIssue(ctx context.Context, in *ReportTranslationIssueRequest, opts ...grpc.CallOption) (*ReportTranslationIssueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportTranslationIssueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReportTranslationIssue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestMultilingualExport(ctx context.Context, in *RequestMultilingualExportRequest, opts ...grpc.CallOption) (*RequestMultilingualExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestMultilingualExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestMultilingualExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetMultilingualExport(ctx context.Context, in *GetMultilingualExportRequest, opts ...grpc.CallOption) (*GetMultilingualExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMultilingualExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetMultilingualExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2294,6 +2439,19 @@ type OnyxServiceServer interface {
 	ListIntelligenceGraphMeetingBriefs(context.Context, *ListIntelligenceGraphMeetingBriefsRequest) (*ListIntelligenceGraphMeetingBriefsResponse, error)
 	ExportPersonalIntelligenceGraph(context.Context, *ExportPersonalIntelligenceGraphRequest) (*ExportPersonalIntelligenceGraphResponse, error)
 	RebuildPersonalIntelligenceGraph(context.Context, *RebuildPersonalIntelligenceGraphRequest) (*RebuildPersonalIntelligenceGraphResponse, error)
+	// Choice 11 — authorized member-facing multilingual editions.
+	ListLanguageConfigs(context.Context, *ListLanguageConfigsRequest) (*ListLanguageConfigsResponse, error)
+	ListContentEditions(context.Context, *ListContentEditionsRequest) (*ListContentEditionsResponse, error)
+	GetAlignedBlocks(context.Context, *GetAlignedBlocksRequest) (*GetAlignedBlocksResponse, error)
+	ListTermbaseEntries(context.Context, *ListTermbaseEntriesRequest) (*ListTermbaseEntriesResponse, error)
+	CrossLanguageSearch(context.Context, *CrossLanguageSearchRequest) (*CrossLanguageSearchResponse, error)
+	GetMultilingualPreferences(context.Context, *GetMultilingualPreferencesRequest) (*GetMultilingualPreferencesResponse, error)
+	UpdateMultilingualPreferences(context.Context, *UpdateMultilingualPreferencesRequest) (*UpdateMultilingualPreferencesResponse, error)
+	GetMultilingualAudioVideo(context.Context, *GetMultilingualAudioVideoRequest) (*GetMultilingualAudioVideoResponse, error)
+	GetMultilingualOfflineManifest(context.Context, *GetMultilingualOfflineManifestRequest) (*GetMultilingualOfflineManifestResponse, error)
+	ReportTranslationIssue(context.Context, *ReportTranslationIssueRequest) (*ReportTranslationIssueResponse, error)
+	RequestMultilingualExport(context.Context, *RequestMultilingualExportRequest) (*RequestMultilingualExportResponse, error)
+	GetMultilingualExport(context.Context, *GetMultilingualExportRequest) (*GetMultilingualExportResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -2810,6 +2968,42 @@ func (UnimplementedOnyxServiceServer) ExportPersonalIntelligenceGraph(context.Co
 }
 func (UnimplementedOnyxServiceServer) RebuildPersonalIntelligenceGraph(context.Context, *RebuildPersonalIntelligenceGraphRequest) (*RebuildPersonalIntelligenceGraphResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RebuildPersonalIntelligenceGraph not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListLanguageConfigs(context.Context, *ListLanguageConfigsRequest) (*ListLanguageConfigsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListLanguageConfigs not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListContentEditions(context.Context, *ListContentEditionsRequest) (*ListContentEditionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListContentEditions not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetAlignedBlocks(context.Context, *GetAlignedBlocksRequest) (*GetAlignedBlocksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAlignedBlocks not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListTermbaseEntries(context.Context, *ListTermbaseEntriesRequest) (*ListTermbaseEntriesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTermbaseEntries not implemented")
+}
+func (UnimplementedOnyxServiceServer) CrossLanguageSearch(context.Context, *CrossLanguageSearchRequest) (*CrossLanguageSearchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CrossLanguageSearch not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetMultilingualPreferences(context.Context, *GetMultilingualPreferencesRequest) (*GetMultilingualPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMultilingualPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdateMultilingualPreferences(context.Context, *UpdateMultilingualPreferencesRequest) (*UpdateMultilingualPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateMultilingualPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetMultilingualAudioVideo(context.Context, *GetMultilingualAudioVideoRequest) (*GetMultilingualAudioVideoResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMultilingualAudioVideo not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetMultilingualOfflineManifest(context.Context, *GetMultilingualOfflineManifestRequest) (*GetMultilingualOfflineManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMultilingualOfflineManifest not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReportTranslationIssue(context.Context, *ReportTranslationIssueRequest) (*ReportTranslationIssueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportTranslationIssue not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestMultilingualExport(context.Context, *RequestMultilingualExportRequest) (*RequestMultilingualExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestMultilingualExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetMultilingualExport(context.Context, *GetMultilingualExportRequest) (*GetMultilingualExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMultilingualExport not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -5874,6 +6068,222 @@ func _OnyxService_RebuildPersonalIntelligenceGraph_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_ListLanguageConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListLanguageConfigsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListLanguageConfigs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListLanguageConfigs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListLanguageConfigs(ctx, req.(*ListLanguageConfigsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListContentEditions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListContentEditionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListContentEditions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListContentEditions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListContentEditions(ctx, req.(*ListContentEditionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetAlignedBlocks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAlignedBlocksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetAlignedBlocks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetAlignedBlocks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetAlignedBlocks(ctx, req.(*GetAlignedBlocksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListTermbaseEntries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTermbaseEntriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListTermbaseEntries(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListTermbaseEntries_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListTermbaseEntries(ctx, req.(*ListTermbaseEntriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CrossLanguageSearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CrossLanguageSearchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CrossLanguageSearch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CrossLanguageSearch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CrossLanguageSearch(ctx, req.(*CrossLanguageSearchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetMultilingualPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMultilingualPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetMultilingualPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetMultilingualPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetMultilingualPreferences(ctx, req.(*GetMultilingualPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdateMultilingualPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMultilingualPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdateMultilingualPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdateMultilingualPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdateMultilingualPreferences(ctx, req.(*UpdateMultilingualPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetMultilingualAudioVideo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMultilingualAudioVideoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetMultilingualAudioVideo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetMultilingualAudioVideo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetMultilingualAudioVideo(ctx, req.(*GetMultilingualAudioVideoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetMultilingualOfflineManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMultilingualOfflineManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetMultilingualOfflineManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetMultilingualOfflineManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetMultilingualOfflineManifest(ctx, req.(*GetMultilingualOfflineManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReportTranslationIssue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportTranslationIssueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReportTranslationIssue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReportTranslationIssue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReportTranslationIssue(ctx, req.(*ReportTranslationIssueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestMultilingualExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestMultilingualExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestMultilingualExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestMultilingualExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestMultilingualExport(ctx, req.(*RequestMultilingualExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetMultilingualExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMultilingualExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetMultilingualExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetMultilingualExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetMultilingualExport(ctx, req.(*GetMultilingualExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -6556,6 +6966,54 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RebuildPersonalIntelligenceGraph",
 			Handler:    _OnyxService_RebuildPersonalIntelligenceGraph_Handler,
+		},
+		{
+			MethodName: "ListLanguageConfigs",
+			Handler:    _OnyxService_ListLanguageConfigs_Handler,
+		},
+		{
+			MethodName: "ListContentEditions",
+			Handler:    _OnyxService_ListContentEditions_Handler,
+		},
+		{
+			MethodName: "GetAlignedBlocks",
+			Handler:    _OnyxService_GetAlignedBlocks_Handler,
+		},
+		{
+			MethodName: "ListTermbaseEntries",
+			Handler:    _OnyxService_ListTermbaseEntries_Handler,
+		},
+		{
+			MethodName: "CrossLanguageSearch",
+			Handler:    _OnyxService_CrossLanguageSearch_Handler,
+		},
+		{
+			MethodName: "GetMultilingualPreferences",
+			Handler:    _OnyxService_GetMultilingualPreferences_Handler,
+		},
+		{
+			MethodName: "UpdateMultilingualPreferences",
+			Handler:    _OnyxService_UpdateMultilingualPreferences_Handler,
+		},
+		{
+			MethodName: "GetMultilingualAudioVideo",
+			Handler:    _OnyxService_GetMultilingualAudioVideo_Handler,
+		},
+		{
+			MethodName: "GetMultilingualOfflineManifest",
+			Handler:    _OnyxService_GetMultilingualOfflineManifest_Handler,
+		},
+		{
+			MethodName: "ReportTranslationIssue",
+			Handler:    _OnyxService_ReportTranslationIssue_Handler,
+		},
+		{
+			MethodName: "RequestMultilingualExport",
+			Handler:    _OnyxService_RequestMultilingualExport_Handler,
+		},
+		{
+			MethodName: "GetMultilingualExport",
+			Handler:    _OnyxService_GetMultilingualExport_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

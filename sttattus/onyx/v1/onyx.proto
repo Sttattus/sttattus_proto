@@ -75,6 +75,47 @@ message OnyxContent {
   int32 progress_offset = 28;
   bool is_private_capture = 29;
   string source_capture_id = 30;
+
+  // Choice 11 — Multilingual Editions
+  // Canonical, normalized BCP-47 tag for the bytes/text returned in this
+  // message. It is content identity, not the member's interface locale.
+  string language_code = 31;
+  // Empty on an original work. Editions always point back to the stable
+  // original content and immutable source revision that they translate.
+  string original_content_id = 32;
+  string edition_id = 33;
+  string edition_revision_id = 34;
+  string source_revision_id = 35;
+  OnyxTranslationClass translation_class = 36;
+  OnyxVerificationState translation_verification_state = 37;
+  OnyxEditionAvailability edition_availability = 38;
+  repeated OnyxContentEdition available_editions = 39;
+  bool is_stale_translation = 40;
+}
+
+// OnyxContentEdition represents an available language/locale edition summary for a piece of content.
+message OnyxContentEdition {
+  string edition_id = 1;
+  string content_id = 2;
+  string edition_revision_id = 3;
+  int32 edition_revision_number = 4;
+  string source_content_id = 5;
+  string source_revision_id = 6;
+  int32 source_revision_number = 7;
+  string language_code = 8;
+  string native_language_name = 9;
+  OnyxTranslationClass translation_class = 10;
+  OnyxVerificationState verification_state = 11;
+  OnyxEditionAvailability availability = 12;
+  string translator_attribution = 13;
+  string reviewer_attribution = 14;
+  string rights_statement = 15;
+  double quality_score = 16;
+  string source_checksum = 17;
+  string target_checksum = 18;
+  bool is_original = 19;
+  google.protobuf.Timestamp published_at = 20;
+  google.protobuf.Timestamp updated_at = 21;
 }
 
 // A stable, addressable passage in one immutable editorial revision.
@@ -86,6 +127,9 @@ message DocumentBlock {
   string block_type = 5; // paragraph | heading | quote | list | code | other
   string markdown = 6;
   string plain_text = 7;
+  string language_code = 8;
+  string segment_id = 9;
+  string edition_revision_id = 10;
 }
 
 // Subscription represents an exclusive link between user and creator.
@@ -282,6 +326,10 @@ message SearchContentRequest {
   string kind = 2; // optional filter: article | audio | video | ""
   string shelf_code = 3; // optional filter
   int32 limit = 4;
+  // A base tag such as "es" matches its registered variants (for example
+  // es-ES and es-MX); a regional tag requests that exact registered variant.
+  string content_language_code = 5;
+  string query_language_code = 6;
 }
 message SearchContentResponse {
   repeated OnyxContent items = 1;
@@ -335,6 +383,10 @@ message ReaderAnnotation {
   google.protobuf.Timestamp created_at = 13;
   google.protobuf.Timestamp updated_at = 14;
   string content_title = 15;
+  string segment_id = 16;
+  string edition_id = 17;
+  string edition_revision_id = 18;
+  string annotation_language_code = 19;
 }
 
 message UpsertReaderAnnotationRequest {
@@ -351,6 +403,10 @@ message UpsertReaderAnnotationRequest {
   int32 end_offset = 11;
   string client_mutation_id = 12; // UUID; makes offline retries idempotent
   int64 expected_version = 13; // 0 creates; updates use optimistic concurrency
+  string segment_id = 14;
+  string edition_id = 15;
+  string edition_revision_id = 16;
+  string annotation_language_code = 17;
 }
 message UpsertReaderAnnotationResponse {
   ReaderAnnotation annotation = 1;
@@ -2957,6 +3013,499 @@ message RebuildPersonalIntelligenceGraphResponse {
   string status = 2;
 }
 
+// Choice 11 — member-facing multilingual-edition contract. Staff production,
+// review, quality and incident operations intentionally remain governed Admin
+// server actions over the canonical database rather than member RPCs.
+enum OnyxTranslationClass {
+  ONYX_TRANSLATION_CLASS_UNSPECIFIED = 0;
+  ONYX_TRANSLATION_CLASS_AUTHORED = 1;
+  ONYX_TRANSLATION_CLASS_REVIEWED = 2;
+  ONYX_TRANSLATION_CLASS_MACHINE_ASSISTED = 3;
+  ONYX_TRANSLATION_CLASS_MACHINE_ONLY = 4;
+}
+
+enum OnyxVerificationState {
+  ONYX_VERIFICATION_STATE_UNSPECIFIED = 0;
+  ONYX_VERIFICATION_STATE_DRAFT = 1;
+  ONYX_VERIFICATION_STATE_SUBMITTED = 2;
+  ONYX_VERIFICATION_STATE_IN_REVIEW = 3;
+  ONYX_VERIFICATION_STATE_APPROVED = 4;
+  ONYX_VERIFICATION_STATE_DISPUTED = 5;
+  ONYX_VERIFICATION_STATE_REJECTED = 6;
+}
+
+enum OnyxEditionAvailability {
+  ONYX_EDITION_AVAILABILITY_UNSPECIFIED = 0;
+  ONYX_EDITION_AVAILABILITY_PUBLISHED = 1;
+  ONYX_EDITION_AVAILABILITY_STALE = 2;
+  ONYX_EDITION_AVAILABILITY_FROZEN = 3;
+  ONYX_EDITION_AVAILABILITY_REVOKED = 4;
+  ONYX_EDITION_AVAILABILITY_WITHDRAWN = 5;
+}
+
+enum OnyxLanguageCapability {
+  ONYX_LANGUAGE_CAPABILITY_UNSPECIFIED = 0;
+  ONYX_LANGUAGE_CAPABILITY_READER = 1;
+  ONYX_LANGUAGE_CAPABILITY_SEARCH = 2;
+  ONYX_LANGUAGE_CAPABILITY_DEVICE_TTS = 3;
+  ONYX_LANGUAGE_CAPABILITY_EDITORIAL_AUDIO = 4;
+  ONYX_LANGUAGE_CAPABILITY_CAPTIONS = 5;
+  ONYX_LANGUAGE_CAPABILITY_AUDIO_DESCRIPTION = 6;
+  ONYX_LANGUAGE_CAPABILITY_LIVE_INTERPRETATION = 7;
+}
+
+enum OnyxParallelReaderMode {
+  ONYX_PARALLEL_READER_MODE_UNSPECIFIED = 0;
+  ONYX_PARALLEL_READER_MODE_SOURCE_ONLY = 1;
+  ONYX_PARALLEL_READER_MODE_TRANSLATION_ONLY = 2;
+  ONYX_PARALLEL_READER_MODE_SIDE_BY_SIDE = 3;
+  ONYX_PARALLEL_READER_MODE_INTERLINEAR = 4;
+}
+
+enum OnyxSearchMatchReason {
+  ONYX_SEARCH_MATCH_REASON_UNSPECIFIED = 0;
+  ONYX_SEARCH_MATCH_REASON_SOURCE_TEXT = 1;
+  ONYX_SEARCH_MATCH_REASON_TRANSLATED_TEXT = 2;
+  ONYX_SEARCH_MATCH_REASON_TERMBASE_EQUIVALENT = 3;
+  ONYX_SEARCH_MATCH_REASON_WATCHLIST_ALIAS = 4;
+}
+
+enum OnyxBilingualListeningMode {
+  ONYX_BILINGUAL_LISTENING_MODE_UNSPECIFIED = 0;
+  ONYX_BILINGUAL_LISTENING_MODE_ORIGINAL_ONLY = 1;
+  ONYX_BILINGUAL_LISTENING_MODE_TRANSLATION_ONLY = 2;
+  ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_PASSAGE = 3;
+  ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_SENTENCE = 4;
+  ONYX_BILINGUAL_LISTENING_MODE_LEARNER_PAUSE = 5;
+}
+
+enum OnyxVoiceDelivery {
+  ONYX_VOICE_DELIVERY_UNSPECIFIED = 0;
+  ONYX_VOICE_DELIVERY_INSTALLED_DEVICE = 1;
+  ONYX_VOICE_DELIVERY_DOWNLOADED = 2;
+  ONYX_VOICE_DELIVERY_EDITORIAL = 3;
+  ONYX_VOICE_DELIVERY_NETWORK = 4;
+}
+
+enum OnyxLiveInterpretationState {
+  ONYX_LIVE_INTERPRETATION_STATE_UNSPECIFIED = 0;
+  ONYX_LIVE_INTERPRETATION_STATE_UNAVAILABLE = 1;
+  ONYX_LIVE_INTERPRETATION_STATE_CONFIGURED_PROVIDER = 2;
+  ONYX_LIVE_INTERPRETATION_STATE_HUMAN_CHANNEL = 3;
+}
+
+enum OnyxTranslationIssueType {
+  ONYX_TRANSLATION_ISSUE_TYPE_UNSPECIFIED = 0;
+  ONYX_TRANSLATION_ISSUE_TYPE_BAD_TERM = 1;
+  ONYX_TRANSLATION_ISSUE_TYPE_OMISSION = 2;
+  ONYX_TRANSLATION_ISSUE_TYPE_ADDITION = 3;
+  ONYX_TRANSLATION_ISSUE_TYPE_NAMES_OR_NUMBERS = 4;
+  ONYX_TRANSLATION_ISSUE_TYPE_MEANING = 5;
+  ONYX_TRANSLATION_ISSUE_TYPE_FORMATTING = 6;
+  ONYX_TRANSLATION_ISSUE_TYPE_CITATION = 7;
+  ONYX_TRANSLATION_ISSUE_TYPE_PRONUNCIATION = 8;
+  ONYX_TRANSLATION_ISSUE_TYPE_SUBTITLE_TIMING = 9;
+  ONYX_TRANSLATION_ISSUE_TYPE_LAYOUT_OR_GLYPH = 10;
+  ONYX_TRANSLATION_ISSUE_TYPE_OTHER = 11;
+}
+
+enum OnyxTranslationReportStatus {
+  ONYX_TRANSLATION_REPORT_STATUS_UNSPECIFIED = 0;
+  ONYX_TRANSLATION_REPORT_STATUS_SUBMITTED = 1;
+  ONYX_TRANSLATION_REPORT_STATUS_UNDER_REVIEW = 2;
+  ONYX_TRANSLATION_REPORT_STATUS_ACCEPTED = 3;
+  ONYX_TRANSLATION_REPORT_STATUS_REJECTED = 4;
+  ONYX_TRANSLATION_REPORT_STATUS_RESOLVED = 5;
+}
+
+enum OnyxMultilingualExportFormat {
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_UNSPECIFIED = 0;
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_MARKDOWN = 1;
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_JSON = 2;
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_PDF = 3;
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_WEBVTT = 4;
+  ONYX_MULTILINGUAL_EXPORT_FORMAT_SRT = 5;
+}
+
+enum OnyxMultilingualExportState {
+  ONYX_MULTILINGUAL_EXPORT_STATE_UNSPECIFIED = 0;
+  ONYX_MULTILINGUAL_EXPORT_STATE_PENDING = 1;
+  ONYX_MULTILINGUAL_EXPORT_STATE_RUNNING = 2;
+  ONYX_MULTILINGUAL_EXPORT_STATE_READY = 3;
+  ONYX_MULTILINGUAL_EXPORT_STATE_FAILED = 4;
+  ONYX_MULTILINGUAL_EXPORT_STATE_REVOKED = 5;
+  ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED = 6;
+}
+
+message OnyxLanguageConfig {
+  string language_code = 1; // normalized BCP-47 tag
+  string base_language = 2; // ISO 639 base language
+  string script_code = 3; // ISO 15924
+  string region_code = 4; // ISO 3166-1 alpha-2 when applicable
+  string english_name = 5;
+  string native_name = 6;
+  bool is_right_to_left = 7;
+  bool bundled_font_supported = 8;
+  repeated OnyxLanguageCapability capabilities = 9;
+  repeated string available_region_codes = 10;
+  bool is_enabled = 11;
+  // An explicit editorial policy only. Clients never silently substitute it
+  // for a missing member-selected edition.
+  string fallback_language_code = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message OnyxMachineTranslationProvenance {
+  string provider_label = 1;
+  string model_version = 2;
+  string prompt_digest = 3;
+  string termbase_version = 4;
+  string translation_memory_version = 5;
+  string input_digest = 6;
+  string output_digest = 7;
+  google.protobuf.Timestamp generated_at = 8;
+}
+
+message OnyxEditionLineage {
+  string edition_id = 1;
+  string content_id = 2;
+  string edition_revision_id = 3;
+  int32 edition_revision_number = 4;
+  string source_content_id = 5;
+  string source_revision_id = 6;
+  int32 source_revision_number = 7;
+  string target_language_code = 8;
+  OnyxTranslationClass translation_class = 9;
+  OnyxVerificationState verification_state = 10;
+  OnyxEditionAvailability availability = 11;
+  string translator_attribution = 12;
+  string reviewer_attribution = 13;
+  string rights_statement = 14;
+  double quality_score = 15;
+  string source_checksum = 16;
+  string target_checksum = 17;
+  string stale_reason = 18;
+  OnyxMachineTranslationProvenance machine_provenance = 19;
+  google.protobuf.Timestamp published_at = 20;
+  google.protobuf.Timestamp updated_at = 21;
+}
+
+message OnyxTranslationAcceptanceProvenance {
+  OnyxTranslationClass translation_class = 1;
+  string translator_attribution = 2;
+  string reviewer_attribution = 3;
+  string translation_memory_match_id = 4;
+  double similarity_score = 5;
+  OnyxMachineTranslationProvenance machine_provenance = 6;
+  google.protobuf.Timestamp accepted_at = 7;
+}
+
+message OnyxAlignedSegment {
+  string id = 1;
+  string source_segment_id = 2;
+  string target_segment_id = 3;
+  string source_passage_key = 4;
+  string target_passage_key = 5;
+  string source_text = 6;
+  string target_text = 7;
+  string source_checksum = 8;
+  string target_checksum = 9;
+  int32 ordinal = 10;
+  bool is_stale = 11;
+  OnyxTranslationAcceptanceProvenance acceptance = 12;
+}
+
+message OnyxAlignedBlock {
+  string source_block_id = 1;
+  string target_block_id = 2;
+  string source_passage_key = 3;
+  string target_passage_key = 4;
+  string source_markdown = 5;
+  string target_markdown = 6;
+  repeated OnyxAlignedSegment segments = 7;
+  int32 ordinal = 8;
+  bool is_stale = 9;
+}
+
+message OnyxTermbaseEntry {
+  string id = 1;
+  string edition_id = 2;
+  string source_language_code = 3;
+  string target_language_code = 4;
+  string source_term = 5;
+  string approved_equivalent = 6;
+  string definition_in_context = 7;
+  string part_of_speech = 8;
+  string inflection = 9;
+  string transliteration = 10;
+  string pronunciation_text = 11;
+  string pronunciation_audio_url = 12;
+  string usage_note = 13;
+  repeated string variants = 14;
+  string attribution = 15;
+  int32 version = 16;
+  google.protobuf.Timestamp updated_at = 17;
+}
+
+message OnyxMultilingualPreferences {
+  repeated string preferred_reading_language_codes = 1;
+  string target_language_code = 2;
+  OnyxParallelReaderMode reader_mode = 3;
+  bool show_original_inline = 4;
+  OnyxBilingualListeningMode listening_mode = 5;
+  int32 learner_pause_seconds = 6;
+  string source_voice_id = 7;
+  string target_voice_id = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+message OnyxCrossLanguageSearchMatch {
+  OnyxContent content = 1;
+  OnyxContentEdition edition = 2;
+  string matched_language_code = 3;
+  OnyxSearchMatchReason match_reason = 4;
+  string source_snippet = 5;
+  string translated_snippet = 6;
+  string source_passage_key = 7;
+  string target_passage_key = 8;
+  string snippet_attribution = 9;
+  double score = 10;
+}
+
+message OnyxCaptionCue {
+  string id = 1;
+  int32 start_milliseconds = 2;
+  int32 end_milliseconds = 3;
+  string text = 4;
+  string speaker_name = 5;
+  string source_segment_id = 6;
+}
+
+message OnyxCaptionTrack {
+  string id = 1;
+  string language_code = 2;
+  OnyxTranslationClass translation_class = 3;
+  OnyxVerificationState verification_state = 4;
+  string translator_attribution = 5;
+  string reviewer_attribution = 6;
+  string checksum = 7;
+  repeated OnyxCaptionCue cues = 8;
+}
+
+message OnyxMediaLanguageTrack {
+  string id = 1;
+  string language_code = 2;
+  OnyxVoiceDelivery delivery = 3;
+  string voice_id = 4;
+  string signed_media_url = 5;
+  int32 duration_seconds = 6;
+  string checksum = 7;
+}
+
+message OnyxMultilingualAudioVideo {
+  string media_id = 1;
+  string source_language_code = 2;
+  string target_language_code = 3;
+  repeated OnyxMediaLanguageTrack audio_tracks = 4;
+  repeated OnyxCaptionTrack caption_tracks = 5;
+  bool has_audio_description = 6;
+  OnyxLiveInterpretationState live_interpretation_state = 7;
+  string live_interpretation_channel_label = 8;
+}
+
+message OnyxTranslationReport {
+  string id = 1;
+  string content_id = 2;
+  string edition_id = 3;
+  string edition_revision_id = 4;
+  string segment_id = 5;
+  string passage_key = 6;
+  OnyxTranslationIssueType issue_type = 7;
+  string flagged_text = 8;
+  string suggested_replacement = 9;
+  string member_comment = 10;
+  OnyxTranslationReportStatus status = 11;
+  string resolution_summary = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message OnyxMultilingualOfflineManifest {
+  string manifest_id = 1;
+  string content_id = 2;
+  string edition_id = 3;
+  string edition_revision_id = 4;
+  string source_revision_id = 5;
+  string source_language_code = 6;
+  string target_language_code = 7;
+  OnyxEditionAvailability availability = 8;
+  bool includes_aligned_segments = 9;
+  bool includes_termbase = 10;
+  bool includes_captions = 11;
+  bool requires_device_tts = 12;
+  string source_checksum = 13;
+  string target_checksum = 14;
+  bool purge_required = 15;
+  string freeze_reason = 16;
+  google.protobuf.Timestamp rights_expire_at = 17;
+  google.protobuf.Timestamp generated_at = 18;
+}
+
+message OnyxMultilingualExportManifestItem {
+  string path = 1;
+  string mime_type = 2;
+  string checksum = 3;
+  string language_code = 4;
+  string source_revision_id = 5;
+  string edition_revision_id = 6;
+}
+
+message OnyxMultilingualExport {
+  string id = 1;
+  string content_id = 2;
+  string edition_id = 3;
+  OnyxMultilingualExportFormat format = 4;
+  OnyxMultilingualExportState state = 5;
+  string filename = 6;
+  string mime_type = 7;
+  string signed_url = 8;
+  string checksum = 9;
+  string source_language_code = 10;
+  string target_language_code = 11;
+  string source_checksum = 12;
+  string target_checksum = 13;
+  string translator_attribution = 14;
+  string reviewer_attribution = 15;
+  string rights_statement = 16;
+  bool is_stale = 17;
+  string schema_version = 18;
+  repeated OnyxMultilingualExportManifestItem manifest = 19;
+  string failure_code = 20;
+  google.protobuf.Timestamp expires_at = 21;
+  google.protobuf.Timestamp created_at = 22;
+  google.protobuf.Timestamp updated_at = 23;
+}
+
+message ListLanguageConfigsRequest {}
+message ListLanguageConfigsResponse {
+  repeated OnyxLanguageConfig languages = 1;
+}
+
+message ListContentEditionsRequest {
+  string content_id = 1;
+  bool include_unavailable = 2;
+}
+message ListContentEditionsResponse {
+  OnyxContent original = 1;
+  repeated OnyxContentEdition editions = 2;
+}
+
+message GetAlignedBlocksRequest {
+  string content_id = 1;
+  string edition_id = 2;
+  string source_revision_id = 3;
+  string edition_revision_id = 4;
+  int32 after_ordinal = 5;
+  int32 limit = 6;
+}
+message GetAlignedBlocksResponse {
+  OnyxEditionLineage lineage = 1;
+  repeated OnyxAlignedBlock blocks = 2;
+  int32 next_ordinal = 3;
+  bool has_more = 4;
+}
+
+message ListTermbaseEntriesRequest {
+  string content_id = 1;
+  string edition_id = 2;
+  string segment_id = 3;
+  string query = 4;
+  int32 limit = 5;
+}
+message ListTermbaseEntriesResponse {
+  repeated OnyxTermbaseEntry entries = 1;
+}
+
+message CrossLanguageSearchRequest {
+  string query = 1;
+  string query_language_code = 2;
+  string preferred_target_language_code = 3;
+  repeated string search_language_codes = 4;
+  string kind = 5;
+  string shelf_code = 6;
+  int32 limit = 7;
+  int32 offset = 8;
+}
+message CrossLanguageSearchResponse {
+  repeated OnyxCrossLanguageSearchMatch matches = 1;
+  bool has_more = 2;
+  string detected_query_language_code = 3;
+}
+
+message GetMultilingualPreferencesRequest {}
+message GetMultilingualPreferencesResponse {
+  OnyxMultilingualPreferences preferences = 1;
+}
+message UpdateMultilingualPreferencesRequest {
+  OnyxMultilingualPreferences preferences = 1;
+  string client_mutation_id = 2;
+}
+message UpdateMultilingualPreferencesResponse {
+  OnyxMultilingualPreferences preferences = 1;
+}
+
+message GetMultilingualAudioVideoRequest {
+  string media_id = 1;
+  string target_language_code = 2;
+}
+message GetMultilingualAudioVideoResponse {
+  OnyxMultilingualAudioVideo media = 1;
+}
+
+message GetMultilingualOfflineManifestRequest {
+  string content_id = 1;
+  string edition_id = 2;
+  string device_id = 3;
+}
+message GetMultilingualOfflineManifestResponse {
+  OnyxMultilingualOfflineManifest manifest = 1;
+}
+
+message ReportTranslationIssueRequest {
+  string content_id = 1;
+  string edition_id = 2;
+  string edition_revision_id = 3;
+  string segment_id = 4;
+  string passage_key = 5;
+  OnyxTranslationIssueType issue_type = 6;
+  string flagged_text = 7;
+  string suggested_replacement = 8;
+  string member_comment = 9;
+  string client_mutation_id = 10;
+}
+message ReportTranslationIssueResponse {
+  OnyxTranslationReport report = 1;
+}
+
+message RequestMultilingualExportRequest {
+  string content_id = 1;
+  string edition_id = 2;
+  OnyxMultilingualExportFormat format = 3;
+  bool include_original = 4;
+  bool include_termbase = 5;
+  bool include_citations = 6;
+  string client_mutation_id = 7;
+}
+message RequestMultilingualExportResponse {
+  OnyxMultilingualExport export = 1;
+}
+message GetMultilingualExportRequest {
+  string export_id = 1;
+}
+message GetMultilingualExportResponse {
+  OnyxMultilingualExport export = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -3179,4 +3728,18 @@ service OnyxService {
   rpc ListIntelligenceGraphMeetingBriefs(ListIntelligenceGraphMeetingBriefsRequest) returns (ListIntelligenceGraphMeetingBriefsResponse);
   rpc ExportPersonalIntelligenceGraph(ExportPersonalIntelligenceGraphRequest) returns (ExportPersonalIntelligenceGraphResponse);
   rpc RebuildPersonalIntelligenceGraph(RebuildPersonalIntelligenceGraphRequest) returns (RebuildPersonalIntelligenceGraphResponse);
+
+  // Choice 11 — authorized member-facing multilingual editions.
+  rpc ListLanguageConfigs(ListLanguageConfigsRequest) returns (ListLanguageConfigsResponse);
+  rpc ListContentEditions(ListContentEditionsRequest) returns (ListContentEditionsResponse);
+  rpc GetAlignedBlocks(GetAlignedBlocksRequest) returns (GetAlignedBlocksResponse);
+  rpc ListTermbaseEntries(ListTermbaseEntriesRequest) returns (ListTermbaseEntriesResponse);
+  rpc CrossLanguageSearch(CrossLanguageSearchRequest) returns (CrossLanguageSearchResponse);
+  rpc GetMultilingualPreferences(GetMultilingualPreferencesRequest) returns (GetMultilingualPreferencesResponse);
+  rpc UpdateMultilingualPreferences(UpdateMultilingualPreferencesRequest) returns (UpdateMultilingualPreferencesResponse);
+  rpc GetMultilingualAudioVideo(GetMultilingualAudioVideoRequest) returns (GetMultilingualAudioVideoResponse);
+  rpc GetMultilingualOfflineManifest(GetMultilingualOfflineManifestRequest) returns (GetMultilingualOfflineManifestResponse);
+  rpc ReportTranslationIssue(ReportTranslationIssueRequest) returns (ReportTranslationIssueResponse);
+  rpc RequestMultilingualExport(RequestMultilingualExportRequest) returns (RequestMultilingualExportResponse);
+  rpc GetMultilingualExport(GetMultilingualExportRequest) returns (GetMultilingualExportResponse);
 }

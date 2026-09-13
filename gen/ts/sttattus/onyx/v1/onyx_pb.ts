@@ -7,6 +7,606 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * Choice 11 — member-facing multilingual-edition contract. Staff production,
+ * review, quality and incident operations intentionally remain governed Admin
+ * server actions over the canonical database rather than member RPCs.
+ *
+ * @generated from enum sttattus.onyx.v1.OnyxTranslationClass
+ */
+export enum OnyxTranslationClass {
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_CLASS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_CLASS_AUTHORED = 1;
+   */
+  AUTHORED = 1,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_CLASS_REVIEWED = 2;
+   */
+  REVIEWED = 2,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_CLASS_MACHINE_ASSISTED = 3;
+   */
+  MACHINE_ASSISTED = 3,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_CLASS_MACHINE_ONLY = 4;
+   */
+  MACHINE_ONLY = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxTranslationClass)
+proto3.util.setEnumType(OnyxTranslationClass, "sttattus.onyx.v1.OnyxTranslationClass", [
+  { no: 0, name: "ONYX_TRANSLATION_CLASS_UNSPECIFIED" },
+  { no: 1, name: "ONYX_TRANSLATION_CLASS_AUTHORED" },
+  { no: 2, name: "ONYX_TRANSLATION_CLASS_REVIEWED" },
+  { no: 3, name: "ONYX_TRANSLATION_CLASS_MACHINE_ASSISTED" },
+  { no: 4, name: "ONYX_TRANSLATION_CLASS_MACHINE_ONLY" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxVerificationState
+ */
+export enum OnyxVerificationState {
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_DRAFT = 1;
+   */
+  DRAFT = 1,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_SUBMITTED = 2;
+   */
+  SUBMITTED = 2,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_IN_REVIEW = 3;
+   */
+  IN_REVIEW = 3,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_APPROVED = 4;
+   */
+  APPROVED = 4,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_DISPUTED = 5;
+   */
+  DISPUTED = 5,
+
+  /**
+   * @generated from enum value: ONYX_VERIFICATION_STATE_REJECTED = 6;
+   */
+  REJECTED = 6,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxVerificationState)
+proto3.util.setEnumType(OnyxVerificationState, "sttattus.onyx.v1.OnyxVerificationState", [
+  { no: 0, name: "ONYX_VERIFICATION_STATE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_VERIFICATION_STATE_DRAFT" },
+  { no: 2, name: "ONYX_VERIFICATION_STATE_SUBMITTED" },
+  { no: 3, name: "ONYX_VERIFICATION_STATE_IN_REVIEW" },
+  { no: 4, name: "ONYX_VERIFICATION_STATE_APPROVED" },
+  { no: 5, name: "ONYX_VERIFICATION_STATE_DISPUTED" },
+  { no: 6, name: "ONYX_VERIFICATION_STATE_REJECTED" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxEditionAvailability
+ */
+export enum OnyxEditionAvailability {
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_PUBLISHED = 1;
+   */
+  PUBLISHED = 1,
+
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_STALE = 2;
+   */
+  STALE = 2,
+
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_FROZEN = 3;
+   */
+  FROZEN = 3,
+
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_REVOKED = 4;
+   */
+  REVOKED = 4,
+
+  /**
+   * @generated from enum value: ONYX_EDITION_AVAILABILITY_WITHDRAWN = 5;
+   */
+  WITHDRAWN = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxEditionAvailability)
+proto3.util.setEnumType(OnyxEditionAvailability, "sttattus.onyx.v1.OnyxEditionAvailability", [
+  { no: 0, name: "ONYX_EDITION_AVAILABILITY_UNSPECIFIED" },
+  { no: 1, name: "ONYX_EDITION_AVAILABILITY_PUBLISHED" },
+  { no: 2, name: "ONYX_EDITION_AVAILABILITY_STALE" },
+  { no: 3, name: "ONYX_EDITION_AVAILABILITY_FROZEN" },
+  { no: 4, name: "ONYX_EDITION_AVAILABILITY_REVOKED" },
+  { no: 5, name: "ONYX_EDITION_AVAILABILITY_WITHDRAWN" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxLanguageCapability
+ */
+export enum OnyxLanguageCapability {
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_READER = 1;
+   */
+  READER = 1,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_SEARCH = 2;
+   */
+  SEARCH = 2,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_DEVICE_TTS = 3;
+   */
+  DEVICE_TTS = 3,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_EDITORIAL_AUDIO = 4;
+   */
+  EDITORIAL_AUDIO = 4,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_CAPTIONS = 5;
+   */
+  CAPTIONS = 5,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_AUDIO_DESCRIPTION = 6;
+   */
+  AUDIO_DESCRIPTION = 6,
+
+  /**
+   * @generated from enum value: ONYX_LANGUAGE_CAPABILITY_LIVE_INTERPRETATION = 7;
+   */
+  LIVE_INTERPRETATION = 7,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxLanguageCapability)
+proto3.util.setEnumType(OnyxLanguageCapability, "sttattus.onyx.v1.OnyxLanguageCapability", [
+  { no: 0, name: "ONYX_LANGUAGE_CAPABILITY_UNSPECIFIED" },
+  { no: 1, name: "ONYX_LANGUAGE_CAPABILITY_READER" },
+  { no: 2, name: "ONYX_LANGUAGE_CAPABILITY_SEARCH" },
+  { no: 3, name: "ONYX_LANGUAGE_CAPABILITY_DEVICE_TTS" },
+  { no: 4, name: "ONYX_LANGUAGE_CAPABILITY_EDITORIAL_AUDIO" },
+  { no: 5, name: "ONYX_LANGUAGE_CAPABILITY_CAPTIONS" },
+  { no: 6, name: "ONYX_LANGUAGE_CAPABILITY_AUDIO_DESCRIPTION" },
+  { no: 7, name: "ONYX_LANGUAGE_CAPABILITY_LIVE_INTERPRETATION" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxParallelReaderMode
+ */
+export enum OnyxParallelReaderMode {
+  /**
+   * @generated from enum value: ONYX_PARALLEL_READER_MODE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_PARALLEL_READER_MODE_SOURCE_ONLY = 1;
+   */
+  SOURCE_ONLY = 1,
+
+  /**
+   * @generated from enum value: ONYX_PARALLEL_READER_MODE_TRANSLATION_ONLY = 2;
+   */
+  TRANSLATION_ONLY = 2,
+
+  /**
+   * @generated from enum value: ONYX_PARALLEL_READER_MODE_SIDE_BY_SIDE = 3;
+   */
+  SIDE_BY_SIDE = 3,
+
+  /**
+   * @generated from enum value: ONYX_PARALLEL_READER_MODE_INTERLINEAR = 4;
+   */
+  INTERLINEAR = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxParallelReaderMode)
+proto3.util.setEnumType(OnyxParallelReaderMode, "sttattus.onyx.v1.OnyxParallelReaderMode", [
+  { no: 0, name: "ONYX_PARALLEL_READER_MODE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_PARALLEL_READER_MODE_SOURCE_ONLY" },
+  { no: 2, name: "ONYX_PARALLEL_READER_MODE_TRANSLATION_ONLY" },
+  { no: 3, name: "ONYX_PARALLEL_READER_MODE_SIDE_BY_SIDE" },
+  { no: 4, name: "ONYX_PARALLEL_READER_MODE_INTERLINEAR" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxSearchMatchReason
+ */
+export enum OnyxSearchMatchReason {
+  /**
+   * @generated from enum value: ONYX_SEARCH_MATCH_REASON_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_SEARCH_MATCH_REASON_SOURCE_TEXT = 1;
+   */
+  SOURCE_TEXT = 1,
+
+  /**
+   * @generated from enum value: ONYX_SEARCH_MATCH_REASON_TRANSLATED_TEXT = 2;
+   */
+  TRANSLATED_TEXT = 2,
+
+  /**
+   * @generated from enum value: ONYX_SEARCH_MATCH_REASON_TERMBASE_EQUIVALENT = 3;
+   */
+  TERMBASE_EQUIVALENT = 3,
+
+  /**
+   * @generated from enum value: ONYX_SEARCH_MATCH_REASON_WATCHLIST_ALIAS = 4;
+   */
+  WATCHLIST_ALIAS = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxSearchMatchReason)
+proto3.util.setEnumType(OnyxSearchMatchReason, "sttattus.onyx.v1.OnyxSearchMatchReason", [
+  { no: 0, name: "ONYX_SEARCH_MATCH_REASON_UNSPECIFIED" },
+  { no: 1, name: "ONYX_SEARCH_MATCH_REASON_SOURCE_TEXT" },
+  { no: 2, name: "ONYX_SEARCH_MATCH_REASON_TRANSLATED_TEXT" },
+  { no: 3, name: "ONYX_SEARCH_MATCH_REASON_TERMBASE_EQUIVALENT" },
+  { no: 4, name: "ONYX_SEARCH_MATCH_REASON_WATCHLIST_ALIAS" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxBilingualListeningMode
+ */
+export enum OnyxBilingualListeningMode {
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_ORIGINAL_ONLY = 1;
+   */
+  ORIGINAL_ONLY = 1,
+
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_TRANSLATION_ONLY = 2;
+   */
+  TRANSLATION_ONLY = 2,
+
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_PASSAGE = 3;
+   */
+  ALTERNATING_PASSAGE = 3,
+
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_SENTENCE = 4;
+   */
+  ALTERNATING_SENTENCE = 4,
+
+  /**
+   * @generated from enum value: ONYX_BILINGUAL_LISTENING_MODE_LEARNER_PAUSE = 5;
+   */
+  LEARNER_PAUSE = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxBilingualListeningMode)
+proto3.util.setEnumType(OnyxBilingualListeningMode, "sttattus.onyx.v1.OnyxBilingualListeningMode", [
+  { no: 0, name: "ONYX_BILINGUAL_LISTENING_MODE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_BILINGUAL_LISTENING_MODE_ORIGINAL_ONLY" },
+  { no: 2, name: "ONYX_BILINGUAL_LISTENING_MODE_TRANSLATION_ONLY" },
+  { no: 3, name: "ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_PASSAGE" },
+  { no: 4, name: "ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_SENTENCE" },
+  { no: 5, name: "ONYX_BILINGUAL_LISTENING_MODE_LEARNER_PAUSE" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxVoiceDelivery
+ */
+export enum OnyxVoiceDelivery {
+  /**
+   * @generated from enum value: ONYX_VOICE_DELIVERY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_VOICE_DELIVERY_INSTALLED_DEVICE = 1;
+   */
+  INSTALLED_DEVICE = 1,
+
+  /**
+   * @generated from enum value: ONYX_VOICE_DELIVERY_DOWNLOADED = 2;
+   */
+  DOWNLOADED = 2,
+
+  /**
+   * @generated from enum value: ONYX_VOICE_DELIVERY_EDITORIAL = 3;
+   */
+  EDITORIAL = 3,
+
+  /**
+   * @generated from enum value: ONYX_VOICE_DELIVERY_NETWORK = 4;
+   */
+  NETWORK = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxVoiceDelivery)
+proto3.util.setEnumType(OnyxVoiceDelivery, "sttattus.onyx.v1.OnyxVoiceDelivery", [
+  { no: 0, name: "ONYX_VOICE_DELIVERY_UNSPECIFIED" },
+  { no: 1, name: "ONYX_VOICE_DELIVERY_INSTALLED_DEVICE" },
+  { no: 2, name: "ONYX_VOICE_DELIVERY_DOWNLOADED" },
+  { no: 3, name: "ONYX_VOICE_DELIVERY_EDITORIAL" },
+  { no: 4, name: "ONYX_VOICE_DELIVERY_NETWORK" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxLiveInterpretationState
+ */
+export enum OnyxLiveInterpretationState {
+  /**
+   * @generated from enum value: ONYX_LIVE_INTERPRETATION_STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_LIVE_INTERPRETATION_STATE_UNAVAILABLE = 1;
+   */
+  UNAVAILABLE = 1,
+
+  /**
+   * @generated from enum value: ONYX_LIVE_INTERPRETATION_STATE_CONFIGURED_PROVIDER = 2;
+   */
+  CONFIGURED_PROVIDER = 2,
+
+  /**
+   * @generated from enum value: ONYX_LIVE_INTERPRETATION_STATE_HUMAN_CHANNEL = 3;
+   */
+  HUMAN_CHANNEL = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxLiveInterpretationState)
+proto3.util.setEnumType(OnyxLiveInterpretationState, "sttattus.onyx.v1.OnyxLiveInterpretationState", [
+  { no: 0, name: "ONYX_LIVE_INTERPRETATION_STATE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_LIVE_INTERPRETATION_STATE_UNAVAILABLE" },
+  { no: 2, name: "ONYX_LIVE_INTERPRETATION_STATE_CONFIGURED_PROVIDER" },
+  { no: 3, name: "ONYX_LIVE_INTERPRETATION_STATE_HUMAN_CHANNEL" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxTranslationIssueType
+ */
+export enum OnyxTranslationIssueType {
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_BAD_TERM = 1;
+   */
+  BAD_TERM = 1,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_OMISSION = 2;
+   */
+  OMISSION = 2,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_ADDITION = 3;
+   */
+  ADDITION = 3,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_NAMES_OR_NUMBERS = 4;
+   */
+  NAMES_OR_NUMBERS = 4,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_MEANING = 5;
+   */
+  MEANING = 5,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_FORMATTING = 6;
+   */
+  FORMATTING = 6,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_CITATION = 7;
+   */
+  CITATION = 7,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_PRONUNCIATION = 8;
+   */
+  PRONUNCIATION = 8,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_SUBTITLE_TIMING = 9;
+   */
+  SUBTITLE_TIMING = 9,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_LAYOUT_OR_GLYPH = 10;
+   */
+  LAYOUT_OR_GLYPH = 10,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_ISSUE_TYPE_OTHER = 11;
+   */
+  OTHER = 11,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxTranslationIssueType)
+proto3.util.setEnumType(OnyxTranslationIssueType, "sttattus.onyx.v1.OnyxTranslationIssueType", [
+  { no: 0, name: "ONYX_TRANSLATION_ISSUE_TYPE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_TRANSLATION_ISSUE_TYPE_BAD_TERM" },
+  { no: 2, name: "ONYX_TRANSLATION_ISSUE_TYPE_OMISSION" },
+  { no: 3, name: "ONYX_TRANSLATION_ISSUE_TYPE_ADDITION" },
+  { no: 4, name: "ONYX_TRANSLATION_ISSUE_TYPE_NAMES_OR_NUMBERS" },
+  { no: 5, name: "ONYX_TRANSLATION_ISSUE_TYPE_MEANING" },
+  { no: 6, name: "ONYX_TRANSLATION_ISSUE_TYPE_FORMATTING" },
+  { no: 7, name: "ONYX_TRANSLATION_ISSUE_TYPE_CITATION" },
+  { no: 8, name: "ONYX_TRANSLATION_ISSUE_TYPE_PRONUNCIATION" },
+  { no: 9, name: "ONYX_TRANSLATION_ISSUE_TYPE_SUBTITLE_TIMING" },
+  { no: 10, name: "ONYX_TRANSLATION_ISSUE_TYPE_LAYOUT_OR_GLYPH" },
+  { no: 11, name: "ONYX_TRANSLATION_ISSUE_TYPE_OTHER" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxTranslationReportStatus
+ */
+export enum OnyxTranslationReportStatus {
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_SUBMITTED = 1;
+   */
+  SUBMITTED = 1,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_UNDER_REVIEW = 2;
+   */
+  UNDER_REVIEW = 2,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_ACCEPTED = 3;
+   */
+  ACCEPTED = 3,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_REJECTED = 4;
+   */
+  REJECTED = 4,
+
+  /**
+   * @generated from enum value: ONYX_TRANSLATION_REPORT_STATUS_RESOLVED = 5;
+   */
+  RESOLVED = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxTranslationReportStatus)
+proto3.util.setEnumType(OnyxTranslationReportStatus, "sttattus.onyx.v1.OnyxTranslationReportStatus", [
+  { no: 0, name: "ONYX_TRANSLATION_REPORT_STATUS_UNSPECIFIED" },
+  { no: 1, name: "ONYX_TRANSLATION_REPORT_STATUS_SUBMITTED" },
+  { no: 2, name: "ONYX_TRANSLATION_REPORT_STATUS_UNDER_REVIEW" },
+  { no: 3, name: "ONYX_TRANSLATION_REPORT_STATUS_ACCEPTED" },
+  { no: 4, name: "ONYX_TRANSLATION_REPORT_STATUS_REJECTED" },
+  { no: 5, name: "ONYX_TRANSLATION_REPORT_STATUS_RESOLVED" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxMultilingualExportFormat
+ */
+export enum OnyxMultilingualExportFormat {
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_MARKDOWN = 1;
+   */
+  MARKDOWN = 1,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_JSON = 2;
+   */
+  JSON = 2,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_PDF = 3;
+   */
+  PDF = 3,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_WEBVTT = 4;
+   */
+  WEBVTT = 4,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_FORMAT_SRT = 5;
+   */
+  SRT = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxMultilingualExportFormat)
+proto3.util.setEnumType(OnyxMultilingualExportFormat, "sttattus.onyx.v1.OnyxMultilingualExportFormat", [
+  { no: 0, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_UNSPECIFIED" },
+  { no: 1, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_MARKDOWN" },
+  { no: 2, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_JSON" },
+  { no: 3, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_PDF" },
+  { no: 4, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_WEBVTT" },
+  { no: 5, name: "ONYX_MULTILINGUAL_EXPORT_FORMAT_SRT" },
+]);
+
+/**
+ * @generated from enum sttattus.onyx.v1.OnyxMultilingualExportState
+ */
+export enum OnyxMultilingualExportState {
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_RUNNING = 2;
+   */
+  RUNNING = 2,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_READY = 3;
+   */
+  READY = 3,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_FAILED = 4;
+   */
+  FAILED = 4,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_REVOKED = 5;
+   */
+  REVOKED = 5,
+
+  /**
+   * @generated from enum value: ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED = 6;
+   */
+  EXPIRED = 6,
+}
+// Retrieve enum metadata with: proto3.getEnumType(OnyxMultilingualExportState)
+proto3.util.setEnumType(OnyxMultilingualExportState, "sttattus.onyx.v1.OnyxMultilingualExportState", [
+  { no: 0, name: "ONYX_MULTILINGUAL_EXPORT_STATE_UNSPECIFIED" },
+  { no: 1, name: "ONYX_MULTILINGUAL_EXPORT_STATE_PENDING" },
+  { no: 2, name: "ONYX_MULTILINGUAL_EXPORT_STATE_RUNNING" },
+  { no: 3, name: "ONYX_MULTILINGUAL_EXPORT_STATE_READY" },
+  { no: 4, name: "ONYX_MULTILINGUAL_EXPORT_STATE_FAILED" },
+  { no: 5, name: "ONYX_MULTILINGUAL_EXPORT_STATE_REVOKED" },
+  { no: 6, name: "ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED" },
+]);
+
+/**
  * GatingCriteria defines the status requirements to access content.
  *
  * @generated from message sttattus.onyx.v1.GatingCriteria
@@ -339,6 +939,63 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   sourceCaptureId = "";
 
+  /**
+   * Choice 11 — Multilingual Editions
+   * Canonical, normalized BCP-47 tag for the bytes/text returned in this
+   * message. It is content identity, not the member's interface locale.
+   *
+   * @generated from field: string language_code = 31;
+   */
+  languageCode = "";
+
+  /**
+   * Empty on an original work. Editions always point back to the stable
+   * original content and immutable source revision that they translate.
+   *
+   * @generated from field: string original_content_id = 32;
+   */
+  originalContentId = "";
+
+  /**
+   * @generated from field: string edition_id = 33;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 34;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 35;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationClass translation_class = 36;
+   */
+  translationClass = OnyxTranslationClass.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxVerificationState translation_verification_state = 37;
+   */
+  translationVerificationState = OnyxVerificationState.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxEditionAvailability edition_availability = 38;
+   */
+  editionAvailability = OnyxEditionAvailability.UNSPECIFIED;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContentEdition available_editions = 39;
+   */
+  availableEditions: OnyxContentEdition[] = [];
+
+  /**
+   * @generated from field: bool is_stale_translation = 40;
+   */
+  isStaleTranslation = false;
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -377,6 +1034,16 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 28, name: "progress_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 29, name: "is_private_capture", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 30, name: "source_capture_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 31, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 32, name: "original_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 33, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 34, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 35, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 36, name: "translation_class", kind: "enum", T: proto3.getEnumType(OnyxTranslationClass) },
+    { no: 37, name: "translation_verification_state", kind: "enum", T: proto3.getEnumType(OnyxVerificationState) },
+    { no: 38, name: "edition_availability", kind: "enum", T: proto3.getEnumType(OnyxEditionAvailability) },
+    { no: 39, name: "available_editions", kind: "message", T: OnyxContentEdition, repeated: true },
+    { no: 40, name: "is_stale_translation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {
@@ -393,6 +1060,165 @@ export class OnyxContent extends Message<OnyxContent> {
 
   static equals(a: OnyxContent | PlainMessage<OnyxContent> | undefined, b: OnyxContent | PlainMessage<OnyxContent> | undefined): boolean {
     return proto3.util.equals(OnyxContent, a, b);
+  }
+}
+
+/**
+ * OnyxContentEdition represents an available language/locale edition summary for a piece of content.
+ *
+ * @generated from message sttattus.onyx.v1.OnyxContentEdition
+ */
+export class OnyxContentEdition extends Message<OnyxContentEdition> {
+  /**
+   * @generated from field: string edition_id = 1;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 3;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: int32 edition_revision_number = 4;
+   */
+  editionRevisionNumber = 0;
+
+  /**
+   * @generated from field: string source_content_id = 5;
+   */
+  sourceContentId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 6;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: int32 source_revision_number = 7;
+   */
+  sourceRevisionNumber = 0;
+
+  /**
+   * @generated from field: string language_code = 8;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string native_language_name = 9;
+   */
+  nativeLanguageName = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationClass translation_class = 10;
+   */
+  translationClass = OnyxTranslationClass.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxVerificationState verification_state = 11;
+   */
+  verificationState = OnyxVerificationState.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxEditionAvailability availability = 12;
+   */
+  availability = OnyxEditionAvailability.UNSPECIFIED;
+
+  /**
+   * @generated from field: string translator_attribution = 13;
+   */
+  translatorAttribution = "";
+
+  /**
+   * @generated from field: string reviewer_attribution = 14;
+   */
+  reviewerAttribution = "";
+
+  /**
+   * @generated from field: string rights_statement = 15;
+   */
+  rightsStatement = "";
+
+  /**
+   * @generated from field: double quality_score = 16;
+   */
+  qualityScore = 0;
+
+  /**
+   * @generated from field: string source_checksum = 17;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string target_checksum = 18;
+   */
+  targetChecksum = "";
+
+  /**
+   * @generated from field: bool is_original = 19;
+   */
+  isOriginal = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 20;
+   */
+  publishedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 21;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxContentEdition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxContentEdition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_revision_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "source_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "source_revision_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "native_language_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "translation_class", kind: "enum", T: proto3.getEnumType(OnyxTranslationClass) },
+    { no: 11, name: "verification_state", kind: "enum", T: proto3.getEnumType(OnyxVerificationState) },
+    { no: 12, name: "availability", kind: "enum", T: proto3.getEnumType(OnyxEditionAvailability) },
+    { no: 13, name: "translator_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "reviewer_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "rights_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "quality_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 17, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "target_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "is_original", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 20, name: "published_at", kind: "message", T: Timestamp },
+    { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContentEdition {
+    return new OnyxContentEdition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxContentEdition {
+    return new OnyxContentEdition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxContentEdition {
+    return new OnyxContentEdition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxContentEdition | PlainMessage<OnyxContentEdition> | undefined, b: OnyxContentEdition | PlainMessage<OnyxContentEdition> | undefined): boolean {
+    return proto3.util.equals(OnyxContentEdition, a, b);
   }
 }
 
@@ -439,6 +1265,21 @@ export class DocumentBlock extends Message<DocumentBlock> {
    */
   plainText = "";
 
+  /**
+   * @generated from field: string language_code = 8;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string segment_id = 9;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 10;
+   */
+  editionRevisionId = "";
+
   constructor(data?: PartialMessage<DocumentBlock>) {
     super();
     proto3.util.initPartial(data, this);
@@ -454,6 +1295,9 @@ export class DocumentBlock extends Message<DocumentBlock> {
     { no: 5, name: "block_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "plain_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DocumentBlock {
@@ -1977,6 +2821,19 @@ export class SearchContentRequest extends Message<SearchContentRequest> {
    */
   limit = 0;
 
+  /**
+   * A base tag such as "es" matches its registered variants (for example
+   * es-ES and es-MX); a regional tag requests that exact registered variant.
+   *
+   * @generated from field: string content_language_code = 5;
+   */
+  contentLanguageCode = "";
+
+  /**
+   * @generated from field: string query_language_code = 6;
+   */
+  queryLanguageCode = "";
+
   constructor(data?: PartialMessage<SearchContentRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1989,6 +2846,8 @@ export class SearchContentRequest extends Message<SearchContentRequest> {
     { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "shelf_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "content_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "query_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchContentRequest {
@@ -2434,6 +3293,26 @@ export class ReaderAnnotation extends Message<ReaderAnnotation> {
    */
   contentTitle = "";
 
+  /**
+   * @generated from field: string segment_id = 16;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string edition_id = 17;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 18;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string annotation_language_code = 19;
+   */
+  annotationLanguageCode = "";
+
   constructor(data?: PartialMessage<ReaderAnnotation>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2457,6 +3336,10 @@ export class ReaderAnnotation extends Message<ReaderAnnotation> {
     { no: 13, name: "created_at", kind: "message", T: Timestamp },
     { no: 14, name: "updated_at", kind: "message", T: Timestamp },
     { no: 15, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "annotation_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReaderAnnotation {
@@ -2551,6 +3434,26 @@ export class UpsertReaderAnnotationRequest extends Message<UpsertReaderAnnotatio
    */
   expectedVersion = protoInt64.zero;
 
+  /**
+   * @generated from field: string segment_id = 14;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string edition_id = 15;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 16;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string annotation_language_code = 17;
+   */
+  annotationLanguageCode = "";
+
   constructor(data?: PartialMessage<UpsertReaderAnnotationRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2572,6 +3475,10 @@ export class UpsertReaderAnnotationRequest extends Message<UpsertReaderAnnotatio
     { no: 11, name: "end_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 12, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "annotation_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertReaderAnnotationRequest {
@@ -24505,6 +25412,2848 @@ export class RebuildPersonalIntelligenceGraphResponse extends Message<RebuildPer
 
   static equals(a: RebuildPersonalIntelligenceGraphResponse | PlainMessage<RebuildPersonalIntelligenceGraphResponse> | undefined, b: RebuildPersonalIntelligenceGraphResponse | PlainMessage<RebuildPersonalIntelligenceGraphResponse> | undefined): boolean {
     return proto3.util.equals(RebuildPersonalIntelligenceGraphResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLanguageConfig
+ */
+export class OnyxLanguageConfig extends Message<OnyxLanguageConfig> {
+  /**
+   * normalized BCP-47 tag
+   *
+   * @generated from field: string language_code = 1;
+   */
+  languageCode = "";
+
+  /**
+   * ISO 639 base language
+   *
+   * @generated from field: string base_language = 2;
+   */
+  baseLanguage = "";
+
+  /**
+   * ISO 15924
+   *
+   * @generated from field: string script_code = 3;
+   */
+  scriptCode = "";
+
+  /**
+   * ISO 3166-1 alpha-2 when applicable
+   *
+   * @generated from field: string region_code = 4;
+   */
+  regionCode = "";
+
+  /**
+   * @generated from field: string english_name = 5;
+   */
+  englishName = "";
+
+  /**
+   * @generated from field: string native_name = 6;
+   */
+  nativeName = "";
+
+  /**
+   * @generated from field: bool is_right_to_left = 7;
+   */
+  isRightToLeft = false;
+
+  /**
+   * @generated from field: bool bundled_font_supported = 8;
+   */
+  bundledFontSupported = false;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLanguageCapability capabilities = 9;
+   */
+  capabilities: OnyxLanguageCapability[] = [];
+
+  /**
+   * @generated from field: repeated string available_region_codes = 10;
+   */
+  availableRegionCodes: string[] = [];
+
+  /**
+   * @generated from field: bool is_enabled = 11;
+   */
+  isEnabled = false;
+
+  /**
+   * An explicit editorial policy only. Clients never silently substitute it
+   * for a missing member-selected edition.
+   *
+   * @generated from field: string fallback_language_code = 12;
+   */
+  fallbackLanguageCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 13;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLanguageConfig>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLanguageConfig";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "base_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "script_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "region_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "english_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "native_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "is_right_to_left", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "bundled_font_supported", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "capabilities", kind: "enum", T: proto3.getEnumType(OnyxLanguageCapability), repeated: true },
+    { no: 10, name: "available_region_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "is_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "fallback_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLanguageConfig {
+    return new OnyxLanguageConfig().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLanguageConfig {
+    return new OnyxLanguageConfig().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLanguageConfig {
+    return new OnyxLanguageConfig().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLanguageConfig | PlainMessage<OnyxLanguageConfig> | undefined, b: OnyxLanguageConfig | PlainMessage<OnyxLanguageConfig> | undefined): boolean {
+    return proto3.util.equals(OnyxLanguageConfig, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMachineTranslationProvenance
+ */
+export class OnyxMachineTranslationProvenance extends Message<OnyxMachineTranslationProvenance> {
+  /**
+   * @generated from field: string provider_label = 1;
+   */
+  providerLabel = "";
+
+  /**
+   * @generated from field: string model_version = 2;
+   */
+  modelVersion = "";
+
+  /**
+   * @generated from field: string prompt_digest = 3;
+   */
+  promptDigest = "";
+
+  /**
+   * @generated from field: string termbase_version = 4;
+   */
+  termbaseVersion = "";
+
+  /**
+   * @generated from field: string translation_memory_version = 5;
+   */
+  translationMemoryVersion = "";
+
+  /**
+   * @generated from field: string input_digest = 6;
+   */
+  inputDigest = "";
+
+  /**
+   * @generated from field: string output_digest = 7;
+   */
+  outputDigest = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 8;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxMachineTranslationProvenance>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMachineTranslationProvenance";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "provider_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "model_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "prompt_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "termbase_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "translation_memory_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "input_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "output_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMachineTranslationProvenance {
+    return new OnyxMachineTranslationProvenance().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMachineTranslationProvenance {
+    return new OnyxMachineTranslationProvenance().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMachineTranslationProvenance {
+    return new OnyxMachineTranslationProvenance().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMachineTranslationProvenance | PlainMessage<OnyxMachineTranslationProvenance> | undefined, b: OnyxMachineTranslationProvenance | PlainMessage<OnyxMachineTranslationProvenance> | undefined): boolean {
+    return proto3.util.equals(OnyxMachineTranslationProvenance, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxEditionLineage
+ */
+export class OnyxEditionLineage extends Message<OnyxEditionLineage> {
+  /**
+   * @generated from field: string edition_id = 1;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 3;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: int32 edition_revision_number = 4;
+   */
+  editionRevisionNumber = 0;
+
+  /**
+   * @generated from field: string source_content_id = 5;
+   */
+  sourceContentId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 6;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: int32 source_revision_number = 7;
+   */
+  sourceRevisionNumber = 0;
+
+  /**
+   * @generated from field: string target_language_code = 8;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationClass translation_class = 9;
+   */
+  translationClass = OnyxTranslationClass.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxVerificationState verification_state = 10;
+   */
+  verificationState = OnyxVerificationState.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxEditionAvailability availability = 11;
+   */
+  availability = OnyxEditionAvailability.UNSPECIFIED;
+
+  /**
+   * @generated from field: string translator_attribution = 12;
+   */
+  translatorAttribution = "";
+
+  /**
+   * @generated from field: string reviewer_attribution = 13;
+   */
+  reviewerAttribution = "";
+
+  /**
+   * @generated from field: string rights_statement = 14;
+   */
+  rightsStatement = "";
+
+  /**
+   * @generated from field: double quality_score = 15;
+   */
+  qualityScore = 0;
+
+  /**
+   * @generated from field: string source_checksum = 16;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string target_checksum = 17;
+   */
+  targetChecksum = "";
+
+  /**
+   * @generated from field: string stale_reason = 18;
+   */
+  staleReason = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMachineTranslationProvenance machine_provenance = 19;
+   */
+  machineProvenance?: OnyxMachineTranslationProvenance;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 20;
+   */
+  publishedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 21;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxEditionLineage>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxEditionLineage";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_revision_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "source_content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "source_revision_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "translation_class", kind: "enum", T: proto3.getEnumType(OnyxTranslationClass) },
+    { no: 10, name: "verification_state", kind: "enum", T: proto3.getEnumType(OnyxVerificationState) },
+    { no: 11, name: "availability", kind: "enum", T: proto3.getEnumType(OnyxEditionAvailability) },
+    { no: 12, name: "translator_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "reviewer_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "rights_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "quality_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 16, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "target_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "stale_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "machine_provenance", kind: "message", T: OnyxMachineTranslationProvenance },
+    { no: 20, name: "published_at", kind: "message", T: Timestamp },
+    { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxEditionLineage {
+    return new OnyxEditionLineage().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxEditionLineage {
+    return new OnyxEditionLineage().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxEditionLineage {
+    return new OnyxEditionLineage().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxEditionLineage | PlainMessage<OnyxEditionLineage> | undefined, b: OnyxEditionLineage | PlainMessage<OnyxEditionLineage> | undefined): boolean {
+    return proto3.util.equals(OnyxEditionLineage, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
+ */
+export class OnyxTranslationAcceptanceProvenance extends Message<OnyxTranslationAcceptanceProvenance> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationClass translation_class = 1;
+   */
+  translationClass = OnyxTranslationClass.UNSPECIFIED;
+
+  /**
+   * @generated from field: string translator_attribution = 2;
+   */
+  translatorAttribution = "";
+
+  /**
+   * @generated from field: string reviewer_attribution = 3;
+   */
+  reviewerAttribution = "";
+
+  /**
+   * @generated from field: string translation_memory_match_id = 4;
+   */
+  translationMemoryMatchId = "";
+
+  /**
+   * @generated from field: double similarity_score = 5;
+   */
+  similarityScore = 0;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMachineTranslationProvenance machine_provenance = 6;
+   */
+  machineProvenance?: OnyxMachineTranslationProvenance;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp accepted_at = 7;
+   */
+  acceptedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxTranslationAcceptanceProvenance>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "translation_class", kind: "enum", T: proto3.getEnumType(OnyxTranslationClass) },
+    { no: 2, name: "translator_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reviewer_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "translation_memory_match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "similarity_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "machine_provenance", kind: "message", T: OnyxMachineTranslationProvenance },
+    { no: 7, name: "accepted_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxTranslationAcceptanceProvenance {
+    return new OnyxTranslationAcceptanceProvenance().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxTranslationAcceptanceProvenance {
+    return new OnyxTranslationAcceptanceProvenance().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxTranslationAcceptanceProvenance {
+    return new OnyxTranslationAcceptanceProvenance().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxTranslationAcceptanceProvenance | PlainMessage<OnyxTranslationAcceptanceProvenance> | undefined, b: OnyxTranslationAcceptanceProvenance | PlainMessage<OnyxTranslationAcceptanceProvenance> | undefined): boolean {
+    return proto3.util.equals(OnyxTranslationAcceptanceProvenance, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxAlignedSegment
+ */
+export class OnyxAlignedSegment extends Message<OnyxAlignedSegment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_segment_id = 2;
+   */
+  sourceSegmentId = "";
+
+  /**
+   * @generated from field: string target_segment_id = 3;
+   */
+  targetSegmentId = "";
+
+  /**
+   * @generated from field: string source_passage_key = 4;
+   */
+  sourcePassageKey = "";
+
+  /**
+   * @generated from field: string target_passage_key = 5;
+   */
+  targetPassageKey = "";
+
+  /**
+   * @generated from field: string source_text = 6;
+   */
+  sourceText = "";
+
+  /**
+   * @generated from field: string target_text = 7;
+   */
+  targetText = "";
+
+  /**
+   * @generated from field: string source_checksum = 8;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string target_checksum = 9;
+   */
+  targetChecksum = "";
+
+  /**
+   * @generated from field: int32 ordinal = 10;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: bool is_stale = 11;
+   */
+  isStale = false;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance acceptance = 12;
+   */
+  acceptance?: OnyxTranslationAcceptanceProvenance;
+
+  constructor(data?: PartialMessage<OnyxAlignedSegment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxAlignedSegment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "target_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "target_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "target_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "is_stale", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "acceptance", kind: "message", T: OnyxTranslationAcceptanceProvenance },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxAlignedSegment {
+    return new OnyxAlignedSegment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxAlignedSegment {
+    return new OnyxAlignedSegment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxAlignedSegment {
+    return new OnyxAlignedSegment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxAlignedSegment | PlainMessage<OnyxAlignedSegment> | undefined, b: OnyxAlignedSegment | PlainMessage<OnyxAlignedSegment> | undefined): boolean {
+    return proto3.util.equals(OnyxAlignedSegment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxAlignedBlock
+ */
+export class OnyxAlignedBlock extends Message<OnyxAlignedBlock> {
+  /**
+   * @generated from field: string source_block_id = 1;
+   */
+  sourceBlockId = "";
+
+  /**
+   * @generated from field: string target_block_id = 2;
+   */
+  targetBlockId = "";
+
+  /**
+   * @generated from field: string source_passage_key = 3;
+   */
+  sourcePassageKey = "";
+
+  /**
+   * @generated from field: string target_passage_key = 4;
+   */
+  targetPassageKey = "";
+
+  /**
+   * @generated from field: string source_markdown = 5;
+   */
+  sourceMarkdown = "";
+
+  /**
+   * @generated from field: string target_markdown = 6;
+   */
+  targetMarkdown = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxAlignedSegment segments = 7;
+   */
+  segments: OnyxAlignedSegment[] = [];
+
+  /**
+   * @generated from field: int32 ordinal = 8;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: bool is_stale = 9;
+   */
+  isStale = false;
+
+  constructor(data?: PartialMessage<OnyxAlignedBlock>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxAlignedBlock";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "target_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "target_markdown", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "segments", kind: "message", T: OnyxAlignedSegment, repeated: true },
+    { no: 8, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "is_stale", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxAlignedBlock {
+    return new OnyxAlignedBlock().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxAlignedBlock {
+    return new OnyxAlignedBlock().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxAlignedBlock {
+    return new OnyxAlignedBlock().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxAlignedBlock | PlainMessage<OnyxAlignedBlock> | undefined, b: OnyxAlignedBlock | PlainMessage<OnyxAlignedBlock> | undefined): boolean {
+    return proto3.util.equals(OnyxAlignedBlock, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxTermbaseEntry
+ */
+export class OnyxTermbaseEntry extends Message<OnyxTermbaseEntry> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string source_language_code = 3;
+   */
+  sourceLanguageCode = "";
+
+  /**
+   * @generated from field: string target_language_code = 4;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: string source_term = 5;
+   */
+  sourceTerm = "";
+
+  /**
+   * @generated from field: string approved_equivalent = 6;
+   */
+  approvedEquivalent = "";
+
+  /**
+   * @generated from field: string definition_in_context = 7;
+   */
+  definitionInContext = "";
+
+  /**
+   * @generated from field: string part_of_speech = 8;
+   */
+  partOfSpeech = "";
+
+  /**
+   * @generated from field: string inflection = 9;
+   */
+  inflection = "";
+
+  /**
+   * @generated from field: string transliteration = 10;
+   */
+  transliteration = "";
+
+  /**
+   * @generated from field: string pronunciation_text = 11;
+   */
+  pronunciationText = "";
+
+  /**
+   * @generated from field: string pronunciation_audio_url = 12;
+   */
+  pronunciationAudioUrl = "";
+
+  /**
+   * @generated from field: string usage_note = 13;
+   */
+  usageNote = "";
+
+  /**
+   * @generated from field: repeated string variants = 14;
+   */
+  variants: string[] = [];
+
+  /**
+   * @generated from field: string attribution = 15;
+   */
+  attribution = "";
+
+  /**
+   * @generated from field: int32 version = 16;
+   */
+  version = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 17;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxTermbaseEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxTermbaseEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_term", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "approved_equivalent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "definition_in_context", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "part_of_speech", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "inflection", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "transliteration", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "pronunciation_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "pronunciation_audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "usage_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "variants", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 15, name: "attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 17, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxTermbaseEntry {
+    return new OnyxTermbaseEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxTermbaseEntry {
+    return new OnyxTermbaseEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxTermbaseEntry {
+    return new OnyxTermbaseEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxTermbaseEntry | PlainMessage<OnyxTermbaseEntry> | undefined, b: OnyxTermbaseEntry | PlainMessage<OnyxTermbaseEntry> | undefined): boolean {
+    return proto3.util.equals(OnyxTermbaseEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMultilingualPreferences
+ */
+export class OnyxMultilingualPreferences extends Message<OnyxMultilingualPreferences> {
+  /**
+   * @generated from field: repeated string preferred_reading_language_codes = 1;
+   */
+  preferredReadingLanguageCodes: string[] = [];
+
+  /**
+   * @generated from field: string target_language_code = 2;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxParallelReaderMode reader_mode = 3;
+   */
+  readerMode = OnyxParallelReaderMode.UNSPECIFIED;
+
+  /**
+   * @generated from field: bool show_original_inline = 4;
+   */
+  showOriginalInline = false;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxBilingualListeningMode listening_mode = 5;
+   */
+  listeningMode = OnyxBilingualListeningMode.UNSPECIFIED;
+
+  /**
+   * @generated from field: int32 learner_pause_seconds = 6;
+   */
+  learnerPauseSeconds = 0;
+
+  /**
+   * @generated from field: string source_voice_id = 7;
+   */
+  sourceVoiceId = "";
+
+  /**
+   * @generated from field: string target_voice_id = 8;
+   */
+  targetVoiceId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 9;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxMultilingualPreferences>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMultilingualPreferences";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferred_reading_language_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reader_mode", kind: "enum", T: proto3.getEnumType(OnyxParallelReaderMode) },
+    { no: 4, name: "show_original_inline", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "listening_mode", kind: "enum", T: proto3.getEnumType(OnyxBilingualListeningMode) },
+    { no: 6, name: "learner_pause_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "source_voice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "target_voice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMultilingualPreferences {
+    return new OnyxMultilingualPreferences().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMultilingualPreferences {
+    return new OnyxMultilingualPreferences().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMultilingualPreferences {
+    return new OnyxMultilingualPreferences().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMultilingualPreferences | PlainMessage<OnyxMultilingualPreferences> | undefined, b: OnyxMultilingualPreferences | PlainMessage<OnyxMultilingualPreferences> | undefined): boolean {
+    return proto3.util.equals(OnyxMultilingualPreferences, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxCrossLanguageSearchMatch
+ */
+export class OnyxCrossLanguageSearchMatch extends Message<OnyxCrossLanguageSearchMatch> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 1;
+   */
+  content?: OnyxContent;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContentEdition edition = 2;
+   */
+  edition?: OnyxContentEdition;
+
+  /**
+   * @generated from field: string matched_language_code = 3;
+   */
+  matchedLanguageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxSearchMatchReason match_reason = 4;
+   */
+  matchReason = OnyxSearchMatchReason.UNSPECIFIED;
+
+  /**
+   * @generated from field: string source_snippet = 5;
+   */
+  sourceSnippet = "";
+
+  /**
+   * @generated from field: string translated_snippet = 6;
+   */
+  translatedSnippet = "";
+
+  /**
+   * @generated from field: string source_passage_key = 7;
+   */
+  sourcePassageKey = "";
+
+  /**
+   * @generated from field: string target_passage_key = 8;
+   */
+  targetPassageKey = "";
+
+  /**
+   * @generated from field: string snippet_attribution = 9;
+   */
+  snippetAttribution = "";
+
+  /**
+   * @generated from field: double score = 10;
+   */
+  score = 0;
+
+  constructor(data?: PartialMessage<OnyxCrossLanguageSearchMatch>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxCrossLanguageSearchMatch";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content", kind: "message", T: OnyxContent },
+    { no: 2, name: "edition", kind: "message", T: OnyxContentEdition },
+    { no: 3, name: "matched_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "match_reason", kind: "enum", T: proto3.getEnumType(OnyxSearchMatchReason) },
+    { no: 5, name: "source_snippet", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "translated_snippet", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "source_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "target_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "snippet_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxCrossLanguageSearchMatch {
+    return new OnyxCrossLanguageSearchMatch().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxCrossLanguageSearchMatch {
+    return new OnyxCrossLanguageSearchMatch().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxCrossLanguageSearchMatch {
+    return new OnyxCrossLanguageSearchMatch().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxCrossLanguageSearchMatch | PlainMessage<OnyxCrossLanguageSearchMatch> | undefined, b: OnyxCrossLanguageSearchMatch | PlainMessage<OnyxCrossLanguageSearchMatch> | undefined): boolean {
+    return proto3.util.equals(OnyxCrossLanguageSearchMatch, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxCaptionCue
+ */
+export class OnyxCaptionCue extends Message<OnyxCaptionCue> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: int32 start_milliseconds = 2;
+   */
+  startMilliseconds = 0;
+
+  /**
+   * @generated from field: int32 end_milliseconds = 3;
+   */
+  endMilliseconds = 0;
+
+  /**
+   * @generated from field: string text = 4;
+   */
+  text = "";
+
+  /**
+   * @generated from field: string speaker_name = 5;
+   */
+  speakerName = "";
+
+  /**
+   * @generated from field: string source_segment_id = 6;
+   */
+  sourceSegmentId = "";
+
+  constructor(data?: PartialMessage<OnyxCaptionCue>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxCaptionCue";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "start_milliseconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "end_milliseconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "speaker_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxCaptionCue {
+    return new OnyxCaptionCue().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxCaptionCue {
+    return new OnyxCaptionCue().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxCaptionCue {
+    return new OnyxCaptionCue().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxCaptionCue | PlainMessage<OnyxCaptionCue> | undefined, b: OnyxCaptionCue | PlainMessage<OnyxCaptionCue> | undefined): boolean {
+    return proto3.util.equals(OnyxCaptionCue, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxCaptionTrack
+ */
+export class OnyxCaptionTrack extends Message<OnyxCaptionTrack> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language_code = 2;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationClass translation_class = 3;
+   */
+  translationClass = OnyxTranslationClass.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxVerificationState verification_state = 4;
+   */
+  verificationState = OnyxVerificationState.UNSPECIFIED;
+
+  /**
+   * @generated from field: string translator_attribution = 5;
+   */
+  translatorAttribution = "";
+
+  /**
+   * @generated from field: string reviewer_attribution = 6;
+   */
+  reviewerAttribution = "";
+
+  /**
+   * @generated from field: string checksum = 7;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxCaptionCue cues = 8;
+   */
+  cues: OnyxCaptionCue[] = [];
+
+  constructor(data?: PartialMessage<OnyxCaptionTrack>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxCaptionTrack";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "translation_class", kind: "enum", T: proto3.getEnumType(OnyxTranslationClass) },
+    { no: 4, name: "verification_state", kind: "enum", T: proto3.getEnumType(OnyxVerificationState) },
+    { no: 5, name: "translator_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "reviewer_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "cues", kind: "message", T: OnyxCaptionCue, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxCaptionTrack {
+    return new OnyxCaptionTrack().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxCaptionTrack {
+    return new OnyxCaptionTrack().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxCaptionTrack {
+    return new OnyxCaptionTrack().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxCaptionTrack | PlainMessage<OnyxCaptionTrack> | undefined, b: OnyxCaptionTrack | PlainMessage<OnyxCaptionTrack> | undefined): boolean {
+    return proto3.util.equals(OnyxCaptionTrack, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMediaLanguageTrack
+ */
+export class OnyxMediaLanguageTrack extends Message<OnyxMediaLanguageTrack> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string language_code = 2;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxVoiceDelivery delivery = 3;
+   */
+  delivery = OnyxVoiceDelivery.UNSPECIFIED;
+
+  /**
+   * @generated from field: string voice_id = 4;
+   */
+  voiceId = "";
+
+  /**
+   * @generated from field: string signed_media_url = 5;
+   */
+  signedMediaUrl = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 6;
+   */
+  durationSeconds = 0;
+
+  /**
+   * @generated from field: string checksum = 7;
+   */
+  checksum = "";
+
+  constructor(data?: PartialMessage<OnyxMediaLanguageTrack>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMediaLanguageTrack";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "delivery", kind: "enum", T: proto3.getEnumType(OnyxVoiceDelivery) },
+    { no: 4, name: "voice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "signed_media_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMediaLanguageTrack {
+    return new OnyxMediaLanguageTrack().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMediaLanguageTrack {
+    return new OnyxMediaLanguageTrack().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMediaLanguageTrack {
+    return new OnyxMediaLanguageTrack().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMediaLanguageTrack | PlainMessage<OnyxMediaLanguageTrack> | undefined, b: OnyxMediaLanguageTrack | PlainMessage<OnyxMediaLanguageTrack> | undefined): boolean {
+    return proto3.util.equals(OnyxMediaLanguageTrack, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMultilingualAudioVideo
+ */
+export class OnyxMultilingualAudioVideo extends Message<OnyxMultilingualAudioVideo> {
+  /**
+   * @generated from field: string media_id = 1;
+   */
+  mediaId = "";
+
+  /**
+   * @generated from field: string source_language_code = 2;
+   */
+  sourceLanguageCode = "";
+
+  /**
+   * @generated from field: string target_language_code = 3;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxMediaLanguageTrack audio_tracks = 4;
+   */
+  audioTracks: OnyxMediaLanguageTrack[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxCaptionTrack caption_tracks = 5;
+   */
+  captionTracks: OnyxCaptionTrack[] = [];
+
+  /**
+   * @generated from field: bool has_audio_description = 6;
+   */
+  hasAudioDescription = false;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLiveInterpretationState live_interpretation_state = 7;
+   */
+  liveInterpretationState = OnyxLiveInterpretationState.UNSPECIFIED;
+
+  /**
+   * @generated from field: string live_interpretation_channel_label = 8;
+   */
+  liveInterpretationChannelLabel = "";
+
+  constructor(data?: PartialMessage<OnyxMultilingualAudioVideo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMultilingualAudioVideo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "audio_tracks", kind: "message", T: OnyxMediaLanguageTrack, repeated: true },
+    { no: 5, name: "caption_tracks", kind: "message", T: OnyxCaptionTrack, repeated: true },
+    { no: 6, name: "has_audio_description", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "live_interpretation_state", kind: "enum", T: proto3.getEnumType(OnyxLiveInterpretationState) },
+    { no: 8, name: "live_interpretation_channel_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMultilingualAudioVideo {
+    return new OnyxMultilingualAudioVideo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMultilingualAudioVideo {
+    return new OnyxMultilingualAudioVideo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMultilingualAudioVideo {
+    return new OnyxMultilingualAudioVideo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMultilingualAudioVideo | PlainMessage<OnyxMultilingualAudioVideo> | undefined, b: OnyxMultilingualAudioVideo | PlainMessage<OnyxMultilingualAudioVideo> | undefined): boolean {
+    return proto3.util.equals(OnyxMultilingualAudioVideo, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxTranslationReport
+ */
+export class OnyxTranslationReport extends Message<OnyxTranslationReport> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 3;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 4;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string segment_id = 5;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string passage_key = 6;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationIssueType issue_type = 7;
+   */
+  issueType = OnyxTranslationIssueType.UNSPECIFIED;
+
+  /**
+   * @generated from field: string flagged_text = 8;
+   */
+  flaggedText = "";
+
+  /**
+   * @generated from field: string suggested_replacement = 9;
+   */
+  suggestedReplacement = "";
+
+  /**
+   * @generated from field: string member_comment = 10;
+   */
+  memberComment = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationReportStatus status = 11;
+   */
+  status = OnyxTranslationReportStatus.UNSPECIFIED;
+
+  /**
+   * @generated from field: string resolution_summary = 12;
+   */
+  resolutionSummary = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxTranslationReport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxTranslationReport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "issue_type", kind: "enum", T: proto3.getEnumType(OnyxTranslationIssueType) },
+    { no: 8, name: "flagged_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "suggested_replacement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "member_comment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "status", kind: "enum", T: proto3.getEnumType(OnyxTranslationReportStatus) },
+    { no: 12, name: "resolution_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+    { no: 14, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxTranslationReport {
+    return new OnyxTranslationReport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxTranslationReport {
+    return new OnyxTranslationReport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxTranslationReport {
+    return new OnyxTranslationReport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxTranslationReport | PlainMessage<OnyxTranslationReport> | undefined, b: OnyxTranslationReport | PlainMessage<OnyxTranslationReport> | undefined): boolean {
+    return proto3.util.equals(OnyxTranslationReport, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMultilingualOfflineManifest
+ */
+export class OnyxMultilingualOfflineManifest extends Message<OnyxMultilingualOfflineManifest> {
+  /**
+   * @generated from field: string manifest_id = 1;
+   */
+  manifestId = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 3;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 4;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 5;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: string source_language_code = 6;
+   */
+  sourceLanguageCode = "";
+
+  /**
+   * @generated from field: string target_language_code = 7;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxEditionAvailability availability = 8;
+   */
+  availability = OnyxEditionAvailability.UNSPECIFIED;
+
+  /**
+   * @generated from field: bool includes_aligned_segments = 9;
+   */
+  includesAlignedSegments = false;
+
+  /**
+   * @generated from field: bool includes_termbase = 10;
+   */
+  includesTermbase = false;
+
+  /**
+   * @generated from field: bool includes_captions = 11;
+   */
+  includesCaptions = false;
+
+  /**
+   * @generated from field: bool requires_device_tts = 12;
+   */
+  requiresDeviceTts = false;
+
+  /**
+   * @generated from field: string source_checksum = 13;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string target_checksum = 14;
+   */
+  targetChecksum = "";
+
+  /**
+   * @generated from field: bool purge_required = 15;
+   */
+  purgeRequired = false;
+
+  /**
+   * @generated from field: string freeze_reason = 16;
+   */
+  freezeReason = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp rights_expire_at = 17;
+   */
+  rightsExpireAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 18;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxMultilingualOfflineManifest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMultilingualOfflineManifest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "availability", kind: "enum", T: proto3.getEnumType(OnyxEditionAvailability) },
+    { no: 9, name: "includes_aligned_segments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "includes_termbase", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "includes_captions", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "requires_device_tts", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "target_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "purge_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "freeze_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "rights_expire_at", kind: "message", T: Timestamp },
+    { no: 18, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMultilingualOfflineManifest {
+    return new OnyxMultilingualOfflineManifest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMultilingualOfflineManifest {
+    return new OnyxMultilingualOfflineManifest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMultilingualOfflineManifest {
+    return new OnyxMultilingualOfflineManifest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMultilingualOfflineManifest | PlainMessage<OnyxMultilingualOfflineManifest> | undefined, b: OnyxMultilingualOfflineManifest | PlainMessage<OnyxMultilingualOfflineManifest> | undefined): boolean {
+    return proto3.util.equals(OnyxMultilingualOfflineManifest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMultilingualExportManifestItem
+ */
+export class OnyxMultilingualExportManifestItem extends Message<OnyxMultilingualExportManifestItem> {
+  /**
+   * @generated from field: string path = 1;
+   */
+  path = "";
+
+  /**
+   * @generated from field: string mime_type = 2;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: string checksum = 3;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string language_code = 4;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string source_revision_id = 5;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 6;
+   */
+  editionRevisionId = "";
+
+  constructor(data?: PartialMessage<OnyxMultilingualExportManifestItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMultilingualExportManifestItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMultilingualExportManifestItem {
+    return new OnyxMultilingualExportManifestItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMultilingualExportManifestItem {
+    return new OnyxMultilingualExportManifestItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMultilingualExportManifestItem {
+    return new OnyxMultilingualExportManifestItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMultilingualExportManifestItem | PlainMessage<OnyxMultilingualExportManifestItem> | undefined, b: OnyxMultilingualExportManifestItem | PlainMessage<OnyxMultilingualExportManifestItem> | undefined): boolean {
+    return proto3.util.equals(OnyxMultilingualExportManifestItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxMultilingualExport
+ */
+export class OnyxMultilingualExport extends Message<OnyxMultilingualExport> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 3;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualExportFormat format = 4;
+   */
+  format = OnyxMultilingualExportFormat.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualExportState state = 5;
+   */
+  state = OnyxMultilingualExportState.UNSPECIFIED;
+
+  /**
+   * @generated from field: string filename = 6;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 7;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: string signed_url = 8;
+   */
+  signedUrl = "";
+
+  /**
+   * @generated from field: string checksum = 9;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string source_language_code = 10;
+   */
+  sourceLanguageCode = "";
+
+  /**
+   * @generated from field: string target_language_code = 11;
+   */
+  targetLanguageCode = "";
+
+  /**
+   * @generated from field: string source_checksum = 12;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string target_checksum = 13;
+   */
+  targetChecksum = "";
+
+  /**
+   * @generated from field: string translator_attribution = 14;
+   */
+  translatorAttribution = "";
+
+  /**
+   * @generated from field: string reviewer_attribution = 15;
+   */
+  reviewerAttribution = "";
+
+  /**
+   * @generated from field: string rights_statement = 16;
+   */
+  rightsStatement = "";
+
+  /**
+   * @generated from field: bool is_stale = 17;
+   */
+  isStale = false;
+
+  /**
+   * @generated from field: string schema_version = 18;
+   */
+  schemaVersion = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxMultilingualExportManifestItem manifest = 19;
+   */
+  manifest: OnyxMultilingualExportManifestItem[] = [];
+
+  /**
+   * @generated from field: string failure_code = 20;
+   */
+  failureCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 21;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 22;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 23;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxMultilingualExport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxMultilingualExport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "format", kind: "enum", T: proto3.getEnumType(OnyxMultilingualExportFormat) },
+    { no: 5, name: "state", kind: "enum", T: proto3.getEnumType(OnyxMultilingualExportState) },
+    { no: 6, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "signed_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "source_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "target_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "translator_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "reviewer_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "rights_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "is_stale", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 18, name: "schema_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "manifest", kind: "message", T: OnyxMultilingualExportManifestItem, repeated: true },
+    { no: 20, name: "failure_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 22, name: "created_at", kind: "message", T: Timestamp },
+    { no: 23, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxMultilingualExport {
+    return new OnyxMultilingualExport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxMultilingualExport {
+    return new OnyxMultilingualExport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxMultilingualExport {
+    return new OnyxMultilingualExport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxMultilingualExport | PlainMessage<OnyxMultilingualExport> | undefined, b: OnyxMultilingualExport | PlainMessage<OnyxMultilingualExport> | undefined): boolean {
+    return proto3.util.equals(OnyxMultilingualExport, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLanguageConfigsRequest
+ */
+export class ListLanguageConfigsRequest extends Message<ListLanguageConfigsRequest> {
+  constructor(data?: PartialMessage<ListLanguageConfigsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLanguageConfigsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLanguageConfigsRequest {
+    return new ListLanguageConfigsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLanguageConfigsRequest {
+    return new ListLanguageConfigsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLanguageConfigsRequest {
+    return new ListLanguageConfigsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLanguageConfigsRequest | PlainMessage<ListLanguageConfigsRequest> | undefined, b: ListLanguageConfigsRequest | PlainMessage<ListLanguageConfigsRequest> | undefined): boolean {
+    return proto3.util.equals(ListLanguageConfigsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListLanguageConfigsResponse
+ */
+export class ListLanguageConfigsResponse extends Message<ListLanguageConfigsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLanguageConfig languages = 1;
+   */
+  languages: OnyxLanguageConfig[] = [];
+
+  constructor(data?: PartialMessage<ListLanguageConfigsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListLanguageConfigsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "languages", kind: "message", T: OnyxLanguageConfig, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLanguageConfigsResponse {
+    return new ListLanguageConfigsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLanguageConfigsResponse {
+    return new ListLanguageConfigsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLanguageConfigsResponse {
+    return new ListLanguageConfigsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListLanguageConfigsResponse | PlainMessage<ListLanguageConfigsResponse> | undefined, b: ListLanguageConfigsResponse | PlainMessage<ListLanguageConfigsResponse> | undefined): boolean {
+    return proto3.util.equals(ListLanguageConfigsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListContentEditionsRequest
+ */
+export class ListContentEditionsRequest extends Message<ListContentEditionsRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: bool include_unavailable = 2;
+   */
+  includeUnavailable = false;
+
+  constructor(data?: PartialMessage<ListContentEditionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListContentEditionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "include_unavailable", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListContentEditionsRequest {
+    return new ListContentEditionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListContentEditionsRequest {
+    return new ListContentEditionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListContentEditionsRequest {
+    return new ListContentEditionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListContentEditionsRequest | PlainMessage<ListContentEditionsRequest> | undefined, b: ListContentEditionsRequest | PlainMessage<ListContentEditionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListContentEditionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListContentEditionsResponse
+ */
+export class ListContentEditionsResponse extends Message<ListContentEditionsResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent original = 1;
+   */
+  original?: OnyxContent;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxContentEdition editions = 2;
+   */
+  editions: OnyxContentEdition[] = [];
+
+  constructor(data?: PartialMessage<ListContentEditionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListContentEditionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "original", kind: "message", T: OnyxContent },
+    { no: 2, name: "editions", kind: "message", T: OnyxContentEdition, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListContentEditionsResponse {
+    return new ListContentEditionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListContentEditionsResponse {
+    return new ListContentEditionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListContentEditionsResponse {
+    return new ListContentEditionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListContentEditionsResponse | PlainMessage<ListContentEditionsResponse> | undefined, b: ListContentEditionsResponse | PlainMessage<ListContentEditionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListContentEditionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAlignedBlocksRequest
+ */
+export class GetAlignedBlocksRequest extends Message<GetAlignedBlocksRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string source_revision_id = 3;
+   */
+  sourceRevisionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 4;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: int32 after_ordinal = 5;
+   */
+  afterOrdinal = 0;
+
+  /**
+   * @generated from field: int32 limit = 6;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<GetAlignedBlocksRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAlignedBlocksRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "after_ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAlignedBlocksRequest {
+    return new GetAlignedBlocksRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAlignedBlocksRequest {
+    return new GetAlignedBlocksRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAlignedBlocksRequest {
+    return new GetAlignedBlocksRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAlignedBlocksRequest | PlainMessage<GetAlignedBlocksRequest> | undefined, b: GetAlignedBlocksRequest | PlainMessage<GetAlignedBlocksRequest> | undefined): boolean {
+    return proto3.util.equals(GetAlignedBlocksRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAlignedBlocksResponse
+ */
+export class GetAlignedBlocksResponse extends Message<GetAlignedBlocksResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxEditionLineage lineage = 1;
+   */
+  lineage?: OnyxEditionLineage;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxAlignedBlock blocks = 2;
+   */
+  blocks: OnyxAlignedBlock[] = [];
+
+  /**
+   * @generated from field: int32 next_ordinal = 3;
+   */
+  nextOrdinal = 0;
+
+  /**
+   * @generated from field: bool has_more = 4;
+   */
+  hasMore = false;
+
+  constructor(data?: PartialMessage<GetAlignedBlocksResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAlignedBlocksResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "lineage", kind: "message", T: OnyxEditionLineage },
+    { no: 2, name: "blocks", kind: "message", T: OnyxAlignedBlock, repeated: true },
+    { no: 3, name: "next_ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "has_more", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAlignedBlocksResponse {
+    return new GetAlignedBlocksResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAlignedBlocksResponse {
+    return new GetAlignedBlocksResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAlignedBlocksResponse {
+    return new GetAlignedBlocksResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAlignedBlocksResponse | PlainMessage<GetAlignedBlocksResponse> | undefined, b: GetAlignedBlocksResponse | PlainMessage<GetAlignedBlocksResponse> | undefined): boolean {
+    return proto3.util.equals(GetAlignedBlocksResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListTermbaseEntriesRequest
+ */
+export class ListTermbaseEntriesRequest extends Message<ListTermbaseEntriesRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string segment_id = 3;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string query = 4;
+   */
+  query = "";
+
+  /**
+   * @generated from field: int32 limit = 5;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<ListTermbaseEntriesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListTermbaseEntriesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTermbaseEntriesRequest {
+    return new ListTermbaseEntriesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTermbaseEntriesRequest {
+    return new ListTermbaseEntriesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTermbaseEntriesRequest {
+    return new ListTermbaseEntriesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTermbaseEntriesRequest | PlainMessage<ListTermbaseEntriesRequest> | undefined, b: ListTermbaseEntriesRequest | PlainMessage<ListTermbaseEntriesRequest> | undefined): boolean {
+    return proto3.util.equals(ListTermbaseEntriesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListTermbaseEntriesResponse
+ */
+export class ListTermbaseEntriesResponse extends Message<ListTermbaseEntriesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxTermbaseEntry entries = 1;
+   */
+  entries: OnyxTermbaseEntry[] = [];
+
+  constructor(data?: PartialMessage<ListTermbaseEntriesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListTermbaseEntriesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: OnyxTermbaseEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTermbaseEntriesResponse {
+    return new ListTermbaseEntriesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTermbaseEntriesResponse {
+    return new ListTermbaseEntriesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTermbaseEntriesResponse {
+    return new ListTermbaseEntriesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListTermbaseEntriesResponse | PlainMessage<ListTermbaseEntriesResponse> | undefined, b: ListTermbaseEntriesResponse | PlainMessage<ListTermbaseEntriesResponse> | undefined): boolean {
+    return proto3.util.equals(ListTermbaseEntriesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CrossLanguageSearchRequest
+ */
+export class CrossLanguageSearchRequest extends Message<CrossLanguageSearchRequest> {
+  /**
+   * @generated from field: string query = 1;
+   */
+  query = "";
+
+  /**
+   * @generated from field: string query_language_code = 2;
+   */
+  queryLanguageCode = "";
+
+  /**
+   * @generated from field: string preferred_target_language_code = 3;
+   */
+  preferredTargetLanguageCode = "";
+
+  /**
+   * @generated from field: repeated string search_language_codes = 4;
+   */
+  searchLanguageCodes: string[] = [];
+
+  /**
+   * @generated from field: string kind = 5;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string shelf_code = 6;
+   */
+  shelfCode = "";
+
+  /**
+   * @generated from field: int32 limit = 7;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: int32 offset = 8;
+   */
+  offset = 0;
+
+  constructor(data?: PartialMessage<CrossLanguageSearchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CrossLanguageSearchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "query", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "query_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "preferred_target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "search_language_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "shelf_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CrossLanguageSearchRequest {
+    return new CrossLanguageSearchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CrossLanguageSearchRequest {
+    return new CrossLanguageSearchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CrossLanguageSearchRequest {
+    return new CrossLanguageSearchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CrossLanguageSearchRequest | PlainMessage<CrossLanguageSearchRequest> | undefined, b: CrossLanguageSearchRequest | PlainMessage<CrossLanguageSearchRequest> | undefined): boolean {
+    return proto3.util.equals(CrossLanguageSearchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CrossLanguageSearchResponse
+ */
+export class CrossLanguageSearchResponse extends Message<CrossLanguageSearchResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxCrossLanguageSearchMatch matches = 1;
+   */
+  matches: OnyxCrossLanguageSearchMatch[] = [];
+
+  /**
+   * @generated from field: bool has_more = 2;
+   */
+  hasMore = false;
+
+  /**
+   * @generated from field: string detected_query_language_code = 3;
+   */
+  detectedQueryLanguageCode = "";
+
+  constructor(data?: PartialMessage<CrossLanguageSearchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CrossLanguageSearchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "matches", kind: "message", T: OnyxCrossLanguageSearchMatch, repeated: true },
+    { no: 2, name: "has_more", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "detected_query_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CrossLanguageSearchResponse {
+    return new CrossLanguageSearchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CrossLanguageSearchResponse {
+    return new CrossLanguageSearchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CrossLanguageSearchResponse {
+    return new CrossLanguageSearchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CrossLanguageSearchResponse | PlainMessage<CrossLanguageSearchResponse> | undefined, b: CrossLanguageSearchResponse | PlainMessage<CrossLanguageSearchResponse> | undefined): boolean {
+    return proto3.util.equals(CrossLanguageSearchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualPreferencesRequest
+ */
+export class GetMultilingualPreferencesRequest extends Message<GetMultilingualPreferencesRequest> {
+  constructor(data?: PartialMessage<GetMultilingualPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualPreferencesRequest {
+    return new GetMultilingualPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualPreferencesRequest {
+    return new GetMultilingualPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualPreferencesRequest {
+    return new GetMultilingualPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualPreferencesRequest | PlainMessage<GetMultilingualPreferencesRequest> | undefined, b: GetMultilingualPreferencesRequest | PlainMessage<GetMultilingualPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualPreferencesResponse
+ */
+export class GetMultilingualPreferencesResponse extends Message<GetMultilingualPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualPreferences preferences = 1;
+   */
+  preferences?: OnyxMultilingualPreferences;
+
+  constructor(data?: PartialMessage<GetMultilingualPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: OnyxMultilingualPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualPreferencesResponse {
+    return new GetMultilingualPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualPreferencesResponse {
+    return new GetMultilingualPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualPreferencesResponse {
+    return new GetMultilingualPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualPreferencesResponse | PlainMessage<GetMultilingualPreferencesResponse> | undefined, b: GetMultilingualPreferencesResponse | PlainMessage<GetMultilingualPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
+ */
+export class UpdateMultilingualPreferencesRequest extends Message<UpdateMultilingualPreferencesRequest> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualPreferences preferences = 1;
+   */
+  preferences?: OnyxMultilingualPreferences;
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpdateMultilingualPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateMultilingualPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: OnyxMultilingualPreferences },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMultilingualPreferencesRequest {
+    return new UpdateMultilingualPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMultilingualPreferencesRequest {
+    return new UpdateMultilingualPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMultilingualPreferencesRequest {
+    return new UpdateMultilingualPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateMultilingualPreferencesRequest | PlainMessage<UpdateMultilingualPreferencesRequest> | undefined, b: UpdateMultilingualPreferencesRequest | PlainMessage<UpdateMultilingualPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateMultilingualPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
+ */
+export class UpdateMultilingualPreferencesResponse extends Message<UpdateMultilingualPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualPreferences preferences = 1;
+   */
+  preferences?: OnyxMultilingualPreferences;
+
+  constructor(data?: PartialMessage<UpdateMultilingualPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateMultilingualPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: OnyxMultilingualPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMultilingualPreferencesResponse {
+    return new UpdateMultilingualPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMultilingualPreferencesResponse {
+    return new UpdateMultilingualPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMultilingualPreferencesResponse {
+    return new UpdateMultilingualPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateMultilingualPreferencesResponse | PlainMessage<UpdateMultilingualPreferencesResponse> | undefined, b: UpdateMultilingualPreferencesResponse | PlainMessage<UpdateMultilingualPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateMultilingualPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualAudioVideoRequest
+ */
+export class GetMultilingualAudioVideoRequest extends Message<GetMultilingualAudioVideoRequest> {
+  /**
+   * @generated from field: string media_id = 1;
+   */
+  mediaId = "";
+
+  /**
+   * @generated from field: string target_language_code = 2;
+   */
+  targetLanguageCode = "";
+
+  constructor(data?: PartialMessage<GetMultilingualAudioVideoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualAudioVideoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualAudioVideoRequest {
+    return new GetMultilingualAudioVideoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualAudioVideoRequest {
+    return new GetMultilingualAudioVideoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualAudioVideoRequest {
+    return new GetMultilingualAudioVideoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualAudioVideoRequest | PlainMessage<GetMultilingualAudioVideoRequest> | undefined, b: GetMultilingualAudioVideoRequest | PlainMessage<GetMultilingualAudioVideoRequest> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualAudioVideoRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualAudioVideoResponse
+ */
+export class GetMultilingualAudioVideoResponse extends Message<GetMultilingualAudioVideoResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualAudioVideo media = 1;
+   */
+  media?: OnyxMultilingualAudioVideo;
+
+  constructor(data?: PartialMessage<GetMultilingualAudioVideoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualAudioVideoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "media", kind: "message", T: OnyxMultilingualAudioVideo },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualAudioVideoResponse {
+    return new GetMultilingualAudioVideoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualAudioVideoResponse {
+    return new GetMultilingualAudioVideoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualAudioVideoResponse {
+    return new GetMultilingualAudioVideoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualAudioVideoResponse | PlainMessage<GetMultilingualAudioVideoResponse> | undefined, b: GetMultilingualAudioVideoResponse | PlainMessage<GetMultilingualAudioVideoResponse> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualAudioVideoResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
+ */
+export class GetMultilingualOfflineManifestRequest extends Message<GetMultilingualOfflineManifestRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string device_id = 3;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<GetMultilingualOfflineManifestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualOfflineManifestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualOfflineManifestRequest {
+    return new GetMultilingualOfflineManifestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualOfflineManifestRequest {
+    return new GetMultilingualOfflineManifestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualOfflineManifestRequest {
+    return new GetMultilingualOfflineManifestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualOfflineManifestRequest | PlainMessage<GetMultilingualOfflineManifestRequest> | undefined, b: GetMultilingualOfflineManifestRequest | PlainMessage<GetMultilingualOfflineManifestRequest> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualOfflineManifestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
+ */
+export class GetMultilingualOfflineManifestResponse extends Message<GetMultilingualOfflineManifestResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualOfflineManifest manifest = 1;
+   */
+  manifest?: OnyxMultilingualOfflineManifest;
+
+  constructor(data?: PartialMessage<GetMultilingualOfflineManifestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualOfflineManifestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest", kind: "message", T: OnyxMultilingualOfflineManifest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualOfflineManifestResponse {
+    return new GetMultilingualOfflineManifestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualOfflineManifestResponse {
+    return new GetMultilingualOfflineManifestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualOfflineManifestResponse {
+    return new GetMultilingualOfflineManifestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualOfflineManifestResponse | PlainMessage<GetMultilingualOfflineManifestResponse> | undefined, b: GetMultilingualOfflineManifestResponse | PlainMessage<GetMultilingualOfflineManifestResponse> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualOfflineManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportTranslationIssueRequest
+ */
+export class ReportTranslationIssueRequest extends Message<ReportTranslationIssueRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string edition_revision_id = 3;
+   */
+  editionRevisionId = "";
+
+  /**
+   * @generated from field: string segment_id = 4;
+   */
+  segmentId = "";
+
+  /**
+   * @generated from field: string passage_key = 5;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationIssueType issue_type = 6;
+   */
+  issueType = OnyxTranslationIssueType.UNSPECIFIED;
+
+  /**
+   * @generated from field: string flagged_text = 7;
+   */
+  flaggedText = "";
+
+  /**
+   * @generated from field: string suggested_replacement = 8;
+   */
+  suggestedReplacement = "";
+
+  /**
+   * @generated from field: string member_comment = 9;
+   */
+  memberComment = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 10;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ReportTranslationIssueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportTranslationIssueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "segment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "issue_type", kind: "enum", T: proto3.getEnumType(OnyxTranslationIssueType) },
+    { no: 7, name: "flagged_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "suggested_replacement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "member_comment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportTranslationIssueRequest {
+    return new ReportTranslationIssueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportTranslationIssueRequest {
+    return new ReportTranslationIssueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportTranslationIssueRequest {
+    return new ReportTranslationIssueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportTranslationIssueRequest | PlainMessage<ReportTranslationIssueRequest> | undefined, b: ReportTranslationIssueRequest | PlainMessage<ReportTranslationIssueRequest> | undefined): boolean {
+    return proto3.util.equals(ReportTranslationIssueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportTranslationIssueResponse
+ */
+export class ReportTranslationIssueResponse extends Message<ReportTranslationIssueResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxTranslationReport report = 1;
+   */
+  report?: OnyxTranslationReport;
+
+  constructor(data?: PartialMessage<ReportTranslationIssueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportTranslationIssueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report", kind: "message", T: OnyxTranslationReport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportTranslationIssueResponse {
+    return new ReportTranslationIssueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportTranslationIssueResponse {
+    return new ReportTranslationIssueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportTranslationIssueResponse {
+    return new ReportTranslationIssueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportTranslationIssueResponse | PlainMessage<ReportTranslationIssueResponse> | undefined, b: ReportTranslationIssueResponse | PlainMessage<ReportTranslationIssueResponse> | undefined): boolean {
+    return proto3.util.equals(ReportTranslationIssueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestMultilingualExportRequest
+ */
+export class RequestMultilingualExportRequest extends Message<RequestMultilingualExportRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualExportFormat format = 3;
+   */
+  format = OnyxMultilingualExportFormat.UNSPECIFIED;
+
+  /**
+   * @generated from field: bool include_original = 4;
+   */
+  includeOriginal = false;
+
+  /**
+   * @generated from field: bool include_termbase = 5;
+   */
+  includeTermbase = false;
+
+  /**
+   * @generated from field: bool include_citations = 6;
+   */
+  includeCitations = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RequestMultilingualExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestMultilingualExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(OnyxMultilingualExportFormat) },
+    { no: 4, name: "include_original", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "include_termbase", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "include_citations", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestMultilingualExportRequest {
+    return new RequestMultilingualExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestMultilingualExportRequest {
+    return new RequestMultilingualExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestMultilingualExportRequest {
+    return new RequestMultilingualExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestMultilingualExportRequest | PlainMessage<RequestMultilingualExportRequest> | undefined, b: RequestMultilingualExportRequest | PlainMessage<RequestMultilingualExportRequest> | undefined): boolean {
+    return proto3.util.equals(RequestMultilingualExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestMultilingualExportResponse
+ */
+export class RequestMultilingualExportResponse extends Message<RequestMultilingualExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualExport export = 1;
+   */
+  export?: OnyxMultilingualExport;
+
+  constructor(data?: PartialMessage<RequestMultilingualExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestMultilingualExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: OnyxMultilingualExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestMultilingualExportResponse {
+    return new RequestMultilingualExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestMultilingualExportResponse {
+    return new RequestMultilingualExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestMultilingualExportResponse {
+    return new RequestMultilingualExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestMultilingualExportResponse | PlainMessage<RequestMultilingualExportResponse> | undefined, b: RequestMultilingualExportResponse | PlainMessage<RequestMultilingualExportResponse> | undefined): boolean {
+    return proto3.util.equals(RequestMultilingualExportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualExportRequest
+ */
+export class GetMultilingualExportRequest extends Message<GetMultilingualExportRequest> {
+  /**
+   * @generated from field: string export_id = 1;
+   */
+  exportId = "";
+
+  constructor(data?: PartialMessage<GetMultilingualExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualExportRequest {
+    return new GetMultilingualExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualExportRequest {
+    return new GetMultilingualExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualExportRequest {
+    return new GetMultilingualExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualExportRequest | PlainMessage<GetMultilingualExportRequest> | undefined, b: GetMultilingualExportRequest | PlainMessage<GetMultilingualExportRequest> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetMultilingualExportResponse
+ */
+export class GetMultilingualExportResponse extends Message<GetMultilingualExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxMultilingualExport export = 1;
+   */
+  export?: OnyxMultilingualExport;
+
+  constructor(data?: PartialMessage<GetMultilingualExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetMultilingualExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: OnyxMultilingualExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualExportResponse {
+    return new GetMultilingualExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMultilingualExportResponse {
+    return new GetMultilingualExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMultilingualExportResponse {
+    return new GetMultilingualExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMultilingualExportResponse | PlainMessage<GetMultilingualExportResponse> | undefined, b: GetMultilingualExportResponse | PlainMessage<GetMultilingualExportResponse> | undefined): boolean {
+    return proto3.util.equals(GetMultilingualExportResponse, a, b);
   }
 }
 

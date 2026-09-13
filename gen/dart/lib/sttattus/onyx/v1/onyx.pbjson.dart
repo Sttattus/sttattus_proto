@@ -15,6 +15,296 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use onyxTranslationClassDescriptor instead')
+const OnyxTranslationClass$json = {
+  '1': 'OnyxTranslationClass',
+  '2': [
+    {'1': 'ONYX_TRANSLATION_CLASS_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_TRANSLATION_CLASS_AUTHORED', '2': 1},
+    {'1': 'ONYX_TRANSLATION_CLASS_REVIEWED', '2': 2},
+    {'1': 'ONYX_TRANSLATION_CLASS_MACHINE_ASSISTED', '2': 3},
+    {'1': 'ONYX_TRANSLATION_CLASS_MACHINE_ONLY', '2': 4},
+  ],
+};
+
+/// Descriptor for `OnyxTranslationClass`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxTranslationClassDescriptor = $convert.base64Decode(
+    'ChRPbnl4VHJhbnNsYXRpb25DbGFzcxImCiJPTllYX1RSQU5TTEFUSU9OX0NMQVNTX1VOU1BFQ0'
+    'lGSUVEEAASIwofT05ZWF9UUkFOU0xBVElPTl9DTEFTU19BVVRIT1JFRBABEiMKH09OWVhfVFJB'
+    'TlNMQVRJT05fQ0xBU1NfUkVWSUVXRUQQAhIrCidPTllYX1RSQU5TTEFUSU9OX0NMQVNTX01BQ0'
+    'hJTkVfQVNTSVNURUQQAxInCiNPTllYX1RSQU5TTEFUSU9OX0NMQVNTX01BQ0hJTkVfT05MWRAE');
+
+@$core.Deprecated('Use onyxVerificationStateDescriptor instead')
+const OnyxVerificationState$json = {
+  '1': 'OnyxVerificationState',
+  '2': [
+    {'1': 'ONYX_VERIFICATION_STATE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_VERIFICATION_STATE_DRAFT', '2': 1},
+    {'1': 'ONYX_VERIFICATION_STATE_SUBMITTED', '2': 2},
+    {'1': 'ONYX_VERIFICATION_STATE_IN_REVIEW', '2': 3},
+    {'1': 'ONYX_VERIFICATION_STATE_APPROVED', '2': 4},
+    {'1': 'ONYX_VERIFICATION_STATE_DISPUTED', '2': 5},
+    {'1': 'ONYX_VERIFICATION_STATE_REJECTED', '2': 6},
+  ],
+};
+
+/// Descriptor for `OnyxVerificationState`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxVerificationStateDescriptor = $convert.base64Decode(
+    'ChVPbnl4VmVyaWZpY2F0aW9uU3RhdGUSJwojT05ZWF9WRVJJRklDQVRJT05fU1RBVEVfVU5TUE'
+    'VDSUZJRUQQABIhCh1PTllYX1ZFUklGSUNBVElPTl9TVEFURV9EUkFGVBABEiUKIU9OWVhfVkVS'
+    'SUZJQ0FUSU9OX1NUQVRFX1NVQk1JVFRFRBACEiUKIU9OWVhfVkVSSUZJQ0FUSU9OX1NUQVRFX0'
+    'lOX1JFVklFVxADEiQKIE9OWVhfVkVSSUZJQ0FUSU9OX1NUQVRFX0FQUFJPVkVEEAQSJAogT05Z'
+    'WF9WRVJJRklDQVRJT05fU1RBVEVfRElTUFVURUQQBRIkCiBPTllYX1ZFUklGSUNBVElPTl9TVE'
+    'FURV9SRUpFQ1RFRBAG');
+
+@$core.Deprecated('Use onyxEditionAvailabilityDescriptor instead')
+const OnyxEditionAvailability$json = {
+  '1': 'OnyxEditionAvailability',
+  '2': [
+    {'1': 'ONYX_EDITION_AVAILABILITY_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_EDITION_AVAILABILITY_PUBLISHED', '2': 1},
+    {'1': 'ONYX_EDITION_AVAILABILITY_STALE', '2': 2},
+    {'1': 'ONYX_EDITION_AVAILABILITY_FROZEN', '2': 3},
+    {'1': 'ONYX_EDITION_AVAILABILITY_REVOKED', '2': 4},
+    {'1': 'ONYX_EDITION_AVAILABILITY_WITHDRAWN', '2': 5},
+  ],
+};
+
+/// Descriptor for `OnyxEditionAvailability`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxEditionAvailabilityDescriptor = $convert.base64Decode(
+    'ChdPbnl4RWRpdGlvbkF2YWlsYWJpbGl0eRIpCiVPTllYX0VESVRJT05fQVZBSUxBQklMSVRZX1'
+    'VOU1BFQ0lGSUVEEAASJwojT05ZWF9FRElUSU9OX0FWQUlMQUJJTElUWV9QVUJMSVNIRUQQARIj'
+    'Ch9PTllYX0VESVRJT05fQVZBSUxBQklMSVRZX1NUQUxFEAISJAogT05ZWF9FRElUSU9OX0FWQU'
+    'lMQUJJTElUWV9GUk9aRU4QAxIlCiFPTllYX0VESVRJT05fQVZBSUxBQklMSVRZX1JFVk9LRUQQ'
+    'BBInCiNPTllYX0VESVRJT05fQVZBSUxBQklMSVRZX1dJVEhEUkFXThAF');
+
+@$core.Deprecated('Use onyxLanguageCapabilityDescriptor instead')
+const OnyxLanguageCapability$json = {
+  '1': 'OnyxLanguageCapability',
+  '2': [
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_READER', '2': 1},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_SEARCH', '2': 2},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_DEVICE_TTS', '2': 3},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_EDITORIAL_AUDIO', '2': 4},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_CAPTIONS', '2': 5},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_AUDIO_DESCRIPTION', '2': 6},
+    {'1': 'ONYX_LANGUAGE_CAPABILITY_LIVE_INTERPRETATION', '2': 7},
+  ],
+};
+
+/// Descriptor for `OnyxLanguageCapability`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxLanguageCapabilityDescriptor = $convert.base64Decode(
+    'ChZPbnl4TGFuZ3VhZ2VDYXBhYmlsaXR5EigKJE9OWVhfTEFOR1VBR0VfQ0FQQUJJTElUWV9VTl'
+    'NQRUNJRklFRBAAEiMKH09OWVhfTEFOR1VBR0VfQ0FQQUJJTElUWV9SRUFERVIQARIjCh9PTllY'
+    'X0xBTkdVQUdFX0NBUEFCSUxJVFlfU0VBUkNIEAISJwojT05ZWF9MQU5HVUFHRV9DQVBBQklMSV'
+    'RZX0RFVklDRV9UVFMQAxIsCihPTllYX0xBTkdVQUdFX0NBUEFCSUxJVFlfRURJVE9SSUFMX0FV'
+    'RElPEAQSJQohT05ZWF9MQU5HVUFHRV9DQVBBQklMSVRZX0NBUFRJT05TEAUSLgoqT05ZWF9MQU'
+    '5HVUFHRV9DQVBBQklMSVRZX0FVRElPX0RFU0NSSVBUSU9OEAYSMAosT05ZWF9MQU5HVUFHRV9D'
+    'QVBBQklMSVRZX0xJVkVfSU5URVJQUkVUQVRJT04QBw==');
+
+@$core.Deprecated('Use onyxParallelReaderModeDescriptor instead')
+const OnyxParallelReaderMode$json = {
+  '1': 'OnyxParallelReaderMode',
+  '2': [
+    {'1': 'ONYX_PARALLEL_READER_MODE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_PARALLEL_READER_MODE_SOURCE_ONLY', '2': 1},
+    {'1': 'ONYX_PARALLEL_READER_MODE_TRANSLATION_ONLY', '2': 2},
+    {'1': 'ONYX_PARALLEL_READER_MODE_SIDE_BY_SIDE', '2': 3},
+    {'1': 'ONYX_PARALLEL_READER_MODE_INTERLINEAR', '2': 4},
+  ],
+};
+
+/// Descriptor for `OnyxParallelReaderMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxParallelReaderModeDescriptor = $convert.base64Decode(
+    'ChZPbnl4UGFyYWxsZWxSZWFkZXJNb2RlEikKJU9OWVhfUEFSQUxMRUxfUkVBREVSX01PREVfVU'
+    '5TUEVDSUZJRUQQABIpCiVPTllYX1BBUkFMTEVMX1JFQURFUl9NT0RFX1NPVVJDRV9PTkxZEAES'
+    'LgoqT05ZWF9QQVJBTExFTF9SRUFERVJfTU9ERV9UUkFOU0xBVElPTl9PTkxZEAISKgomT05ZWF'
+    '9QQVJBTExFTF9SRUFERVJfTU9ERV9TSURFX0JZX1NJREUQAxIpCiVPTllYX1BBUkFMTEVMX1JF'
+    'QURFUl9NT0RFX0lOVEVSTElORUFSEAQ=');
+
+@$core.Deprecated('Use onyxSearchMatchReasonDescriptor instead')
+const OnyxSearchMatchReason$json = {
+  '1': 'OnyxSearchMatchReason',
+  '2': [
+    {'1': 'ONYX_SEARCH_MATCH_REASON_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_SEARCH_MATCH_REASON_SOURCE_TEXT', '2': 1},
+    {'1': 'ONYX_SEARCH_MATCH_REASON_TRANSLATED_TEXT', '2': 2},
+    {'1': 'ONYX_SEARCH_MATCH_REASON_TERMBASE_EQUIVALENT', '2': 3},
+    {'1': 'ONYX_SEARCH_MATCH_REASON_WATCHLIST_ALIAS', '2': 4},
+  ],
+};
+
+/// Descriptor for `OnyxSearchMatchReason`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxSearchMatchReasonDescriptor = $convert.base64Decode(
+    'ChVPbnl4U2VhcmNoTWF0Y2hSZWFzb24SKAokT05ZWF9TRUFSQ0hfTUFUQ0hfUkVBU09OX1VOU1'
+    'BFQ0lGSUVEEAASKAokT05ZWF9TRUFSQ0hfTUFUQ0hfUkVBU09OX1NPVVJDRV9URVhUEAESLAoo'
+    'T05ZWF9TRUFSQ0hfTUFUQ0hfUkVBU09OX1RSQU5TTEFURURfVEVYVBACEjAKLE9OWVhfU0VBUk'
+    'NIX01BVENIX1JFQVNPTl9URVJNQkFTRV9FUVVJVkFMRU5UEAMSLAooT05ZWF9TRUFSQ0hfTUFU'
+    'Q0hfUkVBU09OX1dBVENITElTVF9BTElBUxAE');
+
+@$core.Deprecated('Use onyxBilingualListeningModeDescriptor instead')
+const OnyxBilingualListeningMode$json = {
+  '1': 'OnyxBilingualListeningMode',
+  '2': [
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_ORIGINAL_ONLY', '2': 1},
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_TRANSLATION_ONLY', '2': 2},
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_PASSAGE', '2': 3},
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_ALTERNATING_SENTENCE', '2': 4},
+    {'1': 'ONYX_BILINGUAL_LISTENING_MODE_LEARNER_PAUSE', '2': 5},
+  ],
+};
+
+/// Descriptor for `OnyxBilingualListeningMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxBilingualListeningModeDescriptor = $convert.base64Decode(
+    'ChpPbnl4QmlsaW5ndWFsTGlzdGVuaW5nTW9kZRItCilPTllYX0JJTElOR1VBTF9MSVNURU5JTk'
+    'dfTU9ERV9VTlNQRUNJRklFRBAAEi8KK09OWVhfQklMSU5HVUFMX0xJU1RFTklOR19NT0RFX09S'
+    'SUdJTkFMX09OTFkQARIyCi5PTllYX0JJTElOR1VBTF9MSVNURU5JTkdfTU9ERV9UUkFOU0xBVE'
+    'lPTl9PTkxZEAISNQoxT05ZWF9CSUxJTkdVQUxfTElTVEVOSU5HX01PREVfQUxURVJOQVRJTkdf'
+    'UEFTU0FHRRADEjYKMk9OWVhfQklMSU5HVUFMX0xJU1RFTklOR19NT0RFX0FMVEVSTkFUSU5HX1'
+    'NFTlRFTkNFEAQSLworT05ZWF9CSUxJTkdVQUxfTElTVEVOSU5HX01PREVfTEVBUk5FUl9QQVVT'
+    'RRAF');
+
+@$core.Deprecated('Use onyxVoiceDeliveryDescriptor instead')
+const OnyxVoiceDelivery$json = {
+  '1': 'OnyxVoiceDelivery',
+  '2': [
+    {'1': 'ONYX_VOICE_DELIVERY_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_VOICE_DELIVERY_INSTALLED_DEVICE', '2': 1},
+    {'1': 'ONYX_VOICE_DELIVERY_DOWNLOADED', '2': 2},
+    {'1': 'ONYX_VOICE_DELIVERY_EDITORIAL', '2': 3},
+    {'1': 'ONYX_VOICE_DELIVERY_NETWORK', '2': 4},
+  ],
+};
+
+/// Descriptor for `OnyxVoiceDelivery`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxVoiceDeliveryDescriptor = $convert.base64Decode(
+    'ChFPbnl4Vm9pY2VEZWxpdmVyeRIjCh9PTllYX1ZPSUNFX0RFTElWRVJZX1VOU1BFQ0lGSUVEEA'
+    'ASKAokT05ZWF9WT0lDRV9ERUxJVkVSWV9JTlNUQUxMRURfREVWSUNFEAESIgoeT05ZWF9WT0lD'
+    'RV9ERUxJVkVSWV9ET1dOTE9BREVEEAISIQodT05ZWF9WT0lDRV9ERUxJVkVSWV9FRElUT1JJQU'
+    'wQAxIfChtPTllYX1ZPSUNFX0RFTElWRVJZX05FVFdPUksQBA==');
+
+@$core.Deprecated('Use onyxLiveInterpretationStateDescriptor instead')
+const OnyxLiveInterpretationState$json = {
+  '1': 'OnyxLiveInterpretationState',
+  '2': [
+    {'1': 'ONYX_LIVE_INTERPRETATION_STATE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_LIVE_INTERPRETATION_STATE_UNAVAILABLE', '2': 1},
+    {'1': 'ONYX_LIVE_INTERPRETATION_STATE_CONFIGURED_PROVIDER', '2': 2},
+    {'1': 'ONYX_LIVE_INTERPRETATION_STATE_HUMAN_CHANNEL', '2': 3},
+  ],
+};
+
+/// Descriptor for `OnyxLiveInterpretationState`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxLiveInterpretationStateDescriptor = $convert.base64Decode(
+    'ChtPbnl4TGl2ZUludGVycHJldGF0aW9uU3RhdGUSLgoqT05ZWF9MSVZFX0lOVEVSUFJFVEFUSU'
+    '9OX1NUQVRFX1VOU1BFQ0lGSUVEEAASLgoqT05ZWF9MSVZFX0lOVEVSUFJFVEFUSU9OX1NUQVRF'
+    'X1VOQVZBSUxBQkxFEAESNgoyT05ZWF9MSVZFX0lOVEVSUFJFVEFUSU9OX1NUQVRFX0NPTkZJR1'
+    'VSRURfUFJPVklERVIQAhIwCixPTllYX0xJVkVfSU5URVJQUkVUQVRJT05fU1RBVEVfSFVNQU5f'
+    'Q0hBTk5FTBAD');
+
+@$core.Deprecated('Use onyxTranslationIssueTypeDescriptor instead')
+const OnyxTranslationIssueType$json = {
+  '1': 'OnyxTranslationIssueType',
+  '2': [
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_BAD_TERM', '2': 1},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_OMISSION', '2': 2},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_ADDITION', '2': 3},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_NAMES_OR_NUMBERS', '2': 4},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_MEANING', '2': 5},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_FORMATTING', '2': 6},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_CITATION', '2': 7},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_PRONUNCIATION', '2': 8},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_SUBTITLE_TIMING', '2': 9},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_LAYOUT_OR_GLYPH', '2': 10},
+    {'1': 'ONYX_TRANSLATION_ISSUE_TYPE_OTHER', '2': 11},
+  ],
+};
+
+/// Descriptor for `OnyxTranslationIssueType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxTranslationIssueTypeDescriptor = $convert.base64Decode(
+    'ChhPbnl4VHJhbnNsYXRpb25Jc3N1ZVR5cGUSKwonT05ZWF9UUkFOU0xBVElPTl9JU1NVRV9UWV'
+    'BFX1VOU1BFQ0lGSUVEEAASKAokT05ZWF9UUkFOU0xBVElPTl9JU1NVRV9UWVBFX0JBRF9URVJN'
+    'EAESKAokT05ZWF9UUkFOU0xBVElPTl9JU1NVRV9UWVBFX09NSVNTSU9OEAISKAokT05ZWF9UUk'
+    'FOU0xBVElPTl9JU1NVRV9UWVBFX0FERElUSU9OEAMSMAosT05ZWF9UUkFOU0xBVElPTl9JU1NV'
+    'RV9UWVBFX05BTUVTX09SX05VTUJFUlMQBBInCiNPTllYX1RSQU5TTEFUSU9OX0lTU1VFX1RZUE'
+    'VfTUVBTklORxAFEioKJk9OWVhfVFJBTlNMQVRJT05fSVNTVUVfVFlQRV9GT1JNQVRUSU5HEAYS'
+    'KAokT05ZWF9UUkFOU0xBVElPTl9JU1NVRV9UWVBFX0NJVEFUSU9OEAcSLQopT05ZWF9UUkFOU0'
+    'xBVElPTl9JU1NVRV9UWVBFX1BST05VTkNJQVRJT04QCBIvCitPTllYX1RSQU5TTEFUSU9OX0lT'
+    'U1VFX1RZUEVfU1VCVElUTEVfVElNSU5HEAkSLworT05ZWF9UUkFOU0xBVElPTl9JU1NVRV9UWV'
+    'BFX0xBWU9VVF9PUl9HTFlQSBAKEiUKIU9OWVhfVFJBTlNMQVRJT05fSVNTVUVfVFlQRV9PVEhF'
+    'UhAL');
+
+@$core.Deprecated('Use onyxTranslationReportStatusDescriptor instead')
+const OnyxTranslationReportStatus$json = {
+  '1': 'OnyxTranslationReportStatus',
+  '2': [
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_SUBMITTED', '2': 1},
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_UNDER_REVIEW', '2': 2},
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_ACCEPTED', '2': 3},
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_REJECTED', '2': 4},
+    {'1': 'ONYX_TRANSLATION_REPORT_STATUS_RESOLVED', '2': 5},
+  ],
+};
+
+/// Descriptor for `OnyxTranslationReportStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxTranslationReportStatusDescriptor = $convert.base64Decode(
+    'ChtPbnl4VHJhbnNsYXRpb25SZXBvcnRTdGF0dXMSLgoqT05ZWF9UUkFOU0xBVElPTl9SRVBPUl'
+    'RfU1RBVFVTX1VOU1BFQ0lGSUVEEAASLAooT05ZWF9UUkFOU0xBVElPTl9SRVBPUlRfU1RBVFVT'
+    'X1NVQk1JVFRFRBABEi8KK09OWVhfVFJBTlNMQVRJT05fUkVQT1JUX1NUQVRVU19VTkRFUl9SRV'
+    'ZJRVcQAhIrCidPTllYX1RSQU5TTEFUSU9OX1JFUE9SVF9TVEFUVVNfQUNDRVBURUQQAxIrCidP'
+    'TllYX1RSQU5TTEFUSU9OX1JFUE9SVF9TVEFUVVNfUkVKRUNURUQQBBIrCidPTllYX1RSQU5TTE'
+    'FUSU9OX1JFUE9SVF9TVEFUVVNfUkVTT0xWRUQQBQ==');
+
+@$core.Deprecated('Use onyxMultilingualExportFormatDescriptor instead')
+const OnyxMultilingualExportFormat$json = {
+  '1': 'OnyxMultilingualExportFormat',
+  '2': [
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_MARKDOWN', '2': 1},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_JSON', '2': 2},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_PDF', '2': 3},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_WEBVTT', '2': 4},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_FORMAT_SRT', '2': 5},
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualExportFormat`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualExportFormatDescriptor = $convert.base64Decode(
+    'ChxPbnl4TXVsdGlsaW5ndWFsRXhwb3J0Rm9ybWF0Ei8KK09OWVhfTVVMVElMSU5HVUFMX0VYUE'
+    '9SVF9GT1JNQVRfVU5TUEVDSUZJRUQQABIsCihPTllYX01VTFRJTElOR1VBTF9FWFBPUlRfRk9S'
+    'TUFUX01BUktET1dOEAESKAokT05ZWF9NVUxUSUxJTkdVQUxfRVhQT1JUX0ZPUk1BVF9KU09OEA'
+    'ISJwojT05ZWF9NVUxUSUxJTkdVQUxfRVhQT1JUX0ZPUk1BVF9QREYQAxIqCiZPTllYX01VTFRJ'
+    'TElOR1VBTF9FWFBPUlRfRk9STUFUX1dFQlZUVBAEEicKI09OWVhfTVVMVElMSU5HVUFMX0VYUE'
+    '9SVF9GT1JNQVRfU1JUEAU=');
+
+@$core.Deprecated('Use onyxMultilingualExportStateDescriptor instead')
+const OnyxMultilingualExportState$json = {
+  '1': 'OnyxMultilingualExportState',
+  '2': [
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_UNSPECIFIED', '2': 0},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_PENDING', '2': 1},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_RUNNING', '2': 2},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_READY', '2': 3},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_FAILED', '2': 4},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_REVOKED', '2': 5},
+    {'1': 'ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED', '2': 6},
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualExportState`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualExportStateDescriptor = $convert.base64Decode(
+    'ChtPbnl4TXVsdGlsaW5ndWFsRXhwb3J0U3RhdGUSLgoqT05ZWF9NVUxUSUxJTkdVQUxfRVhQT1'
+    'JUX1NUQVRFX1VOU1BFQ0lGSUVEEAASKgomT05ZWF9NVUxUSUxJTkdVQUxfRVhQT1JUX1NUQVRF'
+    'X1BFTkRJTkcQARIqCiZPTllYX01VTFRJTElOR1VBTF9FWFBPUlRfU1RBVEVfUlVOTklORxACEi'
+    'gKJE9OWVhfTVVMVElMSU5HVUFMX0VYUE9SVF9TVEFURV9SRUFEWRADEikKJU9OWVhfTVVMVElM'
+    'SU5HVUFMX0VYUE9SVF9TVEFURV9GQUlMRUQQBBIqCiZPTllYX01VTFRJTElOR1VBTF9FWFBPUl'
+    'RfU1RBVEVfUkVWT0tFRBAFEioKJk9OWVhfTVVMVElMSU5HVUFMX0VYUE9SVF9TVEFURV9FWFBJ'
+    'UkVEEAY=');
+
 @$core.Deprecated('Use gatingCriteriaDescriptor instead')
 const GatingCriteria$json = {
   '1': 'GatingCriteria',
@@ -170,6 +460,68 @@ const OnyxContent$json = {
       '5': 9,
       '10': 'sourceCaptureId'
     },
+    {'1': 'language_code', '3': 31, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'original_content_id',
+      '3': 32,
+      '4': 1,
+      '5': 9,
+      '10': 'originalContentId'
+    },
+    {'1': 'edition_id', '3': 33, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 34,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'source_revision_id',
+      '3': 35,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'translation_class',
+      '3': 36,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationClass',
+      '10': 'translationClass'
+    },
+    {
+      '1': 'translation_verification_state',
+      '3': 37,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxVerificationState',
+      '10': 'translationVerificationState'
+    },
+    {
+      '1': 'edition_availability',
+      '3': 38,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxEditionAvailability',
+      '10': 'editionAvailability'
+    },
+    {
+      '1': 'available_editions',
+      '3': 39,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContentEdition',
+      '10': 'availableEditions'
+    },
+    {
+      '1': 'is_stale_translation',
+      '3': 40,
+      '4': 1,
+      '5': 8,
+      '10': 'isStaleTranslation'
+    },
   ],
 };
 
@@ -196,7 +548,146 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     'b2dyZXNzX3Bhc3NhZ2Vfa2V5GBsgASgJUhJwcm9ncmVzc1Bhc3NhZ2VLZXkSJwoPcHJvZ3Jlc3'
     'Nfb2Zmc2V0GBwgASgFUg5wcm9ncmVzc09mZnNldBIsChJpc19wcml2YXRlX2NhcHR1cmUYHSAB'
     'KAhSEGlzUHJpdmF0ZUNhcHR1cmUSKgoRc291cmNlX2NhcHR1cmVfaWQYHiABKAlSD3NvdXJjZU'
-    'NhcHR1cmVJZA==');
+    'NhcHR1cmVJZBIjCg1sYW5ndWFnZV9jb2RlGB8gASgJUgxsYW5ndWFnZUNvZGUSLgoTb3JpZ2lu'
+    'YWxfY29udGVudF9pZBggIAEoCVIRb3JpZ2luYWxDb250ZW50SWQSHQoKZWRpdGlvbl9pZBghIA'
+    'EoCVIJZWRpdGlvbklkEi4KE2VkaXRpb25fcmV2aXNpb25faWQYIiABKAlSEWVkaXRpb25SZXZp'
+    'c2lvbklkEiwKEnNvdXJjZV9yZXZpc2lvbl9pZBgjIAEoCVIQc291cmNlUmV2aXNpb25JZBJTCh'
+    'F0cmFuc2xhdGlvbl9jbGFzcxgkIAEoDjImLnN0dGF0dHVzLm9ueXgudjEuT255eFRyYW5zbGF0'
+    'aW9uQ2xhc3NSEHRyYW5zbGF0aW9uQ2xhc3MSbQoedHJhbnNsYXRpb25fdmVyaWZpY2F0aW9uX3'
+    'N0YXRlGCUgASgOMicuc3R0YXR0dXMub255eC52MS5Pbnl4VmVyaWZpY2F0aW9uU3RhdGVSHHRy'
+    'YW5zbGF0aW9uVmVyaWZpY2F0aW9uU3RhdGUSXAoUZWRpdGlvbl9hdmFpbGFiaWxpdHkYJiABKA'
+    '4yKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhFZGl0aW9uQXZhaWxhYmlsaXR5UhNlZGl0aW9uQXZh'
+    'aWxhYmlsaXR5ElMKEmF2YWlsYWJsZV9lZGl0aW9ucxgnIAMoCzIkLnN0dGF0dHVzLm9ueXgudj'
+    'EuT255eENvbnRlbnRFZGl0aW9uUhFhdmFpbGFibGVFZGl0aW9ucxIwChRpc19zdGFsZV90cmFu'
+    'c2xhdGlvbhgoIAEoCFISaXNTdGFsZVRyYW5zbGF0aW9u');
+
+@$core.Deprecated('Use onyxContentEditionDescriptor instead')
+const OnyxContentEdition$json = {
+  '1': 'OnyxContentEdition',
+  '2': [
+    {'1': 'edition_id', '3': 1, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'edition_revision_number',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'editionRevisionNumber'
+    },
+    {'1': 'source_content_id', '3': 5, '4': 1, '5': 9, '10': 'sourceContentId'},
+    {
+      '1': 'source_revision_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'source_revision_number',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'sourceRevisionNumber'
+    },
+    {'1': 'language_code', '3': 8, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'native_language_name',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'nativeLanguageName'
+    },
+    {
+      '1': 'translation_class',
+      '3': 10,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationClass',
+      '10': 'translationClass'
+    },
+    {
+      '1': 'verification_state',
+      '3': 11,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxVerificationState',
+      '10': 'verificationState'
+    },
+    {
+      '1': 'availability',
+      '3': 12,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxEditionAvailability',
+      '10': 'availability'
+    },
+    {
+      '1': 'translator_attribution',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '10': 'translatorAttribution'
+    },
+    {
+      '1': 'reviewer_attribution',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'reviewerAttribution'
+    },
+    {'1': 'rights_statement', '3': 15, '4': 1, '5': 9, '10': 'rightsStatement'},
+    {'1': 'quality_score', '3': 16, '4': 1, '5': 1, '10': 'qualityScore'},
+    {'1': 'source_checksum', '3': 17, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'target_checksum', '3': 18, '4': 1, '5': 9, '10': 'targetChecksum'},
+    {'1': 'is_original', '3': 19, '4': 1, '5': 8, '10': 'isOriginal'},
+    {
+      '1': 'published_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxContentEdition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxContentEditionDescriptor = $convert.base64Decode(
+    'ChJPbnl4Q29udGVudEVkaXRpb24SHQoKZWRpdGlvbl9pZBgBIAEoCVIJZWRpdGlvbklkEh0KCm'
+    'NvbnRlbnRfaWQYAiABKAlSCWNvbnRlbnRJZBIuChNlZGl0aW9uX3JldmlzaW9uX2lkGAMgASgJ'
+    'UhFlZGl0aW9uUmV2aXNpb25JZBI2ChdlZGl0aW9uX3JldmlzaW9uX251bWJlchgEIAEoBVIVZW'
+    'RpdGlvblJldmlzaW9uTnVtYmVyEioKEXNvdXJjZV9jb250ZW50X2lkGAUgASgJUg9zb3VyY2VD'
+    'b250ZW50SWQSLAoSc291cmNlX3JldmlzaW9uX2lkGAYgASgJUhBzb3VyY2VSZXZpc2lvbklkEj'
+    'QKFnNvdXJjZV9yZXZpc2lvbl9udW1iZXIYByABKAVSFHNvdXJjZVJldmlzaW9uTnVtYmVyEiMK'
+    'DWxhbmd1YWdlX2NvZGUYCCABKAlSDGxhbmd1YWdlQ29kZRIwChRuYXRpdmVfbGFuZ3VhZ2Vfbm'
+    'FtZRgJIAEoCVISbmF0aXZlTGFuZ3VhZ2VOYW1lElMKEXRyYW5zbGF0aW9uX2NsYXNzGAogASgO'
+    'MiYuc3R0YXR0dXMub255eC52MS5Pbnl4VHJhbnNsYXRpb25DbGFzc1IQdHJhbnNsYXRpb25DbG'
+    'FzcxJWChJ2ZXJpZmljYXRpb25fc3RhdGUYCyABKA4yJy5zdHRhdHR1cy5vbnl4LnYxLk9ueXhW'
+    'ZXJpZmljYXRpb25TdGF0ZVIRdmVyaWZpY2F0aW9uU3RhdGUSTQoMYXZhaWxhYmlsaXR5GAwgAS'
+    'gOMikuc3R0YXR0dXMub255eC52MS5Pbnl4RWRpdGlvbkF2YWlsYWJpbGl0eVIMYXZhaWxhYmls'
+    'aXR5EjUKFnRyYW5zbGF0b3JfYXR0cmlidXRpb24YDSABKAlSFXRyYW5zbGF0b3JBdHRyaWJ1dG'
+    'lvbhIxChRyZXZpZXdlcl9hdHRyaWJ1dGlvbhgOIAEoCVITcmV2aWV3ZXJBdHRyaWJ1dGlvbhIp'
+    'ChByaWdodHNfc3RhdGVtZW50GA8gASgJUg9yaWdodHNTdGF0ZW1lbnQSIwoNcXVhbGl0eV9zY2'
+    '9yZRgQIAEoAVIMcXVhbGl0eVNjb3JlEicKD3NvdXJjZV9jaGVja3N1bRgRIAEoCVIOc291cmNl'
+    'Q2hlY2tzdW0SJwoPdGFyZ2V0X2NoZWNrc3VtGBIgASgJUg50YXJnZXRDaGVja3N1bRIfCgtpc1'
+    '9vcmlnaW5hbBgTIAEoCFIKaXNPcmlnaW5hbBI9CgxwdWJsaXNoZWRfYXQYFCABKAsyGi5nb29n'
+    'bGUucHJvdG9idWYuVGltZXN0YW1wUgtwdWJsaXNoZWRBdBI5Cgp1cGRhdGVkX2F0GBUgASgLMh'
+    'ouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use documentBlockDescriptor instead')
 const DocumentBlock$json = {
@@ -209,6 +700,15 @@ const DocumentBlock$json = {
     {'1': 'block_type', '3': 5, '4': 1, '5': 9, '10': 'blockType'},
     {'1': 'markdown', '3': 6, '4': 1, '5': 9, '10': 'markdown'},
     {'1': 'plain_text', '3': 7, '4': 1, '5': 9, '10': 'plainText'},
+    {'1': 'language_code', '3': 8, '4': 1, '5': 9, '10': 'languageCode'},
+    {'1': 'segment_id', '3': 9, '4': 1, '5': 9, '10': 'segmentId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
   ],
 };
 
@@ -217,7 +717,9 @@ final $typed_data.Uint8List documentBlockDescriptor = $convert.base64Decode(
     'Cg1Eb2N1bWVudEJsb2NrEg4KAmlkGAEgASgJUgJpZBIfCgtyZXZpc2lvbl9pZBgCIAEoCVIKcm'
     'V2aXNpb25JZBIfCgtwYXNzYWdlX2tleRgDIAEoCVIKcGFzc2FnZUtleRIYCgdvcmRpbmFsGAQg'
     'ASgFUgdvcmRpbmFsEh0KCmJsb2NrX3R5cGUYBSABKAlSCWJsb2NrVHlwZRIaCghtYXJrZG93bh'
-    'gGIAEoCVIIbWFya2Rvd24SHQoKcGxhaW5fdGV4dBgHIAEoCVIJcGxhaW5UZXh0');
+    'gGIAEoCVIIbWFya2Rvd24SHQoKcGxhaW5fdGV4dBgHIAEoCVIJcGxhaW5UZXh0EiMKDWxhbmd1'
+    'YWdlX2NvZGUYCCABKAlSDGxhbmd1YWdlQ29kZRIdCgpzZWdtZW50X2lkGAkgASgJUglzZWdtZW'
+    '50SWQSLgoTZWRpdGlvbl9yZXZpc2lvbl9pZBgKIAEoCVIRZWRpdGlvblJldmlzaW9uSWQ=');
 
 @$core.Deprecated('Use subscriptionDescriptor instead')
 const Subscription$json = {
@@ -868,6 +1370,20 @@ const SearchContentRequest$json = {
     {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
     {'1': 'shelf_code', '3': 3, '4': 1, '5': 9, '10': 'shelfCode'},
     {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
+    {
+      '1': 'content_language_code',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'contentLanguageCode'
+    },
+    {
+      '1': 'query_language_code',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'queryLanguageCode'
+    },
   ],
 };
 
@@ -875,7 +1391,8 @@ const SearchContentRequest$json = {
 final $typed_data.Uint8List searchContentRequestDescriptor = $convert.base64Decode(
     'ChRTZWFyY2hDb250ZW50UmVxdWVzdBIUCgVxdWVyeRgBIAEoCVIFcXVlcnkSEgoEa2luZBgCIA'
     'EoCVIEa2luZBIdCgpzaGVsZl9jb2RlGAMgASgJUglzaGVsZkNvZGUSFAoFbGltaXQYBCABKAVS'
-    'BWxpbWl0');
+    'BWxpbWl0EjIKFWNvbnRlbnRfbGFuZ3VhZ2VfY29kZRgFIAEoCVITY29udGVudExhbmd1YWdlQ2'
+    '9kZRIuChNxdWVyeV9sYW5ndWFnZV9jb2RlGAYgASgJUhFxdWVyeUxhbmd1YWdlQ29kZQ==');
 
 @$core.Deprecated('Use searchContentResponseDescriptor instead')
 const SearchContentResponse$json = {
@@ -1046,6 +1563,22 @@ const ReaderAnnotation$json = {
       '10': 'updatedAt'
     },
     {'1': 'content_title', '3': 15, '4': 1, '5': 9, '10': 'contentTitle'},
+    {'1': 'segment_id', '3': 16, '4': 1, '5': 9, '10': 'segmentId'},
+    {'1': 'edition_id', '3': 17, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 18,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'annotation_language_code',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'annotationLanguageCode'
+    },
   ],
 };
 
@@ -1059,7 +1592,10 @@ final $typed_data.Uint8List readerAnnotationDescriptor = $convert.base64Decode(
     '9vZmZzZXQYCyABKAVSCWVuZE9mZnNldBIYCgd2ZXJzaW9uGAwgASgDUgd2ZXJzaW9uEjkKCmNy'
     'ZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQ'
     'oKdXBkYXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRB'
-    'dBIjCg1jb250ZW50X3RpdGxlGA8gASgJUgxjb250ZW50VGl0bGU=');
+    'dBIjCg1jb250ZW50X3RpdGxlGA8gASgJUgxjb250ZW50VGl0bGUSHQoKc2VnbWVudF9pZBgQIA'
+    'EoCVIJc2VnbWVudElkEh0KCmVkaXRpb25faWQYESABKAlSCWVkaXRpb25JZBIuChNlZGl0aW9u'
+    'X3JldmlzaW9uX2lkGBIgASgJUhFlZGl0aW9uUmV2aXNpb25JZBI4Chhhbm5vdGF0aW9uX2xhbm'
+    'd1YWdlX2NvZGUYEyABKAlSFmFubm90YXRpb25MYW5ndWFnZUNvZGU=');
 
 @$core.Deprecated('Use upsertReaderAnnotationRequestDescriptor instead')
 const UpsertReaderAnnotationRequest$json = {
@@ -1084,6 +1620,22 @@ const UpsertReaderAnnotationRequest$json = {
       '10': 'clientMutationId'
     },
     {'1': 'expected_version', '3': 13, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'segment_id', '3': 14, '4': 1, '5': 9, '10': 'segmentId'},
+    {'1': 'edition_id', '3': 15, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 16,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'annotation_language_code',
+      '3': 17,
+      '4': 1,
+      '5': 9,
+      '10': 'annotationLanguageCode'
+    },
   ],
 };
 
@@ -1096,7 +1648,10 @@ final $typed_data.Uint8List upsertReaderAnnotationRequestDescriptor = $convert.b
     'BWNvbG9yEhIKBHRhZ3MYCSADKAlSBHRhZ3MSIQoMc3RhcnRfb2Zmc2V0GAogASgFUgtzdGFydE'
     '9mZnNldBIdCgplbmRfb2Zmc2V0GAsgASgFUgllbmRPZmZzZXQSLAoSY2xpZW50X211dGF0aW9u'
     'X2lkGAwgASgJUhBjbGllbnRNdXRhdGlvbklkEikKEGV4cGVjdGVkX3ZlcnNpb24YDSABKANSD2'
-    'V4cGVjdGVkVmVyc2lvbg==');
+    'V4cGVjdGVkVmVyc2lvbhIdCgpzZWdtZW50X2lkGA4gASgJUglzZWdtZW50SWQSHQoKZWRpdGlv'
+    'bl9pZBgPIAEoCVIJZWRpdGlvbklkEi4KE2VkaXRpb25fcmV2aXNpb25faWQYECABKAlSEWVkaX'
+    'Rpb25SZXZpc2lvbklkEjgKGGFubm90YXRpb25fbGFuZ3VhZ2VfY29kZRgRIAEoCVIWYW5ub3Rh'
+    'dGlvbkxhbmd1YWdlQ29kZQ==');
 
 @$core.Deprecated('Use upsertReaderAnnotationResponseDescriptor instead')
 const UpsertReaderAnnotationResponse$json = {
@@ -11505,3 +12060,1774 @@ final $typed_data.Uint8List rebuildPersonalIntelligenceGraphResponseDescriptor =
     $convert.base64Decode(
         'CihSZWJ1aWxkUGVyc29uYWxJbnRlbGxpZ2VuY2VHcmFwaFJlc3BvbnNlEhUKBmpvYl9pZBgBIA'
         'EoCVIFam9iSWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use onyxLanguageConfigDescriptor instead')
+const OnyxLanguageConfig$json = {
+  '1': 'OnyxLanguageConfig',
+  '2': [
+    {'1': 'language_code', '3': 1, '4': 1, '5': 9, '10': 'languageCode'},
+    {'1': 'base_language', '3': 2, '4': 1, '5': 9, '10': 'baseLanguage'},
+    {'1': 'script_code', '3': 3, '4': 1, '5': 9, '10': 'scriptCode'},
+    {'1': 'region_code', '3': 4, '4': 1, '5': 9, '10': 'regionCode'},
+    {'1': 'english_name', '3': 5, '4': 1, '5': 9, '10': 'englishName'},
+    {'1': 'native_name', '3': 6, '4': 1, '5': 9, '10': 'nativeName'},
+    {'1': 'is_right_to_left', '3': 7, '4': 1, '5': 8, '10': 'isRightToLeft'},
+    {
+      '1': 'bundled_font_supported',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'bundledFontSupported'
+    },
+    {
+      '1': 'capabilities',
+      '3': 9,
+      '4': 3,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxLanguageCapability',
+      '10': 'capabilities'
+    },
+    {
+      '1': 'available_region_codes',
+      '3': 10,
+      '4': 3,
+      '5': 9,
+      '10': 'availableRegionCodes'
+    },
+    {'1': 'is_enabled', '3': 11, '4': 1, '5': 8, '10': 'isEnabled'},
+    {
+      '1': 'fallback_language_code',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'fallbackLanguageCode'
+    },
+    {
+      '1': 'updated_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLanguageConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLanguageConfigDescriptor = $convert.base64Decode(
+    'ChJPbnl4TGFuZ3VhZ2VDb25maWcSIwoNbGFuZ3VhZ2VfY29kZRgBIAEoCVIMbGFuZ3VhZ2VDb2'
+    'RlEiMKDWJhc2VfbGFuZ3VhZ2UYAiABKAlSDGJhc2VMYW5ndWFnZRIfCgtzY3JpcHRfY29kZRgD'
+    'IAEoCVIKc2NyaXB0Q29kZRIfCgtyZWdpb25fY29kZRgEIAEoCVIKcmVnaW9uQ29kZRIhCgxlbm'
+    'dsaXNoX25hbWUYBSABKAlSC2VuZ2xpc2hOYW1lEh8KC25hdGl2ZV9uYW1lGAYgASgJUgpuYXRp'
+    'dmVOYW1lEicKEGlzX3JpZ2h0X3RvX2xlZnQYByABKAhSDWlzUmlnaHRUb0xlZnQSNAoWYnVuZG'
+    'xlZF9mb250X3N1cHBvcnRlZBgIIAEoCFIUYnVuZGxlZEZvbnRTdXBwb3J0ZWQSTAoMY2FwYWJp'
+    'bGl0aWVzGAkgAygOMiguc3R0YXR0dXMub255eC52MS5Pbnl4TGFuZ3VhZ2VDYXBhYmlsaXR5Ug'
+    'xjYXBhYmlsaXRpZXMSNAoWYXZhaWxhYmxlX3JlZ2lvbl9jb2RlcxgKIAMoCVIUYXZhaWxhYmxl'
+    'UmVnaW9uQ29kZXMSHQoKaXNfZW5hYmxlZBgLIAEoCFIJaXNFbmFibGVkEjQKFmZhbGxiYWNrX2'
+    'xhbmd1YWdlX2NvZGUYDCABKAlSFGZhbGxiYWNrTGFuZ3VhZ2VDb2RlEjkKCnVwZGF0ZWRfYXQY'
+    'DSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use onyxMachineTranslationProvenanceDescriptor instead')
+const OnyxMachineTranslationProvenance$json = {
+  '1': 'OnyxMachineTranslationProvenance',
+  '2': [
+    {'1': 'provider_label', '3': 1, '4': 1, '5': 9, '10': 'providerLabel'},
+    {'1': 'model_version', '3': 2, '4': 1, '5': 9, '10': 'modelVersion'},
+    {'1': 'prompt_digest', '3': 3, '4': 1, '5': 9, '10': 'promptDigest'},
+    {'1': 'termbase_version', '3': 4, '4': 1, '5': 9, '10': 'termbaseVersion'},
+    {
+      '1': 'translation_memory_version',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'translationMemoryVersion'
+    },
+    {'1': 'input_digest', '3': 6, '4': 1, '5': 9, '10': 'inputDigest'},
+    {'1': 'output_digest', '3': 7, '4': 1, '5': 9, '10': 'outputDigest'},
+    {
+      '1': 'generated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMachineTranslationProvenance`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMachineTranslationProvenanceDescriptor = $convert.base64Decode(
+    'CiBPbnl4TWFjaGluZVRyYW5zbGF0aW9uUHJvdmVuYW5jZRIlCg5wcm92aWRlcl9sYWJlbBgBIA'
+    'EoCVINcHJvdmlkZXJMYWJlbBIjCg1tb2RlbF92ZXJzaW9uGAIgASgJUgxtb2RlbFZlcnNpb24S'
+    'IwoNcHJvbXB0X2RpZ2VzdBgDIAEoCVIMcHJvbXB0RGlnZXN0EikKEHRlcm1iYXNlX3ZlcnNpb2'
+    '4YBCABKAlSD3Rlcm1iYXNlVmVyc2lvbhI8Chp0cmFuc2xhdGlvbl9tZW1vcnlfdmVyc2lvbhgF'
+    'IAEoCVIYdHJhbnNsYXRpb25NZW1vcnlWZXJzaW9uEiEKDGlucHV0X2RpZ2VzdBgGIAEoCVILaW'
+    '5wdXREaWdlc3QSIwoNb3V0cHV0X2RpZ2VzdBgHIAEoCVIMb3V0cHV0RGlnZXN0Ej0KDGdlbmVy'
+    'YXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2dlbmVyYXRlZEF0');
+
+@$core.Deprecated('Use onyxEditionLineageDescriptor instead')
+const OnyxEditionLineage$json = {
+  '1': 'OnyxEditionLineage',
+  '2': [
+    {'1': 'edition_id', '3': 1, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'edition_revision_number',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'editionRevisionNumber'
+    },
+    {'1': 'source_content_id', '3': 5, '4': 1, '5': 9, '10': 'sourceContentId'},
+    {
+      '1': 'source_revision_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'source_revision_number',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'sourceRevisionNumber'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {
+      '1': 'translation_class',
+      '3': 9,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationClass',
+      '10': 'translationClass'
+    },
+    {
+      '1': 'verification_state',
+      '3': 10,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxVerificationState',
+      '10': 'verificationState'
+    },
+    {
+      '1': 'availability',
+      '3': 11,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxEditionAvailability',
+      '10': 'availability'
+    },
+    {
+      '1': 'translator_attribution',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'translatorAttribution'
+    },
+    {
+      '1': 'reviewer_attribution',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '10': 'reviewerAttribution'
+    },
+    {'1': 'rights_statement', '3': 14, '4': 1, '5': 9, '10': 'rightsStatement'},
+    {'1': 'quality_score', '3': 15, '4': 1, '5': 1, '10': 'qualityScore'},
+    {'1': 'source_checksum', '3': 16, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'target_checksum', '3': 17, '4': 1, '5': 9, '10': 'targetChecksum'},
+    {'1': 'stale_reason', '3': 18, '4': 1, '5': 9, '10': 'staleReason'},
+    {
+      '1': 'machine_provenance',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMachineTranslationProvenance',
+      '10': 'machineProvenance'
+    },
+    {
+      '1': 'published_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxEditionLineage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxEditionLineageDescriptor = $convert.base64Decode(
+    'ChJPbnl4RWRpdGlvbkxpbmVhZ2USHQoKZWRpdGlvbl9pZBgBIAEoCVIJZWRpdGlvbklkEh0KCm'
+    'NvbnRlbnRfaWQYAiABKAlSCWNvbnRlbnRJZBIuChNlZGl0aW9uX3JldmlzaW9uX2lkGAMgASgJ'
+    'UhFlZGl0aW9uUmV2aXNpb25JZBI2ChdlZGl0aW9uX3JldmlzaW9uX251bWJlchgEIAEoBVIVZW'
+    'RpdGlvblJldmlzaW9uTnVtYmVyEioKEXNvdXJjZV9jb250ZW50X2lkGAUgASgJUg9zb3VyY2VD'
+    'b250ZW50SWQSLAoSc291cmNlX3JldmlzaW9uX2lkGAYgASgJUhBzb3VyY2VSZXZpc2lvbklkEj'
+    'QKFnNvdXJjZV9yZXZpc2lvbl9udW1iZXIYByABKAVSFHNvdXJjZVJldmlzaW9uTnVtYmVyEjAK'
+    'FHRhcmdldF9sYW5ndWFnZV9jb2RlGAggASgJUhJ0YXJnZXRMYW5ndWFnZUNvZGUSUwoRdHJhbn'
+    'NsYXRpb25fY2xhc3MYCSABKA4yJi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhUcmFuc2xhdGlvbkNs'
+    'YXNzUhB0cmFuc2xhdGlvbkNsYXNzElYKEnZlcmlmaWNhdGlvbl9zdGF0ZRgKIAEoDjInLnN0dG'
+    'F0dHVzLm9ueXgudjEuT255eFZlcmlmaWNhdGlvblN0YXRlUhF2ZXJpZmljYXRpb25TdGF0ZRJN'
+    'CgxhdmFpbGFiaWxpdHkYCyABKA4yKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhFZGl0aW9uQXZhaW'
+    'xhYmlsaXR5UgxhdmFpbGFiaWxpdHkSNQoWdHJhbnNsYXRvcl9hdHRyaWJ1dGlvbhgMIAEoCVIV'
+    'dHJhbnNsYXRvckF0dHJpYnV0aW9uEjEKFHJldmlld2VyX2F0dHJpYnV0aW9uGA0gASgJUhNyZX'
+    'ZpZXdlckF0dHJpYnV0aW9uEikKEHJpZ2h0c19zdGF0ZW1lbnQYDiABKAlSD3JpZ2h0c1N0YXRl'
+    'bWVudBIjCg1xdWFsaXR5X3Njb3JlGA8gASgBUgxxdWFsaXR5U2NvcmUSJwoPc291cmNlX2NoZW'
+    'Nrc3VtGBAgASgJUg5zb3VyY2VDaGVja3N1bRInCg90YXJnZXRfY2hlY2tzdW0YESABKAlSDnRh'
+    'cmdldENoZWNrc3VtEiEKDHN0YWxlX3JlYXNvbhgSIAEoCVILc3RhbGVSZWFzb24SYQoSbWFjaG'
+    'luZV9wcm92ZW5hbmNlGBMgASgLMjIuc3R0YXR0dXMub255eC52MS5Pbnl4TWFjaGluZVRyYW5z'
+    'bGF0aW9uUHJvdmVuYW5jZVIRbWFjaGluZVByb3ZlbmFuY2USPQoMcHVibGlzaGVkX2F0GBQgAS'
+    'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILcHVibGlzaGVkQXQSOQoKdXBkYXRlZF9h'
+    'dBgVIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxTranslationAcceptanceProvenanceDescriptor instead')
+const OnyxTranslationAcceptanceProvenance$json = {
+  '1': 'OnyxTranslationAcceptanceProvenance',
+  '2': [
+    {
+      '1': 'translation_class',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationClass',
+      '10': 'translationClass'
+    },
+    {
+      '1': 'translator_attribution',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'translatorAttribution'
+    },
+    {
+      '1': 'reviewer_attribution',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'reviewerAttribution'
+    },
+    {
+      '1': 'translation_memory_match_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'translationMemoryMatchId'
+    },
+    {'1': 'similarity_score', '3': 5, '4': 1, '5': 1, '10': 'similarityScore'},
+    {
+      '1': 'machine_provenance',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMachineTranslationProvenance',
+      '10': 'machineProvenance'
+    },
+    {
+      '1': 'accepted_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'acceptedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxTranslationAcceptanceProvenance`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxTranslationAcceptanceProvenanceDescriptor = $convert.base64Decode(
+    'CiNPbnl4VHJhbnNsYXRpb25BY2NlcHRhbmNlUHJvdmVuYW5jZRJTChF0cmFuc2xhdGlvbl9jbG'
+    'FzcxgBIAEoDjImLnN0dGF0dHVzLm9ueXgudjEuT255eFRyYW5zbGF0aW9uQ2xhc3NSEHRyYW5z'
+    'bGF0aW9uQ2xhc3MSNQoWdHJhbnNsYXRvcl9hdHRyaWJ1dGlvbhgCIAEoCVIVdHJhbnNsYXRvck'
+    'F0dHJpYnV0aW9uEjEKFHJldmlld2VyX2F0dHJpYnV0aW9uGAMgASgJUhNyZXZpZXdlckF0dHJp'
+    'YnV0aW9uEj0KG3RyYW5zbGF0aW9uX21lbW9yeV9tYXRjaF9pZBgEIAEoCVIYdHJhbnNsYXRpb2'
+    '5NZW1vcnlNYXRjaElkEikKEHNpbWlsYXJpdHlfc2NvcmUYBSABKAFSD3NpbWlsYXJpdHlTY29y'
+    'ZRJhChJtYWNoaW5lX3Byb3ZlbmFuY2UYBiABKAsyMi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhNYW'
+    'NoaW5lVHJhbnNsYXRpb25Qcm92ZW5hbmNlUhFtYWNoaW5lUHJvdmVuYW5jZRI7CgthY2NlcHRl'
+    'ZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmFjY2VwdGVkQXQ=');
+
+@$core.Deprecated('Use onyxAlignedSegmentDescriptor instead')
+const OnyxAlignedSegment$json = {
+  '1': 'OnyxAlignedSegment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_segment_id', '3': 2, '4': 1, '5': 9, '10': 'sourceSegmentId'},
+    {'1': 'target_segment_id', '3': 3, '4': 1, '5': 9, '10': 'targetSegmentId'},
+    {
+      '1': 'source_passage_key',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'sourcePassageKey'
+    },
+    {
+      '1': 'target_passage_key',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'targetPassageKey'
+    },
+    {'1': 'source_text', '3': 6, '4': 1, '5': 9, '10': 'sourceText'},
+    {'1': 'target_text', '3': 7, '4': 1, '5': 9, '10': 'targetText'},
+    {'1': 'source_checksum', '3': 8, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'target_checksum', '3': 9, '4': 1, '5': 9, '10': 'targetChecksum'},
+    {'1': 'ordinal', '3': 10, '4': 1, '5': 5, '10': 'ordinal'},
+    {'1': 'is_stale', '3': 11, '4': 1, '5': 8, '10': 'isStale'},
+    {
+      '1': 'acceptance',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance',
+      '10': 'acceptance'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxAlignedSegment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxAlignedSegmentDescriptor = $convert.base64Decode(
+    'ChJPbnl4QWxpZ25lZFNlZ21lbnQSDgoCaWQYASABKAlSAmlkEioKEXNvdXJjZV9zZWdtZW50X2'
+    'lkGAIgASgJUg9zb3VyY2VTZWdtZW50SWQSKgoRdGFyZ2V0X3NlZ21lbnRfaWQYAyABKAlSD3Rh'
+    'cmdldFNlZ21lbnRJZBIsChJzb3VyY2VfcGFzc2FnZV9rZXkYBCABKAlSEHNvdXJjZVBhc3NhZ2'
+    'VLZXkSLAoSdGFyZ2V0X3Bhc3NhZ2Vfa2V5GAUgASgJUhB0YXJnZXRQYXNzYWdlS2V5Eh8KC3Nv'
+    'dXJjZV90ZXh0GAYgASgJUgpzb3VyY2VUZXh0Eh8KC3RhcmdldF90ZXh0GAcgASgJUgp0YXJnZX'
+    'RUZXh0EicKD3NvdXJjZV9jaGVja3N1bRgIIAEoCVIOc291cmNlQ2hlY2tzdW0SJwoPdGFyZ2V0'
+    'X2NoZWNrc3VtGAkgASgJUg50YXJnZXRDaGVja3N1bRIYCgdvcmRpbmFsGAogASgFUgdvcmRpbm'
+    'FsEhkKCGlzX3N0YWxlGAsgASgIUgdpc1N0YWxlElUKCmFjY2VwdGFuY2UYDCABKAsyNS5zdHRh'
+    'dHR1cy5vbnl4LnYxLk9ueXhUcmFuc2xhdGlvbkFjY2VwdGFuY2VQcm92ZW5hbmNlUgphY2NlcH'
+    'RhbmNl');
+
+@$core.Deprecated('Use onyxAlignedBlockDescriptor instead')
+const OnyxAlignedBlock$json = {
+  '1': 'OnyxAlignedBlock',
+  '2': [
+    {'1': 'source_block_id', '3': 1, '4': 1, '5': 9, '10': 'sourceBlockId'},
+    {'1': 'target_block_id', '3': 2, '4': 1, '5': 9, '10': 'targetBlockId'},
+    {
+      '1': 'source_passage_key',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'sourcePassageKey'
+    },
+    {
+      '1': 'target_passage_key',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'targetPassageKey'
+    },
+    {'1': 'source_markdown', '3': 5, '4': 1, '5': 9, '10': 'sourceMarkdown'},
+    {'1': 'target_markdown', '3': 6, '4': 1, '5': 9, '10': 'targetMarkdown'},
+    {
+      '1': 'segments',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxAlignedSegment',
+      '10': 'segments'
+    },
+    {'1': 'ordinal', '3': 8, '4': 1, '5': 5, '10': 'ordinal'},
+    {'1': 'is_stale', '3': 9, '4': 1, '5': 8, '10': 'isStale'},
+  ],
+};
+
+/// Descriptor for `OnyxAlignedBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxAlignedBlockDescriptor = $convert.base64Decode(
+    'ChBPbnl4QWxpZ25lZEJsb2NrEiYKD3NvdXJjZV9ibG9ja19pZBgBIAEoCVINc291cmNlQmxvY2'
+    'tJZBImCg90YXJnZXRfYmxvY2tfaWQYAiABKAlSDXRhcmdldEJsb2NrSWQSLAoSc291cmNlX3Bh'
+    'c3NhZ2Vfa2V5GAMgASgJUhBzb3VyY2VQYXNzYWdlS2V5EiwKEnRhcmdldF9wYXNzYWdlX2tleR'
+    'gEIAEoCVIQdGFyZ2V0UGFzc2FnZUtleRInCg9zb3VyY2VfbWFya2Rvd24YBSABKAlSDnNvdXJj'
+    'ZU1hcmtkb3duEicKD3RhcmdldF9tYXJrZG93bhgGIAEoCVIOdGFyZ2V0TWFya2Rvd24SQAoIc2'
+    'VnbWVudHMYByADKAsyJC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhBbGlnbmVkU2VnbWVudFIIc2Vn'
+    'bWVudHMSGAoHb3JkaW5hbBgIIAEoBVIHb3JkaW5hbBIZCghpc19zdGFsZRgJIAEoCFIHaXNTdG'
+    'FsZQ==');
+
+@$core.Deprecated('Use onyxTermbaseEntryDescriptor instead')
+const OnyxTermbaseEntry$json = {
+  '1': 'OnyxTermbaseEntry',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'source_language_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceLanguageCode'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {'1': 'source_term', '3': 5, '4': 1, '5': 9, '10': 'sourceTerm'},
+    {
+      '1': 'approved_equivalent',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'approvedEquivalent'
+    },
+    {
+      '1': 'definition_in_context',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'definitionInContext'
+    },
+    {'1': 'part_of_speech', '3': 8, '4': 1, '5': 9, '10': 'partOfSpeech'},
+    {'1': 'inflection', '3': 9, '4': 1, '5': 9, '10': 'inflection'},
+    {'1': 'transliteration', '3': 10, '4': 1, '5': 9, '10': 'transliteration'},
+    {
+      '1': 'pronunciation_text',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'pronunciationText'
+    },
+    {
+      '1': 'pronunciation_audio_url',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'pronunciationAudioUrl'
+    },
+    {'1': 'usage_note', '3': 13, '4': 1, '5': 9, '10': 'usageNote'},
+    {'1': 'variants', '3': 14, '4': 3, '5': 9, '10': 'variants'},
+    {'1': 'attribution', '3': 15, '4': 1, '5': 9, '10': 'attribution'},
+    {'1': 'version', '3': 16, '4': 1, '5': 5, '10': 'version'},
+    {
+      '1': 'updated_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxTermbaseEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxTermbaseEntryDescriptor = $convert.base64Decode(
+    'ChFPbnl4VGVybWJhc2VFbnRyeRIOCgJpZBgBIAEoCVICaWQSHQoKZWRpdGlvbl9pZBgCIAEoCV'
+    'IJZWRpdGlvbklkEjAKFHNvdXJjZV9sYW5ndWFnZV9jb2RlGAMgASgJUhJzb3VyY2VMYW5ndWFn'
+    'ZUNvZGUSMAoUdGFyZ2V0X2xhbmd1YWdlX2NvZGUYBCABKAlSEnRhcmdldExhbmd1YWdlQ29kZR'
+    'IfCgtzb3VyY2VfdGVybRgFIAEoCVIKc291cmNlVGVybRIvChNhcHByb3ZlZF9lcXVpdmFsZW50'
+    'GAYgASgJUhJhcHByb3ZlZEVxdWl2YWxlbnQSMgoVZGVmaW5pdGlvbl9pbl9jb250ZXh0GAcgAS'
+    'gJUhNkZWZpbml0aW9uSW5Db250ZXh0EiQKDnBhcnRfb2Zfc3BlZWNoGAggASgJUgxwYXJ0T2ZT'
+    'cGVlY2gSHgoKaW5mbGVjdGlvbhgJIAEoCVIKaW5mbGVjdGlvbhIoCg90cmFuc2xpdGVyYXRpb2'
+    '4YCiABKAlSD3RyYW5zbGl0ZXJhdGlvbhItChJwcm9udW5jaWF0aW9uX3RleHQYCyABKAlSEXBy'
+    'b251bmNpYXRpb25UZXh0EjYKF3Byb251bmNpYXRpb25fYXVkaW9fdXJsGAwgASgJUhVwcm9udW'
+    '5jaWF0aW9uQXVkaW9VcmwSHQoKdXNhZ2Vfbm90ZRgNIAEoCVIJdXNhZ2VOb3RlEhoKCHZhcmlh'
+    'bnRzGA4gAygJUgh2YXJpYW50cxIgCgthdHRyaWJ1dGlvbhgPIAEoCVILYXR0cmlidXRpb24SGA'
+    'oHdmVyc2lvbhgQIAEoBVIHdmVyc2lvbhI5Cgp1cGRhdGVkX2F0GBEgASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use onyxMultilingualPreferencesDescriptor instead')
+const OnyxMultilingualPreferences$json = {
+  '1': 'OnyxMultilingualPreferences',
+  '2': [
+    {
+      '1': 'preferred_reading_language_codes',
+      '3': 1,
+      '4': 3,
+      '5': 9,
+      '10': 'preferredReadingLanguageCodes'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {
+      '1': 'reader_mode',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxParallelReaderMode',
+      '10': 'readerMode'
+    },
+    {
+      '1': 'show_original_inline',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'showOriginalInline'
+    },
+    {
+      '1': 'listening_mode',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxBilingualListeningMode',
+      '10': 'listeningMode'
+    },
+    {
+      '1': 'learner_pause_seconds',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'learnerPauseSeconds'
+    },
+    {'1': 'source_voice_id', '3': 7, '4': 1, '5': 9, '10': 'sourceVoiceId'},
+    {'1': 'target_voice_id', '3': 8, '4': 1, '5': 9, '10': 'targetVoiceId'},
+    {
+      '1': 'updated_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualPreferences`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualPreferencesDescriptor = $convert.base64Decode(
+    'ChtPbnl4TXVsdGlsaW5ndWFsUHJlZmVyZW5jZXMSRwogcHJlZmVycmVkX3JlYWRpbmdfbGFuZ3'
+    'VhZ2VfY29kZXMYASADKAlSHXByZWZlcnJlZFJlYWRpbmdMYW5ndWFnZUNvZGVzEjAKFHRhcmdl'
+    'dF9sYW5ndWFnZV9jb2RlGAIgASgJUhJ0YXJnZXRMYW5ndWFnZUNvZGUSSQoLcmVhZGVyX21vZG'
+    'UYAyABKA4yKC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQYXJhbGxlbFJlYWRlck1vZGVSCnJlYWRl'
+    'ck1vZGUSMAoUc2hvd19vcmlnaW5hbF9pbmxpbmUYBCABKAhSEnNob3dPcmlnaW5hbElubGluZR'
+    'JTCg5saXN0ZW5pbmdfbW9kZRgFIAEoDjIsLnN0dGF0dHVzLm9ueXgudjEuT255eEJpbGluZ3Vh'
+    'bExpc3RlbmluZ01vZGVSDWxpc3RlbmluZ01vZGUSMgoVbGVhcm5lcl9wYXVzZV9zZWNvbmRzGA'
+    'YgASgFUhNsZWFybmVyUGF1c2VTZWNvbmRzEiYKD3NvdXJjZV92b2ljZV9pZBgHIAEoCVINc291'
+    'cmNlVm9pY2VJZBImCg90YXJnZXRfdm9pY2VfaWQYCCABKAlSDXRhcmdldFZvaWNlSWQSOQoKdX'
+    'BkYXRlZF9hdBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxCrossLanguageSearchMatchDescriptor instead')
+const OnyxCrossLanguageSearchMatch$json = {
+  '1': 'OnyxCrossLanguageSearchMatch',
+  '2': [
+    {
+      '1': 'content',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'content'
+    },
+    {
+      '1': 'edition',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContentEdition',
+      '10': 'edition'
+    },
+    {
+      '1': 'matched_language_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'matchedLanguageCode'
+    },
+    {
+      '1': 'match_reason',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxSearchMatchReason',
+      '10': 'matchReason'
+    },
+    {'1': 'source_snippet', '3': 5, '4': 1, '5': 9, '10': 'sourceSnippet'},
+    {
+      '1': 'translated_snippet',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'translatedSnippet'
+    },
+    {
+      '1': 'source_passage_key',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'sourcePassageKey'
+    },
+    {
+      '1': 'target_passage_key',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'targetPassageKey'
+    },
+    {
+      '1': 'snippet_attribution',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'snippetAttribution'
+    },
+    {'1': 'score', '3': 10, '4': 1, '5': 1, '10': 'score'},
+  ],
+};
+
+/// Descriptor for `OnyxCrossLanguageSearchMatch`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxCrossLanguageSearchMatchDescriptor = $convert.base64Decode(
+    'ChxPbnl4Q3Jvc3NMYW5ndWFnZVNlYXJjaE1hdGNoEjcKB2NvbnRlbnQYASABKAsyHS5zdHRhdH'
+    'R1cy5vbnl4LnYxLk9ueXhDb250ZW50Ugdjb250ZW50Ej4KB2VkaXRpb24YAiABKAsyJC5zdHRh'
+    'dHR1cy5vbnl4LnYxLk9ueXhDb250ZW50RWRpdGlvblIHZWRpdGlvbhIyChVtYXRjaGVkX2xhbm'
+    'd1YWdlX2NvZGUYAyABKAlSE21hdGNoZWRMYW5ndWFnZUNvZGUSSgoMbWF0Y2hfcmVhc29uGAQg'
+    'ASgOMicuc3R0YXR0dXMub255eC52MS5Pbnl4U2VhcmNoTWF0Y2hSZWFzb25SC21hdGNoUmVhc2'
+    '9uEiUKDnNvdXJjZV9zbmlwcGV0GAUgASgJUg1zb3VyY2VTbmlwcGV0Ei0KEnRyYW5zbGF0ZWRf'
+    'c25pcHBldBgGIAEoCVIRdHJhbnNsYXRlZFNuaXBwZXQSLAoSc291cmNlX3Bhc3NhZ2Vfa2V5GA'
+    'cgASgJUhBzb3VyY2VQYXNzYWdlS2V5EiwKEnRhcmdldF9wYXNzYWdlX2tleRgIIAEoCVIQdGFy'
+    'Z2V0UGFzc2FnZUtleRIvChNzbmlwcGV0X2F0dHJpYnV0aW9uGAkgASgJUhJzbmlwcGV0QXR0cm'
+    'lidXRpb24SFAoFc2NvcmUYCiABKAFSBXNjb3Jl');
+
+@$core.Deprecated('Use onyxCaptionCueDescriptor instead')
+const OnyxCaptionCue$json = {
+  '1': 'OnyxCaptionCue',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {
+      '1': 'start_milliseconds',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'startMilliseconds'
+    },
+    {'1': 'end_milliseconds', '3': 3, '4': 1, '5': 5, '10': 'endMilliseconds'},
+    {'1': 'text', '3': 4, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'speaker_name', '3': 5, '4': 1, '5': 9, '10': 'speakerName'},
+    {'1': 'source_segment_id', '3': 6, '4': 1, '5': 9, '10': 'sourceSegmentId'},
+  ],
+};
+
+/// Descriptor for `OnyxCaptionCue`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxCaptionCueDescriptor = $convert.base64Decode(
+    'Cg5Pbnl4Q2FwdGlvbkN1ZRIOCgJpZBgBIAEoCVICaWQSLQoSc3RhcnRfbWlsbGlzZWNvbmRzGA'
+    'IgASgFUhFzdGFydE1pbGxpc2Vjb25kcxIpChBlbmRfbWlsbGlzZWNvbmRzGAMgASgFUg9lbmRN'
+    'aWxsaXNlY29uZHMSEgoEdGV4dBgEIAEoCVIEdGV4dBIhCgxzcGVha2VyX25hbWUYBSABKAlSC3'
+    'NwZWFrZXJOYW1lEioKEXNvdXJjZV9zZWdtZW50X2lkGAYgASgJUg9zb3VyY2VTZWdtZW50SWQ=');
+
+@$core.Deprecated('Use onyxCaptionTrackDescriptor instead')
+const OnyxCaptionTrack$json = {
+  '1': 'OnyxCaptionTrack',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language_code', '3': 2, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'translation_class',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationClass',
+      '10': 'translationClass'
+    },
+    {
+      '1': 'verification_state',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxVerificationState',
+      '10': 'verificationState'
+    },
+    {
+      '1': 'translator_attribution',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'translatorAttribution'
+    },
+    {
+      '1': 'reviewer_attribution',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'reviewerAttribution'
+    },
+    {'1': 'checksum', '3': 7, '4': 1, '5': 9, '10': 'checksum'},
+    {
+      '1': 'cues',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxCaptionCue',
+      '10': 'cues'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxCaptionTrack`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxCaptionTrackDescriptor = $convert.base64Decode(
+    'ChBPbnl4Q2FwdGlvblRyYWNrEg4KAmlkGAEgASgJUgJpZBIjCg1sYW5ndWFnZV9jb2RlGAIgAS'
+    'gJUgxsYW5ndWFnZUNvZGUSUwoRdHJhbnNsYXRpb25fY2xhc3MYAyABKA4yJi5zdHRhdHR1cy5v'
+    'bnl4LnYxLk9ueXhUcmFuc2xhdGlvbkNsYXNzUhB0cmFuc2xhdGlvbkNsYXNzElYKEnZlcmlmaW'
+    'NhdGlvbl9zdGF0ZRgEIAEoDjInLnN0dGF0dHVzLm9ueXgudjEuT255eFZlcmlmaWNhdGlvblN0'
+    'YXRlUhF2ZXJpZmljYXRpb25TdGF0ZRI1ChZ0cmFuc2xhdG9yX2F0dHJpYnV0aW9uGAUgASgJUh'
+    'V0cmFuc2xhdG9yQXR0cmlidXRpb24SMQoUcmV2aWV3ZXJfYXR0cmlidXRpb24YBiABKAlSE3Jl'
+    'dmlld2VyQXR0cmlidXRpb24SGgoIY2hlY2tzdW0YByABKAlSCGNoZWNrc3VtEjQKBGN1ZXMYCC'
+    'ADKAsyIC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhDYXB0aW9uQ3VlUgRjdWVz');
+
+@$core.Deprecated('Use onyxMediaLanguageTrackDescriptor instead')
+const OnyxMediaLanguageTrack$json = {
+  '1': 'OnyxMediaLanguageTrack',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'language_code', '3': 2, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'delivery',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxVoiceDelivery',
+      '10': 'delivery'
+    },
+    {'1': 'voice_id', '3': 4, '4': 1, '5': 9, '10': 'voiceId'},
+    {'1': 'signed_media_url', '3': 5, '4': 1, '5': 9, '10': 'signedMediaUrl'},
+    {'1': 'duration_seconds', '3': 6, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'checksum', '3': 7, '4': 1, '5': 9, '10': 'checksum'},
+  ],
+};
+
+/// Descriptor for `OnyxMediaLanguageTrack`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMediaLanguageTrackDescriptor = $convert.base64Decode(
+    'ChZPbnl4TWVkaWFMYW5ndWFnZVRyYWNrEg4KAmlkGAEgASgJUgJpZBIjCg1sYW5ndWFnZV9jb2'
+    'RlGAIgASgJUgxsYW5ndWFnZUNvZGUSPwoIZGVsaXZlcnkYAyABKA4yIy5zdHRhdHR1cy5vbnl4'
+    'LnYxLk9ueXhWb2ljZURlbGl2ZXJ5UghkZWxpdmVyeRIZCgh2b2ljZV9pZBgEIAEoCVIHdm9pY2'
+    'VJZBIoChBzaWduZWRfbWVkaWFfdXJsGAUgASgJUg5zaWduZWRNZWRpYVVybBIpChBkdXJhdGlv'
+    'bl9zZWNvbmRzGAYgASgFUg9kdXJhdGlvblNlY29uZHMSGgoIY2hlY2tzdW0YByABKAlSCGNoZW'
+    'Nrc3Vt');
+
+@$core.Deprecated('Use onyxMultilingualAudioVideoDescriptor instead')
+const OnyxMultilingualAudioVideo$json = {
+  '1': 'OnyxMultilingualAudioVideo',
+  '2': [
+    {'1': 'media_id', '3': 1, '4': 1, '5': 9, '10': 'mediaId'},
+    {
+      '1': 'source_language_code',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceLanguageCode'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {
+      '1': 'audio_tracks',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMediaLanguageTrack',
+      '10': 'audioTracks'
+    },
+    {
+      '1': 'caption_tracks',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxCaptionTrack',
+      '10': 'captionTracks'
+    },
+    {
+      '1': 'has_audio_description',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'hasAudioDescription'
+    },
+    {
+      '1': 'live_interpretation_state',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxLiveInterpretationState',
+      '10': 'liveInterpretationState'
+    },
+    {
+      '1': 'live_interpretation_channel_label',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'liveInterpretationChannelLabel'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualAudioVideo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualAudioVideoDescriptor = $convert.base64Decode(
+    'ChpPbnl4TXVsdGlsaW5ndWFsQXVkaW9WaWRlbxIZCghtZWRpYV9pZBgBIAEoCVIHbWVkaWFJZB'
+    'IwChRzb3VyY2VfbGFuZ3VhZ2VfY29kZRgCIAEoCVISc291cmNlTGFuZ3VhZ2VDb2RlEjAKFHRh'
+    'cmdldF9sYW5ndWFnZV9jb2RlGAMgASgJUhJ0YXJnZXRMYW5ndWFnZUNvZGUSSwoMYXVkaW9fdH'
+    'JhY2tzGAQgAygLMiguc3R0YXR0dXMub255eC52MS5Pbnl4TWVkaWFMYW5ndWFnZVRyYWNrUgth'
+    'dWRpb1RyYWNrcxJJCg5jYXB0aW9uX3RyYWNrcxgFIAMoCzIiLnN0dGF0dHVzLm9ueXgudjEuT2'
+    '55eENhcHRpb25UcmFja1INY2FwdGlvblRyYWNrcxIyChVoYXNfYXVkaW9fZGVzY3JpcHRpb24Y'
+    'BiABKAhSE2hhc0F1ZGlvRGVzY3JpcHRpb24SaQoZbGl2ZV9pbnRlcnByZXRhdGlvbl9zdGF0ZR'
+    'gHIAEoDjItLnN0dGF0dHVzLm9ueXgudjEuT255eExpdmVJbnRlcnByZXRhdGlvblN0YXRlUhds'
+    'aXZlSW50ZXJwcmV0YXRpb25TdGF0ZRJJCiFsaXZlX2ludGVycHJldGF0aW9uX2NoYW5uZWxfbG'
+    'FiZWwYCCABKAlSHmxpdmVJbnRlcnByZXRhdGlvbkNoYW5uZWxMYWJlbA==');
+
+@$core.Deprecated('Use onyxTranslationReportDescriptor instead')
+const OnyxTranslationReport$json = {
+  '1': 'OnyxTranslationReport',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 3, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {'1': 'segment_id', '3': 5, '4': 1, '5': 9, '10': 'segmentId'},
+    {'1': 'passage_key', '3': 6, '4': 1, '5': 9, '10': 'passageKey'},
+    {
+      '1': 'issue_type',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationIssueType',
+      '10': 'issueType'
+    },
+    {'1': 'flagged_text', '3': 8, '4': 1, '5': 9, '10': 'flaggedText'},
+    {
+      '1': 'suggested_replacement',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'suggestedReplacement'
+    },
+    {'1': 'member_comment', '3': 10, '4': 1, '5': 9, '10': 'memberComment'},
+    {
+      '1': 'status',
+      '3': 11,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationReportStatus',
+      '10': 'status'
+    },
+    {
+      '1': 'resolution_summary',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'resolutionSummary'
+    },
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxTranslationReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxTranslationReportDescriptor = $convert.base64Decode(
+    'ChVPbnl4VHJhbnNsYXRpb25SZXBvcnQSDgoCaWQYASABKAlSAmlkEh0KCmNvbnRlbnRfaWQYAi'
+    'ABKAlSCWNvbnRlbnRJZBIdCgplZGl0aW9uX2lkGAMgASgJUgllZGl0aW9uSWQSLgoTZWRpdGlv'
+    'bl9yZXZpc2lvbl9pZBgEIAEoCVIRZWRpdGlvblJldmlzaW9uSWQSHQoKc2VnbWVudF9pZBgFIA'
+    'EoCVIJc2VnbWVudElkEh8KC3Bhc3NhZ2Vfa2V5GAYgASgJUgpwYXNzYWdlS2V5EkkKCmlzc3Vl'
+    'X3R5cGUYByABKA4yKi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhUcmFuc2xhdGlvbklzc3VlVHlwZV'
+    'IJaXNzdWVUeXBlEiEKDGZsYWdnZWRfdGV4dBgIIAEoCVILZmxhZ2dlZFRleHQSMwoVc3VnZ2Vz'
+    'dGVkX3JlcGxhY2VtZW50GAkgASgJUhRzdWdnZXN0ZWRSZXBsYWNlbWVudBIlCg5tZW1iZXJfY2'
+    '9tbWVudBgKIAEoCVINbWVtYmVyQ29tbWVudBJFCgZzdGF0dXMYCyABKA4yLS5zdHRhdHR1cy5v'
+    'bnl4LnYxLk9ueXhUcmFuc2xhdGlvblJlcG9ydFN0YXR1c1IGc3RhdHVzEi0KEnJlc29sdXRpb2'
+    '5fc3VtbWFyeRgMIAEoCVIRcmVzb2x1dGlvblN1bW1hcnkSOQoKY3JlYXRlZF9hdBgNIAEoCzIa'
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GA4gAS'
+    'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use onyxMultilingualOfflineManifestDescriptor instead')
+const OnyxMultilingualOfflineManifest$json = {
+  '1': 'OnyxMultilingualOfflineManifest',
+  '2': [
+    {'1': 'manifest_id', '3': 1, '4': 1, '5': 9, '10': 'manifestId'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 3, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {
+      '1': 'source_revision_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'source_language_code',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceLanguageCode'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {
+      '1': 'availability',
+      '3': 8,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxEditionAvailability',
+      '10': 'availability'
+    },
+    {
+      '1': 'includes_aligned_segments',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'includesAlignedSegments'
+    },
+    {
+      '1': 'includes_termbase',
+      '3': 10,
+      '4': 1,
+      '5': 8,
+      '10': 'includesTermbase'
+    },
+    {
+      '1': 'includes_captions',
+      '3': 11,
+      '4': 1,
+      '5': 8,
+      '10': 'includesCaptions'
+    },
+    {
+      '1': 'requires_device_tts',
+      '3': 12,
+      '4': 1,
+      '5': 8,
+      '10': 'requiresDeviceTts'
+    },
+    {'1': 'source_checksum', '3': 13, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'target_checksum', '3': 14, '4': 1, '5': 9, '10': 'targetChecksum'},
+    {'1': 'purge_required', '3': 15, '4': 1, '5': 8, '10': 'purgeRequired'},
+    {'1': 'freeze_reason', '3': 16, '4': 1, '5': 9, '10': 'freezeReason'},
+    {
+      '1': 'rights_expire_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'rightsExpireAt'
+    },
+    {
+      '1': 'generated_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualOfflineManifest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualOfflineManifestDescriptor = $convert.base64Decode(
+    'Ch9Pbnl4TXVsdGlsaW5ndWFsT2ZmbGluZU1hbmlmZXN0Eh8KC21hbmlmZXN0X2lkGAEgASgJUg'
+    'ptYW5pZmVzdElkEh0KCmNvbnRlbnRfaWQYAiABKAlSCWNvbnRlbnRJZBIdCgplZGl0aW9uX2lk'
+    'GAMgASgJUgllZGl0aW9uSWQSLgoTZWRpdGlvbl9yZXZpc2lvbl9pZBgEIAEoCVIRZWRpdGlvbl'
+    'JldmlzaW9uSWQSLAoSc291cmNlX3JldmlzaW9uX2lkGAUgASgJUhBzb3VyY2VSZXZpc2lvbklk'
+    'EjAKFHNvdXJjZV9sYW5ndWFnZV9jb2RlGAYgASgJUhJzb3VyY2VMYW5ndWFnZUNvZGUSMAoUdG'
+    'FyZ2V0X2xhbmd1YWdlX2NvZGUYByABKAlSEnRhcmdldExhbmd1YWdlQ29kZRJNCgxhdmFpbGFi'
+    'aWxpdHkYCCABKA4yKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhFZGl0aW9uQXZhaWxhYmlsaXR5Ug'
+    'xhdmFpbGFiaWxpdHkSOgoZaW5jbHVkZXNfYWxpZ25lZF9zZWdtZW50cxgJIAEoCFIXaW5jbHVk'
+    'ZXNBbGlnbmVkU2VnbWVudHMSKwoRaW5jbHVkZXNfdGVybWJhc2UYCiABKAhSEGluY2x1ZGVzVG'
+    'VybWJhc2USKwoRaW5jbHVkZXNfY2FwdGlvbnMYCyABKAhSEGluY2x1ZGVzQ2FwdGlvbnMSLgoT'
+    'cmVxdWlyZXNfZGV2aWNlX3R0cxgMIAEoCFIRcmVxdWlyZXNEZXZpY2VUdHMSJwoPc291cmNlX2'
+    'NoZWNrc3VtGA0gASgJUg5zb3VyY2VDaGVja3N1bRInCg90YXJnZXRfY2hlY2tzdW0YDiABKAlS'
+    'DnRhcmdldENoZWNrc3VtEiUKDnB1cmdlX3JlcXVpcmVkGA8gASgIUg1wdXJnZVJlcXVpcmVkEi'
+    'MKDWZyZWV6ZV9yZWFzb24YECABKAlSDGZyZWV6ZVJlYXNvbhJEChByaWdodHNfZXhwaXJlX2F0'
+    'GBEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIOcmlnaHRzRXhwaXJlQXQSPQoMZ2'
+    'VuZXJhdGVkX2F0GBIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILZ2VuZXJhdGVk'
+    'QXQ=');
+
+@$core.Deprecated('Use onyxMultilingualExportManifestItemDescriptor instead')
+const OnyxMultilingualExportManifestItem$json = {
+  '1': 'OnyxMultilingualExportManifestItem',
+  '2': [
+    {'1': 'path', '3': 1, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'mime_type', '3': 2, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'checksum', '3': 3, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'language_code', '3': 4, '4': 1, '5': 9, '10': 'languageCode'},
+    {
+      '1': 'source_revision_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'edition_revision_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualExportManifestItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualExportManifestItemDescriptor =
+    $convert.base64Decode(
+        'CiJPbnl4TXVsdGlsaW5ndWFsRXhwb3J0TWFuaWZlc3RJdGVtEhIKBHBhdGgYASABKAlSBHBhdG'
+        'gSGwoJbWltZV90eXBlGAIgASgJUghtaW1lVHlwZRIaCghjaGVja3N1bRgDIAEoCVIIY2hlY2tz'
+        'dW0SIwoNbGFuZ3VhZ2VfY29kZRgEIAEoCVIMbGFuZ3VhZ2VDb2RlEiwKEnNvdXJjZV9yZXZpc2'
+        'lvbl9pZBgFIAEoCVIQc291cmNlUmV2aXNpb25JZBIuChNlZGl0aW9uX3JldmlzaW9uX2lkGAYg'
+        'ASgJUhFlZGl0aW9uUmV2aXNpb25JZA==');
+
+@$core.Deprecated('Use onyxMultilingualExportDescriptor instead')
+const OnyxMultilingualExport$json = {
+  '1': 'OnyxMultilingualExport',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 3, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'format',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExportFormat',
+      '10': 'format'
+    },
+    {
+      '1': 'state',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExportState',
+      '10': 'state'
+    },
+    {'1': 'filename', '3': 6, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 7, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'signed_url', '3': 8, '4': 1, '5': 9, '10': 'signedUrl'},
+    {'1': 'checksum', '3': 9, '4': 1, '5': 9, '10': 'checksum'},
+    {
+      '1': 'source_language_code',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceLanguageCode'
+    },
+    {
+      '1': 'target_language_code',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+    {'1': 'source_checksum', '3': 12, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'target_checksum', '3': 13, '4': 1, '5': 9, '10': 'targetChecksum'},
+    {
+      '1': 'translator_attribution',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'translatorAttribution'
+    },
+    {
+      '1': 'reviewer_attribution',
+      '3': 15,
+      '4': 1,
+      '5': 9,
+      '10': 'reviewerAttribution'
+    },
+    {'1': 'rights_statement', '3': 16, '4': 1, '5': 9, '10': 'rightsStatement'},
+    {'1': 'is_stale', '3': 17, '4': 1, '5': 8, '10': 'isStale'},
+    {'1': 'schema_version', '3': 18, '4': 1, '5': 9, '10': 'schemaVersion'},
+    {
+      '1': 'manifest',
+      '3': 19,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExportManifestItem',
+      '10': 'manifest'
+    },
+    {'1': 'failure_code', '3': 20, '4': 1, '5': 9, '10': 'failureCode'},
+    {
+      '1': 'expires_at',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 22,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 23,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxMultilingualExport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxMultilingualExportDescriptor = $convert.base64Decode(
+    'ChZPbnl4TXVsdGlsaW5ndWFsRXhwb3J0Eg4KAmlkGAEgASgJUgJpZBIdCgpjb250ZW50X2lkGA'
+    'IgASgJUgljb250ZW50SWQSHQoKZWRpdGlvbl9pZBgDIAEoCVIJZWRpdGlvbklkEkYKBmZvcm1h'
+    'dBgEIAEoDjIuLnN0dGF0dHVzLm9ueXgudjEuT255eE11bHRpbGluZ3VhbEV4cG9ydEZvcm1hdF'
+    'IGZm9ybWF0EkMKBXN0YXRlGAUgASgOMi0uc3R0YXR0dXMub255eC52MS5Pbnl4TXVsdGlsaW5n'
+    'dWFsRXhwb3J0U3RhdGVSBXN0YXRlEhoKCGZpbGVuYW1lGAYgASgJUghmaWxlbmFtZRIbCgltaW'
+    '1lX3R5cGUYByABKAlSCG1pbWVUeXBlEh0KCnNpZ25lZF91cmwYCCABKAlSCXNpZ25lZFVybBIa'
+    'CghjaGVja3N1bRgJIAEoCVIIY2hlY2tzdW0SMAoUc291cmNlX2xhbmd1YWdlX2NvZGUYCiABKA'
+    'lSEnNvdXJjZUxhbmd1YWdlQ29kZRIwChR0YXJnZXRfbGFuZ3VhZ2VfY29kZRgLIAEoCVISdGFy'
+    'Z2V0TGFuZ3VhZ2VDb2RlEicKD3NvdXJjZV9jaGVja3N1bRgMIAEoCVIOc291cmNlQ2hlY2tzdW'
+    '0SJwoPdGFyZ2V0X2NoZWNrc3VtGA0gASgJUg50YXJnZXRDaGVja3N1bRI1ChZ0cmFuc2xhdG9y'
+    'X2F0dHJpYnV0aW9uGA4gASgJUhV0cmFuc2xhdG9yQXR0cmlidXRpb24SMQoUcmV2aWV3ZXJfYX'
+    'R0cmlidXRpb24YDyABKAlSE3Jldmlld2VyQXR0cmlidXRpb24SKQoQcmlnaHRzX3N0YXRlbWVu'
+    'dBgQIAEoCVIPcmlnaHRzU3RhdGVtZW50EhkKCGlzX3N0YWxlGBEgASgIUgdpc1N0YWxlEiUKDn'
+    'NjaGVtYV92ZXJzaW9uGBIgASgJUg1zY2hlbWFWZXJzaW9uElAKCG1hbmlmZXN0GBMgAygLMjQu'
+    'c3R0YXR0dXMub255eC52MS5Pbnl4TXVsdGlsaW5ndWFsRXhwb3J0TWFuaWZlc3RJdGVtUghtYW'
+    '5pZmVzdBIhCgxmYWlsdXJlX2NvZGUYFCABKAlSC2ZhaWx1cmVDb2RlEjkKCmV4cGlyZXNfYXQY'
+    'FSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQSOQoKY3JlYXRlZF'
+    '9hdBgWIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRh'
+    'dGVkX2F0GBcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use listLanguageConfigsRequestDescriptor instead')
+const ListLanguageConfigsRequest$json = {
+  '1': 'ListLanguageConfigsRequest',
+};
+
+/// Descriptor for `ListLanguageConfigsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLanguageConfigsRequestDescriptor =
+    $convert.base64Decode('ChpMaXN0TGFuZ3VhZ2VDb25maWdzUmVxdWVzdA==');
+
+@$core.Deprecated('Use listLanguageConfigsResponseDescriptor instead')
+const ListLanguageConfigsResponse$json = {
+  '1': 'ListLanguageConfigsResponse',
+  '2': [
+    {
+      '1': 'languages',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLanguageConfig',
+      '10': 'languages'
+    },
+  ],
+};
+
+/// Descriptor for `ListLanguageConfigsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listLanguageConfigsResponseDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0TGFuZ3VhZ2VDb25maWdzUmVzcG9uc2USQgoJbGFuZ3VhZ2VzGAEgAygLMiQuc3R0YX'
+        'R0dXMub255eC52MS5Pbnl4TGFuZ3VhZ2VDb25maWdSCWxhbmd1YWdlcw==');
+
+@$core.Deprecated('Use listContentEditionsRequestDescriptor instead')
+const ListContentEditionsRequest$json = {
+  '1': 'ListContentEditionsRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'include_unavailable',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'includeUnavailable'
+    },
+  ],
+};
+
+/// Descriptor for `ListContentEditionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContentEditionsRequestDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0Q29udGVudEVkaXRpb25zUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW'
+        '50SWQSLwoTaW5jbHVkZV91bmF2YWlsYWJsZRgCIAEoCFISaW5jbHVkZVVuYXZhaWxhYmxl');
+
+@$core.Deprecated('Use listContentEditionsResponseDescriptor instead')
+const ListContentEditionsResponse$json = {
+  '1': 'ListContentEditionsResponse',
+  '2': [
+    {
+      '1': 'original',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'original'
+    },
+    {
+      '1': 'editions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContentEdition',
+      '10': 'editions'
+    },
+  ],
+};
+
+/// Descriptor for `ListContentEditionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listContentEditionsResponseDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0Q29udGVudEVkaXRpb25zUmVzcG9uc2USOQoIb3JpZ2luYWwYASABKAsyHS5zdHRhdH'
+        'R1cy5vbnl4LnYxLk9ueXhDb250ZW50UghvcmlnaW5hbBJACghlZGl0aW9ucxgCIAMoCzIkLnN0'
+        'dGF0dHVzLm9ueXgudjEuT255eENvbnRlbnRFZGl0aW9uUghlZGl0aW9ucw==');
+
+@$core.Deprecated('Use getAlignedBlocksRequestDescriptor instead')
+const GetAlignedBlocksRequest$json = {
+  '1': 'GetAlignedBlocksRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'source_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceRevisionId'
+    },
+    {
+      '1': 'edition_revision_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {'1': 'after_ordinal', '3': 5, '4': 1, '5': 5, '10': 'afterOrdinal'},
+    {'1': 'limit', '3': 6, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `GetAlignedBlocksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAlignedBlocksRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRBbGlnbmVkQmxvY2tzUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SW'
+    'QSHQoKZWRpdGlvbl9pZBgCIAEoCVIJZWRpdGlvbklkEiwKEnNvdXJjZV9yZXZpc2lvbl9pZBgD'
+    'IAEoCVIQc291cmNlUmV2aXNpb25JZBIuChNlZGl0aW9uX3JldmlzaW9uX2lkGAQgASgJUhFlZG'
+    'l0aW9uUmV2aXNpb25JZBIjCg1hZnRlcl9vcmRpbmFsGAUgASgFUgxhZnRlck9yZGluYWwSFAoF'
+    'bGltaXQYBiABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use getAlignedBlocksResponseDescriptor instead')
+const GetAlignedBlocksResponse$json = {
+  '1': 'GetAlignedBlocksResponse',
+  '2': [
+    {
+      '1': 'lineage',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxEditionLineage',
+      '10': 'lineage'
+    },
+    {
+      '1': 'blocks',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxAlignedBlock',
+      '10': 'blocks'
+    },
+    {'1': 'next_ordinal', '3': 3, '4': 1, '5': 5, '10': 'nextOrdinal'},
+    {'1': 'has_more', '3': 4, '4': 1, '5': 8, '10': 'hasMore'},
+  ],
+};
+
+/// Descriptor for `GetAlignedBlocksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAlignedBlocksResponseDescriptor = $convert.base64Decode(
+    'ChhHZXRBbGlnbmVkQmxvY2tzUmVzcG9uc2USPgoHbGluZWFnZRgBIAEoCzIkLnN0dGF0dHVzLm'
+    '9ueXgudjEuT255eEVkaXRpb25MaW5lYWdlUgdsaW5lYWdlEjoKBmJsb2NrcxgCIAMoCzIiLnN0'
+    'dGF0dHVzLm9ueXgudjEuT255eEFsaWduZWRCbG9ja1IGYmxvY2tzEiEKDG5leHRfb3JkaW5hbB'
+    'gDIAEoBVILbmV4dE9yZGluYWwSGQoIaGFzX21vcmUYBCABKAhSB2hhc01vcmU=');
+
+@$core.Deprecated('Use listTermbaseEntriesRequestDescriptor instead')
+const ListTermbaseEntriesRequest$json = {
+  '1': 'ListTermbaseEntriesRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'segment_id', '3': 3, '4': 1, '5': 9, '10': 'segmentId'},
+    {'1': 'query', '3': 4, '4': 1, '5': 9, '10': 'query'},
+    {'1': 'limit', '3': 5, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListTermbaseEntriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTermbaseEntriesRequestDescriptor = $convert.base64Decode(
+    'ChpMaXN0VGVybWJhc2VFbnRyaWVzUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW'
+    '50SWQSHQoKZWRpdGlvbl9pZBgCIAEoCVIJZWRpdGlvbklkEh0KCnNlZ21lbnRfaWQYAyABKAlS'
+    'CXNlZ21lbnRJZBIUCgVxdWVyeRgEIAEoCVIFcXVlcnkSFAoFbGltaXQYBSABKAVSBWxpbWl0');
+
+@$core.Deprecated('Use listTermbaseEntriesResponseDescriptor instead')
+const ListTermbaseEntriesResponse$json = {
+  '1': 'ListTermbaseEntriesResponse',
+  '2': [
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxTermbaseEntry',
+      '10': 'entries'
+    },
+  ],
+};
+
+/// Descriptor for `ListTermbaseEntriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listTermbaseEntriesResponseDescriptor =
+    $convert.base64Decode(
+        'ChtMaXN0VGVybWJhc2VFbnRyaWVzUmVzcG9uc2USPQoHZW50cmllcxgBIAMoCzIjLnN0dGF0dH'
+        'VzLm9ueXgudjEuT255eFRlcm1iYXNlRW50cnlSB2VudHJpZXM=');
+
+@$core.Deprecated('Use crossLanguageSearchRequestDescriptor instead')
+const CrossLanguageSearchRequest$json = {
+  '1': 'CrossLanguageSearchRequest',
+  '2': [
+    {'1': 'query', '3': 1, '4': 1, '5': 9, '10': 'query'},
+    {
+      '1': 'query_language_code',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'queryLanguageCode'
+    },
+    {
+      '1': 'preferred_target_language_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'preferredTargetLanguageCode'
+    },
+    {
+      '1': 'search_language_codes',
+      '3': 4,
+      '4': 3,
+      '5': 9,
+      '10': 'searchLanguageCodes'
+    },
+    {'1': 'kind', '3': 5, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'shelf_code', '3': 6, '4': 1, '5': 9, '10': 'shelfCode'},
+    {'1': 'limit', '3': 7, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 8, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `CrossLanguageSearchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List crossLanguageSearchRequestDescriptor = $convert.base64Decode(
+    'ChpDcm9zc0xhbmd1YWdlU2VhcmNoUmVxdWVzdBIUCgVxdWVyeRgBIAEoCVIFcXVlcnkSLgoTcX'
+    'VlcnlfbGFuZ3VhZ2VfY29kZRgCIAEoCVIRcXVlcnlMYW5ndWFnZUNvZGUSQwoecHJlZmVycmVk'
+    'X3RhcmdldF9sYW5ndWFnZV9jb2RlGAMgASgJUhtwcmVmZXJyZWRUYXJnZXRMYW5ndWFnZUNvZG'
+    'USMgoVc2VhcmNoX2xhbmd1YWdlX2NvZGVzGAQgAygJUhNzZWFyY2hMYW5ndWFnZUNvZGVzEhIK'
+    'BGtpbmQYBSABKAlSBGtpbmQSHQoKc2hlbGZfY29kZRgGIAEoCVIJc2hlbGZDb2RlEhQKBWxpbW'
+    'l0GAcgASgFUgVsaW1pdBIWCgZvZmZzZXQYCCABKAVSBm9mZnNldA==');
+
+@$core.Deprecated('Use crossLanguageSearchResponseDescriptor instead')
+const CrossLanguageSearchResponse$json = {
+  '1': 'CrossLanguageSearchResponse',
+  '2': [
+    {
+      '1': 'matches',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxCrossLanguageSearchMatch',
+      '10': 'matches'
+    },
+    {'1': 'has_more', '3': 2, '4': 1, '5': 8, '10': 'hasMore'},
+    {
+      '1': 'detected_query_language_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'detectedQueryLanguageCode'
+    },
+  ],
+};
+
+/// Descriptor for `CrossLanguageSearchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List crossLanguageSearchResponseDescriptor = $convert.base64Decode(
+    'ChtDcm9zc0xhbmd1YWdlU2VhcmNoUmVzcG9uc2USSAoHbWF0Y2hlcxgBIAMoCzIuLnN0dGF0dH'
+    'VzLm9ueXgudjEuT255eENyb3NzTGFuZ3VhZ2VTZWFyY2hNYXRjaFIHbWF0Y2hlcxIZCghoYXNf'
+    'bW9yZRgCIAEoCFIHaGFzTW9yZRI/ChxkZXRlY3RlZF9xdWVyeV9sYW5ndWFnZV9jb2RlGAMgAS'
+    'gJUhlkZXRlY3RlZFF1ZXJ5TGFuZ3VhZ2VDb2Rl');
+
+@$core.Deprecated('Use getMultilingualPreferencesRequestDescriptor instead')
+const GetMultilingualPreferencesRequest$json = {
+  '1': 'GetMultilingualPreferencesRequest',
+};
+
+/// Descriptor for `GetMultilingualPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualPreferencesRequestDescriptor =
+    $convert.base64Decode('CiFHZXRNdWx0aWxpbmd1YWxQcmVmZXJlbmNlc1JlcXVlc3Q=');
+
+@$core.Deprecated('Use getMultilingualPreferencesResponseDescriptor instead')
+const GetMultilingualPreferencesResponse$json = {
+  '1': 'GetMultilingualPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `GetMultilingualPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'CiJHZXRNdWx0aWxpbmd1YWxQcmVmZXJlbmNlc1Jlc3BvbnNlEk8KC3ByZWZlcmVuY2VzGAEgAS'
+        'gLMi0uc3R0YXR0dXMub255eC52MS5Pbnl4TXVsdGlsaW5ndWFsUHJlZmVyZW5jZXNSC3ByZWZl'
+        'cmVuY2Vz');
+
+@$core.Deprecated('Use updateMultilingualPreferencesRequestDescriptor instead')
+const UpdateMultilingualPreferencesRequest$json = {
+  '1': 'UpdateMultilingualPreferencesRequest',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualPreferences',
+      '10': 'preferences'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateMultilingualPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMultilingualPreferencesRequestDescriptor =
+    $convert.base64Decode(
+        'CiRVcGRhdGVNdWx0aWxpbmd1YWxQcmVmZXJlbmNlc1JlcXVlc3QSTwoLcHJlZmVyZW5jZXMYAS'
+        'ABKAsyLS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhNdWx0aWxpbmd1YWxQcmVmZXJlbmNlc1ILcHJl'
+        'ZmVyZW5jZXMSLAoSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use updateMultilingualPreferencesResponseDescriptor instead')
+const UpdateMultilingualPreferencesResponse$json = {
+  '1': 'UpdateMultilingualPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateMultilingualPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateMultilingualPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'CiVVcGRhdGVNdWx0aWxpbmd1YWxQcmVmZXJlbmNlc1Jlc3BvbnNlEk8KC3ByZWZlcmVuY2VzGA'
+        'EgASgLMi0uc3R0YXR0dXMub255eC52MS5Pbnl4TXVsdGlsaW5ndWFsUHJlZmVyZW5jZXNSC3By'
+        'ZWZlcmVuY2Vz');
+
+@$core.Deprecated('Use getMultilingualAudioVideoRequestDescriptor instead')
+const GetMultilingualAudioVideoRequest$json = {
+  '1': 'GetMultilingualAudioVideoRequest',
+  '2': [
+    {'1': 'media_id', '3': 1, '4': 1, '5': 9, '10': 'mediaId'},
+    {
+      '1': 'target_language_code',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'targetLanguageCode'
+    },
+  ],
+};
+
+/// Descriptor for `GetMultilingualAudioVideoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualAudioVideoRequestDescriptor =
+    $convert.base64Decode(
+        'CiBHZXRNdWx0aWxpbmd1YWxBdWRpb1ZpZGVvUmVxdWVzdBIZCghtZWRpYV9pZBgBIAEoCVIHbW'
+        'VkaWFJZBIwChR0YXJnZXRfbGFuZ3VhZ2VfY29kZRgCIAEoCVISdGFyZ2V0TGFuZ3VhZ2VDb2Rl');
+
+@$core.Deprecated('Use getMultilingualAudioVideoResponseDescriptor instead')
+const GetMultilingualAudioVideoResponse$json = {
+  '1': 'GetMultilingualAudioVideoResponse',
+  '2': [
+    {
+      '1': 'media',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualAudioVideo',
+      '10': 'media'
+    },
+  ],
+};
+
+/// Descriptor for `GetMultilingualAudioVideoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualAudioVideoResponseDescriptor =
+    $convert.base64Decode(
+        'CiFHZXRNdWx0aWxpbmd1YWxBdWRpb1ZpZGVvUmVzcG9uc2USQgoFbWVkaWEYASABKAsyLC5zdH'
+        'RhdHR1cy5vbnl4LnYxLk9ueXhNdWx0aWxpbmd1YWxBdWRpb1ZpZGVvUgVtZWRpYQ==');
+
+@$core.Deprecated('Use getMultilingualOfflineManifestRequestDescriptor instead')
+const GetMultilingualOfflineManifestRequest$json = {
+  '1': 'GetMultilingualOfflineManifestRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'device_id', '3': 3, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `GetMultilingualOfflineManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualOfflineManifestRequestDescriptor =
+    $convert.base64Decode(
+        'CiVHZXRNdWx0aWxpbmd1YWxPZmZsaW5lTWFuaWZlc3RSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYAS'
+        'ABKAlSCWNvbnRlbnRJZBIdCgplZGl0aW9uX2lkGAIgASgJUgllZGl0aW9uSWQSGwoJZGV2aWNl'
+        'X2lkGAMgASgJUghkZXZpY2VJZA==');
+
+@$core
+    .Deprecated('Use getMultilingualOfflineManifestResponseDescriptor instead')
+const GetMultilingualOfflineManifestResponse$json = {
+  '1': 'GetMultilingualOfflineManifestResponse',
+  '2': [
+    {
+      '1': 'manifest',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualOfflineManifest',
+      '10': 'manifest'
+    },
+  ],
+};
+
+/// Descriptor for `GetMultilingualOfflineManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualOfflineManifestResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRNdWx0aWxpbmd1YWxPZmZsaW5lTWFuaWZlc3RSZXNwb25zZRJNCghtYW5pZmVzdBgBIA'
+        'EoCzIxLnN0dGF0dHVzLm9ueXgudjEuT255eE11bHRpbGluZ3VhbE9mZmxpbmVNYW5pZmVzdFII'
+        'bWFuaWZlc3Q=');
+
+@$core.Deprecated('Use reportTranslationIssueRequestDescriptor instead')
+const ReportTranslationIssueRequest$json = {
+  '1': 'ReportTranslationIssueRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'edition_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'editionRevisionId'
+    },
+    {'1': 'segment_id', '3': 4, '4': 1, '5': 9, '10': 'segmentId'},
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {
+      '1': 'issue_type',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxTranslationIssueType',
+      '10': 'issueType'
+    },
+    {'1': 'flagged_text', '3': 7, '4': 1, '5': 9, '10': 'flaggedText'},
+    {
+      '1': 'suggested_replacement',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'suggestedReplacement'
+    },
+    {'1': 'member_comment', '3': 9, '4': 1, '5': 9, '10': 'memberComment'},
+    {
+      '1': 'client_mutation_id',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ReportTranslationIssueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportTranslationIssueRequestDescriptor = $convert.base64Decode(
+    'Ch1SZXBvcnRUcmFuc2xhdGlvbklzc3VlUmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb2'
+    '50ZW50SWQSHQoKZWRpdGlvbl9pZBgCIAEoCVIJZWRpdGlvbklkEi4KE2VkaXRpb25fcmV2aXNp'
+    'b25faWQYAyABKAlSEWVkaXRpb25SZXZpc2lvbklkEh0KCnNlZ21lbnRfaWQYBCABKAlSCXNlZ2'
+    '1lbnRJZBIfCgtwYXNzYWdlX2tleRgFIAEoCVIKcGFzc2FnZUtleRJJCgppc3N1ZV90eXBlGAYg'
+    'ASgOMiouc3R0YXR0dXMub255eC52MS5Pbnl4VHJhbnNsYXRpb25Jc3N1ZVR5cGVSCWlzc3VlVH'
+    'lwZRIhCgxmbGFnZ2VkX3RleHQYByABKAlSC2ZsYWdnZWRUZXh0EjMKFXN1Z2dlc3RlZF9yZXBs'
+    'YWNlbWVudBgIIAEoCVIUc3VnZ2VzdGVkUmVwbGFjZW1lbnQSJQoObWVtYmVyX2NvbW1lbnQYCS'
+    'ABKAlSDW1lbWJlckNvbW1lbnQSLAoSY2xpZW50X211dGF0aW9uX2lkGAogASgJUhBjbGllbnRN'
+    'dXRhdGlvbklk');
+
+@$core.Deprecated('Use reportTranslationIssueResponseDescriptor instead')
+const ReportTranslationIssueResponse$json = {
+  '1': 'ReportTranslationIssueResponse',
+  '2': [
+    {
+      '1': 'report',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxTranslationReport',
+      '10': 'report'
+    },
+  ],
+};
+
+/// Descriptor for `ReportTranslationIssueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportTranslationIssueResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5SZXBvcnRUcmFuc2xhdGlvbklzc3VlUmVzcG9uc2USPwoGcmVwb3J0GAEgASgLMicuc3R0YX'
+        'R0dXMub255eC52MS5Pbnl4VHJhbnNsYXRpb25SZXBvcnRSBnJlcG9ydA==');
+
+@$core.Deprecated('Use requestMultilingualExportRequestDescriptor instead')
+const RequestMultilingualExportRequest$json = {
+  '1': 'RequestMultilingualExportRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'format',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExportFormat',
+      '10': 'format'
+    },
+    {'1': 'include_original', '3': 4, '4': 1, '5': 8, '10': 'includeOriginal'},
+    {'1': 'include_termbase', '3': 5, '4': 1, '5': 8, '10': 'includeTermbase'},
+    {
+      '1': 'include_citations',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'includeCitations'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RequestMultilingualExportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestMultilingualExportRequestDescriptor = $convert.base64Decode(
+    'CiBSZXF1ZXN0TXVsdGlsaW5ndWFsRXhwb3J0UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUg'
+    'ljb250ZW50SWQSHQoKZWRpdGlvbl9pZBgCIAEoCVIJZWRpdGlvbklkEkYKBmZvcm1hdBgDIAEo'
+    'DjIuLnN0dGF0dHVzLm9ueXgudjEuT255eE11bHRpbGluZ3VhbEV4cG9ydEZvcm1hdFIGZm9ybW'
+    'F0EikKEGluY2x1ZGVfb3JpZ2luYWwYBCABKAhSD2luY2x1ZGVPcmlnaW5hbBIpChBpbmNsdWRl'
+    'X3Rlcm1iYXNlGAUgASgIUg9pbmNsdWRlVGVybWJhc2USKwoRaW5jbHVkZV9jaXRhdGlvbnMYBi'
+    'ABKAhSEGluY2x1ZGVDaXRhdGlvbnMSLAoSY2xpZW50X211dGF0aW9uX2lkGAcgASgJUhBjbGll'
+    'bnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use requestMultilingualExportResponseDescriptor instead')
+const RequestMultilingualExportResponse$json = {
+  '1': 'RequestMultilingualExportResponse',
+  '2': [
+    {
+      '1': 'export',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExport',
+      '10': 'export'
+    },
+  ],
+};
+
+/// Descriptor for `RequestMultilingualExportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestMultilingualExportResponseDescriptor =
+    $convert.base64Decode(
+        'CiFSZXF1ZXN0TXVsdGlsaW5ndWFsRXhwb3J0UmVzcG9uc2USQAoGZXhwb3J0GAEgASgLMiguc3'
+        'R0YXR0dXMub255eC52MS5Pbnl4TXVsdGlsaW5ndWFsRXhwb3J0UgZleHBvcnQ=');
+
+@$core.Deprecated('Use getMultilingualExportRequestDescriptor instead')
+const GetMultilingualExportRequest$json = {
+  '1': 'GetMultilingualExportRequest',
+  '2': [
+    {'1': 'export_id', '3': 1, '4': 1, '5': 9, '10': 'exportId'},
+  ],
+};
+
+/// Descriptor for `GetMultilingualExportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualExportRequestDescriptor =
+    $convert.base64Decode(
+        'ChxHZXRNdWx0aWxpbmd1YWxFeHBvcnRSZXF1ZXN0EhsKCWV4cG9ydF9pZBgBIAEoCVIIZXhwb3'
+        'J0SWQ=');
+
+@$core.Deprecated('Use getMultilingualExportResponseDescriptor instead')
+const GetMultilingualExportResponse$json = {
+  '1': 'GetMultilingualExportResponse',
+  '2': [
+    {
+      '1': 'export',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxMultilingualExport',
+      '10': 'export'
+    },
+  ],
+};
+
+/// Descriptor for `GetMultilingualExportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMultilingualExportResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1HZXRNdWx0aWxpbmd1YWxFeHBvcnRSZXNwb25zZRJACgZleHBvcnQYASABKAsyKC5zdHRhdH'
+        'R1cy5vbnl4LnYxLk9ueXhNdWx0aWxpbmd1YWxFeHBvcnRSBmV4cG9ydA==');

@@ -306,6 +306,16 @@ class OnyxContent extends $pb.GeneratedMessage {
     $core.int? progressOffset,
     $core.bool? isPrivateCapture,
     $core.String? sourceCaptureId,
+    $core.String? languageCode,
+    $core.String? originalContentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? sourceRevisionId,
+    OnyxTranslationClass? translationClass,
+    OnyxVerificationState? translationVerificationState,
+    OnyxEditionAvailability? editionAvailability,
+    $core.Iterable<OnyxContentEdition>? availableEditions,
+    $core.bool? isStaleTranslation,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -341,6 +351,20 @@ class OnyxContent extends $pb.GeneratedMessage {
     if (progressOffset != null) result.progressOffset = progressOffset;
     if (isPrivateCapture != null) result.isPrivateCapture = isPrivateCapture;
     if (sourceCaptureId != null) result.sourceCaptureId = sourceCaptureId;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (originalContentId != null) result.originalContentId = originalContentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (translationClass != null) result.translationClass = translationClass;
+    if (translationVerificationState != null)
+      result.translationVerificationState = translationVerificationState;
+    if (editionAvailability != null)
+      result.editionAvailability = editionAvailability;
+    if (availableEditions != null)
+      result.availableEditions.addAll(availableEditions);
+    if (isStaleTranslation != null)
+      result.isStaleTranslation = isStaleTranslation;
     return result;
   }
 
@@ -392,6 +416,22 @@ class OnyxContent extends $pb.GeneratedMessage {
     ..aI(28, _omitFieldNames ? '' : 'progressOffset')
     ..aOB(29, _omitFieldNames ? '' : 'isPrivateCapture')
     ..aOS(30, _omitFieldNames ? '' : 'sourceCaptureId')
+    ..aOS(31, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(32, _omitFieldNames ? '' : 'originalContentId')
+    ..aOS(33, _omitFieldNames ? '' : 'editionId')
+    ..aOS(34, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(35, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aE<OnyxTranslationClass>(36, _omitFieldNames ? '' : 'translationClass',
+        enumValues: OnyxTranslationClass.values)
+    ..aE<OnyxVerificationState>(
+        37, _omitFieldNames ? '' : 'translationVerificationState',
+        enumValues: OnyxVerificationState.values)
+    ..aE<OnyxEditionAvailability>(
+        38, _omitFieldNames ? '' : 'editionAvailability',
+        enumValues: OnyxEditionAvailability.values)
+    ..pPM<OnyxContentEdition>(39, _omitFieldNames ? '' : 'availableEditions',
+        subBuilder: OnyxContentEdition.create)
+    ..aOB(40, _omitFieldNames ? '' : 'isStaleTranslation')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -692,6 +732,407 @@ class OnyxContent extends $pb.GeneratedMessage {
   $core.bool hasSourceCaptureId() => $_has(29);
   @$pb.TagNumber(30)
   void clearSourceCaptureId() => $_clearField(30);
+
+  /// Choice 11 — Multilingual Editions
+  /// Canonical, normalized BCP-47 tag for the bytes/text returned in this
+  /// message. It is content identity, not the member's interface locale.
+  @$pb.TagNumber(31)
+  $core.String get languageCode => $_getSZ(30);
+  @$pb.TagNumber(31)
+  set languageCode($core.String value) => $_setString(30, value);
+  @$pb.TagNumber(31)
+  $core.bool hasLanguageCode() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearLanguageCode() => $_clearField(31);
+
+  /// Empty on an original work. Editions always point back to the stable
+  /// original content and immutable source revision that they translate.
+  @$pb.TagNumber(32)
+  $core.String get originalContentId => $_getSZ(31);
+  @$pb.TagNumber(32)
+  set originalContentId($core.String value) => $_setString(31, value);
+  @$pb.TagNumber(32)
+  $core.bool hasOriginalContentId() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearOriginalContentId() => $_clearField(32);
+
+  @$pb.TagNumber(33)
+  $core.String get editionId => $_getSZ(32);
+  @$pb.TagNumber(33)
+  set editionId($core.String value) => $_setString(32, value);
+  @$pb.TagNumber(33)
+  $core.bool hasEditionId() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearEditionId() => $_clearField(33);
+
+  @$pb.TagNumber(34)
+  $core.String get editionRevisionId => $_getSZ(33);
+  @$pb.TagNumber(34)
+  set editionRevisionId($core.String value) => $_setString(33, value);
+  @$pb.TagNumber(34)
+  $core.bool hasEditionRevisionId() => $_has(33);
+  @$pb.TagNumber(34)
+  void clearEditionRevisionId() => $_clearField(34);
+
+  @$pb.TagNumber(35)
+  $core.String get sourceRevisionId => $_getSZ(34);
+  @$pb.TagNumber(35)
+  set sourceRevisionId($core.String value) => $_setString(34, value);
+  @$pb.TagNumber(35)
+  $core.bool hasSourceRevisionId() => $_has(34);
+  @$pb.TagNumber(35)
+  void clearSourceRevisionId() => $_clearField(35);
+
+  @$pb.TagNumber(36)
+  OnyxTranslationClass get translationClass => $_getN(35);
+  @$pb.TagNumber(36)
+  set translationClass(OnyxTranslationClass value) => $_setField(36, value);
+  @$pb.TagNumber(36)
+  $core.bool hasTranslationClass() => $_has(35);
+  @$pb.TagNumber(36)
+  void clearTranslationClass() => $_clearField(36);
+
+  @$pb.TagNumber(37)
+  OnyxVerificationState get translationVerificationState => $_getN(36);
+  @$pb.TagNumber(37)
+  set translationVerificationState(OnyxVerificationState value) =>
+      $_setField(37, value);
+  @$pb.TagNumber(37)
+  $core.bool hasTranslationVerificationState() => $_has(36);
+  @$pb.TagNumber(37)
+  void clearTranslationVerificationState() => $_clearField(37);
+
+  @$pb.TagNumber(38)
+  OnyxEditionAvailability get editionAvailability => $_getN(37);
+  @$pb.TagNumber(38)
+  set editionAvailability(OnyxEditionAvailability value) =>
+      $_setField(38, value);
+  @$pb.TagNumber(38)
+  $core.bool hasEditionAvailability() => $_has(37);
+  @$pb.TagNumber(38)
+  void clearEditionAvailability() => $_clearField(38);
+
+  @$pb.TagNumber(39)
+  $pb.PbList<OnyxContentEdition> get availableEditions => $_getList(38);
+
+  @$pb.TagNumber(40)
+  $core.bool get isStaleTranslation => $_getBF(39);
+  @$pb.TagNumber(40)
+  set isStaleTranslation($core.bool value) => $_setBool(39, value);
+  @$pb.TagNumber(40)
+  $core.bool hasIsStaleTranslation() => $_has(39);
+  @$pb.TagNumber(40)
+  void clearIsStaleTranslation() => $_clearField(40);
+}
+
+/// OnyxContentEdition represents an available language/locale edition summary for a piece of content.
+class OnyxContentEdition extends $pb.GeneratedMessage {
+  factory OnyxContentEdition({
+    $core.String? editionId,
+    $core.String? contentId,
+    $core.String? editionRevisionId,
+    $core.int? editionRevisionNumber,
+    $core.String? sourceContentId,
+    $core.String? sourceRevisionId,
+    $core.int? sourceRevisionNumber,
+    $core.String? languageCode,
+    $core.String? nativeLanguageName,
+    OnyxTranslationClass? translationClass,
+    OnyxVerificationState? verificationState,
+    OnyxEditionAvailability? availability,
+    $core.String? translatorAttribution,
+    $core.String? reviewerAttribution,
+    $core.String? rightsStatement,
+    $core.double? qualityScore,
+    $core.String? sourceChecksum,
+    $core.String? targetChecksum,
+    $core.bool? isOriginal,
+    $1.Timestamp? publishedAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (editionId != null) result.editionId = editionId;
+    if (contentId != null) result.contentId = contentId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (editionRevisionNumber != null)
+      result.editionRevisionNumber = editionRevisionNumber;
+    if (sourceContentId != null) result.sourceContentId = sourceContentId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (sourceRevisionNumber != null)
+      result.sourceRevisionNumber = sourceRevisionNumber;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (nativeLanguageName != null)
+      result.nativeLanguageName = nativeLanguageName;
+    if (translationClass != null) result.translationClass = translationClass;
+    if (verificationState != null) result.verificationState = verificationState;
+    if (availability != null) result.availability = availability;
+    if (translatorAttribution != null)
+      result.translatorAttribution = translatorAttribution;
+    if (reviewerAttribution != null)
+      result.reviewerAttribution = reviewerAttribution;
+    if (rightsStatement != null) result.rightsStatement = rightsStatement;
+    if (qualityScore != null) result.qualityScore = qualityScore;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (targetChecksum != null) result.targetChecksum = targetChecksum;
+    if (isOriginal != null) result.isOriginal = isOriginal;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxContentEdition._();
+
+  factory OnyxContentEdition.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxContentEdition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxContentEdition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'editionId')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aI(4, _omitFieldNames ? '' : 'editionRevisionNumber')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceContentId')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aI(7, _omitFieldNames ? '' : 'sourceRevisionNumber')
+    ..aOS(8, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(9, _omitFieldNames ? '' : 'nativeLanguageName')
+    ..aE<OnyxTranslationClass>(10, _omitFieldNames ? '' : 'translationClass',
+        enumValues: OnyxTranslationClass.values)
+    ..aE<OnyxVerificationState>(11, _omitFieldNames ? '' : 'verificationState',
+        enumValues: OnyxVerificationState.values)
+    ..aE<OnyxEditionAvailability>(12, _omitFieldNames ? '' : 'availability',
+        enumValues: OnyxEditionAvailability.values)
+    ..aOS(13, _omitFieldNames ? '' : 'translatorAttribution')
+    ..aOS(14, _omitFieldNames ? '' : 'reviewerAttribution')
+    ..aOS(15, _omitFieldNames ? '' : 'rightsStatement')
+    ..aD(16, _omitFieldNames ? '' : 'qualityScore')
+    ..aOS(17, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(18, _omitFieldNames ? '' : 'targetChecksum')
+    ..aOB(19, _omitFieldNames ? '' : 'isOriginal')
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(21, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxContentEdition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxContentEdition copyWith(void Function(OnyxContentEdition) updates) =>
+      super.copyWith((message) => updates(message as OnyxContentEdition))
+          as OnyxContentEdition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxContentEdition create() => OnyxContentEdition._();
+  @$core.override
+  OnyxContentEdition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxContentEdition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxContentEdition>(create);
+  static OnyxContentEdition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get editionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set editionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEditionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEditionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get editionRevisionNumber => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set editionRevisionNumber($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionRevisionNumber() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionRevisionNumber() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceContentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceContentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceContentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceContentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceRevisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceRevisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get sourceRevisionNumber => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set sourceRevisionNumber($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSourceRevisionNumber() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourceRevisionNumber() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get languageCode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set languageCode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLanguageCode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLanguageCode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get nativeLanguageName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set nativeLanguageName($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNativeLanguageName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNativeLanguageName() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  OnyxTranslationClass get translationClass => $_getN(9);
+  @$pb.TagNumber(10)
+  set translationClass(OnyxTranslationClass value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTranslationClass() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTranslationClass() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  OnyxVerificationState get verificationState => $_getN(10);
+  @$pb.TagNumber(11)
+  set verificationState(OnyxVerificationState value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasVerificationState() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearVerificationState() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  OnyxEditionAvailability get availability => $_getN(11);
+  @$pb.TagNumber(12)
+  set availability(OnyxEditionAvailability value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasAvailability() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAvailability() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get translatorAttribution => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set translatorAttribution($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasTranslatorAttribution() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTranslatorAttribution() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get reviewerAttribution => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set reviewerAttribution($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasReviewerAttribution() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearReviewerAttribution() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get rightsStatement => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set rightsStatement($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasRightsStatement() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearRightsStatement() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get qualityScore => $_getN(15);
+  @$pb.TagNumber(16)
+  set qualityScore($core.double value) => $_setDouble(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasQualityScore() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearQualityScore() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get sourceChecksum => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set sourceChecksum($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasSourceChecksum() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSourceChecksum() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get targetChecksum => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set targetChecksum($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasTargetChecksum() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearTargetChecksum() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.bool get isOriginal => $_getBF(18);
+  @$pb.TagNumber(19)
+  set isOriginal($core.bool value) => $_setBool(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasIsOriginal() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearIsOriginal() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get publishedAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set publishedAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPublishedAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPublishedAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensurePublishedAt() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $1.Timestamp get updatedAt => $_getN(20);
+  @$pb.TagNumber(21)
+  set updatedAt($1.Timestamp value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasUpdatedAt() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearUpdatedAt() => $_clearField(21);
+  @$pb.TagNumber(21)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(20);
 }
 
 /// A stable, addressable passage in one immutable editorial revision.
@@ -704,6 +1145,9 @@ class DocumentBlock extends $pb.GeneratedMessage {
     $core.String? blockType,
     $core.String? markdown,
     $core.String? plainText,
+    $core.String? languageCode,
+    $core.String? segmentId,
+    $core.String? editionRevisionId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -713,6 +1157,9 @@ class DocumentBlock extends $pb.GeneratedMessage {
     if (blockType != null) result.blockType = blockType;
     if (markdown != null) result.markdown = markdown;
     if (plainText != null) result.plainText = plainText;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
     return result;
   }
 
@@ -737,6 +1184,9 @@ class DocumentBlock extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'blockType')
     ..aOS(6, _omitFieldNames ? '' : 'markdown')
     ..aOS(7, _omitFieldNames ? '' : 'plainText')
+    ..aOS(8, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(9, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(10, _omitFieldNames ? '' : 'editionRevisionId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -820,6 +1270,33 @@ class DocumentBlock extends $pb.GeneratedMessage {
   $core.bool hasPlainText() => $_has(6);
   @$pb.TagNumber(7)
   void clearPlainText() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get languageCode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set languageCode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLanguageCode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLanguageCode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get segmentId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set segmentId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSegmentId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSegmentId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get editionRevisionId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set editionRevisionId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasEditionRevisionId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEditionRevisionId() => $_clearField(10);
 }
 
 /// Subscription represents an exclusive link between user and creator.
@@ -3147,12 +3624,17 @@ class SearchContentRequest extends $pb.GeneratedMessage {
     $core.String? kind,
     $core.String? shelfCode,
     $core.int? limit,
+    $core.String? contentLanguageCode,
+    $core.String? queryLanguageCode,
   }) {
     final result = create();
     if (query != null) result.query = query;
     if (kind != null) result.kind = kind;
     if (shelfCode != null) result.shelfCode = shelfCode;
     if (limit != null) result.limit = limit;
+    if (contentLanguageCode != null)
+      result.contentLanguageCode = contentLanguageCode;
+    if (queryLanguageCode != null) result.queryLanguageCode = queryLanguageCode;
     return result;
   }
 
@@ -3174,6 +3656,8 @@ class SearchContentRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'kind')
     ..aOS(3, _omitFieldNames ? '' : 'shelfCode')
     ..aI(4, _omitFieldNames ? '' : 'limit')
+    ..aOS(5, _omitFieldNames ? '' : 'contentLanguageCode')
+    ..aOS(6, _omitFieldNames ? '' : 'queryLanguageCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3230,6 +3714,26 @@ class SearchContentRequest extends $pb.GeneratedMessage {
   $core.bool hasLimit() => $_has(3);
   @$pb.TagNumber(4)
   void clearLimit() => $_clearField(4);
+
+  /// A base tag such as "es" matches its registered variants (for example
+  /// es-ES and es-MX); a regional tag requests that exact registered variant.
+  @$pb.TagNumber(5)
+  $core.String get contentLanguageCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contentLanguageCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContentLanguageCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContentLanguageCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get queryLanguageCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set queryLanguageCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQueryLanguageCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQueryLanguageCode() => $_clearField(6);
 }
 
 class SearchContentResponse extends $pb.GeneratedMessage {
@@ -3756,6 +4260,10 @@ class ReaderAnnotation extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $core.String? contentTitle,
+    $core.String? segmentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? annotationLanguageCode,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -3773,6 +4281,11 @@ class ReaderAnnotation extends $pb.GeneratedMessage {
     if (createdAt != null) result.createdAt = createdAt;
     if (updatedAt != null) result.updatedAt = updatedAt;
     if (contentTitle != null) result.contentTitle = contentTitle;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (annotationLanguageCode != null)
+      result.annotationLanguageCode = annotationLanguageCode;
     return result;
   }
 
@@ -3807,6 +4320,10 @@ class ReaderAnnotation extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
         subBuilder: $1.Timestamp.create)
     ..aOS(15, _omitFieldNames ? '' : 'contentTitle')
+    ..aOS(16, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(17, _omitFieldNames ? '' : 'editionId')
+    ..aOS(18, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(19, _omitFieldNames ? '' : 'annotationLanguageCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3960,6 +4477,42 @@ class ReaderAnnotation extends $pb.GeneratedMessage {
   $core.bool hasContentTitle() => $_has(14);
   @$pb.TagNumber(15)
   void clearContentTitle() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get segmentId => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set segmentId($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasSegmentId() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSegmentId() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get editionId => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set editionId($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasEditionId() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearEditionId() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get editionRevisionId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set editionRevisionId($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasEditionRevisionId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearEditionRevisionId() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get annotationLanguageCode => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set annotationLanguageCode($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasAnnotationLanguageCode() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearAnnotationLanguageCode() => $_clearField(19);
 }
 
 class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
@@ -3977,6 +4530,10 @@ class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
     $core.int? endOffset,
     $core.String? clientMutationId,
     $fixnum.Int64? expectedVersion,
+    $core.String? segmentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? annotationLanguageCode,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -3992,6 +4549,11 @@ class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
     if (endOffset != null) result.endOffset = endOffset;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
     if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (annotationLanguageCode != null)
+      result.annotationLanguageCode = annotationLanguageCode;
     return result;
   }
 
@@ -4022,6 +4584,10 @@ class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
     ..aI(11, _omitFieldNames ? '' : 'endOffset')
     ..aOS(12, _omitFieldNames ? '' : 'clientMutationId')
     ..aInt64(13, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(14, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(15, _omitFieldNames ? '' : 'editionId')
+    ..aOS(16, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(17, _omitFieldNames ? '' : 'annotationLanguageCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4156,6 +4722,42 @@ class UpsertReaderAnnotationRequest extends $pb.GeneratedMessage {
   $core.bool hasExpectedVersion() => $_has(12);
   @$pb.TagNumber(13)
   void clearExpectedVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get segmentId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set segmentId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasSegmentId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearSegmentId() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get editionId => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set editionId($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasEditionId() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearEditionId() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get editionRevisionId => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set editionRevisionId($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasEditionRevisionId() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearEditionRevisionId() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get annotationLanguageCode => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set annotationLanguageCode($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasAnnotationLanguageCode() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAnnotationLanguageCode() => $_clearField(17);
 }
 
 class UpsertReaderAnnotationResponse extends $pb.GeneratedMessage {
@@ -40688,6 +41290,5082 @@ class RebuildPersonalIntelligenceGraphResponse extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatus() => $_clearField(2);
+}
+
+class OnyxLanguageConfig extends $pb.GeneratedMessage {
+  factory OnyxLanguageConfig({
+    $core.String? languageCode,
+    $core.String? baseLanguage,
+    $core.String? scriptCode,
+    $core.String? regionCode,
+    $core.String? englishName,
+    $core.String? nativeName,
+    $core.bool? isRightToLeft,
+    $core.bool? bundledFontSupported,
+    $core.Iterable<OnyxLanguageCapability>? capabilities,
+    $core.Iterable<$core.String>? availableRegionCodes,
+    $core.bool? isEnabled,
+    $core.String? fallbackLanguageCode,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (languageCode != null) result.languageCode = languageCode;
+    if (baseLanguage != null) result.baseLanguage = baseLanguage;
+    if (scriptCode != null) result.scriptCode = scriptCode;
+    if (regionCode != null) result.regionCode = regionCode;
+    if (englishName != null) result.englishName = englishName;
+    if (nativeName != null) result.nativeName = nativeName;
+    if (isRightToLeft != null) result.isRightToLeft = isRightToLeft;
+    if (bundledFontSupported != null)
+      result.bundledFontSupported = bundledFontSupported;
+    if (capabilities != null) result.capabilities.addAll(capabilities);
+    if (availableRegionCodes != null)
+      result.availableRegionCodes.addAll(availableRegionCodes);
+    if (isEnabled != null) result.isEnabled = isEnabled;
+    if (fallbackLanguageCode != null)
+      result.fallbackLanguageCode = fallbackLanguageCode;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxLanguageConfig._();
+
+  factory OnyxLanguageConfig.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLanguageConfig.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLanguageConfig',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(2, _omitFieldNames ? '' : 'baseLanguage')
+    ..aOS(3, _omitFieldNames ? '' : 'scriptCode')
+    ..aOS(4, _omitFieldNames ? '' : 'regionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'englishName')
+    ..aOS(6, _omitFieldNames ? '' : 'nativeName')
+    ..aOB(7, _omitFieldNames ? '' : 'isRightToLeft')
+    ..aOB(8, _omitFieldNames ? '' : 'bundledFontSupported')
+    ..pc<OnyxLanguageCapability>(
+        9, _omitFieldNames ? '' : 'capabilities', $pb.PbFieldType.KE,
+        valueOf: OnyxLanguageCapability.valueOf,
+        enumValues: OnyxLanguageCapability.values,
+        defaultEnumValue:
+            OnyxLanguageCapability.ONYX_LANGUAGE_CAPABILITY_UNSPECIFIED)
+    ..pPS(10, _omitFieldNames ? '' : 'availableRegionCodes')
+    ..aOB(11, _omitFieldNames ? '' : 'isEnabled')
+    ..aOS(12, _omitFieldNames ? '' : 'fallbackLanguageCode')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLanguageConfig clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLanguageConfig copyWith(void Function(OnyxLanguageConfig) updates) =>
+      super.copyWith((message) => updates(message as OnyxLanguageConfig))
+          as OnyxLanguageConfig;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLanguageConfig create() => OnyxLanguageConfig._();
+  @$core.override
+  OnyxLanguageConfig createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLanguageConfig getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLanguageConfig>(create);
+  static OnyxLanguageConfig? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get languageCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set languageCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguageCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguageCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get baseLanguage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set baseLanguage($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBaseLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBaseLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scriptCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scriptCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScriptCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScriptCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get regionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set regionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRegionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRegionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get englishName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set englishName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEnglishName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnglishName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get nativeName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nativeName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNativeName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNativeName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isRightToLeft => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isRightToLeft($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIsRightToLeft() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsRightToLeft() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get bundledFontSupported => $_getBF(7);
+  @$pb.TagNumber(8)
+  set bundledFontSupported($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBundledFontSupported() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBundledFontSupported() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<OnyxLanguageCapability> get capabilities => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get availableRegionCodes => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.bool get isEnabled => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isEnabled($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsEnabled() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsEnabled() => $_clearField(11);
+
+  /// An explicit editorial policy only. Clients never silently substitute it
+  /// for a missing member-selected edition.
+  @$pb.TagNumber(12)
+  $core.String get fallbackLanguageCode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set fallbackLanguageCode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasFallbackLanguageCode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearFallbackLanguageCode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get updatedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set updatedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(12);
+}
+
+class OnyxMachineTranslationProvenance extends $pb.GeneratedMessage {
+  factory OnyxMachineTranslationProvenance({
+    $core.String? providerLabel,
+    $core.String? modelVersion,
+    $core.String? promptDigest,
+    $core.String? termbaseVersion,
+    $core.String? translationMemoryVersion,
+    $core.String? inputDigest,
+    $core.String? outputDigest,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (providerLabel != null) result.providerLabel = providerLabel;
+    if (modelVersion != null) result.modelVersion = modelVersion;
+    if (promptDigest != null) result.promptDigest = promptDigest;
+    if (termbaseVersion != null) result.termbaseVersion = termbaseVersion;
+    if (translationMemoryVersion != null)
+      result.translationMemoryVersion = translationMemoryVersion;
+    if (inputDigest != null) result.inputDigest = inputDigest;
+    if (outputDigest != null) result.outputDigest = outputDigest;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  OnyxMachineTranslationProvenance._();
+
+  factory OnyxMachineTranslationProvenance.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMachineTranslationProvenance.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMachineTranslationProvenance',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'providerLabel')
+    ..aOS(2, _omitFieldNames ? '' : 'modelVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'promptDigest')
+    ..aOS(4, _omitFieldNames ? '' : 'termbaseVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'translationMemoryVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'inputDigest')
+    ..aOS(7, _omitFieldNames ? '' : 'outputDigest')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMachineTranslationProvenance clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMachineTranslationProvenance copyWith(
+          void Function(OnyxMachineTranslationProvenance) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxMachineTranslationProvenance))
+          as OnyxMachineTranslationProvenance;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMachineTranslationProvenance create() =>
+      OnyxMachineTranslationProvenance._();
+  @$core.override
+  OnyxMachineTranslationProvenance createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMachineTranslationProvenance getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMachineTranslationProvenance>(
+          create);
+  static OnyxMachineTranslationProvenance? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get providerLabel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set providerLabel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProviderLabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProviderLabel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get modelVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set modelVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasModelVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearModelVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get promptDigest => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set promptDigest($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPromptDigest() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPromptDigest() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get termbaseVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set termbaseVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTermbaseVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTermbaseVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get translationMemoryVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set translationMemoryVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTranslationMemoryVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTranslationMemoryVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get inputDigest => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set inputDigest($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasInputDigest() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearInputDigest() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get outputDigest => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set outputDigest($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOutputDigest() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOutputDigest() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get generatedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set generatedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasGeneratedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGeneratedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(7);
+}
+
+class OnyxEditionLineage extends $pb.GeneratedMessage {
+  factory OnyxEditionLineage({
+    $core.String? editionId,
+    $core.String? contentId,
+    $core.String? editionRevisionId,
+    $core.int? editionRevisionNumber,
+    $core.String? sourceContentId,
+    $core.String? sourceRevisionId,
+    $core.int? sourceRevisionNumber,
+    $core.String? targetLanguageCode,
+    OnyxTranslationClass? translationClass,
+    OnyxVerificationState? verificationState,
+    OnyxEditionAvailability? availability,
+    $core.String? translatorAttribution,
+    $core.String? reviewerAttribution,
+    $core.String? rightsStatement,
+    $core.double? qualityScore,
+    $core.String? sourceChecksum,
+    $core.String? targetChecksum,
+    $core.String? staleReason,
+    OnyxMachineTranslationProvenance? machineProvenance,
+    $1.Timestamp? publishedAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (editionId != null) result.editionId = editionId;
+    if (contentId != null) result.contentId = contentId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (editionRevisionNumber != null)
+      result.editionRevisionNumber = editionRevisionNumber;
+    if (sourceContentId != null) result.sourceContentId = sourceContentId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (sourceRevisionNumber != null)
+      result.sourceRevisionNumber = sourceRevisionNumber;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (translationClass != null) result.translationClass = translationClass;
+    if (verificationState != null) result.verificationState = verificationState;
+    if (availability != null) result.availability = availability;
+    if (translatorAttribution != null)
+      result.translatorAttribution = translatorAttribution;
+    if (reviewerAttribution != null)
+      result.reviewerAttribution = reviewerAttribution;
+    if (rightsStatement != null) result.rightsStatement = rightsStatement;
+    if (qualityScore != null) result.qualityScore = qualityScore;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (targetChecksum != null) result.targetChecksum = targetChecksum;
+    if (staleReason != null) result.staleReason = staleReason;
+    if (machineProvenance != null) result.machineProvenance = machineProvenance;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxEditionLineage._();
+
+  factory OnyxEditionLineage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxEditionLineage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxEditionLineage',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'editionId')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aI(4, _omitFieldNames ? '' : 'editionRevisionNumber')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceContentId')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aI(7, _omitFieldNames ? '' : 'sourceRevisionNumber')
+    ..aOS(8, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..aE<OnyxTranslationClass>(9, _omitFieldNames ? '' : 'translationClass',
+        enumValues: OnyxTranslationClass.values)
+    ..aE<OnyxVerificationState>(10, _omitFieldNames ? '' : 'verificationState',
+        enumValues: OnyxVerificationState.values)
+    ..aE<OnyxEditionAvailability>(11, _omitFieldNames ? '' : 'availability',
+        enumValues: OnyxEditionAvailability.values)
+    ..aOS(12, _omitFieldNames ? '' : 'translatorAttribution')
+    ..aOS(13, _omitFieldNames ? '' : 'reviewerAttribution')
+    ..aOS(14, _omitFieldNames ? '' : 'rightsStatement')
+    ..aD(15, _omitFieldNames ? '' : 'qualityScore')
+    ..aOS(16, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(17, _omitFieldNames ? '' : 'targetChecksum')
+    ..aOS(18, _omitFieldNames ? '' : 'staleReason')
+    ..aOM<OnyxMachineTranslationProvenance>(
+        19, _omitFieldNames ? '' : 'machineProvenance',
+        subBuilder: OnyxMachineTranslationProvenance.create)
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(21, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxEditionLineage clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxEditionLineage copyWith(void Function(OnyxEditionLineage) updates) =>
+      super.copyWith((message) => updates(message as OnyxEditionLineage))
+          as OnyxEditionLineage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxEditionLineage create() => OnyxEditionLineage._();
+  @$core.override
+  OnyxEditionLineage createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxEditionLineage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxEditionLineage>(create);
+  static OnyxEditionLineage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get editionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set editionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEditionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEditionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get editionRevisionNumber => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set editionRevisionNumber($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionRevisionNumber() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionRevisionNumber() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceContentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceContentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceContentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceContentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceRevisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceRevisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get sourceRevisionNumber => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set sourceRevisionNumber($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSourceRevisionNumber() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourceRevisionNumber() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get targetLanguageCode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set targetLanguageCode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTargetLanguageCode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTargetLanguageCode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  OnyxTranslationClass get translationClass => $_getN(8);
+  @$pb.TagNumber(9)
+  set translationClass(OnyxTranslationClass value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTranslationClass() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTranslationClass() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  OnyxVerificationState get verificationState => $_getN(9);
+  @$pb.TagNumber(10)
+  set verificationState(OnyxVerificationState value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVerificationState() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVerificationState() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  OnyxEditionAvailability get availability => $_getN(10);
+  @$pb.TagNumber(11)
+  set availability(OnyxEditionAvailability value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasAvailability() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAvailability() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get translatorAttribution => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set translatorAttribution($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasTranslatorAttribution() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTranslatorAttribution() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get reviewerAttribution => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set reviewerAttribution($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasReviewerAttribution() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearReviewerAttribution() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get rightsStatement => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set rightsStatement($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRightsStatement() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRightsStatement() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get qualityScore => $_getN(14);
+  @$pb.TagNumber(15)
+  set qualityScore($core.double value) => $_setDouble(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasQualityScore() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearQualityScore() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get sourceChecksum => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set sourceChecksum($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasSourceChecksum() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSourceChecksum() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get targetChecksum => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set targetChecksum($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasTargetChecksum() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearTargetChecksum() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get staleReason => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set staleReason($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasStaleReason() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearStaleReason() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  OnyxMachineTranslationProvenance get machineProvenance => $_getN(18);
+  @$pb.TagNumber(19)
+  set machineProvenance(OnyxMachineTranslationProvenance value) =>
+      $_setField(19, value);
+  @$pb.TagNumber(19)
+  $core.bool hasMachineProvenance() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearMachineProvenance() => $_clearField(19);
+  @$pb.TagNumber(19)
+  OnyxMachineTranslationProvenance ensureMachineProvenance() => $_ensure(18);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get publishedAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set publishedAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPublishedAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPublishedAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensurePublishedAt() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $1.Timestamp get updatedAt => $_getN(20);
+  @$pb.TagNumber(21)
+  set updatedAt($1.Timestamp value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasUpdatedAt() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearUpdatedAt() => $_clearField(21);
+  @$pb.TagNumber(21)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(20);
+}
+
+class OnyxTranslationAcceptanceProvenance extends $pb.GeneratedMessage {
+  factory OnyxTranslationAcceptanceProvenance({
+    OnyxTranslationClass? translationClass,
+    $core.String? translatorAttribution,
+    $core.String? reviewerAttribution,
+    $core.String? translationMemoryMatchId,
+    $core.double? similarityScore,
+    OnyxMachineTranslationProvenance? machineProvenance,
+    $1.Timestamp? acceptedAt,
+  }) {
+    final result = create();
+    if (translationClass != null) result.translationClass = translationClass;
+    if (translatorAttribution != null)
+      result.translatorAttribution = translatorAttribution;
+    if (reviewerAttribution != null)
+      result.reviewerAttribution = reviewerAttribution;
+    if (translationMemoryMatchId != null)
+      result.translationMemoryMatchId = translationMemoryMatchId;
+    if (similarityScore != null) result.similarityScore = similarityScore;
+    if (machineProvenance != null) result.machineProvenance = machineProvenance;
+    if (acceptedAt != null) result.acceptedAt = acceptedAt;
+    return result;
+  }
+
+  OnyxTranslationAcceptanceProvenance._();
+
+  factory OnyxTranslationAcceptanceProvenance.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxTranslationAcceptanceProvenance.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxTranslationAcceptanceProvenance',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aE<OnyxTranslationClass>(1, _omitFieldNames ? '' : 'translationClass',
+        enumValues: OnyxTranslationClass.values)
+    ..aOS(2, _omitFieldNames ? '' : 'translatorAttribution')
+    ..aOS(3, _omitFieldNames ? '' : 'reviewerAttribution')
+    ..aOS(4, _omitFieldNames ? '' : 'translationMemoryMatchId')
+    ..aD(5, _omitFieldNames ? '' : 'similarityScore')
+    ..aOM<OnyxMachineTranslationProvenance>(
+        6, _omitFieldNames ? '' : 'machineProvenance',
+        subBuilder: OnyxMachineTranslationProvenance.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'acceptedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTranslationAcceptanceProvenance clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTranslationAcceptanceProvenance copyWith(
+          void Function(OnyxTranslationAcceptanceProvenance) updates) =>
+      super.copyWith((message) =>
+              updates(message as OnyxTranslationAcceptanceProvenance))
+          as OnyxTranslationAcceptanceProvenance;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxTranslationAcceptanceProvenance create() =>
+      OnyxTranslationAcceptanceProvenance._();
+  @$core.override
+  OnyxTranslationAcceptanceProvenance createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxTranslationAcceptanceProvenance getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OnyxTranslationAcceptanceProvenance>(create);
+  static OnyxTranslationAcceptanceProvenance? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxTranslationClass get translationClass => $_getN(0);
+  @$pb.TagNumber(1)
+  set translationClass(OnyxTranslationClass value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTranslationClass() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTranslationClass() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get translatorAttribution => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set translatorAttribution($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTranslatorAttribution() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTranslatorAttribution() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reviewerAttribution => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reviewerAttribution($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReviewerAttribution() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReviewerAttribution() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get translationMemoryMatchId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set translationMemoryMatchId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTranslationMemoryMatchId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTranslationMemoryMatchId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get similarityScore => $_getN(4);
+  @$pb.TagNumber(5)
+  set similarityScore($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSimilarityScore() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSimilarityScore() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  OnyxMachineTranslationProvenance get machineProvenance => $_getN(5);
+  @$pb.TagNumber(6)
+  set machineProvenance(OnyxMachineTranslationProvenance value) =>
+      $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMachineProvenance() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMachineProvenance() => $_clearField(6);
+  @$pb.TagNumber(6)
+  OnyxMachineTranslationProvenance ensureMachineProvenance() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get acceptedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set acceptedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAcceptedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAcceptedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureAcceptedAt() => $_ensure(6);
+}
+
+class OnyxAlignedSegment extends $pb.GeneratedMessage {
+  factory OnyxAlignedSegment({
+    $core.String? id,
+    $core.String? sourceSegmentId,
+    $core.String? targetSegmentId,
+    $core.String? sourcePassageKey,
+    $core.String? targetPassageKey,
+    $core.String? sourceText,
+    $core.String? targetText,
+    $core.String? sourceChecksum,
+    $core.String? targetChecksum,
+    $core.int? ordinal,
+    $core.bool? isStale,
+    OnyxTranslationAcceptanceProvenance? acceptance,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceSegmentId != null) result.sourceSegmentId = sourceSegmentId;
+    if (targetSegmentId != null) result.targetSegmentId = targetSegmentId;
+    if (sourcePassageKey != null) result.sourcePassageKey = sourcePassageKey;
+    if (targetPassageKey != null) result.targetPassageKey = targetPassageKey;
+    if (sourceText != null) result.sourceText = sourceText;
+    if (targetText != null) result.targetText = targetText;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (targetChecksum != null) result.targetChecksum = targetChecksum;
+    if (ordinal != null) result.ordinal = ordinal;
+    if (isStale != null) result.isStale = isStale;
+    if (acceptance != null) result.acceptance = acceptance;
+    return result;
+  }
+
+  OnyxAlignedSegment._();
+
+  factory OnyxAlignedSegment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxAlignedSegment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxAlignedSegment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceSegmentId')
+    ..aOS(3, _omitFieldNames ? '' : 'targetSegmentId')
+    ..aOS(4, _omitFieldNames ? '' : 'sourcePassageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'targetPassageKey')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceText')
+    ..aOS(7, _omitFieldNames ? '' : 'targetText')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(9, _omitFieldNames ? '' : 'targetChecksum')
+    ..aI(10, _omitFieldNames ? '' : 'ordinal')
+    ..aOB(11, _omitFieldNames ? '' : 'isStale')
+    ..aOM<OnyxTranslationAcceptanceProvenance>(
+        12, _omitFieldNames ? '' : 'acceptance',
+        subBuilder: OnyxTranslationAcceptanceProvenance.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxAlignedSegment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxAlignedSegment copyWith(void Function(OnyxAlignedSegment) updates) =>
+      super.copyWith((message) => updates(message as OnyxAlignedSegment))
+          as OnyxAlignedSegment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxAlignedSegment create() => OnyxAlignedSegment._();
+  @$core.override
+  OnyxAlignedSegment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxAlignedSegment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxAlignedSegment>(create);
+  static OnyxAlignedSegment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceSegmentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceSegmentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceSegmentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceSegmentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetSegmentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetSegmentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetSegmentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetSegmentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourcePassageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourcePassageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourcePassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourcePassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get targetPassageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set targetPassageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTargetPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceText => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceText($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceText() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get targetText => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set targetText($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTargetText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTargetText() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceChecksum => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceChecksum($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceChecksum() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceChecksum() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get targetChecksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set targetChecksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTargetChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTargetChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get ordinal => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set ordinal($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasOrdinal() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOrdinal() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get isStale => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isStale($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsStale() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsStale() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  OnyxTranslationAcceptanceProvenance get acceptance => $_getN(11);
+  @$pb.TagNumber(12)
+  set acceptance(OnyxTranslationAcceptanceProvenance value) =>
+      $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasAcceptance() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAcceptance() => $_clearField(12);
+  @$pb.TagNumber(12)
+  OnyxTranslationAcceptanceProvenance ensureAcceptance() => $_ensure(11);
+}
+
+class OnyxAlignedBlock extends $pb.GeneratedMessage {
+  factory OnyxAlignedBlock({
+    $core.String? sourceBlockId,
+    $core.String? targetBlockId,
+    $core.String? sourcePassageKey,
+    $core.String? targetPassageKey,
+    $core.String? sourceMarkdown,
+    $core.String? targetMarkdown,
+    $core.Iterable<OnyxAlignedSegment>? segments,
+    $core.int? ordinal,
+    $core.bool? isStale,
+  }) {
+    final result = create();
+    if (sourceBlockId != null) result.sourceBlockId = sourceBlockId;
+    if (targetBlockId != null) result.targetBlockId = targetBlockId;
+    if (sourcePassageKey != null) result.sourcePassageKey = sourcePassageKey;
+    if (targetPassageKey != null) result.targetPassageKey = targetPassageKey;
+    if (sourceMarkdown != null) result.sourceMarkdown = sourceMarkdown;
+    if (targetMarkdown != null) result.targetMarkdown = targetMarkdown;
+    if (segments != null) result.segments.addAll(segments);
+    if (ordinal != null) result.ordinal = ordinal;
+    if (isStale != null) result.isStale = isStale;
+    return result;
+  }
+
+  OnyxAlignedBlock._();
+
+  factory OnyxAlignedBlock.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxAlignedBlock.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxAlignedBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceBlockId')
+    ..aOS(2, _omitFieldNames ? '' : 'targetBlockId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePassageKey')
+    ..aOS(4, _omitFieldNames ? '' : 'targetPassageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceMarkdown')
+    ..aOS(6, _omitFieldNames ? '' : 'targetMarkdown')
+    ..pPM<OnyxAlignedSegment>(7, _omitFieldNames ? '' : 'segments',
+        subBuilder: OnyxAlignedSegment.create)
+    ..aI(8, _omitFieldNames ? '' : 'ordinal')
+    ..aOB(9, _omitFieldNames ? '' : 'isStale')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxAlignedBlock clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxAlignedBlock copyWith(void Function(OnyxAlignedBlock) updates) =>
+      super.copyWith((message) => updates(message as OnyxAlignedBlock))
+          as OnyxAlignedBlock;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxAlignedBlock create() => OnyxAlignedBlock._();
+  @$core.override
+  OnyxAlignedBlock createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxAlignedBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxAlignedBlock>(create);
+  static OnyxAlignedBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceBlockId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceBlockId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceBlockId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceBlockId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetBlockId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetBlockId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetBlockId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetBlockId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePassageKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePassageKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePassageKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePassageKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get targetPassageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetPassageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTargetPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceMarkdown => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceMarkdown($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceMarkdown() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceMarkdown() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get targetMarkdown => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set targetMarkdown($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTargetMarkdown() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTargetMarkdown() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<OnyxAlignedSegment> get segments => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.int get ordinal => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set ordinal($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOrdinal() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOrdinal() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get isStale => $_getBF(8);
+  @$pb.TagNumber(9)
+  set isStale($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIsStale() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIsStale() => $_clearField(9);
+}
+
+class OnyxTermbaseEntry extends $pb.GeneratedMessage {
+  factory OnyxTermbaseEntry({
+    $core.String? id,
+    $core.String? editionId,
+    $core.String? sourceLanguageCode,
+    $core.String? targetLanguageCode,
+    $core.String? sourceTerm,
+    $core.String? approvedEquivalent,
+    $core.String? definitionInContext,
+    $core.String? partOfSpeech,
+    $core.String? inflection,
+    $core.String? transliteration,
+    $core.String? pronunciationText,
+    $core.String? pronunciationAudioUrl,
+    $core.String? usageNote,
+    $core.Iterable<$core.String>? variants,
+    $core.String? attribution,
+    $core.int? version,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (editionId != null) result.editionId = editionId;
+    if (sourceLanguageCode != null)
+      result.sourceLanguageCode = sourceLanguageCode;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (sourceTerm != null) result.sourceTerm = sourceTerm;
+    if (approvedEquivalent != null)
+      result.approvedEquivalent = approvedEquivalent;
+    if (definitionInContext != null)
+      result.definitionInContext = definitionInContext;
+    if (partOfSpeech != null) result.partOfSpeech = partOfSpeech;
+    if (inflection != null) result.inflection = inflection;
+    if (transliteration != null) result.transliteration = transliteration;
+    if (pronunciationText != null) result.pronunciationText = pronunciationText;
+    if (pronunciationAudioUrl != null)
+      result.pronunciationAudioUrl = pronunciationAudioUrl;
+    if (usageNote != null) result.usageNote = usageNote;
+    if (variants != null) result.variants.addAll(variants);
+    if (attribution != null) result.attribution = attribution;
+    if (version != null) result.version = version;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxTermbaseEntry._();
+
+  factory OnyxTermbaseEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxTermbaseEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxTermbaseEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceLanguageCode')
+    ..aOS(4, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceTerm')
+    ..aOS(6, _omitFieldNames ? '' : 'approvedEquivalent')
+    ..aOS(7, _omitFieldNames ? '' : 'definitionInContext')
+    ..aOS(8, _omitFieldNames ? '' : 'partOfSpeech')
+    ..aOS(9, _omitFieldNames ? '' : 'inflection')
+    ..aOS(10, _omitFieldNames ? '' : 'transliteration')
+    ..aOS(11, _omitFieldNames ? '' : 'pronunciationText')
+    ..aOS(12, _omitFieldNames ? '' : 'pronunciationAudioUrl')
+    ..aOS(13, _omitFieldNames ? '' : 'usageNote')
+    ..pPS(14, _omitFieldNames ? '' : 'variants')
+    ..aOS(15, _omitFieldNames ? '' : 'attribution')
+    ..aI(16, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTermbaseEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTermbaseEntry copyWith(void Function(OnyxTermbaseEntry) updates) =>
+      super.copyWith((message) => updates(message as OnyxTermbaseEntry))
+          as OnyxTermbaseEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxTermbaseEntry create() => OnyxTermbaseEntry._();
+  @$core.override
+  OnyxTermbaseEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxTermbaseEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxTermbaseEntry>(create);
+  static OnyxTermbaseEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceLanguageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceLanguageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceLanguageCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get targetLanguageCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set targetLanguageCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTargetLanguageCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTargetLanguageCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceTerm => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceTerm($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceTerm() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceTerm() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get approvedEquivalent => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set approvedEquivalent($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasApprovedEquivalent() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearApprovedEquivalent() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get definitionInContext => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set definitionInContext($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDefinitionInContext() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDefinitionInContext() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get partOfSpeech => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set partOfSpeech($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPartOfSpeech() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPartOfSpeech() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get inflection => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set inflection($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasInflection() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearInflection() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get transliteration => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set transliteration($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTransliteration() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTransliteration() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get pronunciationText => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set pronunciationText($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPronunciationText() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPronunciationText() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get pronunciationAudioUrl => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set pronunciationAudioUrl($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPronunciationAudioUrl() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPronunciationAudioUrl() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get usageNote => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set usageNote($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUsageNote() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUsageNote() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $pb.PbList<$core.String> get variants => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $core.String get attribution => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set attribution($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasAttribution() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearAttribution() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.int get version => $_getIZ(15);
+  @$pb.TagNumber(16)
+  set version($core.int value) => $_setSignedInt32(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasVersion() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearVersion() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get updatedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set updatedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasUpdatedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearUpdatedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(16);
+}
+
+class OnyxMultilingualPreferences extends $pb.GeneratedMessage {
+  factory OnyxMultilingualPreferences({
+    $core.Iterable<$core.String>? preferredReadingLanguageCodes,
+    $core.String? targetLanguageCode,
+    OnyxParallelReaderMode? readerMode,
+    $core.bool? showOriginalInline,
+    OnyxBilingualListeningMode? listeningMode,
+    $core.int? learnerPauseSeconds,
+    $core.String? sourceVoiceId,
+    $core.String? targetVoiceId,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (preferredReadingLanguageCodes != null)
+      result.preferredReadingLanguageCodes
+          .addAll(preferredReadingLanguageCodes);
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (readerMode != null) result.readerMode = readerMode;
+    if (showOriginalInline != null)
+      result.showOriginalInline = showOriginalInline;
+    if (listeningMode != null) result.listeningMode = listeningMode;
+    if (learnerPauseSeconds != null)
+      result.learnerPauseSeconds = learnerPauseSeconds;
+    if (sourceVoiceId != null) result.sourceVoiceId = sourceVoiceId;
+    if (targetVoiceId != null) result.targetVoiceId = targetVoiceId;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxMultilingualPreferences._();
+
+  factory OnyxMultilingualPreferences.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMultilingualPreferences.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMultilingualPreferences',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'preferredReadingLanguageCodes')
+    ..aOS(2, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..aE<OnyxParallelReaderMode>(3, _omitFieldNames ? '' : 'readerMode',
+        enumValues: OnyxParallelReaderMode.values)
+    ..aOB(4, _omitFieldNames ? '' : 'showOriginalInline')
+    ..aE<OnyxBilingualListeningMode>(5, _omitFieldNames ? '' : 'listeningMode',
+        enumValues: OnyxBilingualListeningMode.values)
+    ..aI(6, _omitFieldNames ? '' : 'learnerPauseSeconds')
+    ..aOS(7, _omitFieldNames ? '' : 'sourceVoiceId')
+    ..aOS(8, _omitFieldNames ? '' : 'targetVoiceId')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualPreferences clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualPreferences copyWith(
+          void Function(OnyxMultilingualPreferences) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxMultilingualPreferences))
+          as OnyxMultilingualPreferences;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualPreferences create() =>
+      OnyxMultilingualPreferences._();
+  @$core.override
+  OnyxMultilingualPreferences createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualPreferences getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMultilingualPreferences>(create);
+  static OnyxMultilingualPreferences? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get preferredReadingLanguageCodes => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get targetLanguageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetLanguageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetLanguageCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  OnyxParallelReaderMode get readerMode => $_getN(2);
+  @$pb.TagNumber(3)
+  set readerMode(OnyxParallelReaderMode value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReaderMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReaderMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get showOriginalInline => $_getBF(3);
+  @$pb.TagNumber(4)
+  set showOriginalInline($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShowOriginalInline() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShowOriginalInline() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  OnyxBilingualListeningMode get listeningMode => $_getN(4);
+  @$pb.TagNumber(5)
+  set listeningMode(OnyxBilingualListeningMode value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasListeningMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearListeningMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get learnerPauseSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set learnerPauseSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLearnerPauseSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLearnerPauseSeconds() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sourceVoiceId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sourceVoiceId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSourceVoiceId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourceVoiceId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get targetVoiceId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set targetVoiceId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTargetVoiceId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTargetVoiceId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get updatedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set updatedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(8);
+}
+
+class OnyxCrossLanguageSearchMatch extends $pb.GeneratedMessage {
+  factory OnyxCrossLanguageSearchMatch({
+    OnyxContent? content,
+    OnyxContentEdition? edition,
+    $core.String? matchedLanguageCode,
+    OnyxSearchMatchReason? matchReason,
+    $core.String? sourceSnippet,
+    $core.String? translatedSnippet,
+    $core.String? sourcePassageKey,
+    $core.String? targetPassageKey,
+    $core.String? snippetAttribution,
+    $core.double? score,
+  }) {
+    final result = create();
+    if (content != null) result.content = content;
+    if (edition != null) result.edition = edition;
+    if (matchedLanguageCode != null)
+      result.matchedLanguageCode = matchedLanguageCode;
+    if (matchReason != null) result.matchReason = matchReason;
+    if (sourceSnippet != null) result.sourceSnippet = sourceSnippet;
+    if (translatedSnippet != null) result.translatedSnippet = translatedSnippet;
+    if (sourcePassageKey != null) result.sourcePassageKey = sourcePassageKey;
+    if (targetPassageKey != null) result.targetPassageKey = targetPassageKey;
+    if (snippetAttribution != null)
+      result.snippetAttribution = snippetAttribution;
+    if (score != null) result.score = score;
+    return result;
+  }
+
+  OnyxCrossLanguageSearchMatch._();
+
+  factory OnyxCrossLanguageSearchMatch.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxCrossLanguageSearchMatch.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxCrossLanguageSearchMatch',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxContent>(1, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..aOM<OnyxContentEdition>(2, _omitFieldNames ? '' : 'edition',
+        subBuilder: OnyxContentEdition.create)
+    ..aOS(3, _omitFieldNames ? '' : 'matchedLanguageCode')
+    ..aE<OnyxSearchMatchReason>(4, _omitFieldNames ? '' : 'matchReason',
+        enumValues: OnyxSearchMatchReason.values)
+    ..aOS(5, _omitFieldNames ? '' : 'sourceSnippet')
+    ..aOS(6, _omitFieldNames ? '' : 'translatedSnippet')
+    ..aOS(7, _omitFieldNames ? '' : 'sourcePassageKey')
+    ..aOS(8, _omitFieldNames ? '' : 'targetPassageKey')
+    ..aOS(9, _omitFieldNames ? '' : 'snippetAttribution')
+    ..aD(10, _omitFieldNames ? '' : 'score')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCrossLanguageSearchMatch clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCrossLanguageSearchMatch copyWith(
+          void Function(OnyxCrossLanguageSearchMatch) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxCrossLanguageSearchMatch))
+          as OnyxCrossLanguageSearchMatch;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxCrossLanguageSearchMatch create() =>
+      OnyxCrossLanguageSearchMatch._();
+  @$core.override
+  OnyxCrossLanguageSearchMatch createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxCrossLanguageSearchMatch getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxCrossLanguageSearchMatch>(create);
+  static OnyxCrossLanguageSearchMatch? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxContent get content => $_getN(0);
+  @$pb.TagNumber(1)
+  set content(OnyxContent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxContent ensureContent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxContentEdition get edition => $_getN(1);
+  @$pb.TagNumber(2)
+  set edition(OnyxContentEdition value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEdition() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEdition() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxContentEdition ensureEdition() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get matchedLanguageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set matchedLanguageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMatchedLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMatchedLanguageCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  OnyxSearchMatchReason get matchReason => $_getN(3);
+  @$pb.TagNumber(4)
+  set matchReason(OnyxSearchMatchReason value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMatchReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMatchReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceSnippet => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceSnippet($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceSnippet() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceSnippet() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get translatedSnippet => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set translatedSnippet($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTranslatedSnippet() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTranslatedSnippet() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sourcePassageKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sourcePassageKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSourcePassageKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSourcePassageKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get targetPassageKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set targetPassageKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTargetPassageKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTargetPassageKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get snippetAttribution => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set snippetAttribution($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSnippetAttribution() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSnippetAttribution() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get score => $_getN(9);
+  @$pb.TagNumber(10)
+  set score($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasScore() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearScore() => $_clearField(10);
+}
+
+class OnyxCaptionCue extends $pb.GeneratedMessage {
+  factory OnyxCaptionCue({
+    $core.String? id,
+    $core.int? startMilliseconds,
+    $core.int? endMilliseconds,
+    $core.String? text,
+    $core.String? speakerName,
+    $core.String? sourceSegmentId,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (startMilliseconds != null) result.startMilliseconds = startMilliseconds;
+    if (endMilliseconds != null) result.endMilliseconds = endMilliseconds;
+    if (text != null) result.text = text;
+    if (speakerName != null) result.speakerName = speakerName;
+    if (sourceSegmentId != null) result.sourceSegmentId = sourceSegmentId;
+    return result;
+  }
+
+  OnyxCaptionCue._();
+
+  factory OnyxCaptionCue.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxCaptionCue.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxCaptionCue',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aI(2, _omitFieldNames ? '' : 'startMilliseconds')
+    ..aI(3, _omitFieldNames ? '' : 'endMilliseconds')
+    ..aOS(4, _omitFieldNames ? '' : 'text')
+    ..aOS(5, _omitFieldNames ? '' : 'speakerName')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceSegmentId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCaptionCue clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCaptionCue copyWith(void Function(OnyxCaptionCue) updates) =>
+      super.copyWith((message) => updates(message as OnyxCaptionCue))
+          as OnyxCaptionCue;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxCaptionCue create() => OnyxCaptionCue._();
+  @$core.override
+  OnyxCaptionCue createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxCaptionCue getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxCaptionCue>(create);
+  static OnyxCaptionCue? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get startMilliseconds => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set startMilliseconds($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStartMilliseconds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStartMilliseconds() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get endMilliseconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set endMilliseconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEndMilliseconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEndMilliseconds() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get text => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set text($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasText() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearText() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get speakerName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set speakerName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSpeakerName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSpeakerName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceSegmentId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceSegmentId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceSegmentId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceSegmentId() => $_clearField(6);
+}
+
+class OnyxCaptionTrack extends $pb.GeneratedMessage {
+  factory OnyxCaptionTrack({
+    $core.String? id,
+    $core.String? languageCode,
+    OnyxTranslationClass? translationClass,
+    OnyxVerificationState? verificationState,
+    $core.String? translatorAttribution,
+    $core.String? reviewerAttribution,
+    $core.String? checksum,
+    $core.Iterable<OnyxCaptionCue>? cues,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (translationClass != null) result.translationClass = translationClass;
+    if (verificationState != null) result.verificationState = verificationState;
+    if (translatorAttribution != null)
+      result.translatorAttribution = translatorAttribution;
+    if (reviewerAttribution != null)
+      result.reviewerAttribution = reviewerAttribution;
+    if (checksum != null) result.checksum = checksum;
+    if (cues != null) result.cues.addAll(cues);
+    return result;
+  }
+
+  OnyxCaptionTrack._();
+
+  factory OnyxCaptionTrack.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxCaptionTrack.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxCaptionTrack',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'languageCode')
+    ..aE<OnyxTranslationClass>(3, _omitFieldNames ? '' : 'translationClass',
+        enumValues: OnyxTranslationClass.values)
+    ..aE<OnyxVerificationState>(4, _omitFieldNames ? '' : 'verificationState',
+        enumValues: OnyxVerificationState.values)
+    ..aOS(5, _omitFieldNames ? '' : 'translatorAttribution')
+    ..aOS(6, _omitFieldNames ? '' : 'reviewerAttribution')
+    ..aOS(7, _omitFieldNames ? '' : 'checksum')
+    ..pPM<OnyxCaptionCue>(8, _omitFieldNames ? '' : 'cues',
+        subBuilder: OnyxCaptionCue.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCaptionTrack clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxCaptionTrack copyWith(void Function(OnyxCaptionTrack) updates) =>
+      super.copyWith((message) => updates(message as OnyxCaptionTrack))
+          as OnyxCaptionTrack;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxCaptionTrack create() => OnyxCaptionTrack._();
+  @$core.override
+  OnyxCaptionTrack createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxCaptionTrack getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxCaptionTrack>(create);
+  static OnyxCaptionTrack? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get languageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set languageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguageCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  OnyxTranslationClass get translationClass => $_getN(2);
+  @$pb.TagNumber(3)
+  set translationClass(OnyxTranslationClass value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTranslationClass() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTranslationClass() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  OnyxVerificationState get verificationState => $_getN(3);
+  @$pb.TagNumber(4)
+  set verificationState(OnyxVerificationState value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVerificationState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVerificationState() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get translatorAttribution => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set translatorAttribution($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTranslatorAttribution() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTranslatorAttribution() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reviewerAttribution => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reviewerAttribution($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReviewerAttribution() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReviewerAttribution() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get checksum => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set checksum($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasChecksum() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearChecksum() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<OnyxCaptionCue> get cues => $_getList(7);
+}
+
+class OnyxMediaLanguageTrack extends $pb.GeneratedMessage {
+  factory OnyxMediaLanguageTrack({
+    $core.String? id,
+    $core.String? languageCode,
+    OnyxVoiceDelivery? delivery,
+    $core.String? voiceId,
+    $core.String? signedMediaUrl,
+    $core.int? durationSeconds,
+    $core.String? checksum,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (delivery != null) result.delivery = delivery;
+    if (voiceId != null) result.voiceId = voiceId;
+    if (signedMediaUrl != null) result.signedMediaUrl = signedMediaUrl;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    if (checksum != null) result.checksum = checksum;
+    return result;
+  }
+
+  OnyxMediaLanguageTrack._();
+
+  factory OnyxMediaLanguageTrack.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMediaLanguageTrack.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMediaLanguageTrack',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'languageCode')
+    ..aE<OnyxVoiceDelivery>(3, _omitFieldNames ? '' : 'delivery',
+        enumValues: OnyxVoiceDelivery.values)
+    ..aOS(4, _omitFieldNames ? '' : 'voiceId')
+    ..aOS(5, _omitFieldNames ? '' : 'signedMediaUrl')
+    ..aI(6, _omitFieldNames ? '' : 'durationSeconds')
+    ..aOS(7, _omitFieldNames ? '' : 'checksum')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMediaLanguageTrack clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMediaLanguageTrack copyWith(
+          void Function(OnyxMediaLanguageTrack) updates) =>
+      super.copyWith((message) => updates(message as OnyxMediaLanguageTrack))
+          as OnyxMediaLanguageTrack;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMediaLanguageTrack create() => OnyxMediaLanguageTrack._();
+  @$core.override
+  OnyxMediaLanguageTrack createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMediaLanguageTrack getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMediaLanguageTrack>(create);
+  static OnyxMediaLanguageTrack? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get languageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set languageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguageCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  OnyxVoiceDelivery get delivery => $_getN(2);
+  @$pb.TagNumber(3)
+  set delivery(OnyxVoiceDelivery value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDelivery() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDelivery() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get voiceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set voiceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVoiceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVoiceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get signedMediaUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set signedMediaUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSignedMediaUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignedMediaUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get durationSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set durationSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDurationSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDurationSeconds() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get checksum => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set checksum($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasChecksum() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearChecksum() => $_clearField(7);
+}
+
+class OnyxMultilingualAudioVideo extends $pb.GeneratedMessage {
+  factory OnyxMultilingualAudioVideo({
+    $core.String? mediaId,
+    $core.String? sourceLanguageCode,
+    $core.String? targetLanguageCode,
+    $core.Iterable<OnyxMediaLanguageTrack>? audioTracks,
+    $core.Iterable<OnyxCaptionTrack>? captionTracks,
+    $core.bool? hasAudioDescription,
+    OnyxLiveInterpretationState? liveInterpretationState,
+    $core.String? liveInterpretationChannelLabel,
+  }) {
+    final result = create();
+    if (mediaId != null) result.mediaId = mediaId;
+    if (sourceLanguageCode != null)
+      result.sourceLanguageCode = sourceLanguageCode;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (audioTracks != null) result.audioTracks.addAll(audioTracks);
+    if (captionTracks != null) result.captionTracks.addAll(captionTracks);
+    if (hasAudioDescription != null)
+      result.hasAudioDescription = hasAudioDescription;
+    if (liveInterpretationState != null)
+      result.liveInterpretationState = liveInterpretationState;
+    if (liveInterpretationChannelLabel != null)
+      result.liveInterpretationChannelLabel = liveInterpretationChannelLabel;
+    return result;
+  }
+
+  OnyxMultilingualAudioVideo._();
+
+  factory OnyxMultilingualAudioVideo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMultilingualAudioVideo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMultilingualAudioVideo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceLanguageCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..pPM<OnyxMediaLanguageTrack>(4, _omitFieldNames ? '' : 'audioTracks',
+        subBuilder: OnyxMediaLanguageTrack.create)
+    ..pPM<OnyxCaptionTrack>(5, _omitFieldNames ? '' : 'captionTracks',
+        subBuilder: OnyxCaptionTrack.create)
+    ..aOB(6, _omitFieldNames ? '' : 'hasAudioDescription')
+    ..aE<OnyxLiveInterpretationState>(
+        7, _omitFieldNames ? '' : 'liveInterpretationState',
+        enumValues: OnyxLiveInterpretationState.values)
+    ..aOS(8, _omitFieldNames ? '' : 'liveInterpretationChannelLabel')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualAudioVideo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualAudioVideo copyWith(
+          void Function(OnyxMultilingualAudioVideo) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxMultilingualAudioVideo))
+          as OnyxMultilingualAudioVideo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualAudioVideo create() => OnyxMultilingualAudioVideo._();
+  @$core.override
+  OnyxMultilingualAudioVideo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualAudioVideo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMultilingualAudioVideo>(create);
+  static OnyxMultilingualAudioVideo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mediaId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceLanguageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceLanguageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceLanguageCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetLanguageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetLanguageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetLanguageCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxMediaLanguageTrack> get audioTracks => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<OnyxCaptionTrack> get captionTracks => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get hasAudioDescription => $_getBF(5);
+  @$pb.TagNumber(6)
+  set hasAudioDescription($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHasAudioDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHasAudioDescription() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  OnyxLiveInterpretationState get liveInterpretationState => $_getN(6);
+  @$pb.TagNumber(7)
+  set liveInterpretationState(OnyxLiveInterpretationState value) =>
+      $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLiveInterpretationState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLiveInterpretationState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get liveInterpretationChannelLabel => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set liveInterpretationChannelLabel($core.String value) =>
+      $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLiveInterpretationChannelLabel() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLiveInterpretationChannelLabel() => $_clearField(8);
+}
+
+class OnyxTranslationReport extends $pb.GeneratedMessage {
+  factory OnyxTranslationReport({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? segmentId,
+    $core.String? passageKey,
+    OnyxTranslationIssueType? issueType,
+    $core.String? flaggedText,
+    $core.String? suggestedReplacement,
+    $core.String? memberComment,
+    OnyxTranslationReportStatus? status,
+    $core.String? resolutionSummary,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (issueType != null) result.issueType = issueType;
+    if (flaggedText != null) result.flaggedText = flaggedText;
+    if (suggestedReplacement != null)
+      result.suggestedReplacement = suggestedReplacement;
+    if (memberComment != null) result.memberComment = memberComment;
+    if (status != null) result.status = status;
+    if (resolutionSummary != null) result.resolutionSummary = resolutionSummary;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxTranslationReport._();
+
+  factory OnyxTranslationReport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxTranslationReport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxTranslationReport',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionId')
+    ..aOS(4, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(6, _omitFieldNames ? '' : 'passageKey')
+    ..aE<OnyxTranslationIssueType>(7, _omitFieldNames ? '' : 'issueType',
+        enumValues: OnyxTranslationIssueType.values)
+    ..aOS(8, _omitFieldNames ? '' : 'flaggedText')
+    ..aOS(9, _omitFieldNames ? '' : 'suggestedReplacement')
+    ..aOS(10, _omitFieldNames ? '' : 'memberComment')
+    ..aE<OnyxTranslationReportStatus>(11, _omitFieldNames ? '' : 'status',
+        enumValues: OnyxTranslationReportStatus.values)
+    ..aOS(12, _omitFieldNames ? '' : 'resolutionSummary')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTranslationReport clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxTranslationReport copyWith(
+          void Function(OnyxTranslationReport) updates) =>
+      super.copyWith((message) => updates(message as OnyxTranslationReport))
+          as OnyxTranslationReport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxTranslationReport create() => OnyxTranslationReport._();
+  @$core.override
+  OnyxTranslationReport createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxTranslationReport getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxTranslationReport>(create);
+  static OnyxTranslationReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get editionRevisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set editionRevisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get segmentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set segmentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSegmentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSegmentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get passageKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set passageKey($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPassageKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPassageKey() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  OnyxTranslationIssueType get issueType => $_getN(6);
+  @$pb.TagNumber(7)
+  set issueType(OnyxTranslationIssueType value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIssueType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIssueType() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get flaggedText => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set flaggedText($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFlaggedText() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFlaggedText() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get suggestedReplacement => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set suggestedReplacement($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSuggestedReplacement() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSuggestedReplacement() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get memberComment => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set memberComment($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMemberComment() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMemberComment() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  OnyxTranslationReportStatus get status => $_getN(10);
+  @$pb.TagNumber(11)
+  set status(OnyxTranslationReportStatus value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get resolutionSummary => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set resolutionSummary($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasResolutionSummary() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearResolutionSummary() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+}
+
+class OnyxMultilingualOfflineManifest extends $pb.GeneratedMessage {
+  factory OnyxMultilingualOfflineManifest({
+    $core.String? manifestId,
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? sourceRevisionId,
+    $core.String? sourceLanguageCode,
+    $core.String? targetLanguageCode,
+    OnyxEditionAvailability? availability,
+    $core.bool? includesAlignedSegments,
+    $core.bool? includesTermbase,
+    $core.bool? includesCaptions,
+    $core.bool? requiresDeviceTts,
+    $core.String? sourceChecksum,
+    $core.String? targetChecksum,
+    $core.bool? purgeRequired,
+    $core.String? freezeReason,
+    $1.Timestamp? rightsExpireAt,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (manifestId != null) result.manifestId = manifestId;
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (sourceLanguageCode != null)
+      result.sourceLanguageCode = sourceLanguageCode;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (availability != null) result.availability = availability;
+    if (includesAlignedSegments != null)
+      result.includesAlignedSegments = includesAlignedSegments;
+    if (includesTermbase != null) result.includesTermbase = includesTermbase;
+    if (includesCaptions != null) result.includesCaptions = includesCaptions;
+    if (requiresDeviceTts != null) result.requiresDeviceTts = requiresDeviceTts;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (targetChecksum != null) result.targetChecksum = targetChecksum;
+    if (purgeRequired != null) result.purgeRequired = purgeRequired;
+    if (freezeReason != null) result.freezeReason = freezeReason;
+    if (rightsExpireAt != null) result.rightsExpireAt = rightsExpireAt;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  OnyxMultilingualOfflineManifest._();
+
+  factory OnyxMultilingualOfflineManifest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMultilingualOfflineManifest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMultilingualOfflineManifest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'manifestId')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionId')
+    ..aOS(4, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceLanguageCode')
+    ..aOS(7, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..aE<OnyxEditionAvailability>(8, _omitFieldNames ? '' : 'availability',
+        enumValues: OnyxEditionAvailability.values)
+    ..aOB(9, _omitFieldNames ? '' : 'includesAlignedSegments')
+    ..aOB(10, _omitFieldNames ? '' : 'includesTermbase')
+    ..aOB(11, _omitFieldNames ? '' : 'includesCaptions')
+    ..aOB(12, _omitFieldNames ? '' : 'requiresDeviceTts')
+    ..aOS(13, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(14, _omitFieldNames ? '' : 'targetChecksum')
+    ..aOB(15, _omitFieldNames ? '' : 'purgeRequired')
+    ..aOS(16, _omitFieldNames ? '' : 'freezeReason')
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'rightsExpireAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualOfflineManifest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualOfflineManifest copyWith(
+          void Function(OnyxMultilingualOfflineManifest) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxMultilingualOfflineManifest))
+          as OnyxMultilingualOfflineManifest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualOfflineManifest create() =>
+      OnyxMultilingualOfflineManifest._();
+  @$core.override
+  OnyxMultilingualOfflineManifest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualOfflineManifest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMultilingualOfflineManifest>(
+          create);
+  static OnyxMultilingualOfflineManifest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get manifestId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set manifestId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifestId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifestId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get editionRevisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set editionRevisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceRevisionId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceRevisionId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceRevisionId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceRevisionId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceLanguageCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceLanguageCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceLanguageCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceLanguageCode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get targetLanguageCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set targetLanguageCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTargetLanguageCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTargetLanguageCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  OnyxEditionAvailability get availability => $_getN(7);
+  @$pb.TagNumber(8)
+  set availability(OnyxEditionAvailability value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAvailability() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAvailability() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get includesAlignedSegments => $_getBF(8);
+  @$pb.TagNumber(9)
+  set includesAlignedSegments($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIncludesAlignedSegments() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIncludesAlignedSegments() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get includesTermbase => $_getBF(9);
+  @$pb.TagNumber(10)
+  set includesTermbase($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIncludesTermbase() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIncludesTermbase() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get includesCaptions => $_getBF(10);
+  @$pb.TagNumber(11)
+  set includesCaptions($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIncludesCaptions() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIncludesCaptions() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get requiresDeviceTts => $_getBF(11);
+  @$pb.TagNumber(12)
+  set requiresDeviceTts($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRequiresDeviceTts() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRequiresDeviceTts() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get sourceChecksum => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set sourceChecksum($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasSourceChecksum() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSourceChecksum() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get targetChecksum => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set targetChecksum($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasTargetChecksum() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTargetChecksum() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get purgeRequired => $_getBF(14);
+  @$pb.TagNumber(15)
+  set purgeRequired($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPurgeRequired() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPurgeRequired() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get freezeReason => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set freezeReason($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasFreezeReason() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearFreezeReason() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get rightsExpireAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set rightsExpireAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasRightsExpireAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearRightsExpireAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureRightsExpireAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get generatedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set generatedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasGeneratedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearGeneratedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(17);
+}
+
+class OnyxMultilingualExportManifestItem extends $pb.GeneratedMessage {
+  factory OnyxMultilingualExportManifestItem({
+    $core.String? path,
+    $core.String? mimeType,
+    $core.String? checksum,
+    $core.String? languageCode,
+    $core.String? sourceRevisionId,
+    $core.String? editionRevisionId,
+  }) {
+    final result = create();
+    if (path != null) result.path = path;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (checksum != null) result.checksum = checksum;
+    if (languageCode != null) result.languageCode = languageCode;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    return result;
+  }
+
+  OnyxMultilingualExportManifestItem._();
+
+  factory OnyxMultilingualExportManifestItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMultilingualExportManifestItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMultilingualExportManifestItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'path')
+    ..aOS(2, _omitFieldNames ? '' : 'mimeType')
+    ..aOS(3, _omitFieldNames ? '' : 'checksum')
+    ..aOS(4, _omitFieldNames ? '' : 'languageCode')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aOS(6, _omitFieldNames ? '' : 'editionRevisionId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualExportManifestItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualExportManifestItem copyWith(
+          void Function(OnyxMultilingualExportManifestItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OnyxMultilingualExportManifestItem))
+          as OnyxMultilingualExportManifestItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualExportManifestItem create() =>
+      OnyxMultilingualExportManifestItem._();
+  @$core.override
+  OnyxMultilingualExportManifestItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualExportManifestItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMultilingualExportManifestItem>(
+          create);
+  static OnyxMultilingualExportManifestItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get path => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set path($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPath() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPath() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get mimeType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mimeType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMimeType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMimeType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get checksum => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set checksum($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChecksum() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChecksum() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get languageCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set languageCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLanguageCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguageCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceRevisionId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceRevisionId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceRevisionId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceRevisionId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get editionRevisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set editionRevisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEditionRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEditionRevisionId() => $_clearField(6);
+}
+
+class OnyxMultilingualExport extends $pb.GeneratedMessage {
+  factory OnyxMultilingualExport({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? editionId,
+    OnyxMultilingualExportFormat? format,
+    OnyxMultilingualExportState? state,
+    $core.String? filename,
+    $core.String? mimeType,
+    $core.String? signedUrl,
+    $core.String? checksum,
+    $core.String? sourceLanguageCode,
+    $core.String? targetLanguageCode,
+    $core.String? sourceChecksum,
+    $core.String? targetChecksum,
+    $core.String? translatorAttribution,
+    $core.String? reviewerAttribution,
+    $core.String? rightsStatement,
+    $core.bool? isStale,
+    $core.String? schemaVersion,
+    $core.Iterable<OnyxMultilingualExportManifestItem>? manifest,
+    $core.String? failureCode,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (format != null) result.format = format;
+    if (state != null) result.state = state;
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (signedUrl != null) result.signedUrl = signedUrl;
+    if (checksum != null) result.checksum = checksum;
+    if (sourceLanguageCode != null)
+      result.sourceLanguageCode = sourceLanguageCode;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (targetChecksum != null) result.targetChecksum = targetChecksum;
+    if (translatorAttribution != null)
+      result.translatorAttribution = translatorAttribution;
+    if (reviewerAttribution != null)
+      result.reviewerAttribution = reviewerAttribution;
+    if (rightsStatement != null) result.rightsStatement = rightsStatement;
+    if (isStale != null) result.isStale = isStale;
+    if (schemaVersion != null) result.schemaVersion = schemaVersion;
+    if (manifest != null) result.manifest.addAll(manifest);
+    if (failureCode != null) result.failureCode = failureCode;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxMultilingualExport._();
+
+  factory OnyxMultilingualExport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxMultilingualExport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxMultilingualExport',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionId')
+    ..aE<OnyxMultilingualExportFormat>(4, _omitFieldNames ? '' : 'format',
+        enumValues: OnyxMultilingualExportFormat.values)
+    ..aE<OnyxMultilingualExportState>(5, _omitFieldNames ? '' : 'state',
+        enumValues: OnyxMultilingualExportState.values)
+    ..aOS(6, _omitFieldNames ? '' : 'filename')
+    ..aOS(7, _omitFieldNames ? '' : 'mimeType')
+    ..aOS(8, _omitFieldNames ? '' : 'signedUrl')
+    ..aOS(9, _omitFieldNames ? '' : 'checksum')
+    ..aOS(10, _omitFieldNames ? '' : 'sourceLanguageCode')
+    ..aOS(11, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..aOS(12, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(13, _omitFieldNames ? '' : 'targetChecksum')
+    ..aOS(14, _omitFieldNames ? '' : 'translatorAttribution')
+    ..aOS(15, _omitFieldNames ? '' : 'reviewerAttribution')
+    ..aOS(16, _omitFieldNames ? '' : 'rightsStatement')
+    ..aOB(17, _omitFieldNames ? '' : 'isStale')
+    ..aOS(18, _omitFieldNames ? '' : 'schemaVersion')
+    ..pPM<OnyxMultilingualExportManifestItem>(
+        19, _omitFieldNames ? '' : 'manifest',
+        subBuilder: OnyxMultilingualExportManifestItem.create)
+    ..aOS(20, _omitFieldNames ? '' : 'failureCode')
+    ..aOM<$1.Timestamp>(21, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(22, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(23, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualExport clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxMultilingualExport copyWith(
+          void Function(OnyxMultilingualExport) updates) =>
+      super.copyWith((message) => updates(message as OnyxMultilingualExport))
+          as OnyxMultilingualExport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualExport create() => OnyxMultilingualExport._();
+  @$core.override
+  OnyxMultilingualExport createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxMultilingualExport getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxMultilingualExport>(create);
+  static OnyxMultilingualExport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  OnyxMultilingualExportFormat get format => $_getN(3);
+  @$pb.TagNumber(4)
+  set format(OnyxMultilingualExportFormat value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFormat() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFormat() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  OnyxMultilingualExportState get state => $_getN(4);
+  @$pb.TagNumber(5)
+  set state(OnyxMultilingualExportState value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get filename => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set filename($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFilename() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFilename() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get mimeType => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set mimeType($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMimeType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMimeType() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get signedUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set signedUrl($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSignedUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSignedUrl() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get checksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set checksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sourceLanguageCode => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sourceLanguageCode($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceLanguageCode() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceLanguageCode() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get targetLanguageCode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set targetLanguageCode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasTargetLanguageCode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTargetLanguageCode() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get sourceChecksum => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set sourceChecksum($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSourceChecksum() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSourceChecksum() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get targetChecksum => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set targetChecksum($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasTargetChecksum() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTargetChecksum() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get translatorAttribution => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set translatorAttribution($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasTranslatorAttribution() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTranslatorAttribution() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get reviewerAttribution => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set reviewerAttribution($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasReviewerAttribution() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearReviewerAttribution() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get rightsStatement => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set rightsStatement($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasRightsStatement() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearRightsStatement() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.bool get isStale => $_getBF(16);
+  @$pb.TagNumber(17)
+  set isStale($core.bool value) => $_setBool(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasIsStale() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearIsStale() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get schemaVersion => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set schemaVersion($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasSchemaVersion() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearSchemaVersion() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $pb.PbList<OnyxMultilingualExportManifestItem> get manifest => $_getList(18);
+
+  @$pb.TagNumber(20)
+  $core.String get failureCode => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set failureCode($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasFailureCode() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearFailureCode() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $1.Timestamp get expiresAt => $_getN(20);
+  @$pb.TagNumber(21)
+  set expiresAt($1.Timestamp value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasExpiresAt() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearExpiresAt() => $_clearField(21);
+  @$pb.TagNumber(21)
+  $1.Timestamp ensureExpiresAt() => $_ensure(20);
+
+  @$pb.TagNumber(22)
+  $1.Timestamp get createdAt => $_getN(21);
+  @$pb.TagNumber(22)
+  set createdAt($1.Timestamp value) => $_setField(22, value);
+  @$pb.TagNumber(22)
+  $core.bool hasCreatedAt() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearCreatedAt() => $_clearField(22);
+  @$pb.TagNumber(22)
+  $1.Timestamp ensureCreatedAt() => $_ensure(21);
+
+  @$pb.TagNumber(23)
+  $1.Timestamp get updatedAt => $_getN(22);
+  @$pb.TagNumber(23)
+  set updatedAt($1.Timestamp value) => $_setField(23, value);
+  @$pb.TagNumber(23)
+  $core.bool hasUpdatedAt() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearUpdatedAt() => $_clearField(23);
+  @$pb.TagNumber(23)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(22);
+}
+
+class ListLanguageConfigsRequest extends $pb.GeneratedMessage {
+  factory ListLanguageConfigsRequest() => create();
+
+  ListLanguageConfigsRequest._();
+
+  factory ListLanguageConfigsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLanguageConfigsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLanguageConfigsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLanguageConfigsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLanguageConfigsRequest copyWith(
+          void Function(ListLanguageConfigsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListLanguageConfigsRequest))
+          as ListLanguageConfigsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLanguageConfigsRequest create() => ListLanguageConfigsRequest._();
+  @$core.override
+  ListLanguageConfigsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLanguageConfigsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLanguageConfigsRequest>(create);
+  static ListLanguageConfigsRequest? _defaultInstance;
+}
+
+class ListLanguageConfigsResponse extends $pb.GeneratedMessage {
+  factory ListLanguageConfigsResponse({
+    $core.Iterable<OnyxLanguageConfig>? languages,
+  }) {
+    final result = create();
+    if (languages != null) result.languages.addAll(languages);
+    return result;
+  }
+
+  ListLanguageConfigsResponse._();
+
+  factory ListLanguageConfigsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListLanguageConfigsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListLanguageConfigsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxLanguageConfig>(1, _omitFieldNames ? '' : 'languages',
+        subBuilder: OnyxLanguageConfig.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLanguageConfigsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListLanguageConfigsResponse copyWith(
+          void Function(ListLanguageConfigsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListLanguageConfigsResponse))
+          as ListLanguageConfigsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListLanguageConfigsResponse create() =>
+      ListLanguageConfigsResponse._();
+  @$core.override
+  ListLanguageConfigsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListLanguageConfigsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListLanguageConfigsResponse>(create);
+  static ListLanguageConfigsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxLanguageConfig> get languages => $_getList(0);
+}
+
+class ListContentEditionsRequest extends $pb.GeneratedMessage {
+  factory ListContentEditionsRequest({
+    $core.String? contentId,
+    $core.bool? includeUnavailable,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (includeUnavailable != null)
+      result.includeUnavailable = includeUnavailable;
+    return result;
+  }
+
+  ListContentEditionsRequest._();
+
+  factory ListContentEditionsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListContentEditionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListContentEditionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOB(2, _omitFieldNames ? '' : 'includeUnavailable')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContentEditionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContentEditionsRequest copyWith(
+          void Function(ListContentEditionsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListContentEditionsRequest))
+          as ListContentEditionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContentEditionsRequest create() => ListContentEditionsRequest._();
+  @$core.override
+  ListContentEditionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListContentEditionsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListContentEditionsRequest>(create);
+  static ListContentEditionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeUnavailable => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeUnavailable($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeUnavailable() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeUnavailable() => $_clearField(2);
+}
+
+class ListContentEditionsResponse extends $pb.GeneratedMessage {
+  factory ListContentEditionsResponse({
+    OnyxContent? original,
+    $core.Iterable<OnyxContentEdition>? editions,
+  }) {
+    final result = create();
+    if (original != null) result.original = original;
+    if (editions != null) result.editions.addAll(editions);
+    return result;
+  }
+
+  ListContentEditionsResponse._();
+
+  factory ListContentEditionsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListContentEditionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListContentEditionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxContent>(1, _omitFieldNames ? '' : 'original',
+        subBuilder: OnyxContent.create)
+    ..pPM<OnyxContentEdition>(2, _omitFieldNames ? '' : 'editions',
+        subBuilder: OnyxContentEdition.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContentEditionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListContentEditionsResponse copyWith(
+          void Function(ListContentEditionsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListContentEditionsResponse))
+          as ListContentEditionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListContentEditionsResponse create() =>
+      ListContentEditionsResponse._();
+  @$core.override
+  ListContentEditionsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListContentEditionsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListContentEditionsResponse>(create);
+  static ListContentEditionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxContent get original => $_getN(0);
+  @$pb.TagNumber(1)
+  set original(OnyxContent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOriginal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOriginal() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxContent ensureOriginal() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxContentEdition> get editions => $_getList(1);
+}
+
+class GetAlignedBlocksRequest extends $pb.GeneratedMessage {
+  factory GetAlignedBlocksRequest({
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? sourceRevisionId,
+    $core.String? editionRevisionId,
+    $core.int? afterOrdinal,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (sourceRevisionId != null) result.sourceRevisionId = sourceRevisionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (afterOrdinal != null) result.afterOrdinal = afterOrdinal;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  GetAlignedBlocksRequest._();
+
+  factory GetAlignedBlocksRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAlignedBlocksRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAlignedBlocksRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceRevisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aI(5, _omitFieldNames ? '' : 'afterOrdinal')
+    ..aI(6, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAlignedBlocksRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAlignedBlocksRequest copyWith(
+          void Function(GetAlignedBlocksRequest) updates) =>
+      super.copyWith((message) => updates(message as GetAlignedBlocksRequest))
+          as GetAlignedBlocksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAlignedBlocksRequest create() => GetAlignedBlocksRequest._();
+  @$core.override
+  GetAlignedBlocksRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAlignedBlocksRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAlignedBlocksRequest>(create);
+  static GetAlignedBlocksRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get editionRevisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set editionRevisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get afterOrdinal => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set afterOrdinal($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAfterOrdinal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAfterOrdinal() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get limit => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set limit($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLimit() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLimit() => $_clearField(6);
+}
+
+class GetAlignedBlocksResponse extends $pb.GeneratedMessage {
+  factory GetAlignedBlocksResponse({
+    OnyxEditionLineage? lineage,
+    $core.Iterable<OnyxAlignedBlock>? blocks,
+    $core.int? nextOrdinal,
+    $core.bool? hasMore,
+  }) {
+    final result = create();
+    if (lineage != null) result.lineage = lineage;
+    if (blocks != null) result.blocks.addAll(blocks);
+    if (nextOrdinal != null) result.nextOrdinal = nextOrdinal;
+    if (hasMore != null) result.hasMore = hasMore;
+    return result;
+  }
+
+  GetAlignedBlocksResponse._();
+
+  factory GetAlignedBlocksResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAlignedBlocksResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAlignedBlocksResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxEditionLineage>(1, _omitFieldNames ? '' : 'lineage',
+        subBuilder: OnyxEditionLineage.create)
+    ..pPM<OnyxAlignedBlock>(2, _omitFieldNames ? '' : 'blocks',
+        subBuilder: OnyxAlignedBlock.create)
+    ..aI(3, _omitFieldNames ? '' : 'nextOrdinal')
+    ..aOB(4, _omitFieldNames ? '' : 'hasMore')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAlignedBlocksResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAlignedBlocksResponse copyWith(
+          void Function(GetAlignedBlocksResponse) updates) =>
+      super.copyWith((message) => updates(message as GetAlignedBlocksResponse))
+          as GetAlignedBlocksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAlignedBlocksResponse create() => GetAlignedBlocksResponse._();
+  @$core.override
+  GetAlignedBlocksResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAlignedBlocksResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAlignedBlocksResponse>(create);
+  static GetAlignedBlocksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxEditionLineage get lineage => $_getN(0);
+  @$pb.TagNumber(1)
+  set lineage(OnyxEditionLineage value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLineage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLineage() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxEditionLineage ensureLineage() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxAlignedBlock> get blocks => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.int get nextOrdinal => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set nextOrdinal($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNextOrdinal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNextOrdinal() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get hasMore => $_getBF(3);
+  @$pb.TagNumber(4)
+  set hasMore($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHasMore() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHasMore() => $_clearField(4);
+}
+
+class ListTermbaseEntriesRequest extends $pb.GeneratedMessage {
+  factory ListTermbaseEntriesRequest({
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? segmentId,
+    $core.String? query,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (query != null) result.query = query;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListTermbaseEntriesRequest._();
+
+  factory ListTermbaseEntriesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListTermbaseEntriesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListTermbaseEntriesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(4, _omitFieldNames ? '' : 'query')
+    ..aI(5, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTermbaseEntriesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTermbaseEntriesRequest copyWith(
+          void Function(ListTermbaseEntriesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListTermbaseEntriesRequest))
+          as ListTermbaseEntriesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTermbaseEntriesRequest create() => ListTermbaseEntriesRequest._();
+  @$core.override
+  ListTermbaseEntriesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListTermbaseEntriesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListTermbaseEntriesRequest>(create);
+  static ListTermbaseEntriesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get segmentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set segmentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSegmentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSegmentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get query => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set query($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuery() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuery() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get limit => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set limit($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLimit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLimit() => $_clearField(5);
+}
+
+class ListTermbaseEntriesResponse extends $pb.GeneratedMessage {
+  factory ListTermbaseEntriesResponse({
+    $core.Iterable<OnyxTermbaseEntry>? entries,
+  }) {
+    final result = create();
+    if (entries != null) result.entries.addAll(entries);
+    return result;
+  }
+
+  ListTermbaseEntriesResponse._();
+
+  factory ListTermbaseEntriesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListTermbaseEntriesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListTermbaseEntriesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxTermbaseEntry>(1, _omitFieldNames ? '' : 'entries',
+        subBuilder: OnyxTermbaseEntry.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTermbaseEntriesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListTermbaseEntriesResponse copyWith(
+          void Function(ListTermbaseEntriesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListTermbaseEntriesResponse))
+          as ListTermbaseEntriesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListTermbaseEntriesResponse create() =>
+      ListTermbaseEntriesResponse._();
+  @$core.override
+  ListTermbaseEntriesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListTermbaseEntriesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListTermbaseEntriesResponse>(create);
+  static ListTermbaseEntriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxTermbaseEntry> get entries => $_getList(0);
+}
+
+class CrossLanguageSearchRequest extends $pb.GeneratedMessage {
+  factory CrossLanguageSearchRequest({
+    $core.String? query,
+    $core.String? queryLanguageCode,
+    $core.String? preferredTargetLanguageCode,
+    $core.Iterable<$core.String>? searchLanguageCodes,
+    $core.String? kind,
+    $core.String? shelfCode,
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (query != null) result.query = query;
+    if (queryLanguageCode != null) result.queryLanguageCode = queryLanguageCode;
+    if (preferredTargetLanguageCode != null)
+      result.preferredTargetLanguageCode = preferredTargetLanguageCode;
+    if (searchLanguageCodes != null)
+      result.searchLanguageCodes.addAll(searchLanguageCodes);
+    if (kind != null) result.kind = kind;
+    if (shelfCode != null) result.shelfCode = shelfCode;
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  CrossLanguageSearchRequest._();
+
+  factory CrossLanguageSearchRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CrossLanguageSearchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CrossLanguageSearchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'query')
+    ..aOS(2, _omitFieldNames ? '' : 'queryLanguageCode')
+    ..aOS(3, _omitFieldNames ? '' : 'preferredTargetLanguageCode')
+    ..pPS(4, _omitFieldNames ? '' : 'searchLanguageCodes')
+    ..aOS(5, _omitFieldNames ? '' : 'kind')
+    ..aOS(6, _omitFieldNames ? '' : 'shelfCode')
+    ..aI(7, _omitFieldNames ? '' : 'limit')
+    ..aI(8, _omitFieldNames ? '' : 'offset')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CrossLanguageSearchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CrossLanguageSearchRequest copyWith(
+          void Function(CrossLanguageSearchRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CrossLanguageSearchRequest))
+          as CrossLanguageSearchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CrossLanguageSearchRequest create() => CrossLanguageSearchRequest._();
+  @$core.override
+  CrossLanguageSearchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CrossLanguageSearchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CrossLanguageSearchRequest>(create);
+  static CrossLanguageSearchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get query => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set query($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuery() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get queryLanguageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set queryLanguageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasQueryLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQueryLanguageCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get preferredTargetLanguageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set preferredTargetLanguageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPreferredTargetLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPreferredTargetLanguageCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get searchLanguageCodes => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get kind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set kind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get shelfCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set shelfCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasShelfCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearShelfCode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get limit => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set limit($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLimit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLimit() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get offset => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set offset($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOffset() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOffset() => $_clearField(8);
+}
+
+class CrossLanguageSearchResponse extends $pb.GeneratedMessage {
+  factory CrossLanguageSearchResponse({
+    $core.Iterable<OnyxCrossLanguageSearchMatch>? matches,
+    $core.bool? hasMore,
+    $core.String? detectedQueryLanguageCode,
+  }) {
+    final result = create();
+    if (matches != null) result.matches.addAll(matches);
+    if (hasMore != null) result.hasMore = hasMore;
+    if (detectedQueryLanguageCode != null)
+      result.detectedQueryLanguageCode = detectedQueryLanguageCode;
+    return result;
+  }
+
+  CrossLanguageSearchResponse._();
+
+  factory CrossLanguageSearchResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CrossLanguageSearchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CrossLanguageSearchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxCrossLanguageSearchMatch>(1, _omitFieldNames ? '' : 'matches',
+        subBuilder: OnyxCrossLanguageSearchMatch.create)
+    ..aOB(2, _omitFieldNames ? '' : 'hasMore')
+    ..aOS(3, _omitFieldNames ? '' : 'detectedQueryLanguageCode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CrossLanguageSearchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CrossLanguageSearchResponse copyWith(
+          void Function(CrossLanguageSearchResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CrossLanguageSearchResponse))
+          as CrossLanguageSearchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CrossLanguageSearchResponse create() =>
+      CrossLanguageSearchResponse._();
+  @$core.override
+  CrossLanguageSearchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CrossLanguageSearchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CrossLanguageSearchResponse>(create);
+  static CrossLanguageSearchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxCrossLanguageSearchMatch> get matches => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get hasMore => $_getBF(1);
+  @$pb.TagNumber(2)
+  set hasMore($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHasMore() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHasMore() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get detectedQueryLanguageCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set detectedQueryLanguageCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDetectedQueryLanguageCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDetectedQueryLanguageCode() => $_clearField(3);
+}
+
+class GetMultilingualPreferencesRequest extends $pb.GeneratedMessage {
+  factory GetMultilingualPreferencesRequest() => create();
+
+  GetMultilingualPreferencesRequest._();
+
+  factory GetMultilingualPreferencesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualPreferencesRequest copyWith(
+          void Function(GetMultilingualPreferencesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMultilingualPreferencesRequest))
+          as GetMultilingualPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualPreferencesRequest create() =>
+      GetMultilingualPreferencesRequest._();
+  @$core.override
+  GetMultilingualPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualPreferencesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualPreferencesRequest>(
+          create);
+  static GetMultilingualPreferencesRequest? _defaultInstance;
+}
+
+class GetMultilingualPreferencesResponse extends $pb.GeneratedMessage {
+  factory GetMultilingualPreferencesResponse({
+    OnyxMultilingualPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  GetMultilingualPreferencesResponse._();
+
+  factory GetMultilingualPreferencesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: OnyxMultilingualPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualPreferencesResponse copyWith(
+          void Function(GetMultilingualPreferencesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMultilingualPreferencesResponse))
+          as GetMultilingualPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualPreferencesResponse create() =>
+      GetMultilingualPreferencesResponse._();
+  @$core.override
+  GetMultilingualPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualPreferencesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualPreferencesResponse>(
+          create);
+  static GetMultilingualPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(OnyxMultilingualPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences ensurePreferences() => $_ensure(0);
+}
+
+class UpdateMultilingualPreferencesRequest extends $pb.GeneratedMessage {
+  factory UpdateMultilingualPreferencesRequest({
+    OnyxMultilingualPreferences? preferences,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpdateMultilingualPreferencesRequest._();
+
+  factory UpdateMultilingualPreferencesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateMultilingualPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateMultilingualPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: OnyxMultilingualPreferences.create)
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMultilingualPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMultilingualPreferencesRequest copyWith(
+          void Function(UpdateMultilingualPreferencesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateMultilingualPreferencesRequest))
+          as UpdateMultilingualPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMultilingualPreferencesRequest create() =>
+      UpdateMultilingualPreferencesRequest._();
+  @$core.override
+  UpdateMultilingualPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMultilingualPreferencesRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateMultilingualPreferencesRequest>(create);
+  static UpdateMultilingualPreferencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(OnyxMultilingualPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences ensurePreferences() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class UpdateMultilingualPreferencesResponse extends $pb.GeneratedMessage {
+  factory UpdateMultilingualPreferencesResponse({
+    OnyxMultilingualPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdateMultilingualPreferencesResponse._();
+
+  factory UpdateMultilingualPreferencesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateMultilingualPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateMultilingualPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: OnyxMultilingualPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMultilingualPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateMultilingualPreferencesResponse copyWith(
+          void Function(UpdateMultilingualPreferencesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateMultilingualPreferencesResponse))
+          as UpdateMultilingualPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateMultilingualPreferencesResponse create() =>
+      UpdateMultilingualPreferencesResponse._();
+  @$core.override
+  UpdateMultilingualPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateMultilingualPreferencesResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateMultilingualPreferencesResponse>(create);
+  static UpdateMultilingualPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(OnyxMultilingualPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualPreferences ensurePreferences() => $_ensure(0);
+}
+
+class GetMultilingualAudioVideoRequest extends $pb.GeneratedMessage {
+  factory GetMultilingualAudioVideoRequest({
+    $core.String? mediaId,
+    $core.String? targetLanguageCode,
+  }) {
+    final result = create();
+    if (mediaId != null) result.mediaId = mediaId;
+    if (targetLanguageCode != null)
+      result.targetLanguageCode = targetLanguageCode;
+    return result;
+  }
+
+  GetMultilingualAudioVideoRequest._();
+
+  factory GetMultilingualAudioVideoRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualAudioVideoRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualAudioVideoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'mediaId')
+    ..aOS(2, _omitFieldNames ? '' : 'targetLanguageCode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualAudioVideoRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualAudioVideoRequest copyWith(
+          void Function(GetMultilingualAudioVideoRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetMultilingualAudioVideoRequest))
+          as GetMultilingualAudioVideoRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualAudioVideoRequest create() =>
+      GetMultilingualAudioVideoRequest._();
+  @$core.override
+  GetMultilingualAudioVideoRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualAudioVideoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualAudioVideoRequest>(
+          create);
+  static GetMultilingualAudioVideoRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get mediaId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set mediaId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMediaId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMediaId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetLanguageCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetLanguageCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetLanguageCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetLanguageCode() => $_clearField(2);
+}
+
+class GetMultilingualAudioVideoResponse extends $pb.GeneratedMessage {
+  factory GetMultilingualAudioVideoResponse({
+    OnyxMultilingualAudioVideo? media,
+  }) {
+    final result = create();
+    if (media != null) result.media = media;
+    return result;
+  }
+
+  GetMultilingualAudioVideoResponse._();
+
+  factory GetMultilingualAudioVideoResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualAudioVideoResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualAudioVideoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualAudioVideo>(1, _omitFieldNames ? '' : 'media',
+        subBuilder: OnyxMultilingualAudioVideo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualAudioVideoResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualAudioVideoResponse copyWith(
+          void Function(GetMultilingualAudioVideoResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMultilingualAudioVideoResponse))
+          as GetMultilingualAudioVideoResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualAudioVideoResponse create() =>
+      GetMultilingualAudioVideoResponse._();
+  @$core.override
+  GetMultilingualAudioVideoResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualAudioVideoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualAudioVideoResponse>(
+          create);
+  static GetMultilingualAudioVideoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualAudioVideo get media => $_getN(0);
+  @$pb.TagNumber(1)
+  set media(OnyxMultilingualAudioVideo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMedia() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMedia() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualAudioVideo ensureMedia() => $_ensure(0);
+}
+
+class GetMultilingualOfflineManifestRequest extends $pb.GeneratedMessage {
+  factory GetMultilingualOfflineManifestRequest({
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  GetMultilingualOfflineManifestRequest._();
+
+  factory GetMultilingualOfflineManifestRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualOfflineManifestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualOfflineManifestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualOfflineManifestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualOfflineManifestRequest copyWith(
+          void Function(GetMultilingualOfflineManifestRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMultilingualOfflineManifestRequest))
+          as GetMultilingualOfflineManifestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualOfflineManifestRequest create() =>
+      GetMultilingualOfflineManifestRequest._();
+  @$core.override
+  GetMultilingualOfflineManifestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualOfflineManifestRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMultilingualOfflineManifestRequest>(create);
+  static GetMultilingualOfflineManifestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceId() => $_clearField(3);
+}
+
+class GetMultilingualOfflineManifestResponse extends $pb.GeneratedMessage {
+  factory GetMultilingualOfflineManifestResponse({
+    OnyxMultilingualOfflineManifest? manifest,
+  }) {
+    final result = create();
+    if (manifest != null) result.manifest = manifest;
+    return result;
+  }
+
+  GetMultilingualOfflineManifestResponse._();
+
+  factory GetMultilingualOfflineManifestResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualOfflineManifestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualOfflineManifestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualOfflineManifest>(1, _omitFieldNames ? '' : 'manifest',
+        subBuilder: OnyxMultilingualOfflineManifest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualOfflineManifestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualOfflineManifestResponse copyWith(
+          void Function(GetMultilingualOfflineManifestResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMultilingualOfflineManifestResponse))
+          as GetMultilingualOfflineManifestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualOfflineManifestResponse create() =>
+      GetMultilingualOfflineManifestResponse._();
+  @$core.override
+  GetMultilingualOfflineManifestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualOfflineManifestResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMultilingualOfflineManifestResponse>(create);
+  static GetMultilingualOfflineManifestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualOfflineManifest get manifest => $_getN(0);
+  @$pb.TagNumber(1)
+  set manifest(OnyxMultilingualOfflineManifest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualOfflineManifest ensureManifest() => $_ensure(0);
+}
+
+class ReportTranslationIssueRequest extends $pb.GeneratedMessage {
+  factory ReportTranslationIssueRequest({
+    $core.String? contentId,
+    $core.String? editionId,
+    $core.String? editionRevisionId,
+    $core.String? segmentId,
+    $core.String? passageKey,
+    OnyxTranslationIssueType? issueType,
+    $core.String? flaggedText,
+    $core.String? suggestedReplacement,
+    $core.String? memberComment,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (editionRevisionId != null) result.editionRevisionId = editionRevisionId;
+    if (segmentId != null) result.segmentId = segmentId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (issueType != null) result.issueType = issueType;
+    if (flaggedText != null) result.flaggedText = flaggedText;
+    if (suggestedReplacement != null)
+      result.suggestedReplacement = suggestedReplacement;
+    if (memberComment != null) result.memberComment = memberComment;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ReportTranslationIssueRequest._();
+
+  factory ReportTranslationIssueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportTranslationIssueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportTranslationIssueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionRevisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'segmentId')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aE<OnyxTranslationIssueType>(6, _omitFieldNames ? '' : 'issueType',
+        enumValues: OnyxTranslationIssueType.values)
+    ..aOS(7, _omitFieldNames ? '' : 'flaggedText')
+    ..aOS(8, _omitFieldNames ? '' : 'suggestedReplacement')
+    ..aOS(9, _omitFieldNames ? '' : 'memberComment')
+    ..aOS(10, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportTranslationIssueRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportTranslationIssueRequest copyWith(
+          void Function(ReportTranslationIssueRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportTranslationIssueRequest))
+          as ReportTranslationIssueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportTranslationIssueRequest create() =>
+      ReportTranslationIssueRequest._();
+  @$core.override
+  ReportTranslationIssueRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportTranslationIssueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportTranslationIssueRequest>(create);
+  static ReportTranslationIssueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get segmentId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set segmentId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSegmentId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSegmentId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  OnyxTranslationIssueType get issueType => $_getN(5);
+  @$pb.TagNumber(6)
+  set issueType(OnyxTranslationIssueType value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIssueType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIssueType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get flaggedText => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set flaggedText($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFlaggedText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFlaggedText() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get suggestedReplacement => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set suggestedReplacement($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSuggestedReplacement() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSuggestedReplacement() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get memberComment => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set memberComment($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemberComment() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemberComment() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get clientMutationId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set clientMutationId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasClientMutationId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearClientMutationId() => $_clearField(10);
+}
+
+class ReportTranslationIssueResponse extends $pb.GeneratedMessage {
+  factory ReportTranslationIssueResponse({
+    OnyxTranslationReport? report,
+  }) {
+    final result = create();
+    if (report != null) result.report = report;
+    return result;
+  }
+
+  ReportTranslationIssueResponse._();
+
+  factory ReportTranslationIssueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportTranslationIssueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportTranslationIssueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxTranslationReport>(1, _omitFieldNames ? '' : 'report',
+        subBuilder: OnyxTranslationReport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportTranslationIssueResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportTranslationIssueResponse copyWith(
+          void Function(ReportTranslationIssueResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportTranslationIssueResponse))
+          as ReportTranslationIssueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportTranslationIssueResponse create() =>
+      ReportTranslationIssueResponse._();
+  @$core.override
+  ReportTranslationIssueResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportTranslationIssueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportTranslationIssueResponse>(create);
+  static ReportTranslationIssueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxTranslationReport get report => $_getN(0);
+  @$pb.TagNumber(1)
+  set report(OnyxTranslationReport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxTranslationReport ensureReport() => $_ensure(0);
+}
+
+class RequestMultilingualExportRequest extends $pb.GeneratedMessage {
+  factory RequestMultilingualExportRequest({
+    $core.String? contentId,
+    $core.String? editionId,
+    OnyxMultilingualExportFormat? format,
+    $core.bool? includeOriginal,
+    $core.bool? includeTermbase,
+    $core.bool? includeCitations,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (editionId != null) result.editionId = editionId;
+    if (format != null) result.format = format;
+    if (includeOriginal != null) result.includeOriginal = includeOriginal;
+    if (includeTermbase != null) result.includeTermbase = includeTermbase;
+    if (includeCitations != null) result.includeCitations = includeCitations;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RequestMultilingualExportRequest._();
+
+  factory RequestMultilingualExportRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestMultilingualExportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestMultilingualExportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aE<OnyxMultilingualExportFormat>(3, _omitFieldNames ? '' : 'format',
+        enumValues: OnyxMultilingualExportFormat.values)
+    ..aOB(4, _omitFieldNames ? '' : 'includeOriginal')
+    ..aOB(5, _omitFieldNames ? '' : 'includeTermbase')
+    ..aOB(6, _omitFieldNames ? '' : 'includeCitations')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestMultilingualExportRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestMultilingualExportRequest copyWith(
+          void Function(RequestMultilingualExportRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RequestMultilingualExportRequest))
+          as RequestMultilingualExportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestMultilingualExportRequest create() =>
+      RequestMultilingualExportRequest._();
+  @$core.override
+  RequestMultilingualExportRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestMultilingualExportRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestMultilingualExportRequest>(
+          create);
+  static RequestMultilingualExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  OnyxMultilingualExportFormat get format => $_getN(2);
+  @$pb.TagNumber(3)
+  set format(OnyxMultilingualExportFormat value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get includeOriginal => $_getBF(3);
+  @$pb.TagNumber(4)
+  set includeOriginal($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIncludeOriginal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIncludeOriginal() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get includeTermbase => $_getBF(4);
+  @$pb.TagNumber(5)
+  set includeTermbase($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIncludeTermbase() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIncludeTermbase() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get includeCitations => $_getBF(5);
+  @$pb.TagNumber(6)
+  set includeCitations($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIncludeCitations() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIncludeCitations() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class RequestMultilingualExportResponse extends $pb.GeneratedMessage {
+  factory RequestMultilingualExportResponse({
+    OnyxMultilingualExport? export,
+  }) {
+    final result = create();
+    if (export != null) result.export = export;
+    return result;
+  }
+
+  RequestMultilingualExportResponse._();
+
+  factory RequestMultilingualExportResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestMultilingualExportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestMultilingualExportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualExport>(1, _omitFieldNames ? '' : 'export',
+        subBuilder: OnyxMultilingualExport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestMultilingualExportResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestMultilingualExportResponse copyWith(
+          void Function(RequestMultilingualExportResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestMultilingualExportResponse))
+          as RequestMultilingualExportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestMultilingualExportResponse create() =>
+      RequestMultilingualExportResponse._();
+  @$core.override
+  RequestMultilingualExportResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestMultilingualExportResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestMultilingualExportResponse>(
+          create);
+  static RequestMultilingualExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualExport get export => $_getN(0);
+  @$pb.TagNumber(1)
+  set export(OnyxMultilingualExport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualExport ensureExport() => $_ensure(0);
+}
+
+class GetMultilingualExportRequest extends $pb.GeneratedMessage {
+  factory GetMultilingualExportRequest({
+    $core.String? exportId,
+  }) {
+    final result = create();
+    if (exportId != null) result.exportId = exportId;
+    return result;
+  }
+
+  GetMultilingualExportRequest._();
+
+  factory GetMultilingualExportRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualExportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualExportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'exportId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualExportRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualExportRequest copyWith(
+          void Function(GetMultilingualExportRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetMultilingualExportRequest))
+          as GetMultilingualExportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualExportRequest create() =>
+      GetMultilingualExportRequest._();
+  @$core.override
+  GetMultilingualExportRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualExportRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualExportRequest>(create);
+  static GetMultilingualExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get exportId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set exportId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExportId() => $_clearField(1);
+}
+
+class GetMultilingualExportResponse extends $pb.GeneratedMessage {
+  factory GetMultilingualExportResponse({
+    OnyxMultilingualExport? export,
+  }) {
+    final result = create();
+    if (export != null) result.export = export;
+    return result;
+  }
+
+  GetMultilingualExportResponse._();
+
+  factory GetMultilingualExportResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMultilingualExportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMultilingualExportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxMultilingualExport>(1, _omitFieldNames ? '' : 'export',
+        subBuilder: OnyxMultilingualExport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualExportResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMultilingualExportResponse copyWith(
+          void Function(GetMultilingualExportResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetMultilingualExportResponse))
+          as GetMultilingualExportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualExportResponse create() =>
+      GetMultilingualExportResponse._();
+  @$core.override
+  GetMultilingualExportResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMultilingualExportResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMultilingualExportResponse>(create);
+  static GetMultilingualExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxMultilingualExport get export => $_getN(0);
+  @$pb.TagNumber(1)
+  set export(OnyxMultilingualExport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxMultilingualExport ensureExport() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =

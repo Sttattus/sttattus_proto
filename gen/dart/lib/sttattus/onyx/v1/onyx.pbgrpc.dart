@@ -1368,6 +1368,103 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Choice 11 — authorized member-facing multilingual editions.
+  $grpc.ResponseFuture<$0.ListLanguageConfigsResponse> listLanguageConfigs(
+    $0.ListLanguageConfigsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listLanguageConfigs, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListContentEditionsResponse> listContentEditions(
+    $0.ListContentEditionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listContentEditions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAlignedBlocksResponse> getAlignedBlocks(
+    $0.GetAlignedBlocksRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAlignedBlocks, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListTermbaseEntriesResponse> listTermbaseEntries(
+    $0.ListTermbaseEntriesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listTermbaseEntries, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CrossLanguageSearchResponse> crossLanguageSearch(
+    $0.CrossLanguageSearchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$crossLanguageSearch, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMultilingualPreferencesResponse>
+      getMultilingualPreferences(
+    $0.GetMultilingualPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMultilingualPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateMultilingualPreferencesResponse>
+      updateMultilingualPreferences(
+    $0.UpdateMultilingualPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateMultilingualPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMultilingualAudioVideoResponse>
+      getMultilingualAudioVideo(
+    $0.GetMultilingualAudioVideoRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMultilingualAudioVideo, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMultilingualOfflineManifestResponse>
+      getMultilingualOfflineManifest(
+    $0.GetMultilingualOfflineManifestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMultilingualOfflineManifest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportTranslationIssueResponse>
+      reportTranslationIssue(
+    $0.ReportTranslationIssueRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportTranslationIssue, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestMultilingualExportResponse>
+      requestMultilingualExport(
+    $0.RequestMultilingualExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestMultilingualExport, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMultilingualExportResponse> getMultilingualExport(
+    $0.GetMultilingualExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMultilingualExport, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2282,6 +2379,71 @@ class OnyxServiceClient extends $grpc.Client {
       ($0.RebuildPersonalIntelligenceGraphRequest value) =>
           value.writeToBuffer(),
       $0.RebuildPersonalIntelligenceGraphResponse.fromBuffer);
+  static final _$listLanguageConfigs = $grpc.ClientMethod<
+          $0.ListLanguageConfigsRequest, $0.ListLanguageConfigsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListLanguageConfigs',
+      ($0.ListLanguageConfigsRequest value) => value.writeToBuffer(),
+      $0.ListLanguageConfigsResponse.fromBuffer);
+  static final _$listContentEditions = $grpc.ClientMethod<
+          $0.ListContentEditionsRequest, $0.ListContentEditionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListContentEditions',
+      ($0.ListContentEditionsRequest value) => value.writeToBuffer(),
+      $0.ListContentEditionsResponse.fromBuffer);
+  static final _$getAlignedBlocks = $grpc.ClientMethod<
+          $0.GetAlignedBlocksRequest, $0.GetAlignedBlocksResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetAlignedBlocks',
+      ($0.GetAlignedBlocksRequest value) => value.writeToBuffer(),
+      $0.GetAlignedBlocksResponse.fromBuffer);
+  static final _$listTermbaseEntries = $grpc.ClientMethod<
+          $0.ListTermbaseEntriesRequest, $0.ListTermbaseEntriesResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListTermbaseEntries',
+      ($0.ListTermbaseEntriesRequest value) => value.writeToBuffer(),
+      $0.ListTermbaseEntriesResponse.fromBuffer);
+  static final _$crossLanguageSearch = $grpc.ClientMethod<
+          $0.CrossLanguageSearchRequest, $0.CrossLanguageSearchResponse>(
+      '/sttattus.onyx.v1.OnyxService/CrossLanguageSearch',
+      ($0.CrossLanguageSearchRequest value) => value.writeToBuffer(),
+      $0.CrossLanguageSearchResponse.fromBuffer);
+  static final _$getMultilingualPreferences = $grpc.ClientMethod<
+          $0.GetMultilingualPreferencesRequest,
+          $0.GetMultilingualPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetMultilingualPreferences',
+      ($0.GetMultilingualPreferencesRequest value) => value.writeToBuffer(),
+      $0.GetMultilingualPreferencesResponse.fromBuffer);
+  static final _$updateMultilingualPreferences = $grpc.ClientMethod<
+          $0.UpdateMultilingualPreferencesRequest,
+          $0.UpdateMultilingualPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdateMultilingualPreferences',
+      ($0.UpdateMultilingualPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdateMultilingualPreferencesResponse.fromBuffer);
+  static final _$getMultilingualAudioVideo = $grpc.ClientMethod<
+          $0.GetMultilingualAudioVideoRequest,
+          $0.GetMultilingualAudioVideoResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetMultilingualAudioVideo',
+      ($0.GetMultilingualAudioVideoRequest value) => value.writeToBuffer(),
+      $0.GetMultilingualAudioVideoResponse.fromBuffer);
+  static final _$getMultilingualOfflineManifest = $grpc.ClientMethod<
+          $0.GetMultilingualOfflineManifestRequest,
+          $0.GetMultilingualOfflineManifestResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetMultilingualOfflineManifest',
+      ($0.GetMultilingualOfflineManifestRequest value) => value.writeToBuffer(),
+      $0.GetMultilingualOfflineManifestResponse.fromBuffer);
+  static final _$reportTranslationIssue = $grpc.ClientMethod<
+          $0.ReportTranslationIssueRequest, $0.ReportTranslationIssueResponse>(
+      '/sttattus.onyx.v1.OnyxService/ReportTranslationIssue',
+      ($0.ReportTranslationIssueRequest value) => value.writeToBuffer(),
+      $0.ReportTranslationIssueResponse.fromBuffer);
+  static final _$requestMultilingualExport = $grpc.ClientMethod<
+          $0.RequestMultilingualExportRequest,
+          $0.RequestMultilingualExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestMultilingualExport',
+      ($0.RequestMultilingualExportRequest value) => value.writeToBuffer(),
+      $0.RequestMultilingualExportResponse.fromBuffer);
+  static final _$getMultilingualExport = $grpc.ClientMethod<
+          $0.GetMultilingualExportRequest, $0.GetMultilingualExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetMultilingualExport',
+      ($0.GetMultilingualExportRequest value) => value.writeToBuffer(),
+      $0.GetMultilingualExportResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -3829,6 +3991,117 @@ abstract class OnyxServiceBase extends $grpc.Service {
             $0.RebuildPersonalIntelligenceGraphRequest.fromBuffer(value),
         ($0.RebuildPersonalIntelligenceGraphResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListLanguageConfigsRequest,
+            $0.ListLanguageConfigsResponse>(
+        'ListLanguageConfigs',
+        listLanguageConfigs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListLanguageConfigsRequest.fromBuffer(value),
+        ($0.ListLanguageConfigsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListContentEditionsRequest,
+            $0.ListContentEditionsResponse>(
+        'ListContentEditions',
+        listContentEditions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListContentEditionsRequest.fromBuffer(value),
+        ($0.ListContentEditionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAlignedBlocksRequest,
+            $0.GetAlignedBlocksResponse>(
+        'GetAlignedBlocks',
+        getAlignedBlocks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAlignedBlocksRequest.fromBuffer(value),
+        ($0.GetAlignedBlocksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListTermbaseEntriesRequest,
+            $0.ListTermbaseEntriesResponse>(
+        'ListTermbaseEntries',
+        listTermbaseEntries_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListTermbaseEntriesRequest.fromBuffer(value),
+        ($0.ListTermbaseEntriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CrossLanguageSearchRequest,
+            $0.CrossLanguageSearchResponse>(
+        'CrossLanguageSearch',
+        crossLanguageSearch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CrossLanguageSearchRequest.fromBuffer(value),
+        ($0.CrossLanguageSearchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMultilingualPreferencesRequest,
+            $0.GetMultilingualPreferencesResponse>(
+        'GetMultilingualPreferences',
+        getMultilingualPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMultilingualPreferencesRequest.fromBuffer(value),
+        ($0.GetMultilingualPreferencesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateMultilingualPreferencesRequest,
+            $0.UpdateMultilingualPreferencesResponse>(
+        'UpdateMultilingualPreferences',
+        updateMultilingualPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateMultilingualPreferencesRequest.fromBuffer(value),
+        ($0.UpdateMultilingualPreferencesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMultilingualAudioVideoRequest,
+            $0.GetMultilingualAudioVideoResponse>(
+        'GetMultilingualAudioVideo',
+        getMultilingualAudioVideo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMultilingualAudioVideoRequest.fromBuffer(value),
+        ($0.GetMultilingualAudioVideoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMultilingualOfflineManifestRequest,
+            $0.GetMultilingualOfflineManifestResponse>(
+        'GetMultilingualOfflineManifest',
+        getMultilingualOfflineManifest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMultilingualOfflineManifestRequest.fromBuffer(value),
+        ($0.GetMultilingualOfflineManifestResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportTranslationIssueRequest,
+            $0.ReportTranslationIssueResponse>(
+        'ReportTranslationIssue',
+        reportTranslationIssue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportTranslationIssueRequest.fromBuffer(value),
+        ($0.ReportTranslationIssueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestMultilingualExportRequest,
+            $0.RequestMultilingualExportResponse>(
+        'RequestMultilingualExport',
+        requestMultilingualExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestMultilingualExportRequest.fromBuffer(value),
+        ($0.RequestMultilingualExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMultilingualExportRequest,
+            $0.GetMultilingualExportResponse>(
+        'GetMultilingualExport',
+        getMultilingualExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMultilingualExportRequest.fromBuffer(value),
+        ($0.GetMultilingualExportResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -5413,4 +5686,119 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.RebuildPersonalIntelligenceGraphResponse>
       rebuildPersonalIntelligenceGraph($grpc.ServiceCall call,
           $0.RebuildPersonalIntelligenceGraphRequest request);
+
+  $async.Future<$0.ListLanguageConfigsResponse> listLanguageConfigs_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListLanguageConfigsRequest> $request) async {
+    return listLanguageConfigs($call, await $request);
+  }
+
+  $async.Future<$0.ListLanguageConfigsResponse> listLanguageConfigs(
+      $grpc.ServiceCall call, $0.ListLanguageConfigsRequest request);
+
+  $async.Future<$0.ListContentEditionsResponse> listContentEditions_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListContentEditionsRequest> $request) async {
+    return listContentEditions($call, await $request);
+  }
+
+  $async.Future<$0.ListContentEditionsResponse> listContentEditions(
+      $grpc.ServiceCall call, $0.ListContentEditionsRequest request);
+
+  $async.Future<$0.GetAlignedBlocksResponse> getAlignedBlocks_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetAlignedBlocksRequest> $request) async {
+    return getAlignedBlocks($call, await $request);
+  }
+
+  $async.Future<$0.GetAlignedBlocksResponse> getAlignedBlocks(
+      $grpc.ServiceCall call, $0.GetAlignedBlocksRequest request);
+
+  $async.Future<$0.ListTermbaseEntriesResponse> listTermbaseEntries_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListTermbaseEntriesRequest> $request) async {
+    return listTermbaseEntries($call, await $request);
+  }
+
+  $async.Future<$0.ListTermbaseEntriesResponse> listTermbaseEntries(
+      $grpc.ServiceCall call, $0.ListTermbaseEntriesRequest request);
+
+  $async.Future<$0.CrossLanguageSearchResponse> crossLanguageSearch_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CrossLanguageSearchRequest> $request) async {
+    return crossLanguageSearch($call, await $request);
+  }
+
+  $async.Future<$0.CrossLanguageSearchResponse> crossLanguageSearch(
+      $grpc.ServiceCall call, $0.CrossLanguageSearchRequest request);
+
+  $async.Future<$0.GetMultilingualPreferencesResponse>
+      getMultilingualPreferences_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetMultilingualPreferencesRequest> $request) async {
+    return getMultilingualPreferences($call, await $request);
+  }
+
+  $async.Future<$0.GetMultilingualPreferencesResponse>
+      getMultilingualPreferences(
+          $grpc.ServiceCall call, $0.GetMultilingualPreferencesRequest request);
+
+  $async.Future<$0.UpdateMultilingualPreferencesResponse>
+      updateMultilingualPreferences_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateMultilingualPreferencesRequest>
+              $request) async {
+    return updateMultilingualPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdateMultilingualPreferencesResponse>
+      updateMultilingualPreferences($grpc.ServiceCall call,
+          $0.UpdateMultilingualPreferencesRequest request);
+
+  $async.Future<$0.GetMultilingualAudioVideoResponse>
+      getMultilingualAudioVideo_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetMultilingualAudioVideoRequest> $request) async {
+    return getMultilingualAudioVideo($call, await $request);
+  }
+
+  $async.Future<$0.GetMultilingualAudioVideoResponse> getMultilingualAudioVideo(
+      $grpc.ServiceCall call, $0.GetMultilingualAudioVideoRequest request);
+
+  $async.Future<$0.GetMultilingualOfflineManifestResponse>
+      getMultilingualOfflineManifest_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetMultilingualOfflineManifestRequest>
+              $request) async {
+    return getMultilingualOfflineManifest($call, await $request);
+  }
+
+  $async.Future<$0.GetMultilingualOfflineManifestResponse>
+      getMultilingualOfflineManifest($grpc.ServiceCall call,
+          $0.GetMultilingualOfflineManifestRequest request);
+
+  $async.Future<$0.ReportTranslationIssueResponse> reportTranslationIssue_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportTranslationIssueRequest> $request) async {
+    return reportTranslationIssue($call, await $request);
+  }
+
+  $async.Future<$0.ReportTranslationIssueResponse> reportTranslationIssue(
+      $grpc.ServiceCall call, $0.ReportTranslationIssueRequest request);
+
+  $async.Future<$0.RequestMultilingualExportResponse>
+      requestMultilingualExport_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RequestMultilingualExportRequest> $request) async {
+    return requestMultilingualExport($call, await $request);
+  }
+
+  $async.Future<$0.RequestMultilingualExportResponse> requestMultilingualExport(
+      $grpc.ServiceCall call, $0.RequestMultilingualExportRequest request);
+
+  $async.Future<$0.GetMultilingualExportResponse> getMultilingualExport_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetMultilingualExportRequest> $request) async {
+    return getMultilingualExport($call, await $request);
+  }
+
+  $async.Future<$0.GetMultilingualExportResponse> getMultilingualExport(
+      $grpc.ServiceCall call, $0.GetMultilingualExportRequest request);
 }
