@@ -34132,12 +34132,16 @@ func (x *GetMultilingualAudioVideoResponse) GetMedia() *OnyxMultilingualAudioVid
 }
 
 type GetMultilingualOfflineManifestRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ContentId     string                 `protobuf:"bytes,1,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
-	EditionId     string                 `protobuf:"bytes,2,opt,name=edition_id,json=editionId,proto3" json:"edition_id,omitempty"`
-	DeviceId      string                 `protobuf:"bytes,3,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	ContentId string                 `protobuf:"bytes,1,opt,name=content_id,json=contentId,proto3" json:"content_id,omitempty"`
+	EditionId string                 `protobuf:"bytes,2,opt,name=edition_id,json=editionId,proto3" json:"edition_id,omitempty"`
+	DeviceId  string                 `protobuf:"bytes,3,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	// Materialize or refresh the exact published edition package before the
+	// client hands off to the encrypted offline downloader. Ordinary reads
+	// remain side-effect free when this is false.
+	PrepareForDownload bool `protobuf:"varint,4,opt,name=prepare_for_download,json=prepareForDownload,proto3" json:"prepare_for_download,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *GetMultilingualOfflineManifestRequest) Reset() {
@@ -34189,6 +34193,13 @@ func (x *GetMultilingualOfflineManifestRequest) GetDeviceId() string {
 		return x.DeviceId
 	}
 	return ""
+}
+
+func (x *GetMultilingualOfflineManifestRequest) GetPrepareForDownload() bool {
+	if x != nil {
+		return x.PrepareForDownload
+	}
+	return false
 }
 
 type GetMultilingualOfflineManifestResponse struct {
@@ -37636,13 +37647,14 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\bmedia_id\x18\x01 \x01(\tR\amediaId\x120\n" +
 	"\x14target_language_code\x18\x02 \x01(\tR\x12targetLanguageCode\"g\n" +
 	"!GetMultilingualAudioVideoResponse\x12B\n" +
-	"\x05media\x18\x01 \x01(\v2,.sttattus.onyx.v1.OnyxMultilingualAudioVideoR\x05media\"\x82\x01\n" +
+	"\x05media\x18\x01 \x01(\v2,.sttattus.onyx.v1.OnyxMultilingualAudioVideoR\x05media\"\xb4\x01\n" +
 	"%GetMultilingualOfflineManifestRequest\x12\x1d\n" +
 	"\n" +
 	"content_id\x18\x01 \x01(\tR\tcontentId\x12\x1d\n" +
 	"\n" +
 	"edition_id\x18\x02 \x01(\tR\teditionId\x12\x1b\n" +
-	"\tdevice_id\x18\x03 \x01(\tR\bdeviceId\"w\n" +
+	"\tdevice_id\x18\x03 \x01(\tR\bdeviceId\x120\n" +
+	"\x14prepare_for_download\x18\x04 \x01(\bR\x12prepareForDownload\"w\n" +
 	"&GetMultilingualOfflineManifestResponse\x12M\n" +
 	"\bmanifest\x18\x01 \x01(\v21.sttattus.onyx.v1.OnyxMultilingualOfflineManifestR\bmanifest\"\xc5\x03\n" +
 	"\x1dReportTranslationIssueRequest\x12\x1d\n" +

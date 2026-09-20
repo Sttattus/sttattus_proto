@@ -13625,6 +13625,13 @@ const GetMultilingualOfflineManifestRequest$json = {
     {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
     {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
     {'1': 'device_id', '3': 3, '4': 1, '5': 9, '10': 'deviceId'},
+    {
+      '1': 'prepare_for_download',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'prepareForDownload'
+    },
   ],
 };
 
@@ -13633,7 +13640,8 @@ final $typed_data.Uint8List getMultilingualOfflineManifestRequestDescriptor =
     $convert.base64Decode(
         'CiVHZXRNdWx0aWxpbmd1YWxPZmZsaW5lTWFuaWZlc3RSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYAS'
         'ABKAlSCWNvbnRlbnRJZBIdCgplZGl0aW9uX2lkGAIgASgJUgllZGl0aW9uSWQSGwoJZGV2aWNl'
-        'X2lkGAMgASgJUghkZXZpY2VJZA==');
+        'X2lkGAMgASgJUghkZXZpY2VJZBIwChRwcmVwYXJlX2Zvcl9kb3dubG9hZBgEIAEoCFIScHJlcG'
+        'FyZUZvckRvd25sb2Fk');
 
 @$core
     .Deprecated('Use getMultilingualOfflineManifestResponseDescriptor instead')

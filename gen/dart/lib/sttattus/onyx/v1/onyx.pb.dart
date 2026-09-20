@@ -45682,11 +45682,14 @@ class GetMultilingualOfflineManifestRequest extends $pb.GeneratedMessage {
     $core.String? contentId,
     $core.String? editionId,
     $core.String? deviceId,
+    $core.bool? prepareForDownload,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
     if (editionId != null) result.editionId = editionId;
     if (deviceId != null) result.deviceId = deviceId;
+    if (prepareForDownload != null)
+      result.prepareForDownload = prepareForDownload;
     return result;
   }
 
@@ -45708,6 +45711,7 @@ class GetMultilingualOfflineManifestRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'contentId')
     ..aOS(2, _omitFieldNames ? '' : 'editionId')
     ..aOS(3, _omitFieldNames ? '' : 'deviceId')
+    ..aOB(4, _omitFieldNames ? '' : 'prepareForDownload')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -45759,6 +45763,18 @@ class GetMultilingualOfflineManifestRequest extends $pb.GeneratedMessage {
   $core.bool hasDeviceId() => $_has(2);
   @$pb.TagNumber(3)
   void clearDeviceId() => $_clearField(3);
+
+  /// Materialize or refresh the exact published edition package before the
+  /// client hands off to the encrypted offline downloader. Ordinary reads
+  /// remain side-effect free when this is false.
+  @$pb.TagNumber(4)
+  $core.bool get prepareForDownload => $_getBF(3);
+  @$pb.TagNumber(4)
+  set prepareForDownload($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPrepareForDownload() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPrepareForDownload() => $_clearField(4);
 }
 
 class GetMultilingualOfflineManifestResponse extends $pb.GeneratedMessage {

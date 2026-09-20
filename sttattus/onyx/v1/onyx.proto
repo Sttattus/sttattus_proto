@@ -3466,6 +3466,10 @@ message GetMultilingualOfflineManifestRequest {
   string content_id = 1;
   string edition_id = 2;
   string device_id = 3;
+  // Materialize or refresh the exact published edition package before the
+  // client hands off to the encrypted offline downloader. Ordinary reads
+  // remain side-effect free when this is false.
+  bool prepare_for_download = 4;
 }
 message GetMultilingualOfflineManifestResponse {
   OnyxMultilingualOfflineManifest manifest = 1;

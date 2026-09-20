@@ -27878,6 +27878,15 @@ export class GetMultilingualOfflineManifestRequest extends Message<GetMultilingu
    */
   deviceId = "";
 
+  /**
+   * Materialize or refresh the exact published edition package before the
+   * client hands off to the encrypted offline downloader. Ordinary reads
+   * remain side-effect free when this is false.
+   *
+   * @generated from field: bool prepare_for_download = 4;
+   */
+  prepareForDownload = false;
+
   constructor(data?: PartialMessage<GetMultilingualOfflineManifestRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -27889,6 +27898,7 @@ export class GetMultilingualOfflineManifestRequest extends Message<GetMultilingu
     { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "prepare_for_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMultilingualOfflineManifestRequest {
