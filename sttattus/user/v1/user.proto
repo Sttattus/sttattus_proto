@@ -100,8 +100,8 @@ message GetSttattusResponse {
 // tier begins; it comes from sttattusTierFor, which is the only place the
 // bands are defined.
 message TierBand {
-  string tier = 1;   // "sovereign", "platinum", ...
-  string label = 2;  // "SOVEREIGN"
+  string tier = 1; // "sovereign", "platinum", ...
+  string label = 2; // "SOVEREIGN"
   double floor = 3;
 }
 
