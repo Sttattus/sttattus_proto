@@ -4475,8 +4475,11 @@ type DataConflict struct {
 	SecondaryTitle       string  `protobuf:"bytes,19,opt,name=secondary_title,json=secondaryTitle,proto3" json:"secondary_title,omitempty"`
 	PrimaryPerformedAt   int64   `protobuf:"varint,20,opt,name=primary_performed_at,json=primaryPerformedAt,proto3" json:"primary_performed_at,omitempty"`
 	SecondaryPerformedAt int64   `protobuf:"varint,21,opt,name=secondary_performed_at,json=secondaryPerformedAt,proto3" json:"secondary_performed_at,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// The movement of the set a unit question is about, so the member knows
+	// which lift the numbers belong to.
+	SetMovementName string `protobuf:"bytes,22,opt,name=set_movement_name,json=setMovementName,proto3" json:"set_movement_name,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *DataConflict) Reset() {
@@ -4654,6 +4657,13 @@ func (x *DataConflict) GetSecondaryPerformedAt() int64 {
 		return x.SecondaryPerformedAt
 	}
 	return 0
+}
+
+func (x *DataConflict) GetSetMovementName() string {
+	if x != nil {
+		return x.SetMovementName
+	}
+	return ""
 }
 
 type ListDataConflictsRequest struct {
@@ -5860,7 +5870,7 @@ const file_sttattus_workout_v1_training_data_proto_rawDesc = "" +
 	"\bsessions\x18\x05 \x01(\x05R\bsessions\x12\x12\n" +
 	"\x04sets\x18\x06 \x01(\x05R\x04sets\x12%\n" +
 	"\x0eformat_version\x18\a \x01(\tR\rformatVersion\x12!\n" +
-	"\fgenerated_at\x18\b \x01(\x03R\vgeneratedAt\"\x8a\x06\n" +
+	"\fgenerated_at\x18\b \x01(\x03R\vgeneratedAt\"\xb6\x06\n" +
 	"\fDataConflict\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04kind\x18\x02 \x01(\tR\x04kind\x12\x16\n" +
@@ -5887,7 +5897,8 @@ const file_sttattus_workout_v1_training_data_proto_rawDesc = "" +
 	"\rprimary_title\x18\x12 \x01(\tR\fprimaryTitle\x12'\n" +
 	"\x0fsecondary_title\x18\x13 \x01(\tR\x0esecondaryTitle\x120\n" +
 	"\x14primary_performed_at\x18\x14 \x01(\x03R\x12primaryPerformedAt\x124\n" +
-	"\x16secondary_performed_at\x18\x15 \x01(\x03R\x14secondaryPerformedAt\"g\n" +
+	"\x16secondary_performed_at\x18\x15 \x01(\x03R\x14secondaryPerformedAt\x12*\n" +
+	"\x11set_movement_name\x18\x16 \x01(\tR\x0fsetMovementName\"g\n" +
 	"\x18ListDataConflictsRequest\x12\x16\n" +
 	"\x06status\x18\x01 \x01(\tR\x06status\x123\n" +
 	"\x04page\x18\x02 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"\x92\x01\n" +

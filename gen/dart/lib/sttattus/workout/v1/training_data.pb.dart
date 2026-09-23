@@ -6106,6 +6106,7 @@ class DataConflict extends $pb.GeneratedMessage {
     $core.String? secondaryTitle,
     $fixnum.Int64? primaryPerformedAt,
     $fixnum.Int64? secondaryPerformedAt,
+    $core.String? setMovementName,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -6132,6 +6133,7 @@ class DataConflict extends $pb.GeneratedMessage {
       result.primaryPerformedAt = primaryPerformedAt;
     if (secondaryPerformedAt != null)
       result.secondaryPerformedAt = secondaryPerformedAt;
+    if (setMovementName != null) result.setMovementName = setMovementName;
     return result;
   }
 
@@ -6170,6 +6172,7 @@ class DataConflict extends $pb.GeneratedMessage {
     ..aOS(19, _omitFieldNames ? '' : 'secondaryTitle')
     ..aInt64(20, _omitFieldNames ? '' : 'primaryPerformedAt')
     ..aInt64(21, _omitFieldNames ? '' : 'secondaryPerformedAt')
+    ..aOS(22, _omitFieldNames ? '' : 'setMovementName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -6380,6 +6383,17 @@ class DataConflict extends $pb.GeneratedMessage {
   $core.bool hasSecondaryPerformedAt() => $_has(20);
   @$pb.TagNumber(21)
   void clearSecondaryPerformedAt() => $_clearField(21);
+
+  /// The movement of the set a unit question is about, so the member knows
+  /// which lift the numbers belong to.
+  @$pb.TagNumber(22)
+  $core.String get setMovementName => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set setMovementName($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasSetMovementName() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearSetMovementName() => $_clearField(22);
 }
 
 class ListDataConflictsRequest extends $pb.GeneratedMessage {

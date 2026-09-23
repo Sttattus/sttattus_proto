@@ -528,6 +528,9 @@ message DataConflict {
   string secondary_title = 19;
   int64 primary_performed_at = 20;
   int64 secondary_performed_at = 21;
+  // The movement of the set a unit question is about, so the member knows
+  // which lift the numbers belong to.
+  string set_movement_name = 22;
 }
 
 message ListDataConflictsRequest {

@@ -1851,6 +1851,13 @@ const DataConflict$json = {
       '5': 3,
       '10': 'secondaryPerformedAt'
     },
+    {
+      '1': 'set_movement_name',
+      '3': 22,
+      '4': 1,
+      '5': 9,
+      '10': 'setMovementName'
+    },
   ],
 };
 
@@ -1870,7 +1877,7 @@ final $typed_data.Uint8List dataConflictDescriptor = $convert.base64Decode(
     'RsZRgSIAEoCVIMcHJpbWFyeVRpdGxlEicKD3NlY29uZGFyeV90aXRsZRgTIAEoCVIOc2Vjb25k'
     'YXJ5VGl0bGUSMAoUcHJpbWFyeV9wZXJmb3JtZWRfYXQYFCABKANSEnByaW1hcnlQZXJmb3JtZW'
     'RBdBI0ChZzZWNvbmRhcnlfcGVyZm9ybWVkX2F0GBUgASgDUhRzZWNvbmRhcnlQZXJmb3JtZWRB'
-    'dA==');
+    'dBIqChFzZXRfbW92ZW1lbnRfbmFtZRgWIAEoCVIPc2V0TW92ZW1lbnROYW1l');
 
 @$core.Deprecated('Use listDataConflictsRequestDescriptor instead')
 const ListDataConflictsRequest$json = {

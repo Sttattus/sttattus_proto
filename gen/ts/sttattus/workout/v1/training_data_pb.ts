@@ -3801,6 +3801,14 @@ export class DataConflict extends Message<DataConflict> {
    */
   secondaryPerformedAt = protoInt64.zero;
 
+  /**
+   * The movement of the set a unit question is about, so the member knows
+   * which lift the numbers belong to.
+   *
+   * @generated from field: string set_movement_name = 22;
+   */
+  setMovementName = "";
+
   constructor(data?: PartialMessage<DataConflict>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3830,6 +3838,7 @@ export class DataConflict extends Message<DataConflict> {
     { no: 19, name: "secondary_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "primary_performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 21, name: "secondary_performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 22, name: "set_movement_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DataConflict {
