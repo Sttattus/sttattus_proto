@@ -1055,6 +1055,68 @@ export class SessionSet extends Message<SessionSet> {
    */
   completed = false;
 
+  /**
+   * Choice 1 — provenance of the performed event. set_type is one of
+   * warmup | working | backoff | drop | amrap | failure | cluster |
+   * rest_pause | timed | distance. source is manual | import | device |
+   * voice | coach | correction. load_kg is weight normalized to kilograms by
+   * the database (never recomputed on the client). revision starts at 1 and
+   * increments on every correction; deleted sets are returned only by the
+   * correction surfaces, with deleted = true.
+   *
+   * @generated from field: string set_type = 8;
+   */
+  setType = "";
+
+  /**
+   * @generated from field: string source = 9;
+   */
+  source = "";
+
+  /**
+   * @generated from field: double load_kg = 10;
+   */
+  loadKg = 0;
+
+  /**
+   * @generated from field: int32 revision = 11;
+   */
+  revision = 0;
+
+  /**
+   * @generated from field: bool deleted = 12;
+   */
+  deleted = false;
+
+  /**
+   * @generated from field: bool exclude_from_records = 13;
+   */
+  excludeFromRecords = false;
+
+  /**
+   * unix seconds, 0 when not yet performed
+   *
+   * @generated from field: int64 performed_at = 14;
+   */
+  performedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 duration_seconds = 15;
+   */
+  durationSeconds = 0;
+
+  /**
+   * @generated from field: double distance_m = 16;
+   */
+  distanceM = 0;
+
+  /**
+   * both | left | right
+   *
+   * @generated from field: string side = 17;
+   */
+  side = "";
+
   constructor(data?: PartialMessage<SessionSet>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1070,6 +1132,16 @@ export class SessionSet extends Message<SessionSet> {
     { no: 5, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "rpe", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "set_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "load_kg", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "exclude_from_records", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 16, name: "distance_m", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 17, name: "side", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionSet {
@@ -1166,6 +1238,54 @@ export class SessionExercise extends Message<SessionExercise> {
    */
   sets: SessionSet[] = [];
 
+  /**
+   * Choice 1 — the plan this exercise was prescribed with, kept separate from
+   * the performed sets above, and the identity lineage when the member
+   * corrected which movement was actually done.
+   *
+   * @generated from field: string planned_reps = 15;
+   */
+  plannedReps = "";
+
+  /**
+   * @generated from field: double planned_load_kg = 16;
+   */
+  plannedLoadKg = 0;
+
+  /**
+   * @generated from field: double planned_rpe = 17;
+   */
+  plannedRpe = 0;
+
+  /**
+   * builder | programme | import | coach | member_added
+   *
+   * @generated from field: string planned_source = 18;
+   */
+  plannedSource = "";
+
+  /**
+   * empty unless identity was corrected
+   *
+   * @generated from field: string original_exercise_id = 19;
+   */
+  originalExerciseId = "";
+
+  /**
+   * @generated from field: string exercise_slug = 20;
+   */
+  exerciseSlug = "";
+
+  /**
+   * @generated from field: int32 revision = 21;
+   */
+  revision = 0;
+
+  /**
+   * @generated from field: bool deleted = 22;
+   */
+  deleted = false;
+
   constructor(data?: PartialMessage<SessionExercise>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1188,6 +1308,14 @@ export class SessionExercise extends Message<SessionExercise> {
     { no: 12, name: "cue_two", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "cue_three", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "sets", kind: "message", T: SessionSet, repeated: true },
+    { no: 15, name: "planned_reps", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "planned_load_kg", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 17, name: "planned_rpe", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 18, name: "planned_source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "original_exercise_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "exercise_slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 22, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionExercise {
@@ -1259,6 +1387,79 @@ export class ForgeSession extends Message<ForgeSession> {
    */
   exercises: SessionExercise[] = [];
 
+  /**
+   * Choice 1 — provenance and lifecycle. performed_at is when the training
+   * happened (for imports, the source's own time), local_date is that moment
+   * in the member's time zone, and deleted sessions are soft-deleted with a
+   * reason and restorable.
+   *
+   * manual | programme | import | coach | device
+   *
+   * @generated from field: string source = 9;
+   */
+  source = "";
+
+  /**
+   * @generated from field: string external_source = 10;
+   */
+  externalSource = "";
+
+  /**
+   * @generated from field: int64 performed_at = 11;
+   */
+  performedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: string timezone = 12;
+   */
+  timezone = "";
+
+  /**
+   * YYYY-MM-DD in timezone
+   *
+   * @generated from field: string local_date = 13;
+   */
+  localDate = "";
+
+  /**
+   * @generated from field: int32 revision = 14;
+   */
+  revision = 0;
+
+  /**
+   * @generated from field: bool deleted = 15;
+   */
+  deleted = false;
+
+  /**
+   * @generated from field: int64 deleted_at = 16;
+   */
+  deletedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 paused_seconds = 17;
+   */
+  pausedSeconds = 0;
+
+  /**
+   * a pause is currently open
+   *
+   * @generated from field: bool paused = 18;
+   */
+  paused = false;
+
+  /**
+   * @generated from field: string import_batch_id = 19;
+   */
+  importBatchId = "";
+
+  /**
+   * performed, non-deleted sets
+   *
+   * @generated from field: int32 completed_set_count = 20;
+   */
+  completedSetCount = 0;
+
   constructor(data?: PartialMessage<ForgeSession>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1275,6 +1476,18 @@ export class ForgeSession extends Message<ForgeSession> {
     { no: 6, name: "completed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 8, name: "exercises", kind: "message", T: SessionExercise, repeated: true },
+    { no: 9, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "external_source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "local_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "deleted_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 17, name: "paused_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 18, name: "paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 19, name: "import_batch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "completed_set_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeSession {
@@ -1464,6 +1677,21 @@ export class CreateSessionRequest extends Message<CreateSessionRequest> {
    */
   exercises: PlannedExercise[] = [];
 
+  /**
+   * Choice 1 — a UUID the client generates once per intended session; a
+   * retried create returns the session the first attempt made.
+   *
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  /**
+   * IANA zone of the device, e.g. America/Panama
+   *
+   * @generated from field: string timezone = 5;
+   */
+  timezone = "";
+
   constructor(data?: PartialMessage<CreateSessionRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1475,6 +1703,8 @@ export class CreateSessionRequest extends Message<CreateSessionRequest> {
     { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "exercises", kind: "message", T: PlannedExercise, repeated: true },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSessionRequest {
@@ -1767,6 +1997,16 @@ export class UpdateSessionStatusRequest extends Message<UpdateSessionStatusReque
    */
   status = "";
 
+  /**
+   * Choice 1 — replay-safe status changes from the offline outbox. Allowed
+   * transitions: planned → active | abandoned, active → completed | abandoned.
+   * A completed or abandoned session is terminal; corrections go through
+   * TrainingDataService.
+   *
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
   constructor(data?: PartialMessage<UpdateSessionStatusRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1777,6 +2017,7 @@ export class UpdateSessionStatusRequest extends Message<UpdateSessionStatusReque
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSessionStatusRequest {
@@ -1872,6 +2113,32 @@ export class LogSetRequest extends Message<LogSetRequest> {
    */
   completed = false;
 
+  /**
+   * Choice 1 — durable offline logging. client_mutation_id makes a replayed
+   * request return the stored result instead of writing twice; performed_at is
+   * when the member actually did the set (the outbox may send it later).
+   *
+   * @generated from field: string client_mutation_id = 8;
+   */
+  clientMutationId = "";
+
+  /**
+   * @generated from field: string set_type = 9;
+   */
+  setType = "";
+
+  /**
+   * unix seconds; 0 = now
+   *
+   * @generated from field: int64 performed_at = 10;
+   */
+  performedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: string timezone = 11;
+   */
+  timezone = "";
+
   constructor(data?: PartialMessage<LogSetRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1887,6 +2154,10 @@ export class LogSetRequest extends Message<LogSetRequest> {
     { no: 5, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "rpe", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "set_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "performed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LogSetRequest {
@@ -4739,6 +5010,34 @@ export class PersonalRecord extends Message<PersonalRecord> {
    */
   achievedAt = protoInt64.zero;
 
+  /**
+   * Choice 1 — reconstruction lineage. Every record is derived from one
+   * performed set by a named formula inside a recorded recompute run.
+   *
+   * @generated from field: string formula_version = 11;
+   */
+  formulaVersion = "";
+
+  /**
+   * @generated from field: string recompute_run_id = 12;
+   */
+  recomputeRunId = "";
+
+  /**
+   * @generated from field: string source_set_id = 13;
+   */
+  sourceSetId = "";
+
+  /**
+   * @generated from field: double load_kg = 14;
+   */
+  loadKg = 0;
+
+  /**
+   * @generated from field: double estimated_one_rm_kg = 15;
+   */
+  estimatedOneRmKg = 0;
+
   constructor(data?: PartialMessage<PersonalRecord>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4757,6 +5056,11 @@ export class PersonalRecord extends Message<PersonalRecord> {
     { no: 8, name: "unit", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "source_session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "achieved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "formula_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "recompute_run_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "source_set_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "load_kg", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 15, name: "estimated_one_rm_kg", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PersonalRecord {
@@ -4983,6 +5287,18 @@ export class BodyComposition extends Message<BodyComposition> {
    */
   notes = "";
 
+  /**
+   * Choice 1 — increments on each correction
+   *
+   * @generated from field: int32 revision = 11;
+   */
+  revision = 0;
+
+  /**
+   * @generated from field: int64 updated_at = 12;
+   */
+  updatedAt = protoInt64.zero;
+
   constructor(data?: PartialMessage<BodyComposition>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5001,6 +5317,8 @@ export class BodyComposition extends Message<BodyComposition> {
     { no: 8, name: "visceral_fat_rating", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 9, name: "bmr_kcal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BodyComposition {
@@ -6661,6 +6979,27 @@ export class ForgeAnalytics extends Message<ForgeAnalytics> {
    */
   volumeDaily: ForgeDailyVolume[] = [];
 
+  /**
+   * Choice 1 — tonnage uses load_kg under this formula version, and when the
+   * window is empty the client can say "no training in the last 28 days"
+   * instead of "no training logged yet".
+   *
+   * @generated from field: string formula_version = 12;
+   */
+  formulaVersion = "";
+
+  /**
+   * unix seconds, 0 when the member has none
+   *
+   * @generated from field: int64 last_session_at = 13;
+   */
+  lastSessionAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 lifetime_sessions = 14;
+   */
+  lifetimeSessions = 0;
+
   constructor(data?: PartialMessage<ForgeAnalytics>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6680,6 +7019,9 @@ export class ForgeAnalytics extends Message<ForgeAnalytics> {
     { no: 9, name: "best_one_rm_exercise", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "is_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "volume_daily", kind: "message", T: ForgeDailyVolume, repeated: true },
+    { no: 12, name: "formula_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "last_session_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "lifetime_sessions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeAnalytics {

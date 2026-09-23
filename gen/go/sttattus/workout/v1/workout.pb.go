@@ -1234,16 +1234,33 @@ func (x *Exercise) GetCueThree() string {
 // not yet rated (1-10 once rated); completed flips when the lifter
 // marks the set done in the live view.
 type SessionSet struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	SetIndex      int32                  `protobuf:"varint,2,opt,name=set_index,json=setIndex,proto3" json:"set_index,omitempty"`
-	Weight        float64                `protobuf:"fixed64,3,opt,name=weight,proto3" json:"weight,omitempty"`
-	Reps          int32                  `protobuf:"varint,4,opt,name=reps,proto3" json:"reps,omitempty"`
-	Unit          string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"` // "kg" | "lb"
-	Rpe           float64                `protobuf:"fixed64,6,opt,name=rpe,proto3" json:"rpe,omitempty"`
-	Completed     bool                   `protobuf:"varint,7,opt,name=completed,proto3" json:"completed,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SetIndex  int32                  `protobuf:"varint,2,opt,name=set_index,json=setIndex,proto3" json:"set_index,omitempty"`
+	Weight    float64                `protobuf:"fixed64,3,opt,name=weight,proto3" json:"weight,omitempty"`
+	Reps      int32                  `protobuf:"varint,4,opt,name=reps,proto3" json:"reps,omitempty"`
+	Unit      string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"` // "kg" | "lb"
+	Rpe       float64                `protobuf:"fixed64,6,opt,name=rpe,proto3" json:"rpe,omitempty"`
+	Completed bool                   `protobuf:"varint,7,opt,name=completed,proto3" json:"completed,omitempty"`
+	// Choice 1 — provenance of the performed event. set_type is one of
+	// warmup | working | backoff | drop | amrap | failure | cluster |
+	// rest_pause | timed | distance. source is manual | import | device |
+	// voice | coach | correction. load_kg is weight normalized to kilograms by
+	// the database (never recomputed on the client). revision starts at 1 and
+	// increments on every correction; deleted sets are returned only by the
+	// correction surfaces, with deleted = true.
+	SetType            string  `protobuf:"bytes,8,opt,name=set_type,json=setType,proto3" json:"set_type,omitempty"`
+	Source             string  `protobuf:"bytes,9,opt,name=source,proto3" json:"source,omitempty"`
+	LoadKg             float64 `protobuf:"fixed64,10,opt,name=load_kg,json=loadKg,proto3" json:"load_kg,omitempty"`
+	Revision           int32   `protobuf:"varint,11,opt,name=revision,proto3" json:"revision,omitempty"`
+	Deleted            bool    `protobuf:"varint,12,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	ExcludeFromRecords bool    `protobuf:"varint,13,opt,name=exclude_from_records,json=excludeFromRecords,proto3" json:"exclude_from_records,omitempty"`
+	PerformedAt        int64   `protobuf:"varint,14,opt,name=performed_at,json=performedAt,proto3" json:"performed_at,omitempty"` // unix seconds, 0 when not yet performed
+	DurationSeconds    int32   `protobuf:"varint,15,opt,name=duration_seconds,json=durationSeconds,proto3" json:"duration_seconds,omitempty"`
+	DistanceM          float64 `protobuf:"fixed64,16,opt,name=distance_m,json=distanceM,proto3" json:"distance_m,omitempty"`
+	Side               string  `protobuf:"bytes,17,opt,name=side,proto3" json:"side,omitempty"` // both | left | right
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *SessionSet) Reset() {
@@ -1325,6 +1342,76 @@ func (x *SessionSet) GetCompleted() bool {
 	return false
 }
 
+func (x *SessionSet) GetSetType() string {
+	if x != nil {
+		return x.SetType
+	}
+	return ""
+}
+
+func (x *SessionSet) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *SessionSet) GetLoadKg() float64 {
+	if x != nil {
+		return x.LoadKg
+	}
+	return 0
+}
+
+func (x *SessionSet) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *SessionSet) GetDeleted() bool {
+	if x != nil {
+		return x.Deleted
+	}
+	return false
+}
+
+func (x *SessionSet) GetExcludeFromRecords() bool {
+	if x != nil {
+		return x.ExcludeFromRecords
+	}
+	return false
+}
+
+func (x *SessionSet) GetPerformedAt() int64 {
+	if x != nil {
+		return x.PerformedAt
+	}
+	return 0
+}
+
+func (x *SessionSet) GetDurationSeconds() int32 {
+	if x != nil {
+		return x.DurationSeconds
+	}
+	return 0
+}
+
+func (x *SessionSet) GetDistanceM() float64 {
+	if x != nil {
+		return x.DistanceM
+	}
+	return 0
+}
+
+func (x *SessionSet) GetSide() string {
+	if x != nil {
+		return x.Side
+	}
+	return ""
+}
+
 // SessionExercise is an exercise slotted into a session, with its
 // library metadata joined in and its logged sets attached.
 type SessionExercise struct {
@@ -1343,8 +1430,19 @@ type SessionExercise struct {
 	CueTwo           string                 `protobuf:"bytes,12,opt,name=cue_two,json=cueTwo,proto3" json:"cue_two,omitempty"`
 	CueThree         string                 `protobuf:"bytes,13,opt,name=cue_three,json=cueThree,proto3" json:"cue_three,omitempty"`
 	Sets             []*SessionSet          `protobuf:"bytes,14,rep,name=sets,proto3" json:"sets,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Choice 1 — the plan this exercise was prescribed with, kept separate from
+	// the performed sets above, and the identity lineage when the member
+	// corrected which movement was actually done.
+	PlannedReps        string  `protobuf:"bytes,15,opt,name=planned_reps,json=plannedReps,proto3" json:"planned_reps,omitempty"`
+	PlannedLoadKg      float64 `protobuf:"fixed64,16,opt,name=planned_load_kg,json=plannedLoadKg,proto3" json:"planned_load_kg,omitempty"`
+	PlannedRpe         float64 `protobuf:"fixed64,17,opt,name=planned_rpe,json=plannedRpe,proto3" json:"planned_rpe,omitempty"`
+	PlannedSource      string  `protobuf:"bytes,18,opt,name=planned_source,json=plannedSource,proto3" json:"planned_source,omitempty"`                  // builder | programme | import | coach | member_added
+	OriginalExerciseId string  `protobuf:"bytes,19,opt,name=original_exercise_id,json=originalExerciseId,proto3" json:"original_exercise_id,omitempty"` // empty unless identity was corrected
+	ExerciseSlug       string  `protobuf:"bytes,20,opt,name=exercise_slug,json=exerciseSlug,proto3" json:"exercise_slug,omitempty"`
+	Revision           int32   `protobuf:"varint,21,opt,name=revision,proto3" json:"revision,omitempty"`
+	Deleted            bool    `protobuf:"varint,22,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *SessionExercise) Reset() {
@@ -1475,20 +1573,92 @@ func (x *SessionExercise) GetSets() []*SessionSet {
 	return nil
 }
 
+func (x *SessionExercise) GetPlannedReps() string {
+	if x != nil {
+		return x.PlannedReps
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetPlannedLoadKg() float64 {
+	if x != nil {
+		return x.PlannedLoadKg
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetPlannedRpe() float64 {
+	if x != nil {
+		return x.PlannedRpe
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetPlannedSource() string {
+	if x != nil {
+		return x.PlannedSource
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetOriginalExerciseId() string {
+	if x != nil {
+		return x.OriginalExerciseId
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetExerciseSlug() string {
+	if x != nil {
+		return x.ExerciseSlug
+	}
+	return ""
+}
+
+func (x *SessionExercise) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *SessionExercise) GetDeleted() bool {
+	if x != nil {
+		return x.Deleted
+	}
+	return false
+}
+
 // ForgeSession is a built / live / closed training session.
 type ForgeSession struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	// planned | active | completed | abandoned.
-	Status        string             `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
-	Notes         string             `protobuf:"bytes,4,opt,name=notes,proto3" json:"notes,omitempty"`
-	StartedAt     int64              `protobuf:"varint,5,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`       // unix seconds, 0 if not started
-	CompletedAt   int64              `protobuf:"varint,6,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"` // unix seconds, 0 if not completed
-	CreatedAt     int64              `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	Exercises     []*SessionExercise `protobuf:"bytes,8,rep,name=exercises,proto3" json:"exercises,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Status      string             `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Notes       string             `protobuf:"bytes,4,opt,name=notes,proto3" json:"notes,omitempty"`
+	StartedAt   int64              `protobuf:"varint,5,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`       // unix seconds, 0 if not started
+	CompletedAt int64              `protobuf:"varint,6,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"` // unix seconds, 0 if not completed
+	CreatedAt   int64              `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	Exercises   []*SessionExercise `protobuf:"bytes,8,rep,name=exercises,proto3" json:"exercises,omitempty"`
+	// Choice 1 — provenance and lifecycle. performed_at is when the training
+	// happened (for imports, the source's own time), local_date is that moment
+	// in the member's time zone, and deleted sessions are soft-deleted with a
+	// reason and restorable.
+	Source            string `protobuf:"bytes,9,opt,name=source,proto3" json:"source,omitempty"` // manual | programme | import | coach | device
+	ExternalSource    string `protobuf:"bytes,10,opt,name=external_source,json=externalSource,proto3" json:"external_source,omitempty"`
+	PerformedAt       int64  `protobuf:"varint,11,opt,name=performed_at,json=performedAt,proto3" json:"performed_at,omitempty"`
+	Timezone          string `protobuf:"bytes,12,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	LocalDate         string `protobuf:"bytes,13,opt,name=local_date,json=localDate,proto3" json:"local_date,omitempty"` // YYYY-MM-DD in timezone
+	Revision          int32  `protobuf:"varint,14,opt,name=revision,proto3" json:"revision,omitempty"`
+	Deleted           bool   `protobuf:"varint,15,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	DeletedAt         int64  `protobuf:"varint,16,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
+	PausedSeconds     int32  `protobuf:"varint,17,opt,name=paused_seconds,json=pausedSeconds,proto3" json:"paused_seconds,omitempty"`
+	Paused            bool   `protobuf:"varint,18,opt,name=paused,proto3" json:"paused,omitempty"` // a pause is currently open
+	ImportBatchId     string `protobuf:"bytes,19,opt,name=import_batch_id,json=importBatchId,proto3" json:"import_batch_id,omitempty"`
+	CompletedSetCount int32  `protobuf:"varint,20,opt,name=completed_set_count,json=completedSetCount,proto3" json:"completed_set_count,omitempty"` // performed, non-deleted sets
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ForgeSession) Reset() {
@@ -1575,6 +1745,90 @@ func (x *ForgeSession) GetExercises() []*SessionExercise {
 		return x.Exercises
 	}
 	return nil
+}
+
+func (x *ForgeSession) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetExternalSource() string {
+	if x != nil {
+		return x.ExternalSource
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetPerformedAt() int64 {
+	if x != nil {
+		return x.PerformedAt
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetTimezone() string {
+	if x != nil {
+		return x.Timezone
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetLocalDate() string {
+	if x != nil {
+		return x.LocalDate
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetDeleted() bool {
+	if x != nil {
+		return x.Deleted
+	}
+	return false
+}
+
+func (x *ForgeSession) GetDeletedAt() int64 {
+	if x != nil {
+		return x.DeletedAt
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetPausedSeconds() int32 {
+	if x != nil {
+		return x.PausedSeconds
+	}
+	return 0
+}
+
+func (x *ForgeSession) GetPaused() bool {
+	if x != nil {
+		return x.Paused
+	}
+	return false
+}
+
+func (x *ForgeSession) GetImportBatchId() string {
+	if x != nil {
+		return x.ImportBatchId
+	}
+	return ""
+}
+
+func (x *ForgeSession) GetCompletedSetCount() int32 {
+	if x != nil {
+		return x.CompletedSetCount
+	}
+	return 0
 }
 
 // PlannedExercise is one row of the session builder's output.
@@ -1752,12 +2006,16 @@ func (x *ListExercisesResponse) GetExercises() []*Exercise {
 }
 
 type CreateSessionRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	Notes         string                 `protobuf:"bytes,2,opt,name=notes,proto3" json:"notes,omitempty"`
-	Exercises     []*PlannedExercise     `protobuf:"bytes,3,rep,name=exercises,proto3" json:"exercises,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Title     string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+	Notes     string                 `protobuf:"bytes,2,opt,name=notes,proto3" json:"notes,omitempty"`
+	Exercises []*PlannedExercise     `protobuf:"bytes,3,rep,name=exercises,proto3" json:"exercises,omitempty"`
+	// Choice 1 — a UUID the client generates once per intended session; a
+	// retried create returns the session the first attempt made.
+	ClientMutationId string `protobuf:"bytes,4,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	Timezone         string `protobuf:"bytes,5,opt,name=timezone,proto3" json:"timezone,omitempty"` // IANA zone of the device, e.g. America/Panama
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *CreateSessionRequest) Reset() {
@@ -1809,6 +2067,20 @@ func (x *CreateSessionRequest) GetExercises() []*PlannedExercise {
 		return x.Exercises
 	}
 	return nil
+}
+
+func (x *CreateSessionRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+func (x *CreateSessionRequest) GetTimezone() string {
+	if x != nil {
+		return x.Timezone
+	}
+	return ""
 }
 
 type CreateSessionResponse struct {
@@ -2114,11 +2386,16 @@ func (x *ListSessionsResponse) GetSessions() []*ForgeSession {
 }
 
 type UpdateSessionStatusRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // planned | active | completed | abandoned
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Id     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"` // planned | active | completed | abandoned
+	// Choice 1 — replay-safe status changes from the offline outbox. Allowed
+	// transitions: planned → active | abandoned, active → completed | abandoned.
+	// A completed or abandoned session is terminal; corrections go through
+	// TrainingDataService.
+	ClientMutationId string `protobuf:"bytes,3,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *UpdateSessionStatusRequest) Reset() {
@@ -2161,6 +2438,13 @@ func (x *UpdateSessionStatusRequest) GetId() string {
 func (x *UpdateSessionStatusRequest) GetStatus() string {
 	if x != nil {
 		return x.Status
+	}
+	return ""
+}
+
+func (x *UpdateSessionStatusRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
 	}
 	return ""
 }
@@ -2218,8 +2502,15 @@ type LogSetRequest struct {
 	Unit              string                 `protobuf:"bytes,5,opt,name=unit,proto3" json:"unit,omitempty"`
 	Rpe               float64                `protobuf:"fixed64,6,opt,name=rpe,proto3" json:"rpe,omitempty"`
 	Completed         bool                   `protobuf:"varint,7,opt,name=completed,proto3" json:"completed,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// Choice 1 — durable offline logging. client_mutation_id makes a replayed
+	// request return the stored result instead of writing twice; performed_at is
+	// when the member actually did the set (the outbox may send it later).
+	ClientMutationId string `protobuf:"bytes,8,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	SetType          string `protobuf:"bytes,9,opt,name=set_type,json=setType,proto3" json:"set_type,omitempty"`
+	PerformedAt      int64  `protobuf:"varint,10,opt,name=performed_at,json=performedAt,proto3" json:"performed_at,omitempty"` // unix seconds; 0 = now
+	Timezone         string `protobuf:"bytes,11,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *LogSetRequest) Reset() {
@@ -2299,6 +2590,34 @@ func (x *LogSetRequest) GetCompleted() bool {
 		return x.Completed
 	}
 	return false
+}
+
+func (x *LogSetRequest) GetClientMutationId() string {
+	if x != nil {
+		return x.ClientMutationId
+	}
+	return ""
+}
+
+func (x *LogSetRequest) GetSetType() string {
+	if x != nil {
+		return x.SetType
+	}
+	return ""
+}
+
+func (x *LogSetRequest) GetPerformedAt() int64 {
+	if x != nil {
+		return x.PerformedAt
+	}
+	return 0
+}
+
+func (x *LogSetRequest) GetTimezone() string {
+	if x != nil {
+		return x.Timezone
+	}
+	return ""
 }
 
 type LogSetResponse struct {
@@ -5630,8 +5949,15 @@ type PersonalRecord struct {
 	// The session this PR was first detected in. Empty when imported.
 	SourceSessionId string `protobuf:"bytes,9,opt,name=source_session_id,json=sourceSessionId,proto3" json:"source_session_id,omitempty"`
 	AchievedAt      int64  `protobuf:"varint,10,opt,name=achieved_at,json=achievedAt,proto3" json:"achieved_at,omitempty"` // unix seconds
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// Choice 1 — reconstruction lineage. Every record is derived from one
+	// performed set by a named formula inside a recorded recompute run.
+	FormulaVersion   string  `protobuf:"bytes,11,opt,name=formula_version,json=formulaVersion,proto3" json:"formula_version,omitempty"`
+	RecomputeRunId   string  `protobuf:"bytes,12,opt,name=recompute_run_id,json=recomputeRunId,proto3" json:"recompute_run_id,omitempty"`
+	SourceSetId      string  `protobuf:"bytes,13,opt,name=source_set_id,json=sourceSetId,proto3" json:"source_set_id,omitempty"`
+	LoadKg           float64 `protobuf:"fixed64,14,opt,name=load_kg,json=loadKg,proto3" json:"load_kg,omitempty"`
+	EstimatedOneRmKg float64 `protobuf:"fixed64,15,opt,name=estimated_one_rm_kg,json=estimatedOneRmKg,proto3" json:"estimated_one_rm_kg,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *PersonalRecord) Reset() {
@@ -5730,6 +6056,41 @@ func (x *PersonalRecord) GetSourceSessionId() string {
 func (x *PersonalRecord) GetAchievedAt() int64 {
 	if x != nil {
 		return x.AchievedAt
+	}
+	return 0
+}
+
+func (x *PersonalRecord) GetFormulaVersion() string {
+	if x != nil {
+		return x.FormulaVersion
+	}
+	return ""
+}
+
+func (x *PersonalRecord) GetRecomputeRunId() string {
+	if x != nil {
+		return x.RecomputeRunId
+	}
+	return ""
+}
+
+func (x *PersonalRecord) GetSourceSetId() string {
+	if x != nil {
+		return x.SourceSetId
+	}
+	return ""
+}
+
+func (x *PersonalRecord) GetLoadKg() float64 {
+	if x != nil {
+		return x.LoadKg
+	}
+	return 0
+}
+
+func (x *PersonalRecord) GetEstimatedOneRmKg() float64 {
+	if x != nil {
+		return x.EstimatedOneRmKg
 	}
 	return 0
 }
@@ -5918,6 +6279,8 @@ type BodyComposition struct {
 	VisceralFatRating float64                `protobuf:"fixed64,8,opt,name=visceral_fat_rating,json=visceralFatRating,proto3" json:"visceral_fat_rating,omitempty"`
 	BmrKcal           int32                  `protobuf:"varint,9,opt,name=bmr_kcal,json=bmrKcal,proto3" json:"bmr_kcal,omitempty"`
 	Notes             string                 `protobuf:"bytes,10,opt,name=notes,proto3" json:"notes,omitempty"`
+	Revision          int32                  `protobuf:"varint,11,opt,name=revision,proto3" json:"revision,omitempty"` // Choice 1 — increments on each correction
+	UpdatedAt         int64                  `protobuf:"varint,12,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6020,6 +6383,20 @@ func (x *BodyComposition) GetNotes() string {
 		return x.Notes
 	}
 	return ""
+}
+
+func (x *BodyComposition) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *BodyComposition) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
 }
 
 type ListBodyCompositionsRequest struct {
@@ -7888,9 +8265,15 @@ type ForgeAnalytics struct {
 	// Added because the analytics screen shipped a grey box reading "Chart
 	// plotting logic lands in Phase 2": the aggregation already existed for
 	// volume_7d, and nothing carried a series.
-	VolumeDaily   []*ForgeDailyVolume `protobuf:"bytes,11,rep,name=volume_daily,json=volumeDaily,proto3" json:"volume_daily,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	VolumeDaily []*ForgeDailyVolume `protobuf:"bytes,11,rep,name=volume_daily,json=volumeDaily,proto3" json:"volume_daily,omitempty"`
+	// Choice 1 — tonnage uses load_kg under this formula version, and when the
+	// window is empty the client can say "no training in the last 28 days"
+	// instead of "no training logged yet".
+	FormulaVersion   string `protobuf:"bytes,12,opt,name=formula_version,json=formulaVersion,proto3" json:"formula_version,omitempty"`
+	LastSessionAt    int64  `protobuf:"varint,13,opt,name=last_session_at,json=lastSessionAt,proto3" json:"last_session_at,omitempty"` // unix seconds, 0 when the member has none
+	LifetimeSessions int32  `protobuf:"varint,14,opt,name=lifetime_sessions,json=lifetimeSessions,proto3" json:"lifetime_sessions,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ForgeAnalytics) Reset() {
@@ -7998,6 +8381,27 @@ func (x *ForgeAnalytics) GetVolumeDaily() []*ForgeDailyVolume {
 		return x.VolumeDaily
 	}
 	return nil
+}
+
+func (x *ForgeAnalytics) GetFormulaVersion() string {
+	if x != nil {
+		return x.FormulaVersion
+	}
+	return ""
+}
+
+func (x *ForgeAnalytics) GetLastSessionAt() int64 {
+	if x != nil {
+		return x.LastSessionAt
+	}
+	return 0
+}
+
+func (x *ForgeAnalytics) GetLifetimeSessions() int32 {
+	if x != nil {
+		return x.LifetimeSessions
+	}
+	return 0
 }
 
 // One day of training volume.
@@ -11047,7 +11451,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\tvideo_url\x18\x06 \x01(\tR\bvideoUrl\x12\x17\n" +
 	"\acue_one\x18\a \x01(\tR\x06cueOne\x12\x17\n" +
 	"\acue_two\x18\b \x01(\tR\x06cueTwo\x12\x1b\n" +
-	"\tcue_three\x18\t \x01(\tR\bcueThree\"\xa9\x01\n" +
+	"\tcue_three\x18\t \x01(\tR\bcueThree\"\xde\x03\n" +
 	"\n" +
 	"SessionSet\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
@@ -11056,7 +11460,19 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x04reps\x18\x04 \x01(\x05R\x04reps\x12\x12\n" +
 	"\x04unit\x18\x05 \x01(\tR\x04unit\x12\x10\n" +
 	"\x03rpe\x18\x06 \x01(\x01R\x03rpe\x12\x1c\n" +
-	"\tcompleted\x18\a \x01(\bR\tcompleted\"\xdf\x03\n" +
+	"\tcompleted\x18\a \x01(\bR\tcompleted\x12\x19\n" +
+	"\bset_type\x18\b \x01(\tR\asetType\x12\x16\n" +
+	"\x06source\x18\t \x01(\tR\x06source\x12\x17\n" +
+	"\aload_kg\x18\n" +
+	" \x01(\x01R\x06loadKg\x12\x1a\n" +
+	"\brevision\x18\v \x01(\x05R\brevision\x12\x18\n" +
+	"\adeleted\x18\f \x01(\bR\adeleted\x120\n" +
+	"\x14exclude_from_records\x18\r \x01(\bR\x12excludeFromRecords\x12!\n" +
+	"\fperformed_at\x18\x0e \x01(\x03R\vperformedAt\x12)\n" +
+	"\x10duration_seconds\x18\x0f \x01(\x05R\x0fdurationSeconds\x12\x1d\n" +
+	"\n" +
+	"distance_m\x18\x10 \x01(\x01R\tdistanceM\x12\x12\n" +
+	"\x04side\x18\x11 \x01(\tR\x04side\"\xff\x05\n" +
 	"\x0fSessionExercise\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vexercise_id\x18\x02 \x01(\tR\n" +
@@ -11075,7 +11491,16 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\acue_one\x18\v \x01(\tR\x06cueOne\x12\x17\n" +
 	"\acue_two\x18\f \x01(\tR\x06cueTwo\x12\x1b\n" +
 	"\tcue_three\x18\r \x01(\tR\bcueThree\x123\n" +
-	"\x04sets\x18\x0e \x03(\v2\x1f.sttattus.workout.v1.SessionSetR\x04sets\"\x87\x02\n" +
+	"\x04sets\x18\x0e \x03(\v2\x1f.sttattus.workout.v1.SessionSetR\x04sets\x12!\n" +
+	"\fplanned_reps\x18\x0f \x01(\tR\vplannedReps\x12&\n" +
+	"\x0fplanned_load_kg\x18\x10 \x01(\x01R\rplannedLoadKg\x12\x1f\n" +
+	"\vplanned_rpe\x18\x11 \x01(\x01R\n" +
+	"plannedRpe\x12%\n" +
+	"\x0eplanned_source\x18\x12 \x01(\tR\rplannedSource\x120\n" +
+	"\x14original_exercise_id\x18\x13 \x01(\tR\x12originalExerciseId\x12#\n" +
+	"\rexercise_slug\x18\x14 \x01(\tR\fexerciseSlug\x12\x1a\n" +
+	"\brevision\x18\x15 \x01(\x05R\brevision\x12\x18\n" +
+	"\adeleted\x18\x16 \x01(\bR\adeleted\"\x92\x05\n" +
 	"\fForgeSession\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x16\n" +
@@ -11086,7 +11511,22 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\fcompleted_at\x18\x06 \x01(\x03R\vcompletedAt\x12\x1d\n" +
 	"\n" +
 	"created_at\x18\a \x01(\x03R\tcreatedAt\x12B\n" +
-	"\texercises\x18\b \x03(\v2$.sttattus.workout.v1.SessionExerciseR\texercises\"v\n" +
+	"\texercises\x18\b \x03(\v2$.sttattus.workout.v1.SessionExerciseR\texercises\x12\x16\n" +
+	"\x06source\x18\t \x01(\tR\x06source\x12'\n" +
+	"\x0fexternal_source\x18\n" +
+	" \x01(\tR\x0eexternalSource\x12!\n" +
+	"\fperformed_at\x18\v \x01(\x03R\vperformedAt\x12\x1a\n" +
+	"\btimezone\x18\f \x01(\tR\btimezone\x12\x1d\n" +
+	"\n" +
+	"local_date\x18\r \x01(\tR\tlocalDate\x12\x1a\n" +
+	"\brevision\x18\x0e \x01(\x05R\brevision\x12\x18\n" +
+	"\adeleted\x18\x0f \x01(\bR\adeleted\x12\x1d\n" +
+	"\n" +
+	"deleted_at\x18\x10 \x01(\x03R\tdeletedAt\x12%\n" +
+	"\x0epaused_seconds\x18\x11 \x01(\x05R\rpausedSeconds\x12\x16\n" +
+	"\x06paused\x18\x12 \x01(\bR\x06paused\x12&\n" +
+	"\x0fimport_batch_id\x18\x13 \x01(\tR\rimportBatchId\x12.\n" +
+	"\x13completed_set_count\x18\x14 \x01(\x05R\x11completedSetCount\"v\n" +
 	"\x0fPlannedExercise\x12\x1f\n" +
 	"\vexercise_id\x18\x01 \x01(\tR\n" +
 	"exerciseId\x12\x1f\n" +
@@ -11099,11 +11539,13 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x06muscle\x18\x03 \x01(\tR\x06muscle\x12\x1c\n" +
 	"\tequipment\x18\x04 \x01(\tR\tequipment\"T\n" +
 	"\x15ListExercisesResponse\x12;\n" +
-	"\texercises\x18\x01 \x03(\v2\x1d.sttattus.workout.v1.ExerciseR\texercises\"\x86\x01\n" +
+	"\texercises\x18\x01 \x03(\v2\x1d.sttattus.workout.v1.ExerciseR\texercises\"\xd0\x01\n" +
 	"\x14CreateSessionRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x14\n" +
 	"\x05notes\x18\x02 \x01(\tR\x05notes\x12B\n" +
-	"\texercises\x18\x03 \x03(\v2$.sttattus.workout.v1.PlannedExerciseR\texercises\"T\n" +
+	"\texercises\x18\x03 \x03(\v2$.sttattus.workout.v1.PlannedExerciseR\texercises\x12,\n" +
+	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\x12\x1a\n" +
+	"\btimezone\x18\x05 \x01(\tR\btimezone\"T\n" +
 	"\x15CreateSessionResponse\x12;\n" +
 	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"#\n" +
 	"\x11GetSessionRequest\x12\x0e\n" +
@@ -11116,12 +11558,13 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x13ListSessionsRequest\x123\n" +
 	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"U\n" +
 	"\x14ListSessionsResponse\x12=\n" +
-	"\bsessions\x18\x01 \x03(\v2!.sttattus.workout.v1.ForgeSessionR\bsessions\"D\n" +
+	"\bsessions\x18\x01 \x03(\v2!.sttattus.workout.v1.ForgeSessionR\bsessions\"r\n" +
 	"\x1aUpdateSessionStatusRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\"Z\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\x12,\n" +
+	"\x12client_mutation_id\x18\x03 \x01(\tR\x10clientMutationId\"Z\n" +
 	"\x1bUpdateSessionStatusResponse\x12;\n" +
-	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"\xcc\x01\n" +
+	"\asession\x18\x01 \x01(\v2!.sttattus.workout.v1.ForgeSessionR\asession\"\xd4\x02\n" +
 	"\rLogSetRequest\x12.\n" +
 	"\x13session_exercise_id\x18\x01 \x01(\tR\x11sessionExerciseId\x12\x1b\n" +
 	"\tset_index\x18\x02 \x01(\x05R\bsetIndex\x12\x16\n" +
@@ -11129,7 +11572,12 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x04reps\x18\x04 \x01(\x05R\x04reps\x12\x12\n" +
 	"\x04unit\x18\x05 \x01(\tR\x04unit\x12\x10\n" +
 	"\x03rpe\x18\x06 \x01(\x01R\x03rpe\x12\x1c\n" +
-	"\tcompleted\x18\a \x01(\bR\tcompleted\"C\n" +
+	"\tcompleted\x18\a \x01(\bR\tcompleted\x12,\n" +
+	"\x12client_mutation_id\x18\b \x01(\tR\x10clientMutationId\x12\x19\n" +
+	"\bset_type\x18\t \x01(\tR\asetType\x12!\n" +
+	"\fperformed_at\x18\n" +
+	" \x01(\x03R\vperformedAt\x12\x1a\n" +
+	"\btimezone\x18\v \x01(\tR\btimezone\"C\n" +
 	"\x0eLogSetResponse\x121\n" +
 	"\x03set\x18\x01 \x01(\v2\x1f.sttattus.workout.v1.SessionSetR\x03set\"d\n" +
 	"\x12SessionMetricPoint\x128\n" +
@@ -11375,7 +11823,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\n" +
 	"week_index\x18\x02 \x01(\x05R\tweekIndex\"R\n" +
 	"\x18GetProgrammeWeekResponse\x126\n" +
-	"\x04week\x18\x01 \x01(\v2\".sttattus.workout.v1.ProgrammeWeekR\x04week\"\xb1\x02\n" +
+	"\x04week\x18\x01 \x01(\v2\".sttattus.workout.v1.ProgrammeWeekR\x04week\"\xf0\x03\n" +
 	"\x0ePersonalRecord\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vexercise_id\x18\x02 \x01(\tR\n" +
@@ -11389,14 +11837,19 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x11source_session_id\x18\t \x01(\tR\x0fsourceSessionId\x12\x1f\n" +
 	"\vachieved_at\x18\n" +
 	" \x01(\x03R\n" +
-	"achievedAt\"\x12\n" +
+	"achievedAt\x12'\n" +
+	"\x0fformula_version\x18\v \x01(\tR\x0eformulaVersion\x12(\n" +
+	"\x10recompute_run_id\x18\f \x01(\tR\x0erecomputeRunId\x12\"\n" +
+	"\rsource_set_id\x18\r \x01(\tR\vsourceSetId\x12\x17\n" +
+	"\aload_kg\x18\x0e \x01(\x01R\x06loadKg\x12-\n" +
+	"\x13estimated_one_rm_kg\x18\x0f \x01(\x01R\x10estimatedOneRmKg\"\x12\n" +
 	"\x10ListMyPRsRequest\"J\n" +
 	"\x11ListMyPRsResponse\x125\n" +
 	"\x03prs\x18\x01 \x03(\v2#.sttattus.workout.v1.PersonalRecordR\x03prs\",\n" +
 	"\x14ListRecentPRsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\"N\n" +
 	"\x15ListRecentPRsResponse\x125\n" +
-	"\x03prs\x18\x01 \x03(\v2#.sttattus.workout.v1.PersonalRecordR\x03prs\"\xbc\x02\n" +
+	"\x03prs\x18\x01 \x03(\v2#.sttattus.workout.v1.PersonalRecordR\x03prs\"\xf7\x02\n" +
 	"\x0fBodyComposition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06source\x18\x02 \x01(\tR\x06source\x12\x1f\n" +
@@ -11411,7 +11864,10 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x13visceral_fat_rating\x18\b \x01(\x01R\x11visceralFatRating\x12\x19\n" +
 	"\bbmr_kcal\x18\t \x01(\x05R\abmrKcal\x12\x14\n" +
 	"\x05notes\x18\n" +
-	" \x01(\tR\x05notes\"R\n" +
+	" \x01(\tR\x05notes\x12\x1a\n" +
+	"\brevision\x18\v \x01(\x05R\brevision\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\f \x01(\x03R\tupdatedAt\"R\n" +
 	"\x1bListBodyCompositionsRequest\x123\n" +
 	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"^\n" +
 	"\x1cListBodyCompositionsResponse\x12>\n" +
@@ -11534,7 +11990,7 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x06metric\x18\x01 \x01(\tR\x06metric\x12\x16\n" +
 	"\x06source\x18\x02 \x01(\tR\x06source\"\\\n" +
 	"\x19SetSensorPriorityResponse\x12?\n" +
-	"\bpriority\x18\x01 \x01(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority\"\xe0\x03\n" +
+	"\bpriority\x18\x01 \x01(\v2#.sttattus.workout.v1.SensorPriorityR\bpriority\"\xde\x04\n" +
 	"\x0eForgeAnalytics\x12.\n" +
 	"\x13acute_chronic_ratio\x18\x01 \x01(\x01R\x11acuteChronicRatio\x12,\n" +
 	"\x12acute_chronic_zone\x18\x02 \x01(\tR\x10acuteChronicZone\x12\x1f\n" +
@@ -11548,7 +12004,10 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x14best_one_rm_exercise\x18\t \x01(\tR\x11bestOneRmExercise\x12\x19\n" +
 	"\bis_empty\x18\n" +
 	" \x01(\bR\aisEmpty\x12H\n" +
-	"\fvolume_daily\x18\v \x03(\v2%.sttattus.workout.v1.ForgeDailyVolumeR\vvolumeDaily\"@\n" +
+	"\fvolume_daily\x18\v \x03(\v2%.sttattus.workout.v1.ForgeDailyVolumeR\vvolumeDaily\x12'\n" +
+	"\x0fformula_version\x18\f \x01(\tR\x0eformulaVersion\x12&\n" +
+	"\x0flast_session_at\x18\r \x01(\x03R\rlastSessionAt\x12+\n" +
+	"\x11lifetime_sessions\x18\x0e \x01(\x05R\x10lifetimeSessions\"@\n" +
 	"\x10ForgeDailyVolume\x12\x12\n" +
 	"\x04date\x18\x01 \x01(\tR\x04date\x12\x18\n" +
 	"\atonnage\x18\x02 \x01(\x01R\atonnage\"\x1a\n" +

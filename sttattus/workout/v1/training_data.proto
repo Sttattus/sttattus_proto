@@ -1,0 +1,662 @@
+syntax = "proto3";
+
+package sttattus.workout.v1;
+
+import "sttattus/common/v1/pagination.proto";
+import "sttattus/workout/v1/workout.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1";
+
+// ===========================================================================
+// Forge Choice 1 — Training Data Reliability Center.
+//
+// Canonical movement identity, planned-versus-performed provenance, replay-safe
+// imports with a rejected-row report, member corrections with revision
+// history, deterministic recompute of every derived record, conflicts that are
+// never silently merged, member→staff correction cases, and a full export.
+//
+// Every RPC is scoped to the authenticated member. Identifiers that do not
+// belong to the caller return NOT_FOUND. Mutations accept client_mutation_id
+// (a client-generated UUID): a replay with the same id and the same request
+// returns the stored result; the same id with a different request is
+// ALREADY_EXISTS. Corrections carry expected_revision; a stale revision is
+// ABORTED and the response detail names the current revision.
+// ===========================================================================
+
+// ----- Movement identity ---------------------------------------------------
+
+// Movement is one canonical movement (catalog) or one of the caller's private
+// movements. A merged movement names the movement it now resolves to.
+message Movement {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string category = 4; // compound | accessory | conditioning | mobility | cardio
+  string primary_muscle = 5;
+  string equipment = 6;
+  string movement_pattern = 7; // squat | hinge | horizontal_push | ... | locomotion | other
+  string laterality = 8; // bilateral | unilateral | alternating
+  string measurement = 9; // load_reps | bodyweight_reps | reps_only | duration | distance_duration
+  string status = 10; // active | deprecated | merged
+  string merged_into_id = 11;
+  int32 version = 12;
+  bool is_private = 13;
+  string review_status = 14; // reviewed | unreviewed | submitted | rejected
+  repeated string aliases = 15;
+}
+
+message ListMovementsRequest {
+  string search = 1; // matches name, slug and aliases, case-insensitive
+  bool include_private = 2;
+  bool include_inactive = 3; // deprecated and merged rows, for history screens
+  sttattus.common.v1.PageRequest page = 4;
+}
+message ListMovementsResponse {
+  repeated Movement movements = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// CreatePrivateMovement adds a movement only the caller can see. It is marked
+// unreviewed and never enters the catalog unless staff adopt it.
+message CreatePrivateMovementRequest {
+  string client_mutation_id = 1;
+  string name = 2;
+  string category = 3;
+  string primary_muscle = 4;
+  string equipment = 5;
+  string movement_pattern = 6;
+  string laterality = 7;
+  string measurement = 8;
+  repeated string aliases = 9;
+}
+message CreatePrivateMovementResponse {
+  Movement movement = 1;
+}
+
+// ----- Overview -------------------------------------------------------------
+
+message TrainingDataSourceCount {
+  string source = 1; // manual | import | device | programme | coach
+  int32 sessions = 2;
+  int32 sets = 3;
+  int64 last_at = 4; // unix seconds
+}
+
+message TrainingDataOverview {
+  int32 sessions = 1; // non-deleted
+  int32 completed_sessions = 2;
+  int32 abandoned_sessions = 3;
+  int32 deleted_sessions = 4;
+  int32 performed_sets = 5; // completed, non-deleted
+  int32 corrected_sets = 6; // revision > 1
+  int32 private_movements = 7;
+  int32 imports_committed = 8;
+  int32 open_conflicts = 9;
+  int32 open_correction_requests = 10;
+  repeated TrainingDataSourceCount sources = 11;
+  RecomputeRun last_recompute = 12; // id empty when never recomputed
+  string records_formula_version = 13;
+  int32 personal_records = 14;
+}
+
+message GetTrainingDataOverviewRequest {}
+message GetTrainingDataOverviewResponse {
+  TrainingDataOverview overview = 1;
+}
+
+// ----- Sessions (history with provenance) ----------------------------------
+
+message ListTrainingSessionsRequest {
+  // completed | abandoned | deleted | all (all excludes deleted). Empty = completed.
+  string filter = 1;
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListTrainingSessionsResponse {
+  // Hydrated: exercises and their non-deleted sets, with provenance fields.
+  repeated ForgeSession sessions = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message GetTrainingSessionRequest {
+  string session_id = 1;
+  bool include_deleted_sets = 2;
+}
+message GetTrainingSessionResponse {
+  ForgeSession session = 1;
+}
+
+// ----- Corrections -----------------------------------------------------------
+
+// RecomputeSummary tells the member what a change did to derived data.
+message RecomputeSummary {
+  string run_id = 1;
+  string status = 2; // succeeded | failed | skipped
+  int32 records_before = 3;
+  int32 records_after = 4;
+  string formula_version = 5;
+  bool streak_changed = 6;
+  bool stats_rebuilt = 7;
+  string message = 8; // plain-language result, safe to show
+}
+
+// CorrectSet edits a performed set. Only the fields named in field_mask are
+// changed: weight, reps, unit, rpe, set_type, performed_at, side,
+// duration_seconds, distance_m, exclude_from_records.
+message CorrectSetRequest {
+  string client_mutation_id = 1;
+  string set_id = 2;
+  int32 expected_revision = 3;
+  repeated string field_mask = 4;
+  double weight = 5;
+  int32 reps = 6;
+  string unit = 7;
+  double rpe = 8;
+  string set_type = 9;
+  int64 performed_at = 10;
+  string side = 11;
+  int32 duration_seconds = 12;
+  double distance_m = 13;
+  bool exclude_from_records = 14;
+  string reason = 15; // 3..500 characters, required
+}
+message CorrectSetResponse {
+  SessionSet set = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// AddPerformedSet records a set that was done but never logged (for example a
+// set lost before offline logging existed) on a completed session.
+message AddPerformedSetRequest {
+  string client_mutation_id = 1;
+  string session_exercise_id = 2;
+  double weight = 3;
+  int32 reps = 4;
+  string unit = 5;
+  double rpe = 6;
+  string set_type = 7;
+  int64 performed_at = 8;
+  string reason = 9;
+}
+message AddPerformedSetResponse {
+  SessionSet set = 1;
+  RecomputeSummary recompute = 2;
+}
+
+message DeleteSetRequest {
+  string client_mutation_id = 1;
+  string set_id = 2;
+  int32 expected_revision = 3;
+  string reason = 4;
+}
+message DeleteSetResponse {
+  SessionSet set = 1;
+  RecomputeSummary recompute = 2;
+}
+
+message RestoreSetRequest {
+  string client_mutation_id = 1;
+  string set_id = 2;
+  int32 expected_revision = 3;
+  string reason = 4;
+}
+message RestoreSetResponse {
+  SessionSet set = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// CorrectSessionExerciseIdentity says which movement was actually performed.
+// The original movement id is preserved as lineage.
+message CorrectSessionExerciseIdentityRequest {
+  string client_mutation_id = 1;
+  string session_exercise_id = 2;
+  int32 expected_revision = 3;
+  string exercise_id = 4;
+  string reason = 5;
+}
+message CorrectSessionExerciseIdentityResponse {
+  SessionExercise exercise = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// CorrectSession edits session metadata: title, notes, performed_at, timezone.
+message CorrectSessionRequest {
+  string client_mutation_id = 1;
+  string session_id = 2;
+  int32 expected_revision = 3;
+  repeated string field_mask = 4;
+  string title = 5;
+  string notes = 6;
+  int64 performed_at = 7;
+  string timezone = 8;
+  string reason = 9;
+}
+message CorrectSessionResponse {
+  ForgeSession session = 1;
+  RecomputeSummary recompute = 2;
+}
+
+message DeleteSessionRequest {
+  string client_mutation_id = 1;
+  string session_id = 2;
+  int32 expected_revision = 3;
+  string reason = 4;
+}
+message DeleteSessionResponse {
+  ForgeSession session = 1;
+  RecomputeSummary recompute = 2;
+}
+
+message RestoreSessionRequest {
+  string client_mutation_id = 1;
+  string session_id = 2;
+  int32 expected_revision = 3;
+  string reason = 4;
+}
+message RestoreSessionResponse {
+  ForgeSession session = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// Live-session clock pauses. Pausing an active session opens a pause; resuming
+// closes it. Paused time is excluded from session duration.
+message PauseSessionRequest {
+  string client_mutation_id = 1;
+  string session_id = 2;
+}
+message PauseSessionResponse {
+  ForgeSession session = 1;
+}
+message ResumeSessionRequest {
+  string client_mutation_id = 1;
+  string session_id = 2;
+}
+message ResumeSessionResponse {
+  ForgeSession session = 1;
+}
+
+// UpdateBodyComposition corrects a body-composition entry with a reason.
+message UpdateBodyCompositionRequest {
+  string client_mutation_id = 1;
+  string id = 2;
+  int32 expected_revision = 3;
+  string source = 4;
+  int64 captured_at = 5;
+  double weight_kg = 6;
+  double body_fat_pct = 7;
+  double lean_mass_kg = 8;
+  double fat_mass_kg = 9;
+  double visceral_fat_rating = 10;
+  int32 bmr_kcal = 11;
+  string notes = 12;
+  string reason = 13;
+}
+message UpdateBodyCompositionResponse {
+  BodyComposition entry = 1;
+}
+
+// ----- Revision history ------------------------------------------------------
+
+// TrainingRevision is one immutable history entry. before/after carry only
+// the changed training fields, never another member's data.
+message TrainingRevision {
+  string id = 1;
+  string entity_type = 2; // session | session_exercise | set | body_composition | import_batch | recompute | conflict
+  string entity_id = 3;
+  string session_id = 4;
+  int32 revision = 5;
+  string change_kind = 6; // created | edited | deleted | restored | identity_corrected | excluded | included | imported | rolled_back | conflict_resolved | recomputed | paused | resumed
+  string before_json = 7;
+  string after_json = 8;
+  string reason = 9;
+  string actor_kind = 10; // member | admin | import | system
+  int64 created_at = 11;
+}
+
+message ListTrainingRevisionsRequest {
+  string session_id = 1; // optional: one session and its exercises/sets
+  string entity_type = 2; // optional filter
+  sttattus.common.v1.PageRequest page = 3;
+}
+message ListTrainingRevisionsResponse {
+  repeated TrainingRevision revisions = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// ----- Derived-data recompute --------------------------------------------------
+
+message RecomputeRun {
+  string id = 1;
+  string trigger = 2; // correction | deletion | restore | identity | merge | import | rollback | conflict | admin_replay | backfill | verification | member_request
+  string status = 3; // running | succeeded | failed | verified | mismatch
+  string formula_version = 4;
+  int32 input_event_count = 5;
+  string input_digest = 6;
+  int32 output_record_count = 7;
+  string output_digest = 8;
+  string error_summary = 9;
+  string actor_kind = 10;
+  int64 created_at = 11;
+  int64 finished_at = 12;
+}
+
+message ListRecomputeRunsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListRecomputeRunsResponse {
+  repeated RecomputeRun runs = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// RequestRecompute rebuilds the caller's records, streak and stats from their
+// performed events now (rate-limited to one run per minute).
+message RequestRecomputeRequest {
+  string client_mutation_id = 1;
+}
+message RequestRecomputeResponse {
+  RecomputeSummary recompute = 1;
+}
+
+// ----- Import ------------------------------------------------------------------
+
+// ImportColumnMapping maps one source column to a Forge field. Used for
+// generic CSV files; recognised formats are mapped automatically.
+message ImportColumnMapping {
+  string column = 1;
+  // performed_at | session_title | session_key | exercise | set_index | set_type |
+  // weight | unit | reps | rpe | duration_seconds | distance_m | notes | ignore
+  string field = 2;
+}
+
+// ImportExerciseMapping resolves one source exercise name to a movement.
+message ImportExerciseMapping {
+  string source_name = 1;
+  string exercise_id = 2; // empty = leave rows rejected as unmapped
+  bool create_private = 3; // create a private movement named source_name
+}
+
+message ImportRow {
+  int32 row_number = 1; // 1-based line/record number in the source
+  string status = 2; // pending | accepted | rejected | duplicate
+  string reason_code = 3; // e.g. unmapped_exercise | invalid_number | missing_date | unit_unknown | duplicate_session | out_of_range
+  string reason_detail = 4;
+  string source_exercise_name = 5;
+  string mapped_exercise_id = 6;
+  int64 performed_at = 7;
+  string session_key = 8;
+  int32 set_index = 9;
+  double weight = 10;
+  string unit = 11;
+  int32 reps = 12;
+  double rpe = 13;
+  int32 duration_seconds = 14;
+  double distance_m = 15;
+  string created_set_id = 16;
+}
+
+message ImportUnmappedExercise {
+  string source_name = 1;
+  int32 rows = 2;
+  repeated Movement suggestions = 3; // best matches first
+}
+
+message ImportBatch {
+  string id = 1;
+  string source_format = 2; // forge_json | forge_csv | strong_csv | hevy_csv | generic_csv | tcx | gpx | fit
+  string filename = 3;
+  string content_sha256 = 4;
+  string status = 5; // previewed | committed | rolled_back | expired
+  string parser_version = 6;
+  int32 total_rows = 7;
+  int32 accepted_rows = 8;
+  int32 rejected_rows = 9;
+  int32 duplicate_rows = 10;
+  int32 created_sessions = 11;
+  int32 created_sets = 12;
+  int32 conflicts_opened = 13;
+  repeated ImportColumnMapping columns = 14;
+  repeated string detected_columns = 15;
+  string default_unit = 16;
+  string timezone = 17;
+  int64 created_at = 18;
+  int64 committed_at = 19;
+  int64 rolled_back_at = 20;
+  int64 expires_at = 21;
+  string rollback_reason = 22;
+  int32 sessions_in_file = 23;
+}
+
+// PreviewImport parses a file without writing any training data. The preview
+// is stored for 24 hours so CommitImport never needs the file again.
+message PreviewImportRequest {
+  string client_mutation_id = 1;
+  string filename = 2;
+  bytes content = 3; // at most 3 MiB
+  string source_format = 4; // empty = detect
+  string default_unit = 5; // kg | lb — used when the file does not say
+  string timezone = 6; // IANA zone applied to local timestamps without offset
+  repeated ImportColumnMapping columns = 7; // required for generic_csv
+}
+message PreviewImportResponse {
+  ImportBatch batch = 1;
+  repeated ImportUnmappedExercise unmapped_exercises = 2;
+  repeated ImportRow sample_rows = 3; // up to 50, rejected rows first
+  // Set when this exact file was already committed: no preview is created and
+  // committing again would change nothing.
+  ImportBatch already_committed = 4;
+}
+
+message CommitImportRequest {
+  string client_mutation_id = 1;
+  string batch_id = 2;
+  repeated ImportExerciseMapping exercise_mappings = 3;
+}
+message CommitImportResponse {
+  ImportBatch batch = 1;
+  RecomputeSummary recompute = 2;
+}
+
+message ListImportBatchesRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListImportBatchesResponse {
+  repeated ImportBatch batches = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// GetImportBatch returns the batch and its rows (the rejected-row report).
+message GetImportBatchRequest {
+  string batch_id = 1;
+  string row_status = 2; // optional: accepted | rejected | duplicate
+  sttattus.common.v1.PageRequest page = 3;
+}
+message GetImportBatchResponse {
+  ImportBatch batch = 1;
+  repeated ImportRow rows = 2;
+  sttattus.common.v1.PageResponse page = 3;
+}
+
+// RollbackImport soft-deletes every session the batch created and records why.
+message RollbackImportRequest {
+  string client_mutation_id = 1;
+  string batch_id = 2;
+  string reason = 3;
+}
+message RollbackImportResponse {
+  ImportBatch batch = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// ----- Export --------------------------------------------------------------------
+
+message ExportTrainingDataRequest {
+  string format = 1; // json | csv
+  bool include_deleted = 2;
+}
+message ExportTrainingDataResponse {
+  string filename = 1;
+  string media_type = 2;
+  bytes content = 3;
+  string sha256 = 4;
+  int32 sessions = 5;
+  int32 sets = 6;
+  string format_version = 7; // forge-export-v1
+  int64 generated_at = 8;
+}
+
+// ----- Conflicts --------------------------------------------------------------------
+
+message DataConflict {
+  string id = 1;
+  string kind = 2; // duplicate_session | unit_suspect | source_overlap
+  string status = 3; // open | resolved | dismissed
+  string primary_session_id = 4;
+  string secondary_session_id = 5;
+  string set_id = 6;
+  string import_batch_id = 7;
+  string summary = 8; // plain-language description built from numbers only
+  string resolution = 9;
+  string resolution_reason = 10;
+  string resolved_actor_kind = 11;
+  int64 created_at = 12;
+  int64 resolved_at = 13;
+  int32 version = 14;
+  // Numbers the member needs to decide, e.g. entered vs. converted load.
+  double entered_weight = 15;
+  string entered_unit = 16;
+  double alternative_load_kg = 17;
+  string primary_title = 18;
+  string secondary_title = 19;
+  int64 primary_performed_at = 20;
+  int64 secondary_performed_at = 21;
+}
+
+message ListDataConflictsRequest {
+  string status = 1; // open | resolved | dismissed | all; empty = open
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListDataConflictsResponse {
+  repeated DataConflict conflicts = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// ResolveDataConflict applies the member's decision. Resolutions:
+// duplicate_session / source_overlap: keep_both | keep_primary | keep_secondary;
+// unit_suspect: confirm_as_entered | convert_unit; any: dismiss.
+message ResolveDataConflictRequest {
+  string client_mutation_id = 1;
+  string conflict_id = 2;
+  int32 expected_version = 3;
+  string resolution = 4;
+  string reason = 5;
+}
+message ResolveDataConflictResponse {
+  DataConflict conflict = 1;
+  RecomputeSummary recompute = 2;
+}
+
+// ----- Correction requests (member → staff → member) --------------------------------
+
+message CorrectionEvent {
+  string id = 1;
+  string actor_kind = 2; // member | admin | system
+  string event = 3; // opened | commented | status_changed | resolved | rejected | cancelled | acknowledged
+  string note = 4;
+  string status_after = 5;
+  int64 created_at = 6;
+}
+
+message CorrectionRequest {
+  string id = 1;
+  string kind = 2; // movement_identity | catalog_error | import_mapping | duplicate_data | unit_error | record_dispute | other
+  string subject_type = 3; // session | set | exercise | import_batch | personal_record | none
+  string subject_id = 4;
+  string description = 5;
+  string status = 6; // open | in_review | awaiting_member | resolved | rejected | cancelled
+  string staff_response = 7;
+  string resolution_action = 8; // none | alias_added | movement_merged | catalog_corrected | import_replayed | data_repaired | no_change
+  int32 version = 9;
+  int64 created_at = 10;
+  int64 updated_at = 11;
+  int64 resolved_at = 12;
+  int64 member_acknowledged_at = 13;
+  repeated CorrectionEvent events = 14;
+}
+
+message SubmitCorrectionRequestRequest {
+  string client_mutation_id = 1;
+  string kind = 2;
+  string subject_type = 3;
+  string subject_id = 4;
+  string description = 5; // 10..2000 characters
+}
+message SubmitCorrectionRequestResponse {
+  CorrectionRequest request = 1;
+}
+
+message ListCorrectionRequestsRequest {
+  string status = 1; // open (all non-terminal) | closed | all; empty = all
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListCorrectionRequestsResponse {
+  repeated CorrectionRequest requests = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+// RespondToCorrectionRequest lets the member answer staff (awaiting_member),
+// cancel while non-terminal, or acknowledge a resolution.
+message RespondToCorrectionRequestRequest {
+  string client_mutation_id = 1;
+  string request_id = 2;
+  int32 expected_version = 3;
+  string action = 4; // reply | cancel | acknowledge
+  string note = 5;
+}
+message RespondToCorrectionRequestResponse {
+  CorrectionRequest request = 1;
+}
+
+// ===========================================================================
+
+service TrainingDataService {
+  // Movement identity.
+  rpc ListMovements(ListMovementsRequest) returns (ListMovementsResponse);
+  rpc CreatePrivateMovement(CreatePrivateMovementRequest) returns (CreatePrivateMovementResponse);
+
+  // Overview and provenance-rich history.
+  rpc GetTrainingDataOverview(GetTrainingDataOverviewRequest) returns (GetTrainingDataOverviewResponse);
+  rpc ListTrainingSessions(ListTrainingSessionsRequest) returns (ListTrainingSessionsResponse);
+  rpc GetTrainingSession(GetTrainingSessionRequest) returns (GetTrainingSessionResponse);
+
+  // Corrections with revision history and deterministic recompute.
+  rpc CorrectSet(CorrectSetRequest) returns (CorrectSetResponse);
+  rpc AddPerformedSet(AddPerformedSetRequest) returns (AddPerformedSetResponse);
+  rpc DeleteSet(DeleteSetRequest) returns (DeleteSetResponse);
+  rpc RestoreSet(RestoreSetRequest) returns (RestoreSetResponse);
+  rpc CorrectSessionExerciseIdentity(CorrectSessionExerciseIdentityRequest) returns (CorrectSessionExerciseIdentityResponse);
+  rpc CorrectSession(CorrectSessionRequest) returns (CorrectSessionResponse);
+  rpc DeleteSession(DeleteSessionRequest) returns (DeleteSessionResponse);
+  rpc RestoreSession(RestoreSessionRequest) returns (RestoreSessionResponse);
+  rpc PauseSession(PauseSessionRequest) returns (PauseSessionResponse);
+  rpc ResumeSession(ResumeSessionRequest) returns (ResumeSessionResponse);
+  rpc UpdateBodyComposition(UpdateBodyCompositionRequest) returns (UpdateBodyCompositionResponse);
+  rpc ListTrainingRevisions(ListTrainingRevisionsRequest) returns (ListTrainingRevisionsResponse);
+
+  // Derived data.
+  rpc ListRecomputeRuns(ListRecomputeRunsRequest) returns (ListRecomputeRunsResponse);
+  rpc RequestRecompute(RequestRecomputeRequest) returns (RequestRecomputeResponse);
+
+  // Import and export.
+  rpc PreviewImport(PreviewImportRequest) returns (PreviewImportResponse);
+  rpc CommitImport(CommitImportRequest) returns (CommitImportResponse);
+  rpc ListImportBatches(ListImportBatchesRequest) returns (ListImportBatchesResponse);
+  rpc GetImportBatch(GetImportBatchRequest) returns (GetImportBatchResponse);
+  rpc RollbackImport(RollbackImportRequest) returns (RollbackImportResponse);
+  rpc ExportTrainingData(ExportTrainingDataRequest) returns (ExportTrainingDataResponse);
+
+  // Conflicts and staff correction cases.
+  rpc ListDataConflicts(ListDataConflictsRequest) returns (ListDataConflictsResponse);
+  rpc ResolveDataConflict(ResolveDataConflictRequest) returns (ResolveDataConflictResponse);
+  rpc SubmitCorrectionRequest(SubmitCorrectionRequestRequest) returns (SubmitCorrectionRequestResponse);
+  rpc ListCorrectionRequests(ListCorrectionRequestsRequest) returns (ListCorrectionRequestsResponse);
+  rpc RespondToCorrectionRequest(RespondToCorrectionRequestRequest) returns (RespondToCorrectionRequestResponse);
+}

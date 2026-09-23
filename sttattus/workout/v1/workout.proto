@@ -149,6 +149,23 @@ message SessionSet {
   string unit = 5; // "kg" | "lb"
   double rpe = 6;
   bool completed = 7;
+  // Choice 1 — provenance of the performed event. set_type is one of
+  // warmup | working | backoff | drop | amrap | failure | cluster |
+  // rest_pause | timed | distance. source is manual | import | device |
+  // voice | coach | correction. load_kg is weight normalized to kilograms by
+  // the database (never recomputed on the client). revision starts at 1 and
+  // increments on every correction; deleted sets are returned only by the
+  // correction surfaces, with deleted = true.
+  string set_type = 8;
+  string source = 9;
+  double load_kg = 10;
+  int32 revision = 11;
+  bool deleted = 12;
+  bool exclude_from_records = 13;
+  int64 performed_at = 14; // unix seconds, 0 when not yet performed
+  int32 duration_seconds = 15;
+  double distance_m = 16;
+  string side = 17; // both | left | right
 }
 
 // SessionExercise is an exercise slotted into a session, with its
@@ -168,6 +185,17 @@ message SessionExercise {
   string cue_two = 12;
   string cue_three = 13;
   repeated SessionSet sets = 14;
+  // Choice 1 — the plan this exercise was prescribed with, kept separate from
+  // the performed sets above, and the identity lineage when the member
+  // corrected which movement was actually done.
+  string planned_reps = 15;
+  double planned_load_kg = 16;
+  double planned_rpe = 17;
+  string planned_source = 18; // builder | programme | import | coach | member_added
+  string original_exercise_id = 19; // empty unless identity was corrected
+  string exercise_slug = 20;
+  int32 revision = 21;
+  bool deleted = 22;
 }
 
 // ForgeSession is a built / live / closed training session.
@@ -181,6 +209,22 @@ message ForgeSession {
   int64 completed_at = 6; // unix seconds, 0 if not completed
   int64 created_at = 7;
   repeated SessionExercise exercises = 8;
+  // Choice 1 — provenance and lifecycle. performed_at is when the training
+  // happened (for imports, the source's own time), local_date is that moment
+  // in the member's time zone, and deleted sessions are soft-deleted with a
+  // reason and restorable.
+  string source = 9; // manual | programme | import | coach | device
+  string external_source = 10;
+  int64 performed_at = 11;
+  string timezone = 12;
+  string local_date = 13; // YYYY-MM-DD in timezone
+  int32 revision = 14;
+  bool deleted = 15;
+  int64 deleted_at = 16;
+  int32 paused_seconds = 17;
+  bool paused = 18; // a pause is currently open
+  string import_batch_id = 19;
+  int32 completed_set_count = 20; // performed, non-deleted sets
 }
 
 // PlannedExercise is one row of the session builder's output.
@@ -205,6 +249,10 @@ message CreateSessionRequest {
   string title = 1;
   string notes = 2;
   repeated PlannedExercise exercises = 3;
+  // Choice 1 — a UUID the client generates once per intended session; a
+  // retried create returns the session the first attempt made.
+  string client_mutation_id = 4;
+  string timezone = 5; // IANA zone of the device, e.g. America/Panama
 }
 message CreateSessionResponse {
   ForgeSession session = 1;
@@ -234,6 +282,11 @@ message ListSessionsResponse {
 message UpdateSessionStatusRequest {
   string id = 1;
   string status = 2; // planned | active | completed | abandoned
+  // Choice 1 — replay-safe status changes from the offline outbox. Allowed
+  // transitions: planned → active | abandoned, active → completed | abandoned.
+  // A completed or abandoned session is terminal; corrections go through
+  // TrainingDataService.
+  string client_mutation_id = 3;
 }
 message UpdateSessionStatusResponse {
   ForgeSession session = 1;
@@ -247,6 +300,13 @@ message LogSetRequest {
   string unit = 5;
   double rpe = 6;
   bool completed = 7;
+  // Choice 1 — durable offline logging. client_mutation_id makes a replayed
+  // request return the stored result instead of writing twice; performed_at is
+  // when the member actually did the set (the outbox may send it later).
+  string client_mutation_id = 8;
+  string set_type = 9;
+  int64 performed_at = 10; // unix seconds; 0 = now
+  string timezone = 11;
 }
 message LogSetResponse {
   SessionSet set = 1;
@@ -646,6 +706,13 @@ message PersonalRecord {
   // The session this PR was first detected in. Empty when imported.
   string source_session_id = 9;
   int64 achieved_at = 10; // unix seconds
+  // Choice 1 — reconstruction lineage. Every record is derived from one
+  // performed set by a named formula inside a recorded recompute run.
+  string formula_version = 11;
+  string recompute_run_id = 12;
+  string source_set_id = 13;
+  double load_kg = 14;
+  double estimated_one_rm_kg = 15;
 }
 
 message ListMyPRsRequest {}
@@ -679,6 +746,8 @@ message BodyComposition {
   double visceral_fat_rating = 8;
   int32 bmr_kcal = 9;
   string notes = 10;
+  int32 revision = 11; // Choice 1 — increments on each correction
+  int64 updated_at = 12;
 }
 
 message ListBodyCompositionsRequest {
@@ -889,6 +958,13 @@ message ForgeAnalytics {
   // plotting logic lands in Phase 2": the aggregation already existed for
   // volume_7d, and nothing carried a series.
   repeated ForgeDailyVolume volume_daily = 11;
+
+  // Choice 1 — tonnage uses load_kg under this formula version, and when the
+  // window is empty the client can say "no training in the last 28 days"
+  // instead of "no training logged yet".
+  string formula_version = 12;
+  int64 last_session_at = 13; // unix seconds, 0 when the member has none
+  int32 lifetime_sessions = 14;
 }
 
 // One day of training volume.

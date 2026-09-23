@@ -1621,6 +1621,16 @@ class SessionSet extends $pb.GeneratedMessage {
     $core.String? unit,
     $core.double? rpe,
     $core.bool? completed,
+    $core.String? setType,
+    $core.String? source,
+    $core.double? loadKg,
+    $core.int? revision,
+    $core.bool? deleted,
+    $core.bool? excludeFromRecords,
+    $fixnum.Int64? performedAt,
+    $core.int? durationSeconds,
+    $core.double? distanceM,
+    $core.String? side,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1630,6 +1640,17 @@ class SessionSet extends $pb.GeneratedMessage {
     if (unit != null) result.unit = unit;
     if (rpe != null) result.rpe = rpe;
     if (completed != null) result.completed = completed;
+    if (setType != null) result.setType = setType;
+    if (source != null) result.source = source;
+    if (loadKg != null) result.loadKg = loadKg;
+    if (revision != null) result.revision = revision;
+    if (deleted != null) result.deleted = deleted;
+    if (excludeFromRecords != null)
+      result.excludeFromRecords = excludeFromRecords;
+    if (performedAt != null) result.performedAt = performedAt;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    if (distanceM != null) result.distanceM = distanceM;
+    if (side != null) result.side = side;
     return result;
   }
 
@@ -1654,6 +1675,16 @@ class SessionSet extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'unit')
     ..aD(6, _omitFieldNames ? '' : 'rpe')
     ..aOB(7, _omitFieldNames ? '' : 'completed')
+    ..aOS(8, _omitFieldNames ? '' : 'setType')
+    ..aOS(9, _omitFieldNames ? '' : 'source')
+    ..aD(10, _omitFieldNames ? '' : 'loadKg')
+    ..aI(11, _omitFieldNames ? '' : 'revision')
+    ..aOB(12, _omitFieldNames ? '' : 'deleted')
+    ..aOB(13, _omitFieldNames ? '' : 'excludeFromRecords')
+    ..aInt64(14, _omitFieldNames ? '' : 'performedAt')
+    ..aI(15, _omitFieldNames ? '' : 'durationSeconds')
+    ..aD(16, _omitFieldNames ? '' : 'distanceM')
+    ..aOS(17, _omitFieldNames ? '' : 'side')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1736,6 +1767,103 @@ class SessionSet extends $pb.GeneratedMessage {
   $core.bool hasCompleted() => $_has(6);
   @$pb.TagNumber(7)
   void clearCompleted() => $_clearField(7);
+
+  /// Choice 1 — provenance of the performed event. set_type is one of
+  /// warmup | working | backoff | drop | amrap | failure | cluster |
+  /// rest_pause | timed | distance. source is manual | import | device |
+  /// voice | coach | correction. load_kg is weight normalized to kilograms by
+  /// the database (never recomputed on the client). revision starts at 1 and
+  /// increments on every correction; deleted sets are returned only by the
+  /// correction surfaces, with deleted = true.
+  @$pb.TagNumber(8)
+  $core.String get setType => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set setType($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSetType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSetType() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get source => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set source($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSource() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSource() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get loadKg => $_getN(9);
+  @$pb.TagNumber(10)
+  set loadKg($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLoadKg() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLoadKg() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get revision => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set revision($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRevision() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRevision() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get deleted => $_getBF(11);
+  @$pb.TagNumber(12)
+  set deleted($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDeleted() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDeleted() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get excludeFromRecords => $_getBF(12);
+  @$pb.TagNumber(13)
+  set excludeFromRecords($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasExcludeFromRecords() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearExcludeFromRecords() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get performedAt => $_getI64(13);
+  @$pb.TagNumber(14)
+  set performedAt($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasPerformedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPerformedAt() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.int get durationSeconds => $_getIZ(14);
+  @$pb.TagNumber(15)
+  set durationSeconds($core.int value) => $_setSignedInt32(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasDurationSeconds() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearDurationSeconds() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get distanceM => $_getN(15);
+  @$pb.TagNumber(16)
+  set distanceM($core.double value) => $_setDouble(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasDistanceM() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDistanceM() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get side => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set side($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasSide() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSide() => $_clearField(17);
 }
 
 /// SessionExercise is an exercise slotted into a session, with its
@@ -1756,6 +1884,14 @@ class SessionExercise extends $pb.GeneratedMessage {
     $core.String? cueTwo,
     $core.String? cueThree,
     $core.Iterable<SessionSet>? sets,
+    $core.String? plannedReps,
+    $core.double? plannedLoadKg,
+    $core.double? plannedRpe,
+    $core.String? plannedSource,
+    $core.String? originalExerciseId,
+    $core.String? exerciseSlug,
+    $core.int? revision,
+    $core.bool? deleted,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1772,6 +1908,15 @@ class SessionExercise extends $pb.GeneratedMessage {
     if (cueTwo != null) result.cueTwo = cueTwo;
     if (cueThree != null) result.cueThree = cueThree;
     if (sets != null) result.sets.addAll(sets);
+    if (plannedReps != null) result.plannedReps = plannedReps;
+    if (plannedLoadKg != null) result.plannedLoadKg = plannedLoadKg;
+    if (plannedRpe != null) result.plannedRpe = plannedRpe;
+    if (plannedSource != null) result.plannedSource = plannedSource;
+    if (originalExerciseId != null)
+      result.originalExerciseId = originalExerciseId;
+    if (exerciseSlug != null) result.exerciseSlug = exerciseSlug;
+    if (revision != null) result.revision = revision;
+    if (deleted != null) result.deleted = deleted;
     return result;
   }
 
@@ -1804,6 +1949,14 @@ class SessionExercise extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'cueThree')
     ..pPM<SessionSet>(14, _omitFieldNames ? '' : 'sets',
         subBuilder: SessionSet.create)
+    ..aOS(15, _omitFieldNames ? '' : 'plannedReps')
+    ..aD(16, _omitFieldNames ? '' : 'plannedLoadKg')
+    ..aD(17, _omitFieldNames ? '' : 'plannedRpe')
+    ..aOS(18, _omitFieldNames ? '' : 'plannedSource')
+    ..aOS(19, _omitFieldNames ? '' : 'originalExerciseId')
+    ..aOS(20, _omitFieldNames ? '' : 'exerciseSlug')
+    ..aI(21, _omitFieldNames ? '' : 'revision')
+    ..aOB(22, _omitFieldNames ? '' : 'deleted')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1944,6 +2097,81 @@ class SessionExercise extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(14)
   $pb.PbList<SessionSet> get sets => $_getList(13);
+
+  /// Choice 1 — the plan this exercise was prescribed with, kept separate from
+  /// the performed sets above, and the identity lineage when the member
+  /// corrected which movement was actually done.
+  @$pb.TagNumber(15)
+  $core.String get plannedReps => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set plannedReps($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPlannedReps() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPlannedReps() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.double get plannedLoadKg => $_getN(15);
+  @$pb.TagNumber(16)
+  set plannedLoadKg($core.double value) => $_setDouble(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasPlannedLoadKg() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearPlannedLoadKg() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.double get plannedRpe => $_getN(16);
+  @$pb.TagNumber(17)
+  set plannedRpe($core.double value) => $_setDouble(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasPlannedRpe() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearPlannedRpe() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get plannedSource => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set plannedSource($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasPlannedSource() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearPlannedSource() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get originalExerciseId => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set originalExerciseId($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasOriginalExerciseId() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearOriginalExerciseId() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get exerciseSlug => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set exerciseSlug($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasExerciseSlug() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearExerciseSlug() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.int get revision => $_getIZ(20);
+  @$pb.TagNumber(21)
+  set revision($core.int value) => $_setSignedInt32(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasRevision() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearRevision() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.bool get deleted => $_getBF(21);
+  @$pb.TagNumber(22)
+  set deleted($core.bool value) => $_setBool(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasDeleted() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearDeleted() => $_clearField(22);
 }
 
 /// ForgeSession is a built / live / closed training session.
@@ -1957,6 +2185,18 @@ class ForgeSession extends $pb.GeneratedMessage {
     $fixnum.Int64? completedAt,
     $fixnum.Int64? createdAt,
     $core.Iterable<SessionExercise>? exercises,
+    $core.String? source,
+    $core.String? externalSource,
+    $fixnum.Int64? performedAt,
+    $core.String? timezone,
+    $core.String? localDate,
+    $core.int? revision,
+    $core.bool? deleted,
+    $fixnum.Int64? deletedAt,
+    $core.int? pausedSeconds,
+    $core.bool? paused,
+    $core.String? importBatchId,
+    $core.int? completedSetCount,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1967,6 +2207,18 @@ class ForgeSession extends $pb.GeneratedMessage {
     if (completedAt != null) result.completedAt = completedAt;
     if (createdAt != null) result.createdAt = createdAt;
     if (exercises != null) result.exercises.addAll(exercises);
+    if (source != null) result.source = source;
+    if (externalSource != null) result.externalSource = externalSource;
+    if (performedAt != null) result.performedAt = performedAt;
+    if (timezone != null) result.timezone = timezone;
+    if (localDate != null) result.localDate = localDate;
+    if (revision != null) result.revision = revision;
+    if (deleted != null) result.deleted = deleted;
+    if (deletedAt != null) result.deletedAt = deletedAt;
+    if (pausedSeconds != null) result.pausedSeconds = pausedSeconds;
+    if (paused != null) result.paused = paused;
+    if (importBatchId != null) result.importBatchId = importBatchId;
+    if (completedSetCount != null) result.completedSetCount = completedSetCount;
     return result;
   }
 
@@ -1993,6 +2245,18 @@ class ForgeSession extends $pb.GeneratedMessage {
     ..aInt64(7, _omitFieldNames ? '' : 'createdAt')
     ..pPM<SessionExercise>(8, _omitFieldNames ? '' : 'exercises',
         subBuilder: SessionExercise.create)
+    ..aOS(9, _omitFieldNames ? '' : 'source')
+    ..aOS(10, _omitFieldNames ? '' : 'externalSource')
+    ..aInt64(11, _omitFieldNames ? '' : 'performedAt')
+    ..aOS(12, _omitFieldNames ? '' : 'timezone')
+    ..aOS(13, _omitFieldNames ? '' : 'localDate')
+    ..aI(14, _omitFieldNames ? '' : 'revision')
+    ..aOB(15, _omitFieldNames ? '' : 'deleted')
+    ..aInt64(16, _omitFieldNames ? '' : 'deletedAt')
+    ..aI(17, _omitFieldNames ? '' : 'pausedSeconds')
+    ..aOB(18, _omitFieldNames ? '' : 'paused')
+    ..aOS(19, _omitFieldNames ? '' : 'importBatchId')
+    ..aI(20, _omitFieldNames ? '' : 'completedSetCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2080,6 +2344,118 @@ class ForgeSession extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $pb.PbList<SessionExercise> get exercises => $_getList(7);
+
+  /// Choice 1 — provenance and lifecycle. performed_at is when the training
+  /// happened (for imports, the source's own time), local_date is that moment
+  /// in the member's time zone, and deleted sessions are soft-deleted with a
+  /// reason and restorable.
+  @$pb.TagNumber(9)
+  $core.String get source => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set source($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSource() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSource() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get externalSource => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set externalSource($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExternalSource() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExternalSource() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get performedAt => $_getI64(10);
+  @$pb.TagNumber(11)
+  set performedAt($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPerformedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPerformedAt() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get timezone => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set timezone($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasTimezone() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearTimezone() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get localDate => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set localDate($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLocalDate() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLocalDate() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get revision => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set revision($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRevision() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRevision() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get deleted => $_getBF(14);
+  @$pb.TagNumber(15)
+  set deleted($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasDeleted() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearDeleted() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get deletedAt => $_getI64(15);
+  @$pb.TagNumber(16)
+  set deletedAt($fixnum.Int64 value) => $_setInt64(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasDeletedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDeletedAt() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.int get pausedSeconds => $_getIZ(16);
+  @$pb.TagNumber(17)
+  set pausedSeconds($core.int value) => $_setSignedInt32(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasPausedSeconds() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearPausedSeconds() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.bool get paused => $_getBF(17);
+  @$pb.TagNumber(18)
+  set paused($core.bool value) => $_setBool(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasPaused() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearPaused() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get importBatchId => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set importBatchId($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasImportBatchId() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearImportBatchId() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.int get completedSetCount => $_getIZ(19);
+  @$pb.TagNumber(20)
+  set completedSetCount($core.int value) => $_setSignedInt32(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasCompletedSetCount() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCompletedSetCount() => $_clearField(20);
 }
 
 /// PlannedExercise is one row of the session builder's output.
@@ -2313,11 +2689,15 @@ class CreateSessionRequest extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? notes,
     $core.Iterable<PlannedExercise>? exercises,
+    $core.String? clientMutationId,
+    $core.String? timezone,
   }) {
     final result = create();
     if (title != null) result.title = title;
     if (notes != null) result.notes = notes;
     if (exercises != null) result.exercises.addAll(exercises);
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (timezone != null) result.timezone = timezone;
     return result;
   }
 
@@ -2339,6 +2719,8 @@ class CreateSessionRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'notes')
     ..pPM<PlannedExercise>(3, _omitFieldNames ? '' : 'exercises',
         subBuilder: PlannedExercise.create)
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(5, _omitFieldNames ? '' : 'timezone')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2380,6 +2762,26 @@ class CreateSessionRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $pb.PbList<PlannedExercise> get exercises => $_getList(2);
+
+  /// Choice 1 — a UUID the client generates once per intended session; a
+  /// retried create returns the session the first attempt made.
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get timezone => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set timezone($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTimezone() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTimezone() => $_clearField(5);
 }
 
 class CreateSessionResponse extends $pb.GeneratedMessage {
@@ -2767,10 +3169,12 @@ class UpdateSessionStatusRequest extends $pb.GeneratedMessage {
   factory UpdateSessionStatusRequest({
     $core.String? id,
     $core.String? status,
+    $core.String? clientMutationId,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (status != null) result.status = status;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
     return result;
   }
 
@@ -2790,6 +3194,7 @@ class UpdateSessionStatusRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2830,6 +3235,19 @@ class UpdateSessionStatusRequest extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatus() => $_clearField(2);
+
+  /// Choice 1 — replay-safe status changes from the offline outbox. Allowed
+  /// transitions: planned → active | abandoned, active → completed | abandoned.
+  /// A completed or abandoned session is terminal; corrections go through
+  /// TrainingDataService.
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
 }
 
 class UpdateSessionStatusResponse extends $pb.GeneratedMessage {
@@ -2902,6 +3320,10 @@ class LogSetRequest extends $pb.GeneratedMessage {
     $core.String? unit,
     $core.double? rpe,
     $core.bool? completed,
+    $core.String? clientMutationId,
+    $core.String? setType,
+    $fixnum.Int64? performedAt,
+    $core.String? timezone,
   }) {
     final result = create();
     if (sessionExerciseId != null) result.sessionExerciseId = sessionExerciseId;
@@ -2911,6 +3333,10 @@ class LogSetRequest extends $pb.GeneratedMessage {
     if (unit != null) result.unit = unit;
     if (rpe != null) result.rpe = rpe;
     if (completed != null) result.completed = completed;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (setType != null) result.setType = setType;
+    if (performedAt != null) result.performedAt = performedAt;
+    if (timezone != null) result.timezone = timezone;
     return result;
   }
 
@@ -2935,6 +3361,10 @@ class LogSetRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'unit')
     ..aD(6, _omitFieldNames ? '' : 'rpe')
     ..aOB(7, _omitFieldNames ? '' : 'completed')
+    ..aOS(8, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(9, _omitFieldNames ? '' : 'setType')
+    ..aInt64(10, _omitFieldNames ? '' : 'performedAt')
+    ..aOS(11, _omitFieldNames ? '' : 'timezone')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3018,6 +3448,45 @@ class LogSetRequest extends $pb.GeneratedMessage {
   $core.bool hasCompleted() => $_has(6);
   @$pb.TagNumber(7)
   void clearCompleted() => $_clearField(7);
+
+  /// Choice 1 — durable offline logging. client_mutation_id makes a replayed
+  /// request return the stored result instead of writing twice; performed_at is
+  /// when the member actually did the set (the outbox may send it later).
+  @$pb.TagNumber(8)
+  $core.String get clientMutationId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set clientMutationId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasClientMutationId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearClientMutationId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get setType => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set setType($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSetType() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSetType() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get performedAt => $_getI64(9);
+  @$pb.TagNumber(10)
+  set performedAt($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPerformedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPerformedAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get timezone => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set timezone($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasTimezone() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTimezone() => $_clearField(11);
 }
 
 class LogSetResponse extends $pb.GeneratedMessage {
@@ -7360,6 +7829,11 @@ class PersonalRecord extends $pb.GeneratedMessage {
     $core.String? unit,
     $core.String? sourceSessionId,
     $fixnum.Int64? achievedAt,
+    $core.String? formulaVersion,
+    $core.String? recomputeRunId,
+    $core.String? sourceSetId,
+    $core.double? loadKg,
+    $core.double? estimatedOneRmKg,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -7372,6 +7846,11 @@ class PersonalRecord extends $pb.GeneratedMessage {
     if (unit != null) result.unit = unit;
     if (sourceSessionId != null) result.sourceSessionId = sourceSessionId;
     if (achievedAt != null) result.achievedAt = achievedAt;
+    if (formulaVersion != null) result.formulaVersion = formulaVersion;
+    if (recomputeRunId != null) result.recomputeRunId = recomputeRunId;
+    if (sourceSetId != null) result.sourceSetId = sourceSetId;
+    if (loadKg != null) result.loadKg = loadKg;
+    if (estimatedOneRmKg != null) result.estimatedOneRmKg = estimatedOneRmKg;
     return result;
   }
 
@@ -7399,6 +7878,11 @@ class PersonalRecord extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'unit')
     ..aOS(9, _omitFieldNames ? '' : 'sourceSessionId')
     ..aInt64(10, _omitFieldNames ? '' : 'achievedAt')
+    ..aOS(11, _omitFieldNames ? '' : 'formulaVersion')
+    ..aOS(12, _omitFieldNames ? '' : 'recomputeRunId')
+    ..aOS(13, _omitFieldNames ? '' : 'sourceSetId')
+    ..aD(14, _omitFieldNames ? '' : 'loadKg')
+    ..aD(15, _omitFieldNames ? '' : 'estimatedOneRmKg')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7510,6 +7994,53 @@ class PersonalRecord extends $pb.GeneratedMessage {
   $core.bool hasAchievedAt() => $_has(9);
   @$pb.TagNumber(10)
   void clearAchievedAt() => $_clearField(10);
+
+  /// Choice 1 — reconstruction lineage. Every record is derived from one
+  /// performed set by a named formula inside a recorded recompute run.
+  @$pb.TagNumber(11)
+  $core.String get formulaVersion => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set formulaVersion($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasFormulaVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFormulaVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get recomputeRunId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set recomputeRunId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRecomputeRunId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRecomputeRunId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get sourceSetId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set sourceSetId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasSourceSetId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSourceSetId() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.double get loadKg => $_getN(13);
+  @$pb.TagNumber(14)
+  set loadKg($core.double value) => $_setDouble(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasLoadKg() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLoadKg() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.double get estimatedOneRmKg => $_getN(14);
+  @$pb.TagNumber(15)
+  set estimatedOneRmKg($core.double value) => $_setDouble(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasEstimatedOneRmKg() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearEstimatedOneRmKg() => $_clearField(15);
 }
 
 class ListMyPRsRequest extends $pb.GeneratedMessage {
@@ -7723,6 +8254,8 @@ class BodyComposition extends $pb.GeneratedMessage {
     $core.double? visceralFatRating,
     $core.int? bmrKcal,
     $core.String? notes,
+    $core.int? revision,
+    $fixnum.Int64? updatedAt,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -7735,6 +8268,8 @@ class BodyComposition extends $pb.GeneratedMessage {
     if (visceralFatRating != null) result.visceralFatRating = visceralFatRating;
     if (bmrKcal != null) result.bmrKcal = bmrKcal;
     if (notes != null) result.notes = notes;
+    if (revision != null) result.revision = revision;
+    if (updatedAt != null) result.updatedAt = updatedAt;
     return result;
   }
 
@@ -7762,6 +8297,8 @@ class BodyComposition extends $pb.GeneratedMessage {
     ..aD(8, _omitFieldNames ? '' : 'visceralFatRating')
     ..aI(9, _omitFieldNames ? '' : 'bmrKcal')
     ..aOS(10, _omitFieldNames ? '' : 'notes')
+    ..aI(11, _omitFieldNames ? '' : 'revision')
+    ..aInt64(12, _omitFieldNames ? '' : 'updatedAt')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7872,6 +8409,24 @@ class BodyComposition extends $pb.GeneratedMessage {
   $core.bool hasNotes() => $_has(9);
   @$pb.TagNumber(10)
   void clearNotes() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get revision => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set revision($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRevision() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRevision() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get updatedAt => $_getI64(11);
+  @$pb.TagNumber(12)
+  set updatedAt($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
 }
 
 class ListBodyCompositionsRequest extends $pb.GeneratedMessage {
@@ -10308,6 +10863,9 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
     $core.String? bestOneRmExercise,
     $core.bool? isEmpty,
     $core.Iterable<ForgeDailyVolume>? volumeDaily,
+    $core.String? formulaVersion,
+    $fixnum.Int64? lastSessionAt,
+    $core.int? lifetimeSessions,
   }) {
     final result = create();
     if (acuteChronicRatio != null) result.acuteChronicRatio = acuteChronicRatio;
@@ -10322,6 +10880,9 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
     if (bestOneRmExercise != null) result.bestOneRmExercise = bestOneRmExercise;
     if (isEmpty != null) result.isEmpty = isEmpty;
     if (volumeDaily != null) result.volumeDaily.addAll(volumeDaily);
+    if (formulaVersion != null) result.formulaVersion = formulaVersion;
+    if (lastSessionAt != null) result.lastSessionAt = lastSessionAt;
+    if (lifetimeSessions != null) result.lifetimeSessions = lifetimeSessions;
     return result;
   }
 
@@ -10351,6 +10912,9 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
     ..aOB(10, _omitFieldNames ? '' : 'isEmpty')
     ..pPM<ForgeDailyVolume>(11, _omitFieldNames ? '' : 'volumeDaily',
         subBuilder: ForgeDailyVolume.create)
+    ..aOS(12, _omitFieldNames ? '' : 'formulaVersion')
+    ..aInt64(13, _omitFieldNames ? '' : 'lastSessionAt')
+    ..aI(14, _omitFieldNames ? '' : 'lifetimeSessions')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -10480,6 +11044,36 @@ class ForgeAnalytics extends $pb.GeneratedMessage {
   /// volume_7d, and nothing carried a series.
   @$pb.TagNumber(11)
   $pb.PbList<ForgeDailyVolume> get volumeDaily => $_getList(10);
+
+  /// Choice 1 — tonnage uses load_kg under this formula version, and when the
+  /// window is empty the client can say "no training in the last 28 days"
+  /// instead of "no training logged yet".
+  @$pb.TagNumber(12)
+  $core.String get formulaVersion => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set formulaVersion($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasFormulaVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearFormulaVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get lastSessionAt => $_getI64(12);
+  @$pb.TagNumber(13)
+  set lastSessionAt($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLastSessionAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLastSessionAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get lifetimeSessions => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set lifetimeSessions($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasLifetimeSessions() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLifetimeSessions() => $_clearField(14);
 }
 
 /// One day of training volume.

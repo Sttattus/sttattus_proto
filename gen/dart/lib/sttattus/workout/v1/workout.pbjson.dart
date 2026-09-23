@@ -452,6 +452,22 @@ const SessionSet$json = {
     {'1': 'unit', '3': 5, '4': 1, '5': 9, '10': 'unit'},
     {'1': 'rpe', '3': 6, '4': 1, '5': 1, '10': 'rpe'},
     {'1': 'completed', '3': 7, '4': 1, '5': 8, '10': 'completed'},
+    {'1': 'set_type', '3': 8, '4': 1, '5': 9, '10': 'setType'},
+    {'1': 'source', '3': 9, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'load_kg', '3': 10, '4': 1, '5': 1, '10': 'loadKg'},
+    {'1': 'revision', '3': 11, '4': 1, '5': 5, '10': 'revision'},
+    {'1': 'deleted', '3': 12, '4': 1, '5': 8, '10': 'deleted'},
+    {
+      '1': 'exclude_from_records',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'excludeFromRecords'
+    },
+    {'1': 'performed_at', '3': 14, '4': 1, '5': 3, '10': 'performedAt'},
+    {'1': 'duration_seconds', '3': 15, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'distance_m', '3': 16, '4': 1, '5': 1, '10': 'distanceM'},
+    {'1': 'side', '3': 17, '4': 1, '5': 9, '10': 'side'},
   ],
 };
 
@@ -460,7 +476,12 @@ final $typed_data.Uint8List sessionSetDescriptor = $convert.base64Decode(
     'CgpTZXNzaW9uU2V0Eg4KAmlkGAEgASgJUgJpZBIbCglzZXRfaW5kZXgYAiABKAVSCHNldEluZG'
     'V4EhYKBndlaWdodBgDIAEoAVIGd2VpZ2h0EhIKBHJlcHMYBCABKAVSBHJlcHMSEgoEdW5pdBgF'
     'IAEoCVIEdW5pdBIQCgNycGUYBiABKAFSA3JwZRIcCgljb21wbGV0ZWQYByABKAhSCWNvbXBsZX'
-    'RlZA==');
+    'RlZBIZCghzZXRfdHlwZRgIIAEoCVIHc2V0VHlwZRIWCgZzb3VyY2UYCSABKAlSBnNvdXJjZRIX'
+    'Cgdsb2FkX2tnGAogASgBUgZsb2FkS2cSGgoIcmV2aXNpb24YCyABKAVSCHJldmlzaW9uEhgKB2'
+    'RlbGV0ZWQYDCABKAhSB2RlbGV0ZWQSMAoUZXhjbHVkZV9mcm9tX3JlY29yZHMYDSABKAhSEmV4'
+    'Y2x1ZGVGcm9tUmVjb3JkcxIhCgxwZXJmb3JtZWRfYXQYDiABKANSC3BlcmZvcm1lZEF0EikKEG'
+    'R1cmF0aW9uX3NlY29uZHMYDyABKAVSD2R1cmF0aW9uU2Vjb25kcxIdCgpkaXN0YW5jZV9tGBAg'
+    'ASgBUglkaXN0YW5jZU0SEgoEc2lkZRgRIAEoCVIEc2lkZQ==');
 
 @$core.Deprecated('Use sessionExerciseDescriptor instead')
 const SessionExercise$json = {
@@ -493,6 +514,20 @@ const SessionExercise$json = {
       '6': '.sttattus.workout.v1.SessionSet',
       '10': 'sets'
     },
+    {'1': 'planned_reps', '3': 15, '4': 1, '5': 9, '10': 'plannedReps'},
+    {'1': 'planned_load_kg', '3': 16, '4': 1, '5': 1, '10': 'plannedLoadKg'},
+    {'1': 'planned_rpe', '3': 17, '4': 1, '5': 1, '10': 'plannedRpe'},
+    {'1': 'planned_source', '3': 18, '4': 1, '5': 9, '10': 'plannedSource'},
+    {
+      '1': 'original_exercise_id',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'originalExerciseId'
+    },
+    {'1': 'exercise_slug', '3': 20, '4': 1, '5': 9, '10': 'exerciseSlug'},
+    {'1': 'revision', '3': 21, '4': 1, '5': 5, '10': 'revision'},
+    {'1': 'deleted', '3': 22, '4': 1, '5': 8, '10': 'deleted'},
   ],
 };
 
@@ -506,7 +541,12 @@ final $typed_data.Uint8List sessionExerciseDescriptor = $convert.base64Decode(
     'ltYXJ5TXVzY2xlEhwKCWVxdWlwbWVudBgJIAEoCVIJZXF1aXBtZW50EhsKCXZpZGVvX3VybBgK'
     'IAEoCVIIdmlkZW9VcmwSFwoHY3VlX29uZRgLIAEoCVIGY3VlT25lEhcKB2N1ZV90d28YDCABKA'
     'lSBmN1ZVR3bxIbCgljdWVfdGhyZWUYDSABKAlSCGN1ZVRocmVlEjMKBHNldHMYDiADKAsyHy5z'
-    'dHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25TZXRSBHNldHM=');
+    'dHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25TZXRSBHNldHMSIQoMcGxhbm5lZF9yZXBzGA8gAS'
+    'gJUgtwbGFubmVkUmVwcxImCg9wbGFubmVkX2xvYWRfa2cYECABKAFSDXBsYW5uZWRMb2FkS2cS'
+    'HwoLcGxhbm5lZF9ycGUYESABKAFSCnBsYW5uZWRScGUSJQoOcGxhbm5lZF9zb3VyY2UYEiABKA'
+    'lSDXBsYW5uZWRTb3VyY2USMAoUb3JpZ2luYWxfZXhlcmNpc2VfaWQYEyABKAlSEm9yaWdpbmFs'
+    'RXhlcmNpc2VJZBIjCg1leGVyY2lzZV9zbHVnGBQgASgJUgxleGVyY2lzZVNsdWcSGgoIcmV2aX'
+    'Npb24YFSABKAVSCHJldmlzaW9uEhgKB2RlbGV0ZWQYFiABKAhSB2RlbGV0ZWQ=');
 
 @$core.Deprecated('Use forgeSessionDescriptor instead')
 const ForgeSession$json = {
@@ -527,6 +567,24 @@ const ForgeSession$json = {
       '6': '.sttattus.workout.v1.SessionExercise',
       '10': 'exercises'
     },
+    {'1': 'source', '3': 9, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'external_source', '3': 10, '4': 1, '5': 9, '10': 'externalSource'},
+    {'1': 'performed_at', '3': 11, '4': 1, '5': 3, '10': 'performedAt'},
+    {'1': 'timezone', '3': 12, '4': 1, '5': 9, '10': 'timezone'},
+    {'1': 'local_date', '3': 13, '4': 1, '5': 9, '10': 'localDate'},
+    {'1': 'revision', '3': 14, '4': 1, '5': 5, '10': 'revision'},
+    {'1': 'deleted', '3': 15, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'deleted_at', '3': 16, '4': 1, '5': 3, '10': 'deletedAt'},
+    {'1': 'paused_seconds', '3': 17, '4': 1, '5': 5, '10': 'pausedSeconds'},
+    {'1': 'paused', '3': 18, '4': 1, '5': 8, '10': 'paused'},
+    {'1': 'import_batch_id', '3': 19, '4': 1, '5': 9, '10': 'importBatchId'},
+    {
+      '1': 'completed_set_count',
+      '3': 20,
+      '4': 1,
+      '5': 5,
+      '10': 'completedSetCount'
+    },
   ],
 };
 
@@ -536,7 +594,14 @@ final $typed_data.Uint8List forgeSessionDescriptor = $convert.base64Decode(
     'ZzdGF0dXMYAyABKAlSBnN0YXR1cxIUCgVub3RlcxgEIAEoCVIFbm90ZXMSHQoKc3RhcnRlZF9h'
     'dBgFIAEoA1IJc3RhcnRlZEF0EiEKDGNvbXBsZXRlZF9hdBgGIAEoA1ILY29tcGxldGVkQXQSHQ'
     'oKY3JlYXRlZF9hdBgHIAEoA1IJY3JlYXRlZEF0EkIKCWV4ZXJjaXNlcxgIIAMoCzIkLnN0dGF0'
-    'dHVzLndvcmtvdXQudjEuU2Vzc2lvbkV4ZXJjaXNlUglleGVyY2lzZXM=');
+    'dHVzLndvcmtvdXQudjEuU2Vzc2lvbkV4ZXJjaXNlUglleGVyY2lzZXMSFgoGc291cmNlGAkgAS'
+    'gJUgZzb3VyY2USJwoPZXh0ZXJuYWxfc291cmNlGAogASgJUg5leHRlcm5hbFNvdXJjZRIhCgxw'
+    'ZXJmb3JtZWRfYXQYCyABKANSC3BlcmZvcm1lZEF0EhoKCHRpbWV6b25lGAwgASgJUgh0aW1lem'
+    '9uZRIdCgpsb2NhbF9kYXRlGA0gASgJUglsb2NhbERhdGUSGgoIcmV2aXNpb24YDiABKAVSCHJl'
+    'dmlzaW9uEhgKB2RlbGV0ZWQYDyABKAhSB2RlbGV0ZWQSHQoKZGVsZXRlZF9hdBgQIAEoA1IJZG'
+    'VsZXRlZEF0EiUKDnBhdXNlZF9zZWNvbmRzGBEgASgFUg1wYXVzZWRTZWNvbmRzEhYKBnBhdXNl'
+    'ZBgSIAEoCFIGcGF1c2VkEiYKD2ltcG9ydF9iYXRjaF9pZBgTIAEoCVINaW1wb3J0QmF0Y2hJZB'
+    'IuChNjb21wbGV0ZWRfc2V0X2NvdW50GBQgASgFUhFjb21wbGV0ZWRTZXRDb3VudA==');
 
 @$core.Deprecated('Use plannedExerciseDescriptor instead')
 const PlannedExercise$json = {
@@ -612,6 +677,14 @@ const CreateSessionRequest$json = {
       '6': '.sttattus.workout.v1.PlannedExercise',
       '10': 'exercises'
     },
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'timezone', '3': 5, '4': 1, '5': 9, '10': 'timezone'},
   ],
 };
 
@@ -619,7 +692,8 @@ const CreateSessionRequest$json = {
 final $typed_data.Uint8List createSessionRequestDescriptor = $convert.base64Decode(
     'ChRDcmVhdGVTZXNzaW9uUmVxdWVzdBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSFAoFbm90ZXMYAi'
     'ABKAlSBW5vdGVzEkIKCWV4ZXJjaXNlcxgDIAMoCzIkLnN0dGF0dHVzLndvcmtvdXQudjEuUGxh'
-    'bm5lZEV4ZXJjaXNlUglleGVyY2lzZXM=');
+    'bm5lZEV4ZXJjaXNlUglleGVyY2lzZXMSLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbG'
+    'llbnRNdXRhdGlvbklkEhoKCHRpbWV6b25lGAUgASgJUgh0aW1lem9uZQ==');
 
 @$core.Deprecated('Use createSessionResponseDescriptor instead')
 const CreateSessionResponse$json = {
@@ -749,6 +823,13 @@ const UpdateSessionStatusRequest$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
   ],
 };
 
@@ -756,7 +837,8 @@ const UpdateSessionStatusRequest$json = {
 final $typed_data.Uint8List updateSessionStatusRequestDescriptor =
     $convert.base64Decode(
         'ChpVcGRhdGVTZXNzaW9uU3RhdHVzUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFgoGc3RhdHVzGA'
-        'IgASgJUgZzdGF0dXM=');
+        'IgASgJUgZzdGF0dXMSLAoSY2xpZW50X211dGF0aW9uX2lkGAMgASgJUhBjbGllbnRNdXRhdGlv'
+        'bklk');
 
 @$core.Deprecated('Use updateSessionStatusResponseDescriptor instead')
 const UpdateSessionStatusResponse$json = {
@@ -796,6 +878,16 @@ const LogSetRequest$json = {
     {'1': 'unit', '3': 5, '4': 1, '5': 9, '10': 'unit'},
     {'1': 'rpe', '3': 6, '4': 1, '5': 1, '10': 'rpe'},
     {'1': 'completed', '3': 7, '4': 1, '5': 8, '10': 'completed'},
+    {
+      '1': 'client_mutation_id',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'set_type', '3': 9, '4': 1, '5': 9, '10': 'setType'},
+    {'1': 'performed_at', '3': 10, '4': 1, '5': 3, '10': 'performedAt'},
+    {'1': 'timezone', '3': 11, '4': 1, '5': 9, '10': 'timezone'},
   ],
 };
 
@@ -804,7 +896,10 @@ final $typed_data.Uint8List logSetRequestDescriptor = $convert.base64Decode(
     'Cg1Mb2dTZXRSZXF1ZXN0Ei4KE3Nlc3Npb25fZXhlcmNpc2VfaWQYASABKAlSEXNlc3Npb25FeG'
     'VyY2lzZUlkEhsKCXNldF9pbmRleBgCIAEoBVIIc2V0SW5kZXgSFgoGd2VpZ2h0GAMgASgBUgZ3'
     'ZWlnaHQSEgoEcmVwcxgEIAEoBVIEcmVwcxISCgR1bml0GAUgASgJUgR1bml0EhAKA3JwZRgGIA'
-    'EoAVIDcnBlEhwKCWNvbXBsZXRlZBgHIAEoCFIJY29tcGxldGVk');
+    'EoAVIDcnBlEhwKCWNvbXBsZXRlZBgHIAEoCFIJY29tcGxldGVkEiwKEmNsaWVudF9tdXRhdGlv'
+    'bl9pZBgIIAEoCVIQY2xpZW50TXV0YXRpb25JZBIZCghzZXRfdHlwZRgJIAEoCVIHc2V0VHlwZR'
+    'IhCgxwZXJmb3JtZWRfYXQYCiABKANSC3BlcmZvcm1lZEF0EhoKCHRpbWV6b25lGAsgASgJUgh0'
+    'aW1lem9uZQ==');
 
 @$core.Deprecated('Use logSetResponseDescriptor instead')
 const LogSetResponse$json = {
@@ -1934,6 +2029,17 @@ const PersonalRecord$json = {
     {'1': 'unit', '3': 8, '4': 1, '5': 9, '10': 'unit'},
     {'1': 'source_session_id', '3': 9, '4': 1, '5': 9, '10': 'sourceSessionId'},
     {'1': 'achieved_at', '3': 10, '4': 1, '5': 3, '10': 'achievedAt'},
+    {'1': 'formula_version', '3': 11, '4': 1, '5': 9, '10': 'formulaVersion'},
+    {'1': 'recompute_run_id', '3': 12, '4': 1, '5': 9, '10': 'recomputeRunId'},
+    {'1': 'source_set_id', '3': 13, '4': 1, '5': 9, '10': 'sourceSetId'},
+    {'1': 'load_kg', '3': 14, '4': 1, '5': 1, '10': 'loadKg'},
+    {
+      '1': 'estimated_one_rm_kg',
+      '3': 15,
+      '4': 1,
+      '5': 1,
+      '10': 'estimatedOneRmKg'
+    },
   ],
 };
 
@@ -1944,7 +2050,10 @@ final $typed_data.Uint8List personalRecordDescriptor = $convert.base64Decode(
     'BCABKAlSBGtpbmQSFgoGd2VpZ2h0GAUgASgBUgZ3ZWlnaHQSEgoEcmVwcxgGIAEoBVIEcmVwcx'
     'IoChBlc3RpbWF0ZWRfb25lX3JtGAcgASgBUg5lc3RpbWF0ZWRPbmVSbRISCgR1bml0GAggASgJ'
     'UgR1bml0EioKEXNvdXJjZV9zZXNzaW9uX2lkGAkgASgJUg9zb3VyY2VTZXNzaW9uSWQSHwoLYW'
-    'NoaWV2ZWRfYXQYCiABKANSCmFjaGlldmVkQXQ=');
+    'NoaWV2ZWRfYXQYCiABKANSCmFjaGlldmVkQXQSJwoPZm9ybXVsYV92ZXJzaW9uGAsgASgJUg5m'
+    'b3JtdWxhVmVyc2lvbhIoChByZWNvbXB1dGVfcnVuX2lkGAwgASgJUg5yZWNvbXB1dGVSdW5JZB'
+    'IiCg1zb3VyY2Vfc2V0X2lkGA0gASgJUgtzb3VyY2VTZXRJZBIXCgdsb2FkX2tnGA4gASgBUgZs'
+    'b2FkS2cSLQoTZXN0aW1hdGVkX29uZV9ybV9rZxgPIAEoAVIQZXN0aW1hdGVkT25lUm1LZw==');
 
 @$core.Deprecated('Use listMyPRsRequestDescriptor instead')
 const ListMyPRsRequest$json = {
@@ -2028,6 +2137,8 @@ const BodyComposition$json = {
     },
     {'1': 'bmr_kcal', '3': 9, '4': 1, '5': 5, '10': 'bmrKcal'},
     {'1': 'notes', '3': 10, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'revision', '3': 11, '4': 1, '5': 5, '10': 'revision'},
+    {'1': 'updated_at', '3': 12, '4': 1, '5': 3, '10': 'updatedAt'},
   ],
 };
 
@@ -2038,7 +2149,8 @@ final $typed_data.Uint8List bodyCompositionDescriptor = $convert.base64Decode(
     'd2VpZ2h0S2cSIAoMYm9keV9mYXRfcGN0GAUgASgBUgpib2R5RmF0UGN0EiAKDGxlYW5fbWFzc1'
     '9rZxgGIAEoAVIKbGVhbk1hc3NLZxIeCgtmYXRfbWFzc19rZxgHIAEoAVIJZmF0TWFzc0tnEi4K'
     'E3Zpc2NlcmFsX2ZhdF9yYXRpbmcYCCABKAFSEXZpc2NlcmFsRmF0UmF0aW5nEhkKCGJtcl9rY2'
-    'FsGAkgASgFUgdibXJLY2FsEhQKBW5vdGVzGAogASgJUgVub3Rlcw==');
+    'FsGAkgASgFUgdibXJLY2FsEhQKBW5vdGVzGAogASgJUgVub3RlcxIaCghyZXZpc2lvbhgLIAEo'
+    'BVIIcmV2aXNpb24SHQoKdXBkYXRlZF9hdBgMIAEoA1IJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use listBodyCompositionsRequestDescriptor instead')
 const ListBodyCompositionsRequest$json = {
@@ -2722,6 +2834,15 @@ const ForgeAnalytics$json = {
       '6': '.sttattus.workout.v1.ForgeDailyVolume',
       '10': 'volumeDaily'
     },
+    {'1': 'formula_version', '3': 12, '4': 1, '5': 9, '10': 'formulaVersion'},
+    {'1': 'last_session_at', '3': 13, '4': 1, '5': 3, '10': 'lastSessionAt'},
+    {
+      '1': 'lifetime_sessions',
+      '3': 14,
+      '4': 1,
+      '5': 5,
+      '10': 'lifetimeSessions'
+    },
   ],
 };
 
@@ -2735,7 +2856,9 @@ final $typed_data.Uint8List forgeAnalyticsDescriptor = $convert.base64Decode(
     'RlEjEKFWJlc3RfZXN0aW1hdGVkX29uZV9ybRgIIAEoAVISYmVzdEVzdGltYXRlZE9uZVJtEi8K'
     'FGJlc3Rfb25lX3JtX2V4ZXJjaXNlGAkgASgJUhFiZXN0T25lUm1FeGVyY2lzZRIZCghpc19lbX'
     'B0eRgKIAEoCFIHaXNFbXB0eRJICgx2b2x1bWVfZGFpbHkYCyADKAsyJS5zdHRhdHR1cy53b3Jr'
-    'b3V0LnYxLkZvcmdlRGFpbHlWb2x1bWVSC3ZvbHVtZURhaWx5');
+    'b3V0LnYxLkZvcmdlRGFpbHlWb2x1bWVSC3ZvbHVtZURhaWx5EicKD2Zvcm11bGFfdmVyc2lvbh'
+    'gMIAEoCVIOZm9ybXVsYVZlcnNpb24SJgoPbGFzdF9zZXNzaW9uX2F0GA0gASgDUg1sYXN0U2Vz'
+    'c2lvbkF0EisKEWxpZmV0aW1lX3Nlc3Npb25zGA4gASgFUhBsaWZldGltZVNlc3Npb25z');
 
 @$core.Deprecated('Use forgeDailyVolumeDescriptor instead')
 const ForgeDailyVolume$json = {
