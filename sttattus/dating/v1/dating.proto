@@ -4,6 +4,7 @@ package sttattus.dating.v1;
 
 import "sttattus/common/v1/pagination.proto";
 import "sttattus/dating/v1/identity.proto";
+import "sttattus/dating/v1/privacy.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
 
@@ -42,6 +43,8 @@ message DatingProfile {
   int32 physical_drive = 11;
   int32 social_battery = 12;
   repeated string photo_urls = 13;
+  // Numeric standing scores. Since Atlas Choice 2 these reach only the member
+  // themselves; everyone else receives 0 and reads `predicates` instead.
   double vault_rank = 14;
   double apex_rank = 15;
   double forge_rank = 16;
@@ -76,6 +79,15 @@ message DatingProfile {
   // expiry and policy version (see identity.proto). Never a single verified
   // flag. birth_date above is returned only to the member themselves.
   TrustPanel trust = 26;
+
+  // --- Atlas Choice 2 — cross-pillar firewall ---
+  // Standing bands the member chose to show this viewer (privacy.proto). For
+  // anyone but the member, vault_rank / apex_rank / forge_rank above are
+  // always 0: other pillars reach other members only as these predicates.
+  repeated PillarPredicate predicates = 27;
+  // The member's discoverability for themselves only: visible | paused |
+  // incognito. Empty for anyone else.
+  string discoverability = 28;
 }
 
 // Discovery preferences (A9P5). Backs the Settings distance/age/show-me

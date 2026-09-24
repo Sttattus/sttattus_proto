@@ -1,0 +1,275 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 2 — Privacy and Cross-Pillar Firewall.
+//
+// One access center shows the member who can see each field, what feeds their
+// matching, where they appear, every share link and who opened it, whom they
+// blocked, and which staff opened their dating data. Other pillars reach Atlas
+// only as predicates the member chose ("Vault: established"), never as scores.
+// Location is a chosen city and a radius band; no endpoint returns another
+// member's coordinates or distance.
+//
+// Every RPC is scoped to the authenticated member. Mutations take
+// client_mutation_id (a client-generated UUID); a replay with the same id
+// returns the stored result instead of acting twice. Times are unix seconds.
+// ===========================================================================
+
+// --- Vocabulary -------------------------------------------------------------
+//
+// field_key:    photos | city | age | bio | intent | tier | luminance |
+//               intellectual_pace | emotional_granularity | physical_drive |
+//               social_battery
+// audience:     public (anyone in Atlas) | matched | tier (same Sttattus tier) |
+//               private (nobody). Not every field offers every audience; the
+//               center lists the allowed ones per field.
+// mode:         visible | paused | incognito
+// pillar:       vault | apex | forge
+// band:         none | rising | established | distinguished
+
+message FieldAudience {
+  string field_key = 1;
+  string audience = 2;
+  repeated string allowed = 3;
+}
+
+message Place {
+  string id = 1;
+  string name = 2;
+  string country_code = 3;
+  string region = 4;
+  string time_zone = 5;
+}
+
+message AreaSetting {
+  Place home = 1; // empty id => not set; discovery then ignores distance
+  int32 radius_km = 2; // 10 | 25 | 50 | 100 | 0 (anywhere)
+  Place travel = 3; // empty id => no travel area
+  int64 travel_until = 4;
+}
+
+message PillarSetting {
+  string pillar = 1;
+  bool use_for_matching = 2;
+  string shown_band = 3; // band the member publishes, or "none"
+  string audience = 4; // audience of the published band
+  repeated string eligible_bands = 5; // bands the member meets today
+  int64 predicate_issued_at = 6;
+  int64 predicate_expires_at = 7;
+}
+
+// A band another member may see. Never a score.
+message PillarPredicate {
+  string pillar = 1;
+  string band = 2;
+  int64 issued_at = 3;
+  int64 expires_at = 4;
+}
+
+message ShareAccess {
+  int64 opened_at = 1;
+  string country_code = 2; // coarse, from the CDN; empty when unknown
+  string visitor = 3; // short salted hash of the client; never an IP
+  bool blocked_viewer = 4; // a signed-in member the owner blocked tried to open it
+}
+
+message ShareLink {
+  string id = 1;
+  string url = 2;
+  string purpose = 3;
+  int64 created_at = 4;
+  int64 expires_at = 5;
+  int32 max_views = 6; // 0 => unlimited
+  int32 views = 7;
+  string status = 8; // active | expired | revoked | exhausted
+  int64 revoked_at = 9;
+  string revoked_by = 10; // member | staff
+  repeated ShareAccess recent_accesses = 11;
+}
+
+// Exactly what a share link shows today, before it is created.
+message SharePreview {
+  string name = 1;
+  string bio = 2;
+  string intent = 3;
+  repeated string fields = 4; // fields that will appear, by audience "public"
+  repeated PillarPredicate predicates = 5;
+  bool photos_included = 6; // always false: share links never carry photos
+}
+
+message BlockedMember {
+  string user_id = 1;
+  string name = 2;
+  int64 blocked_at = 3;
+}
+
+message StaffAccess {
+  int64 at = 1;
+  // What happened, as a kind the client words in the member's language:
+  // evidence_viewed | record_opened | check_decided | appeal | restriction |
+  // recovery | erasure | share_closed | data_opened. Never an audit action.
+  string action = 2;
+  string purpose = 3;
+}
+
+message LeaveState {
+  bool scheduled = 1;
+  int64 requested_at = 2;
+  int64 erase_after = 3; // end of the 14-day undo window
+}
+
+message AccessCenter {
+  string mode = 1;
+  repeated FieldAudience fields = 2;
+  AreaSetting area = 3;
+  repeated PillarSetting pillars = 4;
+  repeated ShareLink shares = 5;
+  repeated BlockedMember blocks = 6;
+  int32 active_matches = 7;
+  repeated StaffAccess staff_access = 8;
+  LeaveState leave = 9;
+  bool contact_import_available = 10; // false: Atlas has no contact import
+  int64 panic_location_retention_days = 11;
+}
+
+// --- Requests ---------------------------------------------------------------
+
+message GetAccessCenterRequest {}
+message GetAccessCenterResponse {
+  AccessCenter center = 1;
+}
+
+message SetFieldAudienceRequest {
+  string client_mutation_id = 1;
+  string field_key = 2;
+  string audience = 3;
+}
+message SetFieldAudienceResponse {
+  AccessCenter center = 1;
+}
+
+message SetDiscoverabilityRequest {
+  string client_mutation_id = 1;
+  string mode = 2;
+}
+message SetDiscoverabilityResponse {
+  AccessCenter center = 1;
+}
+
+message ListPlacesRequest {
+  string query = 1; // prefix of the name, any case/accents
+  string country_code = 2; // optional filter
+  sttattus.common.v1.PageRequest page = 3;
+}
+message ListPlacesResponse {
+  repeated Place places = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message SetHomeAreaRequest {
+  string client_mutation_id = 1;
+  string place_id = 2;
+  int32 radius_km = 3;
+}
+message SetHomeAreaResponse {
+  AccessCenter center = 1;
+}
+
+message SetTravelAreaRequest {
+  string client_mutation_id = 1;
+  string place_id = 2; // empty => end travel mode
+  int64 until = 3; // ≤ 30 days ahead
+}
+message SetTravelAreaResponse {
+  AccessCenter center = 1;
+}
+
+message SetPillarSettingRequest {
+  string client_mutation_id = 1;
+  string pillar = 2;
+  bool use_for_matching = 3;
+  string shown_band = 4;
+  string audience = 5;
+}
+message SetPillarSettingResponse {
+  AccessCenter center = 1;
+}
+
+message GetSharePreviewRequest {}
+message GetSharePreviewResponse {
+  SharePreview preview = 1;
+}
+
+message CreateShareLinkRequest {
+  string client_mutation_id = 1;
+  string purpose = 2; // 1–80 characters
+  int32 ttl_days = 3; // 1 | 7 | 14 | 30
+  int32 max_views = 4; // 0 => unlimited; else 1–100
+}
+message CreateShareLinkResponse {
+  ShareLink link = 1;
+}
+
+message RevokeShareLinkRequest {
+  string client_mutation_id = 1;
+  string id = 2;
+}
+message RevokeShareLinkResponse {
+  ShareLink link = 1;
+}
+
+message ListShareAccessesRequest {
+  string id = 1;
+  sttattus.common.v1.PageRequest page = 2;
+}
+message ListShareAccessesResponse {
+  repeated ShareAccess accesses = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message ExportAtlasDataRequest {}
+message ExportAtlasDataResponse {
+  string filename = 1;
+  string mime_type = 2;
+  bytes data = 3;
+  string sha256 = 4;
+  string format = 5; // atlas-data-export-v1
+}
+
+message LeaveAtlasRequest {
+  string client_mutation_id = 1;
+  bool confirm = 2; // must be true
+}
+message LeaveAtlasResponse {
+  LeaveState leave = 1;
+}
+
+message CancelLeaveAtlasRequest {
+  string client_mutation_id = 1;
+}
+message CancelLeaveAtlasResponse {
+  LeaveState leave = 1;
+}
+
+service AtlasPrivacyService {
+  rpc GetAccessCenter(GetAccessCenterRequest) returns (GetAccessCenterResponse);
+  rpc SetFieldAudience(SetFieldAudienceRequest) returns (SetFieldAudienceResponse);
+  rpc SetDiscoverability(SetDiscoverabilityRequest) returns (SetDiscoverabilityResponse);
+  rpc ListPlaces(ListPlacesRequest) returns (ListPlacesResponse);
+  rpc SetHomeArea(SetHomeAreaRequest) returns (SetHomeAreaResponse);
+  rpc SetTravelArea(SetTravelAreaRequest) returns (SetTravelAreaResponse);
+  rpc SetPillarSetting(SetPillarSettingRequest) returns (SetPillarSettingResponse);
+  rpc GetSharePreview(GetSharePreviewRequest) returns (GetSharePreviewResponse);
+  rpc CreateShareLink(CreateShareLinkRequest) returns (CreateShareLinkResponse);
+  rpc RevokeShareLink(RevokeShareLinkRequest) returns (RevokeShareLinkResponse);
+  rpc ListShareAccesses(ListShareAccessesRequest) returns (ListShareAccessesResponse);
+  rpc ExportAtlasData(ExportAtlasDataRequest) returns (ExportAtlasDataResponse);
+  rpc LeaveAtlas(LeaveAtlasRequest) returns (LeaveAtlasResponse);
+  rpc CancelLeaveAtlas(CancelLeaveAtlasRequest) returns (CancelLeaveAtlasResponse);
+}

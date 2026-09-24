@@ -15,9 +15,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/pagination.pb.dart' as $2;
+import '../../common/v1/pagination.pb.dart' as $3;
 import 'dating.pbenum.dart';
 import 'identity.pb.dart' as $1;
+import 'privacy.pb.dart' as $2;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -129,6 +130,8 @@ class DatingProfile extends $pb.GeneratedMessage {
     $core.String? voiceTranscript,
     $core.int? voiceDurationSeconds,
     $1.TrustPanel? trust,
+    $core.Iterable<$2.PillarPredicate>? predicates,
+    $core.String? discoverability,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -159,6 +162,8 @@ class DatingProfile extends $pb.GeneratedMessage {
     if (voiceDurationSeconds != null)
       result.voiceDurationSeconds = voiceDurationSeconds;
     if (trust != null) result.trust = trust;
+    if (predicates != null) result.predicates.addAll(predicates);
+    if (discoverability != null) result.discoverability = discoverability;
     return result;
   }
 
@@ -204,6 +209,9 @@ class DatingProfile extends $pb.GeneratedMessage {
     ..aI(25, _omitFieldNames ? '' : 'voiceDurationSeconds')
     ..aOM<$1.TrustPanel>(26, _omitFieldNames ? '' : 'trust',
         subBuilder: $1.TrustPanel.create)
+    ..pPM<$2.PillarPredicate>(27, _omitFieldNames ? '' : 'predicates',
+        subBuilder: $2.PillarPredicate.create)
+    ..aOS(28, _omitFieldNames ? '' : 'discoverability')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -338,6 +346,8 @@ class DatingProfile extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $pb.PbList<$core.String> get photoUrls => $_getList(12);
 
+  /// Numeric standing scores. Since Atlas Choice 2 these reach only the member
+  /// themselves; everyone else receives 0 and reads `predicates` instead.
   @$pb.TagNumber(14)
   $core.double get vaultRank => $_getN(13);
   @$pb.TagNumber(14)
@@ -468,6 +478,24 @@ class DatingProfile extends $pb.GeneratedMessage {
   void clearTrust() => $_clearField(26);
   @$pb.TagNumber(26)
   $1.TrustPanel ensureTrust() => $_ensure(25);
+
+  /// --- Atlas Choice 2 — cross-pillar firewall ---
+  /// Standing bands the member chose to show this viewer (privacy.proto). For
+  /// anyone but the member, vault_rank / apex_rank / forge_rank above are
+  /// always 0: other pillars reach other members only as these predicates.
+  @$pb.TagNumber(27)
+  $pb.PbList<$2.PillarPredicate> get predicates => $_getList(26);
+
+  /// The member's discoverability for themselves only: visible | paused |
+  /// incognito. Empty for anyone else.
+  @$pb.TagNumber(28)
+  $core.String get discoverability => $_getSZ(27);
+  @$pb.TagNumber(28)
+  set discoverability($core.String value) => $_setString(27, value);
+  @$pb.TagNumber(28)
+  $core.bool hasDiscoverability() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearDiscoverability() => $_clearField(28);
 }
 
 /// Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -1566,7 +1594,7 @@ class SwipeResponse extends $pb.GeneratedMessage {
 
 class ListMatchesRequest extends $pb.GeneratedMessage {
   factory ListMatchesRequest({
-    $2.PageRequest? page,
+    $3.PageRequest? page,
   }) {
     final result = create();
     if (page != null) result.page = page;
@@ -1587,8 +1615,8 @@ class ListMatchesRequest extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
-    ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page',
-        subBuilder: $2.PageRequest.create)
+    ..aOM<$3.PageRequest>(1, _omitFieldNames ? '' : 'page',
+        subBuilder: $3.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1611,21 +1639,21 @@ class ListMatchesRequest extends $pb.GeneratedMessage {
   static ListMatchesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PageRequest get page => $_getN(0);
+  $3.PageRequest get page => $_getN(0);
   @$pb.TagNumber(1)
-  set page($2.PageRequest value) => $_setField(1, value);
+  set page($3.PageRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPage() => $_has(0);
   @$pb.TagNumber(1)
   void clearPage() => $_clearField(1);
   @$pb.TagNumber(1)
-  $2.PageRequest ensurePage() => $_ensure(0);
+  $3.PageRequest ensurePage() => $_ensure(0);
 }
 
 class ListMatchesResponse extends $pb.GeneratedMessage {
   factory ListMatchesResponse({
     $core.Iterable<Match>? matches,
-    $2.PageResponse? page,
+    $3.PageResponse? page,
   }) {
     final result = create();
     if (matches != null) result.matches.addAll(matches);
@@ -1648,8 +1676,8 @@ class ListMatchesResponse extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..pPM<Match>(1, _omitFieldNames ? '' : 'matches', subBuilder: Match.create)
-    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page',
-        subBuilder: $2.PageResponse.create)
+    ..aOM<$3.PageResponse>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $3.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1675,15 +1703,15 @@ class ListMatchesResponse extends $pb.GeneratedMessage {
   $pb.PbList<Match> get matches => $_getList(0);
 
   @$pb.TagNumber(2)
-  $2.PageResponse get page => $_getN(1);
+  $3.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($2.PageResponse value) => $_setField(2, value);
+  set page($3.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $2.PageResponse ensurePage() => $_ensure(1);
+  $3.PageResponse ensurePage() => $_ensure(1);
 }
 
 class UnmatchRequest extends $pb.GeneratedMessage {
@@ -7953,7 +7981,7 @@ class SendGiftResponse extends $pb.GeneratedMessage {
 
 class ListGiftLedgerRequest extends $pb.GeneratedMessage {
   factory ListGiftLedgerRequest({
-    $2.PageRequest? page,
+    $3.PageRequest? page,
   }) {
     final result = create();
     if (page != null) result.page = page;
@@ -7974,8 +8002,8 @@ class ListGiftLedgerRequest extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
-    ..aOM<$2.PageRequest>(1, _omitFieldNames ? '' : 'page',
-        subBuilder: $2.PageRequest.create)
+    ..aOM<$3.PageRequest>(1, _omitFieldNames ? '' : 'page',
+        subBuilder: $3.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7999,21 +8027,21 @@ class ListGiftLedgerRequest extends $pb.GeneratedMessage {
   static ListGiftLedgerRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PageRequest get page => $_getN(0);
+  $3.PageRequest get page => $_getN(0);
   @$pb.TagNumber(1)
-  set page($2.PageRequest value) => $_setField(1, value);
+  set page($3.PageRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPage() => $_has(0);
   @$pb.TagNumber(1)
   void clearPage() => $_clearField(1);
   @$pb.TagNumber(1)
-  $2.PageRequest ensurePage() => $_ensure(0);
+  $3.PageRequest ensurePage() => $_ensure(0);
 }
 
 class ListGiftLedgerResponse extends $pb.GeneratedMessage {
   factory ListGiftLedgerResponse({
     $core.Iterable<Gift>? gifts,
-    $2.PageResponse? page,
+    $3.PageResponse? page,
   }) {
     final result = create();
     if (gifts != null) result.gifts.addAll(gifts);
@@ -8036,8 +8064,8 @@ class ListGiftLedgerResponse extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..pPM<Gift>(1, _omitFieldNames ? '' : 'gifts', subBuilder: Gift.create)
-    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page',
-        subBuilder: $2.PageResponse.create)
+    ..aOM<$3.PageResponse>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $3.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8064,15 +8092,15 @@ class ListGiftLedgerResponse extends $pb.GeneratedMessage {
   $pb.PbList<Gift> get gifts => $_getList(0);
 
   @$pb.TagNumber(2)
-  $2.PageResponse get page => $_getN(1);
+  $3.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($2.PageResponse value) => $_setField(2, value);
+  set page($3.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $2.PageResponse ensurePage() => $_ensure(1);
+  $3.PageResponse ensurePage() => $_ensure(1);
 }
 
 class Mission extends $pb.GeneratedMessage {

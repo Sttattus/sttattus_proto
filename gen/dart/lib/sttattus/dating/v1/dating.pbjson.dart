@@ -133,6 +133,15 @@ const DatingProfile$json = {
       '6': '.sttattus.dating.v1.TrustPanel',
       '10': 'trust'
     },
+    {
+      '1': 'predicates',
+      '3': 27,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.PillarPredicate',
+      '10': 'predicates'
+    },
+    {'1': 'discoverability', '3': 28, '4': 1, '5': 9, '10': 'discoverability'},
   ],
 };
 
@@ -154,7 +163,9 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'UYFiABKAlSCWJpcnRoRGF0ZRIbCgl2b2ljZV91cmwYFyABKAlSCHZvaWNlVXJsEikKEHZvaWNl'
     'X3RyYW5zY3JpcHQYGCABKAlSD3ZvaWNlVHJhbnNjcmlwdBI0ChZ2b2ljZV9kdXJhdGlvbl9zZW'
     'NvbmRzGBkgASgFUhR2b2ljZUR1cmF0aW9uU2Vjb25kcxI0CgV0cnVzdBgaIAEoCzIeLnN0dGF0'
-    'dHVzLmRhdGluZy52MS5UcnVzdFBhbmVsUgV0cnVzdA==');
+    'dHVzLmRhdGluZy52MS5UcnVzdFBhbmVsUgV0cnVzdBJDCgpwcmVkaWNhdGVzGBsgAygLMiMuc3'
+    'R0YXR0dXMuZGF0aW5nLnYxLlBpbGxhclByZWRpY2F0ZVIKcHJlZGljYXRlcxIoCg9kaXNjb3Zl'
+    'cmFiaWxpdHkYHCABKAlSD2Rpc2NvdmVyYWJpbGl0eQ==');
 
 @$core.Deprecated('Use discoveryPreferencesDescriptor instead')
 const DiscoveryPreferences$json = {

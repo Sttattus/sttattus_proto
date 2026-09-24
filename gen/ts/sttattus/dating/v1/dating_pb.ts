@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message as Message$1, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { TrustPanel } from "./identity_pb.js";
+import { PillarPredicate } from "./privacy_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -197,6 +198,9 @@ export class DatingProfile extends Message$1<DatingProfile> {
   photoUrls: string[] = [];
 
   /**
+   * Numeric standing scores. Since Atlas Choice 2 these reach only the member
+   * themselves; everyone else receives 0 and reads `predicates` instead.
+   *
    * @generated from field: double vault_rank = 14;
    */
   vaultRank = 0;
@@ -285,6 +289,24 @@ export class DatingProfile extends Message$1<DatingProfile> {
    */
   trust?: TrustPanel;
 
+  /**
+   * --- Atlas Choice 2 — cross-pillar firewall ---
+   * Standing bands the member chose to show this viewer (privacy.proto). For
+   * anyone but the member, vault_rank / apex_rank / forge_rank above are
+   * always 0: other pillars reach other members only as these predicates.
+   *
+   * @generated from field: repeated sttattus.dating.v1.PillarPredicate predicates = 27;
+   */
+  predicates: PillarPredicate[] = [];
+
+  /**
+   * The member's discoverability for themselves only: visible | paused |
+   * incognito. Empty for anyone else.
+   *
+   * @generated from field: string discoverability = 28;
+   */
+  discoverability = "";
+
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -319,6 +341,8 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 24, name: "voice_transcript", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 25, name: "voice_duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 26, name: "trust", kind: "message", T: TrustPanel },
+    { no: 27, name: "predicates", kind: "message", T: PillarPredicate, repeated: true },
+    { no: 28, name: "discoverability", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {
