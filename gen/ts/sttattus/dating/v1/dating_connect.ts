@@ -610,11 +610,11 @@ export const DatingService = {
     },
     /**
      * A9P6 — Dating photos.
-     * 
+     *
      * atlas_dating_photos had a read path (DatingProfile.photo_urls) and no way
      * to write one: no RPC, and nothing in members/ either. A dating profile
      * that cannot gain a photo is the gap these close.
-     * 
+     *
      * Bytes go through MediaService.RequestUpload / MarkProcessed as everywhere
      * else, so an uploaded photo is screened by the Gemini image classifier
      * before AddDatingPhoto ever sees it. These RPCs carry the media_asset_id,
@@ -689,3 +689,4 @@ export const DatingService = {
     },
   }
 } as const;
+

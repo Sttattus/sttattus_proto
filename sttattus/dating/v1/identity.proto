@@ -1,0 +1,443 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/common/v1/pagination.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 1 — Identity, Authenticity, and Appeals.
+//
+// Trust is a set of separate checks ("layers"), never one "verified" badge.
+// Each layer says what was checked, how, by whom, when, under which policy
+// version and region, until when, and what it does not prove. Human review is
+// labelled as human review; nothing here claims automated face matching or a
+// vendor that is not contracted.
+//
+// Every RPC is scoped to the authenticated member. Identifiers that do not
+// belong to the caller return NOT_FOUND. Mutations accept client_mutation_id
+// (a client-generated UUID): a replay with the same id and the same request
+// returns the stored result; the same id with a different request is
+// ALREADY_EXISTS. Checks and appeals carry a revision; a stale
+// expected_revision is ABORTED.
+//
+// Times are unix seconds; 0 means "not recorded" or "no fixed time".
+// String vocabularies are listed beside each field. Clients render them in
+// plain words; members never see ids, versions or reason codes verbatim.
+// ===========================================================================
+
+// ----- Layers ---------------------------------------------------------------
+
+// IdentityLayer is the caller's current state for one kind of check.
+message IdentityLayer {
+  // email | phone | selfie | government_id | age | professional
+  string layer = 1;
+  // none | active | paused | expired | revoked | withdrawn | unavailable
+  string status = 2;
+  // platform_email | sms_otp | reviewed_video | reviewed_document |
+  // reviewed_credential | self_declared | vendor_idv
+  string method = 3;
+  // platform | reviewer | member | vendor | system
+  string checked_by = 4;
+  int64 checked_at = 5;
+  int64 valid_until = 6;
+  // Policy version the check was performed under, e.g. "2026.1".
+  string policy_version = 7;
+  // Policy region the check was performed under ("global" today).
+  string region = 8;
+  // government_id only, ISO 3166-1 alpha-2. Never part of a TrustPanel.
+  string issuing_country = 9;
+  // credential_recovery | photos_replaced | name_changed | staff_recheck
+  string pause_reason = 10;
+  int64 paused_at = 11;
+  // age: adult_self_declared | adult_document.
+  // professional: the credential category key (healthcare, law, ...).
+  string detail = 12;
+  // selfie only: current profile photos the check covered, and the total.
+  int32 photos_covered = 13;
+  int32 photos_total = 14;
+  // True while a revoked layer can still be appealed.
+  bool appealable = 15;
+  string source_check_id = 16;
+  // Reason code a reviewer gave when revoking the layer.
+  string revoke_reason = 17;
+  int64 evidence_purge_due_at = 18;
+  int64 evidence_purged_at = 19;
+  // Evidence is kept past its purge date for an open safety investigation.
+  bool legal_hold = 20;
+  // Why a layer is "unavailable": not_contracted | no_provider | paused_by_staff.
+  string unavailable_reason = 21;
+}
+
+// ----- Checks ---------------------------------------------------------------
+
+message IdentityEvidence {
+  string id = 1;
+  // selfie_video | document_front | document_back | credential_document |
+  // appeal_video | appeal_document
+  string kind = 2;
+  string media_asset_id = 3;
+  int64 attached_at = 4;
+  int64 purge_due_at = 5;
+  int64 purged_at = 6;
+  // How many times staff opened this evidence. Each open is also an event.
+  int32 staff_views = 7;
+}
+
+// IdentityCheck is one attempt at one layer.
+message IdentityCheck {
+  string id = 1;
+  string layer = 2; // selfie | government_id | professional
+  string method = 3;
+  // started | submitted | in_review | passed | failed | needs_more |
+  // cancelled | expired
+  string status = 4;
+  int32 revision = 5;
+  // selfie only: four digits to say aloud and hold up on paper, and a
+  // gesture key (turn_head | touch_ear | thumbs_up | wave | hand_on_chin).
+  string challenge_code = 6;
+  string challenge_gesture = 7;
+  // selfie: the video must be submitted before this time.
+  int64 challenge_expires_at = 8;
+  repeated IdentityEvidence evidence = 9;
+  // government_id: passport | national_id | driving_licence | residence_permit
+  string document_type = 10;
+  // government_id: ISO 3166-1 alpha-2 issuing country.
+  string issuing_country = 11;
+  // professional: healthcare | law | education | engineering | finance |
+  // public_service | trades | arts | other
+  string credential_category = 12;
+  // Reviewer's reason code: matched | code_not_visible | code_mismatch |
+  // face_not_visible | photo_mismatch | not_live | document_unreadable |
+  // document_expired | document_integrity | name_mismatch | underage |
+  // credential_unreadable | credential_mismatch | other
+  string decision_reason = 13;
+  // Reviewer's note to the member in plain words (never staff-internal).
+  string member_note = 14;
+  int64 created_at = 15;
+  int64 submitted_at = 16;
+  int64 decided_at = 17;
+  int64 appeal_deadline = 18;
+  bool appealable = 19;
+  string open_appeal_id = 20;
+  string policy_version = 21;
+  // True when this check was passed by an overturned appeal.
+  bool passed_on_appeal = 22;
+}
+
+// ----- Enforcement ----------------------------------------------------------
+
+// TrustAction is a restriction on the caller's Atlas use.
+message TrustAction {
+  string id = 1;
+  // discovery_hold | atlas_suspension | underage_hold
+  string kind = 2;
+  // active | lifted | overturned | expired
+  string status = 3;
+  // duplicate_media | impersonation | scam | payment_solicitation |
+  // underage_self_declared | underage_report | age_conflict |
+  // risk_score | staff_review | other
+  string reason = 4;
+  // Provisional holds come from automated signals and end on their own at
+  // review_due_at unless a reviewer confirms them.
+  bool provisional = 5;
+  int64 review_due_at = 6;
+  int64 created_at = 7;
+  int64 ended_at = 8;
+  bool appealable = 9;
+  string open_appeal_id = 10;
+  int64 appeal_deadline = 11;
+  // Staff note to the member in plain words.
+  string member_note = 12;
+  // lifted/overturned/expired reason: reviewed_clear | appeal_overturned |
+  // review_overdue | adult_confirmed | other
+  string end_reason = 13;
+}
+
+// ----- Appeals --------------------------------------------------------------
+
+message AppealMessage {
+  string author = 1; // member | reviewer
+  string body = 2;
+  int64 created_at = 3;
+}
+
+message IdentityAppeal {
+  string id = 1;
+  string subject_type = 2; // check | layer | action
+  string subject_id = 3;
+  // The layer (for check/layer subjects) or action kind being appealed.
+  string subject_label = 4;
+  // open | in_review | needs_info | upheld | overturned | withdrawn
+  string status = 5;
+  int32 revision = 6;
+  string statement = 7;
+  repeated AppealMessage messages = 8;
+  // Reviewer's explanation of the outcome, in plain words.
+  string decision_note = 9;
+  int64 created_at = 10;
+  int64 decided_at = 11;
+  // When the member can expect a decision.
+  int64 due_at = 12;
+  repeated IdentityEvidence evidence = 13;
+}
+
+// ----- History, policy, capability ------------------------------------------
+
+message IdentityEvent {
+  string id = 1;
+  // check_started | check_submitted | check_decided | check_cancelled |
+  // check_expired | layer_activated | layer_paused | layer_resumed |
+  // layer_expired | layer_revoked | layer_withdrawn | layer_restored |
+  // evidence_viewed | evidence_purged | legal_hold_set | legal_hold_released |
+  // action_started | action_ended | appeal_filed | appeal_info_requested |
+  // appeal_answered | appeal_decided | appeal_withdrawn |
+  // account_security_change | recovery_case_opened | recovery_case_closed |
+  // legacy_approval_retired
+  string event_type = 2;
+  string layer = 3;
+  string subject_type = 4;
+  string from_status = 5;
+  string to_status = 6;
+  string reason = 7;
+  string actor = 8; // member | reviewer | system | vendor
+  int64 created_at = 9;
+}
+
+message IdentityPolicyLayer {
+  string layer = 1;
+  string method = 2;
+  int32 validity_months = 3;
+  // Plain-language text in the requested locale.
+  string proves = 4;
+  string does_not_prove = 5;
+  repeated string regions = 6;
+}
+
+message IdentityPolicy {
+  string version = 1;
+  string status = 2; // published | retired
+  int64 effective_at = 3;
+  string summary = 4;
+  repeated IdentityPolicyLayer layers = 5;
+  string locale = 6; // en | es
+}
+
+message IdentityCapability {
+  // platform_email | sms_otp | reviewed_video | reviewed_document |
+  // reviewed_credential | vendor_idv | photo_fingerprint |
+  // synthetic_media_model | payment_pattern
+  string method = 1;
+  // available | degraded | paused | unavailable
+  string status = 2;
+  // not_contracted | no_provider | reviewer_backlog | paused_by_staff |
+  // model_unconfigured | storage_unconfigured | ok
+  string reason = 3;
+  int64 checked_at = 4;
+}
+
+// ----- What other members see -----------------------------------------------
+
+message TrustPanelLayer {
+  string layer = 1;
+  string method = 2;
+  int64 checked_at = 3;
+  int64 valid_until = 4;
+  string detail = 5;
+  int32 photos_covered = 6;
+  int32 photos_total = 7;
+  string region = 8;
+  string policy_version = 9;
+}
+
+// TrustPanel carries only active layers. It never includes pending, failed,
+// paused, revoked or withdrawn layers, restrictions, signals, the issuing
+// country, the reviewer or the birth date.
+message TrustPanel {
+  string user_id = 1;
+  repeated TrustPanelLayer layers = 2;
+  // Current policy version, for the "what checks do not prove" statement.
+  string policy_version = 3;
+}
+
+// ----- Identity center ------------------------------------------------------
+
+message IdentityCenter {
+  repeated IdentityLayer layers = 1;
+  // started | submitted | in_review checks.
+  repeated IdentityCheck open_checks = 2;
+  // Checks decided in the last 90 days.
+  repeated IdentityCheck recent_decisions = 3;
+  // Active restrictions and those that ended in the last 90 days.
+  repeated TrustAction actions = 4;
+  repeated IdentityAppeal appeals = 5;
+  repeated IdentityCapability capabilities = 6;
+  string policy_version = 7;
+  bool discovery_eligible = 8;
+  // underage_hold | atlas_suspension | discovery_hold | birth_date_missing
+  string discovery_block_reason = 9;
+  // Why checks need redoing: credential_recovery | photos_replaced |
+  // name_changed | staff_recheck
+  repeated string reverify_reasons = 10;
+  // Exactly what other members see.
+  TrustPanel public_preview = 11;
+  // An open staff recovery case asks for a new selfie.
+  bool recovery_case_open = 12;
+}
+
+// ----- Requests -------------------------------------------------------------
+
+message GetIdentityCenterRequest {}
+message GetIdentityCenterResponse {
+  IdentityCenter center = 1;
+}
+
+message StartIdentityCheckRequest {
+  string client_mutation_id = 1;
+  string layer = 2; // selfie | government_id | professional
+}
+message StartIdentityCheckResponse {
+  IdentityCheck check = 1;
+}
+
+// AttachIdentityEvidence links an uploaded media asset (category
+// "atlas/identity", owned by the caller, READY) to a started check.
+message AttachIdentityEvidenceRequest {
+  string client_mutation_id = 1;
+  string check_id = 2;
+  int32 expected_revision = 3;
+  string media_asset_id = 4;
+  string kind = 5; // selfie_video | document_front | document_back | credential_document
+}
+message AttachIdentityEvidenceResponse {
+  IdentityCheck check = 1;
+}
+
+message SubmitIdentityCheckRequest {
+  string client_mutation_id = 1;
+  string check_id = 2;
+  int32 expected_revision = 3;
+  string document_type = 4; // government_id
+  string issuing_country = 5; // government_id
+  string credential_category = 6; // professional
+}
+message SubmitIdentityCheckResponse {
+  IdentityCheck check = 1;
+}
+
+message CancelIdentityCheckRequest {
+  string client_mutation_id = 1;
+  string check_id = 2;
+  int32 expected_revision = 3;
+}
+message CancelIdentityCheckResponse {
+  IdentityCheck check = 1;
+}
+
+message GetIdentityCheckRequest {
+  string check_id = 1;
+}
+message GetIdentityCheckResponse {
+  IdentityCheck check = 1;
+}
+
+// WithdrawIdentityLayer removes an active or paused layer from the caller's
+// trust panel and deletes its evidence (unless a legal hold defers it).
+message WithdrawIdentityLayerRequest {
+  string client_mutation_id = 1;
+  string layer = 2; // selfie | government_id | professional
+}
+message WithdrawIdentityLayerResponse {
+  IdentityLayer layer = 1;
+}
+
+message ListIdentityEventsRequest {
+  sttattus.common.v1.PageRequest page = 1;
+}
+message ListIdentityEventsResponse {
+  repeated IdentityEvent events = 1;
+  sttattus.common.v1.PageResponse page = 2;
+}
+
+message GetIdentityPolicyRequest {
+  string version = 1; // empty = current published policy
+  string locale = 2; // en | es; default en
+}
+message GetIdentityPolicyResponse {
+  IdentityPolicy policy = 1;
+}
+
+message GetTrustPanelRequest {
+  string user_id = 1;
+}
+message GetTrustPanelResponse {
+  TrustPanel panel = 1;
+}
+
+message FileIdentityAppealRequest {
+  string client_mutation_id = 1;
+  string subject_type = 2; // check | layer | action
+  string subject_id = 3; // check id, layer name, or action id
+  string statement = 4; // 20..2000 characters
+  // Optional new evidence (category "atlas/identity", owned, READY).
+  repeated string evidence_media_asset_ids = 5;
+}
+message FileIdentityAppealResponse {
+  IdentityAppeal appeal = 1;
+}
+
+message RespondToIdentityAppealRequest {
+  string client_mutation_id = 1;
+  string appeal_id = 2;
+  int32 expected_revision = 3;
+  string message = 4; // 1..2000 characters
+  repeated string evidence_media_asset_ids = 5;
+}
+message RespondToIdentityAppealResponse {
+  IdentityAppeal appeal = 1;
+}
+
+message WithdrawIdentityAppealRequest {
+  string client_mutation_id = 1;
+  string appeal_id = 2;
+  int32 expected_revision = 3;
+}
+message WithdrawIdentityAppealResponse {
+  IdentityAppeal appeal = 1;
+}
+
+message ListIdentityAppealsRequest {}
+message ListIdentityAppealsResponse {
+  repeated IdentityAppeal appeals = 1;
+}
+
+// ExportIdentityRecord returns everything Atlas holds about the caller's
+// identity checks, restrictions, appeals and history. Evidence bytes, reviewer
+// identities and other members' data are never included.
+message ExportIdentityRecordRequest {}
+message ExportIdentityRecordResponse {
+  string filename = 1;
+  string mime_type = 2;
+  bytes data = 3;
+  string checksum = 4; // SHA-256 hex of data
+  int64 generated_at = 5;
+}
+
+service AtlasIdentityService {
+  rpc GetIdentityCenter(GetIdentityCenterRequest) returns (GetIdentityCenterResponse);
+  rpc StartIdentityCheck(StartIdentityCheckRequest) returns (StartIdentityCheckResponse);
+  rpc AttachIdentityEvidence(AttachIdentityEvidenceRequest) returns (AttachIdentityEvidenceResponse);
+  rpc SubmitIdentityCheck(SubmitIdentityCheckRequest) returns (SubmitIdentityCheckResponse);
+  rpc CancelIdentityCheck(CancelIdentityCheckRequest) returns (CancelIdentityCheckResponse);
+  rpc GetIdentityCheck(GetIdentityCheckRequest) returns (GetIdentityCheckResponse);
+  rpc WithdrawIdentityLayer(WithdrawIdentityLayerRequest) returns (WithdrawIdentityLayerResponse);
+  rpc ListIdentityEvents(ListIdentityEventsRequest) returns (ListIdentityEventsResponse);
+  rpc GetIdentityPolicy(GetIdentityPolicyRequest) returns (GetIdentityPolicyResponse);
+  rpc GetTrustPanel(GetTrustPanelRequest) returns (GetTrustPanelResponse);
+  rpc FileIdentityAppeal(FileIdentityAppealRequest) returns (FileIdentityAppealResponse);
+  rpc RespondToIdentityAppeal(RespondToIdentityAppealRequest) returns (RespondToIdentityAppealResponse);
+  rpc WithdrawIdentityAppeal(WithdrawIdentityAppealRequest) returns (WithdrawIdentityAppealResponse);
+  rpc ListIdentityAppeals(ListIdentityAppealsRequest) returns (ListIdentityAppealsResponse);
+  rpc ExportIdentityRecord(ExportIdentityRecordRequest) returns (ExportIdentityRecordResponse);
+}

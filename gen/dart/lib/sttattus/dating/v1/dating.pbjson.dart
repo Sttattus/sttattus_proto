@@ -125,6 +125,14 @@ const DatingProfile$json = {
       '5': 5,
       '10': 'voiceDurationSeconds'
     },
+    {
+      '1': 'trust',
+      '3': 26,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.TrustPanel',
+      '10': 'trust'
+    },
   ],
 };
 
@@ -145,7 +153,8 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'C2NvdW50cnlDb2RlEhwKCWludGVyZXN0cxgVIAMoCVIJaW50ZXJlc3RzEh0KCmJpcnRoX2RhdG'
     'UYFiABKAlSCWJpcnRoRGF0ZRIbCgl2b2ljZV91cmwYFyABKAlSCHZvaWNlVXJsEikKEHZvaWNl'
     'X3RyYW5zY3JpcHQYGCABKAlSD3ZvaWNlVHJhbnNjcmlwdBI0ChZ2b2ljZV9kdXJhdGlvbl9zZW'
-    'NvbmRzGBkgASgFUhR2b2ljZUR1cmF0aW9uU2Vjb25kcw==');
+    'NvbmRzGBkgASgFUhR2b2ljZUR1cmF0aW9uU2Vjb25kcxI0CgV0cnVzdBgaIAEoCzIeLnN0dGF0'
+    'dHVzLmRhdGluZy52MS5UcnVzdFBhbmVsUgV0cnVzdA==');
 
 @$core.Deprecated('Use discoveryPreferencesDescriptor instead')
 const DiscoveryPreferences$json = {

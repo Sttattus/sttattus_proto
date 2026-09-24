@@ -230,8 +230,13 @@ type DatingProfile struct {
 	// configured or failed; a clip with no transcript is still a valid clip.
 	VoiceTranscript      string `protobuf:"bytes,24,opt,name=voice_transcript,json=voiceTranscript,proto3" json:"voice_transcript,omitempty"`
 	VoiceDurationSeconds int32  `protobuf:"varint,25,opt,name=voice_duration_seconds,json=voiceDurationSeconds,proto3" json:"voice_duration_seconds,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	// --- Atlas Choice 1 — identity layers ---
+	// The checks that are currently active for this member, with their dates,
+	// expiry and policy version (see identity.proto). Never a single verified
+	// flag. birth_date above is returned only to the member themselves.
+	Trust         *TrustPanel `protobuf:"bytes,26,opt,name=trust,proto3" json:"trust,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DatingProfile) Reset() {
@@ -437,6 +442,13 @@ func (x *DatingProfile) GetVoiceDurationSeconds() int32 {
 		return x.VoiceDurationSeconds
 	}
 	return 0
+}
+
+func (x *DatingProfile) GetTrust() *TrustPanel {
+	if x != nil {
+		return x.Trust
+	}
+	return nil
 }
 
 // Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -3191,10 +3203,14 @@ func (x *ListMyReportsResponse) GetReports() []*UserReport {
 }
 
 type ReportUserRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReportedId    string                 `protobuf:"bytes,1,opt,name=reported_id,json=reportedId,proto3" json:"reported_id,omitempty"`
-	Category      string                 `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
-	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	ReportedId string                 `protobuf:"bytes,1,opt,name=reported_id,json=reportedId,proto3" json:"reported_id,omitempty"`
+	// harassment | spam | money_request | impersonation | fake_profile |
+	// underage | inappropriate | other. Unknown values are INVALID_ARGUMENT;
+	// reporting yourself is INVALID_ARGUMENT.
+	Category string `protobuf:"bytes,2,opt,name=category,proto3" json:"category,omitempty"`
+	// Optional, up to 1000 characters.
+	Description   string `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -9409,11 +9425,11 @@ var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\n" +
-	"\x1fsttattus/dating/v1/dating.proto\x12\x12sttattus.dating.v1\x1a#sttattus/common/v1/pagination.proto\"0\n" +
+	"\x1fsttattus/dating/v1/dating.proto\x12\x12sttattus.dating.v1\x1a#sttattus/common/v1/pagination.proto\x1a!sttattus/dating/v1/identity.proto\"0\n" +
 	"\x04Vec3\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x01R\x01x\x12\f\n" +
 	"\x01y\x18\x02 \x01(\x01R\x01y\x12\f\n" +
-	"\x01z\x18\x03 \x01(\x01R\x01z\"\xe1\x06\n" +
+	"\x01z\x18\x03 \x01(\x01R\x01z\"\x97\a\n" +
 	"\rDatingProfile\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n" +
@@ -9444,7 +9460,8 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"birth_date\x18\x16 \x01(\tR\tbirthDate\x12\x1b\n" +
 	"\tvoice_url\x18\x17 \x01(\tR\bvoiceUrl\x12)\n" +
 	"\x10voice_transcript\x18\x18 \x01(\tR\x0fvoiceTranscript\x124\n" +
-	"\x16voice_duration_seconds\x18\x19 \x01(\x05R\x14voiceDurationSeconds\"\x8f\x01\n" +
+	"\x16voice_duration_seconds\x18\x19 \x01(\x05R\x14voiceDurationSeconds\x124\n" +
+	"\x05trust\x18\x1a \x01(\v2\x1e.sttattus.dating.v1.TrustPanelR\x05trust\"\x8f\x01\n" +
 	"\x14DiscoveryPreferences\x12,\n" +
 	"\x12max_distance_miles\x18\x01 \x01(\x05R\x10maxDistanceMiles\x12\x17\n" +
 	"\amin_age\x18\x02 \x01(\x05R\x06minAge\x12\x17\n" +
@@ -10317,231 +10334,233 @@ var file_sttattus_dating_v1_dating_proto_goTypes = []any{
 	(*ReorderDatingPhotosResponse)(nil),        // 170: sttattus.dating.v1.ReorderDatingPhotosResponse
 	(*SetPrimaryDatingPhotoRequest)(nil),       // 171: sttattus.dating.v1.SetPrimaryDatingPhotoRequest
 	(*SetPrimaryDatingPhotoResponse)(nil),      // 172: sttattus.dating.v1.SetPrimaryDatingPhotoResponse
-	(*v1.PageRequest)(nil),                     // 173: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                    // 174: sttattus.common.v1.PageResponse
+	(*TrustPanel)(nil),                         // 173: sttattus.dating.v1.TrustPanel
+	(*v1.PageRequest)(nil),                     // 174: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                    // 175: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,   // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
 	2,   // 1: sttattus.dating.v1.DatingProfile.position:type_name -> sttattus.dating.v1.Vec3
-	4,   // 2: sttattus.dating.v1.GetDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
-	4,   // 3: sttattus.dating.v1.UpdateDiscoveryPreferencesRequest.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
-	4,   // 4: sttattus.dating.v1.UpdateDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
-	3,   // 5: sttattus.dating.v1.Candidate.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,   // 6: sttattus.dating.v1.Match.other:type_name -> sttattus.dating.v1.DatingProfile
-	3,   // 7: sttattus.dating.v1.GetProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,   // 8: sttattus.dating.v1.UpdateProfileRequest.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,   // 9: sttattus.dating.v1.UpdateProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	9,   // 10: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
-	0,   // 11: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
-	10,  // 12: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	173, // 13: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	10,  // 14: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	174, // 15: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	11,  // 16: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
-	11,  // 17: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
-	28,  // 18: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
-	28,  // 19: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
-	33,  // 20: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
-	33,  // 21: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
-	33,  // 22: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
-	40,  // 23: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
-	40,  // 24: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
-	40,  // 25: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
-	49,  // 26: sttattus.dating.v1.ListMyBlocksResponse.blocks:type_name -> sttattus.dating.v1.UserBlock
-	49,  // 27: sttattus.dating.v1.BlockUserResponse.block:type_name -> sttattus.dating.v1.UserBlock
-	56,  // 28: sttattus.dating.v1.ListMyReportsResponse.reports:type_name -> sttattus.dating.v1.UserReport
-	56,  // 29: sttattus.dating.v1.ReportUserResponse.report:type_name -> sttattus.dating.v1.UserReport
-	61,  // 30: sttattus.dating.v1.TriggerPanicAlertResponse.alert:type_name -> sttattus.dating.v1.PanicAlert
-	61,  // 31: sttattus.dating.v1.ListMyPanicAlertsResponse.alerts:type_name -> sttattus.dating.v1.PanicAlert
-	66,  // 32: sttattus.dating.v1.GetPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
-	66,  // 33: sttattus.dating.v1.UpsertPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
-	71,  // 34: sttattus.dating.v1.GetPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	71,  // 35: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	71,  // 36: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
-	1,   // 37: sttattus.dating.v1.AtlasMapPoint.intent:type_name -> sttattus.dating.v1.DatingIntent
-	76,  // 38: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
-	79,  // 39: sttattus.dating.v1.ListLiveRoomsResponse.rooms:type_name -> sttattus.dating.v1.AgoraRoom
-	79,  // 40: sttattus.dating.v1.CreateAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
-	79,  // 41: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
-	88,  // 42: sttattus.dating.v1.AttachMediaToMessageResponse.attachment:type_name -> sttattus.dating.v1.MessageAttachment
-	88,  // 43: sttattus.dating.v1.ListMessageAttachmentsResponse.attachments:type_name -> sttattus.dating.v1.MessageAttachment
-	93,  // 44: sttattus.dating.v1.ListRestaurantsResponse.restaurants:type_name -> sttattus.dating.v1.Restaurant
-	96,  // 45: sttattus.dating.v1.CreateReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
-	96,  // 46: sttattus.dating.v1.ListMyReservationsResponse.reservations:type_name -> sttattus.dating.v1.Reservation
-	96,  // 47: sttattus.dating.v1.CancelReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
-	103, // 48: sttattus.dating.v1.CompatibilityMatrix.factors:type_name -> sttattus.dating.v1.CompatibilityFactor
-	104, // 49: sttattus.dating.v1.GetCompatibilityMatrixResponse.matrix:type_name -> sttattus.dating.v1.CompatibilityMatrix
-	107, // 50: sttattus.dating.v1.SendGiftResponse.gift:type_name -> sttattus.dating.v1.Gift
-	173, // 51: sttattus.dating.v1.ListGiftLedgerRequest.page:type_name -> sttattus.common.v1.PageRequest
-	107, // 52: sttattus.dating.v1.ListGiftLedgerResponse.gifts:type_name -> sttattus.dating.v1.Gift
-	174, // 53: sttattus.dating.v1.ListGiftLedgerResponse.page:type_name -> sttattus.common.v1.PageResponse
-	112, // 54: sttattus.dating.v1.ListMissionsResponse.missions:type_name -> sttattus.dating.v1.Mission
-	117, // 55: sttattus.dating.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dating.v1.ConciergeThread
-	117, // 56: sttattus.dating.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dating.v1.ConciergeThread
-	117, // 57: sttattus.dating.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dating.v1.ConciergeThread
-	118, // 58: sttattus.dating.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dating.v1.ConciergeMessage
-	118, // 59: sttattus.dating.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dating.v1.ConciergeMessage
-	127, // 60: sttattus.dating.v1.ListMatchmakerProposalsResponse.proposals:type_name -> sttattus.dating.v1.MatchmakerProposal
-	127, // 61: sttattus.dating.v1.RespondMatchmakerProposalResponse.proposal:type_name -> sttattus.dating.v1.MatchmakerProposal
-	132, // 62: sttattus.dating.v1.ListAtlasLettersResponse.letters:type_name -> sttattus.dating.v1.AtlasLetter
-	132, // 63: sttattus.dating.v1.GetAtlasLetterResponse.letter:type_name -> sttattus.dating.v1.AtlasLetter
-	137, // 64: sttattus.dating.v1.ListEventsResponse.events:type_name -> sttattus.dating.v1.AtlasEvent
-	137, // 65: sttattus.dating.v1.ListMyEventRsvpsResponse.events:type_name -> sttattus.dating.v1.AtlasEvent
-	144, // 66: sttattus.dating.v1.CreateProfileShareResponse.share:type_name -> sttattus.dating.v1.ProfileShareToken
-	144, // 67: sttattus.dating.v1.ListMyProfileSharesResponse.shares:type_name -> sttattus.dating.v1.ProfileShareToken
-	155, // 68: sttattus.dating.v1.GetCrossPillarGateResponse.gates:type_name -> sttattus.dating.v1.CrossPillarGate
-	158, // 69: sttattus.dating.v1.ListDatingPhotosResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	3,   // 70: sttattus.dating.v1.SetVoiceBaselineResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	3,   // 71: sttattus.dating.v1.RemoveVoiceBaselineResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
-	158, // 72: sttattus.dating.v1.AddDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	158, // 73: sttattus.dating.v1.RemoveDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	158, // 74: sttattus.dating.v1.ReorderDatingPhotosResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	158, // 75: sttattus.dating.v1.SetPrimaryDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	12,  // 76: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	14,  // 77: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	16,  // 78: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	18,  // 79: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	20,  // 80: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	22,  // 81: sttattus.dating.v1.DatingService.Unmatch:input_type -> sttattus.dating.v1.UnmatchRequest
-	24,  // 82: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	26,  // 83: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	29,  // 84: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	31,  // 85: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	34,  // 86: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	36,  // 87: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	38,  // 88: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	41,  // 89: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	43,  // 90: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	45,  // 91: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	47,  // 92: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	50,  // 93: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	52,  // 94: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	54,  // 95: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	57,  // 96: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	59,  // 97: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	67,  // 98: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	69,  // 99: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	62,  // 100: sttattus.dating.v1.DatingService.TriggerPanicAlert:input_type -> sttattus.dating.v1.TriggerPanicAlertRequest
-	64,  // 101: sttattus.dating.v1.DatingService.ListMyPanicAlerts:input_type -> sttattus.dating.v1.ListMyPanicAlertsRequest
-	72,  // 102: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	74,  // 103: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	77,  // 104: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
-	80,  // 105: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
-	82,  // 106: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
-	84,  // 107: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
-	86,  // 108: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
-	89,  // 109: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
-	91,  // 110: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
-	94,  // 111: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
-	97,  // 112: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
-	99,  // 113: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
-	101, // 114: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
-	105, // 115: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:input_type -> sttattus.dating.v1.GetCompatibilityMatrixRequest
-	108, // 116: sttattus.dating.v1.DatingService.SendGift:input_type -> sttattus.dating.v1.SendGiftRequest
-	110, // 117: sttattus.dating.v1.DatingService.ListGiftLedger:input_type -> sttattus.dating.v1.ListGiftLedgerRequest
-	5,   // 118: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:input_type -> sttattus.dating.v1.GetDiscoveryPreferencesRequest
-	7,   // 119: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:input_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
-	113, // 120: sttattus.dating.v1.DatingService.ListMissions:input_type -> sttattus.dating.v1.ListMissionsRequest
-	115, // 121: sttattus.dating.v1.DatingService.CompleteMission:input_type -> sttattus.dating.v1.CompleteMissionRequest
-	119, // 122: sttattus.dating.v1.DatingService.StartConciergeThread:input_type -> sttattus.dating.v1.StartConciergeThreadRequest
-	121, // 123: sttattus.dating.v1.DatingService.ListMyConciergeThreads:input_type -> sttattus.dating.v1.ListMyConciergeThreadsRequest
-	123, // 124: sttattus.dating.v1.DatingService.GetConciergeThread:input_type -> sttattus.dating.v1.GetConciergeThreadRequest
-	125, // 125: sttattus.dating.v1.DatingService.PostConciergeMessage:input_type -> sttattus.dating.v1.PostConciergeMessageRequest
-	128, // 126: sttattus.dating.v1.DatingService.ListMatchmakerProposals:input_type -> sttattus.dating.v1.ListMatchmakerProposalsRequest
-	130, // 127: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:input_type -> sttattus.dating.v1.RespondMatchmakerProposalRequest
-	133, // 128: sttattus.dating.v1.DatingService.ListAtlasLetters:input_type -> sttattus.dating.v1.ListAtlasLettersRequest
-	135, // 129: sttattus.dating.v1.DatingService.GetAtlasLetter:input_type -> sttattus.dating.v1.GetAtlasLetterRequest
-	138, // 130: sttattus.dating.v1.DatingService.ListEvents:input_type -> sttattus.dating.v1.ListEventsRequest
-	140, // 131: sttattus.dating.v1.DatingService.RsvpEvent:input_type -> sttattus.dating.v1.RsvpEventRequest
-	142, // 132: sttattus.dating.v1.DatingService.ListMyEventRsvps:input_type -> sttattus.dating.v1.ListMyEventRsvpsRequest
-	156, // 133: sttattus.dating.v1.DatingService.GetCrossPillarGate:input_type -> sttattus.dating.v1.GetCrossPillarGateRequest
-	145, // 134: sttattus.dating.v1.DatingService.CreateProfileShare:input_type -> sttattus.dating.v1.CreateProfileShareRequest
-	147, // 135: sttattus.dating.v1.DatingService.ListMyProfileShares:input_type -> sttattus.dating.v1.ListMyProfileSharesRequest
-	149, // 136: sttattus.dating.v1.DatingService.RevokeProfileShare:input_type -> sttattus.dating.v1.RevokeProfileShareRequest
-	151, // 137: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:input_type -> sttattus.dating.v1.GenerateAtlasYearbookRequest
-	153, // 138: sttattus.dating.v1.DatingService.CheckInEvent:input_type -> sttattus.dating.v1.CheckInEventRequest
-	159, // 139: sttattus.dating.v1.DatingService.ListDatingPhotos:input_type -> sttattus.dating.v1.ListDatingPhotosRequest
-	165, // 140: sttattus.dating.v1.DatingService.AddDatingPhoto:input_type -> sttattus.dating.v1.AddDatingPhotoRequest
-	167, // 141: sttattus.dating.v1.DatingService.RemoveDatingPhoto:input_type -> sttattus.dating.v1.RemoveDatingPhotoRequest
-	169, // 142: sttattus.dating.v1.DatingService.ReorderDatingPhotos:input_type -> sttattus.dating.v1.ReorderDatingPhotosRequest
-	171, // 143: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:input_type -> sttattus.dating.v1.SetPrimaryDatingPhotoRequest
-	161, // 144: sttattus.dating.v1.DatingService.SetVoiceBaseline:input_type -> sttattus.dating.v1.SetVoiceBaselineRequest
-	163, // 145: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:input_type -> sttattus.dating.v1.RemoveVoiceBaselineRequest
-	13,  // 146: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	15,  // 147: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	17,  // 148: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	19,  // 149: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	21,  // 150: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	23,  // 151: sttattus.dating.v1.DatingService.Unmatch:output_type -> sttattus.dating.v1.UnmatchResponse
-	25,  // 152: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	27,  // 153: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	30,  // 154: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	32,  // 155: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	35,  // 156: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	37,  // 157: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	39,  // 158: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	42,  // 159: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	44,  // 160: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	46,  // 161: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	48,  // 162: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	51,  // 163: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	53,  // 164: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	55,  // 165: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	58,  // 166: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	60,  // 167: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	68,  // 168: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	70,  // 169: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	63,  // 170: sttattus.dating.v1.DatingService.TriggerPanicAlert:output_type -> sttattus.dating.v1.TriggerPanicAlertResponse
-	65,  // 171: sttattus.dating.v1.DatingService.ListMyPanicAlerts:output_type -> sttattus.dating.v1.ListMyPanicAlertsResponse
-	73,  // 172: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	75,  // 173: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	78,  // 174: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
-	81,  // 175: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
-	83,  // 176: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
-	85,  // 177: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
-	87,  // 178: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
-	90,  // 179: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
-	92,  // 180: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
-	95,  // 181: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
-	98,  // 182: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
-	100, // 183: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
-	102, // 184: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
-	106, // 185: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:output_type -> sttattus.dating.v1.GetCompatibilityMatrixResponse
-	109, // 186: sttattus.dating.v1.DatingService.SendGift:output_type -> sttattus.dating.v1.SendGiftResponse
-	111, // 187: sttattus.dating.v1.DatingService.ListGiftLedger:output_type -> sttattus.dating.v1.ListGiftLedgerResponse
-	6,   // 188: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:output_type -> sttattus.dating.v1.GetDiscoveryPreferencesResponse
-	8,   // 189: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:output_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
-	114, // 190: sttattus.dating.v1.DatingService.ListMissions:output_type -> sttattus.dating.v1.ListMissionsResponse
-	116, // 191: sttattus.dating.v1.DatingService.CompleteMission:output_type -> sttattus.dating.v1.CompleteMissionResponse
-	120, // 192: sttattus.dating.v1.DatingService.StartConciergeThread:output_type -> sttattus.dating.v1.StartConciergeThreadResponse
-	122, // 193: sttattus.dating.v1.DatingService.ListMyConciergeThreads:output_type -> sttattus.dating.v1.ListMyConciergeThreadsResponse
-	124, // 194: sttattus.dating.v1.DatingService.GetConciergeThread:output_type -> sttattus.dating.v1.GetConciergeThreadResponse
-	126, // 195: sttattus.dating.v1.DatingService.PostConciergeMessage:output_type -> sttattus.dating.v1.PostConciergeMessageResponse
-	129, // 196: sttattus.dating.v1.DatingService.ListMatchmakerProposals:output_type -> sttattus.dating.v1.ListMatchmakerProposalsResponse
-	131, // 197: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:output_type -> sttattus.dating.v1.RespondMatchmakerProposalResponse
-	134, // 198: sttattus.dating.v1.DatingService.ListAtlasLetters:output_type -> sttattus.dating.v1.ListAtlasLettersResponse
-	136, // 199: sttattus.dating.v1.DatingService.GetAtlasLetter:output_type -> sttattus.dating.v1.GetAtlasLetterResponse
-	139, // 200: sttattus.dating.v1.DatingService.ListEvents:output_type -> sttattus.dating.v1.ListEventsResponse
-	141, // 201: sttattus.dating.v1.DatingService.RsvpEvent:output_type -> sttattus.dating.v1.RsvpEventResponse
-	143, // 202: sttattus.dating.v1.DatingService.ListMyEventRsvps:output_type -> sttattus.dating.v1.ListMyEventRsvpsResponse
-	157, // 203: sttattus.dating.v1.DatingService.GetCrossPillarGate:output_type -> sttattus.dating.v1.GetCrossPillarGateResponse
-	146, // 204: sttattus.dating.v1.DatingService.CreateProfileShare:output_type -> sttattus.dating.v1.CreateProfileShareResponse
-	148, // 205: sttattus.dating.v1.DatingService.ListMyProfileShares:output_type -> sttattus.dating.v1.ListMyProfileSharesResponse
-	150, // 206: sttattus.dating.v1.DatingService.RevokeProfileShare:output_type -> sttattus.dating.v1.RevokeProfileShareResponse
-	152, // 207: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:output_type -> sttattus.dating.v1.GenerateAtlasYearbookResponse
-	154, // 208: sttattus.dating.v1.DatingService.CheckInEvent:output_type -> sttattus.dating.v1.CheckInEventResponse
-	160, // 209: sttattus.dating.v1.DatingService.ListDatingPhotos:output_type -> sttattus.dating.v1.ListDatingPhotosResponse
-	166, // 210: sttattus.dating.v1.DatingService.AddDatingPhoto:output_type -> sttattus.dating.v1.AddDatingPhotoResponse
-	168, // 211: sttattus.dating.v1.DatingService.RemoveDatingPhoto:output_type -> sttattus.dating.v1.RemoveDatingPhotoResponse
-	170, // 212: sttattus.dating.v1.DatingService.ReorderDatingPhotos:output_type -> sttattus.dating.v1.ReorderDatingPhotosResponse
-	172, // 213: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:output_type -> sttattus.dating.v1.SetPrimaryDatingPhotoResponse
-	162, // 214: sttattus.dating.v1.DatingService.SetVoiceBaseline:output_type -> sttattus.dating.v1.SetVoiceBaselineResponse
-	164, // 215: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:output_type -> sttattus.dating.v1.RemoveVoiceBaselineResponse
-	146, // [146:216] is the sub-list for method output_type
-	76,  // [76:146] is the sub-list for method input_type
-	76,  // [76:76] is the sub-list for extension type_name
-	76,  // [76:76] is the sub-list for extension extendee
-	0,   // [0:76] is the sub-list for field type_name
+	173, // 2: sttattus.dating.v1.DatingProfile.trust:type_name -> sttattus.dating.v1.TrustPanel
+	4,   // 3: sttattus.dating.v1.GetDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
+	4,   // 4: sttattus.dating.v1.UpdateDiscoveryPreferencesRequest.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
+	4,   // 5: sttattus.dating.v1.UpdateDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
+	3,   // 6: sttattus.dating.v1.Candidate.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 7: sttattus.dating.v1.Match.other:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 8: sttattus.dating.v1.GetProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 9: sttattus.dating.v1.UpdateProfileRequest.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 10: sttattus.dating.v1.UpdateProfileResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	9,   // 11: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
+	0,   // 12: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
+	10,  // 13: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
+	174, // 14: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	10,  // 15: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
+	175, // 16: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	11,  // 17: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
+	11,  // 18: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
+	28,  // 19: sttattus.dating.v1.StartVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	28,  // 20: sttattus.dating.v1.GetLatestVerificationResponse.verification:type_name -> sttattus.dating.v1.AtlasVerification
+	33,  // 21: sttattus.dating.v1.ListTensionSeatsResponse.seats:type_name -> sttattus.dating.v1.TensionSeat
+	33,  // 22: sttattus.dating.v1.PlaceTensionBidResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	33,  // 23: sttattus.dating.v1.ReleaseTensionSeatResponse.seat:type_name -> sttattus.dating.v1.TensionSeat
+	40,  // 24: sttattus.dating.v1.ListAuthorAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	40,  // 25: sttattus.dating.v1.ListVisibleAkashicResponse.chapters:type_name -> sttattus.dating.v1.AkashicChapter
+	40,  // 26: sttattus.dating.v1.UpsertAkashicChapterResponse.chapter:type_name -> sttattus.dating.v1.AkashicChapter
+	49,  // 27: sttattus.dating.v1.ListMyBlocksResponse.blocks:type_name -> sttattus.dating.v1.UserBlock
+	49,  // 28: sttattus.dating.v1.BlockUserResponse.block:type_name -> sttattus.dating.v1.UserBlock
+	56,  // 29: sttattus.dating.v1.ListMyReportsResponse.reports:type_name -> sttattus.dating.v1.UserReport
+	56,  // 30: sttattus.dating.v1.ReportUserResponse.report:type_name -> sttattus.dating.v1.UserReport
+	61,  // 31: sttattus.dating.v1.TriggerPanicAlertResponse.alert:type_name -> sttattus.dating.v1.PanicAlert
+	61,  // 32: sttattus.dating.v1.ListMyPanicAlertsResponse.alerts:type_name -> sttattus.dating.v1.PanicAlert
+	66,  // 33: sttattus.dating.v1.GetPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	66,  // 34: sttattus.dating.v1.UpsertPanicContactResponse.contact:type_name -> sttattus.dating.v1.PanicContact
+	71,  // 35: sttattus.dating.v1.GetPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	71,  // 36: sttattus.dating.v1.UpsertPrivacyAxesRequest.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	71,  // 37: sttattus.dating.v1.UpsertPrivacyAxesResponse.axes:type_name -> sttattus.dating.v1.PrivacyAxes
+	1,   // 38: sttattus.dating.v1.AtlasMapPoint.intent:type_name -> sttattus.dating.v1.DatingIntent
+	76,  // 39: sttattus.dating.v1.ListAtlasMapPointsResponse.points:type_name -> sttattus.dating.v1.AtlasMapPoint
+	79,  // 40: sttattus.dating.v1.ListLiveRoomsResponse.rooms:type_name -> sttattus.dating.v1.AgoraRoom
+	79,  // 41: sttattus.dating.v1.CreateAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	79,  // 42: sttattus.dating.v1.EndAgoraRoomResponse.room:type_name -> sttattus.dating.v1.AgoraRoom
+	88,  // 43: sttattus.dating.v1.AttachMediaToMessageResponse.attachment:type_name -> sttattus.dating.v1.MessageAttachment
+	88,  // 44: sttattus.dating.v1.ListMessageAttachmentsResponse.attachments:type_name -> sttattus.dating.v1.MessageAttachment
+	93,  // 45: sttattus.dating.v1.ListRestaurantsResponse.restaurants:type_name -> sttattus.dating.v1.Restaurant
+	96,  // 46: sttattus.dating.v1.CreateReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	96,  // 47: sttattus.dating.v1.ListMyReservationsResponse.reservations:type_name -> sttattus.dating.v1.Reservation
+	96,  // 48: sttattus.dating.v1.CancelReservationResponse.reservation:type_name -> sttattus.dating.v1.Reservation
+	103, // 49: sttattus.dating.v1.CompatibilityMatrix.factors:type_name -> sttattus.dating.v1.CompatibilityFactor
+	104, // 50: sttattus.dating.v1.GetCompatibilityMatrixResponse.matrix:type_name -> sttattus.dating.v1.CompatibilityMatrix
+	107, // 51: sttattus.dating.v1.SendGiftResponse.gift:type_name -> sttattus.dating.v1.Gift
+	174, // 52: sttattus.dating.v1.ListGiftLedgerRequest.page:type_name -> sttattus.common.v1.PageRequest
+	107, // 53: sttattus.dating.v1.ListGiftLedgerResponse.gifts:type_name -> sttattus.dating.v1.Gift
+	175, // 54: sttattus.dating.v1.ListGiftLedgerResponse.page:type_name -> sttattus.common.v1.PageResponse
+	112, // 55: sttattus.dating.v1.ListMissionsResponse.missions:type_name -> sttattus.dating.v1.Mission
+	117, // 56: sttattus.dating.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dating.v1.ConciergeThread
+	117, // 57: sttattus.dating.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dating.v1.ConciergeThread
+	117, // 58: sttattus.dating.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dating.v1.ConciergeThread
+	118, // 59: sttattus.dating.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dating.v1.ConciergeMessage
+	118, // 60: sttattus.dating.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dating.v1.ConciergeMessage
+	127, // 61: sttattus.dating.v1.ListMatchmakerProposalsResponse.proposals:type_name -> sttattus.dating.v1.MatchmakerProposal
+	127, // 62: sttattus.dating.v1.RespondMatchmakerProposalResponse.proposal:type_name -> sttattus.dating.v1.MatchmakerProposal
+	132, // 63: sttattus.dating.v1.ListAtlasLettersResponse.letters:type_name -> sttattus.dating.v1.AtlasLetter
+	132, // 64: sttattus.dating.v1.GetAtlasLetterResponse.letter:type_name -> sttattus.dating.v1.AtlasLetter
+	137, // 65: sttattus.dating.v1.ListEventsResponse.events:type_name -> sttattus.dating.v1.AtlasEvent
+	137, // 66: sttattus.dating.v1.ListMyEventRsvpsResponse.events:type_name -> sttattus.dating.v1.AtlasEvent
+	144, // 67: sttattus.dating.v1.CreateProfileShareResponse.share:type_name -> sttattus.dating.v1.ProfileShareToken
+	144, // 68: sttattus.dating.v1.ListMyProfileSharesResponse.shares:type_name -> sttattus.dating.v1.ProfileShareToken
+	155, // 69: sttattus.dating.v1.GetCrossPillarGateResponse.gates:type_name -> sttattus.dating.v1.CrossPillarGate
+	158, // 70: sttattus.dating.v1.ListDatingPhotosResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
+	3,   // 71: sttattus.dating.v1.SetVoiceBaselineResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	3,   // 72: sttattus.dating.v1.RemoveVoiceBaselineResponse.profile:type_name -> sttattus.dating.v1.DatingProfile
+	158, // 73: sttattus.dating.v1.AddDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
+	158, // 74: sttattus.dating.v1.RemoveDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
+	158, // 75: sttattus.dating.v1.ReorderDatingPhotosResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
+	158, // 76: sttattus.dating.v1.SetPrimaryDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
+	12,  // 77: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	14,  // 78: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	16,  // 79: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	18,  // 80: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	20,  // 81: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	22,  // 82: sttattus.dating.v1.DatingService.Unmatch:input_type -> sttattus.dating.v1.UnmatchRequest
+	24,  // 83: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	26,  // 84: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	29,  // 85: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	31,  // 86: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	34,  // 87: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	36,  // 88: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	38,  // 89: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	41,  // 90: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	43,  // 91: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	45,  // 92: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	47,  // 93: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	50,  // 94: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	52,  // 95: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	54,  // 96: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	57,  // 97: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	59,  // 98: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	67,  // 99: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	69,  // 100: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	62,  // 101: sttattus.dating.v1.DatingService.TriggerPanicAlert:input_type -> sttattus.dating.v1.TriggerPanicAlertRequest
+	64,  // 102: sttattus.dating.v1.DatingService.ListMyPanicAlerts:input_type -> sttattus.dating.v1.ListMyPanicAlertsRequest
+	72,  // 103: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	74,  // 104: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	77,  // 105: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	80,  // 106: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
+	82,  // 107: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
+	84,  // 108: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
+	86,  // 109: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
+	89,  // 110: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
+	91,  // 111: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
+	94,  // 112: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
+	97,  // 113: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
+	99,  // 114: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
+	101, // 115: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
+	105, // 116: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:input_type -> sttattus.dating.v1.GetCompatibilityMatrixRequest
+	108, // 117: sttattus.dating.v1.DatingService.SendGift:input_type -> sttattus.dating.v1.SendGiftRequest
+	110, // 118: sttattus.dating.v1.DatingService.ListGiftLedger:input_type -> sttattus.dating.v1.ListGiftLedgerRequest
+	5,   // 119: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:input_type -> sttattus.dating.v1.GetDiscoveryPreferencesRequest
+	7,   // 120: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:input_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
+	113, // 121: sttattus.dating.v1.DatingService.ListMissions:input_type -> sttattus.dating.v1.ListMissionsRequest
+	115, // 122: sttattus.dating.v1.DatingService.CompleteMission:input_type -> sttattus.dating.v1.CompleteMissionRequest
+	119, // 123: sttattus.dating.v1.DatingService.StartConciergeThread:input_type -> sttattus.dating.v1.StartConciergeThreadRequest
+	121, // 124: sttattus.dating.v1.DatingService.ListMyConciergeThreads:input_type -> sttattus.dating.v1.ListMyConciergeThreadsRequest
+	123, // 125: sttattus.dating.v1.DatingService.GetConciergeThread:input_type -> sttattus.dating.v1.GetConciergeThreadRequest
+	125, // 126: sttattus.dating.v1.DatingService.PostConciergeMessage:input_type -> sttattus.dating.v1.PostConciergeMessageRequest
+	128, // 127: sttattus.dating.v1.DatingService.ListMatchmakerProposals:input_type -> sttattus.dating.v1.ListMatchmakerProposalsRequest
+	130, // 128: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:input_type -> sttattus.dating.v1.RespondMatchmakerProposalRequest
+	133, // 129: sttattus.dating.v1.DatingService.ListAtlasLetters:input_type -> sttattus.dating.v1.ListAtlasLettersRequest
+	135, // 130: sttattus.dating.v1.DatingService.GetAtlasLetter:input_type -> sttattus.dating.v1.GetAtlasLetterRequest
+	138, // 131: sttattus.dating.v1.DatingService.ListEvents:input_type -> sttattus.dating.v1.ListEventsRequest
+	140, // 132: sttattus.dating.v1.DatingService.RsvpEvent:input_type -> sttattus.dating.v1.RsvpEventRequest
+	142, // 133: sttattus.dating.v1.DatingService.ListMyEventRsvps:input_type -> sttattus.dating.v1.ListMyEventRsvpsRequest
+	156, // 134: sttattus.dating.v1.DatingService.GetCrossPillarGate:input_type -> sttattus.dating.v1.GetCrossPillarGateRequest
+	145, // 135: sttattus.dating.v1.DatingService.CreateProfileShare:input_type -> sttattus.dating.v1.CreateProfileShareRequest
+	147, // 136: sttattus.dating.v1.DatingService.ListMyProfileShares:input_type -> sttattus.dating.v1.ListMyProfileSharesRequest
+	149, // 137: sttattus.dating.v1.DatingService.RevokeProfileShare:input_type -> sttattus.dating.v1.RevokeProfileShareRequest
+	151, // 138: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:input_type -> sttattus.dating.v1.GenerateAtlasYearbookRequest
+	153, // 139: sttattus.dating.v1.DatingService.CheckInEvent:input_type -> sttattus.dating.v1.CheckInEventRequest
+	159, // 140: sttattus.dating.v1.DatingService.ListDatingPhotos:input_type -> sttattus.dating.v1.ListDatingPhotosRequest
+	165, // 141: sttattus.dating.v1.DatingService.AddDatingPhoto:input_type -> sttattus.dating.v1.AddDatingPhotoRequest
+	167, // 142: sttattus.dating.v1.DatingService.RemoveDatingPhoto:input_type -> sttattus.dating.v1.RemoveDatingPhotoRequest
+	169, // 143: sttattus.dating.v1.DatingService.ReorderDatingPhotos:input_type -> sttattus.dating.v1.ReorderDatingPhotosRequest
+	171, // 144: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:input_type -> sttattus.dating.v1.SetPrimaryDatingPhotoRequest
+	161, // 145: sttattus.dating.v1.DatingService.SetVoiceBaseline:input_type -> sttattus.dating.v1.SetVoiceBaselineRequest
+	163, // 146: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:input_type -> sttattus.dating.v1.RemoveVoiceBaselineRequest
+	13,  // 147: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	15,  // 148: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	17,  // 149: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	19,  // 150: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	21,  // 151: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	23,  // 152: sttattus.dating.v1.DatingService.Unmatch:output_type -> sttattus.dating.v1.UnmatchResponse
+	25,  // 153: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	27,  // 154: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	30,  // 155: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	32,  // 156: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	35,  // 157: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	37,  // 158: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	39,  // 159: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	42,  // 160: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	44,  // 161: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	46,  // 162: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	48,  // 163: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	51,  // 164: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	53,  // 165: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	55,  // 166: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	58,  // 167: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	60,  // 168: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	68,  // 169: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	70,  // 170: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	63,  // 171: sttattus.dating.v1.DatingService.TriggerPanicAlert:output_type -> sttattus.dating.v1.TriggerPanicAlertResponse
+	65,  // 172: sttattus.dating.v1.DatingService.ListMyPanicAlerts:output_type -> sttattus.dating.v1.ListMyPanicAlertsResponse
+	73,  // 173: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	75,  // 174: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	78,  // 175: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	81,  // 176: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
+	83,  // 177: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
+	85,  // 178: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
+	87,  // 179: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
+	90,  // 180: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
+	92,  // 181: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
+	95,  // 182: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
+	98,  // 183: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
+	100, // 184: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
+	102, // 185: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
+	106, // 186: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:output_type -> sttattus.dating.v1.GetCompatibilityMatrixResponse
+	109, // 187: sttattus.dating.v1.DatingService.SendGift:output_type -> sttattus.dating.v1.SendGiftResponse
+	111, // 188: sttattus.dating.v1.DatingService.ListGiftLedger:output_type -> sttattus.dating.v1.ListGiftLedgerResponse
+	6,   // 189: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:output_type -> sttattus.dating.v1.GetDiscoveryPreferencesResponse
+	8,   // 190: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:output_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
+	114, // 191: sttattus.dating.v1.DatingService.ListMissions:output_type -> sttattus.dating.v1.ListMissionsResponse
+	116, // 192: sttattus.dating.v1.DatingService.CompleteMission:output_type -> sttattus.dating.v1.CompleteMissionResponse
+	120, // 193: sttattus.dating.v1.DatingService.StartConciergeThread:output_type -> sttattus.dating.v1.StartConciergeThreadResponse
+	122, // 194: sttattus.dating.v1.DatingService.ListMyConciergeThreads:output_type -> sttattus.dating.v1.ListMyConciergeThreadsResponse
+	124, // 195: sttattus.dating.v1.DatingService.GetConciergeThread:output_type -> sttattus.dating.v1.GetConciergeThreadResponse
+	126, // 196: sttattus.dating.v1.DatingService.PostConciergeMessage:output_type -> sttattus.dating.v1.PostConciergeMessageResponse
+	129, // 197: sttattus.dating.v1.DatingService.ListMatchmakerProposals:output_type -> sttattus.dating.v1.ListMatchmakerProposalsResponse
+	131, // 198: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:output_type -> sttattus.dating.v1.RespondMatchmakerProposalResponse
+	134, // 199: sttattus.dating.v1.DatingService.ListAtlasLetters:output_type -> sttattus.dating.v1.ListAtlasLettersResponse
+	136, // 200: sttattus.dating.v1.DatingService.GetAtlasLetter:output_type -> sttattus.dating.v1.GetAtlasLetterResponse
+	139, // 201: sttattus.dating.v1.DatingService.ListEvents:output_type -> sttattus.dating.v1.ListEventsResponse
+	141, // 202: sttattus.dating.v1.DatingService.RsvpEvent:output_type -> sttattus.dating.v1.RsvpEventResponse
+	143, // 203: sttattus.dating.v1.DatingService.ListMyEventRsvps:output_type -> sttattus.dating.v1.ListMyEventRsvpsResponse
+	157, // 204: sttattus.dating.v1.DatingService.GetCrossPillarGate:output_type -> sttattus.dating.v1.GetCrossPillarGateResponse
+	146, // 205: sttattus.dating.v1.DatingService.CreateProfileShare:output_type -> sttattus.dating.v1.CreateProfileShareResponse
+	148, // 206: sttattus.dating.v1.DatingService.ListMyProfileShares:output_type -> sttattus.dating.v1.ListMyProfileSharesResponse
+	150, // 207: sttattus.dating.v1.DatingService.RevokeProfileShare:output_type -> sttattus.dating.v1.RevokeProfileShareResponse
+	152, // 208: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:output_type -> sttattus.dating.v1.GenerateAtlasYearbookResponse
+	154, // 209: sttattus.dating.v1.DatingService.CheckInEvent:output_type -> sttattus.dating.v1.CheckInEventResponse
+	160, // 210: sttattus.dating.v1.DatingService.ListDatingPhotos:output_type -> sttattus.dating.v1.ListDatingPhotosResponse
+	166, // 211: sttattus.dating.v1.DatingService.AddDatingPhoto:output_type -> sttattus.dating.v1.AddDatingPhotoResponse
+	168, // 212: sttattus.dating.v1.DatingService.RemoveDatingPhoto:output_type -> sttattus.dating.v1.RemoveDatingPhotoResponse
+	170, // 213: sttattus.dating.v1.DatingService.ReorderDatingPhotos:output_type -> sttattus.dating.v1.ReorderDatingPhotosResponse
+	172, // 214: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:output_type -> sttattus.dating.v1.SetPrimaryDatingPhotoResponse
+	162, // 215: sttattus.dating.v1.DatingService.SetVoiceBaseline:output_type -> sttattus.dating.v1.SetVoiceBaselineResponse
+	164, // 216: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:output_type -> sttattus.dating.v1.RemoveVoiceBaselineResponse
+	147, // [147:217] is the sub-list for method output_type
+	77,  // [77:147] is the sub-list for method input_type
+	77,  // [77:77] is the sub-list for extension type_name
+	77,  // [77:77] is the sub-list for extension extendee
+	0,   // [0:77] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -10549,6 +10568,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 	if File_sttattus_dating_v1_dating_proto != nil {
 		return
 	}
+	file_sttattus_dating_v1_identity_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

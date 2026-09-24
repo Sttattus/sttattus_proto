@@ -3,6 +3,7 @@ syntax = "proto3";
 package sttattus.dating.v1;
 
 import "sttattus/common/v1/pagination.proto";
+import "sttattus/dating/v1/identity.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
 
@@ -69,6 +70,12 @@ message DatingProfile {
   // configured or failed; a clip with no transcript is still a valid clip.
   string voice_transcript = 24;
   int32 voice_duration_seconds = 25;
+
+  // --- Atlas Choice 1 — identity layers ---
+  // The checks that are currently active for this member, with their dates,
+  // expiry and policy version (see identity.proto). Never a single verified
+  // flag. birth_date above is returned only to the member themselves.
+  TrustPanel trust = 26;
 }
 
 // Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -174,6 +181,12 @@ message SendMessageResponse {
 }
 
 // === Identity verification (A9.2) ===
+//
+// Superseded by AtlasIdentityService (identity.proto). StartVerification now
+// starts a selfie check and GetLatestVerification summarises the caller's
+// latest selfie check, so older clients keep working against the layered
+// model. `status` reads: started | submitted | in_review | passed | failed |
+// needs_more | cancelled | expired; provider is "sttattus_review".
 
 message AtlasVerification {
   string id = 1;
@@ -312,7 +325,11 @@ message ListMyReportsResponse {
 
 message ReportUserRequest {
   string reported_id = 1;
+  // harassment | spam | money_request | impersonation | fake_profile |
+  // underage | inappropriate | other. Unknown values are INVALID_ARGUMENT;
+  // reporting yourself is INVALID_ARGUMENT.
   string category = 2;
+  // Optional, up to 1000 characters.
   string description = 3;
 }
 message ReportUserResponse {

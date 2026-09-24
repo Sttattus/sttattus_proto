@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message as Message$1, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { TrustPanel } from "./identity_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -251,7 +252,7 @@ export class DatingProfile extends Message$1<DatingProfile> {
    * --- A9.7 voice baseline ---
    * A signed, time-bound URL for the member's 60-second clip, or empty. Never
    * the r2:// locator — signing happens server-side on read.
-   * 
+   *
    * Only ever populated for the member themselves and for someone they have
    * matched with. The onboarding copy promises exactly that ("only matched
    * lifters hear it, and only after you accept"), so it is not a preference
@@ -273,6 +274,16 @@ export class DatingProfile extends Message$1<DatingProfile> {
    * @generated from field: int32 voice_duration_seconds = 25;
    */
   voiceDurationSeconds = 0;
+
+  /**
+   * --- Atlas Choice 1 — identity layers ---
+   * The checks that are currently active for this member, with their dates,
+   * expiry and policy version (see identity.proto). Never a single verified
+   * flag. birth_date above is returned only to the member themselves.
+   *
+   * @generated from field: sttattus.dating.v1.TrustPanel trust = 26;
+   */
+  trust?: TrustPanel;
 
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
@@ -307,6 +318,7 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 23, name: "voice_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 24, name: "voice_transcript", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 25, name: "voice_duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 26, name: "trust", kind: "message", T: TrustPanel },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {
@@ -2636,11 +2648,17 @@ export class ReportUserRequest extends Message$1<ReportUserRequest> {
   reportedId = "";
 
   /**
+   * harassment | spam | money_request | impersonation | fake_profile |
+   * underage | inappropriate | other. Unknown values are INVALID_ARGUMENT;
+   * reporting yourself is INVALID_ARGUMENT.
+   *
    * @generated from field: string category = 2;
    */
   category = "";
 
   /**
+   * Optional, up to 1000 characters.
+   *
    * @generated from field: string description = 3;
    */
   description = "";
@@ -5477,7 +5495,7 @@ export class ConciergeMessage extends Message$1<ConciergeMessage> {
   /**
    * The concierge who wrote it. Empty for member and system messages, and
    * for replies written before authorship was recorded.
-   * 
+   *
    * Every desk on the platform answered as an anonymous "STAFF" until
    * 2026-08-23; lexicon's tutor desk had carried a name since migration 0079
    * and was the only one. A white-glove desk that will not say who is
@@ -7782,3 +7800,4 @@ export class SetPrimaryDatingPhotoResponse extends Message$1<SetPrimaryDatingPho
     return proto3.util.equals(SetPrimaryDatingPhotoResponse, a, b);
   }
 }
+
