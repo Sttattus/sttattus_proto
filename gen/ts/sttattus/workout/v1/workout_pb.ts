@@ -1117,6 +1117,97 @@ export class SessionSet extends Message<SessionSet> {
    */
   side = "";
 
+  /**
+   * Choice 2 — the full live-session grammar (see live_session.proto).
+   * set_type additionally takes emom | interval | skill | isometric | assisted.
+   *
+   * reps in reserve; absent when not rated (0 is a real answer)
+   *
+   * @generated from field: optional double rir = 18;
+   */
+  rir?: number;
+
+  /**
+   * e.g. "3-1-1-0"; empty when not given
+   *
+   * @generated from field: string tempo = 19;
+   */
+  tempo = "";
+
+  /**
+   * cluster / rest-pause segments; reps is their sum
+   *
+   * @generated from field: repeated int32 mini_reps = 20;
+   */
+  miniReps: number[] = [];
+
+  /**
+   * assisted sets: help in the same unit as weight
+   *
+   * @generated from field: double assistance = 21;
+   */
+  assistance = 0;
+
+  /**
+   * skill sets: attempts (reps holds the successful ones)
+   *
+   * @generated from field: int32 attempts = 22;
+   */
+  attempts = 0;
+
+  /**
+   * circuit / EMOM / interval round, 0-based
+   *
+   * @generated from field: int32 round_index = 23;
+   */
+  roundIndex = 0;
+
+  /**
+   * rest actually taken before this set
+   *
+   * @generated from field: int32 rest_seconds_before = 24;
+   */
+  restSecondsBefore = 0;
+
+  /**
+   * @generated from field: string notes = 25;
+   */
+  notes = "";
+
+  /**
+   * touch | repeat | command | keyboard | voice | notification | headset | tag | legacy
+   *
+   * @generated from field: string capture_mode = 26;
+   */
+  captureMode = "";
+
+  /**
+   * Voice, lock-screen/watch and headset captures wait for the member's check
+   * and stay out of records until confirmed.
+   *
+   * @generated from field: bool needs_confirmation = 27;
+   */
+  needsConfirmation = false;
+
+  /**
+   * @generated from field: int64 confirmed_at = 28;
+   */
+  confirmedAt = protoInt64.zero;
+
+  /**
+   * phone | tablet | notification | web | other | legacy
+   *
+   * @generated from field: string device_kind = 29;
+   */
+  deviceKind = "";
+
+  /**
+   * the number the writing device asked for
+   *
+   * @generated from field: int32 requested_index = 30;
+   */
+  requestedIndex = 0;
+
   constructor(data?: PartialMessage<SessionSet>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1142,6 +1233,19 @@ export class SessionSet extends Message<SessionSet> {
     { no: 15, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 16, name: "distance_m", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 17, name: "side", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "rir", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
+    { no: 19, name: "tempo", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "mini_reps", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 21, name: "assistance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 22, name: "attempts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 23, name: "round_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "rest_seconds_before", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 26, name: "capture_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 27, name: "needs_confirmation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 28, name: "confirmed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 29, name: "device_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 30, name: "requested_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionSet {
@@ -1286,6 +1390,108 @@ export class SessionExercise extends Message<SessionExercise> {
    */
   deleted = false;
 
+  /**
+   * Choice 2 — block membership, the planned grammar, live changes and the
+   * movement's own measurement so every device renders the right set row.
+   *
+   * @generated from field: string block_id = 23;
+   */
+  blockId = "";
+
+  /**
+   * 0 = A1, 1 = A2 … inside the block
+   *
+   * @generated from field: int32 block_position = 24;
+   */
+  blockPosition = 0;
+
+  /**
+   * @generated from field: string planned_set_type = 25;
+   */
+  plannedSetType = "";
+
+  /**
+   * @generated from field: int32 planned_duration_seconds = 26;
+   */
+  plannedDurationSeconds = 0;
+
+  /**
+   * @generated from field: double planned_distance_m = 27;
+   */
+  plannedDistanceM = 0;
+
+  /**
+   * @generated from field: string planned_tempo = 28;
+   */
+  plannedTempo = "";
+
+  /**
+   * planned | skipped | substituted
+   *
+   * @generated from field: string live_status = 29;
+   */
+  liveStatus = "";
+
+  /**
+   * @generated from field: string skip_reason = 30;
+   */
+  skipReason = "";
+
+  /**
+   * the session exercise this one replaced
+   *
+   * @generated from field: string substituted_from_id = 31;
+   */
+  substitutedFromId = "";
+
+  /**
+   * set when this exercise was swapped out
+   *
+   * @generated from field: string substituted_by_id = 32;
+   */
+  substitutedById = "";
+
+  /**
+   * equipment_busy | equipment_missing | discomfort | preference | coach | other
+   *
+   * @generated from field: string substitution_reason = 33;
+   */
+  substitutionReason = "";
+
+  /**
+   * @generated from field: string member_note = 34;
+   */
+  memberNote = "";
+
+  /**
+   * load_reps | bodyweight_reps | reps_only | duration | distance_duration
+   *
+   * @generated from field: string measurement = 35;
+   */
+  measurement = "";
+
+  /**
+   * bilateral | unilateral | alternating
+   *
+   * @generated from field: string laterality = 36;
+   */
+  laterality = "";
+
+  /**
+   * @generated from field: string movement_pattern = 37;
+   */
+  movementPattern = "";
+
+  /**
+   * @generated from field: string equipment_tag_id = 38;
+   */
+  equipmentTagId = "";
+
+  /**
+   * @generated from field: bool is_private_movement = 39;
+   */
+  isPrivateMovement = false;
+
   constructor(data?: PartialMessage<SessionExercise>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1316,6 +1522,23 @@ export class SessionExercise extends Message<SessionExercise> {
     { no: 20, name: "exercise_slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 21, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 22, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 23, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 24, name: "block_position", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "planned_set_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 26, name: "planned_duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 27, name: "planned_distance_m", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 28, name: "planned_tempo", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 29, name: "live_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 30, name: "skip_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 31, name: "substituted_from_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 32, name: "substituted_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 33, name: "substitution_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 34, name: "member_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 35, name: "measurement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 36, name: "laterality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 37, name: "movement_pattern", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 38, name: "equipment_tag_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 39, name: "is_private_movement", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionExercise {
@@ -1332,6 +1555,154 @@ export class SessionExercise extends Message<SessionExercise> {
 
   static equals(a: SessionExercise | PlainMessage<SessionExercise> | undefined, b: SessionExercise | PlainMessage<SessionExercise> | undefined): boolean {
     return proto3.util.equals(SessionExercise, a, b);
+  }
+}
+
+/**
+ * SessionBlock groups exercises into how they are performed (Choice 2).
+ *
+ * @generated from message sttattus.workout.v1.SessionBlock
+ */
+export class SessionBlock extends Message<SessionBlock> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * straight | superset | circuit | emom | amrap | intervals | for_time
+   *
+   * @generated from field: string kind = 2;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string label = 3;
+   */
+  label = "";
+
+  /**
+   * @generated from field: int32 order_index = 4;
+   */
+  orderIndex = 0;
+
+  /**
+   * circuit / interval rounds, EMOM minutes
+   *
+   * @generated from field: int32 rounds = 5;
+   */
+  rounds = 0;
+
+  /**
+   * EMOM interval or interval work time
+   *
+   * @generated from field: int32 interval_seconds = 6;
+   */
+  intervalSeconds = 0;
+
+  /**
+   * interval rest or rest between rounds
+   *
+   * @generated from field: int32 rest_seconds = 7;
+   */
+  restSeconds = 0;
+
+  /**
+   * AMRAP duration or for-time cap
+   *
+   * @generated from field: int32 time_cap_seconds = 8;
+   */
+  timeCapSeconds = 0;
+
+  /**
+   * @generated from field: string template_id = 9;
+   */
+  templateId = "";
+
+  /**
+   * @generated from field: int32 template_version = 10;
+   */
+  templateVersion = 0;
+
+  /**
+   * @generated from field: string template_name = 11;
+   */
+  templateName = "";
+
+  /**
+   * AMRAP completed rounds
+   *
+   * @generated from field: int32 result_rounds = 12;
+   */
+  resultRounds = 0;
+
+  /**
+   * AMRAP extra reps
+   *
+   * @generated from field: int32 result_reps = 13;
+   */
+  resultReps = 0;
+
+  /**
+   * for-time finish time
+   *
+   * @generated from field: int32 result_seconds = 14;
+   */
+  resultSeconds = 0;
+
+  /**
+   * @generated from field: bool has_result = 15;
+   */
+  hasResult = false;
+
+  /**
+   * Assigned work (coach / clinician / programme) that the member cannot
+   * silently substitute or skip.
+   *
+   * @generated from field: bool locked = 16;
+   */
+  locked = false;
+
+  constructor(data?: PartialMessage<SessionBlock>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.workout.v1.SessionBlock";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "order_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "rounds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "interval_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "rest_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "time_cap_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "template_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "result_rounds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "result_reps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "result_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SessionBlock {
+    return new SessionBlock().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SessionBlock {
+    return new SessionBlock().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SessionBlock {
+    return new SessionBlock().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SessionBlock | PlainMessage<SessionBlock> | undefined, b: SessionBlock | PlainMessage<SessionBlock> | undefined): boolean {
+    return proto3.util.equals(SessionBlock, a, b);
   }
 }
 
@@ -1460,6 +1831,36 @@ export class ForgeSession extends Message<ForgeSession> {
    */
   completedSetCount = 0;
 
+  /**
+   * Choice 2 — blocks (every exercise belongs to one), what still needs the
+   * member's attention, and a "still training?" prompt for a session left open.
+   *
+   * @generated from field: repeated sttattus.workout.v1.SessionBlock blocks = 21;
+   */
+  blocks: SessionBlock[] = [];
+
+  /**
+   * @generated from field: int32 unconfirmed_set_count = 22;
+   */
+  unconfirmedSetCount = 0;
+
+  /**
+   * @generated from field: int32 open_merge_event_count = 23;
+   */
+  openMergeEventCount = 0;
+
+  /**
+   * @generated from field: bool stale_prompt = 24;
+   */
+  stalePrompt = false;
+
+  /**
+   * unix seconds of the latest applied live change
+   *
+   * @generated from field: int64 last_activity_at = 25;
+   */
+  lastActivityAt = protoInt64.zero;
+
   constructor(data?: PartialMessage<ForgeSession>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1488,6 +1889,11 @@ export class ForgeSession extends Message<ForgeSession> {
     { no: 18, name: "paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "import_batch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "completed_set_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 21, name: "blocks", kind: "message", T: SessionBlock, repeated: true },
+    { no: 22, name: "unconfirmed_set_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 23, name: "open_merge_event_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "stale_prompt", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 25, name: "last_activity_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ForgeSession {

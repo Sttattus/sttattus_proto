@@ -468,6 +468,34 @@ const SessionSet$json = {
     {'1': 'duration_seconds', '3': 15, '4': 1, '5': 5, '10': 'durationSeconds'},
     {'1': 'distance_m', '3': 16, '4': 1, '5': 1, '10': 'distanceM'},
     {'1': 'side', '3': 17, '4': 1, '5': 9, '10': 'side'},
+    {'1': 'rir', '3': 18, '4': 1, '5': 1, '9': 0, '10': 'rir', '17': true},
+    {'1': 'tempo', '3': 19, '4': 1, '5': 9, '10': 'tempo'},
+    {'1': 'mini_reps', '3': 20, '4': 3, '5': 5, '10': 'miniReps'},
+    {'1': 'assistance', '3': 21, '4': 1, '5': 1, '10': 'assistance'},
+    {'1': 'attempts', '3': 22, '4': 1, '5': 5, '10': 'attempts'},
+    {'1': 'round_index', '3': 23, '4': 1, '5': 5, '10': 'roundIndex'},
+    {
+      '1': 'rest_seconds_before',
+      '3': 24,
+      '4': 1,
+      '5': 5,
+      '10': 'restSecondsBefore'
+    },
+    {'1': 'notes', '3': 25, '4': 1, '5': 9, '10': 'notes'},
+    {'1': 'capture_mode', '3': 26, '4': 1, '5': 9, '10': 'captureMode'},
+    {
+      '1': 'needs_confirmation',
+      '3': 27,
+      '4': 1,
+      '5': 8,
+      '10': 'needsConfirmation'
+    },
+    {'1': 'confirmed_at', '3': 28, '4': 1, '5': 3, '10': 'confirmedAt'},
+    {'1': 'device_kind', '3': 29, '4': 1, '5': 9, '10': 'deviceKind'},
+    {'1': 'requested_index', '3': 30, '4': 1, '5': 5, '10': 'requestedIndex'},
+  ],
+  '8': [
+    {'1': '_rir'},
   ],
 };
 
@@ -481,7 +509,15 @@ final $typed_data.Uint8List sessionSetDescriptor = $convert.base64Decode(
     'RlbGV0ZWQYDCABKAhSB2RlbGV0ZWQSMAoUZXhjbHVkZV9mcm9tX3JlY29yZHMYDSABKAhSEmV4'
     'Y2x1ZGVGcm9tUmVjb3JkcxIhCgxwZXJmb3JtZWRfYXQYDiABKANSC3BlcmZvcm1lZEF0EikKEG'
     'R1cmF0aW9uX3NlY29uZHMYDyABKAVSD2R1cmF0aW9uU2Vjb25kcxIdCgpkaXN0YW5jZV9tGBAg'
-    'ASgBUglkaXN0YW5jZU0SEgoEc2lkZRgRIAEoCVIEc2lkZQ==');
+    'ASgBUglkaXN0YW5jZU0SEgoEc2lkZRgRIAEoCVIEc2lkZRIVCgNyaXIYEiABKAFIAFIDcmlyiA'
+    'EBEhQKBXRlbXBvGBMgASgJUgV0ZW1wbxIbCgltaW5pX3JlcHMYFCADKAVSCG1pbmlSZXBzEh4K'
+    'CmFzc2lzdGFuY2UYFSABKAFSCmFzc2lzdGFuY2USGgoIYXR0ZW1wdHMYFiABKAVSCGF0dGVtcH'
+    'RzEh8KC3JvdW5kX2luZGV4GBcgASgFUgpyb3VuZEluZGV4Ei4KE3Jlc3Rfc2Vjb25kc19iZWZv'
+    'cmUYGCABKAVSEXJlc3RTZWNvbmRzQmVmb3JlEhQKBW5vdGVzGBkgASgJUgVub3RlcxIhCgxjYX'
+    'B0dXJlX21vZGUYGiABKAlSC2NhcHR1cmVNb2RlEi0KEm5lZWRzX2NvbmZpcm1hdGlvbhgbIAEo'
+    'CFIRbmVlZHNDb25maXJtYXRpb24SIQoMY29uZmlybWVkX2F0GBwgASgDUgtjb25maXJtZWRBdB'
+    'IfCgtkZXZpY2Vfa2luZBgdIAEoCVIKZGV2aWNlS2luZBInCg9yZXF1ZXN0ZWRfaW5kZXgYHiAB'
+    'KAVSDnJlcXVlc3RlZEluZGV4QgYKBF9yaXI=');
 
 @$core.Deprecated('Use sessionExerciseDescriptor instead')
 const SessionExercise$json = {
@@ -528,6 +564,59 @@ const SessionExercise$json = {
     {'1': 'exercise_slug', '3': 20, '4': 1, '5': 9, '10': 'exerciseSlug'},
     {'1': 'revision', '3': 21, '4': 1, '5': 5, '10': 'revision'},
     {'1': 'deleted', '3': 22, '4': 1, '5': 8, '10': 'deleted'},
+    {'1': 'block_id', '3': 23, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'block_position', '3': 24, '4': 1, '5': 5, '10': 'blockPosition'},
+    {'1': 'planned_set_type', '3': 25, '4': 1, '5': 9, '10': 'plannedSetType'},
+    {
+      '1': 'planned_duration_seconds',
+      '3': 26,
+      '4': 1,
+      '5': 5,
+      '10': 'plannedDurationSeconds'
+    },
+    {
+      '1': 'planned_distance_m',
+      '3': 27,
+      '4': 1,
+      '5': 1,
+      '10': 'plannedDistanceM'
+    },
+    {'1': 'planned_tempo', '3': 28, '4': 1, '5': 9, '10': 'plannedTempo'},
+    {'1': 'live_status', '3': 29, '4': 1, '5': 9, '10': 'liveStatus'},
+    {'1': 'skip_reason', '3': 30, '4': 1, '5': 9, '10': 'skipReason'},
+    {
+      '1': 'substituted_from_id',
+      '3': 31,
+      '4': 1,
+      '5': 9,
+      '10': 'substitutedFromId'
+    },
+    {
+      '1': 'substituted_by_id',
+      '3': 32,
+      '4': 1,
+      '5': 9,
+      '10': 'substitutedById'
+    },
+    {
+      '1': 'substitution_reason',
+      '3': 33,
+      '4': 1,
+      '5': 9,
+      '10': 'substitutionReason'
+    },
+    {'1': 'member_note', '3': 34, '4': 1, '5': 9, '10': 'memberNote'},
+    {'1': 'measurement', '3': 35, '4': 1, '5': 9, '10': 'measurement'},
+    {'1': 'laterality', '3': 36, '4': 1, '5': 9, '10': 'laterality'},
+    {'1': 'movement_pattern', '3': 37, '4': 1, '5': 9, '10': 'movementPattern'},
+    {'1': 'equipment_tag_id', '3': 38, '4': 1, '5': 9, '10': 'equipmentTagId'},
+    {
+      '1': 'is_private_movement',
+      '3': 39,
+      '4': 1,
+      '5': 8,
+      '10': 'isPrivateMovement'
+    },
   ],
 };
 
@@ -546,7 +635,56 @@ final $typed_data.Uint8List sessionExerciseDescriptor = $convert.base64Decode(
     'HwoLcGxhbm5lZF9ycGUYESABKAFSCnBsYW5uZWRScGUSJQoOcGxhbm5lZF9zb3VyY2UYEiABKA'
     'lSDXBsYW5uZWRTb3VyY2USMAoUb3JpZ2luYWxfZXhlcmNpc2VfaWQYEyABKAlSEm9yaWdpbmFs'
     'RXhlcmNpc2VJZBIjCg1leGVyY2lzZV9zbHVnGBQgASgJUgxleGVyY2lzZVNsdWcSGgoIcmV2aX'
-    'Npb24YFSABKAVSCHJldmlzaW9uEhgKB2RlbGV0ZWQYFiABKAhSB2RlbGV0ZWQ=');
+    'Npb24YFSABKAVSCHJldmlzaW9uEhgKB2RlbGV0ZWQYFiABKAhSB2RlbGV0ZWQSGQoIYmxvY2tf'
+    'aWQYFyABKAlSB2Jsb2NrSWQSJQoOYmxvY2tfcG9zaXRpb24YGCABKAVSDWJsb2NrUG9zaXRpb2'
+    '4SKAoQcGxhbm5lZF9zZXRfdHlwZRgZIAEoCVIOcGxhbm5lZFNldFR5cGUSOAoYcGxhbm5lZF9k'
+    'dXJhdGlvbl9zZWNvbmRzGBogASgFUhZwbGFubmVkRHVyYXRpb25TZWNvbmRzEiwKEnBsYW5uZW'
+    'RfZGlzdGFuY2VfbRgbIAEoAVIQcGxhbm5lZERpc3RhbmNlTRIjCg1wbGFubmVkX3RlbXBvGBwg'
+    'ASgJUgxwbGFubmVkVGVtcG8SHwoLbGl2ZV9zdGF0dXMYHSABKAlSCmxpdmVTdGF0dXMSHwoLc2'
+    'tpcF9yZWFzb24YHiABKAlSCnNraXBSZWFzb24SLgoTc3Vic3RpdHV0ZWRfZnJvbV9pZBgfIAEo'
+    'CVIRc3Vic3RpdHV0ZWRGcm9tSWQSKgoRc3Vic3RpdHV0ZWRfYnlfaWQYICABKAlSD3N1YnN0aX'
+    'R1dGVkQnlJZBIvChNzdWJzdGl0dXRpb25fcmVhc29uGCEgASgJUhJzdWJzdGl0dXRpb25SZWFz'
+    'b24SHwoLbWVtYmVyX25vdGUYIiABKAlSCm1lbWJlck5vdGUSIAoLbWVhc3VyZW1lbnQYIyABKA'
+    'lSC21lYXN1cmVtZW50Eh4KCmxhdGVyYWxpdHkYJCABKAlSCmxhdGVyYWxpdHkSKQoQbW92ZW1l'
+    'bnRfcGF0dGVybhglIAEoCVIPbW92ZW1lbnRQYXR0ZXJuEigKEGVxdWlwbWVudF90YWdfaWQYJi'
+    'ABKAlSDmVxdWlwbWVudFRhZ0lkEi4KE2lzX3ByaXZhdGVfbW92ZW1lbnQYJyABKAhSEWlzUHJp'
+    'dmF0ZU1vdmVtZW50');
+
+@$core.Deprecated('Use sessionBlockDescriptor instead')
+const SessionBlock$json = {
+  '1': 'SessionBlock',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'kind', '3': 2, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'label', '3': 3, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'order_index', '3': 4, '4': 1, '5': 5, '10': 'orderIndex'},
+    {'1': 'rounds', '3': 5, '4': 1, '5': 5, '10': 'rounds'},
+    {'1': 'interval_seconds', '3': 6, '4': 1, '5': 5, '10': 'intervalSeconds'},
+    {'1': 'rest_seconds', '3': 7, '4': 1, '5': 5, '10': 'restSeconds'},
+    {'1': 'time_cap_seconds', '3': 8, '4': 1, '5': 5, '10': 'timeCapSeconds'},
+    {'1': 'template_id', '3': 9, '4': 1, '5': 9, '10': 'templateId'},
+    {'1': 'template_version', '3': 10, '4': 1, '5': 5, '10': 'templateVersion'},
+    {'1': 'template_name', '3': 11, '4': 1, '5': 9, '10': 'templateName'},
+    {'1': 'result_rounds', '3': 12, '4': 1, '5': 5, '10': 'resultRounds'},
+    {'1': 'result_reps', '3': 13, '4': 1, '5': 5, '10': 'resultReps'},
+    {'1': 'result_seconds', '3': 14, '4': 1, '5': 5, '10': 'resultSeconds'},
+    {'1': 'has_result', '3': 15, '4': 1, '5': 8, '10': 'hasResult'},
+    {'1': 'locked', '3': 16, '4': 1, '5': 8, '10': 'locked'},
+  ],
+};
+
+/// Descriptor for `SessionBlock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sessionBlockDescriptor = $convert.base64Decode(
+    'CgxTZXNzaW9uQmxvY2sSDgoCaWQYASABKAlSAmlkEhIKBGtpbmQYAiABKAlSBGtpbmQSFAoFbG'
+    'FiZWwYAyABKAlSBWxhYmVsEh8KC29yZGVyX2luZGV4GAQgASgFUgpvcmRlckluZGV4EhYKBnJv'
+    'dW5kcxgFIAEoBVIGcm91bmRzEikKEGludGVydmFsX3NlY29uZHMYBiABKAVSD2ludGVydmFsU2'
+    'Vjb25kcxIhCgxyZXN0X3NlY29uZHMYByABKAVSC3Jlc3RTZWNvbmRzEigKEHRpbWVfY2FwX3Nl'
+    'Y29uZHMYCCABKAVSDnRpbWVDYXBTZWNvbmRzEh8KC3RlbXBsYXRlX2lkGAkgASgJUgp0ZW1wbG'
+    'F0ZUlkEikKEHRlbXBsYXRlX3ZlcnNpb24YCiABKAVSD3RlbXBsYXRlVmVyc2lvbhIjCg10ZW1w'
+    'bGF0ZV9uYW1lGAsgASgJUgx0ZW1wbGF0ZU5hbWUSIwoNcmVzdWx0X3JvdW5kcxgMIAEoBVIMcm'
+    'VzdWx0Um91bmRzEh8KC3Jlc3VsdF9yZXBzGA0gASgFUgpyZXN1bHRSZXBzEiUKDnJlc3VsdF9z'
+    'ZWNvbmRzGA4gASgFUg1yZXN1bHRTZWNvbmRzEh0KCmhhc19yZXN1bHQYDyABKAhSCWhhc1Jlc3'
+    'VsdBIWCgZsb2NrZWQYECABKAhSBmxvY2tlZA==');
 
 @$core.Deprecated('Use forgeSessionDescriptor instead')
 const ForgeSession$json = {
@@ -585,6 +723,30 @@ const ForgeSession$json = {
       '5': 5,
       '10': 'completedSetCount'
     },
+    {
+      '1': 'blocks',
+      '3': 21,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.workout.v1.SessionBlock',
+      '10': 'blocks'
+    },
+    {
+      '1': 'unconfirmed_set_count',
+      '3': 22,
+      '4': 1,
+      '5': 5,
+      '10': 'unconfirmedSetCount'
+    },
+    {
+      '1': 'open_merge_event_count',
+      '3': 23,
+      '4': 1,
+      '5': 5,
+      '10': 'openMergeEventCount'
+    },
+    {'1': 'stale_prompt', '3': 24, '4': 1, '5': 8, '10': 'stalePrompt'},
+    {'1': 'last_activity_at', '3': 25, '4': 1, '5': 3, '10': 'lastActivityAt'},
   ],
 };
 
@@ -601,7 +763,12 @@ final $typed_data.Uint8List forgeSessionDescriptor = $convert.base64Decode(
     'dmlzaW9uEhgKB2RlbGV0ZWQYDyABKAhSB2RlbGV0ZWQSHQoKZGVsZXRlZF9hdBgQIAEoA1IJZG'
     'VsZXRlZEF0EiUKDnBhdXNlZF9zZWNvbmRzGBEgASgFUg1wYXVzZWRTZWNvbmRzEhYKBnBhdXNl'
     'ZBgSIAEoCFIGcGF1c2VkEiYKD2ltcG9ydF9iYXRjaF9pZBgTIAEoCVINaW1wb3J0QmF0Y2hJZB'
-    'IuChNjb21wbGV0ZWRfc2V0X2NvdW50GBQgASgFUhFjb21wbGV0ZWRTZXRDb3VudA==');
+    'IuChNjb21wbGV0ZWRfc2V0X2NvdW50GBQgASgFUhFjb21wbGV0ZWRTZXRDb3VudBI5CgZibG9j'
+    'a3MYFSADKAsyIS5zdHRhdHR1cy53b3Jrb3V0LnYxLlNlc3Npb25CbG9ja1IGYmxvY2tzEjIKFX'
+    'VuY29uZmlybWVkX3NldF9jb3VudBgWIAEoBVITdW5jb25maXJtZWRTZXRDb3VudBIzChZvcGVu'
+    'X21lcmdlX2V2ZW50X2NvdW50GBcgASgFUhNvcGVuTWVyZ2VFdmVudENvdW50EiEKDHN0YWxlX3'
+    'Byb21wdBgYIAEoCFILc3RhbGVQcm9tcHQSKAoQbGFzdF9hY3Rpdml0eV9hdBgZIAEoA1IObGFz'
+    'dEFjdGl2aXR5QXQ=');
 
 @$core.Deprecated('Use plannedExerciseDescriptor instead')
 const PlannedExercise$json = {

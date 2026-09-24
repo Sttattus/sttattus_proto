@@ -166,6 +166,24 @@ message SessionSet {
   int32 duration_seconds = 15;
   double distance_m = 16;
   string side = 17; // both | left | right
+  // Choice 2 — the full live-session grammar (see live_session.proto).
+  // set_type additionally takes emom | interval | skill | isometric | assisted.
+  optional double rir = 18; // reps in reserve; absent when not rated (0 is a real answer)
+  string tempo = 19; // e.g. "3-1-1-0"; empty when not given
+  repeated int32 mini_reps = 20; // cluster / rest-pause segments; reps is their sum
+  double assistance = 21; // assisted sets: help in the same unit as weight
+  int32 attempts = 22; // skill sets: attempts (reps holds the successful ones)
+  int32 round_index = 23; // circuit / EMOM / interval round, 0-based
+  int32 rest_seconds_before = 24; // rest actually taken before this set
+  string notes = 25;
+  // touch | repeat | command | keyboard | voice | notification | headset | tag | legacy
+  string capture_mode = 26;
+  // Voice, lock-screen/watch and headset captures wait for the member's check
+  // and stay out of records until confirmed.
+  bool needs_confirmation = 27;
+  int64 confirmed_at = 28;
+  string device_kind = 29; // phone | tablet | notification | web | other | legacy
+  int32 requested_index = 30; // the number the writing device asked for
 }
 
 // SessionExercise is an exercise slotted into a session, with its
@@ -196,6 +214,48 @@ message SessionExercise {
   string exercise_slug = 20;
   int32 revision = 21;
   bool deleted = 22;
+  // Choice 2 — block membership, the planned grammar, live changes and the
+  // movement's own measurement so every device renders the right set row.
+  string block_id = 23;
+  int32 block_position = 24; // 0 = A1, 1 = A2 … inside the block
+  string planned_set_type = 25;
+  int32 planned_duration_seconds = 26;
+  double planned_distance_m = 27;
+  string planned_tempo = 28;
+  string live_status = 29; // planned | skipped | substituted
+  string skip_reason = 30;
+  string substituted_from_id = 31; // the session exercise this one replaced
+  string substituted_by_id = 32; // set when this exercise was swapped out
+  string substitution_reason = 33; // equipment_busy | equipment_missing | discomfort | preference | coach | other
+  string member_note = 34;
+  string measurement = 35; // load_reps | bodyweight_reps | reps_only | duration | distance_duration
+  string laterality = 36; // bilateral | unilateral | alternating
+  string movement_pattern = 37;
+  string equipment_tag_id = 38;
+  bool is_private_movement = 39;
+}
+
+// SessionBlock groups exercises into how they are performed (Choice 2).
+message SessionBlock {
+  string id = 1;
+  // straight | superset | circuit | emom | amrap | intervals | for_time
+  string kind = 2;
+  string label = 3;
+  int32 order_index = 4;
+  int32 rounds = 5; // circuit / interval rounds, EMOM minutes
+  int32 interval_seconds = 6; // EMOM interval or interval work time
+  int32 rest_seconds = 7; // interval rest or rest between rounds
+  int32 time_cap_seconds = 8; // AMRAP duration or for-time cap
+  string template_id = 9;
+  int32 template_version = 10;
+  string template_name = 11;
+  int32 result_rounds = 12; // AMRAP completed rounds
+  int32 result_reps = 13; // AMRAP extra reps
+  int32 result_seconds = 14; // for-time finish time
+  bool has_result = 15;
+  // Assigned work (coach / clinician / programme) that the member cannot
+  // silently substitute or skip.
+  bool locked = 16;
 }
 
 // ForgeSession is a built / live / closed training session.
@@ -225,6 +285,13 @@ message ForgeSession {
   bool paused = 18; // a pause is currently open
   string import_batch_id = 19;
   int32 completed_set_count = 20; // performed, non-deleted sets
+  // Choice 2 — blocks (every exercise belongs to one), what still needs the
+  // member's attention, and a "still training?" prompt for a session left open.
+  repeated SessionBlock blocks = 21;
+  int32 unconfirmed_set_count = 22;
+  int32 open_merge_event_count = 23;
+  bool stale_prompt = 24;
+  int64 last_activity_at = 25; // unix seconds of the latest applied live change
 }
 
 // PlannedExercise is one row of the session builder's output.

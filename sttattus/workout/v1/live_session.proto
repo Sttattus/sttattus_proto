@@ -1,0 +1,583 @@
+syntax = "proto3";
+
+package sttattus.workout.v1;
+
+import "sttattus/workout/v1/workout.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1";
+
+// ===========================================================================
+// Forge Choice 2 — Universal Live Session.
+//
+// A session is built, started, logged, changed and finished on the device,
+// with or without a network. Every change is an operation (LiveOp) with a
+// client-generated id, the writing device, a per-device sequence number and a
+// hybrid logical clock (hlc = wall-clock milliseconds × 1000 + counter).
+// Devices send their operations in order through SyncLiveSession; the server
+// applies them under one deterministic rule that the app also uses to render
+// pending changes offline:
+//
+//   * creation is never lost — sessions, blocks, exercises, sets,
+//     substitutions and member-defined activities always apply;
+//   * each register (a set's whole state, an exercise's status and note, a
+//     block's result, the session title and block order) is last-writer-wins
+//     by (hlc, device_id); the losing write is kept in a LiveMergeEvent;
+//   * sets are numbered canonically by (requested number, created hlc,
+//     device, id), so concurrent "set 4"s from two devices are both kept;
+//   * any finish beats abandon, the session ends at its latest finishing or
+//     abandoning op, and sets performed before that end are accepted whenever
+//     they arrive.
+//
+// Every RPC is scoped to the authenticated member; identifiers that are not
+// the caller's are indistinguishable from missing ones. op_id is the
+// idempotency key: a replay returns the stored result, and a reused op_id
+// with a different body is refused.
+// ===========================================================================
+
+// ----- devices -------------------------------------------------------------
+
+// LiveDevice is one writer: a Forge install, or the lock-screen/watch
+// notification surface of that install (which writes from its own process).
+message LiveDevice {
+  string device_id = 1; // client-generated UUID
+  string kind = 2; // phone | tablet | notification | web | other
+  string label = 3; // member-facing, e.g. "Pixel 8" or "Lock screen & watch"
+  string platform = 4; // android | ios | web
+  int32 app_build = 5;
+  string app_version = 6;
+  // voice | tts | camera | nfc | notifications | keyboard | headset
+  repeated string capabilities = 7;
+  int64 first_seen_at = 8;
+  int64 last_seen_at = 9;
+  bool revoked = 10;
+  int64 op_count = 11;
+}
+
+message RegisterLiveDeviceRequest {
+  string device_id = 1;
+  string kind = 2;
+  string label = 3;
+  string platform = 4;
+  int32 app_build = 5;
+  string app_version = 6;
+  repeated string capabilities = 7;
+}
+message RegisterLiveDeviceResponse {
+  LiveDevice device = 1;
+  int64 server_hlc = 2;
+  LiveRuntimeView runtime = 3;
+}
+
+message ListLiveDevicesRequest {}
+message ListLiveDevicesResponse {
+  repeated LiveDevice devices = 1;
+}
+
+message RevokeLiveDeviceRequest {
+  string device_id = 1;
+  string reason = 2; // 3–500 characters
+}
+message RevokeLiveDeviceResponse {
+  LiveDevice device = 1;
+}
+
+// ----- the set grammar -----------------------------------------------------
+
+// LiveSetValues is what was performed. Which fields apply depends on the
+// movement's measurement (load_reps, bodyweight_reps, reps_only, duration,
+// distance_duration) and the set type.
+message LiveSetValues {
+  // warmup | working | backoff | drop | amrap | failure | cluster | rest_pause
+  // | timed | distance | emom | interval | skill | isometric | assisted
+  string set_type = 1;
+  double weight = 2; // added load; 0 for bodyweight
+  string unit = 3; // kg | lb
+  int32 reps = 4;
+  double rpe = 5; // 0 = not rated, else 1–10
+  optional double rir = 6; // 0–10; absent when not rated
+  int32 duration_seconds = 7;
+  double distance_m = 8;
+  string side = 9; // both | left | right
+  string tempo = 10; // e.g. "3-1-1-0"
+  repeated int32 mini_reps = 11; // cluster / rest-pause segments
+  double assistance = 12; // assisted: help in the same unit as weight
+  int32 attempts = 13; // skill: attempts ≥ reps (successful)
+  int32 round_index = 14;
+  string notes = 15; // ≤ 500 characters
+}
+
+// ----- operations ----------------------------------------------------------
+
+message LiveExerciseDraft {
+  string session_exercise_id = 1; // client-generated UUID
+  string exercise_id = 2; // catalog or the caller's private movement
+  int32 target_sets = 3;
+  int32 rest_seconds = 4;
+  string planned_reps = 5; // free text such as "8" or "8-10"
+  double planned_load_kg = 6;
+  string planned_set_type = 7;
+  int32 planned_duration_seconds = 8;
+  double planned_distance_m = 9;
+  string planned_tempo = 10;
+  double planned_rpe = 11;
+}
+
+message LiveBlockDraft {
+  string block_id = 1; // client-generated UUID
+  string kind = 2; // straight | superset | circuit | emom | amrap | intervals | for_time
+  string label = 3;
+  int32 rounds = 4;
+  int32 interval_seconds = 5;
+  int32 rest_seconds = 6;
+  int32 time_cap_seconds = 7;
+  string template_id = 8;
+  int32 template_version = 9;
+  repeated LiveExerciseDraft exercises = 10;
+}
+
+message CreateLiveSessionOp {
+  string title = 1;
+  string notes = 2;
+  string timezone = 3; // IANA zone of the device
+  repeated LiveBlockDraft blocks = 4;
+  bool start_now = 5; // create straight into active
+}
+
+message StartSessionOp {}
+message FinishSessionOp {}
+message AbandonSessionOp {}
+message PauseSessionOp {}
+message ResumeSessionOp {}
+
+message RenameSessionOp {
+  string title = 1;
+}
+
+message UpsertSetOp {
+  string set_id = 1; // client-generated UUID; the same id edits the same set
+  string session_exercise_id = 2;
+  int32 requested_index = 3; // the set number the device showed, 0-based
+  LiveSetValues values = 4;
+  bool completed = 5;
+  int64 performed_at = 6; // unix seconds
+  string timezone = 7;
+  // touch | repeat | command | keyboard | voice | notification | headset | tag
+  string capture_mode = 8;
+  bool needs_confirmation = 9; // forced true for voice, notification, headset
+  int32 rest_seconds_before = 10;
+  // The set's revision as this device last saw it (0 for a new set). When a
+  // newer write replaces a value the device never saw, both are kept in a
+  // merge event.
+  int32 base_revision = 11;
+  // The member vouches for exactly these values (the check after a voice,
+  // lock-screen/watch or headset capture): the set no longer waits for
+  // confirmation, whatever its capture mode.
+  bool confirmed = 12;
+}
+
+message DeleteSetOp {
+  string set_id = 1;
+  string reason = 2; // "undo" or the member's words
+  int32 base_revision = 3;
+}
+
+message RestoreSetOp {
+  string set_id = 1;
+  int32 base_revision = 2;
+}
+
+message AddBlockOp {
+  LiveBlockDraft block = 1;
+}
+
+message AddExerciseOp {
+  string block_id = 1; // an existing block of this session
+  LiveExerciseDraft exercise = 2;
+  int32 position = 3; // the position the device showed inside the block
+}
+
+message SubstituteExerciseOp {
+  string session_exercise_id = 1; // the exercise being swapped out
+  string new_session_exercise_id = 2; // client-generated UUID of the substitute
+  string exercise_id = 3; // the substitute movement
+  // equipment_busy | equipment_missing | discomfort | preference | coach | other
+  string reason = 4;
+  string note = 5;
+  int32 target_sets = 6; // sets still to do on the substitute
+}
+
+message SkipExerciseOp {
+  string session_exercise_id = 1;
+  bool skipped = 2; // false un-skips
+  string reason = 3;
+}
+
+message ReorderBlocksOp {
+  repeated string block_ids = 1; // the whole order as the device sees it
+}
+
+message ExerciseNoteOp {
+  string session_exercise_id = 1;
+  string note = 2; // ≤ 1000 characters; empty clears
+}
+
+message BlockResultOp {
+  string block_id = 1;
+  int32 rounds = 2;
+  int32 reps = 3;
+  int32 seconds = 4;
+  bool clear = 5;
+}
+
+// DefineActivityOp creates a private, unreviewed movement from inside a live
+// session, offline if need be. The same name defined on two devices resolves
+// to one movement.
+message DefineActivityOp {
+  string exercise_id = 1; // client-generated UUID
+  string name = 2;
+  string measurement = 3;
+  string laterality = 4;
+  string equipment = 5;
+  string category = 6;
+}
+
+message AttachEquipmentOp {
+  string session_exercise_id = 1;
+  string equipment_tag_id = 2; // empty detaches
+}
+
+message LiveOp {
+  reserved 18;
+  string op_id = 1; // client-generated UUID, the idempotency key
+  string session_id = 2; // client-generated for create_session
+  int64 hlc = 3;
+  int64 device_seq = 4;
+  oneof body {
+    CreateLiveSessionOp create_session = 10;
+    StartSessionOp start = 11;
+    FinishSessionOp finish = 12;
+    AbandonSessionOp abandon = 13;
+    PauseSessionOp pause = 14;
+    ResumeSessionOp resume = 15;
+    RenameSessionOp rename = 16;
+    UpsertSetOp upsert_set = 17;
+    DeleteSetOp delete_set = 19;
+    RestoreSetOp restore_set = 20;
+    AddBlockOp add_block = 21;
+    AddExerciseOp add_exercise = 22;
+    SubstituteExerciseOp substitute = 23;
+    SkipExerciseOp skip = 24;
+    ReorderBlocksOp reorder = 25;
+    ExerciseNoteOp note = 26;
+    BlockResultOp block_result = 27;
+    DefineActivityOp define_activity = 28;
+    AttachEquipmentOp attach_equipment = 29;
+  }
+}
+
+// LiveOpResult is the outcome of one op:
+//   applied      — the change is in the session
+//   late_applied — applied to a session that had already ended (work is never
+//                  refused for arriving late); a merge event lets the member
+//                  keep or remove a late set
+//   superseded   — another device wrote this register more recently; both
+//                  values are in a merge event
+//   reindexed    — kept, numbered after a set another device logged
+//   noop         — nothing to change (already paused, same state…)
+//   rejected     — invalid; reason says why (never retried)
+message LiveOpResult {
+  string op_id = 1;
+  string outcome = 2;
+  string reason = 3; // member-safe sentence when not applied
+  string entity_id = 4; // the set / exercise / block / session touched
+  int32 set_index = 5; // canonical number of an upserted set
+  bool replayed = 6; // answered from the op log
+  string merge_event_id = 7;
+}
+
+message SyncLiveSessionRequest {
+  string device_id = 1; // registered with RegisterLiveDevice
+  int32 app_build = 2;
+  repeated LiveOp ops = 3; // in device order, up to the runtime limit
+  // Sessions to return even when no op in this batch touched them.
+  repeated string refresh_session_ids = 4;
+}
+message SyncLiveSessionResponse {
+  repeated LiveOpResult results = 1;
+  repeated ForgeSession sessions = 2; // every session touched or requested
+  repeated LiveMergeEvent merge_events = 3; // created by this batch
+  int64 server_hlc = 4;
+  LiveRuntimeView runtime = 5;
+  // hold = true when this build may not write (below the minimum build, on
+  // the blocked list, or live writes paused). No op was applied and none was
+  // rejected: the device keeps them and retries after the member updates.
+  bool hold = 6;
+  string hold_reason = 7;
+}
+
+// ----- reads ---------------------------------------------------------------
+
+message GetLiveSessionRequest {
+  string session_id = 1;
+}
+message GetLiveSessionResponse {
+  ForgeSession session = 1;
+  repeated LiveMergeEvent merge_events = 2; // open ones first
+  int64 server_hlc = 3;
+}
+
+// MovementContext is what the member did last time and their best, so the
+// live screen can prefill and compare.
+message MovementContext {
+  string exercise_id = 1;
+  string last_local_date = 2; // YYYY-MM-DD of the last session with it
+  string last_session_title = 3;
+  repeated SessionSet last_sets = 4; // performed sets of that session
+  double best_e1rm_kg = 5; // from records; 0 when none
+  double best_load_kg = 6; // heaviest counted set
+  int32 best_load_reps = 7;
+  int32 best_reps = 8; // most reps in one counted set
+  int32 best_duration_seconds = 9;
+  double best_distance_m = 10;
+  string preferred_unit = 11; // unit of the last logged set
+  int32 last_rest_seconds = 12;
+}
+
+message GetMovementContextRequest {
+  repeated string exercise_ids = 1; // up to 60
+}
+message GetMovementContextResponse {
+  repeated MovementContext contexts = 1;
+}
+
+// SessionTemplate is a staff-published, versioned block recipe.
+message SessionTemplate {
+  string id = 1;
+  string slug = 2;
+  int32 version = 3;
+  string name = 4; // in the caller's language (en / es)
+  string description = 5;
+  string block_kind = 6;
+  int32 rounds = 7;
+  int32 interval_seconds = 8;
+  int32 rest_seconds = 9;
+  int32 time_cap_seconds = 10;
+  int32 default_target_sets = 11;
+  string default_reps = 12;
+  string default_set_type = 13;
+  int32 min_exercises = 14;
+  int32 max_exercises = 15;
+  string suggested_measurement = 16; // empty = any
+}
+
+message LivePreferences {
+  bool auto_rest = 1;
+  int32 default_rest_seconds = 2;
+  string rest_alert = 3; // sound | vibrate | both | silent
+  bool spoken_cues = 4;
+  bool large_buttons = 5;
+  bool lock_screen_controls = 6;
+  string prefill = 7; // plan | last | none
+  string weight_unit = 8; // kg | lb
+  string distance_unit = 9; // km | mi
+  double bar_weight = 10;
+  string bar_unit = 11;
+  repeated double plates = 12; // one of each available denomination, bar_unit
+  bool keyboard_hints = 13;
+  int32 revision = 14;
+}
+
+message LiveRuntimeView {
+  string live_status = 1; // active | read_only
+  repeated string enabled_capture_modes = 2;
+  int32 min_app_build = 3;
+  int32 stale_session_hours = 4;
+  int32 max_ops_per_sync = 5;
+}
+
+message GetLiveBootstrapRequest {
+  string language = 1; // en | es — template names
+}
+message GetLiveBootstrapResponse {
+  repeated SessionTemplate templates = 1;
+  LivePreferences preferences = 2;
+  LiveRuntimeView runtime = 3;
+  repeated EquipmentTag my_tags = 4;
+  ForgeSession active_session = 5; // empty id when none
+  int64 server_hlc = 6;
+}
+
+message UpdateLivePreferencesRequest {
+  LivePreferences preferences = 1;
+  int32 expected_revision = 2;
+  string client_mutation_id = 3;
+}
+message UpdateLivePreferencesResponse {
+  LivePreferences preferences = 1;
+}
+
+// ----- merge events --------------------------------------------------------
+
+// LiveMergeEvent tells the member, in plain words, where their devices
+// disagreed and what Forge kept. Both values are carried so they can switch.
+message LiveMergeEvent {
+  string id = 1;
+  string session_id = 2;
+  // superseded | reindexed | late_arrival | terminal_conflict
+  // | concurrent_substitution | clock_clamped
+  string kind = 3;
+  string entity_type = 4; // set | exercise | block | session
+  string entity_id = 5;
+  string exercise_name = 6;
+  int32 set_index = 7;
+  string kept_device_label = 8;
+  string other_device_label = 9;
+  SessionSet kept_set = 10; // set events: what is in the session now
+  SessionSet other_set = 11; // set events: the write that lost / arrived late
+  string kept_summary = 12; // non-set events, member-facing
+  string other_summary = 13;
+  string status = 14; // open | kept | switched | removed | reported | dismissed
+  int64 created_at = 15;
+  int64 resolved_at = 16;
+  int32 version = 17;
+  string correction_request_id = 18;
+}
+
+message ListMergeEventsRequest {
+  string session_id = 1; // empty = all sessions
+  string status = 2; // empty = open
+}
+message ListMergeEventsResponse {
+  repeated LiveMergeEvent events = 1;
+}
+
+message ResolveMergeEventRequest {
+  string id = 1;
+  // keep (accept what Forge kept) | switch (use the other value) |
+  // remove (take out a set that arrived late) | dismiss
+  string action = 2;
+  int32 expected_version = 3;
+  string client_mutation_id = 4;
+}
+message ResolveMergeEventResponse {
+  LiveMergeEvent event = 1;
+  ForgeSession session = 2;
+}
+
+message ReportMergeEventRequest {
+  string id = 1;
+  string description = 2; // 10–2000 characters, becomes a live_sync case
+  string client_mutation_id = 3;
+}
+message ReportMergeEventResponse {
+  LiveMergeEvent event = 1;
+  string correction_request_id = 2;
+}
+
+// ----- equipment tags (QR / NFC) --------------------------------------------
+
+// EquipmentTag identifies one piece of equipment by a random code printed as
+// a QR code or written to an NFC tag as https://sttattus.com/forge/tag/<code>.
+// A member tag resolves only for its owner; a facility tag (Forge Lounge) for
+// any member. Neither reveals who else scanned it.
+message EquipmentTag {
+  string id = 1;
+  string code = 2;
+  string link = 3; // the URL to print / write to NFC
+  string owner_kind = 4; // member | facility
+  string label = 5;
+  string equipment_kind = 6; // barbell | dumbbell | machine | rack | cable | kettlebell | cardio | other
+  string equipment_id = 7; // Equipment Vault item (member tags)
+  string lounge_id = 8; // facility tags
+  string lounge_name = 9;
+  double bar_weight = 10;
+  string bar_unit = 11;
+  repeated double plates = 12;
+  repeated string exercise_ids = 13;
+  string status = 14; // active | revoked
+  int64 created_at = 15;
+  int64 last_scanned_at = 16;
+  int32 version = 17;
+}
+
+message ListEquipmentTagsRequest {}
+message ListEquipmentTagsResponse {
+  repeated EquipmentTag tags = 1;
+}
+
+message CreateEquipmentTagRequest {
+  string equipment_id = 1; // optional Equipment Vault item
+  string label = 2;
+  string equipment_kind = 3;
+  double bar_weight = 4;
+  string bar_unit = 5;
+  repeated double plates = 6;
+  repeated string exercise_ids = 7;
+  string client_mutation_id = 8;
+}
+message CreateEquipmentTagResponse {
+  EquipmentTag tag = 1;
+}
+
+message UpdateEquipmentTagRequest {
+  string id = 1;
+  string label = 2;
+  double bar_weight = 3;
+  string bar_unit = 4;
+  repeated double plates = 5;
+  repeated string exercise_ids = 6;
+  int32 expected_version = 7;
+}
+message UpdateEquipmentTagResponse {
+  EquipmentTag tag = 1;
+}
+
+message RevokeEquipmentTagRequest {
+  string id = 1;
+  string reason = 2;
+}
+message RevokeEquipmentTagResponse {
+  EquipmentTag tag = 1;
+}
+
+// RotateEquipmentTag revokes the code (a lost or copied sticker) and issues a
+// new one with the same setup.
+message RotateEquipmentTagRequest {
+  string id = 1;
+  string reason = 2;
+}
+message RotateEquipmentTagResponse {
+  EquipmentTag tag = 1;
+}
+
+message ResolveEquipmentTagRequest {
+  string code = 1;
+}
+message ResolveEquipmentTagResponse {
+  EquipmentTag tag = 1;
+}
+
+// ===========================================================================
+
+service LiveSessionService {
+  rpc RegisterLiveDevice(RegisterLiveDeviceRequest) returns (RegisterLiveDeviceResponse);
+  rpc ListLiveDevices(ListLiveDevicesRequest) returns (ListLiveDevicesResponse);
+  rpc RevokeLiveDevice(RevokeLiveDeviceRequest) returns (RevokeLiveDeviceResponse);
+
+  rpc SyncLiveSession(SyncLiveSessionRequest) returns (SyncLiveSessionResponse);
+  rpc GetLiveSession(GetLiveSessionRequest) returns (GetLiveSessionResponse);
+  rpc GetMovementContext(GetMovementContextRequest) returns (GetMovementContextResponse);
+  rpc GetLiveBootstrap(GetLiveBootstrapRequest) returns (GetLiveBootstrapResponse);
+  rpc UpdateLivePreferences(UpdateLivePreferencesRequest) returns (UpdateLivePreferencesResponse);
+
+  rpc ListMergeEvents(ListMergeEventsRequest) returns (ListMergeEventsResponse);
+  rpc ResolveMergeEvent(ResolveMergeEventRequest) returns (ResolveMergeEventResponse);
+  rpc ReportMergeEvent(ReportMergeEventRequest) returns (ReportMergeEventResponse);
+
+  rpc ListEquipmentTags(ListEquipmentTagsRequest) returns (ListEquipmentTagsResponse);
+  rpc CreateEquipmentTag(CreateEquipmentTagRequest) returns (CreateEquipmentTagResponse);
+  rpc UpdateEquipmentTag(UpdateEquipmentTagRequest) returns (UpdateEquipmentTagResponse);
+  rpc RevokeEquipmentTag(RevokeEquipmentTagRequest) returns (RevokeEquipmentTagResponse);
+  rpc RotateEquipmentTag(RotateEquipmentTagRequest) returns (RotateEquipmentTagResponse);
+  rpc ResolveEquipmentTag(ResolveEquipmentTagRequest) returns (ResolveEquipmentTagResponse);
+}

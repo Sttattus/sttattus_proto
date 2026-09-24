@@ -1631,6 +1631,19 @@ class SessionSet extends $pb.GeneratedMessage {
     $core.int? durationSeconds,
     $core.double? distanceM,
     $core.String? side,
+    $core.double? rir,
+    $core.String? tempo,
+    $core.Iterable<$core.int>? miniReps,
+    $core.double? assistance,
+    $core.int? attempts,
+    $core.int? roundIndex,
+    $core.int? restSecondsBefore,
+    $core.String? notes,
+    $core.String? captureMode,
+    $core.bool? needsConfirmation,
+    $fixnum.Int64? confirmedAt,
+    $core.String? deviceKind,
+    $core.int? requestedIndex,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1651,6 +1664,19 @@ class SessionSet extends $pb.GeneratedMessage {
     if (durationSeconds != null) result.durationSeconds = durationSeconds;
     if (distanceM != null) result.distanceM = distanceM;
     if (side != null) result.side = side;
+    if (rir != null) result.rir = rir;
+    if (tempo != null) result.tempo = tempo;
+    if (miniReps != null) result.miniReps.addAll(miniReps);
+    if (assistance != null) result.assistance = assistance;
+    if (attempts != null) result.attempts = attempts;
+    if (roundIndex != null) result.roundIndex = roundIndex;
+    if (restSecondsBefore != null) result.restSecondsBefore = restSecondsBefore;
+    if (notes != null) result.notes = notes;
+    if (captureMode != null) result.captureMode = captureMode;
+    if (needsConfirmation != null) result.needsConfirmation = needsConfirmation;
+    if (confirmedAt != null) result.confirmedAt = confirmedAt;
+    if (deviceKind != null) result.deviceKind = deviceKind;
+    if (requestedIndex != null) result.requestedIndex = requestedIndex;
     return result;
   }
 
@@ -1685,6 +1711,19 @@ class SessionSet extends $pb.GeneratedMessage {
     ..aI(15, _omitFieldNames ? '' : 'durationSeconds')
     ..aD(16, _omitFieldNames ? '' : 'distanceM')
     ..aOS(17, _omitFieldNames ? '' : 'side')
+    ..aD(18, _omitFieldNames ? '' : 'rir')
+    ..aOS(19, _omitFieldNames ? '' : 'tempo')
+    ..p<$core.int>(20, _omitFieldNames ? '' : 'miniReps', $pb.PbFieldType.K3)
+    ..aD(21, _omitFieldNames ? '' : 'assistance')
+    ..aI(22, _omitFieldNames ? '' : 'attempts')
+    ..aI(23, _omitFieldNames ? '' : 'roundIndex')
+    ..aI(24, _omitFieldNames ? '' : 'restSecondsBefore')
+    ..aOS(25, _omitFieldNames ? '' : 'notes')
+    ..aOS(26, _omitFieldNames ? '' : 'captureMode')
+    ..aOB(27, _omitFieldNames ? '' : 'needsConfirmation')
+    ..aInt64(28, _omitFieldNames ? '' : 'confirmedAt')
+    ..aOS(29, _omitFieldNames ? '' : 'deviceKind')
+    ..aI(30, _omitFieldNames ? '' : 'requestedIndex')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1864,6 +1903,122 @@ class SessionSet extends $pb.GeneratedMessage {
   $core.bool hasSide() => $_has(16);
   @$pb.TagNumber(17)
   void clearSide() => $_clearField(17);
+
+  /// Choice 2 — the full live-session grammar (see live_session.proto).
+  /// set_type additionally takes emom | interval | skill | isometric | assisted.
+  @$pb.TagNumber(18)
+  $core.double get rir => $_getN(17);
+  @$pb.TagNumber(18)
+  set rir($core.double value) => $_setDouble(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasRir() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearRir() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get tempo => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set tempo($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasTempo() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearTempo() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $pb.PbList<$core.int> get miniReps => $_getList(19);
+
+  @$pb.TagNumber(21)
+  $core.double get assistance => $_getN(20);
+  @$pb.TagNumber(21)
+  set assistance($core.double value) => $_setDouble(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasAssistance() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearAssistance() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.int get attempts => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set attempts($core.int value) => $_setSignedInt32(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasAttempts() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearAttempts() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get roundIndex => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set roundIndex($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasRoundIndex() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearRoundIndex() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.int get restSecondsBefore => $_getIZ(23);
+  @$pb.TagNumber(24)
+  set restSecondsBefore($core.int value) => $_setSignedInt32(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasRestSecondsBefore() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearRestSecondsBefore() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.String get notes => $_getSZ(24);
+  @$pb.TagNumber(25)
+  set notes($core.String value) => $_setString(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasNotes() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearNotes() => $_clearField(25);
+
+  /// touch | repeat | command | keyboard | voice | notification | headset | tag | legacy
+  @$pb.TagNumber(26)
+  $core.String get captureMode => $_getSZ(25);
+  @$pb.TagNumber(26)
+  set captureMode($core.String value) => $_setString(25, value);
+  @$pb.TagNumber(26)
+  $core.bool hasCaptureMode() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearCaptureMode() => $_clearField(26);
+
+  /// Voice, lock-screen/watch and headset captures wait for the member's check
+  /// and stay out of records until confirmed.
+  @$pb.TagNumber(27)
+  $core.bool get needsConfirmation => $_getBF(26);
+  @$pb.TagNumber(27)
+  set needsConfirmation($core.bool value) => $_setBool(26, value);
+  @$pb.TagNumber(27)
+  $core.bool hasNeedsConfirmation() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearNeedsConfirmation() => $_clearField(27);
+
+  @$pb.TagNumber(28)
+  $fixnum.Int64 get confirmedAt => $_getI64(27);
+  @$pb.TagNumber(28)
+  set confirmedAt($fixnum.Int64 value) => $_setInt64(27, value);
+  @$pb.TagNumber(28)
+  $core.bool hasConfirmedAt() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearConfirmedAt() => $_clearField(28);
+
+  @$pb.TagNumber(29)
+  $core.String get deviceKind => $_getSZ(28);
+  @$pb.TagNumber(29)
+  set deviceKind($core.String value) => $_setString(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasDeviceKind() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearDeviceKind() => $_clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.int get requestedIndex => $_getIZ(29);
+  @$pb.TagNumber(30)
+  set requestedIndex($core.int value) => $_setSignedInt32(29, value);
+  @$pb.TagNumber(30)
+  $core.bool hasRequestedIndex() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearRequestedIndex() => $_clearField(30);
 }
 
 /// SessionExercise is an exercise slotted into a session, with its
@@ -1892,6 +2047,23 @@ class SessionExercise extends $pb.GeneratedMessage {
     $core.String? exerciseSlug,
     $core.int? revision,
     $core.bool? deleted,
+    $core.String? blockId,
+    $core.int? blockPosition,
+    $core.String? plannedSetType,
+    $core.int? plannedDurationSeconds,
+    $core.double? plannedDistanceM,
+    $core.String? plannedTempo,
+    $core.String? liveStatus,
+    $core.String? skipReason,
+    $core.String? substitutedFromId,
+    $core.String? substitutedById,
+    $core.String? substitutionReason,
+    $core.String? memberNote,
+    $core.String? measurement,
+    $core.String? laterality,
+    $core.String? movementPattern,
+    $core.String? equipmentTagId,
+    $core.bool? isPrivateMovement,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1917,6 +2089,25 @@ class SessionExercise extends $pb.GeneratedMessage {
     if (exerciseSlug != null) result.exerciseSlug = exerciseSlug;
     if (revision != null) result.revision = revision;
     if (deleted != null) result.deleted = deleted;
+    if (blockId != null) result.blockId = blockId;
+    if (blockPosition != null) result.blockPosition = blockPosition;
+    if (plannedSetType != null) result.plannedSetType = plannedSetType;
+    if (plannedDurationSeconds != null)
+      result.plannedDurationSeconds = plannedDurationSeconds;
+    if (plannedDistanceM != null) result.plannedDistanceM = plannedDistanceM;
+    if (plannedTempo != null) result.plannedTempo = plannedTempo;
+    if (liveStatus != null) result.liveStatus = liveStatus;
+    if (skipReason != null) result.skipReason = skipReason;
+    if (substitutedFromId != null) result.substitutedFromId = substitutedFromId;
+    if (substitutedById != null) result.substitutedById = substitutedById;
+    if (substitutionReason != null)
+      result.substitutionReason = substitutionReason;
+    if (memberNote != null) result.memberNote = memberNote;
+    if (measurement != null) result.measurement = measurement;
+    if (laterality != null) result.laterality = laterality;
+    if (movementPattern != null) result.movementPattern = movementPattern;
+    if (equipmentTagId != null) result.equipmentTagId = equipmentTagId;
+    if (isPrivateMovement != null) result.isPrivateMovement = isPrivateMovement;
     return result;
   }
 
@@ -1957,6 +2148,23 @@ class SessionExercise extends $pb.GeneratedMessage {
     ..aOS(20, _omitFieldNames ? '' : 'exerciseSlug')
     ..aI(21, _omitFieldNames ? '' : 'revision')
     ..aOB(22, _omitFieldNames ? '' : 'deleted')
+    ..aOS(23, _omitFieldNames ? '' : 'blockId')
+    ..aI(24, _omitFieldNames ? '' : 'blockPosition')
+    ..aOS(25, _omitFieldNames ? '' : 'plannedSetType')
+    ..aI(26, _omitFieldNames ? '' : 'plannedDurationSeconds')
+    ..aD(27, _omitFieldNames ? '' : 'plannedDistanceM')
+    ..aOS(28, _omitFieldNames ? '' : 'plannedTempo')
+    ..aOS(29, _omitFieldNames ? '' : 'liveStatus')
+    ..aOS(30, _omitFieldNames ? '' : 'skipReason')
+    ..aOS(31, _omitFieldNames ? '' : 'substitutedFromId')
+    ..aOS(32, _omitFieldNames ? '' : 'substitutedById')
+    ..aOS(33, _omitFieldNames ? '' : 'substitutionReason')
+    ..aOS(34, _omitFieldNames ? '' : 'memberNote')
+    ..aOS(35, _omitFieldNames ? '' : 'measurement')
+    ..aOS(36, _omitFieldNames ? '' : 'laterality')
+    ..aOS(37, _omitFieldNames ? '' : 'movementPattern')
+    ..aOS(38, _omitFieldNames ? '' : 'equipmentTagId')
+    ..aOB(39, _omitFieldNames ? '' : 'isPrivateMovement')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2172,6 +2380,400 @@ class SessionExercise extends $pb.GeneratedMessage {
   $core.bool hasDeleted() => $_has(21);
   @$pb.TagNumber(22)
   void clearDeleted() => $_clearField(22);
+
+  /// Choice 2 — block membership, the planned grammar, live changes and the
+  /// movement's own measurement so every device renders the right set row.
+  @$pb.TagNumber(23)
+  $core.String get blockId => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set blockId($core.String value) => $_setString(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasBlockId() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearBlockId() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.int get blockPosition => $_getIZ(23);
+  @$pb.TagNumber(24)
+  set blockPosition($core.int value) => $_setSignedInt32(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasBlockPosition() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearBlockPosition() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.String get plannedSetType => $_getSZ(24);
+  @$pb.TagNumber(25)
+  set plannedSetType($core.String value) => $_setString(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasPlannedSetType() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearPlannedSetType() => $_clearField(25);
+
+  @$pb.TagNumber(26)
+  $core.int get plannedDurationSeconds => $_getIZ(25);
+  @$pb.TagNumber(26)
+  set plannedDurationSeconds($core.int value) => $_setSignedInt32(25, value);
+  @$pb.TagNumber(26)
+  $core.bool hasPlannedDurationSeconds() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearPlannedDurationSeconds() => $_clearField(26);
+
+  @$pb.TagNumber(27)
+  $core.double get plannedDistanceM => $_getN(26);
+  @$pb.TagNumber(27)
+  set plannedDistanceM($core.double value) => $_setDouble(26, value);
+  @$pb.TagNumber(27)
+  $core.bool hasPlannedDistanceM() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearPlannedDistanceM() => $_clearField(27);
+
+  @$pb.TagNumber(28)
+  $core.String get plannedTempo => $_getSZ(27);
+  @$pb.TagNumber(28)
+  set plannedTempo($core.String value) => $_setString(27, value);
+  @$pb.TagNumber(28)
+  $core.bool hasPlannedTempo() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearPlannedTempo() => $_clearField(28);
+
+  @$pb.TagNumber(29)
+  $core.String get liveStatus => $_getSZ(28);
+  @$pb.TagNumber(29)
+  set liveStatus($core.String value) => $_setString(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasLiveStatus() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearLiveStatus() => $_clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get skipReason => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set skipReason($core.String value) => $_setString(29, value);
+  @$pb.TagNumber(30)
+  $core.bool hasSkipReason() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearSkipReason() => $_clearField(30);
+
+  @$pb.TagNumber(31)
+  $core.String get substitutedFromId => $_getSZ(30);
+  @$pb.TagNumber(31)
+  set substitutedFromId($core.String value) => $_setString(30, value);
+  @$pb.TagNumber(31)
+  $core.bool hasSubstitutedFromId() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearSubstitutedFromId() => $_clearField(31);
+
+  @$pb.TagNumber(32)
+  $core.String get substitutedById => $_getSZ(31);
+  @$pb.TagNumber(32)
+  set substitutedById($core.String value) => $_setString(31, value);
+  @$pb.TagNumber(32)
+  $core.bool hasSubstitutedById() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearSubstitutedById() => $_clearField(32);
+
+  @$pb.TagNumber(33)
+  $core.String get substitutionReason => $_getSZ(32);
+  @$pb.TagNumber(33)
+  set substitutionReason($core.String value) => $_setString(32, value);
+  @$pb.TagNumber(33)
+  $core.bool hasSubstitutionReason() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearSubstitutionReason() => $_clearField(33);
+
+  @$pb.TagNumber(34)
+  $core.String get memberNote => $_getSZ(33);
+  @$pb.TagNumber(34)
+  set memberNote($core.String value) => $_setString(33, value);
+  @$pb.TagNumber(34)
+  $core.bool hasMemberNote() => $_has(33);
+  @$pb.TagNumber(34)
+  void clearMemberNote() => $_clearField(34);
+
+  @$pb.TagNumber(35)
+  $core.String get measurement => $_getSZ(34);
+  @$pb.TagNumber(35)
+  set measurement($core.String value) => $_setString(34, value);
+  @$pb.TagNumber(35)
+  $core.bool hasMeasurement() => $_has(34);
+  @$pb.TagNumber(35)
+  void clearMeasurement() => $_clearField(35);
+
+  @$pb.TagNumber(36)
+  $core.String get laterality => $_getSZ(35);
+  @$pb.TagNumber(36)
+  set laterality($core.String value) => $_setString(35, value);
+  @$pb.TagNumber(36)
+  $core.bool hasLaterality() => $_has(35);
+  @$pb.TagNumber(36)
+  void clearLaterality() => $_clearField(36);
+
+  @$pb.TagNumber(37)
+  $core.String get movementPattern => $_getSZ(36);
+  @$pb.TagNumber(37)
+  set movementPattern($core.String value) => $_setString(36, value);
+  @$pb.TagNumber(37)
+  $core.bool hasMovementPattern() => $_has(36);
+  @$pb.TagNumber(37)
+  void clearMovementPattern() => $_clearField(37);
+
+  @$pb.TagNumber(38)
+  $core.String get equipmentTagId => $_getSZ(37);
+  @$pb.TagNumber(38)
+  set equipmentTagId($core.String value) => $_setString(37, value);
+  @$pb.TagNumber(38)
+  $core.bool hasEquipmentTagId() => $_has(37);
+  @$pb.TagNumber(38)
+  void clearEquipmentTagId() => $_clearField(38);
+
+  @$pb.TagNumber(39)
+  $core.bool get isPrivateMovement => $_getBF(38);
+  @$pb.TagNumber(39)
+  set isPrivateMovement($core.bool value) => $_setBool(38, value);
+  @$pb.TagNumber(39)
+  $core.bool hasIsPrivateMovement() => $_has(38);
+  @$pb.TagNumber(39)
+  void clearIsPrivateMovement() => $_clearField(39);
+}
+
+/// SessionBlock groups exercises into how they are performed (Choice 2).
+class SessionBlock extends $pb.GeneratedMessage {
+  factory SessionBlock({
+    $core.String? id,
+    $core.String? kind,
+    $core.String? label,
+    $core.int? orderIndex,
+    $core.int? rounds,
+    $core.int? intervalSeconds,
+    $core.int? restSeconds,
+    $core.int? timeCapSeconds,
+    $core.String? templateId,
+    $core.int? templateVersion,
+    $core.String? templateName,
+    $core.int? resultRounds,
+    $core.int? resultReps,
+    $core.int? resultSeconds,
+    $core.bool? hasResult,
+    $core.bool? locked,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (label != null) result.label = label;
+    if (orderIndex != null) result.orderIndex = orderIndex;
+    if (rounds != null) result.rounds = rounds;
+    if (intervalSeconds != null) result.intervalSeconds = intervalSeconds;
+    if (restSeconds != null) result.restSeconds = restSeconds;
+    if (timeCapSeconds != null) result.timeCapSeconds = timeCapSeconds;
+    if (templateId != null) result.templateId = templateId;
+    if (templateVersion != null) result.templateVersion = templateVersion;
+    if (templateName != null) result.templateName = templateName;
+    if (resultRounds != null) result.resultRounds = resultRounds;
+    if (resultReps != null) result.resultReps = resultReps;
+    if (resultSeconds != null) result.resultSeconds = resultSeconds;
+    if (hasResult != null) result.hasResult = hasResult;
+    if (locked != null) result.locked = locked;
+    return result;
+  }
+
+  SessionBlock._();
+
+  factory SessionBlock.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SessionBlock.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SessionBlock',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.workout.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'kind')
+    ..aOS(3, _omitFieldNames ? '' : 'label')
+    ..aI(4, _omitFieldNames ? '' : 'orderIndex')
+    ..aI(5, _omitFieldNames ? '' : 'rounds')
+    ..aI(6, _omitFieldNames ? '' : 'intervalSeconds')
+    ..aI(7, _omitFieldNames ? '' : 'restSeconds')
+    ..aI(8, _omitFieldNames ? '' : 'timeCapSeconds')
+    ..aOS(9, _omitFieldNames ? '' : 'templateId')
+    ..aI(10, _omitFieldNames ? '' : 'templateVersion')
+    ..aOS(11, _omitFieldNames ? '' : 'templateName')
+    ..aI(12, _omitFieldNames ? '' : 'resultRounds')
+    ..aI(13, _omitFieldNames ? '' : 'resultReps')
+    ..aI(14, _omitFieldNames ? '' : 'resultSeconds')
+    ..aOB(15, _omitFieldNames ? '' : 'hasResult')
+    ..aOB(16, _omitFieldNames ? '' : 'locked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionBlock clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SessionBlock copyWith(void Function(SessionBlock) updates) =>
+      super.copyWith((message) => updates(message as SessionBlock))
+          as SessionBlock;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SessionBlock create() => SessionBlock._();
+  @$core.override
+  SessionBlock createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SessionBlock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SessionBlock>(create);
+  static SessionBlock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// straight | superset | circuit | emom | amrap | intervals | for_time
+  @$pb.TagNumber(2)
+  $core.String get kind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set kind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get label => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set label($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get orderIndex => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set orderIndex($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOrderIndex() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrderIndex() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get rounds => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set rounds($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRounds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRounds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get intervalSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set intervalSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIntervalSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIntervalSeconds() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get restSeconds => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set restSeconds($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRestSeconds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRestSeconds() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get timeCapSeconds => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set timeCapSeconds($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTimeCapSeconds() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTimeCapSeconds() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get templateId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set templateId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTemplateId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTemplateId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get templateVersion => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set templateVersion($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTemplateVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTemplateVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get templateName => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set templateName($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasTemplateName() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTemplateName() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get resultRounds => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set resultRounds($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasResultRounds() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearResultRounds() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get resultReps => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set resultReps($core.int value) => $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasResultReps() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearResultReps() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get resultSeconds => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set resultSeconds($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasResultSeconds() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearResultSeconds() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get hasResult => $_getBF(14);
+  @$pb.TagNumber(15)
+  set hasResult($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasHasResult() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearHasResult() => $_clearField(15);
+
+  /// Assigned work (coach / clinician / programme) that the member cannot
+  /// silently substitute or skip.
+  @$pb.TagNumber(16)
+  $core.bool get locked => $_getBF(15);
+  @$pb.TagNumber(16)
+  set locked($core.bool value) => $_setBool(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasLocked() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearLocked() => $_clearField(16);
 }
 
 /// ForgeSession is a built / live / closed training session.
@@ -2197,6 +2799,11 @@ class ForgeSession extends $pb.GeneratedMessage {
     $core.bool? paused,
     $core.String? importBatchId,
     $core.int? completedSetCount,
+    $core.Iterable<SessionBlock>? blocks,
+    $core.int? unconfirmedSetCount,
+    $core.int? openMergeEventCount,
+    $core.bool? stalePrompt,
+    $fixnum.Int64? lastActivityAt,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2219,6 +2826,13 @@ class ForgeSession extends $pb.GeneratedMessage {
     if (paused != null) result.paused = paused;
     if (importBatchId != null) result.importBatchId = importBatchId;
     if (completedSetCount != null) result.completedSetCount = completedSetCount;
+    if (blocks != null) result.blocks.addAll(blocks);
+    if (unconfirmedSetCount != null)
+      result.unconfirmedSetCount = unconfirmedSetCount;
+    if (openMergeEventCount != null)
+      result.openMergeEventCount = openMergeEventCount;
+    if (stalePrompt != null) result.stalePrompt = stalePrompt;
+    if (lastActivityAt != null) result.lastActivityAt = lastActivityAt;
     return result;
   }
 
@@ -2257,6 +2871,12 @@ class ForgeSession extends $pb.GeneratedMessage {
     ..aOB(18, _omitFieldNames ? '' : 'paused')
     ..aOS(19, _omitFieldNames ? '' : 'importBatchId')
     ..aI(20, _omitFieldNames ? '' : 'completedSetCount')
+    ..pPM<SessionBlock>(21, _omitFieldNames ? '' : 'blocks',
+        subBuilder: SessionBlock.create)
+    ..aI(22, _omitFieldNames ? '' : 'unconfirmedSetCount')
+    ..aI(23, _omitFieldNames ? '' : 'openMergeEventCount')
+    ..aOB(24, _omitFieldNames ? '' : 'stalePrompt')
+    ..aInt64(25, _omitFieldNames ? '' : 'lastActivityAt')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2456,6 +3076,47 @@ class ForgeSession extends $pb.GeneratedMessage {
   $core.bool hasCompletedSetCount() => $_has(19);
   @$pb.TagNumber(20)
   void clearCompletedSetCount() => $_clearField(20);
+
+  /// Choice 2 — blocks (every exercise belongs to one), what still needs the
+  /// member's attention, and a "still training?" prompt for a session left open.
+  @$pb.TagNumber(21)
+  $pb.PbList<SessionBlock> get blocks => $_getList(20);
+
+  @$pb.TagNumber(22)
+  $core.int get unconfirmedSetCount => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set unconfirmedSetCount($core.int value) => $_setSignedInt32(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasUnconfirmedSetCount() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearUnconfirmedSetCount() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get openMergeEventCount => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set openMergeEventCount($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasOpenMergeEventCount() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearOpenMergeEventCount() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.bool get stalePrompt => $_getBF(23);
+  @$pb.TagNumber(24)
+  set stalePrompt($core.bool value) => $_setBool(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasStalePrompt() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearStalePrompt() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $fixnum.Int64 get lastActivityAt => $_getI64(24);
+  @$pb.TagNumber(25)
+  set lastActivityAt($fixnum.Int64 value) => $_setInt64(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasLastActivityAt() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearLastActivityAt() => $_clearField(25);
 }
 
 /// PlannedExercise is one row of the session builder's output.
