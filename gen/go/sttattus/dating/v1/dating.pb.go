@@ -772,8 +772,15 @@ type Match struct {
 	Other         *DatingProfile         `protobuf:"bytes,2,opt,name=other,proto3" json:"other,omitempty"`
 	CreatedAt     int64                  `protobuf:"varint,3,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	LastMessageAt int64                  `protobuf:"varint,4,opt,name=last_message_at,json=lastMessageAt,proto3" json:"last_message_at,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// The newest message's text, cut to 140 characters; empty when nobody has
+	// written yet or the newest message is an attachment without text. Only the
+	// two members of the match receive it.
+	LastMessagePreview string `protobuf:"bytes,5,opt,name=last_message_preview,json=lastMessagePreview,proto3" json:"last_message_preview,omitempty"`
+	// Whether the viewer wrote the newest message, so the next word is the other
+	// person's. False when nobody has written yet.
+	LastMessageMine bool `protobuf:"varint,6,opt,name=last_message_mine,json=lastMessageMine,proto3" json:"last_message_mine,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Match) Reset() {
@@ -832,6 +839,20 @@ func (x *Match) GetLastMessageAt() int64 {
 		return x.LastMessageAt
 	}
 	return 0
+}
+
+func (x *Match) GetLastMessagePreview() string {
+	if x != nil {
+		return x.LastMessagePreview
+	}
+	return ""
+}
+
+func (x *Match) GetLastMessageMine() bool {
+	if x != nil {
+		return x.LastMessageMine
+	}
+	return false
 }
 
 type Message struct {
@@ -9505,13 +9526,15 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\tCandidate\x12;\n" +
 	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\x12\x1f\n" +
 	"\vmatch_score\x18\x02 \x01(\x01R\n" +
-	"matchScore\"\x97\x01\n" +
+	"matchScore\"\xf5\x01\n" +
 	"\x05Match\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x127\n" +
 	"\x05other\x18\x02 \x01(\v2!.sttattus.dating.v1.DatingProfileR\x05other\x12\x1d\n" +
 	"\n" +
 	"created_at\x18\x03 \x01(\x03R\tcreatedAt\x12&\n" +
-	"\x0flast_message_at\x18\x04 \x01(\x03R\rlastMessageAt\"\xc2\x01\n" +
+	"\x0flast_message_at\x18\x04 \x01(\x03R\rlastMessageAt\x120\n" +
+	"\x14last_message_preview\x18\x05 \x01(\tR\x12lastMessagePreview\x12*\n" +
+	"\x11last_message_mine\x18\x06 \x01(\bR\x0flastMessageMine\"\xc2\x01\n" +
 	"\aMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x01(\tR\amatchId\x12\x1b\n" +

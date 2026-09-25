@@ -897,12 +897,17 @@ class Match extends $pb.GeneratedMessage {
     DatingProfile? other,
     $fixnum.Int64? createdAt,
     $fixnum.Int64? lastMessageAt,
+    $core.String? lastMessagePreview,
+    $core.bool? lastMessageMine,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (other != null) result.other = other;
     if (createdAt != null) result.createdAt = createdAt;
     if (lastMessageAt != null) result.lastMessageAt = lastMessageAt;
+    if (lastMessagePreview != null)
+      result.lastMessagePreview = lastMessagePreview;
+    if (lastMessageMine != null) result.lastMessageMine = lastMessageMine;
     return result;
   }
 
@@ -925,6 +930,8 @@ class Match extends $pb.GeneratedMessage {
         subBuilder: DatingProfile.create)
     ..aInt64(3, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(4, _omitFieldNames ? '' : 'lastMessageAt')
+    ..aOS(5, _omitFieldNames ? '' : 'lastMessagePreview')
+    ..aOB(6, _omitFieldNames ? '' : 'lastMessageMine')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -982,6 +989,29 @@ class Match extends $pb.GeneratedMessage {
   $core.bool hasLastMessageAt() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastMessageAt() => $_clearField(4);
+
+  /// The newest message's text, cut to 140 characters; empty when nobody has
+  /// written yet or the newest message is an attachment without text. Only the
+  /// two members of the match receive it.
+  @$pb.TagNumber(5)
+  $core.String get lastMessagePreview => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lastMessagePreview($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLastMessagePreview() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastMessagePreview() => $_clearField(5);
+
+  /// Whether the viewer wrote the newest message, so the next word is the other
+  /// person's. False when nobody has written yet.
+  @$pb.TagNumber(6)
+  $core.bool get lastMessageMine => $_getBF(5);
+  @$pb.TagNumber(6)
+  set lastMessageMine($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastMessageMine() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastMessageMine() => $_clearField(6);
 }
 
 class Message extends $pb.GeneratedMessage {

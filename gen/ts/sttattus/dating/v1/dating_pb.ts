@@ -633,6 +633,23 @@ export class Match extends Message$1<Match> {
    */
   lastMessageAt = protoInt64.zero;
 
+  /**
+   * The newest message's text, cut to 140 characters; empty when nobody has
+   * written yet or the newest message is an attachment without text. Only the
+   * two members of the match receive it.
+   *
+   * @generated from field: string last_message_preview = 5;
+   */
+  lastMessagePreview = "";
+
+  /**
+   * Whether the viewer wrote the newest message, so the next word is the other
+   * person's. False when nobody has written yet.
+   *
+   * @generated from field: bool last_message_mine = 6;
+   */
+  lastMessageMine = false;
+
   constructor(data?: PartialMessage<Match>) {
     super();
     proto3.util.initPartial(data, this);
@@ -645,6 +662,8 @@ export class Match extends Message$1<Match> {
     { no: 2, name: "other", kind: "message", T: DatingProfile },
     { no: 3, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "last_message_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "last_message_preview", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "last_message_mine", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Match {

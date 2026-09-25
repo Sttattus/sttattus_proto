@@ -122,6 +122,13 @@ message Match {
   DatingProfile other = 2;
   int64 created_at = 3;
   int64 last_message_at = 4;
+  // The newest message's text, cut to 140 characters; empty when nobody has
+  // written yet or the newest message is an attachment without text. Only the
+  // two members of the match receive it.
+  string last_message_preview = 5;
+  // Whether the viewer wrote the newest message, so the next word is the other
+  // person's. False when nobody has written yet.
+  bool last_message_mine = 6;
 }
 
 message Message {
