@@ -446,12 +446,80 @@ message AtlasMapPoint {
   string tier = 7;
   DatingIntent intent = 8;
   int32 intellectual_pace = 9;
+  // Open interest groups this member belongs to. The Cosmos draws each group
+  // around its members in the viewer's sky. Membership in a group is public
+  // to anyone who can already see the member in their sky.
+  repeated string group_ids = 10;
 }
 
 message ListAtlasMapPointsRequest {}
 message ListAtlasMapPointsResponse {
   repeated AtlasMapPoint points = 1;
 }
+
+// === Interest groups in the Cosmos ===
+//
+// A named group of members around one interest ("Jazz in Lisbon"). Members
+// with Gold standing or above (earned standing, never a paid plan) may open
+// up to three at a time. A group is visible to everyone at once; members may
+// report it, and Atlas staff can rename or close it.
+
+message AtlasGroup {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  // Members still on Atlas.
+  int32 member_count = 4;
+  // The viewer belongs to it.
+  bool joined = 5;
+  // The viewer opened it.
+  bool mine = 6;
+  int64 created_at = 7;
+}
+
+message ListAtlasGroupsRequest {}
+message ListAtlasGroupsResponse {
+  repeated AtlasGroup groups = 1;
+  // Whether the viewer may open a group now. When not, why:
+  // "standing" (needs Gold standing), "limit" (three open groups already),
+  // or "restricted" (an Atlas restriction on the account).
+  bool can_create = 2;
+  string cannot_create_reason = 3;
+}
+
+message CreateAtlasGroupRequest {
+  string name = 1;        // 3-40 characters, no links or contact details
+  string description = 2; // up to 140 characters, same rules
+}
+message CreateAtlasGroupResponse {
+  AtlasGroup group = 1;
+}
+
+message JoinAtlasGroupRequest {
+  string group_id = 1;
+}
+message JoinAtlasGroupResponse {
+  AtlasGroup group = 1;
+}
+
+message LeaveAtlasGroupRequest {
+  string group_id = 1;
+}
+message LeaveAtlasGroupResponse {
+  AtlasGroup group = 1;
+}
+
+// Closes a group the viewer opened.
+message CloseAtlasGroupRequest {
+  string group_id = 1;
+}
+message CloseAtlasGroupResponse {}
+
+message ReportAtlasGroupRequest {
+  string group_id = 1;
+  string reason = 2; // offensive | spam | misleading | impersonation | other
+}
+message ReportAtlasGroupResponse {}
 
 // === Agora V3 live rooms (A9P2.3 / A9P2.7 expansion) ===
 
@@ -478,6 +546,8 @@ message ListLiveRoomsResponse {
 
 message CreateAgoraRoomRequest {
   string title = 1;
+  // A free label, or an open interest group's id: a room under a group can
+  // be opened only by one of its members.
   string cluster = 2;
   int32 max_guests = 3;
   bool enable_video = 4;
@@ -924,6 +994,12 @@ service DatingService {
   rpc UpsertPrivacyAxes(UpsertPrivacyAxesRequest) returns (UpsertPrivacyAxesResponse);
 
   rpc ListAtlasMapPoints(ListAtlasMapPointsRequest) returns (ListAtlasMapPointsResponse);
+  rpc ListAtlasGroups(ListAtlasGroupsRequest) returns (ListAtlasGroupsResponse);
+  rpc CreateAtlasGroup(CreateAtlasGroupRequest) returns (CreateAtlasGroupResponse);
+  rpc JoinAtlasGroup(JoinAtlasGroupRequest) returns (JoinAtlasGroupResponse);
+  rpc LeaveAtlasGroup(LeaveAtlasGroupRequest) returns (LeaveAtlasGroupResponse);
+  rpc CloseAtlasGroup(CloseAtlasGroupRequest) returns (CloseAtlasGroupResponse);
+  rpc ReportAtlasGroup(ReportAtlasGroupRequest) returns (ReportAtlasGroupResponse);
 
   rpc ListLiveRooms(ListLiveRoomsRequest) returns (ListLiveRoomsResponse);
   rpc CreateAgoraRoom(CreateAgoraRoomRequest) returns (CreateAgoraRoomResponse);

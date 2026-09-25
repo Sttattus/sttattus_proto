@@ -5324,6 +5324,7 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     $core.String? tier,
     DatingIntent? intent,
     $core.int? intellectualPace,
+    $core.Iterable<$core.String>? groupIds,
   }) {
     final result = create();
     if (userId != null) result.userId = userId;
@@ -5335,6 +5336,7 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     if (tier != null) result.tier = tier;
     if (intent != null) result.intent = intent;
     if (intellectualPace != null) result.intellectualPace = intellectualPace;
+    if (groupIds != null) result.groupIds.addAll(groupIds);
     return result;
   }
 
@@ -5362,6 +5364,7 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
     ..aE<DatingIntent>(8, _omitFieldNames ? '' : 'intent',
         enumValues: DatingIntent.values)
     ..aI(9, _omitFieldNames ? '' : 'intellectualPace')
+    ..pPS(10, _omitFieldNames ? '' : 'groupIds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5463,6 +5466,12 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
   $core.bool hasIntellectualPace() => $_has(8);
   @$pb.TagNumber(9)
   void clearIntellectualPace() => $_clearField(9);
+
+  /// Open interest groups this member belongs to. The Cosmos draws each group
+  /// around its members in the viewer's sky. Membership in a group is public
+  /// to anyone who can already see the member in their sky.
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get groupIds => $_getList(9);
 }
 
 class ListAtlasMapPointsRequest extends $pb.GeneratedMessage {
@@ -5555,6 +5564,816 @@ class ListAtlasMapPointsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<AtlasMapPoint> get points => $_getList(0);
+}
+
+class AtlasGroup extends $pb.GeneratedMessage {
+  factory AtlasGroup({
+    $core.String? id,
+    $core.String? name,
+    $core.String? description,
+    $core.int? memberCount,
+    $core.bool? joined,
+    $core.bool? mine,
+    $fixnum.Int64? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (memberCount != null) result.memberCount = memberCount;
+    if (joined != null) result.joined = joined;
+    if (mine != null) result.mine = mine;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  AtlasGroup._();
+
+  factory AtlasGroup.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AtlasGroup.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AtlasGroup',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aI(4, _omitFieldNames ? '' : 'memberCount')
+    ..aOB(5, _omitFieldNames ? '' : 'joined')
+    ..aOB(6, _omitFieldNames ? '' : 'mine')
+    ..aInt64(7, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasGroup clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AtlasGroup copyWith(void Function(AtlasGroup) updates) =>
+      super.copyWith((message) => updates(message as AtlasGroup)) as AtlasGroup;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AtlasGroup create() => AtlasGroup._();
+  @$core.override
+  AtlasGroup createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AtlasGroup getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AtlasGroup>(create);
+  static AtlasGroup? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  /// Members still on Atlas.
+  @$pb.TagNumber(4)
+  $core.int get memberCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set memberCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMemberCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMemberCount() => $_clearField(4);
+
+  /// The viewer belongs to it.
+  @$pb.TagNumber(5)
+  $core.bool get joined => $_getBF(4);
+  @$pb.TagNumber(5)
+  set joined($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJoined() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJoined() => $_clearField(5);
+
+  /// The viewer opened it.
+  @$pb.TagNumber(6)
+  $core.bool get mine => $_getBF(5);
+  @$pb.TagNumber(6)
+  set mine($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMine() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMine() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get createdAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set createdAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+}
+
+class ListAtlasGroupsRequest extends $pb.GeneratedMessage {
+  factory ListAtlasGroupsRequest() => create();
+
+  ListAtlasGroupsRequest._();
+
+  factory ListAtlasGroupsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAtlasGroupsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAtlasGroupsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasGroupsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasGroupsRequest copyWith(
+          void Function(ListAtlasGroupsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListAtlasGroupsRequest))
+          as ListAtlasGroupsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasGroupsRequest create() => ListAtlasGroupsRequest._();
+  @$core.override
+  ListAtlasGroupsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasGroupsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAtlasGroupsRequest>(create);
+  static ListAtlasGroupsRequest? _defaultInstance;
+}
+
+class ListAtlasGroupsResponse extends $pb.GeneratedMessage {
+  factory ListAtlasGroupsResponse({
+    $core.Iterable<AtlasGroup>? groups,
+    $core.bool? canCreate,
+    $core.String? cannotCreateReason,
+  }) {
+    final result = create();
+    if (groups != null) result.groups.addAll(groups);
+    if (canCreate != null) result.canCreate = canCreate;
+    if (cannotCreateReason != null)
+      result.cannotCreateReason = cannotCreateReason;
+    return result;
+  }
+
+  ListAtlasGroupsResponse._();
+
+  factory ListAtlasGroupsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListAtlasGroupsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListAtlasGroupsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..pPM<AtlasGroup>(1, _omitFieldNames ? '' : 'groups',
+        subBuilder: AtlasGroup.create)
+    ..aOB(2, _omitFieldNames ? '' : 'canCreate')
+    ..aOS(3, _omitFieldNames ? '' : 'cannotCreateReason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasGroupsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListAtlasGroupsResponse copyWith(
+          void Function(ListAtlasGroupsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListAtlasGroupsResponse))
+          as ListAtlasGroupsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasGroupsResponse create() => ListAtlasGroupsResponse._();
+  @$core.override
+  ListAtlasGroupsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListAtlasGroupsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListAtlasGroupsResponse>(create);
+  static ListAtlasGroupsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AtlasGroup> get groups => $_getList(0);
+
+  /// Whether the viewer may open a group now. When not, why:
+  /// "standing" (needs Gold standing), "limit" (three open groups already),
+  /// or "restricted" (an Atlas restriction on the account).
+  @$pb.TagNumber(2)
+  $core.bool get canCreate => $_getBF(1);
+  @$pb.TagNumber(2)
+  set canCreate($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanCreate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanCreate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cannotCreateReason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cannotCreateReason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCannotCreateReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCannotCreateReason() => $_clearField(3);
+}
+
+class CreateAtlasGroupRequest extends $pb.GeneratedMessage {
+  factory CreateAtlasGroupRequest({
+    $core.String? name,
+    $core.String? description,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    return result;
+  }
+
+  CreateAtlasGroupRequest._();
+
+  factory CreateAtlasGroupRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateAtlasGroupRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateAtlasGroupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAtlasGroupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAtlasGroupRequest copyWith(
+          void Function(CreateAtlasGroupRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateAtlasGroupRequest))
+          as CreateAtlasGroupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAtlasGroupRequest create() => CreateAtlasGroupRequest._();
+  @$core.override
+  CreateAtlasGroupRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateAtlasGroupRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateAtlasGroupRequest>(create);
+  static CreateAtlasGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get description => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set description($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDescription() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDescription() => $_clearField(2);
+}
+
+class CreateAtlasGroupResponse extends $pb.GeneratedMessage {
+  factory CreateAtlasGroupResponse({
+    AtlasGroup? group,
+  }) {
+    final result = create();
+    if (group != null) result.group = group;
+    return result;
+  }
+
+  CreateAtlasGroupResponse._();
+
+  factory CreateAtlasGroupResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateAtlasGroupResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateAtlasGroupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<AtlasGroup>(1, _omitFieldNames ? '' : 'group',
+        subBuilder: AtlasGroup.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAtlasGroupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateAtlasGroupResponse copyWith(
+          void Function(CreateAtlasGroupResponse) updates) =>
+      super.copyWith((message) => updates(message as CreateAtlasGroupResponse))
+          as CreateAtlasGroupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateAtlasGroupResponse create() => CreateAtlasGroupResponse._();
+  @$core.override
+  CreateAtlasGroupResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateAtlasGroupResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateAtlasGroupResponse>(create);
+  static CreateAtlasGroupResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AtlasGroup get group => $_getN(0);
+  @$pb.TagNumber(1)
+  set group(AtlasGroup value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroup() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroup() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AtlasGroup ensureGroup() => $_ensure(0);
+}
+
+class JoinAtlasGroupRequest extends $pb.GeneratedMessage {
+  factory JoinAtlasGroupRequest({
+    $core.String? groupId,
+  }) {
+    final result = create();
+    if (groupId != null) result.groupId = groupId;
+    return result;
+  }
+
+  JoinAtlasGroupRequest._();
+
+  factory JoinAtlasGroupRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JoinAtlasGroupRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JoinAtlasGroupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'groupId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinAtlasGroupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinAtlasGroupRequest copyWith(
+          void Function(JoinAtlasGroupRequest) updates) =>
+      super.copyWith((message) => updates(message as JoinAtlasGroupRequest))
+          as JoinAtlasGroupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinAtlasGroupRequest create() => JoinAtlasGroupRequest._();
+  @$core.override
+  JoinAtlasGroupRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JoinAtlasGroupRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JoinAtlasGroupRequest>(create);
+  static JoinAtlasGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get groupId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set groupId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => $_clearField(1);
+}
+
+class JoinAtlasGroupResponse extends $pb.GeneratedMessage {
+  factory JoinAtlasGroupResponse({
+    AtlasGroup? group,
+  }) {
+    final result = create();
+    if (group != null) result.group = group;
+    return result;
+  }
+
+  JoinAtlasGroupResponse._();
+
+  factory JoinAtlasGroupResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory JoinAtlasGroupResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'JoinAtlasGroupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<AtlasGroup>(1, _omitFieldNames ? '' : 'group',
+        subBuilder: AtlasGroup.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinAtlasGroupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  JoinAtlasGroupResponse copyWith(
+          void Function(JoinAtlasGroupResponse) updates) =>
+      super.copyWith((message) => updates(message as JoinAtlasGroupResponse))
+          as JoinAtlasGroupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinAtlasGroupResponse create() => JoinAtlasGroupResponse._();
+  @$core.override
+  JoinAtlasGroupResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static JoinAtlasGroupResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<JoinAtlasGroupResponse>(create);
+  static JoinAtlasGroupResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AtlasGroup get group => $_getN(0);
+  @$pb.TagNumber(1)
+  set group(AtlasGroup value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroup() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroup() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AtlasGroup ensureGroup() => $_ensure(0);
+}
+
+class LeaveAtlasGroupRequest extends $pb.GeneratedMessage {
+  factory LeaveAtlasGroupRequest({
+    $core.String? groupId,
+  }) {
+    final result = create();
+    if (groupId != null) result.groupId = groupId;
+    return result;
+  }
+
+  LeaveAtlasGroupRequest._();
+
+  factory LeaveAtlasGroupRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LeaveAtlasGroupRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LeaveAtlasGroupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'groupId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveAtlasGroupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveAtlasGroupRequest copyWith(
+          void Function(LeaveAtlasGroupRequest) updates) =>
+      super.copyWith((message) => updates(message as LeaveAtlasGroupRequest))
+          as LeaveAtlasGroupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LeaveAtlasGroupRequest create() => LeaveAtlasGroupRequest._();
+  @$core.override
+  LeaveAtlasGroupRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LeaveAtlasGroupRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LeaveAtlasGroupRequest>(create);
+  static LeaveAtlasGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get groupId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set groupId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => $_clearField(1);
+}
+
+class LeaveAtlasGroupResponse extends $pb.GeneratedMessage {
+  factory LeaveAtlasGroupResponse({
+    AtlasGroup? group,
+  }) {
+    final result = create();
+    if (group != null) result.group = group;
+    return result;
+  }
+
+  LeaveAtlasGroupResponse._();
+
+  factory LeaveAtlasGroupResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LeaveAtlasGroupResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LeaveAtlasGroupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOM<AtlasGroup>(1, _omitFieldNames ? '' : 'group',
+        subBuilder: AtlasGroup.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveAtlasGroupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LeaveAtlasGroupResponse copyWith(
+          void Function(LeaveAtlasGroupResponse) updates) =>
+      super.copyWith((message) => updates(message as LeaveAtlasGroupResponse))
+          as LeaveAtlasGroupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LeaveAtlasGroupResponse create() => LeaveAtlasGroupResponse._();
+  @$core.override
+  LeaveAtlasGroupResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LeaveAtlasGroupResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LeaveAtlasGroupResponse>(create);
+  static LeaveAtlasGroupResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AtlasGroup get group => $_getN(0);
+  @$pb.TagNumber(1)
+  set group(AtlasGroup value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroup() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroup() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AtlasGroup ensureGroup() => $_ensure(0);
+}
+
+/// Closes a group the viewer opened.
+class CloseAtlasGroupRequest extends $pb.GeneratedMessage {
+  factory CloseAtlasGroupRequest({
+    $core.String? groupId,
+  }) {
+    final result = create();
+    if (groupId != null) result.groupId = groupId;
+    return result;
+  }
+
+  CloseAtlasGroupRequest._();
+
+  factory CloseAtlasGroupRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CloseAtlasGroupRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CloseAtlasGroupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'groupId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloseAtlasGroupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloseAtlasGroupRequest copyWith(
+          void Function(CloseAtlasGroupRequest) updates) =>
+      super.copyWith((message) => updates(message as CloseAtlasGroupRequest))
+          as CloseAtlasGroupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CloseAtlasGroupRequest create() => CloseAtlasGroupRequest._();
+  @$core.override
+  CloseAtlasGroupRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CloseAtlasGroupRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CloseAtlasGroupRequest>(create);
+  static CloseAtlasGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get groupId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set groupId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => $_clearField(1);
+}
+
+class CloseAtlasGroupResponse extends $pb.GeneratedMessage {
+  factory CloseAtlasGroupResponse() => create();
+
+  CloseAtlasGroupResponse._();
+
+  factory CloseAtlasGroupResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CloseAtlasGroupResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CloseAtlasGroupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloseAtlasGroupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CloseAtlasGroupResponse copyWith(
+          void Function(CloseAtlasGroupResponse) updates) =>
+      super.copyWith((message) => updates(message as CloseAtlasGroupResponse))
+          as CloseAtlasGroupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CloseAtlasGroupResponse create() => CloseAtlasGroupResponse._();
+  @$core.override
+  CloseAtlasGroupResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CloseAtlasGroupResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CloseAtlasGroupResponse>(create);
+  static CloseAtlasGroupResponse? _defaultInstance;
+}
+
+class ReportAtlasGroupRequest extends $pb.GeneratedMessage {
+  factory ReportAtlasGroupRequest({
+    $core.String? groupId,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (groupId != null) result.groupId = groupId;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  ReportAtlasGroupRequest._();
+
+  factory ReportAtlasGroupRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportAtlasGroupRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportAtlasGroupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'groupId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAtlasGroupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAtlasGroupRequest copyWith(
+          void Function(ReportAtlasGroupRequest) updates) =>
+      super.copyWith((message) => updates(message as ReportAtlasGroupRequest))
+          as ReportAtlasGroupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportAtlasGroupRequest create() => ReportAtlasGroupRequest._();
+  @$core.override
+  ReportAtlasGroupRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportAtlasGroupRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportAtlasGroupRequest>(create);
+  static ReportAtlasGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get groupId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set groupId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+}
+
+class ReportAtlasGroupResponse extends $pb.GeneratedMessage {
+  factory ReportAtlasGroupResponse() => create();
+
+  ReportAtlasGroupResponse._();
+
+  factory ReportAtlasGroupResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportAtlasGroupResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportAtlasGroupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAtlasGroupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAtlasGroupResponse copyWith(
+          void Function(ReportAtlasGroupResponse) updates) =>
+      super.copyWith((message) => updates(message as ReportAtlasGroupResponse))
+          as ReportAtlasGroupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportAtlasGroupResponse create() => ReportAtlasGroupResponse._();
+  @$core.override
+  ReportAtlasGroupResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportAtlasGroupResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportAtlasGroupResponse>(create);
+  static ReportAtlasGroupResponse? _defaultInstance;
 }
 
 class AgoraRoom extends $pb.GeneratedMessage {
@@ -5901,6 +6720,8 @@ class CreateAgoraRoomRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearTitle() => $_clearField(1);
 
+  /// A free label, or an open interest group's id: a room under a group can
+  /// be opened only by one of its members.
   @$pb.TagNumber(2)
   $core.String get cluster => $_getSZ(1);
   @$pb.TagNumber(2)

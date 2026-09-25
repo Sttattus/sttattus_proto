@@ -1490,6 +1490,7 @@ const AtlasMapPoint$json = {
       '5': 5,
       '10': 'intellectualPace'
     },
+    {'1': 'group_ids', '3': 10, '4': 3, '5': 9, '10': 'groupIds'},
   ],
 };
 
@@ -1499,7 +1500,8 @@ final $typed_data.Uint8List atlasMapPointDescriptor = $convert.base64Decode(
     'RuYW1lEgwKAXgYAyABKAFSAXgSDAoBeRgEIAEoAVIBeRIMCgF6GAUgASgBUgF6EhwKCWx1bWlu'
     'YW5jZRgGIAEoAVIJbHVtaW5hbmNlEhIKBHRpZXIYByABKAlSBHRpZXISOAoGaW50ZW50GAggAS'
     'gOMiAuc3R0YXR0dXMuZGF0aW5nLnYxLkRhdGluZ0ludGVudFIGaW50ZW50EisKEWludGVsbGVj'
-    'dHVhbF9wYWNlGAkgASgFUhBpbnRlbGxlY3R1YWxQYWNl');
+    'dHVhbF9wYWNlGAkgASgFUhBpbnRlbGxlY3R1YWxQYWNlEhsKCWdyb3VwX2lkcxgKIAMoCVIIZ3'
+    'JvdXBJZHM=');
 
 @$core.Deprecated('Use listAtlasMapPointsRequestDescriptor instead')
 const ListAtlasMapPointsRequest$json = {
@@ -1530,6 +1532,215 @@ final $typed_data.Uint8List listAtlasMapPointsResponseDescriptor =
     $convert.base64Decode(
         'ChpMaXN0QXRsYXNNYXBQb2ludHNSZXNwb25zZRI5CgZwb2ludHMYASADKAsyIS5zdHRhdHR1cy'
         '5kYXRpbmcudjEuQXRsYXNNYXBQb2ludFIGcG9pbnRz');
+
+@$core.Deprecated('Use atlasGroupDescriptor instead')
+const AtlasGroup$json = {
+  '1': 'AtlasGroup',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'member_count', '3': 4, '4': 1, '5': 5, '10': 'memberCount'},
+    {'1': 'joined', '3': 5, '4': 1, '5': 8, '10': 'joined'},
+    {'1': 'mine', '3': 6, '4': 1, '5': 8, '10': 'mine'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasGroup`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasGroupDescriptor = $convert.base64Decode(
+    'CgpBdGxhc0dyb3VwEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2'
+    'NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIhCgxtZW1iZXJfY291bnQYBCABKAVSC21lbWJl'
+    'ckNvdW50EhYKBmpvaW5lZBgFIAEoCFIGam9pbmVkEhIKBG1pbmUYBiABKAhSBG1pbmUSHQoKY3'
+    'JlYXRlZF9hdBgHIAEoA1IJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use listAtlasGroupsRequestDescriptor instead')
+const ListAtlasGroupsRequest$json = {
+  '1': 'ListAtlasGroupsRequest',
+};
+
+/// Descriptor for `ListAtlasGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAtlasGroupsRequestDescriptor =
+    $convert.base64Decode('ChZMaXN0QXRsYXNHcm91cHNSZXF1ZXN0');
+
+@$core.Deprecated('Use listAtlasGroupsResponseDescriptor instead')
+const ListAtlasGroupsResponse$json = {
+  '1': 'ListAtlasGroupsResponse',
+  '2': [
+    {
+      '1': 'groups',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasGroup',
+      '10': 'groups'
+    },
+    {'1': 'can_create', '3': 2, '4': 1, '5': 8, '10': 'canCreate'},
+    {
+      '1': 'cannot_create_reason',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'cannotCreateReason'
+    },
+  ],
+};
+
+/// Descriptor for `ListAtlasGroupsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAtlasGroupsResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0QXRsYXNHcm91cHNSZXNwb25zZRI2CgZncm91cHMYASADKAsyHi5zdHRhdHR1cy5kYX'
+    'RpbmcudjEuQXRsYXNHcm91cFIGZ3JvdXBzEh0KCmNhbl9jcmVhdGUYAiABKAhSCWNhbkNyZWF0'
+    'ZRIwChRjYW5ub3RfY3JlYXRlX3JlYXNvbhgDIAEoCVISY2Fubm90Q3JlYXRlUmVhc29u');
+
+@$core.Deprecated('Use createAtlasGroupRequestDescriptor instead')
+const CreateAtlasGroupRequest$json = {
+  '1': 'CreateAtlasGroupRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `CreateAtlasGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAtlasGroupRequestDescriptor =
+    $convert.base64Decode(
+        'ChdDcmVhdGVBdGxhc0dyb3VwUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaX'
+        'B0aW9uGAIgASgJUgtkZXNjcmlwdGlvbg==');
+
+@$core.Deprecated('Use createAtlasGroupResponseDescriptor instead')
+const CreateAtlasGroupResponse$json = {
+  '1': 'CreateAtlasGroupResponse',
+  '2': [
+    {
+      '1': 'group',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasGroup',
+      '10': 'group'
+    },
+  ],
+};
+
+/// Descriptor for `CreateAtlasGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAtlasGroupResponseDescriptor =
+    $convert.base64Decode(
+        'ChhDcmVhdGVBdGxhc0dyb3VwUmVzcG9uc2USNAoFZ3JvdXAYASABKAsyHi5zdHRhdHR1cy5kYX'
+        'RpbmcudjEuQXRsYXNHcm91cFIFZ3JvdXA=');
+
+@$core.Deprecated('Use joinAtlasGroupRequestDescriptor instead')
+const JoinAtlasGroupRequest$json = {
+  '1': 'JoinAtlasGroupRequest',
+  '2': [
+    {'1': 'group_id', '3': 1, '4': 1, '5': 9, '10': 'groupId'},
+  ],
+};
+
+/// Descriptor for `JoinAtlasGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List joinAtlasGroupRequestDescriptor =
+    $convert.base64Decode(
+        'ChVKb2luQXRsYXNHcm91cFJlcXVlc3QSGQoIZ3JvdXBfaWQYASABKAlSB2dyb3VwSWQ=');
+
+@$core.Deprecated('Use joinAtlasGroupResponseDescriptor instead')
+const JoinAtlasGroupResponse$json = {
+  '1': 'JoinAtlasGroupResponse',
+  '2': [
+    {
+      '1': 'group',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasGroup',
+      '10': 'group'
+    },
+  ],
+};
+
+/// Descriptor for `JoinAtlasGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List joinAtlasGroupResponseDescriptor =
+    $convert.base64Decode(
+        'ChZKb2luQXRsYXNHcm91cFJlc3BvbnNlEjQKBWdyb3VwGAEgASgLMh4uc3R0YXR0dXMuZGF0aW'
+        '5nLnYxLkF0bGFzR3JvdXBSBWdyb3Vw');
+
+@$core.Deprecated('Use leaveAtlasGroupRequestDescriptor instead')
+const LeaveAtlasGroupRequest$json = {
+  '1': 'LeaveAtlasGroupRequest',
+  '2': [
+    {'1': 'group_id', '3': 1, '4': 1, '5': 9, '10': 'groupId'},
+  ],
+};
+
+/// Descriptor for `LeaveAtlasGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List leaveAtlasGroupRequestDescriptor =
+    $convert.base64Decode(
+        'ChZMZWF2ZUF0bGFzR3JvdXBSZXF1ZXN0EhkKCGdyb3VwX2lkGAEgASgJUgdncm91cElk');
+
+@$core.Deprecated('Use leaveAtlasGroupResponseDescriptor instead')
+const LeaveAtlasGroupResponse$json = {
+  '1': 'LeaveAtlasGroupResponse',
+  '2': [
+    {
+      '1': 'group',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasGroup',
+      '10': 'group'
+    },
+  ],
+};
+
+/// Descriptor for `LeaveAtlasGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List leaveAtlasGroupResponseDescriptor =
+    $convert.base64Decode(
+        'ChdMZWF2ZUF0bGFzR3JvdXBSZXNwb25zZRI0CgVncm91cBgBIAEoCzIeLnN0dGF0dHVzLmRhdG'
+        'luZy52MS5BdGxhc0dyb3VwUgVncm91cA==');
+
+@$core.Deprecated('Use closeAtlasGroupRequestDescriptor instead')
+const CloseAtlasGroupRequest$json = {
+  '1': 'CloseAtlasGroupRequest',
+  '2': [
+    {'1': 'group_id', '3': 1, '4': 1, '5': 9, '10': 'groupId'},
+  ],
+};
+
+/// Descriptor for `CloseAtlasGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List closeAtlasGroupRequestDescriptor =
+    $convert.base64Decode(
+        'ChZDbG9zZUF0bGFzR3JvdXBSZXF1ZXN0EhkKCGdyb3VwX2lkGAEgASgJUgdncm91cElk');
+
+@$core.Deprecated('Use closeAtlasGroupResponseDescriptor instead')
+const CloseAtlasGroupResponse$json = {
+  '1': 'CloseAtlasGroupResponse',
+};
+
+/// Descriptor for `CloseAtlasGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List closeAtlasGroupResponseDescriptor =
+    $convert.base64Decode('ChdDbG9zZUF0bGFzR3JvdXBSZXNwb25zZQ==');
+
+@$core.Deprecated('Use reportAtlasGroupRequestDescriptor instead')
+const ReportAtlasGroupRequest$json = {
+  '1': 'ReportAtlasGroupRequest',
+  '2': [
+    {'1': 'group_id', '3': 1, '4': 1, '5': 9, '10': 'groupId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `ReportAtlasGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportAtlasGroupRequestDescriptor =
+    $convert.base64Decode(
+        'ChdSZXBvcnRBdGxhc0dyb3VwUmVxdWVzdBIZCghncm91cF9pZBgBIAEoCVIHZ3JvdXBJZBIWCg'
+        'ZyZWFzb24YAiABKAlSBnJlYXNvbg==');
+
+@$core.Deprecated('Use reportAtlasGroupResponseDescriptor instead')
+const ReportAtlasGroupResponse$json = {
+  '1': 'ReportAtlasGroupResponse',
+};
+
+/// Descriptor for `ReportAtlasGroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportAtlasGroupResponseDescriptor =
+    $convert.base64Decode('ChhSZXBvcnRBdGxhc0dyb3VwUmVzcG9uc2U=');
 
 @$core.Deprecated('Use agoraRoomDescriptor instead')
 const AgoraRoom$json = {

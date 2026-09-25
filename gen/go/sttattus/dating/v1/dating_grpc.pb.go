@@ -48,6 +48,12 @@ const (
 	DatingService_GetPrivacyAxes_FullMethodName             = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
 	DatingService_UpsertPrivacyAxes_FullMethodName          = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
 	DatingService_ListAtlasMapPoints_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListAtlasGroups_FullMethodName            = "/sttattus.dating.v1.DatingService/ListAtlasGroups"
+	DatingService_CreateAtlasGroup_FullMethodName           = "/sttattus.dating.v1.DatingService/CreateAtlasGroup"
+	DatingService_JoinAtlasGroup_FullMethodName             = "/sttattus.dating.v1.DatingService/JoinAtlasGroup"
+	DatingService_LeaveAtlasGroup_FullMethodName            = "/sttattus.dating.v1.DatingService/LeaveAtlasGroup"
+	DatingService_CloseAtlasGroup_FullMethodName            = "/sttattus.dating.v1.DatingService/CloseAtlasGroup"
+	DatingService_ReportAtlasGroup_FullMethodName           = "/sttattus.dating.v1.DatingService/ReportAtlasGroup"
 	DatingService_ListLiveRooms_FullMethodName              = "/sttattus.dating.v1.DatingService/ListLiveRooms"
 	DatingService_CreateAgoraRoom_FullMethodName            = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
 	DatingService_EndAgoraRoom_FullMethodName               = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
@@ -129,6 +135,12 @@ type DatingServiceClient interface {
 	GetPrivacyAxes(ctx context.Context, in *GetPrivacyAxesRequest, opts ...grpc.CallOption) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(ctx context.Context, in *UpsertPrivacyAxesRequest, opts ...grpc.CallOption) (*UpsertPrivacyAxesResponse, error)
 	ListAtlasMapPoints(ctx context.Context, in *ListAtlasMapPointsRequest, opts ...grpc.CallOption) (*ListAtlasMapPointsResponse, error)
+	ListAtlasGroups(ctx context.Context, in *ListAtlasGroupsRequest, opts ...grpc.CallOption) (*ListAtlasGroupsResponse, error)
+	CreateAtlasGroup(ctx context.Context, in *CreateAtlasGroupRequest, opts ...grpc.CallOption) (*CreateAtlasGroupResponse, error)
+	JoinAtlasGroup(ctx context.Context, in *JoinAtlasGroupRequest, opts ...grpc.CallOption) (*JoinAtlasGroupResponse, error)
+	LeaveAtlasGroup(ctx context.Context, in *LeaveAtlasGroupRequest, opts ...grpc.CallOption) (*LeaveAtlasGroupResponse, error)
+	CloseAtlasGroup(ctx context.Context, in *CloseAtlasGroupRequest, opts ...grpc.CallOption) (*CloseAtlasGroupResponse, error)
+	ReportAtlasGroup(ctx context.Context, in *ReportAtlasGroupRequest, opts ...grpc.CallOption) (*ReportAtlasGroupResponse, error)
 	ListLiveRooms(ctx context.Context, in *ListLiveRoomsRequest, opts ...grpc.CallOption) (*ListLiveRoomsResponse, error)
 	CreateAgoraRoom(ctx context.Context, in *CreateAgoraRoomRequest, opts ...grpc.CallOption) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(ctx context.Context, in *EndAgoraRoomRequest, opts ...grpc.CallOption) (*EndAgoraRoomResponse, error)
@@ -507,6 +519,66 @@ func (c *datingServiceClient) ListAtlasMapPoints(ctx context.Context, in *ListAt
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListAtlasMapPointsResponse)
 	err := c.cc.Invoke(ctx, DatingService_ListAtlasMapPoints_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ListAtlasGroups(ctx context.Context, in *ListAtlasGroupsRequest, opts ...grpc.CallOption) (*ListAtlasGroupsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListAtlasGroupsResponse)
+	err := c.cc.Invoke(ctx, DatingService_ListAtlasGroups_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CreateAtlasGroup(ctx context.Context, in *CreateAtlasGroupRequest, opts ...grpc.CallOption) (*CreateAtlasGroupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateAtlasGroupResponse)
+	err := c.cc.Invoke(ctx, DatingService_CreateAtlasGroup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) JoinAtlasGroup(ctx context.Context, in *JoinAtlasGroupRequest, opts ...grpc.CallOption) (*JoinAtlasGroupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(JoinAtlasGroupResponse)
+	err := c.cc.Invoke(ctx, DatingService_JoinAtlasGroup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) LeaveAtlasGroup(ctx context.Context, in *LeaveAtlasGroupRequest, opts ...grpc.CallOption) (*LeaveAtlasGroupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LeaveAtlasGroupResponse)
+	err := c.cc.Invoke(ctx, DatingService_LeaveAtlasGroup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CloseAtlasGroup(ctx context.Context, in *CloseAtlasGroupRequest, opts ...grpc.CallOption) (*CloseAtlasGroupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CloseAtlasGroupResponse)
+	err := c.cc.Invoke(ctx, DatingService_CloseAtlasGroup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ReportAtlasGroup(ctx context.Context, in *ReportAtlasGroupRequest, opts ...grpc.CallOption) (*ReportAtlasGroupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportAtlasGroupResponse)
+	err := c.cc.Invoke(ctx, DatingService_ReportAtlasGroup_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -961,6 +1033,12 @@ type DatingServiceServer interface {
 	GetPrivacyAxes(context.Context, *GetPrivacyAxesRequest) (*GetPrivacyAxesResponse, error)
 	UpsertPrivacyAxes(context.Context, *UpsertPrivacyAxesRequest) (*UpsertPrivacyAxesResponse, error)
 	ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error)
+	ListAtlasGroups(context.Context, *ListAtlasGroupsRequest) (*ListAtlasGroupsResponse, error)
+	CreateAtlasGroup(context.Context, *CreateAtlasGroupRequest) (*CreateAtlasGroupResponse, error)
+	JoinAtlasGroup(context.Context, *JoinAtlasGroupRequest) (*JoinAtlasGroupResponse, error)
+	LeaveAtlasGroup(context.Context, *LeaveAtlasGroupRequest) (*LeaveAtlasGroupResponse, error)
+	CloseAtlasGroup(context.Context, *CloseAtlasGroupRequest) (*CloseAtlasGroupResponse, error)
+	ReportAtlasGroup(context.Context, *ReportAtlasGroupRequest) (*ReportAtlasGroupResponse, error)
 	ListLiveRooms(context.Context, *ListLiveRoomsRequest) (*ListLiveRoomsResponse, error)
 	CreateAgoraRoom(context.Context, *CreateAgoraRoomRequest) (*CreateAgoraRoomResponse, error)
 	EndAgoraRoom(context.Context, *EndAgoraRoomRequest) (*EndAgoraRoomResponse, error)
@@ -1123,6 +1201,24 @@ func (UnimplementedDatingServiceServer) UpsertPrivacyAxes(context.Context, *Upse
 }
 func (UnimplementedDatingServiceServer) ListAtlasMapPoints(context.Context, *ListAtlasMapPointsRequest) (*ListAtlasMapPointsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListAtlasMapPoints not implemented")
+}
+func (UnimplementedDatingServiceServer) ListAtlasGroups(context.Context, *ListAtlasGroupsRequest) (*ListAtlasGroupsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListAtlasGroups not implemented")
+}
+func (UnimplementedDatingServiceServer) CreateAtlasGroup(context.Context, *CreateAtlasGroupRequest) (*CreateAtlasGroupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateAtlasGroup not implemented")
+}
+func (UnimplementedDatingServiceServer) JoinAtlasGroup(context.Context, *JoinAtlasGroupRequest) (*JoinAtlasGroupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method JoinAtlasGroup not implemented")
+}
+func (UnimplementedDatingServiceServer) LeaveAtlasGroup(context.Context, *LeaveAtlasGroupRequest) (*LeaveAtlasGroupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LeaveAtlasGroup not implemented")
+}
+func (UnimplementedDatingServiceServer) CloseAtlasGroup(context.Context, *CloseAtlasGroupRequest) (*CloseAtlasGroupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CloseAtlasGroup not implemented")
+}
+func (UnimplementedDatingServiceServer) ReportAtlasGroup(context.Context, *ReportAtlasGroupRequest) (*ReportAtlasGroupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportAtlasGroup not implemented")
 }
 func (UnimplementedDatingServiceServer) ListLiveRooms(context.Context, *ListLiveRoomsRequest) (*ListLiveRoomsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListLiveRooms not implemented")
@@ -1772,6 +1868,114 @@ func _DatingService_ListAtlasMapPoints_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatingServiceServer).ListAtlasMapPoints(ctx, req.(*ListAtlasMapPointsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ListAtlasGroups_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAtlasGroupsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ListAtlasGroups(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ListAtlasGroups_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ListAtlasGroups(ctx, req.(*ListAtlasGroupsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CreateAtlasGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAtlasGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CreateAtlasGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CreateAtlasGroup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CreateAtlasGroup(ctx, req.(*CreateAtlasGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_JoinAtlasGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(JoinAtlasGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).JoinAtlasGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_JoinAtlasGroup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).JoinAtlasGroup(ctx, req.(*JoinAtlasGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_LeaveAtlasGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LeaveAtlasGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).LeaveAtlasGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_LeaveAtlasGroup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).LeaveAtlasGroup(ctx, req.(*LeaveAtlasGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CloseAtlasGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CloseAtlasGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CloseAtlasGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CloseAtlasGroup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CloseAtlasGroup(ctx, req.(*CloseAtlasGroupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ReportAtlasGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportAtlasGroupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ReportAtlasGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ReportAtlasGroup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ReportAtlasGroup(ctx, req.(*ReportAtlasGroupRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2628,6 +2832,30 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListAtlasMapPoints",
 			Handler:    _DatingService_ListAtlasMapPoints_Handler,
+		},
+		{
+			MethodName: "ListAtlasGroups",
+			Handler:    _DatingService_ListAtlasGroups_Handler,
+		},
+		{
+			MethodName: "CreateAtlasGroup",
+			Handler:    _DatingService_CreateAtlasGroup_Handler,
+		},
+		{
+			MethodName: "JoinAtlasGroup",
+			Handler:    _DatingService_JoinAtlasGroup_Handler,
+		},
+		{
+			MethodName: "LeaveAtlasGroup",
+			Handler:    _DatingService_LeaveAtlasGroup_Handler,
+		},
+		{
+			MethodName: "CloseAtlasGroup",
+			Handler:    _DatingService_CloseAtlasGroup_Handler,
+		},
+		{
+			MethodName: "ReportAtlasGroup",
+			Handler:    _DatingService_ReportAtlasGroup_Handler,
 		},
 		{
 			MethodName: "ListLiveRooms",

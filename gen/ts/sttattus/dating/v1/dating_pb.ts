@@ -3506,6 +3506,15 @@ export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
    */
   intellectualPace = 0;
 
+  /**
+   * Open interest groups this member belongs to. The Cosmos draws each group
+   * around its members in the viewer's sky. Membership in a group is public
+   * to anyone who can already see the member in their sky.
+   *
+   * @generated from field: repeated string group_ids = 10;
+   */
+  groupIds: string[] = [];
+
   constructor(data?: PartialMessage<AtlasMapPoint>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3523,6 +3532,7 @@ export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
     { no: 7, name: "tier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "intent", kind: "enum", T: proto3.getEnumType(DatingIntent) },
     { no: 9, name: "intellectual_pace", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasMapPoint {
@@ -3607,6 +3617,547 @@ export class ListAtlasMapPointsResponse extends Message$1<ListAtlasMapPointsResp
 
   static equals(a: ListAtlasMapPointsResponse | PlainMessage<ListAtlasMapPointsResponse> | undefined, b: ListAtlasMapPointsResponse | PlainMessage<ListAtlasMapPointsResponse> | undefined): boolean {
     return proto3.util.equals(ListAtlasMapPointsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasGroup
+ */
+export class AtlasGroup extends Message$1<AtlasGroup> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * Members still on Atlas.
+   *
+   * @generated from field: int32 member_count = 4;
+   */
+  memberCount = 0;
+
+  /**
+   * The viewer belongs to it.
+   *
+   * @generated from field: bool joined = 5;
+   */
+  joined = false;
+
+  /**
+   * The viewer opened it.
+   *
+   * @generated from field: bool mine = 6;
+   */
+  mine = false;
+
+  /**
+   * @generated from field: int64 created_at = 7;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasGroup>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasGroup";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "member_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "joined", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "mine", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasGroup {
+    return new AtlasGroup().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasGroup {
+    return new AtlasGroup().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasGroup {
+    return new AtlasGroup().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasGroup | PlainMessage<AtlasGroup> | undefined, b: AtlasGroup | PlainMessage<AtlasGroup> | undefined): boolean {
+    return proto3.util.equals(AtlasGroup, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAtlasGroupsRequest
+ */
+export class ListAtlasGroupsRequest extends Message$1<ListAtlasGroupsRequest> {
+  constructor(data?: PartialMessage<ListAtlasGroupsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAtlasGroupsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAtlasGroupsRequest {
+    return new ListAtlasGroupsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAtlasGroupsRequest {
+    return new ListAtlasGroupsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAtlasGroupsRequest {
+    return new ListAtlasGroupsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAtlasGroupsRequest | PlainMessage<ListAtlasGroupsRequest> | undefined, b: ListAtlasGroupsRequest | PlainMessage<ListAtlasGroupsRequest> | undefined): boolean {
+    return proto3.util.equals(ListAtlasGroupsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ListAtlasGroupsResponse
+ */
+export class ListAtlasGroupsResponse extends Message$1<ListAtlasGroupsResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasGroup groups = 1;
+   */
+  groups: AtlasGroup[] = [];
+
+  /**
+   * Whether the viewer may open a group now. When not, why:
+   * "standing" (needs Gold standing), "limit" (three open groups already),
+   * or "restricted" (an Atlas restriction on the account).
+   *
+   * @generated from field: bool can_create = 2;
+   */
+  canCreate = false;
+
+  /**
+   * @generated from field: string cannot_create_reason = 3;
+   */
+  cannotCreateReason = "";
+
+  constructor(data?: PartialMessage<ListAtlasGroupsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ListAtlasGroupsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "groups", kind: "message", T: AtlasGroup, repeated: true },
+    { no: 2, name: "can_create", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "cannot_create_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAtlasGroupsResponse {
+    return new ListAtlasGroupsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAtlasGroupsResponse {
+    return new ListAtlasGroupsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAtlasGroupsResponse {
+    return new ListAtlasGroupsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListAtlasGroupsResponse | PlainMessage<ListAtlasGroupsResponse> | undefined, b: ListAtlasGroupsResponse | PlainMessage<ListAtlasGroupsResponse> | undefined): boolean {
+    return proto3.util.equals(ListAtlasGroupsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateAtlasGroupRequest
+ */
+export class CreateAtlasGroupRequest extends Message$1<CreateAtlasGroupRequest> {
+  /**
+   * 3-40 characters, no links or contact details
+   *
+   * @generated from field: string name = 1;
+   */
+  name = "";
+
+  /**
+   * up to 140 characters, same rules
+   *
+   * @generated from field: string description = 2;
+   */
+  description = "";
+
+  constructor(data?: PartialMessage<CreateAtlasGroupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateAtlasGroupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAtlasGroupRequest {
+    return new CreateAtlasGroupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAtlasGroupRequest {
+    return new CreateAtlasGroupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAtlasGroupRequest {
+    return new CreateAtlasGroupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAtlasGroupRequest | PlainMessage<CreateAtlasGroupRequest> | undefined, b: CreateAtlasGroupRequest | PlainMessage<CreateAtlasGroupRequest> | undefined): boolean {
+    return proto3.util.equals(CreateAtlasGroupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateAtlasGroupResponse
+ */
+export class CreateAtlasGroupResponse extends Message$1<CreateAtlasGroupResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasGroup group = 1;
+   */
+  group?: AtlasGroup;
+
+  constructor(data?: PartialMessage<CreateAtlasGroupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateAtlasGroupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group", kind: "message", T: AtlasGroup },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateAtlasGroupResponse {
+    return new CreateAtlasGroupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateAtlasGroupResponse {
+    return new CreateAtlasGroupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAtlasGroupResponse {
+    return new CreateAtlasGroupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateAtlasGroupResponse | PlainMessage<CreateAtlasGroupResponse> | undefined, b: CreateAtlasGroupResponse | PlainMessage<CreateAtlasGroupResponse> | undefined): boolean {
+    return proto3.util.equals(CreateAtlasGroupResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.JoinAtlasGroupRequest
+ */
+export class JoinAtlasGroupRequest extends Message$1<JoinAtlasGroupRequest> {
+  /**
+   * @generated from field: string group_id = 1;
+   */
+  groupId = "";
+
+  constructor(data?: PartialMessage<JoinAtlasGroupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.JoinAtlasGroupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinAtlasGroupRequest {
+    return new JoinAtlasGroupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinAtlasGroupRequest {
+    return new JoinAtlasGroupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinAtlasGroupRequest {
+    return new JoinAtlasGroupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinAtlasGroupRequest | PlainMessage<JoinAtlasGroupRequest> | undefined, b: JoinAtlasGroupRequest | PlainMessage<JoinAtlasGroupRequest> | undefined): boolean {
+    return proto3.util.equals(JoinAtlasGroupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.JoinAtlasGroupResponse
+ */
+export class JoinAtlasGroupResponse extends Message$1<JoinAtlasGroupResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasGroup group = 1;
+   */
+  group?: AtlasGroup;
+
+  constructor(data?: PartialMessage<JoinAtlasGroupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.JoinAtlasGroupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group", kind: "message", T: AtlasGroup },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JoinAtlasGroupResponse {
+    return new JoinAtlasGroupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JoinAtlasGroupResponse {
+    return new JoinAtlasGroupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JoinAtlasGroupResponse {
+    return new JoinAtlasGroupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: JoinAtlasGroupResponse | PlainMessage<JoinAtlasGroupResponse> | undefined, b: JoinAtlasGroupResponse | PlainMessage<JoinAtlasGroupResponse> | undefined): boolean {
+    return proto3.util.equals(JoinAtlasGroupResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.LeaveAtlasGroupRequest
+ */
+export class LeaveAtlasGroupRequest extends Message$1<LeaveAtlasGroupRequest> {
+  /**
+   * @generated from field: string group_id = 1;
+   */
+  groupId = "";
+
+  constructor(data?: PartialMessage<LeaveAtlasGroupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.LeaveAtlasGroupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveAtlasGroupRequest {
+    return new LeaveAtlasGroupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveAtlasGroupRequest {
+    return new LeaveAtlasGroupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveAtlasGroupRequest {
+    return new LeaveAtlasGroupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveAtlasGroupRequest | PlainMessage<LeaveAtlasGroupRequest> | undefined, b: LeaveAtlasGroupRequest | PlainMessage<LeaveAtlasGroupRequest> | undefined): boolean {
+    return proto3.util.equals(LeaveAtlasGroupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.LeaveAtlasGroupResponse
+ */
+export class LeaveAtlasGroupResponse extends Message$1<LeaveAtlasGroupResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasGroup group = 1;
+   */
+  group?: AtlasGroup;
+
+  constructor(data?: PartialMessage<LeaveAtlasGroupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.LeaveAtlasGroupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group", kind: "message", T: AtlasGroup },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LeaveAtlasGroupResponse {
+    return new LeaveAtlasGroupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LeaveAtlasGroupResponse {
+    return new LeaveAtlasGroupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LeaveAtlasGroupResponse {
+    return new LeaveAtlasGroupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LeaveAtlasGroupResponse | PlainMessage<LeaveAtlasGroupResponse> | undefined, b: LeaveAtlasGroupResponse | PlainMessage<LeaveAtlasGroupResponse> | undefined): boolean {
+    return proto3.util.equals(LeaveAtlasGroupResponse, a, b);
+  }
+}
+
+/**
+ * Closes a group the viewer opened.
+ *
+ * @generated from message sttattus.dating.v1.CloseAtlasGroupRequest
+ */
+export class CloseAtlasGroupRequest extends Message$1<CloseAtlasGroupRequest> {
+  /**
+   * @generated from field: string group_id = 1;
+   */
+  groupId = "";
+
+  constructor(data?: PartialMessage<CloseAtlasGroupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CloseAtlasGroupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CloseAtlasGroupRequest {
+    return new CloseAtlasGroupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CloseAtlasGroupRequest {
+    return new CloseAtlasGroupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CloseAtlasGroupRequest {
+    return new CloseAtlasGroupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CloseAtlasGroupRequest | PlainMessage<CloseAtlasGroupRequest> | undefined, b: CloseAtlasGroupRequest | PlainMessage<CloseAtlasGroupRequest> | undefined): boolean {
+    return proto3.util.equals(CloseAtlasGroupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CloseAtlasGroupResponse
+ */
+export class CloseAtlasGroupResponse extends Message$1<CloseAtlasGroupResponse> {
+  constructor(data?: PartialMessage<CloseAtlasGroupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CloseAtlasGroupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CloseAtlasGroupResponse {
+    return new CloseAtlasGroupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CloseAtlasGroupResponse {
+    return new CloseAtlasGroupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CloseAtlasGroupResponse {
+    return new CloseAtlasGroupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CloseAtlasGroupResponse | PlainMessage<CloseAtlasGroupResponse> | undefined, b: CloseAtlasGroupResponse | PlainMessage<CloseAtlasGroupResponse> | undefined): boolean {
+    return proto3.util.equals(CloseAtlasGroupResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReportAtlasGroupRequest
+ */
+export class ReportAtlasGroupRequest extends Message$1<ReportAtlasGroupRequest> {
+  /**
+   * @generated from field: string group_id = 1;
+   */
+  groupId = "";
+
+  /**
+   * offensive | spam | misleading | impersonation | other
+   *
+   * @generated from field: string reason = 2;
+   */
+  reason = "";
+
+  constructor(data?: PartialMessage<ReportAtlasGroupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReportAtlasGroupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportAtlasGroupRequest {
+    return new ReportAtlasGroupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportAtlasGroupRequest {
+    return new ReportAtlasGroupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportAtlasGroupRequest {
+    return new ReportAtlasGroupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportAtlasGroupRequest | PlainMessage<ReportAtlasGroupRequest> | undefined, b: ReportAtlasGroupRequest | PlainMessage<ReportAtlasGroupRequest> | undefined): boolean {
+    return proto3.util.equals(ReportAtlasGroupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReportAtlasGroupResponse
+ */
+export class ReportAtlasGroupResponse extends Message$1<ReportAtlasGroupResponse> {
+  constructor(data?: PartialMessage<ReportAtlasGroupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReportAtlasGroupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportAtlasGroupResponse {
+    return new ReportAtlasGroupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportAtlasGroupResponse {
+    return new ReportAtlasGroupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportAtlasGroupResponse {
+    return new ReportAtlasGroupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportAtlasGroupResponse | PlainMessage<ReportAtlasGroupResponse> | undefined, b: ReportAtlasGroupResponse | PlainMessage<ReportAtlasGroupResponse> | undefined): boolean {
+    return proto3.util.equals(ReportAtlasGroupResponse, a, b);
   }
 }
 
@@ -3791,6 +4342,9 @@ export class CreateAgoraRoomRequest extends Message$1<CreateAgoraRoomRequest> {
   title = "";
 
   /**
+   * A free label, or an open interest group's id: a room under a group can
+   * be opened only by one of its members.
+   *
    * @generated from field: string cluster = 2;
    */
   cluster = "";

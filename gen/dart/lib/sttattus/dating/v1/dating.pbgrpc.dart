@@ -244,6 +244,48 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAtlasMapPoints, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ListAtlasGroupsResponse> listAtlasGroups(
+    $0.ListAtlasGroupsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listAtlasGroups, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateAtlasGroupResponse> createAtlasGroup(
+    $0.CreateAtlasGroupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createAtlasGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.JoinAtlasGroupResponse> joinAtlasGroup(
+    $0.JoinAtlasGroupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$joinAtlasGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LeaveAtlasGroupResponse> leaveAtlasGroup(
+    $0.LeaveAtlasGroupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$leaveAtlasGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CloseAtlasGroupResponse> closeAtlasGroup(
+    $0.CloseAtlasGroupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$closeAtlasGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportAtlasGroupResponse> reportAtlasGroup(
+    $0.ReportAtlasGroupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportAtlasGroup, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.ListLiveRoomsResponse> listLiveRooms(
     $0.ListLiveRoomsRequest request, {
     $grpc.CallOptions? options,
@@ -716,6 +758,36 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/ListAtlasMapPoints',
       ($0.ListAtlasMapPointsRequest value) => value.writeToBuffer(),
       $0.ListAtlasMapPointsResponse.fromBuffer);
+  static final _$listAtlasGroups =
+      $grpc.ClientMethod<$0.ListAtlasGroupsRequest, $0.ListAtlasGroupsResponse>(
+          '/sttattus.dating.v1.DatingService/ListAtlasGroups',
+          ($0.ListAtlasGroupsRequest value) => value.writeToBuffer(),
+          $0.ListAtlasGroupsResponse.fromBuffer);
+  static final _$createAtlasGroup = $grpc.ClientMethod<
+          $0.CreateAtlasGroupRequest, $0.CreateAtlasGroupResponse>(
+      '/sttattus.dating.v1.DatingService/CreateAtlasGroup',
+      ($0.CreateAtlasGroupRequest value) => value.writeToBuffer(),
+      $0.CreateAtlasGroupResponse.fromBuffer);
+  static final _$joinAtlasGroup =
+      $grpc.ClientMethod<$0.JoinAtlasGroupRequest, $0.JoinAtlasGroupResponse>(
+          '/sttattus.dating.v1.DatingService/JoinAtlasGroup',
+          ($0.JoinAtlasGroupRequest value) => value.writeToBuffer(),
+          $0.JoinAtlasGroupResponse.fromBuffer);
+  static final _$leaveAtlasGroup =
+      $grpc.ClientMethod<$0.LeaveAtlasGroupRequest, $0.LeaveAtlasGroupResponse>(
+          '/sttattus.dating.v1.DatingService/LeaveAtlasGroup',
+          ($0.LeaveAtlasGroupRequest value) => value.writeToBuffer(),
+          $0.LeaveAtlasGroupResponse.fromBuffer);
+  static final _$closeAtlasGroup =
+      $grpc.ClientMethod<$0.CloseAtlasGroupRequest, $0.CloseAtlasGroupResponse>(
+          '/sttattus.dating.v1.DatingService/CloseAtlasGroup',
+          ($0.CloseAtlasGroupRequest value) => value.writeToBuffer(),
+          $0.CloseAtlasGroupResponse.fromBuffer);
+  static final _$reportAtlasGroup = $grpc.ClientMethod<
+          $0.ReportAtlasGroupRequest, $0.ReportAtlasGroupResponse>(
+      '/sttattus.dating.v1.DatingService/ReportAtlasGroup',
+      ($0.ReportAtlasGroupRequest value) => value.writeToBuffer(),
+      $0.ReportAtlasGroupResponse.fromBuffer);
   static final _$listLiveRooms =
       $grpc.ClientMethod<$0.ListLiveRoomsRequest, $0.ListLiveRoomsResponse>(
           '/sttattus.dating.v1.DatingService/ListLiveRooms',
@@ -1183,6 +1255,60 @@ abstract class DatingServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ListAtlasMapPointsRequest.fromBuffer(value),
         ($0.ListAtlasMapPointsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListAtlasGroupsRequest,
+            $0.ListAtlasGroupsResponse>(
+        'ListAtlasGroups',
+        listAtlasGroups_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListAtlasGroupsRequest.fromBuffer(value),
+        ($0.ListAtlasGroupsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateAtlasGroupRequest,
+            $0.CreateAtlasGroupResponse>(
+        'CreateAtlasGroup',
+        createAtlasGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateAtlasGroupRequest.fromBuffer(value),
+        ($0.CreateAtlasGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.JoinAtlasGroupRequest,
+            $0.JoinAtlasGroupResponse>(
+        'JoinAtlasGroup',
+        joinAtlasGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.JoinAtlasGroupRequest.fromBuffer(value),
+        ($0.JoinAtlasGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LeaveAtlasGroupRequest,
+            $0.LeaveAtlasGroupResponse>(
+        'LeaveAtlasGroup',
+        leaveAtlasGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LeaveAtlasGroupRequest.fromBuffer(value),
+        ($0.LeaveAtlasGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CloseAtlasGroupRequest,
+            $0.CloseAtlasGroupResponse>(
+        'CloseAtlasGroup',
+        closeAtlasGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CloseAtlasGroupRequest.fromBuffer(value),
+        ($0.CloseAtlasGroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportAtlasGroupRequest,
+            $0.ReportAtlasGroupResponse>(
+        'ReportAtlasGroup',
+        reportAtlasGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportAtlasGroupRequest.fromBuffer(value),
+        ($0.ReportAtlasGroupResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.ListLiveRoomsRequest, $0.ListLiveRoomsResponse>(
             'ListLiveRooms',
@@ -1801,6 +1927,60 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListAtlasMapPointsResponse> listAtlasMapPoints(
       $grpc.ServiceCall call, $0.ListAtlasMapPointsRequest request);
+
+  $async.Future<$0.ListAtlasGroupsResponse> listAtlasGroups_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListAtlasGroupsRequest> $request) async {
+    return listAtlasGroups($call, await $request);
+  }
+
+  $async.Future<$0.ListAtlasGroupsResponse> listAtlasGroups(
+      $grpc.ServiceCall call, $0.ListAtlasGroupsRequest request);
+
+  $async.Future<$0.CreateAtlasGroupResponse> createAtlasGroup_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateAtlasGroupRequest> $request) async {
+    return createAtlasGroup($call, await $request);
+  }
+
+  $async.Future<$0.CreateAtlasGroupResponse> createAtlasGroup(
+      $grpc.ServiceCall call, $0.CreateAtlasGroupRequest request);
+
+  $async.Future<$0.JoinAtlasGroupResponse> joinAtlasGroup_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.JoinAtlasGroupRequest> $request) async {
+    return joinAtlasGroup($call, await $request);
+  }
+
+  $async.Future<$0.JoinAtlasGroupResponse> joinAtlasGroup(
+      $grpc.ServiceCall call, $0.JoinAtlasGroupRequest request);
+
+  $async.Future<$0.LeaveAtlasGroupResponse> leaveAtlasGroup_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.LeaveAtlasGroupRequest> $request) async {
+    return leaveAtlasGroup($call, await $request);
+  }
+
+  $async.Future<$0.LeaveAtlasGroupResponse> leaveAtlasGroup(
+      $grpc.ServiceCall call, $0.LeaveAtlasGroupRequest request);
+
+  $async.Future<$0.CloseAtlasGroupResponse> closeAtlasGroup_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CloseAtlasGroupRequest> $request) async {
+    return closeAtlasGroup($call, await $request);
+  }
+
+  $async.Future<$0.CloseAtlasGroupResponse> closeAtlasGroup(
+      $grpc.ServiceCall call, $0.CloseAtlasGroupRequest request);
+
+  $async.Future<$0.ReportAtlasGroupResponse> reportAtlasGroup_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportAtlasGroupRequest> $request) async {
+    return reportAtlasGroup($call, await $request);
+  }
+
+  $async.Future<$0.ReportAtlasGroupResponse> reportAtlasGroup(
+      $grpc.ServiceCall call, $0.ReportAtlasGroupRequest request);
 
   $async.Future<$0.ListLiveRoomsResponse> listLiveRooms_Pre(
       $grpc.ServiceCall $call,
