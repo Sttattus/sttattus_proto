@@ -844,6 +844,9 @@ const AkashicChapter$json = {
     {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
     {'1': 'body', '3': 4, '4': 1, '5': 9, '10': 'body'},
     {'1': 'visibility', '3': 5, '4': 1, '5': 9, '10': 'visibility'},
+    {'1': 'hidden', '3': 6, '4': 1, '5': 8, '10': 'hidden'},
+    {'1': 'hidden_reason', '3': 7, '4': 1, '5': 9, '10': 'hiddenReason'},
+    {'1': 'reported', '3': 8, '4': 1, '5': 8, '10': 'reported'},
   ],
 };
 
@@ -851,7 +854,9 @@ const AkashicChapter$json = {
 final $typed_data.Uint8List akashicChapterDescriptor = $convert.base64Decode(
     'Cg5Ba2FzaGljQ2hhcHRlchIOCgJpZBgBIAEoCVICaWQSHwoLY2hhcHRlcl9rZXkYAiABKAlSCm'
     'NoYXB0ZXJLZXkSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhIKBGJvZHkYBCABKAlSBGJvZHkSHgoK'
-    'dmlzaWJpbGl0eRgFIAEoCVIKdmlzaWJpbGl0eQ==');
+    'dmlzaWJpbGl0eRgFIAEoCVIKdmlzaWJpbGl0eRIWCgZoaWRkZW4YBiABKAhSBmhpZGRlbhIjCg'
+    '1oaWRkZW5fcmVhc29uGAcgASgJUgxoaWRkZW5SZWFzb24SGgoIcmVwb3J0ZWQYCCABKAhSCHJl'
+    'cG9ydGVk');
 
 @$core.Deprecated('Use listAuthorAkashicRequestDescriptor instead')
 const ListAuthorAkashicRequest$json = {
@@ -888,6 +893,7 @@ const ListVisibleAkashicRequest$json = {
   '1': 'ListVisibleAkashicRequest',
   '2': [
     {'1': 'target_user_id', '3': 1, '4': 1, '5': 9, '10': 'targetUserId'},
+    {'1': 'preview_as', '3': 2, '4': 1, '5': 9, '10': 'previewAs'},
   ],
 };
 
@@ -895,7 +901,7 @@ const ListVisibleAkashicRequest$json = {
 final $typed_data.Uint8List listVisibleAkashicRequestDescriptor =
     $convert.base64Decode(
         'ChlMaXN0VmlzaWJsZUFrYXNoaWNSZXF1ZXN0EiQKDnRhcmdldF91c2VyX2lkGAEgASgJUgx0YX'
-        'JnZXRVc2VySWQ=');
+        'JnZXRVc2VySWQSHQoKcHJldmlld19hcxgCIAEoCVIJcHJldmlld0Fz');
 
 @$core.Deprecated('Use listVisibleAkashicResponseDescriptor instead')
 const ListVisibleAkashicResponse$json = {
@@ -917,6 +923,30 @@ final $typed_data.Uint8List listVisibleAkashicResponseDescriptor =
     $convert.base64Decode(
         'ChpMaXN0VmlzaWJsZUFrYXNoaWNSZXNwb25zZRI+CghjaGFwdGVycxgBIAMoCzIiLnN0dGF0dH'
         'VzLmRhdGluZy52MS5Ba2FzaGljQ2hhcHRlclIIY2hhcHRlcnM=');
+
+@$core.Deprecated('Use reportAkashicChapterRequestDescriptor instead')
+const ReportAkashicChapterRequest$json = {
+  '1': 'ReportAkashicChapterRequest',
+  '2': [
+    {'1': 'chapter_id', '3': 1, '4': 1, '5': 9, '10': 'chapterId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `ReportAkashicChapterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportAkashicChapterRequestDescriptor =
+    $convert.base64Decode(
+        'ChtSZXBvcnRBa2FzaGljQ2hhcHRlclJlcXVlc3QSHQoKY2hhcHRlcl9pZBgBIAEoCVIJY2hhcH'
+        'RlcklkEhYKBnJlYXNvbhgCIAEoCVIGcmVhc29u');
+
+@$core.Deprecated('Use reportAkashicChapterResponseDescriptor instead')
+const ReportAkashicChapterResponse$json = {
+  '1': 'ReportAkashicChapterResponse',
+};
+
+/// Descriptor for `ReportAkashicChapterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportAkashicChapterResponseDescriptor =
+    $convert.base64Decode('ChxSZXBvcnRBa2FzaGljQ2hhcHRlclJlc3BvbnNl');
 
 @$core.Deprecated('Use upsertAkashicChapterRequestDescriptor instead')
 const UpsertAkashicChapterRequest$json = {

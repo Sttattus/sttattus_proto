@@ -270,7 +270,15 @@ message AkashicChapter {
   string chapter_key = 2;
   string title = 3;
   string body = 4;
+  // public | matched | private
   string visibility = 5;
+  // Atlas staff hid it after a report. Only the author still sees it; set on
+  // ListAuthorAkashic only.
+  bool hidden = 6;
+  // offensive | spam | misleading | impersonation | other
+  string hidden_reason = 7;
+  // The viewer has already reported it. ListVisibleAkashic only.
+  bool reported = 8;
 }
 
 message ListAuthorAkashicRequest {}
@@ -279,11 +287,24 @@ message ListAuthorAkashicResponse {
 }
 
 message ListVisibleAkashicRequest {
+  // Empty is the caller's own record.
   string target_user_id = 1;
+  // The author previewing their own record: "match" shows what a match reads,
+  // anything else what any member reads. Ignored for another member's record.
+  string preview_as = 2;
 }
 message ListVisibleAkashicResponse {
   repeated AkashicChapter chapters = 1;
 }
+
+// A member reports a chapter they can read. Once per chapter; Atlas staff
+// review it on the Admin desk and may hide it.
+message ReportAkashicChapterRequest {
+  string chapter_id = 1;
+  // offensive | spam | misleading | impersonation | other
+  string reason = 2;
+}
+message ReportAkashicChapterResponse {}
 
 message UpsertAkashicChapterRequest {
   string chapter_key = 1;
@@ -488,7 +509,7 @@ message ListAtlasGroupsResponse {
 }
 
 message CreateAtlasGroupRequest {
-  string name = 1;        // 3-40 characters, no links or contact details
+  string name = 1; // 3-40 characters, no links or contact details
   string description = 2; // up to 140 characters, same rules
 }
 message CreateAtlasGroupResponse {
@@ -975,6 +996,7 @@ service DatingService {
   rpc ListVisibleAkashic(ListVisibleAkashicRequest) returns (ListVisibleAkashicResponse);
   rpc UpsertAkashicChapter(UpsertAkashicChapterRequest) returns (UpsertAkashicChapterResponse);
   rpc DeleteAkashicChapter(DeleteAkashicChapterRequest) returns (DeleteAkashicChapterResponse);
+  rpc ReportAkashicChapter(ReportAkashicChapterRequest) returns (ReportAkashicChapterResponse);
 
   rpc ListMyBlocks(ListMyBlocksRequest) returns (ListMyBlocksResponse);
   rpc BlockUser(BlockUserRequest) returns (BlockUserResponse);

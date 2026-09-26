@@ -36,6 +36,7 @@ const (
 	DatingService_ListVisibleAkashic_FullMethodName         = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
 	DatingService_UpsertAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
 	DatingService_DeleteAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ReportAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/ReportAkashicChapter"
 	DatingService_ListMyBlocks_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMyBlocks"
 	DatingService_BlockUser_FullMethodName                  = "/sttattus.dating.v1.DatingService/BlockUser"
 	DatingService_UnblockUser_FullMethodName                = "/sttattus.dating.v1.DatingService/UnblockUser"
@@ -119,6 +120,7 @@ type DatingServiceClient interface {
 	ListVisibleAkashic(ctx context.Context, in *ListVisibleAkashicRequest, opts ...grpc.CallOption) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(ctx context.Context, in *UpsertAkashicChapterRequest, opts ...grpc.CallOption) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(ctx context.Context, in *DeleteAkashicChapterRequest, opts ...grpc.CallOption) (*DeleteAkashicChapterResponse, error)
+	ReportAkashicChapter(ctx context.Context, in *ReportAkashicChapterRequest, opts ...grpc.CallOption) (*ReportAkashicChapterResponse, error)
 	ListMyBlocks(ctx context.Context, in *ListMyBlocksRequest, opts ...grpc.CallOption) (*ListMyBlocksResponse, error)
 	BlockUser(ctx context.Context, in *BlockUserRequest, opts ...grpc.CallOption) (*BlockUserResponse, error)
 	UnblockUser(ctx context.Context, in *UnblockUserRequest, opts ...grpc.CallOption) (*UnblockUserResponse, error)
@@ -399,6 +401,16 @@ func (c *datingServiceClient) DeleteAkashicChapter(ctx context.Context, in *Dele
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(DeleteAkashicChapterResponse)
 	err := c.cc.Invoke(ctx, DatingService_DeleteAkashicChapter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ReportAkashicChapter(ctx context.Context, in *ReportAkashicChapterRequest, opts ...grpc.CallOption) (*ReportAkashicChapterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportAkashicChapterResponse)
+	err := c.cc.Invoke(ctx, DatingService_ReportAkashicChapter_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1017,6 +1029,7 @@ type DatingServiceServer interface {
 	ListVisibleAkashic(context.Context, *ListVisibleAkashicRequest) (*ListVisibleAkashicResponse, error)
 	UpsertAkashicChapter(context.Context, *UpsertAkashicChapterRequest) (*UpsertAkashicChapterResponse, error)
 	DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error)
+	ReportAkashicChapter(context.Context, *ReportAkashicChapterRequest) (*ReportAkashicChapterResponse, error)
 	ListMyBlocks(context.Context, *ListMyBlocksRequest) (*ListMyBlocksResponse, error)
 	BlockUser(context.Context, *BlockUserRequest) (*BlockUserResponse, error)
 	UnblockUser(context.Context, *UnblockUserRequest) (*UnblockUserResponse, error)
@@ -1165,6 +1178,9 @@ func (UnimplementedDatingServiceServer) UpsertAkashicChapter(context.Context, *U
 }
 func (UnimplementedDatingServiceServer) DeleteAkashicChapter(context.Context, *DeleteAkashicChapterRequest) (*DeleteAkashicChapterResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method DeleteAkashicChapter not implemented")
+}
+func (UnimplementedDatingServiceServer) ReportAkashicChapter(context.Context, *ReportAkashicChapterRequest) (*ReportAkashicChapterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportAkashicChapter not implemented")
 }
 func (UnimplementedDatingServiceServer) ListMyBlocks(context.Context, *ListMyBlocksRequest) (*ListMyBlocksResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyBlocks not implemented")
@@ -1652,6 +1668,24 @@ func _DatingService_DeleteAkashicChapter_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DatingServiceServer).DeleteAkashicChapter(ctx, req.(*DeleteAkashicChapterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ReportAkashicChapter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportAkashicChapterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ReportAkashicChapter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ReportAkashicChapter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ReportAkashicChapter(ctx, req.(*ReportAkashicChapterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2784,6 +2818,10 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteAkashicChapter",
 			Handler:    _DatingService_DeleteAkashicChapter_Handler,
+		},
+		{
+			MethodName: "ReportAkashicChapter",
+			Handler:    _DatingService_ReportAkashicChapter_Handler,
 		},
 		{
 			MethodName: "ListMyBlocks",

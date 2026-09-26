@@ -156,6 +156,13 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAkashicChapter, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ReportAkashicChapterResponse> reportAkashicChapter(
+    $0.ReportAkashicChapterRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportAkashicChapter, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.ListMyBlocksResponse> listMyBlocks(
     $0.ListMyBlocksRequest request, {
     $grpc.CallOptions? options,
@@ -698,6 +705,11 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/DeleteAkashicChapter',
       ($0.DeleteAkashicChapterRequest value) => value.writeToBuffer(),
       $0.DeleteAkashicChapterResponse.fromBuffer);
+  static final _$reportAkashicChapter = $grpc.ClientMethod<
+          $0.ReportAkashicChapterRequest, $0.ReportAkashicChapterResponse>(
+      '/sttattus.dating.v1.DatingService/ReportAkashicChapter',
+      ($0.ReportAkashicChapterRequest value) => value.writeToBuffer(),
+      $0.ReportAkashicChapterResponse.fromBuffer);
   static final _$listMyBlocks =
       $grpc.ClientMethod<$0.ListMyBlocksRequest, $0.ListMyBlocksResponse>(
           '/sttattus.dating.v1.DatingService/ListMyBlocks',
@@ -1151,6 +1163,15 @@ abstract class DatingServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.DeleteAkashicChapterRequest.fromBuffer(value),
         ($0.DeleteAkashicChapterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportAkashicChapterRequest,
+            $0.ReportAkashicChapterResponse>(
+        'ReportAkashicChapter',
+        reportAkashicChapter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportAkashicChapterRequest.fromBuffer(value),
+        ($0.ReportAkashicChapterResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.ListMyBlocksRequest, $0.ListMyBlocksResponse>(
             'ListMyBlocks',
@@ -1822,6 +1843,15 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.DeleteAkashicChapterResponse> deleteAkashicChapter(
       $grpc.ServiceCall call, $0.DeleteAkashicChapterRequest request);
+
+  $async.Future<$0.ReportAkashicChapterResponse> reportAkashicChapter_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportAkashicChapterRequest> $request) async {
+    return reportAkashicChapter($call, await $request);
+  }
+
+  $async.Future<$0.ReportAkashicChapterResponse> reportAkashicChapter(
+      $grpc.ServiceCall call, $0.ReportAkashicChapterRequest request);
 
   $async.Future<$0.ListMyBlocksResponse> listMyBlocks_Pre(
       $grpc.ServiceCall $call,

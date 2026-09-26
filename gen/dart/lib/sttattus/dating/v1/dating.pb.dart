@@ -2923,6 +2923,9 @@ class AkashicChapter extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? body,
     $core.String? visibility,
+    $core.bool? hidden,
+    $core.String? hiddenReason,
+    $core.bool? reported,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2930,6 +2933,9 @@ class AkashicChapter extends $pb.GeneratedMessage {
     if (title != null) result.title = title;
     if (body != null) result.body = body;
     if (visibility != null) result.visibility = visibility;
+    if (hidden != null) result.hidden = hidden;
+    if (hiddenReason != null) result.hiddenReason = hiddenReason;
+    if (reported != null) result.reported = reported;
     return result;
   }
 
@@ -2952,6 +2958,9 @@ class AkashicChapter extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'title')
     ..aOS(4, _omitFieldNames ? '' : 'body')
     ..aOS(5, _omitFieldNames ? '' : 'visibility')
+    ..aOB(6, _omitFieldNames ? '' : 'hidden')
+    ..aOS(7, _omitFieldNames ? '' : 'hiddenReason')
+    ..aOB(8, _omitFieldNames ? '' : 'reported')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3009,6 +3018,7 @@ class AkashicChapter extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearBody() => $_clearField(4);
 
+  /// public | matched | private
   @$pb.TagNumber(5)
   $core.String get visibility => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -3017,6 +3027,37 @@ class AkashicChapter extends $pb.GeneratedMessage {
   $core.bool hasVisibility() => $_has(4);
   @$pb.TagNumber(5)
   void clearVisibility() => $_clearField(5);
+
+  /// Atlas staff hid it after a report. Only the author still sees it; set on
+  /// ListAuthorAkashic only.
+  @$pb.TagNumber(6)
+  $core.bool get hidden => $_getBF(5);
+  @$pb.TagNumber(6)
+  set hidden($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHidden() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHidden() => $_clearField(6);
+
+  /// offensive | spam | misleading | impersonation | other
+  @$pb.TagNumber(7)
+  $core.String get hiddenReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set hiddenReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasHiddenReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHiddenReason() => $_clearField(7);
+
+  /// The viewer has already reported it. ListVisibleAkashic only.
+  @$pb.TagNumber(8)
+  $core.bool get reported => $_getBF(7);
+  @$pb.TagNumber(8)
+  set reported($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReported() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReported() => $_clearField(8);
 }
 
 class ListAuthorAkashicRequest extends $pb.GeneratedMessage {
@@ -3113,9 +3154,11 @@ class ListAuthorAkashicResponse extends $pb.GeneratedMessage {
 class ListVisibleAkashicRequest extends $pb.GeneratedMessage {
   factory ListVisibleAkashicRequest({
     $core.String? targetUserId,
+    $core.String? previewAs,
   }) {
     final result = create();
     if (targetUserId != null) result.targetUserId = targetUserId;
+    if (previewAs != null) result.previewAs = previewAs;
     return result;
   }
 
@@ -3134,6 +3177,7 @@ class ListVisibleAkashicRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'previewAs')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3156,6 +3200,7 @@ class ListVisibleAkashicRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ListVisibleAkashicRequest>(create);
   static ListVisibleAkashicRequest? _defaultInstance;
 
+  /// Empty is the caller's own record.
   @$pb.TagNumber(1)
   $core.String get targetUserId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -3164,6 +3209,17 @@ class ListVisibleAkashicRequest extends $pb.GeneratedMessage {
   $core.bool hasTargetUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearTargetUserId() => $_clearField(1);
+
+  /// The author previewing their own record: "match" shows what a match reads,
+  /// anything else what any member reads. Ignored for another member's record.
+  @$pb.TagNumber(2)
+  $core.String get previewAs => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set previewAs($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPreviewAs() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPreviewAs() => $_clearField(2);
 }
 
 class ListVisibleAkashicResponse extends $pb.GeneratedMessage {
@@ -3216,6 +3272,121 @@ class ListVisibleAkashicResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<AkashicChapter> get chapters => $_getList(0);
+}
+
+/// A member reports a chapter they can read. Once per chapter; Atlas staff
+/// review it on the Admin desk and may hide it.
+class ReportAkashicChapterRequest extends $pb.GeneratedMessage {
+  factory ReportAkashicChapterRequest({
+    $core.String? chapterId,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (chapterId != null) result.chapterId = chapterId;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  ReportAkashicChapterRequest._();
+
+  factory ReportAkashicChapterRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportAkashicChapterRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportAkashicChapterRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'chapterId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAkashicChapterRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAkashicChapterRequest copyWith(
+          void Function(ReportAkashicChapterRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportAkashicChapterRequest))
+          as ReportAkashicChapterRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportAkashicChapterRequest create() =>
+      ReportAkashicChapterRequest._();
+  @$core.override
+  ReportAkashicChapterRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportAkashicChapterRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportAkashicChapterRequest>(create);
+  static ReportAkashicChapterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get chapterId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set chapterId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasChapterId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearChapterId() => $_clearField(1);
+
+  /// offensive | spam | misleading | impersonation | other
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+}
+
+class ReportAkashicChapterResponse extends $pb.GeneratedMessage {
+  factory ReportAkashicChapterResponse() => create();
+
+  ReportAkashicChapterResponse._();
+
+  factory ReportAkashicChapterResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportAkashicChapterResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportAkashicChapterResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAkashicChapterResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportAkashicChapterResponse copyWith(
+          void Function(ReportAkashicChapterResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportAkashicChapterResponse))
+          as ReportAkashicChapterResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportAkashicChapterResponse create() =>
+      ReportAkashicChapterResponse._();
+  @$core.override
+  ReportAkashicChapterResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportAkashicChapterResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportAkashicChapterResponse>(create);
+  static ReportAkashicChapterResponse? _defaultInstance;
 }
 
 class UpsertAkashicChapterRequest extends $pb.GeneratedMessage {

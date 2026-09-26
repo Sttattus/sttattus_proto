@@ -1931,9 +1931,33 @@ export class AkashicChapter extends Message$1<AkashicChapter> {
   body = "";
 
   /**
+   * public | matched | private
+   *
    * @generated from field: string visibility = 5;
    */
   visibility = "";
+
+  /**
+   * Atlas staff hid it after a report. Only the author still sees it; set on
+   * ListAuthorAkashic only.
+   *
+   * @generated from field: bool hidden = 6;
+   */
+  hidden = false;
+
+  /**
+   * offensive | spam | misleading | impersonation | other
+   *
+   * @generated from field: string hidden_reason = 7;
+   */
+  hiddenReason = "";
+
+  /**
+   * The viewer has already reported it. ListVisibleAkashic only.
+   *
+   * @generated from field: bool reported = 8;
+   */
+  reported = false;
 
   constructor(data?: PartialMessage<AkashicChapter>) {
     super();
@@ -1948,6 +1972,9 @@ export class AkashicChapter extends Message$1<AkashicChapter> {
     { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "visibility", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "hidden", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "hidden_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "reported", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AkashicChapter {
@@ -2040,9 +2067,19 @@ export class ListAuthorAkashicResponse extends Message$1<ListAuthorAkashicRespon
  */
 export class ListVisibleAkashicRequest extends Message$1<ListVisibleAkashicRequest> {
   /**
+   * Empty is the caller's own record.
+   *
    * @generated from field: string target_user_id = 1;
    */
   targetUserId = "";
+
+  /**
+   * The author previewing their own record: "match" shows what a match reads,
+   * anything else what any member reads. Ignored for another member's record.
+   *
+   * @generated from field: string preview_as = 2;
+   */
+  previewAs = "";
 
   constructor(data?: PartialMessage<ListVisibleAkashicRequest>) {
     super();
@@ -2053,6 +2090,7 @@ export class ListVisibleAkashicRequest extends Message$1<ListVisibleAkashicReque
   static readonly typeName = "sttattus.dating.v1.ListVisibleAkashicRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "preview_as", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVisibleAkashicRequest {
@@ -2106,6 +2144,85 @@ export class ListVisibleAkashicResponse extends Message$1<ListVisibleAkashicResp
 
   static equals(a: ListVisibleAkashicResponse | PlainMessage<ListVisibleAkashicResponse> | undefined, b: ListVisibleAkashicResponse | PlainMessage<ListVisibleAkashicResponse> | undefined): boolean {
     return proto3.util.equals(ListVisibleAkashicResponse, a, b);
+  }
+}
+
+/**
+ * A member reports a chapter they can read. Once per chapter; Atlas staff
+ * review it on the Admin desk and may hide it.
+ *
+ * @generated from message sttattus.dating.v1.ReportAkashicChapterRequest
+ */
+export class ReportAkashicChapterRequest extends Message$1<ReportAkashicChapterRequest> {
+  /**
+   * @generated from field: string chapter_id = 1;
+   */
+  chapterId = "";
+
+  /**
+   * offensive | spam | misleading | impersonation | other
+   *
+   * @generated from field: string reason = 2;
+   */
+  reason = "";
+
+  constructor(data?: PartialMessage<ReportAkashicChapterRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReportAkashicChapterRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "chapter_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportAkashicChapterRequest {
+    return new ReportAkashicChapterRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportAkashicChapterRequest {
+    return new ReportAkashicChapterRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportAkashicChapterRequest {
+    return new ReportAkashicChapterRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportAkashicChapterRequest | PlainMessage<ReportAkashicChapterRequest> | undefined, b: ReportAkashicChapterRequest | PlainMessage<ReportAkashicChapterRequest> | undefined): boolean {
+    return proto3.util.equals(ReportAkashicChapterRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ReportAkashicChapterResponse
+ */
+export class ReportAkashicChapterResponse extends Message$1<ReportAkashicChapterResponse> {
+  constructor(data?: PartialMessage<ReportAkashicChapterResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ReportAkashicChapterResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportAkashicChapterResponse {
+    return new ReportAkashicChapterResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportAkashicChapterResponse {
+    return new ReportAkashicChapterResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportAkashicChapterResponse {
+    return new ReportAkashicChapterResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportAkashicChapterResponse | PlainMessage<ReportAkashicChapterResponse> | undefined, b: ReportAkashicChapterResponse | PlainMessage<ReportAkashicChapterResponse> | undefined): boolean {
+    return proto3.util.equals(ReportAkashicChapterResponse, a, b);
   }
 }
 
