@@ -171,6 +171,54 @@ proto3.util.setEnumType(StudyItemKind, "sttattus.languages.v1.StudyItemKind", [
 ]);
 
 /**
+ * Whether a practice session could introduce new material.
+ *
+ * @generated from enum sttattus.languages.v1.NewMaterialStatus
+ */
+export enum NewMaterialStatus {
+  /**
+   * @generated from enum value: NEW_MATERIAL_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * New items were offered (or none were due to be, within the daily budget).
+   *
+   * @generated from enum value: NEW_MATERIAL_STATUS_OPEN = 1;
+   */
+  OPEN = 1,
+
+  /**
+   * No level of this course is available yet; reviews continue.
+   *
+   * @generated from enum value: NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION = 2;
+   */
+  PAUSED_IN_PREPARATION = 2,
+
+  /**
+   * The level the member reached is released but held while a gate is fixed.
+   *
+   * @generated from enum value: NEW_MATERIAL_STATUS_PAUSED_HELD = 3;
+   */
+  PAUSED_HELD = 3,
+
+  /**
+   * Every available item has been introduced; the next level is not open yet.
+   *
+   * @generated from enum value: NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED = 4;
+   */
+  LEVEL_EXHAUSTED = 4,
+}
+// Retrieve enum metadata with: proto3.getEnumType(NewMaterialStatus)
+proto3.util.setEnumType(NewMaterialStatus, "sttattus.languages.v1.NewMaterialStatus", [
+  { no: 0, name: "NEW_MATERIAL_STATUS_UNSPECIFIED" },
+  { no: 1, name: "NEW_MATERIAL_STATUS_OPEN" },
+  { no: 2, name: "NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION" },
+  { no: 3, name: "NEW_MATERIAL_STATUS_PAUSED_HELD" },
+  { no: 4, name: "NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED" },
+]);
+
+/**
  * CulturalNuance represents a specific rule of social grace or etiquette.
  *
  * @generated from message sttattus.languages.v1.CulturalNuance
@@ -968,6 +1016,31 @@ export class CulturalModule extends Message<CulturalModule> {
    */
   completed = false;
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 12;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 13;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 14;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 15;
+   */
+  pilot = false;
+
   constructor(data?: PartialMessage<CulturalModule>) {
     super();
     proto3.util.initPartial(data, this);
@@ -987,6 +1060,10 @@ export class CulturalModule extends Message<CulturalModule> {
     { no: 9, name: "duration_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "min_cefr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CulturalModule {
@@ -1524,6 +1601,31 @@ export class SpeakingPrompt extends Message<SpeakingPrompt> {
    */
   translation = "";
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 6;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 7;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 8;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 9;
+   */
+  pilot = false;
+
   constructor(data?: PartialMessage<SpeakingPrompt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1537,6 +1639,10 @@ export class SpeakingPrompt extends Message<SpeakingPrompt> {
     { no: 3, name: "cefr_target", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "phrase", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingPrompt {
@@ -2021,6 +2127,31 @@ export class ImmersionClip extends Message<ImmersionClip> {
    */
   completed = false;
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 12;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 13;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 14;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 15;
+   */
+  pilot = false;
+
   constructor(data?: PartialMessage<ImmersionClip>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2040,6 +2171,10 @@ export class ImmersionClip extends Message<ImmersionClip> {
     { no: 9, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "source_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "completed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImmersionClip {
@@ -2972,6 +3107,39 @@ export class WritingPrompt extends Message<WritingPrompt> {
    */
   maxWords = 0;
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 8;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 9;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 10;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 11;
+   */
+  pilot = false;
+
+  /**
+   * The task explained in the member's base language (the prompt itself is in
+   * the target language). Empty when that copy does not exist yet.
+   *
+   * @generated from field: string prompt_translation = 12;
+   */
+  promptTranslation = "";
+
   constructor(data?: PartialMessage<WritingPrompt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2987,6 +3155,11 @@ export class WritingPrompt extends Message<WritingPrompt> {
     { no: 5, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "min_words", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "max_words", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "prompt_translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WritingPrompt {
@@ -3618,6 +3791,31 @@ export class ReadingText extends Message<ReadingText> {
    */
   wordCount = 0;
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 10;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 11;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 12;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 13;
+   */
+  pilot = false;
+
   constructor(data?: PartialMessage<ReadingText>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3635,6 +3833,10 @@ export class ReadingText extends Message<ReadingText> {
     { no: 7, name: "translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "source_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "word_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReadingText {
@@ -3854,6 +4056,31 @@ export class Idiom extends Message<Idiom> {
    */
   note = "";
 
+  /**
+   * Lexicon Choice 1: which governed content unit and revision this came
+   * from, whether it is a pilot the member was invited to, and the language
+   * its explanatory copy is actually in (the base language when that copy
+   * exists; English otherwise, which the app says out loud).
+   *
+   * @generated from field: string copy_language = 9;
+   */
+  copyLanguage = "";
+
+  /**
+   * @generated from field: string content_unit_id = 10;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 11;
+   */
+  contentRevision = 0;
+
+  /**
+   * @generated from field: bool pilot = 12;
+   */
+  pilot = false;
+
   constructor(data?: PartialMessage<Idiom>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3870,6 +4097,10 @@ export class Idiom extends Message<Idiom> {
     { no: 6, name: "example", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "register", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Idiom {
@@ -5175,6 +5406,43 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   irregular = false;
 
+  /**
+   * Lexicon Choice 1 — content lineage. The governed unit and revision this
+   * card was built from; SubmitAnswer echoes them so the answer is recorded
+   * against what the member actually saw.
+   *
+   * @generated from field: string content_unit_id = 22;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 23;
+   */
+  contentRevision = 0;
+
+  /**
+   * Material being piloted with a cohort the member belongs to.
+   *
+   * @generated from field: bool pilot = 24;
+   */
+  pilot = false;
+
+  /**
+   * The item changed since the member last answered it (a correction was
+   * published), so the app can say so instead of looking inconsistent.
+   *
+   * @generated from field: bool corrected_since_seen = 25;
+   */
+  correctedSinceSeen = false;
+
+  /**
+   * The language the prompt detail, rationale and point title are written
+   * in. Equal to base_language unless that copy does not exist yet.
+   *
+   * @generated from field: string copy_language = 26;
+   */
+  copyLanguage = "";
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5204,6 +5472,11 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 19, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "point_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 21, name: "irregular", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 22, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 25, name: "corrected_since_seen", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 26, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -5308,6 +5581,14 @@ export class GetPracticeSessionResponse extends Message<GetPracticeSessionRespon
    */
   corpusEmpty = false;
 
+  /**
+   * Lexicon Choice 1 — whether this session could introduce new material,
+   * and if not, why. Due reviews are always served.
+   *
+   * @generated from field: sttattus.languages.v1.NewMaterialStatus new_material = 5;
+   */
+  newMaterial = NewMaterialStatus.UNSPECIFIED;
+
   constructor(data?: PartialMessage<GetPracticeSessionResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5320,6 +5601,7 @@ export class GetPracticeSessionResponse extends Message<GetPracticeSessionRespon
     { no: 2, name: "due_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "new_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "corpus_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "new_material", kind: "enum", T: proto3.getEnumType(NewMaterialStatus) },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeSessionResponse {
@@ -5389,6 +5671,18 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   itemId = "";
 
+  /**
+   * Lexicon Choice 1 — the unit and revision the card was built from.
+   *
+   * @generated from field: string content_unit_id = 9;
+   */
+  contentUnitId = "";
+
+  /**
+   * @generated from field: int32 content_revision = 10;
+   */
+  contentRevision = 0;
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5405,6 +5699,8 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 6, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "item_kind", kind: "enum", T: proto3.getEnumType(StudyItemKind) },
     { no: 8, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {

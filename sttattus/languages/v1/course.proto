@@ -1,0 +1,317 @@
+syntax = "proto3";
+
+package sttattus.languages.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
+
+// ============================================================================
+// Lexicon Choice 1 — Language Factory and Coverage Contract (member side)
+// ============================================================================
+//
+// A course is one target language taught from one base language (the language
+// the member already speaks). A course level (A1…C2) is offered only when the
+// coverage contract passes for it: curriculum, exercises, audio, review,
+// assessment, base-language copy, an offline pack and Admin operability. This
+// service tells the member, in data the app renders in plain words, which
+// levels exist, what they contain, and what is still being built.
+
+// How a course level stands for this member.
+enum CourseLevelState {
+  COURSE_LEVEL_STATE_UNSPECIFIED = 0;
+  // Released and every gate passes: new material, enrolment and the offline
+  // pack are open.
+  COURSE_LEVEL_STATE_AVAILABLE = 1;
+  // Not released to everyone; this member is in a pilot cohort testing
+  // material at this level.
+  COURSE_LEVEL_STATE_PILOT = 2;
+  // Never released, or not yet passing. Earned reviews continue; nothing new
+  // is introduced from it.
+  COURSE_LEVEL_STATE_IN_PREPARATION = 3;
+  // Was released, but a gate has since failed (for example audio went
+  // missing). New material pauses until it is fixed; earned reviews continue.
+  COURSE_LEVEL_STATE_HELD = 4;
+}
+
+// The eight parts of the coverage contract.
+enum CoverageGate {
+  COVERAGE_GATE_UNSPECIFIED = 0;
+  COVERAGE_GATE_CURRICULUM = 1;
+  COVERAGE_GATE_EXERCISES = 2;
+  COVERAGE_GATE_AUDIO = 3;
+  COVERAGE_GATE_REVIEW = 4;
+  COVERAGE_GATE_ASSESSMENT = 5;
+  COVERAGE_GATE_LOCALE = 6;
+  COVERAGE_GATE_OFFLINE = 7;
+  COVERAGE_GATE_ADMIN = 8;
+}
+
+// A kind of practice a level can offer.
+enum CourseSkill {
+  COURSE_SKILL_UNSPECIFIED = 0;
+  COURSE_SKILL_VOCABULARY = 1;
+  COURSE_SKILL_GRAMMAR = 2;
+  COURSE_SKILL_LISTENING = 3;
+  COURSE_SKILL_READING = 4;
+  COURSE_SKILL_SPEAKING = 5;
+  COURSE_SKILL_WRITING = 6;
+  COURSE_SKILL_CULTURE = 7;
+}
+
+// One gate of one level. `missing` is how many items still stand between the
+// level and passing that gate (0 when it passes); the app turns it into words
+// such as "3 words still need audio".
+message CourseGateStatus {
+  CoverageGate gate = 1;
+  bool passed = 2;
+  int32 missing = 3;
+}
+
+// What an offline pack for a level weighs and when it was built.
+message CoursePackSummary {
+  string content_digest = 1;
+  int64 bytes = 2;
+  int32 item_count = 3;
+  int32 audio_count = 4;
+  google.protobuf.Timestamp built_at = 5;
+}
+
+message CourseLevel {
+  string cefr_level = 1;
+  CourseLevelState state = 2;
+  // Every gate, passed or not, so the app can say what is still being built.
+  repeated CourseGateStatus gates = 3;
+  // Skills this level can actually offer in this base language.
+  repeated CourseSkill skills = 4;
+  int32 word_count = 5;
+  int32 grammar_topic_count = 6;
+  int32 verb_count = 7;
+  int32 placement_item_count = 8;
+  // Present only when a ready pack matches the level's current content.
+  CoursePackSummary pack = 9;
+  // True when the member already has earned reviews from this level, which
+  // continue whatever its state.
+  bool has_progress = 10;
+}
+
+message Course {
+  string target_language = 1;
+  string base_language = 2;
+  repeated CourseLevel levels = 3;
+  bool enrolled = 4;
+  // True when at least one level is available, or in a pilot the member is
+  // part of. A course that is not enrollable is shown, never offered.
+  bool enrollable = 5;
+  bool primary = 6;
+}
+
+message CourseLanguage {
+  string code = 1;
+  // English name, for logs and Admin; the app localises the name itself.
+  string name = 2;
+  // The language's name for itself (Español, Français).
+  string native_name = 3;
+  // True when Lexicon teaches it as a target at all.
+  bool teachable = 4;
+}
+
+// A language the member may declare as the one they already speak, with the
+// number of courses that are currently open to its speakers.
+message BaseLanguageOption {
+  string code = 1;
+  int32 available_courses = 2;
+  // False when this app build does not ship an interface in that language.
+  bool interface_supported = 3;
+}
+
+message GetCourseCatalogRequest {
+  // The interface locales this app build ships (language codes). A base
+  // language whose interface the build lacks cannot pass the locale gate.
+  repeated string interface_locales = 1;
+}
+
+message GetCourseCatalogResponse {
+  string base_language = 1;
+  repeated CourseLanguage languages = 2;
+  // One course per target language other than the base.
+  repeated Course courses = 3;
+  repeated BaseLanguageOption base_language_options = 4;
+  // False only while staff have switched the contract to observe mode.
+  bool enforcement = 5;
+  google.protobuf.Timestamp evaluated_at = 6;
+}
+
+message GetCourseRequest {
+  string target_language = 1;
+  repeated string interface_locales = 2;
+}
+
+message GetCourseResponse {
+  Course course = 1;
+}
+
+// One downloadable file of a pack: the manifest itself or an audio clip.
+message CoursePackFile {
+  // Path inside the pack, e.g. "pack.json" or "audio/3f…a1.wav".
+  string path = 1;
+  // Signed, short-lived download URL.
+  string url = 2;
+  string sha256 = 3;
+  int64 bytes = 4;
+}
+
+message GetCoursePackRequest {
+  string target_language = 1;
+  string cefr_level = 2;
+}
+
+message GetCoursePackResponse {
+  string target_language = 1;
+  string base_language = 2;
+  string cefr_level = 3;
+  // "lexicon-pack-v1".
+  string format = 4;
+  string content_digest = 5;
+  CoursePackFile manifest = 6;
+  repeated CoursePackFile audio = 7;
+  google.protobuf.Timestamp built_at = 8;
+  google.protobuf.Timestamp urls_expire_at = 9;
+}
+
+// What a learner can report.
+enum ContentItemKind {
+  CONTENT_ITEM_KIND_UNSPECIFIED = 0;
+  CONTENT_ITEM_KIND_LEXEME = 1;
+  CONTENT_ITEM_KIND_SENTENCE = 2;
+  CONTENT_ITEM_KIND_GRAMMAR_ITEM = 3;
+  CONTENT_ITEM_KIND_VERB_FORM = 4;
+  CONTENT_ITEM_KIND_SPEAKING_PROMPT = 5;
+  CONTENT_ITEM_KIND_READING_TEXT = 6;
+  CONTENT_ITEM_KIND_IMMERSION_CLIP = 7;
+  CONTENT_ITEM_KIND_IDIOM = 8;
+  CONTENT_ITEM_KIND_CULTURAL_MODULE = 9;
+  CONTENT_ITEM_KIND_WRITING_PROMPT = 10;
+  CONTENT_ITEM_KIND_PLACEMENT_ITEM = 11;
+}
+
+enum ContentReportReason {
+  CONTENT_REPORT_REASON_UNSPECIFIED = 0;
+  CONTENT_REPORT_REASON_WRONG_ANSWER = 1;
+  CONTENT_REPORT_REASON_BAD_TRANSLATION = 2;
+  CONTENT_REPORT_REASON_AUDIO_PROBLEM = 3;
+  CONTENT_REPORT_REASON_CONFUSING = 4;
+  CONTENT_REPORT_REASON_OFFENSIVE = 5;
+  CONTENT_REPORT_REASON_TYPO = 6;
+  CONTENT_REPORT_REASON_OTHER = 7;
+}
+
+enum ContentReportStatus {
+  CONTENT_REPORT_STATUS_UNSPECIFIED = 0;
+  // Received; nobody has looked yet.
+  CONTENT_REPORT_STATUS_OPEN = 1;
+  // A reviewer is looking at it.
+  CONTENT_REPORT_STATUS_TRIAGED = 2;
+  // Corrected; the fix is published.
+  CONTENT_REPORT_STATUS_FIXED = 3;
+  // Reviewed and kept as it is, with the reason in staff_reply.
+  CONTENT_REPORT_STATUS_NO_CHANGE = 4;
+  // Already reported and handled under another report.
+  CONTENT_REPORT_STATUS_DUPLICATE = 5;
+}
+
+message ContentReport {
+  string id = 1;
+  ContentItemKind item_kind = 2;
+  string item_id = 3;
+  // The text the member was looking at (a word, a sentence, a title), so the
+  // list reads as the thing reported rather than an identifier.
+  string item_label = 4;
+  ContentReportReason reason = 5;
+  // The member's own words.
+  string note = 6;
+  ContentReportStatus status = 7;
+  // What the reviewer wrote back to the member.
+  string staff_reply = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp resolved_at = 10;
+  // True once the member has seen the resolution.
+  bool acknowledged = 11;
+  string target_language = 12;
+}
+
+message ReportContentIssueRequest {
+  ContentItemKind item_kind = 1;
+  string item_id = 2;
+  // The revision the member was shown, from the card. 0 when unknown.
+  int32 content_revision = 3;
+  ContentReportReason reason = 4;
+  // Up to 500 characters.
+  string note = 5;
+  // Client-generated UUID; a retry with the same id returns the same report.
+  string client_mutation_id = 6;
+}
+
+message ReportContentIssueResponse {
+  ContentReport report = 1;
+  bool replayed = 2;
+}
+
+message ListMyContentReportsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+}
+
+message ListMyContentReportsResponse {
+  repeated ContentReport reports = 1;
+  string next_page_token = 2;
+  // Resolved reports the member has not acknowledged yet.
+  int32 unread_resolutions = 3;
+}
+
+message AcknowledgeContentReportRequest {
+  string report_id = 1;
+}
+
+message AcknowledgeContentReportResponse {
+  ContentReport report = 1;
+}
+
+// A content pilot the member is part of.
+message Pilot {
+  string cohort_id = 1;
+  // Written by staff for members.
+  string name = 2;
+  string purpose = 3;
+  google.protobuf.Timestamp joined_at = 4;
+  // How many items this pilot is currently testing.
+  int32 pilot_item_count = 5;
+}
+
+message ListMyPilotsRequest {}
+
+message ListMyPilotsResponse {
+  repeated Pilot pilots = 1;
+}
+
+message LeavePilotRequest {
+  string cohort_id = 1;
+}
+
+message LeavePilotResponse {}
+
+service LanguageCourseService {
+  // Every course for the member's base language, with each level's state.
+  rpc GetCourseCatalog(GetCourseCatalogRequest) returns (GetCourseCatalogResponse);
+  // One course in full.
+  rpc GetCourse(GetCourseRequest) returns (GetCourseResponse);
+  // Signed download for the offline pack of an enrolled, available level.
+  rpc GetCoursePack(GetCoursePackRequest) returns (GetCoursePackResponse);
+  // Report a problem with an item the member was shown.
+  rpc ReportContentIssue(ReportContentIssueRequest) returns (ReportContentIssueResponse);
+  rpc ListMyContentReports(ListMyContentReportsRequest) returns (ListMyContentReportsResponse);
+  rpc AcknowledgeContentReport(AcknowledgeContentReportRequest) returns (AcknowledgeContentReportResponse);
+  // Content pilots the member takes part in, and a way out.
+  rpc ListMyPilots(ListMyPilotsRequest) returns (ListMyPilotsResponse);
+  rpc LeavePilot(LeavePilotRequest) returns (LeavePilotResponse);
+}

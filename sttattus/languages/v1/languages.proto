@@ -139,6 +139,15 @@ message CulturalModule {
   int32 duration_minutes = 9;
   string min_cefr = 10;
   bool completed = 11;
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 12;
+  string content_unit_id = 13;
+  int32 content_revision = 14;
+  bool pilot = 15;
 }
 
 message ListCulturalModulesRequest {
@@ -196,6 +205,15 @@ message SpeakingPrompt {
   string cefr_target = 3;
   string phrase = 4;
   string translation = 5;
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 6;
+  string content_unit_id = 7;
+  int32 content_revision = 8;
+  bool pilot = 9;
 }
 
 message PhonemeScore {
@@ -270,6 +288,15 @@ message ImmersionClip {
   int32 duration_seconds = 9;
   string source_note = 10;
   bool completed = 11; // per-user, populated by ListTodayImmersion
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 12;
+  string content_unit_id = 13;
+  int32 content_revision = 14;
+  bool pilot = 15;
 }
 
 message ListTodayImmersionRequest {
@@ -397,6 +424,18 @@ message WritingPrompt {
   string prompt = 5;
   int32 min_words = 6;
   int32 max_words = 7;
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 8;
+  string content_unit_id = 9;
+  int32 content_revision = 10;
+  bool pilot = 11;
+  // The task explained in the member's base language (the prompt itself is in
+  // the target language). Empty when that copy does not exist yet.
+  string prompt_translation = 12;
 }
 
 // RubricScore is one CEFR-aligned scoring dimension of a writing
@@ -491,6 +530,15 @@ message ReadingText {
   string translation = 7; // native-language parallel
   string source_note = 8;
   int32 word_count = 9;
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 10;
+  string content_unit_id = 11;
+  int32 content_revision = 12;
+  bool pilot = 13;
 }
 
 message ListReadingTextsRequest {
@@ -519,6 +567,15 @@ message Idiom {
   string example = 6;
   string register = 7; // formal | informal | slang
   string note = 8;
+
+  // Lexicon Choice 1: which governed content unit and revision this came
+  // from, whether it is a pilot the member was invited to, and the language
+  // its explanatory copy is actually in (the base language when that copy
+  // exists; English otherwise, which the app says out loud).
+  string copy_language = 9;
+  string content_unit_id = 10;
+  int32 content_revision = 11;
+  bool pilot = 12;
 }
 
 message ListIdiomsRequest {
@@ -766,6 +823,19 @@ enum StudyItemKind {
   STUDY_ITEM_KIND_VERB_FORM = 3; // one cell of a conjugation table
 }
 
+// Whether a practice session could introduce new material.
+enum NewMaterialStatus {
+  NEW_MATERIAL_STATUS_UNSPECIFIED = 0;
+  // New items were offered (or none were due to be, within the daily budget).
+  NEW_MATERIAL_STATUS_OPEN = 1;
+  // No level of this course is available yet; reviews continue.
+  NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION = 2;
+  // The level the member reached is released but held while a gate is fixed.
+  NEW_MATERIAL_STATUS_PAUSED_HELD = 3;
+  // Every available item has been introduced; the next level is not open yet.
+  NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED = 4;
+}
+
 // One thing to answer. `prompt` is always written in the member's base
 // language or the target, depending on kind; the client never has to decide.
 message PracticeCard {
@@ -809,6 +879,20 @@ message PracticeCard {
   // True when this cell breaks the pattern its verb class would predict. A
   // regular cell is a rule; an irregular one is a fact to memorise.
   bool irregular = 21;
+
+  // Lexicon Choice 1 — content lineage. The governed unit and revision this
+  // card was built from; SubmitAnswer echoes them so the answer is recorded
+  // against what the member actually saw.
+  string content_unit_id = 22;
+  int32 content_revision = 23;
+  // Material being piloted with a cohort the member belongs to.
+  bool pilot = 24;
+  // The item changed since the member last answered it (a correction was
+  // published), so the app can say so instead of looking inconsistent.
+  bool corrected_since_seen = 25;
+  // The language the prompt detail, rationale and point title are written
+  // in. Equal to base_language unless that copy does not exist yet.
+  string copy_language = 26;
 }
 
 message GetPracticeSessionRequest {
@@ -829,6 +913,9 @@ message GetPracticeSessionResponse {
   // True when the corpus has nothing for this language, which is a content
   // gap and must not be dressed up as "you are all caught up".
   bool corpus_empty = 4;
+  // Lexicon Choice 1 — whether this session could introduce new material,
+  // and if not, why. Due reviews are always served.
+  NewMaterialStatus new_material = 5;
 }
 
 message SubmitAnswerRequest {
@@ -844,6 +931,9 @@ message SubmitAnswerRequest {
   // already-deployed client sends.
   StudyItemKind item_kind = 7;
   string item_id = 8;
+  // Lexicon Choice 1 — the unit and revision the card was built from.
+  string content_unit_id = 9;
+  int32 content_revision = 10;
 }
 message SubmitAnswerResponse {
   bool correct = 1;

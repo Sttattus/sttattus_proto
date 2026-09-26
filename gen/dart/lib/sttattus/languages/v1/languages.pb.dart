@@ -1210,6 +1210,10 @@ class CulturalModule extends $pb.GeneratedMessage {
     $core.int? durationMinutes,
     $core.String? minCefr,
     $core.bool? completed,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1223,6 +1227,10 @@ class CulturalModule extends $pb.GeneratedMessage {
     if (durationMinutes != null) result.durationMinutes = durationMinutes;
     if (minCefr != null) result.minCefr = minCefr;
     if (completed != null) result.completed = completed;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
     return result;
   }
 
@@ -1251,6 +1259,10 @@ class CulturalModule extends $pb.GeneratedMessage {
     ..aI(9, _omitFieldNames ? '' : 'durationMinutes')
     ..aOS(10, _omitFieldNames ? '' : 'minCefr')
     ..aOB(11, _omitFieldNames ? '' : 'completed')
+    ..aOS(12, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(13, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(14, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(15, _omitFieldNames ? '' : 'pilot')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1370,6 +1382,46 @@ class CulturalModule extends $pb.GeneratedMessage {
   $core.bool hasCompleted() => $_has(10);
   @$pb.TagNumber(11)
   void clearCompleted() => $_clearField(11);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(12)
+  $core.String get copyLanguage => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set copyLanguage($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCopyLanguage() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCopyLanguage() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get contentUnitId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set contentUnitId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasContentUnitId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearContentUnitId() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get contentRevision => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set contentRevision($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasContentRevision() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearContentRevision() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get pilot => $_getBF(14);
+  @$pb.TagNumber(15)
+  set pilot($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPilot() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPilot() => $_clearField(15);
 }
 
 class ListCulturalModulesRequest extends $pb.GeneratedMessage {
@@ -2119,6 +2171,10 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     $core.String? cefrTarget,
     $core.String? phrase,
     $core.String? translation,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2126,6 +2182,10 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     if (cefrTarget != null) result.cefrTarget = cefrTarget;
     if (phrase != null) result.phrase = phrase;
     if (translation != null) result.translation = translation;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
     return result;
   }
 
@@ -2148,6 +2208,10 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'cefrTarget')
     ..aOS(4, _omitFieldNames ? '' : 'phrase')
     ..aOS(5, _omitFieldNames ? '' : 'translation')
+    ..aOS(6, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(7, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(8, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(9, _omitFieldNames ? '' : 'pilot')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2213,6 +2277,46 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
   $core.bool hasTranslation() => $_has(4);
   @$pb.TagNumber(5)
   void clearTranslation() => $_clearField(5);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(6)
+  $core.String get copyLanguage => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set copyLanguage($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCopyLanguage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCopyLanguage() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get contentUnitId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set contentUnitId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasContentUnitId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearContentUnitId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get contentRevision => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set contentRevision($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasContentRevision() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearContentRevision() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get pilot => $_getBF(8);
+  @$pb.TagNumber(9)
+  set pilot($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPilot() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPilot() => $_clearField(9);
 }
 
 class PhonemeScore extends $pb.GeneratedMessage {
@@ -2861,6 +2965,10 @@ class ImmersionClip extends $pb.GeneratedMessage {
     $core.int? durationSeconds,
     $core.String? sourceNote,
     $core.bool? completed,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2874,6 +2982,10 @@ class ImmersionClip extends $pb.GeneratedMessage {
     if (durationSeconds != null) result.durationSeconds = durationSeconds;
     if (sourceNote != null) result.sourceNote = sourceNote;
     if (completed != null) result.completed = completed;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
     return result;
   }
 
@@ -2902,6 +3014,10 @@ class ImmersionClip extends $pb.GeneratedMessage {
     ..aI(9, _omitFieldNames ? '' : 'durationSeconds')
     ..aOS(10, _omitFieldNames ? '' : 'sourceNote')
     ..aOB(11, _omitFieldNames ? '' : 'completed')
+    ..aOS(12, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(13, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(14, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(15, _omitFieldNames ? '' : 'pilot')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3021,6 +3137,46 @@ class ImmersionClip extends $pb.GeneratedMessage {
   $core.bool hasCompleted() => $_has(10);
   @$pb.TagNumber(11)
   void clearCompleted() => $_clearField(11);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(12)
+  $core.String get copyLanguage => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set copyLanguage($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCopyLanguage() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCopyLanguage() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get contentUnitId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set contentUnitId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasContentUnitId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearContentUnitId() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.int get contentRevision => $_getIZ(13);
+  @$pb.TagNumber(14)
+  set contentRevision($core.int value) => $_setSignedInt32(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasContentRevision() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearContentRevision() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get pilot => $_getBF(14);
+  @$pb.TagNumber(15)
+  set pilot($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPilot() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPilot() => $_clearField(15);
 }
 
 class ListTodayImmersionRequest extends $pb.GeneratedMessage {
@@ -4396,6 +4552,11 @@ class WritingPrompt extends $pb.GeneratedMessage {
     $core.String? prompt,
     $core.int? minWords,
     $core.int? maxWords,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
+    $core.String? promptTranslation,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -4405,6 +4566,11 @@ class WritingPrompt extends $pb.GeneratedMessage {
     if (prompt != null) result.prompt = prompt;
     if (minWords != null) result.minWords = minWords;
     if (maxWords != null) result.maxWords = maxWords;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
+    if (promptTranslation != null) result.promptTranslation = promptTranslation;
     return result;
   }
 
@@ -4429,6 +4595,11 @@ class WritingPrompt extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'prompt')
     ..aI(6, _omitFieldNames ? '' : 'minWords')
     ..aI(7, _omitFieldNames ? '' : 'maxWords')
+    ..aOS(8, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(9, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(10, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(11, _omitFieldNames ? '' : 'pilot')
+    ..aOS(12, _omitFieldNames ? '' : 'promptTranslation')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4512,6 +4683,57 @@ class WritingPrompt extends $pb.GeneratedMessage {
   $core.bool hasMaxWords() => $_has(6);
   @$pb.TagNumber(7)
   void clearMaxWords() => $_clearField(7);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(8)
+  $core.String get copyLanguage => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set copyLanguage($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCopyLanguage() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCopyLanguage() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get contentUnitId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set contentUnitId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasContentUnitId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearContentUnitId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get contentRevision => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set contentRevision($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasContentRevision() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearContentRevision() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get pilot => $_getBF(10);
+  @$pb.TagNumber(11)
+  set pilot($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPilot() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPilot() => $_clearField(11);
+
+  /// The task explained in the member's base language (the prompt itself is in
+  /// the target language). Empty when that copy does not exist yet.
+  @$pb.TagNumber(12)
+  $core.String get promptTranslation => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set promptTranslation($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPromptTranslation() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPromptTranslation() => $_clearField(12);
 }
 
 /// RubricScore is one CEFR-aligned scoring dimension of a writing
@@ -5389,6 +5611,10 @@ class ReadingText extends $pb.GeneratedMessage {
     $core.String? translation,
     $core.String? sourceNote,
     $core.int? wordCount,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5400,6 +5626,10 @@ class ReadingText extends $pb.GeneratedMessage {
     if (translation != null) result.translation = translation;
     if (sourceNote != null) result.sourceNote = sourceNote;
     if (wordCount != null) result.wordCount = wordCount;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
     return result;
   }
 
@@ -5426,6 +5656,10 @@ class ReadingText extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'translation')
     ..aOS(8, _omitFieldNames ? '' : 'sourceNote')
     ..aI(9, _omitFieldNames ? '' : 'wordCount')
+    ..aOS(10, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(11, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(12, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(13, _omitFieldNames ? '' : 'pilot')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5527,6 +5761,46 @@ class ReadingText extends $pb.GeneratedMessage {
   $core.bool hasWordCount() => $_has(8);
   @$pb.TagNumber(9)
   void clearWordCount() => $_clearField(9);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(10)
+  $core.String get copyLanguage => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set copyLanguage($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCopyLanguage() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCopyLanguage() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get contentUnitId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set contentUnitId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasContentUnitId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearContentUnitId() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get contentRevision => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set contentRevision($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasContentRevision() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearContentRevision() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get pilot => $_getBF(12);
+  @$pb.TagNumber(13)
+  set pilot($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPilot() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPilot() => $_clearField(13);
 }
 
 class ListReadingTextsRequest extends $pb.GeneratedMessage {
@@ -5773,6 +6047,10 @@ class Idiom extends $pb.GeneratedMessage {
     $core.String? example,
     $core.String? register,
     $core.String? note,
+    $core.String? copyLanguage,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5783,6 +6061,10 @@ class Idiom extends $pb.GeneratedMessage {
     if (example != null) result.example = example;
     if (register != null) result.register = register;
     if (note != null) result.note = note;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
     return result;
   }
 
@@ -5808,6 +6090,10 @@ class Idiom extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'example')
     ..aOS(7, _omitFieldNames ? '' : 'register')
     ..aOS(8, _omitFieldNames ? '' : 'note')
+    ..aOS(9, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOS(10, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(11, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(12, _omitFieldNames ? '' : 'pilot')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5899,6 +6185,46 @@ class Idiom extends $pb.GeneratedMessage {
   $core.bool hasNote() => $_has(7);
   @$pb.TagNumber(8)
   void clearNote() => $_clearField(8);
+
+  /// Lexicon Choice 1: which governed content unit and revision this came
+  /// from, whether it is a pilot the member was invited to, and the language
+  /// its explanatory copy is actually in (the base language when that copy
+  /// exists; English otherwise, which the app says out loud).
+  @$pb.TagNumber(9)
+  $core.String get copyLanguage => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set copyLanguage($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCopyLanguage() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCopyLanguage() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get contentUnitId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set contentUnitId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasContentUnitId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearContentUnitId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get contentRevision => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set contentRevision($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasContentRevision() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearContentRevision() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get pilot => $_getBF(11);
+  @$pb.TagNumber(12)
+  set pilot($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPilot() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPilot() => $_clearField(12);
 }
 
 class ListIdiomsRequest extends $pb.GeneratedMessage {
@@ -7710,6 +8036,11 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.String? rationale,
     $core.String? pointTitle,
     $core.bool? irregular,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
+    $core.bool? pilot,
+    $core.bool? correctedSinceSeen,
+    $core.String? copyLanguage,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -7733,6 +8064,12 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (rationale != null) result.rationale = rationale;
     if (pointTitle != null) result.pointTitle = pointTitle;
     if (irregular != null) result.irregular = irregular;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
+    if (pilot != null) result.pilot = pilot;
+    if (correctedSinceSeen != null)
+      result.correctedSinceSeen = correctedSinceSeen;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
     return result;
   }
 
@@ -7773,6 +8110,11 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOS(19, _omitFieldNames ? '' : 'rationale')
     ..aOS(20, _omitFieldNames ? '' : 'pointTitle')
     ..aOB(21, _omitFieldNames ? '' : 'irregular')
+    ..aOS(22, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(23, _omitFieldNames ? '' : 'contentRevision')
+    ..aOB(24, _omitFieldNames ? '' : 'pilot')
+    ..aOB(25, _omitFieldNames ? '' : 'correctedSinceSeen')
+    ..aOS(26, _omitFieldNames ? '' : 'copyLanguage')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -7994,6 +8336,59 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasIrregular() => $_has(20);
   @$pb.TagNumber(21)
   void clearIrregular() => $_clearField(21);
+
+  /// Lexicon Choice 1 — content lineage. The governed unit and revision this
+  /// card was built from; SubmitAnswer echoes them so the answer is recorded
+  /// against what the member actually saw.
+  @$pb.TagNumber(22)
+  $core.String get contentUnitId => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set contentUnitId($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasContentUnitId() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearContentUnitId() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get contentRevision => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set contentRevision($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasContentRevision() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearContentRevision() => $_clearField(23);
+
+  /// Material being piloted with a cohort the member belongs to.
+  @$pb.TagNumber(24)
+  $core.bool get pilot => $_getBF(23);
+  @$pb.TagNumber(24)
+  set pilot($core.bool value) => $_setBool(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasPilot() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearPilot() => $_clearField(24);
+
+  /// The item changed since the member last answered it (a correction was
+  /// published), so the app can say so instead of looking inconsistent.
+  @$pb.TagNumber(25)
+  $core.bool get correctedSinceSeen => $_getBF(24);
+  @$pb.TagNumber(25)
+  set correctedSinceSeen($core.bool value) => $_setBool(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasCorrectedSinceSeen() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearCorrectedSinceSeen() => $_clearField(25);
+
+  /// The language the prompt detail, rationale and point title are written
+  /// in. Equal to base_language unless that copy does not exist yet.
+  @$pb.TagNumber(26)
+  $core.String get copyLanguage => $_getSZ(25);
+  @$pb.TagNumber(26)
+  set copyLanguage($core.String value) => $_setString(25, value);
+  @$pb.TagNumber(26)
+  $core.bool hasCopyLanguage() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearCopyLanguage() => $_clearField(26);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -8082,12 +8477,14 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
     $core.int? dueCount,
     $core.int? newCount,
     $core.bool? corpusEmpty,
+    NewMaterialStatus? newMaterial,
   }) {
     final result = create();
     if (cards != null) result.cards.addAll(cards);
     if (dueCount != null) result.dueCount = dueCount;
     if (newCount != null) result.newCount = newCount;
     if (corpusEmpty != null) result.corpusEmpty = corpusEmpty;
+    if (newMaterial != null) result.newMaterial = newMaterial;
     return result;
   }
 
@@ -8110,6 +8507,8 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
     ..aI(2, _omitFieldNames ? '' : 'dueCount')
     ..aI(3, _omitFieldNames ? '' : 'newCount')
     ..aOB(4, _omitFieldNames ? '' : 'corpusEmpty')
+    ..aE<NewMaterialStatus>(5, _omitFieldNames ? '' : 'newMaterial',
+        enumValues: NewMaterialStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8164,6 +8563,17 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
   $core.bool hasCorpusEmpty() => $_has(3);
   @$pb.TagNumber(4)
   void clearCorpusEmpty() => $_clearField(4);
+
+  /// Lexicon Choice 1 — whether this session could introduce new material,
+  /// and if not, why. Due reviews are always served.
+  @$pb.TagNumber(5)
+  NewMaterialStatus get newMaterial => $_getN(4);
+  @$pb.TagNumber(5)
+  set newMaterial(NewMaterialStatus value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNewMaterial() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNewMaterial() => $_clearField(5);
 }
 
 class SubmitAnswerRequest extends $pb.GeneratedMessage {
@@ -8176,6 +8586,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.String? language,
     StudyItemKind? itemKind,
     $core.String? itemId,
+    $core.String? contentUnitId,
+    $core.int? contentRevision,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8186,6 +8598,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (language != null) result.language = language;
     if (itemKind != null) result.itemKind = itemKind;
     if (itemId != null) result.itemId = itemId;
+    if (contentUnitId != null) result.contentUnitId = contentUnitId;
+    if (contentRevision != null) result.contentRevision = contentRevision;
     return result;
   }
 
@@ -8213,6 +8627,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aE<StudyItemKind>(7, _omitFieldNames ? '' : 'itemKind',
         enumValues: StudyItemKind.values)
     ..aOS(8, _omitFieldNames ? '' : 'itemId')
+    ..aOS(9, _omitFieldNames ? '' : 'contentUnitId')
+    ..aI(10, _omitFieldNames ? '' : 'contentRevision')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8309,6 +8725,25 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasItemId() => $_has(7);
   @$pb.TagNumber(8)
   void clearItemId() => $_clearField(8);
+
+  /// Lexicon Choice 1 — the unit and revision the card was built from.
+  @$pb.TagNumber(9)
+  $core.String get contentUnitId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set contentUnitId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasContentUnitId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearContentUnitId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get contentRevision => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set contentRevision($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasContentRevision() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearContentRevision() => $_clearField(10);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {

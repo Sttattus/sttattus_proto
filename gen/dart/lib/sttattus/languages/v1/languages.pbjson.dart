@@ -74,6 +74,25 @@ final $typed_data.Uint8List studyItemKindDescriptor = $convert.base64Decode(
     'RZX0lURU1fS0lORF9MRVhFTUUQARIbChdTVFVEWV9JVEVNX0tJTkRfR1JBTU1BUhACEh0KGVNU'
     'VURZX0lURU1fS0lORF9WRVJCX0ZPUk0QAw==');
 
+@$core.Deprecated('Use newMaterialStatusDescriptor instead')
+const NewMaterialStatus$json = {
+  '1': 'NewMaterialStatus',
+  '2': [
+    {'1': 'NEW_MATERIAL_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'NEW_MATERIAL_STATUS_OPEN', '2': 1},
+    {'1': 'NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION', '2': 2},
+    {'1': 'NEW_MATERIAL_STATUS_PAUSED_HELD', '2': 3},
+    {'1': 'NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED', '2': 4},
+  ],
+};
+
+/// Descriptor for `NewMaterialStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List newMaterialStatusDescriptor = $convert.base64Decode(
+    'ChFOZXdNYXRlcmlhbFN0YXR1cxIjCh9ORVdfTUFURVJJQUxfU1RBVFVTX1VOU1BFQ0lGSUVEEA'
+    'ASHAoYTkVXX01BVEVSSUFMX1NUQVRVU19PUEVOEAESLQopTkVXX01BVEVSSUFMX1NUQVRVU19Q'
+    'QVVTRURfSU5fUFJFUEFSQVRJT04QAhIjCh9ORVdfTUFURVJJQUxfU1RBVFVTX1BBVVNFRF9IRU'
+    'xEEAMSJwojTkVXX01BVEVSSUFMX1NUQVRVU19MRVZFTF9FWEhBVVNURUQQBA==');
+
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {
   '1': 'CulturalNuance',
@@ -420,6 +439,10 @@ const CulturalModule$json = {
     {'1': 'duration_minutes', '3': 9, '4': 1, '5': 5, '10': 'durationMinutes'},
     {'1': 'min_cefr', '3': 10, '4': 1, '5': 9, '10': 'minCefr'},
     {'1': 'completed', '3': 11, '4': 1, '5': 8, '10': 'completed'},
+    {'1': 'copy_language', '3': 12, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 13, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 14, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 15, '4': 1, '5': 8, '10': 'pilot'},
   ],
 };
 
@@ -430,7 +453,10 @@ final $typed_data.Uint8List culturalModuleDescriptor = $convert.base64Decode(
     'b3J5GAUgASgJUghjYXRlZ29yeRIYCgdzdW1tYXJ5GAYgASgJUgdzdW1tYXJ5EiMKDWJvZHlfbW'
     'Fya2Rvd24YByABKAlSDGJvZHlNYXJrZG93bhIYCgdpbnNpZ2h0GAggASgJUgdpbnNpZ2h0EikK'
     'EGR1cmF0aW9uX21pbnV0ZXMYCSABKAVSD2R1cmF0aW9uTWludXRlcxIZCghtaW5fY2VmchgKIA'
-    'EoCVIHbWluQ2VmchIcCgljb21wbGV0ZWQYCyABKAhSCWNvbXBsZXRlZA==');
+    'EoCVIHbWluQ2VmchIcCgljb21wbGV0ZWQYCyABKAhSCWNvbXBsZXRlZBIjCg1jb3B5X2xhbmd1'
+    'YWdlGAwgASgJUgxjb3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGA0gASgJUg1jb250ZW'
+    '50VW5pdElkEikKEGNvbnRlbnRfcmV2aXNpb24YDiABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVw'
+    'aWxvdBgPIAEoCFIFcGlsb3Q=');
 
 @$core.Deprecated('Use listCulturalModulesRequestDescriptor instead')
 const ListCulturalModulesRequest$json = {
@@ -647,6 +673,10 @@ const SpeakingPrompt$json = {
     {'1': 'cefr_target', '3': 3, '4': 1, '5': 9, '10': 'cefrTarget'},
     {'1': 'phrase', '3': 4, '4': 1, '5': 9, '10': 'phrase'},
     {'1': 'translation', '3': 5, '4': 1, '5': 9, '10': 'translation'},
+    {'1': 'copy_language', '3': 6, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 7, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 8, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 9, '4': 1, '5': 8, '10': 'pilot'},
   ],
 };
 
@@ -654,7 +684,10 @@ const SpeakingPrompt$json = {
 final $typed_data.Uint8List speakingPromptDescriptor = $convert.base64Decode(
     'Cg5TcGVha2luZ1Byb21wdBIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbm'
     'd1YWdlEh8KC2NlZnJfdGFyZ2V0GAMgASgJUgpjZWZyVGFyZ2V0EhYKBnBocmFzZRgEIAEoCVIG'
-    'cGhyYXNlEiAKC3RyYW5zbGF0aW9uGAUgASgJUgt0cmFuc2xhdGlvbg==');
+    'cGhyYXNlEiAKC3RyYW5zbGF0aW9uGAUgASgJUgt0cmFuc2xhdGlvbhIjCg1jb3B5X2xhbmd1YW'
+    'dlGAYgASgJUgxjb3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGAcgASgJUg1jb250ZW50'
+    'VW5pdElkEikKEGNvbnRlbnRfcmV2aXNpb24YCCABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaW'
+    'xvdBgJIAEoCFIFcGlsb3Q=');
 
 @$core.Deprecated('Use phonemeScoreDescriptor instead')
 const PhonemeScore$json = {
@@ -828,6 +861,10 @@ const ImmersionClip$json = {
     {'1': 'duration_seconds', '3': 9, '4': 1, '5': 5, '10': 'durationSeconds'},
     {'1': 'source_note', '3': 10, '4': 1, '5': 9, '10': 'sourceNote'},
     {'1': 'completed', '3': 11, '4': 1, '5': 8, '10': 'completed'},
+    {'1': 'copy_language', '3': 12, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 13, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 14, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 15, '4': 1, '5': 8, '10': 'pilot'},
   ],
 };
 
@@ -839,7 +876,9 @@ final $typed_data.Uint8List immersionClipDescriptor = $convert.base64Decode(
     'gJUgp0cmFuc2NyaXB0EiAKC3RyYW5zbGF0aW9uGAcgASgJUgt0cmFuc2xhdGlvbhIbCglhdWRp'
     'b191cmwYCCABKAlSCGF1ZGlvVXJsEikKEGR1cmF0aW9uX3NlY29uZHMYCSABKAVSD2R1cmF0aW'
     '9uU2Vjb25kcxIfCgtzb3VyY2Vfbm90ZRgKIAEoCVIKc291cmNlTm90ZRIcCgljb21wbGV0ZWQY'
-    'CyABKAhSCWNvbXBsZXRlZA==');
+    'CyABKAhSCWNvbXBsZXRlZBIjCg1jb3B5X2xhbmd1YWdlGAwgASgJUgxjb3B5TGFuZ3VhZ2USJg'
+    'oPY29udGVudF91bml0X2lkGA0gASgJUg1jb250ZW50VW5pdElkEikKEGNvbnRlbnRfcmV2aXNp'
+    'b24YDiABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaWxvdBgPIAEoCFIFcGlsb3Q=');
 
 @$core.Deprecated('Use listTodayImmersionRequestDescriptor instead')
 const ListTodayImmersionRequest$json = {
@@ -1215,6 +1254,17 @@ const WritingPrompt$json = {
     {'1': 'prompt', '3': 5, '4': 1, '5': 9, '10': 'prompt'},
     {'1': 'min_words', '3': 6, '4': 1, '5': 5, '10': 'minWords'},
     {'1': 'max_words', '3': 7, '4': 1, '5': 5, '10': 'maxWords'},
+    {'1': 'copy_language', '3': 8, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 9, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 10, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 11, '4': 1, '5': 8, '10': 'pilot'},
+    {
+      '1': 'prompt_translation',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'promptTranslation'
+    },
   ],
 };
 
@@ -1223,7 +1273,10 @@ final $typed_data.Uint8List writingPromptDescriptor = $convert.base64Decode(
     'Cg1Xcml0aW5nUHJvbXB0Eg4KAmlkGAEgASgJUgJpZBIaCghsYW5ndWFnZRgCIAEoCVIIbGFuZ3'
     'VhZ2USHwoLY2Vmcl90YXJnZXQYAyABKAlSCmNlZnJUYXJnZXQSFAoFdGl0bGUYBCABKAlSBXRp'
     'dGxlEhYKBnByb21wdBgFIAEoCVIGcHJvbXB0EhsKCW1pbl93b3JkcxgGIAEoBVIIbWluV29yZH'
-    'MSGwoJbWF4X3dvcmRzGAcgASgFUghtYXhXb3Jkcw==');
+    'MSGwoJbWF4X3dvcmRzGAcgASgFUghtYXhXb3JkcxIjCg1jb3B5X2xhbmd1YWdlGAggASgJUgxj'
+    'b3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGAkgASgJUg1jb250ZW50VW5pdElkEikKEG'
+    'NvbnRlbnRfcmV2aXNpb24YCiABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaWxvdBgLIAEoCFIF'
+    'cGlsb3QSLQoScHJvbXB0X3RyYW5zbGF0aW9uGAwgASgJUhFwcm9tcHRUcmFuc2xhdGlvbg==');
 
 @$core.Deprecated('Use rubricScoreDescriptor instead')
 const RubricScore$json = {
@@ -1464,6 +1517,10 @@ const ReadingText$json = {
     {'1': 'translation', '3': 7, '4': 1, '5': 9, '10': 'translation'},
     {'1': 'source_note', '3': 8, '4': 1, '5': 9, '10': 'sourceNote'},
     {'1': 'word_count', '3': 9, '4': 1, '5': 5, '10': 'wordCount'},
+    {'1': 'copy_language', '3': 10, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 11, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 12, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 13, '4': 1, '5': 8, '10': 'pilot'},
   ],
 };
 
@@ -1473,7 +1530,10 @@ final $typed_data.Uint8List readingTextDescriptor = $convert.base64Decode(
     'dlEh8KC2NlZnJfdGFyZ2V0GAMgASgJUgpjZWZyVGFyZ2V0EhQKBXRpdGxlGAQgASgJUgV0aXRs'
     'ZRIYCgdzdW1tYXJ5GAUgASgJUgdzdW1tYXJ5EhIKBGJvZHkYBiABKAlSBGJvZHkSIAoLdHJhbn'
     'NsYXRpb24YByABKAlSC3RyYW5zbGF0aW9uEh8KC3NvdXJjZV9ub3RlGAggASgJUgpzb3VyY2VO'
-    'b3RlEh0KCndvcmRfY291bnQYCSABKAVSCXdvcmRDb3VudA==');
+    'b3RlEh0KCndvcmRfY291bnQYCSABKAVSCXdvcmRDb3VudBIjCg1jb3B5X2xhbmd1YWdlGAogAS'
+    'gJUgxjb3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGAsgASgJUg1jb250ZW50VW5pdElk'
+    'EikKEGNvbnRlbnRfcmV2aXNpb24YDCABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaWxvdBgNIA'
+    'EoCFIFcGlsb3Q=');
 
 @$core.Deprecated('Use listReadingTextsRequestDescriptor instead')
 const ListReadingTextsRequest$json = {
@@ -1557,6 +1617,10 @@ const Idiom$json = {
     {'1': 'example', '3': 6, '4': 1, '5': 9, '10': 'example'},
     {'1': 'register', '3': 7, '4': 1, '5': 9, '10': 'register'},
     {'1': 'note', '3': 8, '4': 1, '5': 9, '10': 'note'},
+    {'1': 'copy_language', '3': 9, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {'1': 'content_unit_id', '3': 10, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 11, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 12, '4': 1, '5': 8, '10': 'pilot'},
   ],
 };
 
@@ -1565,7 +1629,10 @@ final $typed_data.Uint8List idiomDescriptor = $convert.base64Decode(
     'CgVJZGlvbRIOCgJpZBgBIAEoCVICaWQSGgoIbGFuZ3VhZ2UYAiABKAlSCGxhbmd1YWdlEhYKBn'
     'BocmFzZRgDIAEoCVIGcGhyYXNlEhgKB2xpdGVyYWwYBCABKAlSB2xpdGVyYWwSGAoHbWVhbmlu'
     'ZxgFIAEoCVIHbWVhbmluZxIYCgdleGFtcGxlGAYgASgJUgdleGFtcGxlEhoKCHJlZ2lzdGVyGA'
-    'cgASgJUghyZWdpc3RlchISCgRub3RlGAggASgJUgRub3Rl');
+    'cgASgJUghyZWdpc3RlchISCgRub3RlGAggASgJUgRub3RlEiMKDWNvcHlfbGFuZ3VhZ2UYCSAB'
+    'KAlSDGNvcHlMYW5ndWFnZRImCg9jb250ZW50X3VuaXRfaWQYCiABKAlSDWNvbnRlbnRVbml0SW'
+    'QSKQoQY29udGVudF9yZXZpc2lvbhgLIAEoBVIPY29udGVudFJldmlzaW9uEhQKBXBpbG90GAwg'
+    'ASgIUgVwaWxvdA==');
 
 @$core.Deprecated('Use listIdiomsRequestDescriptor instead')
 const ListIdiomsRequest$json = {
@@ -2054,6 +2121,17 @@ const PracticeCard$json = {
     {'1': 'rationale', '3': 19, '4': 1, '5': 9, '10': 'rationale'},
     {'1': 'point_title', '3': 20, '4': 1, '5': 9, '10': 'pointTitle'},
     {'1': 'irregular', '3': 21, '4': 1, '5': 8, '10': 'irregular'},
+    {'1': 'content_unit_id', '3': 22, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 23, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'pilot', '3': 24, '4': 1, '5': 8, '10': 'pilot'},
+    {
+      '1': 'corrected_since_seen',
+      '3': 25,
+      '4': 1,
+      '5': 8,
+      '10': 'correctedSinceSeen'
+    },
+    {'1': 'copy_language', '3': 26, '4': 1, '5': 9, '10': 'copyLanguage'},
   ],
 };
 
@@ -2071,7 +2149,11 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'USGQoIaXNfbGVlY2gYECABKAhSB2lzTGVlY2gSQQoJaXRlbV9raW5kGBEgASgOMiQuc3R0YXR0'
     'dXMubGFuZ3VhZ2VzLnYxLlN0dWR5SXRlbUtpbmRSCGl0ZW1LaW5kEhcKB2l0ZW1faWQYEiABKA'
     'lSBml0ZW1JZBIcCglyYXRpb25hbGUYEyABKAlSCXJhdGlvbmFsZRIfCgtwb2ludF90aXRsZRgU'
-    'IAEoCVIKcG9pbnRUaXRsZRIcCglpcnJlZ3VsYXIYFSABKAhSCWlycmVndWxhcg==');
+    'IAEoCVIKcG9pbnRUaXRsZRIcCglpcnJlZ3VsYXIYFSABKAhSCWlycmVndWxhchImCg9jb250ZW'
+    '50X3VuaXRfaWQYFiABKAlSDWNvbnRlbnRVbml0SWQSKQoQY29udGVudF9yZXZpc2lvbhgXIAEo'
+    'BVIPY29udGVudFJldmlzaW9uEhQKBXBpbG90GBggASgIUgVwaWxvdBIwChRjb3JyZWN0ZWRfc2'
+    'luY2Vfc2VlbhgZIAEoCFISY29ycmVjdGVkU2luY2VTZWVuEiMKDWNvcHlfbGFuZ3VhZ2UYGiAB'
+    'KAlSDGNvcHlMYW5ndWFnZQ==');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2104,6 +2186,14 @@ const GetPracticeSessionResponse$json = {
     {'1': 'due_count', '3': 2, '4': 1, '5': 5, '10': 'dueCount'},
     {'1': 'new_count', '3': 3, '4': 1, '5': 5, '10': 'newCount'},
     {'1': 'corpus_empty', '3': 4, '4': 1, '5': 8, '10': 'corpusEmpty'},
+    {
+      '1': 'new_material',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.NewMaterialStatus',
+      '10': 'newMaterial'
+    },
   ],
 };
 
@@ -2112,7 +2202,8 @@ final $typed_data.Uint8List getPracticeSessionResponseDescriptor = $convert.base
     'ChpHZXRQcmFjdGljZVNlc3Npb25SZXNwb25zZRI5CgVjYXJkcxgBIAMoCzIjLnN0dGF0dHVzLm'
     'xhbmd1YWdlcy52MS5QcmFjdGljZUNhcmRSBWNhcmRzEhsKCWR1ZV9jb3VudBgCIAEoBVIIZHVl'
     'Q291bnQSGwoJbmV3X2NvdW50GAMgASgFUghuZXdDb3VudBIhCgxjb3JwdXNfZW1wdHkYBCABKA'
-    'hSC2NvcnB1c0VtcHR5');
+    'hSC2NvcnB1c0VtcHR5EksKDG5ld19tYXRlcmlhbBgFIAEoDjIoLnN0dGF0dHVzLmxhbmd1YWdl'
+    'cy52MS5OZXdNYXRlcmlhbFN0YXR1c1ILbmV3TWF0ZXJpYWw=');
 
 @$core.Deprecated('Use submitAnswerRequestDescriptor instead')
 const SubmitAnswerRequest$json = {
@@ -2140,6 +2231,8 @@ const SubmitAnswerRequest$json = {
       '10': 'itemKind'
     },
     {'1': 'item_id', '3': 8, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'content_unit_id', '3': 9, '4': 1, '5': 9, '10': 'contentUnitId'},
+    {'1': 'content_revision', '3': 10, '4': 1, '5': 5, '10': 'contentRevision'},
   ],
 };
 
@@ -2151,7 +2244,8 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     'N0GAQgASgIUg1jbGllbnRDb3JyZWN0Eh0KCmVsYXBzZWRfbXMYBSABKAVSCWVsYXBzZWRNcxIa'
     'CghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2USQQoJaXRlbV9raW5kGAcgASgOMiQuc3R0YXR0dX'
     'MubGFuZ3VhZ2VzLnYxLlN0dWR5SXRlbUtpbmRSCGl0ZW1LaW5kEhcKB2l0ZW1faWQYCCABKAlS'
-    'Bml0ZW1JZA==');
+    'Bml0ZW1JZBImCg9jb250ZW50X3VuaXRfaWQYCSABKAlSDWNvbnRlbnRVbml0SWQSKQoQY29udG'
+    'VudF9yZXZpc2lvbhgKIAEoBVIPY29udGVudFJldmlzaW9u');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {

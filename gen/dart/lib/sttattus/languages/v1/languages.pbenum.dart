@@ -115,5 +115,46 @@ class StudyItemKind extends $pb.ProtobufEnum {
   const StudyItemKind._(super.value, super.name);
 }
 
+/// Whether a practice session could introduce new material.
+class NewMaterialStatus extends $pb.ProtobufEnum {
+  static const NewMaterialStatus NEW_MATERIAL_STATUS_UNSPECIFIED =
+      NewMaterialStatus._(
+          0, _omitEnumNames ? '' : 'NEW_MATERIAL_STATUS_UNSPECIFIED');
+
+  /// New items were offered (or none were due to be, within the daily budget).
+  static const NewMaterialStatus NEW_MATERIAL_STATUS_OPEN =
+      NewMaterialStatus._(1, _omitEnumNames ? '' : 'NEW_MATERIAL_STATUS_OPEN');
+
+  /// No level of this course is available yet; reviews continue.
+  static const NewMaterialStatus NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION =
+      NewMaterialStatus._(
+          2, _omitEnumNames ? '' : 'NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION');
+
+  /// The level the member reached is released but held while a gate is fixed.
+  static const NewMaterialStatus NEW_MATERIAL_STATUS_PAUSED_HELD =
+      NewMaterialStatus._(
+          3, _omitEnumNames ? '' : 'NEW_MATERIAL_STATUS_PAUSED_HELD');
+
+  /// Every available item has been introduced; the next level is not open yet.
+  static const NewMaterialStatus NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED =
+      NewMaterialStatus._(
+          4, _omitEnumNames ? '' : 'NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED');
+
+  static const $core.List<NewMaterialStatus> values = <NewMaterialStatus>[
+    NEW_MATERIAL_STATUS_UNSPECIFIED,
+    NEW_MATERIAL_STATUS_OPEN,
+    NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION,
+    NEW_MATERIAL_STATUS_PAUSED_HELD,
+    NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED,
+  ];
+
+  static final $core.List<NewMaterialStatus?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 4);
+  static NewMaterialStatus? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const NewMaterialStatus._(super.value, super.name);
+}
+
 const $core.bool _omitEnumNames =
     $core.bool.fromEnvironment('protobuf.omit_enum_names');
