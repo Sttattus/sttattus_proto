@@ -588,8 +588,13 @@ type SharePreview struct {
 	Fields         []string               `protobuf:"bytes,4,rep,name=fields,proto3" json:"fields,omitempty"` // fields that will appear, by audience "public"
 	Predicates     []*PillarPredicate     `protobuf:"bytes,5,rep,name=predicates,proto3" json:"predicates,omitempty"`
 	PhotosIncluded bool                   `protobuf:"varint,6,opt,name=photos_included,json=photosIncluded,proto3" json:"photos_included,omitempty"` // always false: share links never carry photos
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// Atlas Choice 3: the items the member shows to share links. Words only:
+	// voice answers stay in the app.
+	Answers       []*ProfileAnswer `protobuf:"bytes,7,rep,name=answers,proto3" json:"answers,omitempty"`
+	Modules       []*ProfileModule `protobuf:"bytes,8,rep,name=modules,proto3" json:"modules,omitempty"`
+	RightNow      *TemporaryIntent `protobuf:"bytes,9,opt,name=right_now,json=rightNow,proto3" json:"right_now,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SharePreview) Reset() {
@@ -664,6 +669,27 @@ func (x *SharePreview) GetPhotosIncluded() bool {
 	return false
 }
 
+func (x *SharePreview) GetAnswers() []*ProfileAnswer {
+	if x != nil {
+		return x.Answers
+	}
+	return nil
+}
+
+func (x *SharePreview) GetModules() []*ProfileModule {
+	if x != nil {
+		return x.Modules
+	}
+	return nil
+}
+
+func (x *SharePreview) GetRightNow() *TemporaryIntent {
+	if x != nil {
+		return x.RightNow
+	}
+	return nil
+}
+
 type BlockedMember struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -729,7 +755,8 @@ type StaffAccess struct {
 	At    int64                  `protobuf:"varint,1,opt,name=at,proto3" json:"at,omitempty"`
 	// What happened, as a kind the client words in the member's language:
 	// evidence_viewed | record_opened | check_decided | appeal | restriction |
-	// recovery | erasure | share_closed | data_opened. Never an audit action.
+	// recovery | erasure | share_closed | matchmaker | advisor |
+	// content_moderated | data_opened. Never an audit action.
 	Action        string `protobuf:"bytes,2,opt,name=action,proto3" json:"action,omitempty"`
 	Purpose       string `protobuf:"bytes,3,opt,name=purpose,proto3" json:"purpose,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2383,7 +2410,7 @@ var File_sttattus_dating_v1_privacy_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_privacy_proto_rawDesc = "" +
 	"\n" +
-	" sttattus/dating/v1/privacy.proto\x12\x12sttattus.dating.v1\x1a#sttattus/common/v1/pagination.proto\"b\n" +
+	" sttattus/dating/v1/privacy.proto\x12\x12sttattus.dating.v1\x1a#sttattus/common/v1/pagination.proto\x1a sttattus/dating/v1/profile.proto\"b\n" +
 	"\rFieldAudience\x12\x1b\n" +
 	"\tfield_key\x18\x01 \x01(\tR\bfieldKey\x12\x1a\n" +
 	"\baudience\x18\x02 \x01(\tR\baudience\x12\x18\n" +
@@ -2435,7 +2462,7 @@ const file_sttattus_dating_v1_privacy_proto_rawDesc = "" +
 	"\n" +
 	"revoked_by\x18\n" +
 	" \x01(\tR\trevokedBy\x12H\n" +
-	"\x0frecent_accesses\x18\v \x03(\v2\x1f.sttattus.dating.v1.ShareAccessR\x0erecentAccesses\"\xd2\x01\n" +
+	"\x0frecent_accesses\x18\v \x03(\v2\x1f.sttattus.dating.v1.ShareAccessR\x0erecentAccesses\"\x8e\x03\n" +
 	"\fSharePreview\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n" +
 	"\x03bio\x18\x02 \x01(\tR\x03bio\x12\x16\n" +
@@ -2444,7 +2471,10 @@ const file_sttattus_dating_v1_privacy_proto_rawDesc = "" +
 	"\n" +
 	"predicates\x18\x05 \x03(\v2#.sttattus.dating.v1.PillarPredicateR\n" +
 	"predicates\x12'\n" +
-	"\x0fphotos_included\x18\x06 \x01(\bR\x0ephotosIncluded\"[\n" +
+	"\x0fphotos_included\x18\x06 \x01(\bR\x0ephotosIncluded\x12;\n" +
+	"\aanswers\x18\a \x03(\v2!.sttattus.dating.v1.ProfileAnswerR\aanswers\x12;\n" +
+	"\amodules\x18\b \x03(\v2!.sttattus.dating.v1.ProfileModuleR\amodules\x12@\n" +
+	"\tright_now\x18\t \x01(\v2#.sttattus.dating.v1.TemporaryIntentR\brightNow\"[\n" +
 	"\rBlockedMember\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
@@ -2624,71 +2654,77 @@ var file_sttattus_dating_v1_privacy_proto_goTypes = []any{
 	(*LeaveAtlasResponse)(nil),         // 37: sttattus.dating.v1.LeaveAtlasResponse
 	(*CancelLeaveAtlasRequest)(nil),    // 38: sttattus.dating.v1.CancelLeaveAtlasRequest
 	(*CancelLeaveAtlasResponse)(nil),   // 39: sttattus.dating.v1.CancelLeaveAtlasResponse
-	(*v1.PageRequest)(nil),             // 40: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),            // 41: sttattus.common.v1.PageResponse
+	(*ProfileAnswer)(nil),              // 40: sttattus.dating.v1.ProfileAnswer
+	(*ProfileModule)(nil),              // 41: sttattus.dating.v1.ProfileModule
+	(*TemporaryIntent)(nil),            // 42: sttattus.dating.v1.TemporaryIntent
+	(*v1.PageRequest)(nil),             // 43: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),            // 44: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_privacy_proto_depIdxs = []int32{
 	1,  // 0: sttattus.dating.v1.AreaSetting.home:type_name -> sttattus.dating.v1.Place
 	1,  // 1: sttattus.dating.v1.AreaSetting.travel:type_name -> sttattus.dating.v1.Place
 	5,  // 2: sttattus.dating.v1.ShareLink.recent_accesses:type_name -> sttattus.dating.v1.ShareAccess
 	4,  // 3: sttattus.dating.v1.SharePreview.predicates:type_name -> sttattus.dating.v1.PillarPredicate
-	0,  // 4: sttattus.dating.v1.AccessCenter.fields:type_name -> sttattus.dating.v1.FieldAudience
-	2,  // 5: sttattus.dating.v1.AccessCenter.area:type_name -> sttattus.dating.v1.AreaSetting
-	3,  // 6: sttattus.dating.v1.AccessCenter.pillars:type_name -> sttattus.dating.v1.PillarSetting
-	6,  // 7: sttattus.dating.v1.AccessCenter.shares:type_name -> sttattus.dating.v1.ShareLink
-	8,  // 8: sttattus.dating.v1.AccessCenter.blocks:type_name -> sttattus.dating.v1.BlockedMember
-	9,  // 9: sttattus.dating.v1.AccessCenter.staff_access:type_name -> sttattus.dating.v1.StaffAccess
-	10, // 10: sttattus.dating.v1.AccessCenter.leave:type_name -> sttattus.dating.v1.LeaveState
-	11, // 11: sttattus.dating.v1.GetAccessCenterResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	11, // 12: sttattus.dating.v1.SetFieldAudienceResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	11, // 13: sttattus.dating.v1.SetDiscoverabilityResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	40, // 14: sttattus.dating.v1.ListPlacesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	1,  // 15: sttattus.dating.v1.ListPlacesResponse.places:type_name -> sttattus.dating.v1.Place
-	41, // 16: sttattus.dating.v1.ListPlacesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	11, // 17: sttattus.dating.v1.SetHomeAreaResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	11, // 18: sttattus.dating.v1.SetTravelAreaResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	11, // 19: sttattus.dating.v1.SetPillarSettingResponse.center:type_name -> sttattus.dating.v1.AccessCenter
-	7,  // 20: sttattus.dating.v1.GetSharePreviewResponse.preview:type_name -> sttattus.dating.v1.SharePreview
-	6,  // 21: sttattus.dating.v1.CreateShareLinkResponse.link:type_name -> sttattus.dating.v1.ShareLink
-	6,  // 22: sttattus.dating.v1.RevokeShareLinkResponse.link:type_name -> sttattus.dating.v1.ShareLink
-	40, // 23: sttattus.dating.v1.ListShareAccessesRequest.page:type_name -> sttattus.common.v1.PageRequest
-	5,  // 24: sttattus.dating.v1.ListShareAccessesResponse.accesses:type_name -> sttattus.dating.v1.ShareAccess
-	41, // 25: sttattus.dating.v1.ListShareAccessesResponse.page:type_name -> sttattus.common.v1.PageResponse
-	10, // 26: sttattus.dating.v1.LeaveAtlasResponse.leave:type_name -> sttattus.dating.v1.LeaveState
-	10, // 27: sttattus.dating.v1.CancelLeaveAtlasResponse.leave:type_name -> sttattus.dating.v1.LeaveState
-	12, // 28: sttattus.dating.v1.AtlasPrivacyService.GetAccessCenter:input_type -> sttattus.dating.v1.GetAccessCenterRequest
-	14, // 29: sttattus.dating.v1.AtlasPrivacyService.SetFieldAudience:input_type -> sttattus.dating.v1.SetFieldAudienceRequest
-	16, // 30: sttattus.dating.v1.AtlasPrivacyService.SetDiscoverability:input_type -> sttattus.dating.v1.SetDiscoverabilityRequest
-	18, // 31: sttattus.dating.v1.AtlasPrivacyService.ListPlaces:input_type -> sttattus.dating.v1.ListPlacesRequest
-	20, // 32: sttattus.dating.v1.AtlasPrivacyService.SetHomeArea:input_type -> sttattus.dating.v1.SetHomeAreaRequest
-	22, // 33: sttattus.dating.v1.AtlasPrivacyService.SetTravelArea:input_type -> sttattus.dating.v1.SetTravelAreaRequest
-	24, // 34: sttattus.dating.v1.AtlasPrivacyService.SetPillarSetting:input_type -> sttattus.dating.v1.SetPillarSettingRequest
-	26, // 35: sttattus.dating.v1.AtlasPrivacyService.GetSharePreview:input_type -> sttattus.dating.v1.GetSharePreviewRequest
-	28, // 36: sttattus.dating.v1.AtlasPrivacyService.CreateShareLink:input_type -> sttattus.dating.v1.CreateShareLinkRequest
-	30, // 37: sttattus.dating.v1.AtlasPrivacyService.RevokeShareLink:input_type -> sttattus.dating.v1.RevokeShareLinkRequest
-	32, // 38: sttattus.dating.v1.AtlasPrivacyService.ListShareAccesses:input_type -> sttattus.dating.v1.ListShareAccessesRequest
-	34, // 39: sttattus.dating.v1.AtlasPrivacyService.ExportAtlasData:input_type -> sttattus.dating.v1.ExportAtlasDataRequest
-	36, // 40: sttattus.dating.v1.AtlasPrivacyService.LeaveAtlas:input_type -> sttattus.dating.v1.LeaveAtlasRequest
-	38, // 41: sttattus.dating.v1.AtlasPrivacyService.CancelLeaveAtlas:input_type -> sttattus.dating.v1.CancelLeaveAtlasRequest
-	13, // 42: sttattus.dating.v1.AtlasPrivacyService.GetAccessCenter:output_type -> sttattus.dating.v1.GetAccessCenterResponse
-	15, // 43: sttattus.dating.v1.AtlasPrivacyService.SetFieldAudience:output_type -> sttattus.dating.v1.SetFieldAudienceResponse
-	17, // 44: sttattus.dating.v1.AtlasPrivacyService.SetDiscoverability:output_type -> sttattus.dating.v1.SetDiscoverabilityResponse
-	19, // 45: sttattus.dating.v1.AtlasPrivacyService.ListPlaces:output_type -> sttattus.dating.v1.ListPlacesResponse
-	21, // 46: sttattus.dating.v1.AtlasPrivacyService.SetHomeArea:output_type -> sttattus.dating.v1.SetHomeAreaResponse
-	23, // 47: sttattus.dating.v1.AtlasPrivacyService.SetTravelArea:output_type -> sttattus.dating.v1.SetTravelAreaResponse
-	25, // 48: sttattus.dating.v1.AtlasPrivacyService.SetPillarSetting:output_type -> sttattus.dating.v1.SetPillarSettingResponse
-	27, // 49: sttattus.dating.v1.AtlasPrivacyService.GetSharePreview:output_type -> sttattus.dating.v1.GetSharePreviewResponse
-	29, // 50: sttattus.dating.v1.AtlasPrivacyService.CreateShareLink:output_type -> sttattus.dating.v1.CreateShareLinkResponse
-	31, // 51: sttattus.dating.v1.AtlasPrivacyService.RevokeShareLink:output_type -> sttattus.dating.v1.RevokeShareLinkResponse
-	33, // 52: sttattus.dating.v1.AtlasPrivacyService.ListShareAccesses:output_type -> sttattus.dating.v1.ListShareAccessesResponse
-	35, // 53: sttattus.dating.v1.AtlasPrivacyService.ExportAtlasData:output_type -> sttattus.dating.v1.ExportAtlasDataResponse
-	37, // 54: sttattus.dating.v1.AtlasPrivacyService.LeaveAtlas:output_type -> sttattus.dating.v1.LeaveAtlasResponse
-	39, // 55: sttattus.dating.v1.AtlasPrivacyService.CancelLeaveAtlas:output_type -> sttattus.dating.v1.CancelLeaveAtlasResponse
-	42, // [42:56] is the sub-list for method output_type
-	28, // [28:42] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	40, // 4: sttattus.dating.v1.SharePreview.answers:type_name -> sttattus.dating.v1.ProfileAnswer
+	41, // 5: sttattus.dating.v1.SharePreview.modules:type_name -> sttattus.dating.v1.ProfileModule
+	42, // 6: sttattus.dating.v1.SharePreview.right_now:type_name -> sttattus.dating.v1.TemporaryIntent
+	0,  // 7: sttattus.dating.v1.AccessCenter.fields:type_name -> sttattus.dating.v1.FieldAudience
+	2,  // 8: sttattus.dating.v1.AccessCenter.area:type_name -> sttattus.dating.v1.AreaSetting
+	3,  // 9: sttattus.dating.v1.AccessCenter.pillars:type_name -> sttattus.dating.v1.PillarSetting
+	6,  // 10: sttattus.dating.v1.AccessCenter.shares:type_name -> sttattus.dating.v1.ShareLink
+	8,  // 11: sttattus.dating.v1.AccessCenter.blocks:type_name -> sttattus.dating.v1.BlockedMember
+	9,  // 12: sttattus.dating.v1.AccessCenter.staff_access:type_name -> sttattus.dating.v1.StaffAccess
+	10, // 13: sttattus.dating.v1.AccessCenter.leave:type_name -> sttattus.dating.v1.LeaveState
+	11, // 14: sttattus.dating.v1.GetAccessCenterResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	11, // 15: sttattus.dating.v1.SetFieldAudienceResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	11, // 16: sttattus.dating.v1.SetDiscoverabilityResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	43, // 17: sttattus.dating.v1.ListPlacesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	1,  // 18: sttattus.dating.v1.ListPlacesResponse.places:type_name -> sttattus.dating.v1.Place
+	44, // 19: sttattus.dating.v1.ListPlacesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	11, // 20: sttattus.dating.v1.SetHomeAreaResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	11, // 21: sttattus.dating.v1.SetTravelAreaResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	11, // 22: sttattus.dating.v1.SetPillarSettingResponse.center:type_name -> sttattus.dating.v1.AccessCenter
+	7,  // 23: sttattus.dating.v1.GetSharePreviewResponse.preview:type_name -> sttattus.dating.v1.SharePreview
+	6,  // 24: sttattus.dating.v1.CreateShareLinkResponse.link:type_name -> sttattus.dating.v1.ShareLink
+	6,  // 25: sttattus.dating.v1.RevokeShareLinkResponse.link:type_name -> sttattus.dating.v1.ShareLink
+	43, // 26: sttattus.dating.v1.ListShareAccessesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	5,  // 27: sttattus.dating.v1.ListShareAccessesResponse.accesses:type_name -> sttattus.dating.v1.ShareAccess
+	44, // 28: sttattus.dating.v1.ListShareAccessesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	10, // 29: sttattus.dating.v1.LeaveAtlasResponse.leave:type_name -> sttattus.dating.v1.LeaveState
+	10, // 30: sttattus.dating.v1.CancelLeaveAtlasResponse.leave:type_name -> sttattus.dating.v1.LeaveState
+	12, // 31: sttattus.dating.v1.AtlasPrivacyService.GetAccessCenter:input_type -> sttattus.dating.v1.GetAccessCenterRequest
+	14, // 32: sttattus.dating.v1.AtlasPrivacyService.SetFieldAudience:input_type -> sttattus.dating.v1.SetFieldAudienceRequest
+	16, // 33: sttattus.dating.v1.AtlasPrivacyService.SetDiscoverability:input_type -> sttattus.dating.v1.SetDiscoverabilityRequest
+	18, // 34: sttattus.dating.v1.AtlasPrivacyService.ListPlaces:input_type -> sttattus.dating.v1.ListPlacesRequest
+	20, // 35: sttattus.dating.v1.AtlasPrivacyService.SetHomeArea:input_type -> sttattus.dating.v1.SetHomeAreaRequest
+	22, // 36: sttattus.dating.v1.AtlasPrivacyService.SetTravelArea:input_type -> sttattus.dating.v1.SetTravelAreaRequest
+	24, // 37: sttattus.dating.v1.AtlasPrivacyService.SetPillarSetting:input_type -> sttattus.dating.v1.SetPillarSettingRequest
+	26, // 38: sttattus.dating.v1.AtlasPrivacyService.GetSharePreview:input_type -> sttattus.dating.v1.GetSharePreviewRequest
+	28, // 39: sttattus.dating.v1.AtlasPrivacyService.CreateShareLink:input_type -> sttattus.dating.v1.CreateShareLinkRequest
+	30, // 40: sttattus.dating.v1.AtlasPrivacyService.RevokeShareLink:input_type -> sttattus.dating.v1.RevokeShareLinkRequest
+	32, // 41: sttattus.dating.v1.AtlasPrivacyService.ListShareAccesses:input_type -> sttattus.dating.v1.ListShareAccessesRequest
+	34, // 42: sttattus.dating.v1.AtlasPrivacyService.ExportAtlasData:input_type -> sttattus.dating.v1.ExportAtlasDataRequest
+	36, // 43: sttattus.dating.v1.AtlasPrivacyService.LeaveAtlas:input_type -> sttattus.dating.v1.LeaveAtlasRequest
+	38, // 44: sttattus.dating.v1.AtlasPrivacyService.CancelLeaveAtlas:input_type -> sttattus.dating.v1.CancelLeaveAtlasRequest
+	13, // 45: sttattus.dating.v1.AtlasPrivacyService.GetAccessCenter:output_type -> sttattus.dating.v1.GetAccessCenterResponse
+	15, // 46: sttattus.dating.v1.AtlasPrivacyService.SetFieldAudience:output_type -> sttattus.dating.v1.SetFieldAudienceResponse
+	17, // 47: sttattus.dating.v1.AtlasPrivacyService.SetDiscoverability:output_type -> sttattus.dating.v1.SetDiscoverabilityResponse
+	19, // 48: sttattus.dating.v1.AtlasPrivacyService.ListPlaces:output_type -> sttattus.dating.v1.ListPlacesResponse
+	21, // 49: sttattus.dating.v1.AtlasPrivacyService.SetHomeArea:output_type -> sttattus.dating.v1.SetHomeAreaResponse
+	23, // 50: sttattus.dating.v1.AtlasPrivacyService.SetTravelArea:output_type -> sttattus.dating.v1.SetTravelAreaResponse
+	25, // 51: sttattus.dating.v1.AtlasPrivacyService.SetPillarSetting:output_type -> sttattus.dating.v1.SetPillarSettingResponse
+	27, // 52: sttattus.dating.v1.AtlasPrivacyService.GetSharePreview:output_type -> sttattus.dating.v1.GetSharePreviewResponse
+	29, // 53: sttattus.dating.v1.AtlasPrivacyService.CreateShareLink:output_type -> sttattus.dating.v1.CreateShareLinkResponse
+	31, // 54: sttattus.dating.v1.AtlasPrivacyService.RevokeShareLink:output_type -> sttattus.dating.v1.RevokeShareLinkResponse
+	33, // 55: sttattus.dating.v1.AtlasPrivacyService.ListShareAccesses:output_type -> sttattus.dating.v1.ListShareAccessesResponse
+	35, // 56: sttattus.dating.v1.AtlasPrivacyService.ExportAtlasData:output_type -> sttattus.dating.v1.ExportAtlasDataResponse
+	37, // 57: sttattus.dating.v1.AtlasPrivacyService.LeaveAtlas:output_type -> sttattus.dating.v1.LeaveAtlasResponse
+	39, // 58: sttattus.dating.v1.AtlasPrivacyService.CancelLeaveAtlas:output_type -> sttattus.dating.v1.CancelLeaveAtlasResponse
+	45, // [45:59] is the sub-list for method output_type
+	31, // [31:45] is the sub-list for method input_type
+	31, // [31:31] is the sub-list for extension type_name
+	31, // [31:31] is the sub-list for extension extendee
+	0,  // [0:31] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_privacy_proto_init() }
@@ -2696,6 +2732,7 @@ func file_sttattus_dating_v1_privacy_proto_init() {
 	if File_sttattus_dating_v1_privacy_proto != nil {
 		return
 	}
+	file_sttattus_dating_v1_profile_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

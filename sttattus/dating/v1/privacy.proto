@@ -3,6 +3,7 @@ syntax = "proto3";
 package sttattus.dating.v1;
 
 import "sttattus/common/v1/pagination.proto";
+import "sttattus/dating/v1/profile.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
 
@@ -101,6 +102,11 @@ message SharePreview {
   repeated string fields = 4; // fields that will appear, by audience "public"
   repeated PillarPredicate predicates = 5;
   bool photos_included = 6; // always false: share links never carry photos
+  // Atlas Choice 3: the items the member shows to share links. Words only:
+  // voice answers stay in the app.
+  repeated ProfileAnswer answers = 7;
+  repeated ProfileModule modules = 8;
+  TemporaryIntent right_now = 9;
 }
 
 message BlockedMember {
@@ -113,7 +119,8 @@ message StaffAccess {
   int64 at = 1;
   // What happened, as a kind the client words in the member's language:
   // evidence_viewed | record_opened | check_decided | appeal | restriction |
-  // recovery | erasure | share_closed | data_opened. Never an audit action.
+  // recovery | erasure | share_closed | matchmaker | advisor |
+  // content_moderated | data_opened. Never an audit action.
   string action = 2;
   string purpose = 3;
 }

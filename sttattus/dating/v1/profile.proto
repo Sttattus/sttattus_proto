@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 3 — Intent and Boundary-Rich Profiles.
+//
+// A member describes what they want and how they live in answers they choose
+// from a fixed catalogue, adds what is true this week apart from their
+// long-term intent, answers values, dilemma and activity prompts in words or
+// voice, and decides for each item who sees it. Every item is dated; old ones
+// are re-asked instead of being treated as permanent truth.
+//
+// Audiences (contexts), any of:
+//   discovery   members who can find you
+//   matches     members with an open match with you
+//   events      guests of an event you both attend and are both shown at
+//   share       people who open a share link you made
+//   matchmaker  Atlas matchmakers preparing an introduction for you
+//   staff       Atlas advisors in the concierge
+// The server decides which of these a viewer belongs to; a client never
+// claims one. Times are unix seconds.
+//
+// Keys are catalogue keys (e.g. field "family_plans", choice "open_to_children");
+// clients show words, never keys.
+// ===========================================================================
+
+// One boundary answer. For anyone but the member, `audiences`, `hidden` and
+// `hidden_reason` are empty, and an answer they may not see is absent.
+message ProfileAnswer {
+  // relationship_structure | pace | exclusivity | family_plans | geography |
+  // accessibility | communication | drinking | smoking | pets | culture |
+  // languages | schedule | dealbreakers
+  string field = 1;
+  // Catalogue options. Deal-breakers are "field:option" pairs.
+  repeated string choices = 2;
+  // The member's own words (accessibility and culture only). Empty for other
+  // viewers when staff hid it.
+  string note = 3;
+  repeated string audiences = 4;
+  int64 confirmed_at = 5;
+  int64 updated_at = 6;
+  bool hidden = 7;
+  // offensive | spam | misleading | impersonation | other
+  string hidden_reason = 8;
+}
+
+// What is true right now, apart from the long-term intent. Ends by itself.
+message TemporaryIntent {
+  // dinner | drinks | coffee | walk | activity | event | call
+  string kind = 1;
+  string note = 2;
+  int64 until = 3;
+  repeated string audiences = 4;
+  int64 created_at = 5;
+  // The member's current area, only where the viewer may see their city.
+  string place = 6;
+  bool hidden = 7;
+  string hidden_reason = 8;
+}
+
+// A values, dilemma or activity answer, in words and/or voice.
+message ProfileModule {
+  // values | dilemma | activity
+  string kind = 1;
+  // values: core; activity: together; dilemma: plans_or_spontaneity |
+  // truth_or_kindness | city_or_cabin | save_or_spend | talk_now_or_later |
+  // host_or_go_out | dream_job_or_people | phones_away_or_fine
+  string prompt_key = 2;
+  // values: ranked value keys; dilemma: "a" or "b"; activity: activity keys.
+  repeated string choices = 3;
+  string text = 4;
+  // Signed on every read, only for a viewer the audience allows. Never the
+  // storage locator.
+  string voice_url = 5;
+  string voice_transcript = 6;
+  int32 voice_seconds = 7;
+  repeated string audiences = 8;
+  int64 confirmed_at = 9;
+  int64 updated_at = 10;
+  bool hidden = 11;
+  string hidden_reason = 12;
+}
+
+// Everything the member has set, for their own editor.
+message MyBoundaries {
+  repeated ProfileAnswer answers = 1;
+  repeated ProfileModule modules = 2;
+  // Absent when there is none or it has ended.
+  TemporaryIntent right_now = 3;
+  // Items older than 180 days, as ids: "answer:<field>",
+  // "module:<kind>:<prompt>", "intent", "prism".
+  repeated string stale = 4;
+  int64 intent_confirmed_at = 5;
+  int64 prism_confirmed_at = 6;
+}
+
+message GetMyBoundariesRequest {}
+message GetMyBoundariesResponse {
+  MyBoundaries boundaries = 1;
+}
+
+// Upserts one answer. No choices and no note removes it. Audiences must be
+// listed explicitly (the editor pre-selects the suggestion). Saving a change
+// confirms it; saving the same thing again also confirms it.
+message SetProfileAnswerRequest {
+  string field = 1;
+  repeated string choices = 2;
+  string note = 3;
+  repeated string audiences = 4;
+}
+message SetProfileAnswerResponse {
+  MyBoundaries boundaries = 1;
+}
+
+// Upserts one module. `media_asset_id` attaches a new recording (an audio
+// asset of the member's, uploaded under atlas/voice); `remove_voice` drops
+// the current one. Neither keeps the recording as it is.
+message SetProfileModuleRequest {
+  string kind = 1;
+  string prompt_key = 2;
+  repeated string choices = 3;
+  string text = 4;
+  repeated string audiences = 5;
+  string media_asset_id = 6;
+  int32 voice_seconds = 7;
+  bool remove_voice = 8;
+}
+message SetProfileModuleResponse {
+  MyBoundaries boundaries = 1;
+}
+
+message DeleteProfileModuleRequest {
+  string kind = 1;
+  string prompt_key = 2;
+}
+message DeleteProfileModuleResponse {
+  MyBoundaries boundaries = 1;
+}
+
+// Replaces the current one. `until` is in the future and at most 7 days away.
+message SetTemporaryIntentRequest {
+  string kind = 1;
+  string note = 2;
+  int64 until = 3;
+  repeated string audiences = 4;
+}
+message SetTemporaryIntentResponse {
+  MyBoundaries boundaries = 1;
+}
+
+message ClearTemporaryIntentRequest {}
+message ClearTemporaryIntentResponse {
+  MyBoundaries boundaries = 1;
+}
+
+// "Still true": marks items confirmed today without changing them. Ids as in
+// MyBoundaries.stale; unknown ids are refused.
+message ReconfirmProfileRequest {
+  repeated string items = 1;
+}
+message ReconfirmProfileResponse {
+  MyBoundaries boundaries = 1;
+}
+
+// A guest of an event, as another listed guest sees them.
+message EventGuest {
+  string user_id = 1;
+  string name = 2;
+  // First photo, only if their photos audience allows this viewer.
+  string photo_url = 3;
+  TemporaryIntent right_now = 4;
+}
+
+// The listed guests of an event, for a guest who is going and listed.
+message ListEventGuestsRequest {
+  string event_id = 1;
+}
+message ListEventGuestsResponse {
+  // Whether the caller is shown to other guests. When false, `guests` is
+  // empty: guests see each other only when both chose to be shown.
+  bool listed = 1;
+  bool going = 2;
+  repeated EventGuest guests = 3;
+}
+
+message SetEventListingRequest {
+  string event_id = 1;
+  bool listed = 2;
+}
+message SetEventListingResponse {
+  bool listed = 1;
+}
+
+// Report something another member wrote that the reporter can see.
+message ReportProfileContentRequest {
+  string owner_user_id = 1;
+  // "answer:<field>" | "module:<kind>:<prompt>" | "right_now"
+  string item = 2;
+  // offensive | spam | misleading | impersonation | other
+  string reason = 3;
+}
+message ReportProfileContentResponse {}
+
+service AtlasProfileService {
+  rpc GetMyBoundaries(GetMyBoundariesRequest) returns (GetMyBoundariesResponse);
+  rpc SetProfileAnswer(SetProfileAnswerRequest) returns (SetProfileAnswerResponse);
+  rpc SetProfileModule(SetProfileModuleRequest) returns (SetProfileModuleResponse);
+  rpc DeleteProfileModule(DeleteProfileModuleRequest) returns (DeleteProfileModuleResponse);
+  rpc SetTemporaryIntent(SetTemporaryIntentRequest) returns (SetTemporaryIntentResponse);
+  rpc ClearTemporaryIntent(ClearTemporaryIntentRequest) returns (ClearTemporaryIntentResponse);
+  rpc ReconfirmProfile(ReconfirmProfileRequest) returns (ReconfirmProfileResponse);
+  rpc ListEventGuests(ListEventGuestsRequest) returns (ListEventGuestsResponse);
+  rpc SetEventListing(SetEventListingRequest) returns (SetEventListingResponse);
+  rpc ReportProfileContent(ReportProfileContentRequest) returns (ReportProfileContentResponse);
+}

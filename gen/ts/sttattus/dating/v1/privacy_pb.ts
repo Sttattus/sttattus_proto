@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { ProfileAnswer, ProfileModule, TemporaryIntent } from "./profile_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -518,6 +519,24 @@ export class SharePreview extends Message<SharePreview> {
    */
   photosIncluded = false;
 
+  /**
+   * Atlas Choice 3: the items the member shows to share links. Words only:
+   * voice answers stay in the app.
+   *
+   * @generated from field: repeated sttattus.dating.v1.ProfileAnswer answers = 7;
+   */
+  answers: ProfileAnswer[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.ProfileModule modules = 8;
+   */
+  modules: ProfileModule[] = [];
+
+  /**
+   * @generated from field: sttattus.dating.v1.TemporaryIntent right_now = 9;
+   */
+  rightNow?: TemporaryIntent;
+
   constructor(data?: PartialMessage<SharePreview>) {
     super();
     proto3.util.initPartial(data, this);
@@ -532,6 +551,9 @@ export class SharePreview extends Message<SharePreview> {
     { no: 4, name: "fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 5, name: "predicates", kind: "message", T: PillarPredicate, repeated: true },
     { no: 6, name: "photos_included", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "answers", kind: "message", T: ProfileAnswer, repeated: true },
+    { no: 8, name: "modules", kind: "message", T: ProfileModule, repeated: true },
+    { no: 9, name: "right_now", kind: "message", T: TemporaryIntent },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SharePreview {
@@ -612,7 +634,8 @@ export class StaffAccess extends Message<StaffAccess> {
   /**
    * What happened, as a kind the client words in the member's language:
    * evidence_viewed | record_opened | check_decided | appeal | restriction |
-   * recovery | erasure | share_closed | data_opened. Never an audit action.
+   * recovery | erasure | share_closed | matchmaker | advisor |
+   * content_moderated | data_opened. Never an audit action.
    *
    * @generated from field: string action = 2;
    */

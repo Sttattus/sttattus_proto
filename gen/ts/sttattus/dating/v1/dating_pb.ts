@@ -7,6 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message as Message$1, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { TrustPanel } from "./identity_pb.js";
 import { PillarPredicate } from "./privacy_pb.js";
+import { ProfileAnswer, ProfileModule, TemporaryIntent } from "./profile_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -307,6 +308,38 @@ export class DatingProfile extends Message$1<DatingProfile> {
    */
   discoverability = "";
 
+  /**
+   * --- Atlas Choice 3 — intent and boundaries (profile.proto) ---
+   * The answers, modules and right-now this viewer may see, each by its own
+   * audience; everything for the member themselves.
+   *
+   * @generated from field: repeated sttattus.dating.v1.ProfileAnswer boundaries = 29;
+   */
+  boundaries: ProfileAnswer[] = [];
+
+  /**
+   * @generated from field: sttattus.dating.v1.TemporaryIntent right_now = 30;
+   */
+  rightNow?: TemporaryIntent;
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.ProfileModule modules = 31;
+   */
+  modules: ProfileModule[] = [];
+
+  /**
+   * When the durable intent and the Prism answers were last confirmed. Sent
+   * with the intent / axes they date, so absent where those are hidden.
+   *
+   * @generated from field: int64 intent_confirmed_at = 32;
+   */
+  intentConfirmedAt = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 prism_confirmed_at = 33;
+   */
+  prismConfirmedAt = protoInt64.zero;
+
   constructor(data?: PartialMessage<DatingProfile>) {
     super();
     proto3.util.initPartial(data, this);
@@ -343,6 +376,11 @@ export class DatingProfile extends Message$1<DatingProfile> {
     { no: 26, name: "trust", kind: "message", T: TrustPanel },
     { no: 27, name: "predicates", kind: "message", T: PillarPredicate, repeated: true },
     { no: 28, name: "discoverability", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 29, name: "boundaries", kind: "message", T: ProfileAnswer, repeated: true },
+    { no: 30, name: "right_now", kind: "message", T: TemporaryIntent },
+    { no: 31, name: "modules", kind: "message", T: ProfileModule, repeated: true },
+    { no: 32, name: "intent_confirmed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 33, name: "prism_confirmed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatingProfile {
@@ -391,6 +429,13 @@ export class DiscoveryPreferences extends Message$1<DiscoveryPreferences> {
    */
   showMe = "";
 
+  /**
+   * Atlas Choice 3: only people with a live "right now" shown to discovery.
+   *
+   * @generated from field: bool available_now = 5;
+   */
+  availableNow = false;
+
   constructor(data?: PartialMessage<DiscoveryPreferences>) {
     super();
     proto3.util.initPartial(data, this);
@@ -403,6 +448,7 @@ export class DiscoveryPreferences extends Message$1<DiscoveryPreferences> {
     { no: 2, name: "min_age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "max_age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "show_me", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "available_now", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DiscoveryPreferences {

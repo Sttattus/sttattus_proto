@@ -15,7 +15,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../common/v1/pagination.pb.dart' as $1;
+import '../../common/v1/pagination.pb.dart' as $2;
+import 'profile.pb.dart' as $1;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -772,6 +773,9 @@ class SharePreview extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? fields,
     $core.Iterable<PillarPredicate>? predicates,
     $core.bool? photosIncluded,
+    $core.Iterable<$1.ProfileAnswer>? answers,
+    $core.Iterable<$1.ProfileModule>? modules,
+    $1.TemporaryIntent? rightNow,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -780,6 +784,9 @@ class SharePreview extends $pb.GeneratedMessage {
     if (fields != null) result.fields.addAll(fields);
     if (predicates != null) result.predicates.addAll(predicates);
     if (photosIncluded != null) result.photosIncluded = photosIncluded;
+    if (answers != null) result.answers.addAll(answers);
+    if (modules != null) result.modules.addAll(modules);
+    if (rightNow != null) result.rightNow = rightNow;
     return result;
   }
 
@@ -804,6 +811,12 @@ class SharePreview extends $pb.GeneratedMessage {
     ..pPM<PillarPredicate>(5, _omitFieldNames ? '' : 'predicates',
         subBuilder: PillarPredicate.create)
     ..aOB(6, _omitFieldNames ? '' : 'photosIncluded')
+    ..pPM<$1.ProfileAnswer>(7, _omitFieldNames ? '' : 'answers',
+        subBuilder: $1.ProfileAnswer.create)
+    ..pPM<$1.ProfileModule>(8, _omitFieldNames ? '' : 'modules',
+        subBuilder: $1.ProfileModule.create)
+    ..aOM<$1.TemporaryIntent>(9, _omitFieldNames ? '' : 'rightNow',
+        subBuilder: $1.TemporaryIntent.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -866,6 +879,25 @@ class SharePreview extends $pb.GeneratedMessage {
   $core.bool hasPhotosIncluded() => $_has(5);
   @$pb.TagNumber(6)
   void clearPhotosIncluded() => $_clearField(6);
+
+  /// Atlas Choice 3: the items the member shows to share links. Words only:
+  /// voice answers stay in the app.
+  @$pb.TagNumber(7)
+  $pb.PbList<$1.ProfileAnswer> get answers => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$1.ProfileModule> get modules => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $1.TemporaryIntent get rightNow => $_getN(8);
+  @$pb.TagNumber(9)
+  set rightNow($1.TemporaryIntent value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRightNow() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRightNow() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.TemporaryIntent ensureRightNow() => $_ensure(8);
 }
 
 class BlockedMember extends $pb.GeneratedMessage {
@@ -1009,7 +1041,8 @@ class StaffAccess extends $pb.GeneratedMessage {
 
   /// What happened, as a kind the client words in the member's language:
   /// evidence_viewed | record_opened | check_decided | appeal | restriction |
-  /// recovery | erasure | share_closed | data_opened. Never an audit action.
+  /// recovery | erasure | share_closed | matchmaker | advisor |
+  /// content_moderated | data_opened. Never an audit action.
   @$pb.TagNumber(2)
   $core.String get action => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1635,7 +1668,7 @@ class ListPlacesRequest extends $pb.GeneratedMessage {
   factory ListPlacesRequest({
     $core.String? query,
     $core.String? countryCode,
-    $1.PageRequest? page,
+    $2.PageRequest? page,
   }) {
     final result = create();
     if (query != null) result.query = query;
@@ -1660,8 +1693,8 @@ class ListPlacesRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'query')
     ..aOS(2, _omitFieldNames ? '' : 'countryCode')
-    ..aOM<$1.PageRequest>(3, _omitFieldNames ? '' : 'page',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(3, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1702,21 +1735,21 @@ class ListPlacesRequest extends $pb.GeneratedMessage {
   void clearCountryCode() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $1.PageRequest get page => $_getN(2);
+  $2.PageRequest get page => $_getN(2);
   @$pb.TagNumber(3)
-  set page($1.PageRequest value) => $_setField(3, value);
+  set page($2.PageRequest value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasPage() => $_has(2);
   @$pb.TagNumber(3)
   void clearPage() => $_clearField(3);
   @$pb.TagNumber(3)
-  $1.PageRequest ensurePage() => $_ensure(2);
+  $2.PageRequest ensurePage() => $_ensure(2);
 }
 
 class ListPlacesResponse extends $pb.GeneratedMessage {
   factory ListPlacesResponse({
     $core.Iterable<Place>? places,
-    $1.PageResponse? page,
+    $2.PageResponse? page,
   }) {
     final result = create();
     if (places != null) result.places.addAll(places);
@@ -1739,8 +1772,8 @@ class ListPlacesResponse extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..pPM<Place>(1, _omitFieldNames ? '' : 'places', subBuilder: Place.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page',
-        subBuilder: $1.PageResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1766,15 +1799,15 @@ class ListPlacesResponse extends $pb.GeneratedMessage {
   $pb.PbList<Place> get places => $_getList(0);
 
   @$pb.TagNumber(2)
-  $1.PageResponse get page => $_getN(1);
+  $2.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageResponse value) => $_setField(2, value);
+  set page($2.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePage() => $_ensure(1);
+  $2.PageResponse ensurePage() => $_ensure(1);
 }
 
 class SetHomeAreaRequest extends $pb.GeneratedMessage {
@@ -2595,7 +2628,7 @@ class RevokeShareLinkResponse extends $pb.GeneratedMessage {
 class ListShareAccessesRequest extends $pb.GeneratedMessage {
   factory ListShareAccessesRequest({
     $core.String? id,
-    $1.PageRequest? page,
+    $2.PageRequest? page,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2618,8 +2651,8 @@ class ListShareAccessesRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$1.PageRequest>(2, _omitFieldNames ? '' : 'page',
-        subBuilder: $1.PageRequest.create)
+    ..aOM<$2.PageRequest>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2652,21 +2685,21 @@ class ListShareAccessesRequest extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $1.PageRequest get page => $_getN(1);
+  $2.PageRequest get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageRequest value) => $_setField(2, value);
+  set page($2.PageRequest value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageRequest ensurePage() => $_ensure(1);
+  $2.PageRequest ensurePage() => $_ensure(1);
 }
 
 class ListShareAccessesResponse extends $pb.GeneratedMessage {
   factory ListShareAccessesResponse({
     $core.Iterable<ShareAccess>? accesses,
-    $1.PageResponse? page,
+    $2.PageResponse? page,
   }) {
     final result = create();
     if (accesses != null) result.accesses.addAll(accesses);
@@ -2690,8 +2723,8 @@ class ListShareAccessesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<ShareAccess>(1, _omitFieldNames ? '' : 'accesses',
         subBuilder: ShareAccess.create)
-    ..aOM<$1.PageResponse>(2, _omitFieldNames ? '' : 'page',
-        subBuilder: $1.PageResponse.create)
+    ..aOM<$2.PageResponse>(2, _omitFieldNames ? '' : 'page',
+        subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2718,15 +2751,15 @@ class ListShareAccessesResponse extends $pb.GeneratedMessage {
   $pb.PbList<ShareAccess> get accesses => $_getList(0);
 
   @$pb.TagNumber(2)
-  $1.PageResponse get page => $_getN(1);
+  $2.PageResponse get page => $_getN(1);
   @$pb.TagNumber(2)
-  set page($1.PageResponse value) => $_setField(2, value);
+  set page($2.PageResponse value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPage() => $_has(1);
   @$pb.TagNumber(2)
   void clearPage() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.PageResponse ensurePage() => $_ensure(1);
+  $2.PageResponse ensurePage() => $_ensure(1);
 }
 
 class ExportAtlasDataRequest extends $pb.GeneratedMessage {

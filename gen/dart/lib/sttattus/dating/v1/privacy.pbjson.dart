@@ -201,6 +201,30 @@ const SharePreview$json = {
       '10': 'predicates'
     },
     {'1': 'photos_included', '3': 6, '4': 1, '5': 8, '10': 'photosIncluded'},
+    {
+      '1': 'answers',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.ProfileAnswer',
+      '10': 'answers'
+    },
+    {
+      '1': 'modules',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.ProfileModule',
+      '10': 'modules'
+    },
+    {
+      '1': 'right_now',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.TemporaryIntent',
+      '10': 'rightNow'
+    },
   ],
 };
 
@@ -209,7 +233,11 @@ final $typed_data.Uint8List sharePreviewDescriptor = $convert.base64Decode(
     'CgxTaGFyZVByZXZpZXcSEgoEbmFtZRgBIAEoCVIEbmFtZRIQCgNiaW8YAiABKAlSA2JpbxIWCg'
     'ZpbnRlbnQYAyABKAlSBmludGVudBIWCgZmaWVsZHMYBCADKAlSBmZpZWxkcxJDCgpwcmVkaWNh'
     'dGVzGAUgAygLMiMuc3R0YXR0dXMuZGF0aW5nLnYxLlBpbGxhclByZWRpY2F0ZVIKcHJlZGljYX'
-    'RlcxInCg9waG90b3NfaW5jbHVkZWQYBiABKAhSDnBob3Rvc0luY2x1ZGVk');
+    'RlcxInCg9waG90b3NfaW5jbHVkZWQYBiABKAhSDnBob3Rvc0luY2x1ZGVkEjsKB2Fuc3dlcnMY'
+    'ByADKAsyIS5zdHRhdHR1cy5kYXRpbmcudjEuUHJvZmlsZUFuc3dlclIHYW5zd2VycxI7Cgdtb2'
+    'R1bGVzGAggAygLMiEuc3R0YXR0dXMuZGF0aW5nLnYxLlByb2ZpbGVNb2R1bGVSB21vZHVsZXMS'
+    'QAoJcmlnaHRfbm93GAkgASgLMiMuc3R0YXR0dXMuZGF0aW5nLnYxLlRlbXBvcmFyeUludGVudF'
+    'IIcmlnaHROb3c=');
 
 @$core.Deprecated('Use blockedMemberDescriptor instead')
 const BlockedMember$json = {

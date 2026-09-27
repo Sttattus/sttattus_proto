@@ -142,6 +142,44 @@ const DatingProfile$json = {
       '10': 'predicates'
     },
     {'1': 'discoverability', '3': 28, '4': 1, '5': 9, '10': 'discoverability'},
+    {
+      '1': 'boundaries',
+      '3': 29,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.ProfileAnswer',
+      '10': 'boundaries'
+    },
+    {
+      '1': 'right_now',
+      '3': 30,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.TemporaryIntent',
+      '10': 'rightNow'
+    },
+    {
+      '1': 'modules',
+      '3': 31,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.ProfileModule',
+      '10': 'modules'
+    },
+    {
+      '1': 'intent_confirmed_at',
+      '3': 32,
+      '4': 1,
+      '5': 3,
+      '10': 'intentConfirmedAt'
+    },
+    {
+      '1': 'prism_confirmed_at',
+      '3': 33,
+      '4': 1,
+      '5': 3,
+      '10': 'prismConfirmedAt'
+    },
   ],
 };
 
@@ -165,7 +203,12 @@ final $typed_data.Uint8List datingProfileDescriptor = $convert.base64Decode(
     'NvbmRzGBkgASgFUhR2b2ljZUR1cmF0aW9uU2Vjb25kcxI0CgV0cnVzdBgaIAEoCzIeLnN0dGF0'
     'dHVzLmRhdGluZy52MS5UcnVzdFBhbmVsUgV0cnVzdBJDCgpwcmVkaWNhdGVzGBsgAygLMiMuc3'
     'R0YXR0dXMuZGF0aW5nLnYxLlBpbGxhclByZWRpY2F0ZVIKcHJlZGljYXRlcxIoCg9kaXNjb3Zl'
-    'cmFiaWxpdHkYHCABKAlSD2Rpc2NvdmVyYWJpbGl0eQ==');
+    'cmFiaWxpdHkYHCABKAlSD2Rpc2NvdmVyYWJpbGl0eRJBCgpib3VuZGFyaWVzGB0gAygLMiEuc3'
+    'R0YXR0dXMuZGF0aW5nLnYxLlByb2ZpbGVBbnN3ZXJSCmJvdW5kYXJpZXMSQAoJcmlnaHRfbm93'
+    'GB4gASgLMiMuc3R0YXR0dXMuZGF0aW5nLnYxLlRlbXBvcmFyeUludGVudFIIcmlnaHROb3cSOw'
+    'oHbW9kdWxlcxgfIAMoCzIhLnN0dGF0dHVzLmRhdGluZy52MS5Qcm9maWxlTW9kdWxlUgdtb2R1'
+    'bGVzEi4KE2ludGVudF9jb25maXJtZWRfYXQYICABKANSEWludGVudENvbmZpcm1lZEF0EiwKEn'
+    'ByaXNtX2NvbmZpcm1lZF9hdBghIAEoA1IQcHJpc21Db25maXJtZWRBdA==');
 
 @$core.Deprecated('Use discoveryPreferencesDescriptor instead')
 const DiscoveryPreferences$json = {
@@ -181,6 +224,7 @@ const DiscoveryPreferences$json = {
     {'1': 'min_age', '3': 2, '4': 1, '5': 5, '10': 'minAge'},
     {'1': 'max_age', '3': 3, '4': 1, '5': 5, '10': 'maxAge'},
     {'1': 'show_me', '3': 4, '4': 1, '5': 9, '10': 'showMe'},
+    {'1': 'available_now', '3': 5, '4': 1, '5': 8, '10': 'availableNow'},
   ],
 };
 
@@ -188,7 +232,8 @@ const DiscoveryPreferences$json = {
 final $typed_data.Uint8List discoveryPreferencesDescriptor = $convert.base64Decode(
     'ChREaXNjb3ZlcnlQcmVmZXJlbmNlcxIsChJtYXhfZGlzdGFuY2VfbWlsZXMYASABKAVSEG1heE'
     'Rpc3RhbmNlTWlsZXMSFwoHbWluX2FnZRgCIAEoBVIGbWluQWdlEhcKB21heF9hZ2UYAyABKAVS'
-    'Bm1heEFnZRIXCgdzaG93X21lGAQgASgJUgZzaG93TWU=');
+    'Bm1heEFnZRIXCgdzaG93X21lGAQgASgJUgZzaG93TWUSIwoNYXZhaWxhYmxlX25vdxgFIAEoCF'
+    'IMYXZhaWxhYmxlTm93');
 
 @$core.Deprecated('Use getDiscoveryPreferencesRequestDescriptor instead')
 const GetDiscoveryPreferencesRequest$json = {

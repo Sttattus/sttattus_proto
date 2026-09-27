@@ -5,6 +5,7 @@ package sttattus.dating.v1;
 import "sttattus/common/v1/pagination.proto";
 import "sttattus/dating/v1/identity.proto";
 import "sttattus/dating/v1/privacy.proto";
+import "sttattus/dating/v1/profile.proto";
 
 option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
 
@@ -88,6 +89,17 @@ message DatingProfile {
   // The member's discoverability for themselves only: visible | paused |
   // incognito. Empty for anyone else.
   string discoverability = 28;
+
+  // --- Atlas Choice 3 — intent and boundaries (profile.proto) ---
+  // The answers, modules and right-now this viewer may see, each by its own
+  // audience; everything for the member themselves.
+  repeated ProfileAnswer boundaries = 29;
+  TemporaryIntent right_now = 30;
+  repeated ProfileModule modules = 31;
+  // When the durable intent and the Prism answers were last confirmed. Sent
+  // with the intent / axes they date, so absent where those are hidden.
+  int64 intent_confirmed_at = 32;
+  int64 prism_confirmed_at = 33;
 }
 
 // Discovery preferences (A9P5). Backs the Settings distance/age/show-me
@@ -98,6 +110,8 @@ message DiscoveryPreferences {
   int32 max_age = 3;
   // 'everyone' | 'men' | 'women' | 'nonbinary'
   string show_me = 4;
+  // Atlas Choice 3: only people with a live "right now" shown to discovery.
+  bool available_now = 5;
 }
 
 message GetDiscoveryPreferencesRequest {}
