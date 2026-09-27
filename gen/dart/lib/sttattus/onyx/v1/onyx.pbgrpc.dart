@@ -1465,6 +1465,108 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getMultilingualExport, request, options: options);
   }
 
+  /// Choice 12 — member-controlled living archives and succession. Operational
+  /// trigger evidence, dual control, disputes, holds and release remain staff
+  /// workflows; members can always preview and revoke before release.
+  $grpc.ResponseFuture<$0.GetLivingArchiveDashboardResponse>
+      getLivingArchiveDashboard(
+    $0.GetLivingArchiveDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLivingArchiveDashboard, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertLivingArchivePolicyResponse>
+      upsertLivingArchivePolicy(
+    $0.UpsertLivingArchivePolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertLivingArchivePolicy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PreviewLivingArchivePolicyResponse>
+      previewLivingArchivePolicy(
+    $0.PreviewLivingArchivePolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$previewLivingArchivePolicy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateLivingArchiveEditionResponse>
+      generateLivingArchiveEdition(
+    $0.GenerateLivingArchiveEditionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateLivingArchiveEdition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LinkLivingArchiveLegacyEscrowResponse>
+      linkLivingArchiveLegacyEscrow(
+    $0.LinkLivingArchiveLegacyEscrowRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$linkLivingArchiveLegacyEscrow, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertLivingArchiveContactResponse>
+      upsertLivingArchiveContact(
+    $0.UpsertLivingArchiveContactRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertLivingArchiveContact, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteLivingArchiveContactResponse>
+      deleteLivingArchiveContact(
+    $0.DeleteLivingArchiveContactRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteLivingArchiveContact, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitLivingArchivePolicyResponse>
+      submitLivingArchivePolicy(
+    $0.SubmitLivingArchivePolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitLivingArchivePolicy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeLivingArchivePolicyResponse>
+      revokeLivingArchivePolicy(
+    $0.RevokeLivingArchivePolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeLivingArchivePolicy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmLivingArchiveReviewResponse>
+      confirmLivingArchiveReview(
+    $0.ConfirmLivingArchiveReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmLivingArchiveReview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ContestLivingArchiveReleaseResponse>
+      contestLivingArchiveRelease(
+    $0.ContestLivingArchiveReleaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$contestLivingArchiveRelease, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2444,6 +2546,72 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GetMultilingualExport',
       ($0.GetMultilingualExportRequest value) => value.writeToBuffer(),
       $0.GetMultilingualExportResponse.fromBuffer);
+  static final _$getLivingArchiveDashboard = $grpc.ClientMethod<
+          $0.GetLivingArchiveDashboardRequest,
+          $0.GetLivingArchiveDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetLivingArchiveDashboard',
+      ($0.GetLivingArchiveDashboardRequest value) => value.writeToBuffer(),
+      $0.GetLivingArchiveDashboardResponse.fromBuffer);
+  static final _$upsertLivingArchivePolicy = $grpc.ClientMethod<
+          $0.UpsertLivingArchivePolicyRequest,
+          $0.UpsertLivingArchivePolicyResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertLivingArchivePolicy',
+      ($0.UpsertLivingArchivePolicyRequest value) => value.writeToBuffer(),
+      $0.UpsertLivingArchivePolicyResponse.fromBuffer);
+  static final _$previewLivingArchivePolicy = $grpc.ClientMethod<
+          $0.PreviewLivingArchivePolicyRequest,
+          $0.PreviewLivingArchivePolicyResponse>(
+      '/sttattus.onyx.v1.OnyxService/PreviewLivingArchivePolicy',
+      ($0.PreviewLivingArchivePolicyRequest value) => value.writeToBuffer(),
+      $0.PreviewLivingArchivePolicyResponse.fromBuffer);
+  static final _$generateLivingArchiveEdition = $grpc.ClientMethod<
+          $0.GenerateLivingArchiveEditionRequest,
+          $0.GenerateLivingArchiveEditionResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateLivingArchiveEdition',
+      ($0.GenerateLivingArchiveEditionRequest value) => value.writeToBuffer(),
+      $0.GenerateLivingArchiveEditionResponse.fromBuffer);
+  static final _$linkLivingArchiveLegacyEscrow = $grpc.ClientMethod<
+          $0.LinkLivingArchiveLegacyEscrowRequest,
+          $0.LinkLivingArchiveLegacyEscrowResponse>(
+      '/sttattus.onyx.v1.OnyxService/LinkLivingArchiveLegacyEscrow',
+      ($0.LinkLivingArchiveLegacyEscrowRequest value) => value.writeToBuffer(),
+      $0.LinkLivingArchiveLegacyEscrowResponse.fromBuffer);
+  static final _$upsertLivingArchiveContact = $grpc.ClientMethod<
+          $0.UpsertLivingArchiveContactRequest,
+          $0.UpsertLivingArchiveContactResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertLivingArchiveContact',
+      ($0.UpsertLivingArchiveContactRequest value) => value.writeToBuffer(),
+      $0.UpsertLivingArchiveContactResponse.fromBuffer);
+  static final _$deleteLivingArchiveContact = $grpc.ClientMethod<
+          $0.DeleteLivingArchiveContactRequest,
+          $0.DeleteLivingArchiveContactResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteLivingArchiveContact',
+      ($0.DeleteLivingArchiveContactRequest value) => value.writeToBuffer(),
+      $0.DeleteLivingArchiveContactResponse.fromBuffer);
+  static final _$submitLivingArchivePolicy = $grpc.ClientMethod<
+          $0.SubmitLivingArchivePolicyRequest,
+          $0.SubmitLivingArchivePolicyResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitLivingArchivePolicy',
+      ($0.SubmitLivingArchivePolicyRequest value) => value.writeToBuffer(),
+      $0.SubmitLivingArchivePolicyResponse.fromBuffer);
+  static final _$revokeLivingArchivePolicy = $grpc.ClientMethod<
+          $0.RevokeLivingArchivePolicyRequest,
+          $0.RevokeLivingArchivePolicyResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeLivingArchivePolicy',
+      ($0.RevokeLivingArchivePolicyRequest value) => value.writeToBuffer(),
+      $0.RevokeLivingArchivePolicyResponse.fromBuffer);
+  static final _$confirmLivingArchiveReview = $grpc.ClientMethod<
+          $0.ConfirmLivingArchiveReviewRequest,
+          $0.ConfirmLivingArchiveReviewResponse>(
+      '/sttattus.onyx.v1.OnyxService/ConfirmLivingArchiveReview',
+      ($0.ConfirmLivingArchiveReviewRequest value) => value.writeToBuffer(),
+      $0.ConfirmLivingArchiveReviewResponse.fromBuffer);
+  static final _$contestLivingArchiveRelease = $grpc.ClientMethod<
+          $0.ContestLivingArchiveReleaseRequest,
+          $0.ContestLivingArchiveReleaseResponse>(
+      '/sttattus.onyx.v1.OnyxService/ContestLivingArchiveRelease',
+      ($0.ContestLivingArchiveReleaseRequest value) => value.writeToBuffer(),
+      $0.ContestLivingArchiveReleaseResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -4102,6 +4270,112 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetMultilingualExportRequest.fromBuffer(value),
         ($0.GetMultilingualExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLivingArchiveDashboardRequest,
+            $0.GetLivingArchiveDashboardResponse>(
+        'GetLivingArchiveDashboard',
+        getLivingArchiveDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLivingArchiveDashboardRequest.fromBuffer(value),
+        ($0.GetLivingArchiveDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertLivingArchivePolicyRequest,
+            $0.UpsertLivingArchivePolicyResponse>(
+        'UpsertLivingArchivePolicy',
+        upsertLivingArchivePolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertLivingArchivePolicyRequest.fromBuffer(value),
+        ($0.UpsertLivingArchivePolicyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PreviewLivingArchivePolicyRequest,
+            $0.PreviewLivingArchivePolicyResponse>(
+        'PreviewLivingArchivePolicy',
+        previewLivingArchivePolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PreviewLivingArchivePolicyRequest.fromBuffer(value),
+        ($0.PreviewLivingArchivePolicyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateLivingArchiveEditionRequest,
+            $0.GenerateLivingArchiveEditionResponse>(
+        'GenerateLivingArchiveEdition',
+        generateLivingArchiveEdition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateLivingArchiveEditionRequest.fromBuffer(value),
+        ($0.GenerateLivingArchiveEditionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LinkLivingArchiveLegacyEscrowRequest,
+            $0.LinkLivingArchiveLegacyEscrowResponse>(
+        'LinkLivingArchiveLegacyEscrow',
+        linkLivingArchiveLegacyEscrow_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LinkLivingArchiveLegacyEscrowRequest.fromBuffer(value),
+        ($0.LinkLivingArchiveLegacyEscrowResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertLivingArchiveContactRequest,
+            $0.UpsertLivingArchiveContactResponse>(
+        'UpsertLivingArchiveContact',
+        upsertLivingArchiveContact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertLivingArchiveContactRequest.fromBuffer(value),
+        ($0.UpsertLivingArchiveContactResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteLivingArchiveContactRequest,
+            $0.DeleteLivingArchiveContactResponse>(
+        'DeleteLivingArchiveContact',
+        deleteLivingArchiveContact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteLivingArchiveContactRequest.fromBuffer(value),
+        ($0.DeleteLivingArchiveContactResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitLivingArchivePolicyRequest,
+            $0.SubmitLivingArchivePolicyResponse>(
+        'SubmitLivingArchivePolicy',
+        submitLivingArchivePolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitLivingArchivePolicyRequest.fromBuffer(value),
+        ($0.SubmitLivingArchivePolicyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeLivingArchivePolicyRequest,
+            $0.RevokeLivingArchivePolicyResponse>(
+        'RevokeLivingArchivePolicy',
+        revokeLivingArchivePolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeLivingArchivePolicyRequest.fromBuffer(value),
+        ($0.RevokeLivingArchivePolicyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmLivingArchiveReviewRequest,
+            $0.ConfirmLivingArchiveReviewResponse>(
+        'ConfirmLivingArchiveReview',
+        confirmLivingArchiveReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmLivingArchiveReviewRequest.fromBuffer(value),
+        ($0.ConfirmLivingArchiveReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ContestLivingArchiveReleaseRequest,
+            $0.ContestLivingArchiveReleaseResponse>(
+        'ContestLivingArchiveRelease',
+        contestLivingArchiveRelease_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ContestLivingArchiveReleaseRequest.fromBuffer(value),
+        ($0.ContestLivingArchiveReleaseResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -5801,4 +6075,114 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetMultilingualExportResponse> getMultilingualExport(
       $grpc.ServiceCall call, $0.GetMultilingualExportRequest request);
+
+  $async.Future<$0.GetLivingArchiveDashboardResponse>
+      getLivingArchiveDashboard_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetLivingArchiveDashboardRequest> $request) async {
+    return getLivingArchiveDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetLivingArchiveDashboardResponse> getLivingArchiveDashboard(
+      $grpc.ServiceCall call, $0.GetLivingArchiveDashboardRequest request);
+
+  $async.Future<$0.UpsertLivingArchivePolicyResponse>
+      upsertLivingArchivePolicy_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertLivingArchivePolicyRequest> $request) async {
+    return upsertLivingArchivePolicy($call, await $request);
+  }
+
+  $async.Future<$0.UpsertLivingArchivePolicyResponse> upsertLivingArchivePolicy(
+      $grpc.ServiceCall call, $0.UpsertLivingArchivePolicyRequest request);
+
+  $async.Future<$0.PreviewLivingArchivePolicyResponse>
+      previewLivingArchivePolicy_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.PreviewLivingArchivePolicyRequest> $request) async {
+    return previewLivingArchivePolicy($call, await $request);
+  }
+
+  $async.Future<$0.PreviewLivingArchivePolicyResponse>
+      previewLivingArchivePolicy(
+          $grpc.ServiceCall call, $0.PreviewLivingArchivePolicyRequest request);
+
+  $async.Future<$0.GenerateLivingArchiveEditionResponse>
+      generateLivingArchiveEdition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateLivingArchiveEditionRequest>
+              $request) async {
+    return generateLivingArchiveEdition($call, await $request);
+  }
+
+  $async.Future<$0.GenerateLivingArchiveEditionResponse>
+      generateLivingArchiveEdition($grpc.ServiceCall call,
+          $0.GenerateLivingArchiveEditionRequest request);
+
+  $async.Future<$0.LinkLivingArchiveLegacyEscrowResponse>
+      linkLivingArchiveLegacyEscrow_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LinkLivingArchiveLegacyEscrowRequest>
+              $request) async {
+    return linkLivingArchiveLegacyEscrow($call, await $request);
+  }
+
+  $async.Future<$0.LinkLivingArchiveLegacyEscrowResponse>
+      linkLivingArchiveLegacyEscrow($grpc.ServiceCall call,
+          $0.LinkLivingArchiveLegacyEscrowRequest request);
+
+  $async.Future<$0.UpsertLivingArchiveContactResponse>
+      upsertLivingArchiveContact_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertLivingArchiveContactRequest> $request) async {
+    return upsertLivingArchiveContact($call, await $request);
+  }
+
+  $async.Future<$0.UpsertLivingArchiveContactResponse>
+      upsertLivingArchiveContact(
+          $grpc.ServiceCall call, $0.UpsertLivingArchiveContactRequest request);
+
+  $async.Future<$0.DeleteLivingArchiveContactResponse>
+      deleteLivingArchiveContact_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.DeleteLivingArchiveContactRequest> $request) async {
+    return deleteLivingArchiveContact($call, await $request);
+  }
+
+  $async.Future<$0.DeleteLivingArchiveContactResponse>
+      deleteLivingArchiveContact(
+          $grpc.ServiceCall call, $0.DeleteLivingArchiveContactRequest request);
+
+  $async.Future<$0.SubmitLivingArchivePolicyResponse>
+      submitLivingArchivePolicy_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SubmitLivingArchivePolicyRequest> $request) async {
+    return submitLivingArchivePolicy($call, await $request);
+  }
+
+  $async.Future<$0.SubmitLivingArchivePolicyResponse> submitLivingArchivePolicy(
+      $grpc.ServiceCall call, $0.SubmitLivingArchivePolicyRequest request);
+
+  $async.Future<$0.RevokeLivingArchivePolicyResponse>
+      revokeLivingArchivePolicy_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeLivingArchivePolicyRequest> $request) async {
+    return revokeLivingArchivePolicy($call, await $request);
+  }
+
+  $async.Future<$0.RevokeLivingArchivePolicyResponse> revokeLivingArchivePolicy(
+      $grpc.ServiceCall call, $0.RevokeLivingArchivePolicyRequest request);
+
+  $async.Future<$0.ConfirmLivingArchiveReviewResponse>
+      confirmLivingArchiveReview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmLivingArchiveReviewRequest> $request) async {
+    return confirmLivingArchiveReview($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmLivingArchiveReviewResponse>
+      confirmLivingArchiveReview(
+          $grpc.ServiceCall call, $0.ConfirmLivingArchiveReviewRequest request);
+
+  $async.Future<$0.ContestLivingArchiveReleaseResponse>
+      contestLivingArchiveRelease_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ContestLivingArchiveReleaseRequest> $request) async {
+    return contestLivingArchiveRelease($call, await $request);
+  }
+
+  $async.Future<$0.ContestLivingArchiveReleaseResponse>
+      contestLivingArchiveRelease($grpc.ServiceCall call,
+          $0.ContestLivingArchiveReleaseRequest request);
 }

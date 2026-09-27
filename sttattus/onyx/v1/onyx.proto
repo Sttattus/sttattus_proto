@@ -3510,6 +3510,281 @@ message GetMultilingualExportResponse {
   OnyxMultilingualExport export = 1;
 }
 
+// Choice 12 — Living Archive and Succession. These contracts deliberately
+// separate a member-owned archive policy from an operational release case. A
+// Legacy switch becoming overdue is evidence for a case, never authorization
+// to release an archive on its own.
+message OnyxLivingArchivePolicy {
+  string id = 1;
+  string title = 2;
+  string cadence = 3; // annual | quarterly | event
+  string trigger_kind = 4; // manual | incapacity | death
+  string jurisdiction = 5;
+  int32 delay_days = 6;
+  string status = 7; // draft | pending_review | active | frozen | revoked | released
+  int64 version = 8;
+  bool include_reading = 9;
+  bool include_highlights = 10;
+  bool include_notes = 11;
+  bool include_decisions = 12;
+  bool include_salon_moments = 13;
+  bool include_creator_support = 14;
+  bool include_personal_essays = 15;
+  bool excludes_private_items = 16;
+  repeated string content_ids = 17;
+  repeated string collection_labels = 18;
+  repeated string person_labels = 19;
+  string event_id = 20;
+  string member_statement = 21;
+  google.protobuf.Timestamp period_starts_at = 22;
+  google.protobuf.Timestamp period_ends_at = 23;
+  google.protobuf.Timestamp submitted_at = 24;
+  google.protobuf.Timestamp activated_at = 25;
+  google.protobuf.Timestamp review_due_at = 26;
+  google.protobuf.Timestamp revoked_at = 27;
+  google.protobuf.Timestamp updated_at = 28;
+}
+
+message OnyxLivingArchiveContact {
+  string id = 1;
+  string role = 2; // beneficiary | trustee | executor | legal_representative
+  string display_name = 3;
+  string email = 4;
+  string relationship = 5;
+  string legacy_beneficiary_id = 6;
+  string legacy_recovery_share_id = 7;
+  string verification_status = 8; // unverified | pending | verified | rejected | expired | revoked
+  string verification_method = 9;
+  int64 version = 10;
+  google.protobuf.Timestamp verified_at = 11;
+  google.protobuf.Timestamp review_due_at = 12;
+  google.protobuf.Timestamp revoked_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message OnyxLivingArchiveReadiness {
+  int32 legacy_beneficiary_count = 1;
+  int32 legacy_trustees_configured = 2;
+  int32 legacy_trustee_threshold = 3;
+  string legacy_switch_status = 4;
+  bool legacy_switch_enabled = 5;
+  int32 verified_contact_count = 6;
+  bool legal_contact_verified = 7;
+  bool ready_for_review = 8;
+  bool ready_for_release = 9;
+  repeated string blocking_reasons = 10;
+  google.protobuf.Timestamp next_legacy_checkin_at = 11;
+  int32 verified_beneficiary_contact_count = 12;
+  int32 verified_trustee_contact_count = 13;
+}
+
+message OnyxLivingArchivePreviewCount {
+  string item_kind = 1;
+  int32 eligible_count = 2;
+  int32 selected_count = 3;
+  int32 excluded_private_count = 4;
+}
+
+message OnyxLivingArchivePreview {
+  string policy_id = 1;
+  repeated OnyxLivingArchivePreviewCount counts = 2;
+  int32 total_selected_count = 3;
+  int32 total_excluded_private_count = 4;
+  repeated string warnings = 5;
+  string snapshot_checksum = 6;
+  google.protobuf.Timestamp generated_at = 7;
+}
+
+message OnyxLivingArchiveEdition {
+  string id = 1;
+  string policy_id = 2;
+  string title = 3;
+  string cadence = 4;
+  string period_label = 5;
+  string status = 6; // ready | escrowed | released | revoked | failed
+  int32 item_count = 7;
+  int32 excluded_private_count = 8;
+  string snapshot_checksum = 9;
+  string media_asset_id = 10;
+  string download_url = 11;
+  string legacy_document_id = 12;
+  int64 version = 13;
+  google.protobuf.Timestamp period_starts_at = 14;
+  google.protobuf.Timestamp period_ends_at = 15;
+  google.protobuf.Timestamp generated_at = 16;
+  google.protobuf.Timestamp escrowed_at = 17;
+  google.protobuf.Timestamp released_at = 18;
+  google.protobuf.Timestamp revoked_at = 19;
+}
+
+message OnyxLivingArchiveReleaseCase {
+  string id = 1;
+  string policy_id = 2;
+  string edition_id = 3;
+  string trigger_kind = 4;
+  string status = 5; // opened | evidence_review | waiting | contested | frozen | approved | released | denied | cancelled
+  string jurisdiction = 6;
+  bool legal_hold = 7;
+  string member_summary = 8;
+  int64 version = 9;
+  google.protobuf.Timestamp opened_at = 10;
+  google.protobuf.Timestamp waiting_until = 11;
+  google.protobuf.Timestamp contested_at = 12;
+  google.protobuf.Timestamp approved_at = 13;
+  google.protobuf.Timestamp released_at = 14;
+  google.protobuf.Timestamp closed_at = 15;
+}
+
+message OnyxLivingArchiveReceipt {
+  string id = 1;
+  string case_id = 2;
+  string policy_id = 3;
+  string edition_id = 4;
+  string contact_id = 5;
+  string receipt_code = 6;
+  string scope_checksum = 7;
+  string artifact_checksum = 8;
+  string status = 9;
+  google.protobuf.Timestamp released_at = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message GetLivingArchiveDashboardRequest {}
+message GetLivingArchiveDashboardResponse {
+  repeated OnyxLivingArchivePolicy policies = 1;
+  repeated OnyxLivingArchiveContact contacts = 2;
+  repeated OnyxLivingArchiveEdition editions = 3;
+  repeated OnyxLivingArchiveReleaseCase release_cases = 4;
+  repeated OnyxLivingArchiveReceipt receipts = 5;
+  OnyxLivingArchiveReadiness readiness = 6;
+}
+
+message UpsertLivingArchivePolicyRequest {
+  string policy_id = 1;
+  string title = 2;
+  string cadence = 3;
+  string trigger_kind = 4;
+  string jurisdiction = 5;
+  int32 delay_days = 6;
+  bool include_reading = 7;
+  bool include_highlights = 8;
+  bool include_notes = 9;
+  bool include_decisions = 10;
+  bool include_salon_moments = 11;
+  bool include_creator_support = 12;
+  bool include_personal_essays = 13;
+  repeated string content_ids = 14;
+  repeated string collection_labels = 15;
+  repeated string person_labels = 16;
+  string event_id = 17;
+  string member_statement = 18;
+  google.protobuf.Timestamp period_starts_at = 19;
+  google.protobuf.Timestamp period_ends_at = 20;
+  int64 expected_version = 21;
+  string client_mutation_id = 22;
+  bool include_private_items = 23;
+}
+message UpsertLivingArchivePolicyResponse {
+  OnyxLivingArchivePolicy policy = 1;
+}
+
+message PreviewLivingArchivePolicyRequest {
+  string policy_id = 1;
+}
+message PreviewLivingArchivePolicyResponse {
+  OnyxLivingArchivePreview preview = 1;
+}
+
+message GenerateLivingArchiveEditionRequest {
+  string policy_id = 1;
+  string title = 2;
+  string period_label = 3;
+  string personal_essay = 4;
+  google.protobuf.Timestamp period_starts_at = 5;
+  google.protobuf.Timestamp period_ends_at = 6;
+  string client_mutation_id = 7;
+}
+message GenerateLivingArchiveEditionResponse {
+  OnyxLivingArchiveEdition edition = 1;
+  OnyxLivingArchivePreview preview = 2;
+}
+
+message LinkLivingArchiveLegacyEscrowRequest {
+  string edition_id = 1;
+  string legacy_document_id = 2;
+  int64 expected_version = 3;
+  string client_mutation_id = 4;
+}
+message LinkLivingArchiveLegacyEscrowResponse {
+  OnyxLivingArchiveEdition edition = 1;
+  OnyxLivingArchiveReadiness readiness = 2;
+}
+
+message UpsertLivingArchiveContactRequest {
+  string contact_id = 1;
+  string role = 2;
+  string display_name = 3;
+  string email = 4;
+  string relationship = 5;
+  string legacy_beneficiary_id = 6;
+  string legacy_recovery_share_id = 7;
+  int64 expected_version = 8;
+  string client_mutation_id = 9;
+}
+message UpsertLivingArchiveContactResponse {
+  OnyxLivingArchiveContact contact = 1;
+  OnyxLivingArchiveReadiness readiness = 2;
+}
+
+message DeleteLivingArchiveContactRequest {
+  string contact_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message DeleteLivingArchiveContactResponse {
+  OnyxLivingArchiveReadiness readiness = 1;
+}
+
+message SubmitLivingArchivePolicyRequest {
+  string policy_id = 1;
+  int64 expected_version = 2;
+  string client_mutation_id = 3;
+}
+message SubmitLivingArchivePolicyResponse {
+  OnyxLivingArchivePolicy policy = 1;
+  OnyxLivingArchiveReadiness readiness = 2;
+}
+
+message RevokeLivingArchivePolicyRequest {
+  string policy_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message RevokeLivingArchivePolicyResponse {
+  OnyxLivingArchivePolicy policy = 1;
+}
+
+message ConfirmLivingArchiveReviewRequest {
+  string policy_id = 1;
+  int64 expected_version = 2;
+  string client_mutation_id = 3;
+}
+message ConfirmLivingArchiveReviewResponse {
+  OnyxLivingArchivePolicy policy = 1;
+}
+
+message ContestLivingArchiveReleaseRequest {
+  string case_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message ContestLivingArchiveReleaseResponse {
+  OnyxLivingArchiveReleaseCase release_case = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -3746,4 +4021,19 @@ service OnyxService {
   rpc ReportTranslationIssue(ReportTranslationIssueRequest) returns (ReportTranslationIssueResponse);
   rpc RequestMultilingualExport(RequestMultilingualExportRequest) returns (RequestMultilingualExportResponse);
   rpc GetMultilingualExport(GetMultilingualExportRequest) returns (GetMultilingualExportResponse);
+
+  // Choice 12 — member-controlled living archives and succession. Operational
+  // trigger evidence, dual control, disputes, holds and release remain staff
+  // workflows; members can always preview and revoke before release.
+  rpc GetLivingArchiveDashboard(GetLivingArchiveDashboardRequest) returns (GetLivingArchiveDashboardResponse);
+  rpc UpsertLivingArchivePolicy(UpsertLivingArchivePolicyRequest) returns (UpsertLivingArchivePolicyResponse);
+  rpc PreviewLivingArchivePolicy(PreviewLivingArchivePolicyRequest) returns (PreviewLivingArchivePolicyResponse);
+  rpc GenerateLivingArchiveEdition(GenerateLivingArchiveEditionRequest) returns (GenerateLivingArchiveEditionResponse);
+  rpc LinkLivingArchiveLegacyEscrow(LinkLivingArchiveLegacyEscrowRequest) returns (LinkLivingArchiveLegacyEscrowResponse);
+  rpc UpsertLivingArchiveContact(UpsertLivingArchiveContactRequest) returns (UpsertLivingArchiveContactResponse);
+  rpc DeleteLivingArchiveContact(DeleteLivingArchiveContactRequest) returns (DeleteLivingArchiveContactResponse);
+  rpc SubmitLivingArchivePolicy(SubmitLivingArchivePolicyRequest) returns (SubmitLivingArchivePolicyResponse);
+  rpc RevokeLivingArchivePolicy(RevokeLivingArchivePolicyRequest) returns (RevokeLivingArchivePolicyResponse);
+  rpc ConfirmLivingArchiveReview(ConfirmLivingArchiveReviewRequest) returns (ConfirmLivingArchiveReviewResponse);
+  rpc ContestLivingArchiveRelease(ContestLivingArchiveReleaseRequest) returns (ContestLivingArchiveReleaseResponse);
 }

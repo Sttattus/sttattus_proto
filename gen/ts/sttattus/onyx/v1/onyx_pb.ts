@@ -28267,3 +28267,2110 @@ export class GetMultilingualExportResponse extends Message<GetMultilingualExport
   }
 }
 
+/**
+ * Choice 12 — Living Archive and Succession. These contracts deliberately
+ * separate a member-owned archive policy from an operational release case. A
+ * Legacy switch becoming overdue is evidence for a case, never authorization
+ * to release an archive on its own.
+ *
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchivePolicy
+ */
+export class OnyxLivingArchivePolicy extends Message<OnyxLivingArchivePolicy> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * annual | quarterly | event
+   *
+   * @generated from field: string cadence = 3;
+   */
+  cadence = "";
+
+  /**
+   * manual | incapacity | death
+   *
+   * @generated from field: string trigger_kind = 4;
+   */
+  triggerKind = "";
+
+  /**
+   * @generated from field: string jurisdiction = 5;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: int32 delay_days = 6;
+   */
+  delayDays = 0;
+
+  /**
+   * draft | pending_review | active | frozen | revoked | released
+   *
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 version = 8;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: bool include_reading = 9;
+   */
+  includeReading = false;
+
+  /**
+   * @generated from field: bool include_highlights = 10;
+   */
+  includeHighlights = false;
+
+  /**
+   * @generated from field: bool include_notes = 11;
+   */
+  includeNotes = false;
+
+  /**
+   * @generated from field: bool include_decisions = 12;
+   */
+  includeDecisions = false;
+
+  /**
+   * @generated from field: bool include_salon_moments = 13;
+   */
+  includeSalonMoments = false;
+
+  /**
+   * @generated from field: bool include_creator_support = 14;
+   */
+  includeCreatorSupport = false;
+
+  /**
+   * @generated from field: bool include_personal_essays = 15;
+   */
+  includePersonalEssays = false;
+
+  /**
+   * @generated from field: bool excludes_private_items = 16;
+   */
+  excludesPrivateItems = false;
+
+  /**
+   * @generated from field: repeated string content_ids = 17;
+   */
+  contentIds: string[] = [];
+
+  /**
+   * @generated from field: repeated string collection_labels = 18;
+   */
+  collectionLabels: string[] = [];
+
+  /**
+   * @generated from field: repeated string person_labels = 19;
+   */
+  personLabels: string[] = [];
+
+  /**
+   * @generated from field: string event_id = 20;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string member_statement = 21;
+   */
+  memberStatement = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_starts_at = 22;
+   */
+  periodStartsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_ends_at = 23;
+   */
+  periodEndsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp submitted_at = 24;
+   */
+  submittedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp activated_at = 25;
+   */
+  activatedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp review_due_at = 26;
+   */
+  reviewDueAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 27;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 28;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchivePolicy>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchivePolicy";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cadence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "trigger_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "delay_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "include_reading", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "include_highlights", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "include_notes", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "include_decisions", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "include_salon_moments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "include_creator_support", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 15, name: "include_personal_essays", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "excludes_private_items", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 18, name: "collection_labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 19, name: "person_labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 20, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "member_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 22, name: "period_starts_at", kind: "message", T: Timestamp },
+    { no: 23, name: "period_ends_at", kind: "message", T: Timestamp },
+    { no: 24, name: "submitted_at", kind: "message", T: Timestamp },
+    { no: 25, name: "activated_at", kind: "message", T: Timestamp },
+    { no: 26, name: "review_due_at", kind: "message", T: Timestamp },
+    { no: 27, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 28, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchivePolicy {
+    return new OnyxLivingArchivePolicy().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchivePolicy {
+    return new OnyxLivingArchivePolicy().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchivePolicy {
+    return new OnyxLivingArchivePolicy().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchivePolicy | PlainMessage<OnyxLivingArchivePolicy> | undefined, b: OnyxLivingArchivePolicy | PlainMessage<OnyxLivingArchivePolicy> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchivePolicy, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchiveContact
+ */
+export class OnyxLivingArchiveContact extends Message<OnyxLivingArchiveContact> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * beneficiary | trustee | executor | legal_representative
+   *
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  /**
+   * @generated from field: string display_name = 3;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string email = 4;
+   */
+  email = "";
+
+  /**
+   * @generated from field: string relationship = 5;
+   */
+  relationship = "";
+
+  /**
+   * @generated from field: string legacy_beneficiary_id = 6;
+   */
+  legacyBeneficiaryId = "";
+
+  /**
+   * @generated from field: string legacy_recovery_share_id = 7;
+   */
+  legacyRecoveryShareId = "";
+
+  /**
+   * unverified | pending | verified | rejected | expired | revoked
+   *
+   * @generated from field: string verification_status = 8;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: string verification_method = 9;
+   */
+  verificationMethod = "";
+
+  /**
+   * @generated from field: int64 version = 10;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp verified_at = 11;
+   */
+  verifiedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp review_due_at = 12;
+   */
+  reviewDueAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 13;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchiveContact>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchiveContact";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "relationship", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "legacy_beneficiary_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "legacy_recovery_share_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "verification_method", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "verified_at", kind: "message", T: Timestamp },
+    { no: 12, name: "review_due_at", kind: "message", T: Timestamp },
+    { no: 13, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 14, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchiveContact {
+    return new OnyxLivingArchiveContact().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchiveContact {
+    return new OnyxLivingArchiveContact().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchiveContact {
+    return new OnyxLivingArchiveContact().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchiveContact | PlainMessage<OnyxLivingArchiveContact> | undefined, b: OnyxLivingArchiveContact | PlainMessage<OnyxLivingArchiveContact> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchiveContact, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchiveReadiness
+ */
+export class OnyxLivingArchiveReadiness extends Message<OnyxLivingArchiveReadiness> {
+  /**
+   * @generated from field: int32 legacy_beneficiary_count = 1;
+   */
+  legacyBeneficiaryCount = 0;
+
+  /**
+   * @generated from field: int32 legacy_trustees_configured = 2;
+   */
+  legacyTrusteesConfigured = 0;
+
+  /**
+   * @generated from field: int32 legacy_trustee_threshold = 3;
+   */
+  legacyTrusteeThreshold = 0;
+
+  /**
+   * @generated from field: string legacy_switch_status = 4;
+   */
+  legacySwitchStatus = "";
+
+  /**
+   * @generated from field: bool legacy_switch_enabled = 5;
+   */
+  legacySwitchEnabled = false;
+
+  /**
+   * @generated from field: int32 verified_contact_count = 6;
+   */
+  verifiedContactCount = 0;
+
+  /**
+   * @generated from field: bool legal_contact_verified = 7;
+   */
+  legalContactVerified = false;
+
+  /**
+   * @generated from field: bool ready_for_review = 8;
+   */
+  readyForReview = false;
+
+  /**
+   * @generated from field: bool ready_for_release = 9;
+   */
+  readyForRelease = false;
+
+  /**
+   * @generated from field: repeated string blocking_reasons = 10;
+   */
+  blockingReasons: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp next_legacy_checkin_at = 11;
+   */
+  nextLegacyCheckinAt?: Timestamp;
+
+  /**
+   * @generated from field: int32 verified_beneficiary_contact_count = 12;
+   */
+  verifiedBeneficiaryContactCount = 0;
+
+  /**
+   * @generated from field: int32 verified_trustee_contact_count = 13;
+   */
+  verifiedTrusteeContactCount = 0;
+
+  constructor(data?: PartialMessage<OnyxLivingArchiveReadiness>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchiveReadiness";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "legacy_beneficiary_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "legacy_trustees_configured", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "legacy_trustee_threshold", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "legacy_switch_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "legacy_switch_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "verified_contact_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "legal_contact_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "ready_for_review", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "ready_for_release", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "blocking_reasons", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "next_legacy_checkin_at", kind: "message", T: Timestamp },
+    { no: 12, name: "verified_beneficiary_contact_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "verified_trustee_contact_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchiveReadiness {
+    return new OnyxLivingArchiveReadiness().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReadiness {
+    return new OnyxLivingArchiveReadiness().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReadiness {
+    return new OnyxLivingArchiveReadiness().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchiveReadiness | PlainMessage<OnyxLivingArchiveReadiness> | undefined, b: OnyxLivingArchiveReadiness | PlainMessage<OnyxLivingArchiveReadiness> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchiveReadiness, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchivePreviewCount
+ */
+export class OnyxLivingArchivePreviewCount extends Message<OnyxLivingArchivePreviewCount> {
+  /**
+   * @generated from field: string item_kind = 1;
+   */
+  itemKind = "";
+
+  /**
+   * @generated from field: int32 eligible_count = 2;
+   */
+  eligibleCount = 0;
+
+  /**
+   * @generated from field: int32 selected_count = 3;
+   */
+  selectedCount = 0;
+
+  /**
+   * @generated from field: int32 excluded_private_count = 4;
+   */
+  excludedPrivateCount = 0;
+
+  constructor(data?: PartialMessage<OnyxLivingArchivePreviewCount>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchivePreviewCount";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "eligible_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "selected_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "excluded_private_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchivePreviewCount {
+    return new OnyxLivingArchivePreviewCount().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchivePreviewCount {
+    return new OnyxLivingArchivePreviewCount().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchivePreviewCount {
+    return new OnyxLivingArchivePreviewCount().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchivePreviewCount | PlainMessage<OnyxLivingArchivePreviewCount> | undefined, b: OnyxLivingArchivePreviewCount | PlainMessage<OnyxLivingArchivePreviewCount> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchivePreviewCount, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchivePreview
+ */
+export class OnyxLivingArchivePreview extends Message<OnyxLivingArchivePreview> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchivePreviewCount counts = 2;
+   */
+  counts: OnyxLivingArchivePreviewCount[] = [];
+
+  /**
+   * @generated from field: int32 total_selected_count = 3;
+   */
+  totalSelectedCount = 0;
+
+  /**
+   * @generated from field: int32 total_excluded_private_count = 4;
+   */
+  totalExcludedPrivateCount = 0;
+
+  /**
+   * @generated from field: repeated string warnings = 5;
+   */
+  warnings: string[] = [];
+
+  /**
+   * @generated from field: string snapshot_checksum = 6;
+   */
+  snapshotChecksum = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 7;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchivePreview>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchivePreview";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "counts", kind: "message", T: OnyxLivingArchivePreviewCount, repeated: true },
+    { no: 3, name: "total_selected_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "total_excluded_private_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "warnings", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "snapshot_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchivePreview {
+    return new OnyxLivingArchivePreview().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchivePreview {
+    return new OnyxLivingArchivePreview().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchivePreview {
+    return new OnyxLivingArchivePreview().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchivePreview | PlainMessage<OnyxLivingArchivePreview> | undefined, b: OnyxLivingArchivePreview | PlainMessage<OnyxLivingArchivePreview> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchivePreview, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchiveEdition
+ */
+export class OnyxLivingArchiveEdition extends Message<OnyxLivingArchiveEdition> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string policy_id = 2;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string cadence = 4;
+   */
+  cadence = "";
+
+  /**
+   * @generated from field: string period_label = 5;
+   */
+  periodLabel = "";
+
+  /**
+   * ready | escrowed | released | revoked | failed
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 item_count = 7;
+   */
+  itemCount = 0;
+
+  /**
+   * @generated from field: int32 excluded_private_count = 8;
+   */
+  excludedPrivateCount = 0;
+
+  /**
+   * @generated from field: string snapshot_checksum = 9;
+   */
+  snapshotChecksum = "";
+
+  /**
+   * @generated from field: string media_asset_id = 10;
+   */
+  mediaAssetId = "";
+
+  /**
+   * @generated from field: string download_url = 11;
+   */
+  downloadUrl = "";
+
+  /**
+   * @generated from field: string legacy_document_id = 12;
+   */
+  legacyDocumentId = "";
+
+  /**
+   * @generated from field: int64 version = 13;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_starts_at = 14;
+   */
+  periodStartsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_ends_at = 15;
+   */
+  periodEndsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 16;
+   */
+  generatedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp escrowed_at = 17;
+   */
+  escrowedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp released_at = 18;
+   */
+  releasedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 19;
+   */
+  revokedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchiveEdition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchiveEdition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cadence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "period_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "item_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "excluded_private_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "snapshot_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "media_asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "legacy_document_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "period_starts_at", kind: "message", T: Timestamp },
+    { no: 15, name: "period_ends_at", kind: "message", T: Timestamp },
+    { no: 16, name: "generated_at", kind: "message", T: Timestamp },
+    { no: 17, name: "escrowed_at", kind: "message", T: Timestamp },
+    { no: 18, name: "released_at", kind: "message", T: Timestamp },
+    { no: 19, name: "revoked_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchiveEdition {
+    return new OnyxLivingArchiveEdition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchiveEdition {
+    return new OnyxLivingArchiveEdition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchiveEdition {
+    return new OnyxLivingArchiveEdition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchiveEdition | PlainMessage<OnyxLivingArchiveEdition> | undefined, b: OnyxLivingArchiveEdition | PlainMessage<OnyxLivingArchiveEdition> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchiveEdition, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
+ */
+export class OnyxLivingArchiveReleaseCase extends Message<OnyxLivingArchiveReleaseCase> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string policy_id = 2;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string edition_id = 3;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string trigger_kind = 4;
+   */
+  triggerKind = "";
+
+  /**
+   * opened | evidence_review | waiting | contested | frozen | approved | released | denied | cancelled
+   *
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string jurisdiction = 6;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: bool legal_hold = 7;
+   */
+  legalHold = false;
+
+  /**
+   * @generated from field: string member_summary = 8;
+   */
+  memberSummary = "";
+
+  /**
+   * @generated from field: int64 version = 9;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp opened_at = 10;
+   */
+  openedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp waiting_until = 11;
+   */
+  waitingUntil?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp contested_at = 12;
+   */
+  contestedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp approved_at = 13;
+   */
+  approvedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp released_at = 14;
+   */
+  releasedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp closed_at = 15;
+   */
+  closedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchiveReleaseCase>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchiveReleaseCase";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "trigger_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "legal_hold", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "member_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "opened_at", kind: "message", T: Timestamp },
+    { no: 11, name: "waiting_until", kind: "message", T: Timestamp },
+    { no: 12, name: "contested_at", kind: "message", T: Timestamp },
+    { no: 13, name: "approved_at", kind: "message", T: Timestamp },
+    { no: 14, name: "released_at", kind: "message", T: Timestamp },
+    { no: 15, name: "closed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchiveReleaseCase {
+    return new OnyxLivingArchiveReleaseCase().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReleaseCase {
+    return new OnyxLivingArchiveReleaseCase().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReleaseCase {
+    return new OnyxLivingArchiveReleaseCase().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchiveReleaseCase | PlainMessage<OnyxLivingArchiveReleaseCase> | undefined, b: OnyxLivingArchiveReleaseCase | PlainMessage<OnyxLivingArchiveReleaseCase> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchiveReleaseCase, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxLivingArchiveReceipt
+ */
+export class OnyxLivingArchiveReceipt extends Message<OnyxLivingArchiveReceipt> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string case_id = 2;
+   */
+  caseId = "";
+
+  /**
+   * @generated from field: string policy_id = 3;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string edition_id = 4;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string contact_id = 5;
+   */
+  contactId = "";
+
+  /**
+   * @generated from field: string receipt_code = 6;
+   */
+  receiptCode = "";
+
+  /**
+   * @generated from field: string scope_checksum = 7;
+   */
+  scopeChecksum = "";
+
+  /**
+   * @generated from field: string artifact_checksum = 8;
+   */
+  artifactChecksum = "";
+
+  /**
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp released_at = 10;
+   */
+  releasedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxLivingArchiveReceipt>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxLivingArchiveReceipt";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "contact_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "receipt_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "scope_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "artifact_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "released_at", kind: "message", T: Timestamp },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxLivingArchiveReceipt {
+    return new OnyxLivingArchiveReceipt().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReceipt {
+    return new OnyxLivingArchiveReceipt().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxLivingArchiveReceipt {
+    return new OnyxLivingArchiveReceipt().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxLivingArchiveReceipt | PlainMessage<OnyxLivingArchiveReceipt> | undefined, b: OnyxLivingArchiveReceipt | PlainMessage<OnyxLivingArchiveReceipt> | undefined): boolean {
+    return proto3.util.equals(OnyxLivingArchiveReceipt, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLivingArchiveDashboardRequest
+ */
+export class GetLivingArchiveDashboardRequest extends Message<GetLivingArchiveDashboardRequest> {
+  constructor(data?: PartialMessage<GetLivingArchiveDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLivingArchiveDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLivingArchiveDashboardRequest {
+    return new GetLivingArchiveDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLivingArchiveDashboardRequest {
+    return new GetLivingArchiveDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLivingArchiveDashboardRequest {
+    return new GetLivingArchiveDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLivingArchiveDashboardRequest | PlainMessage<GetLivingArchiveDashboardRequest> | undefined, b: GetLivingArchiveDashboardRequest | PlainMessage<GetLivingArchiveDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetLivingArchiveDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetLivingArchiveDashboardResponse
+ */
+export class GetLivingArchiveDashboardResponse extends Message<GetLivingArchiveDashboardResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchivePolicy policies = 1;
+   */
+  policies: OnyxLivingArchivePolicy[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchiveContact contacts = 2;
+   */
+  contacts: OnyxLivingArchiveContact[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchiveEdition editions = 3;
+   */
+  editions: OnyxLivingArchiveEdition[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchiveReleaseCase release_cases = 4;
+   */
+  releaseCases: OnyxLivingArchiveReleaseCase[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxLivingArchiveReceipt receipts = 5;
+   */
+  receipts: OnyxLivingArchiveReceipt[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReadiness readiness = 6;
+   */
+  readiness?: OnyxLivingArchiveReadiness;
+
+  constructor(data?: PartialMessage<GetLivingArchiveDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetLivingArchiveDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policies", kind: "message", T: OnyxLivingArchivePolicy, repeated: true },
+    { no: 2, name: "contacts", kind: "message", T: OnyxLivingArchiveContact, repeated: true },
+    { no: 3, name: "editions", kind: "message", T: OnyxLivingArchiveEdition, repeated: true },
+    { no: 4, name: "release_cases", kind: "message", T: OnyxLivingArchiveReleaseCase, repeated: true },
+    { no: 5, name: "receipts", kind: "message", T: OnyxLivingArchiveReceipt, repeated: true },
+    { no: 6, name: "readiness", kind: "message", T: OnyxLivingArchiveReadiness },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLivingArchiveDashboardResponse {
+    return new GetLivingArchiveDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLivingArchiveDashboardResponse {
+    return new GetLivingArchiveDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLivingArchiveDashboardResponse {
+    return new GetLivingArchiveDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLivingArchiveDashboardResponse | PlainMessage<GetLivingArchiveDashboardResponse> | undefined, b: GetLivingArchiveDashboardResponse | PlainMessage<GetLivingArchiveDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetLivingArchiveDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
+ */
+export class UpsertLivingArchivePolicyRequest extends Message<UpsertLivingArchivePolicyRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string cadence = 3;
+   */
+  cadence = "";
+
+  /**
+   * @generated from field: string trigger_kind = 4;
+   */
+  triggerKind = "";
+
+  /**
+   * @generated from field: string jurisdiction = 5;
+   */
+  jurisdiction = "";
+
+  /**
+   * @generated from field: int32 delay_days = 6;
+   */
+  delayDays = 0;
+
+  /**
+   * @generated from field: bool include_reading = 7;
+   */
+  includeReading = false;
+
+  /**
+   * @generated from field: bool include_highlights = 8;
+   */
+  includeHighlights = false;
+
+  /**
+   * @generated from field: bool include_notes = 9;
+   */
+  includeNotes = false;
+
+  /**
+   * @generated from field: bool include_decisions = 10;
+   */
+  includeDecisions = false;
+
+  /**
+   * @generated from field: bool include_salon_moments = 11;
+   */
+  includeSalonMoments = false;
+
+  /**
+   * @generated from field: bool include_creator_support = 12;
+   */
+  includeCreatorSupport = false;
+
+  /**
+   * @generated from field: bool include_personal_essays = 13;
+   */
+  includePersonalEssays = false;
+
+  /**
+   * @generated from field: repeated string content_ids = 14;
+   */
+  contentIds: string[] = [];
+
+  /**
+   * @generated from field: repeated string collection_labels = 15;
+   */
+  collectionLabels: string[] = [];
+
+  /**
+   * @generated from field: repeated string person_labels = 16;
+   */
+  personLabels: string[] = [];
+
+  /**
+   * @generated from field: string event_id = 17;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string member_statement = 18;
+   */
+  memberStatement = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_starts_at = 19;
+   */
+  periodStartsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_ends_at = 20;
+   */
+  periodEndsAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 expected_version = 21;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 22;
+   */
+  clientMutationId = "";
+
+  /**
+   * @generated from field: bool include_private_items = 23;
+   */
+  includePrivateItems = false;
+
+  constructor(data?: PartialMessage<UpsertLivingArchivePolicyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLivingArchivePolicyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cadence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "trigger_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "delay_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "include_reading", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "include_highlights", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "include_notes", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "include_decisions", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "include_salon_moments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "include_creator_support", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "include_personal_essays", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "content_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 15, name: "collection_labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 16, name: "person_labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 17, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "member_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "period_starts_at", kind: "message", T: Timestamp },
+    { no: 20, name: "period_ends_at", kind: "message", T: Timestamp },
+    { no: 21, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 22, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "include_private_items", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLivingArchivePolicyRequest {
+    return new UpsertLivingArchivePolicyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLivingArchivePolicyRequest {
+    return new UpsertLivingArchivePolicyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLivingArchivePolicyRequest {
+    return new UpsertLivingArchivePolicyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLivingArchivePolicyRequest | PlainMessage<UpsertLivingArchivePolicyRequest> | undefined, b: UpsertLivingArchivePolicyRequest | PlainMessage<UpsertLivingArchivePolicyRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertLivingArchivePolicyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
+ */
+export class UpsertLivingArchivePolicyResponse extends Message<UpsertLivingArchivePolicyResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePolicy policy = 1;
+   */
+  policy?: OnyxLivingArchivePolicy;
+
+  constructor(data?: PartialMessage<UpsertLivingArchivePolicyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLivingArchivePolicyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OnyxLivingArchivePolicy },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLivingArchivePolicyResponse {
+    return new UpsertLivingArchivePolicyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLivingArchivePolicyResponse {
+    return new UpsertLivingArchivePolicyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLivingArchivePolicyResponse {
+    return new UpsertLivingArchivePolicyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLivingArchivePolicyResponse | PlainMessage<UpsertLivingArchivePolicyResponse> | undefined, b: UpsertLivingArchivePolicyResponse | PlainMessage<UpsertLivingArchivePolicyResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertLivingArchivePolicyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
+ */
+export class PreviewLivingArchivePolicyRequest extends Message<PreviewLivingArchivePolicyRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  constructor(data?: PartialMessage<PreviewLivingArchivePolicyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewLivingArchivePolicyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewLivingArchivePolicyRequest {
+    return new PreviewLivingArchivePolicyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewLivingArchivePolicyRequest {
+    return new PreviewLivingArchivePolicyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewLivingArchivePolicyRequest {
+    return new PreviewLivingArchivePolicyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewLivingArchivePolicyRequest | PlainMessage<PreviewLivingArchivePolicyRequest> | undefined, b: PreviewLivingArchivePolicyRequest | PlainMessage<PreviewLivingArchivePolicyRequest> | undefined): boolean {
+    return proto3.util.equals(PreviewLivingArchivePolicyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
+ */
+export class PreviewLivingArchivePolicyResponse extends Message<PreviewLivingArchivePolicyResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePreview preview = 1;
+   */
+  preview?: OnyxLivingArchivePreview;
+
+  constructor(data?: PartialMessage<PreviewLivingArchivePolicyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewLivingArchivePolicyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preview", kind: "message", T: OnyxLivingArchivePreview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewLivingArchivePolicyResponse {
+    return new PreviewLivingArchivePolicyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewLivingArchivePolicyResponse {
+    return new PreviewLivingArchivePolicyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewLivingArchivePolicyResponse {
+    return new PreviewLivingArchivePolicyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewLivingArchivePolicyResponse | PlainMessage<PreviewLivingArchivePolicyResponse> | undefined, b: PreviewLivingArchivePolicyResponse | PlainMessage<PreviewLivingArchivePolicyResponse> | undefined): boolean {
+    return proto3.util.equals(PreviewLivingArchivePolicyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
+ */
+export class GenerateLivingArchiveEditionRequest extends Message<GenerateLivingArchiveEditionRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string period_label = 3;
+   */
+  periodLabel = "";
+
+  /**
+   * @generated from field: string personal_essay = 4;
+   */
+  personalEssay = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_starts_at = 5;
+   */
+  periodStartsAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_ends_at = 6;
+   */
+  periodEndsAt?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<GenerateLivingArchiveEditionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateLivingArchiveEditionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "period_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "personal_essay", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "period_starts_at", kind: "message", T: Timestamp },
+    { no: 6, name: "period_ends_at", kind: "message", T: Timestamp },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateLivingArchiveEditionRequest {
+    return new GenerateLivingArchiveEditionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateLivingArchiveEditionRequest {
+    return new GenerateLivingArchiveEditionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateLivingArchiveEditionRequest {
+    return new GenerateLivingArchiveEditionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateLivingArchiveEditionRequest | PlainMessage<GenerateLivingArchiveEditionRequest> | undefined, b: GenerateLivingArchiveEditionRequest | PlainMessage<GenerateLivingArchiveEditionRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateLivingArchiveEditionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
+ */
+export class GenerateLivingArchiveEditionResponse extends Message<GenerateLivingArchiveEditionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveEdition edition = 1;
+   */
+  edition?: OnyxLivingArchiveEdition;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePreview preview = 2;
+   */
+  preview?: OnyxLivingArchivePreview;
+
+  constructor(data?: PartialMessage<GenerateLivingArchiveEditionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateLivingArchiveEditionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition", kind: "message", T: OnyxLivingArchiveEdition },
+    { no: 2, name: "preview", kind: "message", T: OnyxLivingArchivePreview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateLivingArchiveEditionResponse {
+    return new GenerateLivingArchiveEditionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateLivingArchiveEditionResponse {
+    return new GenerateLivingArchiveEditionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateLivingArchiveEditionResponse {
+    return new GenerateLivingArchiveEditionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateLivingArchiveEditionResponse | PlainMessage<GenerateLivingArchiveEditionResponse> | undefined, b: GenerateLivingArchiveEditionResponse | PlainMessage<GenerateLivingArchiveEditionResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateLivingArchiveEditionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
+ */
+export class LinkLivingArchiveLegacyEscrowRequest extends Message<LinkLivingArchiveLegacyEscrowRequest> {
+  /**
+   * @generated from field: string edition_id = 1;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string legacy_document_id = 2;
+   */
+  legacyDocumentId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 3;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<LinkLivingArchiveLegacyEscrowRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "legacy_document_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkLivingArchiveLegacyEscrowRequest {
+    return new LinkLivingArchiveLegacyEscrowRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkLivingArchiveLegacyEscrowRequest {
+    return new LinkLivingArchiveLegacyEscrowRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkLivingArchiveLegacyEscrowRequest {
+    return new LinkLivingArchiveLegacyEscrowRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkLivingArchiveLegacyEscrowRequest | PlainMessage<LinkLivingArchiveLegacyEscrowRequest> | undefined, b: LinkLivingArchiveLegacyEscrowRequest | PlainMessage<LinkLivingArchiveLegacyEscrowRequest> | undefined): boolean {
+    return proto3.util.equals(LinkLivingArchiveLegacyEscrowRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
+ */
+export class LinkLivingArchiveLegacyEscrowResponse extends Message<LinkLivingArchiveLegacyEscrowResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveEdition edition = 1;
+   */
+  edition?: OnyxLivingArchiveEdition;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReadiness readiness = 2;
+   */
+  readiness?: OnyxLivingArchiveReadiness;
+
+  constructor(data?: PartialMessage<LinkLivingArchiveLegacyEscrowResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition", kind: "message", T: OnyxLivingArchiveEdition },
+    { no: 2, name: "readiness", kind: "message", T: OnyxLivingArchiveReadiness },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LinkLivingArchiveLegacyEscrowResponse {
+    return new LinkLivingArchiveLegacyEscrowResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LinkLivingArchiveLegacyEscrowResponse {
+    return new LinkLivingArchiveLegacyEscrowResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LinkLivingArchiveLegacyEscrowResponse {
+    return new LinkLivingArchiveLegacyEscrowResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LinkLivingArchiveLegacyEscrowResponse | PlainMessage<LinkLivingArchiveLegacyEscrowResponse> | undefined, b: LinkLivingArchiveLegacyEscrowResponse | PlainMessage<LinkLivingArchiveLegacyEscrowResponse> | undefined): boolean {
+    return proto3.util.equals(LinkLivingArchiveLegacyEscrowResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLivingArchiveContactRequest
+ */
+export class UpsertLivingArchiveContactRequest extends Message<UpsertLivingArchiveContactRequest> {
+  /**
+   * @generated from field: string contact_id = 1;
+   */
+  contactId = "";
+
+  /**
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  /**
+   * @generated from field: string display_name = 3;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string email = 4;
+   */
+  email = "";
+
+  /**
+   * @generated from field: string relationship = 5;
+   */
+  relationship = "";
+
+  /**
+   * @generated from field: string legacy_beneficiary_id = 6;
+   */
+  legacyBeneficiaryId = "";
+
+  /**
+   * @generated from field: string legacy_recovery_share_id = 7;
+   */
+  legacyRecoveryShareId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 8;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 9;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertLivingArchiveContactRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLivingArchiveContactRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contact_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "relationship", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "legacy_beneficiary_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "legacy_recovery_share_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLivingArchiveContactRequest {
+    return new UpsertLivingArchiveContactRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLivingArchiveContactRequest {
+    return new UpsertLivingArchiveContactRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLivingArchiveContactRequest {
+    return new UpsertLivingArchiveContactRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLivingArchiveContactRequest | PlainMessage<UpsertLivingArchiveContactRequest> | undefined, b: UpsertLivingArchiveContactRequest | PlainMessage<UpsertLivingArchiveContactRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertLivingArchiveContactRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertLivingArchiveContactResponse
+ */
+export class UpsertLivingArchiveContactResponse extends Message<UpsertLivingArchiveContactResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveContact contact = 1;
+   */
+  contact?: OnyxLivingArchiveContact;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReadiness readiness = 2;
+   */
+  readiness?: OnyxLivingArchiveReadiness;
+
+  constructor(data?: PartialMessage<UpsertLivingArchiveContactResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertLivingArchiveContactResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contact", kind: "message", T: OnyxLivingArchiveContact },
+    { no: 2, name: "readiness", kind: "message", T: OnyxLivingArchiveReadiness },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertLivingArchiveContactResponse {
+    return new UpsertLivingArchiveContactResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertLivingArchiveContactResponse {
+    return new UpsertLivingArchiveContactResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertLivingArchiveContactResponse {
+    return new UpsertLivingArchiveContactResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertLivingArchiveContactResponse | PlainMessage<UpsertLivingArchiveContactResponse> | undefined, b: UpsertLivingArchiveContactResponse | PlainMessage<UpsertLivingArchiveContactResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertLivingArchiveContactResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteLivingArchiveContactRequest
+ */
+export class DeleteLivingArchiveContactRequest extends Message<DeleteLivingArchiveContactRequest> {
+  /**
+   * @generated from field: string contact_id = 1;
+   */
+  contactId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<DeleteLivingArchiveContactRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteLivingArchiveContactRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contact_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLivingArchiveContactRequest {
+    return new DeleteLivingArchiveContactRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLivingArchiveContactRequest {
+    return new DeleteLivingArchiveContactRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLivingArchiveContactRequest {
+    return new DeleteLivingArchiveContactRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteLivingArchiveContactRequest | PlainMessage<DeleteLivingArchiveContactRequest> | undefined, b: DeleteLivingArchiveContactRequest | PlainMessage<DeleteLivingArchiveContactRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteLivingArchiveContactRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteLivingArchiveContactResponse
+ */
+export class DeleteLivingArchiveContactResponse extends Message<DeleteLivingArchiveContactResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReadiness readiness = 1;
+   */
+  readiness?: OnyxLivingArchiveReadiness;
+
+  constructor(data?: PartialMessage<DeleteLivingArchiveContactResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteLivingArchiveContactResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "readiness", kind: "message", T: OnyxLivingArchiveReadiness },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLivingArchiveContactResponse {
+    return new DeleteLivingArchiveContactResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLivingArchiveContactResponse {
+    return new DeleteLivingArchiveContactResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLivingArchiveContactResponse {
+    return new DeleteLivingArchiveContactResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteLivingArchiveContactResponse | PlainMessage<DeleteLivingArchiveContactResponse> | undefined, b: DeleteLivingArchiveContactResponse | PlainMessage<DeleteLivingArchiveContactResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteLivingArchiveContactResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
+ */
+export class SubmitLivingArchivePolicyRequest extends Message<SubmitLivingArchivePolicyRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SubmitLivingArchivePolicyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitLivingArchivePolicyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitLivingArchivePolicyRequest {
+    return new SubmitLivingArchivePolicyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitLivingArchivePolicyRequest {
+    return new SubmitLivingArchivePolicyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitLivingArchivePolicyRequest {
+    return new SubmitLivingArchivePolicyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitLivingArchivePolicyRequest | PlainMessage<SubmitLivingArchivePolicyRequest> | undefined, b: SubmitLivingArchivePolicyRequest | PlainMessage<SubmitLivingArchivePolicyRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitLivingArchivePolicyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
+ */
+export class SubmitLivingArchivePolicyResponse extends Message<SubmitLivingArchivePolicyResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePolicy policy = 1;
+   */
+  policy?: OnyxLivingArchivePolicy;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReadiness readiness = 2;
+   */
+  readiness?: OnyxLivingArchiveReadiness;
+
+  constructor(data?: PartialMessage<SubmitLivingArchivePolicyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitLivingArchivePolicyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OnyxLivingArchivePolicy },
+    { no: 2, name: "readiness", kind: "message", T: OnyxLivingArchiveReadiness },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitLivingArchivePolicyResponse {
+    return new SubmitLivingArchivePolicyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitLivingArchivePolicyResponse {
+    return new SubmitLivingArchivePolicyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitLivingArchivePolicyResponse {
+    return new SubmitLivingArchivePolicyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitLivingArchivePolicyResponse | PlainMessage<SubmitLivingArchivePolicyResponse> | undefined, b: SubmitLivingArchivePolicyResponse | PlainMessage<SubmitLivingArchivePolicyResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitLivingArchivePolicyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
+ */
+export class RevokeLivingArchivePolicyRequest extends Message<RevokeLivingArchivePolicyRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeLivingArchivePolicyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeLivingArchivePolicyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeLivingArchivePolicyRequest {
+    return new RevokeLivingArchivePolicyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeLivingArchivePolicyRequest {
+    return new RevokeLivingArchivePolicyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeLivingArchivePolicyRequest {
+    return new RevokeLivingArchivePolicyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeLivingArchivePolicyRequest | PlainMessage<RevokeLivingArchivePolicyRequest> | undefined, b: RevokeLivingArchivePolicyRequest | PlainMessage<RevokeLivingArchivePolicyRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeLivingArchivePolicyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
+ */
+export class RevokeLivingArchivePolicyResponse extends Message<RevokeLivingArchivePolicyResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePolicy policy = 1;
+   */
+  policy?: OnyxLivingArchivePolicy;
+
+  constructor(data?: PartialMessage<RevokeLivingArchivePolicyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeLivingArchivePolicyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OnyxLivingArchivePolicy },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeLivingArchivePolicyResponse {
+    return new RevokeLivingArchivePolicyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeLivingArchivePolicyResponse {
+    return new RevokeLivingArchivePolicyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeLivingArchivePolicyResponse {
+    return new RevokeLivingArchivePolicyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeLivingArchivePolicyResponse | PlainMessage<RevokeLivingArchivePolicyResponse> | undefined, b: RevokeLivingArchivePolicyResponse | PlainMessage<RevokeLivingArchivePolicyResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeLivingArchivePolicyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
+ */
+export class ConfirmLivingArchiveReviewRequest extends Message<ConfirmLivingArchiveReviewRequest> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ConfirmLivingArchiveReviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmLivingArchiveReviewRequest {
+    return new ConfirmLivingArchiveReviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmLivingArchiveReviewRequest {
+    return new ConfirmLivingArchiveReviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmLivingArchiveReviewRequest {
+    return new ConfirmLivingArchiveReviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmLivingArchiveReviewRequest | PlainMessage<ConfirmLivingArchiveReviewRequest> | undefined, b: ConfirmLivingArchiveReviewRequest | PlainMessage<ConfirmLivingArchiveReviewRequest> | undefined): boolean {
+    return proto3.util.equals(ConfirmLivingArchiveReviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
+ */
+export class ConfirmLivingArchiveReviewResponse extends Message<ConfirmLivingArchiveReviewResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchivePolicy policy = 1;
+   */
+  policy?: OnyxLivingArchivePolicy;
+
+  constructor(data?: PartialMessage<ConfirmLivingArchiveReviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OnyxLivingArchivePolicy },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmLivingArchiveReviewResponse {
+    return new ConfirmLivingArchiveReviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmLivingArchiveReviewResponse {
+    return new ConfirmLivingArchiveReviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmLivingArchiveReviewResponse {
+    return new ConfirmLivingArchiveReviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmLivingArchiveReviewResponse | PlainMessage<ConfirmLivingArchiveReviewResponse> | undefined, b: ConfirmLivingArchiveReviewResponse | PlainMessage<ConfirmLivingArchiveReviewResponse> | undefined): boolean {
+    return proto3.util.equals(ConfirmLivingArchiveReviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
+ */
+export class ContestLivingArchiveReleaseRequest extends Message<ContestLivingArchiveReleaseRequest> {
+  /**
+   * @generated from field: string case_id = 1;
+   */
+  caseId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ContestLivingArchiveReleaseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ContestLivingArchiveReleaseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContestLivingArchiveReleaseRequest {
+    return new ContestLivingArchiveReleaseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContestLivingArchiveReleaseRequest {
+    return new ContestLivingArchiveReleaseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContestLivingArchiveReleaseRequest {
+    return new ContestLivingArchiveReleaseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ContestLivingArchiveReleaseRequest | PlainMessage<ContestLivingArchiveReleaseRequest> | undefined, b: ContestLivingArchiveReleaseRequest | PlainMessage<ContestLivingArchiveReleaseRequest> | undefined): boolean {
+    return proto3.util.equals(ContestLivingArchiveReleaseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
+ */
+export class ContestLivingArchiveReleaseResponse extends Message<ContestLivingArchiveReleaseResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase release_case = 1;
+   */
+  releaseCase?: OnyxLivingArchiveReleaseCase;
+
+  constructor(data?: PartialMessage<ContestLivingArchiveReleaseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ContestLivingArchiveReleaseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "release_case", kind: "message", T: OnyxLivingArchiveReleaseCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContestLivingArchiveReleaseResponse {
+    return new ContestLivingArchiveReleaseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContestLivingArchiveReleaseResponse {
+    return new ContestLivingArchiveReleaseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContestLivingArchiveReleaseResponse {
+    return new ContestLivingArchiveReleaseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ContestLivingArchiveReleaseResponse | PlainMessage<ContestLivingArchiveReleaseResponse> | undefined, b: ContestLivingArchiveReleaseResponse | PlainMessage<ContestLivingArchiveReleaseResponse> | undefined): boolean {
+    return proto3.util.equals(ContestLivingArchiveReleaseResponse, a, b);
+  }
+}
+

@@ -46384,6 +46384,3828 @@ class GetMultilingualExportResponse extends $pb.GeneratedMessage {
   OnyxMultilingualExport ensureExport() => $_ensure(0);
 }
 
+/// Choice 12 — Living Archive and Succession. These contracts deliberately
+/// separate a member-owned archive policy from an operational release case. A
+/// Legacy switch becoming overdue is evidence for a case, never authorization
+/// to release an archive on its own.
+class OnyxLivingArchivePolicy extends $pb.GeneratedMessage {
+  factory OnyxLivingArchivePolicy({
+    $core.String? id,
+    $core.String? title,
+    $core.String? cadence,
+    $core.String? triggerKind,
+    $core.String? jurisdiction,
+    $core.int? delayDays,
+    $core.String? status,
+    $fixnum.Int64? version,
+    $core.bool? includeReading,
+    $core.bool? includeHighlights,
+    $core.bool? includeNotes,
+    $core.bool? includeDecisions,
+    $core.bool? includeSalonMoments,
+    $core.bool? includeCreatorSupport,
+    $core.bool? includePersonalEssays,
+    $core.bool? excludesPrivateItems,
+    $core.Iterable<$core.String>? contentIds,
+    $core.Iterable<$core.String>? collectionLabels,
+    $core.Iterable<$core.String>? personLabels,
+    $core.String? eventId,
+    $core.String? memberStatement,
+    $1.Timestamp? periodStartsAt,
+    $1.Timestamp? periodEndsAt,
+    $1.Timestamp? submittedAt,
+    $1.Timestamp? activatedAt,
+    $1.Timestamp? reviewDueAt,
+    $1.Timestamp? revokedAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (cadence != null) result.cadence = cadence;
+    if (triggerKind != null) result.triggerKind = triggerKind;
+    if (jurisdiction != null) result.jurisdiction = jurisdiction;
+    if (delayDays != null) result.delayDays = delayDays;
+    if (status != null) result.status = status;
+    if (version != null) result.version = version;
+    if (includeReading != null) result.includeReading = includeReading;
+    if (includeHighlights != null) result.includeHighlights = includeHighlights;
+    if (includeNotes != null) result.includeNotes = includeNotes;
+    if (includeDecisions != null) result.includeDecisions = includeDecisions;
+    if (includeSalonMoments != null)
+      result.includeSalonMoments = includeSalonMoments;
+    if (includeCreatorSupport != null)
+      result.includeCreatorSupport = includeCreatorSupport;
+    if (includePersonalEssays != null)
+      result.includePersonalEssays = includePersonalEssays;
+    if (excludesPrivateItems != null)
+      result.excludesPrivateItems = excludesPrivateItems;
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    if (collectionLabels != null)
+      result.collectionLabels.addAll(collectionLabels);
+    if (personLabels != null) result.personLabels.addAll(personLabels);
+    if (eventId != null) result.eventId = eventId;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    if (periodStartsAt != null) result.periodStartsAt = periodStartsAt;
+    if (periodEndsAt != null) result.periodEndsAt = periodEndsAt;
+    if (submittedAt != null) result.submittedAt = submittedAt;
+    if (activatedAt != null) result.activatedAt = activatedAt;
+    if (reviewDueAt != null) result.reviewDueAt = reviewDueAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxLivingArchivePolicy._();
+
+  factory OnyxLivingArchivePolicy.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchivePolicy.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchivePolicy',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'cadence')
+    ..aOS(4, _omitFieldNames ? '' : 'triggerKind')
+    ..aOS(5, _omitFieldNames ? '' : 'jurisdiction')
+    ..aI(6, _omitFieldNames ? '' : 'delayDays')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aInt64(8, _omitFieldNames ? '' : 'version')
+    ..aOB(9, _omitFieldNames ? '' : 'includeReading')
+    ..aOB(10, _omitFieldNames ? '' : 'includeHighlights')
+    ..aOB(11, _omitFieldNames ? '' : 'includeNotes')
+    ..aOB(12, _omitFieldNames ? '' : 'includeDecisions')
+    ..aOB(13, _omitFieldNames ? '' : 'includeSalonMoments')
+    ..aOB(14, _omitFieldNames ? '' : 'includeCreatorSupport')
+    ..aOB(15, _omitFieldNames ? '' : 'includePersonalEssays')
+    ..aOB(16, _omitFieldNames ? '' : 'excludesPrivateItems')
+    ..pPS(17, _omitFieldNames ? '' : 'contentIds')
+    ..pPS(18, _omitFieldNames ? '' : 'collectionLabels')
+    ..pPS(19, _omitFieldNames ? '' : 'personLabels')
+    ..aOS(20, _omitFieldNames ? '' : 'eventId')
+    ..aOS(21, _omitFieldNames ? '' : 'memberStatement')
+    ..aOM<$1.Timestamp>(22, _omitFieldNames ? '' : 'periodStartsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(23, _omitFieldNames ? '' : 'periodEndsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(24, _omitFieldNames ? '' : 'submittedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(25, _omitFieldNames ? '' : 'activatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(26, _omitFieldNames ? '' : 'reviewDueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(27, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(28, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePolicy clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePolicy copyWith(
+          void Function(OnyxLivingArchivePolicy) updates) =>
+      super.copyWith((message) => updates(message as OnyxLivingArchivePolicy))
+          as OnyxLivingArchivePolicy;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePolicy create() => OnyxLivingArchivePolicy._();
+  @$core.override
+  OnyxLivingArchivePolicy createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePolicy getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchivePolicy>(create);
+  static OnyxLivingArchivePolicy? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cadence => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cadence($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCadence() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCadence() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get triggerKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set triggerKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTriggerKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTriggerKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get jurisdiction => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jurisdiction($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJurisdiction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJurisdiction() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get delayDays => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set delayDays($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDelayDays() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDelayDays() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get version => $_getI64(7);
+  @$pb.TagNumber(8)
+  set version($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get includeReading => $_getBF(8);
+  @$pb.TagNumber(9)
+  set includeReading($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIncludeReading() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIncludeReading() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get includeHighlights => $_getBF(9);
+  @$pb.TagNumber(10)
+  set includeHighlights($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIncludeHighlights() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIncludeHighlights() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get includeNotes => $_getBF(10);
+  @$pb.TagNumber(11)
+  set includeNotes($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIncludeNotes() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIncludeNotes() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get includeDecisions => $_getBF(11);
+  @$pb.TagNumber(12)
+  set includeDecisions($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasIncludeDecisions() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearIncludeDecisions() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get includeSalonMoments => $_getBF(12);
+  @$pb.TagNumber(13)
+  set includeSalonMoments($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIncludeSalonMoments() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIncludeSalonMoments() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.bool get includeCreatorSupport => $_getBF(13);
+  @$pb.TagNumber(14)
+  set includeCreatorSupport($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasIncludeCreatorSupport() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearIncludeCreatorSupport() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get includePersonalEssays => $_getBF(14);
+  @$pb.TagNumber(15)
+  set includePersonalEssays($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasIncludePersonalEssays() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearIncludePersonalEssays() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.bool get excludesPrivateItems => $_getBF(15);
+  @$pb.TagNumber(16)
+  set excludesPrivateItems($core.bool value) => $_setBool(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasExcludesPrivateItems() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearExcludesPrivateItems() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $pb.PbList<$core.String> get contentIds => $_getList(16);
+
+  @$pb.TagNumber(18)
+  $pb.PbList<$core.String> get collectionLabels => $_getList(17);
+
+  @$pb.TagNumber(19)
+  $pb.PbList<$core.String> get personLabels => $_getList(18);
+
+  @$pb.TagNumber(20)
+  $core.String get eventId => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set eventId($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasEventId() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearEventId() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get memberStatement => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set memberStatement($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasMemberStatement() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearMemberStatement() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $1.Timestamp get periodStartsAt => $_getN(21);
+  @$pb.TagNumber(22)
+  set periodStartsAt($1.Timestamp value) => $_setField(22, value);
+  @$pb.TagNumber(22)
+  $core.bool hasPeriodStartsAt() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearPeriodStartsAt() => $_clearField(22);
+  @$pb.TagNumber(22)
+  $1.Timestamp ensurePeriodStartsAt() => $_ensure(21);
+
+  @$pb.TagNumber(23)
+  $1.Timestamp get periodEndsAt => $_getN(22);
+  @$pb.TagNumber(23)
+  set periodEndsAt($1.Timestamp value) => $_setField(23, value);
+  @$pb.TagNumber(23)
+  $core.bool hasPeriodEndsAt() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearPeriodEndsAt() => $_clearField(23);
+  @$pb.TagNumber(23)
+  $1.Timestamp ensurePeriodEndsAt() => $_ensure(22);
+
+  @$pb.TagNumber(24)
+  $1.Timestamp get submittedAt => $_getN(23);
+  @$pb.TagNumber(24)
+  set submittedAt($1.Timestamp value) => $_setField(24, value);
+  @$pb.TagNumber(24)
+  $core.bool hasSubmittedAt() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearSubmittedAt() => $_clearField(24);
+  @$pb.TagNumber(24)
+  $1.Timestamp ensureSubmittedAt() => $_ensure(23);
+
+  @$pb.TagNumber(25)
+  $1.Timestamp get activatedAt => $_getN(24);
+  @$pb.TagNumber(25)
+  set activatedAt($1.Timestamp value) => $_setField(25, value);
+  @$pb.TagNumber(25)
+  $core.bool hasActivatedAt() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearActivatedAt() => $_clearField(25);
+  @$pb.TagNumber(25)
+  $1.Timestamp ensureActivatedAt() => $_ensure(24);
+
+  @$pb.TagNumber(26)
+  $1.Timestamp get reviewDueAt => $_getN(25);
+  @$pb.TagNumber(26)
+  set reviewDueAt($1.Timestamp value) => $_setField(26, value);
+  @$pb.TagNumber(26)
+  $core.bool hasReviewDueAt() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearReviewDueAt() => $_clearField(26);
+  @$pb.TagNumber(26)
+  $1.Timestamp ensureReviewDueAt() => $_ensure(25);
+
+  @$pb.TagNumber(27)
+  $1.Timestamp get revokedAt => $_getN(26);
+  @$pb.TagNumber(27)
+  set revokedAt($1.Timestamp value) => $_setField(27, value);
+  @$pb.TagNumber(27)
+  $core.bool hasRevokedAt() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearRevokedAt() => $_clearField(27);
+  @$pb.TagNumber(27)
+  $1.Timestamp ensureRevokedAt() => $_ensure(26);
+
+  @$pb.TagNumber(28)
+  $1.Timestamp get updatedAt => $_getN(27);
+  @$pb.TagNumber(28)
+  set updatedAt($1.Timestamp value) => $_setField(28, value);
+  @$pb.TagNumber(28)
+  $core.bool hasUpdatedAt() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearUpdatedAt() => $_clearField(28);
+  @$pb.TagNumber(28)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(27);
+}
+
+class OnyxLivingArchiveContact extends $pb.GeneratedMessage {
+  factory OnyxLivingArchiveContact({
+    $core.String? id,
+    $core.String? role,
+    $core.String? displayName,
+    $core.String? email,
+    $core.String? relationship,
+    $core.String? legacyBeneficiaryId,
+    $core.String? legacyRecoveryShareId,
+    $core.String? verificationStatus,
+    $core.String? verificationMethod,
+    $fixnum.Int64? version,
+    $1.Timestamp? verifiedAt,
+    $1.Timestamp? reviewDueAt,
+    $1.Timestamp? revokedAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (role != null) result.role = role;
+    if (displayName != null) result.displayName = displayName;
+    if (email != null) result.email = email;
+    if (relationship != null) result.relationship = relationship;
+    if (legacyBeneficiaryId != null)
+      result.legacyBeneficiaryId = legacyBeneficiaryId;
+    if (legacyRecoveryShareId != null)
+      result.legacyRecoveryShareId = legacyRecoveryShareId;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    if (verificationMethod != null)
+      result.verificationMethod = verificationMethod;
+    if (version != null) result.version = version;
+    if (verifiedAt != null) result.verifiedAt = verifiedAt;
+    if (reviewDueAt != null) result.reviewDueAt = reviewDueAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxLivingArchiveContact._();
+
+  factory OnyxLivingArchiveContact.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchiveContact.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchiveContact',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..aOS(3, _omitFieldNames ? '' : 'displayName')
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'relationship')
+    ..aOS(6, _omitFieldNames ? '' : 'legacyBeneficiaryId')
+    ..aOS(7, _omitFieldNames ? '' : 'legacyRecoveryShareId')
+    ..aOS(8, _omitFieldNames ? '' : 'verificationStatus')
+    ..aOS(9, _omitFieldNames ? '' : 'verificationMethod')
+    ..aInt64(10, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'verifiedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'reviewDueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveContact clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveContact copyWith(
+          void Function(OnyxLivingArchiveContact) updates) =>
+      super.copyWith((message) => updates(message as OnyxLivingArchiveContact))
+          as OnyxLivingArchiveContact;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveContact create() => OnyxLivingArchiveContact._();
+  @$core.override
+  OnyxLivingArchiveContact createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveContact getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchiveContact>(create);
+  static OnyxLivingArchiveContact? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get role => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set role($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get displayName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set displayName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplayName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplayName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get email => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set email($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEmail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmail() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get relationship => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set relationship($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRelationship() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRelationship() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get legacyBeneficiaryId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set legacyBeneficiaryId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLegacyBeneficiaryId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLegacyBeneficiaryId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get legacyRecoveryShareId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set legacyRecoveryShareId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLegacyRecoveryShareId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLegacyRecoveryShareId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get verificationStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set verificationStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVerificationStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVerificationStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get verificationMethod => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set verificationMethod($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVerificationMethod() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVerificationMethod() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get version => $_getI64(9);
+  @$pb.TagNumber(10)
+  set version($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get verifiedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set verifiedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasVerifiedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearVerifiedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureVerifiedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get reviewDueAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set reviewDueAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasReviewDueAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearReviewDueAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureReviewDueAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get revokedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set revokedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasRevokedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearRevokedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureRevokedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+}
+
+class OnyxLivingArchiveReadiness extends $pb.GeneratedMessage {
+  factory OnyxLivingArchiveReadiness({
+    $core.int? legacyBeneficiaryCount,
+    $core.int? legacyTrusteesConfigured,
+    $core.int? legacyTrusteeThreshold,
+    $core.String? legacySwitchStatus,
+    $core.bool? legacySwitchEnabled,
+    $core.int? verifiedContactCount,
+    $core.bool? legalContactVerified,
+    $core.bool? readyForReview,
+    $core.bool? readyForRelease,
+    $core.Iterable<$core.String>? blockingReasons,
+    $1.Timestamp? nextLegacyCheckinAt,
+    $core.int? verifiedBeneficiaryContactCount,
+    $core.int? verifiedTrusteeContactCount,
+  }) {
+    final result = create();
+    if (legacyBeneficiaryCount != null)
+      result.legacyBeneficiaryCount = legacyBeneficiaryCount;
+    if (legacyTrusteesConfigured != null)
+      result.legacyTrusteesConfigured = legacyTrusteesConfigured;
+    if (legacyTrusteeThreshold != null)
+      result.legacyTrusteeThreshold = legacyTrusteeThreshold;
+    if (legacySwitchStatus != null)
+      result.legacySwitchStatus = legacySwitchStatus;
+    if (legacySwitchEnabled != null)
+      result.legacySwitchEnabled = legacySwitchEnabled;
+    if (verifiedContactCount != null)
+      result.verifiedContactCount = verifiedContactCount;
+    if (legalContactVerified != null)
+      result.legalContactVerified = legalContactVerified;
+    if (readyForReview != null) result.readyForReview = readyForReview;
+    if (readyForRelease != null) result.readyForRelease = readyForRelease;
+    if (blockingReasons != null) result.blockingReasons.addAll(blockingReasons);
+    if (nextLegacyCheckinAt != null)
+      result.nextLegacyCheckinAt = nextLegacyCheckinAt;
+    if (verifiedBeneficiaryContactCount != null)
+      result.verifiedBeneficiaryContactCount = verifiedBeneficiaryContactCount;
+    if (verifiedTrusteeContactCount != null)
+      result.verifiedTrusteeContactCount = verifiedTrusteeContactCount;
+    return result;
+  }
+
+  OnyxLivingArchiveReadiness._();
+
+  factory OnyxLivingArchiveReadiness.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchiveReadiness.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchiveReadiness',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'legacyBeneficiaryCount')
+    ..aI(2, _omitFieldNames ? '' : 'legacyTrusteesConfigured')
+    ..aI(3, _omitFieldNames ? '' : 'legacyTrusteeThreshold')
+    ..aOS(4, _omitFieldNames ? '' : 'legacySwitchStatus')
+    ..aOB(5, _omitFieldNames ? '' : 'legacySwitchEnabled')
+    ..aI(6, _omitFieldNames ? '' : 'verifiedContactCount')
+    ..aOB(7, _omitFieldNames ? '' : 'legalContactVerified')
+    ..aOB(8, _omitFieldNames ? '' : 'readyForReview')
+    ..aOB(9, _omitFieldNames ? '' : 'readyForRelease')
+    ..pPS(10, _omitFieldNames ? '' : 'blockingReasons')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'nextLegacyCheckinAt',
+        subBuilder: $1.Timestamp.create)
+    ..aI(12, _omitFieldNames ? '' : 'verifiedBeneficiaryContactCount')
+    ..aI(13, _omitFieldNames ? '' : 'verifiedTrusteeContactCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReadiness clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReadiness copyWith(
+          void Function(OnyxLivingArchiveReadiness) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxLivingArchiveReadiness))
+          as OnyxLivingArchiveReadiness;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReadiness create() => OnyxLivingArchiveReadiness._();
+  @$core.override
+  OnyxLivingArchiveReadiness createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReadiness getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchiveReadiness>(create);
+  static OnyxLivingArchiveReadiness? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get legacyBeneficiaryCount => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set legacyBeneficiaryCount($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLegacyBeneficiaryCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLegacyBeneficiaryCount() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get legacyTrusteesConfigured => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set legacyTrusteesConfigured($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLegacyTrusteesConfigured() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLegacyTrusteesConfigured() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get legacyTrusteeThreshold => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set legacyTrusteeThreshold($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLegacyTrusteeThreshold() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLegacyTrusteeThreshold() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get legacySwitchStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set legacySwitchStatus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLegacySwitchStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLegacySwitchStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get legacySwitchEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set legacySwitchEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLegacySwitchEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLegacySwitchEnabled() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get verifiedContactCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set verifiedContactCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVerifiedContactCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVerifiedContactCount() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get legalContactVerified => $_getBF(6);
+  @$pb.TagNumber(7)
+  set legalContactVerified($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLegalContactVerified() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLegalContactVerified() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get readyForReview => $_getBF(7);
+  @$pb.TagNumber(8)
+  set readyForReview($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReadyForReview() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReadyForReview() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get readyForRelease => $_getBF(8);
+  @$pb.TagNumber(9)
+  set readyForRelease($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReadyForRelease() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReadyForRelease() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get blockingReasons => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get nextLegacyCheckinAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set nextLegacyCheckinAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasNextLegacyCheckinAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearNextLegacyCheckinAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureNextLegacyCheckinAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.int get verifiedBeneficiaryContactCount => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set verifiedBeneficiaryContactCount($core.int value) =>
+      $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVerifiedBeneficiaryContactCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVerifiedBeneficiaryContactCount() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get verifiedTrusteeContactCount => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set verifiedTrusteeContactCount($core.int value) =>
+      $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVerifiedTrusteeContactCount() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVerifiedTrusteeContactCount() => $_clearField(13);
+}
+
+class OnyxLivingArchivePreviewCount extends $pb.GeneratedMessage {
+  factory OnyxLivingArchivePreviewCount({
+    $core.String? itemKind,
+    $core.int? eligibleCount,
+    $core.int? selectedCount,
+    $core.int? excludedPrivateCount,
+  }) {
+    final result = create();
+    if (itemKind != null) result.itemKind = itemKind;
+    if (eligibleCount != null) result.eligibleCount = eligibleCount;
+    if (selectedCount != null) result.selectedCount = selectedCount;
+    if (excludedPrivateCount != null)
+      result.excludedPrivateCount = excludedPrivateCount;
+    return result;
+  }
+
+  OnyxLivingArchivePreviewCount._();
+
+  factory OnyxLivingArchivePreviewCount.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchivePreviewCount.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchivePreviewCount',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemKind')
+    ..aI(2, _omitFieldNames ? '' : 'eligibleCount')
+    ..aI(3, _omitFieldNames ? '' : 'selectedCount')
+    ..aI(4, _omitFieldNames ? '' : 'excludedPrivateCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePreviewCount clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePreviewCount copyWith(
+          void Function(OnyxLivingArchivePreviewCount) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxLivingArchivePreviewCount))
+          as OnyxLivingArchivePreviewCount;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePreviewCount create() =>
+      OnyxLivingArchivePreviewCount._();
+  @$core.override
+  OnyxLivingArchivePreviewCount createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePreviewCount getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchivePreviewCount>(create);
+  static OnyxLivingArchivePreviewCount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemKind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemKind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemKind() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get eligibleCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set eligibleCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEligibleCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEligibleCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get selectedCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set selectedCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSelectedCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSelectedCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get excludedPrivateCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set excludedPrivateCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExcludedPrivateCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExcludedPrivateCount() => $_clearField(4);
+}
+
+class OnyxLivingArchivePreview extends $pb.GeneratedMessage {
+  factory OnyxLivingArchivePreview({
+    $core.String? policyId,
+    $core.Iterable<OnyxLivingArchivePreviewCount>? counts,
+    $core.int? totalSelectedCount,
+    $core.int? totalExcludedPrivateCount,
+    $core.Iterable<$core.String>? warnings,
+    $core.String? snapshotChecksum,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (counts != null) result.counts.addAll(counts);
+    if (totalSelectedCount != null)
+      result.totalSelectedCount = totalSelectedCount;
+    if (totalExcludedPrivateCount != null)
+      result.totalExcludedPrivateCount = totalExcludedPrivateCount;
+    if (warnings != null) result.warnings.addAll(warnings);
+    if (snapshotChecksum != null) result.snapshotChecksum = snapshotChecksum;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  OnyxLivingArchivePreview._();
+
+  factory OnyxLivingArchivePreview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchivePreview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchivePreview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..pPM<OnyxLivingArchivePreviewCount>(2, _omitFieldNames ? '' : 'counts',
+        subBuilder: OnyxLivingArchivePreviewCount.create)
+    ..aI(3, _omitFieldNames ? '' : 'totalSelectedCount')
+    ..aI(4, _omitFieldNames ? '' : 'totalExcludedPrivateCount')
+    ..pPS(5, _omitFieldNames ? '' : 'warnings')
+    ..aOS(6, _omitFieldNames ? '' : 'snapshotChecksum')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePreview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchivePreview copyWith(
+          void Function(OnyxLivingArchivePreview) updates) =>
+      super.copyWith((message) => updates(message as OnyxLivingArchivePreview))
+          as OnyxLivingArchivePreview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePreview create() => OnyxLivingArchivePreview._();
+  @$core.override
+  OnyxLivingArchivePreview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchivePreview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchivePreview>(create);
+  static OnyxLivingArchivePreview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxLivingArchivePreviewCount> get counts => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.int get totalSelectedCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set totalSelectedCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTotalSelectedCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalSelectedCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get totalExcludedPrivateCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set totalExcludedPrivateCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTotalExcludedPrivateCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTotalExcludedPrivateCount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get warnings => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get snapshotChecksum => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set snapshotChecksum($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSnapshotChecksum() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSnapshotChecksum() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get generatedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set generatedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGeneratedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGeneratedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(6);
+}
+
+class OnyxLivingArchiveEdition extends $pb.GeneratedMessage {
+  factory OnyxLivingArchiveEdition({
+    $core.String? id,
+    $core.String? policyId,
+    $core.String? title,
+    $core.String? cadence,
+    $core.String? periodLabel,
+    $core.String? status,
+    $core.int? itemCount,
+    $core.int? excludedPrivateCount,
+    $core.String? snapshotChecksum,
+    $core.String? mediaAssetId,
+    $core.String? downloadUrl,
+    $core.String? legacyDocumentId,
+    $fixnum.Int64? version,
+    $1.Timestamp? periodStartsAt,
+    $1.Timestamp? periodEndsAt,
+    $1.Timestamp? generatedAt,
+    $1.Timestamp? escrowedAt,
+    $1.Timestamp? releasedAt,
+    $1.Timestamp? revokedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (policyId != null) result.policyId = policyId;
+    if (title != null) result.title = title;
+    if (cadence != null) result.cadence = cadence;
+    if (periodLabel != null) result.periodLabel = periodLabel;
+    if (status != null) result.status = status;
+    if (itemCount != null) result.itemCount = itemCount;
+    if (excludedPrivateCount != null)
+      result.excludedPrivateCount = excludedPrivateCount;
+    if (snapshotChecksum != null) result.snapshotChecksum = snapshotChecksum;
+    if (mediaAssetId != null) result.mediaAssetId = mediaAssetId;
+    if (downloadUrl != null) result.downloadUrl = downloadUrl;
+    if (legacyDocumentId != null) result.legacyDocumentId = legacyDocumentId;
+    if (version != null) result.version = version;
+    if (periodStartsAt != null) result.periodStartsAt = periodStartsAt;
+    if (periodEndsAt != null) result.periodEndsAt = periodEndsAt;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    if (escrowedAt != null) result.escrowedAt = escrowedAt;
+    if (releasedAt != null) result.releasedAt = releasedAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    return result;
+  }
+
+  OnyxLivingArchiveEdition._();
+
+  factory OnyxLivingArchiveEdition.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchiveEdition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchiveEdition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'policyId')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'cadence')
+    ..aOS(5, _omitFieldNames ? '' : 'periodLabel')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aI(7, _omitFieldNames ? '' : 'itemCount')
+    ..aI(8, _omitFieldNames ? '' : 'excludedPrivateCount')
+    ..aOS(9, _omitFieldNames ? '' : 'snapshotChecksum')
+    ..aOS(10, _omitFieldNames ? '' : 'mediaAssetId')
+    ..aOS(11, _omitFieldNames ? '' : 'downloadUrl')
+    ..aOS(12, _omitFieldNames ? '' : 'legacyDocumentId')
+    ..aInt64(13, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'periodStartsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'periodEndsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(16, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'escrowedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'releasedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(19, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveEdition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveEdition copyWith(
+          void Function(OnyxLivingArchiveEdition) updates) =>
+      super.copyWith((message) => updates(message as OnyxLivingArchiveEdition))
+          as OnyxLivingArchiveEdition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveEdition create() => OnyxLivingArchiveEdition._();
+  @$core.override
+  OnyxLivingArchiveEdition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveEdition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchiveEdition>(create);
+  static OnyxLivingArchiveEdition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get policyId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set policyId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPolicyId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPolicyId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cadence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cadence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCadence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCadence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get periodLabel => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set periodLabel($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPeriodLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPeriodLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get itemCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set itemCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasItemCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearItemCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get excludedPrivateCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set excludedPrivateCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExcludedPrivateCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExcludedPrivateCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get snapshotChecksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set snapshotChecksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSnapshotChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSnapshotChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get mediaAssetId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set mediaAssetId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMediaAssetId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMediaAssetId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get downloadUrl => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set downloadUrl($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDownloadUrl() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDownloadUrl() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get legacyDocumentId => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set legacyDocumentId($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLegacyDocumentId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLegacyDocumentId() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get version => $_getI64(12);
+  @$pb.TagNumber(13)
+  set version($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get periodStartsAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set periodStartsAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasPeriodStartsAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPeriodStartsAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensurePeriodStartsAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get periodEndsAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set periodEndsAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPeriodEndsAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPeriodEndsAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensurePeriodEndsAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get generatedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set generatedAt($1.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasGeneratedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearGeneratedAt() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get escrowedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set escrowedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasEscrowedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearEscrowedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureEscrowedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get releasedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set releasedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasReleasedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearReleasedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureReleasedAt() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $1.Timestamp get revokedAt => $_getN(18);
+  @$pb.TagNumber(19)
+  set revokedAt($1.Timestamp value) => $_setField(19, value);
+  @$pb.TagNumber(19)
+  $core.bool hasRevokedAt() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRevokedAt() => $_clearField(19);
+  @$pb.TagNumber(19)
+  $1.Timestamp ensureRevokedAt() => $_ensure(18);
+}
+
+class OnyxLivingArchiveReleaseCase extends $pb.GeneratedMessage {
+  factory OnyxLivingArchiveReleaseCase({
+    $core.String? id,
+    $core.String? policyId,
+    $core.String? editionId,
+    $core.String? triggerKind,
+    $core.String? status,
+    $core.String? jurisdiction,
+    $core.bool? legalHold,
+    $core.String? memberSummary,
+    $fixnum.Int64? version,
+    $1.Timestamp? openedAt,
+    $1.Timestamp? waitingUntil,
+    $1.Timestamp? contestedAt,
+    $1.Timestamp? approvedAt,
+    $1.Timestamp? releasedAt,
+    $1.Timestamp? closedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (policyId != null) result.policyId = policyId;
+    if (editionId != null) result.editionId = editionId;
+    if (triggerKind != null) result.triggerKind = triggerKind;
+    if (status != null) result.status = status;
+    if (jurisdiction != null) result.jurisdiction = jurisdiction;
+    if (legalHold != null) result.legalHold = legalHold;
+    if (memberSummary != null) result.memberSummary = memberSummary;
+    if (version != null) result.version = version;
+    if (openedAt != null) result.openedAt = openedAt;
+    if (waitingUntil != null) result.waitingUntil = waitingUntil;
+    if (contestedAt != null) result.contestedAt = contestedAt;
+    if (approvedAt != null) result.approvedAt = approvedAt;
+    if (releasedAt != null) result.releasedAt = releasedAt;
+    if (closedAt != null) result.closedAt = closedAt;
+    return result;
+  }
+
+  OnyxLivingArchiveReleaseCase._();
+
+  factory OnyxLivingArchiveReleaseCase.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchiveReleaseCase.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchiveReleaseCase',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'policyId')
+    ..aOS(3, _omitFieldNames ? '' : 'editionId')
+    ..aOS(4, _omitFieldNames ? '' : 'triggerKind')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'jurisdiction')
+    ..aOB(7, _omitFieldNames ? '' : 'legalHold')
+    ..aOS(8, _omitFieldNames ? '' : 'memberSummary')
+    ..aInt64(9, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'openedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'waitingUntil',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'contestedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'approvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'releasedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'closedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReleaseCase clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReleaseCase copyWith(
+          void Function(OnyxLivingArchiveReleaseCase) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxLivingArchiveReleaseCase))
+          as OnyxLivingArchiveReleaseCase;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReleaseCase create() =>
+      OnyxLivingArchiveReleaseCase._();
+  @$core.override
+  OnyxLivingArchiveReleaseCase createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReleaseCase getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchiveReleaseCase>(create);
+  static OnyxLivingArchiveReleaseCase? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get policyId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set policyId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPolicyId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPolicyId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get triggerKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set triggerKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTriggerKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTriggerKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get jurisdiction => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set jurisdiction($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasJurisdiction() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearJurisdiction() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get legalHold => $_getBF(6);
+  @$pb.TagNumber(7)
+  set legalHold($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLegalHold() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLegalHold() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get memberSummary => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set memberSummary($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberSummary() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberSummary() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get version => $_getI64(8);
+  @$pb.TagNumber(9)
+  set version($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get openedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set openedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasOpenedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOpenedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureOpenedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get waitingUntil => $_getN(10);
+  @$pb.TagNumber(11)
+  set waitingUntil($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasWaitingUntil() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearWaitingUntil() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureWaitingUntil() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get contestedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set contestedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasContestedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearContestedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureContestedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get approvedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set approvedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasApprovedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearApprovedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureApprovedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get releasedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set releasedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasReleasedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearReleasedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureReleasedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get closedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set closedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasClosedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearClosedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureClosedAt() => $_ensure(14);
+}
+
+class OnyxLivingArchiveReceipt extends $pb.GeneratedMessage {
+  factory OnyxLivingArchiveReceipt({
+    $core.String? id,
+    $core.String? caseId,
+    $core.String? policyId,
+    $core.String? editionId,
+    $core.String? contactId,
+    $core.String? receiptCode,
+    $core.String? scopeChecksum,
+    $core.String? artifactChecksum,
+    $core.String? status,
+    $1.Timestamp? releasedAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (caseId != null) result.caseId = caseId;
+    if (policyId != null) result.policyId = policyId;
+    if (editionId != null) result.editionId = editionId;
+    if (contactId != null) result.contactId = contactId;
+    if (receiptCode != null) result.receiptCode = receiptCode;
+    if (scopeChecksum != null) result.scopeChecksum = scopeChecksum;
+    if (artifactChecksum != null) result.artifactChecksum = artifactChecksum;
+    if (status != null) result.status = status;
+    if (releasedAt != null) result.releasedAt = releasedAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OnyxLivingArchiveReceipt._();
+
+  factory OnyxLivingArchiveReceipt.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxLivingArchiveReceipt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxLivingArchiveReceipt',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'caseId')
+    ..aOS(3, _omitFieldNames ? '' : 'policyId')
+    ..aOS(4, _omitFieldNames ? '' : 'editionId')
+    ..aOS(5, _omitFieldNames ? '' : 'contactId')
+    ..aOS(6, _omitFieldNames ? '' : 'receiptCode')
+    ..aOS(7, _omitFieldNames ? '' : 'scopeChecksum')
+    ..aOS(8, _omitFieldNames ? '' : 'artifactChecksum')
+    ..aOS(9, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'releasedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReceipt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxLivingArchiveReceipt copyWith(
+          void Function(OnyxLivingArchiveReceipt) updates) =>
+      super.copyWith((message) => updates(message as OnyxLivingArchiveReceipt))
+          as OnyxLivingArchiveReceipt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReceipt create() => OnyxLivingArchiveReceipt._();
+  @$core.override
+  OnyxLivingArchiveReceipt createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxLivingArchiveReceipt getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxLivingArchiveReceipt>(create);
+  static OnyxLivingArchiveReceipt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get caseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set caseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCaseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCaseId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get policyId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set policyId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPolicyId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPolicyId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get editionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set editionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contactId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contactId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContactId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContactId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get receiptCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set receiptCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReceiptCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReceiptCode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get scopeChecksum => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set scopeChecksum($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScopeChecksum() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScopeChecksum() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get artifactChecksum => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set artifactChecksum($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasArtifactChecksum() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearArtifactChecksum() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get status => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set status($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get releasedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set releasedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasReleasedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearReleasedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureReleasedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+}
+
+class GetLivingArchiveDashboardRequest extends $pb.GeneratedMessage {
+  factory GetLivingArchiveDashboardRequest() => create();
+
+  GetLivingArchiveDashboardRequest._();
+
+  factory GetLivingArchiveDashboardRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLivingArchiveDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLivingArchiveDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLivingArchiveDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLivingArchiveDashboardRequest copyWith(
+          void Function(GetLivingArchiveDashboardRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetLivingArchiveDashboardRequest))
+          as GetLivingArchiveDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLivingArchiveDashboardRequest create() =>
+      GetLivingArchiveDashboardRequest._();
+  @$core.override
+  GetLivingArchiveDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLivingArchiveDashboardRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLivingArchiveDashboardRequest>(
+          create);
+  static GetLivingArchiveDashboardRequest? _defaultInstance;
+}
+
+class GetLivingArchiveDashboardResponse extends $pb.GeneratedMessage {
+  factory GetLivingArchiveDashboardResponse({
+    $core.Iterable<OnyxLivingArchivePolicy>? policies,
+    $core.Iterable<OnyxLivingArchiveContact>? contacts,
+    $core.Iterable<OnyxLivingArchiveEdition>? editions,
+    $core.Iterable<OnyxLivingArchiveReleaseCase>? releaseCases,
+    $core.Iterable<OnyxLivingArchiveReceipt>? receipts,
+    OnyxLivingArchiveReadiness? readiness,
+  }) {
+    final result = create();
+    if (policies != null) result.policies.addAll(policies);
+    if (contacts != null) result.contacts.addAll(contacts);
+    if (editions != null) result.editions.addAll(editions);
+    if (releaseCases != null) result.releaseCases.addAll(releaseCases);
+    if (receipts != null) result.receipts.addAll(receipts);
+    if (readiness != null) result.readiness = readiness;
+    return result;
+  }
+
+  GetLivingArchiveDashboardResponse._();
+
+  factory GetLivingArchiveDashboardResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLivingArchiveDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLivingArchiveDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<OnyxLivingArchivePolicy>(1, _omitFieldNames ? '' : 'policies',
+        subBuilder: OnyxLivingArchivePolicy.create)
+    ..pPM<OnyxLivingArchiveContact>(2, _omitFieldNames ? '' : 'contacts',
+        subBuilder: OnyxLivingArchiveContact.create)
+    ..pPM<OnyxLivingArchiveEdition>(3, _omitFieldNames ? '' : 'editions',
+        subBuilder: OnyxLivingArchiveEdition.create)
+    ..pPM<OnyxLivingArchiveReleaseCase>(
+        4, _omitFieldNames ? '' : 'releaseCases',
+        subBuilder: OnyxLivingArchiveReleaseCase.create)
+    ..pPM<OnyxLivingArchiveReceipt>(5, _omitFieldNames ? '' : 'receipts',
+        subBuilder: OnyxLivingArchiveReceipt.create)
+    ..aOM<OnyxLivingArchiveReadiness>(6, _omitFieldNames ? '' : 'readiness',
+        subBuilder: OnyxLivingArchiveReadiness.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLivingArchiveDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLivingArchiveDashboardResponse copyWith(
+          void Function(GetLivingArchiveDashboardResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLivingArchiveDashboardResponse))
+          as GetLivingArchiveDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLivingArchiveDashboardResponse create() =>
+      GetLivingArchiveDashboardResponse._();
+  @$core.override
+  GetLivingArchiveDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLivingArchiveDashboardResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetLivingArchiveDashboardResponse>(
+          create);
+  static GetLivingArchiveDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OnyxLivingArchivePolicy> get policies => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxLivingArchiveContact> get contacts => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxLivingArchiveEdition> get editions => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxLivingArchiveReleaseCase> get releaseCases => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<OnyxLivingArchiveReceipt> get receipts => $_getList(4);
+
+  @$pb.TagNumber(6)
+  OnyxLivingArchiveReadiness get readiness => $_getN(5);
+  @$pb.TagNumber(6)
+  set readiness(OnyxLivingArchiveReadiness value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReadiness() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReadiness() => $_clearField(6);
+  @$pb.TagNumber(6)
+  OnyxLivingArchiveReadiness ensureReadiness() => $_ensure(5);
+}
+
+class UpsertLivingArchivePolicyRequest extends $pb.GeneratedMessage {
+  factory UpsertLivingArchivePolicyRequest({
+    $core.String? policyId,
+    $core.String? title,
+    $core.String? cadence,
+    $core.String? triggerKind,
+    $core.String? jurisdiction,
+    $core.int? delayDays,
+    $core.bool? includeReading,
+    $core.bool? includeHighlights,
+    $core.bool? includeNotes,
+    $core.bool? includeDecisions,
+    $core.bool? includeSalonMoments,
+    $core.bool? includeCreatorSupport,
+    $core.bool? includePersonalEssays,
+    $core.Iterable<$core.String>? contentIds,
+    $core.Iterable<$core.String>? collectionLabels,
+    $core.Iterable<$core.String>? personLabels,
+    $core.String? eventId,
+    $core.String? memberStatement,
+    $1.Timestamp? periodStartsAt,
+    $1.Timestamp? periodEndsAt,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+    $core.bool? includePrivateItems,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (title != null) result.title = title;
+    if (cadence != null) result.cadence = cadence;
+    if (triggerKind != null) result.triggerKind = triggerKind;
+    if (jurisdiction != null) result.jurisdiction = jurisdiction;
+    if (delayDays != null) result.delayDays = delayDays;
+    if (includeReading != null) result.includeReading = includeReading;
+    if (includeHighlights != null) result.includeHighlights = includeHighlights;
+    if (includeNotes != null) result.includeNotes = includeNotes;
+    if (includeDecisions != null) result.includeDecisions = includeDecisions;
+    if (includeSalonMoments != null)
+      result.includeSalonMoments = includeSalonMoments;
+    if (includeCreatorSupport != null)
+      result.includeCreatorSupport = includeCreatorSupport;
+    if (includePersonalEssays != null)
+      result.includePersonalEssays = includePersonalEssays;
+    if (contentIds != null) result.contentIds.addAll(contentIds);
+    if (collectionLabels != null)
+      result.collectionLabels.addAll(collectionLabels);
+    if (personLabels != null) result.personLabels.addAll(personLabels);
+    if (eventId != null) result.eventId = eventId;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    if (periodStartsAt != null) result.periodStartsAt = periodStartsAt;
+    if (periodEndsAt != null) result.periodEndsAt = periodEndsAt;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (includePrivateItems != null)
+      result.includePrivateItems = includePrivateItems;
+    return result;
+  }
+
+  UpsertLivingArchivePolicyRequest._();
+
+  factory UpsertLivingArchivePolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLivingArchivePolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLivingArchivePolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'cadence')
+    ..aOS(4, _omitFieldNames ? '' : 'triggerKind')
+    ..aOS(5, _omitFieldNames ? '' : 'jurisdiction')
+    ..aI(6, _omitFieldNames ? '' : 'delayDays')
+    ..aOB(7, _omitFieldNames ? '' : 'includeReading')
+    ..aOB(8, _omitFieldNames ? '' : 'includeHighlights')
+    ..aOB(9, _omitFieldNames ? '' : 'includeNotes')
+    ..aOB(10, _omitFieldNames ? '' : 'includeDecisions')
+    ..aOB(11, _omitFieldNames ? '' : 'includeSalonMoments')
+    ..aOB(12, _omitFieldNames ? '' : 'includeCreatorSupport')
+    ..aOB(13, _omitFieldNames ? '' : 'includePersonalEssays')
+    ..pPS(14, _omitFieldNames ? '' : 'contentIds')
+    ..pPS(15, _omitFieldNames ? '' : 'collectionLabels')
+    ..pPS(16, _omitFieldNames ? '' : 'personLabels')
+    ..aOS(17, _omitFieldNames ? '' : 'eventId')
+    ..aOS(18, _omitFieldNames ? '' : 'memberStatement')
+    ..aOM<$1.Timestamp>(19, _omitFieldNames ? '' : 'periodStartsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'periodEndsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(21, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(22, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOB(23, _omitFieldNames ? '' : 'includePrivateItems')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchivePolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchivePolicyRequest copyWith(
+          void Function(UpsertLivingArchivePolicyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertLivingArchivePolicyRequest))
+          as UpsertLivingArchivePolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchivePolicyRequest create() =>
+      UpsertLivingArchivePolicyRequest._();
+  @$core.override
+  UpsertLivingArchivePolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchivePolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLivingArchivePolicyRequest>(
+          create);
+  static UpsertLivingArchivePolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cadence => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cadence($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCadence() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCadence() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get triggerKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set triggerKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTriggerKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTriggerKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get jurisdiction => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jurisdiction($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJurisdiction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJurisdiction() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get delayDays => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set delayDays($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDelayDays() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDelayDays() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get includeReading => $_getBF(6);
+  @$pb.TagNumber(7)
+  set includeReading($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIncludeReading() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIncludeReading() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get includeHighlights => $_getBF(7);
+  @$pb.TagNumber(8)
+  set includeHighlights($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIncludeHighlights() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIncludeHighlights() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get includeNotes => $_getBF(8);
+  @$pb.TagNumber(9)
+  set includeNotes($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIncludeNotes() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIncludeNotes() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get includeDecisions => $_getBF(9);
+  @$pb.TagNumber(10)
+  set includeDecisions($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIncludeDecisions() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIncludeDecisions() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get includeSalonMoments => $_getBF(10);
+  @$pb.TagNumber(11)
+  set includeSalonMoments($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIncludeSalonMoments() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIncludeSalonMoments() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get includeCreatorSupport => $_getBF(11);
+  @$pb.TagNumber(12)
+  set includeCreatorSupport($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasIncludeCreatorSupport() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearIncludeCreatorSupport() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get includePersonalEssays => $_getBF(12);
+  @$pb.TagNumber(13)
+  set includePersonalEssays($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIncludePersonalEssays() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIncludePersonalEssays() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $pb.PbList<$core.String> get contentIds => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $pb.PbList<$core.String> get collectionLabels => $_getList(14);
+
+  @$pb.TagNumber(16)
+  $pb.PbList<$core.String> get personLabels => $_getList(15);
+
+  @$pb.TagNumber(17)
+  $core.String get eventId => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set eventId($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasEventId() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearEventId() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get memberStatement => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set memberStatement($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasMemberStatement() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearMemberStatement() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $1.Timestamp get periodStartsAt => $_getN(18);
+  @$pb.TagNumber(19)
+  set periodStartsAt($1.Timestamp value) => $_setField(19, value);
+  @$pb.TagNumber(19)
+  $core.bool hasPeriodStartsAt() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearPeriodStartsAt() => $_clearField(19);
+  @$pb.TagNumber(19)
+  $1.Timestamp ensurePeriodStartsAt() => $_ensure(18);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get periodEndsAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set periodEndsAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPeriodEndsAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPeriodEndsAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensurePeriodEndsAt() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $fixnum.Int64 get expectedVersion => $_getI64(20);
+  @$pb.TagNumber(21)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasExpectedVersion() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearExpectedVersion() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get clientMutationId => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set clientMutationId($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasClientMutationId() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearClientMutationId() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.bool get includePrivateItems => $_getBF(22);
+  @$pb.TagNumber(23)
+  set includePrivateItems($core.bool value) => $_setBool(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasIncludePrivateItems() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearIncludePrivateItems() => $_clearField(23);
+}
+
+class UpsertLivingArchivePolicyResponse extends $pb.GeneratedMessage {
+  factory UpsertLivingArchivePolicyResponse({
+    OnyxLivingArchivePolicy? policy,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    return result;
+  }
+
+  UpsertLivingArchivePolicyResponse._();
+
+  factory UpsertLivingArchivePolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLivingArchivePolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLivingArchivePolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchivePolicy>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OnyxLivingArchivePolicy.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchivePolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchivePolicyResponse copyWith(
+          void Function(UpsertLivingArchivePolicyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertLivingArchivePolicyResponse))
+          as UpsertLivingArchivePolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchivePolicyResponse create() =>
+      UpsertLivingArchivePolicyResponse._();
+  @$core.override
+  UpsertLivingArchivePolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchivePolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLivingArchivePolicyResponse>(
+          create);
+  static UpsertLivingArchivePolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OnyxLivingArchivePolicy value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy ensurePolicy() => $_ensure(0);
+}
+
+class PreviewLivingArchivePolicyRequest extends $pb.GeneratedMessage {
+  factory PreviewLivingArchivePolicyRequest({
+    $core.String? policyId,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    return result;
+  }
+
+  PreviewLivingArchivePolicyRequest._();
+
+  factory PreviewLivingArchivePolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewLivingArchivePolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewLivingArchivePolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewLivingArchivePolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewLivingArchivePolicyRequest copyWith(
+          void Function(PreviewLivingArchivePolicyRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as PreviewLivingArchivePolicyRequest))
+          as PreviewLivingArchivePolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewLivingArchivePolicyRequest create() =>
+      PreviewLivingArchivePolicyRequest._();
+  @$core.override
+  PreviewLivingArchivePolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewLivingArchivePolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewLivingArchivePolicyRequest>(
+          create);
+  static PreviewLivingArchivePolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+}
+
+class PreviewLivingArchivePolicyResponse extends $pb.GeneratedMessage {
+  factory PreviewLivingArchivePolicyResponse({
+    OnyxLivingArchivePreview? preview,
+  }) {
+    final result = create();
+    if (preview != null) result.preview = preview;
+    return result;
+  }
+
+  PreviewLivingArchivePolicyResponse._();
+
+  factory PreviewLivingArchivePolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewLivingArchivePolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewLivingArchivePolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchivePreview>(1, _omitFieldNames ? '' : 'preview',
+        subBuilder: OnyxLivingArchivePreview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewLivingArchivePolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewLivingArchivePolicyResponse copyWith(
+          void Function(PreviewLivingArchivePolicyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as PreviewLivingArchivePolicyResponse))
+          as PreviewLivingArchivePolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewLivingArchivePolicyResponse create() =>
+      PreviewLivingArchivePolicyResponse._();
+  @$core.override
+  PreviewLivingArchivePolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewLivingArchivePolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewLivingArchivePolicyResponse>(
+          create);
+  static PreviewLivingArchivePolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePreview get preview => $_getN(0);
+  @$pb.TagNumber(1)
+  set preview(OnyxLivingArchivePreview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePreview ensurePreview() => $_ensure(0);
+}
+
+class GenerateLivingArchiveEditionRequest extends $pb.GeneratedMessage {
+  factory GenerateLivingArchiveEditionRequest({
+    $core.String? policyId,
+    $core.String? title,
+    $core.String? periodLabel,
+    $core.String? personalEssay,
+    $1.Timestamp? periodStartsAt,
+    $1.Timestamp? periodEndsAt,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (title != null) result.title = title;
+    if (periodLabel != null) result.periodLabel = periodLabel;
+    if (personalEssay != null) result.personalEssay = personalEssay;
+    if (periodStartsAt != null) result.periodStartsAt = periodStartsAt;
+    if (periodEndsAt != null) result.periodEndsAt = periodEndsAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  GenerateLivingArchiveEditionRequest._();
+
+  factory GenerateLivingArchiveEditionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateLivingArchiveEditionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateLivingArchiveEditionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'periodLabel')
+    ..aOS(4, _omitFieldNames ? '' : 'personalEssay')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'periodStartsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'periodEndsAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLivingArchiveEditionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLivingArchiveEditionRequest copyWith(
+          void Function(GenerateLivingArchiveEditionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateLivingArchiveEditionRequest))
+          as GenerateLivingArchiveEditionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLivingArchiveEditionRequest create() =>
+      GenerateLivingArchiveEditionRequest._();
+  @$core.override
+  GenerateLivingArchiveEditionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLivingArchiveEditionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateLivingArchiveEditionRequest>(create);
+  static GenerateLivingArchiveEditionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get periodLabel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set periodLabel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPeriodLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPeriodLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get personalEssay => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set personalEssay($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPersonalEssay() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPersonalEssay() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get periodStartsAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set periodStartsAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPeriodStartsAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPeriodStartsAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensurePeriodStartsAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get periodEndsAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set periodEndsAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPeriodEndsAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPeriodEndsAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensurePeriodEndsAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class GenerateLivingArchiveEditionResponse extends $pb.GeneratedMessage {
+  factory GenerateLivingArchiveEditionResponse({
+    OnyxLivingArchiveEdition? edition,
+    OnyxLivingArchivePreview? preview,
+  }) {
+    final result = create();
+    if (edition != null) result.edition = edition;
+    if (preview != null) result.preview = preview;
+    return result;
+  }
+
+  GenerateLivingArchiveEditionResponse._();
+
+  factory GenerateLivingArchiveEditionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateLivingArchiveEditionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateLivingArchiveEditionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchiveEdition>(1, _omitFieldNames ? '' : 'edition',
+        subBuilder: OnyxLivingArchiveEdition.create)
+    ..aOM<OnyxLivingArchivePreview>(2, _omitFieldNames ? '' : 'preview',
+        subBuilder: OnyxLivingArchivePreview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLivingArchiveEditionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateLivingArchiveEditionResponse copyWith(
+          void Function(GenerateLivingArchiveEditionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateLivingArchiveEditionResponse))
+          as GenerateLivingArchiveEditionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateLivingArchiveEditionResponse create() =>
+      GenerateLivingArchiveEditionResponse._();
+  @$core.override
+  GenerateLivingArchiveEditionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateLivingArchiveEditionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateLivingArchiveEditionResponse>(create);
+  static GenerateLivingArchiveEditionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveEdition get edition => $_getN(0);
+  @$pb.TagNumber(1)
+  set edition(OnyxLivingArchiveEdition value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEdition() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdition() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveEdition ensureEdition() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxLivingArchivePreview get preview => $_getN(1);
+  @$pb.TagNumber(2)
+  set preview(OnyxLivingArchivePreview value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPreview() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPreview() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxLivingArchivePreview ensurePreview() => $_ensure(1);
+}
+
+class LinkLivingArchiveLegacyEscrowRequest extends $pb.GeneratedMessage {
+  factory LinkLivingArchiveLegacyEscrowRequest({
+    $core.String? editionId,
+    $core.String? legacyDocumentId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (editionId != null) result.editionId = editionId;
+    if (legacyDocumentId != null) result.legacyDocumentId = legacyDocumentId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  LinkLivingArchiveLegacyEscrowRequest._();
+
+  factory LinkLivingArchiveLegacyEscrowRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LinkLivingArchiveLegacyEscrowRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LinkLivingArchiveLegacyEscrowRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'editionId')
+    ..aOS(2, _omitFieldNames ? '' : 'legacyDocumentId')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkLivingArchiveLegacyEscrowRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkLivingArchiveLegacyEscrowRequest copyWith(
+          void Function(LinkLivingArchiveLegacyEscrowRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LinkLivingArchiveLegacyEscrowRequest))
+          as LinkLivingArchiveLegacyEscrowRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkLivingArchiveLegacyEscrowRequest create() =>
+      LinkLivingArchiveLegacyEscrowRequest._();
+  @$core.override
+  LinkLivingArchiveLegacyEscrowRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LinkLivingArchiveLegacyEscrowRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LinkLivingArchiveLegacyEscrowRequest>(create);
+  static LinkLivingArchiveLegacyEscrowRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get editionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set editionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEditionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEditionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get legacyDocumentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set legacyDocumentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLegacyDocumentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLegacyDocumentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedVersion => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedVersion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class LinkLivingArchiveLegacyEscrowResponse extends $pb.GeneratedMessage {
+  factory LinkLivingArchiveLegacyEscrowResponse({
+    OnyxLivingArchiveEdition? edition,
+    OnyxLivingArchiveReadiness? readiness,
+  }) {
+    final result = create();
+    if (edition != null) result.edition = edition;
+    if (readiness != null) result.readiness = readiness;
+    return result;
+  }
+
+  LinkLivingArchiveLegacyEscrowResponse._();
+
+  factory LinkLivingArchiveLegacyEscrowResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LinkLivingArchiveLegacyEscrowResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LinkLivingArchiveLegacyEscrowResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchiveEdition>(1, _omitFieldNames ? '' : 'edition',
+        subBuilder: OnyxLivingArchiveEdition.create)
+    ..aOM<OnyxLivingArchiveReadiness>(2, _omitFieldNames ? '' : 'readiness',
+        subBuilder: OnyxLivingArchiveReadiness.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkLivingArchiveLegacyEscrowResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LinkLivingArchiveLegacyEscrowResponse copyWith(
+          void Function(LinkLivingArchiveLegacyEscrowResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LinkLivingArchiveLegacyEscrowResponse))
+          as LinkLivingArchiveLegacyEscrowResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LinkLivingArchiveLegacyEscrowResponse create() =>
+      LinkLivingArchiveLegacyEscrowResponse._();
+  @$core.override
+  LinkLivingArchiveLegacyEscrowResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LinkLivingArchiveLegacyEscrowResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LinkLivingArchiveLegacyEscrowResponse>(create);
+  static LinkLivingArchiveLegacyEscrowResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveEdition get edition => $_getN(0);
+  @$pb.TagNumber(1)
+  set edition(OnyxLivingArchiveEdition value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEdition() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdition() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveEdition ensureEdition() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness get readiness => $_getN(1);
+  @$pb.TagNumber(2)
+  set readiness(OnyxLivingArchiveReadiness value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadiness() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadiness() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness ensureReadiness() => $_ensure(1);
+}
+
+class UpsertLivingArchiveContactRequest extends $pb.GeneratedMessage {
+  factory UpsertLivingArchiveContactRequest({
+    $core.String? contactId,
+    $core.String? role,
+    $core.String? displayName,
+    $core.String? email,
+    $core.String? relationship,
+    $core.String? legacyBeneficiaryId,
+    $core.String? legacyRecoveryShareId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contactId != null) result.contactId = contactId;
+    if (role != null) result.role = role;
+    if (displayName != null) result.displayName = displayName;
+    if (email != null) result.email = email;
+    if (relationship != null) result.relationship = relationship;
+    if (legacyBeneficiaryId != null)
+      result.legacyBeneficiaryId = legacyBeneficiaryId;
+    if (legacyRecoveryShareId != null)
+      result.legacyRecoveryShareId = legacyRecoveryShareId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertLivingArchiveContactRequest._();
+
+  factory UpsertLivingArchiveContactRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLivingArchiveContactRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLivingArchiveContactRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contactId')
+    ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..aOS(3, _omitFieldNames ? '' : 'displayName')
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'relationship')
+    ..aOS(6, _omitFieldNames ? '' : 'legacyBeneficiaryId')
+    ..aOS(7, _omitFieldNames ? '' : 'legacyRecoveryShareId')
+    ..aInt64(8, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(9, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchiveContactRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchiveContactRequest copyWith(
+          void Function(UpsertLivingArchiveContactRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertLivingArchiveContactRequest))
+          as UpsertLivingArchiveContactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchiveContactRequest create() =>
+      UpsertLivingArchiveContactRequest._();
+  @$core.override
+  UpsertLivingArchiveContactRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchiveContactRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLivingArchiveContactRequest>(
+          create);
+  static UpsertLivingArchiveContactRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contactId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contactId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContactId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContactId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get role => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set role($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get displayName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set displayName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplayName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplayName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get email => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set email($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEmail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmail() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get relationship => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set relationship($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRelationship() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRelationship() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get legacyBeneficiaryId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set legacyBeneficiaryId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLegacyBeneficiaryId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLegacyBeneficiaryId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get legacyRecoveryShareId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set legacyRecoveryShareId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLegacyRecoveryShareId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLegacyRecoveryShareId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get expectedVersion => $_getI64(7);
+  @$pb.TagNumber(8)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExpectedVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExpectedVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get clientMutationId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clientMutationId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasClientMutationId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClientMutationId() => $_clearField(9);
+}
+
+class UpsertLivingArchiveContactResponse extends $pb.GeneratedMessage {
+  factory UpsertLivingArchiveContactResponse({
+    OnyxLivingArchiveContact? contact,
+    OnyxLivingArchiveReadiness? readiness,
+  }) {
+    final result = create();
+    if (contact != null) result.contact = contact;
+    if (readiness != null) result.readiness = readiness;
+    return result;
+  }
+
+  UpsertLivingArchiveContactResponse._();
+
+  factory UpsertLivingArchiveContactResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLivingArchiveContactResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLivingArchiveContactResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchiveContact>(1, _omitFieldNames ? '' : 'contact',
+        subBuilder: OnyxLivingArchiveContact.create)
+    ..aOM<OnyxLivingArchiveReadiness>(2, _omitFieldNames ? '' : 'readiness',
+        subBuilder: OnyxLivingArchiveReadiness.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchiveContactResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLivingArchiveContactResponse copyWith(
+          void Function(UpsertLivingArchiveContactResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertLivingArchiveContactResponse))
+          as UpsertLivingArchiveContactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchiveContactResponse create() =>
+      UpsertLivingArchiveContactResponse._();
+  @$core.override
+  UpsertLivingArchiveContactResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLivingArchiveContactResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertLivingArchiveContactResponse>(
+          create);
+  static UpsertLivingArchiveContactResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveContact get contact => $_getN(0);
+  @$pb.TagNumber(1)
+  set contact(OnyxLivingArchiveContact value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContact() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContact() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveContact ensureContact() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness get readiness => $_getN(1);
+  @$pb.TagNumber(2)
+  set readiness(OnyxLivingArchiveReadiness value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadiness() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadiness() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness ensureReadiness() => $_ensure(1);
+}
+
+class DeleteLivingArchiveContactRequest extends $pb.GeneratedMessage {
+  factory DeleteLivingArchiveContactRequest({
+    $core.String? contactId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contactId != null) result.contactId = contactId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  DeleteLivingArchiveContactRequest._();
+
+  factory DeleteLivingArchiveContactRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteLivingArchiveContactRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteLivingArchiveContactRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contactId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLivingArchiveContactRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLivingArchiveContactRequest copyWith(
+          void Function(DeleteLivingArchiveContactRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as DeleteLivingArchiveContactRequest))
+          as DeleteLivingArchiveContactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLivingArchiveContactRequest create() =>
+      DeleteLivingArchiveContactRequest._();
+  @$core.override
+  DeleteLivingArchiveContactRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLivingArchiveContactRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteLivingArchiveContactRequest>(
+          create);
+  static DeleteLivingArchiveContactRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contactId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contactId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContactId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContactId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class DeleteLivingArchiveContactResponse extends $pb.GeneratedMessage {
+  factory DeleteLivingArchiveContactResponse({
+    OnyxLivingArchiveReadiness? readiness,
+  }) {
+    final result = create();
+    if (readiness != null) result.readiness = readiness;
+    return result;
+  }
+
+  DeleteLivingArchiveContactResponse._();
+
+  factory DeleteLivingArchiveContactResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteLivingArchiveContactResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteLivingArchiveContactResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchiveReadiness>(1, _omitFieldNames ? '' : 'readiness',
+        subBuilder: OnyxLivingArchiveReadiness.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLivingArchiveContactResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteLivingArchiveContactResponse copyWith(
+          void Function(DeleteLivingArchiveContactResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as DeleteLivingArchiveContactResponse))
+          as DeleteLivingArchiveContactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteLivingArchiveContactResponse create() =>
+      DeleteLivingArchiveContactResponse._();
+  @$core.override
+  DeleteLivingArchiveContactResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DeleteLivingArchiveContactResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteLivingArchiveContactResponse>(
+          create);
+  static DeleteLivingArchiveContactResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveReadiness get readiness => $_getN(0);
+  @$pb.TagNumber(1)
+  set readiness(OnyxLivingArchiveReadiness value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReadiness() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReadiness() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveReadiness ensureReadiness() => $_ensure(0);
+}
+
+class SubmitLivingArchivePolicyRequest extends $pb.GeneratedMessage {
+  factory SubmitLivingArchivePolicyRequest({
+    $core.String? policyId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SubmitLivingArchivePolicyRequest._();
+
+  factory SubmitLivingArchivePolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitLivingArchivePolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitLivingArchivePolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitLivingArchivePolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitLivingArchivePolicyRequest copyWith(
+          void Function(SubmitLivingArchivePolicyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitLivingArchivePolicyRequest))
+          as SubmitLivingArchivePolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitLivingArchivePolicyRequest create() =>
+      SubmitLivingArchivePolicyRequest._();
+  @$core.override
+  SubmitLivingArchivePolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitLivingArchivePolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitLivingArchivePolicyRequest>(
+          create);
+  static SubmitLivingArchivePolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class SubmitLivingArchivePolicyResponse extends $pb.GeneratedMessage {
+  factory SubmitLivingArchivePolicyResponse({
+    OnyxLivingArchivePolicy? policy,
+    OnyxLivingArchiveReadiness? readiness,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    if (readiness != null) result.readiness = readiness;
+    return result;
+  }
+
+  SubmitLivingArchivePolicyResponse._();
+
+  factory SubmitLivingArchivePolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitLivingArchivePolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitLivingArchivePolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchivePolicy>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OnyxLivingArchivePolicy.create)
+    ..aOM<OnyxLivingArchiveReadiness>(2, _omitFieldNames ? '' : 'readiness',
+        subBuilder: OnyxLivingArchiveReadiness.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitLivingArchivePolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitLivingArchivePolicyResponse copyWith(
+          void Function(SubmitLivingArchivePolicyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitLivingArchivePolicyResponse))
+          as SubmitLivingArchivePolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitLivingArchivePolicyResponse create() =>
+      SubmitLivingArchivePolicyResponse._();
+  @$core.override
+  SubmitLivingArchivePolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitLivingArchivePolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitLivingArchivePolicyResponse>(
+          create);
+  static SubmitLivingArchivePolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OnyxLivingArchivePolicy value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy ensurePolicy() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness get readiness => $_getN(1);
+  @$pb.TagNumber(2)
+  set readiness(OnyxLivingArchiveReadiness value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadiness() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadiness() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxLivingArchiveReadiness ensureReadiness() => $_ensure(1);
+}
+
+class RevokeLivingArchivePolicyRequest extends $pb.GeneratedMessage {
+  factory RevokeLivingArchivePolicyRequest({
+    $core.String? policyId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeLivingArchivePolicyRequest._();
+
+  factory RevokeLivingArchivePolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeLivingArchivePolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeLivingArchivePolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeLivingArchivePolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeLivingArchivePolicyRequest copyWith(
+          void Function(RevokeLivingArchivePolicyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeLivingArchivePolicyRequest))
+          as RevokeLivingArchivePolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeLivingArchivePolicyRequest create() =>
+      RevokeLivingArchivePolicyRequest._();
+  @$core.override
+  RevokeLivingArchivePolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeLivingArchivePolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeLivingArchivePolicyRequest>(
+          create);
+  static RevokeLivingArchivePolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RevokeLivingArchivePolicyResponse extends $pb.GeneratedMessage {
+  factory RevokeLivingArchivePolicyResponse({
+    OnyxLivingArchivePolicy? policy,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    return result;
+  }
+
+  RevokeLivingArchivePolicyResponse._();
+
+  factory RevokeLivingArchivePolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeLivingArchivePolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeLivingArchivePolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchivePolicy>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OnyxLivingArchivePolicy.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeLivingArchivePolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeLivingArchivePolicyResponse copyWith(
+          void Function(RevokeLivingArchivePolicyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeLivingArchivePolicyResponse))
+          as RevokeLivingArchivePolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeLivingArchivePolicyResponse create() =>
+      RevokeLivingArchivePolicyResponse._();
+  @$core.override
+  RevokeLivingArchivePolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeLivingArchivePolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeLivingArchivePolicyResponse>(
+          create);
+  static RevokeLivingArchivePolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OnyxLivingArchivePolicy value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy ensurePolicy() => $_ensure(0);
+}
+
+class ConfirmLivingArchiveReviewRequest extends $pb.GeneratedMessage {
+  factory ConfirmLivingArchiveReviewRequest({
+    $core.String? policyId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ConfirmLivingArchiveReviewRequest._();
+
+  factory ConfirmLivingArchiveReviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmLivingArchiveReviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmLivingArchiveReviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmLivingArchiveReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmLivingArchiveReviewRequest copyWith(
+          void Function(ConfirmLivingArchiveReviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfirmLivingArchiveReviewRequest))
+          as ConfirmLivingArchiveReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmLivingArchiveReviewRequest create() =>
+      ConfirmLivingArchiveReviewRequest._();
+  @$core.override
+  ConfirmLivingArchiveReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmLivingArchiveReviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ConfirmLivingArchiveReviewRequest>(
+          create);
+  static ConfirmLivingArchiveReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class ConfirmLivingArchiveReviewResponse extends $pb.GeneratedMessage {
+  factory ConfirmLivingArchiveReviewResponse({
+    OnyxLivingArchivePolicy? policy,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    return result;
+  }
+
+  ConfirmLivingArchiveReviewResponse._();
+
+  factory ConfirmLivingArchiveReviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmLivingArchiveReviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmLivingArchiveReviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchivePolicy>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OnyxLivingArchivePolicy.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmLivingArchiveReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmLivingArchiveReviewResponse copyWith(
+          void Function(ConfirmLivingArchiveReviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfirmLivingArchiveReviewResponse))
+          as ConfirmLivingArchiveReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmLivingArchiveReviewResponse create() =>
+      ConfirmLivingArchiveReviewResponse._();
+  @$core.override
+  ConfirmLivingArchiveReviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmLivingArchiveReviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ConfirmLivingArchiveReviewResponse>(
+          create);
+  static ConfirmLivingArchiveReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OnyxLivingArchivePolicy value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchivePolicy ensurePolicy() => $_ensure(0);
+}
+
+class ContestLivingArchiveReleaseRequest extends $pb.GeneratedMessage {
+  factory ContestLivingArchiveReleaseRequest({
+    $core.String? caseId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (caseId != null) result.caseId = caseId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ContestLivingArchiveReleaseRequest._();
+
+  factory ContestLivingArchiveReleaseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ContestLivingArchiveReleaseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ContestLivingArchiveReleaseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContestLivingArchiveReleaseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContestLivingArchiveReleaseRequest copyWith(
+          void Function(ContestLivingArchiveReleaseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ContestLivingArchiveReleaseRequest))
+          as ContestLivingArchiveReleaseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ContestLivingArchiveReleaseRequest create() =>
+      ContestLivingArchiveReleaseRequest._();
+  @$core.override
+  ContestLivingArchiveReleaseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ContestLivingArchiveReleaseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ContestLivingArchiveReleaseRequest>(
+          create);
+  static ContestLivingArchiveReleaseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class ContestLivingArchiveReleaseResponse extends $pb.GeneratedMessage {
+  factory ContestLivingArchiveReleaseResponse({
+    OnyxLivingArchiveReleaseCase? releaseCase,
+  }) {
+    final result = create();
+    if (releaseCase != null) result.releaseCase = releaseCase;
+    return result;
+  }
+
+  ContestLivingArchiveReleaseResponse._();
+
+  factory ContestLivingArchiveReleaseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ContestLivingArchiveReleaseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ContestLivingArchiveReleaseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxLivingArchiveReleaseCase>(1, _omitFieldNames ? '' : 'releaseCase',
+        subBuilder: OnyxLivingArchiveReleaseCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContestLivingArchiveReleaseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ContestLivingArchiveReleaseResponse copyWith(
+          void Function(ContestLivingArchiveReleaseResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ContestLivingArchiveReleaseResponse))
+          as ContestLivingArchiveReleaseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ContestLivingArchiveReleaseResponse create() =>
+      ContestLivingArchiveReleaseResponse._();
+  @$core.override
+  ContestLivingArchiveReleaseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ContestLivingArchiveReleaseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ContestLivingArchiveReleaseResponse>(create);
+  static ContestLivingArchiveReleaseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveReleaseCase get releaseCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set releaseCase(OnyxLivingArchiveReleaseCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReleaseCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReleaseCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxLivingArchiveReleaseCase ensureReleaseCase() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

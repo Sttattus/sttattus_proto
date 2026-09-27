@@ -13839,3 +13839,1350 @@ final $typed_data.Uint8List getMultilingualExportResponseDescriptor =
     $convert.base64Decode(
         'Ch1HZXRNdWx0aWxpbmd1YWxFeHBvcnRSZXNwb25zZRJACgZleHBvcnQYASABKAsyKC5zdHRhdH'
         'R1cy5vbnl4LnYxLk9ueXhNdWx0aWxpbmd1YWxFeHBvcnRSBmV4cG9ydA==');
+
+@$core.Deprecated('Use onyxLivingArchivePolicyDescriptor instead')
+const OnyxLivingArchivePolicy$json = {
+  '1': 'OnyxLivingArchivePolicy',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cadence', '3': 3, '4': 1, '5': 9, '10': 'cadence'},
+    {'1': 'trigger_kind', '3': 4, '4': 1, '5': 9, '10': 'triggerKind'},
+    {'1': 'jurisdiction', '3': 5, '4': 1, '5': 9, '10': 'jurisdiction'},
+    {'1': 'delay_days', '3': 6, '4': 1, '5': 5, '10': 'delayDays'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'version', '3': 8, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'include_reading', '3': 9, '4': 1, '5': 8, '10': 'includeReading'},
+    {
+      '1': 'include_highlights',
+      '3': 10,
+      '4': 1,
+      '5': 8,
+      '10': 'includeHighlights'
+    },
+    {'1': 'include_notes', '3': 11, '4': 1, '5': 8, '10': 'includeNotes'},
+    {
+      '1': 'include_decisions',
+      '3': 12,
+      '4': 1,
+      '5': 8,
+      '10': 'includeDecisions'
+    },
+    {
+      '1': 'include_salon_moments',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'includeSalonMoments'
+    },
+    {
+      '1': 'include_creator_support',
+      '3': 14,
+      '4': 1,
+      '5': 8,
+      '10': 'includeCreatorSupport'
+    },
+    {
+      '1': 'include_personal_essays',
+      '3': 15,
+      '4': 1,
+      '5': 8,
+      '10': 'includePersonalEssays'
+    },
+    {
+      '1': 'excludes_private_items',
+      '3': 16,
+      '4': 1,
+      '5': 8,
+      '10': 'excludesPrivateItems'
+    },
+    {'1': 'content_ids', '3': 17, '4': 3, '5': 9, '10': 'contentIds'},
+    {
+      '1': 'collection_labels',
+      '3': 18,
+      '4': 3,
+      '5': 9,
+      '10': 'collectionLabels'
+    },
+    {'1': 'person_labels', '3': 19, '4': 3, '5': 9, '10': 'personLabels'},
+    {'1': 'event_id', '3': 20, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'member_statement', '3': 21, '4': 1, '5': 9, '10': 'memberStatement'},
+    {
+      '1': 'period_starts_at',
+      '3': 22,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodStartsAt'
+    },
+    {
+      '1': 'period_ends_at',
+      '3': 23,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodEndsAt'
+    },
+    {
+      '1': 'submitted_at',
+      '3': 24,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'submittedAt'
+    },
+    {
+      '1': 'activated_at',
+      '3': 25,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'activatedAt'
+    },
+    {
+      '1': 'review_due_at',
+      '3': 26,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'reviewDueAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 27,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 28,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchivePolicy`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchivePolicyDescriptor = $convert.base64Decode(
+    'ChdPbnl4TGl2aW5nQXJjaGl2ZVBvbGljeRIOCgJpZBgBIAEoCVICaWQSFAoFdGl0bGUYAiABKA'
+    'lSBXRpdGxlEhgKB2NhZGVuY2UYAyABKAlSB2NhZGVuY2USIQoMdHJpZ2dlcl9raW5kGAQgASgJ'
+    'Ugt0cmlnZ2VyS2luZBIiCgxqdXJpc2RpY3Rpb24YBSABKAlSDGp1cmlzZGljdGlvbhIdCgpkZW'
+    'xheV9kYXlzGAYgASgFUglkZWxheURheXMSFgoGc3RhdHVzGAcgASgJUgZzdGF0dXMSGAoHdmVy'
+    'c2lvbhgIIAEoA1IHdmVyc2lvbhInCg9pbmNsdWRlX3JlYWRpbmcYCSABKAhSDmluY2x1ZGVSZW'
+    'FkaW5nEi0KEmluY2x1ZGVfaGlnaGxpZ2h0cxgKIAEoCFIRaW5jbHVkZUhpZ2hsaWdodHMSIwoN'
+    'aW5jbHVkZV9ub3RlcxgLIAEoCFIMaW5jbHVkZU5vdGVzEisKEWluY2x1ZGVfZGVjaXNpb25zGA'
+    'wgASgIUhBpbmNsdWRlRGVjaXNpb25zEjIKFWluY2x1ZGVfc2Fsb25fbW9tZW50cxgNIAEoCFIT'
+    'aW5jbHVkZVNhbG9uTW9tZW50cxI2ChdpbmNsdWRlX2NyZWF0b3Jfc3VwcG9ydBgOIAEoCFIVaW'
+    '5jbHVkZUNyZWF0b3JTdXBwb3J0EjYKF2luY2x1ZGVfcGVyc29uYWxfZXNzYXlzGA8gASgIUhVp'
+    'bmNsdWRlUGVyc29uYWxFc3NheXMSNAoWZXhjbHVkZXNfcHJpdmF0ZV9pdGVtcxgQIAEoCFIUZX'
+    'hjbHVkZXNQcml2YXRlSXRlbXMSHwoLY29udGVudF9pZHMYESADKAlSCmNvbnRlbnRJZHMSKwoR'
+    'Y29sbGVjdGlvbl9sYWJlbHMYEiADKAlSEGNvbGxlY3Rpb25MYWJlbHMSIwoNcGVyc29uX2xhYm'
+    'VscxgTIAMoCVIMcGVyc29uTGFiZWxzEhkKCGV2ZW50X2lkGBQgASgJUgdldmVudElkEikKEG1l'
+    'bWJlcl9zdGF0ZW1lbnQYFSABKAlSD21lbWJlclN0YXRlbWVudBJEChBwZXJpb2Rfc3RhcnRzX2'
+    'F0GBYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIOcGVyaW9kU3RhcnRzQXQSQAoO'
+    'cGVyaW9kX2VuZHNfYXQYFyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgxwZXJpb2'
+    'RFbmRzQXQSPQoMc3VibWl0dGVkX2F0GBggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
+    'cFILc3VibWl0dGVkQXQSPQoMYWN0aXZhdGVkX2F0GBkgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFILYWN0aXZhdGVkQXQSPgoNcmV2aWV3X2R1ZV9hdBgaIAEoCzIaLmdvb2dsZS5w'
+    'cm90b2J1Zi5UaW1lc3RhbXBSC3Jldmlld0R1ZUF0EjkKCnJldm9rZWRfYXQYGyABKAsyGi5nb2'
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglyZXZva2VkQXQSOQoKdXBkYXRlZF9hdBgcIAEoCzIa'
+    'Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxLivingArchiveContactDescriptor instead')
+const OnyxLivingArchiveContact$json = {
+  '1': 'OnyxLivingArchiveContact',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'display_name', '3': 3, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'relationship', '3': 5, '4': 1, '5': 9, '10': 'relationship'},
+    {
+      '1': 'legacy_beneficiary_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyBeneficiaryId'
+    },
+    {
+      '1': 'legacy_recovery_share_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyRecoveryShareId'
+    },
+    {
+      '1': 'verification_status',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {
+      '1': 'verification_method',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationMethod'
+    },
+    {'1': 'version', '3': 10, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'verified_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'verifiedAt'
+    },
+    {
+      '1': 'review_due_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'reviewDueAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchiveContact`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchiveContactDescriptor = $convert.base64Decode(
+    'ChhPbnl4TGl2aW5nQXJjaGl2ZUNvbnRhY3QSDgoCaWQYASABKAlSAmlkEhIKBHJvbGUYAiABKA'
+    'lSBHJvbGUSIQoMZGlzcGxheV9uYW1lGAMgASgJUgtkaXNwbGF5TmFtZRIUCgVlbWFpbBgEIAEo'
+    'CVIFZW1haWwSIgoMcmVsYXRpb25zaGlwGAUgASgJUgxyZWxhdGlvbnNoaXASMgoVbGVnYWN5X2'
+    'JlbmVmaWNpYXJ5X2lkGAYgASgJUhNsZWdhY3lCZW5lZmljaWFyeUlkEjcKGGxlZ2FjeV9yZWNv'
+    'dmVyeV9zaGFyZV9pZBgHIAEoCVIVbGVnYWN5UmVjb3ZlcnlTaGFyZUlkEi8KE3ZlcmlmaWNhdG'
+    'lvbl9zdGF0dXMYCCABKAlSEnZlcmlmaWNhdGlvblN0YXR1cxIvChN2ZXJpZmljYXRpb25fbWV0'
+    'aG9kGAkgASgJUhJ2ZXJpZmljYXRpb25NZXRob2QSGAoHdmVyc2lvbhgKIAEoA1IHdmVyc2lvbh'
+    'I7Cgt2ZXJpZmllZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnZlcmlm'
+    'aWVkQXQSPgoNcmV2aWV3X2R1ZV9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbX'
+    'BSC3Jldmlld0R1ZUF0EjkKCnJldm9rZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
+    'ZXN0YW1wUglyZXZva2VkQXQSOQoKdXBkYXRlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxLivingArchiveReadinessDescriptor instead')
+const OnyxLivingArchiveReadiness$json = {
+  '1': 'OnyxLivingArchiveReadiness',
+  '2': [
+    {
+      '1': 'legacy_beneficiary_count',
+      '3': 1,
+      '4': 1,
+      '5': 5,
+      '10': 'legacyBeneficiaryCount'
+    },
+    {
+      '1': 'legacy_trustees_configured',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'legacyTrusteesConfigured'
+    },
+    {
+      '1': 'legacy_trustee_threshold',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'legacyTrusteeThreshold'
+    },
+    {
+      '1': 'legacy_switch_status',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'legacySwitchStatus'
+    },
+    {
+      '1': 'legacy_switch_enabled',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'legacySwitchEnabled'
+    },
+    {
+      '1': 'verified_contact_count',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'verifiedContactCount'
+    },
+    {
+      '1': 'legal_contact_verified',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'legalContactVerified'
+    },
+    {'1': 'ready_for_review', '3': 8, '4': 1, '5': 8, '10': 'readyForReview'},
+    {'1': 'ready_for_release', '3': 9, '4': 1, '5': 8, '10': 'readyForRelease'},
+    {'1': 'blocking_reasons', '3': 10, '4': 3, '5': 9, '10': 'blockingReasons'},
+    {
+      '1': 'next_legacy_checkin_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'nextLegacyCheckinAt'
+    },
+    {
+      '1': 'verified_beneficiary_contact_count',
+      '3': 12,
+      '4': 1,
+      '5': 5,
+      '10': 'verifiedBeneficiaryContactCount'
+    },
+    {
+      '1': 'verified_trustee_contact_count',
+      '3': 13,
+      '4': 1,
+      '5': 5,
+      '10': 'verifiedTrusteeContactCount'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchiveReadiness`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchiveReadinessDescriptor = $convert.base64Decode(
+    'ChpPbnl4TGl2aW5nQXJjaGl2ZVJlYWRpbmVzcxI4ChhsZWdhY3lfYmVuZWZpY2lhcnlfY291bn'
+    'QYASABKAVSFmxlZ2FjeUJlbmVmaWNpYXJ5Q291bnQSPAoabGVnYWN5X3RydXN0ZWVzX2NvbmZp'
+    'Z3VyZWQYAiABKAVSGGxlZ2FjeVRydXN0ZWVzQ29uZmlndXJlZBI4ChhsZWdhY3lfdHJ1c3RlZV'
+    '90aHJlc2hvbGQYAyABKAVSFmxlZ2FjeVRydXN0ZWVUaHJlc2hvbGQSMAoUbGVnYWN5X3N3aXRj'
+    'aF9zdGF0dXMYBCABKAlSEmxlZ2FjeVN3aXRjaFN0YXR1cxIyChVsZWdhY3lfc3dpdGNoX2VuYW'
+    'JsZWQYBSABKAhSE2xlZ2FjeVN3aXRjaEVuYWJsZWQSNAoWdmVyaWZpZWRfY29udGFjdF9jb3Vu'
+    'dBgGIAEoBVIUdmVyaWZpZWRDb250YWN0Q291bnQSNAoWbGVnYWxfY29udGFjdF92ZXJpZmllZB'
+    'gHIAEoCFIUbGVnYWxDb250YWN0VmVyaWZpZWQSKAoQcmVhZHlfZm9yX3JldmlldxgIIAEoCFIO'
+    'cmVhZHlGb3JSZXZpZXcSKgoRcmVhZHlfZm9yX3JlbGVhc2UYCSABKAhSD3JlYWR5Rm9yUmVsZW'
+    'FzZRIpChBibG9ja2luZ19yZWFzb25zGAogAygJUg9ibG9ja2luZ1JlYXNvbnMSTwoWbmV4dF9s'
+    'ZWdhY3lfY2hlY2tpbl9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSE25leH'
+    'RMZWdhY3lDaGVja2luQXQSSwoidmVyaWZpZWRfYmVuZWZpY2lhcnlfY29udGFjdF9jb3VudBgM'
+    'IAEoBVIfdmVyaWZpZWRCZW5lZmljaWFyeUNvbnRhY3RDb3VudBJDCh52ZXJpZmllZF90cnVzdG'
+    'VlX2NvbnRhY3RfY291bnQYDSABKAVSG3ZlcmlmaWVkVHJ1c3RlZUNvbnRhY3RDb3VudA==');
+
+@$core.Deprecated('Use onyxLivingArchivePreviewCountDescriptor instead')
+const OnyxLivingArchivePreviewCount$json = {
+  '1': 'OnyxLivingArchivePreviewCount',
+  '2': [
+    {'1': 'item_kind', '3': 1, '4': 1, '5': 9, '10': 'itemKind'},
+    {'1': 'eligible_count', '3': 2, '4': 1, '5': 5, '10': 'eligibleCount'},
+    {'1': 'selected_count', '3': 3, '4': 1, '5': 5, '10': 'selectedCount'},
+    {
+      '1': 'excluded_private_count',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'excludedPrivateCount'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchivePreviewCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchivePreviewCountDescriptor = $convert.base64Decode(
+    'Ch1Pbnl4TGl2aW5nQXJjaGl2ZVByZXZpZXdDb3VudBIbCglpdGVtX2tpbmQYASABKAlSCGl0ZW'
+    '1LaW5kEiUKDmVsaWdpYmxlX2NvdW50GAIgASgFUg1lbGlnaWJsZUNvdW50EiUKDnNlbGVjdGVk'
+    'X2NvdW50GAMgASgFUg1zZWxlY3RlZENvdW50EjQKFmV4Y2x1ZGVkX3ByaXZhdGVfY291bnQYBC'
+    'ABKAVSFGV4Y2x1ZGVkUHJpdmF0ZUNvdW50');
+
+@$core.Deprecated('Use onyxLivingArchivePreviewDescriptor instead')
+const OnyxLivingArchivePreview$json = {
+  '1': 'OnyxLivingArchivePreview',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {
+      '1': 'counts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePreviewCount',
+      '10': 'counts'
+    },
+    {
+      '1': 'total_selected_count',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'totalSelectedCount'
+    },
+    {
+      '1': 'total_excluded_private_count',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'totalExcludedPrivateCount'
+    },
+    {'1': 'warnings', '3': 5, '4': 3, '5': 9, '10': 'warnings'},
+    {
+      '1': 'snapshot_checksum',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'snapshotChecksum'
+    },
+    {
+      '1': 'generated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchivePreview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchivePreviewDescriptor = $convert.base64Decode(
+    'ChhPbnl4TGl2aW5nQXJjaGl2ZVByZXZpZXcSGwoJcG9saWN5X2lkGAEgASgJUghwb2xpY3lJZB'
+    'JHCgZjb3VudHMYAiADKAsyLy5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUHJl'
+    'dmlld0NvdW50UgZjb3VudHMSMAoUdG90YWxfc2VsZWN0ZWRfY291bnQYAyABKAVSEnRvdGFsU2'
+    'VsZWN0ZWRDb3VudBI/Chx0b3RhbF9leGNsdWRlZF9wcml2YXRlX2NvdW50GAQgASgFUhl0b3Rh'
+    'bEV4Y2x1ZGVkUHJpdmF0ZUNvdW50EhoKCHdhcm5pbmdzGAUgAygJUgh3YXJuaW5ncxIrChFzbm'
+    'Fwc2hvdF9jaGVja3N1bRgGIAEoCVIQc25hcHNob3RDaGVja3N1bRI9CgxnZW5lcmF0ZWRfYXQY'
+    'ByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtnZW5lcmF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxLivingArchiveEditionDescriptor instead')
+const OnyxLivingArchiveEdition$json = {
+  '1': 'OnyxLivingArchiveEdition',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'policy_id', '3': 2, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cadence', '3': 4, '4': 1, '5': 9, '10': 'cadence'},
+    {'1': 'period_label', '3': 5, '4': 1, '5': 9, '10': 'periodLabel'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'item_count', '3': 7, '4': 1, '5': 5, '10': 'itemCount'},
+    {
+      '1': 'excluded_private_count',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'excludedPrivateCount'
+    },
+    {
+      '1': 'snapshot_checksum',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'snapshotChecksum'
+    },
+    {'1': 'media_asset_id', '3': 10, '4': 1, '5': 9, '10': 'mediaAssetId'},
+    {'1': 'download_url', '3': 11, '4': 1, '5': 9, '10': 'downloadUrl'},
+    {
+      '1': 'legacy_document_id',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyDocumentId'
+    },
+    {'1': 'version', '3': 13, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'period_starts_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodStartsAt'
+    },
+    {
+      '1': 'period_ends_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodEndsAt'
+    },
+    {
+      '1': 'generated_at',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+    {
+      '1': 'escrowed_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'escrowedAt'
+    },
+    {
+      '1': 'released_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'releasedAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchiveEdition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchiveEditionDescriptor = $convert.base64Decode(
+    'ChhPbnl4TGl2aW5nQXJjaGl2ZUVkaXRpb24SDgoCaWQYASABKAlSAmlkEhsKCXBvbGljeV9pZB'
+    'gCIAEoCVIIcG9saWN5SWQSFAoFdGl0bGUYAyABKAlSBXRpdGxlEhgKB2NhZGVuY2UYBCABKAlS'
+    'B2NhZGVuY2USIQoMcGVyaW9kX2xhYmVsGAUgASgJUgtwZXJpb2RMYWJlbBIWCgZzdGF0dXMYBi'
+    'ABKAlSBnN0YXR1cxIdCgppdGVtX2NvdW50GAcgASgFUglpdGVtQ291bnQSNAoWZXhjbHVkZWRf'
+    'cHJpdmF0ZV9jb3VudBgIIAEoBVIUZXhjbHVkZWRQcml2YXRlQ291bnQSKwoRc25hcHNob3RfY2'
+    'hlY2tzdW0YCSABKAlSEHNuYXBzaG90Q2hlY2tzdW0SJAoObWVkaWFfYXNzZXRfaWQYCiABKAlS'
+    'DG1lZGlhQXNzZXRJZBIhCgxkb3dubG9hZF91cmwYCyABKAlSC2Rvd25sb2FkVXJsEiwKEmxlZ2'
+    'FjeV9kb2N1bWVudF9pZBgMIAEoCVIQbGVnYWN5RG9jdW1lbnRJZBIYCgd2ZXJzaW9uGA0gASgD'
+    'Ugd2ZXJzaW9uEkQKEHBlcmlvZF9zdGFydHNfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUg5wZXJpb2RTdGFydHNBdBJACg5wZXJpb2RfZW5kc19hdBgPIAEoCzIaLmdvb2ds'
+    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHBlcmlvZEVuZHNBdBI9CgxnZW5lcmF0ZWRfYXQYECABKA'
+    'syGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtnZW5lcmF0ZWRBdBI7Cgtlc2Nyb3dlZF9h'
+    'dBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmVzY3Jvd2VkQXQSOwoLcmVsZW'
+    'FzZWRfYXQYEiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpyZWxlYXNlZEF0EjkK'
+    'CnJldm9rZWRfYXQYEyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglyZXZva2VkQX'
+    'Q=');
+
+@$core.Deprecated('Use onyxLivingArchiveReleaseCaseDescriptor instead')
+const OnyxLivingArchiveReleaseCase$json = {
+  '1': 'OnyxLivingArchiveReleaseCase',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'policy_id', '3': 2, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'edition_id', '3': 3, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'trigger_kind', '3': 4, '4': 1, '5': 9, '10': 'triggerKind'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'jurisdiction', '3': 6, '4': 1, '5': 9, '10': 'jurisdiction'},
+    {'1': 'legal_hold', '3': 7, '4': 1, '5': 8, '10': 'legalHold'},
+    {'1': 'member_summary', '3': 8, '4': 1, '5': 9, '10': 'memberSummary'},
+    {'1': 'version', '3': 9, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'opened_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'openedAt'
+    },
+    {
+      '1': 'waiting_until',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'waitingUntil'
+    },
+    {
+      '1': 'contested_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'contestedAt'
+    },
+    {
+      '1': 'approved_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'approvedAt'
+    },
+    {
+      '1': 'released_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'releasedAt'
+    },
+    {
+      '1': 'closed_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'closedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchiveReleaseCase`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchiveReleaseCaseDescriptor = $convert.base64Decode(
+    'ChxPbnl4TGl2aW5nQXJjaGl2ZVJlbGVhc2VDYXNlEg4KAmlkGAEgASgJUgJpZBIbCglwb2xpY3'
+    'lfaWQYAiABKAlSCHBvbGljeUlkEh0KCmVkaXRpb25faWQYAyABKAlSCWVkaXRpb25JZBIhCgx0'
+    'cmlnZ2VyX2tpbmQYBCABKAlSC3RyaWdnZXJLaW5kEhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEi'
+    'IKDGp1cmlzZGljdGlvbhgGIAEoCVIManVyaXNkaWN0aW9uEh0KCmxlZ2FsX2hvbGQYByABKAhS'
+    'CWxlZ2FsSG9sZBIlCg5tZW1iZXJfc3VtbWFyeRgIIAEoCVINbWVtYmVyU3VtbWFyeRIYCgd2ZX'
+    'JzaW9uGAkgASgDUgd2ZXJzaW9uEjcKCW9wZW5lZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1'
+    'Zi5UaW1lc3RhbXBSCG9wZW5lZEF0Ej8KDXdhaXRpbmdfdW50aWwYCyABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wUgx3YWl0aW5nVW50aWwSPQoMY29udGVzdGVkX2F0GAwgASgLMhou'
+    'Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY29udGVzdGVkQXQSOwoLYXBwcm92ZWRfYXQYDS'
+    'ABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgphcHByb3ZlZEF0EjsKC3JlbGVhc2Vk'
+    'X2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVsZWFzZWRBdBI3CgljbG'
+    '9zZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghjbG9zZWRBdA==');
+
+@$core.Deprecated('Use onyxLivingArchiveReceiptDescriptor instead')
+const OnyxLivingArchiveReceipt$json = {
+  '1': 'OnyxLivingArchiveReceipt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'case_id', '3': 2, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'policy_id', '3': 3, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'edition_id', '3': 4, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'contact_id', '3': 5, '4': 1, '5': 9, '10': 'contactId'},
+    {'1': 'receipt_code', '3': 6, '4': 1, '5': 9, '10': 'receiptCode'},
+    {'1': 'scope_checksum', '3': 7, '4': 1, '5': 9, '10': 'scopeChecksum'},
+    {
+      '1': 'artifact_checksum',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'artifactChecksum'
+    },
+    {'1': 'status', '3': 9, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'released_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'releasedAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxLivingArchiveReceipt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxLivingArchiveReceiptDescriptor = $convert.base64Decode(
+    'ChhPbnl4TGl2aW5nQXJjaGl2ZVJlY2VpcHQSDgoCaWQYASABKAlSAmlkEhcKB2Nhc2VfaWQYAi'
+    'ABKAlSBmNhc2VJZBIbCglwb2xpY3lfaWQYAyABKAlSCHBvbGljeUlkEh0KCmVkaXRpb25faWQY'
+    'BCABKAlSCWVkaXRpb25JZBIdCgpjb250YWN0X2lkGAUgASgJUgljb250YWN0SWQSIQoMcmVjZW'
+    'lwdF9jb2RlGAYgASgJUgtyZWNlaXB0Q29kZRIlCg5zY29wZV9jaGVja3N1bRgHIAEoCVINc2Nv'
+    'cGVDaGVja3N1bRIrChFhcnRpZmFjdF9jaGVja3N1bRgIIAEoCVIQYXJ0aWZhY3RDaGVja3N1bR'
+    'IWCgZzdGF0dXMYCSABKAlSBnN0YXR1cxI7CgtyZWxlYXNlZF9hdBgKIAEoCzIaLmdvb2dsZS5w'
+    'cm90b2J1Zi5UaW1lc3RhbXBSCnJlbGVhc2VkQXQSOQoKY3JlYXRlZF9hdBgLIAEoCzIaLmdvb2'
+    'dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use getLivingArchiveDashboardRequestDescriptor instead')
+const GetLivingArchiveDashboardRequest$json = {
+  '1': 'GetLivingArchiveDashboardRequest',
+};
+
+/// Descriptor for `GetLivingArchiveDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLivingArchiveDashboardRequestDescriptor =
+    $convert.base64Decode('CiBHZXRMaXZpbmdBcmNoaXZlRGFzaGJvYXJkUmVxdWVzdA==');
+
+@$core.Deprecated('Use getLivingArchiveDashboardResponseDescriptor instead')
+const GetLivingArchiveDashboardResponse$json = {
+  '1': 'GetLivingArchiveDashboardResponse',
+  '2': [
+    {
+      '1': 'policies',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePolicy',
+      '10': 'policies'
+    },
+    {
+      '1': 'contacts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveContact',
+      '10': 'contacts'
+    },
+    {
+      '1': 'editions',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveEdition',
+      '10': 'editions'
+    },
+    {
+      '1': 'release_cases',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReleaseCase',
+      '10': 'releaseCases'
+    },
+    {
+      '1': 'receipts',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReceipt',
+      '10': 'receipts'
+    },
+    {
+      '1': 'readiness',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReadiness',
+      '10': 'readiness'
+    },
+  ],
+};
+
+/// Descriptor for `GetLivingArchiveDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLivingArchiveDashboardResponseDescriptor = $convert.base64Decode(
+    'CiFHZXRMaXZpbmdBcmNoaXZlRGFzaGJvYXJkUmVzcG9uc2USRQoIcG9saWNpZXMYASADKAsyKS'
+    '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUG9saWN5Ughwb2xpY2llcxJGCghj'
+    'b250YWN0cxgCIAMoCzIqLnN0dGF0dHVzLm9ueXgudjEuT255eExpdmluZ0FyY2hpdmVDb250YW'
+    'N0Ughjb250YWN0cxJGCghlZGl0aW9ucxgDIAMoCzIqLnN0dGF0dHVzLm9ueXgudjEuT255eExp'
+    'dmluZ0FyY2hpdmVFZGl0aW9uUghlZGl0aW9ucxJTCg1yZWxlYXNlX2Nhc2VzGAQgAygLMi4uc3'
+    'R0YXR0dXMub255eC52MS5Pbnl4TGl2aW5nQXJjaGl2ZVJlbGVhc2VDYXNlUgxyZWxlYXNlQ2Fz'
+    'ZXMSRgoIcmVjZWlwdHMYBSADKAsyKi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaX'
+    'ZlUmVjZWlwdFIIcmVjZWlwdHMSSgoJcmVhZGluZXNzGAYgASgLMiwuc3R0YXR0dXMub255eC52'
+    'MS5Pbnl4TGl2aW5nQXJjaGl2ZVJlYWRpbmVzc1IJcmVhZGluZXNz');
+
+@$core.Deprecated('Use upsertLivingArchivePolicyRequestDescriptor instead')
+const UpsertLivingArchivePolicyRequest$json = {
+  '1': 'UpsertLivingArchivePolicyRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'cadence', '3': 3, '4': 1, '5': 9, '10': 'cadence'},
+    {'1': 'trigger_kind', '3': 4, '4': 1, '5': 9, '10': 'triggerKind'},
+    {'1': 'jurisdiction', '3': 5, '4': 1, '5': 9, '10': 'jurisdiction'},
+    {'1': 'delay_days', '3': 6, '4': 1, '5': 5, '10': 'delayDays'},
+    {'1': 'include_reading', '3': 7, '4': 1, '5': 8, '10': 'includeReading'},
+    {
+      '1': 'include_highlights',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'includeHighlights'
+    },
+    {'1': 'include_notes', '3': 9, '4': 1, '5': 8, '10': 'includeNotes'},
+    {
+      '1': 'include_decisions',
+      '3': 10,
+      '4': 1,
+      '5': 8,
+      '10': 'includeDecisions'
+    },
+    {
+      '1': 'include_salon_moments',
+      '3': 11,
+      '4': 1,
+      '5': 8,
+      '10': 'includeSalonMoments'
+    },
+    {
+      '1': 'include_creator_support',
+      '3': 12,
+      '4': 1,
+      '5': 8,
+      '10': 'includeCreatorSupport'
+    },
+    {
+      '1': 'include_personal_essays',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'includePersonalEssays'
+    },
+    {'1': 'content_ids', '3': 14, '4': 3, '5': 9, '10': 'contentIds'},
+    {
+      '1': 'collection_labels',
+      '3': 15,
+      '4': 3,
+      '5': 9,
+      '10': 'collectionLabels'
+    },
+    {'1': 'person_labels', '3': 16, '4': 3, '5': 9, '10': 'personLabels'},
+    {'1': 'event_id', '3': 17, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'member_statement', '3': 18, '4': 1, '5': 9, '10': 'memberStatement'},
+    {
+      '1': 'period_starts_at',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodStartsAt'
+    },
+    {
+      '1': 'period_ends_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodEndsAt'
+    },
+    {'1': 'expected_version', '3': 21, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 22,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {
+      '1': 'include_private_items',
+      '3': 23,
+      '4': 1,
+      '5': 8,
+      '10': 'includePrivateItems'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertLivingArchivePolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLivingArchivePolicyRequestDescriptor = $convert.base64Decode(
+    'CiBVcHNlcnRMaXZpbmdBcmNoaXZlUG9saWN5UmVxdWVzdBIbCglwb2xpY3lfaWQYASABKAlSCH'
+    'BvbGljeUlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIYCgdjYWRlbmNlGAMgASgJUgdjYWRlbmNl'
+    'EiEKDHRyaWdnZXJfa2luZBgEIAEoCVILdHJpZ2dlcktpbmQSIgoManVyaXNkaWN0aW9uGAUgAS'
+    'gJUgxqdXJpc2RpY3Rpb24SHQoKZGVsYXlfZGF5cxgGIAEoBVIJZGVsYXlEYXlzEicKD2luY2x1'
+    'ZGVfcmVhZGluZxgHIAEoCFIOaW5jbHVkZVJlYWRpbmcSLQoSaW5jbHVkZV9oaWdobGlnaHRzGA'
+    'ggASgIUhFpbmNsdWRlSGlnaGxpZ2h0cxIjCg1pbmNsdWRlX25vdGVzGAkgASgIUgxpbmNsdWRl'
+    'Tm90ZXMSKwoRaW5jbHVkZV9kZWNpc2lvbnMYCiABKAhSEGluY2x1ZGVEZWNpc2lvbnMSMgoVaW'
+    '5jbHVkZV9zYWxvbl9tb21lbnRzGAsgASgIUhNpbmNsdWRlU2Fsb25Nb21lbnRzEjYKF2luY2x1'
+    'ZGVfY3JlYXRvcl9zdXBwb3J0GAwgASgIUhVpbmNsdWRlQ3JlYXRvclN1cHBvcnQSNgoXaW5jbH'
+    'VkZV9wZXJzb25hbF9lc3NheXMYDSABKAhSFWluY2x1ZGVQZXJzb25hbEVzc2F5cxIfCgtjb250'
+    'ZW50X2lkcxgOIAMoCVIKY29udGVudElkcxIrChFjb2xsZWN0aW9uX2xhYmVscxgPIAMoCVIQY2'
+    '9sbGVjdGlvbkxhYmVscxIjCg1wZXJzb25fbGFiZWxzGBAgAygJUgxwZXJzb25MYWJlbHMSGQoI'
+    'ZXZlbnRfaWQYESABKAlSB2V2ZW50SWQSKQoQbWVtYmVyX3N0YXRlbWVudBgSIAEoCVIPbWVtYm'
+    'VyU3RhdGVtZW50EkQKEHBlcmlvZF9zdGFydHNfYXQYEyABKAsyGi5nb29nbGUucHJvdG9idWYu'
+    'VGltZXN0YW1wUg5wZXJpb2RTdGFydHNBdBJACg5wZXJpb2RfZW5kc19hdBgUIAEoCzIaLmdvb2'
+    'dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDHBlcmlvZEVuZHNBdBIpChBleHBlY3RlZF92ZXJzaW9u'
+    'GBUgASgDUg9leHBlY3RlZFZlcnNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGBYgASgJUhBjbG'
+    'llbnRNdXRhdGlvbklkEjIKFWluY2x1ZGVfcHJpdmF0ZV9pdGVtcxgXIAEoCFITaW5jbHVkZVBy'
+    'aXZhdGVJdGVtcw==');
+
+@$core.Deprecated('Use upsertLivingArchivePolicyResponseDescriptor instead')
+const UpsertLivingArchivePolicyResponse$json = {
+  '1': 'UpsertLivingArchivePolicyResponse',
+  '2': [
+    {
+      '1': 'policy',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePolicy',
+      '10': 'policy'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertLivingArchivePolicyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLivingArchivePolicyResponseDescriptor =
+    $convert.base64Decode(
+        'CiFVcHNlcnRMaXZpbmdBcmNoaXZlUG9saWN5UmVzcG9uc2USQQoGcG9saWN5GAEgASgLMikuc3'
+        'R0YXR0dXMub255eC52MS5Pbnl4TGl2aW5nQXJjaGl2ZVBvbGljeVIGcG9saWN5');
+
+@$core.Deprecated('Use previewLivingArchivePolicyRequestDescriptor instead')
+const PreviewLivingArchivePolicyRequest$json = {
+  '1': 'PreviewLivingArchivePolicyRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+  ],
+};
+
+/// Descriptor for `PreviewLivingArchivePolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewLivingArchivePolicyRequestDescriptor =
+    $convert.base64Decode(
+        'CiFQcmV2aWV3TGl2aW5nQXJjaGl2ZVBvbGljeVJlcXVlc3QSGwoJcG9saWN5X2lkGAEgASgJUg'
+        'hwb2xpY3lJZA==');
+
+@$core.Deprecated('Use previewLivingArchivePolicyResponseDescriptor instead')
+const PreviewLivingArchivePolicyResponse$json = {
+  '1': 'PreviewLivingArchivePolicyResponse',
+  '2': [
+    {
+      '1': 'preview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePreview',
+      '10': 'preview'
+    },
+  ],
+};
+
+/// Descriptor for `PreviewLivingArchivePolicyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewLivingArchivePolicyResponseDescriptor =
+    $convert.base64Decode(
+        'CiJQcmV2aWV3TGl2aW5nQXJjaGl2ZVBvbGljeVJlc3BvbnNlEkQKB3ByZXZpZXcYASABKAsyKi'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUHJldmlld1IHcHJldmlldw==');
+
+@$core.Deprecated('Use generateLivingArchiveEditionRequestDescriptor instead')
+const GenerateLivingArchiveEditionRequest$json = {
+  '1': 'GenerateLivingArchiveEditionRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'period_label', '3': 3, '4': 1, '5': 9, '10': 'periodLabel'},
+    {'1': 'personal_essay', '3': 4, '4': 1, '5': 9, '10': 'personalEssay'},
+    {
+      '1': 'period_starts_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodStartsAt'
+    },
+    {
+      '1': 'period_ends_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodEndsAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateLivingArchiveEditionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLivingArchiveEditionRequestDescriptor = $convert.base64Decode(
+    'CiNHZW5lcmF0ZUxpdmluZ0FyY2hpdmVFZGl0aW9uUmVxdWVzdBIbCglwb2xpY3lfaWQYASABKA'
+    'lSCHBvbGljeUlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIhCgxwZXJpb2RfbGFiZWwYAyABKAlS'
+    'C3BlcmlvZExhYmVsEiUKDnBlcnNvbmFsX2Vzc2F5GAQgASgJUg1wZXJzb25hbEVzc2F5EkQKEH'
+    'BlcmlvZF9zdGFydHNfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg5wZXJp'
+    'b2RTdGFydHNBdBJACg5wZXJpb2RfZW5kc19hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBSDHBlcmlvZEVuZHNBdBIsChJjbGllbnRfbXV0YXRpb25faWQYByABKAlSEGNsaWVu'
+    'dE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use generateLivingArchiveEditionResponseDescriptor instead')
+const GenerateLivingArchiveEditionResponse$json = {
+  '1': 'GenerateLivingArchiveEditionResponse',
+  '2': [
+    {
+      '1': 'edition',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveEdition',
+      '10': 'edition'
+    },
+    {
+      '1': 'preview',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePreview',
+      '10': 'preview'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateLivingArchiveEditionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateLivingArchiveEditionResponseDescriptor =
+    $convert.base64Decode(
+        'CiRHZW5lcmF0ZUxpdmluZ0FyY2hpdmVFZGl0aW9uUmVzcG9uc2USRAoHZWRpdGlvbhgBIAEoCz'
+        'IqLnN0dGF0dHVzLm9ueXgudjEuT255eExpdmluZ0FyY2hpdmVFZGl0aW9uUgdlZGl0aW9uEkQK'
+        'B3ByZXZpZXcYAiABKAsyKi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUHJldm'
+        'lld1IHcHJldmlldw==');
+
+@$core.Deprecated('Use linkLivingArchiveLegacyEscrowRequestDescriptor instead')
+const LinkLivingArchiveLegacyEscrowRequest$json = {
+  '1': 'LinkLivingArchiveLegacyEscrowRequest',
+  '2': [
+    {'1': 'edition_id', '3': 1, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'legacy_document_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyDocumentId'
+    },
+    {'1': 'expected_version', '3': 3, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `LinkLivingArchiveLegacyEscrowRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkLivingArchiveLegacyEscrowRequestDescriptor =
+    $convert.base64Decode(
+        'CiRMaW5rTGl2aW5nQXJjaGl2ZUxlZ2FjeUVzY3Jvd1JlcXVlc3QSHQoKZWRpdGlvbl9pZBgBIA'
+        'EoCVIJZWRpdGlvbklkEiwKEmxlZ2FjeV9kb2N1bWVudF9pZBgCIAEoCVIQbGVnYWN5RG9jdW1l'
+        'bnRJZBIpChBleHBlY3RlZF92ZXJzaW9uGAMgASgDUg9leHBlY3RlZFZlcnNpb24SLAoSY2xpZW'
+        '50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use linkLivingArchiveLegacyEscrowResponseDescriptor instead')
+const LinkLivingArchiveLegacyEscrowResponse$json = {
+  '1': 'LinkLivingArchiveLegacyEscrowResponse',
+  '2': [
+    {
+      '1': 'edition',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveEdition',
+      '10': 'edition'
+    },
+    {
+      '1': 'readiness',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReadiness',
+      '10': 'readiness'
+    },
+  ],
+};
+
+/// Descriptor for `LinkLivingArchiveLegacyEscrowResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkLivingArchiveLegacyEscrowResponseDescriptor =
+    $convert.base64Decode(
+        'CiVMaW5rTGl2aW5nQXJjaGl2ZUxlZ2FjeUVzY3Jvd1Jlc3BvbnNlEkQKB2VkaXRpb24YASABKA'
+        'syKi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlRWRpdGlvblIHZWRpdGlvbhJK'
+        'CglyZWFkaW5lc3MYAiABKAsyLC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUm'
+        'VhZGluZXNzUglyZWFkaW5lc3M=');
+
+@$core.Deprecated('Use upsertLivingArchiveContactRequestDescriptor instead')
+const UpsertLivingArchiveContactRequest$json = {
+  '1': 'UpsertLivingArchiveContactRequest',
+  '2': [
+    {'1': 'contact_id', '3': 1, '4': 1, '5': 9, '10': 'contactId'},
+    {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'display_name', '3': 3, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'relationship', '3': 5, '4': 1, '5': 9, '10': 'relationship'},
+    {
+      '1': 'legacy_beneficiary_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyBeneficiaryId'
+    },
+    {
+      '1': 'legacy_recovery_share_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'legacyRecoveryShareId'
+    },
+    {'1': 'expected_version', '3': 8, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertLivingArchiveContactRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLivingArchiveContactRequestDescriptor = $convert.base64Decode(
+    'CiFVcHNlcnRMaXZpbmdBcmNoaXZlQ29udGFjdFJlcXVlc3QSHQoKY29udGFjdF9pZBgBIAEoCV'
+    'IJY29udGFjdElkEhIKBHJvbGUYAiABKAlSBHJvbGUSIQoMZGlzcGxheV9uYW1lGAMgASgJUgtk'
+    'aXNwbGF5TmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSIgoMcmVsYXRpb25zaGlwGAUgASgJUg'
+    'xyZWxhdGlvbnNoaXASMgoVbGVnYWN5X2JlbmVmaWNpYXJ5X2lkGAYgASgJUhNsZWdhY3lCZW5l'
+    'ZmljaWFyeUlkEjcKGGxlZ2FjeV9yZWNvdmVyeV9zaGFyZV9pZBgHIAEoCVIVbGVnYWN5UmVjb3'
+    'ZlcnlTaGFyZUlkEikKEGV4cGVjdGVkX3ZlcnNpb24YCCABKANSD2V4cGVjdGVkVmVyc2lvbhIs'
+    'ChJjbGllbnRfbXV0YXRpb25faWQYCSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use upsertLivingArchiveContactResponseDescriptor instead')
+const UpsertLivingArchiveContactResponse$json = {
+  '1': 'UpsertLivingArchiveContactResponse',
+  '2': [
+    {
+      '1': 'contact',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveContact',
+      '10': 'contact'
+    },
+    {
+      '1': 'readiness',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReadiness',
+      '10': 'readiness'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertLivingArchiveContactResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertLivingArchiveContactResponseDescriptor =
+    $convert.base64Decode(
+        'CiJVcHNlcnRMaXZpbmdBcmNoaXZlQ29udGFjdFJlc3BvbnNlEkQKB2NvbnRhY3QYASABKAsyKi'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlQ29udGFjdFIHY29udGFjdBJKCgly'
+        'ZWFkaW5lc3MYAiABKAsyLC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUmVhZG'
+        'luZXNzUglyZWFkaW5lc3M=');
+
+@$core.Deprecated('Use deleteLivingArchiveContactRequestDescriptor instead')
+const DeleteLivingArchiveContactRequest$json = {
+  '1': 'DeleteLivingArchiveContactRequest',
+  '2': [
+    {'1': 'contact_id', '3': 1, '4': 1, '5': 9, '10': 'contactId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `DeleteLivingArchiveContactRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLivingArchiveContactRequestDescriptor =
+    $convert.base64Decode(
+        'CiFEZWxldGVMaXZpbmdBcmNoaXZlQ29udGFjdFJlcXVlc3QSHQoKY29udGFjdF9pZBgBIAEoCV'
+        'IJY29udGFjdElkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKANSD2V4cGVjdGVkVmVyc2lvbhIW'
+        'CgZyZWFzb24YAyABKAlSBnJlYXNvbhIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlSEGNsaW'
+        'VudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use deleteLivingArchiveContactResponseDescriptor instead')
+const DeleteLivingArchiveContactResponse$json = {
+  '1': 'DeleteLivingArchiveContactResponse',
+  '2': [
+    {
+      '1': 'readiness',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReadiness',
+      '10': 'readiness'
+    },
+  ],
+};
+
+/// Descriptor for `DeleteLivingArchiveContactResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteLivingArchiveContactResponseDescriptor =
+    $convert.base64Decode(
+        'CiJEZWxldGVMaXZpbmdBcmNoaXZlQ29udGFjdFJlc3BvbnNlEkoKCXJlYWRpbmVzcxgBIAEoCz'
+        'IsLnN0dGF0dHVzLm9ueXgudjEuT255eExpdmluZ0FyY2hpdmVSZWFkaW5lc3NSCXJlYWRpbmVz'
+        'cw==');
+
+@$core.Deprecated('Use submitLivingArchivePolicyRequestDescriptor instead')
+const SubmitLivingArchivePolicyRequest$json = {
+  '1': 'SubmitLivingArchivePolicyRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitLivingArchivePolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitLivingArchivePolicyRequestDescriptor =
+    $convert.base64Decode(
+        'CiBTdWJtaXRMaXZpbmdBcmNoaXZlUG9saWN5UmVxdWVzdBIbCglwb2xpY3lfaWQYASABKAlSCH'
+        'BvbGljeUlkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKANSD2V4cGVjdGVkVmVyc2lvbhIsChJj'
+        'bGllbnRfbXV0YXRpb25faWQYAyABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use submitLivingArchivePolicyResponseDescriptor instead')
+const SubmitLivingArchivePolicyResponse$json = {
+  '1': 'SubmitLivingArchivePolicyResponse',
+  '2': [
+    {
+      '1': 'policy',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePolicy',
+      '10': 'policy'
+    },
+    {
+      '1': 'readiness',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReadiness',
+      '10': 'readiness'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitLivingArchivePolicyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitLivingArchivePolicyResponseDescriptor =
+    $convert.base64Decode(
+        'CiFTdWJtaXRMaXZpbmdBcmNoaXZlUG9saWN5UmVzcG9uc2USQQoGcG9saWN5GAEgASgLMikuc3'
+        'R0YXR0dXMub255eC52MS5Pbnl4TGl2aW5nQXJjaGl2ZVBvbGljeVIGcG9saWN5EkoKCXJlYWRp'
+        'bmVzcxgCIAEoCzIsLnN0dGF0dHVzLm9ueXgudjEuT255eExpdmluZ0FyY2hpdmVSZWFkaW5lc3'
+        'NSCXJlYWRpbmVzcw==');
+
+@$core.Deprecated('Use revokeLivingArchivePolicyRequestDescriptor instead')
+const RevokeLivingArchivePolicyRequest$json = {
+  '1': 'RevokeLivingArchivePolicyRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeLivingArchivePolicyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeLivingArchivePolicyRequestDescriptor =
+    $convert.base64Decode(
+        'CiBSZXZva2VMaXZpbmdBcmNoaXZlUG9saWN5UmVxdWVzdBIbCglwb2xpY3lfaWQYASABKAlSCH'
+        'BvbGljeUlkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKANSD2V4cGVjdGVkVmVyc2lvbhIWCgZy'
+        'ZWFzb24YAyABKAlSBnJlYXNvbhIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlSEGNsaWVudE'
+        '11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use revokeLivingArchivePolicyResponseDescriptor instead')
+const RevokeLivingArchivePolicyResponse$json = {
+  '1': 'RevokeLivingArchivePolicyResponse',
+  '2': [
+    {
+      '1': 'policy',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePolicy',
+      '10': 'policy'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeLivingArchivePolicyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeLivingArchivePolicyResponseDescriptor =
+    $convert.base64Decode(
+        'CiFSZXZva2VMaXZpbmdBcmNoaXZlUG9saWN5UmVzcG9uc2USQQoGcG9saWN5GAEgASgLMikuc3'
+        'R0YXR0dXMub255eC52MS5Pbnl4TGl2aW5nQXJjaGl2ZVBvbGljeVIGcG9saWN5');
+
+@$core.Deprecated('Use confirmLivingArchiveReviewRequestDescriptor instead')
+const ConfirmLivingArchiveReviewRequest$json = {
+  '1': 'ConfirmLivingArchiveReviewRequest',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ConfirmLivingArchiveReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List confirmLivingArchiveReviewRequestDescriptor =
+    $convert.base64Decode(
+        'CiFDb25maXJtTGl2aW5nQXJjaGl2ZVJldmlld1JlcXVlc3QSGwoJcG9saWN5X2lkGAEgASgJUg'
+        'hwb2xpY3lJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SLAoS'
+        'Y2xpZW50X211dGF0aW9uX2lkGAMgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use confirmLivingArchiveReviewResponseDescriptor instead')
+const ConfirmLivingArchiveReviewResponse$json = {
+  '1': 'ConfirmLivingArchiveReviewResponse',
+  '2': [
+    {
+      '1': 'policy',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchivePolicy',
+      '10': 'policy'
+    },
+  ],
+};
+
+/// Descriptor for `ConfirmLivingArchiveReviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List confirmLivingArchiveReviewResponseDescriptor =
+    $convert.base64Decode(
+        'CiJDb25maXJtTGl2aW5nQXJjaGl2ZVJldmlld1Jlc3BvbnNlEkEKBnBvbGljeRgBIAEoCzIpLn'
+        'N0dGF0dHVzLm9ueXgudjEuT255eExpdmluZ0FyY2hpdmVQb2xpY3lSBnBvbGljeQ==');
+
+@$core.Deprecated('Use contestLivingArchiveReleaseRequestDescriptor instead')
+const ContestLivingArchiveReleaseRequest$json = {
+  '1': 'ContestLivingArchiveReleaseRequest',
+  '2': [
+    {'1': 'case_id', '3': 1, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ContestLivingArchiveReleaseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List contestLivingArchiveReleaseRequestDescriptor =
+    $convert.base64Decode(
+        'CiJDb250ZXN0TGl2aW5nQXJjaGl2ZVJlbGVhc2VSZXF1ZXN0EhcKB2Nhc2VfaWQYASABKAlSBm'
+        'Nhc2VJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SFgoGcmVh'
+        'c29uGAMgASgJUgZyZWFzb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdX'
+        'RhdGlvbklk');
+
+@$core.Deprecated('Use contestLivingArchiveReleaseResponseDescriptor instead')
+const ContestLivingArchiveReleaseResponse$json = {
+  '1': 'ContestLivingArchiveReleaseResponse',
+  '2': [
+    {
+      '1': 'release_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxLivingArchiveReleaseCase',
+      '10': 'releaseCase'
+    },
+  ],
+};
+
+/// Descriptor for `ContestLivingArchiveReleaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List contestLivingArchiveReleaseResponseDescriptor =
+    $convert.base64Decode(
+        'CiNDb250ZXN0TGl2aW5nQXJjaGl2ZVJlbGVhc2VSZXNwb25zZRJRCgxyZWxlYXNlX2Nhc2UYAS'
+        'ABKAsyLi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUmVsZWFzZUNhc2VSC3Jl'
+        'bGVhc2VDYXNl');

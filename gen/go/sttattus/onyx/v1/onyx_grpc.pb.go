@@ -200,6 +200,17 @@ const (
 	OnyxService_ReportTranslationIssue_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ReportTranslationIssue"
 	OnyxService_RequestMultilingualExport_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RequestMultilingualExport"
 	OnyxService_GetMultilingualExport_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GetMultilingualExport"
+	OnyxService_GetLivingArchiveDashboard_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetLivingArchiveDashboard"
+	OnyxService_UpsertLivingArchivePolicy_FullMethodName            = "/sttattus.onyx.v1.OnyxService/UpsertLivingArchivePolicy"
+	OnyxService_PreviewLivingArchivePolicy_FullMethodName           = "/sttattus.onyx.v1.OnyxService/PreviewLivingArchivePolicy"
+	OnyxService_GenerateLivingArchiveEdition_FullMethodName         = "/sttattus.onyx.v1.OnyxService/GenerateLivingArchiveEdition"
+	OnyxService_LinkLivingArchiveLegacyEscrow_FullMethodName        = "/sttattus.onyx.v1.OnyxService/LinkLivingArchiveLegacyEscrow"
+	OnyxService_UpsertLivingArchiveContact_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpsertLivingArchiveContact"
+	OnyxService_DeleteLivingArchiveContact_FullMethodName           = "/sttattus.onyx.v1.OnyxService/DeleteLivingArchiveContact"
+	OnyxService_SubmitLivingArchivePolicy_FullMethodName            = "/sttattus.onyx.v1.OnyxService/SubmitLivingArchivePolicy"
+	OnyxService_RevokeLivingArchivePolicy_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeLivingArchivePolicy"
+	OnyxService_ConfirmLivingArchiveReview_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ConfirmLivingArchiveReview"
+	OnyxService_ContestLivingArchiveRelease_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ContestLivingArchiveRelease"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -417,6 +428,20 @@ type OnyxServiceClient interface {
 	ReportTranslationIssue(ctx context.Context, in *ReportTranslationIssueRequest, opts ...grpc.CallOption) (*ReportTranslationIssueResponse, error)
 	RequestMultilingualExport(ctx context.Context, in *RequestMultilingualExportRequest, opts ...grpc.CallOption) (*RequestMultilingualExportResponse, error)
 	GetMultilingualExport(ctx context.Context, in *GetMultilingualExportRequest, opts ...grpc.CallOption) (*GetMultilingualExportResponse, error)
+	// Choice 12 — member-controlled living archives and succession. Operational
+	// trigger evidence, dual control, disputes, holds and release remain staff
+	// workflows; members can always preview and revoke before release.
+	GetLivingArchiveDashboard(ctx context.Context, in *GetLivingArchiveDashboardRequest, opts ...grpc.CallOption) (*GetLivingArchiveDashboardResponse, error)
+	UpsertLivingArchivePolicy(ctx context.Context, in *UpsertLivingArchivePolicyRequest, opts ...grpc.CallOption) (*UpsertLivingArchivePolicyResponse, error)
+	PreviewLivingArchivePolicy(ctx context.Context, in *PreviewLivingArchivePolicyRequest, opts ...grpc.CallOption) (*PreviewLivingArchivePolicyResponse, error)
+	GenerateLivingArchiveEdition(ctx context.Context, in *GenerateLivingArchiveEditionRequest, opts ...grpc.CallOption) (*GenerateLivingArchiveEditionResponse, error)
+	LinkLivingArchiveLegacyEscrow(ctx context.Context, in *LinkLivingArchiveLegacyEscrowRequest, opts ...grpc.CallOption) (*LinkLivingArchiveLegacyEscrowResponse, error)
+	UpsertLivingArchiveContact(ctx context.Context, in *UpsertLivingArchiveContactRequest, opts ...grpc.CallOption) (*UpsertLivingArchiveContactResponse, error)
+	DeleteLivingArchiveContact(ctx context.Context, in *DeleteLivingArchiveContactRequest, opts ...grpc.CallOption) (*DeleteLivingArchiveContactResponse, error)
+	SubmitLivingArchivePolicy(ctx context.Context, in *SubmitLivingArchivePolicyRequest, opts ...grpc.CallOption) (*SubmitLivingArchivePolicyResponse, error)
+	RevokeLivingArchivePolicy(ctx context.Context, in *RevokeLivingArchivePolicyRequest, opts ...grpc.CallOption) (*RevokeLivingArchivePolicyResponse, error)
+	ConfirmLivingArchiveReview(ctx context.Context, in *ConfirmLivingArchiveReviewRequest, opts ...grpc.CallOption) (*ConfirmLivingArchiveReviewResponse, error)
+	ContestLivingArchiveRelease(ctx context.Context, in *ContestLivingArchiveReleaseRequest, opts ...grpc.CallOption) (*ContestLivingArchiveReleaseResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2237,6 +2262,116 @@ func (c *onyxServiceClient) GetMultilingualExport(ctx context.Context, in *GetMu
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetLivingArchiveDashboard(ctx context.Context, in *GetLivingArchiveDashboardRequest, opts ...grpc.CallOption) (*GetLivingArchiveDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLivingArchiveDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetLivingArchiveDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertLivingArchivePolicy(ctx context.Context, in *UpsertLivingArchivePolicyRequest, opts ...grpc.CallOption) (*UpsertLivingArchivePolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertLivingArchivePolicyResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertLivingArchivePolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PreviewLivingArchivePolicy(ctx context.Context, in *PreviewLivingArchivePolicyRequest, opts ...grpc.CallOption) (*PreviewLivingArchivePolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewLivingArchivePolicyResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PreviewLivingArchivePolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateLivingArchiveEdition(ctx context.Context, in *GenerateLivingArchiveEditionRequest, opts ...grpc.CallOption) (*GenerateLivingArchiveEditionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateLivingArchiveEditionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateLivingArchiveEdition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) LinkLivingArchiveLegacyEscrow(ctx context.Context, in *LinkLivingArchiveLegacyEscrowRequest, opts ...grpc.CallOption) (*LinkLivingArchiveLegacyEscrowResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LinkLivingArchiveLegacyEscrowResponse)
+	err := c.cc.Invoke(ctx, OnyxService_LinkLivingArchiveLegacyEscrow_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertLivingArchiveContact(ctx context.Context, in *UpsertLivingArchiveContactRequest, opts ...grpc.CallOption) (*UpsertLivingArchiveContactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertLivingArchiveContactResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertLivingArchiveContact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteLivingArchiveContact(ctx context.Context, in *DeleteLivingArchiveContactRequest, opts ...grpc.CallOption) (*DeleteLivingArchiveContactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteLivingArchiveContactResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteLivingArchiveContact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitLivingArchivePolicy(ctx context.Context, in *SubmitLivingArchivePolicyRequest, opts ...grpc.CallOption) (*SubmitLivingArchivePolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitLivingArchivePolicyResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitLivingArchivePolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeLivingArchivePolicy(ctx context.Context, in *RevokeLivingArchivePolicyRequest, opts ...grpc.CallOption) (*RevokeLivingArchivePolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeLivingArchivePolicyResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeLivingArchivePolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ConfirmLivingArchiveReview(ctx context.Context, in *ConfirmLivingArchiveReviewRequest, opts ...grpc.CallOption) (*ConfirmLivingArchiveReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmLivingArchiveReviewResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ConfirmLivingArchiveReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ContestLivingArchiveRelease(ctx context.Context, in *ContestLivingArchiveReleaseRequest, opts ...grpc.CallOption) (*ContestLivingArchiveReleaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ContestLivingArchiveReleaseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ContestLivingArchiveRelease_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2452,6 +2587,20 @@ type OnyxServiceServer interface {
 	ReportTranslationIssue(context.Context, *ReportTranslationIssueRequest) (*ReportTranslationIssueResponse, error)
 	RequestMultilingualExport(context.Context, *RequestMultilingualExportRequest) (*RequestMultilingualExportResponse, error)
 	GetMultilingualExport(context.Context, *GetMultilingualExportRequest) (*GetMultilingualExportResponse, error)
+	// Choice 12 — member-controlled living archives and succession. Operational
+	// trigger evidence, dual control, disputes, holds and release remain staff
+	// workflows; members can always preview and revoke before release.
+	GetLivingArchiveDashboard(context.Context, *GetLivingArchiveDashboardRequest) (*GetLivingArchiveDashboardResponse, error)
+	UpsertLivingArchivePolicy(context.Context, *UpsertLivingArchivePolicyRequest) (*UpsertLivingArchivePolicyResponse, error)
+	PreviewLivingArchivePolicy(context.Context, *PreviewLivingArchivePolicyRequest) (*PreviewLivingArchivePolicyResponse, error)
+	GenerateLivingArchiveEdition(context.Context, *GenerateLivingArchiveEditionRequest) (*GenerateLivingArchiveEditionResponse, error)
+	LinkLivingArchiveLegacyEscrow(context.Context, *LinkLivingArchiveLegacyEscrowRequest) (*LinkLivingArchiveLegacyEscrowResponse, error)
+	UpsertLivingArchiveContact(context.Context, *UpsertLivingArchiveContactRequest) (*UpsertLivingArchiveContactResponse, error)
+	DeleteLivingArchiveContact(context.Context, *DeleteLivingArchiveContactRequest) (*DeleteLivingArchiveContactResponse, error)
+	SubmitLivingArchivePolicy(context.Context, *SubmitLivingArchivePolicyRequest) (*SubmitLivingArchivePolicyResponse, error)
+	RevokeLivingArchivePolicy(context.Context, *RevokeLivingArchivePolicyRequest) (*RevokeLivingArchivePolicyResponse, error)
+	ConfirmLivingArchiveReview(context.Context, *ConfirmLivingArchiveReviewRequest) (*ConfirmLivingArchiveReviewResponse, error)
+	ContestLivingArchiveRelease(context.Context, *ContestLivingArchiveReleaseRequest) (*ContestLivingArchiveReleaseResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3004,6 +3153,39 @@ func (UnimplementedOnyxServiceServer) RequestMultilingualExport(context.Context,
 }
 func (UnimplementedOnyxServiceServer) GetMultilingualExport(context.Context, *GetMultilingualExportRequest) (*GetMultilingualExportResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetMultilingualExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetLivingArchiveDashboard(context.Context, *GetLivingArchiveDashboardRequest) (*GetLivingArchiveDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLivingArchiveDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertLivingArchivePolicy(context.Context, *UpsertLivingArchivePolicyRequest) (*UpsertLivingArchivePolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertLivingArchivePolicy not implemented")
+}
+func (UnimplementedOnyxServiceServer) PreviewLivingArchivePolicy(context.Context, *PreviewLivingArchivePolicyRequest) (*PreviewLivingArchivePolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewLivingArchivePolicy not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateLivingArchiveEdition(context.Context, *GenerateLivingArchiveEditionRequest) (*GenerateLivingArchiveEditionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateLivingArchiveEdition not implemented")
+}
+func (UnimplementedOnyxServiceServer) LinkLivingArchiveLegacyEscrow(context.Context, *LinkLivingArchiveLegacyEscrowRequest) (*LinkLivingArchiveLegacyEscrowResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LinkLivingArchiveLegacyEscrow not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertLivingArchiveContact(context.Context, *UpsertLivingArchiveContactRequest) (*UpsertLivingArchiveContactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertLivingArchiveContact not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteLivingArchiveContact(context.Context, *DeleteLivingArchiveContactRequest) (*DeleteLivingArchiveContactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteLivingArchiveContact not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitLivingArchivePolicy(context.Context, *SubmitLivingArchivePolicyRequest) (*SubmitLivingArchivePolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitLivingArchivePolicy not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeLivingArchivePolicy(context.Context, *RevokeLivingArchivePolicyRequest) (*RevokeLivingArchivePolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeLivingArchivePolicy not implemented")
+}
+func (UnimplementedOnyxServiceServer) ConfirmLivingArchiveReview(context.Context, *ConfirmLivingArchiveReviewRequest) (*ConfirmLivingArchiveReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmLivingArchiveReview not implemented")
+}
+func (UnimplementedOnyxServiceServer) ContestLivingArchiveRelease(context.Context, *ContestLivingArchiveReleaseRequest) (*ContestLivingArchiveReleaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ContestLivingArchiveRelease not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -6284,6 +6466,204 @@ func _OnyxService_GetMultilingualExport_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetLivingArchiveDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLivingArchiveDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetLivingArchiveDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetLivingArchiveDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetLivingArchiveDashboard(ctx, req.(*GetLivingArchiveDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertLivingArchivePolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertLivingArchivePolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertLivingArchivePolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertLivingArchivePolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertLivingArchivePolicy(ctx, req.(*UpsertLivingArchivePolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PreviewLivingArchivePolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewLivingArchivePolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PreviewLivingArchivePolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PreviewLivingArchivePolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PreviewLivingArchivePolicy(ctx, req.(*PreviewLivingArchivePolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateLivingArchiveEdition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateLivingArchiveEditionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateLivingArchiveEdition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateLivingArchiveEdition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateLivingArchiveEdition(ctx, req.(*GenerateLivingArchiveEditionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_LinkLivingArchiveLegacyEscrow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LinkLivingArchiveLegacyEscrowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).LinkLivingArchiveLegacyEscrow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_LinkLivingArchiveLegacyEscrow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).LinkLivingArchiveLegacyEscrow(ctx, req.(*LinkLivingArchiveLegacyEscrowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertLivingArchiveContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertLivingArchiveContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertLivingArchiveContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertLivingArchiveContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertLivingArchiveContact(ctx, req.(*UpsertLivingArchiveContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteLivingArchiveContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteLivingArchiveContactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteLivingArchiveContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteLivingArchiveContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteLivingArchiveContact(ctx, req.(*DeleteLivingArchiveContactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitLivingArchivePolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitLivingArchivePolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitLivingArchivePolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitLivingArchivePolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitLivingArchivePolicy(ctx, req.(*SubmitLivingArchivePolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeLivingArchivePolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeLivingArchivePolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeLivingArchivePolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeLivingArchivePolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeLivingArchivePolicy(ctx, req.(*RevokeLivingArchivePolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ConfirmLivingArchiveReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmLivingArchiveReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ConfirmLivingArchiveReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ConfirmLivingArchiveReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ConfirmLivingArchiveReview(ctx, req.(*ConfirmLivingArchiveReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ContestLivingArchiveRelease_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ContestLivingArchiveReleaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ContestLivingArchiveRelease(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ContestLivingArchiveRelease_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ContestLivingArchiveRelease(ctx, req.(*ContestLivingArchiveReleaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -7014,6 +7394,50 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetMultilingualExport",
 			Handler:    _OnyxService_GetMultilingualExport_Handler,
+		},
+		{
+			MethodName: "GetLivingArchiveDashboard",
+			Handler:    _OnyxService_GetLivingArchiveDashboard_Handler,
+		},
+		{
+			MethodName: "UpsertLivingArchivePolicy",
+			Handler:    _OnyxService_UpsertLivingArchivePolicy_Handler,
+		},
+		{
+			MethodName: "PreviewLivingArchivePolicy",
+			Handler:    _OnyxService_PreviewLivingArchivePolicy_Handler,
+		},
+		{
+			MethodName: "GenerateLivingArchiveEdition",
+			Handler:    _OnyxService_GenerateLivingArchiveEdition_Handler,
+		},
+		{
+			MethodName: "LinkLivingArchiveLegacyEscrow",
+			Handler:    _OnyxService_LinkLivingArchiveLegacyEscrow_Handler,
+		},
+		{
+			MethodName: "UpsertLivingArchiveContact",
+			Handler:    _OnyxService_UpsertLivingArchiveContact_Handler,
+		},
+		{
+			MethodName: "DeleteLivingArchiveContact",
+			Handler:    _OnyxService_DeleteLivingArchiveContact_Handler,
+		},
+		{
+			MethodName: "SubmitLivingArchivePolicy",
+			Handler:    _OnyxService_SubmitLivingArchivePolicy_Handler,
+		},
+		{
+			MethodName: "RevokeLivingArchivePolicy",
+			Handler:    _OnyxService_RevokeLivingArchivePolicy_Handler,
+		},
+		{
+			MethodName: "ConfirmLivingArchiveReview",
+			Handler:    _OnyxService_ConfirmLivingArchiveReview_Handler,
+		},
+		{
+			MethodName: "ContestLivingArchiveRelease",
+			Handler:    _OnyxService_ContestLivingArchiveRelease_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
