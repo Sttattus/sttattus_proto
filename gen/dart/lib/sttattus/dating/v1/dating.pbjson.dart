@@ -428,13 +428,15 @@ const UpdateProfileRequest$json = {
       '6': '.sttattus.dating.v1.DatingProfile',
       '10': 'profile'
     },
+    {'1': 'clear_interests', '3': 2, '4': 1, '5': 8, '10': 'clearInterests'},
   ],
 };
 
 /// Descriptor for `UpdateProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateProfileRequestDescriptor = $convert.base64Decode(
     'ChRVcGRhdGVQcm9maWxlUmVxdWVzdBI7Cgdwcm9maWxlGAEgASgLMiEuc3R0YXR0dXMuZGF0aW'
-    '5nLnYxLkRhdGluZ1Byb2ZpbGVSB3Byb2ZpbGU=');
+    '5nLnYxLkRhdGluZ1Byb2ZpbGVSB3Byb2ZpbGUSJwoPY2xlYXJfaW50ZXJlc3RzGAIgASgIUg5j'
+    'bGVhckludGVyZXN0cw==');
 
 @$core.Deprecated('Use updateProfileResponseDescriptor instead')
 const UpdateProfileResponse$json = {

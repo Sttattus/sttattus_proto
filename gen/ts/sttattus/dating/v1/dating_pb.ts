@@ -887,6 +887,15 @@ export class UpdateProfileRequest extends Message$1<UpdateProfileRequest> {
    */
   profile?: DatingProfile;
 
+  /**
+   * Atlas Choice 3: the member removed every interest. An empty interests
+   * list alone means "unchanged", so a caller that round-trips a profile
+   * cannot wipe them by accident.
+   *
+   * @generated from field: bool clear_interests = 2;
+   */
+  clearInterests = false;
+
   constructor(data?: PartialMessage<UpdateProfileRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -896,6 +905,7 @@ export class UpdateProfileRequest extends Message$1<UpdateProfileRequest> {
   static readonly typeName = "sttattus.dating.v1.UpdateProfileRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "profile", kind: "message", T: DatingProfile },
+    { no: 2, name: "clear_interests", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateProfileRequest {

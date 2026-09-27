@@ -1090,10 +1090,14 @@ func (x *GetProfileResponse) GetProfile() *DatingProfile {
 }
 
 type UpdateProfileRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Profile       *DatingProfile         `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state   protoimpl.MessageState `protogen:"open.v1"`
+	Profile *DatingProfile         `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	// Atlas Choice 3: the member removed every interest. An empty interests
+	// list alone means "unchanged", so a caller that round-trips a profile
+	// cannot wipe them by accident.
+	ClearInterests bool `protobuf:"varint,2,opt,name=clear_interests,json=clearInterests,proto3" json:"clear_interests,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *UpdateProfileRequest) Reset() {
@@ -1131,6 +1135,13 @@ func (x *UpdateProfileRequest) GetProfile() *DatingProfile {
 		return x.Profile
 	}
 	return nil
+}
+
+func (x *UpdateProfileRequest) GetClearInterests() bool {
+	if x != nil {
+		return x.ClearInterests
+	}
+	return false
 }
 
 type UpdateProfileResponse struct {
@@ -10389,9 +10400,10 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x11GetProfileRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\"Q\n" +
 	"\x12GetProfileResponse\x12;\n" +
-	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\"S\n" +
+	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\"|\n" +
 	"\x14UpdateProfileRequest\x12;\n" +
-	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\"T\n" +
+	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\x12'\n" +
+	"\x0fclear_interests\x18\x02 \x01(\bR\x0eclearInterests\"T\n" +
 	"\x15UpdateProfileResponse\x12;\n" +
 	"\aprofile\x18\x01 \x01(\v2!.sttattus.dating.v1.DatingProfileR\aprofile\"7\n" +
 	"\x16StreamDiscoveryRequest\x12\x1d\n" +

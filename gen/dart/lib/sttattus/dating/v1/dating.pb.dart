@@ -1328,9 +1328,11 @@ class GetProfileResponse extends $pb.GeneratedMessage {
 class UpdateProfileRequest extends $pb.GeneratedMessage {
   factory UpdateProfileRequest({
     DatingProfile? profile,
+    $core.bool? clearInterests,
   }) {
     final result = create();
     if (profile != null) result.profile = profile;
+    if (clearInterests != null) result.clearInterests = clearInterests;
     return result;
   }
 
@@ -1350,6 +1352,7 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<DatingProfile>(1, _omitFieldNames ? '' : 'profile',
         subBuilder: DatingProfile.create)
+    ..aOB(2, _omitFieldNames ? '' : 'clearInterests')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1381,6 +1384,18 @@ class UpdateProfileRequest extends $pb.GeneratedMessage {
   void clearProfile() => $_clearField(1);
   @$pb.TagNumber(1)
   DatingProfile ensureProfile() => $_ensure(0);
+
+  /// Atlas Choice 3: the member removed every interest. An empty interests
+  /// list alone means "unchanged", so a caller that round-trips a profile
+  /// cannot wipe them by accident.
+  @$pb.TagNumber(2)
+  $core.bool get clearInterests => $_getBF(1);
+  @$pb.TagNumber(2)
+  set clearInterests($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClearInterests() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClearInterests() => $_clearField(2);
 }
 
 class UpdateProfileResponse extends $pb.GeneratedMessage {
