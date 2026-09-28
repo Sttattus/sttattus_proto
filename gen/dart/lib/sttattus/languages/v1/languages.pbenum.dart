@@ -68,6 +68,22 @@ class ExerciseKind extends $pb.ProtobufEnum {
   static const ExerciseKind EXERCISE_KIND_CONJUGATE =
       ExerciseKind._(7, _omitEnumNames ? '' : 'EXERCISE_KIND_CONJUGATE');
 
+  /// Lexicon Choice 3 — from the word's verified example sentence and audio.
+  static const ExerciseKind EXERCISE_KIND_ASSEMBLE =
+      ExerciseKind._(8, _omitEnumNames ? '' : 'EXERCISE_KIND_ASSEMBLE');
+  static const ExerciseKind EXERCISE_KIND_TRANSLATE_TO_TARGET = ExerciseKind._(
+      9, _omitEnumNames ? '' : 'EXERCISE_KIND_TRANSLATE_TO_TARGET');
+  static const ExerciseKind EXERCISE_KIND_TRANSLATE_TO_BASE = ExerciseKind._(
+      10, _omitEnumNames ? '' : 'EXERCISE_KIND_TRANSLATE_TO_BASE');
+  static const ExerciseKind EXERCISE_KIND_DICTATION =
+      ExerciseKind._(11, _omitEnumNames ? '' : 'EXERCISE_KIND_DICTATION');
+  static const ExerciseKind EXERCISE_KIND_TRANSCRIBE =
+      ExerciseKind._(12, _omitEnumNames ? '' : 'EXERCISE_KIND_TRANSCRIBE');
+  static const ExerciseKind EXERCISE_KIND_LISTEN_NOISE =
+      ExerciseKind._(13, _omitEnumNames ? '' : 'EXERCISE_KIND_LISTEN_NOISE');
+  static const ExerciseKind EXERCISE_KIND_FLUENCY =
+      ExerciseKind._(14, _omitEnumNames ? '' : 'EXERCISE_KIND_FLUENCY');
+
   static const $core.List<ExerciseKind> values = <ExerciseKind>[
     EXERCISE_KIND_UNSPECIFIED,
     EXERCISE_KIND_RECOGNISE,
@@ -77,10 +93,17 @@ class ExerciseKind extends $pb.ProtobufEnum {
     EXERCISE_KIND_TYPE,
     EXERCISE_KIND_SPEAK,
     EXERCISE_KIND_CONJUGATE,
+    EXERCISE_KIND_ASSEMBLE,
+    EXERCISE_KIND_TRANSLATE_TO_TARGET,
+    EXERCISE_KIND_TRANSLATE_TO_BASE,
+    EXERCISE_KIND_DICTATION,
+    EXERCISE_KIND_TRANSCRIBE,
+    EXERCISE_KIND_LISTEN_NOISE,
+    EXERCISE_KIND_FLUENCY,
   ];
 
   static final $core.List<ExerciseKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 7);
+      $pb.ProtobufEnum.$_initByValueList(values, 14);
   static ExerciseKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

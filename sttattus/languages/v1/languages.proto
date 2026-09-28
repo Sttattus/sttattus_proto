@@ -825,6 +825,14 @@ enum ExerciseKind {
   EXERCISE_KIND_TYPE = 5; // produce it from memory, typed
   EXERCISE_KIND_SPEAK = 6; // produce it aloud
   EXERCISE_KIND_CONJUGATE = 7; // give the requested cell of a verb paradigm
+  // Lexicon Choice 3 — from the word's verified example sentence and audio.
+  EXERCISE_KIND_ASSEMBLE = 8; // put the sentence's own words in order (its meaning shown)
+  EXERCISE_KIND_TRANSLATE_TO_TARGET = 9; // build the sentence from tiles, some of them wrong
+  EXERCISE_KIND_TRANSLATE_TO_BASE = 10; // build its meaning in your language from tiles
+  EXERCISE_KIND_DICTATION = 11; // hear the sentence, type it
+  EXERCISE_KIND_TRANSCRIBE = 12; // hear the word, type it
+  EXERCISE_KIND_LISTEN_NOISE = 13; // hear it through noise, choose its meaning
+  EXERCISE_KIND_FLUENCY = 14; // a quick choice in a timed round of known words
 }
 
 // What a schedulable item actually is. Vocabulary alone is not a language: a
@@ -914,6 +922,11 @@ message PracticeCard {
   // The exercise template version that served this card (the exercise's
   // name is its key).
   int32 template_version = 29;
+  // Lexicon Choice 3: the tiles an assembly or translation card is built
+  // from, shuffled; the answer is the tiles in order, joined by spaces.
+  repeated string tiles = 30;
+  // Listening in noise: how loud the noise played under the word is, 0..1.
+  float noise = 31;
 }
 
 message GetPracticeSessionRequest {
@@ -929,6 +942,10 @@ message GetPracticeSessionRequest {
   // Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
   // and skill) instead of the general due queue.
   string plan_item_id = 4;
+  // Lexicon Choice 3: a fluency round — quick choices on words already
+  // known, answered against the clock (never for a member who chose to take
+  // their time: their round is untimed).
+  bool fluency = 5;
 }
 message GetPracticeSessionResponse {
   repeated PracticeCard cards = 1;
@@ -940,6 +957,8 @@ message GetPracticeSessionResponse {
   // Lexicon Choice 1 — whether this session could introduce new material,
   // and if not, why. Due reviews are always served.
   NewMaterialStatus new_material = 5;
+  // A fluency round's length in seconds; 0 is untimed.
+  int32 round_seconds = 6;
 }
 
 message SubmitAnswerRequest {

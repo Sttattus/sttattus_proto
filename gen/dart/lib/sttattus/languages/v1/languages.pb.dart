@@ -8060,6 +8060,8 @@ class PracticeCard extends $pb.GeneratedMessage {
     PlanReason? reason,
     $core.String? retestOf,
     $core.int? templateVersion,
+    $core.Iterable<$core.String>? tiles,
+    $core.double? noise,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8092,6 +8094,8 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (reason != null) result.reason = reason;
     if (retestOf != null) result.retestOf = retestOf;
     if (templateVersion != null) result.templateVersion = templateVersion;
+    if (tiles != null) result.tiles.addAll(tiles);
+    if (noise != null) result.noise = noise;
     return result;
   }
 
@@ -8141,6 +8145,8 @@ class PracticeCard extends $pb.GeneratedMessage {
         subBuilder: PlanReason.create)
     ..aOS(28, _omitFieldNames ? '' : 'retestOf')
     ..aI(29, _omitFieldNames ? '' : 'templateVersion')
+    ..pPS(30, _omitFieldNames ? '' : 'tiles')
+    ..aD(31, _omitFieldNames ? '' : 'noise', fieldType: $pb.PbFieldType.OF)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8448,6 +8454,21 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasTemplateVersion() => $_has(28);
   @$pb.TagNumber(29)
   void clearTemplateVersion() => $_clearField(29);
+
+  /// Lexicon Choice 3: the tiles an assembly or translation card is built
+  /// from, shuffled; the answer is the tiles in order, joined by spaces.
+  @$pb.TagNumber(30)
+  $pb.PbList<$core.String> get tiles => $_getList(29);
+
+  /// Listening in noise: how loud the noise played under the word is, 0..1.
+  @$pb.TagNumber(31)
+  $core.double get noise => $_getN(30);
+  @$pb.TagNumber(31)
+  set noise($core.double value) => $_setFloat(30, value);
+  @$pb.TagNumber(31)
+  $core.bool hasNoise() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearNoise() => $_clearField(31);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -8456,12 +8477,14 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
     $core.int? limit,
     $core.Iterable<$core.String>? ttsLanguages,
     $core.String? planItemId,
+    $core.bool? fluency,
   }) {
     final result = create();
     if (language != null) result.language = language;
     if (limit != null) result.limit = limit;
     if (ttsLanguages != null) result.ttsLanguages.addAll(ttsLanguages);
     if (planItemId != null) result.planItemId = planItemId;
+    if (fluency != null) result.fluency = fluency;
     return result;
   }
 
@@ -8483,6 +8506,7 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
     ..aI(2, _omitFieldNames ? '' : 'limit')
     ..pPS(3, _omitFieldNames ? '' : 'ttsLanguages')
     ..aOS(4, _omitFieldNames ? '' : 'planItemId')
+    ..aOB(5, _omitFieldNames ? '' : 'fluency')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8542,6 +8566,18 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasPlanItemId() => $_has(3);
   @$pb.TagNumber(4)
   void clearPlanItemId() => $_clearField(4);
+
+  /// Lexicon Choice 3: a fluency round — quick choices on words already
+  /// known, answered against the clock (never for a member who chose to take
+  /// their time: their round is untimed).
+  @$pb.TagNumber(5)
+  $core.bool get fluency => $_getBF(4);
+  @$pb.TagNumber(5)
+  set fluency($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFluency() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFluency() => $_clearField(5);
 }
 
 class GetPracticeSessionResponse extends $pb.GeneratedMessage {
@@ -8551,6 +8587,7 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
     $core.int? newCount,
     $core.bool? corpusEmpty,
     NewMaterialStatus? newMaterial,
+    $core.int? roundSeconds,
   }) {
     final result = create();
     if (cards != null) result.cards.addAll(cards);
@@ -8558,6 +8595,7 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
     if (newCount != null) result.newCount = newCount;
     if (corpusEmpty != null) result.corpusEmpty = corpusEmpty;
     if (newMaterial != null) result.newMaterial = newMaterial;
+    if (roundSeconds != null) result.roundSeconds = roundSeconds;
     return result;
   }
 
@@ -8582,6 +8620,7 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
     ..aOB(4, _omitFieldNames ? '' : 'corpusEmpty')
     ..aE<NewMaterialStatus>(5, _omitFieldNames ? '' : 'newMaterial',
         enumValues: NewMaterialStatus.values)
+    ..aI(6, _omitFieldNames ? '' : 'roundSeconds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8647,6 +8686,16 @@ class GetPracticeSessionResponse extends $pb.GeneratedMessage {
   $core.bool hasNewMaterial() => $_has(4);
   @$pb.TagNumber(5)
   void clearNewMaterial() => $_clearField(5);
+
+  /// A fluency round's length in seconds; 0 is untimed.
+  @$pb.TagNumber(6)
+  $core.int get roundSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set roundSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRoundSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRoundSeconds() => $_clearField(6);
 }
 
 class SubmitAnswerRequest extends $pb.GeneratedMessage {

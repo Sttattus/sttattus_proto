@@ -46,6 +46,13 @@ const ExerciseKind$json = {
     {'1': 'EXERCISE_KIND_TYPE', '2': 5},
     {'1': 'EXERCISE_KIND_SPEAK', '2': 6},
     {'1': 'EXERCISE_KIND_CONJUGATE', '2': 7},
+    {'1': 'EXERCISE_KIND_ASSEMBLE', '2': 8},
+    {'1': 'EXERCISE_KIND_TRANSLATE_TO_TARGET', '2': 9},
+    {'1': 'EXERCISE_KIND_TRANSLATE_TO_BASE', '2': 10},
+    {'1': 'EXERCISE_KIND_DICTATION', '2': 11},
+    {'1': 'EXERCISE_KIND_TRANSCRIBE', '2': 12},
+    {'1': 'EXERCISE_KIND_LISTEN_NOISE', '2': 13},
+    {'1': 'EXERCISE_KIND_FLUENCY', '2': 14},
   ],
 };
 
@@ -55,7 +62,11 @@ final $typed_data.Uint8List exerciseKindDescriptor = $convert.base64Decode(
     'NFX0tJTkRfUkVDT0dOSVNFEAESGAoURVhFUkNJU0VfS0lORF9SRUNBTEwQAhIYChRFWEVSQ0lT'
     'RV9LSU5EX0xJU1RFThADEhcKE0VYRVJDSVNFX0tJTkRfQ0xPWkUQBBIWChJFWEVSQ0lTRV9LSU'
     '5EX1RZUEUQBRIXChNFWEVSQ0lTRV9LSU5EX1NQRUFLEAYSGwoXRVhFUkNJU0VfS0lORF9DT05K'
-    'VUdBVEUQBw==');
+    'VUdBVEUQBxIaChZFWEVSQ0lTRV9LSU5EX0FTU0VNQkxFEAgSJQohRVhFUkNJU0VfS0lORF9UUk'
+    'FOU0xBVEVfVE9fVEFSR0VUEAkSIwofRVhFUkNJU0VfS0lORF9UUkFOU0xBVEVfVE9fQkFTRRAK'
+    'EhsKF0VYRVJDSVNFX0tJTkRfRElDVEFUSU9OEAsSHAoYRVhFUkNJU0VfS0lORF9UUkFOU0NSSU'
+    'JFEAwSHgoaRVhFUkNJU0VfS0lORF9MSVNURU5fTk9JU0UQDRIZChVFWEVSQ0lTRV9LSU5EX0ZM'
+    'VUVOQ1kQDg==');
 
 @$core.Deprecated('Use studyItemKindDescriptor instead')
 const StudyItemKind$json = {
@@ -2314,6 +2325,8 @@ const PracticeCard$json = {
     },
     {'1': 'retest_of', '3': 28, '4': 1, '5': 9, '10': 'retestOf'},
     {'1': 'template_version', '3': 29, '4': 1, '5': 5, '10': 'templateVersion'},
+    {'1': 'tiles', '3': 30, '4': 3, '5': 9, '10': 'tiles'},
+    {'1': 'noise', '3': 31, '4': 1, '5': 2, '10': 'noise'},
   ],
 };
 
@@ -2337,7 +2350,8 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'luY2Vfc2VlbhgZIAEoCFISY29ycmVjdGVkU2luY2VTZWVuEiMKDWNvcHlfbGFuZ3VhZ2UYGiAB'
     'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
     'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2YSKQoQdGVt'
-    'cGxhdGVfdmVyc2lvbhgdIAEoBVIPdGVtcGxhdGVWZXJzaW9u');
+    'cGxhdGVfdmVyc2lvbhgdIAEoBVIPdGVtcGxhdGVWZXJzaW9uEhQKBXRpbGVzGB4gAygJUgV0aW'
+    'xlcxIUCgVub2lzZRgfIAEoAlIFbm9pc2U=');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2347,6 +2361,7 @@ const GetPracticeSessionRequest$json = {
     {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
     {'1': 'tts_languages', '3': 3, '4': 3, '5': 9, '10': 'ttsLanguages'},
     {'1': 'plan_item_id', '3': 4, '4': 1, '5': 9, '10': 'planItemId'},
+    {'1': 'fluency', '3': 5, '4': 1, '5': 8, '10': 'fluency'},
   ],
 };
 
@@ -2354,7 +2369,8 @@ const GetPracticeSessionRequest$json = {
 final $typed_data.Uint8List getPracticeSessionRequestDescriptor = $convert.base64Decode(
     'ChlHZXRQcmFjdGljZVNlc3Npb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
     'IUCgVsaW1pdBgCIAEoBVIFbGltaXQSIwoNdHRzX2xhbmd1YWdlcxgDIAMoCVIMdHRzTGFuZ3Vh'
-    'Z2VzEiAKDHBsYW5faXRlbV9pZBgEIAEoCVIKcGxhbkl0ZW1JZA==');
+    'Z2VzEiAKDHBsYW5faXRlbV9pZBgEIAEoCVIKcGxhbkl0ZW1JZBIYCgdmbHVlbmN5GAUgASgIUg'
+    'dmbHVlbmN5');
 
 @$core.Deprecated('Use getPracticeSessionResponseDescriptor instead')
 const GetPracticeSessionResponse$json = {
@@ -2379,6 +2395,7 @@ const GetPracticeSessionResponse$json = {
       '6': '.sttattus.languages.v1.NewMaterialStatus',
       '10': 'newMaterial'
     },
+    {'1': 'round_seconds', '3': 6, '4': 1, '5': 5, '10': 'roundSeconds'},
   ],
 };
 
@@ -2388,7 +2405,8 @@ final $typed_data.Uint8List getPracticeSessionResponseDescriptor = $convert.base
     'xhbmd1YWdlcy52MS5QcmFjdGljZUNhcmRSBWNhcmRzEhsKCWR1ZV9jb3VudBgCIAEoBVIIZHVl'
     'Q291bnQSGwoJbmV3X2NvdW50GAMgASgFUghuZXdDb3VudBIhCgxjb3JwdXNfZW1wdHkYBCABKA'
     'hSC2NvcnB1c0VtcHR5EksKDG5ld19tYXRlcmlhbBgFIAEoDjIoLnN0dGF0dHVzLmxhbmd1YWdl'
-    'cy52MS5OZXdNYXRlcmlhbFN0YXR1c1ILbmV3TWF0ZXJpYWw=');
+    'cy52MS5OZXdNYXRlcmlhbFN0YXR1c1ILbmV3TWF0ZXJpYWwSIwoNcm91bmRfc2Vjb25kcxgGIA'
+    'EoBVIMcm91bmRTZWNvbmRz');
 
 @$core.Deprecated('Use submitAnswerRequestDescriptor instead')
 const SubmitAnswerRequest$json = {

@@ -92,29 +92,51 @@ const (
 	ExerciseKind_EXERCISE_KIND_TYPE        ExerciseKind = 5 // produce it from memory, typed
 	ExerciseKind_EXERCISE_KIND_SPEAK       ExerciseKind = 6 // produce it aloud
 	ExerciseKind_EXERCISE_KIND_CONJUGATE   ExerciseKind = 7 // give the requested cell of a verb paradigm
+	// Lexicon Choice 3 — from the word's verified example sentence and audio.
+	ExerciseKind_EXERCISE_KIND_ASSEMBLE            ExerciseKind = 8  // put the sentence's own words in order (its meaning shown)
+	ExerciseKind_EXERCISE_KIND_TRANSLATE_TO_TARGET ExerciseKind = 9  // build the sentence from tiles, some of them wrong
+	ExerciseKind_EXERCISE_KIND_TRANSLATE_TO_BASE   ExerciseKind = 10 // build its meaning in your language from tiles
+	ExerciseKind_EXERCISE_KIND_DICTATION           ExerciseKind = 11 // hear the sentence, type it
+	ExerciseKind_EXERCISE_KIND_TRANSCRIBE          ExerciseKind = 12 // hear the word, type it
+	ExerciseKind_EXERCISE_KIND_LISTEN_NOISE        ExerciseKind = 13 // hear it through noise, choose its meaning
+	ExerciseKind_EXERCISE_KIND_FLUENCY             ExerciseKind = 14 // a quick choice in a timed round of known words
 )
 
 // Enum value maps for ExerciseKind.
 var (
 	ExerciseKind_name = map[int32]string{
-		0: "EXERCISE_KIND_UNSPECIFIED",
-		1: "EXERCISE_KIND_RECOGNISE",
-		2: "EXERCISE_KIND_RECALL",
-		3: "EXERCISE_KIND_LISTEN",
-		4: "EXERCISE_KIND_CLOZE",
-		5: "EXERCISE_KIND_TYPE",
-		6: "EXERCISE_KIND_SPEAK",
-		7: "EXERCISE_KIND_CONJUGATE",
+		0:  "EXERCISE_KIND_UNSPECIFIED",
+		1:  "EXERCISE_KIND_RECOGNISE",
+		2:  "EXERCISE_KIND_RECALL",
+		3:  "EXERCISE_KIND_LISTEN",
+		4:  "EXERCISE_KIND_CLOZE",
+		5:  "EXERCISE_KIND_TYPE",
+		6:  "EXERCISE_KIND_SPEAK",
+		7:  "EXERCISE_KIND_CONJUGATE",
+		8:  "EXERCISE_KIND_ASSEMBLE",
+		9:  "EXERCISE_KIND_TRANSLATE_TO_TARGET",
+		10: "EXERCISE_KIND_TRANSLATE_TO_BASE",
+		11: "EXERCISE_KIND_DICTATION",
+		12: "EXERCISE_KIND_TRANSCRIBE",
+		13: "EXERCISE_KIND_LISTEN_NOISE",
+		14: "EXERCISE_KIND_FLUENCY",
 	}
 	ExerciseKind_value = map[string]int32{
-		"EXERCISE_KIND_UNSPECIFIED": 0,
-		"EXERCISE_KIND_RECOGNISE":   1,
-		"EXERCISE_KIND_RECALL":      2,
-		"EXERCISE_KIND_LISTEN":      3,
-		"EXERCISE_KIND_CLOZE":       4,
-		"EXERCISE_KIND_TYPE":        5,
-		"EXERCISE_KIND_SPEAK":       6,
-		"EXERCISE_KIND_CONJUGATE":   7,
+		"EXERCISE_KIND_UNSPECIFIED":         0,
+		"EXERCISE_KIND_RECOGNISE":           1,
+		"EXERCISE_KIND_RECALL":              2,
+		"EXERCISE_KIND_LISTEN":              3,
+		"EXERCISE_KIND_CLOZE":               4,
+		"EXERCISE_KIND_TYPE":                5,
+		"EXERCISE_KIND_SPEAK":               6,
+		"EXERCISE_KIND_CONJUGATE":           7,
+		"EXERCISE_KIND_ASSEMBLE":            8,
+		"EXERCISE_KIND_TRANSLATE_TO_TARGET": 9,
+		"EXERCISE_KIND_TRANSLATE_TO_BASE":   10,
+		"EXERCISE_KIND_DICTATION":           11,
+		"EXERCISE_KIND_TRANSCRIBE":          12,
+		"EXERCISE_KIND_LISTEN_NOISE":        13,
+		"EXERCISE_KIND_FLUENCY":             14,
 	}
 )
 
@@ -6848,8 +6870,13 @@ type PracticeCard struct {
 	// The exercise template version that served this card (the exercise's
 	// name is its key).
 	TemplateVersion int32 `protobuf:"varint,29,opt,name=template_version,json=templateVersion,proto3" json:"template_version,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// Lexicon Choice 3: the tiles an assembly or translation card is built
+	// from, shuffled; the answer is the tiles in order, joined by spaces.
+	Tiles []string `protobuf:"bytes,30,rep,name=tiles,proto3" json:"tiles,omitempty"`
+	// Listening in noise: how loud the noise played under the word is, 0..1.
+	Noise         float32 `protobuf:"fixed32,31,opt,name=noise,proto3" json:"noise,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PracticeCard) Reset() {
@@ -7085,6 +7112,20 @@ func (x *PracticeCard) GetTemplateVersion() int32 {
 	return 0
 }
 
+func (x *PracticeCard) GetTiles() []string {
+	if x != nil {
+		return x.Tiles
+	}
+	return nil
+}
+
+func (x *PracticeCard) GetNoise() float32 {
+	if x != nil {
+		return x.Noise
+	}
+	return 0
+}
+
 type GetPracticeSessionRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The language being learned.
@@ -7098,7 +7139,11 @@ type GetPracticeSessionRequest struct {
 	TtsLanguages []string `protobuf:"bytes,3,rep,name=tts_languages,json=ttsLanguages,proto3" json:"tts_languages,omitempty"`
 	// Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
 	// and skill) instead of the general due queue.
-	PlanItemId    string `protobuf:"bytes,4,opt,name=plan_item_id,json=planItemId,proto3" json:"plan_item_id,omitempty"`
+	PlanItemId string `protobuf:"bytes,4,opt,name=plan_item_id,json=planItemId,proto3" json:"plan_item_id,omitempty"`
+	// Lexicon Choice 3: a fluency round — quick choices on words already
+	// known, answered against the clock (never for a member who chose to take
+	// their time: their round is untimed).
+	Fluency       bool `protobuf:"varint,5,opt,name=fluency,proto3" json:"fluency,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -7161,6 +7206,13 @@ func (x *GetPracticeSessionRequest) GetPlanItemId() string {
 	return ""
 }
 
+func (x *GetPracticeSessionRequest) GetFluency() bool {
+	if x != nil {
+		return x.Fluency
+	}
+	return false
+}
+
 type GetPracticeSessionResponse struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
 	Cards    []*PracticeCard        `protobuf:"bytes,1,rep,name=cards,proto3" json:"cards,omitempty"`
@@ -7171,7 +7223,9 @@ type GetPracticeSessionResponse struct {
 	CorpusEmpty bool `protobuf:"varint,4,opt,name=corpus_empty,json=corpusEmpty,proto3" json:"corpus_empty,omitempty"`
 	// Lexicon Choice 1 — whether this session could introduce new material,
 	// and if not, why. Due reviews are always served.
-	NewMaterial   NewMaterialStatus `protobuf:"varint,5,opt,name=new_material,json=newMaterial,proto3,enum=sttattus.languages.v1.NewMaterialStatus" json:"new_material,omitempty"`
+	NewMaterial NewMaterialStatus `protobuf:"varint,5,opt,name=new_material,json=newMaterial,proto3,enum=sttattus.languages.v1.NewMaterialStatus" json:"new_material,omitempty"`
+	// A fluency round's length in seconds; 0 is untimed.
+	RoundSeconds  int32 `protobuf:"varint,6,opt,name=round_seconds,json=roundSeconds,proto3" json:"round_seconds,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -7239,6 +7293,13 @@ func (x *GetPracticeSessionResponse) GetNewMaterial() NewMaterialStatus {
 		return x.NewMaterial
 	}
 	return NewMaterialStatus_NEW_MATERIAL_STATUS_UNSPECIFIED
+}
+
+func (x *GetPracticeSessionResponse) GetRoundSeconds() int32 {
+	if x != nil {
+		return x.RoundSeconds
+	}
+	return 0
 }
 
 type SubmitAnswerRequest struct {
@@ -10166,7 +10227,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aCreateLinguistShareRequest\"P\n" +
 	"\x1bCreateLinguistShareResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
-	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\x8b\b\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xb7\b\n" +
 	"\fPracticeCard\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12\x1d\n" +
 	"\n" +
@@ -10199,19 +10260,23 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\rcopy_language\x18\x1a \x01(\tR\fcopyLanguage\x129\n" +
 	"\x06reason\x18\x1b \x01(\v2!.sttattus.languages.v1.PlanReasonR\x06reason\x12\x1b\n" +
 	"\tretest_of\x18\x1c \x01(\tR\bretestOf\x12)\n" +
-	"\x10template_version\x18\x1d \x01(\x05R\x0ftemplateVersion\"\x94\x01\n" +
+	"\x10template_version\x18\x1d \x01(\x05R\x0ftemplateVersion\x12\x14\n" +
+	"\x05tiles\x18\x1e \x03(\tR\x05tiles\x12\x14\n" +
+	"\x05noise\x18\x1f \x01(\x02R\x05noise\"\xae\x01\n" +
 	"\x19GetPracticeSessionRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12#\n" +
 	"\rtts_languages\x18\x03 \x03(\tR\fttsLanguages\x12 \n" +
 	"\fplan_item_id\x18\x04 \x01(\tR\n" +
-	"planItemId\"\x81\x02\n" +
+	"planItemId\x12\x18\n" +
+	"\afluency\x18\x05 \x01(\bR\afluency\"\xa6\x02\n" +
 	"\x1aGetPracticeSessionResponse\x129\n" +
 	"\x05cards\x18\x01 \x03(\v2#.sttattus.languages.v1.PracticeCardR\x05cards\x12\x1b\n" +
 	"\tdue_count\x18\x02 \x01(\x05R\bdueCount\x12\x1b\n" +
 	"\tnew_count\x18\x03 \x01(\x05R\bnewCount\x12!\n" +
 	"\fcorpus_empty\x18\x04 \x01(\bR\vcorpusEmpty\x12K\n" +
-	"\fnew_material\x18\x05 \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\"\xc1\x04\n" +
+	"\fnew_material\x18\x05 \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\x12#\n" +
+	"\rround_seconds\x18\x06 \x01(\x05R\froundSeconds\"\xc1\x04\n" +
 	"\x13SubmitAnswerRequest\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12?\n" +
 	"\bexercise\x18\x02 \x01(\x0e2#.sttattus.languages.v1.ExerciseKindR\bexercise\x12!\n" +
@@ -10439,7 +10504,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
 	"\x1fCULTURAL_CATEGORY_LUXURY_ASSETS\x10\x02\x12 \n" +
 	"\x1cCULTURAL_CATEGORY_GASTRONOMY\x10\x03\x12\"\n" +
-	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x04*\xe5\x01\n" +
+	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x04*\xc3\x03\n" +
 	"\fExerciseKind\x12\x1d\n" +
 	"\x19EXERCISE_KIND_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17EXERCISE_KIND_RECOGNISE\x10\x01\x12\x18\n" +
@@ -10448,7 +10513,15 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x13EXERCISE_KIND_CLOZE\x10\x04\x12\x16\n" +
 	"\x12EXERCISE_KIND_TYPE\x10\x05\x12\x17\n" +
 	"\x13EXERCISE_KIND_SPEAK\x10\x06\x12\x1b\n" +
-	"\x17EXERCISE_KIND_CONJUGATE\x10\a*\x88\x01\n" +
+	"\x17EXERCISE_KIND_CONJUGATE\x10\a\x12\x1a\n" +
+	"\x16EXERCISE_KIND_ASSEMBLE\x10\b\x12%\n" +
+	"!EXERCISE_KIND_TRANSLATE_TO_TARGET\x10\t\x12#\n" +
+	"\x1fEXERCISE_KIND_TRANSLATE_TO_BASE\x10\n" +
+	"\x12\x1b\n" +
+	"\x17EXERCISE_KIND_DICTATION\x10\v\x12\x1c\n" +
+	"\x18EXERCISE_KIND_TRANSCRIBE\x10\f\x12\x1e\n" +
+	"\x1aEXERCISE_KIND_LISTEN_NOISE\x10\r\x12\x19\n" +
+	"\x15EXERCISE_KIND_FLUENCY\x10\x0e*\x88\x01\n" +
 	"\rStudyItemKind\x12\x1f\n" +
 	"\x1bSTUDY_ITEM_KIND_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16STUDY_ITEM_KIND_LEXEME\x10\x01\x12\x1b\n" +

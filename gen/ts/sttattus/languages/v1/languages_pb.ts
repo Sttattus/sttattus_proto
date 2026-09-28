@@ -115,6 +115,57 @@ export enum ExerciseKind {
    * @generated from enum value: EXERCISE_KIND_CONJUGATE = 7;
    */
   CONJUGATE = 7,
+
+  /**
+   * Lexicon Choice 3 — from the word's verified example sentence and audio.
+   *
+   * put the sentence's own words in order (its meaning shown)
+   *
+   * @generated from enum value: EXERCISE_KIND_ASSEMBLE = 8;
+   */
+  ASSEMBLE = 8,
+
+  /**
+   * build the sentence from tiles, some of them wrong
+   *
+   * @generated from enum value: EXERCISE_KIND_TRANSLATE_TO_TARGET = 9;
+   */
+  TRANSLATE_TO_TARGET = 9,
+
+  /**
+   * build its meaning in your language from tiles
+   *
+   * @generated from enum value: EXERCISE_KIND_TRANSLATE_TO_BASE = 10;
+   */
+  TRANSLATE_TO_BASE = 10,
+
+  /**
+   * hear the sentence, type it
+   *
+   * @generated from enum value: EXERCISE_KIND_DICTATION = 11;
+   */
+  DICTATION = 11,
+
+  /**
+   * hear the word, type it
+   *
+   * @generated from enum value: EXERCISE_KIND_TRANSCRIBE = 12;
+   */
+  TRANSCRIBE = 12,
+
+  /**
+   * hear it through noise, choose its meaning
+   *
+   * @generated from enum value: EXERCISE_KIND_LISTEN_NOISE = 13;
+   */
+  LISTEN_NOISE = 13,
+
+  /**
+   * a quick choice in a timed round of known words
+   *
+   * @generated from enum value: EXERCISE_KIND_FLUENCY = 14;
+   */
+  FLUENCY = 14,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ExerciseKind)
 proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
@@ -126,6 +177,13 @@ proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
   { no: 5, name: "EXERCISE_KIND_TYPE" },
   { no: 6, name: "EXERCISE_KIND_SPEAK" },
   { no: 7, name: "EXERCISE_KIND_CONJUGATE" },
+  { no: 8, name: "EXERCISE_KIND_ASSEMBLE" },
+  { no: 9, name: "EXERCISE_KIND_TRANSLATE_TO_TARGET" },
+  { no: 10, name: "EXERCISE_KIND_TRANSLATE_TO_BASE" },
+  { no: 11, name: "EXERCISE_KIND_DICTATION" },
+  { no: 12, name: "EXERCISE_KIND_TRANSCRIBE" },
+  { no: 13, name: "EXERCISE_KIND_LISTEN_NOISE" },
+  { no: 14, name: "EXERCISE_KIND_FLUENCY" },
 ]);
 
 /**
@@ -5986,6 +6044,21 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   templateVersion = 0;
 
+  /**
+   * Lexicon Choice 3: the tiles an assembly or translation card is built
+   * from, shuffled; the answer is the tiles in order, joined by spaces.
+   *
+   * @generated from field: repeated string tiles = 30;
+   */
+  tiles: string[] = [];
+
+  /**
+   * Listening in noise: how loud the noise played under the word is, 0..1.
+   *
+   * @generated from field: float noise = 31;
+   */
+  noise = 0;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6023,6 +6096,8 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 27, name: "reason", kind: "message", T: PlanReason },
     { no: 28, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 29, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 30, name: "tiles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 31, name: "noise", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -6078,6 +6153,15 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
    */
   planItemId = "";
 
+  /**
+   * Lexicon Choice 3: a fluency round — quick choices on words already
+   * known, answered against the clock (never for a member who chose to take
+   * their time: their round is untimed).
+   *
+   * @generated from field: bool fluency = 5;
+   */
+  fluency = false;
+
   constructor(data?: PartialMessage<GetPracticeSessionRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6090,6 +6174,7 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
     { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "tts_languages", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 4, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "fluency", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeSessionRequest {
@@ -6144,6 +6229,13 @@ export class GetPracticeSessionResponse extends Message<GetPracticeSessionRespon
    */
   newMaterial = NewMaterialStatus.UNSPECIFIED;
 
+  /**
+   * A fluency round's length in seconds; 0 is untimed.
+   *
+   * @generated from field: int32 round_seconds = 6;
+   */
+  roundSeconds = 0;
+
   constructor(data?: PartialMessage<GetPracticeSessionResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6157,6 +6249,7 @@ export class GetPracticeSessionResponse extends Message<GetPracticeSessionRespon
     { no: 3, name: "new_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "corpus_empty", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "new_material", kind: "enum", T: proto3.getEnumType(NewMaterialStatus) },
+    { no: 6, name: "round_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeSessionResponse {
