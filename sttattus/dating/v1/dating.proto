@@ -3,6 +3,7 @@ syntax = "proto3";
 package sttattus.dating.v1;
 
 import "sttattus/common/v1/pagination.proto";
+import "sttattus/dating/v1/compatibility.proto";
 import "sttattus/dating/v1/identity.proto";
 import "sttattus/dating/v1/privacy.proto";
 import "sttattus/dating/v1/profile.proto";
@@ -112,6 +113,9 @@ message DiscoveryPreferences {
   string show_me = 4;
   // Atlas Choice 3: only people with a live "right now" shown to discovery.
   bool available_now = 5;
+  // Atlas Choice 4: fit (by the member's weights) | plain (newest first, not
+  // personalised). Empty keeps the stored value.
+  string ordering = 6;
 }
 
 message GetDiscoveryPreferencesRequest {}
@@ -128,7 +132,12 @@ message UpdateDiscoveryPreferencesResponse {
 
 message Candidate {
   DatingProfile profile = 1;
-  double match_score = 2; // computed by Rust scoring
+  // Deprecated (Atlas Choice 4): always 0. Discovery no longer sends a
+  // percentage; read `compatibility`.
+  double match_score = 2;
+  // Atlas Choice 4: agreements, differences, unknowns, confidence and why
+  // this person was shown (compatibility.proto).
+  CompatibilitySummary compatibility = 3;
 }
 
 message Match {

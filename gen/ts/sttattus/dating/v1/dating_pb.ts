@@ -8,6 +8,7 @@ import { Message as Message$1, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { TrustPanel } from "./identity_pb.js";
 import { PillarPredicate } from "./privacy_pb.js";
 import { ProfileAnswer, ProfileModule, TemporaryIntent } from "./profile_pb.js";
+import { CompatibilitySummary } from "./compatibility_pb.js";
 import { PageRequest, PageResponse } from "../../common/v1/pagination_pb.js";
 
 /**
@@ -436,6 +437,14 @@ export class DiscoveryPreferences extends Message$1<DiscoveryPreferences> {
    */
   availableNow = false;
 
+  /**
+   * Atlas Choice 4: fit (by the member's weights) | plain (newest first, not
+   * personalised). Empty keeps the stored value.
+   *
+   * @generated from field: string ordering = 6;
+   */
+  ordering = "";
+
   constructor(data?: PartialMessage<DiscoveryPreferences>) {
     super();
     proto3.util.initPartial(data, this);
@@ -449,6 +458,7 @@ export class DiscoveryPreferences extends Message$1<DiscoveryPreferences> {
     { no: 3, name: "max_age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "show_me", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "available_now", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "ordering", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DiscoveryPreferences {
@@ -620,11 +630,20 @@ export class Candidate extends Message$1<Candidate> {
   profile?: DatingProfile;
 
   /**
-   * computed by Rust scoring
+   * Deprecated (Atlas Choice 4): always 0. Discovery no longer sends a
+   * percentage; read `compatibility`.
    *
    * @generated from field: double match_score = 2;
    */
   matchScore = 0;
+
+  /**
+   * Atlas Choice 4: agreements, differences, unknowns, confidence and why
+   * this person was shown (compatibility.proto).
+   *
+   * @generated from field: sttattus.dating.v1.CompatibilitySummary compatibility = 3;
+   */
+  compatibility?: CompatibilitySummary;
 
   constructor(data?: PartialMessage<Candidate>) {
     super();
@@ -636,6 +655,7 @@ export class Candidate extends Message$1<Candidate> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "profile", kind: "message", T: DatingProfile },
     { no: 2, name: "match_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "compatibility", kind: "message", T: CompatibilitySummary },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Candidate {

@@ -1,0 +1,172 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 4 — Explainable Compatibility.
+//
+// Compatibility is fifteen dimensions over what two members answered
+// themselves (long-term intent, the Choice 3 answers, values, dilemmas and the
+// Prism quiz), each coming out as agree, close, differ, unknown or boundary
+// (a deal-breaker). A member weights or hides dimensions; discovery orders by
+// the weighted fit or, when asked, newest first without personalisation. No
+// percentage is sent: counts, a band and a confidence in words. The quiz
+// comparison is approximate and says nothing about whether two people get on.
+//
+// Never an input: accessibility and culture notes, other pillars, luminance,
+// age, gender, place, photos, likes, passes or swipes.
+//
+// dimension: intent | relationship_structure | pace | exclusivity |
+//            family_plans | geography | communication | drinking | smoking |
+//            pets | languages | schedule | values | dilemmas | prism
+// ===========================================================================
+
+message DimensionOutcome {
+  string dimension = 1;
+  // agree | close | differ | unknown | boundary
+  string outcome = 2;
+  // Catalogue keys for each side, as far as the viewer may see them
+  // (dilemmas: "prompt:side").
+  repeated string mine = 3;
+  repeated string theirs = 4;
+  int32 weight = 5;
+  // The quiz comparison: approximate, not a prediction.
+  bool approximate = 6;
+}
+
+message CompatibilitySummary {
+  int32 agreements = 1;
+  int32 close = 2;
+  int32 differences = 3;
+  int32 unknowns = 4;
+  int32 boundaries = 5;
+  // much | fair | some | different | none
+  string band = 6;
+  // good | partial | little
+  string confidence = 7;
+  // Boundaries first, then agreements, close, differences, unknowns.
+  repeated DimensionOutcome dimensions = 8;
+  // Why this person was shown, on a discovery card: area | age | show_me |
+  // dealbreakers | free_now | order_fit | order_plain.
+  repeated string rules = 9;
+  string model_version = 10;
+  // The quiz comparison counted.
+  bool approximate = 11;
+}
+
+message GetCompatibilityRequest {
+  string other_user_id = 1;
+}
+message GetCompatibilityResponse {
+  CompatibilitySummary compatibility = 1;
+}
+
+message DimensionWeight {
+  string dimension = 1;
+  // 0 doesn't matter to me (hidden) | 1 a little | 2 normal | 3 a lot
+  int32 weight = 2;
+  // The model's own weight, for "normal".
+  int32 model_weight = 3;
+  // The member chose this weight (otherwise it is the model's).
+  bool chosen = 4;
+}
+
+message GetCompatWeightsRequest {}
+message GetCompatWeightsResponse {
+  repeated DimensionWeight weights = 1;
+  string model_version = 2;
+}
+
+// Sets the given dimensions; "reset_to_model" drops the member's own weights so the
+// model's apply again.
+message SetCompatWeightsRequest {
+  repeated DimensionWeight weights = 1;
+  bool reset_to_model = 2;
+}
+message SetCompatWeightsResponse {
+  repeated DimensionWeight weights = 1;
+  string model_version = 2;
+}
+
+// Another kind of fit from the same pool discovery draws on.
+message AlternativeFit {
+  // shared_plans | shared_outlook | different_style
+  string lens = 1;
+  string user_id = 2;
+  string name = 3;
+  int32 age = 4;
+  string photo_url = 5;
+  CompatibilitySummary compatibility = 6;
+}
+
+message ListAlternativeFitsRequest {}
+message ListAlternativeFitsResponse {
+  repeated AlternativeFit fits = 1;
+}
+
+// How a connection is going, in the member's own words. Every answer is
+// optional and never shown to the other member.
+message MatchFeedback {
+  string match_id = 1;
+  // good | okay | not_for_me | ""
+  string conversation = 2;
+  // yes | no | rather_not_say | ""
+  string comfort = 3;
+  // yes | no | planned | ""
+  string met = 4;
+  // yes | no | unsure | ""
+  string continuing = 5;
+  // "Not now" on the Matches prompt.
+  bool dismissed = 6;
+  int64 updated_at = 7;
+}
+
+message GetMatchFeedbackRequest {
+  string match_id = 1;
+}
+message GetMatchFeedbackResponse {
+  MatchFeedback feedback = 1;
+}
+
+message SetMatchFeedbackRequest {
+  MatchFeedback feedback = 1;
+}
+message SetMatchFeedbackResponse {
+  MatchFeedback feedback = 1;
+}
+
+// A match worth asking about: 4+ messages, 2+ days old, nothing answered and
+// not dismissed. At most one.
+message FeedbackPrompt {
+  string match_id = 1;
+  string other_user_id = 2;
+  string other_name = 3;
+}
+message ListFeedbackPromptsRequest {}
+message ListFeedbackPromptsResponse {
+  repeated FeedbackPrompt prompts = 1;
+}
+
+// "Something's off" on an explanation. The server stores what it would show
+// the member right now; the client sends no snapshot.
+message FileCompatComplaintRequest {
+  // Empty for a complaint about how discovery works in general.
+  string subject_user_id = 1;
+  // wrong_information | unfair | not_relevant | other
+  string reason = 2;
+  string note = 3;
+}
+message FileCompatComplaintResponse {}
+
+service AtlasCompatibilityService {
+  rpc GetCompatibility(GetCompatibilityRequest) returns (GetCompatibilityResponse);
+  rpc GetCompatWeights(GetCompatWeightsRequest) returns (GetCompatWeightsResponse);
+  rpc SetCompatWeights(SetCompatWeightsRequest) returns (SetCompatWeightsResponse);
+  rpc ListAlternativeFits(ListAlternativeFitsRequest) returns (ListAlternativeFitsResponse);
+  rpc GetMatchFeedback(GetMatchFeedbackRequest) returns (GetMatchFeedbackResponse);
+  rpc SetMatchFeedback(SetMatchFeedbackRequest) returns (SetMatchFeedbackResponse);
+  rpc ListFeedbackPrompts(ListFeedbackPromptsRequest) returns (ListFeedbackPromptsResponse);
+  rpc FileCompatComplaint(FileCompatComplaintRequest) returns (FileCompatComplaintResponse);
+}

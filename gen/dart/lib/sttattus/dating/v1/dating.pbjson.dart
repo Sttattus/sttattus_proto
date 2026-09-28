@@ -225,6 +225,7 @@ const DiscoveryPreferences$json = {
     {'1': 'max_age', '3': 3, '4': 1, '5': 5, '10': 'maxAge'},
     {'1': 'show_me', '3': 4, '4': 1, '5': 9, '10': 'showMe'},
     {'1': 'available_now', '3': 5, '4': 1, '5': 8, '10': 'availableNow'},
+    {'1': 'ordering', '3': 6, '4': 1, '5': 9, '10': 'ordering'},
   ],
 };
 
@@ -233,7 +234,7 @@ final $typed_data.Uint8List discoveryPreferencesDescriptor = $convert.base64Deco
     'ChREaXNjb3ZlcnlQcmVmZXJlbmNlcxIsChJtYXhfZGlzdGFuY2VfbWlsZXMYASABKAVSEG1heE'
     'Rpc3RhbmNlTWlsZXMSFwoHbWluX2FnZRgCIAEoBVIGbWluQWdlEhcKB21heF9hZ2UYAyABKAVS'
     'Bm1heEFnZRIXCgdzaG93X21lGAQgASgJUgZzaG93TWUSIwoNYXZhaWxhYmxlX25vdxgFIAEoCF'
-    'IMYXZhaWxhYmxlTm93');
+    'IMYXZhaWxhYmxlTm93EhoKCG9yZGVyaW5nGAYgASgJUghvcmRlcmluZw==');
 
 @$core.Deprecated('Use getDiscoveryPreferencesRequestDescriptor instead')
 const GetDiscoveryPreferencesRequest$json = {
@@ -321,13 +322,23 @@ const Candidate$json = {
       '10': 'profile'
     },
     {'1': 'match_score', '3': 2, '4': 1, '5': 1, '10': 'matchScore'},
+    {
+      '1': 'compatibility',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.CompatibilitySummary',
+      '10': 'compatibility'
+    },
   ],
 };
 
 /// Descriptor for `Candidate`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List candidateDescriptor = $convert.base64Decode(
     'CglDYW5kaWRhdGUSOwoHcHJvZmlsZRgBIAEoCzIhLnN0dGF0dHVzLmRhdGluZy52MS5EYXRpbm'
-    'dQcm9maWxlUgdwcm9maWxlEh8KC21hdGNoX3Njb3JlGAIgASgBUgptYXRjaFNjb3Jl');
+    'dQcm9maWxlUgdwcm9maWxlEh8KC21hdGNoX3Njb3JlGAIgASgBUgptYXRjaFNjb3JlEk4KDWNv'
+    'bXBhdGliaWxpdHkYAyABKAsyKC5zdHRhdHR1cy5kYXRpbmcudjEuQ29tcGF0aWJpbGl0eVN1bW'
+    '1hcnlSDWNvbXBhdGliaWxpdHk=');
 
 @$core.Deprecated('Use matchDescriptor instead')
 const Match$json = {
