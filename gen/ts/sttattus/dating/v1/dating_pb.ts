@@ -645,6 +645,14 @@ export class Candidate extends Message$1<Candidate> {
    */
   compatibility?: CompatibilitySummary;
 
+  /**
+   * Atlas Choice 5: set only when the member chose to show that they are
+   * visiting and their city is visible to this viewer.
+   *
+   * @generated from field: sttattus.dating.v1.TravelNote travel = 4;
+   */
+  travel?: TravelNote;
+
   constructor(data?: PartialMessage<Candidate>) {
     super();
     proto3.util.initPartial(data, this);
@@ -656,6 +664,7 @@ export class Candidate extends Message$1<Candidate> {
     { no: 1, name: "profile", kind: "message", T: DatingProfile },
     { no: 2, name: "match_score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "compatibility", kind: "message", T: CompatibilitySummary },
+    { no: 4, name: "travel", kind: "message", T: TravelNote },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Candidate {
@@ -672,6 +681,51 @@ export class Candidate extends Message$1<Candidate> {
 
   static equals(a: Candidate | PlainMessage<Candidate> | undefined, b: Candidate | PlainMessage<Candidate> | undefined): boolean {
     return proto3.util.equals(Candidate, a, b);
+  }
+}
+
+/**
+ * Atlas Choice 5: "Visiting <place> until <date>".
+ *
+ * @generated from message sttattus.dating.v1.TravelNote
+ */
+export class TravelNote extends Message$1<TravelNote> {
+  /**
+   * @generated from field: string place_name = 1;
+   */
+  placeName = "";
+
+  /**
+   * @generated from field: int64 until = 2;
+   */
+  until = protoInt64.zero;
+
+  constructor(data?: PartialMessage<TravelNote>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.TravelNote";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "place_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "until", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TravelNote {
+    return new TravelNote().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TravelNote {
+    return new TravelNote().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TravelNote {
+    return new TravelNote().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TravelNote | PlainMessage<TravelNote> | undefined, b: TravelNote | PlainMessage<TravelNote> | undefined): boolean {
+    return proto3.util.equals(TravelNote, a, b);
   }
 }
 
@@ -991,6 +1045,22 @@ export class StreamDiscoveryRequest extends Message$1<StreamDiscoveryRequest> {
    */
   batchSize = 0;
 
+  /**
+   * Atlas Choice 5: explore (default: the whole pool in the member's order) |
+   * voice (only people with a voice answer shown to discovery).
+   *
+   * @generated from field: string mode = 2;
+   */
+  mode = "";
+
+  /**
+   * Atlas Choice 5: people already sent in this session, skipped so the deck
+   * can ask for more before it runs out.
+   *
+   * @generated from field: repeated string exclude_user_ids = 3;
+   */
+  excludeUserIds: string[] = [];
+
   constructor(data?: PartialMessage<StreamDiscoveryRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1000,6 +1070,8 @@ export class StreamDiscoveryRequest extends Message$1<StreamDiscoveryRequest> {
   static readonly typeName = "sttattus.dating.v1.StreamDiscoveryRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "batch_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "exclude_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamDiscoveryRequest {
@@ -3680,11 +3752,16 @@ export class AtlasMapPoint extends Message$1<AtlasMapPoint> {
   z = 0;
 
   /**
+   * Deprecated (Atlas Choice 5): always 0. The sky is likeness only; nobody is
+   * drawn bigger or brighter by standing.
+   *
    * @generated from field: double luminance = 6;
    */
   luminance = 0;
 
   /**
+   * Deprecated (Atlas Choice 5): always empty.
+   *
    * @generated from field: string tier = 7;
    */
   tier = "";

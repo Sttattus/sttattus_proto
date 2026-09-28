@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/dating/v1/dating.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 5 — Intent-first discovery.
+//
+// One finite set of introductions a day, chosen at the member's first visit of
+// their local day and fixed for it: the member's order (Choice 4 fit, or newest
+// first), nobody introduced to more members a day than the policy allows, and a
+// share of each set for people introduced or shown least. Only people active
+// within the policy's window. "Not now" rests for the policy's days; "Don't show
+// again" is for good and can be undone. The pool says how many people there are
+// and how many each filter leaves out. Blocked, paused and incognito members, and
+// anyone who blocked the viewer, are never counted anywhere.
+//
+// reason: fit (what you have in common) | fresh (new or not shown much yet) |
+//         newest (plain order)
+// ===========================================================================
+
+message Introduction {
+  Candidate candidate = 1;
+  // 1-based place in today's set.
+  int32 position = 2;
+  // fit | fresh | newest
+  string reason = 3;
+}
+
+// Counts that describe other people are sent as -1 when they are 1 or 2
+// ("a few"): exact small numbers would point at someone. 0 is sent as 0.
+message PoolCoverage {
+  // People who pass every filter and are active now.
+  int32 in_pool = 1;
+  // Of those, never acted on.
+  int32 not_yet_seen = 2;
+  // Passed within the rest window; they may return after it.
+  int32 resting = 3;
+  // When the first resting person may return (unix seconds); 0 when none.
+  int64 next_return_at = 4;
+  // Left out by one filter each (a person can be counted under several).
+  int32 outside_distance = 5;
+  int32 outside_ages = 6;
+  int32 outside_show_me = 7;
+  int32 deal_breakers = 8;
+  int32 not_free_now = 9;
+  int32 inactive = 10;
+  // People the member chose not to see again (their own choice: exact).
+  int32 hidden = 11;
+  // The policy behind the numbers.
+  int32 rest_days = 12;
+  int32 inactive_days = 13;
+  // Whether "free right now" is on.
+  bool free_now_filter = 14;
+}
+
+message GetTodayIntroductionsRequest {}
+message GetTodayIntroductionsResponse {
+  // The member's local day, YYYY-MM-DD.
+  string day = 1;
+  // Still available and not yet acted on, in order.
+  repeated Introduction introductions = 2;
+  // How many were chosen today (at most daily_size).
+  int32 set_size = 3;
+  int32 daily_size = 4;
+  // Chosen today and already acted on.
+  int32 acted = 5;
+  // When the next set can be chosen (unix seconds, the member's next midnight).
+  int64 next_set_at = 6;
+  PoolCoverage pool = 7;
+  string policy_version = 8;
+}
+
+message GetDiscoveryPoolRequest {}
+message GetDiscoveryPoolResponse {
+  PoolCoverage pool = 1;
+}
+
+message HideFromDiscoveryRequest {
+  string user_id = 1;
+}
+message HideFromDiscoveryResponse {}
+
+message UnhideFromDiscoveryRequest {
+  string user_id = 1;
+}
+message UnhideFromDiscoveryResponse {}
+
+message HiddenMember {
+  string user_id = 1;
+  // Empty when the person can no longer be seen (left, paused, blocked either
+  // way): the row stays so the member can still undo it.
+  string name = 2;
+  string photo_url = 3;
+  int64 hidden_at = 4;
+}
+message ListHiddenFromDiscoveryRequest {}
+message ListHiddenFromDiscoveryResponse {
+  repeated HiddenMember members = 1;
+}
+
+service AtlasDiscoveryService {
+  // Today's introductions, choosing them on the first call of the day.
+  rpc GetTodayIntroductions(GetTodayIntroductionsRequest) returns (GetTodayIntroductionsResponse);
+  // How many people are in the member's pool and what each filter leaves out.
+  rpc GetDiscoveryPool(GetDiscoveryPoolRequest) returns (GetDiscoveryPoolResponse);
+  // "Don't show again": for good, until undone.
+  rpc HideFromDiscovery(HideFromDiscoveryRequest) returns (HideFromDiscoveryResponse);
+  rpc UnhideFromDiscovery(UnhideFromDiscoveryRequest) returns (UnhideFromDiscoveryResponse);
+  rpc ListHiddenFromDiscovery(ListHiddenFromDiscoveryRequest) returns (ListHiddenFromDiscoveryResponse);
+}

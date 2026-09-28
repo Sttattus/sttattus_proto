@@ -70,6 +70,8 @@ const AreaSetting$json = {
       '10': 'travel'
     },
     {'1': 'travel_until', '3': 4, '4': 1, '5': 3, '10': 'travelUntil'},
+    {'1': 'travel_from', '3': 5, '4': 1, '5': 3, '10': 'travelFrom'},
+    {'1': 'travel_shown', '3': 6, '4': 1, '5': 8, '10': 'travelShown'},
   ],
 };
 
@@ -78,7 +80,8 @@ final $typed_data.Uint8List areaSettingDescriptor = $convert.base64Decode(
     'CgtBcmVhU2V0dGluZxItCgRob21lGAEgASgLMhkuc3R0YXR0dXMuZGF0aW5nLnYxLlBsYWNlUg'
     'Rob21lEhsKCXJhZGl1c19rbRgCIAEoBVIIcmFkaXVzS20SMQoGdHJhdmVsGAMgASgLMhkuc3R0'
     'YXR0dXMuZGF0aW5nLnYxLlBsYWNlUgZ0cmF2ZWwSIQoMdHJhdmVsX3VudGlsGAQgASgDUgt0cm'
-    'F2ZWxVbnRpbA==');
+    'F2ZWxVbnRpbBIfCgt0cmF2ZWxfZnJvbRgFIAEoA1IKdHJhdmVsRnJvbRIhCgx0cmF2ZWxfc2hv'
+    'd24YBiABKAhSC3RyYXZlbFNob3du');
 
 @$core.Deprecated('Use pillarSettingDescriptor instead')
 const PillarSetting$json = {
@@ -599,6 +602,8 @@ const SetTravelAreaRequest$json = {
     },
     {'1': 'place_id', '3': 2, '4': 1, '5': 9, '10': 'placeId'},
     {'1': 'until', '3': 3, '4': 1, '5': 3, '10': 'until'},
+    {'1': 'from', '3': 4, '4': 1, '5': 3, '10': 'from'},
+    {'1': 'shown', '3': 5, '4': 1, '5': 8, '10': 'shown'},
   ],
 };
 
@@ -606,7 +611,7 @@ const SetTravelAreaRequest$json = {
 final $typed_data.Uint8List setTravelAreaRequestDescriptor = $convert.base64Decode(
     'ChRTZXRUcmF2ZWxBcmVhUmVxdWVzdBIsChJjbGllbnRfbXV0YXRpb25faWQYASABKAlSEGNsaW'
     'VudE11dGF0aW9uSWQSGQoIcGxhY2VfaWQYAiABKAlSB3BsYWNlSWQSFAoFdW50aWwYAyABKANS'
-    'BXVudGls');
+    'BXVudGlsEhIKBGZyb20YBCABKANSBGZyb20SFAoFc2hvd24YBSABKAhSBXNob3du');
 
 @$core.Deprecated('Use setTravelAreaResponseDescriptor instead')
 const SetTravelAreaResponse$json = {

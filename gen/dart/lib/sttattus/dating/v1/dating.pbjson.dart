@@ -330,6 +330,14 @@ const Candidate$json = {
       '6': '.sttattus.dating.v1.CompatibilitySummary',
       '10': 'compatibility'
     },
+    {
+      '1': 'travel',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.TravelNote',
+      '10': 'travel'
+    },
   ],
 };
 
@@ -338,7 +346,22 @@ final $typed_data.Uint8List candidateDescriptor = $convert.base64Decode(
     'CglDYW5kaWRhdGUSOwoHcHJvZmlsZRgBIAEoCzIhLnN0dGF0dHVzLmRhdGluZy52MS5EYXRpbm'
     'dQcm9maWxlUgdwcm9maWxlEh8KC21hdGNoX3Njb3JlGAIgASgBUgptYXRjaFNjb3JlEk4KDWNv'
     'bXBhdGliaWxpdHkYAyABKAsyKC5zdHRhdHR1cy5kYXRpbmcudjEuQ29tcGF0aWJpbGl0eVN1bW'
-    '1hcnlSDWNvbXBhdGliaWxpdHk=');
+    '1hcnlSDWNvbXBhdGliaWxpdHkSNgoGdHJhdmVsGAQgASgLMh4uc3R0YXR0dXMuZGF0aW5nLnYx'
+    'LlRyYXZlbE5vdGVSBnRyYXZlbA==');
+
+@$core.Deprecated('Use travelNoteDescriptor instead')
+const TravelNote$json = {
+  '1': 'TravelNote',
+  '2': [
+    {'1': 'place_name', '3': 1, '4': 1, '5': 9, '10': 'placeName'},
+    {'1': 'until', '3': 2, '4': 1, '5': 3, '10': 'until'},
+  ],
+};
+
+/// Descriptor for `TravelNote`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List travelNoteDescriptor = $convert.base64Decode(
+    'CgpUcmF2ZWxOb3RlEh0KCnBsYWNlX25hbWUYASABKAlSCXBsYWNlTmFtZRIUCgV1bnRpbBgCIA'
+    'EoA1IFdW50aWw=');
 
 @$core.Deprecated('Use matchDescriptor instead')
 const Match$json = {
@@ -474,14 +497,16 @@ const StreamDiscoveryRequest$json = {
   '1': 'StreamDiscoveryRequest',
   '2': [
     {'1': 'batch_size', '3': 1, '4': 1, '5': 5, '10': 'batchSize'},
+    {'1': 'mode', '3': 2, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'exclude_user_ids', '3': 3, '4': 3, '5': 9, '10': 'excludeUserIds'},
   ],
 };
 
 /// Descriptor for `StreamDiscoveryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List streamDiscoveryRequestDescriptor =
-    $convert.base64Decode(
-        'ChZTdHJlYW1EaXNjb3ZlcnlSZXF1ZXN0Eh0KCmJhdGNoX3NpemUYASABKAVSCWJhdGNoU2l6ZQ'
-        '==');
+final $typed_data.Uint8List streamDiscoveryRequestDescriptor = $convert.base64Decode(
+    'ChZTdHJlYW1EaXNjb3ZlcnlSZXF1ZXN0Eh0KCmJhdGNoX3NpemUYASABKAVSCWJhdGNoU2l6ZR'
+    'ISCgRtb2RlGAIgASgJUgRtb2RlEigKEGV4Y2x1ZGVfdXNlcl9pZHMYAyADKAlSDmV4Y2x1ZGVV'
+    'c2VySWRz');
 
 @$core.Deprecated('Use streamDiscoveryResponseDescriptor instead')
 const StreamDiscoveryResponse$json = {

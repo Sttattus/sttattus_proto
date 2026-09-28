@@ -201,12 +201,16 @@ class AreaSetting extends $pb.GeneratedMessage {
     $core.int? radiusKm,
     Place? travel,
     $fixnum.Int64? travelUntil,
+    $fixnum.Int64? travelFrom,
+    $core.bool? travelShown,
   }) {
     final result = create();
     if (home != null) result.home = home;
     if (radiusKm != null) result.radiusKm = radiusKm;
     if (travel != null) result.travel = travel;
     if (travelUntil != null) result.travelUntil = travelUntil;
+    if (travelFrom != null) result.travelFrom = travelFrom;
+    if (travelShown != null) result.travelShown = travelShown;
     return result;
   }
 
@@ -228,6 +232,8 @@ class AreaSetting extends $pb.GeneratedMessage {
     ..aI(2, _omitFieldNames ? '' : 'radiusKm')
     ..aOM<Place>(3, _omitFieldNames ? '' : 'travel', subBuilder: Place.create)
     ..aInt64(4, _omitFieldNames ? '' : 'travelUntil')
+    ..aInt64(5, _omitFieldNames ? '' : 'travelFrom')
+    ..aOB(6, _omitFieldNames ? '' : 'travelShown')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -288,6 +294,27 @@ class AreaSetting extends $pb.GeneratedMessage {
   $core.bool hasTravelUntil() => $_has(3);
   @$pb.TagNumber(4)
   void clearTravelUntil() => $_clearField(4);
+
+  /// Atlas Choice 5: a trip has a start; the destination counts only between
+  /// travel_from and travel_until.
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get travelFrom => $_getI64(4);
+  @$pb.TagNumber(5)
+  set travelFrom($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTravelFrom() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTravelFrom() => $_clearField(5);
+
+  /// Whether cards say the member is visiting (default no).
+  @$pb.TagNumber(6)
+  $core.bool get travelShown => $_getBF(5);
+  @$pb.TagNumber(6)
+  set travelShown($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTravelShown() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTravelShown() => $_clearField(6);
 }
 
 class PillarSetting extends $pb.GeneratedMessage {
@@ -1952,11 +1979,15 @@ class SetTravelAreaRequest extends $pb.GeneratedMessage {
     $core.String? clientMutationId,
     $core.String? placeId,
     $fixnum.Int64? until,
+    $fixnum.Int64? from,
+    $core.bool? shown,
   }) {
     final result = create();
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
     if (placeId != null) result.placeId = placeId;
     if (until != null) result.until = until;
+    if (from != null) result.from = from;
+    if (shown != null) result.shown = shown;
     return result;
   }
 
@@ -1977,6 +2008,8 @@ class SetTravelAreaRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'clientMutationId')
     ..aOS(2, _omitFieldNames ? '' : 'placeId')
     ..aInt64(3, _omitFieldNames ? '' : 'until')
+    ..aInt64(4, _omitFieldNames ? '' : 'from')
+    ..aOB(5, _omitFieldNames ? '' : 'shown')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2016,6 +2049,8 @@ class SetTravelAreaRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPlaceId() => $_clearField(2);
 
+  /// Atlas Choice 5: starts within 90 days; ends after it and at most 30 days
+  /// later. A trip already under way keeps its start when from is 0.
   @$pb.TagNumber(3)
   $fixnum.Int64 get until => $_getI64(2);
   @$pb.TagNumber(3)
@@ -2024,6 +2059,25 @@ class SetTravelAreaRequest extends $pb.GeneratedMessage {
   $core.bool hasUntil() => $_has(2);
   @$pb.TagNumber(3)
   void clearUntil() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get from => $_getI64(3);
+  @$pb.TagNumber(4)
+  set from($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFrom() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFrom() => $_clearField(4);
+
+  /// Whether cards say the member is visiting (default no).
+  @$pb.TagNumber(5)
+  $core.bool get shown => $_getBF(4);
+  @$pb.TagNumber(5)
+  set shown($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasShown() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShown() => $_clearField(5);
 }
 
 class SetTravelAreaResponse extends $pb.GeneratedMessage {

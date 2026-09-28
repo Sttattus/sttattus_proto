@@ -159,11 +159,16 @@ func (x *Place) GetTimeZone() string {
 }
 
 type AreaSetting struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Home          *Place                 `protobuf:"bytes,1,opt,name=home,proto3" json:"home,omitempty"`                          // empty id => not set; discovery then ignores distance
-	RadiusKm      int32                  `protobuf:"varint,2,opt,name=radius_km,json=radiusKm,proto3" json:"radius_km,omitempty"` // 10 | 25 | 50 | 100 | 0 (anywhere)
-	Travel        *Place                 `protobuf:"bytes,3,opt,name=travel,proto3" json:"travel,omitempty"`                      // empty id => no travel area
-	TravelUntil   int64                  `protobuf:"varint,4,opt,name=travel_until,json=travelUntil,proto3" json:"travel_until,omitempty"`
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Home        *Place                 `protobuf:"bytes,1,opt,name=home,proto3" json:"home,omitempty"`                          // empty id => not set; discovery then ignores distance
+	RadiusKm    int32                  `protobuf:"varint,2,opt,name=radius_km,json=radiusKm,proto3" json:"radius_km,omitempty"` // 10 | 25 | 50 | 100 | 0 (anywhere)
+	Travel      *Place                 `protobuf:"bytes,3,opt,name=travel,proto3" json:"travel,omitempty"`                      // empty id => no travel area
+	TravelUntil int64                  `protobuf:"varint,4,opt,name=travel_until,json=travelUntil,proto3" json:"travel_until,omitempty"`
+	// Atlas Choice 5: a trip has a start; the destination counts only between
+	// travel_from and travel_until.
+	TravelFrom int64 `protobuf:"varint,5,opt,name=travel_from,json=travelFrom,proto3" json:"travel_from,omitempty"`
+	// Whether cards say the member is visiting (default no).
+	TravelShown   bool `protobuf:"varint,6,opt,name=travel_shown,json=travelShown,proto3" json:"travel_shown,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -224,6 +229,20 @@ func (x *AreaSetting) GetTravelUntil() int64 {
 		return x.TravelUntil
 	}
 	return 0
+}
+
+func (x *AreaSetting) GetTravelFrom() int64 {
+	if x != nil {
+		return x.TravelFrom
+	}
+	return 0
+}
+
+func (x *AreaSetting) GetTravelShown() bool {
+	if x != nil {
+		return x.TravelShown
+	}
+	return false
 }
 
 type PillarSetting struct {
@@ -1498,9 +1517,14 @@ type SetTravelAreaRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	ClientMutationId string                 `protobuf:"bytes,1,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
 	PlaceId          string                 `protobuf:"bytes,2,opt,name=place_id,json=placeId,proto3" json:"place_id,omitempty"` // empty => end travel mode
-	Until            int64                  `protobuf:"varint,3,opt,name=until,proto3" json:"until,omitempty"`                   // ≤ 30 days ahead
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Atlas Choice 5: starts within 90 days; ends after it and at most 30 days
+	// later. A trip already under way keeps its start when from is 0.
+	Until int64 `protobuf:"varint,3,opt,name=until,proto3" json:"until,omitempty"`
+	From  int64 `protobuf:"varint,4,opt,name=from,proto3" json:"from,omitempty"`
+	// Whether cards say the member is visiting (default no).
+	Shown         bool `protobuf:"varint,5,opt,name=shown,proto3" json:"shown,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SetTravelAreaRequest) Reset() {
@@ -1552,6 +1576,20 @@ func (x *SetTravelAreaRequest) GetUntil() int64 {
 		return x.Until
 	}
 	return 0
+}
+
+func (x *SetTravelAreaRequest) GetFrom() int64 {
+	if x != nil {
+		return x.From
+	}
+	return 0
+}
+
+func (x *SetTravelAreaRequest) GetShown() bool {
+	if x != nil {
+		return x.Shown
+	}
+	return false
 }
 
 type SetTravelAreaResponse struct {
@@ -2420,12 +2458,15 @@ const file_sttattus_dating_v1_privacy_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12!\n" +
 	"\fcountry_code\x18\x03 \x01(\tR\vcountryCode\x12\x16\n" +
 	"\x06region\x18\x04 \x01(\tR\x06region\x12\x1b\n" +
-	"\ttime_zone\x18\x05 \x01(\tR\btimeZone\"\xaf\x01\n" +
+	"\ttime_zone\x18\x05 \x01(\tR\btimeZone\"\xf3\x01\n" +
 	"\vAreaSetting\x12-\n" +
 	"\x04home\x18\x01 \x01(\v2\x19.sttattus.dating.v1.PlaceR\x04home\x12\x1b\n" +
 	"\tradius_km\x18\x02 \x01(\x05R\bradiusKm\x121\n" +
 	"\x06travel\x18\x03 \x01(\v2\x19.sttattus.dating.v1.PlaceR\x06travel\x12!\n" +
-	"\ftravel_until\x18\x04 \x01(\x03R\vtravelUntil\"\x95\x02\n" +
+	"\ftravel_until\x18\x04 \x01(\x03R\vtravelUntil\x12\x1f\n" +
+	"\vtravel_from\x18\x05 \x01(\x03R\n" +
+	"travelFrom\x12!\n" +
+	"\ftravel_shown\x18\x06 \x01(\bR\vtravelShown\"\x95\x02\n" +
 	"\rPillarSetting\x12\x16\n" +
 	"\x06pillar\x18\x01 \x01(\tR\x06pillar\x12(\n" +
 	"\x10use_for_matching\x18\x02 \x01(\bR\x0euseForMatching\x12\x1d\n" +
@@ -2529,11 +2570,13 @@ const file_sttattus_dating_v1_privacy_proto_rawDesc = "" +
 	"\bplace_id\x18\x02 \x01(\tR\aplaceId\x12\x1b\n" +
 	"\tradius_km\x18\x03 \x01(\x05R\bradiusKm\"O\n" +
 	"\x13SetHomeAreaResponse\x128\n" +
-	"\x06center\x18\x01 \x01(\v2 .sttattus.dating.v1.AccessCenterR\x06center\"u\n" +
+	"\x06center\x18\x01 \x01(\v2 .sttattus.dating.v1.AccessCenterR\x06center\"\x9f\x01\n" +
 	"\x14SetTravelAreaRequest\x12,\n" +
 	"\x12client_mutation_id\x18\x01 \x01(\tR\x10clientMutationId\x12\x19\n" +
 	"\bplace_id\x18\x02 \x01(\tR\aplaceId\x12\x14\n" +
-	"\x05until\x18\x03 \x01(\x03R\x05until\"Q\n" +
+	"\x05until\x18\x03 \x01(\x03R\x05until\x12\x12\n" +
+	"\x04from\x18\x04 \x01(\x03R\x04from\x12\x14\n" +
+	"\x05shown\x18\x05 \x01(\bR\x05shown\"Q\n" +
 	"\x15SetTravelAreaResponse\x128\n" +
 	"\x06center\x18\x01 \x01(\v2 .sttattus.dating.v1.AccessCenterR\x06center\"\xc4\x01\n" +
 	"\x17SetPillarSettingRequest\x12,\n" +

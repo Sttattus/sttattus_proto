@@ -53,6 +53,11 @@ message AreaSetting {
   int32 radius_km = 2; // 10 | 25 | 50 | 100 | 0 (anywhere)
   Place travel = 3; // empty id => no travel area
   int64 travel_until = 4;
+  // Atlas Choice 5: a trip has a start; the destination counts only between
+  // travel_from and travel_until.
+  int64 travel_from = 5;
+  // Whether cards say the member is visiting (default no).
+  bool travel_shown = 6;
 }
 
 message PillarSetting {
@@ -191,7 +196,12 @@ message SetHomeAreaResponse {
 message SetTravelAreaRequest {
   string client_mutation_id = 1;
   string place_id = 2; // empty => end travel mode
-  int64 until = 3; // ≤ 30 days ahead
+  // Atlas Choice 5: starts within 90 days; ends after it and at most 30 days
+  // later. A trip already under way keeps its start when from is 0.
+  int64 until = 3;
+  int64 from = 4;
+  // Whether cards say the member is visiting (default no).
+  bool shown = 5;
 }
 message SetTravelAreaResponse {
   AccessCenter center = 1;

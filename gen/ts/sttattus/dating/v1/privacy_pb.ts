@@ -148,6 +148,21 @@ export class AreaSetting extends Message<AreaSetting> {
    */
   travelUntil = protoInt64.zero;
 
+  /**
+   * Atlas Choice 5: a trip has a start; the destination counts only between
+   * travel_from and travel_until.
+   *
+   * @generated from field: int64 travel_from = 5;
+   */
+  travelFrom = protoInt64.zero;
+
+  /**
+   * Whether cards say the member is visiting (default no).
+   *
+   * @generated from field: bool travel_shown = 6;
+   */
+  travelShown = false;
+
   constructor(data?: PartialMessage<AreaSetting>) {
     super();
     proto3.util.initPartial(data, this);
@@ -160,6 +175,8 @@ export class AreaSetting extends Message<AreaSetting> {
     { no: 2, name: "radius_km", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "travel", kind: "message", T: Place },
     { no: 4, name: "travel_until", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "travel_from", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "travel_shown", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AreaSetting {
@@ -1259,11 +1276,24 @@ export class SetTravelAreaRequest extends Message<SetTravelAreaRequest> {
   placeId = "";
 
   /**
-   * ≤ 30 days ahead
+   * Atlas Choice 5: starts within 90 days; ends after it and at most 30 days
+   * later. A trip already under way keeps its start when from is 0.
    *
    * @generated from field: int64 until = 3;
    */
   until = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 from = 4;
+   */
+  from = protoInt64.zero;
+
+  /**
+   * Whether cards say the member is visiting (default no).
+   *
+   * @generated from field: bool shown = 5;
+   */
+  shown = false;
 
   constructor(data?: PartialMessage<SetTravelAreaRequest>) {
     super();
@@ -1276,6 +1306,8 @@ export class SetTravelAreaRequest extends Message<SetTravelAreaRequest> {
     { no: 1, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "place_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "until", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "from", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "shown", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetTravelAreaRequest {

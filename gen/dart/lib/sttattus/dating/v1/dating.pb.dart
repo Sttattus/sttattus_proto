@@ -914,11 +914,13 @@ class Candidate extends $pb.GeneratedMessage {
     DatingProfile? profile,
     $core.double? matchScore,
     $4.CompatibilitySummary? compatibility,
+    TravelNote? travel,
   }) {
     final result = create();
     if (profile != null) result.profile = profile;
     if (matchScore != null) result.matchScore = matchScore;
     if (compatibility != null) result.compatibility = compatibility;
+    if (travel != null) result.travel = travel;
     return result;
   }
 
@@ -941,6 +943,8 @@ class Candidate extends $pb.GeneratedMessage {
     ..aD(2, _omitFieldNames ? '' : 'matchScore')
     ..aOM<$4.CompatibilitySummary>(3, _omitFieldNames ? '' : 'compatibility',
         subBuilder: $4.CompatibilitySummary.create)
+    ..aOM<TravelNote>(4, _omitFieldNames ? '' : 'travel',
+        subBuilder: TravelNote.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -995,6 +999,86 @@ class Candidate extends $pb.GeneratedMessage {
   void clearCompatibility() => $_clearField(3);
   @$pb.TagNumber(3)
   $4.CompatibilitySummary ensureCompatibility() => $_ensure(2);
+
+  /// Atlas Choice 5: set only when the member chose to show that they are
+  /// visiting and their city is visible to this viewer.
+  @$pb.TagNumber(4)
+  TravelNote get travel => $_getN(3);
+  @$pb.TagNumber(4)
+  set travel(TravelNote value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTravel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTravel() => $_clearField(4);
+  @$pb.TagNumber(4)
+  TravelNote ensureTravel() => $_ensure(3);
+}
+
+/// Atlas Choice 5: "Visiting <place> until <date>".
+class TravelNote extends $pb.GeneratedMessage {
+  factory TravelNote({
+    $core.String? placeName,
+    $fixnum.Int64? until,
+  }) {
+    final result = create();
+    if (placeName != null) result.placeName = placeName;
+    if (until != null) result.until = until;
+    return result;
+  }
+
+  TravelNote._();
+
+  factory TravelNote.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TravelNote.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TravelNote',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'placeName')
+    ..aInt64(2, _omitFieldNames ? '' : 'until')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TravelNote clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TravelNote copyWith(void Function(TravelNote) updates) =>
+      super.copyWith((message) => updates(message as TravelNote)) as TravelNote;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TravelNote create() => TravelNote._();
+  @$core.override
+  TravelNote createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TravelNote getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TravelNote>(create);
+  static TravelNote? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get placeName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set placeName($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlaceName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlaceName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get until => $_getI64(1);
+  @$pb.TagNumber(2)
+  set until($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUntil() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUntil() => $_clearField(2);
 }
 
 class Match extends $pb.GeneratedMessage {
@@ -1494,9 +1578,13 @@ class UpdateProfileResponse extends $pb.GeneratedMessage {
 class StreamDiscoveryRequest extends $pb.GeneratedMessage {
   factory StreamDiscoveryRequest({
     $core.int? batchSize,
+    $core.String? mode,
+    $core.Iterable<$core.String>? excludeUserIds,
   }) {
     final result = create();
     if (batchSize != null) result.batchSize = batchSize;
+    if (mode != null) result.mode = mode;
+    if (excludeUserIds != null) result.excludeUserIds.addAll(excludeUserIds);
     return result;
   }
 
@@ -1515,6 +1603,8 @@ class StreamDiscoveryRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
       createEmptyInstance: create)
     ..aI(1, _omitFieldNames ? '' : 'batchSize')
+    ..aOS(2, _omitFieldNames ? '' : 'mode')
+    ..pPS(3, _omitFieldNames ? '' : 'excludeUserIds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1545,6 +1635,22 @@ class StreamDiscoveryRequest extends $pb.GeneratedMessage {
   $core.bool hasBatchSize() => $_has(0);
   @$pb.TagNumber(1)
   void clearBatchSize() => $_clearField(1);
+
+  /// Atlas Choice 5: explore (default: the whole pool in the member's order) |
+  /// voice (only people with a voice answer shown to discovery).
+  @$pb.TagNumber(2)
+  $core.String get mode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set mode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMode() => $_clearField(2);
+
+  /// Atlas Choice 5: people already sent in this session, skipped so the deck
+  /// can ask for more before it runs out.
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get excludeUserIds => $_getList(2);
 }
 
 class StreamDiscoveryResponse extends $pb.GeneratedMessage {
@@ -5723,6 +5829,8 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearZ() => $_clearField(5);
 
+  /// Deprecated (Atlas Choice 5): always 0. The sky is likeness only; nobody is
+  /// drawn bigger or brighter by standing.
   @$pb.TagNumber(6)
   $core.double get luminance => $_getN(5);
   @$pb.TagNumber(6)
@@ -5732,6 +5840,7 @@ class AtlasMapPoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearLuminance() => $_clearField(6);
 
+  /// Deprecated (Atlas Choice 5): always empty.
   @$pb.TagNumber(7)
   $core.String get tier => $_getSZ(6);
   @$pb.TagNumber(7)
