@@ -1228,6 +1228,13 @@ export class ContentReport extends Message<ContentReport> {
    */
   targetLanguage = "";
 
+  /**
+   * Lexicon Choice 3: the answer the member reported, if any.
+   *
+   * @generated from field: string answer_given = 13;
+   */
+  answerGiven = "";
+
   constructor(data?: PartialMessage<ContentReport>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1248,6 +1255,7 @@ export class ContentReport extends Message<ContentReport> {
     { no: 10, name: "resolved_at", kind: "message", T: Timestamp },
     { no: 11, name: "acknowledged", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "target_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "answer_given", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContentReport {
@@ -1307,6 +1315,22 @@ export class ReportContentIssueRequest extends Message<ReportContentIssueRequest
    */
   clientMutationId = "";
 
+  /**
+   * Lexicon Choice 3: the answer the member gave on this card, when they had
+   * answered it — "my answer should have been accepted" needs the answer.
+   * Up to 200 characters.
+   *
+   * @generated from field: string answer_given = 7;
+   */
+  answerGiven = "";
+
+  /**
+   * The exercise the card asked (recognise, cloze, type, …).
+   *
+   * @generated from field: string exercise = 8;
+   */
+  exercise = "";
+
   constructor(data?: PartialMessage<ReportContentIssueRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1321,6 +1345,8 @@ export class ReportContentIssueRequest extends Message<ReportContentIssueRequest
     { no: 4, name: "reason", kind: "enum", T: proto3.getEnumType(ContentReportReason) },
     { no: 5, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "answer_given", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "exercise", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportContentIssueRequest {

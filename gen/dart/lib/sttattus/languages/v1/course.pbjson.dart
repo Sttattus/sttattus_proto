@@ -594,6 +594,7 @@ const ContentReport$json = {
     },
     {'1': 'acknowledged', '3': 11, '4': 1, '5': 8, '10': 'acknowledged'},
     {'1': 'target_language', '3': 12, '4': 1, '5': 9, '10': 'targetLanguage'},
+    {'1': 'answer_given', '3': 13, '4': 1, '5': 9, '10': 'answerGiven'},
   ],
 };
 
@@ -608,7 +609,8 @@ final $typed_data.Uint8List contentReportDescriptor = $convert.base64Decode(
     'UgpzdGFmZlJlcGx5EjkKCmNyZWF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZX'
     'N0YW1wUgljcmVhdGVkQXQSOwoLcmVzb2x2ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYu'
     'VGltZXN0YW1wUgpyZXNvbHZlZEF0EiIKDGFja25vd2xlZGdlZBgLIAEoCFIMYWNrbm93bGVkZ2'
-    'VkEicKD3RhcmdldF9sYW5ndWFnZRgMIAEoCVIOdGFyZ2V0TGFuZ3VhZ2U=');
+    'VkEicKD3RhcmdldF9sYW5ndWFnZRgMIAEoCVIOdGFyZ2V0TGFuZ3VhZ2USIQoMYW5zd2VyX2dp'
+    'dmVuGA0gASgJUgthbnN3ZXJHaXZlbg==');
 
 @$core.Deprecated('Use reportContentIssueRequestDescriptor instead')
 const ReportContentIssueRequest$json = {
@@ -640,6 +642,8 @@ const ReportContentIssueRequest$json = {
       '5': 9,
       '10': 'clientMutationId'
     },
+    {'1': 'answer_given', '3': 7, '4': 1, '5': 9, '10': 'answerGiven'},
+    {'1': 'exercise', '3': 8, '4': 1, '5': 9, '10': 'exercise'},
   ],
 };
 
@@ -650,7 +654,8 @@ final $typed_data.Uint8List reportContentIssueRequestDescriptor = $convert.base6
     'KAlSBml0ZW1JZBIpChBjb250ZW50X3JldmlzaW9uGAMgASgFUg9jb250ZW50UmV2aXNpb24SQg'
     'oGcmVhc29uGAQgASgOMiouc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLkNvbnRlbnRSZXBvcnRSZWFz'
     'b25SBnJlYXNvbhISCgRub3RlGAUgASgJUgRub3RlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIA'
-    'EoCVIQY2xpZW50TXV0YXRpb25JZA==');
+    'EoCVIQY2xpZW50TXV0YXRpb25JZBIhCgxhbnN3ZXJfZ2l2ZW4YByABKAlSC2Fuc3dlckdpdmVu'
+    'EhoKCGV4ZXJjaXNlGAggASgJUghleGVyY2lzZQ==');
 
 @$core.Deprecated('Use reportContentIssueResponseDescriptor instead')
 const ReportContentIssueResponse$json = {

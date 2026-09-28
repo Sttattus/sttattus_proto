@@ -1383,8 +1383,10 @@ type ContentReport struct {
 	// True once the member has seen the resolution.
 	Acknowledged   bool   `protobuf:"varint,11,opt,name=acknowledged,proto3" json:"acknowledged,omitempty"`
 	TargetLanguage string `protobuf:"bytes,12,opt,name=target_language,json=targetLanguage,proto3" json:"target_language,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// Lexicon Choice 3: the answer the member reported, if any.
+	AnswerGiven   string `protobuf:"bytes,13,opt,name=answer_given,json=answerGiven,proto3" json:"answer_given,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ContentReport) Reset() {
@@ -1501,6 +1503,13 @@ func (x *ContentReport) GetTargetLanguage() string {
 	return ""
 }
 
+func (x *ContentReport) GetAnswerGiven() string {
+	if x != nil {
+		return x.AnswerGiven
+	}
+	return ""
+}
+
 type ReportContentIssueRequest struct {
 	state    protoimpl.MessageState `protogen:"open.v1"`
 	ItemKind ContentItemKind        `protobuf:"varint,1,opt,name=item_kind,json=itemKind,proto3,enum=sttattus.languages.v1.ContentItemKind" json:"item_kind,omitempty"`
@@ -1512,8 +1521,14 @@ type ReportContentIssueRequest struct {
 	Note string `protobuf:"bytes,5,opt,name=note,proto3" json:"note,omitempty"`
 	// Client-generated UUID; a retry with the same id returns the same report.
 	ClientMutationId string `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Lexicon Choice 3: the answer the member gave on this card, when they had
+	// answered it — "my answer should have been accepted" needs the answer.
+	// Up to 200 characters.
+	AnswerGiven string `protobuf:"bytes,7,opt,name=answer_given,json=answerGiven,proto3" json:"answer_given,omitempty"`
+	// The exercise the card asked (recognise, cloze, type, …).
+	Exercise      string `protobuf:"bytes,8,opt,name=exercise,proto3" json:"exercise,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ReportContentIssueRequest) Reset() {
@@ -1584,6 +1599,20 @@ func (x *ReportContentIssueRequest) GetNote() string {
 func (x *ReportContentIssueRequest) GetClientMutationId() string {
 	if x != nil {
 		return x.ClientMutationId
+	}
+	return ""
+}
+
+func (x *ReportContentIssueRequest) GetAnswerGiven() string {
+	if x != nil {
+		return x.AnswerGiven
+	}
+	return ""
+}
+
+func (x *ReportContentIssueRequest) GetExercise() string {
+	if x != nil {
+		return x.Exercise
 	}
 	return ""
 }
@@ -2164,7 +2193,7 @@ const file_sttattus_languages_v1_course_proto_rawDesc = "" +
 	"\bmanifest\x18\x06 \x01(\v2%.sttattus.languages.v1.CoursePackFileR\bmanifest\x12;\n" +
 	"\x05audio\x18\a \x03(\v2%.sttattus.languages.v1.CoursePackFileR\x05audio\x125\n" +
 	"\bbuilt_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\abuiltAt\x12@\n" +
-	"\x0eurls_expire_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\furlsExpireAt\"\x9e\x04\n" +
+	"\x0eurls_expire_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\furlsExpireAt\"\xc1\x04\n" +
 	"\rContentReport\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12C\n" +
 	"\titem_kind\x18\x02 \x01(\x0e2&.sttattus.languages.v1.ContentItemKindR\bitemKind\x12\x17\n" +
@@ -2182,14 +2211,17 @@ const file_sttattus_languages_v1_course_proto_rawDesc = "" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\n" +
 	"resolvedAt\x12\"\n" +
 	"\facknowledged\x18\v \x01(\bR\facknowledged\x12'\n" +
-	"\x0ftarget_language\x18\f \x01(\tR\x0etargetLanguage\"\xaa\x02\n" +
+	"\x0ftarget_language\x18\f \x01(\tR\x0etargetLanguage\x12!\n" +
+	"\fanswer_given\x18\r \x01(\tR\vanswerGiven\"\xe9\x02\n" +
 	"\x19ReportContentIssueRequest\x12C\n" +
 	"\titem_kind\x18\x01 \x01(\x0e2&.sttattus.languages.v1.ContentItemKindR\bitemKind\x12\x17\n" +
 	"\aitem_id\x18\x02 \x01(\tR\x06itemId\x12)\n" +
 	"\x10content_revision\x18\x03 \x01(\x05R\x0fcontentRevision\x12B\n" +
 	"\x06reason\x18\x04 \x01(\x0e2*.sttattus.languages.v1.ContentReportReasonR\x06reason\x12\x12\n" +
 	"\x04note\x18\x05 \x01(\tR\x04note\x12,\n" +
-	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"v\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\x12!\n" +
+	"\fanswer_given\x18\a \x01(\tR\vanswerGiven\x12\x1a\n" +
+	"\bexercise\x18\b \x01(\tR\bexercise\"v\n" +
 	"\x1aReportContentIssueResponse\x12<\n" +
 	"\x06report\x18\x01 \x01(\v2$.sttattus.languages.v1.ContentReportR\x06report\x12\x1a\n" +
 	"\breplayed\x18\x02 \x01(\bR\breplayed\"Y\n" +

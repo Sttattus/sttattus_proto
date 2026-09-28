@@ -8058,6 +8058,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.bool? correctedSinceSeen,
     $core.String? copyLanguage,
     PlanReason? reason,
+    $core.String? retestOf,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8088,6 +8089,7 @@ class PracticeCard extends $pb.GeneratedMessage {
       result.correctedSinceSeen = correctedSinceSeen;
     if (copyLanguage != null) result.copyLanguage = copyLanguage;
     if (reason != null) result.reason = reason;
+    if (retestOf != null) result.retestOf = retestOf;
     return result;
   }
 
@@ -8135,6 +8137,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOS(26, _omitFieldNames ? '' : 'copyLanguage')
     ..aOM<PlanReason>(27, _omitFieldNames ? '' : 'reason',
         subBuilder: PlanReason.create)
+    ..aOS(28, _omitFieldNames ? '' : 'retestOf')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8421,6 +8424,16 @@ class PracticeCard extends $pb.GeneratedMessage {
   void clearReason() => $_clearField(27);
   @$pb.TagNumber(27)
   PlanReason ensureReason() => $_ensure(26);
+
+  /// Lexicon Choice 3: set on a retest card — the answer it follows up.
+  @$pb.TagNumber(28)
+  $core.String get retestOf => $_getSZ(27);
+  @$pb.TagNumber(28)
+  set retestOf($core.String value) => $_setString(27, value);
+  @$pb.TagNumber(28)
+  $core.bool hasRetestOf() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearRetestOf() => $_clearField(28);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -8637,6 +8650,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.String? clientEventId,
     $core.bool? hintUsed,
     $core.String? planItemId,
+    $core.String? retestOf,
+    $core.bool? typed,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8652,6 +8667,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (clientEventId != null) result.clientEventId = clientEventId;
     if (hintUsed != null) result.hintUsed = hintUsed;
     if (planItemId != null) result.planItemId = planItemId;
+    if (retestOf != null) result.retestOf = retestOf;
+    if (typed != null) result.typed = typed;
     return result;
   }
 
@@ -8684,6 +8701,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'clientEventId')
     ..aOB(12, _omitFieldNames ? '' : 'hintUsed')
     ..aOS(13, _omitFieldNames ? '' : 'planItemId')
+    ..aOS(14, _omitFieldNames ? '' : 'retestOf')
+    ..aOB(15, _omitFieldNames ? '' : 'typed')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8832,6 +8851,29 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasPlanItemId() => $_has(12);
   @$pb.TagNumber(13)
   void clearPlanItemId() => $_clearField(13);
+
+  /// Lexicon Choice 3: this answers a retest card; the miss it follows up
+  /// (PracticeCard.retest_of).
+  @$pb.TagNumber(14)
+  $core.String get retestOf => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set retestOf($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRetestOf() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRetestOf() => $_clearField(14);
+
+  /// The learner produced the answer (typed, spoken, written by hand, built
+  /// from tiles) rather than choosing an offered option. It changes how a
+  /// miss is classified, never whether the answer is right.
+  @$pb.TagNumber(15)
+  $core.bool get typed => $_getBF(14);
+  @$pb.TagNumber(15)
+  set typed($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasTyped() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearTyped() => $_clearField(15);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {
@@ -8844,6 +8886,13 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     $core.int? newLearnedToday,
     $core.String? rationale,
     $core.bool? duplicate,
+    AnswerErrorKind? errorKind,
+    $core.String? given,
+    $core.Iterable<AnswerDiffSegment>? diff,
+    $core.Iterable<ExampleSentence>? examples,
+    MicroLesson? lesson,
+    PracticeCard? retest,
+    $core.String? graderVersion,
   }) {
     final result = create();
     if (correct != null) result.correct = correct;
@@ -8854,6 +8903,13 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     if (newLearnedToday != null) result.newLearnedToday = newLearnedToday;
     if (rationale != null) result.rationale = rationale;
     if (duplicate != null) result.duplicate = duplicate;
+    if (errorKind != null) result.errorKind = errorKind;
+    if (given != null) result.given = given;
+    if (diff != null) result.diff.addAll(diff);
+    if (examples != null) result.examples.addAll(examples);
+    if (lesson != null) result.lesson = lesson;
+    if (retest != null) result.retest = retest;
+    if (graderVersion != null) result.graderVersion = graderVersion;
     return result;
   }
 
@@ -8880,6 +8936,18 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     ..aI(6, _omitFieldNames ? '' : 'newLearnedToday')
     ..aOS(7, _omitFieldNames ? '' : 'rationale')
     ..aOB(8, _omitFieldNames ? '' : 'duplicate')
+    ..aE<AnswerErrorKind>(9, _omitFieldNames ? '' : 'errorKind',
+        enumValues: AnswerErrorKind.values)
+    ..aOS(10, _omitFieldNames ? '' : 'given')
+    ..pPM<AnswerDiffSegment>(11, _omitFieldNames ? '' : 'diff',
+        subBuilder: AnswerDiffSegment.create)
+    ..pPM<ExampleSentence>(12, _omitFieldNames ? '' : 'examples',
+        subBuilder: ExampleSentence.create)
+    ..aOM<MicroLesson>(13, _omitFieldNames ? '' : 'lesson',
+        subBuilder: MicroLesson.create)
+    ..aOM<PracticeCard>(14, _omitFieldNames ? '' : 'retest',
+        subBuilder: PracticeCard.create)
+    ..aOS(15, _omitFieldNames ? '' : 'graderVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8980,6 +9048,299 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
   $core.bool hasDuplicate() => $_has(7);
   @$pb.TagNumber(8)
   void clearDuplicate() => $_clearField(8);
+
+  /// Lexicon Choice 3 — the repair after a wrong answer. Empty when correct.
+  /// What kind of mistake it was (the grader's taxonomy).
+  @$pb.TagNumber(9)
+  AnswerErrorKind get errorKind => $_getN(8);
+  @$pb.TagNumber(9)
+  set errorKind(AnswerErrorKind value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasErrorKind() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearErrorKind() => $_clearField(9);
+
+  /// The answer as the server received it, and where it differs from the
+  /// expected one, run by run.
+  @$pb.TagNumber(10)
+  $core.String get given => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set given($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasGiven() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearGiven() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<AnswerDiffSegment> get diff => $_getList(10);
+
+  /// Up to two real sentences using the word or point.
+  @$pb.TagNumber(12)
+  $pb.PbList<ExampleSentence> get examples => $_getList(11);
+
+  /// A short lesson on the word, point or verb.
+  @$pb.TagNumber(13)
+  MicroLesson get lesson => $_getN(12);
+  @$pb.TagNumber(13)
+  set lesson(MicroLesson value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLesson() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLesson() => $_clearField(13);
+  @$pb.TagNumber(13)
+  MicroLesson ensureLesson() => $_ensure(12);
+
+  /// The same thing again in a new context, for the app to ask two cards
+  /// later. Its answer carries retest_of.
+  @$pb.TagNumber(14)
+  PracticeCard get retest => $_getN(13);
+  @$pb.TagNumber(14)
+  set retest(PracticeCard value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRetest() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRetest() => $_clearField(14);
+  @$pb.TagNumber(14)
+  PracticeCard ensureRetest() => $_ensure(13);
+
+  /// The grader that judged this answer (the error kind's rules).
+  @$pb.TagNumber(15)
+  $core.String get graderVersion => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set graderVersion($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasGraderVersion() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearGraderVersion() => $_clearField(15);
+}
+
+class AnswerDiffSegment extends $pb.GeneratedMessage {
+  factory AnswerDiffSegment({
+    AnswerDiffOp? op,
+    $core.String? text,
+  }) {
+    final result = create();
+    if (op != null) result.op = op;
+    if (text != null) result.text = text;
+    return result;
+  }
+
+  AnswerDiffSegment._();
+
+  factory AnswerDiffSegment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnswerDiffSegment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnswerDiffSegment',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aE<AnswerDiffOp>(1, _omitFieldNames ? '' : 'op',
+        enumValues: AnswerDiffOp.values)
+    ..aOS(2, _omitFieldNames ? '' : 'text')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnswerDiffSegment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnswerDiffSegment copyWith(void Function(AnswerDiffSegment) updates) =>
+      super.copyWith((message) => updates(message as AnswerDiffSegment))
+          as AnswerDiffSegment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnswerDiffSegment create() => AnswerDiffSegment._();
+  @$core.override
+  AnswerDiffSegment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnswerDiffSegment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnswerDiffSegment>(create);
+  static AnswerDiffSegment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnswerDiffOp get op => $_getN(0);
+  @$pb.TagNumber(1)
+  set op(AnswerDiffOp value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOp() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get text => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set text($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasText() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearText() => $_clearField(2);
+}
+
+class ExampleSentence extends $pb.GeneratedMessage {
+  factory ExampleSentence({
+    $core.String? text,
+    $core.String? translation,
+    $core.String? audioUrl,
+  }) {
+    final result = create();
+    if (text != null) result.text = text;
+    if (translation != null) result.translation = translation;
+    if (audioUrl != null) result.audioUrl = audioUrl;
+    return result;
+  }
+
+  ExampleSentence._();
+
+  factory ExampleSentence.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExampleSentence.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExampleSentence',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'text')
+    ..aOS(2, _omitFieldNames ? '' : 'translation')
+    ..aOS(3, _omitFieldNames ? '' : 'audioUrl')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExampleSentence clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExampleSentence copyWith(void Function(ExampleSentence) updates) =>
+      super.copyWith((message) => updates(message as ExampleSentence))
+          as ExampleSentence;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExampleSentence create() => ExampleSentence._();
+  @$core.override
+  ExampleSentence createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExampleSentence getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExampleSentence>(create);
+  static ExampleSentence? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get text => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set text($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasText() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearText() => $_clearField(1);
+
+  /// In the member's base language.
+  @$pb.TagNumber(2)
+  $core.String get translation => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set translation($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTranslation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTranslation() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get audioUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set audioUrl($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAudioUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAudioUrl() => $_clearField(3);
+}
+
+class MicroLesson extends $pb.GeneratedMessage {
+  factory MicroLesson({
+    $core.String? title,
+    $core.String? body,
+    $core.Iterable<ExampleSentence>? examples,
+    $core.Iterable<$core.String>? lines,
+  }) {
+    final result = create();
+    if (title != null) result.title = title;
+    if (body != null) result.body = body;
+    if (examples != null) result.examples.addAll(examples);
+    if (lines != null) result.lines.addAll(lines);
+    return result;
+  }
+
+  MicroLesson._();
+
+  factory MicroLesson.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MicroLesson.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MicroLesson',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'title')
+    ..aOS(2, _omitFieldNames ? '' : 'body')
+    ..pPM<ExampleSentence>(3, _omitFieldNames ? '' : 'examples',
+        subBuilder: ExampleSentence.create)
+    ..pPS(4, _omitFieldNames ? '' : 'lines')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MicroLesson clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MicroLesson copyWith(void Function(MicroLesson) updates) =>
+      super.copyWith((message) => updates(message as MicroLesson))
+          as MicroLesson;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MicroLesson create() => MicroLesson._();
+  @$core.override
+  MicroLesson createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MicroLesson getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MicroLesson>(create);
+  static MicroLesson? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get title => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set title($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTitle() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTitle() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get body => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set body($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBody() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBody() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<ExampleSentence> get examples => $_getList(2);
+
+  /// Short lines to read together — a verb's persons in one tense.
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get lines => $_getList(3);
 }
 
 class GetPracticeStatsRequest extends $pb.GeneratedMessage {

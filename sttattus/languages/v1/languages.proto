@@ -909,6 +909,8 @@ message PracticeCard {
   string copy_language = 26;
   // Lexicon Choice 2: why this card is in the session now.
   PlanReason reason = 27;
+  // Lexicon Choice 3: set on a retest card — the answer it follows up.
+  string retest_of = 28;
 }
 
 message GetPracticeSessionRequest {
@@ -962,6 +964,13 @@ message SubmitAnswerRequest {
   bool hint_used = 12;
   // The plan item this answer was given for, when the session came from one.
   string plan_item_id = 13;
+  // Lexicon Choice 3: this answers a retest card; the miss it follows up
+  // (PracticeCard.retest_of).
+  string retest_of = 14;
+  // The learner produced the answer (typed, spoken, written by hand, built
+  // from tiles) rather than choosing an offered option. It changes how a
+  // miss is classified, never whether the answer is right.
+  bool typed = 15;
 }
 message SubmitAnswerResponse {
   bool correct = 1;
@@ -978,6 +987,65 @@ message SubmitAnswerResponse {
   // Lexicon Choice 2: this client_event_id had already been recorded; the
   // response describes the first recording and nothing was counted again.
   bool duplicate = 8;
+
+  // Lexicon Choice 3 — the repair after a wrong answer. Empty when correct.
+  // What kind of mistake it was (the grader's taxonomy).
+  AnswerErrorKind error_kind = 9;
+  // The answer as the server received it, and where it differs from the
+  // expected one, run by run.
+  string given = 10;
+  repeated AnswerDiffSegment diff = 11;
+  // Up to two real sentences using the word or point.
+  repeated ExampleSentence examples = 12;
+  // A short lesson on the word, point or verb.
+  MicroLesson lesson = 13;
+  // The same thing again in a new context, for the app to ask two cards
+  // later. Its answer carries retest_of.
+  PracticeCard retest = 14;
+  // The grader that judged this answer (the error kind's rules).
+  string grader_version = 15;
+}
+
+// Lexicon Choice 3 — the taxonomy of a wrong answer.
+enum AnswerErrorKind {
+  ANSWER_ERROR_KIND_UNSPECIFIED = 0;
+  ANSWER_ERROR_KIND_SLIP = 1; // one letter off on something the learner knows
+  ANSWER_ERROR_KIND_SPELLING = 2;
+  ANSWER_ERROR_KIND_MORPHOLOGY = 3; // another form of the same word
+  ANSWER_ERROR_KIND_AGREEMENT = 4; // gender or number
+  ANSWER_ERROR_KIND_WORD_ORDER = 5;
+  ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION = 6; // a near-homophone, by ear
+  ANSWER_ERROR_KIND_FALSE_FRIEND = 7;
+  ANSWER_ERROR_KIND_REGISTER = 8; // formal / informal
+  ANSWER_ERROR_KIND_PRONUNCIATION = 9;
+  ANSWER_ERROR_KIND_CONCEPT_GAP = 10; // not known yet
+}
+
+enum AnswerDiffOp {
+  ANSWER_DIFF_OP_UNSPECIFIED = 0;
+  ANSWER_DIFF_OP_SAME = 1;
+  ANSWER_DIFF_OP_MISSING = 2; // in the expected answer, not in the learner's
+  ANSWER_DIFF_OP_EXTRA = 3; // in the learner's answer, not in the expected
+}
+
+message AnswerDiffSegment {
+  AnswerDiffOp op = 1;
+  string text = 2;
+}
+
+message ExampleSentence {
+  string text = 1;
+  // In the member's base language.
+  string translation = 2;
+  string audio_url = 3;
+}
+
+message MicroLesson {
+  string title = 1;
+  string body = 2;
+  repeated ExampleSentence examples = 3;
+  // Short lines to read together — a verb's persons in one tense.
+  repeated string lines = 4;
 }
 
 message GetPracticeStatsRequest {
@@ -1109,6 +1177,7 @@ enum PlanReasonCode {
   PLAN_REASON_CODE_NEW = 7; // next material in an open level
   PLAN_REASON_CODE_CATCH_UP = 8; // back after missed days
   PLAN_REASON_CODE_GOAL = 9; // the goal mode asks for this skill
+  PLAN_REASON_CODE_RETEST = 10; // Choice 3: missed a moment ago, again another way
 }
 
 // Why something is in the plan. `params` carries the numbers behind the

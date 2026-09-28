@@ -1277,6 +1277,7 @@ class ContentReport extends $pb.GeneratedMessage {
     $1.Timestamp? resolvedAt,
     $core.bool? acknowledged,
     $core.String? targetLanguage,
+    $core.String? answerGiven,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1291,6 +1292,7 @@ class ContentReport extends $pb.GeneratedMessage {
     if (resolvedAt != null) result.resolvedAt = resolvedAt;
     if (acknowledged != null) result.acknowledged = acknowledged;
     if (targetLanguage != null) result.targetLanguage = targetLanguage;
+    if (answerGiven != null) result.answerGiven = answerGiven;
     return result;
   }
 
@@ -1325,6 +1327,7 @@ class ContentReport extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOB(11, _omitFieldNames ? '' : 'acknowledged')
     ..aOS(12, _omitFieldNames ? '' : 'targetLanguage')
+    ..aOS(13, _omitFieldNames ? '' : 'answerGiven')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1462,6 +1465,16 @@ class ContentReport extends $pb.GeneratedMessage {
   $core.bool hasTargetLanguage() => $_has(11);
   @$pb.TagNumber(12)
   void clearTargetLanguage() => $_clearField(12);
+
+  /// Lexicon Choice 3: the answer the member reported, if any.
+  @$pb.TagNumber(13)
+  $core.String get answerGiven => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set answerGiven($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasAnswerGiven() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAnswerGiven() => $_clearField(13);
 }
 
 class ReportContentIssueRequest extends $pb.GeneratedMessage {
@@ -1472,6 +1485,8 @@ class ReportContentIssueRequest extends $pb.GeneratedMessage {
     ContentReportReason? reason,
     $core.String? note,
     $core.String? clientMutationId,
+    $core.String? answerGiven,
+    $core.String? exercise,
   }) {
     final result = create();
     if (itemKind != null) result.itemKind = itemKind;
@@ -1480,6 +1495,8 @@ class ReportContentIssueRequest extends $pb.GeneratedMessage {
     if (reason != null) result.reason = reason;
     if (note != null) result.note = note;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (answerGiven != null) result.answerGiven = answerGiven;
+    if (exercise != null) result.exercise = exercise;
     return result;
   }
 
@@ -1505,6 +1522,8 @@ class ReportContentIssueRequest extends $pb.GeneratedMessage {
         enumValues: ContentReportReason.values)
     ..aOS(5, _omitFieldNames ? '' : 'note')
     ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(7, _omitFieldNames ? '' : 'answerGiven')
+    ..aOS(8, _omitFieldNames ? '' : 'exercise')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1583,6 +1602,28 @@ class ReportContentIssueRequest extends $pb.GeneratedMessage {
   $core.bool hasClientMutationId() => $_has(5);
   @$pb.TagNumber(6)
   void clearClientMutationId() => $_clearField(6);
+
+  /// Lexicon Choice 3: the answer the member gave on this card, when they had
+  /// answered it — "my answer should have been accepted" needs the answer.
+  /// Up to 200 characters.
+  @$pb.TagNumber(7)
+  $core.String get answerGiven => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set answerGiven($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAnswerGiven() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAnswerGiven() => $_clearField(7);
+
+  /// The exercise the card asked (recognise, cloze, type, …).
+  @$pb.TagNumber(8)
+  $core.String get exercise => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set exercise($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExercise() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExercise() => $_clearField(8);
 }
 
 class ReportContentIssueResponse extends $pb.GeneratedMessage {

@@ -156,6 +156,83 @@ class NewMaterialStatus extends $pb.ProtobufEnum {
   const NewMaterialStatus._(super.value, super.name);
 }
 
+/// Lexicon Choice 3 — the taxonomy of a wrong answer.
+class AnswerErrorKind extends $pb.ProtobufEnum {
+  static const AnswerErrorKind ANSWER_ERROR_KIND_UNSPECIFIED =
+      AnswerErrorKind._(
+          0, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_UNSPECIFIED');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_SLIP =
+      AnswerErrorKind._(1, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_SLIP');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_SPELLING =
+      AnswerErrorKind._(2, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_SPELLING');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_MORPHOLOGY = AnswerErrorKind._(
+      3, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_MORPHOLOGY');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_AGREEMENT =
+      AnswerErrorKind._(4, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_AGREEMENT');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_WORD_ORDER = AnswerErrorKind._(
+      5, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_WORD_ORDER');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION =
+      AnswerErrorKind._(6,
+          _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_FALSE_FRIEND =
+      AnswerErrorKind._(
+          7, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_FALSE_FRIEND');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_REGISTER =
+      AnswerErrorKind._(8, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_REGISTER');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_PRONUNCIATION =
+      AnswerErrorKind._(
+          9, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_PRONUNCIATION');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_CONCEPT_GAP =
+      AnswerErrorKind._(
+          10, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_CONCEPT_GAP');
+
+  static const $core.List<AnswerErrorKind> values = <AnswerErrorKind>[
+    ANSWER_ERROR_KIND_UNSPECIFIED,
+    ANSWER_ERROR_KIND_SLIP,
+    ANSWER_ERROR_KIND_SPELLING,
+    ANSWER_ERROR_KIND_MORPHOLOGY,
+    ANSWER_ERROR_KIND_AGREEMENT,
+    ANSWER_ERROR_KIND_WORD_ORDER,
+    ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION,
+    ANSWER_ERROR_KIND_FALSE_FRIEND,
+    ANSWER_ERROR_KIND_REGISTER,
+    ANSWER_ERROR_KIND_PRONUNCIATION,
+    ANSWER_ERROR_KIND_CONCEPT_GAP,
+  ];
+
+  static final $core.List<AnswerErrorKind?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 10);
+  static AnswerErrorKind? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const AnswerErrorKind._(super.value, super.name);
+}
+
+class AnswerDiffOp extends $pb.ProtobufEnum {
+  static const AnswerDiffOp ANSWER_DIFF_OP_UNSPECIFIED =
+      AnswerDiffOp._(0, _omitEnumNames ? '' : 'ANSWER_DIFF_OP_UNSPECIFIED');
+  static const AnswerDiffOp ANSWER_DIFF_OP_SAME =
+      AnswerDiffOp._(1, _omitEnumNames ? '' : 'ANSWER_DIFF_OP_SAME');
+  static const AnswerDiffOp ANSWER_DIFF_OP_MISSING =
+      AnswerDiffOp._(2, _omitEnumNames ? '' : 'ANSWER_DIFF_OP_MISSING');
+  static const AnswerDiffOp ANSWER_DIFF_OP_EXTRA =
+      AnswerDiffOp._(3, _omitEnumNames ? '' : 'ANSWER_DIFF_OP_EXTRA');
+
+  static const $core.List<AnswerDiffOp> values = <AnswerDiffOp>[
+    ANSWER_DIFF_OP_UNSPECIFIED,
+    ANSWER_DIFF_OP_SAME,
+    ANSWER_DIFF_OP_MISSING,
+    ANSWER_DIFF_OP_EXTRA,
+  ];
+
+  static final $core.List<AnswerDiffOp?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static AnswerDiffOp? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const AnswerDiffOp._(super.value, super.name);
+}
+
 /// What an observation is evidence of. The same word can be recognised long
 /// before it can be recalled, spelled, heard or said; each is tracked apart.
 class MasterySkill extends $pb.ProtobufEnum {
@@ -341,6 +418,8 @@ class PlanReasonCode extends $pb.ProtobufEnum {
       PlanReasonCode._(8, _omitEnumNames ? '' : 'PLAN_REASON_CODE_CATCH_UP');
   static const PlanReasonCode PLAN_REASON_CODE_GOAL =
       PlanReasonCode._(9, _omitEnumNames ? '' : 'PLAN_REASON_CODE_GOAL');
+  static const PlanReasonCode PLAN_REASON_CODE_RETEST =
+      PlanReasonCode._(10, _omitEnumNames ? '' : 'PLAN_REASON_CODE_RETEST');
 
   static const $core.List<PlanReasonCode> values = <PlanReasonCode>[
     PLAN_REASON_CODE_UNSPECIFIED,
@@ -353,10 +432,11 @@ class PlanReasonCode extends $pb.ProtobufEnum {
     PLAN_REASON_CODE_NEW,
     PLAN_REASON_CODE_CATCH_UP,
     PLAN_REASON_CODE_GOAL,
+    PLAN_REASON_CODE_RETEST,
   ];
 
   static final $core.List<PlanReasonCode?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 9);
+      $pb.ProtobufEnum.$_initByValueList(values, 10);
   static PlanReasonCode? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

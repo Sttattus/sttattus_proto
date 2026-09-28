@@ -93,6 +93,52 @@ final $typed_data.Uint8List newMaterialStatusDescriptor = $convert.base64Decode(
     'QVVTRURfSU5fUFJFUEFSQVRJT04QAhIjCh9ORVdfTUFURVJJQUxfU1RBVFVTX1BBVVNFRF9IRU'
     'xEEAMSJwojTkVXX01BVEVSSUFMX1NUQVRVU19MRVZFTF9FWEhBVVNURUQQBA==');
 
+@$core.Deprecated('Use answerErrorKindDescriptor instead')
+const AnswerErrorKind$json = {
+  '1': 'AnswerErrorKind',
+  '2': [
+    {'1': 'ANSWER_ERROR_KIND_UNSPECIFIED', '2': 0},
+    {'1': 'ANSWER_ERROR_KIND_SLIP', '2': 1},
+    {'1': 'ANSWER_ERROR_KIND_SPELLING', '2': 2},
+    {'1': 'ANSWER_ERROR_KIND_MORPHOLOGY', '2': 3},
+    {'1': 'ANSWER_ERROR_KIND_AGREEMENT', '2': 4},
+    {'1': 'ANSWER_ERROR_KIND_WORD_ORDER', '2': 5},
+    {'1': 'ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION', '2': 6},
+    {'1': 'ANSWER_ERROR_KIND_FALSE_FRIEND', '2': 7},
+    {'1': 'ANSWER_ERROR_KIND_REGISTER', '2': 8},
+    {'1': 'ANSWER_ERROR_KIND_PRONUNCIATION', '2': 9},
+    {'1': 'ANSWER_ERROR_KIND_CONCEPT_GAP', '2': 10},
+  ],
+};
+
+/// Descriptor for `AnswerErrorKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List answerErrorKindDescriptor = $convert.base64Decode(
+    'Cg9BbnN3ZXJFcnJvcktpbmQSIQodQU5TV0VSX0VSUk9SX0tJTkRfVU5TUEVDSUZJRUQQABIaCh'
+    'ZBTlNXRVJfRVJST1JfS0lORF9TTElQEAESHgoaQU5TV0VSX0VSUk9SX0tJTkRfU1BFTExJTkcQ'
+    'AhIgChxBTlNXRVJfRVJST1JfS0lORF9NT1JQSE9MT0dZEAMSHwobQU5TV0VSX0VSUk9SX0tJTk'
+    'RfQUdSRUVNRU5UEAQSIAocQU5TV0VSX0VSUk9SX0tJTkRfV09SRF9PUkRFUhAFEi4KKkFOU1dF'
+    'Ul9FUlJPUl9LSU5EX0xJU1RFTklOR19ESVNDUklNSU5BVElPThAGEiIKHkFOU1dFUl9FUlJPUl'
+    '9LSU5EX0ZBTFNFX0ZSSUVORBAHEh4KGkFOU1dFUl9FUlJPUl9LSU5EX1JFR0lTVEVSEAgSIwof'
+    'QU5TV0VSX0VSUk9SX0tJTkRfUFJPTlVOQ0lBVElPThAJEiEKHUFOU1dFUl9FUlJPUl9LSU5EX0'
+    'NPTkNFUFRfR0FQEAo=');
+
+@$core.Deprecated('Use answerDiffOpDescriptor instead')
+const AnswerDiffOp$json = {
+  '1': 'AnswerDiffOp',
+  '2': [
+    {'1': 'ANSWER_DIFF_OP_UNSPECIFIED', '2': 0},
+    {'1': 'ANSWER_DIFF_OP_SAME', '2': 1},
+    {'1': 'ANSWER_DIFF_OP_MISSING', '2': 2},
+    {'1': 'ANSWER_DIFF_OP_EXTRA', '2': 3},
+  ],
+};
+
+/// Descriptor for `AnswerDiffOp`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List answerDiffOpDescriptor = $convert.base64Decode(
+    'CgxBbnN3ZXJEaWZmT3ASHgoaQU5TV0VSX0RJRkZfT1BfVU5TUEVDSUZJRUQQABIXChNBTlNXRV'
+    'JfRElGRl9PUF9TQU1FEAESGgoWQU5TV0VSX0RJRkZfT1BfTUlTU0lORxACEhgKFEFOU1dFUl9E'
+    'SUZGX09QX0VYVFJBEAM=');
+
 @$core.Deprecated('Use masterySkillDescriptor instead')
 const MasterySkill$json = {
   '1': 'MasterySkill',
@@ -204,6 +250,7 @@ const PlanReasonCode$json = {
     {'1': 'PLAN_REASON_CODE_NEW', '2': 7},
     {'1': 'PLAN_REASON_CODE_CATCH_UP', '2': 8},
     {'1': 'PLAN_REASON_CODE_GOAL', '2': 9},
+    {'1': 'PLAN_REASON_CODE_RETEST', '2': 10},
   ],
 };
 
@@ -214,7 +261,8 @@ final $typed_data.Uint8List planReasonCodeDescriptor = $convert.base64Decode(
     'Tl9SRUFTT05fQ09ERV9XRUFLX1NLSUxMEAMSIQodUExBTl9SRUFTT05fQ09ERV9JTlRFUkZFUk'
     'VOQ0UQBBIhCh1QTEFOX1JFQVNPTl9DT0RFX1BSRVJFUVVJU0lURRAFEiIKHlBMQU5fUkVBU09O'
     'X0NPREVfQ0hFQ0tfQUlfRkxBRxAGEhgKFFBMQU5fUkVBU09OX0NPREVfTkVXEAcSHQoZUExBTl'
-    '9SRUFTT05fQ09ERV9DQVRDSF9VUBAIEhkKFVBMQU5fUkVBU09OX0NPREVfR09BTBAJ');
+    '9SRUFTT05fQ09ERV9DQVRDSF9VUBAIEhkKFVBMQU5fUkVBU09OX0NPREVfR09BTBAJEhsKF1BM'
+    'QU5fUkVBU09OX0NPREVfUkVURVNUEAo=');
 
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {
@@ -2264,6 +2312,7 @@ const PracticeCard$json = {
       '6': '.sttattus.languages.v1.PlanReason',
       '10': 'reason'
     },
+    {'1': 'retest_of', '3': 28, '4': 1, '5': 9, '10': 'retestOf'},
   ],
 };
 
@@ -2286,7 +2335,7 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'BVIPY29udGVudFJldmlzaW9uEhQKBXBpbG90GBggASgIUgVwaWxvdBIwChRjb3JyZWN0ZWRfc2'
     'luY2Vfc2VlbhgZIAEoCFISY29ycmVjdGVkU2luY2VTZWVuEiMKDWNvcHlfbGFuZ3VhZ2UYGiAB'
     'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
-    'EuUGxhblJlYXNvblIGcmVhc29u');
+    'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2Y=');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2370,6 +2419,8 @@ const SubmitAnswerRequest$json = {
     {'1': 'client_event_id', '3': 11, '4': 1, '5': 9, '10': 'clientEventId'},
     {'1': 'hint_used', '3': 12, '4': 1, '5': 8, '10': 'hintUsed'},
     {'1': 'plan_item_id', '3': 13, '4': 1, '5': 9, '10': 'planItemId'},
+    {'1': 'retest_of', '3': 14, '4': 1, '5': 9, '10': 'retestOf'},
+    {'1': 'typed', '3': 15, '4': 1, '5': 8, '10': 'typed'},
   ],
 };
 
@@ -2384,7 +2435,8 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     'Bml0ZW1JZBImCg9jb250ZW50X3VuaXRfaWQYCSABKAlSDWNvbnRlbnRVbml0SWQSKQoQY29udG'
     'VudF9yZXZpc2lvbhgKIAEoBVIPY29udGVudFJldmlzaW9uEiYKD2NsaWVudF9ldmVudF9pZBgL'
     'IAEoCVINY2xpZW50RXZlbnRJZBIbCgloaW50X3VzZWQYDCABKAhSCGhpbnRVc2VkEiAKDHBsYW'
-    '5faXRlbV9pZBgNIAEoCVIKcGxhbkl0ZW1JZA==');
+    '5faXRlbV9pZBgNIAEoCVIKcGxhbkl0ZW1JZBIbCglyZXRlc3Rfb2YYDiABKAlSCHJldGVzdE9m'
+    'EhQKBXR5cGVkGA8gASgIUgV0eXBlZA==');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {
@@ -2411,6 +2463,48 @@ const SubmitAnswerResponse$json = {
     {'1': 'new_learned_today', '3': 6, '4': 1, '5': 5, '10': 'newLearnedToday'},
     {'1': 'rationale', '3': 7, '4': 1, '5': 9, '10': 'rationale'},
     {'1': 'duplicate', '3': 8, '4': 1, '5': 8, '10': 'duplicate'},
+    {
+      '1': 'error_kind',
+      '3': 9,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.AnswerErrorKind',
+      '10': 'errorKind'
+    },
+    {'1': 'given', '3': 10, '4': 1, '5': 9, '10': 'given'},
+    {
+      '1': 'diff',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.AnswerDiffSegment',
+      '10': 'diff'
+    },
+    {
+      '1': 'examples',
+      '3': 12,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ExampleSentence',
+      '10': 'examples'
+    },
+    {
+      '1': 'lesson',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.MicroLesson',
+      '10': 'lesson'
+    },
+    {
+      '1': 'retest',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PracticeCard',
+      '10': 'retest'
+    },
+    {'1': 'grader_version', '3': 15, '4': 1, '5': 9, '10': 'graderVersion'},
   ],
 };
 
@@ -2421,7 +2515,74 @@ final $typed_data.Uint8List submitAnswerResponseDescriptor = $convert.base64Deco
     'X2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIFZHVlQXQSLAoScmV2aWV3c1'
     '9kb25lX3RvZGF5GAUgASgFUhByZXZpZXdzRG9uZVRvZGF5EioKEW5ld19sZWFybmVkX3RvZGF5'
     'GAYgASgFUg9uZXdMZWFybmVkVG9kYXkSHAoJcmF0aW9uYWxlGAcgASgJUglyYXRpb25hbGUSHA'
-    'oJZHVwbGljYXRlGAggASgIUglkdXBsaWNhdGU=');
+    'oJZHVwbGljYXRlGAggASgIUglkdXBsaWNhdGUSRQoKZXJyb3Jfa2luZBgJIAEoDjImLnN0dGF0'
+    'dHVzLmxhbmd1YWdlcy52MS5BbnN3ZXJFcnJvcktpbmRSCWVycm9yS2luZBIUCgVnaXZlbhgKIA'
+    'EoCVIFZ2l2ZW4SPAoEZGlmZhgLIAMoCzIoLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5BbnN3ZXJE'
+    'aWZmU2VnbWVudFIEZGlmZhJCCghleGFtcGxlcxgMIAMoCzImLnN0dGF0dHVzLmxhbmd1YWdlcy'
+    '52MS5FeGFtcGxlU2VudGVuY2VSCGV4YW1wbGVzEjoKBmxlc3NvbhgNIAEoCzIiLnN0dGF0dHVz'
+    'Lmxhbmd1YWdlcy52MS5NaWNyb0xlc3NvblIGbGVzc29uEjsKBnJldGVzdBgOIAEoCzIjLnN0dG'
+    'F0dHVzLmxhbmd1YWdlcy52MS5QcmFjdGljZUNhcmRSBnJldGVzdBIlCg5ncmFkZXJfdmVyc2lv'
+    'bhgPIAEoCVINZ3JhZGVyVmVyc2lvbg==');
+
+@$core.Deprecated('Use answerDiffSegmentDescriptor instead')
+const AnswerDiffSegment$json = {
+  '1': 'AnswerDiffSegment',
+  '2': [
+    {
+      '1': 'op',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.AnswerDiffOp',
+      '10': 'op'
+    },
+    {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+  ],
+};
+
+/// Descriptor for `AnswerDiffSegment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List answerDiffSegmentDescriptor = $convert.base64Decode(
+    'ChFBbnN3ZXJEaWZmU2VnbWVudBIzCgJvcBgBIAEoDjIjLnN0dGF0dHVzLmxhbmd1YWdlcy52MS'
+    '5BbnN3ZXJEaWZmT3BSAm9wEhIKBHRleHQYAiABKAlSBHRleHQ=');
+
+@$core.Deprecated('Use exampleSentenceDescriptor instead')
+const ExampleSentence$json = {
+  '1': 'ExampleSentence',
+  '2': [
+    {'1': 'text', '3': 1, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'translation', '3': 2, '4': 1, '5': 9, '10': 'translation'},
+    {'1': 'audio_url', '3': 3, '4': 1, '5': 9, '10': 'audioUrl'},
+  ],
+};
+
+/// Descriptor for `ExampleSentence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exampleSentenceDescriptor = $convert.base64Decode(
+    'Cg9FeGFtcGxlU2VudGVuY2USEgoEdGV4dBgBIAEoCVIEdGV4dBIgCgt0cmFuc2xhdGlvbhgCIA'
+    'EoCVILdHJhbnNsYXRpb24SGwoJYXVkaW9fdXJsGAMgASgJUghhdWRpb1VybA==');
+
+@$core.Deprecated('Use microLessonDescriptor instead')
+const MicroLesson$json = {
+  '1': 'MicroLesson',
+  '2': [
+    {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+    {
+      '1': 'examples',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ExampleSentence',
+      '10': 'examples'
+    },
+    {'1': 'lines', '3': 4, '4': 3, '5': 9, '10': 'lines'},
+  ],
+};
+
+/// Descriptor for `MicroLesson`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List microLessonDescriptor = $convert.base64Decode(
+    'CgtNaWNyb0xlc3NvbhIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSEgoEYm9keRgCIAEoCVIEYm9keR'
+    'JCCghleGFtcGxlcxgDIAMoCzImLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5FeGFtcGxlU2VudGVu'
+    'Y2VSCGV4YW1wbGVzEhQKBWxpbmVzGAQgAygJUgVsaW5lcw==');
 
 @$core.Deprecated('Use getPracticeStatsRequestDescriptor instead')
 const GetPracticeStatsRequest$json = {

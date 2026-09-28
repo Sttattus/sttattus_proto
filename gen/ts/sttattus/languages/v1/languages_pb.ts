@@ -219,6 +219,130 @@ proto3.util.setEnumType(NewMaterialStatus, "sttattus.languages.v1.NewMaterialSta
 ]);
 
 /**
+ * Lexicon Choice 3 — the taxonomy of a wrong answer.
+ *
+ * @generated from enum sttattus.languages.v1.AnswerErrorKind
+ */
+export enum AnswerErrorKind {
+  /**
+   * @generated from enum value: ANSWER_ERROR_KIND_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * one letter off on something the learner knows
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_SLIP = 1;
+   */
+  SLIP = 1,
+
+  /**
+   * @generated from enum value: ANSWER_ERROR_KIND_SPELLING = 2;
+   */
+  SPELLING = 2,
+
+  /**
+   * another form of the same word
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_MORPHOLOGY = 3;
+   */
+  MORPHOLOGY = 3,
+
+  /**
+   * gender or number
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_AGREEMENT = 4;
+   */
+  AGREEMENT = 4,
+
+  /**
+   * @generated from enum value: ANSWER_ERROR_KIND_WORD_ORDER = 5;
+   */
+  WORD_ORDER = 5,
+
+  /**
+   * a near-homophone, by ear
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION = 6;
+   */
+  LISTENING_DISCRIMINATION = 6,
+
+  /**
+   * @generated from enum value: ANSWER_ERROR_KIND_FALSE_FRIEND = 7;
+   */
+  FALSE_FRIEND = 7,
+
+  /**
+   * formal / informal
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_REGISTER = 8;
+   */
+  REGISTER = 8,
+
+  /**
+   * @generated from enum value: ANSWER_ERROR_KIND_PRONUNCIATION = 9;
+   */
+  PRONUNCIATION = 9,
+
+  /**
+   * not known yet
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_CONCEPT_GAP = 10;
+   */
+  CONCEPT_GAP = 10,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AnswerErrorKind)
+proto3.util.setEnumType(AnswerErrorKind, "sttattus.languages.v1.AnswerErrorKind", [
+  { no: 0, name: "ANSWER_ERROR_KIND_UNSPECIFIED" },
+  { no: 1, name: "ANSWER_ERROR_KIND_SLIP" },
+  { no: 2, name: "ANSWER_ERROR_KIND_SPELLING" },
+  { no: 3, name: "ANSWER_ERROR_KIND_MORPHOLOGY" },
+  { no: 4, name: "ANSWER_ERROR_KIND_AGREEMENT" },
+  { no: 5, name: "ANSWER_ERROR_KIND_WORD_ORDER" },
+  { no: 6, name: "ANSWER_ERROR_KIND_LISTENING_DISCRIMINATION" },
+  { no: 7, name: "ANSWER_ERROR_KIND_FALSE_FRIEND" },
+  { no: 8, name: "ANSWER_ERROR_KIND_REGISTER" },
+  { no: 9, name: "ANSWER_ERROR_KIND_PRONUNCIATION" },
+  { no: 10, name: "ANSWER_ERROR_KIND_CONCEPT_GAP" },
+]);
+
+/**
+ * @generated from enum sttattus.languages.v1.AnswerDiffOp
+ */
+export enum AnswerDiffOp {
+  /**
+   * @generated from enum value: ANSWER_DIFF_OP_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ANSWER_DIFF_OP_SAME = 1;
+   */
+  SAME = 1,
+
+  /**
+   * in the expected answer, not in the learner's
+   *
+   * @generated from enum value: ANSWER_DIFF_OP_MISSING = 2;
+   */
+  MISSING = 2,
+
+  /**
+   * in the learner's answer, not in the expected
+   *
+   * @generated from enum value: ANSWER_DIFF_OP_EXTRA = 3;
+   */
+  EXTRA = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AnswerDiffOp)
+proto3.util.setEnumType(AnswerDiffOp, "sttattus.languages.v1.AnswerDiffOp", [
+  { no: 0, name: "ANSWER_DIFF_OP_UNSPECIFIED" },
+  { no: 1, name: "ANSWER_DIFF_OP_SAME" },
+  { no: 2, name: "ANSWER_DIFF_OP_MISSING" },
+  { no: 3, name: "ANSWER_DIFF_OP_EXTRA" },
+]);
+
+/**
  * What an observation is evidence of. The same word can be recognised long
  * before it can be recalled, spelled, heard or said; each is tracked apart.
  *
@@ -581,6 +705,13 @@ export enum PlanReasonCode {
    * @generated from enum value: PLAN_REASON_CODE_GOAL = 9;
    */
   GOAL = 9,
+
+  /**
+   * Choice 3: missed a moment ago, again another way
+   *
+   * @generated from enum value: PLAN_REASON_CODE_RETEST = 10;
+   */
+  RETEST = 10,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PlanReasonCode)
 proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", [
@@ -594,6 +725,7 @@ proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", 
   { no: 7, name: "PLAN_REASON_CODE_NEW" },
   { no: 8, name: "PLAN_REASON_CODE_CATCH_UP" },
   { no: 9, name: "PLAN_REASON_CODE_GOAL" },
+  { no: 10, name: "PLAN_REASON_CODE_RETEST" },
 ]);
 
 /**
@@ -5839,6 +5971,13 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   reason?: PlanReason;
 
+  /**
+   * Lexicon Choice 3: set on a retest card — the answer it follows up.
+   *
+   * @generated from field: string retest_of = 28;
+   */
+  retestOf = "";
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5874,6 +6013,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 25, name: "corrected_since_seen", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 26, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 27, name: "reason", kind: "message", T: PlanReason },
+    { no: 28, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -6113,6 +6253,23 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   planItemId = "";
 
+  /**
+   * Lexicon Choice 3: this answers a retest card; the miss it follows up
+   * (PracticeCard.retest_of).
+   *
+   * @generated from field: string retest_of = 14;
+   */
+  retestOf = "";
+
+  /**
+   * The learner produced the answer (typed, spoken, written by hand, built
+   * from tiles) rather than choosing an offered option. It changes how a
+   * miss is classified, never whether the answer is right.
+   *
+   * @generated from field: bool typed = 15;
+   */
+  typed = false;
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6134,6 +6291,8 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 11, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "hint_used", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 13, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "typed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {
@@ -6207,6 +6366,56 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
    */
   duplicate = false;
 
+  /**
+   * Lexicon Choice 3 — the repair after a wrong answer. Empty when correct.
+   * What kind of mistake it was (the grader's taxonomy).
+   *
+   * @generated from field: sttattus.languages.v1.AnswerErrorKind error_kind = 9;
+   */
+  errorKind = AnswerErrorKind.UNSPECIFIED;
+
+  /**
+   * The answer as the server received it, and where it differs from the
+   * expected one, run by run.
+   *
+   * @generated from field: string given = 10;
+   */
+  given = "";
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.AnswerDiffSegment diff = 11;
+   */
+  diff: AnswerDiffSegment[] = [];
+
+  /**
+   * Up to two real sentences using the word or point.
+   *
+   * @generated from field: repeated sttattus.languages.v1.ExampleSentence examples = 12;
+   */
+  examples: ExampleSentence[] = [];
+
+  /**
+   * A short lesson on the word, point or verb.
+   *
+   * @generated from field: sttattus.languages.v1.MicroLesson lesson = 13;
+   */
+  lesson?: MicroLesson;
+
+  /**
+   * The same thing again in a new context, for the app to ask two cards
+   * later. Its answer carries retest_of.
+   *
+   * @generated from field: sttattus.languages.v1.PracticeCard retest = 14;
+   */
+  retest?: PracticeCard;
+
+  /**
+   * The grader that judged this answer (the error kind's rules).
+   *
+   * @generated from field: string grader_version = 15;
+   */
+  graderVersion = "";
+
   constructor(data?: PartialMessage<SubmitAnswerResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6223,6 +6432,13 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
     { no: 6, name: "new_learned_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "duplicate", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "error_kind", kind: "enum", T: proto3.getEnumType(AnswerErrorKind) },
+    { no: 10, name: "given", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "diff", kind: "message", T: AnswerDiffSegment, repeated: true },
+    { no: 12, name: "examples", kind: "message", T: ExampleSentence, repeated: true },
+    { no: 13, name: "lesson", kind: "message", T: MicroLesson },
+    { no: 14, name: "retest", kind: "message", T: PracticeCard },
+    { no: 15, name: "grader_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerResponse {
@@ -6239,6 +6455,157 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
 
   static equals(a: SubmitAnswerResponse | PlainMessage<SubmitAnswerResponse> | undefined, b: SubmitAnswerResponse | PlainMessage<SubmitAnswerResponse> | undefined): boolean {
     return proto3.util.equals(SubmitAnswerResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.AnswerDiffSegment
+ */
+export class AnswerDiffSegment extends Message<AnswerDiffSegment> {
+  /**
+   * @generated from field: sttattus.languages.v1.AnswerDiffOp op = 1;
+   */
+  op = AnswerDiffOp.UNSPECIFIED;
+
+  /**
+   * @generated from field: string text = 2;
+   */
+  text = "";
+
+  constructor(data?: PartialMessage<AnswerDiffSegment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.AnswerDiffSegment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "op", kind: "enum", T: proto3.getEnumType(AnswerDiffOp) },
+    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnswerDiffSegment {
+    return new AnswerDiffSegment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnswerDiffSegment {
+    return new AnswerDiffSegment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnswerDiffSegment {
+    return new AnswerDiffSegment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnswerDiffSegment | PlainMessage<AnswerDiffSegment> | undefined, b: AnswerDiffSegment | PlainMessage<AnswerDiffSegment> | undefined): boolean {
+    return proto3.util.equals(AnswerDiffSegment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ExampleSentence
+ */
+export class ExampleSentence extends Message<ExampleSentence> {
+  /**
+   * @generated from field: string text = 1;
+   */
+  text = "";
+
+  /**
+   * In the member's base language.
+   *
+   * @generated from field: string translation = 2;
+   */
+  translation = "";
+
+  /**
+   * @generated from field: string audio_url = 3;
+   */
+  audioUrl = "";
+
+  constructor(data?: PartialMessage<ExampleSentence>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ExampleSentence";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "translation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExampleSentence {
+    return new ExampleSentence().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExampleSentence {
+    return new ExampleSentence().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExampleSentence {
+    return new ExampleSentence().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExampleSentence | PlainMessage<ExampleSentence> | undefined, b: ExampleSentence | PlainMessage<ExampleSentence> | undefined): boolean {
+    return proto3.util.equals(ExampleSentence, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.MicroLesson
+ */
+export class MicroLesson extends Message<MicroLesson> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string body = 2;
+   */
+  body = "";
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.ExampleSentence examples = 3;
+   */
+  examples: ExampleSentence[] = [];
+
+  /**
+   * Short lines to read together — a verb's persons in one tense.
+   *
+   * @generated from field: repeated string lines = 4;
+   */
+  lines: string[] = [];
+
+  constructor(data?: PartialMessage<MicroLesson>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.MicroLesson";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "examples", kind: "message", T: ExampleSentence, repeated: true },
+    { no: 4, name: "lines", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MicroLesson {
+    return new MicroLesson().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MicroLesson {
+    return new MicroLesson().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MicroLesson {
+    return new MicroLesson().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MicroLesson | PlainMessage<MicroLesson> | undefined, b: MicroLesson | PlainMessage<MicroLesson> | undefined): boolean {
+    return proto3.util.equals(MicroLesson, a, b);
   }
 }
 

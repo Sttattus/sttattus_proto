@@ -238,6 +238,8 @@ message ContentReport {
   // True once the member has seen the resolution.
   bool acknowledged = 11;
   string target_language = 12;
+  // Lexicon Choice 3: the answer the member reported, if any.
+  string answer_given = 13;
 }
 
 message ReportContentIssueRequest {
@@ -250,6 +252,12 @@ message ReportContentIssueRequest {
   string note = 5;
   // Client-generated UUID; a retry with the same id returns the same report.
   string client_mutation_id = 6;
+  // Lexicon Choice 3: the answer the member gave on this card, when they had
+  // answered it — "my answer should have been accepted" needs the answer.
+  // Up to 200 characters.
+  string answer_given = 7;
+  // The exercise the card asked (recognise, cloze, type, …).
+  string exercise = 8;
 }
 
 message ReportContentIssueResponse {
