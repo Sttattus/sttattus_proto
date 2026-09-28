@@ -8059,6 +8059,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.String? copyLanguage,
     PlanReason? reason,
     $core.String? retestOf,
+    $core.int? templateVersion,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8090,6 +8091,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (copyLanguage != null) result.copyLanguage = copyLanguage;
     if (reason != null) result.reason = reason;
     if (retestOf != null) result.retestOf = retestOf;
+    if (templateVersion != null) result.templateVersion = templateVersion;
     return result;
   }
 
@@ -8138,6 +8140,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOM<PlanReason>(27, _omitFieldNames ? '' : 'reason',
         subBuilder: PlanReason.create)
     ..aOS(28, _omitFieldNames ? '' : 'retestOf')
+    ..aI(29, _omitFieldNames ? '' : 'templateVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8434,6 +8437,17 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasRetestOf() => $_has(27);
   @$pb.TagNumber(28)
   void clearRetestOf() => $_clearField(28);
+
+  /// The exercise template version that served this card (the exercise's
+  /// name is its key).
+  @$pb.TagNumber(29)
+  $core.int get templateVersion => $_getIZ(28);
+  @$pb.TagNumber(29)
+  set templateVersion($core.int value) => $_setSignedInt32(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasTemplateVersion() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearTemplateVersion() => $_clearField(29);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {

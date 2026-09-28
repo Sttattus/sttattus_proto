@@ -911,6 +911,9 @@ message PracticeCard {
   PlanReason reason = 27;
   // Lexicon Choice 3: set on a retest card — the answer it follows up.
   string retest_of = 28;
+  // The exercise template version that served this card (the exercise's
+  // name is its key).
+  int32 template_version = 29;
 }
 
 message GetPracticeSessionRequest {

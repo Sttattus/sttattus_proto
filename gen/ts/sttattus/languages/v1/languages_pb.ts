@@ -5978,6 +5978,14 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   retestOf = "";
 
+  /**
+   * The exercise template version that served this card (the exercise's
+   * name is its key).
+   *
+   * @generated from field: int32 template_version = 29;
+   */
+  templateVersion = 0;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6014,6 +6022,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 26, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 27, name: "reason", kind: "message", T: PlanReason },
     { no: 28, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 29, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {

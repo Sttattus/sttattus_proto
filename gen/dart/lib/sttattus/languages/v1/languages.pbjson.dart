@@ -2313,6 +2313,7 @@ const PracticeCard$json = {
       '10': 'reason'
     },
     {'1': 'retest_of', '3': 28, '4': 1, '5': 9, '10': 'retestOf'},
+    {'1': 'template_version', '3': 29, '4': 1, '5': 5, '10': 'templateVersion'},
   ],
 };
 
@@ -2335,7 +2336,8 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'BVIPY29udGVudFJldmlzaW9uEhQKBXBpbG90GBggASgIUgVwaWxvdBIwChRjb3JyZWN0ZWRfc2'
     'luY2Vfc2VlbhgZIAEoCFISY29ycmVjdGVkU2luY2VTZWVuEiMKDWNvcHlfbGFuZ3VhZ2UYGiAB'
     'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
-    'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2Y=');
+    'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2YSKQoQdGVt'
+    'cGxhdGVfdmVyc2lvbhgdIAEoBVIPdGVtcGxhdGVWZXJzaW9u');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {

@@ -6844,9 +6844,12 @@ type PracticeCard struct {
 	// Lexicon Choice 2: why this card is in the session now.
 	Reason *PlanReason `protobuf:"bytes,27,opt,name=reason,proto3" json:"reason,omitempty"`
 	// Lexicon Choice 3: set on a retest card — the answer it follows up.
-	RetestOf      string `protobuf:"bytes,28,opt,name=retest_of,json=retestOf,proto3" json:"retest_of,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	RetestOf string `protobuf:"bytes,28,opt,name=retest_of,json=retestOf,proto3" json:"retest_of,omitempty"`
+	// The exercise template version that served this card (the exercise's
+	// name is its key).
+	TemplateVersion int32 `protobuf:"varint,29,opt,name=template_version,json=templateVersion,proto3" json:"template_version,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *PracticeCard) Reset() {
@@ -7073,6 +7076,13 @@ func (x *PracticeCard) GetRetestOf() string {
 		return x.RetestOf
 	}
 	return ""
+}
+
+func (x *PracticeCard) GetTemplateVersion() int32 {
+	if x != nil {
+		return x.TemplateVersion
+	}
+	return 0
 }
 
 type GetPracticeSessionRequest struct {
@@ -10156,7 +10166,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aCreateLinguistShareRequest\"P\n" +
 	"\x1bCreateLinguistShareResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
-	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xe0\a\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\x8b\b\n" +
 	"\fPracticeCard\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12\x1d\n" +
 	"\n" +
@@ -10188,7 +10198,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x14corrected_since_seen\x18\x19 \x01(\bR\x12correctedSinceSeen\x12#\n" +
 	"\rcopy_language\x18\x1a \x01(\tR\fcopyLanguage\x129\n" +
 	"\x06reason\x18\x1b \x01(\v2!.sttattus.languages.v1.PlanReasonR\x06reason\x12\x1b\n" +
-	"\tretest_of\x18\x1c \x01(\tR\bretestOf\"\x94\x01\n" +
+	"\tretest_of\x18\x1c \x01(\tR\bretestOf\x12)\n" +
+	"\x10template_version\x18\x1d \x01(\x05R\x0ftemplateVersion\"\x94\x01\n" +
 	"\x19GetPracticeSessionRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12#\n" +
