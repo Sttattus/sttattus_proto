@@ -466,6 +466,11 @@ message WritingError {
   // lexicon_grammar_points.key, when the mistake maps onto a point that is
   // actually taught. Empty when it does not.
   string grammar_point_key = 5;
+  // Lexicon Choice 2. An AI-found error is a suspicion, not evidence: it
+  // lowers nothing until a short check confirms it. "unverified" until then,
+  // "confirmed" or "cleared" by the check, "dismissed" when the member says
+  // it is not an error.
+  string flag_state = 6;
 }
 
 message WritingSubmission {
@@ -792,6 +797,15 @@ service LanguagesService {
   rpc GetMemberPrefs(GetMemberPrefsRequest) returns (GetMemberPrefsResponse);
   rpc SetMemberPrefs(SetMemberPrefsRequest) returns (SetMemberPrefsResponse);
 
+  // Lexicon Choice 2 — the mastery graph and the adaptive Today plan. Every
+  // plan item says why it is there, and a plan is reproducible from the
+  // stored evidence it was built from.
+  rpc GetAdaptivePlan(GetAdaptivePlanRequest) returns (GetAdaptivePlanResponse);
+  rpc SkipPlanItem(SkipPlanItemRequest) returns (SkipPlanItemResponse);
+  rpc GetMasteryMap(GetMasteryMapRequest) returns (GetMasteryMapResponse);
+  rpc GetNodeEvidence(GetNodeEvidenceRequest) returns (GetNodeEvidenceResponse);
+  rpc DismissWritingFlag(DismissWritingFlagRequest) returns (DismissWritingFlagResponse);
+
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
 }
@@ -893,6 +907,8 @@ message PracticeCard {
   // The language the prompt detail, rationale and point title are written
   // in. Equal to base_language unless that copy does not exist yet.
   string copy_language = 26;
+  // Lexicon Choice 2: why this card is in the session now.
+  PlanReason reason = 27;
 }
 
 message GetPracticeSessionRequest {
@@ -905,6 +921,9 @@ message GetPracticeSessionRequest {
   // (or for an item with recorded audio): a listen card on a device with no
   // voice installed has no prompt at all and cannot be answered.
   repeated string tts_languages = 3;
+  // Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
+  // and skill) instead of the general due queue.
+  string plan_item_id = 4;
 }
 message GetPracticeSessionResponse {
   repeated PracticeCard cards = 1;
@@ -934,6 +953,15 @@ message SubmitAnswerRequest {
   // Lexicon Choice 1 — the unit and revision the card was built from.
   string content_unit_id = 9;
   int32 content_revision = 10;
+  // Lexicon Choice 2. A client-generated id for this answer: a retry after a
+  // dropped connection (or an offline replay) is recognised and not counted
+  // twice.
+  string client_event_id = 11;
+  // The member asked for a hint before answering; a hinted success is weaker
+  // evidence than an unaided one.
+  bool hint_used = 12;
+  // The plan item this answer was given for, when the session came from one.
+  string plan_item_id = 13;
 }
 message SubmitAnswerResponse {
   bool correct = 1;
@@ -947,6 +975,9 @@ message SubmitAnswerResponse {
   // The explanation for this item, so the client can show it after an answer
   // without holding the card.
   string rationale = 7;
+  // Lexicon Choice 2: this client_event_id had already been recorded; the
+  // response describes the first recording and nothing was counted again.
+  bool duplicate = 8;
 }
 
 message GetPracticeStatsRequest {
@@ -972,6 +1003,21 @@ message MemberPrefs {
   string base_language = 1;
   int32 daily_new_target = 2;
   int32 daily_review_target = 3;
+  // Lexicon Choice 2 — how the member wants Today planned. On
+  // SetMemberPrefs a field left out keeps its stored value (an older app
+  // that only sends the base language must not reset these):
+  // GOAL_MODE_UNSPECIFIED and daily_minutes 0 mean "unchanged", and the
+  // optional fields are applied only when present. vacation_until "" clears it.
+  GoalMode goal_mode = 4;
+  // Time budget for Today, 5–90 minutes.
+  int32 daily_minutes = 5;
+  // The device's offset from UTC, so "today" is the member's day.
+  optional int32 utc_offset_minutes = 6;
+  // New material pauses until this date (YYYY-MM-DD, inclusive); empty = off.
+  optional string vacation_until = 7;
+  // Accessibility pacing: more time per item, and latency never counts
+  // against an answer.
+  optional bool extra_time = 8;
 }
 message GetMemberPrefsRequest {}
 message GetMemberPrefsResponse {
@@ -994,4 +1040,226 @@ message ListWordsRequest {
 }
 message ListWordsResponse {
   repeated Word words = 1;
+}
+
+// ============================================================================
+// Lexicon Choice 2 — mastery graph and adaptive Today
+// ============================================================================
+
+// What an observation is evidence of. The same word can be recognised long
+// before it can be recalled, spelled, heard or said; each is tracked apart.
+enum MasterySkill {
+  MASTERY_SKILL_UNSPECIFIED = 0;
+  MASTERY_SKILL_RECOGNITION = 1; // see it, know what it means
+  MASTERY_SKILL_RECALL = 2; // produce it from its meaning
+  MASTERY_SKILL_SPELLING = 3; // write it exactly, accents included
+  MASTERY_SKILL_LISTENING = 4; // hear it, know what it means
+  MASTERY_SKILL_PRONUNCIATION = 5; // say it so it is understood
+  MASTERY_SKILL_PRODUCTION = 6; // use it in free speech
+  MASTERY_SKILL_GRAMMAR = 7; // apply a grammar point in context
+  MASTERY_SKILL_CONJUGATION = 8; // produce the right verb form
+  MASTERY_SKILL_READING = 9;
+  MASTERY_SKILL_WRITING = 10;
+  MASTERY_SKILL_CONVERSATION = 11;
+}
+
+// What the member is learning for. It changes the mix of Today, never what
+// counts as knowing something.
+enum GoalMode {
+  GOAL_MODE_UNSPECIFIED = 0;
+  GOAL_MODE_BALANCED = 1;
+  GOAL_MODE_TRAVEL = 2;
+  GOAL_MODE_FAMILY = 3;
+  GOAL_MODE_ACADEMIC = 4;
+  GOAL_MODE_RELOCATION = 5;
+  GOAL_MODE_EXAM = 6;
+  GOAL_MODE_BUSINESS = 7;
+  GOAL_MODE_PRONUNCIATION = 8;
+  GOAL_MODE_MAINTENANCE = 9;
+}
+
+enum PlanItemKind {
+  PLAN_ITEM_KIND_UNSPECIFIED = 0;
+  PLAN_ITEM_KIND_REVIEW = 1; // due retrieval
+  PLAN_ITEM_KIND_NEW = 2; // new material from an open level
+  PLAN_ITEM_KIND_REPAIR = 3; // a leech, a weak skill or a prerequisite
+  PLAN_ITEM_KIND_CONTRAST = 4; // two items the member confuses, side by side
+  PLAN_ITEM_KIND_CHECK = 5; // a short check of an AI-suspected error
+  PLAN_ITEM_KIND_LISTENING = 6; // listening drill on known words
+  PLAN_ITEM_KIND_SPEAKING = 7; // a speaking prompt
+  PLAN_ITEM_KIND_READING = 8; // a graded reading text
+  PLAN_ITEM_KIND_WRITING = 9; // a writing prompt
+}
+
+enum PlanItemState {
+  PLAN_ITEM_STATE_UNSPECIFIED = 0;
+  PLAN_ITEM_STATE_PENDING = 1;
+  PLAN_ITEM_STATE_DONE = 2; // completed by evidence, never by a tap
+  PLAN_ITEM_STATE_SKIPPED = 3; // "not today"; can be restored
+}
+
+enum PlanReasonCode {
+  PLAN_REASON_CODE_UNSPECIFIED = 0;
+  PLAN_REASON_CODE_DUE = 1; // predicted recall fell below the threshold
+  PLAN_REASON_CODE_LEECH = 2; // lost again and again
+  PLAN_REASON_CODE_WEAK_SKILL = 3; // a skill well below the member's others
+  PLAN_REASON_CODE_INTERFERENCE = 4; // two items confused with each other
+  PLAN_REASON_CODE_PREREQUISITE = 5; // needed by something else in the plan
+  PLAN_REASON_CODE_CHECK_AI_FLAG = 6; // the writing coach suspected an error
+  PLAN_REASON_CODE_NEW = 7; // next material in an open level
+  PLAN_REASON_CODE_CATCH_UP = 8; // back after missed days
+  PLAN_REASON_CODE_GOAL = 9; // the goal mode asks for this skill
+}
+
+// Why something is in the plan. `params` carries the numbers behind the
+// sentence (skill, estimate, lapses, the two confused items, days missed…) so
+// the app can say it in the member's language; evidence_count is how many
+// observations the claim rests on.
+message PlanReason {
+  PlanReasonCode code = 1;
+  map<string, string> params = 2;
+  int32 evidence_count = 3;
+}
+
+message PlanItem {
+  string id = 1;
+  PlanItemKind kind = 2;
+  MasterySkill skill = 3;
+  // What the item covers, as the member would name it (words, a grammar
+  // point's title, a prompt).
+  repeated string labels = 4;
+  int32 estimated_minutes = 5;
+  PlanItemState state = 6;
+  PlanReason reason = 7;
+  // Answers (or one attempt/completion) needed, and how many are done.
+  int32 target_count = 8;
+  int32 done_count = 9;
+  // For speaking/reading/writing items: the activity to open.
+  string activity_id = 10;
+  string activity_title = 11;
+}
+
+message AdaptivePlan {
+  string revision_id = 1;
+  string language = 2;
+  string plan_date = 3; // the member's local date, YYYY-MM-DD
+  int32 revision = 4;
+  string policy_version = 5;
+  GoalMode goal_mode = 6;
+  int32 budget_minutes = 7;
+  int32 estimated_minutes = 8;
+  repeated PlanItem items = 9;
+  // Back after a gap: how many days were missed and how many at-risk items
+  // were spread over the coming days instead of all landing today.
+  int32 missed_days = 10;
+  int32 deferred_count = 11;
+  bool vacation = 12;
+  // What the plan was built from; the same inputs rebuild the same plan.
+  string inputs_digest = 13;
+  int64 generated_unix = 14;
+  NewMaterialStatus new_material = 15;
+}
+
+message GetAdaptivePlanRequest {
+  string language = 1;
+  int32 utc_offset_minutes = 2;
+  // Build a new revision now (after settings change or new evidence) instead
+  // of returning today's current one.
+  bool regenerate = 3;
+}
+message GetAdaptivePlanResponse {
+  AdaptivePlan plan = 1;
+}
+
+message SkipPlanItemRequest {
+  string language = 1;
+  string plan_item_id = 2;
+  bool restore = 3;
+}
+message SkipPlanItemResponse {
+  AdaptivePlan plan = 1;
+}
+
+// One estimate, with how sure it is. `estimate`, `low` and `high` are 0–100.
+message SkillEstimate {
+  MasterySkill skill = 1;
+  int32 estimate = 2;
+  int32 low = 3;
+  int32 high = 4;
+  int32 evidence_count = 5;
+  // Things observed in this skill, out of what the open levels contain.
+  int32 nodes_observed = 6;
+  int32 nodes_open = 7;
+}
+
+message LevelProgress {
+  string cefr_level = 1;
+  int32 nodes_open = 2;
+  int32 nodes_seen = 3;
+  int32 nodes_strong = 4;
+}
+
+message NodeEstimate {
+  string node_kind = 1; // concept | grammar_point | verb
+  string node_id = 2;
+  string label = 3;
+  MasterySkill skill = 4;
+  int32 estimate = 5;
+  int32 low = 6;
+  int32 high = 7;
+  int32 evidence_count = 8;
+  double half_life_days = 9;
+  int64 last_observed_unix = 10;
+  // Predicted recall right now, after forgetting.
+  int32 recall_now = 11;
+}
+
+message ConfusionPair {
+  string a_label = 1;
+  string b_label = 2;
+  int32 count = 3;
+}
+
+message GetMasteryMapRequest {
+  string language = 1;
+}
+message GetMasteryMapResponse {
+  repeated SkillEstimate skills = 1;
+  repeated LevelProgress levels = 2;
+  repeated NodeEstimate weakest = 3;
+  repeated ConfusionPair confusions = 4;
+  // One-off placement tests, shown apart from practice evidence.
+  repeated PlacementResult placement = 5;
+  int32 evidence_total = 6;
+  string policy_version = 7;
+}
+
+message EvidenceEntry {
+  MasterySkill skill = 1;
+  int32 credit = 2; // 0–100
+  string source = 3; // practice | writing_coach | speaking_coach | placement | scenario
+  string trust = 4; // verified | self_report | ai_unverified | disputed | withdrawn
+  bool hint_used = 5;
+  string exercise = 6;
+  int64 observed_unix = 7;
+}
+
+message GetNodeEvidenceRequest {
+  string language = 1;
+  string node_kind = 2;
+  string node_id = 3;
+}
+message GetNodeEvidenceResponse {
+  repeated NodeEstimate estimates = 1;
+  repeated EvidenceEntry evidence = 2;
+}
+
+message DismissWritingFlagRequest {
+  string submission_id = 1;
+  int32 error_index = 2;
+  // false restores a dismissed flag.
+  bool dismiss = 3;
+}
+message DismissWritingFlagResponse {
+  WritingSubmission submission = 1;
 }

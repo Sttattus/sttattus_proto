@@ -60,6 +60,11 @@ const (
 	LanguagesService_GetPracticeStats_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetPracticeStats"
 	LanguagesService_GetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetMemberPrefs"
 	LanguagesService_SetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/SetMemberPrefs"
+	LanguagesService_GetAdaptivePlan_FullMethodName          = "/sttattus.languages.v1.LanguagesService/GetAdaptivePlan"
+	LanguagesService_SkipPlanItem_FullMethodName             = "/sttattus.languages.v1.LanguagesService/SkipPlanItem"
+	LanguagesService_GetMasteryMap_FullMethodName            = "/sttattus.languages.v1.LanguagesService/GetMasteryMap"
+	LanguagesService_GetNodeEvidence_FullMethodName          = "/sttattus.languages.v1.LanguagesService/GetNodeEvidence"
+	LanguagesService_DismissWritingFlag_FullMethodName       = "/sttattus.languages.v1.LanguagesService/DismissWritingFlag"
 	LanguagesService_ListWords_FullMethodName                = "/sttattus.languages.v1.LanguagesService/ListWords"
 )
 
@@ -128,6 +133,14 @@ type LanguagesServiceClient interface {
 	GetPracticeStats(ctx context.Context, in *GetPracticeStatsRequest, opts ...grpc.CallOption) (*GetPracticeStatsResponse, error)
 	GetMemberPrefs(ctx context.Context, in *GetMemberPrefsRequest, opts ...grpc.CallOption) (*GetMemberPrefsResponse, error)
 	SetMemberPrefs(ctx context.Context, in *SetMemberPrefsRequest, opts ...grpc.CallOption) (*SetMemberPrefsResponse, error)
+	// Lexicon Choice 2 — the mastery graph and the adaptive Today plan. Every
+	// plan item says why it is there, and a plan is reproducible from the
+	// stored evidence it was built from.
+	GetAdaptivePlan(ctx context.Context, in *GetAdaptivePlanRequest, opts ...grpc.CallOption) (*GetAdaptivePlanResponse, error)
+	SkipPlanItem(ctx context.Context, in *SkipPlanItemRequest, opts ...grpc.CallOption) (*SkipPlanItemResponse, error)
+	GetMasteryMap(ctx context.Context, in *GetMasteryMapRequest, opts ...grpc.CallOption) (*GetMasteryMapResponse, error)
+	GetNodeEvidence(ctx context.Context, in *GetNodeEvidenceRequest, opts ...grpc.CallOption) (*GetNodeEvidenceResponse, error)
+	DismissWritingFlag(ctx context.Context, in *DismissWritingFlagRequest, opts ...grpc.CallOption) (*DismissWritingFlagResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
 }
@@ -550,6 +563,56 @@ func (c *languagesServiceClient) SetMemberPrefs(ctx context.Context, in *SetMemb
 	return out, nil
 }
 
+func (c *languagesServiceClient) GetAdaptivePlan(ctx context.Context, in *GetAdaptivePlanRequest, opts ...grpc.CallOption) (*GetAdaptivePlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAdaptivePlanResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetAdaptivePlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SkipPlanItem(ctx context.Context, in *SkipPlanItemRequest, opts ...grpc.CallOption) (*SkipPlanItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SkipPlanItemResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SkipPlanItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetMasteryMap(ctx context.Context, in *GetMasteryMapRequest, opts ...grpc.CallOption) (*GetMasteryMapResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMasteryMapResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetMasteryMap_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetNodeEvidence(ctx context.Context, in *GetNodeEvidenceRequest, opts ...grpc.CallOption) (*GetNodeEvidenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetNodeEvidenceResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetNodeEvidence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) DismissWritingFlag(ctx context.Context, in *DismissWritingFlagRequest, opts ...grpc.CallOption) (*DismissWritingFlagResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DismissWritingFlagResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_DismissWritingFlag_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListWordsResponse)
@@ -625,6 +688,14 @@ type LanguagesServiceServer interface {
 	GetPracticeStats(context.Context, *GetPracticeStatsRequest) (*GetPracticeStatsResponse, error)
 	GetMemberPrefs(context.Context, *GetMemberPrefsRequest) (*GetMemberPrefsResponse, error)
 	SetMemberPrefs(context.Context, *SetMemberPrefsRequest) (*SetMemberPrefsResponse, error)
+	// Lexicon Choice 2 — the mastery graph and the adaptive Today plan. Every
+	// plan item says why it is there, and a plan is reproducible from the
+	// stored evidence it was built from.
+	GetAdaptivePlan(context.Context, *GetAdaptivePlanRequest) (*GetAdaptivePlanResponse, error)
+	SkipPlanItem(context.Context, *SkipPlanItemRequest) (*SkipPlanItemResponse, error)
+	GetMasteryMap(context.Context, *GetMasteryMapRequest) (*GetMasteryMapResponse, error)
+	GetNodeEvidence(context.Context, *GetNodeEvidenceRequest) (*GetNodeEvidenceResponse, error)
+	DismissWritingFlag(context.Context, *DismissWritingFlagRequest) (*DismissWritingFlagResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
@@ -759,6 +830,21 @@ func (UnimplementedLanguagesServiceServer) GetMemberPrefs(context.Context, *GetM
 }
 func (UnimplementedLanguagesServiceServer) SetMemberPrefs(context.Context, *SetMemberPrefsRequest) (*SetMemberPrefsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetMemberPrefs not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetAdaptivePlan(context.Context, *GetAdaptivePlanRequest) (*GetAdaptivePlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAdaptivePlan not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SkipPlanItem(context.Context, *SkipPlanItemRequest) (*SkipPlanItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SkipPlanItem not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetMasteryMap(context.Context, *GetMasteryMapRequest) (*GetMasteryMapResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMasteryMap not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetNodeEvidence(context.Context, *GetNodeEvidenceRequest) (*GetNodeEvidenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetNodeEvidence not implemented")
+}
+func (UnimplementedLanguagesServiceServer) DismissWritingFlag(context.Context, *DismissWritingFlagRequest) (*DismissWritingFlagResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DismissWritingFlag not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
@@ -1522,6 +1608,96 @@ func _LanguagesService_SetMemberPrefs_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_GetAdaptivePlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAdaptivePlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetAdaptivePlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetAdaptivePlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetAdaptivePlan(ctx, req.(*GetAdaptivePlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SkipPlanItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SkipPlanItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SkipPlanItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SkipPlanItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SkipPlanItem(ctx, req.(*SkipPlanItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetMasteryMap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMasteryMapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetMasteryMap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetMasteryMap_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetMasteryMap(ctx, req.(*GetMasteryMapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetNodeEvidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetNodeEvidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetNodeEvidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetNodeEvidence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetNodeEvidence(ctx, req.(*GetNodeEvidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_DismissWritingFlag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DismissWritingFlagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).DismissWritingFlag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_DismissWritingFlag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).DismissWritingFlag(ctx, req.(*DismissWritingFlagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListWordsRequest)
 	if err := dec(in); err != nil {
@@ -1710,6 +1886,26 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetMemberPrefs",
 			Handler:    _LanguagesService_SetMemberPrefs_Handler,
+		},
+		{
+			MethodName: "GetAdaptivePlan",
+			Handler:    _LanguagesService_GetAdaptivePlan_Handler,
+		},
+		{
+			MethodName: "SkipPlanItem",
+			Handler:    _LanguagesService_SkipPlanItem_Handler,
+		},
+		{
+			MethodName: "GetMasteryMap",
+			Handler:    _LanguagesService_GetMasteryMap_Handler,
+		},
+		{
+			MethodName: "GetNodeEvidence",
+			Handler:    _LanguagesService_GetNodeEvidence_Handler,
+		},
+		{
+			MethodName: "DismissWritingFlag",
+			Handler:    _LanguagesService_DismissWritingFlag_Handler,
 		},
 		{
 			MethodName: "ListWords",

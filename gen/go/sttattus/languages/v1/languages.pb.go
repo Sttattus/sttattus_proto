@@ -260,6 +260,348 @@ func (NewMaterialStatus) EnumDescriptor() ([]byte, []int) {
 	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{3}
 }
 
+// What an observation is evidence of. The same word can be recognised long
+// before it can be recalled, spelled, heard or said; each is tracked apart.
+type MasterySkill int32
+
+const (
+	MasterySkill_MASTERY_SKILL_UNSPECIFIED   MasterySkill = 0
+	MasterySkill_MASTERY_SKILL_RECOGNITION   MasterySkill = 1 // see it, know what it means
+	MasterySkill_MASTERY_SKILL_RECALL        MasterySkill = 2 // produce it from its meaning
+	MasterySkill_MASTERY_SKILL_SPELLING      MasterySkill = 3 // write it exactly, accents included
+	MasterySkill_MASTERY_SKILL_LISTENING     MasterySkill = 4 // hear it, know what it means
+	MasterySkill_MASTERY_SKILL_PRONUNCIATION MasterySkill = 5 // say it so it is understood
+	MasterySkill_MASTERY_SKILL_PRODUCTION    MasterySkill = 6 // use it in free speech
+	MasterySkill_MASTERY_SKILL_GRAMMAR       MasterySkill = 7 // apply a grammar point in context
+	MasterySkill_MASTERY_SKILL_CONJUGATION   MasterySkill = 8 // produce the right verb form
+	MasterySkill_MASTERY_SKILL_READING       MasterySkill = 9
+	MasterySkill_MASTERY_SKILL_WRITING       MasterySkill = 10
+	MasterySkill_MASTERY_SKILL_CONVERSATION  MasterySkill = 11
+)
+
+// Enum value maps for MasterySkill.
+var (
+	MasterySkill_name = map[int32]string{
+		0:  "MASTERY_SKILL_UNSPECIFIED",
+		1:  "MASTERY_SKILL_RECOGNITION",
+		2:  "MASTERY_SKILL_RECALL",
+		3:  "MASTERY_SKILL_SPELLING",
+		4:  "MASTERY_SKILL_LISTENING",
+		5:  "MASTERY_SKILL_PRONUNCIATION",
+		6:  "MASTERY_SKILL_PRODUCTION",
+		7:  "MASTERY_SKILL_GRAMMAR",
+		8:  "MASTERY_SKILL_CONJUGATION",
+		9:  "MASTERY_SKILL_READING",
+		10: "MASTERY_SKILL_WRITING",
+		11: "MASTERY_SKILL_CONVERSATION",
+	}
+	MasterySkill_value = map[string]int32{
+		"MASTERY_SKILL_UNSPECIFIED":   0,
+		"MASTERY_SKILL_RECOGNITION":   1,
+		"MASTERY_SKILL_RECALL":        2,
+		"MASTERY_SKILL_SPELLING":      3,
+		"MASTERY_SKILL_LISTENING":     4,
+		"MASTERY_SKILL_PRONUNCIATION": 5,
+		"MASTERY_SKILL_PRODUCTION":    6,
+		"MASTERY_SKILL_GRAMMAR":       7,
+		"MASTERY_SKILL_CONJUGATION":   8,
+		"MASTERY_SKILL_READING":       9,
+		"MASTERY_SKILL_WRITING":       10,
+		"MASTERY_SKILL_CONVERSATION":  11,
+	}
+)
+
+func (x MasterySkill) Enum() *MasterySkill {
+	p := new(MasterySkill)
+	*p = x
+	return p
+}
+
+func (x MasterySkill) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (MasterySkill) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[4].Descriptor()
+}
+
+func (MasterySkill) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[4]
+}
+
+func (x MasterySkill) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use MasterySkill.Descriptor instead.
+func (MasterySkill) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{4}
+}
+
+// What the member is learning for. It changes the mix of Today, never what
+// counts as knowing something.
+type GoalMode int32
+
+const (
+	GoalMode_GOAL_MODE_UNSPECIFIED   GoalMode = 0
+	GoalMode_GOAL_MODE_BALANCED      GoalMode = 1
+	GoalMode_GOAL_MODE_TRAVEL        GoalMode = 2
+	GoalMode_GOAL_MODE_FAMILY        GoalMode = 3
+	GoalMode_GOAL_MODE_ACADEMIC      GoalMode = 4
+	GoalMode_GOAL_MODE_RELOCATION    GoalMode = 5
+	GoalMode_GOAL_MODE_EXAM          GoalMode = 6
+	GoalMode_GOAL_MODE_BUSINESS      GoalMode = 7
+	GoalMode_GOAL_MODE_PRONUNCIATION GoalMode = 8
+	GoalMode_GOAL_MODE_MAINTENANCE   GoalMode = 9
+)
+
+// Enum value maps for GoalMode.
+var (
+	GoalMode_name = map[int32]string{
+		0: "GOAL_MODE_UNSPECIFIED",
+		1: "GOAL_MODE_BALANCED",
+		2: "GOAL_MODE_TRAVEL",
+		3: "GOAL_MODE_FAMILY",
+		4: "GOAL_MODE_ACADEMIC",
+		5: "GOAL_MODE_RELOCATION",
+		6: "GOAL_MODE_EXAM",
+		7: "GOAL_MODE_BUSINESS",
+		8: "GOAL_MODE_PRONUNCIATION",
+		9: "GOAL_MODE_MAINTENANCE",
+	}
+	GoalMode_value = map[string]int32{
+		"GOAL_MODE_UNSPECIFIED":   0,
+		"GOAL_MODE_BALANCED":      1,
+		"GOAL_MODE_TRAVEL":        2,
+		"GOAL_MODE_FAMILY":        3,
+		"GOAL_MODE_ACADEMIC":      4,
+		"GOAL_MODE_RELOCATION":    5,
+		"GOAL_MODE_EXAM":          6,
+		"GOAL_MODE_BUSINESS":      7,
+		"GOAL_MODE_PRONUNCIATION": 8,
+		"GOAL_MODE_MAINTENANCE":   9,
+	}
+)
+
+func (x GoalMode) Enum() *GoalMode {
+	p := new(GoalMode)
+	*p = x
+	return p
+}
+
+func (x GoalMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (GoalMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[5].Descriptor()
+}
+
+func (GoalMode) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[5]
+}
+
+func (x GoalMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use GoalMode.Descriptor instead.
+func (GoalMode) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{5}
+}
+
+type PlanItemKind int32
+
+const (
+	PlanItemKind_PLAN_ITEM_KIND_UNSPECIFIED PlanItemKind = 0
+	PlanItemKind_PLAN_ITEM_KIND_REVIEW      PlanItemKind = 1 // due retrieval
+	PlanItemKind_PLAN_ITEM_KIND_NEW         PlanItemKind = 2 // new material from an open level
+	PlanItemKind_PLAN_ITEM_KIND_REPAIR      PlanItemKind = 3 // a leech, a weak skill or a prerequisite
+	PlanItemKind_PLAN_ITEM_KIND_CONTRAST    PlanItemKind = 4 // two items the member confuses, side by side
+	PlanItemKind_PLAN_ITEM_KIND_CHECK       PlanItemKind = 5 // a short check of an AI-suspected error
+	PlanItemKind_PLAN_ITEM_KIND_LISTENING   PlanItemKind = 6 // listening drill on known words
+	PlanItemKind_PLAN_ITEM_KIND_SPEAKING    PlanItemKind = 7 // a speaking prompt
+	PlanItemKind_PLAN_ITEM_KIND_READING     PlanItemKind = 8 // a graded reading text
+	PlanItemKind_PLAN_ITEM_KIND_WRITING     PlanItemKind = 9 // a writing prompt
+)
+
+// Enum value maps for PlanItemKind.
+var (
+	PlanItemKind_name = map[int32]string{
+		0: "PLAN_ITEM_KIND_UNSPECIFIED",
+		1: "PLAN_ITEM_KIND_REVIEW",
+		2: "PLAN_ITEM_KIND_NEW",
+		3: "PLAN_ITEM_KIND_REPAIR",
+		4: "PLAN_ITEM_KIND_CONTRAST",
+		5: "PLAN_ITEM_KIND_CHECK",
+		6: "PLAN_ITEM_KIND_LISTENING",
+		7: "PLAN_ITEM_KIND_SPEAKING",
+		8: "PLAN_ITEM_KIND_READING",
+		9: "PLAN_ITEM_KIND_WRITING",
+	}
+	PlanItemKind_value = map[string]int32{
+		"PLAN_ITEM_KIND_UNSPECIFIED": 0,
+		"PLAN_ITEM_KIND_REVIEW":      1,
+		"PLAN_ITEM_KIND_NEW":         2,
+		"PLAN_ITEM_KIND_REPAIR":      3,
+		"PLAN_ITEM_KIND_CONTRAST":    4,
+		"PLAN_ITEM_KIND_CHECK":       5,
+		"PLAN_ITEM_KIND_LISTENING":   6,
+		"PLAN_ITEM_KIND_SPEAKING":    7,
+		"PLAN_ITEM_KIND_READING":     8,
+		"PLAN_ITEM_KIND_WRITING":     9,
+	}
+)
+
+func (x PlanItemKind) Enum() *PlanItemKind {
+	p := new(PlanItemKind)
+	*p = x
+	return p
+}
+
+func (x PlanItemKind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PlanItemKind) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[6].Descriptor()
+}
+
+func (PlanItemKind) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[6]
+}
+
+func (x PlanItemKind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PlanItemKind.Descriptor instead.
+func (PlanItemKind) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{6}
+}
+
+type PlanItemState int32
+
+const (
+	PlanItemState_PLAN_ITEM_STATE_UNSPECIFIED PlanItemState = 0
+	PlanItemState_PLAN_ITEM_STATE_PENDING     PlanItemState = 1
+	PlanItemState_PLAN_ITEM_STATE_DONE        PlanItemState = 2 // completed by evidence, never by a tap
+	PlanItemState_PLAN_ITEM_STATE_SKIPPED     PlanItemState = 3 // "not today"; can be restored
+)
+
+// Enum value maps for PlanItemState.
+var (
+	PlanItemState_name = map[int32]string{
+		0: "PLAN_ITEM_STATE_UNSPECIFIED",
+		1: "PLAN_ITEM_STATE_PENDING",
+		2: "PLAN_ITEM_STATE_DONE",
+		3: "PLAN_ITEM_STATE_SKIPPED",
+	}
+	PlanItemState_value = map[string]int32{
+		"PLAN_ITEM_STATE_UNSPECIFIED": 0,
+		"PLAN_ITEM_STATE_PENDING":     1,
+		"PLAN_ITEM_STATE_DONE":        2,
+		"PLAN_ITEM_STATE_SKIPPED":     3,
+	}
+)
+
+func (x PlanItemState) Enum() *PlanItemState {
+	p := new(PlanItemState)
+	*p = x
+	return p
+}
+
+func (x PlanItemState) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PlanItemState) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[7].Descriptor()
+}
+
+func (PlanItemState) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[7]
+}
+
+func (x PlanItemState) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PlanItemState.Descriptor instead.
+func (PlanItemState) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{7}
+}
+
+type PlanReasonCode int32
+
+const (
+	PlanReasonCode_PLAN_REASON_CODE_UNSPECIFIED   PlanReasonCode = 0
+	PlanReasonCode_PLAN_REASON_CODE_DUE           PlanReasonCode = 1 // predicted recall fell below the threshold
+	PlanReasonCode_PLAN_REASON_CODE_LEECH         PlanReasonCode = 2 // lost again and again
+	PlanReasonCode_PLAN_REASON_CODE_WEAK_SKILL    PlanReasonCode = 3 // a skill well below the member's others
+	PlanReasonCode_PLAN_REASON_CODE_INTERFERENCE  PlanReasonCode = 4 // two items confused with each other
+	PlanReasonCode_PLAN_REASON_CODE_PREREQUISITE  PlanReasonCode = 5 // needed by something else in the plan
+	PlanReasonCode_PLAN_REASON_CODE_CHECK_AI_FLAG PlanReasonCode = 6 // the writing coach suspected an error
+	PlanReasonCode_PLAN_REASON_CODE_NEW           PlanReasonCode = 7 // next material in an open level
+	PlanReasonCode_PLAN_REASON_CODE_CATCH_UP      PlanReasonCode = 8 // back after missed days
+	PlanReasonCode_PLAN_REASON_CODE_GOAL          PlanReasonCode = 9 // the goal mode asks for this skill
+)
+
+// Enum value maps for PlanReasonCode.
+var (
+	PlanReasonCode_name = map[int32]string{
+		0: "PLAN_REASON_CODE_UNSPECIFIED",
+		1: "PLAN_REASON_CODE_DUE",
+		2: "PLAN_REASON_CODE_LEECH",
+		3: "PLAN_REASON_CODE_WEAK_SKILL",
+		4: "PLAN_REASON_CODE_INTERFERENCE",
+		5: "PLAN_REASON_CODE_PREREQUISITE",
+		6: "PLAN_REASON_CODE_CHECK_AI_FLAG",
+		7: "PLAN_REASON_CODE_NEW",
+		8: "PLAN_REASON_CODE_CATCH_UP",
+		9: "PLAN_REASON_CODE_GOAL",
+	}
+	PlanReasonCode_value = map[string]int32{
+		"PLAN_REASON_CODE_UNSPECIFIED":   0,
+		"PLAN_REASON_CODE_DUE":           1,
+		"PLAN_REASON_CODE_LEECH":         2,
+		"PLAN_REASON_CODE_WEAK_SKILL":    3,
+		"PLAN_REASON_CODE_INTERFERENCE":  4,
+		"PLAN_REASON_CODE_PREREQUISITE":  5,
+		"PLAN_REASON_CODE_CHECK_AI_FLAG": 6,
+		"PLAN_REASON_CODE_NEW":           7,
+		"PLAN_REASON_CODE_CATCH_UP":      8,
+		"PLAN_REASON_CODE_GOAL":          9,
+	}
+)
+
+func (x PlanReasonCode) Enum() *PlanReasonCode {
+	p := new(PlanReasonCode)
+	*p = x
+	return p
+}
+
+func (x PlanReasonCode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PlanReasonCode) Descriptor() protoreflect.EnumDescriptor {
+	return file_sttattus_languages_v1_languages_proto_enumTypes[8].Descriptor()
+}
+
+func (PlanReasonCode) Type() protoreflect.EnumType {
+	return &file_sttattus_languages_v1_languages_proto_enumTypes[8]
+}
+
+func (x PlanReasonCode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PlanReasonCode.Descriptor instead.
+func (PlanReasonCode) EnumDescriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{8}
+}
+
 // CulturalNuance represents a specific rule of social grace or etiquette.
 type CulturalNuance struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -3881,8 +4223,13 @@ type WritingError struct {
 	// lexicon_grammar_points.key, when the mistake maps onto a point that is
 	// actually taught. Empty when it does not.
 	GrammarPointKey string `protobuf:"bytes,5,opt,name=grammar_point_key,json=grammarPointKey,proto3" json:"grammar_point_key,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// Lexicon Choice 2. An AI-found error is a suspicion, not evidence: it
+	// lowers nothing until a short check confirms it. "unverified" until then,
+	// "confirmed" or "cleared" by the check, "dismissed" when the member says
+	// it is not an error.
+	FlagState     string `protobuf:"bytes,6,opt,name=flag_state,json=flagState,proto3" json:"flag_state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *WritingError) Reset() {
@@ -3946,6 +4293,13 @@ func (x *WritingError) GetExplanation() string {
 func (x *WritingError) GetGrammarPointKey() string {
 	if x != nil {
 		return x.GrammarPointKey
+	}
+	return ""
+}
+
+func (x *WritingError) GetFlagState() string {
+	if x != nil {
+		return x.FlagState
 	}
 	return ""
 }
@@ -6357,7 +6711,9 @@ type PracticeCard struct {
 	CorrectedSinceSeen bool `protobuf:"varint,25,opt,name=corrected_since_seen,json=correctedSinceSeen,proto3" json:"corrected_since_seen,omitempty"`
 	// The language the prompt detail, rationale and point title are written
 	// in. Equal to base_language unless that copy does not exist yet.
-	CopyLanguage  string `protobuf:"bytes,26,opt,name=copy_language,json=copyLanguage,proto3" json:"copy_language,omitempty"`
+	CopyLanguage string `protobuf:"bytes,26,opt,name=copy_language,json=copyLanguage,proto3" json:"copy_language,omitempty"`
+	// Lexicon Choice 2: why this card is in the session now.
+	Reason        *PlanReason `protobuf:"bytes,27,opt,name=reason,proto3" json:"reason,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6574,6 +6930,13 @@ func (x *PracticeCard) GetCopyLanguage() string {
 	return ""
 }
 
+func (x *PracticeCard) GetReason() *PlanReason {
+	if x != nil {
+		return x.Reason
+	}
+	return nil
+}
+
 type GetPracticeSessionRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The language being learned.
@@ -6584,7 +6947,10 @@ type GetPracticeSessionRequest struct {
 	// list. Listening exercises are only scheduled for a language named here
 	// (or for an item with recorded audio): a listen card on a device with no
 	// voice installed has no prompt at all and cannot be answered.
-	TtsLanguages  []string `protobuf:"bytes,3,rep,name=tts_languages,json=ttsLanguages,proto3" json:"tts_languages,omitempty"`
+	TtsLanguages []string `protobuf:"bytes,3,rep,name=tts_languages,json=ttsLanguages,proto3" json:"tts_languages,omitempty"`
+	// Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
+	// and skill) instead of the general due queue.
+	PlanItemId    string `protobuf:"bytes,4,opt,name=plan_item_id,json=planItemId,proto3" json:"plan_item_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6638,6 +7004,13 @@ func (x *GetPracticeSessionRequest) GetTtsLanguages() []string {
 		return x.TtsLanguages
 	}
 	return nil
+}
+
+func (x *GetPracticeSessionRequest) GetPlanItemId() string {
+	if x != nil {
+		return x.PlanItemId
+	}
+	return ""
 }
 
 type GetPracticeSessionResponse struct {
@@ -6737,8 +7110,17 @@ type SubmitAnswerRequest struct {
 	// Lexicon Choice 1 — the unit and revision the card was built from.
 	ContentUnitId   string `protobuf:"bytes,9,opt,name=content_unit_id,json=contentUnitId,proto3" json:"content_unit_id,omitempty"`
 	ContentRevision int32  `protobuf:"varint,10,opt,name=content_revision,json=contentRevision,proto3" json:"content_revision,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// Lexicon Choice 2. A client-generated id for this answer: a retry after a
+	// dropped connection (or an offline replay) is recognised and not counted
+	// twice.
+	ClientEventId string `protobuf:"bytes,11,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	// The member asked for a hint before answering; a hinted success is weaker
+	// evidence than an unaided one.
+	HintUsed bool `protobuf:"varint,12,opt,name=hint_used,json=hintUsed,proto3" json:"hint_used,omitempty"`
+	// The plan item this answer was given for, when the session came from one.
+	PlanItemId    string `protobuf:"bytes,13,opt,name=plan_item_id,json=planItemId,proto3" json:"plan_item_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SubmitAnswerRequest) Reset() {
@@ -6841,6 +7223,27 @@ func (x *SubmitAnswerRequest) GetContentRevision() int32 {
 	return 0
 }
 
+func (x *SubmitAnswerRequest) GetClientEventId() string {
+	if x != nil {
+		return x.ClientEventId
+	}
+	return ""
+}
+
+func (x *SubmitAnswerRequest) GetHintUsed() bool {
+	if x != nil {
+		return x.HintUsed
+	}
+	return false
+}
+
+func (x *SubmitAnswerRequest) GetPlanItemId() string {
+	if x != nil {
+		return x.PlanItemId
+	}
+	return ""
+}
+
 type SubmitAnswerResponse struct {
 	state   protoimpl.MessageState `protogen:"open.v1"`
 	Correct bool                   `protobuf:"varint,1,opt,name=correct,proto3" json:"correct,omitempty"`
@@ -6853,7 +7256,10 @@ type SubmitAnswerResponse struct {
 	NewLearnedToday  int32                  `protobuf:"varint,6,opt,name=new_learned_today,json=newLearnedToday,proto3" json:"new_learned_today,omitempty"`
 	// The explanation for this item, so the client can show it after an answer
 	// without holding the card.
-	Rationale     string `protobuf:"bytes,7,opt,name=rationale,proto3" json:"rationale,omitempty"`
+	Rationale string `protobuf:"bytes,7,opt,name=rationale,proto3" json:"rationale,omitempty"`
+	// Lexicon Choice 2: this client_event_id had already been recorded; the
+	// response describes the first recording and nothing was counted again.
+	Duplicate     bool `protobuf:"varint,8,opt,name=duplicate,proto3" json:"duplicate,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -6935,6 +7341,13 @@ func (x *SubmitAnswerResponse) GetRationale() string {
 		return x.Rationale
 	}
 	return ""
+}
+
+func (x *SubmitAnswerResponse) GetDuplicate() bool {
+	if x != nil {
+		return x.Duplicate
+	}
+	return false
 }
 
 type GetPracticeStatsRequest struct {
@@ -7112,8 +7525,23 @@ type MemberPrefs struct {
 	BaseLanguage      string                 `protobuf:"bytes,1,opt,name=base_language,json=baseLanguage,proto3" json:"base_language,omitempty"`
 	DailyNewTarget    int32                  `protobuf:"varint,2,opt,name=daily_new_target,json=dailyNewTarget,proto3" json:"daily_new_target,omitempty"`
 	DailyReviewTarget int32                  `protobuf:"varint,3,opt,name=daily_review_target,json=dailyReviewTarget,proto3" json:"daily_review_target,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// Lexicon Choice 2 — how the member wants Today planned. On
+	// SetMemberPrefs a field left out keeps its stored value (an older app
+	// that only sends the base language must not reset these):
+	// GOAL_MODE_UNSPECIFIED and daily_minutes 0 mean "unchanged", and the
+	// optional fields are applied only when present. vacation_until "" clears it.
+	GoalMode GoalMode `protobuf:"varint,4,opt,name=goal_mode,json=goalMode,proto3,enum=sttattus.languages.v1.GoalMode" json:"goal_mode,omitempty"`
+	// Time budget for Today, 5–90 minutes.
+	DailyMinutes int32 `protobuf:"varint,5,opt,name=daily_minutes,json=dailyMinutes,proto3" json:"daily_minutes,omitempty"`
+	// The device's offset from UTC, so "today" is the member's day.
+	UtcOffsetMinutes *int32 `protobuf:"varint,6,opt,name=utc_offset_minutes,json=utcOffsetMinutes,proto3,oneof" json:"utc_offset_minutes,omitempty"`
+	// New material pauses until this date (YYYY-MM-DD, inclusive); empty = off.
+	VacationUntil *string `protobuf:"bytes,7,opt,name=vacation_until,json=vacationUntil,proto3,oneof" json:"vacation_until,omitempty"`
+	// Accessibility pacing: more time per item, and latency never counts
+	// against an answer.
+	ExtraTime     *bool `protobuf:"varint,8,opt,name=extra_time,json=extraTime,proto3,oneof" json:"extra_time,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *MemberPrefs) Reset() {
@@ -7165,6 +7593,41 @@ func (x *MemberPrefs) GetDailyReviewTarget() int32 {
 		return x.DailyReviewTarget
 	}
 	return 0
+}
+
+func (x *MemberPrefs) GetGoalMode() GoalMode {
+	if x != nil {
+		return x.GoalMode
+	}
+	return GoalMode_GOAL_MODE_UNSPECIFIED
+}
+
+func (x *MemberPrefs) GetDailyMinutes() int32 {
+	if x != nil {
+		return x.DailyMinutes
+	}
+	return 0
+}
+
+func (x *MemberPrefs) GetUtcOffsetMinutes() int32 {
+	if x != nil && x.UtcOffsetMinutes != nil {
+		return *x.UtcOffsetMinutes
+	}
+	return 0
+}
+
+func (x *MemberPrefs) GetVacationUntil() string {
+	if x != nil && x.VacationUntil != nil {
+		return *x.VacationUntil
+	}
+	return ""
+}
+
+func (x *MemberPrefs) GetExtraTime() bool {
+	if x != nil && x.ExtraTime != nil {
+		return *x.ExtraTime
+	}
+	return false
 }
 
 type GetMemberPrefsRequest struct {
@@ -7476,6 +7939,1360 @@ func (x *ListWordsResponse) GetWords() []*Word {
 	return nil
 }
 
+// Why something is in the plan. `params` carries the numbers behind the
+// sentence (skill, estimate, lapses, the two confused items, days missed…) so
+// the app can say it in the member's language; evidence_count is how many
+// observations the claim rests on.
+type PlanReason struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Code          PlanReasonCode         `protobuf:"varint,1,opt,name=code,proto3,enum=sttattus.languages.v1.PlanReasonCode" json:"code,omitempty"`
+	Params        map[string]string      `protobuf:"bytes,2,rep,name=params,proto3" json:"params,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	EvidenceCount int32                  `protobuf:"varint,3,opt,name=evidence_count,json=evidenceCount,proto3" json:"evidence_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlanReason) Reset() {
+	*x = PlanReason{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlanReason) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlanReason) ProtoMessage() {}
+
+func (x *PlanReason) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlanReason.ProtoReflect.Descriptor instead.
+func (*PlanReason) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *PlanReason) GetCode() PlanReasonCode {
+	if x != nil {
+		return x.Code
+	}
+	return PlanReasonCode_PLAN_REASON_CODE_UNSPECIFIED
+}
+
+func (x *PlanReason) GetParams() map[string]string {
+	if x != nil {
+		return x.Params
+	}
+	return nil
+}
+
+func (x *PlanReason) GetEvidenceCount() int32 {
+	if x != nil {
+		return x.EvidenceCount
+	}
+	return 0
+}
+
+type PlanItem struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Kind  PlanItemKind           `protobuf:"varint,2,opt,name=kind,proto3,enum=sttattus.languages.v1.PlanItemKind" json:"kind,omitempty"`
+	Skill MasterySkill           `protobuf:"varint,3,opt,name=skill,proto3,enum=sttattus.languages.v1.MasterySkill" json:"skill,omitempty"`
+	// What the item covers, as the member would name it (words, a grammar
+	// point's title, a prompt).
+	Labels           []string      `protobuf:"bytes,4,rep,name=labels,proto3" json:"labels,omitempty"`
+	EstimatedMinutes int32         `protobuf:"varint,5,opt,name=estimated_minutes,json=estimatedMinutes,proto3" json:"estimated_minutes,omitempty"`
+	State            PlanItemState `protobuf:"varint,6,opt,name=state,proto3,enum=sttattus.languages.v1.PlanItemState" json:"state,omitempty"`
+	Reason           *PlanReason   `protobuf:"bytes,7,opt,name=reason,proto3" json:"reason,omitempty"`
+	// Answers (or one attempt/completion) needed, and how many are done.
+	TargetCount int32 `protobuf:"varint,8,opt,name=target_count,json=targetCount,proto3" json:"target_count,omitempty"`
+	DoneCount   int32 `protobuf:"varint,9,opt,name=done_count,json=doneCount,proto3" json:"done_count,omitempty"`
+	// For speaking/reading/writing items: the activity to open.
+	ActivityId    string `protobuf:"bytes,10,opt,name=activity_id,json=activityId,proto3" json:"activity_id,omitempty"`
+	ActivityTitle string `protobuf:"bytes,11,opt,name=activity_title,json=activityTitle,proto3" json:"activity_title,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PlanItem) Reset() {
+	*x = PlanItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlanItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlanItem) ProtoMessage() {}
+
+func (x *PlanItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlanItem.ProtoReflect.Descriptor instead.
+func (*PlanItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *PlanItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PlanItem) GetKind() PlanItemKind {
+	if x != nil {
+		return x.Kind
+	}
+	return PlanItemKind_PLAN_ITEM_KIND_UNSPECIFIED
+}
+
+func (x *PlanItem) GetSkill() MasterySkill {
+	if x != nil {
+		return x.Skill
+	}
+	return MasterySkill_MASTERY_SKILL_UNSPECIFIED
+}
+
+func (x *PlanItem) GetLabels() []string {
+	if x != nil {
+		return x.Labels
+	}
+	return nil
+}
+
+func (x *PlanItem) GetEstimatedMinutes() int32 {
+	if x != nil {
+		return x.EstimatedMinutes
+	}
+	return 0
+}
+
+func (x *PlanItem) GetState() PlanItemState {
+	if x != nil {
+		return x.State
+	}
+	return PlanItemState_PLAN_ITEM_STATE_UNSPECIFIED
+}
+
+func (x *PlanItem) GetReason() *PlanReason {
+	if x != nil {
+		return x.Reason
+	}
+	return nil
+}
+
+func (x *PlanItem) GetTargetCount() int32 {
+	if x != nil {
+		return x.TargetCount
+	}
+	return 0
+}
+
+func (x *PlanItem) GetDoneCount() int32 {
+	if x != nil {
+		return x.DoneCount
+	}
+	return 0
+}
+
+func (x *PlanItem) GetActivityId() string {
+	if x != nil {
+		return x.ActivityId
+	}
+	return ""
+}
+
+func (x *PlanItem) GetActivityTitle() string {
+	if x != nil {
+		return x.ActivityTitle
+	}
+	return ""
+}
+
+type AdaptivePlan struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	RevisionId       string                 `protobuf:"bytes,1,opt,name=revision_id,json=revisionId,proto3" json:"revision_id,omitempty"`
+	Language         string                 `protobuf:"bytes,2,opt,name=language,proto3" json:"language,omitempty"`
+	PlanDate         string                 `protobuf:"bytes,3,opt,name=plan_date,json=planDate,proto3" json:"plan_date,omitempty"` // the member's local date, YYYY-MM-DD
+	Revision         int32                  `protobuf:"varint,4,opt,name=revision,proto3" json:"revision,omitempty"`
+	PolicyVersion    string                 `protobuf:"bytes,5,opt,name=policy_version,json=policyVersion,proto3" json:"policy_version,omitempty"`
+	GoalMode         GoalMode               `protobuf:"varint,6,opt,name=goal_mode,json=goalMode,proto3,enum=sttattus.languages.v1.GoalMode" json:"goal_mode,omitempty"`
+	BudgetMinutes    int32                  `protobuf:"varint,7,opt,name=budget_minutes,json=budgetMinutes,proto3" json:"budget_minutes,omitempty"`
+	EstimatedMinutes int32                  `protobuf:"varint,8,opt,name=estimated_minutes,json=estimatedMinutes,proto3" json:"estimated_minutes,omitempty"`
+	Items            []*PlanItem            `protobuf:"bytes,9,rep,name=items,proto3" json:"items,omitempty"`
+	// Back after a gap: how many days were missed and how many at-risk items
+	// were spread over the coming days instead of all landing today.
+	MissedDays    int32 `protobuf:"varint,10,opt,name=missed_days,json=missedDays,proto3" json:"missed_days,omitempty"`
+	DeferredCount int32 `protobuf:"varint,11,opt,name=deferred_count,json=deferredCount,proto3" json:"deferred_count,omitempty"`
+	Vacation      bool  `protobuf:"varint,12,opt,name=vacation,proto3" json:"vacation,omitempty"`
+	// What the plan was built from; the same inputs rebuild the same plan.
+	InputsDigest  string            `protobuf:"bytes,13,opt,name=inputs_digest,json=inputsDigest,proto3" json:"inputs_digest,omitempty"`
+	GeneratedUnix int64             `protobuf:"varint,14,opt,name=generated_unix,json=generatedUnix,proto3" json:"generated_unix,omitempty"`
+	NewMaterial   NewMaterialStatus `protobuf:"varint,15,opt,name=new_material,json=newMaterial,proto3,enum=sttattus.languages.v1.NewMaterialStatus" json:"new_material,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdaptivePlan) Reset() {
+	*x = AdaptivePlan{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdaptivePlan) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdaptivePlan) ProtoMessage() {}
+
+func (x *AdaptivePlan) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdaptivePlan.ProtoReflect.Descriptor instead.
+func (*AdaptivePlan) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *AdaptivePlan) GetRevisionId() string {
+	if x != nil {
+		return x.RevisionId
+	}
+	return ""
+}
+
+func (x *AdaptivePlan) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *AdaptivePlan) GetPlanDate() string {
+	if x != nil {
+		return x.PlanDate
+	}
+	return ""
+}
+
+func (x *AdaptivePlan) GetRevision() int32 {
+	if x != nil {
+		return x.Revision
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetPolicyVersion() string {
+	if x != nil {
+		return x.PolicyVersion
+	}
+	return ""
+}
+
+func (x *AdaptivePlan) GetGoalMode() GoalMode {
+	if x != nil {
+		return x.GoalMode
+	}
+	return GoalMode_GOAL_MODE_UNSPECIFIED
+}
+
+func (x *AdaptivePlan) GetBudgetMinutes() int32 {
+	if x != nil {
+		return x.BudgetMinutes
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetEstimatedMinutes() int32 {
+	if x != nil {
+		return x.EstimatedMinutes
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetItems() []*PlanItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *AdaptivePlan) GetMissedDays() int32 {
+	if x != nil {
+		return x.MissedDays
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetDeferredCount() int32 {
+	if x != nil {
+		return x.DeferredCount
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetVacation() bool {
+	if x != nil {
+		return x.Vacation
+	}
+	return false
+}
+
+func (x *AdaptivePlan) GetInputsDigest() string {
+	if x != nil {
+		return x.InputsDigest
+	}
+	return ""
+}
+
+func (x *AdaptivePlan) GetGeneratedUnix() int64 {
+	if x != nil {
+		return x.GeneratedUnix
+	}
+	return 0
+}
+
+func (x *AdaptivePlan) GetNewMaterial() NewMaterialStatus {
+	if x != nil {
+		return x.NewMaterial
+	}
+	return NewMaterialStatus_NEW_MATERIAL_STATUS_UNSPECIFIED
+}
+
+type GetAdaptivePlanRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Language         string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	UtcOffsetMinutes int32                  `protobuf:"varint,2,opt,name=utc_offset_minutes,json=utcOffsetMinutes,proto3" json:"utc_offset_minutes,omitempty"`
+	// Build a new revision now (after settings change or new evidence) instead
+	// of returning today's current one.
+	Regenerate    bool `protobuf:"varint,3,opt,name=regenerate,proto3" json:"regenerate,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdaptivePlanRequest) Reset() {
+	*x = GetAdaptivePlanRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdaptivePlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdaptivePlanRequest) ProtoMessage() {}
+
+func (x *GetAdaptivePlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdaptivePlanRequest.ProtoReflect.Descriptor instead.
+func (*GetAdaptivePlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *GetAdaptivePlanRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *GetAdaptivePlanRequest) GetUtcOffsetMinutes() int32 {
+	if x != nil {
+		return x.UtcOffsetMinutes
+	}
+	return 0
+}
+
+func (x *GetAdaptivePlanRequest) GetRegenerate() bool {
+	if x != nil {
+		return x.Regenerate
+	}
+	return false
+}
+
+type GetAdaptivePlanResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Plan          *AdaptivePlan          `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdaptivePlanResponse) Reset() {
+	*x = GetAdaptivePlanResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdaptivePlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdaptivePlanResponse) ProtoMessage() {}
+
+func (x *GetAdaptivePlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdaptivePlanResponse.ProtoReflect.Descriptor instead.
+func (*GetAdaptivePlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{117}
+}
+
+func (x *GetAdaptivePlanResponse) GetPlan() *AdaptivePlan {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
+type SkipPlanItemRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	PlanItemId    string                 `protobuf:"bytes,2,opt,name=plan_item_id,json=planItemId,proto3" json:"plan_item_id,omitempty"`
+	Restore       bool                   `protobuf:"varint,3,opt,name=restore,proto3" json:"restore,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SkipPlanItemRequest) Reset() {
+	*x = SkipPlanItemRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkipPlanItemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkipPlanItemRequest) ProtoMessage() {}
+
+func (x *SkipPlanItemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkipPlanItemRequest.ProtoReflect.Descriptor instead.
+func (*SkipPlanItemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *SkipPlanItemRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *SkipPlanItemRequest) GetPlanItemId() string {
+	if x != nil {
+		return x.PlanItemId
+	}
+	return ""
+}
+
+func (x *SkipPlanItemRequest) GetRestore() bool {
+	if x != nil {
+		return x.Restore
+	}
+	return false
+}
+
+type SkipPlanItemResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Plan          *AdaptivePlan          `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SkipPlanItemResponse) Reset() {
+	*x = SkipPlanItemResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkipPlanItemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkipPlanItemResponse) ProtoMessage() {}
+
+func (x *SkipPlanItemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkipPlanItemResponse.ProtoReflect.Descriptor instead.
+func (*SkipPlanItemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *SkipPlanItemResponse) GetPlan() *AdaptivePlan {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
+// One estimate, with how sure it is. `estimate`, `low` and `high` are 0–100.
+type SkillEstimate struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Skill         MasterySkill           `protobuf:"varint,1,opt,name=skill,proto3,enum=sttattus.languages.v1.MasterySkill" json:"skill,omitempty"`
+	Estimate      int32                  `protobuf:"varint,2,opt,name=estimate,proto3" json:"estimate,omitempty"`
+	Low           int32                  `protobuf:"varint,3,opt,name=low,proto3" json:"low,omitempty"`
+	High          int32                  `protobuf:"varint,4,opt,name=high,proto3" json:"high,omitempty"`
+	EvidenceCount int32                  `protobuf:"varint,5,opt,name=evidence_count,json=evidenceCount,proto3" json:"evidence_count,omitempty"`
+	// Things observed in this skill, out of what the open levels contain.
+	NodesObserved int32 `protobuf:"varint,6,opt,name=nodes_observed,json=nodesObserved,proto3" json:"nodes_observed,omitempty"`
+	NodesOpen     int32 `protobuf:"varint,7,opt,name=nodes_open,json=nodesOpen,proto3" json:"nodes_open,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SkillEstimate) Reset() {
+	*x = SkillEstimate{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkillEstimate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkillEstimate) ProtoMessage() {}
+
+func (x *SkillEstimate) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkillEstimate.ProtoReflect.Descriptor instead.
+func (*SkillEstimate) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *SkillEstimate) GetSkill() MasterySkill {
+	if x != nil {
+		return x.Skill
+	}
+	return MasterySkill_MASTERY_SKILL_UNSPECIFIED
+}
+
+func (x *SkillEstimate) GetEstimate() int32 {
+	if x != nil {
+		return x.Estimate
+	}
+	return 0
+}
+
+func (x *SkillEstimate) GetLow() int32 {
+	if x != nil {
+		return x.Low
+	}
+	return 0
+}
+
+func (x *SkillEstimate) GetHigh() int32 {
+	if x != nil {
+		return x.High
+	}
+	return 0
+}
+
+func (x *SkillEstimate) GetEvidenceCount() int32 {
+	if x != nil {
+		return x.EvidenceCount
+	}
+	return 0
+}
+
+func (x *SkillEstimate) GetNodesObserved() int32 {
+	if x != nil {
+		return x.NodesObserved
+	}
+	return 0
+}
+
+func (x *SkillEstimate) GetNodesOpen() int32 {
+	if x != nil {
+		return x.NodesOpen
+	}
+	return 0
+}
+
+type LevelProgress struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CefrLevel     string                 `protobuf:"bytes,1,opt,name=cefr_level,json=cefrLevel,proto3" json:"cefr_level,omitempty"`
+	NodesOpen     int32                  `protobuf:"varint,2,opt,name=nodes_open,json=nodesOpen,proto3" json:"nodes_open,omitempty"`
+	NodesSeen     int32                  `protobuf:"varint,3,opt,name=nodes_seen,json=nodesSeen,proto3" json:"nodes_seen,omitempty"`
+	NodesStrong   int32                  `protobuf:"varint,4,opt,name=nodes_strong,json=nodesStrong,proto3" json:"nodes_strong,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LevelProgress) Reset() {
+	*x = LevelProgress{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LevelProgress) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LevelProgress) ProtoMessage() {}
+
+func (x *LevelProgress) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LevelProgress.ProtoReflect.Descriptor instead.
+func (*LevelProgress) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *LevelProgress) GetCefrLevel() string {
+	if x != nil {
+		return x.CefrLevel
+	}
+	return ""
+}
+
+func (x *LevelProgress) GetNodesOpen() int32 {
+	if x != nil {
+		return x.NodesOpen
+	}
+	return 0
+}
+
+func (x *LevelProgress) GetNodesSeen() int32 {
+	if x != nil {
+		return x.NodesSeen
+	}
+	return 0
+}
+
+func (x *LevelProgress) GetNodesStrong() int32 {
+	if x != nil {
+		return x.NodesStrong
+	}
+	return 0
+}
+
+type NodeEstimate struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	NodeKind         string                 `protobuf:"bytes,1,opt,name=node_kind,json=nodeKind,proto3" json:"node_kind,omitempty"` // concept | grammar_point | verb
+	NodeId           string                 `protobuf:"bytes,2,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
+	Label            string                 `protobuf:"bytes,3,opt,name=label,proto3" json:"label,omitempty"`
+	Skill            MasterySkill           `protobuf:"varint,4,opt,name=skill,proto3,enum=sttattus.languages.v1.MasterySkill" json:"skill,omitempty"`
+	Estimate         int32                  `protobuf:"varint,5,opt,name=estimate,proto3" json:"estimate,omitempty"`
+	Low              int32                  `protobuf:"varint,6,opt,name=low,proto3" json:"low,omitempty"`
+	High             int32                  `protobuf:"varint,7,opt,name=high,proto3" json:"high,omitempty"`
+	EvidenceCount    int32                  `protobuf:"varint,8,opt,name=evidence_count,json=evidenceCount,proto3" json:"evidence_count,omitempty"`
+	HalfLifeDays     float64                `protobuf:"fixed64,9,opt,name=half_life_days,json=halfLifeDays,proto3" json:"half_life_days,omitempty"`
+	LastObservedUnix int64                  `protobuf:"varint,10,opt,name=last_observed_unix,json=lastObservedUnix,proto3" json:"last_observed_unix,omitempty"`
+	// Predicted recall right now, after forgetting.
+	RecallNow     int32 `protobuf:"varint,11,opt,name=recall_now,json=recallNow,proto3" json:"recall_now,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *NodeEstimate) Reset() {
+	*x = NodeEstimate{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *NodeEstimate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NodeEstimate) ProtoMessage() {}
+
+func (x *NodeEstimate) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NodeEstimate.ProtoReflect.Descriptor instead.
+func (*NodeEstimate) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *NodeEstimate) GetNodeKind() string {
+	if x != nil {
+		return x.NodeKind
+	}
+	return ""
+}
+
+func (x *NodeEstimate) GetNodeId() string {
+	if x != nil {
+		return x.NodeId
+	}
+	return ""
+}
+
+func (x *NodeEstimate) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *NodeEstimate) GetSkill() MasterySkill {
+	if x != nil {
+		return x.Skill
+	}
+	return MasterySkill_MASTERY_SKILL_UNSPECIFIED
+}
+
+func (x *NodeEstimate) GetEstimate() int32 {
+	if x != nil {
+		return x.Estimate
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetLow() int32 {
+	if x != nil {
+		return x.Low
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetHigh() int32 {
+	if x != nil {
+		return x.High
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetEvidenceCount() int32 {
+	if x != nil {
+		return x.EvidenceCount
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetHalfLifeDays() float64 {
+	if x != nil {
+		return x.HalfLifeDays
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetLastObservedUnix() int64 {
+	if x != nil {
+		return x.LastObservedUnix
+	}
+	return 0
+}
+
+func (x *NodeEstimate) GetRecallNow() int32 {
+	if x != nil {
+		return x.RecallNow
+	}
+	return 0
+}
+
+type ConfusionPair struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ALabel        string                 `protobuf:"bytes,1,opt,name=a_label,json=aLabel,proto3" json:"a_label,omitempty"`
+	BLabel        string                 `protobuf:"bytes,2,opt,name=b_label,json=bLabel,proto3" json:"b_label,omitempty"`
+	Count         int32                  `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfusionPair) Reset() {
+	*x = ConfusionPair{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfusionPair) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfusionPair) ProtoMessage() {}
+
+func (x *ConfusionPair) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfusionPair.ProtoReflect.Descriptor instead.
+func (*ConfusionPair) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *ConfusionPair) GetALabel() string {
+	if x != nil {
+		return x.ALabel
+	}
+	return ""
+}
+
+func (x *ConfusionPair) GetBLabel() string {
+	if x != nil {
+		return x.BLabel
+	}
+	return ""
+}
+
+func (x *ConfusionPair) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type GetMasteryMapRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMasteryMapRequest) Reset() {
+	*x = GetMasteryMapRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMasteryMapRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMasteryMapRequest) ProtoMessage() {}
+
+func (x *GetMasteryMapRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMasteryMapRequest.ProtoReflect.Descriptor instead.
+func (*GetMasteryMapRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *GetMasteryMapRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+type GetMasteryMapResponse struct {
+	state      protoimpl.MessageState `protogen:"open.v1"`
+	Skills     []*SkillEstimate       `protobuf:"bytes,1,rep,name=skills,proto3" json:"skills,omitempty"`
+	Levels     []*LevelProgress       `protobuf:"bytes,2,rep,name=levels,proto3" json:"levels,omitempty"`
+	Weakest    []*NodeEstimate        `protobuf:"bytes,3,rep,name=weakest,proto3" json:"weakest,omitempty"`
+	Confusions []*ConfusionPair       `protobuf:"bytes,4,rep,name=confusions,proto3" json:"confusions,omitempty"`
+	// One-off placement tests, shown apart from practice evidence.
+	Placement     []*PlacementResult `protobuf:"bytes,5,rep,name=placement,proto3" json:"placement,omitempty"`
+	EvidenceTotal int32              `protobuf:"varint,6,opt,name=evidence_total,json=evidenceTotal,proto3" json:"evidence_total,omitempty"`
+	PolicyVersion string             `protobuf:"bytes,7,opt,name=policy_version,json=policyVersion,proto3" json:"policy_version,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMasteryMapResponse) Reset() {
+	*x = GetMasteryMapResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMasteryMapResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMasteryMapResponse) ProtoMessage() {}
+
+func (x *GetMasteryMapResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMasteryMapResponse.ProtoReflect.Descriptor instead.
+func (*GetMasteryMapResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *GetMasteryMapResponse) GetSkills() []*SkillEstimate {
+	if x != nil {
+		return x.Skills
+	}
+	return nil
+}
+
+func (x *GetMasteryMapResponse) GetLevels() []*LevelProgress {
+	if x != nil {
+		return x.Levels
+	}
+	return nil
+}
+
+func (x *GetMasteryMapResponse) GetWeakest() []*NodeEstimate {
+	if x != nil {
+		return x.Weakest
+	}
+	return nil
+}
+
+func (x *GetMasteryMapResponse) GetConfusions() []*ConfusionPair {
+	if x != nil {
+		return x.Confusions
+	}
+	return nil
+}
+
+func (x *GetMasteryMapResponse) GetPlacement() []*PlacementResult {
+	if x != nil {
+		return x.Placement
+	}
+	return nil
+}
+
+func (x *GetMasteryMapResponse) GetEvidenceTotal() int32 {
+	if x != nil {
+		return x.EvidenceTotal
+	}
+	return 0
+}
+
+func (x *GetMasteryMapResponse) GetPolicyVersion() string {
+	if x != nil {
+		return x.PolicyVersion
+	}
+	return ""
+}
+
+type EvidenceEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Skill         MasterySkill           `protobuf:"varint,1,opt,name=skill,proto3,enum=sttattus.languages.v1.MasterySkill" json:"skill,omitempty"`
+	Credit        int32                  `protobuf:"varint,2,opt,name=credit,proto3" json:"credit,omitempty"` // 0–100
+	Source        string                 `protobuf:"bytes,3,opt,name=source,proto3" json:"source,omitempty"`  // practice | writing_coach | speaking_coach | placement | scenario
+	Trust         string                 `protobuf:"bytes,4,opt,name=trust,proto3" json:"trust,omitempty"`    // verified | self_report | ai_unverified | disputed | withdrawn
+	HintUsed      bool                   `protobuf:"varint,5,opt,name=hint_used,json=hintUsed,proto3" json:"hint_used,omitempty"`
+	Exercise      string                 `protobuf:"bytes,6,opt,name=exercise,proto3" json:"exercise,omitempty"`
+	ObservedUnix  int64                  `protobuf:"varint,7,opt,name=observed_unix,json=observedUnix,proto3" json:"observed_unix,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EvidenceEntry) Reset() {
+	*x = EvidenceEntry{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvidenceEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvidenceEntry) ProtoMessage() {}
+
+func (x *EvidenceEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvidenceEntry.ProtoReflect.Descriptor instead.
+func (*EvidenceEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{126}
+}
+
+func (x *EvidenceEntry) GetSkill() MasterySkill {
+	if x != nil {
+		return x.Skill
+	}
+	return MasterySkill_MASTERY_SKILL_UNSPECIFIED
+}
+
+func (x *EvidenceEntry) GetCredit() int32 {
+	if x != nil {
+		return x.Credit
+	}
+	return 0
+}
+
+func (x *EvidenceEntry) GetSource() string {
+	if x != nil {
+		return x.Source
+	}
+	return ""
+}
+
+func (x *EvidenceEntry) GetTrust() string {
+	if x != nil {
+		return x.Trust
+	}
+	return ""
+}
+
+func (x *EvidenceEntry) GetHintUsed() bool {
+	if x != nil {
+		return x.HintUsed
+	}
+	return false
+}
+
+func (x *EvidenceEntry) GetExercise() string {
+	if x != nil {
+		return x.Exercise
+	}
+	return ""
+}
+
+func (x *EvidenceEntry) GetObservedUnix() int64 {
+	if x != nil {
+		return x.ObservedUnix
+	}
+	return 0
+}
+
+type GetNodeEvidenceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Language      string                 `protobuf:"bytes,1,opt,name=language,proto3" json:"language,omitempty"`
+	NodeKind      string                 `protobuf:"bytes,2,opt,name=node_kind,json=nodeKind,proto3" json:"node_kind,omitempty"`
+	NodeId        string                 `protobuf:"bytes,3,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetNodeEvidenceRequest) Reset() {
+	*x = GetNodeEvidenceRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetNodeEvidenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNodeEvidenceRequest) ProtoMessage() {}
+
+func (x *GetNodeEvidenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNodeEvidenceRequest.ProtoReflect.Descriptor instead.
+func (*GetNodeEvidenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *GetNodeEvidenceRequest) GetLanguage() string {
+	if x != nil {
+		return x.Language
+	}
+	return ""
+}
+
+func (x *GetNodeEvidenceRequest) GetNodeKind() string {
+	if x != nil {
+		return x.NodeKind
+	}
+	return ""
+}
+
+func (x *GetNodeEvidenceRequest) GetNodeId() string {
+	if x != nil {
+		return x.NodeId
+	}
+	return ""
+}
+
+type GetNodeEvidenceResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Estimates     []*NodeEstimate        `protobuf:"bytes,1,rep,name=estimates,proto3" json:"estimates,omitempty"`
+	Evidence      []*EvidenceEntry       `protobuf:"bytes,2,rep,name=evidence,proto3" json:"evidence,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetNodeEvidenceResponse) Reset() {
+	*x = GetNodeEvidenceResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetNodeEvidenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetNodeEvidenceResponse) ProtoMessage() {}
+
+func (x *GetNodeEvidenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetNodeEvidenceResponse.ProtoReflect.Descriptor instead.
+func (*GetNodeEvidenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *GetNodeEvidenceResponse) GetEstimates() []*NodeEstimate {
+	if x != nil {
+		return x.Estimates
+	}
+	return nil
+}
+
+func (x *GetNodeEvidenceResponse) GetEvidence() []*EvidenceEntry {
+	if x != nil {
+		return x.Evidence
+	}
+	return nil
+}
+
+type DismissWritingFlagRequest struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	SubmissionId string                 `protobuf:"bytes,1,opt,name=submission_id,json=submissionId,proto3" json:"submission_id,omitempty"`
+	ErrorIndex   int32                  `protobuf:"varint,2,opt,name=error_index,json=errorIndex,proto3" json:"error_index,omitempty"`
+	// false restores a dismissed flag.
+	Dismiss       bool `protobuf:"varint,3,opt,name=dismiss,proto3" json:"dismiss,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DismissWritingFlagRequest) Reset() {
+	*x = DismissWritingFlagRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DismissWritingFlagRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DismissWritingFlagRequest) ProtoMessage() {}
+
+func (x *DismissWritingFlagRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DismissWritingFlagRequest.ProtoReflect.Descriptor instead.
+func (*DismissWritingFlagRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *DismissWritingFlagRequest) GetSubmissionId() string {
+	if x != nil {
+		return x.SubmissionId
+	}
+	return ""
+}
+
+func (x *DismissWritingFlagRequest) GetErrorIndex() int32 {
+	if x != nil {
+		return x.ErrorIndex
+	}
+	return 0
+}
+
+func (x *DismissWritingFlagRequest) GetDismiss() bool {
+	if x != nil {
+		return x.Dismiss
+	}
+	return false
+}
+
+type DismissWritingFlagResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Submission    *WritingSubmission     `protobuf:"bytes,1,opt,name=submission,proto3" json:"submission,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DismissWritingFlagResponse) Reset() {
+	*x = DismissWritingFlagResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DismissWritingFlagResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DismissWritingFlagResponse) ProtoMessage() {}
+
+func (x *DismissWritingFlagResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DismissWritingFlagResponse.ProtoReflect.Descriptor instead.
+func (*DismissWritingFlagResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{130}
+}
+
+func (x *DismissWritingFlagResponse) GetSubmission() *WritingSubmission {
+	if x != nil {
+		return x.Submission
+	}
+	return nil
+}
+
 var File_sttattus_languages_v1_languages_proto protoreflect.FileDescriptor
 
 const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
@@ -7754,7 +9571,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\vRubricScore\x12\x1c\n" +
 	"\tdimension\x18\x01 \x01(\tR\tdimension\x12\x14\n" +
 	"\x05score\x18\x02 \x01(\x05R\x05score\x12\x18\n" +
-	"\acomment\x18\x03 \x01(\tR\acomment\"\xac\x01\n" +
+	"\acomment\x18\x03 \x01(\tR\acomment\"\xcb\x01\n" +
 	"\fWritingError\x12\x1a\n" +
 	"\boriginal\x18\x01 \x01(\tR\boriginal\x12\x1e\n" +
 	"\n" +
@@ -7762,7 +9579,9 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"correction\x12\x12\n" +
 	"\x04kind\x18\x03 \x01(\tR\x04kind\x12 \n" +
 	"\vexplanation\x18\x04 \x01(\tR\vexplanation\x12*\n" +
-	"\x11grammar_point_key\x18\x05 \x01(\tR\x0fgrammarPointKey\"\xda\x03\n" +
+	"\x11grammar_point_key\x18\x05 \x01(\tR\x0fgrammarPointKey\x12\x1d\n" +
+	"\n" +
+	"flag_state\x18\x06 \x01(\tR\tflagState\"\xda\x03\n" +
 	"\x11WritingSubmission\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tprompt_id\x18\x02 \x01(\tR\bpromptId\x12\x1a\n" +
@@ -7931,7 +9750,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aCreateLinguistShareRequest\"P\n" +
 	"\x1bCreateLinguistShareResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
-	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\x88\a\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xc3\a\n" +
 	"\fPracticeCard\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12\x1d\n" +
 	"\n" +
@@ -7961,17 +9780,20 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x10content_revision\x18\x17 \x01(\x05R\x0fcontentRevision\x12\x14\n" +
 	"\x05pilot\x18\x18 \x01(\bR\x05pilot\x120\n" +
 	"\x14corrected_since_seen\x18\x19 \x01(\bR\x12correctedSinceSeen\x12#\n" +
-	"\rcopy_language\x18\x1a \x01(\tR\fcopyLanguage\"r\n" +
+	"\rcopy_language\x18\x1a \x01(\tR\fcopyLanguage\x129\n" +
+	"\x06reason\x18\x1b \x01(\v2!.sttattus.languages.v1.PlanReasonR\x06reason\"\x94\x01\n" +
 	"\x19GetPracticeSessionRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12#\n" +
-	"\rtts_languages\x18\x03 \x03(\tR\fttsLanguages\"\x81\x02\n" +
+	"\rtts_languages\x18\x03 \x03(\tR\fttsLanguages\x12 \n" +
+	"\fplan_item_id\x18\x04 \x01(\tR\n" +
+	"planItemId\"\x81\x02\n" +
 	"\x1aGetPracticeSessionResponse\x129\n" +
 	"\x05cards\x18\x01 \x03(\v2#.sttattus.languages.v1.PracticeCardR\x05cards\x12\x1b\n" +
 	"\tdue_count\x18\x02 \x01(\x05R\bdueCount\x12\x1b\n" +
 	"\tnew_count\x18\x03 \x01(\x05R\bnewCount\x12!\n" +
 	"\fcorpus_empty\x18\x04 \x01(\bR\vcorpusEmpty\x12K\n" +
-	"\fnew_material\x18\x05 \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\"\xa7\x03\n" +
+	"\fnew_material\x18\x05 \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\"\x8e\x04\n" +
 	"\x13SubmitAnswerRequest\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12?\n" +
 	"\bexercise\x18\x02 \x01(\x0e2#.sttattus.languages.v1.ExerciseKindR\bexercise\x12!\n" +
@@ -7984,7 +9806,11 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\aitem_id\x18\b \x01(\tR\x06itemId\x12&\n" +
 	"\x0fcontent_unit_id\x18\t \x01(\tR\rcontentUnitId\x12)\n" +
 	"\x10content_revision\x18\n" +
-	" \x01(\x05R\x0fcontentRevision\"\x93\x02\n" +
+	" \x01(\x05R\x0fcontentRevision\x12&\n" +
+	"\x0fclient_event_id\x18\v \x01(\tR\rclientEventId\x12\x1b\n" +
+	"\thint_used\x18\f \x01(\bR\bhintUsed\x12 \n" +
+	"\fplan_item_id\x18\r \x01(\tR\n" +
+	"planItemId\"\xb1\x02\n" +
 	"\x14SubmitAnswerResponse\x12\x18\n" +
 	"\acorrect\x18\x01 \x01(\bR\acorrect\x12\x1a\n" +
 	"\bexpected\x18\x02 \x01(\tR\bexpected\x12\x1a\n" +
@@ -7992,7 +9818,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x06due_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\x05dueAt\x12,\n" +
 	"\x12reviews_done_today\x18\x05 \x01(\x05R\x10reviewsDoneToday\x12*\n" +
 	"\x11new_learned_today\x18\x06 \x01(\x05R\x0fnewLearnedToday\x12\x1c\n" +
-	"\trationale\x18\a \x01(\tR\trationale\"5\n" +
+	"\trationale\x18\a \x01(\tR\trationale\x12\x1c\n" +
+	"\tduplicate\x18\b \x01(\bR\tduplicate\"5\n" +
 	"\x17GetPracticeStatsRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\"\x8e\x03\n" +
 	"\x18GetPracticeStatsResponse\x12\x17\n" +
@@ -8010,11 +9837,20 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x11corpus_vocabulary\x18\t \x01(\x05R\x10corpusVocabulary\x12%\n" +
 	"\x0ecorpus_grammar\x18\n" +
 	" \x01(\x05R\rcorpusGrammar\x12*\n" +
-	"\x11corpus_verb_forms\x18\v \x01(\x05R\x0fcorpusVerbForms\"\x8c\x01\n" +
+	"\x11corpus_verb_forms\x18\v \x01(\x05R\x0fcorpusVerbForms\"\xab\x03\n" +
 	"\vMemberPrefs\x12#\n" +
 	"\rbase_language\x18\x01 \x01(\tR\fbaseLanguage\x12(\n" +
 	"\x10daily_new_target\x18\x02 \x01(\x05R\x0edailyNewTarget\x12.\n" +
-	"\x13daily_review_target\x18\x03 \x01(\x05R\x11dailyReviewTarget\"\x17\n" +
+	"\x13daily_review_target\x18\x03 \x01(\x05R\x11dailyReviewTarget\x12<\n" +
+	"\tgoal_mode\x18\x04 \x01(\x0e2\x1f.sttattus.languages.v1.GoalModeR\bgoalMode\x12#\n" +
+	"\rdaily_minutes\x18\x05 \x01(\x05R\fdailyMinutes\x121\n" +
+	"\x12utc_offset_minutes\x18\x06 \x01(\x05H\x00R\x10utcOffsetMinutes\x88\x01\x01\x12*\n" +
+	"\x0evacation_until\x18\a \x01(\tH\x01R\rvacationUntil\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"extra_time\x18\b \x01(\bH\x02R\textraTime\x88\x01\x01B\x15\n" +
+	"\x13_utc_offset_minutesB\x11\n" +
+	"\x0f_vacation_untilB\r\n" +
+	"\v_extra_time\"\x17\n" +
 	"\x15GetMemberPrefsRequest\"R\n" +
 	"\x16GetMemberPrefsResponse\x128\n" +
 	"\x05prefs\x18\x01 \x01(\v2\".sttattus.languages.v1.MemberPrefsR\x05prefs\"Q\n" +
@@ -8028,7 +9864,135 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x10ListWordsRequest\x123\n" +
 	"\x04page\x18\x01 \x01(\v2\x1f.sttattus.common.v1.PageRequestR\x04page\"F\n" +
 	"\x11ListWordsResponse\x121\n" +
-	"\x05words\x18\x01 \x03(\v2\x1b.sttattus.languages.v1.WordR\x05words*\xc1\x01\n" +
+	"\x05words\x18\x01 \x03(\v2\x1b.sttattus.languages.v1.WordR\x05words\"\xf0\x01\n" +
+	"\n" +
+	"PlanReason\x129\n" +
+	"\x04code\x18\x01 \x01(\x0e2%.sttattus.languages.v1.PlanReasonCodeR\x04code\x12E\n" +
+	"\x06params\x18\x02 \x03(\v2-.sttattus.languages.v1.PlanReason.ParamsEntryR\x06params\x12%\n" +
+	"\x0eevidence_count\x18\x03 \x01(\x05R\revidenceCount\x1a9\n" +
+	"\vParamsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xd4\x03\n" +
+	"\bPlanItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x127\n" +
+	"\x04kind\x18\x02 \x01(\x0e2#.sttattus.languages.v1.PlanItemKindR\x04kind\x129\n" +
+	"\x05skill\x18\x03 \x01(\x0e2#.sttattus.languages.v1.MasterySkillR\x05skill\x12\x16\n" +
+	"\x06labels\x18\x04 \x03(\tR\x06labels\x12+\n" +
+	"\x11estimated_minutes\x18\x05 \x01(\x05R\x10estimatedMinutes\x12:\n" +
+	"\x05state\x18\x06 \x01(\x0e2$.sttattus.languages.v1.PlanItemStateR\x05state\x129\n" +
+	"\x06reason\x18\a \x01(\v2!.sttattus.languages.v1.PlanReasonR\x06reason\x12!\n" +
+	"\ftarget_count\x18\b \x01(\x05R\vtargetCount\x12\x1d\n" +
+	"\n" +
+	"done_count\x18\t \x01(\x05R\tdoneCount\x12\x1f\n" +
+	"\vactivity_id\x18\n" +
+	" \x01(\tR\n" +
+	"activityId\x12%\n" +
+	"\x0eactivity_title\x18\v \x01(\tR\ractivityTitle\"\xf1\x04\n" +
+	"\fAdaptivePlan\x12\x1f\n" +
+	"\vrevision_id\x18\x01 \x01(\tR\n" +
+	"revisionId\x12\x1a\n" +
+	"\blanguage\x18\x02 \x01(\tR\blanguage\x12\x1b\n" +
+	"\tplan_date\x18\x03 \x01(\tR\bplanDate\x12\x1a\n" +
+	"\brevision\x18\x04 \x01(\x05R\brevision\x12%\n" +
+	"\x0epolicy_version\x18\x05 \x01(\tR\rpolicyVersion\x12<\n" +
+	"\tgoal_mode\x18\x06 \x01(\x0e2\x1f.sttattus.languages.v1.GoalModeR\bgoalMode\x12%\n" +
+	"\x0ebudget_minutes\x18\a \x01(\x05R\rbudgetMinutes\x12+\n" +
+	"\x11estimated_minutes\x18\b \x01(\x05R\x10estimatedMinutes\x125\n" +
+	"\x05items\x18\t \x03(\v2\x1f.sttattus.languages.v1.PlanItemR\x05items\x12\x1f\n" +
+	"\vmissed_days\x18\n" +
+	" \x01(\x05R\n" +
+	"missedDays\x12%\n" +
+	"\x0edeferred_count\x18\v \x01(\x05R\rdeferredCount\x12\x1a\n" +
+	"\bvacation\x18\f \x01(\bR\bvacation\x12#\n" +
+	"\rinputs_digest\x18\r \x01(\tR\finputsDigest\x12%\n" +
+	"\x0egenerated_unix\x18\x0e \x01(\x03R\rgeneratedUnix\x12K\n" +
+	"\fnew_material\x18\x0f \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\"\x82\x01\n" +
+	"\x16GetAdaptivePlanRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12,\n" +
+	"\x12utc_offset_minutes\x18\x02 \x01(\x05R\x10utcOffsetMinutes\x12\x1e\n" +
+	"\n" +
+	"regenerate\x18\x03 \x01(\bR\n" +
+	"regenerate\"R\n" +
+	"\x17GetAdaptivePlanResponse\x127\n" +
+	"\x04plan\x18\x01 \x01(\v2#.sttattus.languages.v1.AdaptivePlanR\x04plan\"m\n" +
+	"\x13SkipPlanItemRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12 \n" +
+	"\fplan_item_id\x18\x02 \x01(\tR\n" +
+	"planItemId\x12\x18\n" +
+	"\arestore\x18\x03 \x01(\bR\arestore\"O\n" +
+	"\x14SkipPlanItemResponse\x127\n" +
+	"\x04plan\x18\x01 \x01(\v2#.sttattus.languages.v1.AdaptivePlanR\x04plan\"\xf9\x01\n" +
+	"\rSkillEstimate\x129\n" +
+	"\x05skill\x18\x01 \x01(\x0e2#.sttattus.languages.v1.MasterySkillR\x05skill\x12\x1a\n" +
+	"\bestimate\x18\x02 \x01(\x05R\bestimate\x12\x10\n" +
+	"\x03low\x18\x03 \x01(\x05R\x03low\x12\x12\n" +
+	"\x04high\x18\x04 \x01(\x05R\x04high\x12%\n" +
+	"\x0eevidence_count\x18\x05 \x01(\x05R\revidenceCount\x12%\n" +
+	"\x0enodes_observed\x18\x06 \x01(\x05R\rnodesObserved\x12\x1d\n" +
+	"\n" +
+	"nodes_open\x18\a \x01(\x05R\tnodesOpen\"\x8f\x01\n" +
+	"\rLevelProgress\x12\x1d\n" +
+	"\n" +
+	"cefr_level\x18\x01 \x01(\tR\tcefrLevel\x12\x1d\n" +
+	"\n" +
+	"nodes_open\x18\x02 \x01(\x05R\tnodesOpen\x12\x1d\n" +
+	"\n" +
+	"nodes_seen\x18\x03 \x01(\x05R\tnodesSeen\x12!\n" +
+	"\fnodes_strong\x18\x04 \x01(\x05R\vnodesStrong\"\xf1\x02\n" +
+	"\fNodeEstimate\x12\x1b\n" +
+	"\tnode_kind\x18\x01 \x01(\tR\bnodeKind\x12\x17\n" +
+	"\anode_id\x18\x02 \x01(\tR\x06nodeId\x12\x14\n" +
+	"\x05label\x18\x03 \x01(\tR\x05label\x129\n" +
+	"\x05skill\x18\x04 \x01(\x0e2#.sttattus.languages.v1.MasterySkillR\x05skill\x12\x1a\n" +
+	"\bestimate\x18\x05 \x01(\x05R\bestimate\x12\x10\n" +
+	"\x03low\x18\x06 \x01(\x05R\x03low\x12\x12\n" +
+	"\x04high\x18\a \x01(\x05R\x04high\x12%\n" +
+	"\x0eevidence_count\x18\b \x01(\x05R\revidenceCount\x12$\n" +
+	"\x0ehalf_life_days\x18\t \x01(\x01R\fhalfLifeDays\x12,\n" +
+	"\x12last_observed_unix\x18\n" +
+	" \x01(\x03R\x10lastObservedUnix\x12\x1d\n" +
+	"\n" +
+	"recall_now\x18\v \x01(\x05R\trecallNow\"W\n" +
+	"\rConfusionPair\x12\x17\n" +
+	"\aa_label\x18\x01 \x01(\tR\x06aLabel\x12\x17\n" +
+	"\ab_label\x18\x02 \x01(\tR\x06bLabel\x12\x14\n" +
+	"\x05count\x18\x03 \x01(\x05R\x05count\"2\n" +
+	"\x14GetMasteryMapRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\"\xac\x03\n" +
+	"\x15GetMasteryMapResponse\x12<\n" +
+	"\x06skills\x18\x01 \x03(\v2$.sttattus.languages.v1.SkillEstimateR\x06skills\x12<\n" +
+	"\x06levels\x18\x02 \x03(\v2$.sttattus.languages.v1.LevelProgressR\x06levels\x12=\n" +
+	"\aweakest\x18\x03 \x03(\v2#.sttattus.languages.v1.NodeEstimateR\aweakest\x12D\n" +
+	"\n" +
+	"confusions\x18\x04 \x03(\v2$.sttattus.languages.v1.ConfusionPairR\n" +
+	"confusions\x12D\n" +
+	"\tplacement\x18\x05 \x03(\v2&.sttattus.languages.v1.PlacementResultR\tplacement\x12%\n" +
+	"\x0eevidence_total\x18\x06 \x01(\x05R\revidenceTotal\x12%\n" +
+	"\x0epolicy_version\x18\a \x01(\tR\rpolicyVersion\"\xee\x01\n" +
+	"\rEvidenceEntry\x129\n" +
+	"\x05skill\x18\x01 \x01(\x0e2#.sttattus.languages.v1.MasterySkillR\x05skill\x12\x16\n" +
+	"\x06credit\x18\x02 \x01(\x05R\x06credit\x12\x16\n" +
+	"\x06source\x18\x03 \x01(\tR\x06source\x12\x14\n" +
+	"\x05trust\x18\x04 \x01(\tR\x05trust\x12\x1b\n" +
+	"\thint_used\x18\x05 \x01(\bR\bhintUsed\x12\x1a\n" +
+	"\bexercise\x18\x06 \x01(\tR\bexercise\x12#\n" +
+	"\robserved_unix\x18\a \x01(\x03R\fobservedUnix\"j\n" +
+	"\x16GetNodeEvidenceRequest\x12\x1a\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x1b\n" +
+	"\tnode_kind\x18\x02 \x01(\tR\bnodeKind\x12\x17\n" +
+	"\anode_id\x18\x03 \x01(\tR\x06nodeId\"\x9e\x01\n" +
+	"\x17GetNodeEvidenceResponse\x12A\n" +
+	"\testimates\x18\x01 \x03(\v2#.sttattus.languages.v1.NodeEstimateR\testimates\x12@\n" +
+	"\bevidence\x18\x02 \x03(\v2$.sttattus.languages.v1.EvidenceEntryR\bevidence\"{\n" +
+	"\x19DismissWritingFlagRequest\x12#\n" +
+	"\rsubmission_id\x18\x01 \x01(\tR\fsubmissionId\x12\x1f\n" +
+	"\verror_index\x18\x02 \x01(\x05R\n" +
+	"errorIndex\x12\x18\n" +
+	"\adismiss\x18\x03 \x01(\bR\adismiss\"f\n" +
+	"\x1aDismissWritingFlagResponse\x12H\n" +
+	"\n" +
+	"submission\x18\x01 \x01(\v2(.sttattus.languages.v1.WritingSubmissionR\n" +
+	"submission*\xc1\x01\n" +
 	"\x10CulturalCategory\x12!\n" +
 	"\x1dCULTURAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
@@ -8054,7 +10018,59 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x18NEW_MATERIAL_STATUS_OPEN\x10\x01\x12-\n" +
 	")NEW_MATERIAL_STATUS_PAUSED_IN_PREPARATION\x10\x02\x12#\n" +
 	"\x1fNEW_MATERIAL_STATUS_PAUSED_HELD\x10\x03\x12'\n" +
-	"#NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED\x10\x042\xd7'\n" +
+	"#NEW_MATERIAL_STATUS_LEVEL_EXHAUSTED\x10\x04*\xee\x02\n" +
+	"\fMasterySkill\x12\x1d\n" +
+	"\x19MASTERY_SKILL_UNSPECIFIED\x10\x00\x12\x1d\n" +
+	"\x19MASTERY_SKILL_RECOGNITION\x10\x01\x12\x18\n" +
+	"\x14MASTERY_SKILL_RECALL\x10\x02\x12\x1a\n" +
+	"\x16MASTERY_SKILL_SPELLING\x10\x03\x12\x1b\n" +
+	"\x17MASTERY_SKILL_LISTENING\x10\x04\x12\x1f\n" +
+	"\x1bMASTERY_SKILL_PRONUNCIATION\x10\x05\x12\x1c\n" +
+	"\x18MASTERY_SKILL_PRODUCTION\x10\x06\x12\x19\n" +
+	"\x15MASTERY_SKILL_GRAMMAR\x10\a\x12\x1d\n" +
+	"\x19MASTERY_SKILL_CONJUGATION\x10\b\x12\x19\n" +
+	"\x15MASTERY_SKILL_READING\x10\t\x12\x19\n" +
+	"\x15MASTERY_SKILL_WRITING\x10\n" +
+	"\x12\x1e\n" +
+	"\x1aMASTERY_SKILL_CONVERSATION\x10\v*\xff\x01\n" +
+	"\bGoalMode\x12\x19\n" +
+	"\x15GOAL_MODE_UNSPECIFIED\x10\x00\x12\x16\n" +
+	"\x12GOAL_MODE_BALANCED\x10\x01\x12\x14\n" +
+	"\x10GOAL_MODE_TRAVEL\x10\x02\x12\x14\n" +
+	"\x10GOAL_MODE_FAMILY\x10\x03\x12\x16\n" +
+	"\x12GOAL_MODE_ACADEMIC\x10\x04\x12\x18\n" +
+	"\x14GOAL_MODE_RELOCATION\x10\x05\x12\x12\n" +
+	"\x0eGOAL_MODE_EXAM\x10\x06\x12\x16\n" +
+	"\x12GOAL_MODE_BUSINESS\x10\a\x12\x1b\n" +
+	"\x17GOAL_MODE_PRONUNCIATION\x10\b\x12\x19\n" +
+	"\x15GOAL_MODE_MAINTENANCE\x10\t*\xa6\x02\n" +
+	"\fPlanItemKind\x12\x1e\n" +
+	"\x1aPLAN_ITEM_KIND_UNSPECIFIED\x10\x00\x12\x19\n" +
+	"\x15PLAN_ITEM_KIND_REVIEW\x10\x01\x12\x16\n" +
+	"\x12PLAN_ITEM_KIND_NEW\x10\x02\x12\x19\n" +
+	"\x15PLAN_ITEM_KIND_REPAIR\x10\x03\x12\x1b\n" +
+	"\x17PLAN_ITEM_KIND_CONTRAST\x10\x04\x12\x18\n" +
+	"\x14PLAN_ITEM_KIND_CHECK\x10\x05\x12\x1c\n" +
+	"\x18PLAN_ITEM_KIND_LISTENING\x10\x06\x12\x1b\n" +
+	"\x17PLAN_ITEM_KIND_SPEAKING\x10\a\x12\x1a\n" +
+	"\x16PLAN_ITEM_KIND_READING\x10\b\x12\x1a\n" +
+	"\x16PLAN_ITEM_KIND_WRITING\x10\t*\x84\x01\n" +
+	"\rPlanItemState\x12\x1f\n" +
+	"\x1bPLAN_ITEM_STATE_UNSPECIFIED\x10\x00\x12\x1b\n" +
+	"\x17PLAN_ITEM_STATE_PENDING\x10\x01\x12\x18\n" +
+	"\x14PLAN_ITEM_STATE_DONE\x10\x02\x12\x1b\n" +
+	"\x17PLAN_ITEM_STATE_SKIPPED\x10\x03*\xc7\x02\n" +
+	"\x0ePlanReasonCode\x12 \n" +
+	"\x1cPLAN_REASON_CODE_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14PLAN_REASON_CODE_DUE\x10\x01\x12\x1a\n" +
+	"\x16PLAN_REASON_CODE_LEECH\x10\x02\x12\x1f\n" +
+	"\x1bPLAN_REASON_CODE_WEAK_SKILL\x10\x03\x12!\n" +
+	"\x1dPLAN_REASON_CODE_INTERFERENCE\x10\x04\x12!\n" +
+	"\x1dPLAN_REASON_CODE_PREREQUISITE\x10\x05\x12\"\n" +
+	"\x1ePLAN_REASON_CODE_CHECK_AI_FLAG\x10\x06\x12\x18\n" +
+	"\x14PLAN_REASON_CODE_NEW\x10\a\x12\x1d\n" +
+	"\x19PLAN_REASON_CODE_CATCH_UP\x10\b\x12\x19\n" +
+	"\x15PLAN_REASON_CODE_GOAL\x10\t2\x8b,\n" +
 	"\x10LanguagesService\x12j\n" +
 	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
 	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +
@@ -8097,7 +10113,12 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\fSubmitAnswer\x12*.sttattus.languages.v1.SubmitAnswerRequest\x1a+.sttattus.languages.v1.SubmitAnswerResponse\x12s\n" +
 	"\x10GetPracticeStats\x12..sttattus.languages.v1.GetPracticeStatsRequest\x1a/.sttattus.languages.v1.GetPracticeStatsResponse\x12m\n" +
 	"\x0eGetMemberPrefs\x12,.sttattus.languages.v1.GetMemberPrefsRequest\x1a-.sttattus.languages.v1.GetMemberPrefsResponse\x12m\n" +
-	"\x0eSetMemberPrefs\x12,.sttattus.languages.v1.SetMemberPrefsRequest\x1a-.sttattus.languages.v1.SetMemberPrefsResponse\x12^\n" +
+	"\x0eSetMemberPrefs\x12,.sttattus.languages.v1.SetMemberPrefsRequest\x1a-.sttattus.languages.v1.SetMemberPrefsResponse\x12p\n" +
+	"\x0fGetAdaptivePlan\x12-.sttattus.languages.v1.GetAdaptivePlanRequest\x1a..sttattus.languages.v1.GetAdaptivePlanResponse\x12g\n" +
+	"\fSkipPlanItem\x12*.sttattus.languages.v1.SkipPlanItemRequest\x1a+.sttattus.languages.v1.SkipPlanItemResponse\x12j\n" +
+	"\rGetMasteryMap\x12+.sttattus.languages.v1.GetMasteryMapRequest\x1a,.sttattus.languages.v1.GetMasteryMapResponse\x12p\n" +
+	"\x0fGetNodeEvidence\x12-.sttattus.languages.v1.GetNodeEvidenceRequest\x1a..sttattus.languages.v1.GetNodeEvidenceResponse\x12y\n" +
+	"\x12DismissWritingFlag\x120.sttattus.languages.v1.DismissWritingFlagRequest\x1a1.sttattus.languages.v1.DismissWritingFlagResponse\x12^\n" +
 	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
 
 var (
@@ -8112,278 +10133,336 @@ func file_sttattus_languages_v1_languages_proto_rawDescGZIP() []byte {
 	return file_sttattus_languages_v1_languages_proto_rawDescData
 }
 
-var file_sttattus_languages_v1_languages_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 113)
+var file_sttattus_languages_v1_languages_proto_enumTypes = make([]protoimpl.EnumInfo, 9)
+var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 132)
 var file_sttattus_languages_v1_languages_proto_goTypes = []any{
 	(CulturalCategory)(0),                    // 0: sttattus.languages.v1.CulturalCategory
 	(ExerciseKind)(0),                        // 1: sttattus.languages.v1.ExerciseKind
 	(StudyItemKind)(0),                       // 2: sttattus.languages.v1.StudyItemKind
 	(NewMaterialStatus)(0),                   // 3: sttattus.languages.v1.NewMaterialStatus
-	(*CulturalNuance)(nil),                   // 4: sttattus.languages.v1.CulturalNuance
-	(*Scenario)(nil),                         // 5: sttattus.languages.v1.Scenario
-	(*DialogueNode)(nil),                     // 6: sttattus.languages.v1.DialogueNode
-	(*DialogueOption)(nil),                   // 7: sttattus.languages.v1.DialogueOption
-	(*Progress)(nil),                         // 8: sttattus.languages.v1.Progress
-	(*LinguistStats)(nil),                    // 9: sttattus.languages.v1.LinguistStats
-	(*ListScenariosRequest)(nil),             // 10: sttattus.languages.v1.ListScenariosRequest
-	(*ListScenariosResponse)(nil),            // 11: sttattus.languages.v1.ListScenariosResponse
-	(*CompleteInteractionRequest)(nil),       // 12: sttattus.languages.v1.CompleteInteractionRequest
-	(*CompleteInteractionResponse)(nil),      // 13: sttattus.languages.v1.CompleteInteractionResponse
-	(*GetLinguistStatsRequest)(nil),          // 14: sttattus.languages.v1.GetLinguistStatsRequest
-	(*GetLinguistStatsResponse)(nil),         // 15: sttattus.languages.v1.GetLinguistStatsResponse
-	(*CulturalModule)(nil),                   // 16: sttattus.languages.v1.CulturalModule
-	(*ListCulturalModulesRequest)(nil),       // 17: sttattus.languages.v1.ListCulturalModulesRequest
-	(*ListCulturalModulesResponse)(nil),      // 18: sttattus.languages.v1.ListCulturalModulesResponse
-	(*MarkCulturalCompletedRequest)(nil),     // 19: sttattus.languages.v1.MarkCulturalCompletedRequest
-	(*MarkCulturalCompletedResponse)(nil),    // 20: sttattus.languages.v1.MarkCulturalCompletedResponse
-	(*UserLanguage)(nil),                     // 21: sttattus.languages.v1.UserLanguage
-	(*ListMyLanguagesRequest)(nil),           // 22: sttattus.languages.v1.ListMyLanguagesRequest
-	(*ListMyLanguagesResponse)(nil),          // 23: sttattus.languages.v1.ListMyLanguagesResponse
-	(*AddMyLanguageRequest)(nil),             // 24: sttattus.languages.v1.AddMyLanguageRequest
-	(*AddMyLanguageResponse)(nil),            // 25: sttattus.languages.v1.AddMyLanguageResponse
-	(*RemoveMyLanguageRequest)(nil),          // 26: sttattus.languages.v1.RemoveMyLanguageRequest
-	(*RemoveMyLanguageResponse)(nil),         // 27: sttattus.languages.v1.RemoveMyLanguageResponse
-	(*SetMyPrimaryLanguageRequest)(nil),      // 28: sttattus.languages.v1.SetMyPrimaryLanguageRequest
-	(*SetMyPrimaryLanguageResponse)(nil),     // 29: sttattus.languages.v1.SetMyPrimaryLanguageResponse
-	(*SpeakingPrompt)(nil),                   // 30: sttattus.languages.v1.SpeakingPrompt
-	(*PhonemeScore)(nil),                     // 31: sttattus.languages.v1.PhonemeScore
-	(*SpeakingAttempt)(nil),                  // 32: sttattus.languages.v1.SpeakingAttempt
-	(*ListSpeakingPromptsRequest)(nil),       // 33: sttattus.languages.v1.ListSpeakingPromptsRequest
-	(*ListSpeakingPromptsResponse)(nil),      // 34: sttattus.languages.v1.ListSpeakingPromptsResponse
-	(*CreateSpeakingAttemptRequest)(nil),     // 35: sttattus.languages.v1.CreateSpeakingAttemptRequest
-	(*CreateSpeakingAttemptResponse)(nil),    // 36: sttattus.languages.v1.CreateSpeakingAttemptResponse
-	(*GetSpeakingAttemptRequest)(nil),        // 37: sttattus.languages.v1.GetSpeakingAttemptRequest
-	(*GetSpeakingAttemptResponse)(nil),       // 38: sttattus.languages.v1.GetSpeakingAttemptResponse
-	(*ImmersionClip)(nil),                    // 39: sttattus.languages.v1.ImmersionClip
-	(*ListTodayImmersionRequest)(nil),        // 40: sttattus.languages.v1.ListTodayImmersionRequest
-	(*ListTodayImmersionResponse)(nil),       // 41: sttattus.languages.v1.ListTodayImmersionResponse
-	(*MarkImmersionCompletedRequest)(nil),    // 42: sttattus.languages.v1.MarkImmersionCompletedRequest
-	(*MarkImmersionCompletedResponse)(nil),   // 43: sttattus.languages.v1.MarkImmersionCompletedResponse
-	(*DailyPlan)(nil),                        // 44: sttattus.languages.v1.DailyPlan
-	(*GetTodayPlanRequest)(nil),              // 45: sttattus.languages.v1.GetTodayPlanRequest
-	(*GetTodayPlanResponse)(nil),             // 46: sttattus.languages.v1.GetTodayPlanResponse
-	(*MarkPlanBlockRequest)(nil),             // 47: sttattus.languages.v1.MarkPlanBlockRequest
-	(*MarkPlanBlockResponse)(nil),            // 48: sttattus.languages.v1.MarkPlanBlockResponse
-	(*PlacementQuestion)(nil),                // 49: sttattus.languages.v1.PlacementQuestion
-	(*PlacementAnswer)(nil),                  // 50: sttattus.languages.v1.PlacementAnswer
-	(*ListPlacementQuestionsRequest)(nil),    // 51: sttattus.languages.v1.ListPlacementQuestionsRequest
-	(*ListPlacementQuestionsResponse)(nil),   // 52: sttattus.languages.v1.ListPlacementQuestionsResponse
-	(*SubmitPlacementResultRequest)(nil),     // 53: sttattus.languages.v1.SubmitPlacementResultRequest
-	(*PlacementResult)(nil),                  // 54: sttattus.languages.v1.PlacementResult
-	(*SubmitPlacementResultResponse)(nil),    // 55: sttattus.languages.v1.SubmitPlacementResultResponse
-	(*ListMyPlacementResultsRequest)(nil),    // 56: sttattus.languages.v1.ListMyPlacementResultsRequest
-	(*ListMyPlacementResultsResponse)(nil),   // 57: sttattus.languages.v1.ListMyPlacementResultsResponse
-	(*WritingPrompt)(nil),                    // 58: sttattus.languages.v1.WritingPrompt
-	(*RubricScore)(nil),                      // 59: sttattus.languages.v1.RubricScore
-	(*WritingError)(nil),                     // 60: sttattus.languages.v1.WritingError
-	(*WritingSubmission)(nil),                // 61: sttattus.languages.v1.WritingSubmission
-	(*ListWritingPromptsRequest)(nil),        // 62: sttattus.languages.v1.ListWritingPromptsRequest
-	(*ListWritingPromptsResponse)(nil),       // 63: sttattus.languages.v1.ListWritingPromptsResponse
-	(*SubmitWritingRequest)(nil),             // 64: sttattus.languages.v1.SubmitWritingRequest
-	(*SubmitWritingResponse)(nil),            // 65: sttattus.languages.v1.SubmitWritingResponse
-	(*ListMyWritingSubmissionsRequest)(nil),  // 66: sttattus.languages.v1.ListMyWritingSubmissionsRequest
-	(*ListMyWritingSubmissionsResponse)(nil), // 67: sttattus.languages.v1.ListMyWritingSubmissionsResponse
-	(*GetWritingSubmissionRequest)(nil),      // 68: sttattus.languages.v1.GetWritingSubmissionRequest
-	(*GetWritingSubmissionResponse)(nil),     // 69: sttattus.languages.v1.GetWritingSubmissionResponse
-	(*ReadingText)(nil),                      // 70: sttattus.languages.v1.ReadingText
-	(*ListReadingTextsRequest)(nil),          // 71: sttattus.languages.v1.ListReadingTextsRequest
-	(*ListReadingTextsResponse)(nil),         // 72: sttattus.languages.v1.ListReadingTextsResponse
-	(*GetReadingTextRequest)(nil),            // 73: sttattus.languages.v1.GetReadingTextRequest
-	(*GetReadingTextResponse)(nil),           // 74: sttattus.languages.v1.GetReadingTextResponse
-	(*Idiom)(nil),                            // 75: sttattus.languages.v1.Idiom
-	(*ListIdiomsRequest)(nil),                // 76: sttattus.languages.v1.ListIdiomsRequest
-	(*ListIdiomsResponse)(nil),               // 77: sttattus.languages.v1.ListIdiomsResponse
-	(*TutorThread)(nil),                      // 78: sttattus.languages.v1.TutorThread
-	(*TutorMessage)(nil),                     // 79: sttattus.languages.v1.TutorMessage
-	(*StartTutorThreadRequest)(nil),          // 80: sttattus.languages.v1.StartTutorThreadRequest
-	(*StartTutorThreadResponse)(nil),         // 81: sttattus.languages.v1.StartTutorThreadResponse
-	(*ListMyTutorThreadsRequest)(nil),        // 82: sttattus.languages.v1.ListMyTutorThreadsRequest
-	(*ListMyTutorThreadsResponse)(nil),       // 83: sttattus.languages.v1.ListMyTutorThreadsResponse
-	(*GetTutorThreadRequest)(nil),            // 84: sttattus.languages.v1.GetTutorThreadRequest
-	(*GetTutorThreadResponse)(nil),           // 85: sttattus.languages.v1.GetTutorThreadResponse
-	(*PostTutorMessageRequest)(nil),          // 86: sttattus.languages.v1.PostTutorMessageRequest
-	(*PostTutorMessageResponse)(nil),         // 87: sttattus.languages.v1.PostTutorMessageResponse
-	(*AnthologyArticle)(nil),                 // 88: sttattus.languages.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),     // 89: sttattus.languages.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),    // 90: sttattus.languages.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),       // 91: sttattus.languages.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),      // 92: sttattus.languages.v1.GetAnthologyArticleResponse
-	(*Certificate)(nil),                      // 93: sttattus.languages.v1.Certificate
-	(*IssueCertificateRequest)(nil),          // 94: sttattus.languages.v1.IssueCertificateRequest
-	(*IssueCertificateResponse)(nil),         // 95: sttattus.languages.v1.IssueCertificateResponse
-	(*ListMyCertificatesRequest)(nil),        // 96: sttattus.languages.v1.ListMyCertificatesRequest
-	(*ListMyCertificatesResponse)(nil),       // 97: sttattus.languages.v1.ListMyCertificatesResponse
-	(*GenerateLinguistAlmanacRequest)(nil),   // 98: sttattus.languages.v1.GenerateLinguistAlmanacRequest
-	(*GenerateLinguistAlmanacResponse)(nil),  // 99: sttattus.languages.v1.GenerateLinguistAlmanacResponse
-	(*CreateLinguistShareRequest)(nil),       // 100: sttattus.languages.v1.CreateLinguistShareRequest
-	(*CreateLinguistShareResponse)(nil),      // 101: sttattus.languages.v1.CreateLinguistShareResponse
-	(*PracticeCard)(nil),                     // 102: sttattus.languages.v1.PracticeCard
-	(*GetPracticeSessionRequest)(nil),        // 103: sttattus.languages.v1.GetPracticeSessionRequest
-	(*GetPracticeSessionResponse)(nil),       // 104: sttattus.languages.v1.GetPracticeSessionResponse
-	(*SubmitAnswerRequest)(nil),              // 105: sttattus.languages.v1.SubmitAnswerRequest
-	(*SubmitAnswerResponse)(nil),             // 106: sttattus.languages.v1.SubmitAnswerResponse
-	(*GetPracticeStatsRequest)(nil),          // 107: sttattus.languages.v1.GetPracticeStatsRequest
-	(*GetPracticeStatsResponse)(nil),         // 108: sttattus.languages.v1.GetPracticeStatsResponse
-	(*MemberPrefs)(nil),                      // 109: sttattus.languages.v1.MemberPrefs
-	(*GetMemberPrefsRequest)(nil),            // 110: sttattus.languages.v1.GetMemberPrefsRequest
-	(*GetMemberPrefsResponse)(nil),           // 111: sttattus.languages.v1.GetMemberPrefsResponse
-	(*SetMemberPrefsRequest)(nil),            // 112: sttattus.languages.v1.SetMemberPrefsRequest
-	(*SetMemberPrefsResponse)(nil),           // 113: sttattus.languages.v1.SetMemberPrefsResponse
-	(*Word)(nil),                             // 114: sttattus.languages.v1.Word
-	(*ListWordsRequest)(nil),                 // 115: sttattus.languages.v1.ListWordsRequest
-	(*ListWordsResponse)(nil),                // 116: sttattus.languages.v1.ListWordsResponse
-	(*timestamppb.Timestamp)(nil),            // 117: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),                   // 118: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                  // 119: sttattus.common.v1.PageResponse
+	(MasterySkill)(0),                        // 4: sttattus.languages.v1.MasterySkill
+	(GoalMode)(0),                            // 5: sttattus.languages.v1.GoalMode
+	(PlanItemKind)(0),                        // 6: sttattus.languages.v1.PlanItemKind
+	(PlanItemState)(0),                       // 7: sttattus.languages.v1.PlanItemState
+	(PlanReasonCode)(0),                      // 8: sttattus.languages.v1.PlanReasonCode
+	(*CulturalNuance)(nil),                   // 9: sttattus.languages.v1.CulturalNuance
+	(*Scenario)(nil),                         // 10: sttattus.languages.v1.Scenario
+	(*DialogueNode)(nil),                     // 11: sttattus.languages.v1.DialogueNode
+	(*DialogueOption)(nil),                   // 12: sttattus.languages.v1.DialogueOption
+	(*Progress)(nil),                         // 13: sttattus.languages.v1.Progress
+	(*LinguistStats)(nil),                    // 14: sttattus.languages.v1.LinguistStats
+	(*ListScenariosRequest)(nil),             // 15: sttattus.languages.v1.ListScenariosRequest
+	(*ListScenariosResponse)(nil),            // 16: sttattus.languages.v1.ListScenariosResponse
+	(*CompleteInteractionRequest)(nil),       // 17: sttattus.languages.v1.CompleteInteractionRequest
+	(*CompleteInteractionResponse)(nil),      // 18: sttattus.languages.v1.CompleteInteractionResponse
+	(*GetLinguistStatsRequest)(nil),          // 19: sttattus.languages.v1.GetLinguistStatsRequest
+	(*GetLinguistStatsResponse)(nil),         // 20: sttattus.languages.v1.GetLinguistStatsResponse
+	(*CulturalModule)(nil),                   // 21: sttattus.languages.v1.CulturalModule
+	(*ListCulturalModulesRequest)(nil),       // 22: sttattus.languages.v1.ListCulturalModulesRequest
+	(*ListCulturalModulesResponse)(nil),      // 23: sttattus.languages.v1.ListCulturalModulesResponse
+	(*MarkCulturalCompletedRequest)(nil),     // 24: sttattus.languages.v1.MarkCulturalCompletedRequest
+	(*MarkCulturalCompletedResponse)(nil),    // 25: sttattus.languages.v1.MarkCulturalCompletedResponse
+	(*UserLanguage)(nil),                     // 26: sttattus.languages.v1.UserLanguage
+	(*ListMyLanguagesRequest)(nil),           // 27: sttattus.languages.v1.ListMyLanguagesRequest
+	(*ListMyLanguagesResponse)(nil),          // 28: sttattus.languages.v1.ListMyLanguagesResponse
+	(*AddMyLanguageRequest)(nil),             // 29: sttattus.languages.v1.AddMyLanguageRequest
+	(*AddMyLanguageResponse)(nil),            // 30: sttattus.languages.v1.AddMyLanguageResponse
+	(*RemoveMyLanguageRequest)(nil),          // 31: sttattus.languages.v1.RemoveMyLanguageRequest
+	(*RemoveMyLanguageResponse)(nil),         // 32: sttattus.languages.v1.RemoveMyLanguageResponse
+	(*SetMyPrimaryLanguageRequest)(nil),      // 33: sttattus.languages.v1.SetMyPrimaryLanguageRequest
+	(*SetMyPrimaryLanguageResponse)(nil),     // 34: sttattus.languages.v1.SetMyPrimaryLanguageResponse
+	(*SpeakingPrompt)(nil),                   // 35: sttattus.languages.v1.SpeakingPrompt
+	(*PhonemeScore)(nil),                     // 36: sttattus.languages.v1.PhonemeScore
+	(*SpeakingAttempt)(nil),                  // 37: sttattus.languages.v1.SpeakingAttempt
+	(*ListSpeakingPromptsRequest)(nil),       // 38: sttattus.languages.v1.ListSpeakingPromptsRequest
+	(*ListSpeakingPromptsResponse)(nil),      // 39: sttattus.languages.v1.ListSpeakingPromptsResponse
+	(*CreateSpeakingAttemptRequest)(nil),     // 40: sttattus.languages.v1.CreateSpeakingAttemptRequest
+	(*CreateSpeakingAttemptResponse)(nil),    // 41: sttattus.languages.v1.CreateSpeakingAttemptResponse
+	(*GetSpeakingAttemptRequest)(nil),        // 42: sttattus.languages.v1.GetSpeakingAttemptRequest
+	(*GetSpeakingAttemptResponse)(nil),       // 43: sttattus.languages.v1.GetSpeakingAttemptResponse
+	(*ImmersionClip)(nil),                    // 44: sttattus.languages.v1.ImmersionClip
+	(*ListTodayImmersionRequest)(nil),        // 45: sttattus.languages.v1.ListTodayImmersionRequest
+	(*ListTodayImmersionResponse)(nil),       // 46: sttattus.languages.v1.ListTodayImmersionResponse
+	(*MarkImmersionCompletedRequest)(nil),    // 47: sttattus.languages.v1.MarkImmersionCompletedRequest
+	(*MarkImmersionCompletedResponse)(nil),   // 48: sttattus.languages.v1.MarkImmersionCompletedResponse
+	(*DailyPlan)(nil),                        // 49: sttattus.languages.v1.DailyPlan
+	(*GetTodayPlanRequest)(nil),              // 50: sttattus.languages.v1.GetTodayPlanRequest
+	(*GetTodayPlanResponse)(nil),             // 51: sttattus.languages.v1.GetTodayPlanResponse
+	(*MarkPlanBlockRequest)(nil),             // 52: sttattus.languages.v1.MarkPlanBlockRequest
+	(*MarkPlanBlockResponse)(nil),            // 53: sttattus.languages.v1.MarkPlanBlockResponse
+	(*PlacementQuestion)(nil),                // 54: sttattus.languages.v1.PlacementQuestion
+	(*PlacementAnswer)(nil),                  // 55: sttattus.languages.v1.PlacementAnswer
+	(*ListPlacementQuestionsRequest)(nil),    // 56: sttattus.languages.v1.ListPlacementQuestionsRequest
+	(*ListPlacementQuestionsResponse)(nil),   // 57: sttattus.languages.v1.ListPlacementQuestionsResponse
+	(*SubmitPlacementResultRequest)(nil),     // 58: sttattus.languages.v1.SubmitPlacementResultRequest
+	(*PlacementResult)(nil),                  // 59: sttattus.languages.v1.PlacementResult
+	(*SubmitPlacementResultResponse)(nil),    // 60: sttattus.languages.v1.SubmitPlacementResultResponse
+	(*ListMyPlacementResultsRequest)(nil),    // 61: sttattus.languages.v1.ListMyPlacementResultsRequest
+	(*ListMyPlacementResultsResponse)(nil),   // 62: sttattus.languages.v1.ListMyPlacementResultsResponse
+	(*WritingPrompt)(nil),                    // 63: sttattus.languages.v1.WritingPrompt
+	(*RubricScore)(nil),                      // 64: sttattus.languages.v1.RubricScore
+	(*WritingError)(nil),                     // 65: sttattus.languages.v1.WritingError
+	(*WritingSubmission)(nil),                // 66: sttattus.languages.v1.WritingSubmission
+	(*ListWritingPromptsRequest)(nil),        // 67: sttattus.languages.v1.ListWritingPromptsRequest
+	(*ListWritingPromptsResponse)(nil),       // 68: sttattus.languages.v1.ListWritingPromptsResponse
+	(*SubmitWritingRequest)(nil),             // 69: sttattus.languages.v1.SubmitWritingRequest
+	(*SubmitWritingResponse)(nil),            // 70: sttattus.languages.v1.SubmitWritingResponse
+	(*ListMyWritingSubmissionsRequest)(nil),  // 71: sttattus.languages.v1.ListMyWritingSubmissionsRequest
+	(*ListMyWritingSubmissionsResponse)(nil), // 72: sttattus.languages.v1.ListMyWritingSubmissionsResponse
+	(*GetWritingSubmissionRequest)(nil),      // 73: sttattus.languages.v1.GetWritingSubmissionRequest
+	(*GetWritingSubmissionResponse)(nil),     // 74: sttattus.languages.v1.GetWritingSubmissionResponse
+	(*ReadingText)(nil),                      // 75: sttattus.languages.v1.ReadingText
+	(*ListReadingTextsRequest)(nil),          // 76: sttattus.languages.v1.ListReadingTextsRequest
+	(*ListReadingTextsResponse)(nil),         // 77: sttattus.languages.v1.ListReadingTextsResponse
+	(*GetReadingTextRequest)(nil),            // 78: sttattus.languages.v1.GetReadingTextRequest
+	(*GetReadingTextResponse)(nil),           // 79: sttattus.languages.v1.GetReadingTextResponse
+	(*Idiom)(nil),                            // 80: sttattus.languages.v1.Idiom
+	(*ListIdiomsRequest)(nil),                // 81: sttattus.languages.v1.ListIdiomsRequest
+	(*ListIdiomsResponse)(nil),               // 82: sttattus.languages.v1.ListIdiomsResponse
+	(*TutorThread)(nil),                      // 83: sttattus.languages.v1.TutorThread
+	(*TutorMessage)(nil),                     // 84: sttattus.languages.v1.TutorMessage
+	(*StartTutorThreadRequest)(nil),          // 85: sttattus.languages.v1.StartTutorThreadRequest
+	(*StartTutorThreadResponse)(nil),         // 86: sttattus.languages.v1.StartTutorThreadResponse
+	(*ListMyTutorThreadsRequest)(nil),        // 87: sttattus.languages.v1.ListMyTutorThreadsRequest
+	(*ListMyTutorThreadsResponse)(nil),       // 88: sttattus.languages.v1.ListMyTutorThreadsResponse
+	(*GetTutorThreadRequest)(nil),            // 89: sttattus.languages.v1.GetTutorThreadRequest
+	(*GetTutorThreadResponse)(nil),           // 90: sttattus.languages.v1.GetTutorThreadResponse
+	(*PostTutorMessageRequest)(nil),          // 91: sttattus.languages.v1.PostTutorMessageRequest
+	(*PostTutorMessageResponse)(nil),         // 92: sttattus.languages.v1.PostTutorMessageResponse
+	(*AnthologyArticle)(nil),                 // 93: sttattus.languages.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),     // 94: sttattus.languages.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),    // 95: sttattus.languages.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),       // 96: sttattus.languages.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),      // 97: sttattus.languages.v1.GetAnthologyArticleResponse
+	(*Certificate)(nil),                      // 98: sttattus.languages.v1.Certificate
+	(*IssueCertificateRequest)(nil),          // 99: sttattus.languages.v1.IssueCertificateRequest
+	(*IssueCertificateResponse)(nil),         // 100: sttattus.languages.v1.IssueCertificateResponse
+	(*ListMyCertificatesRequest)(nil),        // 101: sttattus.languages.v1.ListMyCertificatesRequest
+	(*ListMyCertificatesResponse)(nil),       // 102: sttattus.languages.v1.ListMyCertificatesResponse
+	(*GenerateLinguistAlmanacRequest)(nil),   // 103: sttattus.languages.v1.GenerateLinguistAlmanacRequest
+	(*GenerateLinguistAlmanacResponse)(nil),  // 104: sttattus.languages.v1.GenerateLinguistAlmanacResponse
+	(*CreateLinguistShareRequest)(nil),       // 105: sttattus.languages.v1.CreateLinguistShareRequest
+	(*CreateLinguistShareResponse)(nil),      // 106: sttattus.languages.v1.CreateLinguistShareResponse
+	(*PracticeCard)(nil),                     // 107: sttattus.languages.v1.PracticeCard
+	(*GetPracticeSessionRequest)(nil),        // 108: sttattus.languages.v1.GetPracticeSessionRequest
+	(*GetPracticeSessionResponse)(nil),       // 109: sttattus.languages.v1.GetPracticeSessionResponse
+	(*SubmitAnswerRequest)(nil),              // 110: sttattus.languages.v1.SubmitAnswerRequest
+	(*SubmitAnswerResponse)(nil),             // 111: sttattus.languages.v1.SubmitAnswerResponse
+	(*GetPracticeStatsRequest)(nil),          // 112: sttattus.languages.v1.GetPracticeStatsRequest
+	(*GetPracticeStatsResponse)(nil),         // 113: sttattus.languages.v1.GetPracticeStatsResponse
+	(*MemberPrefs)(nil),                      // 114: sttattus.languages.v1.MemberPrefs
+	(*GetMemberPrefsRequest)(nil),            // 115: sttattus.languages.v1.GetMemberPrefsRequest
+	(*GetMemberPrefsResponse)(nil),           // 116: sttattus.languages.v1.GetMemberPrefsResponse
+	(*SetMemberPrefsRequest)(nil),            // 117: sttattus.languages.v1.SetMemberPrefsRequest
+	(*SetMemberPrefsResponse)(nil),           // 118: sttattus.languages.v1.SetMemberPrefsResponse
+	(*Word)(nil),                             // 119: sttattus.languages.v1.Word
+	(*ListWordsRequest)(nil),                 // 120: sttattus.languages.v1.ListWordsRequest
+	(*ListWordsResponse)(nil),                // 121: sttattus.languages.v1.ListWordsResponse
+	(*PlanReason)(nil),                       // 122: sttattus.languages.v1.PlanReason
+	(*PlanItem)(nil),                         // 123: sttattus.languages.v1.PlanItem
+	(*AdaptivePlan)(nil),                     // 124: sttattus.languages.v1.AdaptivePlan
+	(*GetAdaptivePlanRequest)(nil),           // 125: sttattus.languages.v1.GetAdaptivePlanRequest
+	(*GetAdaptivePlanResponse)(nil),          // 126: sttattus.languages.v1.GetAdaptivePlanResponse
+	(*SkipPlanItemRequest)(nil),              // 127: sttattus.languages.v1.SkipPlanItemRequest
+	(*SkipPlanItemResponse)(nil),             // 128: sttattus.languages.v1.SkipPlanItemResponse
+	(*SkillEstimate)(nil),                    // 129: sttattus.languages.v1.SkillEstimate
+	(*LevelProgress)(nil),                    // 130: sttattus.languages.v1.LevelProgress
+	(*NodeEstimate)(nil),                     // 131: sttattus.languages.v1.NodeEstimate
+	(*ConfusionPair)(nil),                    // 132: sttattus.languages.v1.ConfusionPair
+	(*GetMasteryMapRequest)(nil),             // 133: sttattus.languages.v1.GetMasteryMapRequest
+	(*GetMasteryMapResponse)(nil),            // 134: sttattus.languages.v1.GetMasteryMapResponse
+	(*EvidenceEntry)(nil),                    // 135: sttattus.languages.v1.EvidenceEntry
+	(*GetNodeEvidenceRequest)(nil),           // 136: sttattus.languages.v1.GetNodeEvidenceRequest
+	(*GetNodeEvidenceResponse)(nil),          // 137: sttattus.languages.v1.GetNodeEvidenceResponse
+	(*DismissWritingFlagRequest)(nil),        // 138: sttattus.languages.v1.DismissWritingFlagRequest
+	(*DismissWritingFlagResponse)(nil),       // 139: sttattus.languages.v1.DismissWritingFlagResponse
+	nil,                                      // 140: sttattus.languages.v1.PlanReason.ParamsEntry
+	(*timestamppb.Timestamp)(nil),            // 141: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),                   // 142: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                  // 143: sttattus.common.v1.PageResponse
 }
 var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	0,   // 0: sttattus.languages.v1.Scenario.category:type_name -> sttattus.languages.v1.CulturalCategory
-	6,   // 1: sttattus.languages.v1.Scenario.nodes:type_name -> sttattus.languages.v1.DialogueNode
-	7,   // 2: sttattus.languages.v1.DialogueNode.options:type_name -> sttattus.languages.v1.DialogueOption
-	117, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
+	11,  // 1: sttattus.languages.v1.Scenario.nodes:type_name -> sttattus.languages.v1.DialogueNode
+	12,  // 2: sttattus.languages.v1.DialogueNode.options:type_name -> sttattus.languages.v1.DialogueOption
+	141, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
 	0,   // 4: sttattus.languages.v1.ListScenariosRequest.category:type_name -> sttattus.languages.v1.CulturalCategory
-	118, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
-	5,   // 6: sttattus.languages.v1.ListScenariosResponse.scenarios:type_name -> sttattus.languages.v1.Scenario
-	119, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
-	8,   // 8: sttattus.languages.v1.CompleteInteractionResponse.progress:type_name -> sttattus.languages.v1.Progress
-	9,   // 9: sttattus.languages.v1.CompleteInteractionResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
-	9,   // 10: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
-	16,  // 11: sttattus.languages.v1.ListCulturalModulesResponse.modules:type_name -> sttattus.languages.v1.CulturalModule
-	16,  // 12: sttattus.languages.v1.MarkCulturalCompletedResponse.module:type_name -> sttattus.languages.v1.CulturalModule
-	21,  // 13: sttattus.languages.v1.ListMyLanguagesResponse.languages:type_name -> sttattus.languages.v1.UserLanguage
-	21,  // 14: sttattus.languages.v1.AddMyLanguageResponse.language:type_name -> sttattus.languages.v1.UserLanguage
-	21,  // 15: sttattus.languages.v1.SetMyPrimaryLanguageResponse.language:type_name -> sttattus.languages.v1.UserLanguage
-	31,  // 16: sttattus.languages.v1.SpeakingAttempt.phonemes:type_name -> sttattus.languages.v1.PhonemeScore
-	30,  // 17: sttattus.languages.v1.ListSpeakingPromptsResponse.prompts:type_name -> sttattus.languages.v1.SpeakingPrompt
-	32,  // 18: sttattus.languages.v1.CreateSpeakingAttemptResponse.attempt:type_name -> sttattus.languages.v1.SpeakingAttempt
-	32,  // 19: sttattus.languages.v1.GetSpeakingAttemptResponse.attempt:type_name -> sttattus.languages.v1.SpeakingAttempt
-	39,  // 20: sttattus.languages.v1.ListTodayImmersionResponse.clips:type_name -> sttattus.languages.v1.ImmersionClip
-	39,  // 21: sttattus.languages.v1.MarkImmersionCompletedResponse.clip:type_name -> sttattus.languages.v1.ImmersionClip
-	44,  // 22: sttattus.languages.v1.GetTodayPlanResponse.plan:type_name -> sttattus.languages.v1.DailyPlan
-	44,  // 23: sttattus.languages.v1.MarkPlanBlockResponse.plan:type_name -> sttattus.languages.v1.DailyPlan
-	49,  // 24: sttattus.languages.v1.ListPlacementQuestionsResponse.questions:type_name -> sttattus.languages.v1.PlacementQuestion
-	50,  // 25: sttattus.languages.v1.SubmitPlacementResultRequest.answers:type_name -> sttattus.languages.v1.PlacementAnswer
-	54,  // 26: sttattus.languages.v1.SubmitPlacementResultResponse.result:type_name -> sttattus.languages.v1.PlacementResult
-	54,  // 27: sttattus.languages.v1.ListMyPlacementResultsResponse.results:type_name -> sttattus.languages.v1.PlacementResult
-	59,  // 28: sttattus.languages.v1.WritingSubmission.rubric:type_name -> sttattus.languages.v1.RubricScore
-	60,  // 29: sttattus.languages.v1.WritingSubmission.errors:type_name -> sttattus.languages.v1.WritingError
-	58,  // 30: sttattus.languages.v1.ListWritingPromptsResponse.prompts:type_name -> sttattus.languages.v1.WritingPrompt
-	61,  // 31: sttattus.languages.v1.SubmitWritingResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
-	61,  // 32: sttattus.languages.v1.ListMyWritingSubmissionsResponse.submissions:type_name -> sttattus.languages.v1.WritingSubmission
-	61,  // 33: sttattus.languages.v1.GetWritingSubmissionResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
-	70,  // 34: sttattus.languages.v1.ListReadingTextsResponse.texts:type_name -> sttattus.languages.v1.ReadingText
-	70,  // 35: sttattus.languages.v1.GetReadingTextResponse.text:type_name -> sttattus.languages.v1.ReadingText
-	75,  // 36: sttattus.languages.v1.ListIdiomsResponse.idioms:type_name -> sttattus.languages.v1.Idiom
-	79,  // 37: sttattus.languages.v1.TutorThread.messages:type_name -> sttattus.languages.v1.TutorMessage
-	78,  // 38: sttattus.languages.v1.StartTutorThreadResponse.thread:type_name -> sttattus.languages.v1.TutorThread
-	78,  // 39: sttattus.languages.v1.ListMyTutorThreadsResponse.threads:type_name -> sttattus.languages.v1.TutorThread
-	78,  // 40: sttattus.languages.v1.GetTutorThreadResponse.thread:type_name -> sttattus.languages.v1.TutorThread
-	78,  // 41: sttattus.languages.v1.PostTutorMessageResponse.thread:type_name -> sttattus.languages.v1.TutorThread
-	88,  // 42: sttattus.languages.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.languages.v1.AnthologyArticle
-	88,  // 43: sttattus.languages.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.languages.v1.AnthologyArticle
-	93,  // 44: sttattus.languages.v1.IssueCertificateResponse.certificate:type_name -> sttattus.languages.v1.Certificate
-	93,  // 45: sttattus.languages.v1.ListMyCertificatesResponse.certificates:type_name -> sttattus.languages.v1.Certificate
+	142, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	10,  // 6: sttattus.languages.v1.ListScenariosResponse.scenarios:type_name -> sttattus.languages.v1.Scenario
+	143, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
+	13,  // 8: sttattus.languages.v1.CompleteInteractionResponse.progress:type_name -> sttattus.languages.v1.Progress
+	14,  // 9: sttattus.languages.v1.CompleteInteractionResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
+	14,  // 10: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
+	21,  // 11: sttattus.languages.v1.ListCulturalModulesResponse.modules:type_name -> sttattus.languages.v1.CulturalModule
+	21,  // 12: sttattus.languages.v1.MarkCulturalCompletedResponse.module:type_name -> sttattus.languages.v1.CulturalModule
+	26,  // 13: sttattus.languages.v1.ListMyLanguagesResponse.languages:type_name -> sttattus.languages.v1.UserLanguage
+	26,  // 14: sttattus.languages.v1.AddMyLanguageResponse.language:type_name -> sttattus.languages.v1.UserLanguage
+	26,  // 15: sttattus.languages.v1.SetMyPrimaryLanguageResponse.language:type_name -> sttattus.languages.v1.UserLanguage
+	36,  // 16: sttattus.languages.v1.SpeakingAttempt.phonemes:type_name -> sttattus.languages.v1.PhonemeScore
+	35,  // 17: sttattus.languages.v1.ListSpeakingPromptsResponse.prompts:type_name -> sttattus.languages.v1.SpeakingPrompt
+	37,  // 18: sttattus.languages.v1.CreateSpeakingAttemptResponse.attempt:type_name -> sttattus.languages.v1.SpeakingAttempt
+	37,  // 19: sttattus.languages.v1.GetSpeakingAttemptResponse.attempt:type_name -> sttattus.languages.v1.SpeakingAttempt
+	44,  // 20: sttattus.languages.v1.ListTodayImmersionResponse.clips:type_name -> sttattus.languages.v1.ImmersionClip
+	44,  // 21: sttattus.languages.v1.MarkImmersionCompletedResponse.clip:type_name -> sttattus.languages.v1.ImmersionClip
+	49,  // 22: sttattus.languages.v1.GetTodayPlanResponse.plan:type_name -> sttattus.languages.v1.DailyPlan
+	49,  // 23: sttattus.languages.v1.MarkPlanBlockResponse.plan:type_name -> sttattus.languages.v1.DailyPlan
+	54,  // 24: sttattus.languages.v1.ListPlacementQuestionsResponse.questions:type_name -> sttattus.languages.v1.PlacementQuestion
+	55,  // 25: sttattus.languages.v1.SubmitPlacementResultRequest.answers:type_name -> sttattus.languages.v1.PlacementAnswer
+	59,  // 26: sttattus.languages.v1.SubmitPlacementResultResponse.result:type_name -> sttattus.languages.v1.PlacementResult
+	59,  // 27: sttattus.languages.v1.ListMyPlacementResultsResponse.results:type_name -> sttattus.languages.v1.PlacementResult
+	64,  // 28: sttattus.languages.v1.WritingSubmission.rubric:type_name -> sttattus.languages.v1.RubricScore
+	65,  // 29: sttattus.languages.v1.WritingSubmission.errors:type_name -> sttattus.languages.v1.WritingError
+	63,  // 30: sttattus.languages.v1.ListWritingPromptsResponse.prompts:type_name -> sttattus.languages.v1.WritingPrompt
+	66,  // 31: sttattus.languages.v1.SubmitWritingResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
+	66,  // 32: sttattus.languages.v1.ListMyWritingSubmissionsResponse.submissions:type_name -> sttattus.languages.v1.WritingSubmission
+	66,  // 33: sttattus.languages.v1.GetWritingSubmissionResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
+	75,  // 34: sttattus.languages.v1.ListReadingTextsResponse.texts:type_name -> sttattus.languages.v1.ReadingText
+	75,  // 35: sttattus.languages.v1.GetReadingTextResponse.text:type_name -> sttattus.languages.v1.ReadingText
+	80,  // 36: sttattus.languages.v1.ListIdiomsResponse.idioms:type_name -> sttattus.languages.v1.Idiom
+	84,  // 37: sttattus.languages.v1.TutorThread.messages:type_name -> sttattus.languages.v1.TutorMessage
+	83,  // 38: sttattus.languages.v1.StartTutorThreadResponse.thread:type_name -> sttattus.languages.v1.TutorThread
+	83,  // 39: sttattus.languages.v1.ListMyTutorThreadsResponse.threads:type_name -> sttattus.languages.v1.TutorThread
+	83,  // 40: sttattus.languages.v1.GetTutorThreadResponse.thread:type_name -> sttattus.languages.v1.TutorThread
+	83,  // 41: sttattus.languages.v1.PostTutorMessageResponse.thread:type_name -> sttattus.languages.v1.TutorThread
+	93,  // 42: sttattus.languages.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.languages.v1.AnthologyArticle
+	93,  // 43: sttattus.languages.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.languages.v1.AnthologyArticle
+	98,  // 44: sttattus.languages.v1.IssueCertificateResponse.certificate:type_name -> sttattus.languages.v1.Certificate
+	98,  // 45: sttattus.languages.v1.ListMyCertificatesResponse.certificates:type_name -> sttattus.languages.v1.Certificate
 	1,   // 46: sttattus.languages.v1.PracticeCard.exercise:type_name -> sttattus.languages.v1.ExerciseKind
 	2,   // 47: sttattus.languages.v1.PracticeCard.item_kind:type_name -> sttattus.languages.v1.StudyItemKind
-	102, // 48: sttattus.languages.v1.GetPracticeSessionResponse.cards:type_name -> sttattus.languages.v1.PracticeCard
-	3,   // 49: sttattus.languages.v1.GetPracticeSessionResponse.new_material:type_name -> sttattus.languages.v1.NewMaterialStatus
-	1,   // 50: sttattus.languages.v1.SubmitAnswerRequest.exercise:type_name -> sttattus.languages.v1.ExerciseKind
-	2,   // 51: sttattus.languages.v1.SubmitAnswerRequest.item_kind:type_name -> sttattus.languages.v1.StudyItemKind
-	117, // 52: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
-	109, // 53: sttattus.languages.v1.GetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	109, // 54: sttattus.languages.v1.SetMemberPrefsRequest.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	109, // 55: sttattus.languages.v1.SetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	118, // 56: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	114, // 57: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
-	10,  // 58: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
-	12,  // 59: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
-	14,  // 60: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
-	51,  // 61: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
-	53,  // 62: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
-	56,  // 63: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
-	45,  // 64: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
-	47,  // 65: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
-	40,  // 66: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
-	42,  // 67: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
-	33,  // 68: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
-	35,  // 69: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
-	37,  // 70: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
-	22,  // 71: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
-	24,  // 72: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
-	26,  // 73: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
-	28,  // 74: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
-	17,  // 75: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
-	19,  // 76: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
-	62,  // 77: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
-	64,  // 78: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
-	66,  // 79: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
-	68,  // 80: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
-	71,  // 81: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
-	73,  // 82: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
-	76,  // 83: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
-	80,  // 84: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
-	82,  // 85: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
-	84,  // 86: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
-	86,  // 87: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
-	89,  // 88: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
-	91,  // 89: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
-	94,  // 90: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
-	96,  // 91: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
-	98,  // 92: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
-	100, // 93: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
-	103, // 94: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
-	105, // 95: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
-	107, // 96: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
-	110, // 97: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
-	112, // 98: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
-	115, // 99: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
-	11,  // 100: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
-	13,  // 101: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
-	15,  // 102: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
-	52,  // 103: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
-	55,  // 104: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
-	57,  // 105: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
-	46,  // 106: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
-	48,  // 107: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
-	41,  // 108: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
-	43,  // 109: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
-	34,  // 110: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
-	36,  // 111: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
-	38,  // 112: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
-	23,  // 113: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
-	25,  // 114: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
-	27,  // 115: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
-	29,  // 116: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
-	18,  // 117: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
-	20,  // 118: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
-	63,  // 119: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
-	65,  // 120: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
-	67,  // 121: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
-	69,  // 122: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
-	72,  // 123: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
-	74,  // 124: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
-	77,  // 125: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
-	81,  // 126: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
-	83,  // 127: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
-	85,  // 128: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
-	87,  // 129: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
-	90,  // 130: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
-	92,  // 131: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
-	95,  // 132: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
-	97,  // 133: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
-	99,  // 134: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
-	101, // 135: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
-	104, // 136: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
-	106, // 137: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
-	108, // 138: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
-	111, // 139: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
-	113, // 140: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
-	116, // 141: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
-	100, // [100:142] is the sub-list for method output_type
-	58,  // [58:100] is the sub-list for method input_type
-	58,  // [58:58] is the sub-list for extension type_name
-	58,  // [58:58] is the sub-list for extension extendee
-	0,   // [0:58] is the sub-list for field type_name
+	122, // 48: sttattus.languages.v1.PracticeCard.reason:type_name -> sttattus.languages.v1.PlanReason
+	107, // 49: sttattus.languages.v1.GetPracticeSessionResponse.cards:type_name -> sttattus.languages.v1.PracticeCard
+	3,   // 50: sttattus.languages.v1.GetPracticeSessionResponse.new_material:type_name -> sttattus.languages.v1.NewMaterialStatus
+	1,   // 51: sttattus.languages.v1.SubmitAnswerRequest.exercise:type_name -> sttattus.languages.v1.ExerciseKind
+	2,   // 52: sttattus.languages.v1.SubmitAnswerRequest.item_kind:type_name -> sttattus.languages.v1.StudyItemKind
+	141, // 53: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
+	5,   // 54: sttattus.languages.v1.MemberPrefs.goal_mode:type_name -> sttattus.languages.v1.GoalMode
+	114, // 55: sttattus.languages.v1.GetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	114, // 56: sttattus.languages.v1.SetMemberPrefsRequest.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	114, // 57: sttattus.languages.v1.SetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	142, // 58: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	119, // 59: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
+	8,   // 60: sttattus.languages.v1.PlanReason.code:type_name -> sttattus.languages.v1.PlanReasonCode
+	140, // 61: sttattus.languages.v1.PlanReason.params:type_name -> sttattus.languages.v1.PlanReason.ParamsEntry
+	6,   // 62: sttattus.languages.v1.PlanItem.kind:type_name -> sttattus.languages.v1.PlanItemKind
+	4,   // 63: sttattus.languages.v1.PlanItem.skill:type_name -> sttattus.languages.v1.MasterySkill
+	7,   // 64: sttattus.languages.v1.PlanItem.state:type_name -> sttattus.languages.v1.PlanItemState
+	122, // 65: sttattus.languages.v1.PlanItem.reason:type_name -> sttattus.languages.v1.PlanReason
+	5,   // 66: sttattus.languages.v1.AdaptivePlan.goal_mode:type_name -> sttattus.languages.v1.GoalMode
+	123, // 67: sttattus.languages.v1.AdaptivePlan.items:type_name -> sttattus.languages.v1.PlanItem
+	3,   // 68: sttattus.languages.v1.AdaptivePlan.new_material:type_name -> sttattus.languages.v1.NewMaterialStatus
+	124, // 69: sttattus.languages.v1.GetAdaptivePlanResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
+	124, // 70: sttattus.languages.v1.SkipPlanItemResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
+	4,   // 71: sttattus.languages.v1.SkillEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
+	4,   // 72: sttattus.languages.v1.NodeEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
+	129, // 73: sttattus.languages.v1.GetMasteryMapResponse.skills:type_name -> sttattus.languages.v1.SkillEstimate
+	130, // 74: sttattus.languages.v1.GetMasteryMapResponse.levels:type_name -> sttattus.languages.v1.LevelProgress
+	131, // 75: sttattus.languages.v1.GetMasteryMapResponse.weakest:type_name -> sttattus.languages.v1.NodeEstimate
+	132, // 76: sttattus.languages.v1.GetMasteryMapResponse.confusions:type_name -> sttattus.languages.v1.ConfusionPair
+	59,  // 77: sttattus.languages.v1.GetMasteryMapResponse.placement:type_name -> sttattus.languages.v1.PlacementResult
+	4,   // 78: sttattus.languages.v1.EvidenceEntry.skill:type_name -> sttattus.languages.v1.MasterySkill
+	131, // 79: sttattus.languages.v1.GetNodeEvidenceResponse.estimates:type_name -> sttattus.languages.v1.NodeEstimate
+	135, // 80: sttattus.languages.v1.GetNodeEvidenceResponse.evidence:type_name -> sttattus.languages.v1.EvidenceEntry
+	66,  // 81: sttattus.languages.v1.DismissWritingFlagResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
+	15,  // 82: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
+	17,  // 83: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
+	19,  // 84: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
+	56,  // 85: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
+	58,  // 86: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
+	61,  // 87: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
+	50,  // 88: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
+	52,  // 89: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
+	45,  // 90: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
+	47,  // 91: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
+	38,  // 92: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
+	40,  // 93: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
+	42,  // 94: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
+	27,  // 95: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
+	29,  // 96: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
+	31,  // 97: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
+	33,  // 98: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
+	22,  // 99: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
+	24,  // 100: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
+	67,  // 101: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
+	69,  // 102: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
+	71,  // 103: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
+	73,  // 104: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
+	76,  // 105: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
+	78,  // 106: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
+	81,  // 107: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
+	85,  // 108: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
+	87,  // 109: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
+	89,  // 110: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
+	91,  // 111: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
+	94,  // 112: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
+	96,  // 113: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
+	99,  // 114: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
+	101, // 115: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
+	103, // 116: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
+	105, // 117: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
+	108, // 118: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
+	110, // 119: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
+	112, // 120: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
+	115, // 121: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
+	117, // 122: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
+	125, // 123: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:input_type -> sttattus.languages.v1.GetAdaptivePlanRequest
+	127, // 124: sttattus.languages.v1.LanguagesService.SkipPlanItem:input_type -> sttattus.languages.v1.SkipPlanItemRequest
+	133, // 125: sttattus.languages.v1.LanguagesService.GetMasteryMap:input_type -> sttattus.languages.v1.GetMasteryMapRequest
+	136, // 126: sttattus.languages.v1.LanguagesService.GetNodeEvidence:input_type -> sttattus.languages.v1.GetNodeEvidenceRequest
+	138, // 127: sttattus.languages.v1.LanguagesService.DismissWritingFlag:input_type -> sttattus.languages.v1.DismissWritingFlagRequest
+	120, // 128: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
+	16,  // 129: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
+	18,  // 130: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
+	20,  // 131: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
+	57,  // 132: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
+	60,  // 133: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
+	62,  // 134: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
+	51,  // 135: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
+	53,  // 136: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
+	46,  // 137: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
+	48,  // 138: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
+	39,  // 139: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
+	41,  // 140: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
+	43,  // 141: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
+	28,  // 142: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
+	30,  // 143: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
+	32,  // 144: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
+	34,  // 145: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
+	23,  // 146: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
+	25,  // 147: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
+	68,  // 148: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
+	70,  // 149: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
+	72,  // 150: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
+	74,  // 151: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
+	77,  // 152: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
+	79,  // 153: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
+	82,  // 154: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
+	86,  // 155: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
+	88,  // 156: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
+	90,  // 157: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
+	92,  // 158: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
+	95,  // 159: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
+	97,  // 160: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
+	100, // 161: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
+	102, // 162: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
+	104, // 163: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
+	106, // 164: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
+	109, // 165: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
+	111, // 166: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
+	113, // 167: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
+	116, // 168: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
+	118, // 169: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
+	126, // 170: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:output_type -> sttattus.languages.v1.GetAdaptivePlanResponse
+	128, // 171: sttattus.languages.v1.LanguagesService.SkipPlanItem:output_type -> sttattus.languages.v1.SkipPlanItemResponse
+	134, // 172: sttattus.languages.v1.LanguagesService.GetMasteryMap:output_type -> sttattus.languages.v1.GetMasteryMapResponse
+	137, // 173: sttattus.languages.v1.LanguagesService.GetNodeEvidence:output_type -> sttattus.languages.v1.GetNodeEvidenceResponse
+	139, // 174: sttattus.languages.v1.LanguagesService.DismissWritingFlag:output_type -> sttattus.languages.v1.DismissWritingFlagResponse
+	121, // 175: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
+	129, // [129:176] is the sub-list for method output_type
+	82,  // [82:129] is the sub-list for method input_type
+	82,  // [82:82] is the sub-list for extension type_name
+	82,  // [82:82] is the sub-list for extension extendee
+	0,   // [0:82] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_languages_proto_init() }
@@ -8391,13 +10470,14 @@ func file_sttattus_languages_v1_languages_proto_init() {
 	if File_sttattus_languages_v1_languages_proto != nil {
 		return
 	}
+	file_sttattus_languages_v1_languages_proto_msgTypes[105].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_languages_v1_languages_proto_rawDesc), len(file_sttattus_languages_v1_languages_proto_rawDesc)),
-			NumEnums:      4,
-			NumMessages:   113,
+			NumEnums:      9,
+			NumMessages:   132,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

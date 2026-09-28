@@ -4834,6 +4834,7 @@ class WritingError extends $pb.GeneratedMessage {
     $core.String? kind,
     $core.String? explanation,
     $core.String? grammarPointKey,
+    $core.String? flagState,
   }) {
     final result = create();
     if (original != null) result.original = original;
@@ -4841,6 +4842,7 @@ class WritingError extends $pb.GeneratedMessage {
     if (kind != null) result.kind = kind;
     if (explanation != null) result.explanation = explanation;
     if (grammarPointKey != null) result.grammarPointKey = grammarPointKey;
+    if (flagState != null) result.flagState = flagState;
     return result;
   }
 
@@ -4863,6 +4865,7 @@ class WritingError extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'kind')
     ..aOS(4, _omitFieldNames ? '' : 'explanation')
     ..aOS(5, _omitFieldNames ? '' : 'grammarPointKey')
+    ..aOS(6, _omitFieldNames ? '' : 'flagState')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4932,6 +4935,19 @@ class WritingError extends $pb.GeneratedMessage {
   $core.bool hasGrammarPointKey() => $_has(4);
   @$pb.TagNumber(5)
   void clearGrammarPointKey() => $_clearField(5);
+
+  /// Lexicon Choice 2. An AI-found error is a suspicion, not evidence: it
+  /// lowers nothing until a short check confirms it. "unverified" until then,
+  /// "confirmed" or "cleared" by the check, "dismissed" when the member says
+  /// it is not an error.
+  @$pb.TagNumber(6)
+  $core.String get flagState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set flagState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFlagState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFlagState() => $_clearField(6);
 }
 
 class WritingSubmission extends $pb.GeneratedMessage {
@@ -8041,6 +8057,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.bool? pilot,
     $core.bool? correctedSinceSeen,
     $core.String? copyLanguage,
+    PlanReason? reason,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8070,6 +8087,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (correctedSinceSeen != null)
       result.correctedSinceSeen = correctedSinceSeen;
     if (copyLanguage != null) result.copyLanguage = copyLanguage;
+    if (reason != null) result.reason = reason;
     return result;
   }
 
@@ -8115,6 +8133,8 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aOB(24, _omitFieldNames ? '' : 'pilot')
     ..aOB(25, _omitFieldNames ? '' : 'correctedSinceSeen')
     ..aOS(26, _omitFieldNames ? '' : 'copyLanguage')
+    ..aOM<PlanReason>(27, _omitFieldNames ? '' : 'reason',
+        subBuilder: PlanReason.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8389,6 +8409,18 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasCopyLanguage() => $_has(25);
   @$pb.TagNumber(26)
   void clearCopyLanguage() => $_clearField(26);
+
+  /// Lexicon Choice 2: why this card is in the session now.
+  @$pb.TagNumber(27)
+  PlanReason get reason => $_getN(26);
+  @$pb.TagNumber(27)
+  set reason(PlanReason value) => $_setField(27, value);
+  @$pb.TagNumber(27)
+  $core.bool hasReason() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearReason() => $_clearField(27);
+  @$pb.TagNumber(27)
+  PlanReason ensureReason() => $_ensure(26);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -8396,11 +8428,13 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
     $core.String? language,
     $core.int? limit,
     $core.Iterable<$core.String>? ttsLanguages,
+    $core.String? planItemId,
   }) {
     final result = create();
     if (language != null) result.language = language;
     if (limit != null) result.limit = limit;
     if (ttsLanguages != null) result.ttsLanguages.addAll(ttsLanguages);
+    if (planItemId != null) result.planItemId = planItemId;
     return result;
   }
 
@@ -8421,6 +8455,7 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'language')
     ..aI(2, _omitFieldNames ? '' : 'limit')
     ..pPS(3, _omitFieldNames ? '' : 'ttsLanguages')
+    ..aOS(4, _omitFieldNames ? '' : 'planItemId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8469,6 +8504,17 @@ class GetPracticeSessionRequest extends $pb.GeneratedMessage {
   /// voice installed has no prompt at all and cannot be answered.
   @$pb.TagNumber(3)
   $pb.PbList<$core.String> get ttsLanguages => $_getList(2);
+
+  /// Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
+  /// and skill) instead of the general due queue.
+  @$pb.TagNumber(4)
+  $core.String get planItemId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set planItemId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlanItemId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlanItemId() => $_clearField(4);
 }
 
 class GetPracticeSessionResponse extends $pb.GeneratedMessage {
@@ -8588,6 +8634,9 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.String? itemId,
     $core.String? contentUnitId,
     $core.int? contentRevision,
+    $core.String? clientEventId,
+    $core.bool? hintUsed,
+    $core.String? planItemId,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8600,6 +8649,9 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (itemId != null) result.itemId = itemId;
     if (contentUnitId != null) result.contentUnitId = contentUnitId;
     if (contentRevision != null) result.contentRevision = contentRevision;
+    if (clientEventId != null) result.clientEventId = clientEventId;
+    if (hintUsed != null) result.hintUsed = hintUsed;
+    if (planItemId != null) result.planItemId = planItemId;
     return result;
   }
 
@@ -8629,6 +8681,9 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'itemId')
     ..aOS(9, _omitFieldNames ? '' : 'contentUnitId')
     ..aI(10, _omitFieldNames ? '' : 'contentRevision')
+    ..aOS(11, _omitFieldNames ? '' : 'clientEventId')
+    ..aOB(12, _omitFieldNames ? '' : 'hintUsed')
+    ..aOS(13, _omitFieldNames ? '' : 'planItemId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8744,6 +8799,39 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasContentRevision() => $_has(9);
   @$pb.TagNumber(10)
   void clearContentRevision() => $_clearField(10);
+
+  /// Lexicon Choice 2. A client-generated id for this answer: a retry after a
+  /// dropped connection (or an offline replay) is recognised and not counted
+  /// twice.
+  @$pb.TagNumber(11)
+  $core.String get clientEventId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set clientEventId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasClientEventId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearClientEventId() => $_clearField(11);
+
+  /// The member asked for a hint before answering; a hinted success is weaker
+  /// evidence than an unaided one.
+  @$pb.TagNumber(12)
+  $core.bool get hintUsed => $_getBF(11);
+  @$pb.TagNumber(12)
+  set hintUsed($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasHintUsed() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearHintUsed() => $_clearField(12);
+
+  /// The plan item this answer was given for, when the session came from one.
+  @$pb.TagNumber(13)
+  $core.String get planItemId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set planItemId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPlanItemId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPlanItemId() => $_clearField(13);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {
@@ -8755,6 +8843,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     $core.int? reviewsDoneToday,
     $core.int? newLearnedToday,
     $core.String? rationale,
+    $core.bool? duplicate,
   }) {
     final result = create();
     if (correct != null) result.correct = correct;
@@ -8764,6 +8853,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     if (reviewsDoneToday != null) result.reviewsDoneToday = reviewsDoneToday;
     if (newLearnedToday != null) result.newLearnedToday = newLearnedToday;
     if (rationale != null) result.rationale = rationale;
+    if (duplicate != null) result.duplicate = duplicate;
     return result;
   }
 
@@ -8789,6 +8879,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     ..aI(5, _omitFieldNames ? '' : 'reviewsDoneToday')
     ..aI(6, _omitFieldNames ? '' : 'newLearnedToday')
     ..aOS(7, _omitFieldNames ? '' : 'rationale')
+    ..aOB(8, _omitFieldNames ? '' : 'duplicate')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8878,6 +8969,17 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
   $core.bool hasRationale() => $_has(6);
   @$pb.TagNumber(7)
   void clearRationale() => $_clearField(7);
+
+  /// Lexicon Choice 2: this client_event_id had already been recorded; the
+  /// response describes the first recording and nothing was counted again.
+  @$pb.TagNumber(8)
+  $core.bool get duplicate => $_getBF(7);
+  @$pb.TagNumber(8)
+  set duplicate($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDuplicate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDuplicate() => $_clearField(8);
 }
 
 class GetPracticeStatsRequest extends $pb.GeneratedMessage {
@@ -9119,11 +9221,21 @@ class MemberPrefs extends $pb.GeneratedMessage {
     $core.String? baseLanguage,
     $core.int? dailyNewTarget,
     $core.int? dailyReviewTarget,
+    GoalMode? goalMode,
+    $core.int? dailyMinutes,
+    $core.int? utcOffsetMinutes,
+    $core.String? vacationUntil,
+    $core.bool? extraTime,
   }) {
     final result = create();
     if (baseLanguage != null) result.baseLanguage = baseLanguage;
     if (dailyNewTarget != null) result.dailyNewTarget = dailyNewTarget;
     if (dailyReviewTarget != null) result.dailyReviewTarget = dailyReviewTarget;
+    if (goalMode != null) result.goalMode = goalMode;
+    if (dailyMinutes != null) result.dailyMinutes = dailyMinutes;
+    if (utcOffsetMinutes != null) result.utcOffsetMinutes = utcOffsetMinutes;
+    if (vacationUntil != null) result.vacationUntil = vacationUntil;
+    if (extraTime != null) result.extraTime = extraTime;
     return result;
   }
 
@@ -9144,6 +9256,12 @@ class MemberPrefs extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'baseLanguage')
     ..aI(2, _omitFieldNames ? '' : 'dailyNewTarget')
     ..aI(3, _omitFieldNames ? '' : 'dailyReviewTarget')
+    ..aE<GoalMode>(4, _omitFieldNames ? '' : 'goalMode',
+        enumValues: GoalMode.values)
+    ..aI(5, _omitFieldNames ? '' : 'dailyMinutes')
+    ..aI(6, _omitFieldNames ? '' : 'utcOffsetMinutes')
+    ..aOS(7, _omitFieldNames ? '' : 'vacationUntil')
+    ..aOB(8, _omitFieldNames ? '' : 'extraTime')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9191,6 +9309,61 @@ class MemberPrefs extends $pb.GeneratedMessage {
   $core.bool hasDailyReviewTarget() => $_has(2);
   @$pb.TagNumber(3)
   void clearDailyReviewTarget() => $_clearField(3);
+
+  /// Lexicon Choice 2 — how the member wants Today planned. On
+  /// SetMemberPrefs a field left out keeps its stored value (an older app
+  /// that only sends the base language must not reset these):
+  /// GOAL_MODE_UNSPECIFIED and daily_minutes 0 mean "unchanged", and the
+  /// optional fields are applied only when present. vacation_until "" clears it.
+  @$pb.TagNumber(4)
+  GoalMode get goalMode => $_getN(3);
+  @$pb.TagNumber(4)
+  set goalMode(GoalMode value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGoalMode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGoalMode() => $_clearField(4);
+
+  /// Time budget for Today, 5–90 minutes.
+  @$pb.TagNumber(5)
+  $core.int get dailyMinutes => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set dailyMinutes($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDailyMinutes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDailyMinutes() => $_clearField(5);
+
+  /// The device's offset from UTC, so "today" is the member's day.
+  @$pb.TagNumber(6)
+  $core.int get utcOffsetMinutes => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set utcOffsetMinutes($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasUtcOffsetMinutes() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUtcOffsetMinutes() => $_clearField(6);
+
+  /// New material pauses until this date (YYYY-MM-DD, inclusive); empty = off.
+  @$pb.TagNumber(7)
+  $core.String get vacationUntil => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set vacationUntil($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVacationUntil() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVacationUntil() => $_clearField(7);
+
+  /// Accessibility pacing: more time per item, and latency never counts
+  /// against an answer.
+  @$pb.TagNumber(8)
+  $core.bool get extraTime => $_getBF(7);
+  @$pb.TagNumber(8)
+  set extraTime($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExtraTime() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExtraTime() => $_clearField(8);
 }
 
 class GetMemberPrefsRequest extends $pb.GeneratedMessage {
@@ -9582,6 +9755,1809 @@ class ListWordsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<Word> get words => $_getList(0);
+}
+
+/// Why something is in the plan. `params` carries the numbers behind the
+/// sentence (skill, estimate, lapses, the two confused items, days missed…) so
+/// the app can say it in the member's language; evidence_count is how many
+/// observations the claim rests on.
+class PlanReason extends $pb.GeneratedMessage {
+  factory PlanReason({
+    PlanReasonCode? code,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? params,
+    $core.int? evidenceCount,
+  }) {
+    final result = create();
+    if (code != null) result.code = code;
+    if (params != null) result.params.addEntries(params);
+    if (evidenceCount != null) result.evidenceCount = evidenceCount;
+    return result;
+  }
+
+  PlanReason._();
+
+  factory PlanReason.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PlanReason.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PlanReason',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aE<PlanReasonCode>(1, _omitFieldNames ? '' : 'code',
+        enumValues: PlanReasonCode.values)
+    ..m<$core.String, $core.String>(2, _omitFieldNames ? '' : 'params',
+        entryClassName: 'PlanReason.ParamsEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('sttattus.languages.v1'))
+    ..aI(3, _omitFieldNames ? '' : 'evidenceCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlanReason clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlanReason copyWith(void Function(PlanReason) updates) =>
+      super.copyWith((message) => updates(message as PlanReason)) as PlanReason;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanReason create() => PlanReason._();
+  @$core.override
+  PlanReason createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PlanReason getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PlanReason>(create);
+  static PlanReason? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PlanReasonCode get code => $_getN(0);
+  @$pb.TagNumber(1)
+  set code(PlanReasonCode value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbMap<$core.String, $core.String> get params => $_getMap(1);
+
+  @$pb.TagNumber(3)
+  $core.int get evidenceCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set evidenceCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEvidenceCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEvidenceCount() => $_clearField(3);
+}
+
+class PlanItem extends $pb.GeneratedMessage {
+  factory PlanItem({
+    $core.String? id,
+    PlanItemKind? kind,
+    MasterySkill? skill,
+    $core.Iterable<$core.String>? labels,
+    $core.int? estimatedMinutes,
+    PlanItemState? state,
+    PlanReason? reason,
+    $core.int? targetCount,
+    $core.int? doneCount,
+    $core.String? activityId,
+    $core.String? activityTitle,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (kind != null) result.kind = kind;
+    if (skill != null) result.skill = skill;
+    if (labels != null) result.labels.addAll(labels);
+    if (estimatedMinutes != null) result.estimatedMinutes = estimatedMinutes;
+    if (state != null) result.state = state;
+    if (reason != null) result.reason = reason;
+    if (targetCount != null) result.targetCount = targetCount;
+    if (doneCount != null) result.doneCount = doneCount;
+    if (activityId != null) result.activityId = activityId;
+    if (activityTitle != null) result.activityTitle = activityTitle;
+    return result;
+  }
+
+  PlanItem._();
+
+  factory PlanItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PlanItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PlanItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aE<PlanItemKind>(2, _omitFieldNames ? '' : 'kind',
+        enumValues: PlanItemKind.values)
+    ..aE<MasterySkill>(3, _omitFieldNames ? '' : 'skill',
+        enumValues: MasterySkill.values)
+    ..pPS(4, _omitFieldNames ? '' : 'labels')
+    ..aI(5, _omitFieldNames ? '' : 'estimatedMinutes')
+    ..aE<PlanItemState>(6, _omitFieldNames ? '' : 'state',
+        enumValues: PlanItemState.values)
+    ..aOM<PlanReason>(7, _omitFieldNames ? '' : 'reason',
+        subBuilder: PlanReason.create)
+    ..aI(8, _omitFieldNames ? '' : 'targetCount')
+    ..aI(9, _omitFieldNames ? '' : 'doneCount')
+    ..aOS(10, _omitFieldNames ? '' : 'activityId')
+    ..aOS(11, _omitFieldNames ? '' : 'activityTitle')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlanItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PlanItem copyWith(void Function(PlanItem) updates) =>
+      super.copyWith((message) => updates(message as PlanItem)) as PlanItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PlanItem create() => PlanItem._();
+  @$core.override
+  PlanItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PlanItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PlanItem>(create);
+  static PlanItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  PlanItemKind get kind => $_getN(1);
+  @$pb.TagNumber(2)
+  set kind(PlanItemKind value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  MasterySkill get skill => $_getN(2);
+  @$pb.TagNumber(3)
+  set skill(MasterySkill value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSkill() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSkill() => $_clearField(3);
+
+  /// What the item covers, as the member would name it (words, a grammar
+  /// point's title, a prompt).
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get labels => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.int get estimatedMinutes => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set estimatedMinutes($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEstimatedMinutes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEstimatedMinutes() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  PlanItemState get state => $_getN(5);
+  @$pb.TagNumber(6)
+  set state(PlanItemState value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  PlanReason get reason => $_getN(6);
+  @$pb.TagNumber(7)
+  set reason(PlanReason value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReason() => $_clearField(7);
+  @$pb.TagNumber(7)
+  PlanReason ensureReason() => $_ensure(6);
+
+  /// Answers (or one attempt/completion) needed, and how many are done.
+  @$pb.TagNumber(8)
+  $core.int get targetCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set targetCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTargetCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTargetCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get doneCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set doneCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDoneCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDoneCount() => $_clearField(9);
+
+  /// For speaking/reading/writing items: the activity to open.
+  @$pb.TagNumber(10)
+  $core.String get activityId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set activityId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasActivityId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearActivityId() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get activityTitle => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set activityTitle($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasActivityTitle() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearActivityTitle() => $_clearField(11);
+}
+
+class AdaptivePlan extends $pb.GeneratedMessage {
+  factory AdaptivePlan({
+    $core.String? revisionId,
+    $core.String? language,
+    $core.String? planDate,
+    $core.int? revision,
+    $core.String? policyVersion,
+    GoalMode? goalMode,
+    $core.int? budgetMinutes,
+    $core.int? estimatedMinutes,
+    $core.Iterable<PlanItem>? items,
+    $core.int? missedDays,
+    $core.int? deferredCount,
+    $core.bool? vacation,
+    $core.String? inputsDigest,
+    $fixnum.Int64? generatedUnix,
+    NewMaterialStatus? newMaterial,
+  }) {
+    final result = create();
+    if (revisionId != null) result.revisionId = revisionId;
+    if (language != null) result.language = language;
+    if (planDate != null) result.planDate = planDate;
+    if (revision != null) result.revision = revision;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (goalMode != null) result.goalMode = goalMode;
+    if (budgetMinutes != null) result.budgetMinutes = budgetMinutes;
+    if (estimatedMinutes != null) result.estimatedMinutes = estimatedMinutes;
+    if (items != null) result.items.addAll(items);
+    if (missedDays != null) result.missedDays = missedDays;
+    if (deferredCount != null) result.deferredCount = deferredCount;
+    if (vacation != null) result.vacation = vacation;
+    if (inputsDigest != null) result.inputsDigest = inputsDigest;
+    if (generatedUnix != null) result.generatedUnix = generatedUnix;
+    if (newMaterial != null) result.newMaterial = newMaterial;
+    return result;
+  }
+
+  AdaptivePlan._();
+
+  factory AdaptivePlan.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdaptivePlan.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdaptivePlan',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(2, _omitFieldNames ? '' : 'language')
+    ..aOS(3, _omitFieldNames ? '' : 'planDate')
+    ..aI(4, _omitFieldNames ? '' : 'revision')
+    ..aOS(5, _omitFieldNames ? '' : 'policyVersion')
+    ..aE<GoalMode>(6, _omitFieldNames ? '' : 'goalMode',
+        enumValues: GoalMode.values)
+    ..aI(7, _omitFieldNames ? '' : 'budgetMinutes')
+    ..aI(8, _omitFieldNames ? '' : 'estimatedMinutes')
+    ..pPM<PlanItem>(9, _omitFieldNames ? '' : 'items',
+        subBuilder: PlanItem.create)
+    ..aI(10, _omitFieldNames ? '' : 'missedDays')
+    ..aI(11, _omitFieldNames ? '' : 'deferredCount')
+    ..aOB(12, _omitFieldNames ? '' : 'vacation')
+    ..aOS(13, _omitFieldNames ? '' : 'inputsDigest')
+    ..aInt64(14, _omitFieldNames ? '' : 'generatedUnix')
+    ..aE<NewMaterialStatus>(15, _omitFieldNames ? '' : 'newMaterial',
+        enumValues: NewMaterialStatus.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdaptivePlan clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdaptivePlan copyWith(void Function(AdaptivePlan) updates) =>
+      super.copyWith((message) => updates(message as AdaptivePlan))
+          as AdaptivePlan;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdaptivePlan create() => AdaptivePlan._();
+  @$core.override
+  AdaptivePlan createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdaptivePlan getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdaptivePlan>(create);
+  static AdaptivePlan? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get revisionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set revisionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRevisionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRevisionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get language => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set language($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLanguage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLanguage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get planDate => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set planDate($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlanDate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlanDate() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get revision => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set revision($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevision() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get policyVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set policyVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPolicyVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPolicyVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  GoalMode get goalMode => $_getN(5);
+  @$pb.TagNumber(6)
+  set goalMode(GoalMode value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGoalMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGoalMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get budgetMinutes => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set budgetMinutes($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBudgetMinutes() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBudgetMinutes() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get estimatedMinutes => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set estimatedMinutes($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEstimatedMinutes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEstimatedMinutes() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<PlanItem> get items => $_getList(8);
+
+  /// Back after a gap: how many days were missed and how many at-risk items
+  /// were spread over the coming days instead of all landing today.
+  @$pb.TagNumber(10)
+  $core.int get missedDays => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set missedDays($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMissedDays() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMissedDays() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get deferredCount => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set deferredCount($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDeferredCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDeferredCount() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get vacation => $_getBF(11);
+  @$pb.TagNumber(12)
+  set vacation($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVacation() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVacation() => $_clearField(12);
+
+  /// What the plan was built from; the same inputs rebuild the same plan.
+  @$pb.TagNumber(13)
+  $core.String get inputsDigest => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set inputsDigest($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasInputsDigest() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearInputsDigest() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get generatedUnix => $_getI64(13);
+  @$pb.TagNumber(14)
+  set generatedUnix($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasGeneratedUnix() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearGeneratedUnix() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  NewMaterialStatus get newMaterial => $_getN(14);
+  @$pb.TagNumber(15)
+  set newMaterial(NewMaterialStatus value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasNewMaterial() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearNewMaterial() => $_clearField(15);
+}
+
+class GetAdaptivePlanRequest extends $pb.GeneratedMessage {
+  factory GetAdaptivePlanRequest({
+    $core.String? language,
+    $core.int? utcOffsetMinutes,
+    $core.bool? regenerate,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (utcOffsetMinutes != null) result.utcOffsetMinutes = utcOffsetMinutes;
+    if (regenerate != null) result.regenerate = regenerate;
+    return result;
+  }
+
+  GetAdaptivePlanRequest._();
+
+  factory GetAdaptivePlanRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAdaptivePlanRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAdaptivePlanRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aI(2, _omitFieldNames ? '' : 'utcOffsetMinutes')
+    ..aOB(3, _omitFieldNames ? '' : 'regenerate')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAdaptivePlanRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAdaptivePlanRequest copyWith(
+          void Function(GetAdaptivePlanRequest) updates) =>
+      super.copyWith((message) => updates(message as GetAdaptivePlanRequest))
+          as GetAdaptivePlanRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAdaptivePlanRequest create() => GetAdaptivePlanRequest._();
+  @$core.override
+  GetAdaptivePlanRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAdaptivePlanRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAdaptivePlanRequest>(create);
+  static GetAdaptivePlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get utcOffsetMinutes => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set utcOffsetMinutes($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUtcOffsetMinutes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUtcOffsetMinutes() => $_clearField(2);
+
+  /// Build a new revision now (after settings change or new evidence) instead
+  /// of returning today's current one.
+  @$pb.TagNumber(3)
+  $core.bool get regenerate => $_getBF(2);
+  @$pb.TagNumber(3)
+  set regenerate($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRegenerate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRegenerate() => $_clearField(3);
+}
+
+class GetAdaptivePlanResponse extends $pb.GeneratedMessage {
+  factory GetAdaptivePlanResponse({
+    AdaptivePlan? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  GetAdaptivePlanResponse._();
+
+  factory GetAdaptivePlanResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAdaptivePlanResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAdaptivePlanResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<AdaptivePlan>(1, _omitFieldNames ? '' : 'plan',
+        subBuilder: AdaptivePlan.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAdaptivePlanResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAdaptivePlanResponse copyWith(
+          void Function(GetAdaptivePlanResponse) updates) =>
+      super.copyWith((message) => updates(message as GetAdaptivePlanResponse))
+          as GetAdaptivePlanResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAdaptivePlanResponse create() => GetAdaptivePlanResponse._();
+  @$core.override
+  GetAdaptivePlanResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAdaptivePlanResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAdaptivePlanResponse>(create);
+  static GetAdaptivePlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AdaptivePlan get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(AdaptivePlan value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AdaptivePlan ensurePlan() => $_ensure(0);
+}
+
+class SkipPlanItemRequest extends $pb.GeneratedMessage {
+  factory SkipPlanItemRequest({
+    $core.String? language,
+    $core.String? planItemId,
+    $core.bool? restore,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (planItemId != null) result.planItemId = planItemId;
+    if (restore != null) result.restore = restore;
+    return result;
+  }
+
+  SkipPlanItemRequest._();
+
+  factory SkipPlanItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SkipPlanItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SkipPlanItemRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'planItemId')
+    ..aOB(3, _omitFieldNames ? '' : 'restore')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkipPlanItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkipPlanItemRequest copyWith(void Function(SkipPlanItemRequest) updates) =>
+      super.copyWith((message) => updates(message as SkipPlanItemRequest))
+          as SkipPlanItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SkipPlanItemRequest create() => SkipPlanItemRequest._();
+  @$core.override
+  SkipPlanItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SkipPlanItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SkipPlanItemRequest>(create);
+  static SkipPlanItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get planItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set planItemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPlanItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlanItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get restore => $_getBF(2);
+  @$pb.TagNumber(3)
+  set restore($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRestore() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRestore() => $_clearField(3);
+}
+
+class SkipPlanItemResponse extends $pb.GeneratedMessage {
+  factory SkipPlanItemResponse({
+    AdaptivePlan? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  SkipPlanItemResponse._();
+
+  factory SkipPlanItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SkipPlanItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SkipPlanItemResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<AdaptivePlan>(1, _omitFieldNames ? '' : 'plan',
+        subBuilder: AdaptivePlan.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkipPlanItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkipPlanItemResponse copyWith(void Function(SkipPlanItemResponse) updates) =>
+      super.copyWith((message) => updates(message as SkipPlanItemResponse))
+          as SkipPlanItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SkipPlanItemResponse create() => SkipPlanItemResponse._();
+  @$core.override
+  SkipPlanItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SkipPlanItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SkipPlanItemResponse>(create);
+  static SkipPlanItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AdaptivePlan get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(AdaptivePlan value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AdaptivePlan ensurePlan() => $_ensure(0);
+}
+
+/// One estimate, with how sure it is. `estimate`, `low` and `high` are 0–100.
+class SkillEstimate extends $pb.GeneratedMessage {
+  factory SkillEstimate({
+    MasterySkill? skill,
+    $core.int? estimate,
+    $core.int? low,
+    $core.int? high,
+    $core.int? evidenceCount,
+    $core.int? nodesObserved,
+    $core.int? nodesOpen,
+  }) {
+    final result = create();
+    if (skill != null) result.skill = skill;
+    if (estimate != null) result.estimate = estimate;
+    if (low != null) result.low = low;
+    if (high != null) result.high = high;
+    if (evidenceCount != null) result.evidenceCount = evidenceCount;
+    if (nodesObserved != null) result.nodesObserved = nodesObserved;
+    if (nodesOpen != null) result.nodesOpen = nodesOpen;
+    return result;
+  }
+
+  SkillEstimate._();
+
+  factory SkillEstimate.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SkillEstimate.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SkillEstimate',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aE<MasterySkill>(1, _omitFieldNames ? '' : 'skill',
+        enumValues: MasterySkill.values)
+    ..aI(2, _omitFieldNames ? '' : 'estimate')
+    ..aI(3, _omitFieldNames ? '' : 'low')
+    ..aI(4, _omitFieldNames ? '' : 'high')
+    ..aI(5, _omitFieldNames ? '' : 'evidenceCount')
+    ..aI(6, _omitFieldNames ? '' : 'nodesObserved')
+    ..aI(7, _omitFieldNames ? '' : 'nodesOpen')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkillEstimate clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SkillEstimate copyWith(void Function(SkillEstimate) updates) =>
+      super.copyWith((message) => updates(message as SkillEstimate))
+          as SkillEstimate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SkillEstimate create() => SkillEstimate._();
+  @$core.override
+  SkillEstimate createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SkillEstimate getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SkillEstimate>(create);
+  static SkillEstimate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MasterySkill get skill => $_getN(0);
+  @$pb.TagNumber(1)
+  set skill(MasterySkill value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSkill() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSkill() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get estimate => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set estimate($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEstimate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEstimate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get low => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set low($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLow() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLow() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get high => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set high($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHigh() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHigh() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get evidenceCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set evidenceCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEvidenceCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvidenceCount() => $_clearField(5);
+
+  /// Things observed in this skill, out of what the open levels contain.
+  @$pb.TagNumber(6)
+  $core.int get nodesObserved => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set nodesObserved($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNodesObserved() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNodesObserved() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get nodesOpen => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set nodesOpen($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNodesOpen() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNodesOpen() => $_clearField(7);
+}
+
+class LevelProgress extends $pb.GeneratedMessage {
+  factory LevelProgress({
+    $core.String? cefrLevel,
+    $core.int? nodesOpen,
+    $core.int? nodesSeen,
+    $core.int? nodesStrong,
+  }) {
+    final result = create();
+    if (cefrLevel != null) result.cefrLevel = cefrLevel;
+    if (nodesOpen != null) result.nodesOpen = nodesOpen;
+    if (nodesSeen != null) result.nodesSeen = nodesSeen;
+    if (nodesStrong != null) result.nodesStrong = nodesStrong;
+    return result;
+  }
+
+  LevelProgress._();
+
+  factory LevelProgress.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LevelProgress.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LevelProgress',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cefrLevel')
+    ..aI(2, _omitFieldNames ? '' : 'nodesOpen')
+    ..aI(3, _omitFieldNames ? '' : 'nodesSeen')
+    ..aI(4, _omitFieldNames ? '' : 'nodesStrong')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LevelProgress clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LevelProgress copyWith(void Function(LevelProgress) updates) =>
+      super.copyWith((message) => updates(message as LevelProgress))
+          as LevelProgress;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LevelProgress create() => LevelProgress._();
+  @$core.override
+  LevelProgress createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LevelProgress getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LevelProgress>(create);
+  static LevelProgress? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cefrLevel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cefrLevel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCefrLevel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCefrLevel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get nodesOpen => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set nodesOpen($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodesOpen() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodesOpen() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get nodesSeen => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set nodesSeen($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNodesSeen() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodesSeen() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get nodesStrong => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set nodesStrong($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNodesStrong() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodesStrong() => $_clearField(4);
+}
+
+class NodeEstimate extends $pb.GeneratedMessage {
+  factory NodeEstimate({
+    $core.String? nodeKind,
+    $core.String? nodeId,
+    $core.String? label,
+    MasterySkill? skill,
+    $core.int? estimate,
+    $core.int? low,
+    $core.int? high,
+    $core.int? evidenceCount,
+    $core.double? halfLifeDays,
+    $fixnum.Int64? lastObservedUnix,
+    $core.int? recallNow,
+  }) {
+    final result = create();
+    if (nodeKind != null) result.nodeKind = nodeKind;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (label != null) result.label = label;
+    if (skill != null) result.skill = skill;
+    if (estimate != null) result.estimate = estimate;
+    if (low != null) result.low = low;
+    if (high != null) result.high = high;
+    if (evidenceCount != null) result.evidenceCount = evidenceCount;
+    if (halfLifeDays != null) result.halfLifeDays = halfLifeDays;
+    if (lastObservedUnix != null) result.lastObservedUnix = lastObservedUnix;
+    if (recallNow != null) result.recallNow = recallNow;
+    return result;
+  }
+
+  NodeEstimate._();
+
+  factory NodeEstimate.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NodeEstimate.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NodeEstimate',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'nodeKind')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeId')
+    ..aOS(3, _omitFieldNames ? '' : 'label')
+    ..aE<MasterySkill>(4, _omitFieldNames ? '' : 'skill',
+        enumValues: MasterySkill.values)
+    ..aI(5, _omitFieldNames ? '' : 'estimate')
+    ..aI(6, _omitFieldNames ? '' : 'low')
+    ..aI(7, _omitFieldNames ? '' : 'high')
+    ..aI(8, _omitFieldNames ? '' : 'evidenceCount')
+    ..aD(9, _omitFieldNames ? '' : 'halfLifeDays')
+    ..aInt64(10, _omitFieldNames ? '' : 'lastObservedUnix')
+    ..aI(11, _omitFieldNames ? '' : 'recallNow')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NodeEstimate clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NodeEstimate copyWith(void Function(NodeEstimate) updates) =>
+      super.copyWith((message) => updates(message as NodeEstimate))
+          as NodeEstimate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NodeEstimate create() => NodeEstimate._();
+  @$core.override
+  NodeEstimate createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NodeEstimate getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NodeEstimate>(create);
+  static NodeEstimate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get nodeKind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set nodeKind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeKind() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get label => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set label($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  MasterySkill get skill => $_getN(3);
+  @$pb.TagNumber(4)
+  set skill(MasterySkill value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSkill() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSkill() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get estimate => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set estimate($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEstimate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEstimate() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get low => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set low($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLow() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLow() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get high => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set high($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasHigh() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearHigh() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get evidenceCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set evidenceCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEvidenceCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvidenceCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get halfLifeDays => $_getN(8);
+  @$pb.TagNumber(9)
+  set halfLifeDays($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasHalfLifeDays() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHalfLifeDays() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get lastObservedUnix => $_getI64(9);
+  @$pb.TagNumber(10)
+  set lastObservedUnix($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLastObservedUnix() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLastObservedUnix() => $_clearField(10);
+
+  /// Predicted recall right now, after forgetting.
+  @$pb.TagNumber(11)
+  $core.int get recallNow => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set recallNow($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRecallNow() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRecallNow() => $_clearField(11);
+}
+
+class ConfusionPair extends $pb.GeneratedMessage {
+  factory ConfusionPair({
+    $core.String? aLabel,
+    $core.String? bLabel,
+    $core.int? count,
+  }) {
+    final result = create();
+    if (aLabel != null) result.aLabel = aLabel;
+    if (bLabel != null) result.bLabel = bLabel;
+    if (count != null) result.count = count;
+    return result;
+  }
+
+  ConfusionPair._();
+
+  factory ConfusionPair.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfusionPair.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfusionPair',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'aLabel')
+    ..aOS(2, _omitFieldNames ? '' : 'bLabel')
+    ..aI(3, _omitFieldNames ? '' : 'count')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfusionPair clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfusionPair copyWith(void Function(ConfusionPair) updates) =>
+      super.copyWith((message) => updates(message as ConfusionPair))
+          as ConfusionPair;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfusionPair create() => ConfusionPair._();
+  @$core.override
+  ConfusionPair createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfusionPair getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ConfusionPair>(create);
+  static ConfusionPair? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get aLabel => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set aLabel($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasALabel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearALabel() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get bLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set bLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get count => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set count($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCount() => $_clearField(3);
+}
+
+class GetMasteryMapRequest extends $pb.GeneratedMessage {
+  factory GetMasteryMapRequest({
+    $core.String? language,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    return result;
+  }
+
+  GetMasteryMapRequest._();
+
+  factory GetMasteryMapRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMasteryMapRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMasteryMapRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMasteryMapRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMasteryMapRequest copyWith(void Function(GetMasteryMapRequest) updates) =>
+      super.copyWith((message) => updates(message as GetMasteryMapRequest))
+          as GetMasteryMapRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMasteryMapRequest create() => GetMasteryMapRequest._();
+  @$core.override
+  GetMasteryMapRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMasteryMapRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMasteryMapRequest>(create);
+  static GetMasteryMapRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+}
+
+class GetMasteryMapResponse extends $pb.GeneratedMessage {
+  factory GetMasteryMapResponse({
+    $core.Iterable<SkillEstimate>? skills,
+    $core.Iterable<LevelProgress>? levels,
+    $core.Iterable<NodeEstimate>? weakest,
+    $core.Iterable<ConfusionPair>? confusions,
+    $core.Iterable<PlacementResult>? placement,
+    $core.int? evidenceTotal,
+    $core.String? policyVersion,
+  }) {
+    final result = create();
+    if (skills != null) result.skills.addAll(skills);
+    if (levels != null) result.levels.addAll(levels);
+    if (weakest != null) result.weakest.addAll(weakest);
+    if (confusions != null) result.confusions.addAll(confusions);
+    if (placement != null) result.placement.addAll(placement);
+    if (evidenceTotal != null) result.evidenceTotal = evidenceTotal;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    return result;
+  }
+
+  GetMasteryMapResponse._();
+
+  factory GetMasteryMapResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMasteryMapResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMasteryMapResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..pPM<SkillEstimate>(1, _omitFieldNames ? '' : 'skills',
+        subBuilder: SkillEstimate.create)
+    ..pPM<LevelProgress>(2, _omitFieldNames ? '' : 'levels',
+        subBuilder: LevelProgress.create)
+    ..pPM<NodeEstimate>(3, _omitFieldNames ? '' : 'weakest',
+        subBuilder: NodeEstimate.create)
+    ..pPM<ConfusionPair>(4, _omitFieldNames ? '' : 'confusions',
+        subBuilder: ConfusionPair.create)
+    ..pPM<PlacementResult>(5, _omitFieldNames ? '' : 'placement',
+        subBuilder: PlacementResult.create)
+    ..aI(6, _omitFieldNames ? '' : 'evidenceTotal')
+    ..aOS(7, _omitFieldNames ? '' : 'policyVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMasteryMapResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMasteryMapResponse copyWith(
+          void Function(GetMasteryMapResponse) updates) =>
+      super.copyWith((message) => updates(message as GetMasteryMapResponse))
+          as GetMasteryMapResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMasteryMapResponse create() => GetMasteryMapResponse._();
+  @$core.override
+  GetMasteryMapResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMasteryMapResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetMasteryMapResponse>(create);
+  static GetMasteryMapResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SkillEstimate> get skills => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<LevelProgress> get levels => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<NodeEstimate> get weakest => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<ConfusionPair> get confusions => $_getList(3);
+
+  /// One-off placement tests, shown apart from practice evidence.
+  @$pb.TagNumber(5)
+  $pb.PbList<PlacementResult> get placement => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.int get evidenceTotal => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set evidenceTotal($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEvidenceTotal() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEvidenceTotal() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get policyVersion => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set policyVersion($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPolicyVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPolicyVersion() => $_clearField(7);
+}
+
+class EvidenceEntry extends $pb.GeneratedMessage {
+  factory EvidenceEntry({
+    MasterySkill? skill,
+    $core.int? credit,
+    $core.String? source,
+    $core.String? trust,
+    $core.bool? hintUsed,
+    $core.String? exercise,
+    $fixnum.Int64? observedUnix,
+  }) {
+    final result = create();
+    if (skill != null) result.skill = skill;
+    if (credit != null) result.credit = credit;
+    if (source != null) result.source = source;
+    if (trust != null) result.trust = trust;
+    if (hintUsed != null) result.hintUsed = hintUsed;
+    if (exercise != null) result.exercise = exercise;
+    if (observedUnix != null) result.observedUnix = observedUnix;
+    return result;
+  }
+
+  EvidenceEntry._();
+
+  factory EvidenceEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceEntry',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aE<MasterySkill>(1, _omitFieldNames ? '' : 'skill',
+        enumValues: MasterySkill.values)
+    ..aI(2, _omitFieldNames ? '' : 'credit')
+    ..aOS(3, _omitFieldNames ? '' : 'source')
+    ..aOS(4, _omitFieldNames ? '' : 'trust')
+    ..aOB(5, _omitFieldNames ? '' : 'hintUsed')
+    ..aOS(6, _omitFieldNames ? '' : 'exercise')
+    ..aInt64(7, _omitFieldNames ? '' : 'observedUnix')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceEntry copyWith(void Function(EvidenceEntry) updates) =>
+      super.copyWith((message) => updates(message as EvidenceEntry))
+          as EvidenceEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceEntry create() => EvidenceEntry._();
+  @$core.override
+  EvidenceEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceEntry>(create);
+  static EvidenceEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MasterySkill get skill => $_getN(0);
+  @$pb.TagNumber(1)
+  set skill(MasterySkill value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSkill() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSkill() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get credit => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set credit($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCredit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCredit() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get source => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set source($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSource() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get trust => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set trust($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTrust() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTrust() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get hintUsed => $_getBF(4);
+  @$pb.TagNumber(5)
+  set hintUsed($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasHintUsed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHintUsed() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get exercise => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set exercise($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExercise() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExercise() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get observedUnix => $_getI64(6);
+  @$pb.TagNumber(7)
+  set observedUnix($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasObservedUnix() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearObservedUnix() => $_clearField(7);
+}
+
+class GetNodeEvidenceRequest extends $pb.GeneratedMessage {
+  factory GetNodeEvidenceRequest({
+    $core.String? language,
+    $core.String? nodeKind,
+    $core.String? nodeId,
+  }) {
+    final result = create();
+    if (language != null) result.language = language;
+    if (nodeKind != null) result.nodeKind = nodeKind;
+    if (nodeId != null) result.nodeId = nodeId;
+    return result;
+  }
+
+  GetNodeEvidenceRequest._();
+
+  factory GetNodeEvidenceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetNodeEvidenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetNodeEvidenceRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'language')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeKind')
+    ..aOS(3, _omitFieldNames ? '' : 'nodeId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetNodeEvidenceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetNodeEvidenceRequest copyWith(
+          void Function(GetNodeEvidenceRequest) updates) =>
+      super.copyWith((message) => updates(message as GetNodeEvidenceRequest))
+          as GetNodeEvidenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetNodeEvidenceRequest create() => GetNodeEvidenceRequest._();
+  @$core.override
+  GetNodeEvidenceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetNodeEvidenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetNodeEvidenceRequest>(create);
+  static GetNodeEvidenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get language => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set language($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLanguage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLanguage() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nodeId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nodeId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeId() => $_clearField(3);
+}
+
+class GetNodeEvidenceResponse extends $pb.GeneratedMessage {
+  factory GetNodeEvidenceResponse({
+    $core.Iterable<NodeEstimate>? estimates,
+    $core.Iterable<EvidenceEntry>? evidence,
+  }) {
+    final result = create();
+    if (estimates != null) result.estimates.addAll(estimates);
+    if (evidence != null) result.evidence.addAll(evidence);
+    return result;
+  }
+
+  GetNodeEvidenceResponse._();
+
+  factory GetNodeEvidenceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetNodeEvidenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetNodeEvidenceResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..pPM<NodeEstimate>(1, _omitFieldNames ? '' : 'estimates',
+        subBuilder: NodeEstimate.create)
+    ..pPM<EvidenceEntry>(2, _omitFieldNames ? '' : 'evidence',
+        subBuilder: EvidenceEntry.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetNodeEvidenceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetNodeEvidenceResponse copyWith(
+          void Function(GetNodeEvidenceResponse) updates) =>
+      super.copyWith((message) => updates(message as GetNodeEvidenceResponse))
+          as GetNodeEvidenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetNodeEvidenceResponse create() => GetNodeEvidenceResponse._();
+  @$core.override
+  GetNodeEvidenceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetNodeEvidenceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetNodeEvidenceResponse>(create);
+  static GetNodeEvidenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<NodeEstimate> get estimates => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EvidenceEntry> get evidence => $_getList(1);
+}
+
+class DismissWritingFlagRequest extends $pb.GeneratedMessage {
+  factory DismissWritingFlagRequest({
+    $core.String? submissionId,
+    $core.int? errorIndex,
+    $core.bool? dismiss,
+  }) {
+    final result = create();
+    if (submissionId != null) result.submissionId = submissionId;
+    if (errorIndex != null) result.errorIndex = errorIndex;
+    if (dismiss != null) result.dismiss = dismiss;
+    return result;
+  }
+
+  DismissWritingFlagRequest._();
+
+  factory DismissWritingFlagRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DismissWritingFlagRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DismissWritingFlagRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'submissionId')
+    ..aI(2, _omitFieldNames ? '' : 'errorIndex')
+    ..aOB(3, _omitFieldNames ? '' : 'dismiss')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DismissWritingFlagRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DismissWritingFlagRequest copyWith(
+          void Function(DismissWritingFlagRequest) updates) =>
+      super.copyWith((message) => updates(message as DismissWritingFlagRequest))
+          as DismissWritingFlagRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DismissWritingFlagRequest create() => DismissWritingFlagRequest._();
+  @$core.override
+  DismissWritingFlagRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DismissWritingFlagRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DismissWritingFlagRequest>(create);
+  static DismissWritingFlagRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get submissionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set submissionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubmissionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubmissionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get errorIndex => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set errorIndex($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasErrorIndex() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearErrorIndex() => $_clearField(2);
+
+  /// false restores a dismissed flag.
+  @$pb.TagNumber(3)
+  $core.bool get dismiss => $_getBF(2);
+  @$pb.TagNumber(3)
+  set dismiss($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDismiss() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDismiss() => $_clearField(3);
+}
+
+class DismissWritingFlagResponse extends $pb.GeneratedMessage {
+  factory DismissWritingFlagResponse({
+    WritingSubmission? submission,
+  }) {
+    final result = create();
+    if (submission != null) result.submission = submission;
+    return result;
+  }
+
+  DismissWritingFlagResponse._();
+
+  factory DismissWritingFlagResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DismissWritingFlagResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DismissWritingFlagResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOM<WritingSubmission>(1, _omitFieldNames ? '' : 'submission',
+        subBuilder: WritingSubmission.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DismissWritingFlagResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DismissWritingFlagResponse copyWith(
+          void Function(DismissWritingFlagResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as DismissWritingFlagResponse))
+          as DismissWritingFlagResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DismissWritingFlagResponse create() => DismissWritingFlagResponse._();
+  @$core.override
+  DismissWritingFlagResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DismissWritingFlagResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DismissWritingFlagResponse>(create);
+  static DismissWritingFlagResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  WritingSubmission get submission => $_getN(0);
+  @$pb.TagNumber(1)
+  set submission(WritingSubmission value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSubmission() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSubmission() => $_clearField(1);
+  @$pb.TagNumber(1)
+  WritingSubmission ensureSubmission() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =

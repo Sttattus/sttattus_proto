@@ -156,5 +156,212 @@ class NewMaterialStatus extends $pb.ProtobufEnum {
   const NewMaterialStatus._(super.value, super.name);
 }
 
+/// What an observation is evidence of. The same word can be recognised long
+/// before it can be recalled, spelled, heard or said; each is tracked apart.
+class MasterySkill extends $pb.ProtobufEnum {
+  static const MasterySkill MASTERY_SKILL_UNSPECIFIED =
+      MasterySkill._(0, _omitEnumNames ? '' : 'MASTERY_SKILL_UNSPECIFIED');
+  static const MasterySkill MASTERY_SKILL_RECOGNITION =
+      MasterySkill._(1, _omitEnumNames ? '' : 'MASTERY_SKILL_RECOGNITION');
+  static const MasterySkill MASTERY_SKILL_RECALL =
+      MasterySkill._(2, _omitEnumNames ? '' : 'MASTERY_SKILL_RECALL');
+  static const MasterySkill MASTERY_SKILL_SPELLING =
+      MasterySkill._(3, _omitEnumNames ? '' : 'MASTERY_SKILL_SPELLING');
+  static const MasterySkill MASTERY_SKILL_LISTENING =
+      MasterySkill._(4, _omitEnumNames ? '' : 'MASTERY_SKILL_LISTENING');
+  static const MasterySkill MASTERY_SKILL_PRONUNCIATION =
+      MasterySkill._(5, _omitEnumNames ? '' : 'MASTERY_SKILL_PRONUNCIATION');
+  static const MasterySkill MASTERY_SKILL_PRODUCTION =
+      MasterySkill._(6, _omitEnumNames ? '' : 'MASTERY_SKILL_PRODUCTION');
+  static const MasterySkill MASTERY_SKILL_GRAMMAR =
+      MasterySkill._(7, _omitEnumNames ? '' : 'MASTERY_SKILL_GRAMMAR');
+  static const MasterySkill MASTERY_SKILL_CONJUGATION =
+      MasterySkill._(8, _omitEnumNames ? '' : 'MASTERY_SKILL_CONJUGATION');
+  static const MasterySkill MASTERY_SKILL_READING =
+      MasterySkill._(9, _omitEnumNames ? '' : 'MASTERY_SKILL_READING');
+  static const MasterySkill MASTERY_SKILL_WRITING =
+      MasterySkill._(10, _omitEnumNames ? '' : 'MASTERY_SKILL_WRITING');
+  static const MasterySkill MASTERY_SKILL_CONVERSATION =
+      MasterySkill._(11, _omitEnumNames ? '' : 'MASTERY_SKILL_CONVERSATION');
+
+  static const $core.List<MasterySkill> values = <MasterySkill>[
+    MASTERY_SKILL_UNSPECIFIED,
+    MASTERY_SKILL_RECOGNITION,
+    MASTERY_SKILL_RECALL,
+    MASTERY_SKILL_SPELLING,
+    MASTERY_SKILL_LISTENING,
+    MASTERY_SKILL_PRONUNCIATION,
+    MASTERY_SKILL_PRODUCTION,
+    MASTERY_SKILL_GRAMMAR,
+    MASTERY_SKILL_CONJUGATION,
+    MASTERY_SKILL_READING,
+    MASTERY_SKILL_WRITING,
+    MASTERY_SKILL_CONVERSATION,
+  ];
+
+  static final $core.List<MasterySkill?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 11);
+  static MasterySkill? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const MasterySkill._(super.value, super.name);
+}
+
+/// What the member is learning for. It changes the mix of Today, never what
+/// counts as knowing something.
+class GoalMode extends $pb.ProtobufEnum {
+  static const GoalMode GOAL_MODE_UNSPECIFIED =
+      GoalMode._(0, _omitEnumNames ? '' : 'GOAL_MODE_UNSPECIFIED');
+  static const GoalMode GOAL_MODE_BALANCED =
+      GoalMode._(1, _omitEnumNames ? '' : 'GOAL_MODE_BALANCED');
+  static const GoalMode GOAL_MODE_TRAVEL =
+      GoalMode._(2, _omitEnumNames ? '' : 'GOAL_MODE_TRAVEL');
+  static const GoalMode GOAL_MODE_FAMILY =
+      GoalMode._(3, _omitEnumNames ? '' : 'GOAL_MODE_FAMILY');
+  static const GoalMode GOAL_MODE_ACADEMIC =
+      GoalMode._(4, _omitEnumNames ? '' : 'GOAL_MODE_ACADEMIC');
+  static const GoalMode GOAL_MODE_RELOCATION =
+      GoalMode._(5, _omitEnumNames ? '' : 'GOAL_MODE_RELOCATION');
+  static const GoalMode GOAL_MODE_EXAM =
+      GoalMode._(6, _omitEnumNames ? '' : 'GOAL_MODE_EXAM');
+  static const GoalMode GOAL_MODE_BUSINESS =
+      GoalMode._(7, _omitEnumNames ? '' : 'GOAL_MODE_BUSINESS');
+  static const GoalMode GOAL_MODE_PRONUNCIATION =
+      GoalMode._(8, _omitEnumNames ? '' : 'GOAL_MODE_PRONUNCIATION');
+  static const GoalMode GOAL_MODE_MAINTENANCE =
+      GoalMode._(9, _omitEnumNames ? '' : 'GOAL_MODE_MAINTENANCE');
+
+  static const $core.List<GoalMode> values = <GoalMode>[
+    GOAL_MODE_UNSPECIFIED,
+    GOAL_MODE_BALANCED,
+    GOAL_MODE_TRAVEL,
+    GOAL_MODE_FAMILY,
+    GOAL_MODE_ACADEMIC,
+    GOAL_MODE_RELOCATION,
+    GOAL_MODE_EXAM,
+    GOAL_MODE_BUSINESS,
+    GOAL_MODE_PRONUNCIATION,
+    GOAL_MODE_MAINTENANCE,
+  ];
+
+  static final $core.List<GoalMode?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 9);
+  static GoalMode? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const GoalMode._(super.value, super.name);
+}
+
+class PlanItemKind extends $pb.ProtobufEnum {
+  static const PlanItemKind PLAN_ITEM_KIND_UNSPECIFIED =
+      PlanItemKind._(0, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_UNSPECIFIED');
+  static const PlanItemKind PLAN_ITEM_KIND_REVIEW =
+      PlanItemKind._(1, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_REVIEW');
+  static const PlanItemKind PLAN_ITEM_KIND_NEW =
+      PlanItemKind._(2, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_NEW');
+  static const PlanItemKind PLAN_ITEM_KIND_REPAIR =
+      PlanItemKind._(3, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_REPAIR');
+  static const PlanItemKind PLAN_ITEM_KIND_CONTRAST =
+      PlanItemKind._(4, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_CONTRAST');
+  static const PlanItemKind PLAN_ITEM_KIND_CHECK =
+      PlanItemKind._(5, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_CHECK');
+  static const PlanItemKind PLAN_ITEM_KIND_LISTENING =
+      PlanItemKind._(6, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_LISTENING');
+  static const PlanItemKind PLAN_ITEM_KIND_SPEAKING =
+      PlanItemKind._(7, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_SPEAKING');
+  static const PlanItemKind PLAN_ITEM_KIND_READING =
+      PlanItemKind._(8, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_READING');
+  static const PlanItemKind PLAN_ITEM_KIND_WRITING =
+      PlanItemKind._(9, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_WRITING');
+
+  static const $core.List<PlanItemKind> values = <PlanItemKind>[
+    PLAN_ITEM_KIND_UNSPECIFIED,
+    PLAN_ITEM_KIND_REVIEW,
+    PLAN_ITEM_KIND_NEW,
+    PLAN_ITEM_KIND_REPAIR,
+    PLAN_ITEM_KIND_CONTRAST,
+    PLAN_ITEM_KIND_CHECK,
+    PLAN_ITEM_KIND_LISTENING,
+    PLAN_ITEM_KIND_SPEAKING,
+    PLAN_ITEM_KIND_READING,
+    PLAN_ITEM_KIND_WRITING,
+  ];
+
+  static final $core.List<PlanItemKind?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 9);
+  static PlanItemKind? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const PlanItemKind._(super.value, super.name);
+}
+
+class PlanItemState extends $pb.ProtobufEnum {
+  static const PlanItemState PLAN_ITEM_STATE_UNSPECIFIED =
+      PlanItemState._(0, _omitEnumNames ? '' : 'PLAN_ITEM_STATE_UNSPECIFIED');
+  static const PlanItemState PLAN_ITEM_STATE_PENDING =
+      PlanItemState._(1, _omitEnumNames ? '' : 'PLAN_ITEM_STATE_PENDING');
+  static const PlanItemState PLAN_ITEM_STATE_DONE =
+      PlanItemState._(2, _omitEnumNames ? '' : 'PLAN_ITEM_STATE_DONE');
+  static const PlanItemState PLAN_ITEM_STATE_SKIPPED =
+      PlanItemState._(3, _omitEnumNames ? '' : 'PLAN_ITEM_STATE_SKIPPED');
+
+  static const $core.List<PlanItemState> values = <PlanItemState>[
+    PLAN_ITEM_STATE_UNSPECIFIED,
+    PLAN_ITEM_STATE_PENDING,
+    PLAN_ITEM_STATE_DONE,
+    PLAN_ITEM_STATE_SKIPPED,
+  ];
+
+  static final $core.List<PlanItemState?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static PlanItemState? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const PlanItemState._(super.value, super.name);
+}
+
+class PlanReasonCode extends $pb.ProtobufEnum {
+  static const PlanReasonCode PLAN_REASON_CODE_UNSPECIFIED =
+      PlanReasonCode._(0, _omitEnumNames ? '' : 'PLAN_REASON_CODE_UNSPECIFIED');
+  static const PlanReasonCode PLAN_REASON_CODE_DUE =
+      PlanReasonCode._(1, _omitEnumNames ? '' : 'PLAN_REASON_CODE_DUE');
+  static const PlanReasonCode PLAN_REASON_CODE_LEECH =
+      PlanReasonCode._(2, _omitEnumNames ? '' : 'PLAN_REASON_CODE_LEECH');
+  static const PlanReasonCode PLAN_REASON_CODE_WEAK_SKILL =
+      PlanReasonCode._(3, _omitEnumNames ? '' : 'PLAN_REASON_CODE_WEAK_SKILL');
+  static const PlanReasonCode PLAN_REASON_CODE_INTERFERENCE = PlanReasonCode._(
+      4, _omitEnumNames ? '' : 'PLAN_REASON_CODE_INTERFERENCE');
+  static const PlanReasonCode PLAN_REASON_CODE_PREREQUISITE = PlanReasonCode._(
+      5, _omitEnumNames ? '' : 'PLAN_REASON_CODE_PREREQUISITE');
+  static const PlanReasonCode PLAN_REASON_CODE_CHECK_AI_FLAG = PlanReasonCode._(
+      6, _omitEnumNames ? '' : 'PLAN_REASON_CODE_CHECK_AI_FLAG');
+  static const PlanReasonCode PLAN_REASON_CODE_NEW =
+      PlanReasonCode._(7, _omitEnumNames ? '' : 'PLAN_REASON_CODE_NEW');
+  static const PlanReasonCode PLAN_REASON_CODE_CATCH_UP =
+      PlanReasonCode._(8, _omitEnumNames ? '' : 'PLAN_REASON_CODE_CATCH_UP');
+  static const PlanReasonCode PLAN_REASON_CODE_GOAL =
+      PlanReasonCode._(9, _omitEnumNames ? '' : 'PLAN_REASON_CODE_GOAL');
+
+  static const $core.List<PlanReasonCode> values = <PlanReasonCode>[
+    PLAN_REASON_CODE_UNSPECIFIED,
+    PLAN_REASON_CODE_DUE,
+    PLAN_REASON_CODE_LEECH,
+    PLAN_REASON_CODE_WEAK_SKILL,
+    PLAN_REASON_CODE_INTERFERENCE,
+    PLAN_REASON_CODE_PREREQUISITE,
+    PLAN_REASON_CODE_CHECK_AI_FLAG,
+    PLAN_REASON_CODE_NEW,
+    PLAN_REASON_CODE_CATCH_UP,
+    PLAN_REASON_CODE_GOAL,
+  ];
+
+  static final $core.List<PlanReasonCode?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 9);
+  static PlanReasonCode? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const PlanReasonCode._(super.value, super.name);
+}
+
 const $core.bool _omitEnumNames =
     $core.bool.fromEnvironment('protobuf.omit_enum_names');

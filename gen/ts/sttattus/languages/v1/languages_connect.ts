@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetMemberPrefsRequest, GetMemberPrefsResponse, GetPracticeSessionRequest, GetPracticeSessionResponse, GetPracticeStatsRequest, GetPracticeStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMemberPrefsRequest, SetMemberPrefsResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitAnswerRequest, SubmitAnswerResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, DismissWritingFlagRequest, DismissWritingFlagResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAdaptivePlanRequest, GetAdaptivePlanResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetMasteryMapRequest, GetMasteryMapResponse, GetMemberPrefsRequest, GetMemberPrefsResponse, GetNodeEvidenceRequest, GetNodeEvidenceResponse, GetPracticeSessionRequest, GetPracticeSessionResponse, GetPracticeStatsRequest, GetPracticeStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMemberPrefsRequest, SetMemberPrefsResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SkipPlanItemRequest, SkipPlanItemResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitAnswerRequest, SubmitAnswerResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -416,6 +416,55 @@ export const LanguagesService = {
       name: "SetMemberPrefs",
       I: SetMemberPrefsRequest,
       O: SetMemberPrefsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lexicon Choice 2 — the mastery graph and the adaptive Today plan. Every
+     * plan item says why it is there, and a plan is reproducible from the
+     * stored evidence it was built from.
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetAdaptivePlan
+     */
+    getAdaptivePlan: {
+      name: "GetAdaptivePlan",
+      I: GetAdaptivePlanRequest,
+      O: GetAdaptivePlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SkipPlanItem
+     */
+    skipPlanItem: {
+      name: "SkipPlanItem",
+      I: SkipPlanItemRequest,
+      O: SkipPlanItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetMasteryMap
+     */
+    getMasteryMap: {
+      name: "GetMasteryMap",
+      I: GetMasteryMapRequest,
+      O: GetMasteryMapResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetNodeEvidence
+     */
+    getNodeEvidence: {
+      name: "GetNodeEvidence",
+      I: GetNodeEvidenceRequest,
+      O: GetNodeEvidenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.DismissWritingFlag
+     */
+    dismissWritingFlag: {
+      name: "DismissWritingFlag",
+      I: DismissWritingFlagRequest,
+      O: DismissWritingFlagResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -349,6 +349,44 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setMemberPrefs, request, options: options);
   }
 
+  /// Lexicon Choice 2 — the mastery graph and the adaptive Today plan. Every
+  /// plan item says why it is there, and a plan is reproducible from the
+  /// stored evidence it was built from.
+  $grpc.ResponseFuture<$0.GetAdaptivePlanResponse> getAdaptivePlan(
+    $0.GetAdaptivePlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAdaptivePlan, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SkipPlanItemResponse> skipPlanItem(
+    $0.SkipPlanItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$skipPlanItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetMasteryMapResponse> getMasteryMap(
+    $0.GetMasteryMapRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMasteryMap, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetNodeEvidenceResponse> getNodeEvidence(
+    $0.GetNodeEvidenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getNodeEvidence, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DismissWritingFlagResponse> dismissWritingFlag(
+    $0.DismissWritingFlagRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$dismissWritingFlag, request, options: options);
+  }
+
   /// Legacy (Deprecated but kept for bridge)
   $grpc.ResponseFuture<$0.ListWordsResponse> listWords(
     $0.ListWordsRequest request, {
@@ -566,6 +604,31 @@ class LanguagesServiceClient extends $grpc.Client {
           '/sttattus.languages.v1.LanguagesService/SetMemberPrefs',
           ($0.SetMemberPrefsRequest value) => value.writeToBuffer(),
           $0.SetMemberPrefsResponse.fromBuffer);
+  static final _$getAdaptivePlan =
+      $grpc.ClientMethod<$0.GetAdaptivePlanRequest, $0.GetAdaptivePlanResponse>(
+          '/sttattus.languages.v1.LanguagesService/GetAdaptivePlan',
+          ($0.GetAdaptivePlanRequest value) => value.writeToBuffer(),
+          $0.GetAdaptivePlanResponse.fromBuffer);
+  static final _$skipPlanItem =
+      $grpc.ClientMethod<$0.SkipPlanItemRequest, $0.SkipPlanItemResponse>(
+          '/sttattus.languages.v1.LanguagesService/SkipPlanItem',
+          ($0.SkipPlanItemRequest value) => value.writeToBuffer(),
+          $0.SkipPlanItemResponse.fromBuffer);
+  static final _$getMasteryMap =
+      $grpc.ClientMethod<$0.GetMasteryMapRequest, $0.GetMasteryMapResponse>(
+          '/sttattus.languages.v1.LanguagesService/GetMasteryMap',
+          ($0.GetMasteryMapRequest value) => value.writeToBuffer(),
+          $0.GetMasteryMapResponse.fromBuffer);
+  static final _$getNodeEvidence =
+      $grpc.ClientMethod<$0.GetNodeEvidenceRequest, $0.GetNodeEvidenceResponse>(
+          '/sttattus.languages.v1.LanguagesService/GetNodeEvidence',
+          ($0.GetNodeEvidenceRequest value) => value.writeToBuffer(),
+          $0.GetNodeEvidenceResponse.fromBuffer);
+  static final _$dismissWritingFlag = $grpc.ClientMethod<
+          $0.DismissWritingFlagRequest, $0.DismissWritingFlagResponse>(
+      '/sttattus.languages.v1.LanguagesService/DismissWritingFlag',
+      ($0.DismissWritingFlagRequest value) => value.writeToBuffer(),
+      $0.DismissWritingFlagResponse.fromBuffer);
   static final _$listWords =
       $grpc.ClientMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
           '/sttattus.languages.v1.LanguagesService/ListWords',
@@ -945,6 +1008,51 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.SetMemberPrefsRequest.fromBuffer(value),
         ($0.SetMemberPrefsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAdaptivePlanRequest,
+            $0.GetAdaptivePlanResponse>(
+        'GetAdaptivePlan',
+        getAdaptivePlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAdaptivePlanRequest.fromBuffer(value),
+        ($0.GetAdaptivePlanResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.SkipPlanItemRequest, $0.SkipPlanItemResponse>(
+            'SkipPlanItem',
+            skipPlanItem_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.SkipPlanItemRequest.fromBuffer(value),
+            ($0.SkipPlanItemResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.GetMasteryMapRequest, $0.GetMasteryMapResponse>(
+            'GetMasteryMap',
+            getMasteryMap_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.GetMasteryMapRequest.fromBuffer(value),
+            ($0.GetMasteryMapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetNodeEvidenceRequest,
+            $0.GetNodeEvidenceResponse>(
+        'GetNodeEvidence',
+        getNodeEvidence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetNodeEvidenceRequest.fromBuffer(value),
+        ($0.GetNodeEvidenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DismissWritingFlagRequest,
+            $0.DismissWritingFlagResponse>(
+        'DismissWritingFlag',
+        dismissWritingFlag_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DismissWritingFlagRequest.fromBuffer(value),
+        ($0.DismissWritingFlagResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListWordsRequest, $0.ListWordsResponse>(
         'ListWords',
         listWords_Pre,
@@ -1321,6 +1429,51 @@ abstract class LanguagesServiceBase extends $grpc.Service {
 
   $async.Future<$0.SetMemberPrefsResponse> setMemberPrefs(
       $grpc.ServiceCall call, $0.SetMemberPrefsRequest request);
+
+  $async.Future<$0.GetAdaptivePlanResponse> getAdaptivePlan_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetAdaptivePlanRequest> $request) async {
+    return getAdaptivePlan($call, await $request);
+  }
+
+  $async.Future<$0.GetAdaptivePlanResponse> getAdaptivePlan(
+      $grpc.ServiceCall call, $0.GetAdaptivePlanRequest request);
+
+  $async.Future<$0.SkipPlanItemResponse> skipPlanItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SkipPlanItemRequest> $request) async {
+    return skipPlanItem($call, await $request);
+  }
+
+  $async.Future<$0.SkipPlanItemResponse> skipPlanItem(
+      $grpc.ServiceCall call, $0.SkipPlanItemRequest request);
+
+  $async.Future<$0.GetMasteryMapResponse> getMasteryMap_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetMasteryMapRequest> $request) async {
+    return getMasteryMap($call, await $request);
+  }
+
+  $async.Future<$0.GetMasteryMapResponse> getMasteryMap(
+      $grpc.ServiceCall call, $0.GetMasteryMapRequest request);
+
+  $async.Future<$0.GetNodeEvidenceResponse> getNodeEvidence_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetNodeEvidenceRequest> $request) async {
+    return getNodeEvidence($call, await $request);
+  }
+
+  $async.Future<$0.GetNodeEvidenceResponse> getNodeEvidence(
+      $grpc.ServiceCall call, $0.GetNodeEvidenceRequest request);
+
+  $async.Future<$0.DismissWritingFlagResponse> dismissWritingFlag_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DismissWritingFlagRequest> $request) async {
+    return dismissWritingFlag($call, await $request);
+  }
+
+  $async.Future<$0.DismissWritingFlagResponse> dismissWritingFlag(
+      $grpc.ServiceCall call, $0.DismissWritingFlagRequest request);
 
   $async.Future<$0.ListWordsResponse> listWords_Pre($grpc.ServiceCall $call,
       $async.Future<$0.ListWordsRequest> $request) async {

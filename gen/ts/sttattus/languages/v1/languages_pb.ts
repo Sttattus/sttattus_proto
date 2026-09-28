@@ -219,6 +219,384 @@ proto3.util.setEnumType(NewMaterialStatus, "sttattus.languages.v1.NewMaterialSta
 ]);
 
 /**
+ * What an observation is evidence of. The same word can be recognised long
+ * before it can be recalled, spelled, heard or said; each is tracked apart.
+ *
+ * @generated from enum sttattus.languages.v1.MasterySkill
+ */
+export enum MasterySkill {
+  /**
+   * @generated from enum value: MASTERY_SKILL_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * see it, know what it means
+   *
+   * @generated from enum value: MASTERY_SKILL_RECOGNITION = 1;
+   */
+  RECOGNITION = 1,
+
+  /**
+   * produce it from its meaning
+   *
+   * @generated from enum value: MASTERY_SKILL_RECALL = 2;
+   */
+  RECALL = 2,
+
+  /**
+   * write it exactly, accents included
+   *
+   * @generated from enum value: MASTERY_SKILL_SPELLING = 3;
+   */
+  SPELLING = 3,
+
+  /**
+   * hear it, know what it means
+   *
+   * @generated from enum value: MASTERY_SKILL_LISTENING = 4;
+   */
+  LISTENING = 4,
+
+  /**
+   * say it so it is understood
+   *
+   * @generated from enum value: MASTERY_SKILL_PRONUNCIATION = 5;
+   */
+  PRONUNCIATION = 5,
+
+  /**
+   * use it in free speech
+   *
+   * @generated from enum value: MASTERY_SKILL_PRODUCTION = 6;
+   */
+  PRODUCTION = 6,
+
+  /**
+   * apply a grammar point in context
+   *
+   * @generated from enum value: MASTERY_SKILL_GRAMMAR = 7;
+   */
+  GRAMMAR = 7,
+
+  /**
+   * produce the right verb form
+   *
+   * @generated from enum value: MASTERY_SKILL_CONJUGATION = 8;
+   */
+  CONJUGATION = 8,
+
+  /**
+   * @generated from enum value: MASTERY_SKILL_READING = 9;
+   */
+  READING = 9,
+
+  /**
+   * @generated from enum value: MASTERY_SKILL_WRITING = 10;
+   */
+  WRITING = 10,
+
+  /**
+   * @generated from enum value: MASTERY_SKILL_CONVERSATION = 11;
+   */
+  CONVERSATION = 11,
+}
+// Retrieve enum metadata with: proto3.getEnumType(MasterySkill)
+proto3.util.setEnumType(MasterySkill, "sttattus.languages.v1.MasterySkill", [
+  { no: 0, name: "MASTERY_SKILL_UNSPECIFIED" },
+  { no: 1, name: "MASTERY_SKILL_RECOGNITION" },
+  { no: 2, name: "MASTERY_SKILL_RECALL" },
+  { no: 3, name: "MASTERY_SKILL_SPELLING" },
+  { no: 4, name: "MASTERY_SKILL_LISTENING" },
+  { no: 5, name: "MASTERY_SKILL_PRONUNCIATION" },
+  { no: 6, name: "MASTERY_SKILL_PRODUCTION" },
+  { no: 7, name: "MASTERY_SKILL_GRAMMAR" },
+  { no: 8, name: "MASTERY_SKILL_CONJUGATION" },
+  { no: 9, name: "MASTERY_SKILL_READING" },
+  { no: 10, name: "MASTERY_SKILL_WRITING" },
+  { no: 11, name: "MASTERY_SKILL_CONVERSATION" },
+]);
+
+/**
+ * What the member is learning for. It changes the mix of Today, never what
+ * counts as knowing something.
+ *
+ * @generated from enum sttattus.languages.v1.GoalMode
+ */
+export enum GoalMode {
+  /**
+   * @generated from enum value: GOAL_MODE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: GOAL_MODE_BALANCED = 1;
+   */
+  BALANCED = 1,
+
+  /**
+   * @generated from enum value: GOAL_MODE_TRAVEL = 2;
+   */
+  TRAVEL = 2,
+
+  /**
+   * @generated from enum value: GOAL_MODE_FAMILY = 3;
+   */
+  FAMILY = 3,
+
+  /**
+   * @generated from enum value: GOAL_MODE_ACADEMIC = 4;
+   */
+  ACADEMIC = 4,
+
+  /**
+   * @generated from enum value: GOAL_MODE_RELOCATION = 5;
+   */
+  RELOCATION = 5,
+
+  /**
+   * @generated from enum value: GOAL_MODE_EXAM = 6;
+   */
+  EXAM = 6,
+
+  /**
+   * @generated from enum value: GOAL_MODE_BUSINESS = 7;
+   */
+  BUSINESS = 7,
+
+  /**
+   * @generated from enum value: GOAL_MODE_PRONUNCIATION = 8;
+   */
+  PRONUNCIATION = 8,
+
+  /**
+   * @generated from enum value: GOAL_MODE_MAINTENANCE = 9;
+   */
+  MAINTENANCE = 9,
+}
+// Retrieve enum metadata with: proto3.getEnumType(GoalMode)
+proto3.util.setEnumType(GoalMode, "sttattus.languages.v1.GoalMode", [
+  { no: 0, name: "GOAL_MODE_UNSPECIFIED" },
+  { no: 1, name: "GOAL_MODE_BALANCED" },
+  { no: 2, name: "GOAL_MODE_TRAVEL" },
+  { no: 3, name: "GOAL_MODE_FAMILY" },
+  { no: 4, name: "GOAL_MODE_ACADEMIC" },
+  { no: 5, name: "GOAL_MODE_RELOCATION" },
+  { no: 6, name: "GOAL_MODE_EXAM" },
+  { no: 7, name: "GOAL_MODE_BUSINESS" },
+  { no: 8, name: "GOAL_MODE_PRONUNCIATION" },
+  { no: 9, name: "GOAL_MODE_MAINTENANCE" },
+]);
+
+/**
+ * @generated from enum sttattus.languages.v1.PlanItemKind
+ */
+export enum PlanItemKind {
+  /**
+   * @generated from enum value: PLAN_ITEM_KIND_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * due retrieval
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_REVIEW = 1;
+   */
+  REVIEW = 1,
+
+  /**
+   * new material from an open level
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_NEW = 2;
+   */
+  NEW = 2,
+
+  /**
+   * a leech, a weak skill or a prerequisite
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_REPAIR = 3;
+   */
+  REPAIR = 3,
+
+  /**
+   * two items the member confuses, side by side
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_CONTRAST = 4;
+   */
+  CONTRAST = 4,
+
+  /**
+   * a short check of an AI-suspected error
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_CHECK = 5;
+   */
+  CHECK = 5,
+
+  /**
+   * listening drill on known words
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_LISTENING = 6;
+   */
+  LISTENING = 6,
+
+  /**
+   * a speaking prompt
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_SPEAKING = 7;
+   */
+  SPEAKING = 7,
+
+  /**
+   * a graded reading text
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_READING = 8;
+   */
+  READING = 8,
+
+  /**
+   * a writing prompt
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_WRITING = 9;
+   */
+  WRITING = 9,
+}
+// Retrieve enum metadata with: proto3.getEnumType(PlanItemKind)
+proto3.util.setEnumType(PlanItemKind, "sttattus.languages.v1.PlanItemKind", [
+  { no: 0, name: "PLAN_ITEM_KIND_UNSPECIFIED" },
+  { no: 1, name: "PLAN_ITEM_KIND_REVIEW" },
+  { no: 2, name: "PLAN_ITEM_KIND_NEW" },
+  { no: 3, name: "PLAN_ITEM_KIND_REPAIR" },
+  { no: 4, name: "PLAN_ITEM_KIND_CONTRAST" },
+  { no: 5, name: "PLAN_ITEM_KIND_CHECK" },
+  { no: 6, name: "PLAN_ITEM_KIND_LISTENING" },
+  { no: 7, name: "PLAN_ITEM_KIND_SPEAKING" },
+  { no: 8, name: "PLAN_ITEM_KIND_READING" },
+  { no: 9, name: "PLAN_ITEM_KIND_WRITING" },
+]);
+
+/**
+ * @generated from enum sttattus.languages.v1.PlanItemState
+ */
+export enum PlanItemState {
+  /**
+   * @generated from enum value: PLAN_ITEM_STATE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: PLAN_ITEM_STATE_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * completed by evidence, never by a tap
+   *
+   * @generated from enum value: PLAN_ITEM_STATE_DONE = 2;
+   */
+  DONE = 2,
+
+  /**
+   * "not today"; can be restored
+   *
+   * @generated from enum value: PLAN_ITEM_STATE_SKIPPED = 3;
+   */
+  SKIPPED = 3,
+}
+// Retrieve enum metadata with: proto3.getEnumType(PlanItemState)
+proto3.util.setEnumType(PlanItemState, "sttattus.languages.v1.PlanItemState", [
+  { no: 0, name: "PLAN_ITEM_STATE_UNSPECIFIED" },
+  { no: 1, name: "PLAN_ITEM_STATE_PENDING" },
+  { no: 2, name: "PLAN_ITEM_STATE_DONE" },
+  { no: 3, name: "PLAN_ITEM_STATE_SKIPPED" },
+]);
+
+/**
+ * @generated from enum sttattus.languages.v1.PlanReasonCode
+ */
+export enum PlanReasonCode {
+  /**
+   * @generated from enum value: PLAN_REASON_CODE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * predicted recall fell below the threshold
+   *
+   * @generated from enum value: PLAN_REASON_CODE_DUE = 1;
+   */
+  DUE = 1,
+
+  /**
+   * lost again and again
+   *
+   * @generated from enum value: PLAN_REASON_CODE_LEECH = 2;
+   */
+  LEECH = 2,
+
+  /**
+   * a skill well below the member's others
+   *
+   * @generated from enum value: PLAN_REASON_CODE_WEAK_SKILL = 3;
+   */
+  WEAK_SKILL = 3,
+
+  /**
+   * two items confused with each other
+   *
+   * @generated from enum value: PLAN_REASON_CODE_INTERFERENCE = 4;
+   */
+  INTERFERENCE = 4,
+
+  /**
+   * needed by something else in the plan
+   *
+   * @generated from enum value: PLAN_REASON_CODE_PREREQUISITE = 5;
+   */
+  PREREQUISITE = 5,
+
+  /**
+   * the writing coach suspected an error
+   *
+   * @generated from enum value: PLAN_REASON_CODE_CHECK_AI_FLAG = 6;
+   */
+  CHECK_AI_FLAG = 6,
+
+  /**
+   * next material in an open level
+   *
+   * @generated from enum value: PLAN_REASON_CODE_NEW = 7;
+   */
+  NEW = 7,
+
+  /**
+   * back after missed days
+   *
+   * @generated from enum value: PLAN_REASON_CODE_CATCH_UP = 8;
+   */
+  CATCH_UP = 8,
+
+  /**
+   * the goal mode asks for this skill
+   *
+   * @generated from enum value: PLAN_REASON_CODE_GOAL = 9;
+   */
+  GOAL = 9,
+}
+// Retrieve enum metadata with: proto3.getEnumType(PlanReasonCode)
+proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", [
+  { no: 0, name: "PLAN_REASON_CODE_UNSPECIFIED" },
+  { no: 1, name: "PLAN_REASON_CODE_DUE" },
+  { no: 2, name: "PLAN_REASON_CODE_LEECH" },
+  { no: 3, name: "PLAN_REASON_CODE_WEAK_SKILL" },
+  { no: 4, name: "PLAN_REASON_CODE_INTERFERENCE" },
+  { no: 5, name: "PLAN_REASON_CODE_PREREQUISITE" },
+  { no: 6, name: "PLAN_REASON_CODE_CHECK_AI_FLAG" },
+  { no: 7, name: "PLAN_REASON_CODE_NEW" },
+  { no: 8, name: "PLAN_REASON_CODE_CATCH_UP" },
+  { no: 9, name: "PLAN_REASON_CODE_GOAL" },
+]);
+
+/**
  * CulturalNuance represents a specific rule of social grace or etiquette.
  *
  * @generated from message sttattus.languages.v1.CulturalNuance
@@ -3283,6 +3661,16 @@ export class WritingError extends Message<WritingError> {
    */
   grammarPointKey = "";
 
+  /**
+   * Lexicon Choice 2. An AI-found error is a suspicion, not evidence: it
+   * lowers nothing until a short check confirms it. "unverified" until then,
+   * "confirmed" or "cleared" by the check, "dismissed" when the member says
+   * it is not an error.
+   *
+   * @generated from field: string flag_state = 6;
+   */
+  flagState = "";
+
   constructor(data?: PartialMessage<WritingError>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3296,6 +3684,7 @@ export class WritingError extends Message<WritingError> {
     { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "grammar_point_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "flag_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WritingError {
@@ -5443,6 +5832,13 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   copyLanguage = "";
 
+  /**
+   * Lexicon Choice 2: why this card is in the session now.
+   *
+   * @generated from field: sttattus.languages.v1.PlanReason reason = 27;
+   */
+  reason?: PlanReason;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5477,6 +5873,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 24, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 25, name: "corrected_since_seen", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 26, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 27, name: "reason", kind: "message", T: PlanReason },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -5524,6 +5921,14 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
    */
   ttsLanguages: string[] = [];
 
+  /**
+   * Lexicon Choice 2: serve the cards of one item of today's plan (its nodes
+   * and skill) instead of the general due queue.
+   *
+   * @generated from field: string plan_item_id = 4;
+   */
+  planItemId = "";
+
   constructor(data?: PartialMessage<GetPracticeSessionRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5535,6 +5940,7 @@ export class GetPracticeSessionRequest extends Message<GetPracticeSessionRequest
     { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "tts_languages", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPracticeSessionRequest {
@@ -5683,6 +6089,30 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   contentRevision = 0;
 
+  /**
+   * Lexicon Choice 2. A client-generated id for this answer: a retry after a
+   * dropped connection (or an offline replay) is recognised and not counted
+   * twice.
+   *
+   * @generated from field: string client_event_id = 11;
+   */
+  clientEventId = "";
+
+  /**
+   * The member asked for a hint before answering; a hinted success is weaker
+   * evidence than an unaided one.
+   *
+   * @generated from field: bool hint_used = 12;
+   */
+  hintUsed = false;
+
+  /**
+   * The plan item this answer was given for, when the session came from one.
+   *
+   * @generated from field: string plan_item_id = 13;
+   */
+  planItemId = "";
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5701,6 +6131,9 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 8, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "hint_used", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {
@@ -5766,6 +6199,14 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
    */
   rationale = "";
 
+  /**
+   * Lexicon Choice 2: this client_event_id had already been recorded; the
+   * response describes the first recording and nothing was counted again.
+   *
+   * @generated from field: bool duplicate = 8;
+   */
+  duplicate = false;
+
   constructor(data?: PartialMessage<SubmitAnswerResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5781,6 +6222,7 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
     { no: 5, name: "reviews_done_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 6, name: "new_learned_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "duplicate", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerResponse {
@@ -5956,6 +6398,46 @@ export class MemberPrefs extends Message<MemberPrefs> {
    */
   dailyReviewTarget = 0;
 
+  /**
+   * Lexicon Choice 2 — how the member wants Today planned. On
+   * SetMemberPrefs a field left out keeps its stored value (an older app
+   * that only sends the base language must not reset these):
+   * GOAL_MODE_UNSPECIFIED and daily_minutes 0 mean "unchanged", and the
+   * optional fields are applied only when present. vacation_until "" clears it.
+   *
+   * @generated from field: sttattus.languages.v1.GoalMode goal_mode = 4;
+   */
+  goalMode = GoalMode.UNSPECIFIED;
+
+  /**
+   * Time budget for Today, 5–90 minutes.
+   *
+   * @generated from field: int32 daily_minutes = 5;
+   */
+  dailyMinutes = 0;
+
+  /**
+   * The device's offset from UTC, so "today" is the member's day.
+   *
+   * @generated from field: optional int32 utc_offset_minutes = 6;
+   */
+  utcOffsetMinutes?: number;
+
+  /**
+   * New material pauses until this date (YYYY-MM-DD, inclusive); empty = off.
+   *
+   * @generated from field: optional string vacation_until = 7;
+   */
+  vacationUntil?: string;
+
+  /**
+   * Accessibility pacing: more time per item, and latency never counts
+   * against an answer.
+   *
+   * @generated from field: optional bool extra_time = 8;
+   */
+  extraTime?: boolean;
+
   constructor(data?: PartialMessage<MemberPrefs>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5967,6 +6449,11 @@ export class MemberPrefs extends Message<MemberPrefs> {
     { no: 1, name: "base_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "daily_new_target", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "daily_review_target", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "goal_mode", kind: "enum", T: proto3.getEnumType(GoalMode) },
+    { no: 5, name: "daily_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "utc_offset_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 7, name: "vacation_until", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: "extra_time", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MemberPrefs {
@@ -6244,6 +6731,1120 @@ export class ListWordsResponse extends Message<ListWordsResponse> {
 
   static equals(a: ListWordsResponse | PlainMessage<ListWordsResponse> | undefined, b: ListWordsResponse | PlainMessage<ListWordsResponse> | undefined): boolean {
     return proto3.util.equals(ListWordsResponse, a, b);
+  }
+}
+
+/**
+ * Why something is in the plan. `params` carries the numbers behind the
+ * sentence (skill, estimate, lapses, the two confused items, days missed…) so
+ * the app can say it in the member's language; evidence_count is how many
+ * observations the claim rests on.
+ *
+ * @generated from message sttattus.languages.v1.PlanReason
+ */
+export class PlanReason extends Message<PlanReason> {
+  /**
+   * @generated from field: sttattus.languages.v1.PlanReasonCode code = 1;
+   */
+  code = PlanReasonCode.UNSPECIFIED;
+
+  /**
+   * @generated from field: map<string, string> params = 2;
+   */
+  params: { [key: string]: string } = {};
+
+  /**
+   * @generated from field: int32 evidence_count = 3;
+   */
+  evidenceCount = 0;
+
+  constructor(data?: PartialMessage<PlanReason>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PlanReason";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "enum", T: proto3.getEnumType(PlanReasonCode) },
+    { no: 2, name: "params", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 3, name: "evidence_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlanReason {
+    return new PlanReason().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlanReason {
+    return new PlanReason().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlanReason {
+    return new PlanReason().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlanReason | PlainMessage<PlanReason> | undefined, b: PlanReason | PlainMessage<PlanReason> | undefined): boolean {
+    return proto3.util.equals(PlanReason, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.PlanItem
+ */
+export class PlanItem extends Message<PlanItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: sttattus.languages.v1.PlanItemKind kind = 2;
+   */
+  kind = PlanItemKind.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.languages.v1.MasterySkill skill = 3;
+   */
+  skill = MasterySkill.UNSPECIFIED;
+
+  /**
+   * What the item covers, as the member would name it (words, a grammar
+   * point's title, a prompt).
+   *
+   * @generated from field: repeated string labels = 4;
+   */
+  labels: string[] = [];
+
+  /**
+   * @generated from field: int32 estimated_minutes = 5;
+   */
+  estimatedMinutes = 0;
+
+  /**
+   * @generated from field: sttattus.languages.v1.PlanItemState state = 6;
+   */
+  state = PlanItemState.UNSPECIFIED;
+
+  /**
+   * @generated from field: sttattus.languages.v1.PlanReason reason = 7;
+   */
+  reason?: PlanReason;
+
+  /**
+   * Answers (or one attempt/completion) needed, and how many are done.
+   *
+   * @generated from field: int32 target_count = 8;
+   */
+  targetCount = 0;
+
+  /**
+   * @generated from field: int32 done_count = 9;
+   */
+  doneCount = 0;
+
+  /**
+   * For speaking/reading/writing items: the activity to open.
+   *
+   * @generated from field: string activity_id = 10;
+   */
+  activityId = "";
+
+  /**
+   * @generated from field: string activity_title = 11;
+   */
+  activityTitle = "";
+
+  constructor(data?: PartialMessage<PlanItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.PlanItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "kind", kind: "enum", T: proto3.getEnumType(PlanItemKind) },
+    { no: 3, name: "skill", kind: "enum", T: proto3.getEnumType(MasterySkill) },
+    { no: 4, name: "labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "estimated_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "state", kind: "enum", T: proto3.getEnumType(PlanItemState) },
+    { no: 7, name: "reason", kind: "message", T: PlanReason },
+    { no: 8, name: "target_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "done_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "activity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "activity_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlanItem {
+    return new PlanItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlanItem {
+    return new PlanItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlanItem {
+    return new PlanItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlanItem | PlainMessage<PlanItem> | undefined, b: PlanItem | PlainMessage<PlanItem> | undefined): boolean {
+    return proto3.util.equals(PlanItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.AdaptivePlan
+ */
+export class AdaptivePlan extends Message<AdaptivePlan> {
+  /**
+   * @generated from field: string revision_id = 1;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string language = 2;
+   */
+  language = "";
+
+  /**
+   * the member's local date, YYYY-MM-DD
+   *
+   * @generated from field: string plan_date = 3;
+   */
+  planDate = "";
+
+  /**
+   * @generated from field: int32 revision = 4;
+   */
+  revision = 0;
+
+  /**
+   * @generated from field: string policy_version = 5;
+   */
+  policyVersion = "";
+
+  /**
+   * @generated from field: sttattus.languages.v1.GoalMode goal_mode = 6;
+   */
+  goalMode = GoalMode.UNSPECIFIED;
+
+  /**
+   * @generated from field: int32 budget_minutes = 7;
+   */
+  budgetMinutes = 0;
+
+  /**
+   * @generated from field: int32 estimated_minutes = 8;
+   */
+  estimatedMinutes = 0;
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.PlanItem items = 9;
+   */
+  items: PlanItem[] = [];
+
+  /**
+   * Back after a gap: how many days were missed and how many at-risk items
+   * were spread over the coming days instead of all landing today.
+   *
+   * @generated from field: int32 missed_days = 10;
+   */
+  missedDays = 0;
+
+  /**
+   * @generated from field: int32 deferred_count = 11;
+   */
+  deferredCount = 0;
+
+  /**
+   * @generated from field: bool vacation = 12;
+   */
+  vacation = false;
+
+  /**
+   * What the plan was built from; the same inputs rebuild the same plan.
+   *
+   * @generated from field: string inputs_digest = 13;
+   */
+  inputsDigest = "";
+
+  /**
+   * @generated from field: int64 generated_unix = 14;
+   */
+  generatedUnix = protoInt64.zero;
+
+  /**
+   * @generated from field: sttattus.languages.v1.NewMaterialStatus new_material = 15;
+   */
+  newMaterial = NewMaterialStatus.UNSPECIFIED;
+
+  constructor(data?: PartialMessage<AdaptivePlan>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.AdaptivePlan";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "plan_date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "goal_mode", kind: "enum", T: proto3.getEnumType(GoalMode) },
+    { no: 7, name: "budget_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "estimated_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "items", kind: "message", T: PlanItem, repeated: true },
+    { no: 10, name: "missed_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "deferred_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "vacation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "inputs_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "generated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "new_material", kind: "enum", T: proto3.getEnumType(NewMaterialStatus) },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdaptivePlan {
+    return new AdaptivePlan().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdaptivePlan {
+    return new AdaptivePlan().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdaptivePlan {
+    return new AdaptivePlan().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdaptivePlan | PlainMessage<AdaptivePlan> | undefined, b: AdaptivePlan | PlainMessage<AdaptivePlan> | undefined): boolean {
+    return proto3.util.equals(AdaptivePlan, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetAdaptivePlanRequest
+ */
+export class GetAdaptivePlanRequest extends Message<GetAdaptivePlanRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: int32 utc_offset_minutes = 2;
+   */
+  utcOffsetMinutes = 0;
+
+  /**
+   * Build a new revision now (after settings change or new evidence) instead
+   * of returning today's current one.
+   *
+   * @generated from field: bool regenerate = 3;
+   */
+  regenerate = false;
+
+  constructor(data?: PartialMessage<GetAdaptivePlanRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetAdaptivePlanRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "utc_offset_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "regenerate", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAdaptivePlanRequest {
+    return new GetAdaptivePlanRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAdaptivePlanRequest {
+    return new GetAdaptivePlanRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAdaptivePlanRequest {
+    return new GetAdaptivePlanRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAdaptivePlanRequest | PlainMessage<GetAdaptivePlanRequest> | undefined, b: GetAdaptivePlanRequest | PlainMessage<GetAdaptivePlanRequest> | undefined): boolean {
+    return proto3.util.equals(GetAdaptivePlanRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetAdaptivePlanResponse
+ */
+export class GetAdaptivePlanResponse extends Message<GetAdaptivePlanResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.AdaptivePlan plan = 1;
+   */
+  plan?: AdaptivePlan;
+
+  constructor(data?: PartialMessage<GetAdaptivePlanResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetAdaptivePlanResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: AdaptivePlan },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAdaptivePlanResponse {
+    return new GetAdaptivePlanResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAdaptivePlanResponse {
+    return new GetAdaptivePlanResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAdaptivePlanResponse {
+    return new GetAdaptivePlanResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAdaptivePlanResponse | PlainMessage<GetAdaptivePlanResponse> | undefined, b: GetAdaptivePlanResponse | PlainMessage<GetAdaptivePlanResponse> | undefined): boolean {
+    return proto3.util.equals(GetAdaptivePlanResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SkipPlanItemRequest
+ */
+export class SkipPlanItemRequest extends Message<SkipPlanItemRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string plan_item_id = 2;
+   */
+  planItemId = "";
+
+  /**
+   * @generated from field: bool restore = 3;
+   */
+  restore = false;
+
+  constructor(data?: PartialMessage<SkipPlanItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SkipPlanItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "restore", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkipPlanItemRequest {
+    return new SkipPlanItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkipPlanItemRequest {
+    return new SkipPlanItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkipPlanItemRequest {
+    return new SkipPlanItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SkipPlanItemRequest | PlainMessage<SkipPlanItemRequest> | undefined, b: SkipPlanItemRequest | PlainMessage<SkipPlanItemRequest> | undefined): boolean {
+    return proto3.util.equals(SkipPlanItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SkipPlanItemResponse
+ */
+export class SkipPlanItemResponse extends Message<SkipPlanItemResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.AdaptivePlan plan = 1;
+   */
+  plan?: AdaptivePlan;
+
+  constructor(data?: PartialMessage<SkipPlanItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SkipPlanItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: AdaptivePlan },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkipPlanItemResponse {
+    return new SkipPlanItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkipPlanItemResponse {
+    return new SkipPlanItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkipPlanItemResponse {
+    return new SkipPlanItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SkipPlanItemResponse | PlainMessage<SkipPlanItemResponse> | undefined, b: SkipPlanItemResponse | PlainMessage<SkipPlanItemResponse> | undefined): boolean {
+    return proto3.util.equals(SkipPlanItemResponse, a, b);
+  }
+}
+
+/**
+ * One estimate, with how sure it is. `estimate`, `low` and `high` are 0–100.
+ *
+ * @generated from message sttattus.languages.v1.SkillEstimate
+ */
+export class SkillEstimate extends Message<SkillEstimate> {
+  /**
+   * @generated from field: sttattus.languages.v1.MasterySkill skill = 1;
+   */
+  skill = MasterySkill.UNSPECIFIED;
+
+  /**
+   * @generated from field: int32 estimate = 2;
+   */
+  estimate = 0;
+
+  /**
+   * @generated from field: int32 low = 3;
+   */
+  low = 0;
+
+  /**
+   * @generated from field: int32 high = 4;
+   */
+  high = 0;
+
+  /**
+   * @generated from field: int32 evidence_count = 5;
+   */
+  evidenceCount = 0;
+
+  /**
+   * Things observed in this skill, out of what the open levels contain.
+   *
+   * @generated from field: int32 nodes_observed = 6;
+   */
+  nodesObserved = 0;
+
+  /**
+   * @generated from field: int32 nodes_open = 7;
+   */
+  nodesOpen = 0;
+
+  constructor(data?: PartialMessage<SkillEstimate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SkillEstimate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "skill", kind: "enum", T: proto3.getEnumType(MasterySkill) },
+    { no: 2, name: "estimate", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "low", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "high", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "evidence_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "nodes_observed", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "nodes_open", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkillEstimate {
+    return new SkillEstimate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkillEstimate {
+    return new SkillEstimate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkillEstimate {
+    return new SkillEstimate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SkillEstimate | PlainMessage<SkillEstimate> | undefined, b: SkillEstimate | PlainMessage<SkillEstimate> | undefined): boolean {
+    return proto3.util.equals(SkillEstimate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.LevelProgress
+ */
+export class LevelProgress extends Message<LevelProgress> {
+  /**
+   * @generated from field: string cefr_level = 1;
+   */
+  cefrLevel = "";
+
+  /**
+   * @generated from field: int32 nodes_open = 2;
+   */
+  nodesOpen = 0;
+
+  /**
+   * @generated from field: int32 nodes_seen = 3;
+   */
+  nodesSeen = 0;
+
+  /**
+   * @generated from field: int32 nodes_strong = 4;
+   */
+  nodesStrong = 0;
+
+  constructor(data?: PartialMessage<LevelProgress>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.LevelProgress";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cefr_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "nodes_open", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "nodes_seen", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "nodes_strong", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LevelProgress {
+    return new LevelProgress().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LevelProgress {
+    return new LevelProgress().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LevelProgress {
+    return new LevelProgress().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LevelProgress | PlainMessage<LevelProgress> | undefined, b: LevelProgress | PlainMessage<LevelProgress> | undefined): boolean {
+    return proto3.util.equals(LevelProgress, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.NodeEstimate
+ */
+export class NodeEstimate extends Message<NodeEstimate> {
+  /**
+   * concept | grammar_point | verb
+   *
+   * @generated from field: string node_kind = 1;
+   */
+  nodeKind = "";
+
+  /**
+   * @generated from field: string node_id = 2;
+   */
+  nodeId = "";
+
+  /**
+   * @generated from field: string label = 3;
+   */
+  label = "";
+
+  /**
+   * @generated from field: sttattus.languages.v1.MasterySkill skill = 4;
+   */
+  skill = MasterySkill.UNSPECIFIED;
+
+  /**
+   * @generated from field: int32 estimate = 5;
+   */
+  estimate = 0;
+
+  /**
+   * @generated from field: int32 low = 6;
+   */
+  low = 0;
+
+  /**
+   * @generated from field: int32 high = 7;
+   */
+  high = 0;
+
+  /**
+   * @generated from field: int32 evidence_count = 8;
+   */
+  evidenceCount = 0;
+
+  /**
+   * @generated from field: double half_life_days = 9;
+   */
+  halfLifeDays = 0;
+
+  /**
+   * @generated from field: int64 last_observed_unix = 10;
+   */
+  lastObservedUnix = protoInt64.zero;
+
+  /**
+   * Predicted recall right now, after forgetting.
+   *
+   * @generated from field: int32 recall_now = 11;
+   */
+  recallNow = 0;
+
+  constructor(data?: PartialMessage<NodeEstimate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.NodeEstimate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "node_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "skill", kind: "enum", T: proto3.getEnumType(MasterySkill) },
+    { no: 5, name: "estimate", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "low", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "high", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "evidence_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "half_life_days", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "last_observed_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "recall_now", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NodeEstimate {
+    return new NodeEstimate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NodeEstimate {
+    return new NodeEstimate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NodeEstimate {
+    return new NodeEstimate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: NodeEstimate | PlainMessage<NodeEstimate> | undefined, b: NodeEstimate | PlainMessage<NodeEstimate> | undefined): boolean {
+    return proto3.util.equals(NodeEstimate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ConfusionPair
+ */
+export class ConfusionPair extends Message<ConfusionPair> {
+  /**
+   * @generated from field: string a_label = 1;
+   */
+  aLabel = "";
+
+  /**
+   * @generated from field: string b_label = 2;
+   */
+  bLabel = "";
+
+  /**
+   * @generated from field: int32 count = 3;
+   */
+  count = 0;
+
+  constructor(data?: PartialMessage<ConfusionPair>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ConfusionPair";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "a_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "b_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfusionPair {
+    return new ConfusionPair().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfusionPair {
+    return new ConfusionPair().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfusionPair {
+    return new ConfusionPair().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfusionPair | PlainMessage<ConfusionPair> | undefined, b: ConfusionPair | PlainMessage<ConfusionPair> | undefined): boolean {
+    return proto3.util.equals(ConfusionPair, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetMasteryMapRequest
+ */
+export class GetMasteryMapRequest extends Message<GetMasteryMapRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  constructor(data?: PartialMessage<GetMasteryMapRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetMasteryMapRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMasteryMapRequest {
+    return new GetMasteryMapRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMasteryMapRequest {
+    return new GetMasteryMapRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMasteryMapRequest {
+    return new GetMasteryMapRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMasteryMapRequest | PlainMessage<GetMasteryMapRequest> | undefined, b: GetMasteryMapRequest | PlainMessage<GetMasteryMapRequest> | undefined): boolean {
+    return proto3.util.equals(GetMasteryMapRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetMasteryMapResponse
+ */
+export class GetMasteryMapResponse extends Message<GetMasteryMapResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.SkillEstimate skills = 1;
+   */
+  skills: SkillEstimate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.LevelProgress levels = 2;
+   */
+  levels: LevelProgress[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.NodeEstimate weakest = 3;
+   */
+  weakest: NodeEstimate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.ConfusionPair confusions = 4;
+   */
+  confusions: ConfusionPair[] = [];
+
+  /**
+   * One-off placement tests, shown apart from practice evidence.
+   *
+   * @generated from field: repeated sttattus.languages.v1.PlacementResult placement = 5;
+   */
+  placement: PlacementResult[] = [];
+
+  /**
+   * @generated from field: int32 evidence_total = 6;
+   */
+  evidenceTotal = 0;
+
+  /**
+   * @generated from field: string policy_version = 7;
+   */
+  policyVersion = "";
+
+  constructor(data?: PartialMessage<GetMasteryMapResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetMasteryMapResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "skills", kind: "message", T: SkillEstimate, repeated: true },
+    { no: 2, name: "levels", kind: "message", T: LevelProgress, repeated: true },
+    { no: 3, name: "weakest", kind: "message", T: NodeEstimate, repeated: true },
+    { no: 4, name: "confusions", kind: "message", T: ConfusionPair, repeated: true },
+    { no: 5, name: "placement", kind: "message", T: PlacementResult, repeated: true },
+    { no: 6, name: "evidence_total", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMasteryMapResponse {
+    return new GetMasteryMapResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMasteryMapResponse {
+    return new GetMasteryMapResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMasteryMapResponse {
+    return new GetMasteryMapResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMasteryMapResponse | PlainMessage<GetMasteryMapResponse> | undefined, b: GetMasteryMapResponse | PlainMessage<GetMasteryMapResponse> | undefined): boolean {
+    return proto3.util.equals(GetMasteryMapResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.EvidenceEntry
+ */
+export class EvidenceEntry extends Message<EvidenceEntry> {
+  /**
+   * @generated from field: sttattus.languages.v1.MasterySkill skill = 1;
+   */
+  skill = MasterySkill.UNSPECIFIED;
+
+  /**
+   * 0–100
+   *
+   * @generated from field: int32 credit = 2;
+   */
+  credit = 0;
+
+  /**
+   * practice | writing_coach | speaking_coach | placement | scenario
+   *
+   * @generated from field: string source = 3;
+   */
+  source = "";
+
+  /**
+   * verified | self_report | ai_unverified | disputed | withdrawn
+   *
+   * @generated from field: string trust = 4;
+   */
+  trust = "";
+
+  /**
+   * @generated from field: bool hint_used = 5;
+   */
+  hintUsed = false;
+
+  /**
+   * @generated from field: string exercise = 6;
+   */
+  exercise = "";
+
+  /**
+   * @generated from field: int64 observed_unix = 7;
+   */
+  observedUnix = protoInt64.zero;
+
+  constructor(data?: PartialMessage<EvidenceEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.EvidenceEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "skill", kind: "enum", T: proto3.getEnumType(MasterySkill) },
+    { no: 2, name: "credit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "trust", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "hint_used", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "exercise", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "observed_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceEntry {
+    return new EvidenceEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceEntry {
+    return new EvidenceEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceEntry {
+    return new EvidenceEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceEntry | PlainMessage<EvidenceEntry> | undefined, b: EvidenceEntry | PlainMessage<EvidenceEntry> | undefined): boolean {
+    return proto3.util.equals(EvidenceEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetNodeEvidenceRequest
+ */
+export class GetNodeEvidenceRequest extends Message<GetNodeEvidenceRequest> {
+  /**
+   * @generated from field: string language = 1;
+   */
+  language = "";
+
+  /**
+   * @generated from field: string node_kind = 2;
+   */
+  nodeKind = "";
+
+  /**
+   * @generated from field: string node_id = 3;
+   */
+  nodeId = "";
+
+  constructor(data?: PartialMessage<GetNodeEvidenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetNodeEvidenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "node_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNodeEvidenceRequest {
+    return new GetNodeEvidenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNodeEvidenceRequest {
+    return new GetNodeEvidenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNodeEvidenceRequest {
+    return new GetNodeEvidenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetNodeEvidenceRequest | PlainMessage<GetNodeEvidenceRequest> | undefined, b: GetNodeEvidenceRequest | PlainMessage<GetNodeEvidenceRequest> | undefined): boolean {
+    return proto3.util.equals(GetNodeEvidenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.GetNodeEvidenceResponse
+ */
+export class GetNodeEvidenceResponse extends Message<GetNodeEvidenceResponse> {
+  /**
+   * @generated from field: repeated sttattus.languages.v1.NodeEstimate estimates = 1;
+   */
+  estimates: NodeEstimate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.EvidenceEntry evidence = 2;
+   */
+  evidence: EvidenceEntry[] = [];
+
+  constructor(data?: PartialMessage<GetNodeEvidenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.GetNodeEvidenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "estimates", kind: "message", T: NodeEstimate, repeated: true },
+    { no: 2, name: "evidence", kind: "message", T: EvidenceEntry, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNodeEvidenceResponse {
+    return new GetNodeEvidenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNodeEvidenceResponse {
+    return new GetNodeEvidenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNodeEvidenceResponse {
+    return new GetNodeEvidenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetNodeEvidenceResponse | PlainMessage<GetNodeEvidenceResponse> | undefined, b: GetNodeEvidenceResponse | PlainMessage<GetNodeEvidenceResponse> | undefined): boolean {
+    return proto3.util.equals(GetNodeEvidenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.DismissWritingFlagRequest
+ */
+export class DismissWritingFlagRequest extends Message<DismissWritingFlagRequest> {
+  /**
+   * @generated from field: string submission_id = 1;
+   */
+  submissionId = "";
+
+  /**
+   * @generated from field: int32 error_index = 2;
+   */
+  errorIndex = 0;
+
+  /**
+   * false restores a dismissed flag.
+   *
+   * @generated from field: bool dismiss = 3;
+   */
+  dismiss = false;
+
+  constructor(data?: PartialMessage<DismissWritingFlagRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.DismissWritingFlagRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "submission_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "error_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "dismiss", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DismissWritingFlagRequest {
+    return new DismissWritingFlagRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DismissWritingFlagRequest {
+    return new DismissWritingFlagRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DismissWritingFlagRequest {
+    return new DismissWritingFlagRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DismissWritingFlagRequest | PlainMessage<DismissWritingFlagRequest> | undefined, b: DismissWritingFlagRequest | PlainMessage<DismissWritingFlagRequest> | undefined): boolean {
+    return proto3.util.equals(DismissWritingFlagRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.DismissWritingFlagResponse
+ */
+export class DismissWritingFlagResponse extends Message<DismissWritingFlagResponse> {
+  /**
+   * @generated from field: sttattus.languages.v1.WritingSubmission submission = 1;
+   */
+  submission?: WritingSubmission;
+
+  constructor(data?: PartialMessage<DismissWritingFlagResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.DismissWritingFlagResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "submission", kind: "message", T: WritingSubmission },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DismissWritingFlagResponse {
+    return new DismissWritingFlagResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DismissWritingFlagResponse {
+    return new DismissWritingFlagResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DismissWritingFlagResponse {
+    return new DismissWritingFlagResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DismissWritingFlagResponse | PlainMessage<DismissWritingFlagResponse> | undefined, b: DismissWritingFlagResponse | PlainMessage<DismissWritingFlagResponse> | undefined): boolean {
+    return proto3.util.equals(DismissWritingFlagResponse, a, b);
   }
 }
 

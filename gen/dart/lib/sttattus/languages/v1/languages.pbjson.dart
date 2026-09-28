@@ -93,6 +93,129 @@ final $typed_data.Uint8List newMaterialStatusDescriptor = $convert.base64Decode(
     'QVVTRURfSU5fUFJFUEFSQVRJT04QAhIjCh9ORVdfTUFURVJJQUxfU1RBVFVTX1BBVVNFRF9IRU'
     'xEEAMSJwojTkVXX01BVEVSSUFMX1NUQVRVU19MRVZFTF9FWEhBVVNURUQQBA==');
 
+@$core.Deprecated('Use masterySkillDescriptor instead')
+const MasterySkill$json = {
+  '1': 'MasterySkill',
+  '2': [
+    {'1': 'MASTERY_SKILL_UNSPECIFIED', '2': 0},
+    {'1': 'MASTERY_SKILL_RECOGNITION', '2': 1},
+    {'1': 'MASTERY_SKILL_RECALL', '2': 2},
+    {'1': 'MASTERY_SKILL_SPELLING', '2': 3},
+    {'1': 'MASTERY_SKILL_LISTENING', '2': 4},
+    {'1': 'MASTERY_SKILL_PRONUNCIATION', '2': 5},
+    {'1': 'MASTERY_SKILL_PRODUCTION', '2': 6},
+    {'1': 'MASTERY_SKILL_GRAMMAR', '2': 7},
+    {'1': 'MASTERY_SKILL_CONJUGATION', '2': 8},
+    {'1': 'MASTERY_SKILL_READING', '2': 9},
+    {'1': 'MASTERY_SKILL_WRITING', '2': 10},
+    {'1': 'MASTERY_SKILL_CONVERSATION', '2': 11},
+  ],
+};
+
+/// Descriptor for `MasterySkill`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List masterySkillDescriptor = $convert.base64Decode(
+    'CgxNYXN0ZXJ5U2tpbGwSHQoZTUFTVEVSWV9TS0lMTF9VTlNQRUNJRklFRBAAEh0KGU1BU1RFUl'
+    'lfU0tJTExfUkVDT0dOSVRJT04QARIYChRNQVNURVJZX1NLSUxMX1JFQ0FMTBACEhoKFk1BU1RF'
+    'UllfU0tJTExfU1BFTExJTkcQAxIbChdNQVNURVJZX1NLSUxMX0xJU1RFTklORxAEEh8KG01BU1'
+    'RFUllfU0tJTExfUFJPTlVOQ0lBVElPThAFEhwKGE1BU1RFUllfU0tJTExfUFJPRFVDVElPThAG'
+    'EhkKFU1BU1RFUllfU0tJTExfR1JBTU1BUhAHEh0KGU1BU1RFUllfU0tJTExfQ09OSlVHQVRJT0'
+    '4QCBIZChVNQVNURVJZX1NLSUxMX1JFQURJTkcQCRIZChVNQVNURVJZX1NLSUxMX1dSSVRJTkcQ'
+    'ChIeChpNQVNURVJZX1NLSUxMX0NPTlZFUlNBVElPThAL');
+
+@$core.Deprecated('Use goalModeDescriptor instead')
+const GoalMode$json = {
+  '1': 'GoalMode',
+  '2': [
+    {'1': 'GOAL_MODE_UNSPECIFIED', '2': 0},
+    {'1': 'GOAL_MODE_BALANCED', '2': 1},
+    {'1': 'GOAL_MODE_TRAVEL', '2': 2},
+    {'1': 'GOAL_MODE_FAMILY', '2': 3},
+    {'1': 'GOAL_MODE_ACADEMIC', '2': 4},
+    {'1': 'GOAL_MODE_RELOCATION', '2': 5},
+    {'1': 'GOAL_MODE_EXAM', '2': 6},
+    {'1': 'GOAL_MODE_BUSINESS', '2': 7},
+    {'1': 'GOAL_MODE_PRONUNCIATION', '2': 8},
+    {'1': 'GOAL_MODE_MAINTENANCE', '2': 9},
+  ],
+};
+
+/// Descriptor for `GoalMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List goalModeDescriptor = $convert.base64Decode(
+    'CghHb2FsTW9kZRIZChVHT0FMX01PREVfVU5TUEVDSUZJRUQQABIWChJHT0FMX01PREVfQkFMQU'
+    '5DRUQQARIUChBHT0FMX01PREVfVFJBVkVMEAISFAoQR09BTF9NT0RFX0ZBTUlMWRADEhYKEkdP'
+    'QUxfTU9ERV9BQ0FERU1JQxAEEhgKFEdPQUxfTU9ERV9SRUxPQ0FUSU9OEAUSEgoOR09BTF9NT0'
+    'RFX0VYQU0QBhIWChJHT0FMX01PREVfQlVTSU5FU1MQBxIbChdHT0FMX01PREVfUFJPTlVOQ0lB'
+    'VElPThAIEhkKFUdPQUxfTU9ERV9NQUlOVEVOQU5DRRAJ');
+
+@$core.Deprecated('Use planItemKindDescriptor instead')
+const PlanItemKind$json = {
+  '1': 'PlanItemKind',
+  '2': [
+    {'1': 'PLAN_ITEM_KIND_UNSPECIFIED', '2': 0},
+    {'1': 'PLAN_ITEM_KIND_REVIEW', '2': 1},
+    {'1': 'PLAN_ITEM_KIND_NEW', '2': 2},
+    {'1': 'PLAN_ITEM_KIND_REPAIR', '2': 3},
+    {'1': 'PLAN_ITEM_KIND_CONTRAST', '2': 4},
+    {'1': 'PLAN_ITEM_KIND_CHECK', '2': 5},
+    {'1': 'PLAN_ITEM_KIND_LISTENING', '2': 6},
+    {'1': 'PLAN_ITEM_KIND_SPEAKING', '2': 7},
+    {'1': 'PLAN_ITEM_KIND_READING', '2': 8},
+    {'1': 'PLAN_ITEM_KIND_WRITING', '2': 9},
+  ],
+};
+
+/// Descriptor for `PlanItemKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List planItemKindDescriptor = $convert.base64Decode(
+    'CgxQbGFuSXRlbUtpbmQSHgoaUExBTl9JVEVNX0tJTkRfVU5TUEVDSUZJRUQQABIZChVQTEFOX0'
+    'lURU1fS0lORF9SRVZJRVcQARIWChJQTEFOX0lURU1fS0lORF9ORVcQAhIZChVQTEFOX0lURU1f'
+    'S0lORF9SRVBBSVIQAxIbChdQTEFOX0lURU1fS0lORF9DT05UUkFTVBAEEhgKFFBMQU5fSVRFTV'
+    '9LSU5EX0NIRUNLEAUSHAoYUExBTl9JVEVNX0tJTkRfTElTVEVOSU5HEAYSGwoXUExBTl9JVEVN'
+    'X0tJTkRfU1BFQUtJTkcQBxIaChZQTEFOX0lURU1fS0lORF9SRUFESU5HEAgSGgoWUExBTl9JVE'
+    'VNX0tJTkRfV1JJVElORxAJ');
+
+@$core.Deprecated('Use planItemStateDescriptor instead')
+const PlanItemState$json = {
+  '1': 'PlanItemState',
+  '2': [
+    {'1': 'PLAN_ITEM_STATE_UNSPECIFIED', '2': 0},
+    {'1': 'PLAN_ITEM_STATE_PENDING', '2': 1},
+    {'1': 'PLAN_ITEM_STATE_DONE', '2': 2},
+    {'1': 'PLAN_ITEM_STATE_SKIPPED', '2': 3},
+  ],
+};
+
+/// Descriptor for `PlanItemState`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List planItemStateDescriptor = $convert.base64Decode(
+    'Cg1QbGFuSXRlbVN0YXRlEh8KG1BMQU5fSVRFTV9TVEFURV9VTlNQRUNJRklFRBAAEhsKF1BMQU'
+    '5fSVRFTV9TVEFURV9QRU5ESU5HEAESGAoUUExBTl9JVEVNX1NUQVRFX0RPTkUQAhIbChdQTEFO'
+    'X0lURU1fU1RBVEVfU0tJUFBFRBAD');
+
+@$core.Deprecated('Use planReasonCodeDescriptor instead')
+const PlanReasonCode$json = {
+  '1': 'PlanReasonCode',
+  '2': [
+    {'1': 'PLAN_REASON_CODE_UNSPECIFIED', '2': 0},
+    {'1': 'PLAN_REASON_CODE_DUE', '2': 1},
+    {'1': 'PLAN_REASON_CODE_LEECH', '2': 2},
+    {'1': 'PLAN_REASON_CODE_WEAK_SKILL', '2': 3},
+    {'1': 'PLAN_REASON_CODE_INTERFERENCE', '2': 4},
+    {'1': 'PLAN_REASON_CODE_PREREQUISITE', '2': 5},
+    {'1': 'PLAN_REASON_CODE_CHECK_AI_FLAG', '2': 6},
+    {'1': 'PLAN_REASON_CODE_NEW', '2': 7},
+    {'1': 'PLAN_REASON_CODE_CATCH_UP', '2': 8},
+    {'1': 'PLAN_REASON_CODE_GOAL', '2': 9},
+  ],
+};
+
+/// Descriptor for `PlanReasonCode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List planReasonCodeDescriptor = $convert.base64Decode(
+    'Cg5QbGFuUmVhc29uQ29kZRIgChxQTEFOX1JFQVNPTl9DT0RFX1VOU1BFQ0lGSUVEEAASGAoUUE'
+    'xBTl9SRUFTT05fQ09ERV9EVUUQARIaChZQTEFOX1JFQVNPTl9DT0RFX0xFRUNIEAISHwobUExB'
+    'Tl9SRUFTT05fQ09ERV9XRUFLX1NLSUxMEAMSIQodUExBTl9SRUFTT05fQ09ERV9JTlRFUkZFUk'
+    'VOQ0UQBBIhCh1QTEFOX1JFQVNPTl9DT0RFX1BSRVJFUVVJU0lURRAFEiIKHlBMQU5fUkVBU09O'
+    'X0NPREVfQ0hFQ0tfQUlfRkxBRxAGEhgKFFBMQU5fUkVBU09OX0NPREVfTkVXEAcSHQoZUExBTl'
+    '9SRUFTT05fQ09ERV9DQVRDSF9VUBAIEhkKFVBMQU5fUkVBU09OX0NPREVfR09BTBAJ');
+
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {
   '1': 'CulturalNuance',
@@ -1302,6 +1425,7 @@ const WritingError$json = {
     {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
     {'1': 'explanation', '3': 4, '4': 1, '5': 9, '10': 'explanation'},
     {'1': 'grammar_point_key', '3': 5, '4': 1, '5': 9, '10': 'grammarPointKey'},
+    {'1': 'flag_state', '3': 6, '4': 1, '5': 9, '10': 'flagState'},
   ],
 };
 
@@ -1310,7 +1434,7 @@ final $typed_data.Uint8List writingErrorDescriptor = $convert.base64Decode(
     'CgxXcml0aW5nRXJyb3ISGgoIb3JpZ2luYWwYASABKAlSCG9yaWdpbmFsEh4KCmNvcnJlY3Rpb2'
     '4YAiABKAlSCmNvcnJlY3Rpb24SEgoEa2luZBgDIAEoCVIEa2luZBIgCgtleHBsYW5hdGlvbhgE'
     'IAEoCVILZXhwbGFuYXRpb24SKgoRZ3JhbW1hcl9wb2ludF9rZXkYBSABKAlSD2dyYW1tYXJQb2'
-    'ludEtleQ==');
+    'ludEtleRIdCgpmbGFnX3N0YXRlGAYgASgJUglmbGFnU3RhdGU=');
 
 @$core.Deprecated('Use writingSubmissionDescriptor instead')
 const WritingSubmission$json = {
@@ -2132,6 +2256,14 @@ const PracticeCard$json = {
       '10': 'correctedSinceSeen'
     },
     {'1': 'copy_language', '3': 26, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {
+      '1': 'reason',
+      '3': 27,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PlanReason',
+      '10': 'reason'
+    },
   ],
 };
 
@@ -2153,7 +2285,8 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     '50X3VuaXRfaWQYFiABKAlSDWNvbnRlbnRVbml0SWQSKQoQY29udGVudF9yZXZpc2lvbhgXIAEo'
     'BVIPY29udGVudFJldmlzaW9uEhQKBXBpbG90GBggASgIUgVwaWxvdBIwChRjb3JyZWN0ZWRfc2'
     'luY2Vfc2VlbhgZIAEoCFISY29ycmVjdGVkU2luY2VTZWVuEiMKDWNvcHlfbGFuZ3VhZ2UYGiAB'
-    'KAlSDGNvcHlMYW5ndWFnZQ==');
+    'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
+    'EuUGxhblJlYXNvblIGcmVhc29u');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2162,6 +2295,7 @@ const GetPracticeSessionRequest$json = {
     {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
     {'1': 'limit', '3': 2, '4': 1, '5': 5, '10': 'limit'},
     {'1': 'tts_languages', '3': 3, '4': 3, '5': 9, '10': 'ttsLanguages'},
+    {'1': 'plan_item_id', '3': 4, '4': 1, '5': 9, '10': 'planItemId'},
   ],
 };
 
@@ -2169,7 +2303,7 @@ const GetPracticeSessionRequest$json = {
 final $typed_data.Uint8List getPracticeSessionRequestDescriptor = $convert.base64Decode(
     'ChlHZXRQcmFjdGljZVNlc3Npb25SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZR'
     'IUCgVsaW1pdBgCIAEoBVIFbGltaXQSIwoNdHRzX2xhbmd1YWdlcxgDIAMoCVIMdHRzTGFuZ3Vh'
-    'Z2Vz');
+    'Z2VzEiAKDHBsYW5faXRlbV9pZBgEIAEoCVIKcGxhbkl0ZW1JZA==');
 
 @$core.Deprecated('Use getPracticeSessionResponseDescriptor instead')
 const GetPracticeSessionResponse$json = {
@@ -2233,6 +2367,9 @@ const SubmitAnswerRequest$json = {
     {'1': 'item_id', '3': 8, '4': 1, '5': 9, '10': 'itemId'},
     {'1': 'content_unit_id', '3': 9, '4': 1, '5': 9, '10': 'contentUnitId'},
     {'1': 'content_revision', '3': 10, '4': 1, '5': 5, '10': 'contentRevision'},
+    {'1': 'client_event_id', '3': 11, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'hint_used', '3': 12, '4': 1, '5': 8, '10': 'hintUsed'},
+    {'1': 'plan_item_id', '3': 13, '4': 1, '5': 9, '10': 'planItemId'},
   ],
 };
 
@@ -2245,7 +2382,9 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     'CghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2USQQoJaXRlbV9raW5kGAcgASgOMiQuc3R0YXR0dX'
     'MubGFuZ3VhZ2VzLnYxLlN0dWR5SXRlbUtpbmRSCGl0ZW1LaW5kEhcKB2l0ZW1faWQYCCABKAlS'
     'Bml0ZW1JZBImCg9jb250ZW50X3VuaXRfaWQYCSABKAlSDWNvbnRlbnRVbml0SWQSKQoQY29udG'
-    'VudF9yZXZpc2lvbhgKIAEoBVIPY29udGVudFJldmlzaW9u');
+    'VudF9yZXZpc2lvbhgKIAEoBVIPY29udGVudFJldmlzaW9uEiYKD2NsaWVudF9ldmVudF9pZBgL'
+    'IAEoCVINY2xpZW50RXZlbnRJZBIbCgloaW50X3VzZWQYDCABKAhSCGhpbnRVc2VkEiAKDHBsYW'
+    '5faXRlbV9pZBgNIAEoCVIKcGxhbkl0ZW1JZA==');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {
@@ -2271,6 +2410,7 @@ const SubmitAnswerResponse$json = {
     },
     {'1': 'new_learned_today', '3': 6, '4': 1, '5': 5, '10': 'newLearnedToday'},
     {'1': 'rationale', '3': 7, '4': 1, '5': 9, '10': 'rationale'},
+    {'1': 'duplicate', '3': 8, '4': 1, '5': 8, '10': 'duplicate'},
   ],
 };
 
@@ -2280,7 +2420,8 @@ final $typed_data.Uint8List submitAnswerResponseDescriptor = $convert.base64Deco
     'VjdGVkGAIgASgJUghleHBlY3RlZBIaCghzdHJlbmd0aBgDIAEoBVIIc3RyZW5ndGgSMQoGZHVl'
     'X2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIFZHVlQXQSLAoScmV2aWV3c1'
     '9kb25lX3RvZGF5GAUgASgFUhByZXZpZXdzRG9uZVRvZGF5EioKEW5ld19sZWFybmVkX3RvZGF5'
-    'GAYgASgFUg9uZXdMZWFybmVkVG9kYXkSHAoJcmF0aW9uYWxlGAcgASgJUglyYXRpb25hbGU=');
+    'GAYgASgFUg9uZXdMZWFybmVkVG9kYXkSHAoJcmF0aW9uYWxlGAcgASgJUglyYXRpb25hbGUSHA'
+    'oJZHVwbGljYXRlGAggASgIUglkdXBsaWNhdGU=');
 
 @$core.Deprecated('Use getPracticeStatsRequestDescriptor instead')
 const GetPracticeStatsRequest$json = {
@@ -2349,6 +2490,47 @@ const MemberPrefs$json = {
       '5': 5,
       '10': 'dailyReviewTarget'
     },
+    {
+      '1': 'goal_mode',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.GoalMode',
+      '10': 'goalMode'
+    },
+    {'1': 'daily_minutes', '3': 5, '4': 1, '5': 5, '10': 'dailyMinutes'},
+    {
+      '1': 'utc_offset_minutes',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '9': 0,
+      '10': 'utcOffsetMinutes',
+      '17': true
+    },
+    {
+      '1': 'vacation_until',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '9': 1,
+      '10': 'vacationUntil',
+      '17': true
+    },
+    {
+      '1': 'extra_time',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '9': 2,
+      '10': 'extraTime',
+      '17': true
+    },
+  ],
+  '8': [
+    {'1': '_utc_offset_minutes'},
+    {'1': '_vacation_until'},
+    {'1': '_extra_time'},
   ],
 };
 
@@ -2356,7 +2538,12 @@ const MemberPrefs$json = {
 final $typed_data.Uint8List memberPrefsDescriptor = $convert.base64Decode(
     'CgtNZW1iZXJQcmVmcxIjCg1iYXNlX2xhbmd1YWdlGAEgASgJUgxiYXNlTGFuZ3VhZ2USKAoQZG'
     'FpbHlfbmV3X3RhcmdldBgCIAEoBVIOZGFpbHlOZXdUYXJnZXQSLgoTZGFpbHlfcmV2aWV3X3Rh'
-    'cmdldBgDIAEoBVIRZGFpbHlSZXZpZXdUYXJnZXQ=');
+    'cmdldBgDIAEoBVIRZGFpbHlSZXZpZXdUYXJnZXQSPAoJZ29hbF9tb2RlGAQgASgOMh8uc3R0YX'
+    'R0dXMubGFuZ3VhZ2VzLnYxLkdvYWxNb2RlUghnb2FsTW9kZRIjCg1kYWlseV9taW51dGVzGAUg'
+    'ASgFUgxkYWlseU1pbnV0ZXMSMQoSdXRjX29mZnNldF9taW51dGVzGAYgASgFSABSEHV0Y09mZn'
+    'NldE1pbnV0ZXOIAQESKgoOdmFjYXRpb25fdW50aWwYByABKAlIAVINdmFjYXRpb25VbnRpbIgB'
+    'ARIiCgpleHRyYV90aW1lGAggASgISAJSCWV4dHJhVGltZYgBAUIVChNfdXRjX29mZnNldF9taW'
+    '51dGVzQhEKD192YWNhdGlvbl91bnRpbEINCgtfZXh0cmFfdGltZQ==');
 
 @$core.Deprecated('Use getMemberPrefsRequestDescriptor instead')
 const GetMemberPrefsRequest$json = {
@@ -2482,3 +2669,537 @@ const ListWordsResponse$json = {
 final $typed_data.Uint8List listWordsResponseDescriptor = $convert.base64Decode(
     'ChFMaXN0V29yZHNSZXNwb25zZRIxCgV3b3JkcxgBIAMoCzIbLnN0dGF0dHVzLmxhbmd1YWdlcy'
     '52MS5Xb3JkUgV3b3Jkcw==');
+
+@$core.Deprecated('Use planReasonDescriptor instead')
+const PlanReason$json = {
+  '1': 'PlanReason',
+  '2': [
+    {
+      '1': 'code',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.PlanReasonCode',
+      '10': 'code'
+    },
+    {
+      '1': 'params',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PlanReason.ParamsEntry',
+      '10': 'params'
+    },
+    {'1': 'evidence_count', '3': 3, '4': 1, '5': 5, '10': 'evidenceCount'},
+  ],
+  '3': [PlanReason_ParamsEntry$json],
+};
+
+@$core.Deprecated('Use planReasonDescriptor instead')
+const PlanReason_ParamsEntry$json = {
+  '1': 'ParamsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `PlanReason`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List planReasonDescriptor = $convert.base64Decode(
+    'CgpQbGFuUmVhc29uEjkKBGNvZGUYASABKA4yJS5zdHRhdHR1cy5sYW5ndWFnZXMudjEuUGxhbl'
+    'JlYXNvbkNvZGVSBGNvZGUSRQoGcGFyYW1zGAIgAygLMi0uc3R0YXR0dXMubGFuZ3VhZ2VzLnYx'
+    'LlBsYW5SZWFzb24uUGFyYW1zRW50cnlSBnBhcmFtcxIlCg5ldmlkZW5jZV9jb3VudBgDIAEoBV'
+    'INZXZpZGVuY2VDb3VudBo5CgtQYXJhbXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1'
+    'ZRgCIAEoCVIFdmFsdWU6AjgB');
+
+@$core.Deprecated('Use planItemDescriptor instead')
+const PlanItem$json = {
+  '1': 'PlanItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {
+      '1': 'kind',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.PlanItemKind',
+      '10': 'kind'
+    },
+    {
+      '1': 'skill',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.MasterySkill',
+      '10': 'skill'
+    },
+    {'1': 'labels', '3': 4, '4': 3, '5': 9, '10': 'labels'},
+    {
+      '1': 'estimated_minutes',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'estimatedMinutes'
+    },
+    {
+      '1': 'state',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.PlanItemState',
+      '10': 'state'
+    },
+    {
+      '1': 'reason',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PlanReason',
+      '10': 'reason'
+    },
+    {'1': 'target_count', '3': 8, '4': 1, '5': 5, '10': 'targetCount'},
+    {'1': 'done_count', '3': 9, '4': 1, '5': 5, '10': 'doneCount'},
+    {'1': 'activity_id', '3': 10, '4': 1, '5': 9, '10': 'activityId'},
+    {'1': 'activity_title', '3': 11, '4': 1, '5': 9, '10': 'activityTitle'},
+  ],
+};
+
+/// Descriptor for `PlanItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List planItemDescriptor = $convert.base64Decode(
+    'CghQbGFuSXRlbRIOCgJpZBgBIAEoCVICaWQSNwoEa2luZBgCIAEoDjIjLnN0dGF0dHVzLmxhbm'
+    'd1YWdlcy52MS5QbGFuSXRlbUtpbmRSBGtpbmQSOQoFc2tpbGwYAyABKA4yIy5zdHRhdHR1cy5s'
+    'YW5ndWFnZXMudjEuTWFzdGVyeVNraWxsUgVza2lsbBIWCgZsYWJlbHMYBCADKAlSBmxhYmVscx'
+    'IrChFlc3RpbWF0ZWRfbWludXRlcxgFIAEoBVIQZXN0aW1hdGVkTWludXRlcxI6CgVzdGF0ZRgG'
+    'IAEoDjIkLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5QbGFuSXRlbVN0YXRlUgVzdGF0ZRI5CgZyZW'
+    'Fzb24YByABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudjEuUGxhblJlYXNvblIGcmVhc29uEiEK'
+    'DHRhcmdldF9jb3VudBgIIAEoBVILdGFyZ2V0Q291bnQSHQoKZG9uZV9jb3VudBgJIAEoBVIJZG'
+    '9uZUNvdW50Eh8KC2FjdGl2aXR5X2lkGAogASgJUgphY3Rpdml0eUlkEiUKDmFjdGl2aXR5X3Rp'
+    'dGxlGAsgASgJUg1hY3Rpdml0eVRpdGxl');
+
+@$core.Deprecated('Use adaptivePlanDescriptor instead')
+const AdaptivePlan$json = {
+  '1': 'AdaptivePlan',
+  '2': [
+    {'1': 'revision_id', '3': 1, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'language', '3': 2, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'plan_date', '3': 3, '4': 1, '5': 9, '10': 'planDate'},
+    {'1': 'revision', '3': 4, '4': 1, '5': 5, '10': 'revision'},
+    {'1': 'policy_version', '3': 5, '4': 1, '5': 9, '10': 'policyVersion'},
+    {
+      '1': 'goal_mode',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.GoalMode',
+      '10': 'goalMode'
+    },
+    {'1': 'budget_minutes', '3': 7, '4': 1, '5': 5, '10': 'budgetMinutes'},
+    {
+      '1': 'estimated_minutes',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'estimatedMinutes'
+    },
+    {
+      '1': 'items',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PlanItem',
+      '10': 'items'
+    },
+    {'1': 'missed_days', '3': 10, '4': 1, '5': 5, '10': 'missedDays'},
+    {'1': 'deferred_count', '3': 11, '4': 1, '5': 5, '10': 'deferredCount'},
+    {'1': 'vacation', '3': 12, '4': 1, '5': 8, '10': 'vacation'},
+    {'1': 'inputs_digest', '3': 13, '4': 1, '5': 9, '10': 'inputsDigest'},
+    {'1': 'generated_unix', '3': 14, '4': 1, '5': 3, '10': 'generatedUnix'},
+    {
+      '1': 'new_material',
+      '3': 15,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.NewMaterialStatus',
+      '10': 'newMaterial'
+    },
+  ],
+};
+
+/// Descriptor for `AdaptivePlan`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adaptivePlanDescriptor = $convert.base64Decode(
+    'CgxBZGFwdGl2ZVBsYW4SHwoLcmV2aXNpb25faWQYASABKAlSCnJldmlzaW9uSWQSGgoIbGFuZ3'
+    'VhZ2UYAiABKAlSCGxhbmd1YWdlEhsKCXBsYW5fZGF0ZRgDIAEoCVIIcGxhbkRhdGUSGgoIcmV2'
+    'aXNpb24YBCABKAVSCHJldmlzaW9uEiUKDnBvbGljeV92ZXJzaW9uGAUgASgJUg1wb2xpY3lWZX'
+    'JzaW9uEjwKCWdvYWxfbW9kZRgGIAEoDjIfLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5Hb2FsTW9k'
+    'ZVIIZ29hbE1vZGUSJQoOYnVkZ2V0X21pbnV0ZXMYByABKAVSDWJ1ZGdldE1pbnV0ZXMSKwoRZX'
+    'N0aW1hdGVkX21pbnV0ZXMYCCABKAVSEGVzdGltYXRlZE1pbnV0ZXMSNQoFaXRlbXMYCSADKAsy'
+    'Hy5zdHRhdHR1cy5sYW5ndWFnZXMudjEuUGxhbkl0ZW1SBWl0ZW1zEh8KC21pc3NlZF9kYXlzGA'
+    'ogASgFUgptaXNzZWREYXlzEiUKDmRlZmVycmVkX2NvdW50GAsgASgFUg1kZWZlcnJlZENvdW50'
+    'EhoKCHZhY2F0aW9uGAwgASgIUgh2YWNhdGlvbhIjCg1pbnB1dHNfZGlnZXN0GA0gASgJUgxpbn'
+    'B1dHNEaWdlc3QSJQoOZ2VuZXJhdGVkX3VuaXgYDiABKANSDWdlbmVyYXRlZFVuaXgSSwoMbmV3'
+    'X21hdGVyaWFsGA8gASgOMiguc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLk5ld01hdGVyaWFsU3RhdH'
+    'VzUgtuZXdNYXRlcmlhbA==');
+
+@$core.Deprecated('Use getAdaptivePlanRequestDescriptor instead')
+const GetAdaptivePlanRequest$json = {
+  '1': 'GetAdaptivePlanRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {
+      '1': 'utc_offset_minutes',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'utcOffsetMinutes'
+    },
+    {'1': 'regenerate', '3': 3, '4': 1, '5': 8, '10': 'regenerate'},
+  ],
+};
+
+/// Descriptor for `GetAdaptivePlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAdaptivePlanRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRBZGFwdGl2ZVBsYW5SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZRIsCh'
+    'J1dGNfb2Zmc2V0X21pbnV0ZXMYAiABKAVSEHV0Y09mZnNldE1pbnV0ZXMSHgoKcmVnZW5lcmF0'
+    'ZRgDIAEoCFIKcmVnZW5lcmF0ZQ==');
+
+@$core.Deprecated('Use getAdaptivePlanResponseDescriptor instead')
+const GetAdaptivePlanResponse$json = {
+  '1': 'GetAdaptivePlanResponse',
+  '2': [
+    {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.AdaptivePlan',
+      '10': 'plan'
+    },
+  ],
+};
+
+/// Descriptor for `GetAdaptivePlanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAdaptivePlanResponseDescriptor =
+    $convert.base64Decode(
+        'ChdHZXRBZGFwdGl2ZVBsYW5SZXNwb25zZRI3CgRwbGFuGAEgASgLMiMuc3R0YXR0dXMubGFuZ3'
+        'VhZ2VzLnYxLkFkYXB0aXZlUGxhblIEcGxhbg==');
+
+@$core.Deprecated('Use skipPlanItemRequestDescriptor instead')
+const SkipPlanItemRequest$json = {
+  '1': 'SkipPlanItemRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'plan_item_id', '3': 2, '4': 1, '5': 9, '10': 'planItemId'},
+    {'1': 'restore', '3': 3, '4': 1, '5': 8, '10': 'restore'},
+  ],
+};
+
+/// Descriptor for `SkipPlanItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List skipPlanItemRequestDescriptor = $convert.base64Decode(
+    'ChNTa2lwUGxhbkl0ZW1SZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZRIgCgxwbG'
+    'FuX2l0ZW1faWQYAiABKAlSCnBsYW5JdGVtSWQSGAoHcmVzdG9yZRgDIAEoCFIHcmVzdG9yZQ==');
+
+@$core.Deprecated('Use skipPlanItemResponseDescriptor instead')
+const SkipPlanItemResponse$json = {
+  '1': 'SkipPlanItemResponse',
+  '2': [
+    {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.AdaptivePlan',
+      '10': 'plan'
+    },
+  ],
+};
+
+/// Descriptor for `SkipPlanItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List skipPlanItemResponseDescriptor = $convert.base64Decode(
+    'ChRTa2lwUGxhbkl0ZW1SZXNwb25zZRI3CgRwbGFuGAEgASgLMiMuc3R0YXR0dXMubGFuZ3VhZ2'
+    'VzLnYxLkFkYXB0aXZlUGxhblIEcGxhbg==');
+
+@$core.Deprecated('Use skillEstimateDescriptor instead')
+const SkillEstimate$json = {
+  '1': 'SkillEstimate',
+  '2': [
+    {
+      '1': 'skill',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.MasterySkill',
+      '10': 'skill'
+    },
+    {'1': 'estimate', '3': 2, '4': 1, '5': 5, '10': 'estimate'},
+    {'1': 'low', '3': 3, '4': 1, '5': 5, '10': 'low'},
+    {'1': 'high', '3': 4, '4': 1, '5': 5, '10': 'high'},
+    {'1': 'evidence_count', '3': 5, '4': 1, '5': 5, '10': 'evidenceCount'},
+    {'1': 'nodes_observed', '3': 6, '4': 1, '5': 5, '10': 'nodesObserved'},
+    {'1': 'nodes_open', '3': 7, '4': 1, '5': 5, '10': 'nodesOpen'},
+  ],
+};
+
+/// Descriptor for `SkillEstimate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List skillEstimateDescriptor = $convert.base64Decode(
+    'Cg1Ta2lsbEVzdGltYXRlEjkKBXNraWxsGAEgASgOMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLk'
+    '1hc3RlcnlTa2lsbFIFc2tpbGwSGgoIZXN0aW1hdGUYAiABKAVSCGVzdGltYXRlEhAKA2xvdxgD'
+    'IAEoBVIDbG93EhIKBGhpZ2gYBCABKAVSBGhpZ2gSJQoOZXZpZGVuY2VfY291bnQYBSABKAVSDW'
+    'V2aWRlbmNlQ291bnQSJQoObm9kZXNfb2JzZXJ2ZWQYBiABKAVSDW5vZGVzT2JzZXJ2ZWQSHQoK'
+    'bm9kZXNfb3BlbhgHIAEoBVIJbm9kZXNPcGVu');
+
+@$core.Deprecated('Use levelProgressDescriptor instead')
+const LevelProgress$json = {
+  '1': 'LevelProgress',
+  '2': [
+    {'1': 'cefr_level', '3': 1, '4': 1, '5': 9, '10': 'cefrLevel'},
+    {'1': 'nodes_open', '3': 2, '4': 1, '5': 5, '10': 'nodesOpen'},
+    {'1': 'nodes_seen', '3': 3, '4': 1, '5': 5, '10': 'nodesSeen'},
+    {'1': 'nodes_strong', '3': 4, '4': 1, '5': 5, '10': 'nodesStrong'},
+  ],
+};
+
+/// Descriptor for `LevelProgress`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List levelProgressDescriptor = $convert.base64Decode(
+    'Cg1MZXZlbFByb2dyZXNzEh0KCmNlZnJfbGV2ZWwYASABKAlSCWNlZnJMZXZlbBIdCgpub2Rlc1'
+    '9vcGVuGAIgASgFUglub2Rlc09wZW4SHQoKbm9kZXNfc2VlbhgDIAEoBVIJbm9kZXNTZWVuEiEK'
+    'DG5vZGVzX3N0cm9uZxgEIAEoBVILbm9kZXNTdHJvbmc=');
+
+@$core.Deprecated('Use nodeEstimateDescriptor instead')
+const NodeEstimate$json = {
+  '1': 'NodeEstimate',
+  '2': [
+    {'1': 'node_kind', '3': 1, '4': 1, '5': 9, '10': 'nodeKind'},
+    {'1': 'node_id', '3': 2, '4': 1, '5': 9, '10': 'nodeId'},
+    {'1': 'label', '3': 3, '4': 1, '5': 9, '10': 'label'},
+    {
+      '1': 'skill',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.MasterySkill',
+      '10': 'skill'
+    },
+    {'1': 'estimate', '3': 5, '4': 1, '5': 5, '10': 'estimate'},
+    {'1': 'low', '3': 6, '4': 1, '5': 5, '10': 'low'},
+    {'1': 'high', '3': 7, '4': 1, '5': 5, '10': 'high'},
+    {'1': 'evidence_count', '3': 8, '4': 1, '5': 5, '10': 'evidenceCount'},
+    {'1': 'half_life_days', '3': 9, '4': 1, '5': 1, '10': 'halfLifeDays'},
+    {
+      '1': 'last_observed_unix',
+      '3': 10,
+      '4': 1,
+      '5': 3,
+      '10': 'lastObservedUnix'
+    },
+    {'1': 'recall_now', '3': 11, '4': 1, '5': 5, '10': 'recallNow'},
+  ],
+};
+
+/// Descriptor for `NodeEstimate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nodeEstimateDescriptor = $convert.base64Decode(
+    'CgxOb2RlRXN0aW1hdGUSGwoJbm9kZV9raW5kGAEgASgJUghub2RlS2luZBIXCgdub2RlX2lkGA'
+    'IgASgJUgZub2RlSWQSFAoFbGFiZWwYAyABKAlSBWxhYmVsEjkKBXNraWxsGAQgASgOMiMuc3R0'
+    'YXR0dXMubGFuZ3VhZ2VzLnYxLk1hc3RlcnlTa2lsbFIFc2tpbGwSGgoIZXN0aW1hdGUYBSABKA'
+    'VSCGVzdGltYXRlEhAKA2xvdxgGIAEoBVIDbG93EhIKBGhpZ2gYByABKAVSBGhpZ2gSJQoOZXZp'
+    'ZGVuY2VfY291bnQYCCABKAVSDWV2aWRlbmNlQ291bnQSJAoOaGFsZl9saWZlX2RheXMYCSABKA'
+    'FSDGhhbGZMaWZlRGF5cxIsChJsYXN0X29ic2VydmVkX3VuaXgYCiABKANSEGxhc3RPYnNlcnZl'
+    'ZFVuaXgSHQoKcmVjYWxsX25vdxgLIAEoBVIJcmVjYWxsTm93');
+
+@$core.Deprecated('Use confusionPairDescriptor instead')
+const ConfusionPair$json = {
+  '1': 'ConfusionPair',
+  '2': [
+    {'1': 'a_label', '3': 1, '4': 1, '5': 9, '10': 'aLabel'},
+    {'1': 'b_label', '3': 2, '4': 1, '5': 9, '10': 'bLabel'},
+    {'1': 'count', '3': 3, '4': 1, '5': 5, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `ConfusionPair`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List confusionPairDescriptor = $convert.base64Decode(
+    'Cg1Db25mdXNpb25QYWlyEhcKB2FfbGFiZWwYASABKAlSBmFMYWJlbBIXCgdiX2xhYmVsGAIgAS'
+    'gJUgZiTGFiZWwSFAoFY291bnQYAyABKAVSBWNvdW50');
+
+@$core.Deprecated('Use getMasteryMapRequestDescriptor instead')
+const GetMasteryMapRequest$json = {
+  '1': 'GetMasteryMapRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+  ],
+};
+
+/// Descriptor for `GetMasteryMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMasteryMapRequestDescriptor =
+    $convert.base64Decode(
+        'ChRHZXRNYXN0ZXJ5TWFwUmVxdWVzdBIaCghsYW5ndWFnZRgBIAEoCVIIbGFuZ3VhZ2U=');
+
+@$core.Deprecated('Use getMasteryMapResponseDescriptor instead')
+const GetMasteryMapResponse$json = {
+  '1': 'GetMasteryMapResponse',
+  '2': [
+    {
+      '1': 'skills',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.SkillEstimate',
+      '10': 'skills'
+    },
+    {
+      '1': 'levels',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.LevelProgress',
+      '10': 'levels'
+    },
+    {
+      '1': 'weakest',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.NodeEstimate',
+      '10': 'weakest'
+    },
+    {
+      '1': 'confusions',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ConfusionPair',
+      '10': 'confusions'
+    },
+    {
+      '1': 'placement',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PlacementResult',
+      '10': 'placement'
+    },
+    {'1': 'evidence_total', '3': 6, '4': 1, '5': 5, '10': 'evidenceTotal'},
+    {'1': 'policy_version', '3': 7, '4': 1, '5': 9, '10': 'policyVersion'},
+  ],
+};
+
+/// Descriptor for `GetMasteryMapResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMasteryMapResponseDescriptor = $convert.base64Decode(
+    'ChVHZXRNYXN0ZXJ5TWFwUmVzcG9uc2USPAoGc2tpbGxzGAEgAygLMiQuc3R0YXR0dXMubGFuZ3'
+    'VhZ2VzLnYxLlNraWxsRXN0aW1hdGVSBnNraWxscxI8CgZsZXZlbHMYAiADKAsyJC5zdHRhdHR1'
+    'cy5sYW5ndWFnZXMudjEuTGV2ZWxQcm9ncmVzc1IGbGV2ZWxzEj0KB3dlYWtlc3QYAyADKAsyIy'
+    '5zdHRhdHR1cy5sYW5ndWFnZXMudjEuTm9kZUVzdGltYXRlUgd3ZWFrZXN0EkQKCmNvbmZ1c2lv'
+    'bnMYBCADKAsyJC5zdHRhdHR1cy5sYW5ndWFnZXMudjEuQ29uZnVzaW9uUGFpclIKY29uZnVzaW'
+    '9ucxJECglwbGFjZW1lbnQYBSADKAsyJi5zdHRhdHR1cy5sYW5ndWFnZXMudjEuUGxhY2VtZW50'
+    'UmVzdWx0UglwbGFjZW1lbnQSJQoOZXZpZGVuY2VfdG90YWwYBiABKAVSDWV2aWRlbmNlVG90YW'
+    'wSJQoOcG9saWN5X3ZlcnNpb24YByABKAlSDXBvbGljeVZlcnNpb24=');
+
+@$core.Deprecated('Use evidenceEntryDescriptor instead')
+const EvidenceEntry$json = {
+  '1': 'EvidenceEntry',
+  '2': [
+    {
+      '1': 'skill',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.MasterySkill',
+      '10': 'skill'
+    },
+    {'1': 'credit', '3': 2, '4': 1, '5': 5, '10': 'credit'},
+    {'1': 'source', '3': 3, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'trust', '3': 4, '4': 1, '5': 9, '10': 'trust'},
+    {'1': 'hint_used', '3': 5, '4': 1, '5': 8, '10': 'hintUsed'},
+    {'1': 'exercise', '3': 6, '4': 1, '5': 9, '10': 'exercise'},
+    {'1': 'observed_unix', '3': 7, '4': 1, '5': 3, '10': 'observedUnix'},
+  ],
+};
+
+/// Descriptor for `EvidenceEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceEntryDescriptor = $convert.base64Decode(
+    'Cg1FdmlkZW5jZUVudHJ5EjkKBXNraWxsGAEgASgOMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLk'
+    '1hc3RlcnlTa2lsbFIFc2tpbGwSFgoGY3JlZGl0GAIgASgFUgZjcmVkaXQSFgoGc291cmNlGAMg'
+    'ASgJUgZzb3VyY2USFAoFdHJ1c3QYBCABKAlSBXRydXN0EhsKCWhpbnRfdXNlZBgFIAEoCFIIaG'
+    'ludFVzZWQSGgoIZXhlcmNpc2UYBiABKAlSCGV4ZXJjaXNlEiMKDW9ic2VydmVkX3VuaXgYByAB'
+    'KANSDG9ic2VydmVkVW5peA==');
+
+@$core.Deprecated('Use getNodeEvidenceRequestDescriptor instead')
+const GetNodeEvidenceRequest$json = {
+  '1': 'GetNodeEvidenceRequest',
+  '2': [
+    {'1': 'language', '3': 1, '4': 1, '5': 9, '10': 'language'},
+    {'1': 'node_kind', '3': 2, '4': 1, '5': 9, '10': 'nodeKind'},
+    {'1': 'node_id', '3': 3, '4': 1, '5': 9, '10': 'nodeId'},
+  ],
+};
+
+/// Descriptor for `GetNodeEvidenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getNodeEvidenceRequestDescriptor = $convert.base64Decode(
+    'ChZHZXROb2RlRXZpZGVuY2VSZXF1ZXN0EhoKCGxhbmd1YWdlGAEgASgJUghsYW5ndWFnZRIbCg'
+    'lub2RlX2tpbmQYAiABKAlSCG5vZGVLaW5kEhcKB25vZGVfaWQYAyABKAlSBm5vZGVJZA==');
+
+@$core.Deprecated('Use getNodeEvidenceResponseDescriptor instead')
+const GetNodeEvidenceResponse$json = {
+  '1': 'GetNodeEvidenceResponse',
+  '2': [
+    {
+      '1': 'estimates',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.NodeEstimate',
+      '10': 'estimates'
+    },
+    {
+      '1': 'evidence',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.EvidenceEntry',
+      '10': 'evidence'
+    },
+  ],
+};
+
+/// Descriptor for `GetNodeEvidenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getNodeEvidenceResponseDescriptor = $convert.base64Decode(
+    'ChdHZXROb2RlRXZpZGVuY2VSZXNwb25zZRJBCgllc3RpbWF0ZXMYASADKAsyIy5zdHRhdHR1cy'
+    '5sYW5ndWFnZXMudjEuTm9kZUVzdGltYXRlUgllc3RpbWF0ZXMSQAoIZXZpZGVuY2UYAiADKAsy'
+    'JC5zdHRhdHR1cy5sYW5ndWFnZXMudjEuRXZpZGVuY2VFbnRyeVIIZXZpZGVuY2U=');
+
+@$core.Deprecated('Use dismissWritingFlagRequestDescriptor instead')
+const DismissWritingFlagRequest$json = {
+  '1': 'DismissWritingFlagRequest',
+  '2': [
+    {'1': 'submission_id', '3': 1, '4': 1, '5': 9, '10': 'submissionId'},
+    {'1': 'error_index', '3': 2, '4': 1, '5': 5, '10': 'errorIndex'},
+    {'1': 'dismiss', '3': 3, '4': 1, '5': 8, '10': 'dismiss'},
+  ],
+};
+
+/// Descriptor for `DismissWritingFlagRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dismissWritingFlagRequestDescriptor = $convert.base64Decode(
+    'ChlEaXNtaXNzV3JpdGluZ0ZsYWdSZXF1ZXN0EiMKDXN1Ym1pc3Npb25faWQYASABKAlSDHN1Ym'
+    '1pc3Npb25JZBIfCgtlcnJvcl9pbmRleBgCIAEoBVIKZXJyb3JJbmRleBIYCgdkaXNtaXNzGAMg'
+    'ASgIUgdkaXNtaXNz');
+
+@$core.Deprecated('Use dismissWritingFlagResponseDescriptor instead')
+const DismissWritingFlagResponse$json = {
+  '1': 'DismissWritingFlagResponse',
+  '2': [
+    {
+      '1': 'submission',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.WritingSubmission',
+      '10': 'submission'
+    },
+  ],
+};
+
+/// Descriptor for `DismissWritingFlagResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dismissWritingFlagResponseDescriptor =
+    $convert.base64Decode(
+        'ChpEaXNtaXNzV3JpdGluZ0ZsYWdSZXNwb25zZRJICgpzdWJtaXNzaW9uGAEgASgLMiguc3R0YX'
+        'R0dXMubGFuZ3VhZ2VzLnYxLldyaXRpbmdTdWJtaXNzaW9uUgpzdWJtaXNzaW9u');
