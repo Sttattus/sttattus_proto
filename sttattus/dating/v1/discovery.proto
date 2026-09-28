@@ -41,7 +41,8 @@ message PoolCoverage {
   int32 resting = 3;
   // When the first resting person may return (unix seconds); 0 when none.
   int64 next_return_at = 4;
-  // Left out by one filter each (a person can be counted under several).
+  // Left out by that filter alone: they pass every other filter, so widening
+  // it would add exactly them. Nobody is counted under two.
   int32 outside_distance = 5;
   int32 outside_ages = 6;
   int32 outside_show_me = 7;

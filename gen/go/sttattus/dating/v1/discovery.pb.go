@@ -95,7 +95,8 @@ type PoolCoverage struct {
 	Resting int32 `protobuf:"varint,3,opt,name=resting,proto3" json:"resting,omitempty"`
 	// When the first resting person may return (unix seconds); 0 when none.
 	NextReturnAt int64 `protobuf:"varint,4,opt,name=next_return_at,json=nextReturnAt,proto3" json:"next_return_at,omitempty"`
-	// Left out by one filter each (a person can be counted under several).
+	// Left out by that filter alone: they pass every other filter, so widening
+	// it would add exactly them. Nobody is counted under two.
 	OutsideDistance int32 `protobuf:"varint,5,opt,name=outside_distance,json=outsideDistance,proto3" json:"outside_distance,omitempty"`
 	OutsideAges     int32 `protobuf:"varint,6,opt,name=outside_ages,json=outsideAges,proto3" json:"outside_ages,omitempty"`
 	OutsideShowMe   int32 `protobuf:"varint,7,opt,name=outside_show_me,json=outsideShowMe,proto3" json:"outside_show_me,omitempty"`

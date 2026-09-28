@@ -96,7 +96,8 @@ export class PoolCoverage extends Message<PoolCoverage> {
   nextReturnAt = protoInt64.zero;
 
   /**
-   * Left out by one filter each (a person can be counted under several).
+   * Left out by that filter alone: they pass every other filter, so widening
+   * it would add exactly them. Nobody is counted under two.
    *
    * @generated from field: int32 outside_distance = 5;
    */

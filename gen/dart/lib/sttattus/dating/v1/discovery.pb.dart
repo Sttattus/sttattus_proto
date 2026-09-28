@@ -229,7 +229,8 @@ class PoolCoverage extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearNextReturnAt() => $_clearField(4);
 
-  /// Left out by one filter each (a person can be counted under several).
+  /// Left out by that filter alone: they pass every other filter, so widening
+  /// it would add exactly them. Nobody is counted under two.
   @$pb.TagNumber(5)
   $core.int get outsideDistance => $_getIZ(4);
   @$pb.TagNumber(5)
