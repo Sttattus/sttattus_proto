@@ -1567,6 +1567,65 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Choice 13 — explicit rare-content marking, short-lived custody manifests,
+  /// allegation response and independent appeal. Staff review remains in Admin.
+  $grpc.ResponseFuture<$0.GetForensicProtectionDashboardResponse>
+      getForensicProtectionDashboard(
+    $0.GetForensicProtectionDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getForensicProtectionDashboard, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.IssueForensicManifestResponse> issueForensicManifest(
+    $0.IssueForensicManifestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$issueForensicManifest, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeForensicManifestResponse>
+      revokeForensicManifest(
+    $0.RevokeForensicManifestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeForensicManifest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RespondForensicCaseResponse> respondForensicCase(
+    $0.RespondForensicCaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$respondForensicCase, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FileForensicAppealResponse> fileForensicAppeal(
+    $0.FileForensicAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$fileForensicAppeal, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PostForensicAppealMessageResponse>
+      postForensicAppealMessage(
+    $0.PostForensicAppealMessageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$postForensicAppealMessage, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.WithdrawForensicAppealResponse>
+      withdrawForensicAppeal(
+    $0.WithdrawForensicAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$withdrawForensicAppeal, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2612,6 +2671,43 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ContestLivingArchiveRelease',
       ($0.ContestLivingArchiveReleaseRequest value) => value.writeToBuffer(),
       $0.ContestLivingArchiveReleaseResponse.fromBuffer);
+  static final _$getForensicProtectionDashboard = $grpc.ClientMethod<
+          $0.GetForensicProtectionDashboardRequest,
+          $0.GetForensicProtectionDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetForensicProtectionDashboard',
+      ($0.GetForensicProtectionDashboardRequest value) => value.writeToBuffer(),
+      $0.GetForensicProtectionDashboardResponse.fromBuffer);
+  static final _$issueForensicManifest = $grpc.ClientMethod<
+          $0.IssueForensicManifestRequest, $0.IssueForensicManifestResponse>(
+      '/sttattus.onyx.v1.OnyxService/IssueForensicManifest',
+      ($0.IssueForensicManifestRequest value) => value.writeToBuffer(),
+      $0.IssueForensicManifestResponse.fromBuffer);
+  static final _$revokeForensicManifest = $grpc.ClientMethod<
+          $0.RevokeForensicManifestRequest, $0.RevokeForensicManifestResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeForensicManifest',
+      ($0.RevokeForensicManifestRequest value) => value.writeToBuffer(),
+      $0.RevokeForensicManifestResponse.fromBuffer);
+  static final _$respondForensicCase = $grpc.ClientMethod<
+          $0.RespondForensicCaseRequest, $0.RespondForensicCaseResponse>(
+      '/sttattus.onyx.v1.OnyxService/RespondForensicCase',
+      ($0.RespondForensicCaseRequest value) => value.writeToBuffer(),
+      $0.RespondForensicCaseResponse.fromBuffer);
+  static final _$fileForensicAppeal = $grpc.ClientMethod<
+          $0.FileForensicAppealRequest, $0.FileForensicAppealResponse>(
+      '/sttattus.onyx.v1.OnyxService/FileForensicAppeal',
+      ($0.FileForensicAppealRequest value) => value.writeToBuffer(),
+      $0.FileForensicAppealResponse.fromBuffer);
+  static final _$postForensicAppealMessage = $grpc.ClientMethod<
+          $0.PostForensicAppealMessageRequest,
+          $0.PostForensicAppealMessageResponse>(
+      '/sttattus.onyx.v1.OnyxService/PostForensicAppealMessage',
+      ($0.PostForensicAppealMessageRequest value) => value.writeToBuffer(),
+      $0.PostForensicAppealMessageResponse.fromBuffer);
+  static final _$withdrawForensicAppeal = $grpc.ClientMethod<
+          $0.WithdrawForensicAppealRequest, $0.WithdrawForensicAppealResponse>(
+      '/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal',
+      ($0.WithdrawForensicAppealRequest value) => value.writeToBuffer(),
+      $0.WithdrawForensicAppealResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -4376,6 +4472,70 @@ abstract class OnyxServiceBase extends $grpc.Service {
             $0.ContestLivingArchiveReleaseRequest.fromBuffer(value),
         ($0.ContestLivingArchiveReleaseResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetForensicProtectionDashboardRequest,
+            $0.GetForensicProtectionDashboardResponse>(
+        'GetForensicProtectionDashboard',
+        getForensicProtectionDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetForensicProtectionDashboardRequest.fromBuffer(value),
+        ($0.GetForensicProtectionDashboardResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IssueForensicManifestRequest,
+            $0.IssueForensicManifestResponse>(
+        'IssueForensicManifest',
+        issueForensicManifest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.IssueForensicManifestRequest.fromBuffer(value),
+        ($0.IssueForensicManifestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeForensicManifestRequest,
+            $0.RevokeForensicManifestResponse>(
+        'RevokeForensicManifest',
+        revokeForensicManifest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeForensicManifestRequest.fromBuffer(value),
+        ($0.RevokeForensicManifestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RespondForensicCaseRequest,
+            $0.RespondForensicCaseResponse>(
+        'RespondForensicCase',
+        respondForensicCase_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RespondForensicCaseRequest.fromBuffer(value),
+        ($0.RespondForensicCaseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FileForensicAppealRequest,
+            $0.FileForensicAppealResponse>(
+        'FileForensicAppeal',
+        fileForensicAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FileForensicAppealRequest.fromBuffer(value),
+        ($0.FileForensicAppealResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PostForensicAppealMessageRequest,
+            $0.PostForensicAppealMessageResponse>(
+        'PostForensicAppealMessage',
+        postForensicAppealMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PostForensicAppealMessageRequest.fromBuffer(value),
+        ($0.PostForensicAppealMessageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.WithdrawForensicAppealRequest,
+            $0.WithdrawForensicAppealResponse>(
+        'WithdrawForensicAppeal',
+        withdrawForensicAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.WithdrawForensicAppealRequest.fromBuffer(value),
+        ($0.WithdrawForensicAppealResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -6185,4 +6345,70 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.ContestLivingArchiveReleaseResponse>
       contestLivingArchiveRelease($grpc.ServiceCall call,
           $0.ContestLivingArchiveReleaseRequest request);
+
+  $async.Future<$0.GetForensicProtectionDashboardResponse>
+      getForensicProtectionDashboard_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetForensicProtectionDashboardRequest>
+              $request) async {
+    return getForensicProtectionDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetForensicProtectionDashboardResponse>
+      getForensicProtectionDashboard($grpc.ServiceCall call,
+          $0.GetForensicProtectionDashboardRequest request);
+
+  $async.Future<$0.IssueForensicManifestResponse> issueForensicManifest_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.IssueForensicManifestRequest> $request) async {
+    return issueForensicManifest($call, await $request);
+  }
+
+  $async.Future<$0.IssueForensicManifestResponse> issueForensicManifest(
+      $grpc.ServiceCall call, $0.IssueForensicManifestRequest request);
+
+  $async.Future<$0.RevokeForensicManifestResponse> revokeForensicManifest_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeForensicManifestRequest> $request) async {
+    return revokeForensicManifest($call, await $request);
+  }
+
+  $async.Future<$0.RevokeForensicManifestResponse> revokeForensicManifest(
+      $grpc.ServiceCall call, $0.RevokeForensicManifestRequest request);
+
+  $async.Future<$0.RespondForensicCaseResponse> respondForensicCase_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RespondForensicCaseRequest> $request) async {
+    return respondForensicCase($call, await $request);
+  }
+
+  $async.Future<$0.RespondForensicCaseResponse> respondForensicCase(
+      $grpc.ServiceCall call, $0.RespondForensicCaseRequest request);
+
+  $async.Future<$0.FileForensicAppealResponse> fileForensicAppeal_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.FileForensicAppealRequest> $request) async {
+    return fileForensicAppeal($call, await $request);
+  }
+
+  $async.Future<$0.FileForensicAppealResponse> fileForensicAppeal(
+      $grpc.ServiceCall call, $0.FileForensicAppealRequest request);
+
+  $async.Future<$0.PostForensicAppealMessageResponse>
+      postForensicAppealMessage_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.PostForensicAppealMessageRequest> $request) async {
+    return postForensicAppealMessage($call, await $request);
+  }
+
+  $async.Future<$0.PostForensicAppealMessageResponse> postForensicAppealMessage(
+      $grpc.ServiceCall call, $0.PostForensicAppealMessageRequest request);
+
+  $async.Future<$0.WithdrawForensicAppealResponse> withdrawForensicAppeal_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.WithdrawForensicAppealRequest> $request) async {
+    return withdrawForensicAppeal($call, await $request);
+  }
+
+  $async.Future<$0.WithdrawForensicAppealResponse> withdrawForensicAppeal(
+      $grpc.ServiceCall call, $0.WithdrawForensicAppealRequest request);
 }

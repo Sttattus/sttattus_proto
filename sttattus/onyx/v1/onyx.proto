@@ -91,6 +91,11 @@ message OnyxContent {
   OnyxEditionAvailability edition_availability = 38;
   repeated OnyxContentEdition available_editions = 39;
   bool is_stale_translation = 40;
+
+  // Choice 13 — explicit staff policy protects this revision. The body/media
+  // is never returned unmarked when protection is active.
+  bool forensic_protected = 41;
+  int64 forensic_policy_version = 42;
 }
 
 // OnyxContentEdition represents an available language/locale edition summary for a piece of content.
@@ -187,10 +192,13 @@ message SubscribeResponse {
 
 message GetContentRequest {
   string id = 1;
+  // Required when the current revision is explicitly forensic-protected.
+  string forensic_manifest_id = 2;
 }
 
 message GetContentResponse {
   OnyxContent content = 1;
+  OnyxForensicManifest forensic_manifest = 2;
 }
 
 message ListShelfRequest {
@@ -1401,9 +1409,14 @@ message ShareLink {
   string watermark = 4; // the sharer's name, stamped on the shared view
   google.protobuf.Timestamp expires_at = 5;
   bool revoked = 6;
+  bool forensic_protected = 7;
+  string forensic_mark = 8;
 }
 message CreateShareLinkRequest {
   string content_id = 1;
+  // Required when this revision has an active forensic policy. The manifest
+  // must be a fresh, device-bound, one-use `share` grant.
+  string forensic_manifest_id = 2;
 }
 message CreateShareLinkResponse {
   ShareLink link = 1;
@@ -1448,6 +1461,8 @@ message EncryptedRendition {
   int64 source_version = 14;
   OfflinePackageType package_type = 15;
   string key_wrap_algorithm = 16; // RSA-OAEP-SHA-256-MGF1-SHA-1
+  // Present only for explicitly protected, device-bound delivery.
+  OnyxForensicManifest forensic_manifest = 17;
 }
 
 message GetOfflineManifestRequest {
@@ -3785,6 +3800,185 @@ message ContestLivingArchiveReleaseResponse {
   OnyxLivingArchiveReleaseCase release_case = 1;
 }
 
+// === Choice 13 — forensic protection with member due process ===
+
+message OnyxForensicRuntime {
+  string status = 1; // active | paused | disabled
+  bool issuance_enabled = 2;
+  int32 manifest_ttl_seconds = 3;
+  int32 appeal_window_days = 4;
+  int64 signing_version = 5;
+  string public_notice = 6;
+  int32 simulation_sla_seconds = 7;
+}
+
+message OnyxForensicContentProtection {
+  string policy_id = 1;
+  string content_id = 2;
+  string content_title = 3;
+  string revision_id = 4;
+  string status = 5; // draft | active | paused | retired
+  string mark_mode = 6; // visible_overlay | signed_manifest | combined
+  repeated string allowed_actions = 7; // read | stream | download | share
+  int64 version = 8;
+  google.protobuf.Timestamp activated_at = 9;
+  string content_kind = 10; // article | audio | video
+}
+
+message OnyxForensicManifest {
+  string id = 1;
+  string content_id = 2;
+  string content_title = 3;
+  string revision_id = 4;
+  string device_id = 5;
+  string action = 6;
+  string mark_code = 7; // random pseudonym; never an account identifier
+  string visible_watermark = 8;
+  string manifest_checksum = 9;
+  string signature = 10;
+  string status = 11; // active | used | revoked | expired | stale
+  int64 policy_version = 12;
+  int64 version = 13;
+  google.protobuf.Timestamp issued_at = 14;
+  google.protobuf.Timestamp expires_at = 15;
+  google.protobuf.Timestamp first_used_at = 16;
+  google.protobuf.Timestamp revoked_at = 17;
+  string signature_key_ref = 18;
+  string signature_algorithm = 19;
+  int64 signing_version = 20;
+}
+
+message OnyxForensicCustodyEvent {
+  string id = 1;
+  string action = 2;
+  string actor_kind = 3; // member | staff | system | simulator
+  string summary = 4;
+  string evidence_digest = 5;
+  string previous_hash = 6;
+  string event_hash = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message OnyxForensicAppealMessage {
+  string id = 1;
+  string author_kind = 2; // member | staff
+  string body = 3;
+  string evidence_digest = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message OnyxForensicAppeal {
+  string id = 1;
+  string case_id = 2;
+  string status = 3; // submitted | info_requested | upheld | overturned | withdrawn
+  string reason = 4;
+  string decision_summary = 5;
+  int64 version = 6;
+  repeated OnyxForensicAppealMessage messages = 7;
+  google.protobuf.Timestamp filed_at = 8;
+  google.protobuf.Timestamp decided_at = 9;
+}
+
+message OnyxForensicCase {
+  string id = 1;
+  string case_code = 2;
+  string content_id = 3;
+  string content_title = 4;
+  string manifest_id = 5;
+  string status = 6; // investigating | pending_review | dismissed | inconclusive | confirmed | appealed | overturned | upheld
+  string allegation_summary = 7;
+  string member_response = 8;
+  string confidence_label = 9; // unverified | weak | moderate | strong
+  string restriction_scope = 10; // none | protected_share_download
+  bool restriction_active = 11;
+  bool synthetic = 12;
+  int64 version = 13;
+  google.protobuf.Timestamp opened_at = 14;
+  google.protobuf.Timestamp response_due_at = 15;
+  google.protobuf.Timestamp decided_at = 16;
+  repeated OnyxForensicCustodyEvent custody = 17;
+  OnyxForensicAppeal appeal = 18;
+  bool legal_hold = 19;
+  string legal_hold_reason = 20;
+}
+
+message GetForensicProtectionDashboardRequest {
+  bool include_history = 1;
+}
+message GetForensicProtectionDashboardResponse {
+  OnyxForensicRuntime runtime = 1;
+  repeated OnyxForensicContentProtection protected_content = 2;
+  repeated OnyxForensicManifest manifests = 3;
+  repeated OnyxForensicCase cases = 4;
+}
+
+message IssueForensicManifestRequest {
+  string content_id = 1;
+  string device_id = 2;
+  string action = 3; // read | stream | download | share
+  string client_mutation_id = 4;
+}
+message IssueForensicManifestResponse {
+  OnyxForensicManifest manifest = 1;
+  // Populated for a one-use `download` grant. The package remains encrypted
+  // to the registered device and is bound to the manifest in the database.
+  repeated EncryptedRendition encrypted_renditions = 2;
+  OnyxContent content = 3;
+}
+
+message RevokeForensicManifestRequest {
+  string manifest_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message RevokeForensicManifestResponse {
+  OnyxForensicManifest manifest = 1;
+}
+
+message RespondForensicCaseRequest {
+  string case_id = 1;
+  int64 expected_version = 2;
+  string response = 3;
+  string evidence_digest = 4;
+  string client_mutation_id = 5;
+}
+message RespondForensicCaseResponse {
+  OnyxForensicCase forensic_case = 1;
+}
+
+message FileForensicAppealRequest {
+  string case_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string evidence_digest = 4;
+  string client_mutation_id = 5;
+}
+message FileForensicAppealResponse {
+  OnyxForensicCase forensic_case = 1;
+}
+
+message PostForensicAppealMessageRequest {
+  string appeal_id = 1;
+  int64 expected_version = 2;
+  string body = 3;
+  string evidence_digest = 4;
+  string client_mutation_id = 5;
+}
+message PostForensicAppealMessageResponse {
+  OnyxForensicCase forensic_case = 1;
+}
+
+message WithdrawForensicAppealRequest {
+  string appeal_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message WithdrawForensicAppealResponse {
+  OnyxForensicCase forensic_case = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -4036,4 +4230,14 @@ service OnyxService {
   rpc RevokeLivingArchivePolicy(RevokeLivingArchivePolicyRequest) returns (RevokeLivingArchivePolicyResponse);
   rpc ConfirmLivingArchiveReview(ConfirmLivingArchiveReviewRequest) returns (ConfirmLivingArchiveReviewResponse);
   rpc ContestLivingArchiveRelease(ContestLivingArchiveReleaseRequest) returns (ContestLivingArchiveReleaseResponse);
+
+  // Choice 13 — explicit rare-content marking, short-lived custody manifests,
+  // allegation response and independent appeal. Staff review remains in Admin.
+  rpc GetForensicProtectionDashboard(GetForensicProtectionDashboardRequest) returns (GetForensicProtectionDashboardResponse);
+  rpc IssueForensicManifest(IssueForensicManifestRequest) returns (IssueForensicManifestResponse);
+  rpc RevokeForensicManifest(RevokeForensicManifestRequest) returns (RevokeForensicManifestResponse);
+  rpc RespondForensicCase(RespondForensicCaseRequest) returns (RespondForensicCaseResponse);
+  rpc FileForensicAppeal(FileForensicAppealRequest) returns (FileForensicAppealResponse);
+  rpc PostForensicAppealMessage(PostForensicAppealMessageRequest) returns (PostForensicAppealMessageResponse);
+  rpc WithdrawForensicAppeal(WithdrawForensicAppealRequest) returns (WithdrawForensicAppealResponse);
 }

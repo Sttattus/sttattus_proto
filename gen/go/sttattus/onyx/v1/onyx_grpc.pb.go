@@ -211,6 +211,13 @@ const (
 	OnyxService_RevokeLivingArchivePolicy_FullMethodName            = "/sttattus.onyx.v1.OnyxService/RevokeLivingArchivePolicy"
 	OnyxService_ConfirmLivingArchiveReview_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ConfirmLivingArchiveReview"
 	OnyxService_ContestLivingArchiveRelease_FullMethodName          = "/sttattus.onyx.v1.OnyxService/ContestLivingArchiveRelease"
+	OnyxService_GetForensicProtectionDashboard_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetForensicProtectionDashboard"
+	OnyxService_IssueForensicManifest_FullMethodName                = "/sttattus.onyx.v1.OnyxService/IssueForensicManifest"
+	OnyxService_RevokeForensicManifest_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RevokeForensicManifest"
+	OnyxService_RespondForensicCase_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/RespondForensicCase"
+	OnyxService_FileForensicAppeal_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/FileForensicAppeal"
+	OnyxService_PostForensicAppealMessage_FullMethodName            = "/sttattus.onyx.v1.OnyxService/PostForensicAppealMessage"
+	OnyxService_WithdrawForensicAppeal_FullMethodName               = "/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -442,6 +449,15 @@ type OnyxServiceClient interface {
 	RevokeLivingArchivePolicy(ctx context.Context, in *RevokeLivingArchivePolicyRequest, opts ...grpc.CallOption) (*RevokeLivingArchivePolicyResponse, error)
 	ConfirmLivingArchiveReview(ctx context.Context, in *ConfirmLivingArchiveReviewRequest, opts ...grpc.CallOption) (*ConfirmLivingArchiveReviewResponse, error)
 	ContestLivingArchiveRelease(ctx context.Context, in *ContestLivingArchiveReleaseRequest, opts ...grpc.CallOption) (*ContestLivingArchiveReleaseResponse, error)
+	// Choice 13 — explicit rare-content marking, short-lived custody manifests,
+	// allegation response and independent appeal. Staff review remains in Admin.
+	GetForensicProtectionDashboard(ctx context.Context, in *GetForensicProtectionDashboardRequest, opts ...grpc.CallOption) (*GetForensicProtectionDashboardResponse, error)
+	IssueForensicManifest(ctx context.Context, in *IssueForensicManifestRequest, opts ...grpc.CallOption) (*IssueForensicManifestResponse, error)
+	RevokeForensicManifest(ctx context.Context, in *RevokeForensicManifestRequest, opts ...grpc.CallOption) (*RevokeForensicManifestResponse, error)
+	RespondForensicCase(ctx context.Context, in *RespondForensicCaseRequest, opts ...grpc.CallOption) (*RespondForensicCaseResponse, error)
+	FileForensicAppeal(ctx context.Context, in *FileForensicAppealRequest, opts ...grpc.CallOption) (*FileForensicAppealResponse, error)
+	PostForensicAppealMessage(ctx context.Context, in *PostForensicAppealMessageRequest, opts ...grpc.CallOption) (*PostForensicAppealMessageResponse, error)
+	WithdrawForensicAppeal(ctx context.Context, in *WithdrawForensicAppealRequest, opts ...grpc.CallOption) (*WithdrawForensicAppealResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2372,6 +2388,76 @@ func (c *onyxServiceClient) ContestLivingArchiveRelease(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetForensicProtectionDashboard(ctx context.Context, in *GetForensicProtectionDashboardRequest, opts ...grpc.CallOption) (*GetForensicProtectionDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetForensicProtectionDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetForensicProtectionDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) IssueForensicManifest(ctx context.Context, in *IssueForensicManifestRequest, opts ...grpc.CallOption) (*IssueForensicManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueForensicManifestResponse)
+	err := c.cc.Invoke(ctx, OnyxService_IssueForensicManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeForensicManifest(ctx context.Context, in *RevokeForensicManifestRequest, opts ...grpc.CallOption) (*RevokeForensicManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeForensicManifestResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeForensicManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RespondForensicCase(ctx context.Context, in *RespondForensicCaseRequest, opts ...grpc.CallOption) (*RespondForensicCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondForensicCaseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RespondForensicCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) FileForensicAppeal(ctx context.Context, in *FileForensicAppealRequest, opts ...grpc.CallOption) (*FileForensicAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FileForensicAppealResponse)
+	err := c.cc.Invoke(ctx, OnyxService_FileForensicAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PostForensicAppealMessage(ctx context.Context, in *PostForensicAppealMessageRequest, opts ...grpc.CallOption) (*PostForensicAppealMessageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PostForensicAppealMessageResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PostForensicAppealMessage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) WithdrawForensicAppeal(ctx context.Context, in *WithdrawForensicAppealRequest, opts ...grpc.CallOption) (*WithdrawForensicAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(WithdrawForensicAppealResponse)
+	err := c.cc.Invoke(ctx, OnyxService_WithdrawForensicAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2601,6 +2687,15 @@ type OnyxServiceServer interface {
 	RevokeLivingArchivePolicy(context.Context, *RevokeLivingArchivePolicyRequest) (*RevokeLivingArchivePolicyResponse, error)
 	ConfirmLivingArchiveReview(context.Context, *ConfirmLivingArchiveReviewRequest) (*ConfirmLivingArchiveReviewResponse, error)
 	ContestLivingArchiveRelease(context.Context, *ContestLivingArchiveReleaseRequest) (*ContestLivingArchiveReleaseResponse, error)
+	// Choice 13 — explicit rare-content marking, short-lived custody manifests,
+	// allegation response and independent appeal. Staff review remains in Admin.
+	GetForensicProtectionDashboard(context.Context, *GetForensicProtectionDashboardRequest) (*GetForensicProtectionDashboardResponse, error)
+	IssueForensicManifest(context.Context, *IssueForensicManifestRequest) (*IssueForensicManifestResponse, error)
+	RevokeForensicManifest(context.Context, *RevokeForensicManifestRequest) (*RevokeForensicManifestResponse, error)
+	RespondForensicCase(context.Context, *RespondForensicCaseRequest) (*RespondForensicCaseResponse, error)
+	FileForensicAppeal(context.Context, *FileForensicAppealRequest) (*FileForensicAppealResponse, error)
+	PostForensicAppealMessage(context.Context, *PostForensicAppealMessageRequest) (*PostForensicAppealMessageResponse, error)
+	WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3186,6 +3281,27 @@ func (UnimplementedOnyxServiceServer) ConfirmLivingArchiveReview(context.Context
 }
 func (UnimplementedOnyxServiceServer) ContestLivingArchiveRelease(context.Context, *ContestLivingArchiveReleaseRequest) (*ContestLivingArchiveReleaseResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ContestLivingArchiveRelease not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetForensicProtectionDashboard(context.Context, *GetForensicProtectionDashboardRequest) (*GetForensicProtectionDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetForensicProtectionDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) IssueForensicManifest(context.Context, *IssueForensicManifestRequest) (*IssueForensicManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueForensicManifest not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeForensicManifest(context.Context, *RevokeForensicManifestRequest) (*RevokeForensicManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeForensicManifest not implemented")
+}
+func (UnimplementedOnyxServiceServer) RespondForensicCase(context.Context, *RespondForensicCaseRequest) (*RespondForensicCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondForensicCase not implemented")
+}
+func (UnimplementedOnyxServiceServer) FileForensicAppeal(context.Context, *FileForensicAppealRequest) (*FileForensicAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FileForensicAppeal not implemented")
+}
+func (UnimplementedOnyxServiceServer) PostForensicAppealMessage(context.Context, *PostForensicAppealMessageRequest) (*PostForensicAppealMessageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PostForensicAppealMessage not implemented")
+}
+func (UnimplementedOnyxServiceServer) WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method WithdrawForensicAppeal not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -6664,6 +6780,132 @@ func _OnyxService_ContestLivingArchiveRelease_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetForensicProtectionDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetForensicProtectionDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetForensicProtectionDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetForensicProtectionDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetForensicProtectionDashboard(ctx, req.(*GetForensicProtectionDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_IssueForensicManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueForensicManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).IssueForensicManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_IssueForensicManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).IssueForensicManifest(ctx, req.(*IssueForensicManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeForensicManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeForensicManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeForensicManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeForensicManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeForensicManifest(ctx, req.(*RevokeForensicManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RespondForensicCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondForensicCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RespondForensicCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RespondForensicCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RespondForensicCase(ctx, req.(*RespondForensicCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_FileForensicAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FileForensicAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).FileForensicAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_FileForensicAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).FileForensicAppeal(ctx, req.(*FileForensicAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PostForensicAppealMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PostForensicAppealMessageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PostForensicAppealMessage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PostForensicAppealMessage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PostForensicAppealMessage(ctx, req.(*PostForensicAppealMessageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_WithdrawForensicAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WithdrawForensicAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).WithdrawForensicAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_WithdrawForensicAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).WithdrawForensicAppeal(ctx, req.(*WithdrawForensicAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -7438,6 +7680,34 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ContestLivingArchiveRelease",
 			Handler:    _OnyxService_ContestLivingArchiveRelease_Handler,
+		},
+		{
+			MethodName: "GetForensicProtectionDashboard",
+			Handler:    _OnyxService_GetForensicProtectionDashboard_Handler,
+		},
+		{
+			MethodName: "IssueForensicManifest",
+			Handler:    _OnyxService_IssueForensicManifest_Handler,
+		},
+		{
+			MethodName: "RevokeForensicManifest",
+			Handler:    _OnyxService_RevokeForensicManifest_Handler,
+		},
+		{
+			MethodName: "RespondForensicCase",
+			Handler:    _OnyxService_RespondForensicCase_Handler,
+		},
+		{
+			MethodName: "FileForensicAppeal",
+			Handler:    _OnyxService_FileForensicAppeal_Handler,
+		},
+		{
+			MethodName: "PostForensicAppealMessage",
+			Handler:    _OnyxService_PostForensicAppealMessage_Handler,
+		},
+		{
+			MethodName: "WithdrawForensicAppeal",
+			Handler:    _OnyxService_WithdrawForensicAppeal_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

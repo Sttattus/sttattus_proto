@@ -996,6 +996,19 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   isStaleTranslation = false;
 
+  /**
+   * Choice 13 — explicit staff policy protects this revision. The body/media
+   * is never returned unmarked when protection is active.
+   *
+   * @generated from field: bool forensic_protected = 41;
+   */
+  forensicProtected = false;
+
+  /**
+   * @generated from field: int64 forensic_policy_version = 42;
+   */
+  forensicPolicyVersion = protoInt64.zero;
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1044,6 +1057,8 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 38, name: "edition_availability", kind: "enum", T: proto3.getEnumType(OnyxEditionAvailability) },
     { no: 39, name: "available_editions", kind: "message", T: OnyxContentEdition, repeated: true },
     { no: 40, name: "is_stale_translation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 41, name: "forensic_protected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 42, name: "forensic_policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {
@@ -1745,6 +1760,13 @@ export class GetContentRequest extends Message<GetContentRequest> {
    */
   id = "";
 
+  /**
+   * Required when the current revision is explicitly forensic-protected.
+   *
+   * @generated from field: string forensic_manifest_id = 2;
+   */
+  forensicManifestId = "";
+
   constructor(data?: PartialMessage<GetContentRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1754,6 +1776,7 @@ export class GetContentRequest extends Message<GetContentRequest> {
   static readonly typeName = "sttattus.onyx.v1.GetContentRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "forensic_manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetContentRequest {
@@ -1782,6 +1805,11 @@ export class GetContentResponse extends Message<GetContentResponse> {
    */
   content?: OnyxContent;
 
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicManifest forensic_manifest = 2;
+   */
+  forensicManifest?: OnyxForensicManifest;
+
   constructor(data?: PartialMessage<GetContentResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1791,6 +1819,7 @@ export class GetContentResponse extends Message<GetContentResponse> {
   static readonly typeName = "sttattus.onyx.v1.GetContentResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "content", kind: "message", T: OnyxContent },
+    { no: 2, name: "forensic_manifest", kind: "message", T: OnyxForensicManifest },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetContentResponse {
@@ -12306,6 +12335,16 @@ export class ShareLink extends Message<ShareLink> {
    */
   revoked = false;
 
+  /**
+   * @generated from field: bool forensic_protected = 7;
+   */
+  forensicProtected = false;
+
+  /**
+   * @generated from field: string forensic_mark = 8;
+   */
+  forensicMark = "";
+
   constructor(data?: PartialMessage<ShareLink>) {
     super();
     proto3.util.initPartial(data, this);
@@ -12320,6 +12359,8 @@ export class ShareLink extends Message<ShareLink> {
     { no: 4, name: "watermark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "expires_at", kind: "message", T: Timestamp },
     { no: 6, name: "revoked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "forensic_protected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "forensic_mark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShareLink {
@@ -12348,6 +12389,14 @@ export class CreateShareLinkRequest extends Message<CreateShareLinkRequest> {
    */
   contentId = "";
 
+  /**
+   * Required when this revision has an active forensic policy. The manifest
+   * must be a fresh, device-bound, one-use `share` grant.
+   *
+   * @generated from field: string forensic_manifest_id = 2;
+   */
+  forensicManifestId = "";
+
   constructor(data?: PartialMessage<CreateShareLinkRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -12357,6 +12406,7 @@ export class CreateShareLinkRequest extends Message<CreateShareLinkRequest> {
   static readonly typeName = "sttattus.onyx.v1.CreateShareLinkRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "forensic_manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShareLinkRequest {
@@ -12641,6 +12691,13 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
    */
   keyWrapAlgorithm = "";
 
+  /**
+   * Present only for explicitly protected, device-bound delivery.
+   *
+   * @generated from field: sttattus.onyx.v1.OnyxForensicManifest forensic_manifest = 17;
+   */
+  forensicManifest?: OnyxForensicManifest;
+
   constructor(data?: PartialMessage<EncryptedRendition>) {
     super();
     proto3.util.initPartial(data, this);
@@ -12665,6 +12722,7 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
     { no: 14, name: "source_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 15, name: "package_type", kind: "enum", T: proto3.getEnumType(EncryptedRendition_OfflinePackageType) },
     { no: 16, name: "key_wrap_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "forensic_manifest", kind: "message", T: OnyxForensicManifest },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedRendition {
@@ -30371,6 +30429,1402 @@ export class ContestLivingArchiveReleaseResponse extends Message<ContestLivingAr
 
   static equals(a: ContestLivingArchiveReleaseResponse | PlainMessage<ContestLivingArchiveReleaseResponse> | undefined, b: ContestLivingArchiveReleaseResponse | PlainMessage<ContestLivingArchiveReleaseResponse> | undefined): boolean {
     return proto3.util.equals(ContestLivingArchiveReleaseResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicRuntime
+ */
+export class OnyxForensicRuntime extends Message<OnyxForensicRuntime> {
+  /**
+   * active | paused | disabled
+   *
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: bool issuance_enabled = 2;
+   */
+  issuanceEnabled = false;
+
+  /**
+   * @generated from field: int32 manifest_ttl_seconds = 3;
+   */
+  manifestTtlSeconds = 0;
+
+  /**
+   * @generated from field: int32 appeal_window_days = 4;
+   */
+  appealWindowDays = 0;
+
+  /**
+   * @generated from field: int64 signing_version = 5;
+   */
+  signingVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string public_notice = 6;
+   */
+  publicNotice = "";
+
+  /**
+   * @generated from field: int32 simulation_sla_seconds = 7;
+   */
+  simulationSlaSeconds = 0;
+
+  constructor(data?: PartialMessage<OnyxForensicRuntime>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicRuntime";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "issuance_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "manifest_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "appeal_window_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "signing_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "simulation_sla_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicRuntime {
+    return new OnyxForensicRuntime().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicRuntime {
+    return new OnyxForensicRuntime().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicRuntime {
+    return new OnyxForensicRuntime().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicRuntime | PlainMessage<OnyxForensicRuntime> | undefined, b: OnyxForensicRuntime | PlainMessage<OnyxForensicRuntime> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicRuntime, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicContentProtection
+ */
+export class OnyxForensicContentProtection extends Message<OnyxForensicContentProtection> {
+  /**
+   * @generated from field: string policy_id = 1;
+   */
+  policyId = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string content_title = 3;
+   */
+  contentTitle = "";
+
+  /**
+   * @generated from field: string revision_id = 4;
+   */
+  revisionId = "";
+
+  /**
+   * draft | active | paused | retired
+   *
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * visible_overlay | signed_manifest | combined
+   *
+   * @generated from field: string mark_mode = 6;
+   */
+  markMode = "";
+
+  /**
+   * read | stream | download | share
+   *
+   * @generated from field: repeated string allowed_actions = 7;
+   */
+  allowedActions: string[] = [];
+
+  /**
+   * @generated from field: int64 version = 8;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp activated_at = 9;
+   */
+  activatedAt?: Timestamp;
+
+  /**
+   * article | audio | video
+   *
+   * @generated from field: string content_kind = 10;
+   */
+  contentKind = "";
+
+  constructor(data?: PartialMessage<OnyxForensicContentProtection>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicContentProtection";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "mark_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "allowed_actions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "activated_at", kind: "message", T: Timestamp },
+    { no: 10, name: "content_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicContentProtection {
+    return new OnyxForensicContentProtection().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicContentProtection {
+    return new OnyxForensicContentProtection().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicContentProtection {
+    return new OnyxForensicContentProtection().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicContentProtection | PlainMessage<OnyxForensicContentProtection> | undefined, b: OnyxForensicContentProtection | PlainMessage<OnyxForensicContentProtection> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicContentProtection, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicManifest
+ */
+export class OnyxForensicManifest extends Message<OnyxForensicManifest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string content_title = 3;
+   */
+  contentTitle = "";
+
+  /**
+   * @generated from field: string revision_id = 4;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string device_id = 5;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string action = 6;
+   */
+  action = "";
+
+  /**
+   * random pseudonym; never an account identifier
+   *
+   * @generated from field: string mark_code = 7;
+   */
+  markCode = "";
+
+  /**
+   * @generated from field: string visible_watermark = 8;
+   */
+  visibleWatermark = "";
+
+  /**
+   * @generated from field: string manifest_checksum = 9;
+   */
+  manifestChecksum = "";
+
+  /**
+   * @generated from field: string signature = 10;
+   */
+  signature = "";
+
+  /**
+   * active | used | revoked | expired | stale
+   *
+   * @generated from field: string status = 11;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 policy_version = 12;
+   */
+  policyVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 version = 13;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp issued_at = 14;
+   */
+  issuedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 15;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp first_used_at = 16;
+   */
+  firstUsedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 17;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: string signature_key_ref = 18;
+   */
+  signatureKeyRef = "";
+
+  /**
+   * @generated from field: string signature_algorithm = 19;
+   */
+  signatureAlgorithm = "";
+
+  /**
+   * @generated from field: int64 signing_version = 20;
+   */
+  signingVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxForensicManifest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicManifest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "mark_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "visible_watermark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "manifest_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "issued_at", kind: "message", T: Timestamp },
+    { no: 15, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 16, name: "first_used_at", kind: "message", T: Timestamp },
+    { no: 17, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 18, name: "signature_key_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "signature_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "signing_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicManifest {
+    return new OnyxForensicManifest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicManifest {
+    return new OnyxForensicManifest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicManifest {
+    return new OnyxForensicManifest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicManifest | PlainMessage<OnyxForensicManifest> | undefined, b: OnyxForensicManifest | PlainMessage<OnyxForensicManifest> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicManifest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicCustodyEvent
+ */
+export class OnyxForensicCustodyEvent extends Message<OnyxForensicCustodyEvent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * member | staff | system | simulator
+   *
+   * @generated from field: string actor_kind = 3;
+   */
+  actorKind = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string evidence_digest = 5;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: string previous_hash = 6;
+   */
+  previousHash = "";
+
+  /**
+   * @generated from field: string event_hash = 7;
+   */
+  eventHash = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 8;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxForensicCustodyEvent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicCustodyEvent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "actor_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "previous_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "event_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicCustodyEvent {
+    return new OnyxForensicCustodyEvent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicCustodyEvent {
+    return new OnyxForensicCustodyEvent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicCustodyEvent {
+    return new OnyxForensicCustodyEvent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicCustodyEvent | PlainMessage<OnyxForensicCustodyEvent> | undefined, b: OnyxForensicCustodyEvent | PlainMessage<OnyxForensicCustodyEvent> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicCustodyEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicAppealMessage
+ */
+export class OnyxForensicAppealMessage extends Message<OnyxForensicAppealMessage> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * member | staff
+   *
+   * @generated from field: string author_kind = 2;
+   */
+  authorKind = "";
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string evidence_digest = 4;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 5;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxForensicAppealMessage>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicAppealMessage";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "author_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicAppealMessage {
+    return new OnyxForensicAppealMessage().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicAppealMessage {
+    return new OnyxForensicAppealMessage().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicAppealMessage {
+    return new OnyxForensicAppealMessage().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicAppealMessage | PlainMessage<OnyxForensicAppealMessage> | undefined, b: OnyxForensicAppealMessage | PlainMessage<OnyxForensicAppealMessage> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicAppealMessage, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicAppeal
+ */
+export class OnyxForensicAppeal extends Message<OnyxForensicAppeal> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string case_id = 2;
+   */
+  caseId = "";
+
+  /**
+   * submitted | info_requested | upheld | overturned | withdrawn
+   *
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string decision_summary = 5;
+   */
+  decisionSummary = "";
+
+  /**
+   * @generated from field: int64 version = 6;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxForensicAppealMessage messages = 7;
+   */
+  messages: OnyxForensicAppealMessage[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp filed_at = 8;
+   */
+  filedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp decided_at = 9;
+   */
+  decidedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxForensicAppeal>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicAppeal";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "decision_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "messages", kind: "message", T: OnyxForensicAppealMessage, repeated: true },
+    { no: 8, name: "filed_at", kind: "message", T: Timestamp },
+    { no: 9, name: "decided_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicAppeal {
+    return new OnyxForensicAppeal().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicAppeal {
+    return new OnyxForensicAppeal().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicAppeal {
+    return new OnyxForensicAppeal().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicAppeal | PlainMessage<OnyxForensicAppeal> | undefined, b: OnyxForensicAppeal | PlainMessage<OnyxForensicAppeal> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicAppeal, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxForensicCase
+ */
+export class OnyxForensicCase extends Message<OnyxForensicCase> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string case_code = 2;
+   */
+  caseCode = "";
+
+  /**
+   * @generated from field: string content_id = 3;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string content_title = 4;
+   */
+  contentTitle = "";
+
+  /**
+   * @generated from field: string manifest_id = 5;
+   */
+  manifestId = "";
+
+  /**
+   * investigating | pending_review | dismissed | inconclusive | confirmed | appealed | overturned | upheld
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string allegation_summary = 7;
+   */
+  allegationSummary = "";
+
+  /**
+   * @generated from field: string member_response = 8;
+   */
+  memberResponse = "";
+
+  /**
+   * unverified | weak | moderate | strong
+   *
+   * @generated from field: string confidence_label = 9;
+   */
+  confidenceLabel = "";
+
+  /**
+   * none | protected_share_download
+   *
+   * @generated from field: string restriction_scope = 10;
+   */
+  restrictionScope = "";
+
+  /**
+   * @generated from field: bool restriction_active = 11;
+   */
+  restrictionActive = false;
+
+  /**
+   * @generated from field: bool synthetic = 12;
+   */
+  synthetic = false;
+
+  /**
+   * @generated from field: int64 version = 13;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp opened_at = 14;
+   */
+  openedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp response_due_at = 15;
+   */
+  responseDueAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp decided_at = 16;
+   */
+  decidedAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxForensicCustodyEvent custody = 17;
+   */
+  custody: OnyxForensicCustodyEvent[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicAppeal appeal = 18;
+   */
+  appeal?: OnyxForensicAppeal;
+
+  /**
+   * @generated from field: bool legal_hold = 19;
+   */
+  legalHold = false;
+
+  /**
+   * @generated from field: string legal_hold_reason = 20;
+   */
+  legalHoldReason = "";
+
+  constructor(data?: PartialMessage<OnyxForensicCase>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxForensicCase";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "case_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "content_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "allegation_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "member_response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "confidence_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "restriction_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "restriction_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "synthetic", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "opened_at", kind: "message", T: Timestamp },
+    { no: 15, name: "response_due_at", kind: "message", T: Timestamp },
+    { no: 16, name: "decided_at", kind: "message", T: Timestamp },
+    { no: 17, name: "custody", kind: "message", T: OnyxForensicCustodyEvent, repeated: true },
+    { no: 18, name: "appeal", kind: "message", T: OnyxForensicAppeal },
+    { no: 19, name: "legal_hold", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 20, name: "legal_hold_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxForensicCase {
+    return new OnyxForensicCase().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxForensicCase {
+    return new OnyxForensicCase().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxForensicCase {
+    return new OnyxForensicCase().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxForensicCase | PlainMessage<OnyxForensicCase> | undefined, b: OnyxForensicCase | PlainMessage<OnyxForensicCase> | undefined): boolean {
+    return proto3.util.equals(OnyxForensicCase, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetForensicProtectionDashboardRequest
+ */
+export class GetForensicProtectionDashboardRequest extends Message<GetForensicProtectionDashboardRequest> {
+  /**
+   * @generated from field: bool include_history = 1;
+   */
+  includeHistory = false;
+
+  constructor(data?: PartialMessage<GetForensicProtectionDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetForensicProtectionDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "include_history", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForensicProtectionDashboardRequest {
+    return new GetForensicProtectionDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForensicProtectionDashboardRequest {
+    return new GetForensicProtectionDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForensicProtectionDashboardRequest {
+    return new GetForensicProtectionDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForensicProtectionDashboardRequest | PlainMessage<GetForensicProtectionDashboardRequest> | undefined, b: GetForensicProtectionDashboardRequest | PlainMessage<GetForensicProtectionDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetForensicProtectionDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetForensicProtectionDashboardResponse
+ */
+export class GetForensicProtectionDashboardResponse extends Message<GetForensicProtectionDashboardResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicRuntime runtime = 1;
+   */
+  runtime?: OnyxForensicRuntime;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxForensicContentProtection protected_content = 2;
+   */
+  protectedContent: OnyxForensicContentProtection[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxForensicManifest manifests = 3;
+   */
+  manifests: OnyxForensicManifest[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxForensicCase cases = 4;
+   */
+  cases: OnyxForensicCase[] = [];
+
+  constructor(data?: PartialMessage<GetForensicProtectionDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetForensicProtectionDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runtime", kind: "message", T: OnyxForensicRuntime },
+    { no: 2, name: "protected_content", kind: "message", T: OnyxForensicContentProtection, repeated: true },
+    { no: 3, name: "manifests", kind: "message", T: OnyxForensicManifest, repeated: true },
+    { no: 4, name: "cases", kind: "message", T: OnyxForensicCase, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForensicProtectionDashboardResponse {
+    return new GetForensicProtectionDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForensicProtectionDashboardResponse {
+    return new GetForensicProtectionDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForensicProtectionDashboardResponse {
+    return new GetForensicProtectionDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForensicProtectionDashboardResponse | PlainMessage<GetForensicProtectionDashboardResponse> | undefined, b: GetForensicProtectionDashboardResponse | PlainMessage<GetForensicProtectionDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetForensicProtectionDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IssueForensicManifestRequest
+ */
+export class IssueForensicManifestRequest extends Message<IssueForensicManifestRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * read | stream | download | share
+   *
+   * @generated from field: string action = 3;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<IssueForensicManifestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IssueForensicManifestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IssueForensicManifestRequest {
+    return new IssueForensicManifestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IssueForensicManifestRequest {
+    return new IssueForensicManifestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IssueForensicManifestRequest {
+    return new IssueForensicManifestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IssueForensicManifestRequest | PlainMessage<IssueForensicManifestRequest> | undefined, b: IssueForensicManifestRequest | PlainMessage<IssueForensicManifestRequest> | undefined): boolean {
+    return proto3.util.equals(IssueForensicManifestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.IssueForensicManifestResponse
+ */
+export class IssueForensicManifestResponse extends Message<IssueForensicManifestResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicManifest manifest = 1;
+   */
+  manifest?: OnyxForensicManifest;
+
+  /**
+   * Populated for a one-use `download` grant. The package remains encrypted
+   * to the registered device and is bound to the manifest in the database.
+   *
+   * @generated from field: repeated sttattus.onyx.v1.EncryptedRendition encrypted_renditions = 2;
+   */
+  encryptedRenditions: EncryptedRendition[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxContent content = 3;
+   */
+  content?: OnyxContent;
+
+  constructor(data?: PartialMessage<IssueForensicManifestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.IssueForensicManifestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest", kind: "message", T: OnyxForensicManifest },
+    { no: 2, name: "encrypted_renditions", kind: "message", T: EncryptedRendition, repeated: true },
+    { no: 3, name: "content", kind: "message", T: OnyxContent },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IssueForensicManifestResponse {
+    return new IssueForensicManifestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IssueForensicManifestResponse {
+    return new IssueForensicManifestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IssueForensicManifestResponse {
+    return new IssueForensicManifestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IssueForensicManifestResponse | PlainMessage<IssueForensicManifestResponse> | undefined, b: IssueForensicManifestResponse | PlainMessage<IssueForensicManifestResponse> | undefined): boolean {
+    return proto3.util.equals(IssueForensicManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeForensicManifestRequest
+ */
+export class RevokeForensicManifestRequest extends Message<RevokeForensicManifestRequest> {
+  /**
+   * @generated from field: string manifest_id = 1;
+   */
+  manifestId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeForensicManifestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeForensicManifestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeForensicManifestRequest {
+    return new RevokeForensicManifestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeForensicManifestRequest {
+    return new RevokeForensicManifestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeForensicManifestRequest {
+    return new RevokeForensicManifestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeForensicManifestRequest | PlainMessage<RevokeForensicManifestRequest> | undefined, b: RevokeForensicManifestRequest | PlainMessage<RevokeForensicManifestRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeForensicManifestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeForensicManifestResponse
+ */
+export class RevokeForensicManifestResponse extends Message<RevokeForensicManifestResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicManifest manifest = 1;
+   */
+  manifest?: OnyxForensicManifest;
+
+  constructor(data?: PartialMessage<RevokeForensicManifestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeForensicManifestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest", kind: "message", T: OnyxForensicManifest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeForensicManifestResponse {
+    return new RevokeForensicManifestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeForensicManifestResponse {
+    return new RevokeForensicManifestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeForensicManifestResponse {
+    return new RevokeForensicManifestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeForensicManifestResponse | PlainMessage<RevokeForensicManifestResponse> | undefined, b: RevokeForensicManifestResponse | PlainMessage<RevokeForensicManifestResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeForensicManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RespondForensicCaseRequest
+ */
+export class RespondForensicCaseRequest extends Message<RespondForensicCaseRequest> {
+  /**
+   * @generated from field: string case_id = 1;
+   */
+  caseId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string response = 3;
+   */
+  response = "";
+
+  /**
+   * @generated from field: string evidence_digest = 4;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RespondForensicCaseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RespondForensicCaseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondForensicCaseRequest {
+    return new RespondForensicCaseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondForensicCaseRequest {
+    return new RespondForensicCaseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondForensicCaseRequest {
+    return new RespondForensicCaseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondForensicCaseRequest | PlainMessage<RespondForensicCaseRequest> | undefined, b: RespondForensicCaseRequest | PlainMessage<RespondForensicCaseRequest> | undefined): boolean {
+    return proto3.util.equals(RespondForensicCaseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RespondForensicCaseResponse
+ */
+export class RespondForensicCaseResponse extends Message<RespondForensicCaseResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicCase forensic_case = 1;
+   */
+  forensicCase?: OnyxForensicCase;
+
+  constructor(data?: PartialMessage<RespondForensicCaseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RespondForensicCaseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forensic_case", kind: "message", T: OnyxForensicCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondForensicCaseResponse {
+    return new RespondForensicCaseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondForensicCaseResponse {
+    return new RespondForensicCaseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondForensicCaseResponse {
+    return new RespondForensicCaseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondForensicCaseResponse | PlainMessage<RespondForensicCaseResponse> | undefined, b: RespondForensicCaseResponse | PlainMessage<RespondForensicCaseResponse> | undefined): boolean {
+    return proto3.util.equals(RespondForensicCaseResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.FileForensicAppealRequest
+ */
+export class FileForensicAppealRequest extends Message<FileForensicAppealRequest> {
+  /**
+   * @generated from field: string case_id = 1;
+   */
+  caseId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string evidence_digest = 4;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<FileForensicAppealRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.FileForensicAppealRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FileForensicAppealRequest {
+    return new FileForensicAppealRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FileForensicAppealRequest {
+    return new FileForensicAppealRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FileForensicAppealRequest {
+    return new FileForensicAppealRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FileForensicAppealRequest | PlainMessage<FileForensicAppealRequest> | undefined, b: FileForensicAppealRequest | PlainMessage<FileForensicAppealRequest> | undefined): boolean {
+    return proto3.util.equals(FileForensicAppealRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.FileForensicAppealResponse
+ */
+export class FileForensicAppealResponse extends Message<FileForensicAppealResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicCase forensic_case = 1;
+   */
+  forensicCase?: OnyxForensicCase;
+
+  constructor(data?: PartialMessage<FileForensicAppealResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.FileForensicAppealResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forensic_case", kind: "message", T: OnyxForensicCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FileForensicAppealResponse {
+    return new FileForensicAppealResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FileForensicAppealResponse {
+    return new FileForensicAppealResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FileForensicAppealResponse {
+    return new FileForensicAppealResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FileForensicAppealResponse | PlainMessage<FileForensicAppealResponse> | undefined, b: FileForensicAppealResponse | PlainMessage<FileForensicAppealResponse> | undefined): boolean {
+    return proto3.util.equals(FileForensicAppealResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PostForensicAppealMessageRequest
+ */
+export class PostForensicAppealMessageRequest extends Message<PostForensicAppealMessageRequest> {
+  /**
+   * @generated from field: string appeal_id = 1;
+   */
+  appealId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string evidence_digest = 4;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<PostForensicAppealMessageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PostForensicAppealMessageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "appeal_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PostForensicAppealMessageRequest {
+    return new PostForensicAppealMessageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PostForensicAppealMessageRequest {
+    return new PostForensicAppealMessageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PostForensicAppealMessageRequest {
+    return new PostForensicAppealMessageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PostForensicAppealMessageRequest | PlainMessage<PostForensicAppealMessageRequest> | undefined, b: PostForensicAppealMessageRequest | PlainMessage<PostForensicAppealMessageRequest> | undefined): boolean {
+    return proto3.util.equals(PostForensicAppealMessageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PostForensicAppealMessageResponse
+ */
+export class PostForensicAppealMessageResponse extends Message<PostForensicAppealMessageResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicCase forensic_case = 1;
+   */
+  forensicCase?: OnyxForensicCase;
+
+  constructor(data?: PartialMessage<PostForensicAppealMessageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PostForensicAppealMessageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forensic_case", kind: "message", T: OnyxForensicCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PostForensicAppealMessageResponse {
+    return new PostForensicAppealMessageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PostForensicAppealMessageResponse {
+    return new PostForensicAppealMessageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PostForensicAppealMessageResponse {
+    return new PostForensicAppealMessageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PostForensicAppealMessageResponse | PlainMessage<PostForensicAppealMessageResponse> | undefined, b: PostForensicAppealMessageResponse | PlainMessage<PostForensicAppealMessageResponse> | undefined): boolean {
+    return proto3.util.equals(PostForensicAppealMessageResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.WithdrawForensicAppealRequest
+ */
+export class WithdrawForensicAppealRequest extends Message<WithdrawForensicAppealRequest> {
+  /**
+   * @generated from field: string appeal_id = 1;
+   */
+  appealId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<WithdrawForensicAppealRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.WithdrawForensicAppealRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "appeal_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WithdrawForensicAppealRequest {
+    return new WithdrawForensicAppealRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WithdrawForensicAppealRequest {
+    return new WithdrawForensicAppealRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WithdrawForensicAppealRequest {
+    return new WithdrawForensicAppealRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: WithdrawForensicAppealRequest | PlainMessage<WithdrawForensicAppealRequest> | undefined, b: WithdrawForensicAppealRequest | PlainMessage<WithdrawForensicAppealRequest> | undefined): boolean {
+    return proto3.util.equals(WithdrawForensicAppealRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.WithdrawForensicAppealResponse
+ */
+export class WithdrawForensicAppealResponse extends Message<WithdrawForensicAppealResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxForensicCase forensic_case = 1;
+   */
+  forensicCase?: OnyxForensicCase;
+
+  constructor(data?: PartialMessage<WithdrawForensicAppealResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.WithdrawForensicAppealResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forensic_case", kind: "message", T: OnyxForensicCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WithdrawForensicAppealResponse {
+    return new WithdrawForensicAppealResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WithdrawForensicAppealResponse {
+    return new WithdrawForensicAppealResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WithdrawForensicAppealResponse {
+    return new WithdrawForensicAppealResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: WithdrawForensicAppealResponse | PlainMessage<WithdrawForensicAppealResponse> | undefined, b: WithdrawForensicAppealResponse | PlainMessage<WithdrawForensicAppealResponse> | undefined): boolean {
+    return proto3.util.equals(WithdrawForensicAppealResponse, a, b);
   }
 }
 

@@ -522,6 +522,20 @@ const OnyxContent$json = {
       '5': 8,
       '10': 'isStaleTranslation'
     },
+    {
+      '1': 'forensic_protected',
+      '3': 41,
+      '4': 1,
+      '5': 8,
+      '10': 'forensicProtected'
+    },
+    {
+      '1': 'forensic_policy_version',
+      '3': 42,
+      '4': 1,
+      '5': 3,
+      '10': 'forensicPolicyVersion'
+    },
   ],
 };
 
@@ -559,7 +573,9 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     '4yKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhFZGl0aW9uQXZhaWxhYmlsaXR5UhNlZGl0aW9uQXZh'
     'aWxhYmlsaXR5ElMKEmF2YWlsYWJsZV9lZGl0aW9ucxgnIAMoCzIkLnN0dGF0dHVzLm9ueXgudj'
     'EuT255eENvbnRlbnRFZGl0aW9uUhFhdmFpbGFibGVFZGl0aW9ucxIwChRpc19zdGFsZV90cmFu'
-    'c2xhdGlvbhgoIAEoCFISaXNTdGFsZVRyYW5zbGF0aW9u');
+    'c2xhdGlvbhgoIAEoCFISaXNTdGFsZVRyYW5zbGF0aW9uEi0KEmZvcmVuc2ljX3Byb3RlY3RlZB'
+    'gpIAEoCFIRZm9yZW5zaWNQcm90ZWN0ZWQSNgoXZm9yZW5zaWNfcG9saWN5X3ZlcnNpb24YKiAB'
+    'KANSFWZvcmVuc2ljUG9saWN5VmVyc2lvbg==');
 
 @$core.Deprecated('Use onyxContentEditionDescriptor instead')
 const OnyxContentEdition$json = {
@@ -929,12 +945,20 @@ const GetContentRequest$json = {
   '1': 'GetContentRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {
+      '1': 'forensic_manifest_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'forensicManifestId'
+    },
   ],
 };
 
 /// Descriptor for `GetContentRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getContentRequestDescriptor =
-    $convert.base64Decode('ChFHZXRDb250ZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+final $typed_data.Uint8List getContentRequestDescriptor = $convert.base64Decode(
+    'ChFHZXRDb250ZW50UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSMAoUZm9yZW5zaWNfbWFuaWZlc3'
+    'RfaWQYAiABKAlSEmZvcmVuc2ljTWFuaWZlc3RJZA==');
 
 @$core.Deprecated('Use getContentResponseDescriptor instead')
 const GetContentResponse$json = {
@@ -948,13 +972,22 @@ const GetContentResponse$json = {
       '6': '.sttattus.onyx.v1.OnyxContent',
       '10': 'content'
     },
+    {
+      '1': 'forensic_manifest',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicManifest',
+      '10': 'forensicManifest'
+    },
   ],
 };
 
 /// Descriptor for `GetContentResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getContentResponseDescriptor = $convert.base64Decode(
     'ChJHZXRDb250ZW50UmVzcG9uc2USNwoHY29udGVudBgBIAEoCzIdLnN0dGF0dHVzLm9ueXgudj'
-    'EuT255eENvbnRlbnRSB2NvbnRlbnQ=');
+    'EuT255eENvbnRlbnRSB2NvbnRlbnQSUwoRZm9yZW5zaWNfbWFuaWZlc3QYAiABKAsyJi5zdHRh'
+    'dHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY01hbmlmZXN0UhBmb3JlbnNpY01hbmlmZXN0');
 
 @$core.Deprecated('Use listShelfRequestDescriptor instead')
 const ListShelfRequest$json = {
@@ -5535,6 +5568,14 @@ const ShareLink$json = {
       '10': 'expiresAt'
     },
     {'1': 'revoked', '3': 6, '4': 1, '5': 8, '10': 'revoked'},
+    {
+      '1': 'forensic_protected',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'forensicProtected'
+    },
+    {'1': 'forensic_mark', '3': 8, '4': 1, '5': 9, '10': 'forensicMark'},
   ],
 };
 
@@ -5543,21 +5584,30 @@ final $typed_data.Uint8List shareLinkDescriptor = $convert.base64Decode(
     'CglTaGFyZUxpbmsSFAoFdG9rZW4YASABKAlSBXRva2VuEh0KCmNvbnRlbnRfaWQYAiABKAlSCW'
     'NvbnRlbnRJZBIQCgN1cmwYAyABKAlSA3VybBIcCgl3YXRlcm1hcmsYBCABKAlSCXdhdGVybWFy'
     'axI5CgpleHBpcmVzX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaX'
-    'Jlc0F0EhgKB3Jldm9rZWQYBiABKAhSB3Jldm9rZWQ=');
+    'Jlc0F0EhgKB3Jldm9rZWQYBiABKAhSB3Jldm9rZWQSLQoSZm9yZW5zaWNfcHJvdGVjdGVkGAcg'
+    'ASgIUhFmb3JlbnNpY1Byb3RlY3RlZBIjCg1mb3JlbnNpY19tYXJrGAggASgJUgxmb3JlbnNpY0'
+    '1hcms=');
 
 @$core.Deprecated('Use createShareLinkRequestDescriptor instead')
 const CreateShareLinkRequest$json = {
   '1': 'CreateShareLinkRequest',
   '2': [
     {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'forensic_manifest_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'forensicManifestId'
+    },
   ],
 };
 
 /// Descriptor for `CreateShareLinkRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createShareLinkRequestDescriptor =
     $convert.base64Decode(
-        'ChZDcmVhdGVTaGFyZUxpbmtSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbnRlbnRJZA'
-        '==');
+        'ChZDcmVhdGVTaGFyZUxpbmtSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbnRlbnRJZB'
+        'IwChRmb3JlbnNpY19tYW5pZmVzdF9pZBgCIAEoCVISZm9yZW5zaWNNYW5pZmVzdElk');
 
 @$core.Deprecated('Use createShareLinkResponseDescriptor instead')
 const CreateShareLinkResponse$json = {
@@ -5685,6 +5735,14 @@ const EncryptedRendition$json = {
       '5': 9,
       '10': 'keyWrapAlgorithm'
     },
+    {
+      '1': 'forensic_manifest',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicManifest',
+      '10': 'forensicManifest'
+    },
   ],
   '4': [
     EncryptedRendition_RenditionStatus$json,
@@ -5730,14 +5788,16 @@ final $typed_data.Uint8List encryptedRenditionDescriptor = $convert.base64Decode
     'ljeV92ZXJzaW9uGA0gASgJUg1wb2xpY3lWZXJzaW9uEiUKDnNvdXJjZV92ZXJzaW9uGA4gASgD'
     'Ug1zb3VyY2VWZXJzaW9uEloKDHBhY2thZ2VfdHlwZRgPIAEoDjI3LnN0dGF0dHVzLm9ueXgudj'
     'EuRW5jcnlwdGVkUmVuZGl0aW9uLk9mZmxpbmVQYWNrYWdlVHlwZVILcGFja2FnZVR5cGUSLAoS'
-    'a2V5X3dyYXBfYWxnb3JpdGhtGBAgASgJUhBrZXlXcmFwQWxnb3JpdGhtIowBCg9SZW5kaXRpb2'
-    '5TdGF0dXMSIAocUkVORElUSU9OX1NUQVRVU19VTlNQRUNJRklFRBAAEh4KGlJFTkRJVElPTl9T'
-    'VEFUVVNfUFJFUEFSSU5HEAESGgoWUkVORElUSU9OX1NUQVRVU19SRUFEWRACEhsKF1JFTkRJVE'
-    'lPTl9TVEFUVVNfRkFJTEVEEAMi8wEKEk9mZmxpbmVQYWNrYWdlVHlwZRIkCiBPRkZMSU5FX1BB'
-    'Q0tBR0VfVFlQRV9VTlNQRUNJRklFRBAAEikKJU9GRkxJTkVfUEFDS0FHRV9UWVBFX1BST1RPQl'
-    'VGX0FSVElDTEUQARInCiNPRkZMSU5FX1BBQ0tBR0VfVFlQRV9FVklERU5DRV9CUklFRhACEiIK'
-    'Hk9GRkxJTkVfUEFDS0FHRV9UWVBFX1JBV19BVURJTxADEiEKHU9GRkxJTkVfUEFDS0FHRV9UWV'
-    'BFX0NBUFRJT05TEAQSHAoYT0ZGTElORV9QQUNLQUdFX1RZUEVfUERGEAU=');
+    'a2V5X3dyYXBfYWxnb3JpdGhtGBAgASgJUhBrZXlXcmFwQWxnb3JpdGhtElMKEWZvcmVuc2ljX2'
+    '1hbmlmZXN0GBEgASgLMiYuc3R0YXR0dXMub255eC52MS5Pbnl4Rm9yZW5zaWNNYW5pZmVzdFIQ'
+    'Zm9yZW5zaWNNYW5pZmVzdCKMAQoPUmVuZGl0aW9uU3RhdHVzEiAKHFJFTkRJVElPTl9TVEFUVV'
+    'NfVU5TUEVDSUZJRUQQABIeChpSRU5ESVRJT05fU1RBVFVTX1BSRVBBUklORxABEhoKFlJFTkRJ'
+    'VElPTl9TVEFUVVNfUkVBRFkQAhIbChdSRU5ESVRJT05fU1RBVFVTX0ZBSUxFRBADIvMBChJPZm'
+    'ZsaW5lUGFja2FnZVR5cGUSJAogT0ZGTElORV9QQUNLQUdFX1RZUEVfVU5TUEVDSUZJRUQQABIp'
+    'CiVPRkZMSU5FX1BBQ0tBR0VfVFlQRV9QUk9UT0JVRl9BUlRJQ0xFEAESJwojT0ZGTElORV9QQU'
+    'NLQUdFX1RZUEVfRVZJREVOQ0VfQlJJRUYQAhIiCh5PRkZMSU5FX1BBQ0tBR0VfVFlQRV9SQVdf'
+    'QVVESU8QAxIhCh1PRkZMSU5FX1BBQ0tBR0VfVFlQRV9DQVBUSU9OUxAEEhwKGE9GRkxJTkVfUE'
+    'FDS0FHRV9UWVBFX1BERhAF');
 
 @$core.Deprecated('Use getOfflineManifestRequestDescriptor instead')
 const GetOfflineManifestRequest$json = {
@@ -15186,3 +15246,740 @@ final $typed_data.Uint8List contestLivingArchiveReleaseResponseDescriptor =
         'CiNDb250ZXN0TGl2aW5nQXJjaGl2ZVJlbGVhc2VSZXNwb25zZRJRCgxyZWxlYXNlX2Nhc2UYAS'
         'ABKAsyLi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhMaXZpbmdBcmNoaXZlUmVsZWFzZUNhc2VSC3Jl'
         'bGVhc2VDYXNl');
+
+@$core.Deprecated('Use onyxForensicRuntimeDescriptor instead')
+const OnyxForensicRuntime$json = {
+  '1': 'OnyxForensicRuntime',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'issuance_enabled', '3': 2, '4': 1, '5': 8, '10': 'issuanceEnabled'},
+    {
+      '1': 'manifest_ttl_seconds',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'manifestTtlSeconds'
+    },
+    {
+      '1': 'appeal_window_days',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'appealWindowDays'
+    },
+    {'1': 'signing_version', '3': 5, '4': 1, '5': 3, '10': 'signingVersion'},
+    {'1': 'public_notice', '3': 6, '4': 1, '5': 9, '10': 'publicNotice'},
+    {
+      '1': 'simulation_sla_seconds',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'simulationSlaSeconds'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxForensicRuntime`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicRuntimeDescriptor = $convert.base64Decode(
+    'ChNPbnl4Rm9yZW5zaWNSdW50aW1lEhYKBnN0YXR1cxgBIAEoCVIGc3RhdHVzEikKEGlzc3Vhbm'
+    'NlX2VuYWJsZWQYAiABKAhSD2lzc3VhbmNlRW5hYmxlZBIwChRtYW5pZmVzdF90dGxfc2Vjb25k'
+    'cxgDIAEoBVISbWFuaWZlc3RUdGxTZWNvbmRzEiwKEmFwcGVhbF93aW5kb3dfZGF5cxgEIAEoBV'
+    'IQYXBwZWFsV2luZG93RGF5cxInCg9zaWduaW5nX3ZlcnNpb24YBSABKANSDnNpZ25pbmdWZXJz'
+    'aW9uEiMKDXB1YmxpY19ub3RpY2UYBiABKAlSDHB1YmxpY05vdGljZRI0ChZzaW11bGF0aW9uX3'
+    'NsYV9zZWNvbmRzGAcgASgFUhRzaW11bGF0aW9uU2xhU2Vjb25kcw==');
+
+@$core.Deprecated('Use onyxForensicContentProtectionDescriptor instead')
+const OnyxForensicContentProtection$json = {
+  '1': 'OnyxForensicContentProtection',
+  '2': [
+    {'1': 'policy_id', '3': 1, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'content_title', '3': 3, '4': 1, '5': 9, '10': 'contentTitle'},
+    {'1': 'revision_id', '3': 4, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'mark_mode', '3': 6, '4': 1, '5': 9, '10': 'markMode'},
+    {'1': 'allowed_actions', '3': 7, '4': 3, '5': 9, '10': 'allowedActions'},
+    {'1': 'version', '3': 8, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'activated_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'activatedAt'
+    },
+    {'1': 'content_kind', '3': 10, '4': 1, '5': 9, '10': 'contentKind'},
+  ],
+};
+
+/// Descriptor for `OnyxForensicContentProtection`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicContentProtectionDescriptor = $convert.base64Decode(
+    'Ch1Pbnl4Rm9yZW5zaWNDb250ZW50UHJvdGVjdGlvbhIbCglwb2xpY3lfaWQYASABKAlSCHBvbG'
+    'ljeUlkEh0KCmNvbnRlbnRfaWQYAiABKAlSCWNvbnRlbnRJZBIjCg1jb250ZW50X3RpdGxlGAMg'
+    'ASgJUgxjb250ZW50VGl0bGUSHwoLcmV2aXNpb25faWQYBCABKAlSCnJldmlzaW9uSWQSFgoGc3'
+    'RhdHVzGAUgASgJUgZzdGF0dXMSGwoJbWFya19tb2RlGAYgASgJUghtYXJrTW9kZRInCg9hbGxv'
+    'd2VkX2FjdGlvbnMYByADKAlSDmFsbG93ZWRBY3Rpb25zEhgKB3ZlcnNpb24YCCABKANSB3Zlcn'
+    'Npb24SPQoMYWN0aXZhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIL'
+    'YWN0aXZhdGVkQXQSIQoMY29udGVudF9raW5kGAogASgJUgtjb250ZW50S2luZA==');
+
+@$core.Deprecated('Use onyxForensicManifestDescriptor instead')
+const OnyxForensicManifest$json = {
+  '1': 'OnyxForensicManifest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'content_title', '3': 3, '4': 1, '5': 9, '10': 'contentTitle'},
+    {'1': 'revision_id', '3': 4, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'device_id', '3': 5, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'action', '3': 6, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'mark_code', '3': 7, '4': 1, '5': 9, '10': 'markCode'},
+    {
+      '1': 'visible_watermark',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'visibleWatermark'
+    },
+    {
+      '1': 'manifest_checksum',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'manifestChecksum'
+    },
+    {'1': 'signature', '3': 10, '4': 1, '5': 9, '10': 'signature'},
+    {'1': 'status', '3': 11, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'policy_version', '3': 12, '4': 1, '5': 3, '10': 'policyVersion'},
+    {'1': 'version', '3': 13, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'issued_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'issuedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'first_used_at',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'firstUsedAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'signature_key_ref',
+      '3': 18,
+      '4': 1,
+      '5': 9,
+      '10': 'signatureKeyRef'
+    },
+    {
+      '1': 'signature_algorithm',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'signatureAlgorithm'
+    },
+    {'1': 'signing_version', '3': 20, '4': 1, '5': 3, '10': 'signingVersion'},
+  ],
+};
+
+/// Descriptor for `OnyxForensicManifest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicManifestDescriptor = $convert.base64Decode(
+    'ChRPbnl4Rm9yZW5zaWNNYW5pZmVzdBIOCgJpZBgBIAEoCVICaWQSHQoKY29udGVudF9pZBgCIA'
+    'EoCVIJY29udGVudElkEiMKDWNvbnRlbnRfdGl0bGUYAyABKAlSDGNvbnRlbnRUaXRsZRIfCgty'
+    'ZXZpc2lvbl9pZBgEIAEoCVIKcmV2aXNpb25JZBIbCglkZXZpY2VfaWQYBSABKAlSCGRldmljZU'
+    'lkEhYKBmFjdGlvbhgGIAEoCVIGYWN0aW9uEhsKCW1hcmtfY29kZRgHIAEoCVIIbWFya0NvZGUS'
+    'KwoRdmlzaWJsZV93YXRlcm1hcmsYCCABKAlSEHZpc2libGVXYXRlcm1hcmsSKwoRbWFuaWZlc3'
+    'RfY2hlY2tzdW0YCSABKAlSEG1hbmlmZXN0Q2hlY2tzdW0SHAoJc2lnbmF0dXJlGAogASgJUglz'
+    'aWduYXR1cmUSFgoGc3RhdHVzGAsgASgJUgZzdGF0dXMSJQoOcG9saWN5X3ZlcnNpb24YDCABKA'
+    'NSDXBvbGljeVZlcnNpb24SGAoHdmVyc2lvbhgNIAEoA1IHdmVyc2lvbhI3Cglpc3N1ZWRfYXQY'
+    'DiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghpc3N1ZWRBdBI5CgpleHBpcmVzX2'
+    'F0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0Ej4KDWZpcnN0'
+    'X3VzZWRfYXQYECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtmaXJzdFVzZWRBdB'
+    'I5CgpyZXZva2VkX2F0GBEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJcmV2b2tl'
+    'ZEF0EioKEXNpZ25hdHVyZV9rZXlfcmVmGBIgASgJUg9zaWduYXR1cmVLZXlSZWYSLwoTc2lnbm'
+    'F0dXJlX2FsZ29yaXRobRgTIAEoCVISc2lnbmF0dXJlQWxnb3JpdGhtEicKD3NpZ25pbmdfdmVy'
+    'c2lvbhgUIAEoA1IOc2lnbmluZ1ZlcnNpb24=');
+
+@$core.Deprecated('Use onyxForensicCustodyEventDescriptor instead')
+const OnyxForensicCustodyEvent$json = {
+  '1': 'OnyxForensicCustodyEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'actor_kind', '3': 3, '4': 1, '5': 9, '10': 'actorKind'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'evidence_digest', '3': 5, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {'1': 'previous_hash', '3': 6, '4': 1, '5': 9, '10': 'previousHash'},
+    {'1': 'event_hash', '3': 7, '4': 1, '5': 9, '10': 'eventHash'},
+    {
+      '1': 'created_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxForensicCustodyEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicCustodyEventDescriptor = $convert.base64Decode(
+    'ChhPbnl4Rm9yZW5zaWNDdXN0b2R5RXZlbnQSDgoCaWQYASABKAlSAmlkEhYKBmFjdGlvbhgCIA'
+    'EoCVIGYWN0aW9uEh0KCmFjdG9yX2tpbmQYAyABKAlSCWFjdG9yS2luZBIYCgdzdW1tYXJ5GAQg'
+    'ASgJUgdzdW1tYXJ5EicKD2V2aWRlbmNlX2RpZ2VzdBgFIAEoCVIOZXZpZGVuY2VEaWdlc3QSIw'
+    'oNcHJldmlvdXNfaGFzaBgGIAEoCVIMcHJldmlvdXNIYXNoEh0KCmV2ZW50X2hhc2gYByABKAlS'
+    'CWV2ZW50SGFzaBI5CgpjcmVhdGVkX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
+    'FtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use onyxForensicAppealMessageDescriptor instead')
+const OnyxForensicAppealMessage$json = {
+  '1': 'OnyxForensicAppealMessage',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'author_kind', '3': 2, '4': 1, '5': 9, '10': 'authorKind'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'evidence_digest', '3': 4, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxForensicAppealMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicAppealMessageDescriptor = $convert.base64Decode(
+    'ChlPbnl4Rm9yZW5zaWNBcHBlYWxNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIfCgthdXRob3Jfa2'
+    'luZBgCIAEoCVIKYXV0aG9yS2luZBISCgRib2R5GAMgASgJUgRib2R5EicKD2V2aWRlbmNlX2Rp'
+    'Z2VzdBgEIAEoCVIOZXZpZGVuY2VEaWdlc3QSOQoKY3JlYXRlZF9hdBgFIAEoCzIaLmdvb2dsZS'
+    '5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use onyxForensicAppealDescriptor instead')
+const OnyxForensicAppeal$json = {
+  '1': 'OnyxForensicAppeal',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'case_id', '3': 2, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'decision_summary', '3': 5, '4': 1, '5': 9, '10': 'decisionSummary'},
+    {'1': 'version', '3': 6, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'messages',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicAppealMessage',
+      '10': 'messages'
+    },
+    {
+      '1': 'filed_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'filedAt'
+    },
+    {
+      '1': 'decided_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'decidedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxForensicAppeal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicAppealDescriptor = $convert.base64Decode(
+    'ChJPbnl4Rm9yZW5zaWNBcHBlYWwSDgoCaWQYASABKAlSAmlkEhcKB2Nhc2VfaWQYAiABKAlSBm'
+    'Nhc2VJZBIWCgZzdGF0dXMYAyABKAlSBnN0YXR1cxIWCgZyZWFzb24YBCABKAlSBnJlYXNvbhIp'
+    'ChBkZWNpc2lvbl9zdW1tYXJ5GAUgASgJUg9kZWNpc2lvblN1bW1hcnkSGAoHdmVyc2lvbhgGIA'
+    'EoA1IHdmVyc2lvbhJHCghtZXNzYWdlcxgHIAMoCzIrLnN0dGF0dHVzLm9ueXgudjEuT255eEZv'
+    'cmVuc2ljQXBwZWFsTWVzc2FnZVIIbWVzc2FnZXMSNQoIZmlsZWRfYXQYCCABKAsyGi5nb29nbG'
+    'UucHJvdG9idWYuVGltZXN0YW1wUgdmaWxlZEF0EjkKCmRlY2lkZWRfYXQYCSABKAsyGi5nb29n'
+    'bGUucHJvdG9idWYuVGltZXN0YW1wUglkZWNpZGVkQXQ=');
+
+@$core.Deprecated('Use onyxForensicCaseDescriptor instead')
+const OnyxForensicCase$json = {
+  '1': 'OnyxForensicCase',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'case_code', '3': 2, '4': 1, '5': 9, '10': 'caseCode'},
+    {'1': 'content_id', '3': 3, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'content_title', '3': 4, '4': 1, '5': 9, '10': 'contentTitle'},
+    {'1': 'manifest_id', '3': 5, '4': 1, '5': 9, '10': 'manifestId'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'allegation_summary',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'allegationSummary'
+    },
+    {'1': 'member_response', '3': 8, '4': 1, '5': 9, '10': 'memberResponse'},
+    {'1': 'confidence_label', '3': 9, '4': 1, '5': 9, '10': 'confidenceLabel'},
+    {
+      '1': 'restriction_scope',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'restrictionScope'
+    },
+    {
+      '1': 'restriction_active',
+      '3': 11,
+      '4': 1,
+      '5': 8,
+      '10': 'restrictionActive'
+    },
+    {'1': 'synthetic', '3': 12, '4': 1, '5': 8, '10': 'synthetic'},
+    {'1': 'version', '3': 13, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'opened_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'openedAt'
+    },
+    {
+      '1': 'response_due_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'responseDueAt'
+    },
+    {
+      '1': 'decided_at',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'decidedAt'
+    },
+    {
+      '1': 'custody',
+      '3': 17,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCustodyEvent',
+      '10': 'custody'
+    },
+    {
+      '1': 'appeal',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicAppeal',
+      '10': 'appeal'
+    },
+    {'1': 'legal_hold', '3': 19, '4': 1, '5': 8, '10': 'legalHold'},
+    {
+      '1': 'legal_hold_reason',
+      '3': 20,
+      '4': 1,
+      '5': 9,
+      '10': 'legalHoldReason'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxForensicCase`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxForensicCaseDescriptor = $convert.base64Decode(
+    'ChBPbnl4Rm9yZW5zaWNDYXNlEg4KAmlkGAEgASgJUgJpZBIbCgljYXNlX2NvZGUYAiABKAlSCG'
+    'Nhc2VDb2RlEh0KCmNvbnRlbnRfaWQYAyABKAlSCWNvbnRlbnRJZBIjCg1jb250ZW50X3RpdGxl'
+    'GAQgASgJUgxjb250ZW50VGl0bGUSHwoLbWFuaWZlc3RfaWQYBSABKAlSCm1hbmlmZXN0SWQSFg'
+    'oGc3RhdHVzGAYgASgJUgZzdGF0dXMSLQoSYWxsZWdhdGlvbl9zdW1tYXJ5GAcgASgJUhFhbGxl'
+    'Z2F0aW9uU3VtbWFyeRInCg9tZW1iZXJfcmVzcG9uc2UYCCABKAlSDm1lbWJlclJlc3BvbnNlEi'
+    'kKEGNvbmZpZGVuY2VfbGFiZWwYCSABKAlSD2NvbmZpZGVuY2VMYWJlbBIrChFyZXN0cmljdGlv'
+    'bl9zY29wZRgKIAEoCVIQcmVzdHJpY3Rpb25TY29wZRItChJyZXN0cmljdGlvbl9hY3RpdmUYCy'
+    'ABKAhSEXJlc3RyaWN0aW9uQWN0aXZlEhwKCXN5bnRoZXRpYxgMIAEoCFIJc3ludGhldGljEhgK'
+    'B3ZlcnNpb24YDSABKANSB3ZlcnNpb24SNwoJb3BlbmVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3'
+    'RvYnVmLlRpbWVzdGFtcFIIb3BlbmVkQXQSQgoPcmVzcG9uc2VfZHVlX2F0GA8gASgLMhouZ29v'
+    'Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFINcmVzcG9uc2VEdWVBdBI5CgpkZWNpZGVkX2F0GBAgAS'
+    'gLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZGVjaWRlZEF0EkQKB2N1c3RvZHkYESAD'
+    'KAsyKi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY0N1c3RvZHlFdmVudFIHY3VzdG9keR'
+    'I8CgZhcHBlYWwYEiABKAsyJC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY0FwcGVhbFIG'
+    'YXBwZWFsEh0KCmxlZ2FsX2hvbGQYEyABKAhSCWxlZ2FsSG9sZBIqChFsZWdhbF9ob2xkX3JlYX'
+    'NvbhgUIAEoCVIPbGVnYWxIb2xkUmVhc29u');
+
+@$core.Deprecated('Use getForensicProtectionDashboardRequestDescriptor instead')
+const GetForensicProtectionDashboardRequest$json = {
+  '1': 'GetForensicProtectionDashboardRequest',
+  '2': [
+    {'1': 'include_history', '3': 1, '4': 1, '5': 8, '10': 'includeHistory'},
+  ],
+};
+
+/// Descriptor for `GetForensicProtectionDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForensicProtectionDashboardRequestDescriptor =
+    $convert.base64Decode(
+        'CiVHZXRGb3JlbnNpY1Byb3RlY3Rpb25EYXNoYm9hcmRSZXF1ZXN0EicKD2luY2x1ZGVfaGlzdG'
+        '9yeRgBIAEoCFIOaW5jbHVkZUhpc3Rvcnk=');
+
+@$core
+    .Deprecated('Use getForensicProtectionDashboardResponseDescriptor instead')
+const GetForensicProtectionDashboardResponse$json = {
+  '1': 'GetForensicProtectionDashboardResponse',
+  '2': [
+    {
+      '1': 'runtime',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicRuntime',
+      '10': 'runtime'
+    },
+    {
+      '1': 'protected_content',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicContentProtection',
+      '10': 'protectedContent'
+    },
+    {
+      '1': 'manifests',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicManifest',
+      '10': 'manifests'
+    },
+    {
+      '1': 'cases',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCase',
+      '10': 'cases'
+    },
+  ],
+};
+
+/// Descriptor for `GetForensicProtectionDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getForensicProtectionDashboardResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRGb3JlbnNpY1Byb3RlY3Rpb25EYXNoYm9hcmRSZXNwb25zZRI/CgdydW50aW1lGAEgAS'
+        'gLMiUuc3R0YXR0dXMub255eC52MS5Pbnl4Rm9yZW5zaWNSdW50aW1lUgdydW50aW1lElwKEXBy'
+        'b3RlY3RlZF9jb250ZW50GAIgAygLMi8uc3R0YXR0dXMub255eC52MS5Pbnl4Rm9yZW5zaWNDb2'
+        '50ZW50UHJvdGVjdGlvblIQcHJvdGVjdGVkQ29udGVudBJECgltYW5pZmVzdHMYAyADKAsyJi5z'
+        'dHRhdHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY01hbmlmZXN0UgltYW5pZmVzdHMSOAoFY2FzZX'
+        'MYBCADKAsyIi5zdHRhdHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY0Nhc2VSBWNhc2Vz');
+
+@$core.Deprecated('Use issueForensicManifestRequestDescriptor instead')
+const IssueForensicManifestRequest$json = {
+  '1': 'IssueForensicManifestRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'action', '3': 3, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `IssueForensicManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueForensicManifestRequestDescriptor =
+    $convert.base64Decode(
+        'ChxJc3N1ZUZvcmVuc2ljTWFuaWZlc3RSZXF1ZXN0Eh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbn'
+        'RlbnRJZBIbCglkZXZpY2VfaWQYAiABKAlSCGRldmljZUlkEhYKBmFjdGlvbhgDIAEoCVIGYWN0'
+        'aW9uEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use issueForensicManifestResponseDescriptor instead')
+const IssueForensicManifestResponse$json = {
+  '1': 'IssueForensicManifestResponse',
+  '2': [
+    {
+      '1': 'manifest',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicManifest',
+      '10': 'manifest'
+    },
+    {
+      '1': 'encrypted_renditions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EncryptedRendition',
+      '10': 'encryptedRenditions'
+    },
+    {
+      '1': 'content',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxContent',
+      '10': 'content'
+    },
+  ],
+};
+
+/// Descriptor for `IssueForensicManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueForensicManifestResponseDescriptor = $convert.base64Decode(
+    'Ch1Jc3N1ZUZvcmVuc2ljTWFuaWZlc3RSZXNwb25zZRJCCghtYW5pZmVzdBgBIAEoCzImLnN0dG'
+    'F0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljTWFuaWZlc3RSCG1hbmlmZXN0ElcKFGVuY3J5cHRl'
+    'ZF9yZW5kaXRpb25zGAIgAygLMiQuc3R0YXR0dXMub255eC52MS5FbmNyeXB0ZWRSZW5kaXRpb2'
+    '5SE2VuY3J5cHRlZFJlbmRpdGlvbnMSNwoHY29udGVudBgDIAEoCzIdLnN0dGF0dHVzLm9ueXgu'
+    'djEuT255eENvbnRlbnRSB2NvbnRlbnQ=');
+
+@$core.Deprecated('Use revokeForensicManifestRequestDescriptor instead')
+const RevokeForensicManifestRequest$json = {
+  '1': 'RevokeForensicManifestRequest',
+  '2': [
+    {'1': 'manifest_id', '3': 1, '4': 1, '5': 9, '10': 'manifestId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeForensicManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeForensicManifestRequestDescriptor = $convert.base64Decode(
+    'Ch1SZXZva2VGb3JlbnNpY01hbmlmZXN0UmVxdWVzdBIfCgttYW5pZmVzdF9pZBgBIAEoCVIKbW'
+    'FuaWZlc3RJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SFgoG'
+    'cmVhc29uGAMgASgJUgZyZWFzb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbn'
+    'RNdXRhdGlvbklk');
+
+@$core.Deprecated('Use revokeForensicManifestResponseDescriptor instead')
+const RevokeForensicManifestResponse$json = {
+  '1': 'RevokeForensicManifestResponse',
+  '2': [
+    {
+      '1': 'manifest',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicManifest',
+      '10': 'manifest'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeForensicManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeForensicManifestResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5SZXZva2VGb3JlbnNpY01hbmlmZXN0UmVzcG9uc2USQgoIbWFuaWZlc3QYASABKAsyJi5zdH'
+        'RhdHR1cy5vbnl4LnYxLk9ueXhGb3JlbnNpY01hbmlmZXN0UghtYW5pZmVzdA==');
+
+@$core.Deprecated('Use respondForensicCaseRequestDescriptor instead')
+const RespondForensicCaseRequest$json = {
+  '1': 'RespondForensicCaseRequest',
+  '2': [
+    {'1': 'case_id', '3': 1, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'response', '3': 3, '4': 1, '5': 9, '10': 'response'},
+    {'1': 'evidence_digest', '3': 4, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RespondForensicCaseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List respondForensicCaseRequestDescriptor = $convert.base64Decode(
+    'ChpSZXNwb25kRm9yZW5zaWNDYXNlUmVxdWVzdBIXCgdjYXNlX2lkGAEgASgJUgZjYXNlSWQSKQ'
+    'oQZXhwZWN0ZWRfdmVyc2lvbhgCIAEoA1IPZXhwZWN0ZWRWZXJzaW9uEhoKCHJlc3BvbnNlGAMg'
+    'ASgJUghyZXNwb25zZRInCg9ldmlkZW5jZV9kaWdlc3QYBCABKAlSDmV2aWRlbmNlRGlnZXN0Ei'
+    'wKEmNsaWVudF9tdXRhdGlvbl9pZBgFIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use respondForensicCaseResponseDescriptor instead')
+const RespondForensicCaseResponse$json = {
+  '1': 'RespondForensicCaseResponse',
+  '2': [
+    {
+      '1': 'forensic_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCase',
+      '10': 'forensicCase'
+    },
+  ],
+};
+
+/// Descriptor for `RespondForensicCaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List respondForensicCaseResponseDescriptor =
+    $convert.base64Decode(
+        'ChtSZXNwb25kRm9yZW5zaWNDYXNlUmVzcG9uc2USRwoNZm9yZW5zaWNfY2FzZRgBIAEoCzIiLn'
+        'N0dGF0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljQ2FzZVIMZm9yZW5zaWNDYXNl');
+
+@$core.Deprecated('Use fileForensicAppealRequestDescriptor instead')
+const FileForensicAppealRequest$json = {
+  '1': 'FileForensicAppealRequest',
+  '2': [
+    {'1': 'case_id', '3': 1, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'evidence_digest', '3': 4, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `FileForensicAppealRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileForensicAppealRequestDescriptor = $convert.base64Decode(
+    'ChlGaWxlRm9yZW5zaWNBcHBlYWxSZXF1ZXN0EhcKB2Nhc2VfaWQYASABKAlSBmNhc2VJZBIpCh'
+    'BleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SFgoGcmVhc29uGAMgASgJ'
+    'UgZyZWFzb24SJwoPZXZpZGVuY2VfZGlnZXN0GAQgASgJUg5ldmlkZW5jZURpZ2VzdBIsChJjbG'
+    'llbnRfbXV0YXRpb25faWQYBSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use fileForensicAppealResponseDescriptor instead')
+const FileForensicAppealResponse$json = {
+  '1': 'FileForensicAppealResponse',
+  '2': [
+    {
+      '1': 'forensic_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCase',
+      '10': 'forensicCase'
+    },
+  ],
+};
+
+/// Descriptor for `FileForensicAppealResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileForensicAppealResponseDescriptor =
+    $convert.base64Decode(
+        'ChpGaWxlRm9yZW5zaWNBcHBlYWxSZXNwb25zZRJHCg1mb3JlbnNpY19jYXNlGAEgASgLMiIuc3'
+        'R0YXR0dXMub255eC52MS5Pbnl4Rm9yZW5zaWNDYXNlUgxmb3JlbnNpY0Nhc2U=');
+
+@$core.Deprecated('Use postForensicAppealMessageRequestDescriptor instead')
+const PostForensicAppealMessageRequest$json = {
+  '1': 'PostForensicAppealMessageRequest',
+  '2': [
+    {'1': 'appeal_id', '3': 1, '4': 1, '5': 9, '10': 'appealId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'body', '3': 3, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'evidence_digest', '3': 4, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `PostForensicAppealMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postForensicAppealMessageRequestDescriptor =
+    $convert.base64Decode(
+        'CiBQb3N0Rm9yZW5zaWNBcHBlYWxNZXNzYWdlUmVxdWVzdBIbCglhcHBlYWxfaWQYASABKAlSCG'
+        'FwcGVhbElkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKANSD2V4cGVjdGVkVmVyc2lvbhISCgRi'
+        'b2R5GAMgASgJUgRib2R5EicKD2V2aWRlbmNlX2RpZ2VzdBgEIAEoCVIOZXZpZGVuY2VEaWdlc3'
+        'QSLAoSY2xpZW50X211dGF0aW9uX2lkGAUgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use postForensicAppealMessageResponseDescriptor instead')
+const PostForensicAppealMessageResponse$json = {
+  '1': 'PostForensicAppealMessageResponse',
+  '2': [
+    {
+      '1': 'forensic_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCase',
+      '10': 'forensicCase'
+    },
+  ],
+};
+
+/// Descriptor for `PostForensicAppealMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postForensicAppealMessageResponseDescriptor =
+    $convert.base64Decode(
+        'CiFQb3N0Rm9yZW5zaWNBcHBlYWxNZXNzYWdlUmVzcG9uc2USRwoNZm9yZW5zaWNfY2FzZRgBIA'
+        'EoCzIiLnN0dGF0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljQ2FzZVIMZm9yZW5zaWNDYXNl');
+
+@$core.Deprecated('Use withdrawForensicAppealRequestDescriptor instead')
+const WithdrawForensicAppealRequest$json = {
+  '1': 'WithdrawForensicAppealRequest',
+  '2': [
+    {'1': 'appeal_id', '3': 1, '4': 1, '5': 9, '10': 'appealId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `WithdrawForensicAppealRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List withdrawForensicAppealRequestDescriptor = $convert.base64Decode(
+    'Ch1XaXRoZHJhd0ZvcmVuc2ljQXBwZWFsUmVxdWVzdBIbCglhcHBlYWxfaWQYASABKAlSCGFwcG'
+    'VhbElkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKANSD2V4cGVjdGVkVmVyc2lvbhIWCgZyZWFz'
+    'b24YAyABKAlSBnJlYXNvbhIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlSEGNsaWVudE11dG'
+    'F0aW9uSWQ=');
+
+@$core.Deprecated('Use withdrawForensicAppealResponseDescriptor instead')
+const WithdrawForensicAppealResponse$json = {
+  '1': 'WithdrawForensicAppealResponse',
+  '2': [
+    {
+      '1': 'forensic_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxForensicCase',
+      '10': 'forensicCase'
+    },
+  ],
+};
+
+/// Descriptor for `WithdrawForensicAppealResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List withdrawForensicAppealResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5XaXRoZHJhd0ZvcmVuc2ljQXBwZWFsUmVzcG9uc2USRwoNZm9yZW5zaWNfY2FzZRgBIAEoCz'
+        'IiLnN0dGF0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljQ2FzZVIMZm9yZW5zaWNDYXNl');

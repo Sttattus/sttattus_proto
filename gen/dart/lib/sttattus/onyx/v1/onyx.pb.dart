@@ -316,6 +316,8 @@ class OnyxContent extends $pb.GeneratedMessage {
     OnyxEditionAvailability? editionAvailability,
     $core.Iterable<OnyxContentEdition>? availableEditions,
     $core.bool? isStaleTranslation,
+    $core.bool? forensicProtected,
+    $fixnum.Int64? forensicPolicyVersion,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -365,6 +367,9 @@ class OnyxContent extends $pb.GeneratedMessage {
       result.availableEditions.addAll(availableEditions);
     if (isStaleTranslation != null)
       result.isStaleTranslation = isStaleTranslation;
+    if (forensicProtected != null) result.forensicProtected = forensicProtected;
+    if (forensicPolicyVersion != null)
+      result.forensicPolicyVersion = forensicPolicyVersion;
     return result;
   }
 
@@ -432,6 +437,8 @@ class OnyxContent extends $pb.GeneratedMessage {
     ..pPM<OnyxContentEdition>(39, _omitFieldNames ? '' : 'availableEditions',
         subBuilder: OnyxContentEdition.create)
     ..aOB(40, _omitFieldNames ? '' : 'isStaleTranslation')
+    ..aOB(41, _omitFieldNames ? '' : 'forensicProtected')
+    ..aInt64(42, _omitFieldNames ? '' : 'forensicPolicyVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -823,6 +830,26 @@ class OnyxContent extends $pb.GeneratedMessage {
   $core.bool hasIsStaleTranslation() => $_has(39);
   @$pb.TagNumber(40)
   void clearIsStaleTranslation() => $_clearField(40);
+
+  /// Choice 13 — explicit staff policy protects this revision. The body/media
+  /// is never returned unmarked when protection is active.
+  @$pb.TagNumber(41)
+  $core.bool get forensicProtected => $_getBF(40);
+  @$pb.TagNumber(41)
+  set forensicProtected($core.bool value) => $_setBool(40, value);
+  @$pb.TagNumber(41)
+  $core.bool hasForensicProtected() => $_has(40);
+  @$pb.TagNumber(41)
+  void clearForensicProtected() => $_clearField(41);
+
+  @$pb.TagNumber(42)
+  $fixnum.Int64 get forensicPolicyVersion => $_getI64(41);
+  @$pb.TagNumber(42)
+  set forensicPolicyVersion($fixnum.Int64 value) => $_setInt64(41, value);
+  @$pb.TagNumber(42)
+  $core.bool hasForensicPolicyVersion() => $_has(41);
+  @$pb.TagNumber(42)
+  void clearForensicPolicyVersion() => $_clearField(42);
 }
 
 /// OnyxContentEdition represents an available language/locale edition summary for a piece of content.
@@ -1969,9 +1996,12 @@ class SubscribeResponse extends $pb.GeneratedMessage {
 class GetContentRequest extends $pb.GeneratedMessage {
   factory GetContentRequest({
     $core.String? id,
+    $core.String? forensicManifestId,
   }) {
     final result = create();
     if (id != null) result.id = id;
+    if (forensicManifestId != null)
+      result.forensicManifestId = forensicManifestId;
     return result;
   }
 
@@ -1990,6 +2020,7 @@ class GetContentRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'forensicManifestId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2019,14 +2050,26 @@ class GetContentRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
+
+  /// Required when the current revision is explicitly forensic-protected.
+  @$pb.TagNumber(2)
+  $core.String get forensicManifestId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set forensicManifestId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForensicManifestId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForensicManifestId() => $_clearField(2);
 }
 
 class GetContentResponse extends $pb.GeneratedMessage {
   factory GetContentResponse({
     OnyxContent? content,
+    OnyxForensicManifest? forensicManifest,
   }) {
     final result = create();
     if (content != null) result.content = content;
+    if (forensicManifest != null) result.forensicManifest = forensicManifest;
     return result;
   }
 
@@ -2046,6 +2089,8 @@ class GetContentResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<OnyxContent>(1, _omitFieldNames ? '' : 'content',
         subBuilder: OnyxContent.create)
+    ..aOM<OnyxForensicManifest>(2, _omitFieldNames ? '' : 'forensicManifest',
+        subBuilder: OnyxForensicManifest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2077,6 +2122,17 @@ class GetContentResponse extends $pb.GeneratedMessage {
   void clearContent() => $_clearField(1);
   @$pb.TagNumber(1)
   OnyxContent ensureContent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxForensicManifest get forensicManifest => $_getN(1);
+  @$pb.TagNumber(2)
+  set forensicManifest(OnyxForensicManifest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForensicManifest() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForensicManifest() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxForensicManifest ensureForensicManifest() => $_ensure(1);
 }
 
 class ListShelfRequest extends $pb.GeneratedMessage {
@@ -18912,6 +18968,8 @@ class ShareLink extends $pb.GeneratedMessage {
     $core.String? watermark,
     $1.Timestamp? expiresAt,
     $core.bool? revoked,
+    $core.bool? forensicProtected,
+    $core.String? forensicMark,
   }) {
     final result = create();
     if (token != null) result.token = token;
@@ -18920,6 +18978,8 @@ class ShareLink extends $pb.GeneratedMessage {
     if (watermark != null) result.watermark = watermark;
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (revoked != null) result.revoked = revoked;
+    if (forensicProtected != null) result.forensicProtected = forensicProtected;
+    if (forensicMark != null) result.forensicMark = forensicMark;
     return result;
   }
 
@@ -18944,6 +19004,8 @@ class ShareLink extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
         subBuilder: $1.Timestamp.create)
     ..aOB(6, _omitFieldNames ? '' : 'revoked')
+    ..aOB(7, _omitFieldNames ? '' : 'forensicProtected')
+    ..aOS(8, _omitFieldNames ? '' : 'forensicMark')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -19019,14 +19081,35 @@ class ShareLink extends $pb.GeneratedMessage {
   $core.bool hasRevoked() => $_has(5);
   @$pb.TagNumber(6)
   void clearRevoked() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get forensicProtected => $_getBF(6);
+  @$pb.TagNumber(7)
+  set forensicProtected($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasForensicProtected() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearForensicProtected() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get forensicMark => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set forensicMark($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasForensicMark() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearForensicMark() => $_clearField(8);
 }
 
 class CreateShareLinkRequest extends $pb.GeneratedMessage {
   factory CreateShareLinkRequest({
     $core.String? contentId,
+    $core.String? forensicManifestId,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
+    if (forensicManifestId != null)
+      result.forensicManifestId = forensicManifestId;
     return result;
   }
 
@@ -19045,6 +19128,7 @@ class CreateShareLinkRequest extends $pb.GeneratedMessage {
           const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'forensicManifestId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -19075,6 +19159,17 @@ class CreateShareLinkRequest extends $pb.GeneratedMessage {
   $core.bool hasContentId() => $_has(0);
   @$pb.TagNumber(1)
   void clearContentId() => $_clearField(1);
+
+  /// Required when this revision has an active forensic policy. The manifest
+  /// must be a fresh, device-bound, one-use `share` grant.
+  @$pb.TagNumber(2)
+  $core.String get forensicManifestId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set forensicManifestId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForensicManifestId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForensicManifestId() => $_clearField(2);
 }
 
 class CreateShareLinkResponse extends $pb.GeneratedMessage {
@@ -19341,6 +19436,7 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     $fixnum.Int64? sourceVersion,
     EncryptedRendition_OfflinePackageType? packageType,
     $core.String? keyWrapAlgorithm,
+    OnyxForensicManifest? forensicManifest,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
@@ -19359,6 +19455,7 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     if (sourceVersion != null) result.sourceVersion = sourceVersion;
     if (packageType != null) result.packageType = packageType;
     if (keyWrapAlgorithm != null) result.keyWrapAlgorithm = keyWrapAlgorithm;
+    if (forensicManifest != null) result.forensicManifest = forensicManifest;
     return result;
   }
 
@@ -19397,6 +19494,8 @@ class EncryptedRendition extends $pb.GeneratedMessage {
         15, _omitFieldNames ? '' : 'packageType',
         enumValues: EncryptedRendition_OfflinePackageType.values)
     ..aOS(16, _omitFieldNames ? '' : 'keyWrapAlgorithm')
+    ..aOM<OnyxForensicManifest>(17, _omitFieldNames ? '' : 'forensicManifest',
+        subBuilder: OnyxForensicManifest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -19564,6 +19663,18 @@ class EncryptedRendition extends $pb.GeneratedMessage {
   $core.bool hasKeyWrapAlgorithm() => $_has(15);
   @$pb.TagNumber(16)
   void clearKeyWrapAlgorithm() => $_clearField(16);
+
+  /// Present only for explicitly protected, device-bound delivery.
+  @$pb.TagNumber(17)
+  OnyxForensicManifest get forensicManifest => $_getN(16);
+  @$pb.TagNumber(17)
+  set forensicManifest(OnyxForensicManifest value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasForensicManifest() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearForensicManifest() => $_clearField(17);
+  @$pb.TagNumber(17)
+  OnyxForensicManifest ensureForensicManifest() => $_ensure(16);
 }
 
 class GetOfflineManifestRequest extends $pb.GeneratedMessage {
@@ -50204,6 +50315,2424 @@ class ContestLivingArchiveReleaseResponse extends $pb.GeneratedMessage {
   void clearReleaseCase() => $_clearField(1);
   @$pb.TagNumber(1)
   OnyxLivingArchiveReleaseCase ensureReleaseCase() => $_ensure(0);
+}
+
+class OnyxForensicRuntime extends $pb.GeneratedMessage {
+  factory OnyxForensicRuntime({
+    $core.String? status,
+    $core.bool? issuanceEnabled,
+    $core.int? manifestTtlSeconds,
+    $core.int? appealWindowDays,
+    $fixnum.Int64? signingVersion,
+    $core.String? publicNotice,
+    $core.int? simulationSlaSeconds,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (issuanceEnabled != null) result.issuanceEnabled = issuanceEnabled;
+    if (manifestTtlSeconds != null)
+      result.manifestTtlSeconds = manifestTtlSeconds;
+    if (appealWindowDays != null) result.appealWindowDays = appealWindowDays;
+    if (signingVersion != null) result.signingVersion = signingVersion;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    if (simulationSlaSeconds != null)
+      result.simulationSlaSeconds = simulationSlaSeconds;
+    return result;
+  }
+
+  OnyxForensicRuntime._();
+
+  factory OnyxForensicRuntime.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicRuntime.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicRuntime',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aOB(2, _omitFieldNames ? '' : 'issuanceEnabled')
+    ..aI(3, _omitFieldNames ? '' : 'manifestTtlSeconds')
+    ..aI(4, _omitFieldNames ? '' : 'appealWindowDays')
+    ..aInt64(5, _omitFieldNames ? '' : 'signingVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'publicNotice')
+    ..aI(7, _omitFieldNames ? '' : 'simulationSlaSeconds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicRuntime clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicRuntime copyWith(void Function(OnyxForensicRuntime) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicRuntime))
+          as OnyxForensicRuntime;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicRuntime create() => OnyxForensicRuntime._();
+  @$core.override
+  OnyxForensicRuntime createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicRuntime getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicRuntime>(create);
+  static OnyxForensicRuntime? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get issuanceEnabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set issuanceEnabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIssuanceEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIssuanceEnabled() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get manifestTtlSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set manifestTtlSeconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasManifestTtlSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearManifestTtlSeconds() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get appealWindowDays => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set appealWindowDays($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAppealWindowDays() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAppealWindowDays() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get signingVersion => $_getI64(4);
+  @$pb.TagNumber(5)
+  set signingVersion($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSigningVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSigningVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get publicNotice => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set publicNotice($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPublicNotice() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPublicNotice() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get simulationSlaSeconds => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set simulationSlaSeconds($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSimulationSlaSeconds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSimulationSlaSeconds() => $_clearField(7);
+}
+
+class OnyxForensicContentProtection extends $pb.GeneratedMessage {
+  factory OnyxForensicContentProtection({
+    $core.String? policyId,
+    $core.String? contentId,
+    $core.String? contentTitle,
+    $core.String? revisionId,
+    $core.String? status,
+    $core.String? markMode,
+    $core.Iterable<$core.String>? allowedActions,
+    $fixnum.Int64? version,
+    $1.Timestamp? activatedAt,
+    $core.String? contentKind,
+  }) {
+    final result = create();
+    if (policyId != null) result.policyId = policyId;
+    if (contentId != null) result.contentId = contentId;
+    if (contentTitle != null) result.contentTitle = contentTitle;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (status != null) result.status = status;
+    if (markMode != null) result.markMode = markMode;
+    if (allowedActions != null) result.allowedActions.addAll(allowedActions);
+    if (version != null) result.version = version;
+    if (activatedAt != null) result.activatedAt = activatedAt;
+    if (contentKind != null) result.contentKind = contentKind;
+    return result;
+  }
+
+  OnyxForensicContentProtection._();
+
+  factory OnyxForensicContentProtection.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicContentProtection.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicContentProtection',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyId')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'contentTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'markMode')
+    ..pPS(7, _omitFieldNames ? '' : 'allowedActions')
+    ..aInt64(8, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'activatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(10, _omitFieldNames ? '' : 'contentKind')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicContentProtection clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicContentProtection copyWith(
+          void Function(OnyxForensicContentProtection) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxForensicContentProtection))
+          as OnyxForensicContentProtection;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicContentProtection create() =>
+      OnyxForensicContentProtection._();
+  @$core.override
+  OnyxForensicContentProtection createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicContentProtection getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicContentProtection>(create);
+  static OnyxForensicContentProtection? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get revisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get markMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set markMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMarkMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMarkMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get allowedActions => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get version => $_getI64(7);
+  @$pb.TagNumber(8)
+  set version($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get activatedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set activatedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasActivatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearActivatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureActivatedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $core.String get contentKind => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set contentKind($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasContentKind() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearContentKind() => $_clearField(10);
+}
+
+class OnyxForensicManifest extends $pb.GeneratedMessage {
+  factory OnyxForensicManifest({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? contentTitle,
+    $core.String? revisionId,
+    $core.String? deviceId,
+    $core.String? action,
+    $core.String? markCode,
+    $core.String? visibleWatermark,
+    $core.String? manifestChecksum,
+    $core.String? signature,
+    $core.String? status,
+    $fixnum.Int64? policyVersion,
+    $fixnum.Int64? version,
+    $1.Timestamp? issuedAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? firstUsedAt,
+    $1.Timestamp? revokedAt,
+    $core.String? signatureKeyRef,
+    $core.String? signatureAlgorithm,
+    $fixnum.Int64? signingVersion,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (contentTitle != null) result.contentTitle = contentTitle;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (action != null) result.action = action;
+    if (markCode != null) result.markCode = markCode;
+    if (visibleWatermark != null) result.visibleWatermark = visibleWatermark;
+    if (manifestChecksum != null) result.manifestChecksum = manifestChecksum;
+    if (signature != null) result.signature = signature;
+    if (status != null) result.status = status;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (version != null) result.version = version;
+    if (issuedAt != null) result.issuedAt = issuedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (firstUsedAt != null) result.firstUsedAt = firstUsedAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (signatureKeyRef != null) result.signatureKeyRef = signatureKeyRef;
+    if (signatureAlgorithm != null)
+      result.signatureAlgorithm = signatureAlgorithm;
+    if (signingVersion != null) result.signingVersion = signingVersion;
+    return result;
+  }
+
+  OnyxForensicManifest._();
+
+  factory OnyxForensicManifest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicManifest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicManifest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'contentTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(6, _omitFieldNames ? '' : 'action')
+    ..aOS(7, _omitFieldNames ? '' : 'markCode')
+    ..aOS(8, _omitFieldNames ? '' : 'visibleWatermark')
+    ..aOS(9, _omitFieldNames ? '' : 'manifestChecksum')
+    ..aOS(10, _omitFieldNames ? '' : 'signature')
+    ..aOS(11, _omitFieldNames ? '' : 'status')
+    ..aInt64(12, _omitFieldNames ? '' : 'policyVersion')
+    ..aInt64(13, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'issuedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(16, _omitFieldNames ? '' : 'firstUsedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(18, _omitFieldNames ? '' : 'signatureKeyRef')
+    ..aOS(19, _omitFieldNames ? '' : 'signatureAlgorithm')
+    ..aInt64(20, _omitFieldNames ? '' : 'signingVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicManifest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicManifest copyWith(void Function(OnyxForensicManifest) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicManifest))
+          as OnyxForensicManifest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicManifest create() => OnyxForensicManifest._();
+  @$core.override
+  OnyxForensicManifest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicManifest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicManifest>(create);
+  static OnyxForensicManifest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get revisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get deviceId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set deviceId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDeviceId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeviceId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get action => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set action($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAction() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAction() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get markCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set markCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMarkCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMarkCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get visibleWatermark => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set visibleWatermark($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVisibleWatermark() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVisibleWatermark() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get manifestChecksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set manifestChecksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasManifestChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearManifestChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get signature => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set signature($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSignature() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSignature() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get status => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set status($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get policyVersion => $_getI64(11);
+  @$pb.TagNumber(12)
+  set policyVersion($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPolicyVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPolicyVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get version => $_getI64(12);
+  @$pb.TagNumber(13)
+  set version($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get issuedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set issuedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasIssuedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearIssuedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureIssuedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get expiresAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set expiresAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasExpiresAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearExpiresAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureExpiresAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get firstUsedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set firstUsedAt($1.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasFirstUsedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearFirstUsedAt() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureFirstUsedAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get revokedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set revokedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasRevokedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearRevokedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureRevokedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $core.String get signatureKeyRef => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set signatureKeyRef($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasSignatureKeyRef() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearSignatureKeyRef() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get signatureAlgorithm => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set signatureAlgorithm($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasSignatureAlgorithm() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearSignatureAlgorithm() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $fixnum.Int64 get signingVersion => $_getI64(19);
+  @$pb.TagNumber(20)
+  set signingVersion($fixnum.Int64 value) => $_setInt64(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasSigningVersion() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearSigningVersion() => $_clearField(20);
+}
+
+class OnyxForensicCustodyEvent extends $pb.GeneratedMessage {
+  factory OnyxForensicCustodyEvent({
+    $core.String? id,
+    $core.String? action,
+    $core.String? actorKind,
+    $core.String? summary,
+    $core.String? evidenceDigest,
+    $core.String? previousHash,
+    $core.String? eventHash,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (action != null) result.action = action;
+    if (actorKind != null) result.actorKind = actorKind;
+    if (summary != null) result.summary = summary;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (previousHash != null) result.previousHash = previousHash;
+    if (eventHash != null) result.eventHash = eventHash;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OnyxForensicCustodyEvent._();
+
+  factory OnyxForensicCustodyEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicCustodyEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicCustodyEvent',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'actorKind')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aOS(5, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOS(6, _omitFieldNames ? '' : 'previousHash')
+    ..aOS(7, _omitFieldNames ? '' : 'eventHash')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicCustodyEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicCustodyEvent copyWith(
+          void Function(OnyxForensicCustodyEvent) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicCustodyEvent))
+          as OnyxForensicCustodyEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicCustodyEvent create() => OnyxForensicCustodyEvent._();
+  @$core.override
+  OnyxForensicCustodyEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicCustodyEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicCustodyEvent>(create);
+  static OnyxForensicCustodyEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get actorKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set actorKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasActorKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearActorKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get evidenceDigest => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set evidenceDigest($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEvidenceDigest() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvidenceDigest() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get previousHash => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set previousHash($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPreviousHash() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreviousHash() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get eventHash => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set eventHash($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEventHash() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEventHash() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get createdAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set createdAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureCreatedAt() => $_ensure(7);
+}
+
+class OnyxForensicAppealMessage extends $pb.GeneratedMessage {
+  factory OnyxForensicAppealMessage({
+    $core.String? id,
+    $core.String? authorKind,
+    $core.String? body,
+    $core.String? evidenceDigest,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (authorKind != null) result.authorKind = authorKind;
+    if (body != null) result.body = body;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OnyxForensicAppealMessage._();
+
+  factory OnyxForensicAppealMessage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicAppealMessage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicAppealMessage',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'authorKind')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicAppealMessage clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicAppealMessage copyWith(
+          void Function(OnyxForensicAppealMessage) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicAppealMessage))
+          as OnyxForensicAppealMessage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicAppealMessage create() => OnyxForensicAppealMessage._();
+  @$core.override
+  OnyxForensicAppealMessage createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicAppealMessage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicAppealMessage>(create);
+  static OnyxForensicAppealMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get authorKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authorKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAuthorKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthorKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceDigest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceDigest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceDigest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceDigest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureCreatedAt() => $_ensure(4);
+}
+
+class OnyxForensicAppeal extends $pb.GeneratedMessage {
+  factory OnyxForensicAppeal({
+    $core.String? id,
+    $core.String? caseId,
+    $core.String? status,
+    $core.String? reason,
+    $core.String? decisionSummary,
+    $fixnum.Int64? version,
+    $core.Iterable<OnyxForensicAppealMessage>? messages,
+    $1.Timestamp? filedAt,
+    $1.Timestamp? decidedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (caseId != null) result.caseId = caseId;
+    if (status != null) result.status = status;
+    if (reason != null) result.reason = reason;
+    if (decisionSummary != null) result.decisionSummary = decisionSummary;
+    if (version != null) result.version = version;
+    if (messages != null) result.messages.addAll(messages);
+    if (filedAt != null) result.filedAt = filedAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    return result;
+  }
+
+  OnyxForensicAppeal._();
+
+  factory OnyxForensicAppeal.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicAppeal.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicAppeal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'caseId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'decisionSummary')
+    ..aInt64(6, _omitFieldNames ? '' : 'version')
+    ..pPM<OnyxForensicAppealMessage>(7, _omitFieldNames ? '' : 'messages',
+        subBuilder: OnyxForensicAppealMessage.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'filedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'decidedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicAppeal clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicAppeal copyWith(void Function(OnyxForensicAppeal) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicAppeal))
+          as OnyxForensicAppeal;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicAppeal create() => OnyxForensicAppeal._();
+  @$core.override
+  OnyxForensicAppeal createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicAppeal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicAppeal>(create);
+  static OnyxForensicAppeal? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get caseId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set caseId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCaseId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCaseId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get decisionSummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set decisionSummary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDecisionSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDecisionSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get version => $_getI64(5);
+  @$pb.TagNumber(6)
+  set version($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<OnyxForensicAppealMessage> get messages => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get filedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set filedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFiledAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFiledAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureFiledAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get decidedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set decidedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDecidedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDecidedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureDecidedAt() => $_ensure(8);
+}
+
+class OnyxForensicCase extends $pb.GeneratedMessage {
+  factory OnyxForensicCase({
+    $core.String? id,
+    $core.String? caseCode,
+    $core.String? contentId,
+    $core.String? contentTitle,
+    $core.String? manifestId,
+    $core.String? status,
+    $core.String? allegationSummary,
+    $core.String? memberResponse,
+    $core.String? confidenceLabel,
+    $core.String? restrictionScope,
+    $core.bool? restrictionActive,
+    $core.bool? synthetic,
+    $fixnum.Int64? version,
+    $1.Timestamp? openedAt,
+    $1.Timestamp? responseDueAt,
+    $1.Timestamp? decidedAt,
+    $core.Iterable<OnyxForensicCustodyEvent>? custody,
+    OnyxForensicAppeal? appeal,
+    $core.bool? legalHold,
+    $core.String? legalHoldReason,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (caseCode != null) result.caseCode = caseCode;
+    if (contentId != null) result.contentId = contentId;
+    if (contentTitle != null) result.contentTitle = contentTitle;
+    if (manifestId != null) result.manifestId = manifestId;
+    if (status != null) result.status = status;
+    if (allegationSummary != null) result.allegationSummary = allegationSummary;
+    if (memberResponse != null) result.memberResponse = memberResponse;
+    if (confidenceLabel != null) result.confidenceLabel = confidenceLabel;
+    if (restrictionScope != null) result.restrictionScope = restrictionScope;
+    if (restrictionActive != null) result.restrictionActive = restrictionActive;
+    if (synthetic != null) result.synthetic = synthetic;
+    if (version != null) result.version = version;
+    if (openedAt != null) result.openedAt = openedAt;
+    if (responseDueAt != null) result.responseDueAt = responseDueAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    if (custody != null) result.custody.addAll(custody);
+    if (appeal != null) result.appeal = appeal;
+    if (legalHold != null) result.legalHold = legalHold;
+    if (legalHoldReason != null) result.legalHoldReason = legalHoldReason;
+    return result;
+  }
+
+  OnyxForensicCase._();
+
+  factory OnyxForensicCase.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxForensicCase.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxForensicCase',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'caseCode')
+    ..aOS(3, _omitFieldNames ? '' : 'contentId')
+    ..aOS(4, _omitFieldNames ? '' : 'contentTitle')
+    ..aOS(5, _omitFieldNames ? '' : 'manifestId')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'allegationSummary')
+    ..aOS(8, _omitFieldNames ? '' : 'memberResponse')
+    ..aOS(9, _omitFieldNames ? '' : 'confidenceLabel')
+    ..aOS(10, _omitFieldNames ? '' : 'restrictionScope')
+    ..aOB(11, _omitFieldNames ? '' : 'restrictionActive')
+    ..aOB(12, _omitFieldNames ? '' : 'synthetic')
+    ..aInt64(13, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'openedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'responseDueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(16, _omitFieldNames ? '' : 'decidedAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<OnyxForensicCustodyEvent>(17, _omitFieldNames ? '' : 'custody',
+        subBuilder: OnyxForensicCustodyEvent.create)
+    ..aOM<OnyxForensicAppeal>(18, _omitFieldNames ? '' : 'appeal',
+        subBuilder: OnyxForensicAppeal.create)
+    ..aOB(19, _omitFieldNames ? '' : 'legalHold')
+    ..aOS(20, _omitFieldNames ? '' : 'legalHoldReason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicCase clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxForensicCase copyWith(void Function(OnyxForensicCase) updates) =>
+      super.copyWith((message) => updates(message as OnyxForensicCase))
+          as OnyxForensicCase;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicCase create() => OnyxForensicCase._();
+  @$core.override
+  OnyxForensicCase createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxForensicCase getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxForensicCase>(create);
+  static OnyxForensicCase? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get caseCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set caseCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCaseCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCaseCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get contentTitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set contentTitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContentTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContentTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get manifestId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set manifestId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasManifestId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearManifestId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get allegationSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set allegationSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAllegationSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllegationSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get memberResponse => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set memberResponse($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberResponse() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberResponse() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get confidenceLabel => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set confidenceLabel($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasConfidenceLabel() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConfidenceLabel() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get restrictionScope => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set restrictionScope($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRestrictionScope() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRestrictionScope() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get restrictionActive => $_getBF(10);
+  @$pb.TagNumber(11)
+  set restrictionActive($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRestrictionActive() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRestrictionActive() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get synthetic => $_getBF(11);
+  @$pb.TagNumber(12)
+  set synthetic($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSynthetic() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSynthetic() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get version => $_getI64(12);
+  @$pb.TagNumber(13)
+  set version($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get openedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set openedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasOpenedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearOpenedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureOpenedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get responseDueAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set responseDueAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasResponseDueAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearResponseDueAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureResponseDueAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get decidedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set decidedAt($1.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasDecidedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearDecidedAt() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureDecidedAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $pb.PbList<OnyxForensicCustodyEvent> get custody => $_getList(16);
+
+  @$pb.TagNumber(18)
+  OnyxForensicAppeal get appeal => $_getN(17);
+  @$pb.TagNumber(18)
+  set appeal(OnyxForensicAppeal value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasAppeal() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearAppeal() => $_clearField(18);
+  @$pb.TagNumber(18)
+  OnyxForensicAppeal ensureAppeal() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $core.bool get legalHold => $_getBF(18);
+  @$pb.TagNumber(19)
+  set legalHold($core.bool value) => $_setBool(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasLegalHold() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearLegalHold() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get legalHoldReason => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set legalHoldReason($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasLegalHoldReason() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearLegalHoldReason() => $_clearField(20);
+}
+
+class GetForensicProtectionDashboardRequest extends $pb.GeneratedMessage {
+  factory GetForensicProtectionDashboardRequest({
+    $core.bool? includeHistory,
+  }) {
+    final result = create();
+    if (includeHistory != null) result.includeHistory = includeHistory;
+    return result;
+  }
+
+  GetForensicProtectionDashboardRequest._();
+
+  factory GetForensicProtectionDashboardRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetForensicProtectionDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetForensicProtectionDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'includeHistory')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForensicProtectionDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForensicProtectionDashboardRequest copyWith(
+          void Function(GetForensicProtectionDashboardRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetForensicProtectionDashboardRequest))
+          as GetForensicProtectionDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForensicProtectionDashboardRequest create() =>
+      GetForensicProtectionDashboardRequest._();
+  @$core.override
+  GetForensicProtectionDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetForensicProtectionDashboardRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetForensicProtectionDashboardRequest>(create);
+  static GetForensicProtectionDashboardRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get includeHistory => $_getBF(0);
+  @$pb.TagNumber(1)
+  set includeHistory($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncludeHistory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncludeHistory() => $_clearField(1);
+}
+
+class GetForensicProtectionDashboardResponse extends $pb.GeneratedMessage {
+  factory GetForensicProtectionDashboardResponse({
+    OnyxForensicRuntime? runtime,
+    $core.Iterable<OnyxForensicContentProtection>? protectedContent,
+    $core.Iterable<OnyxForensicManifest>? manifests,
+    $core.Iterable<OnyxForensicCase>? cases,
+  }) {
+    final result = create();
+    if (runtime != null) result.runtime = runtime;
+    if (protectedContent != null)
+      result.protectedContent.addAll(protectedContent);
+    if (manifests != null) result.manifests.addAll(manifests);
+    if (cases != null) result.cases.addAll(cases);
+    return result;
+  }
+
+  GetForensicProtectionDashboardResponse._();
+
+  factory GetForensicProtectionDashboardResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetForensicProtectionDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetForensicProtectionDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicRuntime>(1, _omitFieldNames ? '' : 'runtime',
+        subBuilder: OnyxForensicRuntime.create)
+    ..pPM<OnyxForensicContentProtection>(
+        2, _omitFieldNames ? '' : 'protectedContent',
+        subBuilder: OnyxForensicContentProtection.create)
+    ..pPM<OnyxForensicManifest>(3, _omitFieldNames ? '' : 'manifests',
+        subBuilder: OnyxForensicManifest.create)
+    ..pPM<OnyxForensicCase>(4, _omitFieldNames ? '' : 'cases',
+        subBuilder: OnyxForensicCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForensicProtectionDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForensicProtectionDashboardResponse copyWith(
+          void Function(GetForensicProtectionDashboardResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetForensicProtectionDashboardResponse))
+          as GetForensicProtectionDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForensicProtectionDashboardResponse create() =>
+      GetForensicProtectionDashboardResponse._();
+  @$core.override
+  GetForensicProtectionDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetForensicProtectionDashboardResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetForensicProtectionDashboardResponse>(create);
+  static GetForensicProtectionDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicRuntime get runtime => $_getN(0);
+  @$pb.TagNumber(1)
+  set runtime(OnyxForensicRuntime value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuntime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuntime() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicRuntime ensureRuntime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxForensicContentProtection> get protectedContent =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxForensicManifest> get manifests => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxForensicCase> get cases => $_getList(3);
+}
+
+class IssueForensicManifestRequest extends $pb.GeneratedMessage {
+  factory IssueForensicManifestRequest({
+    $core.String? contentId,
+    $core.String? deviceId,
+    $core.String? action,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (action != null) result.action = action;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  IssueForensicManifestRequest._();
+
+  factory IssueForensicManifestRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueForensicManifestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueForensicManifestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(3, _omitFieldNames ? '' : 'action')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueForensicManifestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueForensicManifestRequest copyWith(
+          void Function(IssueForensicManifestRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as IssueForensicManifestRequest))
+          as IssueForensicManifestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueForensicManifestRequest create() =>
+      IssueForensicManifestRequest._();
+  @$core.override
+  IssueForensicManifestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueForensicManifestRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IssueForensicManifestRequest>(create);
+  static IssueForensicManifestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get action => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set action($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAction() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAction() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class IssueForensicManifestResponse extends $pb.GeneratedMessage {
+  factory IssueForensicManifestResponse({
+    OnyxForensicManifest? manifest,
+    $core.Iterable<EncryptedRendition>? encryptedRenditions,
+    OnyxContent? content,
+  }) {
+    final result = create();
+    if (manifest != null) result.manifest = manifest;
+    if (encryptedRenditions != null)
+      result.encryptedRenditions.addAll(encryptedRenditions);
+    if (content != null) result.content = content;
+    return result;
+  }
+
+  IssueForensicManifestResponse._();
+
+  factory IssueForensicManifestResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueForensicManifestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueForensicManifestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicManifest>(1, _omitFieldNames ? '' : 'manifest',
+        subBuilder: OnyxForensicManifest.create)
+    ..pPM<EncryptedRendition>(2, _omitFieldNames ? '' : 'encryptedRenditions',
+        subBuilder: EncryptedRendition.create)
+    ..aOM<OnyxContent>(3, _omitFieldNames ? '' : 'content',
+        subBuilder: OnyxContent.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueForensicManifestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueForensicManifestResponse copyWith(
+          void Function(IssueForensicManifestResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as IssueForensicManifestResponse))
+          as IssueForensicManifestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueForensicManifestResponse create() =>
+      IssueForensicManifestResponse._();
+  @$core.override
+  IssueForensicManifestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueForensicManifestResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<IssueForensicManifestResponse>(create);
+  static IssueForensicManifestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicManifest get manifest => $_getN(0);
+  @$pb.TagNumber(1)
+  set manifest(OnyxForensicManifest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicManifest ensureManifest() => $_ensure(0);
+
+  /// Populated for a one-use `download` grant. The package remains encrypted
+  /// to the registered device and is bound to the manifest in the database.
+  @$pb.TagNumber(2)
+  $pb.PbList<EncryptedRendition> get encryptedRenditions => $_getList(1);
+
+  @$pb.TagNumber(3)
+  OnyxContent get content => $_getN(2);
+  @$pb.TagNumber(3)
+  set content(OnyxContent value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContent() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContent() => $_clearField(3);
+  @$pb.TagNumber(3)
+  OnyxContent ensureContent() => $_ensure(2);
+}
+
+class RevokeForensicManifestRequest extends $pb.GeneratedMessage {
+  factory RevokeForensicManifestRequest({
+    $core.String? manifestId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (manifestId != null) result.manifestId = manifestId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeForensicManifestRequest._();
+
+  factory RevokeForensicManifestRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeForensicManifestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeForensicManifestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'manifestId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeForensicManifestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeForensicManifestRequest copyWith(
+          void Function(RevokeForensicManifestRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeForensicManifestRequest))
+          as RevokeForensicManifestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeForensicManifestRequest create() =>
+      RevokeForensicManifestRequest._();
+  @$core.override
+  RevokeForensicManifestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeForensicManifestRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeForensicManifestRequest>(create);
+  static RevokeForensicManifestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get manifestId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set manifestId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifestId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifestId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RevokeForensicManifestResponse extends $pb.GeneratedMessage {
+  factory RevokeForensicManifestResponse({
+    OnyxForensicManifest? manifest,
+  }) {
+    final result = create();
+    if (manifest != null) result.manifest = manifest;
+    return result;
+  }
+
+  RevokeForensicManifestResponse._();
+
+  factory RevokeForensicManifestResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeForensicManifestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeForensicManifestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicManifest>(1, _omitFieldNames ? '' : 'manifest',
+        subBuilder: OnyxForensicManifest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeForensicManifestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeForensicManifestResponse copyWith(
+          void Function(RevokeForensicManifestResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeForensicManifestResponse))
+          as RevokeForensicManifestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeForensicManifestResponse create() =>
+      RevokeForensicManifestResponse._();
+  @$core.override
+  RevokeForensicManifestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeForensicManifestResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeForensicManifestResponse>(create);
+  static RevokeForensicManifestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicManifest get manifest => $_getN(0);
+  @$pb.TagNumber(1)
+  set manifest(OnyxForensicManifest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasManifest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearManifest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicManifest ensureManifest() => $_ensure(0);
+}
+
+class RespondForensicCaseRequest extends $pb.GeneratedMessage {
+  factory RespondForensicCaseRequest({
+    $core.String? caseId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? response,
+    $core.String? evidenceDigest,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (caseId != null) result.caseId = caseId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (response != null) result.response = response;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RespondForensicCaseRequest._();
+
+  factory RespondForensicCaseRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RespondForensicCaseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RespondForensicCaseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'response')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondForensicCaseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondForensicCaseRequest copyWith(
+          void Function(RespondForensicCaseRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RespondForensicCaseRequest))
+          as RespondForensicCaseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondForensicCaseRequest create() => RespondForensicCaseRequest._();
+  @$core.override
+  RespondForensicCaseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RespondForensicCaseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RespondForensicCaseRequest>(create);
+  static RespondForensicCaseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get response => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set response($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResponse() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResponse() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceDigest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceDigest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceDigest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceDigest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class RespondForensicCaseResponse extends $pb.GeneratedMessage {
+  factory RespondForensicCaseResponse({
+    OnyxForensicCase? forensicCase,
+  }) {
+    final result = create();
+    if (forensicCase != null) result.forensicCase = forensicCase;
+    return result;
+  }
+
+  RespondForensicCaseResponse._();
+
+  factory RespondForensicCaseResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RespondForensicCaseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RespondForensicCaseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicCase>(1, _omitFieldNames ? '' : 'forensicCase',
+        subBuilder: OnyxForensicCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondForensicCaseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondForensicCaseResponse copyWith(
+          void Function(RespondForensicCaseResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RespondForensicCaseResponse))
+          as RespondForensicCaseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondForensicCaseResponse create() =>
+      RespondForensicCaseResponse._();
+  @$core.override
+  RespondForensicCaseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RespondForensicCaseResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RespondForensicCaseResponse>(create);
+  static RespondForensicCaseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicCase get forensicCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set forensicCase(OnyxForensicCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForensicCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForensicCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicCase ensureForensicCase() => $_ensure(0);
+}
+
+class FileForensicAppealRequest extends $pb.GeneratedMessage {
+  factory FileForensicAppealRequest({
+    $core.String? caseId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? evidenceDigest,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (caseId != null) result.caseId = caseId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  FileForensicAppealRequest._();
+
+  factory FileForensicAppealRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileForensicAppealRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileForensicAppealRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileForensicAppealRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileForensicAppealRequest copyWith(
+          void Function(FileForensicAppealRequest) updates) =>
+      super.copyWith((message) => updates(message as FileForensicAppealRequest))
+          as FileForensicAppealRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileForensicAppealRequest create() => FileForensicAppealRequest._();
+  @$core.override
+  FileForensicAppealRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileForensicAppealRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FileForensicAppealRequest>(create);
+  static FileForensicAppealRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceDigest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceDigest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceDigest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceDigest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class FileForensicAppealResponse extends $pb.GeneratedMessage {
+  factory FileForensicAppealResponse({
+    OnyxForensicCase? forensicCase,
+  }) {
+    final result = create();
+    if (forensicCase != null) result.forensicCase = forensicCase;
+    return result;
+  }
+
+  FileForensicAppealResponse._();
+
+  factory FileForensicAppealResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileForensicAppealResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileForensicAppealResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicCase>(1, _omitFieldNames ? '' : 'forensicCase',
+        subBuilder: OnyxForensicCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileForensicAppealResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileForensicAppealResponse copyWith(
+          void Function(FileForensicAppealResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as FileForensicAppealResponse))
+          as FileForensicAppealResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileForensicAppealResponse create() => FileForensicAppealResponse._();
+  @$core.override
+  FileForensicAppealResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileForensicAppealResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FileForensicAppealResponse>(create);
+  static FileForensicAppealResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicCase get forensicCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set forensicCase(OnyxForensicCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForensicCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForensicCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicCase ensureForensicCase() => $_ensure(0);
+}
+
+class PostForensicAppealMessageRequest extends $pb.GeneratedMessage {
+  factory PostForensicAppealMessageRequest({
+    $core.String? appealId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? body,
+    $core.String? evidenceDigest,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (appealId != null) result.appealId = appealId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (body != null) result.body = body;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  PostForensicAppealMessageRequest._();
+
+  factory PostForensicAppealMessageRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostForensicAppealMessageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostForensicAppealMessageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appealId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'body')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostForensicAppealMessageRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostForensicAppealMessageRequest copyWith(
+          void Function(PostForensicAppealMessageRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PostForensicAppealMessageRequest))
+          as PostForensicAppealMessageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostForensicAppealMessageRequest create() =>
+      PostForensicAppealMessageRequest._();
+  @$core.override
+  PostForensicAppealMessageRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostForensicAppealMessageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostForensicAppealMessageRequest>(
+          create);
+  static PostForensicAppealMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appealId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appealId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppealId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppealId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get body => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set body($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceDigest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceDigest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceDigest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceDigest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class PostForensicAppealMessageResponse extends $pb.GeneratedMessage {
+  factory PostForensicAppealMessageResponse({
+    OnyxForensicCase? forensicCase,
+  }) {
+    final result = create();
+    if (forensicCase != null) result.forensicCase = forensicCase;
+    return result;
+  }
+
+  PostForensicAppealMessageResponse._();
+
+  factory PostForensicAppealMessageResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostForensicAppealMessageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostForensicAppealMessageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicCase>(1, _omitFieldNames ? '' : 'forensicCase',
+        subBuilder: OnyxForensicCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostForensicAppealMessageResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostForensicAppealMessageResponse copyWith(
+          void Function(PostForensicAppealMessageResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as PostForensicAppealMessageResponse))
+          as PostForensicAppealMessageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostForensicAppealMessageResponse create() =>
+      PostForensicAppealMessageResponse._();
+  @$core.override
+  PostForensicAppealMessageResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostForensicAppealMessageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostForensicAppealMessageResponse>(
+          create);
+  static PostForensicAppealMessageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicCase get forensicCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set forensicCase(OnyxForensicCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForensicCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForensicCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicCase ensureForensicCase() => $_ensure(0);
+}
+
+class WithdrawForensicAppealRequest extends $pb.GeneratedMessage {
+  factory WithdrawForensicAppealRequest({
+    $core.String? appealId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (appealId != null) result.appealId = appealId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  WithdrawForensicAppealRequest._();
+
+  factory WithdrawForensicAppealRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory WithdrawForensicAppealRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'WithdrawForensicAppealRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'appealId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WithdrawForensicAppealRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WithdrawForensicAppealRequest copyWith(
+          void Function(WithdrawForensicAppealRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as WithdrawForensicAppealRequest))
+          as WithdrawForensicAppealRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WithdrawForensicAppealRequest create() =>
+      WithdrawForensicAppealRequest._();
+  @$core.override
+  WithdrawForensicAppealRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static WithdrawForensicAppealRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<WithdrawForensicAppealRequest>(create);
+  static WithdrawForensicAppealRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appealId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appealId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppealId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppealId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class WithdrawForensicAppealResponse extends $pb.GeneratedMessage {
+  factory WithdrawForensicAppealResponse({
+    OnyxForensicCase? forensicCase,
+  }) {
+    final result = create();
+    if (forensicCase != null) result.forensicCase = forensicCase;
+    return result;
+  }
+
+  WithdrawForensicAppealResponse._();
+
+  factory WithdrawForensicAppealResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory WithdrawForensicAppealResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'WithdrawForensicAppealResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxForensicCase>(1, _omitFieldNames ? '' : 'forensicCase',
+        subBuilder: OnyxForensicCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WithdrawForensicAppealResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  WithdrawForensicAppealResponse copyWith(
+          void Function(WithdrawForensicAppealResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as WithdrawForensicAppealResponse))
+          as WithdrawForensicAppealResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static WithdrawForensicAppealResponse create() =>
+      WithdrawForensicAppealResponse._();
+  @$core.override
+  WithdrawForensicAppealResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static WithdrawForensicAppealResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<WithdrawForensicAppealResponse>(create);
+  static WithdrawForensicAppealResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxForensicCase get forensicCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set forensicCase(OnyxForensicCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForensicCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForensicCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxForensicCase ensureForensicCase() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =
