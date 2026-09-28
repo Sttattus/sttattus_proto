@@ -2283,6 +2283,9 @@ message ResearchRoomShareLink {
   google.protobuf.Timestamp expires_at = 13;
   google.protobuf.Timestamp revoked_at = 14;
   google.protobuf.Timestamp created_at = 15;
+  bool forensic_protected = 16;
+  string forensic_mark = 17;
+  string forensic_manifest_id = 18;
 }
 
 message ResearchRoomOfflineManifest {
@@ -2608,6 +2611,9 @@ message CreateResearchRoomShareLinkRequest {
   bool allow_download = 4;
   google.protobuf.Timestamp expires_at = 5;
   string client_mutation_id = 6;
+  // Required for a content item when the room watermark mode is `forensic`.
+  // The manifest must be a fresh, device-bound, one-use `share` grant.
+  string forensic_manifest_id = 7;
 }
 message CreateResearchRoomShareLinkResponse {
   ResearchRoomShareLink share_link = 1;
@@ -2635,6 +2641,8 @@ message ResolveResearchRoomShareLinkResponse {
   OnyxContent content = 3;
   bool allow_download = 4;
   string watermark = 5;
+  bool forensic_protected = 6;
+  string forensic_mark = 7;
 }
 
 message GetResearchRoomOfflineManifestRequest {

@@ -30222,6 +30222,9 @@ class ResearchRoomShareLink extends $pb.GeneratedMessage {
     $1.Timestamp? expiresAt,
     $1.Timestamp? revokedAt,
     $1.Timestamp? createdAt,
+    $core.bool? forensicProtected,
+    $core.String? forensicMark,
+    $core.String? forensicManifestId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -30241,6 +30244,10 @@ class ResearchRoomShareLink extends $pb.GeneratedMessage {
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (revokedAt != null) result.revokedAt = revokedAt;
     if (createdAt != null) result.createdAt = createdAt;
+    if (forensicProtected != null) result.forensicProtected = forensicProtected;
+    if (forensicMark != null) result.forensicMark = forensicMark;
+    if (forensicManifestId != null)
+      result.forensicManifestId = forensicManifestId;
     return result;
   }
 
@@ -30277,6 +30284,9 @@ class ResearchRoomShareLink extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..aOB(16, _omitFieldNames ? '' : 'forensicProtected')
+    ..aOS(17, _omitFieldNames ? '' : 'forensicMark')
+    ..aOS(18, _omitFieldNames ? '' : 'forensicManifestId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -30441,6 +30451,33 @@ class ResearchRoomShareLink extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(15);
   @$pb.TagNumber(15)
   $1.Timestamp ensureCreatedAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $core.bool get forensicProtected => $_getBF(15);
+  @$pb.TagNumber(16)
+  set forensicProtected($core.bool value) => $_setBool(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasForensicProtected() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearForensicProtected() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get forensicMark => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set forensicMark($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasForensicMark() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearForensicMark() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get forensicManifestId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set forensicManifestId($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasForensicManifestId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearForensicManifestId() => $_clearField(18);
 }
 
 class ResearchRoomOfflineManifest extends $pb.GeneratedMessage {
@@ -35099,6 +35136,7 @@ class CreateResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
     $core.bool? allowDownload,
     $1.Timestamp? expiresAt,
     $core.String? clientMutationId,
+    $core.String? forensicManifestId,
   }) {
     final result = create();
     if (roomId != null) result.roomId = roomId;
@@ -35107,6 +35145,8 @@ class CreateResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
     if (allowDownload != null) result.allowDownload = allowDownload;
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (forensicManifestId != null)
+      result.forensicManifestId = forensicManifestId;
     return result;
   }
 
@@ -35132,6 +35172,7 @@ class CreateResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
         subBuilder: $1.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(7, _omitFieldNames ? '' : 'forensicManifestId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -35212,6 +35253,17 @@ class CreateResearchRoomShareLinkRequest extends $pb.GeneratedMessage {
   $core.bool hasClientMutationId() => $_has(5);
   @$pb.TagNumber(6)
   void clearClientMutationId() => $_clearField(6);
+
+  /// Required for a content item when the room watermark mode is `forensic`.
+  /// The manifest must be a fresh, device-bound, one-use `share` grant.
+  @$pb.TagNumber(7)
+  $core.String get forensicManifestId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set forensicManifestId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasForensicManifestId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearForensicManifestId() => $_clearField(7);
 }
 
 class CreateResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
@@ -35611,6 +35663,8 @@ class ResolveResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
     OnyxContent? content,
     $core.bool? allowDownload,
     $core.String? watermark,
+    $core.bool? forensicProtected,
+    $core.String? forensicMark,
   }) {
     final result = create();
     if (room != null) result.room = room;
@@ -35618,6 +35672,8 @@ class ResolveResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
     if (content != null) result.content = content;
     if (allowDownload != null) result.allowDownload = allowDownload;
     if (watermark != null) result.watermark = watermark;
+    if (forensicProtected != null) result.forensicProtected = forensicProtected;
+    if (forensicMark != null) result.forensicMark = forensicMark;
     return result;
   }
 
@@ -35644,6 +35700,8 @@ class ResolveResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
         subBuilder: OnyxContent.create)
     ..aOB(4, _omitFieldNames ? '' : 'allowDownload')
     ..aOS(5, _omitFieldNames ? '' : 'watermark')
+    ..aOB(6, _omitFieldNames ? '' : 'forensicProtected')
+    ..aOS(7, _omitFieldNames ? '' : 'forensicMark')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -35719,6 +35777,24 @@ class ResolveResearchRoomShareLinkResponse extends $pb.GeneratedMessage {
   $core.bool hasWatermark() => $_has(4);
   @$pb.TagNumber(5)
   void clearWatermark() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get forensicProtected => $_getBF(5);
+  @$pb.TagNumber(6)
+  set forensicProtected($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasForensicProtected() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearForensicProtected() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get forensicMark => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set forensicMark($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasForensicMark() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearForensicMark() => $_clearField(7);
 }
 
 class GetResearchRoomOfflineManifestRequest extends $pb.GeneratedMessage {

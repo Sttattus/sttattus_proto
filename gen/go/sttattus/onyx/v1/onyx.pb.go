@@ -23188,6 +23188,9 @@ type ResearchRoomShareLink struct {
 	ExpiresAt               *timestamppb.Timestamp `protobuf:"bytes,13,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	RevokedAt               *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=revoked_at,json=revokedAt,proto3" json:"revoked_at,omitempty"`
 	CreatedAt               *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ForensicProtected       bool                   `protobuf:"varint,16,opt,name=forensic_protected,json=forensicProtected,proto3" json:"forensic_protected,omitempty"`
+	ForensicMark            string                 `protobuf:"bytes,17,opt,name=forensic_mark,json=forensicMark,proto3" json:"forensic_mark,omitempty"`
+	ForensicManifestId      string                 `protobuf:"bytes,18,opt,name=forensic_manifest_id,json=forensicManifestId,proto3" json:"forensic_manifest_id,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -23325,6 +23328,27 @@ func (x *ResearchRoomShareLink) GetCreatedAt() *timestamppb.Timestamp {
 		return x.CreatedAt
 	}
 	return nil
+}
+
+func (x *ResearchRoomShareLink) GetForensicProtected() bool {
+	if x != nil {
+		return x.ForensicProtected
+	}
+	return false
+}
+
+func (x *ResearchRoomShareLink) GetForensicMark() string {
+	if x != nil {
+		return x.ForensicMark
+	}
+	return ""
+}
+
+func (x *ResearchRoomShareLink) GetForensicManifestId() string {
+	if x != nil {
+		return x.ForensicManifestId
+	}
+	return ""
 }
 
 type ResearchRoomOfflineManifest struct {
@@ -26703,8 +26727,11 @@ type CreateResearchRoomShareLinkRequest struct {
 	AllowDownload    bool                   `protobuf:"varint,4,opt,name=allow_download,json=allowDownload,proto3" json:"allow_download,omitempty"`
 	ExpiresAt        *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	ClientMutationId string                 `protobuf:"bytes,6,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// Required for a content item when the room watermark mode is `forensic`.
+	// The manifest must be a fresh, device-bound, one-use `share` grant.
+	ForensicManifestId string `protobuf:"bytes,7,opt,name=forensic_manifest_id,json=forensicManifestId,proto3" json:"forensic_manifest_id,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *CreateResearchRoomShareLinkRequest) Reset() {
@@ -26775,6 +26802,13 @@ func (x *CreateResearchRoomShareLinkRequest) GetExpiresAt() *timestamppb.Timesta
 func (x *CreateResearchRoomShareLinkRequest) GetClientMutationId() string {
 	if x != nil {
 		return x.ClientMutationId
+	}
+	return ""
+}
+
+func (x *CreateResearchRoomShareLinkRequest) GetForensicManifestId() string {
+	if x != nil {
+		return x.ForensicManifestId
 	}
 	return ""
 }
@@ -27068,14 +27102,16 @@ func (x *ResolveResearchRoomShareLinkRequest) GetToken() string {
 }
 
 type ResolveResearchRoomShareLinkResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Room          *ResearchRoom          `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
-	Item          *ResearchRoomItem      `protobuf:"bytes,2,opt,name=item,proto3" json:"item,omitempty"`
-	Content       *OnyxContent           `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
-	AllowDownload bool                   `protobuf:"varint,4,opt,name=allow_download,json=allowDownload,proto3" json:"allow_download,omitempty"`
-	Watermark     string                 `protobuf:"bytes,5,opt,name=watermark,proto3" json:"watermark,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Room              *ResearchRoom          `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	Item              *ResearchRoomItem      `protobuf:"bytes,2,opt,name=item,proto3" json:"item,omitempty"`
+	Content           *OnyxContent           `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	AllowDownload     bool                   `protobuf:"varint,4,opt,name=allow_download,json=allowDownload,proto3" json:"allow_download,omitempty"`
+	Watermark         string                 `protobuf:"bytes,5,opt,name=watermark,proto3" json:"watermark,omitempty"`
+	ForensicProtected bool                   `protobuf:"varint,6,opt,name=forensic_protected,json=forensicProtected,proto3" json:"forensic_protected,omitempty"`
+	ForensicMark      string                 `protobuf:"bytes,7,opt,name=forensic_mark,json=forensicMark,proto3" json:"forensic_mark,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ResolveResearchRoomShareLinkResponse) Reset() {
@@ -27139,6 +27175,20 @@ func (x *ResolveResearchRoomShareLinkResponse) GetAllowDownload() bool {
 func (x *ResolveResearchRoomShareLinkResponse) GetWatermark() string {
 	if x != nil {
 		return x.Watermark
+	}
+	return ""
+}
+
+func (x *ResolveResearchRoomShareLinkResponse) GetForensicProtected() bool {
+	if x != nil {
+		return x.ForensicProtected
+	}
+	return false
+}
+
+func (x *ResolveResearchRoomShareLinkResponse) GetForensicMark() string {
+	if x != nil {
+		return x.ForensicMark
 	}
 	return ""
 }
@@ -41052,7 +41102,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x12granted_by_user_id\x18\f \x01(\tR\x0fgrantedByUserId\x12&\n" +
 	"\x0fgranted_by_name\x18\r \x01(\tR\rgrantedByName\x129\n" +
 	"\n" +
-	"created_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x99\x05\n" +
+	"created_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\x9f\x06\n" +
 	"\x15ResearchRoomShareLink\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\aroom_id\x18\x02 \x01(\tR\x06roomId\x12\x17\n" +
@@ -41072,7 +41122,10 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"revoked_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\trevokedAt\x129\n" +
 	"\n" +
-	"created_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xe5\x04\n" +
+	"created_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12-\n" +
+	"\x12forensic_protected\x18\x10 \x01(\bR\x11forensicProtected\x12#\n" +
+	"\rforensic_mark\x18\x11 \x01(\tR\fforensicMark\x120\n" +
+	"\x14forensic_manifest_id\x18\x12 \x01(\tR\x12forensicManifestId\"\xe5\x04\n" +
 	"\x1bResearchRoomOfflineManifest\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
 	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId\x123\n" +
@@ -41351,7 +41404,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x06reason\x18\x03 \x01(\tR\x06reason\x12,\n" +
 	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"[\n" +
 	"\x1fRevokeResearchRoomGrantResponse\x128\n" +
-	"\x18room_authorization_epoch\x18\x01 \x01(\x03R\x16roomAuthorizationEpoch\"\x92\x02\n" +
+	"\x18room_authorization_epoch\x18\x01 \x01(\x03R\x16roomAuthorizationEpoch\"\xc4\x02\n" +
 	"\"CreateResearchRoomShareLinkRequest\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x17\n" +
 	"\aitem_id\x18\x02 \x01(\tR\x06itemId\x12*\n" +
@@ -41359,7 +41412,8 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x0eallow_download\x18\x04 \x01(\bR\rallowDownload\x129\n" +
 	"\n" +
 	"expires_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12,\n" +
-	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\"\x83\x01\n" +
+	"\x12client_mutation_id\x18\x06 \x01(\tR\x10clientMutationId\x120\n" +
+	"\x14forensic_manifest_id\x18\a \x01(\tR\x12forensicManifestId\"\x83\x01\n" +
 	"#CreateResearchRoomShareLinkResponse\x12F\n" +
 	"\n" +
 	"share_link\x18\x01 \x01(\v2'.sttattus.onyx.v1.ResearchRoomShareLinkR\tshareLink\x12\x14\n" +
@@ -41376,13 +41430,15 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"%\n" +
 	"#RevokeResearchRoomShareLinkResponse\";\n" +
 	"#ResolveResearchRoomShareLinkRequest\x12\x14\n" +
-	"\x05token\x18\x01 \x01(\tR\x05token\"\x90\x02\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"\xe4\x02\n" +
 	"$ResolveResearchRoomShareLinkResponse\x122\n" +
 	"\x04room\x18\x01 \x01(\v2\x1e.sttattus.onyx.v1.ResearchRoomR\x04room\x126\n" +
 	"\x04item\x18\x02 \x01(\v2\".sttattus.onyx.v1.ResearchRoomItemR\x04item\x127\n" +
 	"\acontent\x18\x03 \x01(\v2\x1d.sttattus.onyx.v1.OnyxContentR\acontent\x12%\n" +
 	"\x0eallow_download\x18\x04 \x01(\bR\rallowDownload\x12\x1c\n" +
-	"\twatermark\x18\x05 \x01(\tR\twatermark\"]\n" +
+	"\twatermark\x18\x05 \x01(\tR\twatermark\x12-\n" +
+	"\x12forensic_protected\x18\x06 \x01(\bR\x11forensicProtected\x12#\n" +
+	"\rforensic_mark\x18\a \x01(\tR\fforensicMark\"]\n" +
 	"%GetResearchRoomOfflineManifestRequest\x12\x17\n" +
 	"\aroom_id\x18\x01 \x01(\tR\x06roomId\x12\x1b\n" +
 	"\tdevice_id\x18\x02 \x01(\tR\bdeviceId\"s\n" +

@@ -19078,6 +19078,21 @@ export class ResearchRoomShareLink extends Message<ResearchRoomShareLink> {
    */
   createdAt?: Timestamp;
 
+  /**
+   * @generated from field: bool forensic_protected = 16;
+   */
+  forensicProtected = false;
+
+  /**
+   * @generated from field: string forensic_mark = 17;
+   */
+  forensicMark = "";
+
+  /**
+   * @generated from field: string forensic_manifest_id = 18;
+   */
+  forensicManifestId = "";
+
   constructor(data?: PartialMessage<ResearchRoomShareLink>) {
     super();
     proto3.util.initPartial(data, this);
@@ -19101,6 +19116,9 @@ export class ResearchRoomShareLink extends Message<ResearchRoomShareLink> {
     { no: 13, name: "expires_at", kind: "message", T: Timestamp },
     { no: 14, name: "revoked_at", kind: "message", T: Timestamp },
     { no: 15, name: "created_at", kind: "message", T: Timestamp },
+    { no: 16, name: "forensic_protected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "forensic_mark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "forensic_manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResearchRoomShareLink {
@@ -21880,6 +21898,14 @@ export class CreateResearchRoomShareLinkRequest extends Message<CreateResearchRo
    */
   clientMutationId = "";
 
+  /**
+   * Required for a content item when the room watermark mode is `forensic`.
+   * The manifest must be a fresh, device-bound, one-use `share` grant.
+   *
+   * @generated from field: string forensic_manifest_id = 7;
+   */
+  forensicManifestId = "";
+
   constructor(data?: PartialMessage<CreateResearchRoomShareLinkRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -21894,6 +21920,7 @@ export class CreateResearchRoomShareLinkRequest extends Message<CreateResearchRo
     { no: 4, name: "allow_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "expires_at", kind: "message", T: Timestamp },
     { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "forensic_manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateResearchRoomShareLinkRequest {
@@ -22184,6 +22211,16 @@ export class ResolveResearchRoomShareLinkResponse extends Message<ResolveResearc
    */
   watermark = "";
 
+  /**
+   * @generated from field: bool forensic_protected = 6;
+   */
+  forensicProtected = false;
+
+  /**
+   * @generated from field: string forensic_mark = 7;
+   */
+  forensicMark = "";
+
   constructor(data?: PartialMessage<ResolveResearchRoomShareLinkResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -22197,6 +22234,8 @@ export class ResolveResearchRoomShareLinkResponse extends Message<ResolveResearc
     { no: 3, name: "content", kind: "message", T: OnyxContent },
     { no: 4, name: "allow_download", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "watermark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "forensic_protected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "forensic_mark", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveResearchRoomShareLinkResponse {

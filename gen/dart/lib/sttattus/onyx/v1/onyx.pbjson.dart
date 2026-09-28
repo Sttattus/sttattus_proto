@@ -8828,6 +8828,21 @@ const ResearchRoomShareLink$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {
+      '1': 'forensic_protected',
+      '3': 16,
+      '4': 1,
+      '5': 8,
+      '10': 'forensicProtected'
+    },
+    {'1': 'forensic_mark', '3': 17, '4': 1, '5': 9, '10': 'forensicMark'},
+    {
+      '1': 'forensic_manifest_id',
+      '3': 18,
+      '4': 1,
+      '5': 9,
+      '10': 'forensicManifestId'
+    },
   ],
 };
 
@@ -8844,7 +8859,10 @@ final $typed_data.Uint8List researchRoomShareLinkDescriptor = $convert.base64Dec
     'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIObGFzdEFjY2Vzc2VkQXQSOQoKZXhwaXJlc1'
     '9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBI5CgpyZXZv'
     'a2VkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJcmV2b2tlZEF0EjkKCm'
-    'NyZWF0ZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
+    'NyZWF0ZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQS'
+    'LQoSZm9yZW5zaWNfcHJvdGVjdGVkGBAgASgIUhFmb3JlbnNpY1Byb3RlY3RlZBIjCg1mb3Jlbn'
+    'NpY19tYXJrGBEgASgJUgxmb3JlbnNpY01hcmsSMAoUZm9yZW5zaWNfbWFuaWZlc3RfaWQYEiAB'
+    'KAlSEmZvcmVuc2ljTWFuaWZlc3RJZA==');
 
 @$core.Deprecated('Use researchRoomOfflineManifestDescriptor instead')
 const ResearchRoomOfflineManifest$json = {
@@ -10230,6 +10248,13 @@ const CreateResearchRoomShareLinkRequest$json = {
       '5': 9,
       '10': 'clientMutationId'
     },
+    {
+      '1': 'forensic_manifest_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'forensicManifestId'
+    },
   ],
 };
 
@@ -10239,7 +10264,8 @@ final $typed_data.Uint8List createResearchRoomShareLinkRequestDescriptor = $conv
     'Jvb21JZBIXCgdpdGVtX2lkGAIgASgJUgZpdGVtSWQSKgoRcmVjaXBpZW50X3VzZXJfaWQYAyAB'
     'KAlSD3JlY2lwaWVudFVzZXJJZBIlCg5hbGxvd19kb3dubG9hZBgEIAEoCFINYWxsb3dEb3dubG'
     '9hZBI5CgpleHBpcmVzX2F0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhw'
-    'aXJlc0F0EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+    'aXJlc0F0EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZBIwCh'
+    'Rmb3JlbnNpY19tYW5pZmVzdF9pZBgHIAEoCVISZm9yZW5zaWNNYW5pZmVzdElk');
 
 @$core.Deprecated('Use createResearchRoomShareLinkResponseDescriptor instead')
 const CreateResearchRoomShareLinkResponse$json = {
@@ -10378,17 +10404,26 @@ const ResolveResearchRoomShareLinkResponse$json = {
     },
     {'1': 'allow_download', '3': 4, '4': 1, '5': 8, '10': 'allowDownload'},
     {'1': 'watermark', '3': 5, '4': 1, '5': 9, '10': 'watermark'},
+    {
+      '1': 'forensic_protected',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'forensicProtected'
+    },
+    {'1': 'forensic_mark', '3': 7, '4': 1, '5': 9, '10': 'forensicMark'},
   ],
 };
 
 /// Descriptor for `ResolveResearchRoomShareLinkResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List resolveResearchRoomShareLinkResponseDescriptor =
-    $convert.base64Decode(
-        'CiRSZXNvbHZlUmVzZWFyY2hSb29tU2hhcmVMaW5rUmVzcG9uc2USMgoEcm9vbRgBIAEoCzIeLn'
-        'N0dGF0dHVzLm9ueXgudjEuUmVzZWFyY2hSb29tUgRyb29tEjYKBGl0ZW0YAiABKAsyIi5zdHRh'
-        'dHR1cy5vbnl4LnYxLlJlc2VhcmNoUm9vbUl0ZW1SBGl0ZW0SNwoHY29udGVudBgDIAEoCzIdLn'
-        'N0dGF0dHVzLm9ueXgudjEuT255eENvbnRlbnRSB2NvbnRlbnQSJQoOYWxsb3dfZG93bmxvYWQY'
-        'BCABKAhSDWFsbG93RG93bmxvYWQSHAoJd2F0ZXJtYXJrGAUgASgJUgl3YXRlcm1hcms=');
+final $typed_data.Uint8List resolveResearchRoomShareLinkResponseDescriptor = $convert.base64Decode(
+    'CiRSZXNvbHZlUmVzZWFyY2hSb29tU2hhcmVMaW5rUmVzcG9uc2USMgoEcm9vbRgBIAEoCzIeLn'
+    'N0dGF0dHVzLm9ueXgudjEuUmVzZWFyY2hSb29tUgRyb29tEjYKBGl0ZW0YAiABKAsyIi5zdHRh'
+    'dHR1cy5vbnl4LnYxLlJlc2VhcmNoUm9vbUl0ZW1SBGl0ZW0SNwoHY29udGVudBgDIAEoCzIdLn'
+    'N0dGF0dHVzLm9ueXgudjEuT255eENvbnRlbnRSB2NvbnRlbnQSJQoOYWxsb3dfZG93bmxvYWQY'
+    'BCABKAhSDWFsbG93RG93bmxvYWQSHAoJd2F0ZXJtYXJrGAUgASgJUgl3YXRlcm1hcmsSLQoSZm'
+    '9yZW5zaWNfcHJvdGVjdGVkGAYgASgIUhFmb3JlbnNpY1Byb3RlY3RlZBIjCg1mb3JlbnNpY19t'
+    'YXJrGAcgASgJUgxmb3JlbnNpY01hcms=');
 
 @$core.Deprecated('Use getResearchRoomOfflineManifestRequestDescriptor instead')
 const GetResearchRoomOfflineManifestRequest$json = {
