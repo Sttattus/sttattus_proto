@@ -1213,6 +1213,10 @@ class Message extends $pb.GeneratedMessage {
     $core.int? tensionLevel,
     $fixnum.Int64? createdAt,
     $fixnum.Int64? readAt,
+    $core.String? kind,
+    MessageCard? card,
+    MessageCall? call,
+    $core.bool? notOkByMe,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1222,6 +1226,10 @@ class Message extends $pb.GeneratedMessage {
     if (tensionLevel != null) result.tensionLevel = tensionLevel;
     if (createdAt != null) result.createdAt = createdAt;
     if (readAt != null) result.readAt = readAt;
+    if (kind != null) result.kind = kind;
+    if (card != null) result.card = card;
+    if (call != null) result.call = call;
+    if (notOkByMe != null) result.notOkByMe = notOkByMe;
     return result;
   }
 
@@ -1246,6 +1254,12 @@ class Message extends $pb.GeneratedMessage {
     ..aI(5, _omitFieldNames ? '' : 'tensionLevel')
     ..aInt64(6, _omitFieldNames ? '' : 'createdAt')
     ..aInt64(7, _omitFieldNames ? '' : 'readAt')
+    ..aOS(8, _omitFieldNames ? '' : 'kind')
+    ..aOM<MessageCard>(9, _omitFieldNames ? '' : 'card',
+        subBuilder: MessageCard.create)
+    ..aOM<MessageCall>(10, _omitFieldNames ? '' : 'call',
+        subBuilder: MessageCall.create)
+    ..aOB(11, _omitFieldNames ? '' : 'notOkByMe')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1328,6 +1342,407 @@ class Message extends $pb.GeneratedMessage {
   $core.bool hasReadAt() => $_has(6);
   @$pb.TagNumber(7)
   void clearReadAt() => $_clearField(7);
+
+  /// Atlas Choice 6: text | question (a question card; its words are the
+  /// card's, in the viewer's language) | closing (the line left when closing
+  /// kindly) | call (a call's trace: who called, how long).
+  @$pb.TagNumber(8)
+  $core.String get kind => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set kind($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasKind() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearKind() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  MessageCard get card => $_getN(8);
+  @$pb.TagNumber(9)
+  set card(MessageCard value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCard() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCard() => $_clearField(9);
+  @$pb.TagNumber(9)
+  MessageCard ensureCard() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  MessageCall get call => $_getN(9);
+  @$pb.TagNumber(10)
+  set call(MessageCall value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCall() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCall() => $_clearField(10);
+  @$pb.TagNumber(10)
+  MessageCall ensureCall() => $_ensure(9);
+
+  /// The viewer said this message was not OK for them.
+  @$pb.TagNumber(11)
+  $core.bool get notOkByMe => $_getBF(10);
+  @$pb.TagNumber(11)
+  set notOkByMe($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasNotOkByMe() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearNotOkByMe() => $_clearField(11);
+}
+
+/// Atlas Choice 6: a question card sent in a conversation. The other member's
+/// answer is sent only once both have answered.
+class MessageCard extends $pb.GeneratedMessage {
+  factory MessageCard({
+    $core.String? cardId,
+    $core.String? deckKind,
+    $core.String? text,
+    $core.String? optionA,
+    $core.String? optionB,
+    $core.String? myAnswer,
+    $core.String? myChoice,
+    $core.String? theirAnswer,
+    $core.String? theirChoice,
+    $core.bool? iAnswered,
+    $core.bool? bothAnswered,
+  }) {
+    final result = create();
+    if (cardId != null) result.cardId = cardId;
+    if (deckKind != null) result.deckKind = deckKind;
+    if (text != null) result.text = text;
+    if (optionA != null) result.optionA = optionA;
+    if (optionB != null) result.optionB = optionB;
+    if (myAnswer != null) result.myAnswer = myAnswer;
+    if (myChoice != null) result.myChoice = myChoice;
+    if (theirAnswer != null) result.theirAnswer = theirAnswer;
+    if (theirChoice != null) result.theirChoice = theirChoice;
+    if (iAnswered != null) result.iAnswered = iAnswered;
+    if (bothAnswered != null) result.bothAnswered = bothAnswered;
+    return result;
+  }
+
+  MessageCard._();
+
+  factory MessageCard.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MessageCard.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MessageCard',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cardId')
+    ..aOS(2, _omitFieldNames ? '' : 'deckKind')
+    ..aOS(3, _omitFieldNames ? '' : 'text')
+    ..aOS(4, _omitFieldNames ? '' : 'optionA')
+    ..aOS(5, _omitFieldNames ? '' : 'optionB')
+    ..aOS(6, _omitFieldNames ? '' : 'myAnswer')
+    ..aOS(7, _omitFieldNames ? '' : 'myChoice')
+    ..aOS(8, _omitFieldNames ? '' : 'theirAnswer')
+    ..aOS(9, _omitFieldNames ? '' : 'theirChoice')
+    ..aOB(10, _omitFieldNames ? '' : 'iAnswered')
+    ..aOB(11, _omitFieldNames ? '' : 'bothAnswered')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageCard clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageCard copyWith(void Function(MessageCard) updates) =>
+      super.copyWith((message) => updates(message as MessageCard))
+          as MessageCard;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MessageCard create() => MessageCard._();
+  @$core.override
+  MessageCard createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MessageCard getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MessageCard>(create);
+  static MessageCard? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cardId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cardId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCardId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCardId() => $_clearField(1);
+
+  /// questions | this_or_that
+  @$pb.TagNumber(2)
+  $core.String get deckKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get text => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set text($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasText() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearText() => $_clearField(3);
+
+  /// this_or_that only.
+  @$pb.TagNumber(4)
+  $core.String get optionA => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set optionA($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOptionA() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOptionA() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get optionB => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set optionB($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOptionB() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOptionB() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get myAnswer => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set myAnswer($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMyAnswer() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMyAnswer() => $_clearField(6);
+
+  /// a | b; empty when not answered or not this_or_that.
+  @$pb.TagNumber(7)
+  $core.String get myChoice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set myChoice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMyChoice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMyChoice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get theirAnswer => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set theirAnswer($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTheirAnswer() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTheirAnswer() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get theirChoice => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set theirChoice($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTheirChoice() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTheirChoice() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get iAnswered => $_getBF(9);
+  @$pb.TagNumber(10)
+  set iAnswered($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIAnswered() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIAnswered() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get bothAnswered => $_getBF(10);
+  @$pb.TagNumber(11)
+  set bothAnswered($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasBothAnswered() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearBothAnswered() => $_clearField(11);
+}
+
+/// Atlas Choice 6: a call's trace in the conversation. Nothing of the call
+/// itself is kept.
+class MessageCall extends $pb.GeneratedMessage {
+  factory MessageCall({
+    $core.String? kind,
+    $core.String? status,
+    $core.int? durationSeconds,
+    $core.bool? iCalled,
+  }) {
+    final result = create();
+    if (kind != null) result.kind = kind;
+    if (status != null) result.status = status;
+    if (durationSeconds != null) result.durationSeconds = durationSeconds;
+    if (iCalled != null) result.iCalled = iCalled;
+    return result;
+  }
+
+  MessageCall._();
+
+  factory MessageCall.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MessageCall.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MessageCall',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'kind')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aI(3, _omitFieldNames ? '' : 'durationSeconds')
+    ..aOB(4, _omitFieldNames ? '' : 'iCalled')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageCall clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MessageCall copyWith(void Function(MessageCall) updates) =>
+      super.copyWith((message) => updates(message as MessageCall))
+          as MessageCall;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MessageCall create() => MessageCall._();
+  @$core.override
+  MessageCall createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MessageCall getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MessageCall>(create);
+  static MessageCall? _defaultInstance;
+
+  /// voice | video
+  @$pb.TagNumber(1)
+  $core.String get kind => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set kind($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKind() => $_clearField(1);
+
+  /// ended | missed | declined | ringing | live
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get durationSeconds => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set durationSeconds($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDurationSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDurationSeconds() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get iCalled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set iCalled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasICalled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearICalled() => $_clearField(4);
+}
+
+/// Atlas Choice 6: why a message was not delivered yet. The member reads the
+/// category in words; the reason behind it is never free text.
+class Screening extends $pb.GeneratedMessage {
+  factory Screening({
+    $core.String? id,
+    $core.String? category,
+    $core.String? action,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (category != null) result.category = category;
+    if (action != null) result.action = action;
+    return result;
+  }
+
+  Screening._();
+
+  factory Screening.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Screening.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Screening',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.dating.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'category')
+    ..aOS(3, _omitFieldNames ? '' : 'action')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Screening clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Screening copyWith(void Function(Screening) updates) =>
+      super.copyWith((message) => updates(message as Screening)) as Screening;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Screening create() => Screening._();
+  @$core.override
+  Screening createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static Screening getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Screening>(create);
+  static Screening? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// threat | harassment | sexual_coercion | scam | doxxing
+  @$pb.TagNumber(2)
+  $core.String get category => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set category($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => $_clearField(2);
+
+  /// warn (edit, or send anyway with this id) | hold (not delivered; appeal)
+  @$pb.TagNumber(3)
+  $core.String get action => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set action($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAction() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAction() => $_clearField(3);
 }
 
 class GetProfileRequest extends $pb.GeneratedMessage {
@@ -2184,10 +2599,13 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   factory SendMessageRequest({
     $core.String? matchId,
     $core.String? body,
+    $core.String? sendAnywayScreeningId,
   }) {
     final result = create();
     if (matchId != null) result.matchId = matchId;
     if (body != null) result.body = body;
+    if (sendAnywayScreeningId != null)
+      result.sendAnywayScreeningId = sendAnywayScreeningId;
     return result;
   }
 
@@ -2207,6 +2625,7 @@ class SendMessageRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'matchId')
     ..aOS(2, _omitFieldNames ? '' : 'body')
+    ..aOS(3, _omitFieldNames ? '' : 'sendAnywayScreeningId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2245,14 +2664,27 @@ class SendMessageRequest extends $pb.GeneratedMessage {
   $core.bool hasBody() => $_has(1);
   @$pb.TagNumber(2)
   void clearBody() => $_clearField(2);
+
+  /// Atlas Choice 6: send a warned message anyway — the id of its screening;
+  /// the body must be the same words.
+  @$pb.TagNumber(3)
+  $core.String get sendAnywayScreeningId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sendAnywayScreeningId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSendAnywayScreeningId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSendAnywayScreeningId() => $_clearField(3);
 }
 
 class SendMessageResponse extends $pb.GeneratedMessage {
   factory SendMessageResponse({
     Message? message,
+    Screening? screening,
   }) {
     final result = create();
     if (message != null) result.message = message;
+    if (screening != null) result.screening = screening;
     return result;
   }
 
@@ -2272,6 +2704,8 @@ class SendMessageResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<Message>(1, _omitFieldNames ? '' : 'message',
         subBuilder: Message.create)
+    ..aOM<Screening>(2, _omitFieldNames ? '' : 'screening',
+        subBuilder: Screening.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2293,6 +2727,7 @@ class SendMessageResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<SendMessageResponse>(create);
   static SendMessageResponse? _defaultInstance;
 
+  /// Empty when the message was not delivered; then screening says why.
   @$pb.TagNumber(1)
   Message get message => $_getN(0);
   @$pb.TagNumber(1)
@@ -2303,6 +2738,17 @@ class SendMessageResponse extends $pb.GeneratedMessage {
   void clearMessage() => $_clearField(1);
   @$pb.TagNumber(1)
   Message ensureMessage() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  Screening get screening => $_getN(1);
+  @$pb.TagNumber(2)
+  set screening(Screening value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScreening() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScreening() => $_clearField(2);
+  @$pb.TagNumber(2)
+  Screening ensureScreening() => $_ensure(1);
 }
 
 class AtlasVerification extends $pb.GeneratedMessage {
@@ -4490,11 +4936,15 @@ class ReportUserRequest extends $pb.GeneratedMessage {
     $core.String? reportedId,
     $core.String? category,
     $core.String? description,
+    $core.String? matchId,
+    $core.Iterable<$core.String>? messageIds,
   }) {
     final result = create();
     if (reportedId != null) result.reportedId = reportedId;
     if (category != null) result.category = category;
     if (description != null) result.description = description;
+    if (matchId != null) result.matchId = matchId;
+    if (messageIds != null) result.messageIds.addAll(messageIds);
     return result;
   }
 
@@ -4515,6 +4965,8 @@ class ReportUserRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'reportedId')
     ..aOS(2, _omitFieldNames ? '' : 'category')
     ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'matchId')
+    ..pPS(5, _omitFieldNames ? '' : 'messageIds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4566,6 +5018,20 @@ class ReportUserRequest extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
   void clearDescription() => $_clearField(3);
+
+  /// Atlas Choice 6: the conversation the report is about and up to 20 of its
+  /// messages, preserved as evidence when the report is filed.
+  @$pb.TagNumber(4)
+  $core.String get matchId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set matchId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMatchId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMatchId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get messageIds => $_getList(4);
 }
 
 class ReportUserResponse extends $pb.GeneratedMessage {

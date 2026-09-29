@@ -171,6 +171,54 @@ message Message {
   int32 tension_level = 5;
   int64 created_at = 6;
   int64 read_at = 7;
+  // Atlas Choice 6: text | question (a question card; its words are the
+  // card's, in the viewer's language) | closing (the line left when closing
+  // kindly) | call (a call's trace: who called, how long).
+  string kind = 8;
+  MessageCard card = 9;
+  MessageCall call = 10;
+  // The viewer said this message was not OK for them.
+  bool not_ok_by_me = 11;
+}
+
+// Atlas Choice 6: a question card sent in a conversation. The other member's
+// answer is sent only once both have answered.
+message MessageCard {
+  string card_id = 1;
+  // questions | this_or_that
+  string deck_kind = 2;
+  string text = 3;
+  // this_or_that only.
+  string option_a = 4;
+  string option_b = 5;
+  string my_answer = 6;
+  // a | b; empty when not answered or not this_or_that.
+  string my_choice = 7;
+  string their_answer = 8;
+  string their_choice = 9;
+  bool i_answered = 10;
+  bool both_answered = 11;
+}
+
+// Atlas Choice 6: a call's trace in the conversation. Nothing of the call
+// itself is kept.
+message MessageCall {
+  // voice | video
+  string kind = 1;
+  // ended | missed | declined | ringing | live
+  string status = 2;
+  int32 duration_seconds = 3;
+  bool i_called = 4;
+}
+
+// Atlas Choice 6: why a message was not delivered yet. The member reads the
+// category in words; the reason behind it is never free text.
+message Screening {
+  string id = 1;
+  // threat | harassment | sexual_coercion | scam | doxxing
+  string category = 2;
+  // warn (edit, or send anyway with this id) | hold (not delivered; appeal)
+  string action = 3;
 }
 
 message GetProfileRequest {
@@ -236,9 +284,14 @@ message StreamMessagesResponse {
 message SendMessageRequest {
   string match_id = 1;
   string body = 2;
+  // Atlas Choice 6: send a warned message anyway — the id of its screening;
+  // the body must be the same words.
+  string send_anyway_screening_id = 3;
 }
 message SendMessageResponse {
+  // Empty when the message was not delivered; then screening says why.
   Message message = 1;
+  Screening screening = 2;
 }
 
 // === Identity verification (A9.2) ===
@@ -413,6 +466,10 @@ message ReportUserRequest {
   string category = 2;
   // Optional, up to 1000 characters.
   string description = 3;
+  // Atlas Choice 6: the conversation the report is about and up to 20 of its
+  // messages, preserved as evidence when the report is filed.
+  string match_id = 4;
+  repeated string message_ids = 5;
 }
 message ReportUserResponse {
   UserReport report = 1;

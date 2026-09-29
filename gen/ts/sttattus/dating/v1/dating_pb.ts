@@ -842,6 +842,32 @@ export class Message extends Message$1<Message> {
    */
   readAt = protoInt64.zero;
 
+  /**
+   * Atlas Choice 6: text | question (a question card; its words are the
+   * card's, in the viewer's language) | closing (the line left when closing
+   * kindly) | call (a call's trace: who called, how long).
+   *
+   * @generated from field: string kind = 8;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: sttattus.dating.v1.MessageCard card = 9;
+   */
+  card?: MessageCard;
+
+  /**
+   * @generated from field: sttattus.dating.v1.MessageCall call = 10;
+   */
+  call?: MessageCall;
+
+  /**
+   * The viewer said this message was not OK for them.
+   *
+   * @generated from field: bool not_ok_by_me = 11;
+   */
+  notOkByMe = false;
+
   constructor(data?: PartialMessage<Message>) {
     super();
     proto3.util.initPartial(data, this);
@@ -857,6 +883,10 @@ export class Message extends Message$1<Message> {
     { no: 5, name: "tension_level", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 6, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "read_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "card", kind: "message", T: MessageCard },
+    { no: 10, name: "call", kind: "message", T: MessageCall },
+    { no: 11, name: "not_ok_by_me", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Message {
@@ -873,6 +903,230 @@ export class Message extends Message$1<Message> {
 
   static equals(a: Message | PlainMessage<Message> | undefined, b: Message | PlainMessage<Message> | undefined): boolean {
     return proto3.util.equals(Message, a, b);
+  }
+}
+
+/**
+ * Atlas Choice 6: a question card sent in a conversation. The other member's
+ * answer is sent only once both have answered.
+ *
+ * @generated from message sttattus.dating.v1.MessageCard
+ */
+export class MessageCard extends Message$1<MessageCard> {
+  /**
+   * @generated from field: string card_id = 1;
+   */
+  cardId = "";
+
+  /**
+   * questions | this_or_that
+   *
+   * @generated from field: string deck_kind = 2;
+   */
+  deckKind = "";
+
+  /**
+   * @generated from field: string text = 3;
+   */
+  text = "";
+
+  /**
+   * this_or_that only.
+   *
+   * @generated from field: string option_a = 4;
+   */
+  optionA = "";
+
+  /**
+   * @generated from field: string option_b = 5;
+   */
+  optionB = "";
+
+  /**
+   * @generated from field: string my_answer = 6;
+   */
+  myAnswer = "";
+
+  /**
+   * a | b; empty when not answered or not this_or_that.
+   *
+   * @generated from field: string my_choice = 7;
+   */
+  myChoice = "";
+
+  /**
+   * @generated from field: string their_answer = 8;
+   */
+  theirAnswer = "";
+
+  /**
+   * @generated from field: string their_choice = 9;
+   */
+  theirChoice = "";
+
+  /**
+   * @generated from field: bool i_answered = 10;
+   */
+  iAnswered = false;
+
+  /**
+   * @generated from field: bool both_answered = 11;
+   */
+  bothAnswered = false;
+
+  constructor(data?: PartialMessage<MessageCard>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.MessageCard";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "card_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "option_a", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "option_b", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "my_answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "my_choice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "their_answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "their_choice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "i_answered", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "both_answered", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MessageCard {
+    return new MessageCard().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MessageCard {
+    return new MessageCard().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MessageCard {
+    return new MessageCard().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MessageCard | PlainMessage<MessageCard> | undefined, b: MessageCard | PlainMessage<MessageCard> | undefined): boolean {
+    return proto3.util.equals(MessageCard, a, b);
+  }
+}
+
+/**
+ * Atlas Choice 6: a call's trace in the conversation. Nothing of the call
+ * itself is kept.
+ *
+ * @generated from message sttattus.dating.v1.MessageCall
+ */
+export class MessageCall extends Message$1<MessageCall> {
+  /**
+   * voice | video
+   *
+   * @generated from field: string kind = 1;
+   */
+  kind = "";
+
+  /**
+   * ended | missed | declined | ringing | live
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 duration_seconds = 3;
+   */
+  durationSeconds = 0;
+
+  /**
+   * @generated from field: bool i_called = 4;
+   */
+  iCalled = false;
+
+  constructor(data?: PartialMessage<MessageCall>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.MessageCall";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "duration_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "i_called", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MessageCall {
+    return new MessageCall().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MessageCall {
+    return new MessageCall().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MessageCall {
+    return new MessageCall().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MessageCall | PlainMessage<MessageCall> | undefined, b: MessageCall | PlainMessage<MessageCall> | undefined): boolean {
+    return proto3.util.equals(MessageCall, a, b);
+  }
+}
+
+/**
+ * Atlas Choice 6: why a message was not delivered yet. The member reads the
+ * category in words; the reason behind it is never free text.
+ *
+ * @generated from message sttattus.dating.v1.Screening
+ */
+export class Screening extends Message$1<Screening> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * threat | harassment | sexual_coercion | scam | doxxing
+   *
+   * @generated from field: string category = 2;
+   */
+  category = "";
+
+  /**
+   * warn (edit, or send anyway with this id) | hold (not delivered; appeal)
+   *
+   * @generated from field: string action = 3;
+   */
+  action = "";
+
+  constructor(data?: PartialMessage<Screening>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.Screening";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Screening {
+    return new Screening().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Screening {
+    return new Screening().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Screening {
+    return new Screening().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Screening | PlainMessage<Screening> | undefined, b: Screening | PlainMessage<Screening> | undefined): boolean {
+    return proto3.util.equals(Screening, a, b);
   }
 }
 
@@ -1452,6 +1706,14 @@ export class SendMessageRequest extends Message$1<SendMessageRequest> {
    */
   body = "";
 
+  /**
+   * Atlas Choice 6: send a warned message anyway — the id of its screening;
+   * the body must be the same words.
+   *
+   * @generated from field: string send_anyway_screening_id = 3;
+   */
+  sendAnywayScreeningId = "";
+
   constructor(data?: PartialMessage<SendMessageRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1462,6 +1724,7 @@ export class SendMessageRequest extends Message$1<SendMessageRequest> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "send_anyway_screening_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageRequest {
@@ -1486,9 +1749,16 @@ export class SendMessageRequest extends Message$1<SendMessageRequest> {
  */
 export class SendMessageResponse extends Message$1<SendMessageResponse> {
   /**
+   * Empty when the message was not delivered; then screening says why.
+   *
    * @generated from field: sttattus.dating.v1.Message message = 1;
    */
   message?: Message;
+
+  /**
+   * @generated from field: sttattus.dating.v1.Screening screening = 2;
+   */
+  screening?: Screening;
 
   constructor(data?: PartialMessage<SendMessageResponse>) {
     super();
@@ -1499,6 +1769,7 @@ export class SendMessageResponse extends Message$1<SendMessageResponse> {
   static readonly typeName = "sttattus.dating.v1.SendMessageResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "message", kind: "message", T: Message },
+    { no: 2, name: "screening", kind: "message", T: Screening },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMessageResponse {
@@ -2971,6 +3242,19 @@ export class ReportUserRequest extends Message$1<ReportUserRequest> {
    */
   description = "";
 
+  /**
+   * Atlas Choice 6: the conversation the report is about and up to 20 of its
+   * messages, preserved as evidence when the report is filed.
+   *
+   * @generated from field: string match_id = 4;
+   */
+  matchId = "";
+
+  /**
+   * @generated from field: repeated string message_ids = 5;
+   */
+  messageIds: string[] = [];
+
   constructor(data?: PartialMessage<ReportUserRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2982,6 +3266,8 @@ export class ReportUserRequest extends Message$1<ReportUserRequest> {
     { no: 1, name: "reported_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "message_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportUserRequest {

@@ -1,0 +1,333 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/dating/v1/dating.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// ===========================================================================
+// Atlas Choice 6 — Authentic conversation and consent.
+//
+// Each member says how they like to talk (a consent card) and the server
+// enforces it: media and calls the other set to "no" are refused, "ask" needs
+// their yes once per match, calls do not ring in their quiet hours. Every
+// message is screened before it is stored; a warning explains itself and can
+// be edited or sent anyway, a hold is not delivered and can be appealed to a
+// person. "Not OK for me" tells the sender kindly; repeats pause them. AI only
+// helps when a member taps for it — rewording their own draft, translating or
+// captioning what they received — and never writes or sends as anyone.
+// Conversations can be closed kindly or paused, and calls are never recorded.
+//
+// channel: voice_notes | photos | video_clips | voice_calls | video_calls
+// consent value: yes | ask | no
+// ===========================================================================
+
+// How a member likes to talk. Text is always yes.
+message ConsentCard {
+  string voice_notes = 1;
+  string photos = 2;
+  string video_clips = 3;
+  string voice_calls = 4;
+  string video_calls = 5;
+  // slow | steady | quick; empty when not said.
+  string pace = 6;
+  // Topics to ask about first: intimacy | past_relationships | family |
+  // religion | politics | health | money | substances.
+  repeated string ask_first_topics = 7;
+  // Quiet hours in the member's own time, minutes after midnight; -1 for
+  // none. Never sent to anyone else: the other member only learns whether it
+  // is quiet now.
+  int32 quiet_start_minute = 8;
+  int32 quiet_end_minute = 9;
+  int32 revision = 10;
+  int64 updated_at = 11;
+}
+
+message GetMyConsentCardRequest {}
+message GetMyConsentCardResponse {
+  ConsentCard card = 1;
+}
+message SetMyConsentCardRequest {
+  ConsentCard card = 1;
+}
+message SetMyConsentCardResponse {
+  ConsentCard card = 1;
+}
+
+// One channel between the two members, from the viewer's side.
+message ChannelState {
+  string channel = 1;
+  // What the viewer may do towards the other: yes | ask (may ask once) |
+  // asked (waiting for them) | declined | no.
+  string mine = 2;
+  // The other asked the viewer and is waiting for an answer.
+  bool they_asked = 3;
+  // The viewer allowed the other (so they can take it back).
+  bool i_allowed = 4;
+}
+
+message ConversationPause {
+  // pause (nobody writes until it ends) | boundary (one member may not write
+  // until the other resumes it)
+  string kind = 1;
+  // The viewer set the pause, or it is the viewer's boundary.
+  bool mine = 2;
+  // boundary: the viewer is the one who may not write.
+  bool i_am_paused = 3;
+  // pause only: when it ends on its own.
+  int64 until = 4;
+}
+
+message CallInfo {
+  string id = 1;
+  string match_id = 2;
+  // voice | video
+  string kind = 3;
+  // ringing | live | ended | missed | declined
+  string status = 4;
+  bool i_called = 5;
+  int64 created_at = 6;
+  int64 answered_at = 7;
+  int64 ended_at = 8;
+  int32 duration_seconds = 9;
+}
+
+message ConversationState {
+  string match_id = 1;
+  // The other member's card; their quiet hours are sent as -1 (see
+  // their_quiet_now).
+  ConsentCard their_card = 2;
+  bool their_quiet_now = 3;
+  // When their quiet hours end, when it is quiet now (unix seconds).
+  int64 their_quiet_until = 4;
+  repeated ChannelState channels = 5;
+  // False once the match has ended: history only.
+  bool open = 6;
+  // closed | blocked | left_atlas | deceased | unmatched; empty while open.
+  string ended_reason = 7;
+  bool closed_by_me = 8;
+  repeated ConversationPause pauses = 9;
+  // A call ringing or live between the two, if any.
+  CallInfo call = 10;
+  // Messages of the viewer's the other said were not OK for them, last 7 days.
+  int32 not_ok_on_mine = 11;
+  // Assistance (reword, translate, captions) the viewer may still use today.
+  int32 assist_left_today = 12;
+}
+
+message GetConversationRequest {
+  string match_id = 1;
+}
+message GetConversationResponse {
+  ConversationState state = 1;
+}
+
+message AskChannelRequest {
+  string match_id = 1;
+  string channel = 2;
+}
+message AskChannelResponse {
+  ConversationState state = 1;
+}
+
+// Answer the other's ask (allow or decline), or take back an allow
+// (allow = false when already allowed).
+message AnswerChannelRequest {
+  string match_id = 1;
+  string channel = 2;
+  bool allow = 3;
+}
+message AnswerChannelResponse {
+  ConversationState state = 1;
+}
+
+message MarkNotOkRequest {
+  string message_id = 1;
+  // pace | topic | media | tone | other
+  string boundary = 2;
+}
+message MarkNotOkResponse {
+  ConversationState state = 1;
+}
+
+// 1, 3 or 7 days.
+message PauseConversationRequest {
+  string match_id = 1;
+  int32 days = 2;
+}
+message PauseConversationResponse {
+  ConversationState state = 1;
+}
+
+// Ends the viewer's own pause, or a boundary pause on the viewer's boundary.
+message ResumeConversationRequest {
+  string match_id = 1;
+}
+message ResumeConversationResponse {
+  ConversationState state = 1;
+}
+
+// Close kindly: a template line (thanks | not_a_match | wish_well) or the
+// member's own words (screened like any message), then the match ends.
+message CloseConversationRequest {
+  string match_id = 1;
+  string template_key = 2;
+  string own_words = 3;
+}
+message CloseConversationResponse {
+  ConversationState state = 1;
+  // Set when the own words were not delivered; the conversation stays open.
+  Screening screening = 2;
+}
+
+// A message of the member's that was held, to the member only.
+message HeldMessage {
+  string screening_id = 1;
+  string match_id = 2;
+  string other_name = 3;
+  // threat | harassment | sexual_coercion | scam | doxxing
+  string category = 4;
+  // The member's own words; empty once they expired.
+  string body = 5;
+  // none | open | overturned | upheld
+  string appeal = 6;
+  string decision_note = 7;
+  int64 created_at = 8;
+  int64 expires_at = 9;
+}
+message ListMyHeldMessagesRequest {}
+message ListMyHeldMessagesResponse {
+  repeated HeldMessage held = 1;
+}
+message AppealHeldMessageRequest {
+  string screening_id = 1;
+  // Optional, up to 500 characters.
+  string note = 2;
+}
+message AppealHeldMessageResponse {
+  HeldMessage held = 1;
+}
+
+// Up to three rewordings of the member's own draft. Suggestions only: the
+// member edits and sends; a suggestion that adds a name, number, place or
+// claim not in the draft is dropped.
+message CoachDraftRequest {
+  string match_id = 1;
+  string draft = 2;
+}
+message CoachDraftResponse {
+  repeated string suggestions = 1;
+  int32 left_today = 2;
+}
+
+// A received message in the reader's language. Not stored.
+message TranslateMessageRequest {
+  string message_id = 1;
+}
+message TranslateMessageResponse {
+  string text = 1;
+  int32 left_today = 2;
+}
+
+// A received voice note's words. Not stored.
+message CaptionVoiceNoteRequest {
+  string attachment_id = 1;
+}
+message CaptionVoiceNoteResponse {
+  string text = 1;
+  int32 left_today = 2;
+}
+
+message QuestionCard {
+  string id = 1;
+  string text = 2;
+  string option_a = 3;
+  string option_b = 4;
+}
+message QuestionDeck {
+  string id = 1;
+  // questions | this_or_that
+  string kind = 2;
+  string title = 3;
+  repeated QuestionCard cards = 4;
+}
+message ListQuestionDecksRequest {}
+message ListQuestionDecksResponse {
+  repeated QuestionDeck decks = 1;
+}
+message SendQuestionCardRequest {
+  string match_id = 1;
+  string card_id = 2;
+}
+message SendQuestionCardResponse {
+  Message message = 1;
+}
+
+// A free answer (questions) or a choice a | b (this_or_that).
+message AnswerQuestionCardRequest {
+  string message_id = 1;
+  string answer = 2;
+  string choice = 3;
+}
+message AnswerQuestionCardResponse {
+  Message message = 1;
+}
+
+message CallJoin {
+  CallInfo call = 1;
+  // LiveKit access for this call only; empty when the call was not joined.
+  string token = 2;
+  string ws_url = 3;
+}
+message StartCallRequest {
+  string match_id = 1;
+  // voice | video
+  string kind = 2;
+}
+message StartCallResponse {
+  CallJoin join = 1;
+}
+message AnswerCallRequest {
+  string call_id = 1;
+  bool accept = 2;
+}
+message AnswerCallResponse {
+  CallJoin join = 1;
+}
+message EndCallRequest {
+  string call_id = 1;
+}
+message EndCallResponse {
+  CallInfo call = 1;
+}
+message GetIncomingCallRequest {}
+message GetIncomingCallResponse {
+  // Empty when nobody is calling.
+  CallInfo call = 1;
+  string caller_name = 2;
+}
+
+service AtlasConversationService {
+  rpc GetMyConsentCard(GetMyConsentCardRequest) returns (GetMyConsentCardResponse);
+  rpc SetMyConsentCard(SetMyConsentCardRequest) returns (SetMyConsentCardResponse);
+  rpc GetConversation(GetConversationRequest) returns (GetConversationResponse);
+  rpc AskChannel(AskChannelRequest) returns (AskChannelResponse);
+  rpc AnswerChannel(AnswerChannelRequest) returns (AnswerChannelResponse);
+  rpc MarkNotOk(MarkNotOkRequest) returns (MarkNotOkResponse);
+  rpc PauseConversation(PauseConversationRequest) returns (PauseConversationResponse);
+  rpc ResumeConversation(ResumeConversationRequest) returns (ResumeConversationResponse);
+  rpc CloseConversation(CloseConversationRequest) returns (CloseConversationResponse);
+  rpc ListMyHeldMessages(ListMyHeldMessagesRequest) returns (ListMyHeldMessagesResponse);
+  rpc AppealHeldMessage(AppealHeldMessageRequest) returns (AppealHeldMessageResponse);
+  rpc CoachDraft(CoachDraftRequest) returns (CoachDraftResponse);
+  rpc TranslateMessage(TranslateMessageRequest) returns (TranslateMessageResponse);
+  rpc CaptionVoiceNote(CaptionVoiceNoteRequest) returns (CaptionVoiceNoteResponse);
+  rpc ListQuestionDecks(ListQuestionDecksRequest) returns (ListQuestionDecksResponse);
+  rpc SendQuestionCard(SendQuestionCardRequest) returns (SendQuestionCardResponse);
+  rpc AnswerQuestionCard(AnswerQuestionCardRequest) returns (AnswerQuestionCardResponse);
+  rpc StartCall(StartCallRequest) returns (StartCallResponse);
+  rpc AnswerCall(AnswerCallRequest) returns (AnswerCallResponse);
+  rpc EndCall(EndCallRequest) returns (EndCallResponse);
+  rpc GetIncomingCall(GetIncomingCallRequest) returns (GetIncomingCallResponse);
+}

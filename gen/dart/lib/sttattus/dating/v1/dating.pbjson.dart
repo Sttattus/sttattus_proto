@@ -408,6 +408,24 @@ const Message$json = {
     {'1': 'tension_level', '3': 5, '4': 1, '5': 5, '10': 'tensionLevel'},
     {'1': 'created_at', '3': 6, '4': 1, '5': 3, '10': 'createdAt'},
     {'1': 'read_at', '3': 7, '4': 1, '5': 3, '10': 'readAt'},
+    {'1': 'kind', '3': 8, '4': 1, '5': 9, '10': 'kind'},
+    {
+      '1': 'card',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.MessageCard',
+      '10': 'card'
+    },
+    {
+      '1': 'call',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.MessageCall',
+      '10': 'call'
+    },
+    {'1': 'not_ok_by_me', '3': 11, '4': 1, '5': 8, '10': 'notOkByMe'},
   ],
 };
 
@@ -416,7 +434,70 @@ final $typed_data.Uint8List messageDescriptor = $convert.base64Decode(
     'CgdNZXNzYWdlEg4KAmlkGAEgASgJUgJpZBIZCghtYXRjaF9pZBgCIAEoCVIHbWF0Y2hJZBIbCg'
     'lzZW5kZXJfaWQYAyABKAlSCHNlbmRlcklkEhIKBGJvZHkYBCABKAlSBGJvZHkSIwoNdGVuc2lv'
     'bl9sZXZlbBgFIAEoBVIMdGVuc2lvbkxldmVsEh0KCmNyZWF0ZWRfYXQYBiABKANSCWNyZWF0ZW'
-    'RBdBIXCgdyZWFkX2F0GAcgASgDUgZyZWFkQXQ=');
+    'RBdBIXCgdyZWFkX2F0GAcgASgDUgZyZWFkQXQSEgoEa2luZBgIIAEoCVIEa2luZBIzCgRjYXJk'
+    'GAkgASgLMh8uc3R0YXR0dXMuZGF0aW5nLnYxLk1lc3NhZ2VDYXJkUgRjYXJkEjMKBGNhbGwYCi'
+    'ABKAsyHy5zdHRhdHR1cy5kYXRpbmcudjEuTWVzc2FnZUNhbGxSBGNhbGwSHwoMbm90X29rX2J5'
+    'X21lGAsgASgIUglub3RPa0J5TWU=');
+
+@$core.Deprecated('Use messageCardDescriptor instead')
+const MessageCard$json = {
+  '1': 'MessageCard',
+  '2': [
+    {'1': 'card_id', '3': 1, '4': 1, '5': 9, '10': 'cardId'},
+    {'1': 'deck_kind', '3': 2, '4': 1, '5': 9, '10': 'deckKind'},
+    {'1': 'text', '3': 3, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'option_a', '3': 4, '4': 1, '5': 9, '10': 'optionA'},
+    {'1': 'option_b', '3': 5, '4': 1, '5': 9, '10': 'optionB'},
+    {'1': 'my_answer', '3': 6, '4': 1, '5': 9, '10': 'myAnswer'},
+    {'1': 'my_choice', '3': 7, '4': 1, '5': 9, '10': 'myChoice'},
+    {'1': 'their_answer', '3': 8, '4': 1, '5': 9, '10': 'theirAnswer'},
+    {'1': 'their_choice', '3': 9, '4': 1, '5': 9, '10': 'theirChoice'},
+    {'1': 'i_answered', '3': 10, '4': 1, '5': 8, '10': 'iAnswered'},
+    {'1': 'both_answered', '3': 11, '4': 1, '5': 8, '10': 'bothAnswered'},
+  ],
+};
+
+/// Descriptor for `MessageCard`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List messageCardDescriptor = $convert.base64Decode(
+    'CgtNZXNzYWdlQ2FyZBIXCgdjYXJkX2lkGAEgASgJUgZjYXJkSWQSGwoJZGVja19raW5kGAIgAS'
+    'gJUghkZWNrS2luZBISCgR0ZXh0GAMgASgJUgR0ZXh0EhkKCG9wdGlvbl9hGAQgASgJUgdvcHRp'
+    'b25BEhkKCG9wdGlvbl9iGAUgASgJUgdvcHRpb25CEhsKCW15X2Fuc3dlchgGIAEoCVIIbXlBbn'
+    'N3ZXISGwoJbXlfY2hvaWNlGAcgASgJUghteUNob2ljZRIhCgx0aGVpcl9hbnN3ZXIYCCABKAlS'
+    'C3RoZWlyQW5zd2VyEiEKDHRoZWlyX2Nob2ljZRgJIAEoCVILdGhlaXJDaG9pY2USHQoKaV9hbn'
+    'N3ZXJlZBgKIAEoCFIJaUFuc3dlcmVkEiMKDWJvdGhfYW5zd2VyZWQYCyABKAhSDGJvdGhBbnN3'
+    'ZXJlZA==');
+
+@$core.Deprecated('Use messageCallDescriptor instead')
+const MessageCall$json = {
+  '1': 'MessageCall',
+  '2': [
+    {'1': 'kind', '3': 1, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'duration_seconds', '3': 3, '4': 1, '5': 5, '10': 'durationSeconds'},
+    {'1': 'i_called', '3': 4, '4': 1, '5': 8, '10': 'iCalled'},
+  ],
+};
+
+/// Descriptor for `MessageCall`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List messageCallDescriptor = $convert.base64Decode(
+    'CgtNZXNzYWdlQ2FsbBISCgRraW5kGAEgASgJUgRraW5kEhYKBnN0YXR1cxgCIAEoCVIGc3RhdH'
+    'VzEikKEGR1cmF0aW9uX3NlY29uZHMYAyABKAVSD2R1cmF0aW9uU2Vjb25kcxIZCghpX2NhbGxl'
+    'ZBgEIAEoCFIHaUNhbGxlZA==');
+
+@$core.Deprecated('Use screeningDescriptor instead')
+const Screening$json = {
+  '1': 'Screening',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'action', '3': 3, '4': 1, '5': 9, '10': 'action'},
+  ],
+};
+
+/// Descriptor for `Screening`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List screeningDescriptor = $convert.base64Decode(
+    'CglTY3JlZW5pbmcSDgoCaWQYASABKAlSAmlkEhoKCGNhdGVnb3J5GAIgASgJUghjYXRlZ29yeR'
+    'IWCgZhY3Rpb24YAyABKAlSBmFjdGlvbg==');
 
 @$core.Deprecated('Use getProfileRequestDescriptor instead')
 const GetProfileRequest$json = {
@@ -682,13 +763,21 @@ const SendMessageRequest$json = {
   '2': [
     {'1': 'match_id', '3': 1, '4': 1, '5': 9, '10': 'matchId'},
     {'1': 'body', '3': 2, '4': 1, '5': 9, '10': 'body'},
+    {
+      '1': 'send_anyway_screening_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'sendAnywayScreeningId'
+    },
   ],
 };
 
 /// Descriptor for `SendMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sendMessageRequestDescriptor = $convert.base64Decode(
     'ChJTZW5kTWVzc2FnZVJlcXVlc3QSGQoIbWF0Y2hfaWQYASABKAlSB21hdGNoSWQSEgoEYm9keR'
-    'gCIAEoCVIEYm9keQ==');
+    'gCIAEoCVIEYm9keRI3ChhzZW5kX2FueXdheV9zY3JlZW5pbmdfaWQYAyABKAlSFXNlbmRBbnl3'
+    'YXlTY3JlZW5pbmdJZA==');
 
 @$core.Deprecated('Use sendMessageResponseDescriptor instead')
 const SendMessageResponse$json = {
@@ -702,13 +791,22 @@ const SendMessageResponse$json = {
       '6': '.sttattus.dating.v1.Message',
       '10': 'message'
     },
+    {
+      '1': 'screening',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.Screening',
+      '10': 'screening'
+    },
   ],
 };
 
 /// Descriptor for `SendMessageResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sendMessageResponseDescriptor = $convert.base64Decode(
     'ChNTZW5kTWVzc2FnZVJlc3BvbnNlEjUKB21lc3NhZ2UYASABKAsyGy5zdHRhdHR1cy5kYXRpbm'
-    'cudjEuTWVzc2FnZVIHbWVzc2FnZQ==');
+    'cudjEuTWVzc2FnZVIHbWVzc2FnZRI7CglzY3JlZW5pbmcYAiABKAsyHS5zdHRhdHR1cy5kYXRp'
+    'bmcudjEuU2NyZWVuaW5nUglzY3JlZW5pbmc=');
 
 @$core.Deprecated('Use atlasVerificationDescriptor instead')
 const AtlasVerification$json = {
@@ -1252,6 +1350,8 @@ const ReportUserRequest$json = {
     {'1': 'reported_id', '3': 1, '4': 1, '5': 9, '10': 'reportedId'},
     {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'match_id', '3': 4, '4': 1, '5': 9, '10': 'matchId'},
+    {'1': 'message_ids', '3': 5, '4': 3, '5': 9, '10': 'messageIds'},
   ],
 };
 
@@ -1259,7 +1359,8 @@ const ReportUserRequest$json = {
 final $typed_data.Uint8List reportUserRequestDescriptor = $convert.base64Decode(
     'ChFSZXBvcnRVc2VyUmVxdWVzdBIfCgtyZXBvcnRlZF9pZBgBIAEoCVIKcmVwb3J0ZWRJZBIaCg'
     'hjYXRlZ29yeRgCIAEoCVIIY2F0ZWdvcnkSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0'
-    'aW9u');
+    'aW9uEhkKCG1hdGNoX2lkGAQgASgJUgdtYXRjaElkEh8KC21lc3NhZ2VfaWRzGAUgAygJUgptZX'
+    'NzYWdlSWRz');
 
 @$core.Deprecated('Use reportUserResponseDescriptor instead')
 const ReportUserResponse$json = {
