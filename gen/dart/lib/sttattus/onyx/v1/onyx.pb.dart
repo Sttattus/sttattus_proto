@@ -52811,6 +52811,4191 @@ class WithdrawForensicAppealResponse extends $pb.GeneratedMessage {
   OnyxForensicCase ensureForensicCase() => $_ensure(0);
 }
 
+/// Choice 14 — scoped API, MCP and integrations. Raw client secrets,
+/// authorization codes and bearer tokens are deliberately absent from all read
+/// models. A newly issued authorization code is returned once by the authorize
+/// mutation and is otherwise represented only by its non-sensitive hint.
+class OnyxIntegrationRuntime extends $pb.GeneratedMessage {
+  factory OnyxIntegrationRuntime({
+    $core.String? status,
+    $core.bool? grantsEnabled,
+    $core.bool? apiEnabled,
+    $core.bool? mcpEnabled,
+    $core.bool? connectorsEnabled,
+    $core.bool? bridgesEnabled,
+    $core.int? accessTokenTtlSeconds,
+    $core.int? authorizationCodeTtlSeconds,
+    $core.int? defaultQuotaPerMinute,
+    $fixnum.Int64? maxExportBytes,
+    $core.String? publicNotice,
+    $fixnum.Int64? version,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (grantsEnabled != null) result.grantsEnabled = grantsEnabled;
+    if (apiEnabled != null) result.apiEnabled = apiEnabled;
+    if (mcpEnabled != null) result.mcpEnabled = mcpEnabled;
+    if (connectorsEnabled != null) result.connectorsEnabled = connectorsEnabled;
+    if (bridgesEnabled != null) result.bridgesEnabled = bridgesEnabled;
+    if (accessTokenTtlSeconds != null)
+      result.accessTokenTtlSeconds = accessTokenTtlSeconds;
+    if (authorizationCodeTtlSeconds != null)
+      result.authorizationCodeTtlSeconds = authorizationCodeTtlSeconds;
+    if (defaultQuotaPerMinute != null)
+      result.defaultQuotaPerMinute = defaultQuotaPerMinute;
+    if (maxExportBytes != null) result.maxExportBytes = maxExportBytes;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  OnyxIntegrationRuntime._();
+
+  factory OnyxIntegrationRuntime.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationRuntime.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationRuntime',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aOB(2, _omitFieldNames ? '' : 'grantsEnabled')
+    ..aOB(3, _omitFieldNames ? '' : 'apiEnabled')
+    ..aOB(4, _omitFieldNames ? '' : 'mcpEnabled')
+    ..aOB(5, _omitFieldNames ? '' : 'connectorsEnabled')
+    ..aOB(6, _omitFieldNames ? '' : 'bridgesEnabled')
+    ..aI(7, _omitFieldNames ? '' : 'accessTokenTtlSeconds')
+    ..aI(8, _omitFieldNames ? '' : 'authorizationCodeTtlSeconds')
+    ..aI(9, _omitFieldNames ? '' : 'defaultQuotaPerMinute')
+    ..aInt64(10, _omitFieldNames ? '' : 'maxExportBytes')
+    ..aOS(11, _omitFieldNames ? '' : 'publicNotice')
+    ..aInt64(12, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationRuntime clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationRuntime copyWith(
+          void Function(OnyxIntegrationRuntime) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationRuntime))
+          as OnyxIntegrationRuntime;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationRuntime create() => OnyxIntegrationRuntime._();
+  @$core.override
+  OnyxIntegrationRuntime createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationRuntime getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationRuntime>(create);
+  static OnyxIntegrationRuntime? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get grantsEnabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set grantsEnabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantsEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantsEnabled() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get apiEnabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set apiEnabled($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasApiEnabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearApiEnabled() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get mcpEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set mcpEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMcpEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMcpEnabled() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get connectorsEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set connectorsEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasConnectorsEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConnectorsEnabled() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get bridgesEnabled => $_getBF(5);
+  @$pb.TagNumber(6)
+  set bridgesEnabled($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBridgesEnabled() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBridgesEnabled() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get accessTokenTtlSeconds => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set accessTokenTtlSeconds($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAccessTokenTtlSeconds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAccessTokenTtlSeconds() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get authorizationCodeTtlSeconds => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set authorizationCodeTtlSeconds($core.int value) =>
+      $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAuthorizationCodeTtlSeconds() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAuthorizationCodeTtlSeconds() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get defaultQuotaPerMinute => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set defaultQuotaPerMinute($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDefaultQuotaPerMinute() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDefaultQuotaPerMinute() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get maxExportBytes => $_getI64(9);
+  @$pb.TagNumber(10)
+  set maxExportBytes($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMaxExportBytes() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMaxExportBytes() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get publicNotice => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set publicNotice($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPublicNotice() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPublicNotice() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get version => $_getI64(11);
+  @$pb.TagNumber(12)
+  set version($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVersion() => $_clearField(12);
+}
+
+class OnyxIntegrationClient extends $pb.GeneratedMessage {
+  factory OnyxIntegrationClient({
+    $core.String? id,
+    $core.String? slug,
+    $core.String? name,
+    $core.String? publisherName,
+    $core.String? description,
+    $core.String? clientType,
+    $core.String? environment,
+    $core.String? status,
+    $core.String? homepageUrl,
+    $core.Iterable<$core.String>? allowedScopes,
+    $core.Iterable<$core.String>? allowedDataClasses,
+    $core.int? quotaPerMinute,
+    $core.bool? offlineAccessAllowed,
+    $core.String? currentSecretHint,
+    $1.Timestamp? reviewedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (slug != null) result.slug = slug;
+    if (name != null) result.name = name;
+    if (publisherName != null) result.publisherName = publisherName;
+    if (description != null) result.description = description;
+    if (clientType != null) result.clientType = clientType;
+    if (environment != null) result.environment = environment;
+    if (status != null) result.status = status;
+    if (homepageUrl != null) result.homepageUrl = homepageUrl;
+    if (allowedScopes != null) result.allowedScopes.addAll(allowedScopes);
+    if (allowedDataClasses != null)
+      result.allowedDataClasses.addAll(allowedDataClasses);
+    if (quotaPerMinute != null) result.quotaPerMinute = quotaPerMinute;
+    if (offlineAccessAllowed != null)
+      result.offlineAccessAllowed = offlineAccessAllowed;
+    if (currentSecretHint != null) result.currentSecretHint = currentSecretHint;
+    if (reviewedAt != null) result.reviewedAt = reviewedAt;
+    return result;
+  }
+
+  OnyxIntegrationClient._();
+
+  factory OnyxIntegrationClient.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationClient.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationClient',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'publisherName')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOS(6, _omitFieldNames ? '' : 'clientType')
+    ..aOS(7, _omitFieldNames ? '' : 'environment')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'homepageUrl')
+    ..pPS(10, _omitFieldNames ? '' : 'allowedScopes')
+    ..pPS(11, _omitFieldNames ? '' : 'allowedDataClasses')
+    ..aI(12, _omitFieldNames ? '' : 'quotaPerMinute')
+    ..aOB(13, _omitFieldNames ? '' : 'offlineAccessAllowed')
+    ..aOS(14, _omitFieldNames ? '' : 'currentSecretHint')
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'reviewedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationClient clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationClient copyWith(
+          void Function(OnyxIntegrationClient) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationClient))
+          as OnyxIntegrationClient;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationClient create() => OnyxIntegrationClient._();
+  @$core.override
+  OnyxIntegrationClient createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationClient getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationClient>(create);
+  static OnyxIntegrationClient? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get publisherName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set publisherName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPublisherName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPublisherName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get environment => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set environment($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEnvironment() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEnvironment() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get homepageUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set homepageUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasHomepageUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHomepageUrl() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get allowedScopes => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get allowedDataClasses => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.int get quotaPerMinute => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set quotaPerMinute($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasQuotaPerMinute() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearQuotaPerMinute() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get offlineAccessAllowed => $_getBF(12);
+  @$pb.TagNumber(13)
+  set offlineAccessAllowed($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasOfflineAccessAllowed() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearOfflineAccessAllowed() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get currentSecretHint => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set currentSecretHint($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCurrentSecretHint() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCurrentSecretHint() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get reviewedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set reviewedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasReviewedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearReviewedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureReviewedAt() => $_ensure(14);
+}
+
+class OnyxIntegrationGrant extends $pb.GeneratedMessage {
+  factory OnyxIntegrationGrant({
+    $core.String? id,
+    $core.String? clientId,
+    $core.String? clientName,
+    $core.String? clientPublisher,
+    $core.String? displayName,
+    $core.String? purpose,
+    $core.String? status,
+    $core.Iterable<$core.String>? scopes,
+    $core.Iterable<$core.String>? dataClasses,
+    $core.String? resourceType,
+    $core.Iterable<$core.String>? resourceIds,
+    $core.bool? offlineAccess,
+    $fixnum.Int64? revocationEpoch,
+    $fixnum.Int64? version,
+    $core.String? authorizationCodeHint,
+    $1.Timestamp? grantedAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? revokedAt,
+    $core.String? revokedReason,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clientId != null) result.clientId = clientId;
+    if (clientName != null) result.clientName = clientName;
+    if (clientPublisher != null) result.clientPublisher = clientPublisher;
+    if (displayName != null) result.displayName = displayName;
+    if (purpose != null) result.purpose = purpose;
+    if (status != null) result.status = status;
+    if (scopes != null) result.scopes.addAll(scopes);
+    if (dataClasses != null) result.dataClasses.addAll(dataClasses);
+    if (resourceType != null) result.resourceType = resourceType;
+    if (resourceIds != null) result.resourceIds.addAll(resourceIds);
+    if (offlineAccess != null) result.offlineAccess = offlineAccess;
+    if (revocationEpoch != null) result.revocationEpoch = revocationEpoch;
+    if (version != null) result.version = version;
+    if (authorizationCodeHint != null)
+      result.authorizationCodeHint = authorizationCodeHint;
+    if (grantedAt != null) result.grantedAt = grantedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (revokedReason != null) result.revokedReason = revokedReason;
+    return result;
+  }
+
+  OnyxIntegrationGrant._();
+
+  factory OnyxIntegrationGrant.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationGrant.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationGrant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientId')
+    ..aOS(3, _omitFieldNames ? '' : 'clientName')
+    ..aOS(4, _omitFieldNames ? '' : 'clientPublisher')
+    ..aOS(5, _omitFieldNames ? '' : 'displayName')
+    ..aOS(6, _omitFieldNames ? '' : 'purpose')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..pPS(8, _omitFieldNames ? '' : 'scopes')
+    ..pPS(9, _omitFieldNames ? '' : 'dataClasses')
+    ..aOS(10, _omitFieldNames ? '' : 'resourceType')
+    ..pPS(11, _omitFieldNames ? '' : 'resourceIds')
+    ..aOB(12, _omitFieldNames ? '' : 'offlineAccess')
+    ..aInt64(13, _omitFieldNames ? '' : 'revocationEpoch')
+    ..aInt64(14, _omitFieldNames ? '' : 'version')
+    ..aOS(15, _omitFieldNames ? '' : 'authorizationCodeHint')
+    ..aOM<$1.Timestamp>(16, _omitFieldNames ? '' : 'grantedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(19, _omitFieldNames ? '' : 'revokedReason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationGrant clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationGrant copyWith(void Function(OnyxIntegrationGrant) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationGrant))
+          as OnyxIntegrationGrant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationGrant create() => OnyxIntegrationGrant._();
+  @$core.override
+  OnyxIntegrationGrant createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationGrant getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationGrant>(create);
+  static OnyxIntegrationGrant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientPublisher => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientPublisher($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientPublisher() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientPublisher() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get displayName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set displayName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDisplayName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDisplayName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get purpose => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set purpose($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPurpose() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPurpose() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get scopes => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get dataClasses => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get resourceType => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set resourceType($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResourceType() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResourceType() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get resourceIds => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.bool get offlineAccess => $_getBF(11);
+  @$pb.TagNumber(12)
+  set offlineAccess($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasOfflineAccess() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearOfflineAccess() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get revocationEpoch => $_getI64(12);
+  @$pb.TagNumber(13)
+  set revocationEpoch($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasRevocationEpoch() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearRevocationEpoch() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get version => $_getI64(13);
+  @$pb.TagNumber(14)
+  set version($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearVersion() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get authorizationCodeHint => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set authorizationCodeHint($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasAuthorizationCodeHint() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearAuthorizationCodeHint() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get grantedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set grantedAt($1.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasGrantedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearGrantedAt() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureGrantedAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get expiresAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set expiresAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasExpiresAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearExpiresAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureExpiresAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get revokedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set revokedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasRevokedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearRevokedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureRevokedAt() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $core.String get revokedReason => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set revokedReason($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasRevokedReason() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRevokedReason() => $_clearField(19);
+}
+
+class OnyxIntegrationCall extends $pb.GeneratedMessage {
+  factory OnyxIntegrationCall({
+    $core.String? id,
+    $core.String? clientName,
+    $core.String? transport,
+    $core.String? operation,
+    $core.String? requiredScope,
+    $core.String? status,
+    $core.int? responseCode,
+    $fixnum.Int64? responseBytes,
+    $core.int? durationMs,
+    $core.String? errorCode,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (clientName != null) result.clientName = clientName;
+    if (transport != null) result.transport = transport;
+    if (operation != null) result.operation = operation;
+    if (requiredScope != null) result.requiredScope = requiredScope;
+    if (status != null) result.status = status;
+    if (responseCode != null) result.responseCode = responseCode;
+    if (responseBytes != null) result.responseBytes = responseBytes;
+    if (durationMs != null) result.durationMs = durationMs;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OnyxIntegrationCall._();
+
+  factory OnyxIntegrationCall.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationCall.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationCall',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientName')
+    ..aOS(3, _omitFieldNames ? '' : 'transport')
+    ..aOS(4, _omitFieldNames ? '' : 'operation')
+    ..aOS(5, _omitFieldNames ? '' : 'requiredScope')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aI(7, _omitFieldNames ? '' : 'responseCode')
+    ..aInt64(8, _omitFieldNames ? '' : 'responseBytes')
+    ..aI(9, _omitFieldNames ? '' : 'durationMs')
+    ..aOS(10, _omitFieldNames ? '' : 'errorCode')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationCall clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationCall copyWith(void Function(OnyxIntegrationCall) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationCall))
+          as OnyxIntegrationCall;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationCall create() => OnyxIntegrationCall._();
+  @$core.override
+  OnyxIntegrationCall createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationCall getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationCall>(create);
+  static OnyxIntegrationCall? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get transport => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set transport($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTransport() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTransport() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get operation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set operation($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOperation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOperation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get requiredScope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set requiredScope($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRequiredScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequiredScope() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get responseCode => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set responseCode($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasResponseCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResponseCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get responseBytes => $_getI64(7);
+  @$pb.TagNumber(8)
+  set responseBytes($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResponseBytes() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResponseBytes() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get durationMs => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set durationMs($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDurationMs() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDurationMs() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get errorCode => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set errorCode($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasErrorCode() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearErrorCode() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+}
+
+class OnyxIntegrationConnectorDefinition extends $pb.GeneratedMessage {
+  factory OnyxIntegrationConnectorDefinition({
+    $core.String? code,
+    $core.String? name,
+    $core.String? category,
+    $core.String? mode,
+    $core.String? status,
+    $core.Iterable<$core.String>? supportedDirections,
+    $core.Iterable<$core.String>? requiredScopes,
+    $core.String? configurationNotice,
+    $core.bool? supportsScheduling,
+  }) {
+    final result = create();
+    if (code != null) result.code = code;
+    if (name != null) result.name = name;
+    if (category != null) result.category = category;
+    if (mode != null) result.mode = mode;
+    if (status != null) result.status = status;
+    if (supportedDirections != null)
+      result.supportedDirections.addAll(supportedDirections);
+    if (requiredScopes != null) result.requiredScopes.addAll(requiredScopes);
+    if (configurationNotice != null)
+      result.configurationNotice = configurationNotice;
+    if (supportsScheduling != null)
+      result.supportsScheduling = supportsScheduling;
+    return result;
+  }
+
+  OnyxIntegrationConnectorDefinition._();
+
+  factory OnyxIntegrationConnectorDefinition.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationConnectorDefinition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationConnectorDefinition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'category')
+    ..aOS(4, _omitFieldNames ? '' : 'mode')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..pPS(6, _omitFieldNames ? '' : 'supportedDirections')
+    ..pPS(7, _omitFieldNames ? '' : 'requiredScopes')
+    ..aOS(8, _omitFieldNames ? '' : 'configurationNotice')
+    ..aOB(9, _omitFieldNames ? '' : 'supportsScheduling')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorDefinition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorDefinition copyWith(
+          void Function(OnyxIntegrationConnectorDefinition) updates) =>
+      super.copyWith((message) =>
+              updates(message as OnyxIntegrationConnectorDefinition))
+          as OnyxIntegrationConnectorDefinition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorDefinition create() =>
+      OnyxIntegrationConnectorDefinition._();
+  @$core.override
+  OnyxIntegrationConnectorDefinition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorDefinition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationConnectorDefinition>(
+          create);
+  static OnyxIntegrationConnectorDefinition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get category => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set category($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCategory() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get mode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set mode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get supportedDirections => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get requiredScopes => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get configurationNotice => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set configurationNotice($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasConfigurationNotice() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConfigurationNotice() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get supportsScheduling => $_getBF(8);
+  @$pb.TagNumber(9)
+  set supportsScheduling($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSupportsScheduling() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSupportsScheduling() => $_clearField(9);
+}
+
+class OnyxIntegrationConnectorAccount extends $pb.GeneratedMessage {
+  factory OnyxIntegrationConnectorAccount({
+    $core.String? id,
+    $core.String? grantId,
+    $core.String? clientName,
+    $core.String? connectorCode,
+    $core.String? connectorName,
+    $core.String? displayName,
+    $core.String? status,
+    $core.String? syncDirection,
+    $core.String? schedule,
+    $core.String? checkpoint,
+    $fixnum.Int64? grantEpoch,
+    $fixnum.Int64? version,
+    $1.Timestamp? lastSyncAt,
+    $1.Timestamp? nextSyncAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (grantId != null) result.grantId = grantId;
+    if (clientName != null) result.clientName = clientName;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (connectorName != null) result.connectorName = connectorName;
+    if (displayName != null) result.displayName = displayName;
+    if (status != null) result.status = status;
+    if (syncDirection != null) result.syncDirection = syncDirection;
+    if (schedule != null) result.schedule = schedule;
+    if (checkpoint != null) result.checkpoint = checkpoint;
+    if (grantEpoch != null) result.grantEpoch = grantEpoch;
+    if (version != null) result.version = version;
+    if (lastSyncAt != null) result.lastSyncAt = lastSyncAt;
+    if (nextSyncAt != null) result.nextSyncAt = nextSyncAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxIntegrationConnectorAccount._();
+
+  factory OnyxIntegrationConnectorAccount.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationConnectorAccount.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationConnectorAccount',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'clientName')
+    ..aOS(4, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(5, _omitFieldNames ? '' : 'connectorName')
+    ..aOS(6, _omitFieldNames ? '' : 'displayName')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'syncDirection')
+    ..aOS(9, _omitFieldNames ? '' : 'schedule')
+    ..aOS(10, _omitFieldNames ? '' : 'checkpoint')
+    ..aInt64(11, _omitFieldNames ? '' : 'grantEpoch')
+    ..aInt64(12, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'lastSyncAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'nextSyncAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorAccount clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorAccount copyWith(
+          void Function(OnyxIntegrationConnectorAccount) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxIntegrationConnectorAccount))
+          as OnyxIntegrationConnectorAccount;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorAccount create() =>
+      OnyxIntegrationConnectorAccount._();
+  @$core.override
+  OnyxIntegrationConnectorAccount createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorAccount getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationConnectorAccount>(
+          create);
+  static OnyxIntegrationConnectorAccount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get connectorCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set connectorCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConnectorCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConnectorCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get connectorName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set connectorName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasConnectorName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConnectorName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get displayName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set displayName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDisplayName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDisplayName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get syncDirection => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set syncDirection($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSyncDirection() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSyncDirection() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get schedule => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set schedule($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSchedule() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSchedule() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get checkpoint => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set checkpoint($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCheckpoint() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCheckpoint() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get grantEpoch => $_getI64(10);
+  @$pb.TagNumber(11)
+  set grantEpoch($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasGrantEpoch() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearGrantEpoch() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get version => $_getI64(11);
+  @$pb.TagNumber(12)
+  set version($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get lastSyncAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set lastSyncAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLastSyncAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLastSyncAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureLastSyncAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get nextSyncAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set nextSyncAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasNextSyncAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearNextSyncAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureNextSyncAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get updatedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set updatedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasUpdatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdatedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(14);
+}
+
+class OnyxIntegrationConnectorRun extends $pb.GeneratedMessage {
+  factory OnyxIntegrationConnectorRun({
+    $core.String? id,
+    $core.String? accountId,
+    $core.String? connectorName,
+    $core.String? triggerKind,
+    $core.String? direction,
+    $core.String? status,
+    $core.int? inputCount,
+    $core.int? outputCount,
+    $core.int? conflictCount,
+    $fixnum.Int64? bytesProcessed,
+    $core.String? artifactChecksum,
+    $core.String? errorCode,
+    $core.String? errorMessage,
+    $1.Timestamp? queuedAt,
+    $1.Timestamp? completedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (accountId != null) result.accountId = accountId;
+    if (connectorName != null) result.connectorName = connectorName;
+    if (triggerKind != null) result.triggerKind = triggerKind;
+    if (direction != null) result.direction = direction;
+    if (status != null) result.status = status;
+    if (inputCount != null) result.inputCount = inputCount;
+    if (outputCount != null) result.outputCount = outputCount;
+    if (conflictCount != null) result.conflictCount = conflictCount;
+    if (bytesProcessed != null) result.bytesProcessed = bytesProcessed;
+    if (artifactChecksum != null) result.artifactChecksum = artifactChecksum;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (errorMessage != null) result.errorMessage = errorMessage;
+    if (queuedAt != null) result.queuedAt = queuedAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  OnyxIntegrationConnectorRun._();
+
+  factory OnyxIntegrationConnectorRun.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationConnectorRun.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationConnectorRun',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'accountId')
+    ..aOS(3, _omitFieldNames ? '' : 'connectorName')
+    ..aOS(4, _omitFieldNames ? '' : 'triggerKind')
+    ..aOS(5, _omitFieldNames ? '' : 'direction')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aI(7, _omitFieldNames ? '' : 'inputCount')
+    ..aI(8, _omitFieldNames ? '' : 'outputCount')
+    ..aI(9, _omitFieldNames ? '' : 'conflictCount')
+    ..aInt64(10, _omitFieldNames ? '' : 'bytesProcessed')
+    ..aOS(11, _omitFieldNames ? '' : 'artifactChecksum')
+    ..aOS(12, _omitFieldNames ? '' : 'errorCode')
+    ..aOS(13, _omitFieldNames ? '' : 'errorMessage')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'queuedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'completedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorRun clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConnectorRun copyWith(
+          void Function(OnyxIntegrationConnectorRun) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxIntegrationConnectorRun))
+          as OnyxIntegrationConnectorRun;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorRun create() =>
+      OnyxIntegrationConnectorRun._();
+  @$core.override
+  OnyxIntegrationConnectorRun createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConnectorRun getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationConnectorRun>(create);
+  static OnyxIntegrationConnectorRun? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get connectorName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set connectorName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConnectorName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConnectorName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get triggerKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set triggerKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTriggerKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTriggerKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get direction => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set direction($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDirection() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDirection() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get inputCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set inputCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasInputCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearInputCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get outputCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set outputCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOutputCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOutputCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get conflictCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set conflictCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasConflictCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConflictCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get bytesProcessed => $_getI64(9);
+  @$pb.TagNumber(10)
+  set bytesProcessed($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasBytesProcessed() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearBytesProcessed() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get artifactChecksum => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set artifactChecksum($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasArtifactChecksum() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearArtifactChecksum() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get errorCode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set errorCode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasErrorCode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearErrorCode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get errorMessage => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set errorMessage($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasErrorMessage() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearErrorMessage() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get queuedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set queuedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasQueuedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearQueuedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureQueuedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get completedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set completedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCompletedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCompletedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureCompletedAt() => $_ensure(14);
+}
+
+class OnyxIntegrationArtifact extends $pb.GeneratedMessage {
+  factory OnyxIntegrationArtifact({
+    $core.String? id,
+    $core.String? runId,
+    $core.String? format,
+    $core.String? filename,
+    $core.String? mimeType,
+    $core.String? checksum,
+    $fixnum.Int64? byteCount,
+    $core.String? data,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (runId != null) result.runId = runId;
+    if (format != null) result.format = format;
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
+    if (checksum != null) result.checksum = checksum;
+    if (byteCount != null) result.byteCount = byteCount;
+    if (data != null) result.data = data;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  OnyxIntegrationArtifact._();
+
+  factory OnyxIntegrationArtifact.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationArtifact.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationArtifact',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'runId')
+    ..aOS(3, _omitFieldNames ? '' : 'format')
+    ..aOS(4, _omitFieldNames ? '' : 'filename')
+    ..aOS(5, _omitFieldNames ? '' : 'mimeType')
+    ..aOS(6, _omitFieldNames ? '' : 'checksum')
+    ..aInt64(7, _omitFieldNames ? '' : 'byteCount')
+    ..aOS(8, _omitFieldNames ? '' : 'data')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationArtifact clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationArtifact copyWith(
+          void Function(OnyxIntegrationArtifact) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationArtifact))
+          as OnyxIntegrationArtifact;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationArtifact create() => OnyxIntegrationArtifact._();
+  @$core.override
+  OnyxIntegrationArtifact createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationArtifact getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationArtifact>(create);
+  static OnyxIntegrationArtifact? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get runId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set runId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRunId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRunId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get format => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set format($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get filename => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set filename($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFilename() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFilename() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get mimeType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set mimeType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMimeType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMimeType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get checksum => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set checksum($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasChecksum() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearChecksum() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get byteCount => $_getI64(6);
+  @$pb.TagNumber(7)
+  set byteCount($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasByteCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearByteCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get data => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set data($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasData() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearData() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get expiresAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set expiresAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasExpiresAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExpiresAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureExpiresAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get createdAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set createdAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+}
+
+class OnyxIntegrationConflict extends $pb.GeneratedMessage {
+  factory OnyxIntegrationConflict({
+    $core.String? id,
+    $core.String? runId,
+    $core.String? conflictType,
+    $core.String? localRef,
+    $core.String? externalRef,
+    $core.String? summary,
+    $core.String? status,
+    $core.String? resolution,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (runId != null) result.runId = runId;
+    if (conflictType != null) result.conflictType = conflictType;
+    if (localRef != null) result.localRef = localRef;
+    if (externalRef != null) result.externalRef = externalRef;
+    if (summary != null) result.summary = summary;
+    if (status != null) result.status = status;
+    if (resolution != null) result.resolution = resolution;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  OnyxIntegrationConflict._();
+
+  factory OnyxIntegrationConflict.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationConflict.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationConflict',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'runId')
+    ..aOS(3, _omitFieldNames ? '' : 'conflictType')
+    ..aOS(4, _omitFieldNames ? '' : 'localRef')
+    ..aOS(5, _omitFieldNames ? '' : 'externalRef')
+    ..aOS(6, _omitFieldNames ? '' : 'summary')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'resolution')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConflict clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationConflict copyWith(
+          void Function(OnyxIntegrationConflict) updates) =>
+      super.copyWith((message) => updates(message as OnyxIntegrationConflict))
+          as OnyxIntegrationConflict;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConflict create() => OnyxIntegrationConflict._();
+  @$core.override
+  OnyxIntegrationConflict createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationConflict getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationConflict>(create);
+  static OnyxIntegrationConflict? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get runId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set runId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRunId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRunId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get conflictType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set conflictType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConflictType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConflictType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get localRef => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set localRef($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLocalRef() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLocalRef() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get externalRef => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set externalRef($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExternalRef() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExternalRef() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get summary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set summary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get resolution => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set resolution($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolution() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolution() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get createdAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set createdAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get resolvedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set resolvedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolvedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolvedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureResolvedAt() => $_ensure(9);
+}
+
+class OnyxIntegrationBridgeDispatch extends $pb.GeneratedMessage {
+  factory OnyxIntegrationBridgeDispatch({
+    $core.String? id,
+    $core.String? grantId,
+    $core.String? destination,
+    $core.String? sourceKind,
+    $core.String? sourceId,
+    $core.String? title,
+    $core.String? purpose,
+    $core.String? status,
+    $core.String? downstreamRef,
+    $core.String? receiptChecksum,
+    $core.String? errorCode,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? completedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (grantId != null) result.grantId = grantId;
+    if (destination != null) result.destination = destination;
+    if (sourceKind != null) result.sourceKind = sourceKind;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (title != null) result.title = title;
+    if (purpose != null) result.purpose = purpose;
+    if (status != null) result.status = status;
+    if (downstreamRef != null) result.downstreamRef = downstreamRef;
+    if (receiptChecksum != null) result.receiptChecksum = receiptChecksum;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  OnyxIntegrationBridgeDispatch._();
+
+  factory OnyxIntegrationBridgeDispatch.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationBridgeDispatch.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationBridgeDispatch',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'destination')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceKind')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOS(7, _omitFieldNames ? '' : 'purpose')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'downstreamRef')
+    ..aOS(10, _omitFieldNames ? '' : 'receiptChecksum')
+    ..aOS(11, _omitFieldNames ? '' : 'errorCode')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'completedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationBridgeDispatch clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationBridgeDispatch copyWith(
+          void Function(OnyxIntegrationBridgeDispatch) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxIntegrationBridgeDispatch))
+          as OnyxIntegrationBridgeDispatch;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationBridgeDispatch create() =>
+      OnyxIntegrationBridgeDispatch._();
+  @$core.override
+  OnyxIntegrationBridgeDispatch createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationBridgeDispatch getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationBridgeDispatch>(create);
+  static OnyxIntegrationBridgeDispatch? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get destination => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set destination($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDestination() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDestination() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get title => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set title($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTitle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get purpose => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set purpose($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPurpose() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPurpose() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get downstreamRef => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set downstreamRef($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDownstreamRef() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDownstreamRef() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get receiptChecksum => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set receiptChecksum($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasReceiptChecksum() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearReceiptChecksum() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get errorCode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set errorCode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasErrorCode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearErrorCode() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get completedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set completedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCompletedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCompletedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCompletedAt() => $_ensure(12);
+}
+
+class OnyxIntegrationBridgeSource extends $pb.GeneratedMessage {
+  factory OnyxIntegrationBridgeSource({
+    $core.String? id,
+    $core.String? sourceKind,
+    $core.String? title,
+    $core.String? summary,
+    $core.Iterable<$core.String>? allowedDestinations,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceKind != null) result.sourceKind = sourceKind;
+    if (title != null) result.title = title;
+    if (summary != null) result.summary = summary;
+    if (allowedDestinations != null)
+      result.allowedDestinations.addAll(allowedDestinations);
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OnyxIntegrationBridgeSource._();
+
+  factory OnyxIntegrationBridgeSource.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationBridgeSource.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationBridgeSource',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceKind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..pPS(5, _omitFieldNames ? '' : 'allowedDestinations')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationBridgeSource clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationBridgeSource copyWith(
+          void Function(OnyxIntegrationBridgeSource) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxIntegrationBridgeSource))
+          as OnyxIntegrationBridgeSource;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationBridgeSource create() =>
+      OnyxIntegrationBridgeSource._();
+  @$core.override
+  OnyxIntegrationBridgeSource createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationBridgeSource getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationBridgeSource>(create);
+  static OnyxIntegrationBridgeSource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get allowedDestinations => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get updatedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set updatedAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasUpdatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpdatedAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(5);
+}
+
+class OnyxIntegrationOperationsCase extends $pb.GeneratedMessage {
+  factory OnyxIntegrationOperationsCase({
+    $core.String? id,
+    $core.String? caseType,
+    $core.String? status,
+    $core.String? severity,
+    $core.String? clientName,
+    $core.String? summary,
+    $core.String? memberStatement,
+    $core.String? resolution,
+    $1.Timestamp? openedAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (caseType != null) result.caseType = caseType;
+    if (status != null) result.status = status;
+    if (severity != null) result.severity = severity;
+    if (clientName != null) result.clientName = clientName;
+    if (summary != null) result.summary = summary;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    if (resolution != null) result.resolution = resolution;
+    if (openedAt != null) result.openedAt = openedAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  OnyxIntegrationOperationsCase._();
+
+  factory OnyxIntegrationOperationsCase.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxIntegrationOperationsCase.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxIntegrationOperationsCase',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'caseType')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'severity')
+    ..aOS(5, _omitFieldNames ? '' : 'clientName')
+    ..aOS(6, _omitFieldNames ? '' : 'summary')
+    ..aOS(7, _omitFieldNames ? '' : 'memberStatement')
+    ..aOS(8, _omitFieldNames ? '' : 'resolution')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'openedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationOperationsCase clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxIntegrationOperationsCase copyWith(
+          void Function(OnyxIntegrationOperationsCase) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxIntegrationOperationsCase))
+          as OnyxIntegrationOperationsCase;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationOperationsCase create() =>
+      OnyxIntegrationOperationsCase._();
+  @$core.override
+  OnyxIntegrationOperationsCase createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxIntegrationOperationsCase getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxIntegrationOperationsCase>(create);
+  static OnyxIntegrationOperationsCase? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get caseType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set caseType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCaseType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCaseType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get severity => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set severity($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSeverity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSeverity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get summary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set summary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get memberStatement => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set memberStatement($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMemberStatement() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemberStatement() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get resolution => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set resolution($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolution() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolution() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get openedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set openedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasOpenedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOpenedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureOpenedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get resolvedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set resolvedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolvedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolvedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureResolvedAt() => $_ensure(9);
+}
+
+class GetIntegrationDashboardRequest extends $pb.GeneratedMessage {
+  factory GetIntegrationDashboardRequest({
+    $core.bool? includeHistory,
+  }) {
+    final result = create();
+    if (includeHistory != null) result.includeHistory = includeHistory;
+    return result;
+  }
+
+  GetIntegrationDashboardRequest._();
+
+  factory GetIntegrationDashboardRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntegrationDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntegrationDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'includeHistory')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationDashboardRequest copyWith(
+          void Function(GetIntegrationDashboardRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntegrationDashboardRequest))
+          as GetIntegrationDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationDashboardRequest create() =>
+      GetIntegrationDashboardRequest._();
+  @$core.override
+  GetIntegrationDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationDashboardRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntegrationDashboardRequest>(create);
+  static GetIntegrationDashboardRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get includeHistory => $_getBF(0);
+  @$pb.TagNumber(1)
+  set includeHistory($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncludeHistory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncludeHistory() => $_clearField(1);
+}
+
+class GetIntegrationDashboardResponse extends $pb.GeneratedMessage {
+  factory GetIntegrationDashboardResponse({
+    OnyxIntegrationRuntime? runtime,
+    $core.Iterable<OnyxIntegrationClient>? availableClients,
+    $core.Iterable<OnyxIntegrationGrant>? grants,
+    $core.Iterable<OnyxIntegrationConnectorDefinition>? connectorCatalog,
+    $core.Iterable<OnyxIntegrationConnectorAccount>? connectorAccounts,
+    $core.Iterable<OnyxIntegrationConnectorRun>? connectorRuns,
+    $core.Iterable<OnyxIntegrationArtifact>? artifacts,
+    $core.Iterable<OnyxIntegrationConflict>? conflicts,
+    $core.Iterable<OnyxIntegrationBridgeDispatch>? bridgeDispatches,
+    $core.Iterable<OnyxIntegrationCall>? recentCalls,
+    $core.Iterable<OnyxIntegrationOperationsCase>? operationsCases,
+    $core.Iterable<OnyxIntegrationBridgeSource>? bridgeSources,
+  }) {
+    final result = create();
+    if (runtime != null) result.runtime = runtime;
+    if (availableClients != null)
+      result.availableClients.addAll(availableClients);
+    if (grants != null) result.grants.addAll(grants);
+    if (connectorCatalog != null)
+      result.connectorCatalog.addAll(connectorCatalog);
+    if (connectorAccounts != null)
+      result.connectorAccounts.addAll(connectorAccounts);
+    if (connectorRuns != null) result.connectorRuns.addAll(connectorRuns);
+    if (artifacts != null) result.artifacts.addAll(artifacts);
+    if (conflicts != null) result.conflicts.addAll(conflicts);
+    if (bridgeDispatches != null)
+      result.bridgeDispatches.addAll(bridgeDispatches);
+    if (recentCalls != null) result.recentCalls.addAll(recentCalls);
+    if (operationsCases != null) result.operationsCases.addAll(operationsCases);
+    if (bridgeSources != null) result.bridgeSources.addAll(bridgeSources);
+    return result;
+  }
+
+  GetIntegrationDashboardResponse._();
+
+  factory GetIntegrationDashboardResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntegrationDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntegrationDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationRuntime>(1, _omitFieldNames ? '' : 'runtime',
+        subBuilder: OnyxIntegrationRuntime.create)
+    ..pPM<OnyxIntegrationClient>(2, _omitFieldNames ? '' : 'availableClients',
+        subBuilder: OnyxIntegrationClient.create)
+    ..pPM<OnyxIntegrationGrant>(3, _omitFieldNames ? '' : 'grants',
+        subBuilder: OnyxIntegrationGrant.create)
+    ..pPM<OnyxIntegrationConnectorDefinition>(
+        4, _omitFieldNames ? '' : 'connectorCatalog',
+        subBuilder: OnyxIntegrationConnectorDefinition.create)
+    ..pPM<OnyxIntegrationConnectorAccount>(
+        5, _omitFieldNames ? '' : 'connectorAccounts',
+        subBuilder: OnyxIntegrationConnectorAccount.create)
+    ..pPM<OnyxIntegrationConnectorRun>(
+        6, _omitFieldNames ? '' : 'connectorRuns',
+        subBuilder: OnyxIntegrationConnectorRun.create)
+    ..pPM<OnyxIntegrationArtifact>(7, _omitFieldNames ? '' : 'artifacts',
+        subBuilder: OnyxIntegrationArtifact.create)
+    ..pPM<OnyxIntegrationConflict>(8, _omitFieldNames ? '' : 'conflicts',
+        subBuilder: OnyxIntegrationConflict.create)
+    ..pPM<OnyxIntegrationBridgeDispatch>(
+        9, _omitFieldNames ? '' : 'bridgeDispatches',
+        subBuilder: OnyxIntegrationBridgeDispatch.create)
+    ..pPM<OnyxIntegrationCall>(10, _omitFieldNames ? '' : 'recentCalls',
+        subBuilder: OnyxIntegrationCall.create)
+    ..pPM<OnyxIntegrationOperationsCase>(
+        11, _omitFieldNames ? '' : 'operationsCases',
+        subBuilder: OnyxIntegrationOperationsCase.create)
+    ..pPM<OnyxIntegrationBridgeSource>(
+        12, _omitFieldNames ? '' : 'bridgeSources',
+        subBuilder: OnyxIntegrationBridgeSource.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationDashboardResponse copyWith(
+          void Function(GetIntegrationDashboardResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntegrationDashboardResponse))
+          as GetIntegrationDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationDashboardResponse create() =>
+      GetIntegrationDashboardResponse._();
+  @$core.override
+  GetIntegrationDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationDashboardResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntegrationDashboardResponse>(
+          create);
+  static GetIntegrationDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationRuntime get runtime => $_getN(0);
+  @$pb.TagNumber(1)
+  set runtime(OnyxIntegrationRuntime value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuntime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuntime() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationRuntime ensureRuntime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OnyxIntegrationClient> get availableClients => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxIntegrationGrant> get grants => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<OnyxIntegrationConnectorDefinition> get connectorCatalog =>
+      $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<OnyxIntegrationConnectorAccount> get connectorAccounts =>
+      $_getList(4);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<OnyxIntegrationConnectorRun> get connectorRuns => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<OnyxIntegrationArtifact> get artifacts => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<OnyxIntegrationConflict> get conflicts => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<OnyxIntegrationBridgeDispatch> get bridgeDispatches =>
+      $_getList(8);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<OnyxIntegrationCall> get recentCalls => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<OnyxIntegrationOperationsCase> get operationsCases =>
+      $_getList(10);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<OnyxIntegrationBridgeSource> get bridgeSources => $_getList(11);
+}
+
+class AuthorizeIntegrationRequest extends $pb.GeneratedMessage {
+  factory AuthorizeIntegrationRequest({
+    $core.String? clientId,
+    $core.String? displayName,
+    $core.String? purpose,
+    $core.Iterable<$core.String>? scopes,
+    $core.Iterable<$core.String>? dataClasses,
+    $core.String? resourceType,
+    $core.Iterable<$core.String>? resourceIds,
+    $core.bool? offlineAccess,
+    $core.int? expiresInDays,
+    $core.String? redirectUri,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (clientId != null) result.clientId = clientId;
+    if (displayName != null) result.displayName = displayName;
+    if (purpose != null) result.purpose = purpose;
+    if (scopes != null) result.scopes.addAll(scopes);
+    if (dataClasses != null) result.dataClasses.addAll(dataClasses);
+    if (resourceType != null) result.resourceType = resourceType;
+    if (resourceIds != null) result.resourceIds.addAll(resourceIds);
+    if (offlineAccess != null) result.offlineAccess = offlineAccess;
+    if (expiresInDays != null) result.expiresInDays = expiresInDays;
+    if (redirectUri != null) result.redirectUri = redirectUri;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  AuthorizeIntegrationRequest._();
+
+  factory AuthorizeIntegrationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AuthorizeIntegrationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AuthorizeIntegrationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'clientId')
+    ..aOS(2, _omitFieldNames ? '' : 'displayName')
+    ..aOS(3, _omitFieldNames ? '' : 'purpose')
+    ..pPS(4, _omitFieldNames ? '' : 'scopes')
+    ..pPS(5, _omitFieldNames ? '' : 'dataClasses')
+    ..aOS(6, _omitFieldNames ? '' : 'resourceType')
+    ..pPS(7, _omitFieldNames ? '' : 'resourceIds')
+    ..aOB(8, _omitFieldNames ? '' : 'offlineAccess')
+    ..aI(9, _omitFieldNames ? '' : 'expiresInDays')
+    ..aOS(10, _omitFieldNames ? '' : 'redirectUri')
+    ..aOS(11, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AuthorizeIntegrationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AuthorizeIntegrationRequest copyWith(
+          void Function(AuthorizeIntegrationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as AuthorizeIntegrationRequest))
+          as AuthorizeIntegrationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthorizeIntegrationRequest create() =>
+      AuthorizeIntegrationRequest._();
+  @$core.override
+  AuthorizeIntegrationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AuthorizeIntegrationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AuthorizeIntegrationRequest>(create);
+  static AuthorizeIntegrationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get clientId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set clientId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClientId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClientId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get displayName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set displayName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisplayName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplayName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get purpose => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set purpose($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPurpose() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPurpose() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get scopes => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get dataClasses => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get resourceType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set resourceType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasResourceType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResourceType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get resourceIds => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.bool get offlineAccess => $_getBF(7);
+  @$pb.TagNumber(8)
+  set offlineAccess($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOfflineAccess() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOfflineAccess() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get expiresInDays => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set expiresInDays($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasExpiresInDays() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExpiresInDays() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get redirectUri => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set redirectUri($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRedirectUri() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRedirectUri() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get clientMutationId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set clientMutationId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasClientMutationId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearClientMutationId() => $_clearField(11);
+}
+
+class AuthorizeIntegrationResponse extends $pb.GeneratedMessage {
+  factory AuthorizeIntegrationResponse({
+    OnyxIntegrationGrant? grant,
+    $core.String? authorizationCode,
+    $1.Timestamp? authorizationCodeExpiresAt,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    if (authorizationCode != null) result.authorizationCode = authorizationCode;
+    if (authorizationCodeExpiresAt != null)
+      result.authorizationCodeExpiresAt = authorizationCodeExpiresAt;
+    return result;
+  }
+
+  AuthorizeIntegrationResponse._();
+
+  factory AuthorizeIntegrationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AuthorizeIntegrationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AuthorizeIntegrationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxIntegrationGrant.create)
+    ..aOS(2, _omitFieldNames ? '' : 'authorizationCode')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'authorizationCodeExpiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AuthorizeIntegrationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AuthorizeIntegrationResponse copyWith(
+          void Function(AuthorizeIntegrationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as AuthorizeIntegrationResponse))
+          as AuthorizeIntegrationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthorizeIntegrationResponse create() =>
+      AuthorizeIntegrationResponse._();
+  @$core.override
+  AuthorizeIntegrationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AuthorizeIntegrationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AuthorizeIntegrationResponse>(create);
+  static AuthorizeIntegrationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxIntegrationGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationGrant ensureGrant() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get authorizationCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set authorizationCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAuthorizationCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthorizationCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get authorizationCodeExpiresAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set authorizationCodeExpiresAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAuthorizationCodeExpiresAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthorizationCodeExpiresAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureAuthorizationCodeExpiresAt() => $_ensure(2);
+}
+
+class RevokeIntegrationGrantRequest extends $pb.GeneratedMessage {
+  factory RevokeIntegrationGrantRequest({
+    $core.String? grantId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (grantId != null) result.grantId = grantId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeIntegrationGrantRequest._();
+
+  factory RevokeIntegrationGrantRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeIntegrationGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeIntegrationGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'grantId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeIntegrationGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeIntegrationGrantRequest copyWith(
+          void Function(RevokeIntegrationGrantRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeIntegrationGrantRequest))
+          as RevokeIntegrationGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeIntegrationGrantRequest create() =>
+      RevokeIntegrationGrantRequest._();
+  @$core.override
+  RevokeIntegrationGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeIntegrationGrantRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeIntegrationGrantRequest>(create);
+  static RevokeIntegrationGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get grantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set grantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RevokeIntegrationGrantResponse extends $pb.GeneratedMessage {
+  factory RevokeIntegrationGrantResponse({
+    OnyxIntegrationGrant? grant,
+    $core.int? revokedTokens,
+    $core.int? terminatedMcpSessions,
+    $core.int? cancelledConnectorRuns,
+    $core.int? cancelledBridgeDispatches,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    if (revokedTokens != null) result.revokedTokens = revokedTokens;
+    if (terminatedMcpSessions != null)
+      result.terminatedMcpSessions = terminatedMcpSessions;
+    if (cancelledConnectorRuns != null)
+      result.cancelledConnectorRuns = cancelledConnectorRuns;
+    if (cancelledBridgeDispatches != null)
+      result.cancelledBridgeDispatches = cancelledBridgeDispatches;
+    return result;
+  }
+
+  RevokeIntegrationGrantResponse._();
+
+  factory RevokeIntegrationGrantResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeIntegrationGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeIntegrationGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxIntegrationGrant.create)
+    ..aI(2, _omitFieldNames ? '' : 'revokedTokens')
+    ..aI(3, _omitFieldNames ? '' : 'terminatedMcpSessions')
+    ..aI(4, _omitFieldNames ? '' : 'cancelledConnectorRuns')
+    ..aI(5, _omitFieldNames ? '' : 'cancelledBridgeDispatches')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeIntegrationGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeIntegrationGrantResponse copyWith(
+          void Function(RevokeIntegrationGrantResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokeIntegrationGrantResponse))
+          as RevokeIntegrationGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeIntegrationGrantResponse create() =>
+      RevokeIntegrationGrantResponse._();
+  @$core.override
+  RevokeIntegrationGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeIntegrationGrantResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeIntegrationGrantResponse>(create);
+  static RevokeIntegrationGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxIntegrationGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationGrant ensureGrant() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get revokedTokens => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set revokedTokens($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRevokedTokens() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRevokedTokens() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get terminatedMcpSessions => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set terminatedMcpSessions($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTerminatedMcpSessions() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTerminatedMcpSessions() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get cancelledConnectorRuns => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set cancelledConnectorRuns($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCancelledConnectorRuns() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCancelledConnectorRuns() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get cancelledBridgeDispatches => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set cancelledBridgeDispatches($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCancelledBridgeDispatches() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCancelledBridgeDispatches() => $_clearField(5);
+}
+
+class UpsertIntegrationConnectorRequest extends $pb.GeneratedMessage {
+  factory UpsertIntegrationConnectorRequest({
+    $core.String? accountId,
+    $core.String? grantId,
+    $core.String? connectorCode,
+    $core.String? displayName,
+    $core.String? syncDirection,
+    $core.String? schedule,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (accountId != null) result.accountId = accountId;
+    if (grantId != null) result.grantId = grantId;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (displayName != null) result.displayName = displayName;
+    if (syncDirection != null) result.syncDirection = syncDirection;
+    if (schedule != null) result.schedule = schedule;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertIntegrationConnectorRequest._();
+
+  factory UpsertIntegrationConnectorRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntegrationConnectorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntegrationConnectorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accountId')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(4, _omitFieldNames ? '' : 'displayName')
+    ..aOS(5, _omitFieldNames ? '' : 'syncDirection')
+    ..aOS(6, _omitFieldNames ? '' : 'schedule')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntegrationConnectorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntegrationConnectorRequest copyWith(
+          void Function(UpsertIntegrationConnectorRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntegrationConnectorRequest))
+          as UpsertIntegrationConnectorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntegrationConnectorRequest create() =>
+      UpsertIntegrationConnectorRequest._();
+  @$core.override
+  UpsertIntegrationConnectorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntegrationConnectorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertIntegrationConnectorRequest>(
+          create);
+  static UpsertIntegrationConnectorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accountId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accountId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccountId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccountId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get connectorCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set connectorCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConnectorCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConnectorCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get displayName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set displayName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDisplayName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDisplayName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get syncDirection => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set syncDirection($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSyncDirection() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSyncDirection() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get schedule => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set schedule($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSchedule() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSchedule() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class UpsertIntegrationConnectorResponse extends $pb.GeneratedMessage {
+  factory UpsertIntegrationConnectorResponse({
+    OnyxIntegrationConnectorAccount? account,
+  }) {
+    final result = create();
+    if (account != null) result.account = account;
+    return result;
+  }
+
+  UpsertIntegrationConnectorResponse._();
+
+  factory UpsertIntegrationConnectorResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertIntegrationConnectorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertIntegrationConnectorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationConnectorAccount>(1, _omitFieldNames ? '' : 'account',
+        subBuilder: OnyxIntegrationConnectorAccount.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntegrationConnectorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertIntegrationConnectorResponse copyWith(
+          void Function(UpsertIntegrationConnectorResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertIntegrationConnectorResponse))
+          as UpsertIntegrationConnectorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntegrationConnectorResponse create() =>
+      UpsertIntegrationConnectorResponse._();
+  @$core.override
+  UpsertIntegrationConnectorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertIntegrationConnectorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertIntegrationConnectorResponse>(
+          create);
+  static UpsertIntegrationConnectorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorAccount get account => $_getN(0);
+  @$pb.TagNumber(1)
+  set account(OnyxIntegrationConnectorAccount value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccount() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorAccount ensureAccount() => $_ensure(0);
+}
+
+class SetIntegrationConnectorStateRequest extends $pb.GeneratedMessage {
+  factory SetIntegrationConnectorStateRequest({
+    $core.String? accountId,
+    $core.String? action,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (accountId != null) result.accountId = accountId;
+    if (action != null) result.action = action;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetIntegrationConnectorStateRequest._();
+
+  factory SetIntegrationConnectorStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntegrationConnectorStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntegrationConnectorStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accountId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntegrationConnectorStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntegrationConnectorStateRequest copyWith(
+          void Function(SetIntegrationConnectorStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntegrationConnectorStateRequest))
+          as SetIntegrationConnectorStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntegrationConnectorStateRequest create() =>
+      SetIntegrationConnectorStateRequest._();
+  @$core.override
+  SetIntegrationConnectorStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntegrationConnectorStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntegrationConnectorStateRequest>(create);
+  static SetIntegrationConnectorStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accountId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accountId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccountId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccountId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedVersion => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedVersion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SetIntegrationConnectorStateResponse extends $pb.GeneratedMessage {
+  factory SetIntegrationConnectorStateResponse({
+    OnyxIntegrationConnectorAccount? account,
+  }) {
+    final result = create();
+    if (account != null) result.account = account;
+    return result;
+  }
+
+  SetIntegrationConnectorStateResponse._();
+
+  factory SetIntegrationConnectorStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetIntegrationConnectorStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetIntegrationConnectorStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationConnectorAccount>(1, _omitFieldNames ? '' : 'account',
+        subBuilder: OnyxIntegrationConnectorAccount.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntegrationConnectorStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetIntegrationConnectorStateResponse copyWith(
+          void Function(SetIntegrationConnectorStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetIntegrationConnectorStateResponse))
+          as SetIntegrationConnectorStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetIntegrationConnectorStateResponse create() =>
+      SetIntegrationConnectorStateResponse._();
+  @$core.override
+  SetIntegrationConnectorStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetIntegrationConnectorStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetIntegrationConnectorStateResponse>(create);
+  static SetIntegrationConnectorStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorAccount get account => $_getN(0);
+  @$pb.TagNumber(1)
+  set account(OnyxIntegrationConnectorAccount value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccount() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorAccount ensureAccount() => $_ensure(0);
+}
+
+class RunIntegrationConnectorRequest extends $pb.GeneratedMessage {
+  factory RunIntegrationConnectorRequest({
+    $core.String? accountId,
+    $core.String? direction,
+    $core.String? importFormat,
+    $core.String? importData,
+    $core.String? idempotencyKey,
+  }) {
+    final result = create();
+    if (accountId != null) result.accountId = accountId;
+    if (direction != null) result.direction = direction;
+    if (importFormat != null) result.importFormat = importFormat;
+    if (importData != null) result.importData = importData;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    return result;
+  }
+
+  RunIntegrationConnectorRequest._();
+
+  factory RunIntegrationConnectorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunIntegrationConnectorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunIntegrationConnectorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accountId')
+    ..aOS(2, _omitFieldNames ? '' : 'direction')
+    ..aOS(3, _omitFieldNames ? '' : 'importFormat')
+    ..aOS(4, _omitFieldNames ? '' : 'importData')
+    ..aOS(5, _omitFieldNames ? '' : 'idempotencyKey')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunIntegrationConnectorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunIntegrationConnectorRequest copyWith(
+          void Function(RunIntegrationConnectorRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RunIntegrationConnectorRequest))
+          as RunIntegrationConnectorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunIntegrationConnectorRequest create() =>
+      RunIntegrationConnectorRequest._();
+  @$core.override
+  RunIntegrationConnectorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunIntegrationConnectorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunIntegrationConnectorRequest>(create);
+  static RunIntegrationConnectorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accountId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accountId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccountId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccountId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get direction => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set direction($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDirection() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDirection() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get importFormat => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set importFormat($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasImportFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImportFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get importData => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set importData($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasImportData() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearImportData() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get idempotencyKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set idempotencyKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIdempotencyKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIdempotencyKey() => $_clearField(5);
+}
+
+class RunIntegrationConnectorResponse extends $pb.GeneratedMessage {
+  factory RunIntegrationConnectorResponse({
+    OnyxIntegrationConnectorRun? run,
+    OnyxIntegrationArtifact? artifact,
+    $core.Iterable<OnyxIntegrationConflict>? conflicts,
+  }) {
+    final result = create();
+    if (run != null) result.run = run;
+    if (artifact != null) result.artifact = artifact;
+    if (conflicts != null) result.conflicts.addAll(conflicts);
+    return result;
+  }
+
+  RunIntegrationConnectorResponse._();
+
+  factory RunIntegrationConnectorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunIntegrationConnectorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunIntegrationConnectorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationConnectorRun>(1, _omitFieldNames ? '' : 'run',
+        subBuilder: OnyxIntegrationConnectorRun.create)
+    ..aOM<OnyxIntegrationArtifact>(2, _omitFieldNames ? '' : 'artifact',
+        subBuilder: OnyxIntegrationArtifact.create)
+    ..pPM<OnyxIntegrationConflict>(3, _omitFieldNames ? '' : 'conflicts',
+        subBuilder: OnyxIntegrationConflict.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunIntegrationConnectorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunIntegrationConnectorResponse copyWith(
+          void Function(RunIntegrationConnectorResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RunIntegrationConnectorResponse))
+          as RunIntegrationConnectorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunIntegrationConnectorResponse create() =>
+      RunIntegrationConnectorResponse._();
+  @$core.override
+  RunIntegrationConnectorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunIntegrationConnectorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunIntegrationConnectorResponse>(
+          create);
+  static RunIntegrationConnectorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorRun get run => $_getN(0);
+  @$pb.TagNumber(1)
+  set run(OnyxIntegrationConnectorRun value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRun() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRun() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationConnectorRun ensureRun() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxIntegrationArtifact get artifact => $_getN(1);
+  @$pb.TagNumber(2)
+  set artifact(OnyxIntegrationArtifact value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasArtifact() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearArtifact() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxIntegrationArtifact ensureArtifact() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxIntegrationConflict> get conflicts => $_getList(2);
+}
+
+class GetIntegrationArtifactRequest extends $pb.GeneratedMessage {
+  factory GetIntegrationArtifactRequest({
+    $core.String? artifactId,
+  }) {
+    final result = create();
+    if (artifactId != null) result.artifactId = artifactId;
+    return result;
+  }
+
+  GetIntegrationArtifactRequest._();
+
+  factory GetIntegrationArtifactRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntegrationArtifactRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntegrationArtifactRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'artifactId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationArtifactRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationArtifactRequest copyWith(
+          void Function(GetIntegrationArtifactRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntegrationArtifactRequest))
+          as GetIntegrationArtifactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationArtifactRequest create() =>
+      GetIntegrationArtifactRequest._();
+  @$core.override
+  GetIntegrationArtifactRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationArtifactRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntegrationArtifactRequest>(create);
+  static GetIntegrationArtifactRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get artifactId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set artifactId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArtifactId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArtifactId() => $_clearField(1);
+}
+
+class GetIntegrationArtifactResponse extends $pb.GeneratedMessage {
+  factory GetIntegrationArtifactResponse({
+    OnyxIntegrationArtifact? artifact,
+  }) {
+    final result = create();
+    if (artifact != null) result.artifact = artifact;
+    return result;
+  }
+
+  GetIntegrationArtifactResponse._();
+
+  factory GetIntegrationArtifactResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetIntegrationArtifactResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetIntegrationArtifactResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationArtifact>(1, _omitFieldNames ? '' : 'artifact',
+        subBuilder: OnyxIntegrationArtifact.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationArtifactResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetIntegrationArtifactResponse copyWith(
+          void Function(GetIntegrationArtifactResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetIntegrationArtifactResponse))
+          as GetIntegrationArtifactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationArtifactResponse create() =>
+      GetIntegrationArtifactResponse._();
+  @$core.override
+  GetIntegrationArtifactResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetIntegrationArtifactResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetIntegrationArtifactResponse>(create);
+  static GetIntegrationArtifactResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationArtifact get artifact => $_getN(0);
+  @$pb.TagNumber(1)
+  set artifact(OnyxIntegrationArtifact value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArtifact() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArtifact() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationArtifact ensureArtifact() => $_ensure(0);
+}
+
+class ResolveIntegrationConflictRequest extends $pb.GeneratedMessage {
+  factory ResolveIntegrationConflictRequest({
+    $core.String? conflictId,
+    $core.String? resolution,
+    $core.String? note,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (conflictId != null) result.conflictId = conflictId;
+    if (resolution != null) result.resolution = resolution;
+    if (note != null) result.note = note;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ResolveIntegrationConflictRequest._();
+
+  factory ResolveIntegrationConflictRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveIntegrationConflictRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveIntegrationConflictRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'conflictId')
+    ..aOS(2, _omitFieldNames ? '' : 'resolution')
+    ..aOS(3, _omitFieldNames ? '' : 'note')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIntegrationConflictRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIntegrationConflictRequest copyWith(
+          void Function(ResolveIntegrationConflictRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveIntegrationConflictRequest))
+          as ResolveIntegrationConflictRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveIntegrationConflictRequest create() =>
+      ResolveIntegrationConflictRequest._();
+  @$core.override
+  ResolveIntegrationConflictRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveIntegrationConflictRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveIntegrationConflictRequest>(
+          create);
+  static ResolveIntegrationConflictRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get conflictId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set conflictId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflictId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflictId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resolution => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resolution($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasResolution() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResolution() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get note => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set note($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class ResolveIntegrationConflictResponse extends $pb.GeneratedMessage {
+  factory ResolveIntegrationConflictResponse({
+    OnyxIntegrationConflict? conflict,
+  }) {
+    final result = create();
+    if (conflict != null) result.conflict = conflict;
+    return result;
+  }
+
+  ResolveIntegrationConflictResponse._();
+
+  factory ResolveIntegrationConflictResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveIntegrationConflictResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveIntegrationConflictResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationConflict>(1, _omitFieldNames ? '' : 'conflict',
+        subBuilder: OnyxIntegrationConflict.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIntegrationConflictResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveIntegrationConflictResponse copyWith(
+          void Function(ResolveIntegrationConflictResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveIntegrationConflictResponse))
+          as ResolveIntegrationConflictResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveIntegrationConflictResponse create() =>
+      ResolveIntegrationConflictResponse._();
+  @$core.override
+  ResolveIntegrationConflictResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveIntegrationConflictResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveIntegrationConflictResponse>(
+          create);
+  static ResolveIntegrationConflictResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationConflict get conflict => $_getN(0);
+  @$pb.TagNumber(1)
+  set conflict(OnyxIntegrationConflict value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflict() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflict() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationConflict ensureConflict() => $_ensure(0);
+}
+
+class DispatchIntegrationBridgeRequest extends $pb.GeneratedMessage {
+  factory DispatchIntegrationBridgeRequest({
+    $core.String? grantId,
+    $core.String? destination,
+    $core.String? sourceKind,
+    $core.String? sourceId,
+    $core.String? title,
+    $core.String? purpose,
+    $core.String? idempotencyKey,
+  }) {
+    final result = create();
+    if (grantId != null) result.grantId = grantId;
+    if (destination != null) result.destination = destination;
+    if (sourceKind != null) result.sourceKind = sourceKind;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (title != null) result.title = title;
+    if (purpose != null) result.purpose = purpose;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    return result;
+  }
+
+  DispatchIntegrationBridgeRequest._();
+
+  factory DispatchIntegrationBridgeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DispatchIntegrationBridgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DispatchIntegrationBridgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'grantId')
+    ..aOS(2, _omitFieldNames ? '' : 'destination')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceKind')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'purpose')
+    ..aOS(7, _omitFieldNames ? '' : 'idempotencyKey')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchIntegrationBridgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchIntegrationBridgeRequest copyWith(
+          void Function(DispatchIntegrationBridgeRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as DispatchIntegrationBridgeRequest))
+          as DispatchIntegrationBridgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DispatchIntegrationBridgeRequest create() =>
+      DispatchIntegrationBridgeRequest._();
+  @$core.override
+  DispatchIntegrationBridgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DispatchIntegrationBridgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DispatchIntegrationBridgeRequest>(
+          create);
+  static DispatchIntegrationBridgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get grantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set grantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get destination => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set destination($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDestination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestination() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get purpose => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set purpose($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPurpose() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPurpose() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get idempotencyKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set idempotencyKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIdempotencyKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIdempotencyKey() => $_clearField(7);
+}
+
+class DispatchIntegrationBridgeResponse extends $pb.GeneratedMessage {
+  factory DispatchIntegrationBridgeResponse({
+    OnyxIntegrationBridgeDispatch? dispatch,
+  }) {
+    final result = create();
+    if (dispatch != null) result.dispatch = dispatch;
+    return result;
+  }
+
+  DispatchIntegrationBridgeResponse._();
+
+  factory DispatchIntegrationBridgeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DispatchIntegrationBridgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DispatchIntegrationBridgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationBridgeDispatch>(1, _omitFieldNames ? '' : 'dispatch',
+        subBuilder: OnyxIntegrationBridgeDispatch.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchIntegrationBridgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchIntegrationBridgeResponse copyWith(
+          void Function(DispatchIntegrationBridgeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as DispatchIntegrationBridgeResponse))
+          as DispatchIntegrationBridgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DispatchIntegrationBridgeResponse create() =>
+      DispatchIntegrationBridgeResponse._();
+  @$core.override
+  DispatchIntegrationBridgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DispatchIntegrationBridgeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DispatchIntegrationBridgeResponse>(
+          create);
+  static DispatchIntegrationBridgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationBridgeDispatch get dispatch => $_getN(0);
+  @$pb.TagNumber(1)
+  set dispatch(OnyxIntegrationBridgeDispatch value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDispatch() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDispatch() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationBridgeDispatch ensureDispatch() => $_ensure(0);
+}
+
+class SubmitIntegrationOperationsCaseRequest extends $pb.GeneratedMessage {
+  factory SubmitIntegrationOperationsCaseRequest({
+    $core.String? caseType,
+    $core.String? clientId,
+    $core.String? grantId,
+    $core.String? summary,
+    $core.String? memberStatement,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (caseType != null) result.caseType = caseType;
+    if (clientId != null) result.clientId = clientId;
+    if (grantId != null) result.grantId = grantId;
+    if (summary != null) result.summary = summary;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SubmitIntegrationOperationsCaseRequest._();
+
+  factory SubmitIntegrationOperationsCaseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitIntegrationOperationsCaseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitIntegrationOperationsCaseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseType')
+    ..aOS(2, _omitFieldNames ? '' : 'clientId')
+    ..aOS(3, _omitFieldNames ? '' : 'grantId')
+    ..aOS(4, _omitFieldNames ? '' : 'summary')
+    ..aOS(5, _omitFieldNames ? '' : 'memberStatement')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitIntegrationOperationsCaseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitIntegrationOperationsCaseRequest copyWith(
+          void Function(SubmitIntegrationOperationsCaseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitIntegrationOperationsCaseRequest))
+          as SubmitIntegrationOperationsCaseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitIntegrationOperationsCaseRequest create() =>
+      SubmitIntegrationOperationsCaseRequest._();
+  @$core.override
+  SubmitIntegrationOperationsCaseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitIntegrationOperationsCaseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitIntegrationOperationsCaseRequest>(create);
+  static SubmitIntegrationOperationsCaseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseType($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseType() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get grantId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set grantId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGrantId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGrantId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get summary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set summary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get memberStatement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberStatement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberStatement() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class SubmitIntegrationOperationsCaseResponse extends $pb.GeneratedMessage {
+  factory SubmitIntegrationOperationsCaseResponse({
+    OnyxIntegrationOperationsCase? operationsCase,
+  }) {
+    final result = create();
+    if (operationsCase != null) result.operationsCase = operationsCase;
+    return result;
+  }
+
+  SubmitIntegrationOperationsCaseResponse._();
+
+  factory SubmitIntegrationOperationsCaseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitIntegrationOperationsCaseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitIntegrationOperationsCaseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxIntegrationOperationsCase>(
+        1, _omitFieldNames ? '' : 'operationsCase',
+        subBuilder: OnyxIntegrationOperationsCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitIntegrationOperationsCaseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitIntegrationOperationsCaseResponse copyWith(
+          void Function(SubmitIntegrationOperationsCaseResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitIntegrationOperationsCaseResponse))
+          as SubmitIntegrationOperationsCaseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitIntegrationOperationsCaseResponse create() =>
+      SubmitIntegrationOperationsCaseResponse._();
+  @$core.override
+  SubmitIntegrationOperationsCaseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitIntegrationOperationsCaseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitIntegrationOperationsCaseResponse>(create);
+  static SubmitIntegrationOperationsCaseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxIntegrationOperationsCase get operationsCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set operationsCase(OnyxIntegrationOperationsCase value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOperationsCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperationsCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxIntegrationOperationsCase ensureOperationsCase() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

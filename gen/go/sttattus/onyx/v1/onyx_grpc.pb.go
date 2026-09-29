@@ -218,6 +218,16 @@ const (
 	OnyxService_FileForensicAppeal_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/FileForensicAppeal"
 	OnyxService_PostForensicAppealMessage_FullMethodName            = "/sttattus.onyx.v1.OnyxService/PostForensicAppealMessage"
 	OnyxService_WithdrawForensicAppeal_FullMethodName               = "/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal"
+	OnyxService_GetIntegrationDashboard_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetIntegrationDashboard"
+	OnyxService_AuthorizeIntegration_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/AuthorizeIntegration"
+	OnyxService_RevokeIntegrationGrant_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RevokeIntegrationGrant"
+	OnyxService_UpsertIntegrationConnector_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpsertIntegrationConnector"
+	OnyxService_SetIntegrationConnectorState_FullMethodName         = "/sttattus.onyx.v1.OnyxService/SetIntegrationConnectorState"
+	OnyxService_RunIntegrationConnector_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RunIntegrationConnector"
+	OnyxService_GetIntegrationArtifact_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetIntegrationArtifact"
+	OnyxService_ResolveIntegrationConflict_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ResolveIntegrationConflict"
+	OnyxService_DispatchIntegrationBridge_FullMethodName            = "/sttattus.onyx.v1.OnyxService/DispatchIntegrationBridge"
+	OnyxService_SubmitIntegrationOperationsCase_FullMethodName      = "/sttattus.onyx.v1.OnyxService/SubmitIntegrationOperationsCase"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -458,6 +468,19 @@ type OnyxServiceClient interface {
 	FileForensicAppeal(ctx context.Context, in *FileForensicAppealRequest, opts ...grpc.CallOption) (*FileForensicAppealResponse, error)
 	PostForensicAppealMessage(ctx context.Context, in *PostForensicAppealMessageRequest, opts ...grpc.CallOption) (*PostForensicAppealMessageResponse, error)
 	WithdrawForensicAppeal(ctx context.Context, in *WithdrawForensicAppealRequest, opts ...grpc.CallOption) (*WithdrawForensicAppealResponse, error)
+	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
+	// cross-pillar dispatches. External REST/MCP calls use the same grant and
+	// audit records through the HTTP edge.
+	GetIntegrationDashboard(ctx context.Context, in *GetIntegrationDashboardRequest, opts ...grpc.CallOption) (*GetIntegrationDashboardResponse, error)
+	AuthorizeIntegration(ctx context.Context, in *AuthorizeIntegrationRequest, opts ...grpc.CallOption) (*AuthorizeIntegrationResponse, error)
+	RevokeIntegrationGrant(ctx context.Context, in *RevokeIntegrationGrantRequest, opts ...grpc.CallOption) (*RevokeIntegrationGrantResponse, error)
+	UpsertIntegrationConnector(ctx context.Context, in *UpsertIntegrationConnectorRequest, opts ...grpc.CallOption) (*UpsertIntegrationConnectorResponse, error)
+	SetIntegrationConnectorState(ctx context.Context, in *SetIntegrationConnectorStateRequest, opts ...grpc.CallOption) (*SetIntegrationConnectorStateResponse, error)
+	RunIntegrationConnector(ctx context.Context, in *RunIntegrationConnectorRequest, opts ...grpc.CallOption) (*RunIntegrationConnectorResponse, error)
+	GetIntegrationArtifact(ctx context.Context, in *GetIntegrationArtifactRequest, opts ...grpc.CallOption) (*GetIntegrationArtifactResponse, error)
+	ResolveIntegrationConflict(ctx context.Context, in *ResolveIntegrationConflictRequest, opts ...grpc.CallOption) (*ResolveIntegrationConflictResponse, error)
+	DispatchIntegrationBridge(ctx context.Context, in *DispatchIntegrationBridgeRequest, opts ...grpc.CallOption) (*DispatchIntegrationBridgeResponse, error)
+	SubmitIntegrationOperationsCase(ctx context.Context, in *SubmitIntegrationOperationsCaseRequest, opts ...grpc.CallOption) (*SubmitIntegrationOperationsCaseResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2458,6 +2481,106 @@ func (c *onyxServiceClient) WithdrawForensicAppeal(ctx context.Context, in *With
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetIntegrationDashboard(ctx context.Context, in *GetIntegrationDashboardRequest, opts ...grpc.CallOption) (*GetIntegrationDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIntegrationDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetIntegrationDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) AuthorizeIntegration(ctx context.Context, in *AuthorizeIntegrationRequest, opts ...grpc.CallOption) (*AuthorizeIntegrationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AuthorizeIntegrationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_AuthorizeIntegration_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeIntegrationGrant(ctx context.Context, in *RevokeIntegrationGrantRequest, opts ...grpc.CallOption) (*RevokeIntegrationGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeIntegrationGrantResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeIntegrationGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertIntegrationConnector(ctx context.Context, in *UpsertIntegrationConnectorRequest, opts ...grpc.CallOption) (*UpsertIntegrationConnectorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertIntegrationConnectorResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertIntegrationConnector_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetIntegrationConnectorState(ctx context.Context, in *SetIntegrationConnectorStateRequest, opts ...grpc.CallOption) (*SetIntegrationConnectorStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetIntegrationConnectorStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetIntegrationConnectorState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RunIntegrationConnector(ctx context.Context, in *RunIntegrationConnectorRequest, opts ...grpc.CallOption) (*RunIntegrationConnectorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunIntegrationConnectorResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RunIntegrationConnector_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetIntegrationArtifact(ctx context.Context, in *GetIntegrationArtifactRequest, opts ...grpc.CallOption) (*GetIntegrationArtifactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIntegrationArtifactResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetIntegrationArtifact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ResolveIntegrationConflict(ctx context.Context, in *ResolveIntegrationConflictRequest, opts ...grpc.CallOption) (*ResolveIntegrationConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveIntegrationConflictResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ResolveIntegrationConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DispatchIntegrationBridge(ctx context.Context, in *DispatchIntegrationBridgeRequest, opts ...grpc.CallOption) (*DispatchIntegrationBridgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DispatchIntegrationBridgeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DispatchIntegrationBridge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitIntegrationOperationsCase(ctx context.Context, in *SubmitIntegrationOperationsCaseRequest, opts ...grpc.CallOption) (*SubmitIntegrationOperationsCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitIntegrationOperationsCaseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitIntegrationOperationsCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2696,6 +2819,19 @@ type OnyxServiceServer interface {
 	FileForensicAppeal(context.Context, *FileForensicAppealRequest) (*FileForensicAppealResponse, error)
 	PostForensicAppealMessage(context.Context, *PostForensicAppealMessageRequest) (*PostForensicAppealMessageResponse, error)
 	WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error)
+	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
+	// cross-pillar dispatches. External REST/MCP calls use the same grant and
+	// audit records through the HTTP edge.
+	GetIntegrationDashboard(context.Context, *GetIntegrationDashboardRequest) (*GetIntegrationDashboardResponse, error)
+	AuthorizeIntegration(context.Context, *AuthorizeIntegrationRequest) (*AuthorizeIntegrationResponse, error)
+	RevokeIntegrationGrant(context.Context, *RevokeIntegrationGrantRequest) (*RevokeIntegrationGrantResponse, error)
+	UpsertIntegrationConnector(context.Context, *UpsertIntegrationConnectorRequest) (*UpsertIntegrationConnectorResponse, error)
+	SetIntegrationConnectorState(context.Context, *SetIntegrationConnectorStateRequest) (*SetIntegrationConnectorStateResponse, error)
+	RunIntegrationConnector(context.Context, *RunIntegrationConnectorRequest) (*RunIntegrationConnectorResponse, error)
+	GetIntegrationArtifact(context.Context, *GetIntegrationArtifactRequest) (*GetIntegrationArtifactResponse, error)
+	ResolveIntegrationConflict(context.Context, *ResolveIntegrationConflictRequest) (*ResolveIntegrationConflictResponse, error)
+	DispatchIntegrationBridge(context.Context, *DispatchIntegrationBridgeRequest) (*DispatchIntegrationBridgeResponse, error)
+	SubmitIntegrationOperationsCase(context.Context, *SubmitIntegrationOperationsCaseRequest) (*SubmitIntegrationOperationsCaseResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3302,6 +3438,36 @@ func (UnimplementedOnyxServiceServer) PostForensicAppealMessage(context.Context,
 }
 func (UnimplementedOnyxServiceServer) WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method WithdrawForensicAppeal not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetIntegrationDashboard(context.Context, *GetIntegrationDashboardRequest) (*GetIntegrationDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIntegrationDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) AuthorizeIntegration(context.Context, *AuthorizeIntegrationRequest) (*AuthorizeIntegrationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AuthorizeIntegration not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeIntegrationGrant(context.Context, *RevokeIntegrationGrantRequest) (*RevokeIntegrationGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeIntegrationGrant not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertIntegrationConnector(context.Context, *UpsertIntegrationConnectorRequest) (*UpsertIntegrationConnectorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertIntegrationConnector not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetIntegrationConnectorState(context.Context, *SetIntegrationConnectorStateRequest) (*SetIntegrationConnectorStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetIntegrationConnectorState not implemented")
+}
+func (UnimplementedOnyxServiceServer) RunIntegrationConnector(context.Context, *RunIntegrationConnectorRequest) (*RunIntegrationConnectorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunIntegrationConnector not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetIntegrationArtifact(context.Context, *GetIntegrationArtifactRequest) (*GetIntegrationArtifactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIntegrationArtifact not implemented")
+}
+func (UnimplementedOnyxServiceServer) ResolveIntegrationConflict(context.Context, *ResolveIntegrationConflictRequest) (*ResolveIntegrationConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveIntegrationConflict not implemented")
+}
+func (UnimplementedOnyxServiceServer) DispatchIntegrationBridge(context.Context, *DispatchIntegrationBridgeRequest) (*DispatchIntegrationBridgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DispatchIntegrationBridge not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitIntegrationOperationsCase(context.Context, *SubmitIntegrationOperationsCaseRequest) (*SubmitIntegrationOperationsCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitIntegrationOperationsCase not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -6906,6 +7072,186 @@ func _OnyxService_WithdrawForensicAppeal_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetIntegrationDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntegrationDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetIntegrationDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetIntegrationDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetIntegrationDashboard(ctx, req.(*GetIntegrationDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_AuthorizeIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AuthorizeIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).AuthorizeIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_AuthorizeIntegration_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).AuthorizeIntegration(ctx, req.(*AuthorizeIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeIntegrationGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeIntegrationGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeIntegrationGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeIntegrationGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeIntegrationGrant(ctx, req.(*RevokeIntegrationGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertIntegrationConnector_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertIntegrationConnectorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertIntegrationConnector(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertIntegrationConnector_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertIntegrationConnector(ctx, req.(*UpsertIntegrationConnectorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetIntegrationConnectorState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetIntegrationConnectorStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetIntegrationConnectorState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetIntegrationConnectorState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetIntegrationConnectorState(ctx, req.(*SetIntegrationConnectorStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RunIntegrationConnector_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunIntegrationConnectorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RunIntegrationConnector(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RunIntegrationConnector_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RunIntegrationConnector(ctx, req.(*RunIntegrationConnectorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetIntegrationArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIntegrationArtifactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetIntegrationArtifact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetIntegrationArtifact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetIntegrationArtifact(ctx, req.(*GetIntegrationArtifactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ResolveIntegrationConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveIntegrationConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ResolveIntegrationConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ResolveIntegrationConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ResolveIntegrationConflict(ctx, req.(*ResolveIntegrationConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DispatchIntegrationBridge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DispatchIntegrationBridgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DispatchIntegrationBridge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DispatchIntegrationBridge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DispatchIntegrationBridge(ctx, req.(*DispatchIntegrationBridgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitIntegrationOperationsCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitIntegrationOperationsCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitIntegrationOperationsCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitIntegrationOperationsCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitIntegrationOperationsCase(ctx, req.(*SubmitIntegrationOperationsCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -7708,6 +8054,46 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WithdrawForensicAppeal",
 			Handler:    _OnyxService_WithdrawForensicAppeal_Handler,
+		},
+		{
+			MethodName: "GetIntegrationDashboard",
+			Handler:    _OnyxService_GetIntegrationDashboard_Handler,
+		},
+		{
+			MethodName: "AuthorizeIntegration",
+			Handler:    _OnyxService_AuthorizeIntegration_Handler,
+		},
+		{
+			MethodName: "RevokeIntegrationGrant",
+			Handler:    _OnyxService_RevokeIntegrationGrant_Handler,
+		},
+		{
+			MethodName: "UpsertIntegrationConnector",
+			Handler:    _OnyxService_UpsertIntegrationConnector_Handler,
+		},
+		{
+			MethodName: "SetIntegrationConnectorState",
+			Handler:    _OnyxService_SetIntegrationConnectorState_Handler,
+		},
+		{
+			MethodName: "RunIntegrationConnector",
+			Handler:    _OnyxService_RunIntegrationConnector_Handler,
+		},
+		{
+			MethodName: "GetIntegrationArtifact",
+			Handler:    _OnyxService_GetIntegrationArtifact_Handler,
+		},
+		{
+			MethodName: "ResolveIntegrationConflict",
+			Handler:    _OnyxService_ResolveIntegrationConflict_Handler,
+		},
+		{
+			MethodName: "DispatchIntegrationBridge",
+			Handler:    _OnyxService_DispatchIntegrationBridge_Handler,
+		},
+		{
+			MethodName: "SubmitIntegrationOperationsCase",
+			Handler:    _OnyxService_SubmitIntegrationOperationsCase_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

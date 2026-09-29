@@ -3987,6 +3987,327 @@ message WithdrawForensicAppealResponse {
   OnyxForensicCase forensic_case = 1;
 }
 
+// Choice 14 — scoped API, MCP and integrations. Raw client secrets,
+// authorization codes and bearer tokens are deliberately absent from all read
+// models. A newly issued authorization code is returned once by the authorize
+// mutation and is otherwise represented only by its non-sensitive hint.
+message OnyxIntegrationRuntime {
+  string status = 1;
+  bool grants_enabled = 2;
+  bool api_enabled = 3;
+  bool mcp_enabled = 4;
+  bool connectors_enabled = 5;
+  bool bridges_enabled = 6;
+  int32 access_token_ttl_seconds = 7;
+  int32 authorization_code_ttl_seconds = 8;
+  int32 default_quota_per_minute = 9;
+  int64 max_export_bytes = 10;
+  string public_notice = 11;
+  int64 version = 12;
+}
+
+message OnyxIntegrationClient {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string publisher_name = 4;
+  string description = 5;
+  string client_type = 6;
+  string environment = 7;
+  string status = 8;
+  string homepage_url = 9;
+  repeated string allowed_scopes = 10;
+  repeated string allowed_data_classes = 11;
+  int32 quota_per_minute = 12;
+  bool offline_access_allowed = 13;
+  string current_secret_hint = 14;
+  google.protobuf.Timestamp reviewed_at = 15;
+}
+
+message OnyxIntegrationGrant {
+  string id = 1;
+  string client_id = 2;
+  string client_name = 3;
+  string client_publisher = 4;
+  string display_name = 5;
+  string purpose = 6;
+  string status = 7;
+  repeated string scopes = 8;
+  repeated string data_classes = 9;
+  string resource_type = 10;
+  repeated string resource_ids = 11;
+  bool offline_access = 12;
+  int64 revocation_epoch = 13;
+  int64 version = 14;
+  string authorization_code_hint = 15;
+  google.protobuf.Timestamp granted_at = 16;
+  google.protobuf.Timestamp expires_at = 17;
+  google.protobuf.Timestamp revoked_at = 18;
+  string revoked_reason = 19;
+}
+
+message OnyxIntegrationCall {
+  string id = 1;
+  string client_name = 2;
+  string transport = 3;
+  string operation = 4;
+  string required_scope = 5;
+  string status = 6;
+  int32 response_code = 7;
+  int64 response_bytes = 8;
+  int32 duration_ms = 9;
+  string error_code = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message OnyxIntegrationConnectorDefinition {
+  string code = 1;
+  string name = 2;
+  string category = 3;
+  string mode = 4;
+  string status = 5;
+  repeated string supported_directions = 6;
+  repeated string required_scopes = 7;
+  string configuration_notice = 8;
+  bool supports_scheduling = 9;
+}
+
+message OnyxIntegrationConnectorAccount {
+  string id = 1;
+  string grant_id = 2;
+  string client_name = 3;
+  string connector_code = 4;
+  string connector_name = 5;
+  string display_name = 6;
+  string status = 7;
+  string sync_direction = 8;
+  string schedule = 9;
+  string checkpoint = 10;
+  int64 grant_epoch = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp last_sync_at = 13;
+  google.protobuf.Timestamp next_sync_at = 14;
+  google.protobuf.Timestamp updated_at = 15;
+}
+
+message OnyxIntegrationConnectorRun {
+  string id = 1;
+  string account_id = 2;
+  string connector_name = 3;
+  string trigger_kind = 4;
+  string direction = 5;
+  string status = 6;
+  int32 input_count = 7;
+  int32 output_count = 8;
+  int32 conflict_count = 9;
+  int64 bytes_processed = 10;
+  string artifact_checksum = 11;
+  string error_code = 12;
+  string error_message = 13;
+  google.protobuf.Timestamp queued_at = 14;
+  google.protobuf.Timestamp completed_at = 15;
+}
+
+message OnyxIntegrationArtifact {
+  string id = 1;
+  string run_id = 2;
+  string format = 3;
+  string filename = 4;
+  string mime_type = 5;
+  string checksum = 6;
+  int64 byte_count = 7;
+  string data = 8;
+  google.protobuf.Timestamp expires_at = 9;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message OnyxIntegrationConflict {
+  string id = 1;
+  string run_id = 2;
+  string conflict_type = 3;
+  string local_ref = 4;
+  string external_ref = 5;
+  string summary = 6;
+  string status = 7;
+  string resolution = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp resolved_at = 10;
+}
+
+message OnyxIntegrationBridgeDispatch {
+  string id = 1;
+  string grant_id = 2;
+  string destination = 3;
+  string source_kind = 4;
+  string source_id = 5;
+  string title = 6;
+  string purpose = 7;
+  string status = 8;
+  string downstream_ref = 9;
+  string receipt_checksum = 10;
+  string error_code = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp completed_at = 13;
+}
+
+message OnyxIntegrationBridgeSource {
+  string id = 1;
+  string source_kind = 2;
+  string title = 3;
+  string summary = 4;
+  repeated string allowed_destinations = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}
+
+message OnyxIntegrationOperationsCase {
+  string id = 1;
+  string case_type = 2;
+  string status = 3;
+  string severity = 4;
+  string client_name = 5;
+  string summary = 6;
+  string member_statement = 7;
+  string resolution = 8;
+  google.protobuf.Timestamp opened_at = 9;
+  google.protobuf.Timestamp resolved_at = 10;
+}
+
+message GetIntegrationDashboardRequest {
+  bool include_history = 1;
+}
+
+message GetIntegrationDashboardResponse {
+  OnyxIntegrationRuntime runtime = 1;
+  repeated OnyxIntegrationClient available_clients = 2;
+  repeated OnyxIntegrationGrant grants = 3;
+  repeated OnyxIntegrationConnectorDefinition connector_catalog = 4;
+  repeated OnyxIntegrationConnectorAccount connector_accounts = 5;
+  repeated OnyxIntegrationConnectorRun connector_runs = 6;
+  repeated OnyxIntegrationArtifact artifacts = 7;
+  repeated OnyxIntegrationConflict conflicts = 8;
+  repeated OnyxIntegrationBridgeDispatch bridge_dispatches = 9;
+  repeated OnyxIntegrationCall recent_calls = 10;
+  repeated OnyxIntegrationOperationsCase operations_cases = 11;
+  repeated OnyxIntegrationBridgeSource bridge_sources = 12;
+}
+
+message AuthorizeIntegrationRequest {
+  string client_id = 1;
+  string display_name = 2;
+  string purpose = 3;
+  repeated string scopes = 4;
+  repeated string data_classes = 5;
+  string resource_type = 6;
+  repeated string resource_ids = 7;
+  bool offline_access = 8;
+  int32 expires_in_days = 9;
+  string redirect_uri = 10;
+  string client_mutation_id = 11;
+}
+
+message AuthorizeIntegrationResponse {
+  OnyxIntegrationGrant grant = 1;
+  string authorization_code = 2;
+  google.protobuf.Timestamp authorization_code_expires_at = 3;
+}
+
+message RevokeIntegrationGrantRequest {
+  string grant_id = 1;
+  int64 expected_version = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+
+message RevokeIntegrationGrantResponse {
+  OnyxIntegrationGrant grant = 1;
+  int32 revoked_tokens = 2;
+  int32 terminated_mcp_sessions = 3;
+  int32 cancelled_connector_runs = 4;
+  int32 cancelled_bridge_dispatches = 5;
+}
+
+message UpsertIntegrationConnectorRequest {
+  string account_id = 1;
+  string grant_id = 2;
+  string connector_code = 3;
+  string display_name = 4;
+  string sync_direction = 5;
+  string schedule = 6;
+  string client_mutation_id = 7;
+}
+
+message UpsertIntegrationConnectorResponse {
+  OnyxIntegrationConnectorAccount account = 1;
+}
+
+message SetIntegrationConnectorStateRequest {
+  string account_id = 1;
+  string action = 2; // pause | resume | revoke
+  int64 expected_version = 3;
+  string reason = 4;
+  string client_mutation_id = 5;
+}
+
+message SetIntegrationConnectorStateResponse {
+  OnyxIntegrationConnectorAccount account = 1;
+}
+
+message RunIntegrationConnectorRequest {
+  string account_id = 1;
+  string direction = 2;
+  string import_format = 3;
+  string import_data = 4;
+  string idempotency_key = 5;
+}
+
+message RunIntegrationConnectorResponse {
+  OnyxIntegrationConnectorRun run = 1;
+  OnyxIntegrationArtifact artifact = 2;
+  repeated OnyxIntegrationConflict conflicts = 3;
+}
+
+message GetIntegrationArtifactRequest {
+  string artifact_id = 1;
+}
+message GetIntegrationArtifactResponse {
+  OnyxIntegrationArtifact artifact = 1;
+}
+
+message ResolveIntegrationConflictRequest {
+  string conflict_id = 1;
+  string resolution = 2; // keep_onyx | keep_external | keep_both | dismissed
+  string note = 3;
+  string client_mutation_id = 4;
+}
+message ResolveIntegrationConflictResponse {
+  OnyxIntegrationConflict conflict = 1;
+}
+
+message DispatchIntegrationBridgeRequest {
+  string grant_id = 1;
+  string destination = 2;
+  string source_kind = 3;
+  string source_id = 4;
+  string title = 5;
+  string purpose = 6;
+  string idempotency_key = 7;
+}
+message DispatchIntegrationBridgeResponse {
+  OnyxIntegrationBridgeDispatch dispatch = 1;
+}
+
+message SubmitIntegrationOperationsCaseRequest {
+  string case_type = 1; // consent_complaint | data_deletion
+  string client_id = 2;
+  string grant_id = 3;
+  string summary = 4;
+  string member_statement = 5;
+  string client_mutation_id = 6;
+}
+message SubmitIntegrationOperationsCaseResponse {
+  OnyxIntegrationOperationsCase operations_case = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -4248,4 +4569,18 @@ service OnyxService {
   rpc FileForensicAppeal(FileForensicAppealRequest) returns (FileForensicAppealResponse);
   rpc PostForensicAppealMessage(PostForensicAppealMessageRequest) returns (PostForensicAppealMessageResponse);
   rpc WithdrawForensicAppeal(WithdrawForensicAppealRequest) returns (WithdrawForensicAppealResponse);
+
+  // Choice 14 — member-owned OAuth-style grants, connectors and explicit
+  // cross-pillar dispatches. External REST/MCP calls use the same grant and
+  // audit records through the HTTP edge.
+  rpc GetIntegrationDashboard(GetIntegrationDashboardRequest) returns (GetIntegrationDashboardResponse);
+  rpc AuthorizeIntegration(AuthorizeIntegrationRequest) returns (AuthorizeIntegrationResponse);
+  rpc RevokeIntegrationGrant(RevokeIntegrationGrantRequest) returns (RevokeIntegrationGrantResponse);
+  rpc UpsertIntegrationConnector(UpsertIntegrationConnectorRequest) returns (UpsertIntegrationConnectorResponse);
+  rpc SetIntegrationConnectorState(SetIntegrationConnectorStateRequest) returns (SetIntegrationConnectorStateResponse);
+  rpc RunIntegrationConnector(RunIntegrationConnectorRequest) returns (RunIntegrationConnectorResponse);
+  rpc GetIntegrationArtifact(GetIntegrationArtifactRequest) returns (GetIntegrationArtifactResponse);
+  rpc ResolveIntegrationConflict(ResolveIntegrationConflictRequest) returns (ResolveIntegrationConflictResponse);
+  rpc DispatchIntegrationBridge(DispatchIntegrationBridgeRequest) returns (DispatchIntegrationBridgeResponse);
+  rpc SubmitIntegrationOperationsCase(SubmitIntegrationOperationsCaseRequest) returns (SubmitIntegrationOperationsCaseResponse);
 }

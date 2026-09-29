@@ -31867,3 +31867,2356 @@ export class WithdrawForensicAppealResponse extends Message<WithdrawForensicAppe
   }
 }
 
+/**
+ * Choice 14 — scoped API, MCP and integrations. Raw client secrets,
+ * authorization codes and bearer tokens are deliberately absent from all read
+ * models. A newly issued authorization code is returned once by the authorize
+ * mutation and is otherwise represented only by its non-sensitive hint.
+ *
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationRuntime
+ */
+export class OnyxIntegrationRuntime extends Message<OnyxIntegrationRuntime> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: bool grants_enabled = 2;
+   */
+  grantsEnabled = false;
+
+  /**
+   * @generated from field: bool api_enabled = 3;
+   */
+  apiEnabled = false;
+
+  /**
+   * @generated from field: bool mcp_enabled = 4;
+   */
+  mcpEnabled = false;
+
+  /**
+   * @generated from field: bool connectors_enabled = 5;
+   */
+  connectorsEnabled = false;
+
+  /**
+   * @generated from field: bool bridges_enabled = 6;
+   */
+  bridgesEnabled = false;
+
+  /**
+   * @generated from field: int32 access_token_ttl_seconds = 7;
+   */
+  accessTokenTtlSeconds = 0;
+
+  /**
+   * @generated from field: int32 authorization_code_ttl_seconds = 8;
+   */
+  authorizationCodeTtlSeconds = 0;
+
+  /**
+   * @generated from field: int32 default_quota_per_minute = 9;
+   */
+  defaultQuotaPerMinute = 0;
+
+  /**
+   * @generated from field: int64 max_export_bytes = 10;
+   */
+  maxExportBytes = protoInt64.zero;
+
+  /**
+   * @generated from field: string public_notice = 11;
+   */
+  publicNotice = "";
+
+  /**
+   * @generated from field: int64 version = 12;
+   */
+  version = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxIntegrationRuntime>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationRuntime";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grants_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "api_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "mcp_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "connectors_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "bridges_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "access_token_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "authorization_code_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "default_quota_per_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "max_export_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationRuntime {
+    return new OnyxIntegrationRuntime().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationRuntime {
+    return new OnyxIntegrationRuntime().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationRuntime {
+    return new OnyxIntegrationRuntime().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationRuntime | PlainMessage<OnyxIntegrationRuntime> | undefined, b: OnyxIntegrationRuntime | PlainMessage<OnyxIntegrationRuntime> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationRuntime, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationClient
+ */
+export class OnyxIntegrationClient extends Message<OnyxIntegrationClient> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string slug = 2;
+   */
+  slug = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string publisher_name = 4;
+   */
+  publisherName = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string client_type = 6;
+   */
+  clientType = "";
+
+  /**
+   * @generated from field: string environment = 7;
+   */
+  environment = "";
+
+  /**
+   * @generated from field: string status = 8;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string homepage_url = 9;
+   */
+  homepageUrl = "";
+
+  /**
+   * @generated from field: repeated string allowed_scopes = 10;
+   */
+  allowedScopes: string[] = [];
+
+  /**
+   * @generated from field: repeated string allowed_data_classes = 11;
+   */
+  allowedDataClasses: string[] = [];
+
+  /**
+   * @generated from field: int32 quota_per_minute = 12;
+   */
+  quotaPerMinute = 0;
+
+  /**
+   * @generated from field: bool offline_access_allowed = 13;
+   */
+  offlineAccessAllowed = false;
+
+  /**
+   * @generated from field: string current_secret_hint = 14;
+   */
+  currentSecretHint = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp reviewed_at = 15;
+   */
+  reviewedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationClient>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationClient";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "slug", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "publisher_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "environment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "homepage_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "allowed_scopes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "allowed_data_classes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 12, name: "quota_per_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "offline_access_allowed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "current_secret_hint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "reviewed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationClient {
+    return new OnyxIntegrationClient().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationClient {
+    return new OnyxIntegrationClient().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationClient {
+    return new OnyxIntegrationClient().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationClient | PlainMessage<OnyxIntegrationClient> | undefined, b: OnyxIntegrationClient | PlainMessage<OnyxIntegrationClient> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationClient, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationGrant
+ */
+export class OnyxIntegrationGrant extends Message<OnyxIntegrationGrant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_id = 2;
+   */
+  clientId = "";
+
+  /**
+   * @generated from field: string client_name = 3;
+   */
+  clientName = "";
+
+  /**
+   * @generated from field: string client_publisher = 4;
+   */
+  clientPublisher = "";
+
+  /**
+   * @generated from field: string display_name = 5;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string purpose = 6;
+   */
+  purpose = "";
+
+  /**
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: repeated string scopes = 8;
+   */
+  scopes: string[] = [];
+
+  /**
+   * @generated from field: repeated string data_classes = 9;
+   */
+  dataClasses: string[] = [];
+
+  /**
+   * @generated from field: string resource_type = 10;
+   */
+  resourceType = "";
+
+  /**
+   * @generated from field: repeated string resource_ids = 11;
+   */
+  resourceIds: string[] = [];
+
+  /**
+   * @generated from field: bool offline_access = 12;
+   */
+  offlineAccess = false;
+
+  /**
+   * @generated from field: int64 revocation_epoch = 13;
+   */
+  revocationEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 version = 14;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: string authorization_code_hint = 15;
+   */
+  authorizationCodeHint = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp granted_at = 16;
+   */
+  grantedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 17;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 18;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: string revoked_reason = 19;
+   */
+  revokedReason = "";
+
+  constructor(data?: PartialMessage<OnyxIntegrationGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_publisher", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "scopes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "data_classes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "resource_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "resource_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 12, name: "offline_access", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "revocation_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 14, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "authorization_code_hint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "granted_at", kind: "message", T: Timestamp },
+    { no: 17, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 18, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 19, name: "revoked_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationGrant {
+    return new OnyxIntegrationGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationGrant {
+    return new OnyxIntegrationGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationGrant {
+    return new OnyxIntegrationGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationGrant | PlainMessage<OnyxIntegrationGrant> | undefined, b: OnyxIntegrationGrant | PlainMessage<OnyxIntegrationGrant> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationCall
+ */
+export class OnyxIntegrationCall extends Message<OnyxIntegrationCall> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_name = 2;
+   */
+  clientName = "";
+
+  /**
+   * @generated from field: string transport = 3;
+   */
+  transport = "";
+
+  /**
+   * @generated from field: string operation = 4;
+   */
+  operation = "";
+
+  /**
+   * @generated from field: string required_scope = 5;
+   */
+  requiredScope = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 response_code = 7;
+   */
+  responseCode = 0;
+
+  /**
+   * @generated from field: int64 response_bytes = 8;
+   */
+  responseBytes = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 duration_ms = 9;
+   */
+  durationMs = 0;
+
+  /**
+   * @generated from field: string error_code = 10;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationCall>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationCall";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "transport", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "operation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "required_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "response_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "response_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "duration_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationCall {
+    return new OnyxIntegrationCall().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationCall {
+    return new OnyxIntegrationCall().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationCall {
+    return new OnyxIntegrationCall().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationCall | PlainMessage<OnyxIntegrationCall> | undefined, b: OnyxIntegrationCall | PlainMessage<OnyxIntegrationCall> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationCall, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationConnectorDefinition
+ */
+export class OnyxIntegrationConnectorDefinition extends Message<OnyxIntegrationConnectorDefinition> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string category = 3;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string mode = 4;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: repeated string supported_directions = 6;
+   */
+  supportedDirections: string[] = [];
+
+  /**
+   * @generated from field: repeated string required_scopes = 7;
+   */
+  requiredScopes: string[] = [];
+
+  /**
+   * @generated from field: string configuration_notice = 8;
+   */
+  configurationNotice = "";
+
+  /**
+   * @generated from field: bool supports_scheduling = 9;
+   */
+  supportsScheduling = false;
+
+  constructor(data?: PartialMessage<OnyxIntegrationConnectorDefinition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationConnectorDefinition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "supported_directions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "required_scopes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "configuration_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "supports_scheduling", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationConnectorDefinition {
+    return new OnyxIntegrationConnectorDefinition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorDefinition {
+    return new OnyxIntegrationConnectorDefinition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorDefinition {
+    return new OnyxIntegrationConnectorDefinition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationConnectorDefinition | PlainMessage<OnyxIntegrationConnectorDefinition> | undefined, b: OnyxIntegrationConnectorDefinition | PlainMessage<OnyxIntegrationConnectorDefinition> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationConnectorDefinition, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationConnectorAccount
+ */
+export class OnyxIntegrationConnectorAccount extends Message<OnyxIntegrationConnectorAccount> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string client_name = 3;
+   */
+  clientName = "";
+
+  /**
+   * @generated from field: string connector_code = 4;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string connector_name = 5;
+   */
+  connectorName = "";
+
+  /**
+   * @generated from field: string display_name = 6;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string sync_direction = 8;
+   */
+  syncDirection = "";
+
+  /**
+   * @generated from field: string schedule = 9;
+   */
+  schedule = "";
+
+  /**
+   * @generated from field: string checkpoint = 10;
+   */
+  checkpoint = "";
+
+  /**
+   * @generated from field: int64 grant_epoch = 11;
+   */
+  grantEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 version = 12;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_sync_at = 13;
+   */
+  lastSyncAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp next_sync_at = 14;
+   */
+  nextSyncAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 15;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationConnectorAccount>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationConnectorAccount";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "connector_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "sync_direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "schedule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "checkpoint", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "grant_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "last_sync_at", kind: "message", T: Timestamp },
+    { no: 14, name: "next_sync_at", kind: "message", T: Timestamp },
+    { no: 15, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationConnectorAccount {
+    return new OnyxIntegrationConnectorAccount().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorAccount {
+    return new OnyxIntegrationConnectorAccount().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorAccount {
+    return new OnyxIntegrationConnectorAccount().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationConnectorAccount | PlainMessage<OnyxIntegrationConnectorAccount> | undefined, b: OnyxIntegrationConnectorAccount | PlainMessage<OnyxIntegrationConnectorAccount> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationConnectorAccount, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationConnectorRun
+ */
+export class OnyxIntegrationConnectorRun extends Message<OnyxIntegrationConnectorRun> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string account_id = 2;
+   */
+  accountId = "";
+
+  /**
+   * @generated from field: string connector_name = 3;
+   */
+  connectorName = "";
+
+  /**
+   * @generated from field: string trigger_kind = 4;
+   */
+  triggerKind = "";
+
+  /**
+   * @generated from field: string direction = 5;
+   */
+  direction = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 input_count = 7;
+   */
+  inputCount = 0;
+
+  /**
+   * @generated from field: int32 output_count = 8;
+   */
+  outputCount = 0;
+
+  /**
+   * @generated from field: int32 conflict_count = 9;
+   */
+  conflictCount = 0;
+
+  /**
+   * @generated from field: int64 bytes_processed = 10;
+   */
+  bytesProcessed = protoInt64.zero;
+
+  /**
+   * @generated from field: string artifact_checksum = 11;
+   */
+  artifactChecksum = "";
+
+  /**
+   * @generated from field: string error_code = 12;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: string error_message = 13;
+   */
+  errorMessage = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp queued_at = 14;
+   */
+  queuedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp completed_at = 15;
+   */
+  completedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationConnectorRun>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationConnectorRun";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "connector_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "trigger_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "input_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "output_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "conflict_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "bytes_processed", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "artifact_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "error_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "queued_at", kind: "message", T: Timestamp },
+    { no: 15, name: "completed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationConnectorRun {
+    return new OnyxIntegrationConnectorRun().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorRun {
+    return new OnyxIntegrationConnectorRun().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationConnectorRun {
+    return new OnyxIntegrationConnectorRun().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationConnectorRun | PlainMessage<OnyxIntegrationConnectorRun> | undefined, b: OnyxIntegrationConnectorRun | PlainMessage<OnyxIntegrationConnectorRun> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationConnectorRun, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationArtifact
+ */
+export class OnyxIntegrationArtifact extends Message<OnyxIntegrationArtifact> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string run_id = 2;
+   */
+  runId = "";
+
+  /**
+   * @generated from field: string format = 3;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string filename = 4;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 5;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: string checksum = 6;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: int64 byte_count = 7;
+   */
+  byteCount = protoInt64.zero;
+
+  /**
+   * @generated from field: string data = 8;
+   */
+  data = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 9;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 10;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationArtifact>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationArtifact";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "run_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "byte_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 10, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationArtifact {
+    return new OnyxIntegrationArtifact().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationArtifact {
+    return new OnyxIntegrationArtifact().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationArtifact {
+    return new OnyxIntegrationArtifact().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationArtifact | PlainMessage<OnyxIntegrationArtifact> | undefined, b: OnyxIntegrationArtifact | PlainMessage<OnyxIntegrationArtifact> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationArtifact, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationConflict
+ */
+export class OnyxIntegrationConflict extends Message<OnyxIntegrationConflict> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string run_id = 2;
+   */
+  runId = "";
+
+  /**
+   * @generated from field: string conflict_type = 3;
+   */
+  conflictType = "";
+
+  /**
+   * @generated from field: string local_ref = 4;
+   */
+  localRef = "";
+
+  /**
+   * @generated from field: string external_ref = 5;
+   */
+  externalRef = "";
+
+  /**
+   * @generated from field: string summary = 6;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string resolution = 8;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 9;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 10;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationConflict>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationConflict";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "run_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "conflict_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "local_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "external_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_at", kind: "message", T: Timestamp },
+    { no: 10, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationConflict {
+    return new OnyxIntegrationConflict().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationConflict {
+    return new OnyxIntegrationConflict().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationConflict {
+    return new OnyxIntegrationConflict().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationConflict | PlainMessage<OnyxIntegrationConflict> | undefined, b: OnyxIntegrationConflict | PlainMessage<OnyxIntegrationConflict> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationConflict, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
+ */
+export class OnyxIntegrationBridgeDispatch extends Message<OnyxIntegrationBridgeDispatch> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string destination = 3;
+   */
+  destination = "";
+
+  /**
+   * @generated from field: string source_kind = 4;
+   */
+  sourceKind = "";
+
+  /**
+   * @generated from field: string source_id = 5;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string title = 6;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string purpose = 7;
+   */
+  purpose = "";
+
+  /**
+   * @generated from field: string status = 8;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string downstream_ref = 9;
+   */
+  downstreamRef = "";
+
+  /**
+   * @generated from field: string receipt_checksum = 10;
+   */
+  receiptChecksum = "";
+
+  /**
+   * @generated from field: string error_code = 11;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp completed_at = 13;
+   */
+  completedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationBridgeDispatch>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationBridgeDispatch";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "destination", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "downstream_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "receipt_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+    { no: 13, name: "completed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationBridgeDispatch {
+    return new OnyxIntegrationBridgeDispatch().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationBridgeDispatch {
+    return new OnyxIntegrationBridgeDispatch().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationBridgeDispatch {
+    return new OnyxIntegrationBridgeDispatch().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationBridgeDispatch | PlainMessage<OnyxIntegrationBridgeDispatch> | undefined, b: OnyxIntegrationBridgeDispatch | PlainMessage<OnyxIntegrationBridgeDispatch> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationBridgeDispatch, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationBridgeSource
+ */
+export class OnyxIntegrationBridgeSource extends Message<OnyxIntegrationBridgeSource> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_kind = 2;
+   */
+  sourceKind = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: repeated string allowed_destinations = 5;
+   */
+  allowedDestinations: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 6;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationBridgeSource>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationBridgeSource";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "allowed_destinations", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationBridgeSource {
+    return new OnyxIntegrationBridgeSource().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationBridgeSource {
+    return new OnyxIntegrationBridgeSource().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationBridgeSource {
+    return new OnyxIntegrationBridgeSource().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationBridgeSource | PlainMessage<OnyxIntegrationBridgeSource> | undefined, b: OnyxIntegrationBridgeSource | PlainMessage<OnyxIntegrationBridgeSource> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationBridgeSource, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxIntegrationOperationsCase
+ */
+export class OnyxIntegrationOperationsCase extends Message<OnyxIntegrationOperationsCase> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string case_type = 2;
+   */
+  caseType = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string severity = 4;
+   */
+  severity = "";
+
+  /**
+   * @generated from field: string client_name = 5;
+   */
+  clientName = "";
+
+  /**
+   * @generated from field: string summary = 6;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string member_statement = 7;
+   */
+  memberStatement = "";
+
+  /**
+   * @generated from field: string resolution = 8;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp opened_at = 9;
+   */
+  openedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 10;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<OnyxIntegrationOperationsCase>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxIntegrationOperationsCase";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "case_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "severity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "member_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "opened_at", kind: "message", T: Timestamp },
+    { no: 10, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxIntegrationOperationsCase {
+    return new OnyxIntegrationOperationsCase().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxIntegrationOperationsCase {
+    return new OnyxIntegrationOperationsCase().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxIntegrationOperationsCase {
+    return new OnyxIntegrationOperationsCase().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxIntegrationOperationsCase | PlainMessage<OnyxIntegrationOperationsCase> | undefined, b: OnyxIntegrationOperationsCase | PlainMessage<OnyxIntegrationOperationsCase> | undefined): boolean {
+    return proto3.util.equals(OnyxIntegrationOperationsCase, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntegrationDashboardRequest
+ */
+export class GetIntegrationDashboardRequest extends Message<GetIntegrationDashboardRequest> {
+  /**
+   * @generated from field: bool include_history = 1;
+   */
+  includeHistory = false;
+
+  constructor(data?: PartialMessage<GetIntegrationDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntegrationDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "include_history", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntegrationDashboardRequest {
+    return new GetIntegrationDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntegrationDashboardRequest {
+    return new GetIntegrationDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntegrationDashboardRequest {
+    return new GetIntegrationDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntegrationDashboardRequest | PlainMessage<GetIntegrationDashboardRequest> | undefined, b: GetIntegrationDashboardRequest | PlainMessage<GetIntegrationDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetIntegrationDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntegrationDashboardResponse
+ */
+export class GetIntegrationDashboardResponse extends Message<GetIntegrationDashboardResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationRuntime runtime = 1;
+   */
+  runtime?: OnyxIntegrationRuntime;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationClient available_clients = 2;
+   */
+  availableClients: OnyxIntegrationClient[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationGrant grants = 3;
+   */
+  grants: OnyxIntegrationGrant[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationConnectorDefinition connector_catalog = 4;
+   */
+  connectorCatalog: OnyxIntegrationConnectorDefinition[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationConnectorAccount connector_accounts = 5;
+   */
+  connectorAccounts: OnyxIntegrationConnectorAccount[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationConnectorRun connector_runs = 6;
+   */
+  connectorRuns: OnyxIntegrationConnectorRun[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationArtifact artifacts = 7;
+   */
+  artifacts: OnyxIntegrationArtifact[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationConflict conflicts = 8;
+   */
+  conflicts: OnyxIntegrationConflict[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationBridgeDispatch bridge_dispatches = 9;
+   */
+  bridgeDispatches: OnyxIntegrationBridgeDispatch[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationCall recent_calls = 10;
+   */
+  recentCalls: OnyxIntegrationCall[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationOperationsCase operations_cases = 11;
+   */
+  operationsCases: OnyxIntegrationOperationsCase[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationBridgeSource bridge_sources = 12;
+   */
+  bridgeSources: OnyxIntegrationBridgeSource[] = [];
+
+  constructor(data?: PartialMessage<GetIntegrationDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntegrationDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runtime", kind: "message", T: OnyxIntegrationRuntime },
+    { no: 2, name: "available_clients", kind: "message", T: OnyxIntegrationClient, repeated: true },
+    { no: 3, name: "grants", kind: "message", T: OnyxIntegrationGrant, repeated: true },
+    { no: 4, name: "connector_catalog", kind: "message", T: OnyxIntegrationConnectorDefinition, repeated: true },
+    { no: 5, name: "connector_accounts", kind: "message", T: OnyxIntegrationConnectorAccount, repeated: true },
+    { no: 6, name: "connector_runs", kind: "message", T: OnyxIntegrationConnectorRun, repeated: true },
+    { no: 7, name: "artifacts", kind: "message", T: OnyxIntegrationArtifact, repeated: true },
+    { no: 8, name: "conflicts", kind: "message", T: OnyxIntegrationConflict, repeated: true },
+    { no: 9, name: "bridge_dispatches", kind: "message", T: OnyxIntegrationBridgeDispatch, repeated: true },
+    { no: 10, name: "recent_calls", kind: "message", T: OnyxIntegrationCall, repeated: true },
+    { no: 11, name: "operations_cases", kind: "message", T: OnyxIntegrationOperationsCase, repeated: true },
+    { no: 12, name: "bridge_sources", kind: "message", T: OnyxIntegrationBridgeSource, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntegrationDashboardResponse {
+    return new GetIntegrationDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntegrationDashboardResponse {
+    return new GetIntegrationDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntegrationDashboardResponse {
+    return new GetIntegrationDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntegrationDashboardResponse | PlainMessage<GetIntegrationDashboardResponse> | undefined, b: GetIntegrationDashboardResponse | PlainMessage<GetIntegrationDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetIntegrationDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AuthorizeIntegrationRequest
+ */
+export class AuthorizeIntegrationRequest extends Message<AuthorizeIntegrationRequest> {
+  /**
+   * @generated from field: string client_id = 1;
+   */
+  clientId = "";
+
+  /**
+   * @generated from field: string display_name = 2;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string purpose = 3;
+   */
+  purpose = "";
+
+  /**
+   * @generated from field: repeated string scopes = 4;
+   */
+  scopes: string[] = [];
+
+  /**
+   * @generated from field: repeated string data_classes = 5;
+   */
+  dataClasses: string[] = [];
+
+  /**
+   * @generated from field: string resource_type = 6;
+   */
+  resourceType = "";
+
+  /**
+   * @generated from field: repeated string resource_ids = 7;
+   */
+  resourceIds: string[] = [];
+
+  /**
+   * @generated from field: bool offline_access = 8;
+   */
+  offlineAccess = false;
+
+  /**
+   * @generated from field: int32 expires_in_days = 9;
+   */
+  expiresInDays = 0;
+
+  /**
+   * @generated from field: string redirect_uri = 10;
+   */
+  redirectUri = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 11;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<AuthorizeIntegrationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AuthorizeIntegrationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "scopes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "data_classes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "resource_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "resource_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "offline_access", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "expires_in_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "redirect_uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AuthorizeIntegrationRequest {
+    return new AuthorizeIntegrationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AuthorizeIntegrationRequest {
+    return new AuthorizeIntegrationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AuthorizeIntegrationRequest {
+    return new AuthorizeIntegrationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AuthorizeIntegrationRequest | PlainMessage<AuthorizeIntegrationRequest> | undefined, b: AuthorizeIntegrationRequest | PlainMessage<AuthorizeIntegrationRequest> | undefined): boolean {
+    return proto3.util.equals(AuthorizeIntegrationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AuthorizeIntegrationResponse
+ */
+export class AuthorizeIntegrationResponse extends Message<AuthorizeIntegrationResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationGrant grant = 1;
+   */
+  grant?: OnyxIntegrationGrant;
+
+  /**
+   * @generated from field: string authorization_code = 2;
+   */
+  authorizationCode = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp authorization_code_expires_at = 3;
+   */
+  authorizationCodeExpiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<AuthorizeIntegrationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AuthorizeIntegrationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxIntegrationGrant },
+    { no: 2, name: "authorization_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "authorization_code_expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AuthorizeIntegrationResponse {
+    return new AuthorizeIntegrationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AuthorizeIntegrationResponse {
+    return new AuthorizeIntegrationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AuthorizeIntegrationResponse {
+    return new AuthorizeIntegrationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AuthorizeIntegrationResponse | PlainMessage<AuthorizeIntegrationResponse> | undefined, b: AuthorizeIntegrationResponse | PlainMessage<AuthorizeIntegrationResponse> | undefined): boolean {
+    return proto3.util.equals(AuthorizeIntegrationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeIntegrationGrantRequest
+ */
+export class RevokeIntegrationGrantRequest extends Message<RevokeIntegrationGrantRequest> {
+  /**
+   * @generated from field: string grant_id = 1;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeIntegrationGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeIntegrationGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeIntegrationGrantRequest {
+    return new RevokeIntegrationGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeIntegrationGrantRequest {
+    return new RevokeIntegrationGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeIntegrationGrantRequest {
+    return new RevokeIntegrationGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeIntegrationGrantRequest | PlainMessage<RevokeIntegrationGrantRequest> | undefined, b: RevokeIntegrationGrantRequest | PlainMessage<RevokeIntegrationGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeIntegrationGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeIntegrationGrantResponse
+ */
+export class RevokeIntegrationGrantResponse extends Message<RevokeIntegrationGrantResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationGrant grant = 1;
+   */
+  grant?: OnyxIntegrationGrant;
+
+  /**
+   * @generated from field: int32 revoked_tokens = 2;
+   */
+  revokedTokens = 0;
+
+  /**
+   * @generated from field: int32 terminated_mcp_sessions = 3;
+   */
+  terminatedMcpSessions = 0;
+
+  /**
+   * @generated from field: int32 cancelled_connector_runs = 4;
+   */
+  cancelledConnectorRuns = 0;
+
+  /**
+   * @generated from field: int32 cancelled_bridge_dispatches = 5;
+   */
+  cancelledBridgeDispatches = 0;
+
+  constructor(data?: PartialMessage<RevokeIntegrationGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeIntegrationGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxIntegrationGrant },
+    { no: 2, name: "revoked_tokens", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "terminated_mcp_sessions", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "cancelled_connector_runs", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "cancelled_bridge_dispatches", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeIntegrationGrantResponse {
+    return new RevokeIntegrationGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeIntegrationGrantResponse {
+    return new RevokeIntegrationGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeIntegrationGrantResponse {
+    return new RevokeIntegrationGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeIntegrationGrantResponse | PlainMessage<RevokeIntegrationGrantResponse> | undefined, b: RevokeIntegrationGrantResponse | PlainMessage<RevokeIntegrationGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeIntegrationGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntegrationConnectorRequest
+ */
+export class UpsertIntegrationConnectorRequest extends Message<UpsertIntegrationConnectorRequest> {
+  /**
+   * @generated from field: string account_id = 1;
+   */
+  accountId = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string connector_code = 3;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string display_name = 4;
+   */
+  displayName = "";
+
+  /**
+   * @generated from field: string sync_direction = 5;
+   */
+  syncDirection = "";
+
+  /**
+   * @generated from field: string schedule = 6;
+   */
+  schedule = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertIntegrationConnectorRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntegrationConnectorRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "sync_direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "schedule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntegrationConnectorRequest {
+    return new UpsertIntegrationConnectorRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntegrationConnectorRequest {
+    return new UpsertIntegrationConnectorRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntegrationConnectorRequest {
+    return new UpsertIntegrationConnectorRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntegrationConnectorRequest | PlainMessage<UpsertIntegrationConnectorRequest> | undefined, b: UpsertIntegrationConnectorRequest | PlainMessage<UpsertIntegrationConnectorRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertIntegrationConnectorRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertIntegrationConnectorResponse
+ */
+export class UpsertIntegrationConnectorResponse extends Message<UpsertIntegrationConnectorResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationConnectorAccount account = 1;
+   */
+  account?: OnyxIntegrationConnectorAccount;
+
+  constructor(data?: PartialMessage<UpsertIntegrationConnectorResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertIntegrationConnectorResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "account", kind: "message", T: OnyxIntegrationConnectorAccount },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertIntegrationConnectorResponse {
+    return new UpsertIntegrationConnectorResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertIntegrationConnectorResponse {
+    return new UpsertIntegrationConnectorResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertIntegrationConnectorResponse {
+    return new UpsertIntegrationConnectorResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertIntegrationConnectorResponse | PlainMessage<UpsertIntegrationConnectorResponse> | undefined, b: UpsertIntegrationConnectorResponse | PlainMessage<UpsertIntegrationConnectorResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertIntegrationConnectorResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntegrationConnectorStateRequest
+ */
+export class SetIntegrationConnectorStateRequest extends Message<SetIntegrationConnectorStateRequest> {
+  /**
+   * @generated from field: string account_id = 1;
+   */
+  accountId = "";
+
+  /**
+   * pause | resume | revoke
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: int64 expected_version = 3;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetIntegrationConnectorStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntegrationConnectorStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntegrationConnectorStateRequest {
+    return new SetIntegrationConnectorStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntegrationConnectorStateRequest {
+    return new SetIntegrationConnectorStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntegrationConnectorStateRequest {
+    return new SetIntegrationConnectorStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntegrationConnectorStateRequest | PlainMessage<SetIntegrationConnectorStateRequest> | undefined, b: SetIntegrationConnectorStateRequest | PlainMessage<SetIntegrationConnectorStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetIntegrationConnectorStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetIntegrationConnectorStateResponse
+ */
+export class SetIntegrationConnectorStateResponse extends Message<SetIntegrationConnectorStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationConnectorAccount account = 1;
+   */
+  account?: OnyxIntegrationConnectorAccount;
+
+  constructor(data?: PartialMessage<SetIntegrationConnectorStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetIntegrationConnectorStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "account", kind: "message", T: OnyxIntegrationConnectorAccount },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIntegrationConnectorStateResponse {
+    return new SetIntegrationConnectorStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIntegrationConnectorStateResponse {
+    return new SetIntegrationConnectorStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIntegrationConnectorStateResponse {
+    return new SetIntegrationConnectorStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetIntegrationConnectorStateResponse | PlainMessage<SetIntegrationConnectorStateResponse> | undefined, b: SetIntegrationConnectorStateResponse | PlainMessage<SetIntegrationConnectorStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetIntegrationConnectorStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RunIntegrationConnectorRequest
+ */
+export class RunIntegrationConnectorRequest extends Message<RunIntegrationConnectorRequest> {
+  /**
+   * @generated from field: string account_id = 1;
+   */
+  accountId = "";
+
+  /**
+   * @generated from field: string direction = 2;
+   */
+  direction = "";
+
+  /**
+   * @generated from field: string import_format = 3;
+   */
+  importFormat = "";
+
+  /**
+   * @generated from field: string import_data = 4;
+   */
+  importData = "";
+
+  /**
+   * @generated from field: string idempotency_key = 5;
+   */
+  idempotencyKey = "";
+
+  constructor(data?: PartialMessage<RunIntegrationConnectorRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RunIntegrationConnectorRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "import_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "import_data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "idempotency_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunIntegrationConnectorRequest {
+    return new RunIntegrationConnectorRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunIntegrationConnectorRequest {
+    return new RunIntegrationConnectorRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunIntegrationConnectorRequest {
+    return new RunIntegrationConnectorRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunIntegrationConnectorRequest | PlainMessage<RunIntegrationConnectorRequest> | undefined, b: RunIntegrationConnectorRequest | PlainMessage<RunIntegrationConnectorRequest> | undefined): boolean {
+    return proto3.util.equals(RunIntegrationConnectorRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RunIntegrationConnectorResponse
+ */
+export class RunIntegrationConnectorResponse extends Message<RunIntegrationConnectorResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationConnectorRun run = 1;
+   */
+  run?: OnyxIntegrationConnectorRun;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationArtifact artifact = 2;
+   */
+  artifact?: OnyxIntegrationArtifact;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxIntegrationConflict conflicts = 3;
+   */
+  conflicts: OnyxIntegrationConflict[] = [];
+
+  constructor(data?: PartialMessage<RunIntegrationConnectorResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RunIntegrationConnectorResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "run", kind: "message", T: OnyxIntegrationConnectorRun },
+    { no: 2, name: "artifact", kind: "message", T: OnyxIntegrationArtifact },
+    { no: 3, name: "conflicts", kind: "message", T: OnyxIntegrationConflict, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunIntegrationConnectorResponse {
+    return new RunIntegrationConnectorResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunIntegrationConnectorResponse {
+    return new RunIntegrationConnectorResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunIntegrationConnectorResponse {
+    return new RunIntegrationConnectorResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunIntegrationConnectorResponse | PlainMessage<RunIntegrationConnectorResponse> | undefined, b: RunIntegrationConnectorResponse | PlainMessage<RunIntegrationConnectorResponse> | undefined): boolean {
+    return proto3.util.equals(RunIntegrationConnectorResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntegrationArtifactRequest
+ */
+export class GetIntegrationArtifactRequest extends Message<GetIntegrationArtifactRequest> {
+  /**
+   * @generated from field: string artifact_id = 1;
+   */
+  artifactId = "";
+
+  constructor(data?: PartialMessage<GetIntegrationArtifactRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntegrationArtifactRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "artifact_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntegrationArtifactRequest {
+    return new GetIntegrationArtifactRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntegrationArtifactRequest {
+    return new GetIntegrationArtifactRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntegrationArtifactRequest {
+    return new GetIntegrationArtifactRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntegrationArtifactRequest | PlainMessage<GetIntegrationArtifactRequest> | undefined, b: GetIntegrationArtifactRequest | PlainMessage<GetIntegrationArtifactRequest> | undefined): boolean {
+    return proto3.util.equals(GetIntegrationArtifactRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetIntegrationArtifactResponse
+ */
+export class GetIntegrationArtifactResponse extends Message<GetIntegrationArtifactResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationArtifact artifact = 1;
+   */
+  artifact?: OnyxIntegrationArtifact;
+
+  constructor(data?: PartialMessage<GetIntegrationArtifactResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetIntegrationArtifactResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "artifact", kind: "message", T: OnyxIntegrationArtifact },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIntegrationArtifactResponse {
+    return new GetIntegrationArtifactResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIntegrationArtifactResponse {
+    return new GetIntegrationArtifactResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIntegrationArtifactResponse {
+    return new GetIntegrationArtifactResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetIntegrationArtifactResponse | PlainMessage<GetIntegrationArtifactResponse> | undefined, b: GetIntegrationArtifactResponse | PlainMessage<GetIntegrationArtifactResponse> | undefined): boolean {
+    return proto3.util.equals(GetIntegrationArtifactResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveIntegrationConflictRequest
+ */
+export class ResolveIntegrationConflictRequest extends Message<ResolveIntegrationConflictRequest> {
+  /**
+   * @generated from field: string conflict_id = 1;
+   */
+  conflictId = "";
+
+  /**
+   * keep_onyx | keep_external | keep_both | dismissed
+   *
+   * @generated from field: string resolution = 2;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: string note = 3;
+   */
+  note = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ResolveIntegrationConflictRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveIntegrationConflictRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveIntegrationConflictRequest {
+    return new ResolveIntegrationConflictRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveIntegrationConflictRequest {
+    return new ResolveIntegrationConflictRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveIntegrationConflictRequest {
+    return new ResolveIntegrationConflictRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveIntegrationConflictRequest | PlainMessage<ResolveIntegrationConflictRequest> | undefined, b: ResolveIntegrationConflictRequest | PlainMessage<ResolveIntegrationConflictRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveIntegrationConflictRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveIntegrationConflictResponse
+ */
+export class ResolveIntegrationConflictResponse extends Message<ResolveIntegrationConflictResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationConflict conflict = 1;
+   */
+  conflict?: OnyxIntegrationConflict;
+
+  constructor(data?: PartialMessage<ResolveIntegrationConflictResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveIntegrationConflictResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict", kind: "message", T: OnyxIntegrationConflict },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveIntegrationConflictResponse {
+    return new ResolveIntegrationConflictResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveIntegrationConflictResponse {
+    return new ResolveIntegrationConflictResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveIntegrationConflictResponse {
+    return new ResolveIntegrationConflictResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveIntegrationConflictResponse | PlainMessage<ResolveIntegrationConflictResponse> | undefined, b: ResolveIntegrationConflictResponse | PlainMessage<ResolveIntegrationConflictResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveIntegrationConflictResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DispatchIntegrationBridgeRequest
+ */
+export class DispatchIntegrationBridgeRequest extends Message<DispatchIntegrationBridgeRequest> {
+  /**
+   * @generated from field: string grant_id = 1;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string destination = 2;
+   */
+  destination = "";
+
+  /**
+   * @generated from field: string source_kind = 3;
+   */
+  sourceKind = "";
+
+  /**
+   * @generated from field: string source_id = 4;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string title = 5;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string purpose = 6;
+   */
+  purpose = "";
+
+  /**
+   * @generated from field: string idempotency_key = 7;
+   */
+  idempotencyKey = "";
+
+  constructor(data?: PartialMessage<DispatchIntegrationBridgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DispatchIntegrationBridgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "destination", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "idempotency_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DispatchIntegrationBridgeRequest {
+    return new DispatchIntegrationBridgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DispatchIntegrationBridgeRequest {
+    return new DispatchIntegrationBridgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DispatchIntegrationBridgeRequest {
+    return new DispatchIntegrationBridgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DispatchIntegrationBridgeRequest | PlainMessage<DispatchIntegrationBridgeRequest> | undefined, b: DispatchIntegrationBridgeRequest | PlainMessage<DispatchIntegrationBridgeRequest> | undefined): boolean {
+    return proto3.util.equals(DispatchIntegrationBridgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DispatchIntegrationBridgeResponse
+ */
+export class DispatchIntegrationBridgeResponse extends Message<DispatchIntegrationBridgeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch dispatch = 1;
+   */
+  dispatch?: OnyxIntegrationBridgeDispatch;
+
+  constructor(data?: PartialMessage<DispatchIntegrationBridgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DispatchIntegrationBridgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "dispatch", kind: "message", T: OnyxIntegrationBridgeDispatch },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DispatchIntegrationBridgeResponse {
+    return new DispatchIntegrationBridgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DispatchIntegrationBridgeResponse {
+    return new DispatchIntegrationBridgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DispatchIntegrationBridgeResponse {
+    return new DispatchIntegrationBridgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DispatchIntegrationBridgeResponse | PlainMessage<DispatchIntegrationBridgeResponse> | undefined, b: DispatchIntegrationBridgeResponse | PlainMessage<DispatchIntegrationBridgeResponse> | undefined): boolean {
+    return proto3.util.equals(DispatchIntegrationBridgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
+ */
+export class SubmitIntegrationOperationsCaseRequest extends Message<SubmitIntegrationOperationsCaseRequest> {
+  /**
+   * consent_complaint | data_deletion
+   *
+   * @generated from field: string case_type = 1;
+   */
+  caseType = "";
+
+  /**
+   * @generated from field: string client_id = 2;
+   */
+  clientId = "";
+
+  /**
+   * @generated from field: string grant_id = 3;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string member_statement = 5;
+   */
+  memberStatement = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SubmitIntegrationOperationsCaseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "member_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitIntegrationOperationsCaseRequest {
+    return new SubmitIntegrationOperationsCaseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitIntegrationOperationsCaseRequest {
+    return new SubmitIntegrationOperationsCaseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitIntegrationOperationsCaseRequest {
+    return new SubmitIntegrationOperationsCaseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitIntegrationOperationsCaseRequest | PlainMessage<SubmitIntegrationOperationsCaseRequest> | undefined, b: SubmitIntegrationOperationsCaseRequest | PlainMessage<SubmitIntegrationOperationsCaseRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitIntegrationOperationsCaseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
+ */
+export class SubmitIntegrationOperationsCaseResponse extends Message<SubmitIntegrationOperationsCaseResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxIntegrationOperationsCase operations_case = 1;
+   */
+  operationsCase?: OnyxIntegrationOperationsCase;
+
+  constructor(data?: PartialMessage<SubmitIntegrationOperationsCaseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "operations_case", kind: "message", T: OnyxIntegrationOperationsCase },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitIntegrationOperationsCaseResponse {
+    return new SubmitIntegrationOperationsCaseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitIntegrationOperationsCaseResponse {
+    return new SubmitIntegrationOperationsCaseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitIntegrationOperationsCaseResponse {
+    return new SubmitIntegrationOperationsCaseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitIntegrationOperationsCaseResponse | PlainMessage<SubmitIntegrationOperationsCaseResponse> | undefined, b: SubmitIntegrationOperationsCaseResponse | PlainMessage<SubmitIntegrationOperationsCaseResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitIntegrationOperationsCaseResponse, a, b);
+  }
+}
+

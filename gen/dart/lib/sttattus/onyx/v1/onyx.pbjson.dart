@@ -16018,3 +16018,1203 @@ final $typed_data.Uint8List withdrawForensicAppealResponseDescriptor =
     $convert.base64Decode(
         'Ch5XaXRoZHJhd0ZvcmVuc2ljQXBwZWFsUmVzcG9uc2USRwoNZm9yZW5zaWNfY2FzZRgBIAEoCz'
         'IiLnN0dGF0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljQ2FzZVIMZm9yZW5zaWNDYXNl');
+
+@$core.Deprecated('Use onyxIntegrationRuntimeDescriptor instead')
+const OnyxIntegrationRuntime$json = {
+  '1': 'OnyxIntegrationRuntime',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'grants_enabled', '3': 2, '4': 1, '5': 8, '10': 'grantsEnabled'},
+    {'1': 'api_enabled', '3': 3, '4': 1, '5': 8, '10': 'apiEnabled'},
+    {'1': 'mcp_enabled', '3': 4, '4': 1, '5': 8, '10': 'mcpEnabled'},
+    {
+      '1': 'connectors_enabled',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'connectorsEnabled'
+    },
+    {'1': 'bridges_enabled', '3': 6, '4': 1, '5': 8, '10': 'bridgesEnabled'},
+    {
+      '1': 'access_token_ttl_seconds',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'accessTokenTtlSeconds'
+    },
+    {
+      '1': 'authorization_code_ttl_seconds',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'authorizationCodeTtlSeconds'
+    },
+    {
+      '1': 'default_quota_per_minute',
+      '3': 9,
+      '4': 1,
+      '5': 5,
+      '10': 'defaultQuotaPerMinute'
+    },
+    {'1': 'max_export_bytes', '3': 10, '4': 1, '5': 3, '10': 'maxExportBytes'},
+    {'1': 'public_notice', '3': 11, '4': 1, '5': 9, '10': 'publicNotice'},
+    {'1': 'version', '3': 12, '4': 1, '5': 3, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationRuntime`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationRuntimeDescriptor = $convert.base64Decode(
+    'ChZPbnl4SW50ZWdyYXRpb25SdW50aW1lEhYKBnN0YXR1cxgBIAEoCVIGc3RhdHVzEiUKDmdyYW'
+    '50c19lbmFibGVkGAIgASgIUg1ncmFudHNFbmFibGVkEh8KC2FwaV9lbmFibGVkGAMgASgIUgph'
+    'cGlFbmFibGVkEh8KC21jcF9lbmFibGVkGAQgASgIUgptY3BFbmFibGVkEi0KEmNvbm5lY3Rvcn'
+    'NfZW5hYmxlZBgFIAEoCFIRY29ubmVjdG9yc0VuYWJsZWQSJwoPYnJpZGdlc19lbmFibGVkGAYg'
+    'ASgIUg5icmlkZ2VzRW5hYmxlZBI3ChhhY2Nlc3NfdG9rZW5fdHRsX3NlY29uZHMYByABKAVSFW'
+    'FjY2Vzc1Rva2VuVHRsU2Vjb25kcxJDCh5hdXRob3JpemF0aW9uX2NvZGVfdHRsX3NlY29uZHMY'
+    'CCABKAVSG2F1dGhvcml6YXRpb25Db2RlVHRsU2Vjb25kcxI3ChhkZWZhdWx0X3F1b3RhX3Blcl'
+    '9taW51dGUYCSABKAVSFWRlZmF1bHRRdW90YVBlck1pbnV0ZRIoChBtYXhfZXhwb3J0X2J5dGVz'
+    'GAogASgDUg5tYXhFeHBvcnRCeXRlcxIjCg1wdWJsaWNfbm90aWNlGAsgASgJUgxwdWJsaWNOb3'
+    'RpY2USGAoHdmVyc2lvbhgMIAEoA1IHdmVyc2lvbg==');
+
+@$core.Deprecated('Use onyxIntegrationClientDescriptor instead')
+const OnyxIntegrationClient$json = {
+  '1': 'OnyxIntegrationClient',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'slug', '3': 2, '4': 1, '5': 9, '10': 'slug'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'publisher_name', '3': 4, '4': 1, '5': 9, '10': 'publisherName'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'client_type', '3': 6, '4': 1, '5': 9, '10': 'clientType'},
+    {'1': 'environment', '3': 7, '4': 1, '5': 9, '10': 'environment'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'homepage_url', '3': 9, '4': 1, '5': 9, '10': 'homepageUrl'},
+    {'1': 'allowed_scopes', '3': 10, '4': 3, '5': 9, '10': 'allowedScopes'},
+    {
+      '1': 'allowed_data_classes',
+      '3': 11,
+      '4': 3,
+      '5': 9,
+      '10': 'allowedDataClasses'
+    },
+    {'1': 'quota_per_minute', '3': 12, '4': 1, '5': 5, '10': 'quotaPerMinute'},
+    {
+      '1': 'offline_access_allowed',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'offlineAccessAllowed'
+    },
+    {
+      '1': 'current_secret_hint',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'currentSecretHint'
+    },
+    {
+      '1': 'reviewed_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'reviewedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationClient`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationClientDescriptor = $convert.base64Decode(
+    'ChVPbnl4SW50ZWdyYXRpb25DbGllbnQSDgoCaWQYASABKAlSAmlkEhIKBHNsdWcYAiABKAlSBH'
+    'NsdWcSEgoEbmFtZRgDIAEoCVIEbmFtZRIlCg5wdWJsaXNoZXJfbmFtZRgEIAEoCVINcHVibGlz'
+    'aGVyTmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24SHwoLY2xpZW50X3R5cG'
+    'UYBiABKAlSCmNsaWVudFR5cGUSIAoLZW52aXJvbm1lbnQYByABKAlSC2Vudmlyb25tZW50EhYK'
+    'BnN0YXR1cxgIIAEoCVIGc3RhdHVzEiEKDGhvbWVwYWdlX3VybBgJIAEoCVILaG9tZXBhZ2VVcm'
+    'wSJQoOYWxsb3dlZF9zY29wZXMYCiADKAlSDWFsbG93ZWRTY29wZXMSMAoUYWxsb3dlZF9kYXRh'
+    'X2NsYXNzZXMYCyADKAlSEmFsbG93ZWREYXRhQ2xhc3NlcxIoChBxdW90YV9wZXJfbWludXRlGA'
+    'wgASgFUg5xdW90YVBlck1pbnV0ZRI0ChZvZmZsaW5lX2FjY2Vzc19hbGxvd2VkGA0gASgIUhRv'
+    'ZmZsaW5lQWNjZXNzQWxsb3dlZBIuChNjdXJyZW50X3NlY3JldF9oaW50GA4gASgJUhFjdXJyZW'
+    '50U2VjcmV0SGludBI7CgtyZXZpZXdlZF9hdBgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l'
+    'c3RhbXBSCnJldmlld2VkQXQ=');
+
+@$core.Deprecated('Use onyxIntegrationGrantDescriptor instead')
+const OnyxIntegrationGrant$json = {
+  '1': 'OnyxIntegrationGrant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'client_name', '3': 3, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'client_publisher', '3': 4, '4': 1, '5': 9, '10': 'clientPublisher'},
+    {'1': 'display_name', '3': 5, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'purpose', '3': 6, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'scopes', '3': 8, '4': 3, '5': 9, '10': 'scopes'},
+    {'1': 'data_classes', '3': 9, '4': 3, '5': 9, '10': 'dataClasses'},
+    {'1': 'resource_type', '3': 10, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_ids', '3': 11, '4': 3, '5': 9, '10': 'resourceIds'},
+    {'1': 'offline_access', '3': 12, '4': 1, '5': 8, '10': 'offlineAccess'},
+    {'1': 'revocation_epoch', '3': 13, '4': 1, '5': 3, '10': 'revocationEpoch'},
+    {'1': 'version', '3': 14, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'authorization_code_hint',
+      '3': 15,
+      '4': 1,
+      '5': 9,
+      '10': 'authorizationCodeHint'
+    },
+    {
+      '1': 'granted_at',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'grantedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {'1': 'revoked_reason', '3': 19, '4': 1, '5': 9, '10': 'revokedReason'},
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationGrant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationGrantDescriptor = $convert.base64Decode(
+    'ChRPbnl4SW50ZWdyYXRpb25HcmFudBIOCgJpZBgBIAEoCVICaWQSGwoJY2xpZW50X2lkGAIgAS'
+    'gJUghjbGllbnRJZBIfCgtjbGllbnRfbmFtZRgDIAEoCVIKY2xpZW50TmFtZRIpChBjbGllbnRf'
+    'cHVibGlzaGVyGAQgASgJUg9jbGllbnRQdWJsaXNoZXISIQoMZGlzcGxheV9uYW1lGAUgASgJUg'
+    'tkaXNwbGF5TmFtZRIYCgdwdXJwb3NlGAYgASgJUgdwdXJwb3NlEhYKBnN0YXR1cxgHIAEoCVIG'
+    'c3RhdHVzEhYKBnNjb3BlcxgIIAMoCVIGc2NvcGVzEiEKDGRhdGFfY2xhc3NlcxgJIAMoCVILZG'
+    'F0YUNsYXNzZXMSIwoNcmVzb3VyY2VfdHlwZRgKIAEoCVIMcmVzb3VyY2VUeXBlEiEKDHJlc291'
+    'cmNlX2lkcxgLIAMoCVILcmVzb3VyY2VJZHMSJQoOb2ZmbGluZV9hY2Nlc3MYDCABKAhSDW9mZm'
+    'xpbmVBY2Nlc3MSKQoQcmV2b2NhdGlvbl9lcG9jaBgNIAEoA1IPcmV2b2NhdGlvbkVwb2NoEhgK'
+    'B3ZlcnNpb24YDiABKANSB3ZlcnNpb24SNgoXYXV0aG9yaXphdGlvbl9jb2RlX2hpbnQYDyABKA'
+    'lSFWF1dGhvcml6YXRpb25Db2RlSGludBI5CgpncmFudGVkX2F0GBAgASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIJZ3JhbnRlZEF0EjkKCmV4cGlyZXNfYXQYESABKAsyGi5nb29nbG'
+    'UucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQSOQoKcmV2b2tlZF9hdBgSIAEoCzIaLmdv'
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXJldm9rZWRBdBIlCg5yZXZva2VkX3JlYXNvbhgTIA'
+    'EoCVINcmV2b2tlZFJlYXNvbg==');
+
+@$core.Deprecated('Use onyxIntegrationCallDescriptor instead')
+const OnyxIntegrationCall$json = {
+  '1': 'OnyxIntegrationCall',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'client_name', '3': 2, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'transport', '3': 3, '4': 1, '5': 9, '10': 'transport'},
+    {'1': 'operation', '3': 4, '4': 1, '5': 9, '10': 'operation'},
+    {'1': 'required_scope', '3': 5, '4': 1, '5': 9, '10': 'requiredScope'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'response_code', '3': 7, '4': 1, '5': 5, '10': 'responseCode'},
+    {'1': 'response_bytes', '3': 8, '4': 1, '5': 3, '10': 'responseBytes'},
+    {'1': 'duration_ms', '3': 9, '4': 1, '5': 5, '10': 'durationMs'},
+    {'1': 'error_code', '3': 10, '4': 1, '5': 9, '10': 'errorCode'},
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationCall`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationCallDescriptor = $convert.base64Decode(
+    'ChNPbnl4SW50ZWdyYXRpb25DYWxsEg4KAmlkGAEgASgJUgJpZBIfCgtjbGllbnRfbmFtZRgCIA'
+    'EoCVIKY2xpZW50TmFtZRIcCgl0cmFuc3BvcnQYAyABKAlSCXRyYW5zcG9ydBIcCglvcGVyYXRp'
+    'b24YBCABKAlSCW9wZXJhdGlvbhIlCg5yZXF1aXJlZF9zY29wZRgFIAEoCVINcmVxdWlyZWRTY2'
+    '9wZRIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cxIjCg1yZXNwb25zZV9jb2RlGAcgASgFUgxyZXNw'
+    'b25zZUNvZGUSJQoOcmVzcG9uc2VfYnl0ZXMYCCABKANSDXJlc3BvbnNlQnl0ZXMSHwoLZHVyYX'
+    'Rpb25fbXMYCSABKAVSCmR1cmF0aW9uTXMSHQoKZXJyb3JfY29kZRgKIAEoCVIJZXJyb3JDb2Rl'
+    'EjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdG'
+    'VkQXQ=');
+
+@$core.Deprecated('Use onyxIntegrationConnectorDefinitionDescriptor instead')
+const OnyxIntegrationConnectorDefinition$json = {
+  '1': 'OnyxIntegrationConnectorDefinition',
+  '2': [
+    {'1': 'code', '3': 1, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'category', '3': 3, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'mode', '3': 4, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'supported_directions',
+      '3': 6,
+      '4': 3,
+      '5': 9,
+      '10': 'supportedDirections'
+    },
+    {'1': 'required_scopes', '3': 7, '4': 3, '5': 9, '10': 'requiredScopes'},
+    {
+      '1': 'configuration_notice',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'configurationNotice'
+    },
+    {
+      '1': 'supports_scheduling',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'supportsScheduling'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationConnectorDefinition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationConnectorDefinitionDescriptor = $convert.base64Decode(
+    'CiJPbnl4SW50ZWdyYXRpb25Db25uZWN0b3JEZWZpbml0aW9uEhIKBGNvZGUYASABKAlSBGNvZG'
+    'USEgoEbmFtZRgCIAEoCVIEbmFtZRIaCghjYXRlZ29yeRgDIAEoCVIIY2F0ZWdvcnkSEgoEbW9k'
+    'ZRgEIAEoCVIEbW9kZRIWCgZzdGF0dXMYBSABKAlSBnN0YXR1cxIxChRzdXBwb3J0ZWRfZGlyZW'
+    'N0aW9ucxgGIAMoCVITc3VwcG9ydGVkRGlyZWN0aW9ucxInCg9yZXF1aXJlZF9zY29wZXMYByAD'
+    'KAlSDnJlcXVpcmVkU2NvcGVzEjEKFGNvbmZpZ3VyYXRpb25fbm90aWNlGAggASgJUhNjb25maW'
+    'd1cmF0aW9uTm90aWNlEi8KE3N1cHBvcnRzX3NjaGVkdWxpbmcYCSABKAhSEnN1cHBvcnRzU2No'
+    'ZWR1bGluZw==');
+
+@$core.Deprecated('Use onyxIntegrationConnectorAccountDescriptor instead')
+const OnyxIntegrationConnectorAccount$json = {
+  '1': 'OnyxIntegrationConnectorAccount',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'client_name', '3': 3, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'connector_code', '3': 4, '4': 1, '5': 9, '10': 'connectorCode'},
+    {'1': 'connector_name', '3': 5, '4': 1, '5': 9, '10': 'connectorName'},
+    {'1': 'display_name', '3': 6, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'sync_direction', '3': 8, '4': 1, '5': 9, '10': 'syncDirection'},
+    {'1': 'schedule', '3': 9, '4': 1, '5': 9, '10': 'schedule'},
+    {'1': 'checkpoint', '3': 10, '4': 1, '5': 9, '10': 'checkpoint'},
+    {'1': 'grant_epoch', '3': 11, '4': 1, '5': 3, '10': 'grantEpoch'},
+    {'1': 'version', '3': 12, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'last_sync_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSyncAt'
+    },
+    {
+      '1': 'next_sync_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'nextSyncAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationConnectorAccount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationConnectorAccountDescriptor = $convert.base64Decode(
+    'Ch9Pbnl4SW50ZWdyYXRpb25Db25uZWN0b3JBY2NvdW50Eg4KAmlkGAEgASgJUgJpZBIZCghncm'
+    'FudF9pZBgCIAEoCVIHZ3JhbnRJZBIfCgtjbGllbnRfbmFtZRgDIAEoCVIKY2xpZW50TmFtZRIl'
+    'Cg5jb25uZWN0b3JfY29kZRgEIAEoCVINY29ubmVjdG9yQ29kZRIlCg5jb25uZWN0b3JfbmFtZR'
+    'gFIAEoCVINY29ubmVjdG9yTmFtZRIhCgxkaXNwbGF5X25hbWUYBiABKAlSC2Rpc3BsYXlOYW1l'
+    'EhYKBnN0YXR1cxgHIAEoCVIGc3RhdHVzEiUKDnN5bmNfZGlyZWN0aW9uGAggASgJUg1zeW5jRG'
+    'lyZWN0aW9uEhoKCHNjaGVkdWxlGAkgASgJUghzY2hlZHVsZRIeCgpjaGVja3BvaW50GAogASgJ'
+    'UgpjaGVja3BvaW50Eh8KC2dyYW50X2Vwb2NoGAsgASgDUgpncmFudEVwb2NoEhgKB3ZlcnNpb2'
+    '4YDCABKANSB3ZlcnNpb24SPAoMbGFzdF9zeW5jX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVm'
+    'LlRpbWVzdGFtcFIKbGFzdFN5bmNBdBI8CgxuZXh0X3N5bmNfYXQYDiABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wUgpuZXh0U3luY0F0EjkKCnVwZGF0ZWRfYXQYDyABKAsyGi5nb29n'
+    'bGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use onyxIntegrationConnectorRunDescriptor instead')
+const OnyxIntegrationConnectorRun$json = {
+  '1': 'OnyxIntegrationConnectorRun',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'account_id', '3': 2, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'connector_name', '3': 3, '4': 1, '5': 9, '10': 'connectorName'},
+    {'1': 'trigger_kind', '3': 4, '4': 1, '5': 9, '10': 'triggerKind'},
+    {'1': 'direction', '3': 5, '4': 1, '5': 9, '10': 'direction'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'input_count', '3': 7, '4': 1, '5': 5, '10': 'inputCount'},
+    {'1': 'output_count', '3': 8, '4': 1, '5': 5, '10': 'outputCount'},
+    {'1': 'conflict_count', '3': 9, '4': 1, '5': 5, '10': 'conflictCount'},
+    {'1': 'bytes_processed', '3': 10, '4': 1, '5': 3, '10': 'bytesProcessed'},
+    {
+      '1': 'artifact_checksum',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'artifactChecksum'
+    },
+    {'1': 'error_code', '3': 12, '4': 1, '5': 9, '10': 'errorCode'},
+    {'1': 'error_message', '3': 13, '4': 1, '5': 9, '10': 'errorMessage'},
+    {
+      '1': 'queued_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'queuedAt'
+    },
+    {
+      '1': 'completed_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'completedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationConnectorRun`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationConnectorRunDescriptor = $convert.base64Decode(
+    'ChtPbnl4SW50ZWdyYXRpb25Db25uZWN0b3JSdW4SDgoCaWQYASABKAlSAmlkEh0KCmFjY291bn'
+    'RfaWQYAiABKAlSCWFjY291bnRJZBIlCg5jb25uZWN0b3JfbmFtZRgDIAEoCVINY29ubmVjdG9y'
+    'TmFtZRIhCgx0cmlnZ2VyX2tpbmQYBCABKAlSC3RyaWdnZXJLaW5kEhwKCWRpcmVjdGlvbhgFIA'
+    'EoCVIJZGlyZWN0aW9uEhYKBnN0YXR1cxgGIAEoCVIGc3RhdHVzEh8KC2lucHV0X2NvdW50GAcg'
+    'ASgFUgppbnB1dENvdW50EiEKDG91dHB1dF9jb3VudBgIIAEoBVILb3V0cHV0Q291bnQSJQoOY2'
+    '9uZmxpY3RfY291bnQYCSABKAVSDWNvbmZsaWN0Q291bnQSJwoPYnl0ZXNfcHJvY2Vzc2VkGAog'
+    'ASgDUg5ieXRlc1Byb2Nlc3NlZBIrChFhcnRpZmFjdF9jaGVja3N1bRgLIAEoCVIQYXJ0aWZhY3'
+    'RDaGVja3N1bRIdCgplcnJvcl9jb2RlGAwgASgJUgllcnJvckNvZGUSIwoNZXJyb3JfbWVzc2Fn'
+    'ZRgNIAEoCVIMZXJyb3JNZXNzYWdlEjcKCXF1ZXVlZF9hdBgOIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBSCHF1ZXVlZEF0Ej0KDGNvbXBsZXRlZF9hdBgPIAEoCzIaLmdvb2dsZS5w'
+    'cm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0');
+
+@$core.Deprecated('Use onyxIntegrationArtifactDescriptor instead')
+const OnyxIntegrationArtifact$json = {
+  '1': 'OnyxIntegrationArtifact',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'run_id', '3': 2, '4': 1, '5': 9, '10': 'runId'},
+    {'1': 'format', '3': 3, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'filename', '3': 4, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 5, '4': 1, '5': 9, '10': 'mimeType'},
+    {'1': 'checksum', '3': 6, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'byte_count', '3': 7, '4': 1, '5': 3, '10': 'byteCount'},
+    {'1': 'data', '3': 8, '4': 1, '5': 9, '10': 'data'},
+    {
+      '1': 'expires_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationArtifact`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationArtifactDescriptor = $convert.base64Decode(
+    'ChdPbnl4SW50ZWdyYXRpb25BcnRpZmFjdBIOCgJpZBgBIAEoCVICaWQSFQoGcnVuX2lkGAIgAS'
+    'gJUgVydW5JZBIWCgZmb3JtYXQYAyABKAlSBmZvcm1hdBIaCghmaWxlbmFtZRgEIAEoCVIIZmls'
+    'ZW5hbWUSGwoJbWltZV90eXBlGAUgASgJUghtaW1lVHlwZRIaCghjaGVja3N1bRgGIAEoCVIIY2'
+    'hlY2tzdW0SHQoKYnl0ZV9jb3VudBgHIAEoA1IJYnl0ZUNvdW50EhIKBGRhdGEYCCABKAlSBGRh'
+    'dGESOQoKZXhwaXJlc19hdBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cG'
+    'lyZXNBdBI5CgpjcmVhdGVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJ'
+    'Y3JlYXRlZEF0');
+
+@$core.Deprecated('Use onyxIntegrationConflictDescriptor instead')
+const OnyxIntegrationConflict$json = {
+  '1': 'OnyxIntegrationConflict',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'run_id', '3': 2, '4': 1, '5': 9, '10': 'runId'},
+    {'1': 'conflict_type', '3': 3, '4': 1, '5': 9, '10': 'conflictType'},
+    {'1': 'local_ref', '3': 4, '4': 1, '5': 9, '10': 'localRef'},
+    {'1': 'external_ref', '3': 5, '4': 1, '5': 9, '10': 'externalRef'},
+    {'1': 'summary', '3': 6, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'resolution', '3': 8, '4': 1, '5': 9, '10': 'resolution'},
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationConflict`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationConflictDescriptor = $convert.base64Decode(
+    'ChdPbnl4SW50ZWdyYXRpb25Db25mbGljdBIOCgJpZBgBIAEoCVICaWQSFQoGcnVuX2lkGAIgAS'
+    'gJUgVydW5JZBIjCg1jb25mbGljdF90eXBlGAMgASgJUgxjb25mbGljdFR5cGUSGwoJbG9jYWxf'
+    'cmVmGAQgASgJUghsb2NhbFJlZhIhCgxleHRlcm5hbF9yZWYYBSABKAlSC2V4dGVybmFsUmVmEh'
+    'gKB3N1bW1hcnkYBiABKAlSB3N1bW1hcnkSFgoGc3RhdHVzGAcgASgJUgZzdGF0dXMSHgoKcmVz'
+    'b2x1dGlvbhgIIAEoCVIKcmVzb2x1dGlvbhI5CgpjcmVhdGVkX2F0GAkgASgLMhouZ29vZ2xlLn'
+    'Byb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjsKC3Jlc29sdmVkX2F0GAogASgLMhouZ29v'
+    'Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVzb2x2ZWRBdA==');
+
+@$core.Deprecated('Use onyxIntegrationBridgeDispatchDescriptor instead')
+const OnyxIntegrationBridgeDispatch$json = {
+  '1': 'OnyxIntegrationBridgeDispatch',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'destination', '3': 3, '4': 1, '5': 9, '10': 'destination'},
+    {'1': 'source_kind', '3': 4, '4': 1, '5': 9, '10': 'sourceKind'},
+    {'1': 'source_id', '3': 5, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'title', '3': 6, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'purpose', '3': 7, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'downstream_ref', '3': 9, '4': 1, '5': 9, '10': 'downstreamRef'},
+    {'1': 'receipt_checksum', '3': 10, '4': 1, '5': 9, '10': 'receiptChecksum'},
+    {'1': 'error_code', '3': 11, '4': 1, '5': 9, '10': 'errorCode'},
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'completed_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'completedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationBridgeDispatch`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationBridgeDispatchDescriptor = $convert.base64Decode(
+    'Ch1Pbnl4SW50ZWdyYXRpb25CcmlkZ2VEaXNwYXRjaBIOCgJpZBgBIAEoCVICaWQSGQoIZ3Jhbn'
+    'RfaWQYAiABKAlSB2dyYW50SWQSIAoLZGVzdGluYXRpb24YAyABKAlSC2Rlc3RpbmF0aW9uEh8K'
+    'C3NvdXJjZV9raW5kGAQgASgJUgpzb3VyY2VLaW5kEhsKCXNvdXJjZV9pZBgFIAEoCVIIc291cm'
+    'NlSWQSFAoFdGl0bGUYBiABKAlSBXRpdGxlEhgKB3B1cnBvc2UYByABKAlSB3B1cnBvc2USFgoG'
+    'c3RhdHVzGAggASgJUgZzdGF0dXMSJQoOZG93bnN0cmVhbV9yZWYYCSABKAlSDWRvd25zdHJlYW'
+    '1SZWYSKQoQcmVjZWlwdF9jaGVja3N1bRgKIAEoCVIPcmVjZWlwdENoZWNrc3VtEh0KCmVycm9y'
+    'X2NvZGUYCyABKAlSCWVycm9yQ29kZRI5CgpjcmVhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3'
+    'RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgNIAEoCzIaLmdvb2ds'
+    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2NvbXBsZXRlZEF0');
+
+@$core.Deprecated('Use onyxIntegrationBridgeSourceDescriptor instead')
+const OnyxIntegrationBridgeSource$json = {
+  '1': 'OnyxIntegrationBridgeSource',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_kind', '3': 2, '4': 1, '5': 9, '10': 'sourceKind'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {
+      '1': 'allowed_destinations',
+      '3': 5,
+      '4': 3,
+      '5': 9,
+      '10': 'allowedDestinations'
+    },
+    {
+      '1': 'updated_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationBridgeSource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationBridgeSourceDescriptor = $convert.base64Decode(
+    'ChtPbnl4SW50ZWdyYXRpb25CcmlkZ2VTb3VyY2USDgoCaWQYASABKAlSAmlkEh8KC3NvdXJjZV'
+    '9raW5kGAIgASgJUgpzb3VyY2VLaW5kEhQKBXRpdGxlGAMgASgJUgV0aXRsZRIYCgdzdW1tYXJ5'
+    'GAQgASgJUgdzdW1tYXJ5EjEKFGFsbG93ZWRfZGVzdGluYXRpb25zGAUgAygJUhNhbGxvd2VkRG'
+    'VzdGluYXRpb25zEjkKCnVwZGF0ZWRfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
+    'YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use onyxIntegrationOperationsCaseDescriptor instead')
+const OnyxIntegrationOperationsCase$json = {
+  '1': 'OnyxIntegrationOperationsCase',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'case_type', '3': 2, '4': 1, '5': 9, '10': 'caseType'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'severity', '3': 4, '4': 1, '5': 9, '10': 'severity'},
+    {'1': 'client_name', '3': 5, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'summary', '3': 6, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'member_statement', '3': 7, '4': 1, '5': 9, '10': 'memberStatement'},
+    {'1': 'resolution', '3': 8, '4': 1, '5': 9, '10': 'resolution'},
+    {
+      '1': 'opened_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'openedAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxIntegrationOperationsCase`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxIntegrationOperationsCaseDescriptor = $convert.base64Decode(
+    'Ch1Pbnl4SW50ZWdyYXRpb25PcGVyYXRpb25zQ2FzZRIOCgJpZBgBIAEoCVICaWQSGwoJY2FzZV'
+    '90eXBlGAIgASgJUghjYXNlVHlwZRIWCgZzdGF0dXMYAyABKAlSBnN0YXR1cxIaCghzZXZlcml0'
+    'eRgEIAEoCVIIc2V2ZXJpdHkSHwoLY2xpZW50X25hbWUYBSABKAlSCmNsaWVudE5hbWUSGAoHc3'
+    'VtbWFyeRgGIAEoCVIHc3VtbWFyeRIpChBtZW1iZXJfc3RhdGVtZW50GAcgASgJUg9tZW1iZXJT'
+    'dGF0ZW1lbnQSHgoKcmVzb2x1dGlvbhgIIAEoCVIKcmVzb2x1dGlvbhI3CglvcGVuZWRfYXQYCS'
+    'ABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghvcGVuZWRBdBI7CgtyZXNvbHZlZF9h'
+    'dBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnJlc29sdmVkQXQ=');
+
+@$core.Deprecated('Use getIntegrationDashboardRequestDescriptor instead')
+const GetIntegrationDashboardRequest$json = {
+  '1': 'GetIntegrationDashboardRequest',
+  '2': [
+    {'1': 'include_history', '3': 1, '4': 1, '5': 8, '10': 'includeHistory'},
+  ],
+};
+
+/// Descriptor for `GetIntegrationDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntegrationDashboardRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXRJbnRlZ3JhdGlvbkRhc2hib2FyZFJlcXVlc3QSJwoPaW5jbHVkZV9oaXN0b3J5GAEgAS'
+        'gIUg5pbmNsdWRlSGlzdG9yeQ==');
+
+@$core.Deprecated('Use getIntegrationDashboardResponseDescriptor instead')
+const GetIntegrationDashboardResponse$json = {
+  '1': 'GetIntegrationDashboardResponse',
+  '2': [
+    {
+      '1': 'runtime',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationRuntime',
+      '10': 'runtime'
+    },
+    {
+      '1': 'available_clients',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationClient',
+      '10': 'availableClients'
+    },
+    {
+      '1': 'grants',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationGrant',
+      '10': 'grants'
+    },
+    {
+      '1': 'connector_catalog',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorDefinition',
+      '10': 'connectorCatalog'
+    },
+    {
+      '1': 'connector_accounts',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorAccount',
+      '10': 'connectorAccounts'
+    },
+    {
+      '1': 'connector_runs',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorRun',
+      '10': 'connectorRuns'
+    },
+    {
+      '1': 'artifacts',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationArtifact',
+      '10': 'artifacts'
+    },
+    {
+      '1': 'conflicts',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConflict',
+      '10': 'conflicts'
+    },
+    {
+      '1': 'bridge_dispatches',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationBridgeDispatch',
+      '10': 'bridgeDispatches'
+    },
+    {
+      '1': 'recent_calls',
+      '3': 10,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationCall',
+      '10': 'recentCalls'
+    },
+    {
+      '1': 'operations_cases',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationOperationsCase',
+      '10': 'operationsCases'
+    },
+    {
+      '1': 'bridge_sources',
+      '3': 12,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationBridgeSource',
+      '10': 'bridgeSources'
+    },
+  ],
+};
+
+/// Descriptor for `GetIntegrationDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntegrationDashboardResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXRJbnRlZ3JhdGlvbkRhc2hib2FyZFJlc3BvbnNlEkIKB3J1bnRpbWUYASABKAsyKC5zdH'
+    'RhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvblJ1bnRpbWVSB3J1bnRpbWUSVAoRYXZhaWxh'
+    'YmxlX2NsaWVudHMYAiADKAsyJy5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkNsaW'
+    'VudFIQYXZhaWxhYmxlQ2xpZW50cxI+CgZncmFudHMYAyADKAsyJi5zdHRhdHR1cy5vbnl4LnYx'
+    'Lk9ueXhJbnRlZ3JhdGlvbkdyYW50UgZncmFudHMSYQoRY29ubmVjdG9yX2NhdGFsb2cYBCADKA'
+    'syNC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkNvbm5lY3RvckRlZmluaXRpb25S'
+    'EGNvbm5lY3RvckNhdGFsb2cSYAoSY29ubmVjdG9yX2FjY291bnRzGAUgAygLMjEuc3R0YXR0dX'
+    'Mub255eC52MS5Pbnl4SW50ZWdyYXRpb25Db25uZWN0b3JBY2NvdW50UhFjb25uZWN0b3JBY2Nv'
+    'dW50cxJUCg5jb25uZWN0b3JfcnVucxgGIAMoCzItLnN0dGF0dHVzLm9ueXgudjEuT255eEludG'
+    'VncmF0aW9uQ29ubmVjdG9yUnVuUg1jb25uZWN0b3JSdW5zEkcKCWFydGlmYWN0cxgHIAMoCzIp'
+    'LnN0dGF0dHVzLm9ueXgudjEuT255eEludGVncmF0aW9uQXJ0aWZhY3RSCWFydGlmYWN0cxJHCg'
+    'ljb25mbGljdHMYCCADKAsyKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkNvbmZs'
+    'aWN0Ugljb25mbGljdHMSXAoRYnJpZGdlX2Rpc3BhdGNoZXMYCSADKAsyLy5zdHRhdHR1cy5vbn'
+    'l4LnYxLk9ueXhJbnRlZ3JhdGlvbkJyaWRnZURpc3BhdGNoUhBicmlkZ2VEaXNwYXRjaGVzEkgK'
+    'DHJlY2VudF9jYWxscxgKIAMoCzIlLnN0dGF0dHVzLm9ueXgudjEuT255eEludGVncmF0aW9uQ2'
+    'FsbFILcmVjZW50Q2FsbHMSWgoQb3BlcmF0aW9uc19jYXNlcxgLIAMoCzIvLnN0dGF0dHVzLm9u'
+    'eXgudjEuT255eEludGVncmF0aW9uT3BlcmF0aW9uc0Nhc2VSD29wZXJhdGlvbnNDYXNlcxJUCg'
+    '5icmlkZ2Vfc291cmNlcxgMIAMoCzItLnN0dGF0dHVzLm9ueXgudjEuT255eEludGVncmF0aW9u'
+    'QnJpZGdlU291cmNlUg1icmlkZ2VTb3VyY2Vz');
+
+@$core.Deprecated('Use authorizeIntegrationRequestDescriptor instead')
+const AuthorizeIntegrationRequest$json = {
+  '1': 'AuthorizeIntegrationRequest',
+  '2': [
+    {'1': 'client_id', '3': 1, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'display_name', '3': 2, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'purpose', '3': 3, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'scopes', '3': 4, '4': 3, '5': 9, '10': 'scopes'},
+    {'1': 'data_classes', '3': 5, '4': 3, '5': 9, '10': 'dataClasses'},
+    {'1': 'resource_type', '3': 6, '4': 1, '5': 9, '10': 'resourceType'},
+    {'1': 'resource_ids', '3': 7, '4': 3, '5': 9, '10': 'resourceIds'},
+    {'1': 'offline_access', '3': 8, '4': 1, '5': 8, '10': 'offlineAccess'},
+    {'1': 'expires_in_days', '3': 9, '4': 1, '5': 5, '10': 'expiresInDays'},
+    {'1': 'redirect_uri', '3': 10, '4': 1, '5': 9, '10': 'redirectUri'},
+    {
+      '1': 'client_mutation_id',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `AuthorizeIntegrationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authorizeIntegrationRequestDescriptor = $convert.base64Decode(
+    'ChtBdXRob3JpemVJbnRlZ3JhdGlvblJlcXVlc3QSGwoJY2xpZW50X2lkGAEgASgJUghjbGllbn'
+    'RJZBIhCgxkaXNwbGF5X25hbWUYAiABKAlSC2Rpc3BsYXlOYW1lEhgKB3B1cnBvc2UYAyABKAlS'
+    'B3B1cnBvc2USFgoGc2NvcGVzGAQgAygJUgZzY29wZXMSIQoMZGF0YV9jbGFzc2VzGAUgAygJUg'
+    'tkYXRhQ2xhc3NlcxIjCg1yZXNvdXJjZV90eXBlGAYgASgJUgxyZXNvdXJjZVR5cGUSIQoMcmVz'
+    'b3VyY2VfaWRzGAcgAygJUgtyZXNvdXJjZUlkcxIlCg5vZmZsaW5lX2FjY2VzcxgIIAEoCFINb2'
+    'ZmbGluZUFjY2VzcxImCg9leHBpcmVzX2luX2RheXMYCSABKAVSDWV4cGlyZXNJbkRheXMSIQoM'
+    'cmVkaXJlY3RfdXJpGAogASgJUgtyZWRpcmVjdFVyaRIsChJjbGllbnRfbXV0YXRpb25faWQYCy'
+    'ABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use authorizeIntegrationResponseDescriptor instead')
+const AuthorizeIntegrationResponse$json = {
+  '1': 'AuthorizeIntegrationResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationGrant',
+      '10': 'grant'
+    },
+    {
+      '1': 'authorization_code',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'authorizationCode'
+    },
+    {
+      '1': 'authorization_code_expires_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'authorizationCodeExpiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `AuthorizeIntegrationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authorizeIntegrationResponseDescriptor = $convert.base64Decode(
+    'ChxBdXRob3JpemVJbnRlZ3JhdGlvblJlc3BvbnNlEjwKBWdyYW50GAEgASgLMiYuc3R0YXR0dX'
+    'Mub255eC52MS5Pbnl4SW50ZWdyYXRpb25HcmFudFIFZ3JhbnQSLQoSYXV0aG9yaXphdGlvbl9j'
+    'b2RlGAIgASgJUhFhdXRob3JpemF0aW9uQ29kZRJdCh1hdXRob3JpemF0aW9uX2NvZGVfZXhwaX'
+    'Jlc19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSGmF1dGhvcml6YXRpb25D'
+    'b2RlRXhwaXJlc0F0');
+
+@$core.Deprecated('Use revokeIntegrationGrantRequestDescriptor instead')
+const RevokeIntegrationGrantRequest$json = {
+  '1': 'RevokeIntegrationGrantRequest',
+  '2': [
+    {'1': 'grant_id', '3': 1, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeIntegrationGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeIntegrationGrantRequestDescriptor = $convert.base64Decode(
+    'Ch1SZXZva2VJbnRlZ3JhdGlvbkdyYW50UmVxdWVzdBIZCghncmFudF9pZBgBIAEoCVIHZ3Jhbn'
+    'RJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SFgoGcmVhc29u'
+    'GAMgASgJUgZyZWFzb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdXRhdG'
+    'lvbklk');
+
+@$core.Deprecated('Use revokeIntegrationGrantResponseDescriptor instead')
+const RevokeIntegrationGrantResponse$json = {
+  '1': 'RevokeIntegrationGrantResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationGrant',
+      '10': 'grant'
+    },
+    {'1': 'revoked_tokens', '3': 2, '4': 1, '5': 5, '10': 'revokedTokens'},
+    {
+      '1': 'terminated_mcp_sessions',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'terminatedMcpSessions'
+    },
+    {
+      '1': 'cancelled_connector_runs',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'cancelledConnectorRuns'
+    },
+    {
+      '1': 'cancelled_bridge_dispatches',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'cancelledBridgeDispatches'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeIntegrationGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeIntegrationGrantResponseDescriptor = $convert.base64Decode(
+    'Ch5SZXZva2VJbnRlZ3JhdGlvbkdyYW50UmVzcG9uc2USPAoFZ3JhbnQYASABKAsyJi5zdHRhdH'
+    'R1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkdyYW50UgVncmFudBIlCg5yZXZva2VkX3Rva2Vu'
+    'cxgCIAEoBVINcmV2b2tlZFRva2VucxI2Chd0ZXJtaW5hdGVkX21jcF9zZXNzaW9ucxgDIAEoBV'
+    'IVdGVybWluYXRlZE1jcFNlc3Npb25zEjgKGGNhbmNlbGxlZF9jb25uZWN0b3JfcnVucxgEIAEo'
+    'BVIWY2FuY2VsbGVkQ29ubmVjdG9yUnVucxI+ChtjYW5jZWxsZWRfYnJpZGdlX2Rpc3BhdGNoZX'
+    'MYBSABKAVSGWNhbmNlbGxlZEJyaWRnZURpc3BhdGNoZXM=');
+
+@$core.Deprecated('Use upsertIntegrationConnectorRequestDescriptor instead')
+const UpsertIntegrationConnectorRequest$json = {
+  '1': 'UpsertIntegrationConnectorRequest',
+  '2': [
+    {'1': 'account_id', '3': 1, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'connector_code', '3': 3, '4': 1, '5': 9, '10': 'connectorCode'},
+    {'1': 'display_name', '3': 4, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'sync_direction', '3': 5, '4': 1, '5': 9, '10': 'syncDirection'},
+    {'1': 'schedule', '3': 6, '4': 1, '5': 9, '10': 'schedule'},
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntegrationConnectorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntegrationConnectorRequestDescriptor = $convert.base64Decode(
+    'CiFVcHNlcnRJbnRlZ3JhdGlvbkNvbm5lY3RvclJlcXVlc3QSHQoKYWNjb3VudF9pZBgBIAEoCV'
+    'IJYWNjb3VudElkEhkKCGdyYW50X2lkGAIgASgJUgdncmFudElkEiUKDmNvbm5lY3Rvcl9jb2Rl'
+    'GAMgASgJUg1jb25uZWN0b3JDb2RlEiEKDGRpc3BsYXlfbmFtZRgEIAEoCVILZGlzcGxheU5hbW'
+    'USJQoOc3luY19kaXJlY3Rpb24YBSABKAlSDXN5bmNEaXJlY3Rpb24SGgoIc2NoZWR1bGUYBiAB'
+    'KAlSCHNjaGVkdWxlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgHIAEoCVIQY2xpZW50TXV0YXRpb2'
+    '5JZA==');
+
+@$core.Deprecated('Use upsertIntegrationConnectorResponseDescriptor instead')
+const UpsertIntegrationConnectorResponse$json = {
+  '1': 'UpsertIntegrationConnectorResponse',
+  '2': [
+    {
+      '1': 'account',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorAccount',
+      '10': 'account'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertIntegrationConnectorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertIntegrationConnectorResponseDescriptor =
+    $convert.base64Decode(
+        'CiJVcHNlcnRJbnRlZ3JhdGlvbkNvbm5lY3RvclJlc3BvbnNlEksKB2FjY291bnQYASABKAsyMS'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkNvbm5lY3RvckFjY291bnRSB2FjY291'
+        'bnQ=');
+
+@$core.Deprecated('Use setIntegrationConnectorStateRequestDescriptor instead')
+const SetIntegrationConnectorStateRequest$json = {
+  '1': 'SetIntegrationConnectorStateRequest',
+  '2': [
+    {'1': 'account_id', '3': 1, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'expected_version', '3': 3, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntegrationConnectorStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntegrationConnectorStateRequestDescriptor =
+    $convert.base64Decode(
+        'CiNTZXRJbnRlZ3JhdGlvbkNvbm5lY3RvclN0YXRlUmVxdWVzdBIdCgphY2NvdW50X2lkGAEgAS'
+        'gJUglhY2NvdW50SWQSFgoGYWN0aW9uGAIgASgJUgZhY3Rpb24SKQoQZXhwZWN0ZWRfdmVyc2lv'
+        'bhgDIAEoA1IPZXhwZWN0ZWRWZXJzaW9uEhYKBnJlYXNvbhgEIAEoCVIGcmVhc29uEiwKEmNsaW'
+        'VudF9tdXRhdGlvbl9pZBgFIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use setIntegrationConnectorStateResponseDescriptor instead')
+const SetIntegrationConnectorStateResponse$json = {
+  '1': 'SetIntegrationConnectorStateResponse',
+  '2': [
+    {
+      '1': 'account',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorAccount',
+      '10': 'account'
+    },
+  ],
+};
+
+/// Descriptor for `SetIntegrationConnectorStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setIntegrationConnectorStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiRTZXRJbnRlZ3JhdGlvbkNvbm5lY3RvclN0YXRlUmVzcG9uc2USSwoHYWNjb3VudBgBIAEoCz'
+        'IxLnN0dGF0dHVzLm9ueXgudjEuT255eEludGVncmF0aW9uQ29ubmVjdG9yQWNjb3VudFIHYWNj'
+        'b3VudA==');
+
+@$core.Deprecated('Use runIntegrationConnectorRequestDescriptor instead')
+const RunIntegrationConnectorRequest$json = {
+  '1': 'RunIntegrationConnectorRequest',
+  '2': [
+    {'1': 'account_id', '3': 1, '4': 1, '5': 9, '10': 'accountId'},
+    {'1': 'direction', '3': 2, '4': 1, '5': 9, '10': 'direction'},
+    {'1': 'import_format', '3': 3, '4': 1, '5': 9, '10': 'importFormat'},
+    {'1': 'import_data', '3': 4, '4': 1, '5': 9, '10': 'importData'},
+    {'1': 'idempotency_key', '3': 5, '4': 1, '5': 9, '10': 'idempotencyKey'},
+  ],
+};
+
+/// Descriptor for `RunIntegrationConnectorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runIntegrationConnectorRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5SdW5JbnRlZ3JhdGlvbkNvbm5lY3RvclJlcXVlc3QSHQoKYWNjb3VudF9pZBgBIAEoCVIJYW'
+        'Njb3VudElkEhwKCWRpcmVjdGlvbhgCIAEoCVIJZGlyZWN0aW9uEiMKDWltcG9ydF9mb3JtYXQY'
+        'AyABKAlSDGltcG9ydEZvcm1hdBIfCgtpbXBvcnRfZGF0YRgEIAEoCVIKaW1wb3J0RGF0YRInCg'
+        '9pZGVtcG90ZW5jeV9rZXkYBSABKAlSDmlkZW1wb3RlbmN5S2V5');
+
+@$core.Deprecated('Use runIntegrationConnectorResponseDescriptor instead')
+const RunIntegrationConnectorResponse$json = {
+  '1': 'RunIntegrationConnectorResponse',
+  '2': [
+    {
+      '1': 'run',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConnectorRun',
+      '10': 'run'
+    },
+    {
+      '1': 'artifact',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationArtifact',
+      '10': 'artifact'
+    },
+    {
+      '1': 'conflicts',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConflict',
+      '10': 'conflicts'
+    },
+  ],
+};
+
+/// Descriptor for `RunIntegrationConnectorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List runIntegrationConnectorResponseDescriptor = $convert.base64Decode(
+    'Ch9SdW5JbnRlZ3JhdGlvbkNvbm5lY3RvclJlc3BvbnNlEj8KA3J1bhgBIAEoCzItLnN0dGF0dH'
+    'VzLm9ueXgudjEuT255eEludGVncmF0aW9uQ29ubmVjdG9yUnVuUgNydW4SRQoIYXJ0aWZhY3QY'
+    'AiABKAsyKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkFydGlmYWN0UghhcnRpZm'
+    'FjdBJHCgljb25mbGljdHMYAyADKAsyKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlv'
+    'bkNvbmZsaWN0Ugljb25mbGljdHM=');
+
+@$core.Deprecated('Use getIntegrationArtifactRequestDescriptor instead')
+const GetIntegrationArtifactRequest$json = {
+  '1': 'GetIntegrationArtifactRequest',
+  '2': [
+    {'1': 'artifact_id', '3': 1, '4': 1, '5': 9, '10': 'artifactId'},
+  ],
+};
+
+/// Descriptor for `GetIntegrationArtifactRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntegrationArtifactRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1HZXRJbnRlZ3JhdGlvbkFydGlmYWN0UmVxdWVzdBIfCgthcnRpZmFjdF9pZBgBIAEoCVIKYX'
+        'J0aWZhY3RJZA==');
+
+@$core.Deprecated('Use getIntegrationArtifactResponseDescriptor instead')
+const GetIntegrationArtifactResponse$json = {
+  '1': 'GetIntegrationArtifactResponse',
+  '2': [
+    {
+      '1': 'artifact',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationArtifact',
+      '10': 'artifact'
+    },
+  ],
+};
+
+/// Descriptor for `GetIntegrationArtifactResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getIntegrationArtifactResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXRJbnRlZ3JhdGlvbkFydGlmYWN0UmVzcG9uc2USRQoIYXJ0aWZhY3QYASABKAsyKS5zdH'
+        'RhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkFydGlmYWN0UghhcnRpZmFjdA==');
+
+@$core.Deprecated('Use resolveIntegrationConflictRequestDescriptor instead')
+const ResolveIntegrationConflictRequest$json = {
+  '1': 'ResolveIntegrationConflictRequest',
+  '2': [
+    {'1': 'conflict_id', '3': 1, '4': 1, '5': 9, '10': 'conflictId'},
+    {'1': 'resolution', '3': 2, '4': 1, '5': 9, '10': 'resolution'},
+    {'1': 'note', '3': 3, '4': 1, '5': 9, '10': 'note'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveIntegrationConflictRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveIntegrationConflictRequestDescriptor =
+    $convert.base64Decode(
+        'CiFSZXNvbHZlSW50ZWdyYXRpb25Db25mbGljdFJlcXVlc3QSHwoLY29uZmxpY3RfaWQYASABKA'
+        'lSCmNvbmZsaWN0SWQSHgoKcmVzb2x1dGlvbhgCIAEoCVIKcmVzb2x1dGlvbhISCgRub3RlGAMg'
+        'ASgJUgRub3RlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA'
+        '==');
+
+@$core.Deprecated('Use resolveIntegrationConflictResponseDescriptor instead')
+const ResolveIntegrationConflictResponse$json = {
+  '1': 'ResolveIntegrationConflictResponse',
+  '2': [
+    {
+      '1': 'conflict',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationConflict',
+      '10': 'conflict'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveIntegrationConflictResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveIntegrationConflictResponseDescriptor =
+    $convert.base64Decode(
+        'CiJSZXNvbHZlSW50ZWdyYXRpb25Db25mbGljdFJlc3BvbnNlEkUKCGNvbmZsaWN0GAEgASgLMi'
+        'kuc3R0YXR0dXMub255eC52MS5Pbnl4SW50ZWdyYXRpb25Db25mbGljdFIIY29uZmxpY3Q=');
+
+@$core.Deprecated('Use dispatchIntegrationBridgeRequestDescriptor instead')
+const DispatchIntegrationBridgeRequest$json = {
+  '1': 'DispatchIntegrationBridgeRequest',
+  '2': [
+    {'1': 'grant_id', '3': 1, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'destination', '3': 2, '4': 1, '5': 9, '10': 'destination'},
+    {'1': 'source_kind', '3': 3, '4': 1, '5': 9, '10': 'sourceKind'},
+    {'1': 'source_id', '3': 4, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'purpose', '3': 6, '4': 1, '5': 9, '10': 'purpose'},
+    {'1': 'idempotency_key', '3': 7, '4': 1, '5': 9, '10': 'idempotencyKey'},
+  ],
+};
+
+/// Descriptor for `DispatchIntegrationBridgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dispatchIntegrationBridgeRequestDescriptor = $convert.base64Decode(
+    'CiBEaXNwYXRjaEludGVncmF0aW9uQnJpZGdlUmVxdWVzdBIZCghncmFudF9pZBgBIAEoCVIHZ3'
+    'JhbnRJZBIgCgtkZXN0aW5hdGlvbhgCIAEoCVILZGVzdGluYXRpb24SHwoLc291cmNlX2tpbmQY'
+    'AyABKAlSCnNvdXJjZUtpbmQSGwoJc291cmNlX2lkGAQgASgJUghzb3VyY2VJZBIUCgV0aXRsZR'
+    'gFIAEoCVIFdGl0bGUSGAoHcHVycG9zZRgGIAEoCVIHcHVycG9zZRInCg9pZGVtcG90ZW5jeV9r'
+    'ZXkYByABKAlSDmlkZW1wb3RlbmN5S2V5');
+
+@$core.Deprecated('Use dispatchIntegrationBridgeResponseDescriptor instead')
+const DispatchIntegrationBridgeResponse$json = {
+  '1': 'DispatchIntegrationBridgeResponse',
+  '2': [
+    {
+      '1': 'dispatch',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationBridgeDispatch',
+      '10': 'dispatch'
+    },
+  ],
+};
+
+/// Descriptor for `DispatchIntegrationBridgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dispatchIntegrationBridgeResponseDescriptor =
+    $convert.base64Decode(
+        'CiFEaXNwYXRjaEludGVncmF0aW9uQnJpZGdlUmVzcG9uc2USSwoIZGlzcGF0Y2gYASABKAsyLy'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhJbnRlZ3JhdGlvbkJyaWRnZURpc3BhdGNoUghkaXNwYXRj'
+        'aA==');
+
+@$core
+    .Deprecated('Use submitIntegrationOperationsCaseRequestDescriptor instead')
+const SubmitIntegrationOperationsCaseRequest$json = {
+  '1': 'SubmitIntegrationOperationsCaseRequest',
+  '2': [
+    {'1': 'case_type', '3': 1, '4': 1, '5': 9, '10': 'caseType'},
+    {'1': 'client_id', '3': 2, '4': 1, '5': 9, '10': 'clientId'},
+    {'1': 'grant_id', '3': 3, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'member_statement', '3': 5, '4': 1, '5': 9, '10': 'memberStatement'},
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitIntegrationOperationsCaseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitIntegrationOperationsCaseRequestDescriptor =
+    $convert.base64Decode(
+        'CiZTdWJtaXRJbnRlZ3JhdGlvbk9wZXJhdGlvbnNDYXNlUmVxdWVzdBIbCgljYXNlX3R5cGUYAS'
+        'ABKAlSCGNhc2VUeXBlEhsKCWNsaWVudF9pZBgCIAEoCVIIY2xpZW50SWQSGQoIZ3JhbnRfaWQY'
+        'AyABKAlSB2dyYW50SWQSGAoHc3VtbWFyeRgEIAEoCVIHc3VtbWFyeRIpChBtZW1iZXJfc3RhdG'
+        'VtZW50GAUgASgJUg9tZW1iZXJTdGF0ZW1lbnQSLAoSY2xpZW50X211dGF0aW9uX2lkGAYgASgJ'
+        'UhBjbGllbnRNdXRhdGlvbklk');
+
+@$core
+    .Deprecated('Use submitIntegrationOperationsCaseResponseDescriptor instead')
+const SubmitIntegrationOperationsCaseResponse$json = {
+  '1': 'SubmitIntegrationOperationsCaseResponse',
+  '2': [
+    {
+      '1': 'operations_case',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxIntegrationOperationsCase',
+      '10': 'operationsCase'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitIntegrationOperationsCaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitIntegrationOperationsCaseResponseDescriptor =
+    $convert.base64Decode(
+        'CidTdWJtaXRJbnRlZ3JhdGlvbk9wZXJhdGlvbnNDYXNlUmVzcG9uc2USWAoPb3BlcmF0aW9uc1'
+        '9jYXNlGAEgASgLMi8uc3R0YXR0dXMub255eC52MS5Pbnl4SW50ZWdyYXRpb25PcGVyYXRpb25z'
+        'Q2FzZVIOb3BlcmF0aW9uc0Nhc2U=');

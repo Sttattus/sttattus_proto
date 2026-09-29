@@ -1626,6 +1626,97 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Choice 14 — member-owned OAuth-style grants, connectors and explicit
+  /// cross-pillar dispatches. External REST/MCP calls use the same grant and
+  /// audit records through the HTTP edge.
+  $grpc.ResponseFuture<$0.GetIntegrationDashboardResponse>
+      getIntegrationDashboard(
+    $0.GetIntegrationDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getIntegrationDashboard, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AuthorizeIntegrationResponse> authorizeIntegration(
+    $0.AuthorizeIntegrationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$authorizeIntegration, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeIntegrationGrantResponse>
+      revokeIntegrationGrant(
+    $0.RevokeIntegrationGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeIntegrationGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertIntegrationConnectorResponse>
+      upsertIntegrationConnector(
+    $0.UpsertIntegrationConnectorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertIntegrationConnector, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetIntegrationConnectorStateResponse>
+      setIntegrationConnectorState(
+    $0.SetIntegrationConnectorStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setIntegrationConnectorState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunIntegrationConnectorResponse>
+      runIntegrationConnector(
+    $0.RunIntegrationConnectorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runIntegrationConnector, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetIntegrationArtifactResponse>
+      getIntegrationArtifact(
+    $0.GetIntegrationArtifactRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getIntegrationArtifact, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveIntegrationConflictResponse>
+      resolveIntegrationConflict(
+    $0.ResolveIntegrationConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveIntegrationConflict, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DispatchIntegrationBridgeResponse>
+      dispatchIntegrationBridge(
+    $0.DispatchIntegrationBridgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$dispatchIntegrationBridge, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitIntegrationOperationsCaseResponse>
+      submitIntegrationOperationsCase(
+    $0.SubmitIntegrationOperationsCaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitIntegrationOperationsCase, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2708,6 +2799,64 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal',
       ($0.WithdrawForensicAppealRequest value) => value.writeToBuffer(),
       $0.WithdrawForensicAppealResponse.fromBuffer);
+  static final _$getIntegrationDashboard = $grpc.ClientMethod<
+          $0.GetIntegrationDashboardRequest,
+          $0.GetIntegrationDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetIntegrationDashboard',
+      ($0.GetIntegrationDashboardRequest value) => value.writeToBuffer(),
+      $0.GetIntegrationDashboardResponse.fromBuffer);
+  static final _$authorizeIntegration = $grpc.ClientMethod<
+          $0.AuthorizeIntegrationRequest, $0.AuthorizeIntegrationResponse>(
+      '/sttattus.onyx.v1.OnyxService/AuthorizeIntegration',
+      ($0.AuthorizeIntegrationRequest value) => value.writeToBuffer(),
+      $0.AuthorizeIntegrationResponse.fromBuffer);
+  static final _$revokeIntegrationGrant = $grpc.ClientMethod<
+          $0.RevokeIntegrationGrantRequest, $0.RevokeIntegrationGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeIntegrationGrant',
+      ($0.RevokeIntegrationGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeIntegrationGrantResponse.fromBuffer);
+  static final _$upsertIntegrationConnector = $grpc.ClientMethod<
+          $0.UpsertIntegrationConnectorRequest,
+          $0.UpsertIntegrationConnectorResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertIntegrationConnector',
+      ($0.UpsertIntegrationConnectorRequest value) => value.writeToBuffer(),
+      $0.UpsertIntegrationConnectorResponse.fromBuffer);
+  static final _$setIntegrationConnectorState = $grpc.ClientMethod<
+          $0.SetIntegrationConnectorStateRequest,
+          $0.SetIntegrationConnectorStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetIntegrationConnectorState',
+      ($0.SetIntegrationConnectorStateRequest value) => value.writeToBuffer(),
+      $0.SetIntegrationConnectorStateResponse.fromBuffer);
+  static final _$runIntegrationConnector = $grpc.ClientMethod<
+          $0.RunIntegrationConnectorRequest,
+          $0.RunIntegrationConnectorResponse>(
+      '/sttattus.onyx.v1.OnyxService/RunIntegrationConnector',
+      ($0.RunIntegrationConnectorRequest value) => value.writeToBuffer(),
+      $0.RunIntegrationConnectorResponse.fromBuffer);
+  static final _$getIntegrationArtifact = $grpc.ClientMethod<
+          $0.GetIntegrationArtifactRequest, $0.GetIntegrationArtifactResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetIntegrationArtifact',
+      ($0.GetIntegrationArtifactRequest value) => value.writeToBuffer(),
+      $0.GetIntegrationArtifactResponse.fromBuffer);
+  static final _$resolveIntegrationConflict = $grpc.ClientMethod<
+          $0.ResolveIntegrationConflictRequest,
+          $0.ResolveIntegrationConflictResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveIntegrationConflict',
+      ($0.ResolveIntegrationConflictRequest value) => value.writeToBuffer(),
+      $0.ResolveIntegrationConflictResponse.fromBuffer);
+  static final _$dispatchIntegrationBridge = $grpc.ClientMethod<
+          $0.DispatchIntegrationBridgeRequest,
+          $0.DispatchIntegrationBridgeResponse>(
+      '/sttattus.onyx.v1.OnyxService/DispatchIntegrationBridge',
+      ($0.DispatchIntegrationBridgeRequest value) => value.writeToBuffer(),
+      $0.DispatchIntegrationBridgeResponse.fromBuffer);
+  static final _$submitIntegrationOperationsCase = $grpc.ClientMethod<
+          $0.SubmitIntegrationOperationsCaseRequest,
+          $0.SubmitIntegrationOperationsCaseResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitIntegrationOperationsCase',
+      ($0.SubmitIntegrationOperationsCaseRequest value) =>
+          value.writeToBuffer(),
+      $0.SubmitIntegrationOperationsCaseResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -4536,6 +4685,100 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.WithdrawForensicAppealRequest.fromBuffer(value),
         ($0.WithdrawForensicAppealResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetIntegrationDashboardRequest,
+            $0.GetIntegrationDashboardResponse>(
+        'GetIntegrationDashboard',
+        getIntegrationDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetIntegrationDashboardRequest.fromBuffer(value),
+        ($0.GetIntegrationDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AuthorizeIntegrationRequest,
+            $0.AuthorizeIntegrationResponse>(
+        'AuthorizeIntegration',
+        authorizeIntegration_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AuthorizeIntegrationRequest.fromBuffer(value),
+        ($0.AuthorizeIntegrationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeIntegrationGrantRequest,
+            $0.RevokeIntegrationGrantResponse>(
+        'RevokeIntegrationGrant',
+        revokeIntegrationGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeIntegrationGrantRequest.fromBuffer(value),
+        ($0.RevokeIntegrationGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertIntegrationConnectorRequest,
+            $0.UpsertIntegrationConnectorResponse>(
+        'UpsertIntegrationConnector',
+        upsertIntegrationConnector_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertIntegrationConnectorRequest.fromBuffer(value),
+        ($0.UpsertIntegrationConnectorResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetIntegrationConnectorStateRequest,
+            $0.SetIntegrationConnectorStateResponse>(
+        'SetIntegrationConnectorState',
+        setIntegrationConnectorState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetIntegrationConnectorStateRequest.fromBuffer(value),
+        ($0.SetIntegrationConnectorStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunIntegrationConnectorRequest,
+            $0.RunIntegrationConnectorResponse>(
+        'RunIntegrationConnector',
+        runIntegrationConnector_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunIntegrationConnectorRequest.fromBuffer(value),
+        ($0.RunIntegrationConnectorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetIntegrationArtifactRequest,
+            $0.GetIntegrationArtifactResponse>(
+        'GetIntegrationArtifact',
+        getIntegrationArtifact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetIntegrationArtifactRequest.fromBuffer(value),
+        ($0.GetIntegrationArtifactResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveIntegrationConflictRequest,
+            $0.ResolveIntegrationConflictResponse>(
+        'ResolveIntegrationConflict',
+        resolveIntegrationConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveIntegrationConflictRequest.fromBuffer(value),
+        ($0.ResolveIntegrationConflictResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DispatchIntegrationBridgeRequest,
+            $0.DispatchIntegrationBridgeResponse>(
+        'DispatchIntegrationBridge',
+        dispatchIntegrationBridge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DispatchIntegrationBridgeRequest.fromBuffer(value),
+        ($0.DispatchIntegrationBridgeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitIntegrationOperationsCaseRequest,
+            $0.SubmitIntegrationOperationsCaseResponse>(
+        'SubmitIntegrationOperationsCase',
+        submitIntegrationOperationsCase_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitIntegrationOperationsCaseRequest.fromBuffer(value),
+        ($0.SubmitIntegrationOperationsCaseResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -6411,4 +6654,102 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.WithdrawForensicAppealResponse> withdrawForensicAppeal(
       $grpc.ServiceCall call, $0.WithdrawForensicAppealRequest request);
+
+  $async.Future<$0.GetIntegrationDashboardResponse> getIntegrationDashboard_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetIntegrationDashboardRequest> $request) async {
+    return getIntegrationDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetIntegrationDashboardResponse> getIntegrationDashboard(
+      $grpc.ServiceCall call, $0.GetIntegrationDashboardRequest request);
+
+  $async.Future<$0.AuthorizeIntegrationResponse> authorizeIntegration_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.AuthorizeIntegrationRequest> $request) async {
+    return authorizeIntegration($call, await $request);
+  }
+
+  $async.Future<$0.AuthorizeIntegrationResponse> authorizeIntegration(
+      $grpc.ServiceCall call, $0.AuthorizeIntegrationRequest request);
+
+  $async.Future<$0.RevokeIntegrationGrantResponse> revokeIntegrationGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeIntegrationGrantRequest> $request) async {
+    return revokeIntegrationGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeIntegrationGrantResponse> revokeIntegrationGrant(
+      $grpc.ServiceCall call, $0.RevokeIntegrationGrantRequest request);
+
+  $async.Future<$0.UpsertIntegrationConnectorResponse>
+      upsertIntegrationConnector_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertIntegrationConnectorRequest> $request) async {
+    return upsertIntegrationConnector($call, await $request);
+  }
+
+  $async.Future<$0.UpsertIntegrationConnectorResponse>
+      upsertIntegrationConnector(
+          $grpc.ServiceCall call, $0.UpsertIntegrationConnectorRequest request);
+
+  $async.Future<$0.SetIntegrationConnectorStateResponse>
+      setIntegrationConnectorState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetIntegrationConnectorStateRequest>
+              $request) async {
+    return setIntegrationConnectorState($call, await $request);
+  }
+
+  $async.Future<$0.SetIntegrationConnectorStateResponse>
+      setIntegrationConnectorState($grpc.ServiceCall call,
+          $0.SetIntegrationConnectorStateRequest request);
+
+  $async.Future<$0.RunIntegrationConnectorResponse> runIntegrationConnector_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RunIntegrationConnectorRequest> $request) async {
+    return runIntegrationConnector($call, await $request);
+  }
+
+  $async.Future<$0.RunIntegrationConnectorResponse> runIntegrationConnector(
+      $grpc.ServiceCall call, $0.RunIntegrationConnectorRequest request);
+
+  $async.Future<$0.GetIntegrationArtifactResponse> getIntegrationArtifact_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetIntegrationArtifactRequest> $request) async {
+    return getIntegrationArtifact($call, await $request);
+  }
+
+  $async.Future<$0.GetIntegrationArtifactResponse> getIntegrationArtifact(
+      $grpc.ServiceCall call, $0.GetIntegrationArtifactRequest request);
+
+  $async.Future<$0.ResolveIntegrationConflictResponse>
+      resolveIntegrationConflict_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ResolveIntegrationConflictRequest> $request) async {
+    return resolveIntegrationConflict($call, await $request);
+  }
+
+  $async.Future<$0.ResolveIntegrationConflictResponse>
+      resolveIntegrationConflict(
+          $grpc.ServiceCall call, $0.ResolveIntegrationConflictRequest request);
+
+  $async.Future<$0.DispatchIntegrationBridgeResponse>
+      dispatchIntegrationBridge_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.DispatchIntegrationBridgeRequest> $request) async {
+    return dispatchIntegrationBridge($call, await $request);
+  }
+
+  $async.Future<$0.DispatchIntegrationBridgeResponse> dispatchIntegrationBridge(
+      $grpc.ServiceCall call, $0.DispatchIntegrationBridgeRequest request);
+
+  $async.Future<$0.SubmitIntegrationOperationsCaseResponse>
+      submitIntegrationOperationsCase_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitIntegrationOperationsCaseRequest>
+              $request) async {
+    return submitIntegrationOperationsCase($call, await $request);
+  }
+
+  $async.Future<$0.SubmitIntegrationOperationsCaseResponse>
+      submitIntegrationOperationsCase($grpc.ServiceCall call,
+          $0.SubmitIntegrationOperationsCaseRequest request);
 }
