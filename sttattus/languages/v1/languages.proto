@@ -214,6 +214,11 @@ message SpeakingPrompt {
   string content_unit_id = 7;
   int32 content_revision = 8;
   bool pilot = 9;
+  // Lexicon Choice 3 — free speech. "repeat": say the phrase. "respond": the
+  // phrase is a task, answered freely, and the answer should use the key
+  // words (heard in the transcript: the pronunciation evidence).
+  string mode = 10;
+  repeated string key_words = 11;
 }
 
 message PhonemeScore {
@@ -246,6 +251,21 @@ message SpeakingAttempt {
   // which target words survived transcription. The member is not told a
   // word-count is pronunciation feedback.
   string scored_by = 11;
+
+  // Lexicon Choice 3 — free speech ("respond" prompts). The key words the
+  // transcriber did not hear; what the coach found in what was said, each a
+  // suspicion to dismiss or to be checked (as for writing, through
+  // writing_submission_id); the one thing to work on; and a reviewed sample
+  // answer, shown once the member has spoken.
+  string mode = 12;
+  repeated string missed_words = 13;
+  repeated WritingError errors = 14;
+  string next_step = 15;
+  string sample = 16;
+  string writing_submission_id = 17;
+  // A retest: one key word said again on its own, following up this attempt.
+  string focus = 18;
+  string retest_of = 19;
 }
 
 message ListSpeakingPromptsRequest {
@@ -259,6 +279,11 @@ message ListSpeakingPromptsResponse {
 message CreateSpeakingAttemptRequest {
   string prompt_id = 1;
   string audio_url = 2; // R2 key returned from the presign-PUT upload
+  // One per recording: a replay returns the attempt already made.
+  string client_event_id = 3;
+  // A free-speech retest: the key word said again, and the attempt it follows.
+  string focus = 4;
+  string retest_of = 5;
 }
 message CreateSpeakingAttemptResponse {
   SpeakingAttempt attempt = 1;

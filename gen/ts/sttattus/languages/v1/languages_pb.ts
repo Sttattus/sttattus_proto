@@ -2228,6 +2228,20 @@ export class SpeakingPrompt extends Message<SpeakingPrompt> {
    */
   pilot = false;
 
+  /**
+   * Lexicon Choice 3 — free speech. "repeat": say the phrase. "respond": the
+   * phrase is a task, answered freely, and the answer should use the key
+   * words (heard in the transcript: the pronunciation evidence).
+   *
+   * @generated from field: string mode = 10;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: repeated string key_words = 11;
+   */
+  keyWords: string[] = [];
+
   constructor(data?: PartialMessage<SpeakingPrompt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2245,6 +2259,8 @@ export class SpeakingPrompt extends Message<SpeakingPrompt> {
     { no: 7, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "key_words", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingPrompt {
@@ -2390,6 +2406,54 @@ export class SpeakingAttempt extends Message<SpeakingAttempt> {
    */
   scoredBy = "";
 
+  /**
+   * Lexicon Choice 3 — free speech ("respond" prompts). The key words the
+   * transcriber did not hear; what the coach found in what was said, each a
+   * suspicion to dismiss or to be checked (as for writing, through
+   * writing_submission_id); the one thing to work on; and a reviewed sample
+   * answer, shown once the member has spoken.
+   *
+   * @generated from field: string mode = 12;
+   */
+  mode = "";
+
+  /**
+   * @generated from field: repeated string missed_words = 13;
+   */
+  missedWords: string[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.languages.v1.WritingError errors = 14;
+   */
+  errors: WritingError[] = [];
+
+  /**
+   * @generated from field: string next_step = 15;
+   */
+  nextStep = "";
+
+  /**
+   * @generated from field: string sample = 16;
+   */
+  sample = "";
+
+  /**
+   * @generated from field: string writing_submission_id = 17;
+   */
+  writingSubmissionId = "";
+
+  /**
+   * A retest: one key word said again on its own, following up this attempt.
+   *
+   * @generated from field: string focus = 18;
+   */
+  focus = "";
+
+  /**
+   * @generated from field: string retest_of = 19;
+   */
+  retestOf = "";
+
   constructor(data?: PartialMessage<SpeakingAttempt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2409,6 +2473,14 @@ export class SpeakingAttempt extends Message<SpeakingAttempt> {
     { no: 9, name: "updated_unix", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "feedback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "scored_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "missed_words", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "errors", kind: "message", T: WritingError, repeated: true },
+    { no: 15, name: "next_step", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "sample", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "writing_submission_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "focus", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpeakingAttempt {
@@ -2524,6 +2596,25 @@ export class CreateSpeakingAttemptRequest extends Message<CreateSpeakingAttemptR
    */
   audioUrl = "";
 
+  /**
+   * One per recording: a replay returns the attempt already made.
+   *
+   * @generated from field: string client_event_id = 3;
+   */
+  clientEventId = "";
+
+  /**
+   * A free-speech retest: the key word said again, and the attempt it follows.
+   *
+   * @generated from field: string focus = 4;
+   */
+  focus = "";
+
+  /**
+   * @generated from field: string retest_of = 5;
+   */
+  retestOf = "";
+
   constructor(data?: PartialMessage<CreateSpeakingAttemptRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2534,6 +2625,9 @@ export class CreateSpeakingAttemptRequest extends Message<CreateSpeakingAttemptR
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "prompt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "focus", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpeakingAttemptRequest {

@@ -2175,6 +2175,8 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     $core.String? contentUnitId,
     $core.int? contentRevision,
     $core.bool? pilot,
+    $core.String? mode,
+    $core.Iterable<$core.String>? keyWords,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2186,6 +2188,8 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     if (contentUnitId != null) result.contentUnitId = contentUnitId;
     if (contentRevision != null) result.contentRevision = contentRevision;
     if (pilot != null) result.pilot = pilot;
+    if (mode != null) result.mode = mode;
+    if (keyWords != null) result.keyWords.addAll(keyWords);
     return result;
   }
 
@@ -2212,6 +2216,8 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'contentUnitId')
     ..aI(8, _omitFieldNames ? '' : 'contentRevision')
     ..aOB(9, _omitFieldNames ? '' : 'pilot')
+    ..aOS(10, _omitFieldNames ? '' : 'mode')
+    ..pPS(11, _omitFieldNames ? '' : 'keyWords')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2317,6 +2323,21 @@ class SpeakingPrompt extends $pb.GeneratedMessage {
   $core.bool hasPilot() => $_has(8);
   @$pb.TagNumber(9)
   void clearPilot() => $_clearField(9);
+
+  /// Lexicon Choice 3 — free speech. "repeat": say the phrase. "respond": the
+  /// phrase is a task, answered freely, and the answer should use the key
+  /// words (heard in the transcript: the pronunciation evidence).
+  @$pb.TagNumber(10)
+  $core.String get mode => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set mode($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMode() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMode() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get keyWords => $_getList(10);
 }
 
 class PhonemeScore extends $pb.GeneratedMessage {
@@ -2417,6 +2438,14 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
     $fixnum.Int64? updatedUnix,
     $core.String? feedback,
     $core.String? scoredBy,
+    $core.String? mode,
+    $core.Iterable<$core.String>? missedWords,
+    $core.Iterable<WritingError>? errors,
+    $core.String? nextStep,
+    $core.String? sample,
+    $core.String? writingSubmissionId,
+    $core.String? focus,
+    $core.String? retestOf,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -2430,6 +2459,15 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
     if (updatedUnix != null) result.updatedUnix = updatedUnix;
     if (feedback != null) result.feedback = feedback;
     if (scoredBy != null) result.scoredBy = scoredBy;
+    if (mode != null) result.mode = mode;
+    if (missedWords != null) result.missedWords.addAll(missedWords);
+    if (errors != null) result.errors.addAll(errors);
+    if (nextStep != null) result.nextStep = nextStep;
+    if (sample != null) result.sample = sample;
+    if (writingSubmissionId != null)
+      result.writingSubmissionId = writingSubmissionId;
+    if (focus != null) result.focus = focus;
+    if (retestOf != null) result.retestOf = retestOf;
     return result;
   }
 
@@ -2459,6 +2497,15 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
     ..aInt64(9, _omitFieldNames ? '' : 'updatedUnix')
     ..aOS(10, _omitFieldNames ? '' : 'feedback')
     ..aOS(11, _omitFieldNames ? '' : 'scoredBy')
+    ..aOS(12, _omitFieldNames ? '' : 'mode')
+    ..pPS(13, _omitFieldNames ? '' : 'missedWords')
+    ..pPM<WritingError>(14, _omitFieldNames ? '' : 'errors',
+        subBuilder: WritingError.create)
+    ..aOS(15, _omitFieldNames ? '' : 'nextStep')
+    ..aOS(16, _omitFieldNames ? '' : 'sample')
+    ..aOS(17, _omitFieldNames ? '' : 'writingSubmissionId')
+    ..aOS(18, _omitFieldNames ? '' : 'focus')
+    ..aOS(19, _omitFieldNames ? '' : 'retestOf')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2578,6 +2625,72 @@ class SpeakingAttempt extends $pb.GeneratedMessage {
   $core.bool hasScoredBy() => $_has(10);
   @$pb.TagNumber(11)
   void clearScoredBy() => $_clearField(11);
+
+  /// Lexicon Choice 3 — free speech ("respond" prompts). The key words the
+  /// transcriber did not hear; what the coach found in what was said, each a
+  /// suspicion to dismiss or to be checked (as for writing, through
+  /// writing_submission_id); the one thing to work on; and a reviewed sample
+  /// answer, shown once the member has spoken.
+  @$pb.TagNumber(12)
+  $core.String get mode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set mode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasMode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $pb.PbList<$core.String> get missedWords => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $pb.PbList<WritingError> get errors => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $core.String get nextStep => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set nextStep($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasNextStep() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearNextStep() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get sample => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set sample($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasSample() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSample() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get writingSubmissionId => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set writingSubmissionId($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasWritingSubmissionId() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearWritingSubmissionId() => $_clearField(17);
+
+  /// A retest: one key word said again on its own, following up this attempt.
+  @$pb.TagNumber(18)
+  $core.String get focus => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set focus($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasFocus() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearFocus() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get retestOf => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set retestOf($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasRetestOf() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearRetestOf() => $_clearField(19);
 }
 
 class ListSpeakingPromptsRequest extends $pb.GeneratedMessage {
@@ -2706,10 +2819,16 @@ class CreateSpeakingAttemptRequest extends $pb.GeneratedMessage {
   factory CreateSpeakingAttemptRequest({
     $core.String? promptId,
     $core.String? audioUrl,
+    $core.String? clientEventId,
+    $core.String? focus,
+    $core.String? retestOf,
   }) {
     final result = create();
     if (promptId != null) result.promptId = promptId;
     if (audioUrl != null) result.audioUrl = audioUrl;
+    if (clientEventId != null) result.clientEventId = clientEventId;
+    if (focus != null) result.focus = focus;
+    if (retestOf != null) result.retestOf = retestOf;
     return result;
   }
 
@@ -2729,6 +2848,9 @@ class CreateSpeakingAttemptRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'promptId')
     ..aOS(2, _omitFieldNames ? '' : 'audioUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'clientEventId')
+    ..aOS(4, _omitFieldNames ? '' : 'focus')
+    ..aOS(5, _omitFieldNames ? '' : 'retestOf')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2770,6 +2892,35 @@ class CreateSpeakingAttemptRequest extends $pb.GeneratedMessage {
   $core.bool hasAudioUrl() => $_has(1);
   @$pb.TagNumber(2)
   void clearAudioUrl() => $_clearField(2);
+
+  /// One per recording: a replay returns the attempt already made.
+  @$pb.TagNumber(3)
+  $core.String get clientEventId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientEventId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientEventId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientEventId() => $_clearField(3);
+
+  /// A free-speech retest: the key word said again, and the attempt it follows.
+  @$pb.TagNumber(4)
+  $core.String get focus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set focus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFocus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFocus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get retestOf => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set retestOf($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRetestOf() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRetestOf() => $_clearField(5);
 }
 
 class CreateSpeakingAttemptResponse extends $pb.GeneratedMessage {

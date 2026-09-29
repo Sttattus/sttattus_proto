@@ -865,6 +865,8 @@ const SpeakingPrompt$json = {
     {'1': 'content_unit_id', '3': 7, '4': 1, '5': 9, '10': 'contentUnitId'},
     {'1': 'content_revision', '3': 8, '4': 1, '5': 5, '10': 'contentRevision'},
     {'1': 'pilot', '3': 9, '4': 1, '5': 8, '10': 'pilot'},
+    {'1': 'mode', '3': 10, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'key_words', '3': 11, '4': 3, '5': 9, '10': 'keyWords'},
   ],
 };
 
@@ -875,7 +877,8 @@ final $typed_data.Uint8List speakingPromptDescriptor = $convert.base64Decode(
     'cGhyYXNlEiAKC3RyYW5zbGF0aW9uGAUgASgJUgt0cmFuc2xhdGlvbhIjCg1jb3B5X2xhbmd1YW'
     'dlGAYgASgJUgxjb3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGAcgASgJUg1jb250ZW50'
     'VW5pdElkEikKEGNvbnRlbnRfcmV2aXNpb24YCCABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaW'
-    'xvdBgJIAEoCFIFcGlsb3Q=');
+    'xvdBgJIAEoCFIFcGlsb3QSEgoEbW9kZRgKIAEoCVIEbW9kZRIbCglrZXlfd29yZHMYCyADKAlS'
+    'CGtleVdvcmRz');
 
 @$core.Deprecated('Use phonemeScoreDescriptor instead')
 const PhonemeScore$json = {
@@ -914,6 +917,27 @@ const SpeakingAttempt$json = {
     {'1': 'updated_unix', '3': 9, '4': 1, '5': 3, '10': 'updatedUnix'},
     {'1': 'feedback', '3': 10, '4': 1, '5': 9, '10': 'feedback'},
     {'1': 'scored_by', '3': 11, '4': 1, '5': 9, '10': 'scoredBy'},
+    {'1': 'mode', '3': 12, '4': 1, '5': 9, '10': 'mode'},
+    {'1': 'missed_words', '3': 13, '4': 3, '5': 9, '10': 'missedWords'},
+    {
+      '1': 'errors',
+      '3': 14,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.WritingError',
+      '10': 'errors'
+    },
+    {'1': 'next_step', '3': 15, '4': 1, '5': 9, '10': 'nextStep'},
+    {'1': 'sample', '3': 16, '4': 1, '5': 9, '10': 'sample'},
+    {
+      '1': 'writing_submission_id',
+      '3': 17,
+      '4': 1,
+      '5': 9,
+      '10': 'writingSubmissionId'
+    },
+    {'1': 'focus', '3': 18, '4': 1, '5': 9, '10': 'focus'},
+    {'1': 'retest_of', '3': 19, '4': 1, '5': 9, '10': 'retestOf'},
   ],
 };
 
@@ -925,7 +949,12 @@ final $typed_data.Uint8List speakingAttemptDescriptor = $convert.base64Decode(
     'Njb3JlEj8KCHBob25lbWVzGAcgAygLMiMuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLlBob25lbWVT'
     'Y29yZVIIcGhvbmVtZXMSIQoMY3JlYXRlZF91bml4GAggASgDUgtjcmVhdGVkVW5peBIhCgx1cG'
     'RhdGVkX3VuaXgYCSABKANSC3VwZGF0ZWRVbml4EhoKCGZlZWRiYWNrGAogASgJUghmZWVkYmFj'
-    'axIbCglzY29yZWRfYnkYCyABKAlSCHNjb3JlZEJ5');
+    'axIbCglzY29yZWRfYnkYCyABKAlSCHNjb3JlZEJ5EhIKBG1vZGUYDCABKAlSBG1vZGUSIQoMbW'
+    'lzc2VkX3dvcmRzGA0gAygJUgttaXNzZWRXb3JkcxI7CgZlcnJvcnMYDiADKAsyIy5zdHRhdHR1'
+    'cy5sYW5ndWFnZXMudjEuV3JpdGluZ0Vycm9yUgZlcnJvcnMSGwoJbmV4dF9zdGVwGA8gASgJUg'
+    'huZXh0U3RlcBIWCgZzYW1wbGUYECABKAlSBnNhbXBsZRIyChV3cml0aW5nX3N1Ym1pc3Npb25f'
+    'aWQYESABKAlSE3dyaXRpbmdTdWJtaXNzaW9uSWQSFAoFZm9jdXMYEiABKAlSBWZvY3VzEhsKCX'
+    'JldGVzdF9vZhgTIAEoCVIIcmV0ZXN0T2Y=');
 
 @$core.Deprecated('Use listSpeakingPromptsRequestDescriptor instead')
 const ListSpeakingPromptsRequest$json = {
@@ -969,14 +998,18 @@ const CreateSpeakingAttemptRequest$json = {
   '2': [
     {'1': 'prompt_id', '3': 1, '4': 1, '5': 9, '10': 'promptId'},
     {'1': 'audio_url', '3': 2, '4': 1, '5': 9, '10': 'audioUrl'},
+    {'1': 'client_event_id', '3': 3, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'focus', '3': 4, '4': 1, '5': 9, '10': 'focus'},
+    {'1': 'retest_of', '3': 5, '4': 1, '5': 9, '10': 'retestOf'},
   ],
 };
 
 /// Descriptor for `CreateSpeakingAttemptRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createSpeakingAttemptRequestDescriptor =
-    $convert.base64Decode(
-        'ChxDcmVhdGVTcGVha2luZ0F0dGVtcHRSZXF1ZXN0EhsKCXByb21wdF9pZBgBIAEoCVIIcHJvbX'
-        'B0SWQSGwoJYXVkaW9fdXJsGAIgASgJUghhdWRpb1VybA==');
+final $typed_data.Uint8List createSpeakingAttemptRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVTcGVha2luZ0F0dGVtcHRSZXF1ZXN0EhsKCXByb21wdF9pZBgBIAEoCVIIcHJvbX'
+    'B0SWQSGwoJYXVkaW9fdXJsGAIgASgJUghhdWRpb1VybBImCg9jbGllbnRfZXZlbnRfaWQYAyAB'
+    'KAlSDWNsaWVudEV2ZW50SWQSFAoFZm9jdXMYBCABKAlSBWZvY3VzEhsKCXJldGVzdF9vZhgFIA'
+    'EoCVIIcmV0ZXN0T2Y=');
 
 @$core.Deprecated('Use createSpeakingAttemptResponseDescriptor instead')
 const CreateSpeakingAttemptResponse$json = {
