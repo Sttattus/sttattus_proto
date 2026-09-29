@@ -494,6 +494,9 @@ type CoursePackSummary struct {
 	ItemCount     int32                  `protobuf:"varint,3,opt,name=item_count,json=itemCount,proto3" json:"item_count,omitempty"`
 	AudioCount    int32                  `protobuf:"varint,4,opt,name=audio_count,json=audioCount,proto3" json:"audio_count,omitempty"`
 	BuiltAt       *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=built_at,json=builtAt,proto3" json:"built_at,omitempty"`
+	// Lexicon Choice 3: lexicon-pack-v2 carries what offline practice needs;
+	// a download of an older format is offered as an update.
+	Format        string `protobuf:"bytes,6,opt,name=format,proto3" json:"format,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -561,6 +564,13 @@ func (x *CoursePackSummary) GetBuiltAt() *timestamppb.Timestamp {
 		return x.BuiltAt
 	}
 	return nil
+}
+
+func (x *CoursePackSummary) GetFormat() string {
+	if x != nil {
+		return x.Format
+	}
+	return ""
 }
 
 type CourseLevel struct {
@@ -2117,7 +2127,7 @@ const file_sttattus_languages_v1_course_proto_rawDesc = "" +
 	"\x10CourseGateStatus\x127\n" +
 	"\x04gate\x18\x01 \x01(\x0e2#.sttattus.languages.v1.CoverageGateR\x04gate\x12\x16\n" +
 	"\x06passed\x18\x02 \x01(\bR\x06passed\x12\x18\n" +
-	"\amissing\x18\x03 \x01(\x05R\amissing\"\xc7\x01\n" +
+	"\amissing\x18\x03 \x01(\x05R\amissing\"\xdf\x01\n" +
 	"\x11CoursePackSummary\x12%\n" +
 	"\x0econtent_digest\x18\x01 \x01(\tR\rcontentDigest\x12\x14\n" +
 	"\x05bytes\x18\x02 \x01(\x03R\x05bytes\x12\x1d\n" +
@@ -2125,7 +2135,8 @@ const file_sttattus_languages_v1_course_proto_rawDesc = "" +
 	"item_count\x18\x03 \x01(\x05R\titemCount\x12\x1f\n" +
 	"\vaudio_count\x18\x04 \x01(\x05R\n" +
 	"audioCount\x125\n" +
-	"\bbuilt_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\abuiltAt\"\xe7\x03\n" +
+	"\bbuilt_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\abuiltAt\x12\x16\n" +
+	"\x06format\x18\x06 \x01(\tR\x06format\"\xe7\x03\n" +
 	"\vCourseLevel\x12\x1d\n" +
 	"\n" +
 	"cefr_level\x18\x01 \x01(\tR\tcefrLevel\x12=\n" +

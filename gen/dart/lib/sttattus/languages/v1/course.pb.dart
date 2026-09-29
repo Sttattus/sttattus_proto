@@ -114,6 +114,7 @@ class CoursePackSummary extends $pb.GeneratedMessage {
     $core.int? itemCount,
     $core.int? audioCount,
     $1.Timestamp? builtAt,
+    $core.String? format,
   }) {
     final result = create();
     if (contentDigest != null) result.contentDigest = contentDigest;
@@ -121,6 +122,7 @@ class CoursePackSummary extends $pb.GeneratedMessage {
     if (itemCount != null) result.itemCount = itemCount;
     if (audioCount != null) result.audioCount = audioCount;
     if (builtAt != null) result.builtAt = builtAt;
+    if (format != null) result.format = format;
     return result;
   }
 
@@ -144,6 +146,7 @@ class CoursePackSummary extends $pb.GeneratedMessage {
     ..aI(4, _omitFieldNames ? '' : 'audioCount')
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'builtAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'format')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -211,6 +214,17 @@ class CoursePackSummary extends $pb.GeneratedMessage {
   void clearBuiltAt() => $_clearField(5);
   @$pb.TagNumber(5)
   $1.Timestamp ensureBuiltAt() => $_ensure(4);
+
+  /// Lexicon Choice 3: lexicon-pack-v2 carries what offline practice needs;
+  /// a download of an older format is offered as an update.
+  @$pb.TagNumber(6)
+  $core.String get format => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set format($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFormat() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFormat() => $_clearField(6);
 }
 
 class CourseLevel extends $pb.GeneratedMessage {

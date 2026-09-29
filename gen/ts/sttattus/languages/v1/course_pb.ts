@@ -456,6 +456,14 @@ export class CoursePackSummary extends Message<CoursePackSummary> {
    */
   builtAt?: Timestamp;
 
+  /**
+   * Lexicon Choice 3: lexicon-pack-v2 carries what offline practice needs;
+   * a download of an older format is offered as an update.
+   *
+   * @generated from field: string format = 6;
+   */
+  format = "";
+
   constructor(data?: PartialMessage<CoursePackSummary>) {
     super();
     proto3.util.initPartial(data, this);
@@ -469,6 +477,7 @@ export class CoursePackSummary extends Message<CoursePackSummary> {
     { no: 3, name: "item_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "audio_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "built_at", kind: "message", T: Timestamp },
+    { no: 6, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CoursePackSummary {

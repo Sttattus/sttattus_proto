@@ -195,6 +195,7 @@ const CoursePackSummary$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'builtAt'
     },
+    {'1': 'format', '3': 6, '4': 1, '5': 9, '10': 'format'},
   ],
 };
 
@@ -203,7 +204,8 @@ final $typed_data.Uint8List coursePackSummaryDescriptor = $convert.base64Decode(
     'ChFDb3Vyc2VQYWNrU3VtbWFyeRIlCg5jb250ZW50X2RpZ2VzdBgBIAEoCVINY29udGVudERpZ2'
     'VzdBIUCgVieXRlcxgCIAEoA1IFYnl0ZXMSHQoKaXRlbV9jb3VudBgDIAEoBVIJaXRlbUNvdW50'
     'Eh8KC2F1ZGlvX2NvdW50GAQgASgFUgphdWRpb0NvdW50EjUKCGJ1aWx0X2F0GAUgASgLMhouZ2'
-    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHYnVpbHRBdA==');
+    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIHYnVpbHRBdBIWCgZmb3JtYXQYBiABKAlSBmZvcm1h'
+    'dA==');
 
 @$core.Deprecated('Use courseLevelDescriptor instead')
 const CourseLevel$json = {

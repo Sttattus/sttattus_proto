@@ -75,6 +75,9 @@ message CoursePackSummary {
   int32 item_count = 3;
   int32 audio_count = 4;
   google.protobuf.Timestamp built_at = 5;
+  // Lexicon Choice 3: lexicon-pack-v2 carries what offline practice needs;
+  // a download of an older format is offered as an update.
+  string format = 6;
 }
 
 message CourseLevel {
