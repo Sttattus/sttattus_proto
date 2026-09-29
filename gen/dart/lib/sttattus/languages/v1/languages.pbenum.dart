@@ -193,6 +193,38 @@ class NewMaterialStatus extends $pb.ProtobufEnum {
   const NewMaterialStatus._(super.value, super.name);
 }
 
+/// How an answer was given (Lexicon Choice 3, input modalities).
+class AnswerModality extends $pb.ProtobufEnum {
+  static const AnswerModality ANSWER_MODALITY_UNSPECIFIED =
+      AnswerModality._(0, _omitEnumNames ? '' : 'ANSWER_MODALITY_UNSPECIFIED');
+  static const AnswerModality ANSWER_MODALITY_TAPPED =
+      AnswerModality._(1, _omitEnumNames ? '' : 'ANSWER_MODALITY_TAPPED');
+  static const AnswerModality ANSWER_MODALITY_TYPED =
+      AnswerModality._(2, _omitEnumNames ? '' : 'ANSWER_MODALITY_TYPED');
+  static const AnswerModality ANSWER_MODALITY_SPOKEN =
+      AnswerModality._(3, _omitEnumNames ? '' : 'ANSWER_MODALITY_SPOKEN');
+  static const AnswerModality ANSWER_MODALITY_HANDWRITTEN =
+      AnswerModality._(4, _omitEnumNames ? '' : 'ANSWER_MODALITY_HANDWRITTEN');
+  static const AnswerModality ANSWER_MODALITY_TILES =
+      AnswerModality._(5, _omitEnumNames ? '' : 'ANSWER_MODALITY_TILES');
+
+  static const $core.List<AnswerModality> values = <AnswerModality>[
+    ANSWER_MODALITY_UNSPECIFIED,
+    ANSWER_MODALITY_TAPPED,
+    ANSWER_MODALITY_TYPED,
+    ANSWER_MODALITY_SPOKEN,
+    ANSWER_MODALITY_HANDWRITTEN,
+    ANSWER_MODALITY_TILES,
+  ];
+
+  static final $core.List<AnswerModality?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 5);
+  static AnswerModality? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const AnswerModality._(super.value, super.name);
+}
+
 /// Lexicon Choice 3 — the taxonomy of a wrong answer.
 class AnswerErrorKind extends $pb.ProtobufEnum {
   static const AnswerErrorKind ANSWER_ERROR_KIND_UNSPECIFIED =

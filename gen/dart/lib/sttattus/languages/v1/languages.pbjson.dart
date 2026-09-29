@@ -110,6 +110,26 @@ final $typed_data.Uint8List newMaterialStatusDescriptor = $convert.base64Decode(
     'QVVTRURfSU5fUFJFUEFSQVRJT04QAhIjCh9ORVdfTUFURVJJQUxfU1RBVFVTX1BBVVNFRF9IRU'
     'xEEAMSJwojTkVXX01BVEVSSUFMX1NUQVRVU19MRVZFTF9FWEhBVVNURUQQBA==');
 
+@$core.Deprecated('Use answerModalityDescriptor instead')
+const AnswerModality$json = {
+  '1': 'AnswerModality',
+  '2': [
+    {'1': 'ANSWER_MODALITY_UNSPECIFIED', '2': 0},
+    {'1': 'ANSWER_MODALITY_TAPPED', '2': 1},
+    {'1': 'ANSWER_MODALITY_TYPED', '2': 2},
+    {'1': 'ANSWER_MODALITY_SPOKEN', '2': 3},
+    {'1': 'ANSWER_MODALITY_HANDWRITTEN', '2': 4},
+    {'1': 'ANSWER_MODALITY_TILES', '2': 5},
+  ],
+};
+
+/// Descriptor for `AnswerModality`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List answerModalityDescriptor = $convert.base64Decode(
+    'Cg5BbnN3ZXJNb2RhbGl0eRIfChtBTlNXRVJfTU9EQUxJVFlfVU5TUEVDSUZJRUQQABIaChZBTl'
+    'NXRVJfTU9EQUxJVFlfVEFQUEVEEAESGQoVQU5TV0VSX01PREFMSVRZX1RZUEVEEAISGgoWQU5T'
+    'V0VSX01PREFMSVRZX1NQT0tFThADEh8KG0FOU1dFUl9NT0RBTElUWV9IQU5EV1JJVFRFThAEEh'
+    'kKFUFOU1dFUl9NT0RBTElUWV9USUxFUxAF');
+
 @$core.Deprecated('Use answerErrorKindDescriptor instead')
 const AnswerErrorKind$json = {
   '1': 'AnswerErrorKind',
@@ -2455,6 +2475,14 @@ const PracticeCard$json = {
     {'1': 'tiles', '3': 30, '4': 3, '5': 9, '10': 'tiles'},
     {'1': 'noise', '3': 31, '4': 1, '5': 2, '10': 'noise'},
     {'1': 'picture', '3': 32, '4': 1, '5': 9, '10': 'picture'},
+    {
+      '1': 'text_variant',
+      '3': 33,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.PracticeCard',
+      '10': 'textVariant'
+    },
   ],
 };
 
@@ -2479,7 +2507,9 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
     'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2YSKQoQdGVt'
     'cGxhdGVfdmVyc2lvbhgdIAEoBVIPdGVtcGxhdGVWZXJzaW9uEhQKBXRpbGVzGB4gAygJUgV0aW'
-    'xlcxIUCgVub2lzZRgfIAEoAlIFbm9pc2USGAoHcGljdHVyZRggIAEoCVIHcGljdHVyZQ==');
+    'xlcxIUCgVub2lzZRgfIAEoAlIFbm9pc2USGAoHcGljdHVyZRggIAEoCVIHcGljdHVyZRJGCgx0'
+    'ZXh0X3ZhcmlhbnQYISABKAsyIy5zdHRhdHR1cy5sYW5ndWFnZXMudjEuUHJhY3RpY2VDYXJkUg'
+    't0ZXh0VmFyaWFudA==');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {
@@ -2569,6 +2599,15 @@ const SubmitAnswerRequest$json = {
     {'1': 'plan_item_id', '3': 13, '4': 1, '5': 9, '10': 'planItemId'},
     {'1': 'retest_of', '3': 14, '4': 1, '5': 9, '10': 'retestOf'},
     {'1': 'typed', '3': 15, '4': 1, '5': 8, '10': 'typed'},
+    {
+      '1': 'modality',
+      '3': 16,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.AnswerModality',
+      '10': 'modality'
+    },
+    {'1': 'spoken_audio_url', '3': 17, '4': 1, '5': 9, '10': 'spokenAudioUrl'},
   ],
 };
 
@@ -2584,7 +2623,9 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     'VudF9yZXZpc2lvbhgKIAEoBVIPY29udGVudFJldmlzaW9uEiYKD2NsaWVudF9ldmVudF9pZBgL'
     'IAEoCVINY2xpZW50RXZlbnRJZBIbCgloaW50X3VzZWQYDCABKAhSCGhpbnRVc2VkEiAKDHBsYW'
     '5faXRlbV9pZBgNIAEoCVIKcGxhbkl0ZW1JZBIbCglyZXRlc3Rfb2YYDiABKAlSCHJldGVzdE9m'
-    'EhQKBXR5cGVkGA8gASgIUgV0eXBlZA==');
+    'EhQKBXR5cGVkGA8gASgIUgV0eXBlZBJBCghtb2RhbGl0eRgQIAEoDjIlLnN0dGF0dHVzLmxhbm'
+    'd1YWdlcy52MS5BbnN3ZXJNb2RhbGl0eVIIbW9kYWxpdHkSKAoQc3Bva2VuX2F1ZGlvX3VybBgR'
+    'IAEoCVIOc3Bva2VuQXVkaW9Vcmw=');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {
@@ -2653,6 +2694,7 @@ const SubmitAnswerResponse$json = {
       '10': 'retest'
     },
     {'1': 'grader_version', '3': 15, '4': 1, '5': 9, '10': 'graderVersion'},
+    {'1': 'heard', '3': 16, '4': 1, '5': 9, '10': 'heard'},
   ],
 };
 
@@ -2670,7 +2712,7 @@ final $typed_data.Uint8List submitAnswerResponseDescriptor = $convert.base64Deco
     '52MS5FeGFtcGxlU2VudGVuY2VSCGV4YW1wbGVzEjoKBmxlc3NvbhgNIAEoCzIiLnN0dGF0dHVz'
     'Lmxhbmd1YWdlcy52MS5NaWNyb0xlc3NvblIGbGVzc29uEjsKBnJldGVzdBgOIAEoCzIjLnN0dG'
     'F0dHVzLmxhbmd1YWdlcy52MS5QcmFjdGljZUNhcmRSBnJldGVzdBIlCg5ncmFkZXJfdmVyc2lv'
-    'bhgPIAEoCVINZ3JhZGVyVmVyc2lvbg==');
+    'bhgPIAEoCVINZ3JhZGVyVmVyc2lvbhIUCgVoZWFyZBgQIAEoCVIFaGVhcmQ=');
 
 @$core.Deprecated('Use answerDiffSegmentDescriptor instead')
 const AnswerDiffSegment$json = {
@@ -2835,11 +2877,21 @@ const MemberPrefs$json = {
       '10': 'extraTime',
       '17': true
     },
+    {
+      '1': 'no_audio',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '9': 3,
+      '10': 'noAudio',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_utc_offset_minutes'},
     {'1': '_vacation_until'},
     {'1': '_extra_time'},
+    {'1': '_no_audio'},
   ],
 };
 
@@ -2851,8 +2903,9 @@ final $typed_data.Uint8List memberPrefsDescriptor = $convert.base64Decode(
     'R0dXMubGFuZ3VhZ2VzLnYxLkdvYWxNb2RlUghnb2FsTW9kZRIjCg1kYWlseV9taW51dGVzGAUg'
     'ASgFUgxkYWlseU1pbnV0ZXMSMQoSdXRjX29mZnNldF9taW51dGVzGAYgASgFSABSEHV0Y09mZn'
     'NldE1pbnV0ZXOIAQESKgoOdmFjYXRpb25fdW50aWwYByABKAlIAVINdmFjYXRpb25VbnRpbIgB'
-    'ARIiCgpleHRyYV90aW1lGAggASgISAJSCWV4dHJhVGltZYgBAUIVChNfdXRjX29mZnNldF9taW'
-    '51dGVzQhEKD192YWNhdGlvbl91bnRpbEINCgtfZXh0cmFfdGltZQ==');
+    'ARIiCgpleHRyYV90aW1lGAggASgISAJSCWV4dHJhVGltZYgBARIeCghub19hdWRpbxgJIAEoCE'
+    'gDUgdub0F1ZGlviAEBQhUKE191dGNfb2Zmc2V0X21pbnV0ZXNCEQoPX3ZhY2F0aW9uX3VudGls'
+    'Qg0KC19leHRyYV90aW1lQgsKCV9ub19hdWRpbw==');
 
 @$core.Deprecated('Use getMemberPrefsRequestDescriptor instead')
 const GetMemberPrefsRequest$json = {

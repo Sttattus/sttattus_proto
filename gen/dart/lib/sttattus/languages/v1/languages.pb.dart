@@ -8607,6 +8607,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? tiles,
     $core.double? noise,
     $core.String? picture,
+    PracticeCard? textVariant,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8642,6 +8643,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (tiles != null) result.tiles.addAll(tiles);
     if (noise != null) result.noise = noise;
     if (picture != null) result.picture = picture;
+    if (textVariant != null) result.textVariant = textVariant;
     return result;
   }
 
@@ -8694,6 +8696,8 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..pPS(30, _omitFieldNames ? '' : 'tiles')
     ..aD(31, _omitFieldNames ? '' : 'noise', fieldType: $pb.PbFieldType.OF)
     ..aOS(32, _omitFieldNames ? '' : 'picture')
+    ..aOM<PracticeCard>(33, _omitFieldNames ? '' : 'textVariant',
+        subBuilder: PracticeCard.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9026,6 +9030,20 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasPicture() => $_has(31);
   @$pb.TagNumber(32)
   void clearPicture() => $_clearField(32);
+
+  /// Lexicon Choice 3 (accessibility): on a card that must be heard, the
+  /// same item as a card that needs no sound, for "can't listen now". It is
+  /// swapped in on the device; nothing is counted for the card it replaces.
+  @$pb.TagNumber(33)
+  PracticeCard get textVariant => $_getN(32);
+  @$pb.TagNumber(33)
+  set textVariant(PracticeCard value) => $_setField(33, value);
+  @$pb.TagNumber(33)
+  $core.bool hasTextVariant() => $_has(32);
+  @$pb.TagNumber(33)
+  void clearTextVariant() => $_clearField(33);
+  @$pb.TagNumber(33)
+  PracticeCard ensureTextVariant() => $_ensure(32);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {
@@ -9272,6 +9290,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.String? planItemId,
     $core.String? retestOf,
     $core.bool? typed,
+    AnswerModality? modality,
+    $core.String? spokenAudioUrl,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -9289,6 +9309,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (planItemId != null) result.planItemId = planItemId;
     if (retestOf != null) result.retestOf = retestOf;
     if (typed != null) result.typed = typed;
+    if (modality != null) result.modality = modality;
+    if (spokenAudioUrl != null) result.spokenAudioUrl = spokenAudioUrl;
     return result;
   }
 
@@ -9323,6 +9345,9 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'planItemId')
     ..aOS(14, _omitFieldNames ? '' : 'retestOf')
     ..aOB(15, _omitFieldNames ? '' : 'typed')
+    ..aE<AnswerModality>(16, _omitFieldNames ? '' : 'modality',
+        enumValues: AnswerModality.values)
+    ..aOS(17, _omitFieldNames ? '' : 'spokenAudioUrl')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9494,6 +9519,29 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasTyped() => $_has(14);
   @$pb.TagNumber(15)
   void clearTyped() => $_clearField(15);
+
+  /// Lexicon Choice 3 — how the answer was given. A spoken answer carries its
+  /// recording (the object key from the upload); the server transcribes it
+  /// and grades the transcript like a typed answer. When it cannot, it says
+  /// so (FAILED_PRECONDITION "transcription unavailable") and records
+  /// nothing: the app then asks the member instead (self-report).
+  @$pb.TagNumber(16)
+  AnswerModality get modality => $_getN(15);
+  @$pb.TagNumber(16)
+  set modality(AnswerModality value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasModality() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearModality() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get spokenAudioUrl => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set spokenAudioUrl($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasSpokenAudioUrl() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSpokenAudioUrl() => $_clearField(17);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {
@@ -9513,6 +9561,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     MicroLesson? lesson,
     PracticeCard? retest,
     $core.String? graderVersion,
+    $core.String? heard,
   }) {
     final result = create();
     if (correct != null) result.correct = correct;
@@ -9530,6 +9579,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     if (lesson != null) result.lesson = lesson;
     if (retest != null) result.retest = retest;
     if (graderVersion != null) result.graderVersion = graderVersion;
+    if (heard != null) result.heard = heard;
     return result;
   }
 
@@ -9568,6 +9618,7 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
     ..aOM<PracticeCard>(14, _omitFieldNames ? '' : 'retest',
         subBuilder: PracticeCard.create)
     ..aOS(15, _omitFieldNames ? '' : 'graderVersion')
+    ..aOS(16, _omitFieldNames ? '' : 'heard')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9732,6 +9783,16 @@ class SubmitAnswerResponse extends $pb.GeneratedMessage {
   $core.bool hasGraderVersion() => $_has(14);
   @$pb.TagNumber(15)
   void clearGraderVersion() => $_clearField(15);
+
+  /// A spoken answer: what the transcriber heard.
+  @$pb.TagNumber(16)
+  $core.String get heard => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set heard($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasHeard() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearHeard() => $_clearField(16);
 }
 
 class AnswerDiffSegment extends $pb.GeneratedMessage {
@@ -10207,6 +10268,7 @@ class MemberPrefs extends $pb.GeneratedMessage {
     $core.int? utcOffsetMinutes,
     $core.String? vacationUntil,
     $core.bool? extraTime,
+    $core.bool? noAudio,
   }) {
     final result = create();
     if (baseLanguage != null) result.baseLanguage = baseLanguage;
@@ -10217,6 +10279,7 @@ class MemberPrefs extends $pb.GeneratedMessage {
     if (utcOffsetMinutes != null) result.utcOffsetMinutes = utcOffsetMinutes;
     if (vacationUntil != null) result.vacationUntil = vacationUntil;
     if (extraTime != null) result.extraTime = extraTime;
+    if (noAudio != null) result.noAudio = noAudio;
     return result;
   }
 
@@ -10243,6 +10306,7 @@ class MemberPrefs extends $pb.GeneratedMessage {
     ..aI(6, _omitFieldNames ? '' : 'utcOffsetMinutes')
     ..aOS(7, _omitFieldNames ? '' : 'vacationUntil')
     ..aOB(8, _omitFieldNames ? '' : 'extraTime')
+    ..aOB(9, _omitFieldNames ? '' : 'noAudio')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -10345,6 +10409,17 @@ class MemberPrefs extends $pb.GeneratedMessage {
   $core.bool hasExtraTime() => $_has(7);
   @$pb.TagNumber(8)
   void clearExtraTime() => $_clearField(8);
+
+  /// Accessibility: the member cannot use sound. No card that must be heard
+  /// is served; the same items come as cards that need none.
+  @$pb.TagNumber(9)
+  $core.bool get noAudio => $_getBF(8);
+  @$pb.TagNumber(9)
+  set noAudio($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNoAudio() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNoAudio() => $_clearField(9);
 }
 
 class GetMemberPrefsRequest extends $pb.GeneratedMessage {

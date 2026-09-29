@@ -1004,6 +1004,10 @@ message PracticeCard {
   float noise = 31;
   // Naming: the picture of the thing (one emoji, drawn by the device's font).
   string picture = 32;
+  // Lexicon Choice 3 (accessibility): on a card that must be heard, the
+  // same item as a card that needs no sound, for "can't listen now". It is
+  // swapped in on the device; nothing is counted for the card it replaces.
+  PracticeCard text_variant = 33;
 }
 
 message GetPracticeSessionRequest {
@@ -1038,6 +1042,16 @@ message GetPracticeSessionResponse {
   int32 round_seconds = 6;
 }
 
+// How an answer was given (Lexicon Choice 3, input modalities).
+enum AnswerModality {
+  ANSWER_MODALITY_UNSPECIFIED = 0;
+  ANSWER_MODALITY_TAPPED = 1; // an option chosen
+  ANSWER_MODALITY_TYPED = 2;
+  ANSWER_MODALITY_SPOKEN = 3; // recorded, transcribed by the server
+  ANSWER_MODALITY_HANDWRITTEN = 4; // recognised on the device into text
+  ANSWER_MODALITY_TILES = 5; // built from tiles
+}
+
 message SubmitAnswerRequest {
   string lexeme_id = 1;
   ExerciseKind exercise = 2;
@@ -1070,6 +1084,13 @@ message SubmitAnswerRequest {
   // from tiles) rather than choosing an offered option. It changes how a
   // miss is classified, never whether the answer is right.
   bool typed = 15;
+  // Lexicon Choice 3 — how the answer was given. A spoken answer carries its
+  // recording (the object key from the upload); the server transcribes it
+  // and grades the transcript like a typed answer. When it cannot, it says
+  // so (FAILED_PRECONDITION "transcription unavailable") and records
+  // nothing: the app then asks the member instead (self-report).
+  AnswerModality modality = 16;
+  string spoken_audio_url = 17;
 }
 message SubmitAnswerResponse {
   bool correct = 1;
@@ -1103,6 +1124,8 @@ message SubmitAnswerResponse {
   PracticeCard retest = 14;
   // The grader that judged this answer (the error kind's rules).
   string grader_version = 15;
+  // A spoken answer: what the transcriber heard.
+  string heard = 16;
 }
 
 // Lexicon Choice 3 — the taxonomy of a wrong answer.
@@ -1185,6 +1208,9 @@ message MemberPrefs {
   // Accessibility pacing: more time per item, and latency never counts
   // against an answer.
   optional bool extra_time = 8;
+  // Accessibility: the member cannot use sound. No card that must be heard
+  // is served; the same items come as cards that need none.
+  optional bool no_audio = 9;
 }
 message GetMemberPrefsRequest {}
 message GetMemberPrefsResponse {

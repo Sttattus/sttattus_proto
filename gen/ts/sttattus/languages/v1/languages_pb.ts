@@ -311,6 +311,60 @@ proto3.util.setEnumType(NewMaterialStatus, "sttattus.languages.v1.NewMaterialSta
 ]);
 
 /**
+ * How an answer was given (Lexicon Choice 3, input modalities).
+ *
+ * @generated from enum sttattus.languages.v1.AnswerModality
+ */
+export enum AnswerModality {
+  /**
+   * @generated from enum value: ANSWER_MODALITY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * an option chosen
+   *
+   * @generated from enum value: ANSWER_MODALITY_TAPPED = 1;
+   */
+  TAPPED = 1,
+
+  /**
+   * @generated from enum value: ANSWER_MODALITY_TYPED = 2;
+   */
+  TYPED = 2,
+
+  /**
+   * recorded, transcribed by the server
+   *
+   * @generated from enum value: ANSWER_MODALITY_SPOKEN = 3;
+   */
+  SPOKEN = 3,
+
+  /**
+   * recognised on the device into text
+   *
+   * @generated from enum value: ANSWER_MODALITY_HANDWRITTEN = 4;
+   */
+  HANDWRITTEN = 4,
+
+  /**
+   * built from tiles
+   *
+   * @generated from enum value: ANSWER_MODALITY_TILES = 5;
+   */
+  TILES = 5,
+}
+// Retrieve enum metadata with: proto3.getEnumType(AnswerModality)
+proto3.util.setEnumType(AnswerModality, "sttattus.languages.v1.AnswerModality", [
+  { no: 0, name: "ANSWER_MODALITY_UNSPECIFIED" },
+  { no: 1, name: "ANSWER_MODALITY_TAPPED" },
+  { no: 2, name: "ANSWER_MODALITY_TYPED" },
+  { no: 3, name: "ANSWER_MODALITY_SPOKEN" },
+  { no: 4, name: "ANSWER_MODALITY_HANDWRITTEN" },
+  { no: 5, name: "ANSWER_MODALITY_TILES" },
+]);
+
+/**
  * Lexicon Choice 3 — the taxonomy of a wrong answer.
  *
  * @generated from enum sttattus.languages.v1.AnswerErrorKind
@@ -6436,6 +6490,15 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   picture = "";
 
+  /**
+   * Lexicon Choice 3 (accessibility): on a card that must be heard, the
+   * same item as a card that needs no sound, for "can't listen now". It is
+   * swapped in on the device; nothing is counted for the card it replaces.
+   *
+   * @generated from field: sttattus.languages.v1.PracticeCard text_variant = 33;
+   */
+  textVariant?: PracticeCard;
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6476,6 +6539,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 30, name: "tiles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 31, name: "noise", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 32, name: "picture", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 33, name: "text_variant", kind: "message", T: PracticeCard },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {
@@ -6750,6 +6814,22 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   typed = false;
 
+  /**
+   * Lexicon Choice 3 — how the answer was given. A spoken answer carries its
+   * recording (the object key from the upload); the server transcribes it
+   * and grades the transcript like a typed answer. When it cannot, it says
+   * so (FAILED_PRECONDITION "transcription unavailable") and records
+   * nothing: the app then asks the member instead (self-report).
+   *
+   * @generated from field: sttattus.languages.v1.AnswerModality modality = 16;
+   */
+  modality = AnswerModality.UNSPECIFIED;
+
+  /**
+   * @generated from field: string spoken_audio_url = 17;
+   */
+  spokenAudioUrl = "";
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6773,6 +6853,8 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 13, name: "plan_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "typed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "modality", kind: "enum", T: proto3.getEnumType(AnswerModality) },
+    { no: 17, name: "spoken_audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {
@@ -6896,6 +6978,13 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
    */
   graderVersion = "";
 
+  /**
+   * A spoken answer: what the transcriber heard.
+   *
+   * @generated from field: string heard = 16;
+   */
+  heard = "";
+
   constructor(data?: PartialMessage<SubmitAnswerResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6919,6 +7008,7 @@ export class SubmitAnswerResponse extends Message<SubmitAnswerResponse> {
     { no: 13, name: "lesson", kind: "message", T: MicroLesson },
     { no: 14, name: "retest", kind: "message", T: PracticeCard },
     { no: 15, name: "grader_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "heard", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerResponse {
@@ -7285,6 +7375,14 @@ export class MemberPrefs extends Message<MemberPrefs> {
    */
   extraTime?: boolean;
 
+  /**
+   * Accessibility: the member cannot use sound. No card that must be heard
+   * is served; the same items come as cards that need none.
+   *
+   * @generated from field: optional bool no_audio = 9;
+   */
+  noAudio?: boolean;
+
   constructor(data?: PartialMessage<MemberPrefs>) {
     super();
     proto3.util.initPartial(data, this);
@@ -7301,6 +7399,7 @@ export class MemberPrefs extends Message<MemberPrefs> {
     { no: 6, name: "utc_offset_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 7, name: "vacation_until", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 8, name: "extra_time", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "no_audio", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MemberPrefs {
