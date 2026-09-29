@@ -7839,8 +7839,12 @@ type SubmitAnswerRequest struct {
 	// nothing: the app then asks the member instead (self-report).
 	Modality       AnswerModality `protobuf:"varint,16,opt,name=modality,proto3,enum=sttattus.languages.v1.AnswerModality" json:"modality,omitempty"`
 	SpokenAudioUrl string         `protobuf:"bytes,17,opt,name=spoken_audio_url,json=spokenAudioUrl,proto3" json:"spoken_audio_url,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// Lexicon Choice 3 (offline): when the answer was given, for an answer
+	// kept on the device and sent later. Accepted up to 30 days back, never in
+	// the future; the evidence and the review carry it. Unset: now.
+	ObservedAt    *timestamppb.Timestamp `protobuf:"bytes,18,opt,name=observed_at,json=observedAt,proto3" json:"observed_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *SubmitAnswerRequest) Reset() {
@@ -7990,6 +7994,13 @@ func (x *SubmitAnswerRequest) GetSpokenAudioUrl() string {
 		return x.SpokenAudioUrl
 	}
 	return ""
+}
+
+func (x *SubmitAnswerRequest) GetObservedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ObservedAt
+	}
+	return nil
 }
 
 type SubmitAnswerResponse struct {
@@ -10856,7 +10867,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\tnew_count\x18\x03 \x01(\x05R\bnewCount\x12!\n" +
 	"\fcorpus_empty\x18\x04 \x01(\bR\vcorpusEmpty\x12K\n" +
 	"\fnew_material\x18\x05 \x01(\x0e2(.sttattus.languages.v1.NewMaterialStatusR\vnewMaterial\x12#\n" +
-	"\rround_seconds\x18\x06 \x01(\x05R\froundSeconds\"\xae\x05\n" +
+	"\rround_seconds\x18\x06 \x01(\x05R\froundSeconds\"\xeb\x05\n" +
 	"\x13SubmitAnswerRequest\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12?\n" +
 	"\bexercise\x18\x02 \x01(\x0e2#.sttattus.languages.v1.ExerciseKindR\bexercise\x12!\n" +
@@ -10877,7 +10888,9 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\tretest_of\x18\x0e \x01(\tR\bretestOf\x12\x14\n" +
 	"\x05typed\x18\x0f \x01(\bR\x05typed\x12A\n" +
 	"\bmodality\x18\x10 \x01(\x0e2%.sttattus.languages.v1.AnswerModalityR\bmodality\x12(\n" +
-	"\x10spoken_audio_url\x18\x11 \x01(\tR\x0espokenAudioUrl\"\xc6\x05\n" +
+	"\x10spoken_audio_url\x18\x11 \x01(\tR\x0espokenAudioUrl\x12;\n" +
+	"\vobserved_at\x18\x12 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"observedAt\"\xc6\x05\n" +
 	"\x14SubmitAnswerResponse\x12\x18\n" +
 	"\acorrect\x18\x01 \x01(\bR\acorrect\x12\x1a\n" +
 	"\bexpected\x18\x02 \x01(\tR\bexpected\x12\x1a\n" +
@@ -11481,143 +11494,144 @@ var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	1,   // 56: sttattus.languages.v1.SubmitAnswerRequest.exercise:type_name -> sttattus.languages.v1.ExerciseKind
 	2,   // 57: sttattus.languages.v1.SubmitAnswerRequest.item_kind:type_name -> sttattus.languages.v1.StudyItemKind
 	4,   // 58: sttattus.languages.v1.SubmitAnswerRequest.modality:type_name -> sttattus.languages.v1.AnswerModality
-	150, // 59: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
-	5,   // 60: sttattus.languages.v1.SubmitAnswerResponse.error_kind:type_name -> sttattus.languages.v1.AnswerErrorKind
-	118, // 61: sttattus.languages.v1.SubmitAnswerResponse.diff:type_name -> sttattus.languages.v1.AnswerDiffSegment
-	119, // 62: sttattus.languages.v1.SubmitAnswerResponse.examples:type_name -> sttattus.languages.v1.ExampleSentence
-	120, // 63: sttattus.languages.v1.SubmitAnswerResponse.lesson:type_name -> sttattus.languages.v1.MicroLesson
-	113, // 64: sttattus.languages.v1.SubmitAnswerResponse.retest:type_name -> sttattus.languages.v1.PracticeCard
-	6,   // 65: sttattus.languages.v1.AnswerDiffSegment.op:type_name -> sttattus.languages.v1.AnswerDiffOp
-	119, // 66: sttattus.languages.v1.MicroLesson.examples:type_name -> sttattus.languages.v1.ExampleSentence
-	8,   // 67: sttattus.languages.v1.MemberPrefs.goal_mode:type_name -> sttattus.languages.v1.GoalMode
-	123, // 68: sttattus.languages.v1.GetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	123, // 69: sttattus.languages.v1.SetMemberPrefsRequest.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	123, // 70: sttattus.languages.v1.SetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	151, // 71: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	128, // 72: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
-	11,  // 73: sttattus.languages.v1.PlanReason.code:type_name -> sttattus.languages.v1.PlanReasonCode
-	149, // 74: sttattus.languages.v1.PlanReason.params:type_name -> sttattus.languages.v1.PlanReason.ParamsEntry
-	9,   // 75: sttattus.languages.v1.PlanItem.kind:type_name -> sttattus.languages.v1.PlanItemKind
-	7,   // 76: sttattus.languages.v1.PlanItem.skill:type_name -> sttattus.languages.v1.MasterySkill
-	10,  // 77: sttattus.languages.v1.PlanItem.state:type_name -> sttattus.languages.v1.PlanItemState
-	131, // 78: sttattus.languages.v1.PlanItem.reason:type_name -> sttattus.languages.v1.PlanReason
-	8,   // 79: sttattus.languages.v1.AdaptivePlan.goal_mode:type_name -> sttattus.languages.v1.GoalMode
-	132, // 80: sttattus.languages.v1.AdaptivePlan.items:type_name -> sttattus.languages.v1.PlanItem
-	3,   // 81: sttattus.languages.v1.AdaptivePlan.new_material:type_name -> sttattus.languages.v1.NewMaterialStatus
-	133, // 82: sttattus.languages.v1.GetAdaptivePlanResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
-	133, // 83: sttattus.languages.v1.SkipPlanItemResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
-	7,   // 84: sttattus.languages.v1.SkillEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
-	7,   // 85: sttattus.languages.v1.NodeEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
-	138, // 86: sttattus.languages.v1.GetMasteryMapResponse.skills:type_name -> sttattus.languages.v1.SkillEstimate
-	139, // 87: sttattus.languages.v1.GetMasteryMapResponse.levels:type_name -> sttattus.languages.v1.LevelProgress
-	140, // 88: sttattus.languages.v1.GetMasteryMapResponse.weakest:type_name -> sttattus.languages.v1.NodeEstimate
-	141, // 89: sttattus.languages.v1.GetMasteryMapResponse.confusions:type_name -> sttattus.languages.v1.ConfusionPair
-	62,  // 90: sttattus.languages.v1.GetMasteryMapResponse.placement:type_name -> sttattus.languages.v1.PlacementResult
-	7,   // 91: sttattus.languages.v1.EvidenceEntry.skill:type_name -> sttattus.languages.v1.MasterySkill
-	140, // 92: sttattus.languages.v1.GetNodeEvidenceResponse.estimates:type_name -> sttattus.languages.v1.NodeEstimate
-	144, // 93: sttattus.languages.v1.GetNodeEvidenceResponse.evidence:type_name -> sttattus.languages.v1.EvidenceEntry
-	69,  // 94: sttattus.languages.v1.DismissWritingFlagResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
-	18,  // 95: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
-	20,  // 96: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
-	22,  // 97: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
-	59,  // 98: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
-	61,  // 99: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
-	64,  // 100: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
-	53,  // 101: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
-	55,  // 102: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
-	48,  // 103: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
-	50,  // 104: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
-	41,  // 105: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
-	43,  // 106: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
-	45,  // 107: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
-	30,  // 108: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
-	32,  // 109: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
-	34,  // 110: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
-	36,  // 111: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
-	25,  // 112: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
-	27,  // 113: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
-	70,  // 114: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
-	72,  // 115: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
-	74,  // 116: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
-	76,  // 117: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
-	82,  // 118: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
-	84,  // 119: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
-	80,  // 120: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:input_type -> sttattus.languages.v1.SubmitReadingAnswerRequest
-	87,  // 121: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
-	91,  // 122: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
-	93,  // 123: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
-	95,  // 124: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
-	97,  // 125: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
-	100, // 126: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
-	102, // 127: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
-	105, // 128: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
-	107, // 129: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
-	109, // 130: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
-	111, // 131: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
-	114, // 132: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
-	116, // 133: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
-	121, // 134: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
-	124, // 135: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
-	126, // 136: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
-	134, // 137: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:input_type -> sttattus.languages.v1.GetAdaptivePlanRequest
-	136, // 138: sttattus.languages.v1.LanguagesService.SkipPlanItem:input_type -> sttattus.languages.v1.SkipPlanItemRequest
-	142, // 139: sttattus.languages.v1.LanguagesService.GetMasteryMap:input_type -> sttattus.languages.v1.GetMasteryMapRequest
-	145, // 140: sttattus.languages.v1.LanguagesService.GetNodeEvidence:input_type -> sttattus.languages.v1.GetNodeEvidenceRequest
-	147, // 141: sttattus.languages.v1.LanguagesService.DismissWritingFlag:input_type -> sttattus.languages.v1.DismissWritingFlagRequest
-	129, // 142: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
-	19,  // 143: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
-	21,  // 144: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
-	23,  // 145: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
-	60,  // 146: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
-	63,  // 147: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
-	65,  // 148: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
-	54,  // 149: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
-	56,  // 150: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
-	49,  // 151: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
-	51,  // 152: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
-	42,  // 153: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
-	44,  // 154: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
-	46,  // 155: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
-	31,  // 156: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
-	33,  // 157: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
-	35,  // 158: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
-	37,  // 159: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
-	26,  // 160: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
-	28,  // 161: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
-	71,  // 162: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
-	73,  // 163: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
-	75,  // 164: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
-	77,  // 165: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
-	83,  // 166: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
-	85,  // 167: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
-	81,  // 168: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:output_type -> sttattus.languages.v1.SubmitReadingAnswerResponse
-	88,  // 169: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
-	92,  // 170: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
-	94,  // 171: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
-	96,  // 172: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
-	98,  // 173: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
-	101, // 174: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
-	103, // 175: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
-	106, // 176: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
-	108, // 177: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
-	110, // 178: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
-	112, // 179: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
-	115, // 180: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
-	117, // 181: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
-	122, // 182: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
-	125, // 183: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
-	127, // 184: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
-	135, // 185: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:output_type -> sttattus.languages.v1.GetAdaptivePlanResponse
-	137, // 186: sttattus.languages.v1.LanguagesService.SkipPlanItem:output_type -> sttattus.languages.v1.SkipPlanItemResponse
-	143, // 187: sttattus.languages.v1.LanguagesService.GetMasteryMap:output_type -> sttattus.languages.v1.GetMasteryMapResponse
-	146, // 188: sttattus.languages.v1.LanguagesService.GetNodeEvidence:output_type -> sttattus.languages.v1.GetNodeEvidenceResponse
-	148, // 189: sttattus.languages.v1.LanguagesService.DismissWritingFlag:output_type -> sttattus.languages.v1.DismissWritingFlagResponse
-	130, // 190: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
-	143, // [143:191] is the sub-list for method output_type
-	95,  // [95:143] is the sub-list for method input_type
-	95,  // [95:95] is the sub-list for extension type_name
-	95,  // [95:95] is the sub-list for extension extendee
-	0,   // [0:95] is the sub-list for field type_name
+	150, // 59: sttattus.languages.v1.SubmitAnswerRequest.observed_at:type_name -> google.protobuf.Timestamp
+	150, // 60: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
+	5,   // 61: sttattus.languages.v1.SubmitAnswerResponse.error_kind:type_name -> sttattus.languages.v1.AnswerErrorKind
+	118, // 62: sttattus.languages.v1.SubmitAnswerResponse.diff:type_name -> sttattus.languages.v1.AnswerDiffSegment
+	119, // 63: sttattus.languages.v1.SubmitAnswerResponse.examples:type_name -> sttattus.languages.v1.ExampleSentence
+	120, // 64: sttattus.languages.v1.SubmitAnswerResponse.lesson:type_name -> sttattus.languages.v1.MicroLesson
+	113, // 65: sttattus.languages.v1.SubmitAnswerResponse.retest:type_name -> sttattus.languages.v1.PracticeCard
+	6,   // 66: sttattus.languages.v1.AnswerDiffSegment.op:type_name -> sttattus.languages.v1.AnswerDiffOp
+	119, // 67: sttattus.languages.v1.MicroLesson.examples:type_name -> sttattus.languages.v1.ExampleSentence
+	8,   // 68: sttattus.languages.v1.MemberPrefs.goal_mode:type_name -> sttattus.languages.v1.GoalMode
+	123, // 69: sttattus.languages.v1.GetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	123, // 70: sttattus.languages.v1.SetMemberPrefsRequest.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	123, // 71: sttattus.languages.v1.SetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
+	151, // 72: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	128, // 73: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
+	11,  // 74: sttattus.languages.v1.PlanReason.code:type_name -> sttattus.languages.v1.PlanReasonCode
+	149, // 75: sttattus.languages.v1.PlanReason.params:type_name -> sttattus.languages.v1.PlanReason.ParamsEntry
+	9,   // 76: sttattus.languages.v1.PlanItem.kind:type_name -> sttattus.languages.v1.PlanItemKind
+	7,   // 77: sttattus.languages.v1.PlanItem.skill:type_name -> sttattus.languages.v1.MasterySkill
+	10,  // 78: sttattus.languages.v1.PlanItem.state:type_name -> sttattus.languages.v1.PlanItemState
+	131, // 79: sttattus.languages.v1.PlanItem.reason:type_name -> sttattus.languages.v1.PlanReason
+	8,   // 80: sttattus.languages.v1.AdaptivePlan.goal_mode:type_name -> sttattus.languages.v1.GoalMode
+	132, // 81: sttattus.languages.v1.AdaptivePlan.items:type_name -> sttattus.languages.v1.PlanItem
+	3,   // 82: sttattus.languages.v1.AdaptivePlan.new_material:type_name -> sttattus.languages.v1.NewMaterialStatus
+	133, // 83: sttattus.languages.v1.GetAdaptivePlanResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
+	133, // 84: sttattus.languages.v1.SkipPlanItemResponse.plan:type_name -> sttattus.languages.v1.AdaptivePlan
+	7,   // 85: sttattus.languages.v1.SkillEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
+	7,   // 86: sttattus.languages.v1.NodeEstimate.skill:type_name -> sttattus.languages.v1.MasterySkill
+	138, // 87: sttattus.languages.v1.GetMasteryMapResponse.skills:type_name -> sttattus.languages.v1.SkillEstimate
+	139, // 88: sttattus.languages.v1.GetMasteryMapResponse.levels:type_name -> sttattus.languages.v1.LevelProgress
+	140, // 89: sttattus.languages.v1.GetMasteryMapResponse.weakest:type_name -> sttattus.languages.v1.NodeEstimate
+	141, // 90: sttattus.languages.v1.GetMasteryMapResponse.confusions:type_name -> sttattus.languages.v1.ConfusionPair
+	62,  // 91: sttattus.languages.v1.GetMasteryMapResponse.placement:type_name -> sttattus.languages.v1.PlacementResult
+	7,   // 92: sttattus.languages.v1.EvidenceEntry.skill:type_name -> sttattus.languages.v1.MasterySkill
+	140, // 93: sttattus.languages.v1.GetNodeEvidenceResponse.estimates:type_name -> sttattus.languages.v1.NodeEstimate
+	144, // 94: sttattus.languages.v1.GetNodeEvidenceResponse.evidence:type_name -> sttattus.languages.v1.EvidenceEntry
+	69,  // 95: sttattus.languages.v1.DismissWritingFlagResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
+	18,  // 96: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
+	20,  // 97: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
+	22,  // 98: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
+	59,  // 99: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
+	61,  // 100: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
+	64,  // 101: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
+	53,  // 102: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
+	55,  // 103: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
+	48,  // 104: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
+	50,  // 105: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
+	41,  // 106: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
+	43,  // 107: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
+	45,  // 108: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
+	30,  // 109: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
+	32,  // 110: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
+	34,  // 111: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
+	36,  // 112: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
+	25,  // 113: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
+	27,  // 114: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
+	70,  // 115: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
+	72,  // 116: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
+	74,  // 117: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
+	76,  // 118: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
+	82,  // 119: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
+	84,  // 120: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
+	80,  // 121: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:input_type -> sttattus.languages.v1.SubmitReadingAnswerRequest
+	87,  // 122: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
+	91,  // 123: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
+	93,  // 124: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
+	95,  // 125: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
+	97,  // 126: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
+	100, // 127: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
+	102, // 128: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
+	105, // 129: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
+	107, // 130: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
+	109, // 131: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
+	111, // 132: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
+	114, // 133: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
+	116, // 134: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
+	121, // 135: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
+	124, // 136: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
+	126, // 137: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
+	134, // 138: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:input_type -> sttattus.languages.v1.GetAdaptivePlanRequest
+	136, // 139: sttattus.languages.v1.LanguagesService.SkipPlanItem:input_type -> sttattus.languages.v1.SkipPlanItemRequest
+	142, // 140: sttattus.languages.v1.LanguagesService.GetMasteryMap:input_type -> sttattus.languages.v1.GetMasteryMapRequest
+	145, // 141: sttattus.languages.v1.LanguagesService.GetNodeEvidence:input_type -> sttattus.languages.v1.GetNodeEvidenceRequest
+	147, // 142: sttattus.languages.v1.LanguagesService.DismissWritingFlag:input_type -> sttattus.languages.v1.DismissWritingFlagRequest
+	129, // 143: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
+	19,  // 144: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
+	21,  // 145: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
+	23,  // 146: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
+	60,  // 147: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
+	63,  // 148: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
+	65,  // 149: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
+	54,  // 150: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
+	56,  // 151: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
+	49,  // 152: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
+	51,  // 153: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
+	42,  // 154: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
+	44,  // 155: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
+	46,  // 156: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
+	31,  // 157: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
+	33,  // 158: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
+	35,  // 159: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
+	37,  // 160: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
+	26,  // 161: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
+	28,  // 162: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
+	71,  // 163: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
+	73,  // 164: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
+	75,  // 165: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
+	77,  // 166: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
+	83,  // 167: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
+	85,  // 168: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
+	81,  // 169: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:output_type -> sttattus.languages.v1.SubmitReadingAnswerResponse
+	88,  // 170: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
+	92,  // 171: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
+	94,  // 172: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
+	96,  // 173: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
+	98,  // 174: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
+	101, // 175: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
+	103, // 176: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
+	106, // 177: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
+	108, // 178: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
+	110, // 179: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
+	112, // 180: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
+	115, // 181: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
+	117, // 182: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
+	122, // 183: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
+	125, // 184: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
+	127, // 185: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
+	135, // 186: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:output_type -> sttattus.languages.v1.GetAdaptivePlanResponse
+	137, // 187: sttattus.languages.v1.LanguagesService.SkipPlanItem:output_type -> sttattus.languages.v1.SkipPlanItemResponse
+	143, // 188: sttattus.languages.v1.LanguagesService.GetMasteryMap:output_type -> sttattus.languages.v1.GetMasteryMapResponse
+	146, // 189: sttattus.languages.v1.LanguagesService.GetNodeEvidence:output_type -> sttattus.languages.v1.GetNodeEvidenceResponse
+	148, // 190: sttattus.languages.v1.LanguagesService.DismissWritingFlag:output_type -> sttattus.languages.v1.DismissWritingFlagResponse
+	130, // 191: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
+	144, // [144:192] is the sub-list for method output_type
+	96,  // [96:144] is the sub-list for method input_type
+	96,  // [96:96] is the sub-list for extension type_name
+	96,  // [96:96] is the sub-list for extension extendee
+	0,   // [0:96] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_languages_proto_init() }

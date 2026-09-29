@@ -6830,6 +6830,15 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
    */
   spokenAudioUrl = "";
 
+  /**
+   * Lexicon Choice 3 (offline): when the answer was given, for an answer
+   * kept on the device and sent later. Accepted up to 30 days back, never in
+   * the future; the evidence and the review carry it. Unset: now.
+   *
+   * @generated from field: google.protobuf.Timestamp observed_at = 18;
+   */
+  observedAt?: Timestamp;
+
   constructor(data?: PartialMessage<SubmitAnswerRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6855,6 +6864,7 @@ export class SubmitAnswerRequest extends Message<SubmitAnswerRequest> {
     { no: 15, name: "typed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 16, name: "modality", kind: "enum", T: proto3.getEnumType(AnswerModality) },
     { no: 17, name: "spoken_audio_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "observed_at", kind: "message", T: Timestamp },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnswerRequest {

@@ -9292,6 +9292,7 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     $core.bool? typed,
     AnswerModality? modality,
     $core.String? spokenAudioUrl,
+    $1.Timestamp? observedAt,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -9311,6 +9312,7 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     if (typed != null) result.typed = typed;
     if (modality != null) result.modality = modality;
     if (spokenAudioUrl != null) result.spokenAudioUrl = spokenAudioUrl;
+    if (observedAt != null) result.observedAt = observedAt;
     return result;
   }
 
@@ -9348,6 +9350,8 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
     ..aE<AnswerModality>(16, _omitFieldNames ? '' : 'modality',
         enumValues: AnswerModality.values)
     ..aOS(17, _omitFieldNames ? '' : 'spokenAudioUrl')
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'observedAt',
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9542,6 +9546,20 @@ class SubmitAnswerRequest extends $pb.GeneratedMessage {
   $core.bool hasSpokenAudioUrl() => $_has(16);
   @$pb.TagNumber(17)
   void clearSpokenAudioUrl() => $_clearField(17);
+
+  /// Lexicon Choice 3 (offline): when the answer was given, for an answer
+  /// kept on the device and sent later. Accepted up to 30 days back, never in
+  /// the future; the evidence and the review carry it. Unset: now.
+  @$pb.TagNumber(18)
+  $1.Timestamp get observedAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set observedAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasObservedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearObservedAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureObservedAt() => $_ensure(17);
 }
 
 class SubmitAnswerResponse extends $pb.GeneratedMessage {

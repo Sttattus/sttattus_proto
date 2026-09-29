@@ -1091,6 +1091,10 @@ message SubmitAnswerRequest {
   // nothing: the app then asks the member instead (self-report).
   AnswerModality modality = 16;
   string spoken_audio_url = 17;
+  // Lexicon Choice 3 (offline): when the answer was given, for an answer
+  // kept on the device and sent later. Accepted up to 30 days back, never in
+  // the future; the evidence and the review carry it. Unset: now.
+  google.protobuf.Timestamp observed_at = 18;
 }
 message SubmitAnswerResponse {
   bool correct = 1;

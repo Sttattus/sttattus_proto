@@ -2608,6 +2608,14 @@ const SubmitAnswerRequest$json = {
       '10': 'modality'
     },
     {'1': 'spoken_audio_url', '3': 17, '4': 1, '5': 9, '10': 'spokenAudioUrl'},
+    {
+      '1': 'observed_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'observedAt'
+    },
   ],
 };
 
@@ -2625,7 +2633,8 @@ final $typed_data.Uint8List submitAnswerRequestDescriptor = $convert.base64Decod
     '5faXRlbV9pZBgNIAEoCVIKcGxhbkl0ZW1JZBIbCglyZXRlc3Rfb2YYDiABKAlSCHJldGVzdE9m'
     'EhQKBXR5cGVkGA8gASgIUgV0eXBlZBJBCghtb2RhbGl0eRgQIAEoDjIlLnN0dGF0dHVzLmxhbm'
     'd1YWdlcy52MS5BbnN3ZXJNb2RhbGl0eVIIbW9kYWxpdHkSKAoQc3Bva2VuX2F1ZGlvX3VybBgR'
-    'IAEoCVIOc3Bva2VuQXVkaW9Vcmw=');
+    'IAEoCVIOc3Bva2VuQXVkaW9VcmwSOwoLb2JzZXJ2ZWRfYXQYEiABKAsyGi5nb29nbGUucHJvdG'
+    '9idWYuVGltZXN0YW1wUgpvYnNlcnZlZEF0');
 
 @$core.Deprecated('Use submitAnswerResponseDescriptor instead')
 const SubmitAnswerResponse$json = {
