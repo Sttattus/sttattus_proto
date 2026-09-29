@@ -544,6 +544,49 @@ message ReadingText {
   string content_unit_id = 11;
   int32 content_revision = 12;
   bool pilot = 13;
+  // Lexicon Choice 3: questions that check it was understood (GetReadingText
+  // only). Their answers are graded on the server.
+  repeated ReadingQuestion questions = 14;
+}
+
+// A question about a reading, in the language read.
+message ReadingQuestion {
+  string id = 1;
+  string prompt = 2;
+  repeated string options = 3;
+  // The member's last answer to it, if any, and whether it was right.
+  string answered = 4;
+  bool answered_correct = 5;
+  // A retest only: the sentence of the text it is asked about.
+  string context = 6;
+  // A retest only: the answer it follows up (SubmitReadingAnswerRequest.retest_of).
+  string retest_of = 7;
+}
+
+message SubmitReadingAnswerRequest {
+  string question_id = 1;
+  string answer = 2;
+  // One per answer: a replay (a dropped connection, the offline outbox) is
+  // recognised and never counted twice.
+  string client_event_id = 3;
+  int32 elapsed_ms = 4;
+  // The answer this retests (SubmitReadingAnswerResponse.retest.retest_of).
+  string retest_of = 5;
+}
+message SubmitReadingAnswerResponse {
+  bool correct = 1;
+  string expected = 2;
+  // Why, in the member's language where written.
+  string explanation = 3;
+  bool duplicate = 4;
+  string grader_version = 5;
+  // A wrong answer: its kind, the sentence of the text that answers the
+  // question, and the question asked again at once in that sentence's
+  // context (options in a new order). It is asked again the next time the
+  // text is opened, too.
+  AnswerErrorKind error_kind = 6;
+  string quote = 7;
+  ReadingQuestion retest = 8;
 }
 
 message ListReadingTextsRequest {
@@ -763,6 +806,8 @@ service LanguagesService {
   // L12.10 — reading library (parallel text).
   rpc ListReadingTexts(ListReadingTextsRequest) returns (ListReadingTextsResponse);
   rpc GetReadingText(GetReadingTextRequest) returns (GetReadingTextResponse);
+  // Lexicon Choice 3: answer a question about a reading.
+  rpc SubmitReadingAnswer(SubmitReadingAnswerRequest) returns (SubmitReadingAnswerResponse);
 
   // L12.11 — idiom library.
   rpc ListIdioms(ListIdiomsRequest) returns (ListIdiomsResponse);
@@ -836,6 +881,8 @@ enum ExerciseKind {
   // Lexicon Choice 3 — backed by reviewed content on concepts and grammar.
   EXERCISE_KIND_NAME_IT = 15; // see its picture, write the word
   EXERCISE_KIND_TRANSFORM = 16; // rewrite the sentence as the instruction says
+  EXERCISE_KIND_MINIMAL_PAIR = 17; // hear one of two words a sound apart, say which
+  EXERCISE_KIND_READ = 18; // a question about a reading (answered with SubmitReadingAnswer)
 }
 
 // What a schedulable item actually is. Vocabulary alone is not a language: a

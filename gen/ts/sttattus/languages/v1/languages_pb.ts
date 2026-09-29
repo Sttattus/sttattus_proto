@@ -182,6 +182,20 @@ export enum ExerciseKind {
    * @generated from enum value: EXERCISE_KIND_TRANSFORM = 16;
    */
   TRANSFORM = 16,
+
+  /**
+   * hear one of two words a sound apart, say which
+   *
+   * @generated from enum value: EXERCISE_KIND_MINIMAL_PAIR = 17;
+   */
+  MINIMAL_PAIR = 17,
+
+  /**
+   * a question about a reading (answered with SubmitReadingAnswer)
+   *
+   * @generated from enum value: EXERCISE_KIND_READ = 18;
+   */
+  READ = 18,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ExerciseKind)
 proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
@@ -202,6 +216,8 @@ proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
   { no: 14, name: "EXERCISE_KIND_FLUENCY" },
   { no: 15, name: "EXERCISE_KIND_NAME_IT" },
   { no: 16, name: "EXERCISE_KIND_TRANSFORM" },
+  { no: 17, name: "EXERCISE_KIND_MINIMAL_PAIR" },
+  { no: 18, name: "EXERCISE_KIND_READ" },
 ]);
 
 /**
@@ -4413,6 +4429,14 @@ export class ReadingText extends Message<ReadingText> {
    */
   pilot = false;
 
+  /**
+   * Lexicon Choice 3: questions that check it was understood (GetReadingText
+   * only). Their answers are graded on the server.
+   *
+   * @generated from field: repeated sttattus.languages.v1.ReadingQuestion questions = 14;
+   */
+  questions: ReadingQuestion[] = [];
+
   constructor(data?: PartialMessage<ReadingText>) {
     super();
     proto3.util.initPartial(data, this);
@@ -4434,6 +4458,7 @@ export class ReadingText extends Message<ReadingText> {
     { no: 11, name: "content_unit_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "content_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 13, name: "pilot", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "questions", kind: "message", T: ReadingQuestion, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReadingText {
@@ -4450,6 +4475,239 @@ export class ReadingText extends Message<ReadingText> {
 
   static equals(a: ReadingText | PlainMessage<ReadingText> | undefined, b: ReadingText | PlainMessage<ReadingText> | undefined): boolean {
     return proto3.util.equals(ReadingText, a, b);
+  }
+}
+
+/**
+ * A question about a reading, in the language read.
+ *
+ * @generated from message sttattus.languages.v1.ReadingQuestion
+ */
+export class ReadingQuestion extends Message<ReadingQuestion> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string prompt = 2;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: repeated string options = 3;
+   */
+  options: string[] = [];
+
+  /**
+   * The member's last answer to it, if any, and whether it was right.
+   *
+   * @generated from field: string answered = 4;
+   */
+  answered = "";
+
+  /**
+   * @generated from field: bool answered_correct = 5;
+   */
+  answeredCorrect = false;
+
+  /**
+   * A retest only: the sentence of the text it is asked about.
+   *
+   * @generated from field: string context = 6;
+   */
+  context = "";
+
+  /**
+   * A retest only: the answer it follows up (SubmitReadingAnswerRequest.retest_of).
+   *
+   * @generated from field: string retest_of = 7;
+   */
+  retestOf = "";
+
+  constructor(data?: PartialMessage<ReadingQuestion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ReadingQuestion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "answered", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "answered_correct", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "context", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReadingQuestion {
+    return new ReadingQuestion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReadingQuestion {
+    return new ReadingQuestion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReadingQuestion {
+    return new ReadingQuestion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReadingQuestion | PlainMessage<ReadingQuestion> | undefined, b: ReadingQuestion | PlainMessage<ReadingQuestion> | undefined): boolean {
+    return proto3.util.equals(ReadingQuestion, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SubmitReadingAnswerRequest
+ */
+export class SubmitReadingAnswerRequest extends Message<SubmitReadingAnswerRequest> {
+  /**
+   * @generated from field: string question_id = 1;
+   */
+  questionId = "";
+
+  /**
+   * @generated from field: string answer = 2;
+   */
+  answer = "";
+
+  /**
+   * One per answer: a replay (a dropped connection, the offline outbox) is
+   * recognised and never counted twice.
+   *
+   * @generated from field: string client_event_id = 3;
+   */
+  clientEventId = "";
+
+  /**
+   * @generated from field: int32 elapsed_ms = 4;
+   */
+  elapsedMs = 0;
+
+  /**
+   * The answer this retests (SubmitReadingAnswerResponse.retest.retest_of).
+   *
+   * @generated from field: string retest_of = 5;
+   */
+  retestOf = "";
+
+  constructor(data?: PartialMessage<SubmitReadingAnswerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SubmitReadingAnswerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "question_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "elapsed_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "retest_of", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitReadingAnswerRequest {
+    return new SubmitReadingAnswerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitReadingAnswerRequest {
+    return new SubmitReadingAnswerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitReadingAnswerRequest {
+    return new SubmitReadingAnswerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitReadingAnswerRequest | PlainMessage<SubmitReadingAnswerRequest> | undefined, b: SubmitReadingAnswerRequest | PlainMessage<SubmitReadingAnswerRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitReadingAnswerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.SubmitReadingAnswerResponse
+ */
+export class SubmitReadingAnswerResponse extends Message<SubmitReadingAnswerResponse> {
+  /**
+   * @generated from field: bool correct = 1;
+   */
+  correct = false;
+
+  /**
+   * @generated from field: string expected = 2;
+   */
+  expected = "";
+
+  /**
+   * Why, in the member's language where written.
+   *
+   * @generated from field: string explanation = 3;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: bool duplicate = 4;
+   */
+  duplicate = false;
+
+  /**
+   * @generated from field: string grader_version = 5;
+   */
+  graderVersion = "";
+
+  /**
+   * A wrong answer: its kind, the sentence of the text that answers the
+   * question, and the question asked again at once in that sentence's
+   * context (options in a new order). It is asked again the next time the
+   * text is opened, too.
+   *
+   * @generated from field: sttattus.languages.v1.AnswerErrorKind error_kind = 6;
+   */
+  errorKind = AnswerErrorKind.UNSPECIFIED;
+
+  /**
+   * @generated from field: string quote = 7;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: sttattus.languages.v1.ReadingQuestion retest = 8;
+   */
+  retest?: ReadingQuestion;
+
+  constructor(data?: PartialMessage<SubmitReadingAnswerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.SubmitReadingAnswerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "correct", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "expected", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "duplicate", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "grader_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "error_kind", kind: "enum", T: proto3.getEnumType(AnswerErrorKind) },
+    { no: 7, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "retest", kind: "message", T: ReadingQuestion },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitReadingAnswerResponse {
+    return new SubmitReadingAnswerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitReadingAnswerResponse {
+    return new SubmitReadingAnswerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitReadingAnswerResponse {
+    return new SubmitReadingAnswerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitReadingAnswerResponse | PlainMessage<SubmitReadingAnswerResponse> | undefined, b: SubmitReadingAnswerResponse | PlainMessage<SubmitReadingAnswerResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitReadingAnswerResponse, a, b);
   }
 }
 

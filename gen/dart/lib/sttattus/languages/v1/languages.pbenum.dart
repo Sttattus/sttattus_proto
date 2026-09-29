@@ -89,6 +89,10 @@ class ExerciseKind extends $pb.ProtobufEnum {
       ExerciseKind._(15, _omitEnumNames ? '' : 'EXERCISE_KIND_NAME_IT');
   static const ExerciseKind EXERCISE_KIND_TRANSFORM =
       ExerciseKind._(16, _omitEnumNames ? '' : 'EXERCISE_KIND_TRANSFORM');
+  static const ExerciseKind EXERCISE_KIND_MINIMAL_PAIR =
+      ExerciseKind._(17, _omitEnumNames ? '' : 'EXERCISE_KIND_MINIMAL_PAIR');
+  static const ExerciseKind EXERCISE_KIND_READ =
+      ExerciseKind._(18, _omitEnumNames ? '' : 'EXERCISE_KIND_READ');
 
   static const $core.List<ExerciseKind> values = <ExerciseKind>[
     EXERCISE_KIND_UNSPECIFIED,
@@ -108,10 +112,12 @@ class ExerciseKind extends $pb.ProtobufEnum {
     EXERCISE_KIND_FLUENCY,
     EXERCISE_KIND_NAME_IT,
     EXERCISE_KIND_TRANSFORM,
+    EXERCISE_KIND_MINIMAL_PAIR,
+    EXERCISE_KIND_READ,
   ];
 
   static final $core.List<ExerciseKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 16);
+      $pb.ProtobufEnum.$_initByValueList(values, 18);
   static ExerciseKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

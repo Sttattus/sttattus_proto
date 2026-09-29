@@ -225,6 +225,14 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getReadingText, request, options: options);
   }
 
+  /// Lexicon Choice 3: answer a question about a reading.
+  $grpc.ResponseFuture<$0.SubmitReadingAnswerResponse> submitReadingAnswer(
+    $0.SubmitReadingAnswerRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitReadingAnswer, request, options: options);
+  }
+
   /// L12.11 — idiom library.
   $grpc.ResponseFuture<$0.ListIdiomsResponse> listIdioms(
     $0.ListIdiomsRequest request, {
@@ -523,6 +531,11 @@ class LanguagesServiceClient extends $grpc.Client {
           '/sttattus.languages.v1.LanguagesService/GetReadingText',
           ($0.GetReadingTextRequest value) => value.writeToBuffer(),
           $0.GetReadingTextResponse.fromBuffer);
+  static final _$submitReadingAnswer = $grpc.ClientMethod<
+          $0.SubmitReadingAnswerRequest, $0.SubmitReadingAnswerResponse>(
+      '/sttattus.languages.v1.LanguagesService/SubmitReadingAnswer',
+      ($0.SubmitReadingAnswerRequest value) => value.writeToBuffer(),
+      $0.SubmitReadingAnswerResponse.fromBuffer);
   static final _$listIdioms =
       $grpc.ClientMethod<$0.ListIdiomsRequest, $0.ListIdiomsResponse>(
           '/sttattus.languages.v1.LanguagesService/ListIdioms',
@@ -866,6 +879,15 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetReadingTextRequest.fromBuffer(value),
         ($0.GetReadingTextResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitReadingAnswerRequest,
+            $0.SubmitReadingAnswerResponse>(
+        'SubmitReadingAnswer',
+        submitReadingAnswer_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitReadingAnswerRequest.fromBuffer(value),
+        ($0.SubmitReadingAnswerResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ListIdiomsRequest, $0.ListIdiomsResponse>(
         'ListIdioms',
         listIdioms_Pre,
@@ -1286,6 +1308,15 @@ abstract class LanguagesServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetReadingTextResponse> getReadingText(
       $grpc.ServiceCall call, $0.GetReadingTextRequest request);
+
+  $async.Future<$0.SubmitReadingAnswerResponse> submitReadingAnswer_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SubmitReadingAnswerRequest> $request) async {
+    return submitReadingAnswer($call, await $request);
+  }
+
+  $async.Future<$0.SubmitReadingAnswerResponse> submitReadingAnswer(
+      $grpc.ServiceCall call, $0.SubmitReadingAnswerRequest request);
 
   $async.Future<$0.ListIdiomsResponse> listIdioms_Pre($grpc.ServiceCall $call,
       $async.Future<$0.ListIdiomsRequest> $request) async {

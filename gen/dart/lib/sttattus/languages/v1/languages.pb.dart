@@ -5631,6 +5631,7 @@ class ReadingText extends $pb.GeneratedMessage {
     $core.String? contentUnitId,
     $core.int? contentRevision,
     $core.bool? pilot,
+    $core.Iterable<ReadingQuestion>? questions,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5646,6 +5647,7 @@ class ReadingText extends $pb.GeneratedMessage {
     if (contentUnitId != null) result.contentUnitId = contentUnitId;
     if (contentRevision != null) result.contentRevision = contentRevision;
     if (pilot != null) result.pilot = pilot;
+    if (questions != null) result.questions.addAll(questions);
     return result;
   }
 
@@ -5676,6 +5678,8 @@ class ReadingText extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'contentUnitId')
     ..aI(12, _omitFieldNames ? '' : 'contentRevision')
     ..aOB(13, _omitFieldNames ? '' : 'pilot')
+    ..pPM<ReadingQuestion>(14, _omitFieldNames ? '' : 'questions',
+        subBuilder: ReadingQuestion.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5817,6 +5821,395 @@ class ReadingText extends $pb.GeneratedMessage {
   $core.bool hasPilot() => $_has(12);
   @$pb.TagNumber(13)
   void clearPilot() => $_clearField(13);
+
+  /// Lexicon Choice 3: questions that check it was understood (GetReadingText
+  /// only). Their answers are graded on the server.
+  @$pb.TagNumber(14)
+  $pb.PbList<ReadingQuestion> get questions => $_getList(13);
+}
+
+/// A question about a reading, in the language read.
+class ReadingQuestion extends $pb.GeneratedMessage {
+  factory ReadingQuestion({
+    $core.String? id,
+    $core.String? prompt,
+    $core.Iterable<$core.String>? options,
+    $core.String? answered,
+    $core.bool? answeredCorrect,
+    $core.String? context,
+    $core.String? retestOf,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (prompt != null) result.prompt = prompt;
+    if (options != null) result.options.addAll(options);
+    if (answered != null) result.answered = answered;
+    if (answeredCorrect != null) result.answeredCorrect = answeredCorrect;
+    if (context != null) result.context = context;
+    if (retestOf != null) result.retestOf = retestOf;
+    return result;
+  }
+
+  ReadingQuestion._();
+
+  factory ReadingQuestion.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReadingQuestion.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReadingQuestion',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'prompt')
+    ..pPS(3, _omitFieldNames ? '' : 'options')
+    ..aOS(4, _omitFieldNames ? '' : 'answered')
+    ..aOB(5, _omitFieldNames ? '' : 'answeredCorrect')
+    ..aOS(6, _omitFieldNames ? '' : 'context')
+    ..aOS(7, _omitFieldNames ? '' : 'retestOf')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReadingQuestion clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReadingQuestion copyWith(void Function(ReadingQuestion) updates) =>
+      super.copyWith((message) => updates(message as ReadingQuestion))
+          as ReadingQuestion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReadingQuestion create() => ReadingQuestion._();
+  @$core.override
+  ReadingQuestion createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReadingQuestion getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReadingQuestion>(create);
+  static ReadingQuestion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get prompt => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set prompt($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPrompt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPrompt() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get options => $_getList(2);
+
+  /// The member's last answer to it, if any, and whether it was right.
+  @$pb.TagNumber(4)
+  $core.String get answered => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set answered($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAnswered() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnswered() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get answeredCorrect => $_getBF(4);
+  @$pb.TagNumber(5)
+  set answeredCorrect($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAnsweredCorrect() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAnsweredCorrect() => $_clearField(5);
+
+  /// A retest only: the sentence of the text it is asked about.
+  @$pb.TagNumber(6)
+  $core.String get context => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set context($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasContext() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearContext() => $_clearField(6);
+
+  /// A retest only: the answer it follows up (SubmitReadingAnswerRequest.retest_of).
+  @$pb.TagNumber(7)
+  $core.String get retestOf => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set retestOf($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRetestOf() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRetestOf() => $_clearField(7);
+}
+
+class SubmitReadingAnswerRequest extends $pb.GeneratedMessage {
+  factory SubmitReadingAnswerRequest({
+    $core.String? questionId,
+    $core.String? answer,
+    $core.String? clientEventId,
+    $core.int? elapsedMs,
+    $core.String? retestOf,
+  }) {
+    final result = create();
+    if (questionId != null) result.questionId = questionId;
+    if (answer != null) result.answer = answer;
+    if (clientEventId != null) result.clientEventId = clientEventId;
+    if (elapsedMs != null) result.elapsedMs = elapsedMs;
+    if (retestOf != null) result.retestOf = retestOf;
+    return result;
+  }
+
+  SubmitReadingAnswerRequest._();
+
+  factory SubmitReadingAnswerRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitReadingAnswerRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitReadingAnswerRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'questionId')
+    ..aOS(2, _omitFieldNames ? '' : 'answer')
+    ..aOS(3, _omitFieldNames ? '' : 'clientEventId')
+    ..aI(4, _omitFieldNames ? '' : 'elapsedMs')
+    ..aOS(5, _omitFieldNames ? '' : 'retestOf')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitReadingAnswerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitReadingAnswerRequest copyWith(
+          void Function(SubmitReadingAnswerRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitReadingAnswerRequest))
+          as SubmitReadingAnswerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitReadingAnswerRequest create() => SubmitReadingAnswerRequest._();
+  @$core.override
+  SubmitReadingAnswerRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitReadingAnswerRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitReadingAnswerRequest>(create);
+  static SubmitReadingAnswerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get questionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set questionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuestionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuestionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get answer => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set answer($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAnswer() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAnswer() => $_clearField(2);
+
+  /// One per answer: a replay (a dropped connection, the offline outbox) is
+  /// recognised and never counted twice.
+  @$pb.TagNumber(3)
+  $core.String get clientEventId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientEventId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientEventId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientEventId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get elapsedMs => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set elapsedMs($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasElapsedMs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearElapsedMs() => $_clearField(4);
+
+  /// The answer this retests (SubmitReadingAnswerResponse.retest.retest_of).
+  @$pb.TagNumber(5)
+  $core.String get retestOf => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set retestOf($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRetestOf() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRetestOf() => $_clearField(5);
+}
+
+class SubmitReadingAnswerResponse extends $pb.GeneratedMessage {
+  factory SubmitReadingAnswerResponse({
+    $core.bool? correct,
+    $core.String? expected,
+    $core.String? explanation,
+    $core.bool? duplicate,
+    $core.String? graderVersion,
+    AnswerErrorKind? errorKind,
+    $core.String? quote,
+    ReadingQuestion? retest,
+  }) {
+    final result = create();
+    if (correct != null) result.correct = correct;
+    if (expected != null) result.expected = expected;
+    if (explanation != null) result.explanation = explanation;
+    if (duplicate != null) result.duplicate = duplicate;
+    if (graderVersion != null) result.graderVersion = graderVersion;
+    if (errorKind != null) result.errorKind = errorKind;
+    if (quote != null) result.quote = quote;
+    if (retest != null) result.retest = retest;
+    return result;
+  }
+
+  SubmitReadingAnswerResponse._();
+
+  factory SubmitReadingAnswerResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitReadingAnswerResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitReadingAnswerResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'correct')
+    ..aOS(2, _omitFieldNames ? '' : 'expected')
+    ..aOS(3, _omitFieldNames ? '' : 'explanation')
+    ..aOB(4, _omitFieldNames ? '' : 'duplicate')
+    ..aOS(5, _omitFieldNames ? '' : 'graderVersion')
+    ..aE<AnswerErrorKind>(6, _omitFieldNames ? '' : 'errorKind',
+        enumValues: AnswerErrorKind.values)
+    ..aOS(7, _omitFieldNames ? '' : 'quote')
+    ..aOM<ReadingQuestion>(8, _omitFieldNames ? '' : 'retest',
+        subBuilder: ReadingQuestion.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitReadingAnswerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitReadingAnswerResponse copyWith(
+          void Function(SubmitReadingAnswerResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SubmitReadingAnswerResponse))
+          as SubmitReadingAnswerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitReadingAnswerResponse create() =>
+      SubmitReadingAnswerResponse._();
+  @$core.override
+  SubmitReadingAnswerResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitReadingAnswerResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SubmitReadingAnswerResponse>(create);
+  static SubmitReadingAnswerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get correct => $_getBF(0);
+  @$pb.TagNumber(1)
+  set correct($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCorrect() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCorrect() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get expected => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set expected($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpected() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpected() => $_clearField(2);
+
+  /// Why, in the member's language where written.
+  @$pb.TagNumber(3)
+  $core.String get explanation => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set explanation($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExplanation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExplanation() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get duplicate => $_getBF(3);
+  @$pb.TagNumber(4)
+  set duplicate($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDuplicate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDuplicate() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get graderVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set graderVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGraderVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGraderVersion() => $_clearField(5);
+
+  /// A wrong answer: its kind, the sentence of the text that answers the
+  /// question, and the question asked again at once in that sentence's
+  /// context (options in a new order). It is asked again the next time the
+  /// text is opened, too.
+  @$pb.TagNumber(6)
+  AnswerErrorKind get errorKind => $_getN(5);
+  @$pb.TagNumber(6)
+  set errorKind(AnswerErrorKind value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasErrorKind() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearErrorKind() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get quote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set quote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  ReadingQuestion get retest => $_getN(7);
+  @$pb.TagNumber(8)
+  set retest(ReadingQuestion value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRetest() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRetest() => $_clearField(8);
+  @$pb.TagNumber(8)
+  ReadingQuestion ensureRetest() => $_ensure(7);
 }
 
 class ListReadingTextsRequest extends $pb.GeneratedMessage {

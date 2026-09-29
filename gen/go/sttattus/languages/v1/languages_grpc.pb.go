@@ -44,6 +44,7 @@ const (
 	LanguagesService_GetWritingSubmission_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetWritingSubmission"
 	LanguagesService_ListReadingTexts_FullMethodName         = "/sttattus.languages.v1.LanguagesService/ListReadingTexts"
 	LanguagesService_GetReadingText_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetReadingText"
+	LanguagesService_SubmitReadingAnswer_FullMethodName      = "/sttattus.languages.v1.LanguagesService/SubmitReadingAnswer"
 	LanguagesService_ListIdioms_FullMethodName               = "/sttattus.languages.v1.LanguagesService/ListIdioms"
 	LanguagesService_StartTutorThread_FullMethodName         = "/sttattus.languages.v1.LanguagesService/StartTutorThread"
 	LanguagesService_ListMyTutorThreads_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyTutorThreads"
@@ -107,6 +108,8 @@ type LanguagesServiceClient interface {
 	// L12.10 — reading library (parallel text).
 	ListReadingTexts(ctx context.Context, in *ListReadingTextsRequest, opts ...grpc.CallOption) (*ListReadingTextsResponse, error)
 	GetReadingText(ctx context.Context, in *GetReadingTextRequest, opts ...grpc.CallOption) (*GetReadingTextResponse, error)
+	// Lexicon Choice 3: answer a question about a reading.
+	SubmitReadingAnswer(ctx context.Context, in *SubmitReadingAnswerRequest, opts ...grpc.CallOption) (*SubmitReadingAnswerResponse, error)
 	// L12.11 — idiom library.
 	ListIdioms(ctx context.Context, in *ListIdiomsRequest, opts ...grpc.CallOption) (*ListIdiomsResponse, error)
 	// L12.12 — tutor desk / concierge (Sovereign).
@@ -403,6 +406,16 @@ func (c *languagesServiceClient) GetReadingText(ctx context.Context, in *GetRead
 	return out, nil
 }
 
+func (c *languagesServiceClient) SubmitReadingAnswer(ctx context.Context, in *SubmitReadingAnswerRequest, opts ...grpc.CallOption) (*SubmitReadingAnswerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitReadingAnswerResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitReadingAnswer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *languagesServiceClient) ListIdioms(ctx context.Context, in *ListIdiomsRequest, opts ...grpc.CallOption) (*ListIdiomsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListIdiomsResponse)
@@ -662,6 +675,8 @@ type LanguagesServiceServer interface {
 	// L12.10 — reading library (parallel text).
 	ListReadingTexts(context.Context, *ListReadingTextsRequest) (*ListReadingTextsResponse, error)
 	GetReadingText(context.Context, *GetReadingTextRequest) (*GetReadingTextResponse, error)
+	// Lexicon Choice 3: answer a question about a reading.
+	SubmitReadingAnswer(context.Context, *SubmitReadingAnswerRequest) (*SubmitReadingAnswerResponse, error)
 	// L12.11 — idiom library.
 	ListIdioms(context.Context, *ListIdiomsRequest) (*ListIdiomsResponse, error)
 	// L12.12 — tutor desk / concierge (Sovereign).
@@ -782,6 +797,9 @@ func (UnimplementedLanguagesServiceServer) ListReadingTexts(context.Context, *Li
 }
 func (UnimplementedLanguagesServiceServer) GetReadingText(context.Context, *GetReadingTextRequest) (*GetReadingTextResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetReadingText not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitReadingAnswer(context.Context, *SubmitReadingAnswerRequest) (*SubmitReadingAnswerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitReadingAnswer not implemented")
 }
 func (UnimplementedLanguagesServiceServer) ListIdioms(context.Context, *ListIdiomsRequest) (*ListIdiomsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListIdioms not implemented")
@@ -1320,6 +1338,24 @@ func _LanguagesService_GetReadingText_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_SubmitReadingAnswer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitReadingAnswerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitReadingAnswer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitReadingAnswer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitReadingAnswer(ctx, req.(*SubmitReadingAnswerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LanguagesService_ListIdioms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListIdiomsRequest)
 	if err := dec(in); err != nil {
@@ -1822,6 +1858,10 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetReadingText",
 			Handler:    _LanguagesService_GetReadingText_Handler,
+		},
+		{
+			MethodName: "SubmitReadingAnswer",
+			Handler:    _LanguagesService_SubmitReadingAnswer_Handler,
 		},
 		{
 			MethodName: "ListIdioms",

@@ -55,6 +55,8 @@ const ExerciseKind$json = {
     {'1': 'EXERCISE_KIND_FLUENCY', '2': 14},
     {'1': 'EXERCISE_KIND_NAME_IT', '2': 15},
     {'1': 'EXERCISE_KIND_TRANSFORM', '2': 16},
+    {'1': 'EXERCISE_KIND_MINIMAL_PAIR', '2': 17},
+    {'1': 'EXERCISE_KIND_READ', '2': 18},
   ],
 };
 
@@ -69,7 +71,8 @@ final $typed_data.Uint8List exerciseKindDescriptor = $convert.base64Decode(
     'EhsKF0VYRVJDSVNFX0tJTkRfRElDVEFUSU9OEAsSHAoYRVhFUkNJU0VfS0lORF9UUkFOU0NSSU'
     'JFEAwSHgoaRVhFUkNJU0VfS0lORF9MSVNURU5fTk9JU0UQDRIZChVFWEVSQ0lTRV9LSU5EX0ZM'
     'VUVOQ1kQDhIZChVFWEVSQ0lTRV9LSU5EX05BTUVfSVQQDxIbChdFWEVSQ0lTRV9LSU5EX1RSQU'
-    '5TRk9STRAQ');
+    '5TRk9STRAQEh4KGkVYRVJDSVNFX0tJTkRfTUlOSU1BTF9QQUlSEBESFgoSRVhFUkNJU0VfS0lO'
+    'RF9SRUFEEBI=');
 
 @$core.Deprecated('Use studyItemKindDescriptor instead')
 const StudyItemKind$json = {
@@ -1707,6 +1710,14 @@ const ReadingText$json = {
     {'1': 'content_unit_id', '3': 11, '4': 1, '5': 9, '10': 'contentUnitId'},
     {'1': 'content_revision', '3': 12, '4': 1, '5': 5, '10': 'contentRevision'},
     {'1': 'pilot', '3': 13, '4': 1, '5': 8, '10': 'pilot'},
+    {
+      '1': 'questions',
+      '3': 14,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ReadingQuestion',
+      '10': 'questions'
+    },
   ],
 };
 
@@ -1719,7 +1730,87 @@ final $typed_data.Uint8List readingTextDescriptor = $convert.base64Decode(
     'b3RlEh0KCndvcmRfY291bnQYCSABKAVSCXdvcmRDb3VudBIjCg1jb3B5X2xhbmd1YWdlGAogAS'
     'gJUgxjb3B5TGFuZ3VhZ2USJgoPY29udGVudF91bml0X2lkGAsgASgJUg1jb250ZW50VW5pdElk'
     'EikKEGNvbnRlbnRfcmV2aXNpb24YDCABKAVSD2NvbnRlbnRSZXZpc2lvbhIUCgVwaWxvdBgNIA'
-    'EoCFIFcGlsb3Q=');
+    'EoCFIFcGlsb3QSRAoJcXVlc3Rpb25zGA4gAygLMiYuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLlJl'
+    'YWRpbmdRdWVzdGlvblIJcXVlc3Rpb25z');
+
+@$core.Deprecated('Use readingQuestionDescriptor instead')
+const ReadingQuestion$json = {
+  '1': 'ReadingQuestion',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'prompt', '3': 2, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'options', '3': 3, '4': 3, '5': 9, '10': 'options'},
+    {'1': 'answered', '3': 4, '4': 1, '5': 9, '10': 'answered'},
+    {'1': 'answered_correct', '3': 5, '4': 1, '5': 8, '10': 'answeredCorrect'},
+    {'1': 'context', '3': 6, '4': 1, '5': 9, '10': 'context'},
+    {'1': 'retest_of', '3': 7, '4': 1, '5': 9, '10': 'retestOf'},
+  ],
+};
+
+/// Descriptor for `ReadingQuestion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List readingQuestionDescriptor = $convert.base64Decode(
+    'Cg9SZWFkaW5nUXVlc3Rpb24SDgoCaWQYASABKAlSAmlkEhYKBnByb21wdBgCIAEoCVIGcHJvbX'
+    'B0EhgKB29wdGlvbnMYAyADKAlSB29wdGlvbnMSGgoIYW5zd2VyZWQYBCABKAlSCGFuc3dlcmVk'
+    'EikKEGFuc3dlcmVkX2NvcnJlY3QYBSABKAhSD2Fuc3dlcmVkQ29ycmVjdBIYCgdjb250ZXh0GA'
+    'YgASgJUgdjb250ZXh0EhsKCXJldGVzdF9vZhgHIAEoCVIIcmV0ZXN0T2Y=');
+
+@$core.Deprecated('Use submitReadingAnswerRequestDescriptor instead')
+const SubmitReadingAnswerRequest$json = {
+  '1': 'SubmitReadingAnswerRequest',
+  '2': [
+    {'1': 'question_id', '3': 1, '4': 1, '5': 9, '10': 'questionId'},
+    {'1': 'answer', '3': 2, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'client_event_id', '3': 3, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'elapsed_ms', '3': 4, '4': 1, '5': 5, '10': 'elapsedMs'},
+    {'1': 'retest_of', '3': 5, '4': 1, '5': 9, '10': 'retestOf'},
+  ],
+};
+
+/// Descriptor for `SubmitReadingAnswerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitReadingAnswerRequestDescriptor = $convert.base64Decode(
+    'ChpTdWJtaXRSZWFkaW5nQW5zd2VyUmVxdWVzdBIfCgtxdWVzdGlvbl9pZBgBIAEoCVIKcXVlc3'
+    'Rpb25JZBIWCgZhbnN3ZXIYAiABKAlSBmFuc3dlchImCg9jbGllbnRfZXZlbnRfaWQYAyABKAlS'
+    'DWNsaWVudEV2ZW50SWQSHQoKZWxhcHNlZF9tcxgEIAEoBVIJZWxhcHNlZE1zEhsKCXJldGVzdF'
+    '9vZhgFIAEoCVIIcmV0ZXN0T2Y=');
+
+@$core.Deprecated('Use submitReadingAnswerResponseDescriptor instead')
+const SubmitReadingAnswerResponse$json = {
+  '1': 'SubmitReadingAnswerResponse',
+  '2': [
+    {'1': 'correct', '3': 1, '4': 1, '5': 8, '10': 'correct'},
+    {'1': 'expected', '3': 2, '4': 1, '5': 9, '10': 'expected'},
+    {'1': 'explanation', '3': 3, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'duplicate', '3': 4, '4': 1, '5': 8, '10': 'duplicate'},
+    {'1': 'grader_version', '3': 5, '4': 1, '5': 9, '10': 'graderVersion'},
+    {
+      '1': 'error_kind',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.sttattus.languages.v1.AnswerErrorKind',
+      '10': 'errorKind'
+    },
+    {'1': 'quote', '3': 7, '4': 1, '5': 9, '10': 'quote'},
+    {
+      '1': 'retest',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ReadingQuestion',
+      '10': 'retest'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitReadingAnswerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitReadingAnswerResponseDescriptor = $convert.base64Decode(
+    'ChtTdWJtaXRSZWFkaW5nQW5zd2VyUmVzcG9uc2USGAoHY29ycmVjdBgBIAEoCFIHY29ycmVjdB'
+    'IaCghleHBlY3RlZBgCIAEoCVIIZXhwZWN0ZWQSIAoLZXhwbGFuYXRpb24YAyABKAlSC2V4cGxh'
+    'bmF0aW9uEhwKCWR1cGxpY2F0ZRgEIAEoCFIJZHVwbGljYXRlEiUKDmdyYWRlcl92ZXJzaW9uGA'
+    'UgASgJUg1ncmFkZXJWZXJzaW9uEkUKCmVycm9yX2tpbmQYBiABKA4yJi5zdHRhdHR1cy5sYW5n'
+    'dWFnZXMudjEuQW5zd2VyRXJyb3JLaW5kUgllcnJvcktpbmQSFAoFcXVvdGUYByABKAlSBXF1b3'
+    'RlEj4KBnJldGVzdBgIIAEoCzImLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5SZWFkaW5nUXVlc3Rp'
+    'b25SBnJldGVzdA==');
 
 @$core.Deprecated('Use listReadingTextsRequestDescriptor instead')
 const ListReadingTextsRequest$json = {
