@@ -100,6 +100,9 @@ const (
 	ExerciseKind_EXERCISE_KIND_TRANSCRIBE          ExerciseKind = 12 // hear the word, type it
 	ExerciseKind_EXERCISE_KIND_LISTEN_NOISE        ExerciseKind = 13 // hear it through noise, choose its meaning
 	ExerciseKind_EXERCISE_KIND_FLUENCY             ExerciseKind = 14 // a quick choice in a timed round of known words
+	// Lexicon Choice 3 — backed by reviewed content on concepts and grammar.
+	ExerciseKind_EXERCISE_KIND_NAME_IT   ExerciseKind = 15 // see its picture, write the word
+	ExerciseKind_EXERCISE_KIND_TRANSFORM ExerciseKind = 16 // rewrite the sentence as the instruction says
 )
 
 // Enum value maps for ExerciseKind.
@@ -120,6 +123,8 @@ var (
 		12: "EXERCISE_KIND_TRANSCRIBE",
 		13: "EXERCISE_KIND_LISTEN_NOISE",
 		14: "EXERCISE_KIND_FLUENCY",
+		15: "EXERCISE_KIND_NAME_IT",
+		16: "EXERCISE_KIND_TRANSFORM",
 	}
 	ExerciseKind_value = map[string]int32{
 		"EXERCISE_KIND_UNSPECIFIED":         0,
@@ -137,6 +142,8 @@ var (
 		"EXERCISE_KIND_TRANSCRIBE":          12,
 		"EXERCISE_KIND_LISTEN_NOISE":        13,
 		"EXERCISE_KIND_FLUENCY":             14,
+		"EXERCISE_KIND_NAME_IT":             15,
+		"EXERCISE_KIND_TRANSFORM":           16,
 	}
 )
 
@@ -6874,7 +6881,9 @@ type PracticeCard struct {
 	// from, shuffled; the answer is the tiles in order, joined by spaces.
 	Tiles []string `protobuf:"bytes,30,rep,name=tiles,proto3" json:"tiles,omitempty"`
 	// Listening in noise: how loud the noise played under the word is, 0..1.
-	Noise         float32 `protobuf:"fixed32,31,opt,name=noise,proto3" json:"noise,omitempty"`
+	Noise float32 `protobuf:"fixed32,31,opt,name=noise,proto3" json:"noise,omitempty"`
+	// Naming: the picture of the thing (one emoji, drawn by the device's font).
+	Picture       string `protobuf:"bytes,32,opt,name=picture,proto3" json:"picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -7124,6 +7133,13 @@ func (x *PracticeCard) GetNoise() float32 {
 		return x.Noise
 	}
 	return 0
+}
+
+func (x *PracticeCard) GetPicture() string {
+	if x != nil {
+		return x.Picture
+	}
+	return ""
 }
 
 type GetPracticeSessionRequest struct {
@@ -10227,7 +10243,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aCreateLinguistShareRequest\"P\n" +
 	"\x1bCreateLinguistShareResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1b\n" +
-	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xb7\b\n" +
+	"\tshare_url\x18\x02 \x01(\tR\bshareUrl\"\xd1\b\n" +
 	"\fPracticeCard\x12\x1b\n" +
 	"\tlexeme_id\x18\x01 \x01(\tR\blexemeId\x12\x1d\n" +
 	"\n" +
@@ -10262,7 +10278,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\tretest_of\x18\x1c \x01(\tR\bretestOf\x12)\n" +
 	"\x10template_version\x18\x1d \x01(\x05R\x0ftemplateVersion\x12\x14\n" +
 	"\x05tiles\x18\x1e \x03(\tR\x05tiles\x12\x14\n" +
-	"\x05noise\x18\x1f \x01(\x02R\x05noise\"\xae\x01\n" +
+	"\x05noise\x18\x1f \x01(\x02R\x05noise\x12\x18\n" +
+	"\apicture\x18  \x01(\tR\apicture\"\xae\x01\n" +
 	"\x19GetPracticeSessionRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12#\n" +
@@ -10504,7 +10521,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
 	"\x1fCULTURAL_CATEGORY_LUXURY_ASSETS\x10\x02\x12 \n" +
 	"\x1cCULTURAL_CATEGORY_GASTRONOMY\x10\x03\x12\"\n" +
-	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x04*\xc3\x03\n" +
+	"\x1eCULTURAL_CATEGORY_PHILANTHROPY\x10\x04*\xfb\x03\n" +
 	"\fExerciseKind\x12\x1d\n" +
 	"\x19EXERCISE_KIND_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17EXERCISE_KIND_RECOGNISE\x10\x01\x12\x18\n" +
@@ -10521,7 +10538,9 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x17EXERCISE_KIND_DICTATION\x10\v\x12\x1c\n" +
 	"\x18EXERCISE_KIND_TRANSCRIBE\x10\f\x12\x1e\n" +
 	"\x1aEXERCISE_KIND_LISTEN_NOISE\x10\r\x12\x19\n" +
-	"\x15EXERCISE_KIND_FLUENCY\x10\x0e*\x88\x01\n" +
+	"\x15EXERCISE_KIND_FLUENCY\x10\x0e\x12\x19\n" +
+	"\x15EXERCISE_KIND_NAME_IT\x10\x0f\x12\x1b\n" +
+	"\x17EXERCISE_KIND_TRANSFORM\x10\x10*\x88\x01\n" +
 	"\rStudyItemKind\x12\x1f\n" +
 	"\x1bSTUDY_ITEM_KIND_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16STUDY_ITEM_KIND_LEXEME\x10\x01\x12\x1b\n" +

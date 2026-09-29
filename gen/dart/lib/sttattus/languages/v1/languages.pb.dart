@@ -8062,6 +8062,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     $core.int? templateVersion,
     $core.Iterable<$core.String>? tiles,
     $core.double? noise,
+    $core.String? picture,
   }) {
     final result = create();
     if (lexemeId != null) result.lexemeId = lexemeId;
@@ -8096,6 +8097,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     if (templateVersion != null) result.templateVersion = templateVersion;
     if (tiles != null) result.tiles.addAll(tiles);
     if (noise != null) result.noise = noise;
+    if (picture != null) result.picture = picture;
     return result;
   }
 
@@ -8147,6 +8149,7 @@ class PracticeCard extends $pb.GeneratedMessage {
     ..aI(29, _omitFieldNames ? '' : 'templateVersion')
     ..pPS(30, _omitFieldNames ? '' : 'tiles')
     ..aD(31, _omitFieldNames ? '' : 'noise', fieldType: $pb.PbFieldType.OF)
+    ..aOS(32, _omitFieldNames ? '' : 'picture')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -8469,6 +8472,16 @@ class PracticeCard extends $pb.GeneratedMessage {
   $core.bool hasNoise() => $_has(30);
   @$pb.TagNumber(31)
   void clearNoise() => $_clearField(31);
+
+  /// Naming: the picture of the thing (one emoji, drawn by the device's font).
+  @$pb.TagNumber(32)
+  $core.String get picture => $_getSZ(31);
+  @$pb.TagNumber(32)
+  set picture($core.String value) => $_setString(31, value);
+  @$pb.TagNumber(32)
+  $core.bool hasPicture() => $_has(31);
+  @$pb.TagNumber(32)
+  void clearPicture() => $_clearField(32);
 }
 
 class GetPracticeSessionRequest extends $pb.GeneratedMessage {

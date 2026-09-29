@@ -166,6 +166,22 @@ export enum ExerciseKind {
    * @generated from enum value: EXERCISE_KIND_FLUENCY = 14;
    */
   FLUENCY = 14,
+
+  /**
+   * Lexicon Choice 3 — backed by reviewed content on concepts and grammar.
+   *
+   * see its picture, write the word
+   *
+   * @generated from enum value: EXERCISE_KIND_NAME_IT = 15;
+   */
+  NAME_IT = 15,
+
+  /**
+   * rewrite the sentence as the instruction says
+   *
+   * @generated from enum value: EXERCISE_KIND_TRANSFORM = 16;
+   */
+  TRANSFORM = 16,
 }
 // Retrieve enum metadata with: proto3.getEnumType(ExerciseKind)
 proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
@@ -184,6 +200,8 @@ proto3.util.setEnumType(ExerciseKind, "sttattus.languages.v1.ExerciseKind", [
   { no: 12, name: "EXERCISE_KIND_TRANSCRIBE" },
   { no: 13, name: "EXERCISE_KIND_LISTEN_NOISE" },
   { no: 14, name: "EXERCISE_KIND_FLUENCY" },
+  { no: 15, name: "EXERCISE_KIND_NAME_IT" },
+  { no: 16, name: "EXERCISE_KIND_TRANSFORM" },
 ]);
 
 /**
@@ -6059,6 +6077,13 @@ export class PracticeCard extends Message<PracticeCard> {
    */
   noise = 0;
 
+  /**
+   * Naming: the picture of the thing (one emoji, drawn by the device's font).
+   *
+   * @generated from field: string picture = 32;
+   */
+  picture = "";
+
   constructor(data?: PartialMessage<PracticeCard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6098,6 +6123,7 @@ export class PracticeCard extends Message<PracticeCard> {
     { no: 29, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 30, name: "tiles", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 31, name: "noise", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 32, name: "picture", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PracticeCard {

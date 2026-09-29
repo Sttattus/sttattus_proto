@@ -84,6 +84,12 @@ class ExerciseKind extends $pb.ProtobufEnum {
   static const ExerciseKind EXERCISE_KIND_FLUENCY =
       ExerciseKind._(14, _omitEnumNames ? '' : 'EXERCISE_KIND_FLUENCY');
 
+  /// Lexicon Choice 3 — backed by reviewed content on concepts and grammar.
+  static const ExerciseKind EXERCISE_KIND_NAME_IT =
+      ExerciseKind._(15, _omitEnumNames ? '' : 'EXERCISE_KIND_NAME_IT');
+  static const ExerciseKind EXERCISE_KIND_TRANSFORM =
+      ExerciseKind._(16, _omitEnumNames ? '' : 'EXERCISE_KIND_TRANSFORM');
+
   static const $core.List<ExerciseKind> values = <ExerciseKind>[
     EXERCISE_KIND_UNSPECIFIED,
     EXERCISE_KIND_RECOGNISE,
@@ -100,10 +106,12 @@ class ExerciseKind extends $pb.ProtobufEnum {
     EXERCISE_KIND_TRANSCRIBE,
     EXERCISE_KIND_LISTEN_NOISE,
     EXERCISE_KIND_FLUENCY,
+    EXERCISE_KIND_NAME_IT,
+    EXERCISE_KIND_TRANSFORM,
   ];
 
   static final $core.List<ExerciseKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 14);
+      $pb.ProtobufEnum.$_initByValueList(values, 16);
   static ExerciseKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

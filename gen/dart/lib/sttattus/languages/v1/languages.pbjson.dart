@@ -53,6 +53,8 @@ const ExerciseKind$json = {
     {'1': 'EXERCISE_KIND_TRANSCRIBE', '2': 12},
     {'1': 'EXERCISE_KIND_LISTEN_NOISE', '2': 13},
     {'1': 'EXERCISE_KIND_FLUENCY', '2': 14},
+    {'1': 'EXERCISE_KIND_NAME_IT', '2': 15},
+    {'1': 'EXERCISE_KIND_TRANSFORM', '2': 16},
   ],
 };
 
@@ -66,7 +68,8 @@ final $typed_data.Uint8List exerciseKindDescriptor = $convert.base64Decode(
     'FOU0xBVEVfVE9fVEFSR0VUEAkSIwofRVhFUkNJU0VfS0lORF9UUkFOU0xBVEVfVE9fQkFTRRAK'
     'EhsKF0VYRVJDSVNFX0tJTkRfRElDVEFUSU9OEAsSHAoYRVhFUkNJU0VfS0lORF9UUkFOU0NSSU'
     'JFEAwSHgoaRVhFUkNJU0VfS0lORF9MSVNURU5fTk9JU0UQDRIZChVFWEVSQ0lTRV9LSU5EX0ZM'
-    'VUVOQ1kQDg==');
+    'VUVOQ1kQDhIZChVFWEVSQ0lTRV9LSU5EX05BTUVfSVQQDxIbChdFWEVSQ0lTRV9LSU5EX1RSQU'
+    '5TRk9STRAQ');
 
 @$core.Deprecated('Use studyItemKindDescriptor instead')
 const StudyItemKind$json = {
@@ -2327,6 +2330,7 @@ const PracticeCard$json = {
     {'1': 'template_version', '3': 29, '4': 1, '5': 5, '10': 'templateVersion'},
     {'1': 'tiles', '3': 30, '4': 3, '5': 9, '10': 'tiles'},
     {'1': 'noise', '3': 31, '4': 1, '5': 2, '10': 'noise'},
+    {'1': 'picture', '3': 32, '4': 1, '5': 9, '10': 'picture'},
   ],
 };
 
@@ -2351,7 +2355,7 @@ final $typed_data.Uint8List practiceCardDescriptor = $convert.base64Decode(
     'KAlSDGNvcHlMYW5ndWFnZRI5CgZyZWFzb24YGyABKAsyIS5zdHRhdHR1cy5sYW5ndWFnZXMudj'
     'EuUGxhblJlYXNvblIGcmVhc29uEhsKCXJldGVzdF9vZhgcIAEoCVIIcmV0ZXN0T2YSKQoQdGVt'
     'cGxhdGVfdmVyc2lvbhgdIAEoBVIPdGVtcGxhdGVWZXJzaW9uEhQKBXRpbGVzGB4gAygJUgV0aW'
-    'xlcxIUCgVub2lzZRgfIAEoAlIFbm9pc2U=');
+    'xlcxIUCgVub2lzZRgfIAEoAlIFbm9pc2USGAoHcGljdHVyZRggIAEoCVIHcGljdHVyZQ==');
 
 @$core.Deprecated('Use getPracticeSessionRequestDescriptor instead')
 const GetPracticeSessionRequest$json = {

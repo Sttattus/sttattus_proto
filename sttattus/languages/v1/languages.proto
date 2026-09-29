@@ -833,6 +833,9 @@ enum ExerciseKind {
   EXERCISE_KIND_TRANSCRIBE = 12; // hear the word, type it
   EXERCISE_KIND_LISTEN_NOISE = 13; // hear it through noise, choose its meaning
   EXERCISE_KIND_FLUENCY = 14; // a quick choice in a timed round of known words
+  // Lexicon Choice 3 — backed by reviewed content on concepts and grammar.
+  EXERCISE_KIND_NAME_IT = 15; // see its picture, write the word
+  EXERCISE_KIND_TRANSFORM = 16; // rewrite the sentence as the instruction says
 }
 
 // What a schedulable item actually is. Vocabulary alone is not a language: a
@@ -927,6 +930,8 @@ message PracticeCard {
   repeated string tiles = 30;
   // Listening in noise: how loud the noise played under the word is, 0..1.
   float noise = 31;
+  // Naming: the picture of the thing (one emoji, drawn by the device's font).
+  string picture = 32;
 }
 
 message GetPracticeSessionRequest {
