@@ -4477,6 +4477,9 @@ message SpatialCanvasExport {
   int32 warning_count = 10;
   google.protobuf.Timestamp expires_at = 11;
   google.protobuf.Timestamp created_at = 12;
+  bytes artifact_data = 13;
+  string filename = 14;
+  string mime_type = 15;
 }
 
 message SpatialCanvasOperation {
@@ -4518,8 +4521,12 @@ message GetSpatialCanvasDashboardResponse {
   bool exports_enabled = 9;
 }
 
-message ListSpatialCanvasTemplatesRequest { bool include_retired = 1; }
-message ListSpatialCanvasTemplatesResponse { repeated SpatialCanvasTemplate templates = 1; }
+message ListSpatialCanvasTemplatesRequest {
+  bool include_retired = 1;
+}
+message ListSpatialCanvasTemplatesResponse {
+  repeated SpatialCanvasTemplate templates = 1;
+}
 
 message CreateSpatialCanvasRequest {
   string workspace_id = 1;
@@ -4532,14 +4539,18 @@ message CreateSpatialCanvasRequest {
   int64 template_version = 8;
   string client_mutation_id = 9;
 }
-message CreateSpatialCanvasResponse { SpatialCanvasDetail detail = 1; }
+message CreateSpatialCanvasResponse {
+  SpatialCanvasDetail detail = 1;
+}
 
 message GetSpatialCanvasRequest {
   string canvas_id = 1;
   int64 since_revision = 2;
   bool include_deleted = 3;
 }
-message GetSpatialCanvasResponse { SpatialCanvasDetail detail = 1; }
+message GetSpatialCanvasResponse {
+  SpatialCanvasDetail detail = 1;
+}
 
 message ApplySpatialCanvasOperationsRequest {
   string canvas_id = 1;
@@ -4560,21 +4571,27 @@ message ResolveSpatialCanvasConflictRequest {
   int64 expected_revision = 4;
   string client_mutation_id = 5;
 }
-message ResolveSpatialCanvasConflictResponse { SpatialCanvasConflict conflict = 1; }
+message ResolveSpatialCanvasConflictResponse {
+  SpatialCanvasConflict conflict = 1;
+}
 
 message CreateSpatialCanvasSnapshotRequest {
   string canvas_id = 1;
   string name = 2;
   string client_mutation_id = 3;
 }
-message CreateSpatialCanvasSnapshotResponse { SpatialCanvasSnapshot snapshot = 1; }
+message CreateSpatialCanvasSnapshotResponse {
+  SpatialCanvasSnapshot snapshot = 1;
+}
 
 message RestoreSpatialCanvasSnapshotRequest {
   string snapshot_id = 1;
   int64 expected_revision = 2;
   string client_mutation_id = 3;
 }
-message RestoreSpatialCanvasSnapshotResponse { SpatialCanvasDetail detail = 1; }
+message RestoreSpatialCanvasSnapshotResponse {
+  SpatialCanvasDetail detail = 1;
+}
 
 message UpsertSpatialCanvasCommentRequest {
   string canvas_id = 1;
@@ -4585,7 +4602,9 @@ message UpsertSpatialCanvasCommentRequest {
   int64 expected_version = 6;
   string client_mutation_id = 7;
 }
-message UpsertSpatialCanvasCommentResponse { SpatialCanvasComment comment = 1; }
+message UpsertSpatialCanvasCommentResponse {
+  SpatialCanvasComment comment = 1;
+}
 
 message SetSpatialCanvasCommentStateRequest {
   string comment_id = 1;
@@ -4593,14 +4612,18 @@ message SetSpatialCanvasCommentStateRequest {
   int64 expected_version = 3;
   string client_mutation_id = 4;
 }
-message SetSpatialCanvasCommentStateResponse { SpatialCanvasComment comment = 1; }
+message SetSpatialCanvasCommentStateResponse {
+  SpatialCanvasComment comment = 1;
+}
 
 message GenerateSpatialCanvasProposalsRequest {
   string canvas_id = 1;
   repeated string proposal_types = 2;
   string client_mutation_id = 3;
 }
-message GenerateSpatialCanvasProposalsResponse { repeated SpatialCanvasProposal proposals = 1; }
+message GenerateSpatialCanvasProposalsResponse {
+  repeated SpatialCanvasProposal proposals = 1;
+}
 
 message SetSpatialCanvasProposalStateRequest {
   string proposal_id = 1;
@@ -4620,10 +4643,16 @@ message RequestSpatialCanvasExportRequest {
   bool include_comments = 4;
   string client_mutation_id = 5;
 }
-message RequestSpatialCanvasExportResponse { SpatialCanvasExport export = 1; }
+message RequestSpatialCanvasExportResponse {
+  SpatialCanvasExport export = 1;
+}
 
-message GetSpatialCanvasExportRequest { string export_id = 1; }
-message GetSpatialCanvasExportResponse { SpatialCanvasExport export = 1; }
+message GetSpatialCanvasExportRequest {
+  string export_id = 1;
+}
+message GetSpatialCanvasExportResponse {
+  SpatialCanvasExport export = 1;
+}
 
 message UpsertSpatialCanvasCollaboratorRequest {
   string canvas_id = 1;

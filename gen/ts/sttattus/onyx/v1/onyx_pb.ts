@@ -35353,6 +35353,21 @@ export class SpatialCanvasExport extends Message<SpatialCanvasExport> {
    */
   createdAt?: Timestamp;
 
+  /**
+   * @generated from field: bytes artifact_data = 13;
+   */
+  artifactData = new Uint8Array(0);
+
+  /**
+   * @generated from field: string filename = 14;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 15;
+   */
+  mimeType = "";
+
   constructor(data?: PartialMessage<SpatialCanvasExport>) {
     super();
     proto3.util.initPartial(data, this);
@@ -35373,6 +35388,9 @@ export class SpatialCanvasExport extends Message<SpatialCanvasExport> {
     { no: 10, name: "warning_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 11, name: "expires_at", kind: "message", T: Timestamp },
     { no: 12, name: "created_at", kind: "message", T: Timestamp },
+    { no: 13, name: "artifact_data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 14, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasExport {

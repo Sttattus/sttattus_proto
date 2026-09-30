@@ -17706,6 +17706,9 @@ const SpatialCanvasExport$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {'1': 'artifact_data', '3': 13, '4': 1, '5': 12, '10': 'artifactData'},
+    {'1': 'filename', '3': 14, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'mime_type', '3': 15, '4': 1, '5': 9, '10': 'mimeType'},
   ],
 };
 
@@ -17719,7 +17722,8 @@ final $typed_data.Uint8List spatialCanvasExportDescriptor = $convert.base64Decod
     'gFUg1jaXRhdGlvbkNvdW50EiMKDXdhcm5pbmdfY291bnQYCiABKAVSDHdhcm5pbmdDb3VudBI5'
     'CgpleHBpcmVzX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0'
     'F0EjkKCmNyZWF0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVh'
-    'dGVkQXQ=');
+    'dGVkQXQSIwoNYXJ0aWZhY3RfZGF0YRgNIAEoDFIMYXJ0aWZhY3REYXRhEhoKCGZpbGVuYW1lGA'
+    '4gASgJUghmaWxlbmFtZRIbCgltaW1lX3R5cGUYDyABKAlSCG1pbWVUeXBl');
 
 @$core.Deprecated('Use spatialCanvasOperationDescriptor instead')
 const SpatialCanvasOperation$json = {

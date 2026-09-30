@@ -43417,6 +43417,9 @@ type SpatialCanvasExport struct {
 	WarningCount   int32                  `protobuf:"varint,10,opt,name=warning_count,json=warningCount,proto3" json:"warning_count,omitempty"`
 	ExpiresAt      *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	CreatedAt      *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ArtifactData   []byte                 `protobuf:"bytes,13,opt,name=artifact_data,json=artifactData,proto3" json:"artifact_data,omitempty"`
+	Filename       string                 `protobuf:"bytes,14,opt,name=filename,proto3" json:"filename,omitempty"`
+	MimeType       string                 `protobuf:"bytes,15,opt,name=mime_type,json=mimeType,proto3" json:"mime_type,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -43533,6 +43536,27 @@ func (x *SpatialCanvasExport) GetCreatedAt() *timestamppb.Timestamp {
 		return x.CreatedAt
 	}
 	return nil
+}
+
+func (x *SpatialCanvasExport) GetArtifactData() []byte {
+	if x != nil {
+		return x.ArtifactData
+	}
+	return nil
+}
+
+func (x *SpatialCanvasExport) GetFilename() string {
+	if x != nil {
+		return x.Filename
+	}
+	return ""
+}
+
+func (x *SpatialCanvasExport) GetMimeType() string {
+	if x != nil {
+		return x.MimeType
+	}
+	return ""
 }
 
 type SpatialCanvasOperation struct {
@@ -49659,7 +49683,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"decided_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdecidedAt\"\xc1\x03\n" +
+	"decided_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tdecidedAt\"\x9f\x04\n" +
 	"\x13SpatialCanvasExport\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tcanvas_id\x18\x02 \x01(\tR\bcanvasId\x12\x16\n" +
@@ -49675,7 +49699,10 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"expires_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x129\n" +
 	"\n" +
-	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xef\x02\n" +
+	"created_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12#\n" +
+	"\rartifact_data\x18\r \x01(\fR\fartifactData\x12\x1a\n" +
+	"\bfilename\x18\x0e \x01(\tR\bfilename\x12\x1b\n" +
+	"\tmime_type\x18\x0f \x01(\tR\bmimeType\"\xef\x02\n" +
 	"\x16SpatialCanvasOperation\x12!\n" +
 	"\foperation_id\x18\x01 \x01(\tR\voperationId\x12\x1d\n" +
 	"\n" +

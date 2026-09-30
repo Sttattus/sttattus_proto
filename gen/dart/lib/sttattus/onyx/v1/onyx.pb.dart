@@ -58974,6 +58974,9 @@ class SpatialCanvasExport extends $pb.GeneratedMessage {
     $core.int? warningCount,
     $1.Timestamp? expiresAt,
     $1.Timestamp? createdAt,
+    $core.List<$core.int>? artifactData,
+    $core.String? filename,
+    $core.String? mimeType,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -58988,6 +58991,9 @@ class SpatialCanvasExport extends $pb.GeneratedMessage {
     if (warningCount != null) result.warningCount = warningCount;
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (createdAt != null) result.createdAt = createdAt;
+    if (artifactData != null) result.artifactData = artifactData;
+    if (filename != null) result.filename = filename;
+    if (mimeType != null) result.mimeType = mimeType;
     return result;
   }
 
@@ -59019,6 +59025,10 @@ class SpatialCanvasExport extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        13, _omitFieldNames ? '' : 'artifactData', $pb.PbFieldType.OY)
+    ..aOS(14, _omitFieldNames ? '' : 'filename')
+    ..aOS(15, _omitFieldNames ? '' : 'mimeType')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -59151,6 +59161,33 @@ class SpatialCanvasExport extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(12);
   @$pb.TagNumber(12)
   $1.Timestamp ensureCreatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $core.List<$core.int> get artifactData => $_getN(12);
+  @$pb.TagNumber(13)
+  set artifactData($core.List<$core.int> value) => $_setBytes(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasArtifactData() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearArtifactData() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get filename => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set filename($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasFilename() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearFilename() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get mimeType => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set mimeType($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasMimeType() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearMimeType() => $_clearField(15);
 }
 
 class SpatialCanvasOperation extends $pb.GeneratedMessage {
