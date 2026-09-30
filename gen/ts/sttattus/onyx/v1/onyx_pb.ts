@@ -34220,3 +34220,2927 @@ export class SubmitIntegrationOperationsCaseResponse extends Message<SubmitInteg
   }
 }
 
+/**
+ * Choice 15 — a versioned, source-anchored spatial evidence canvas. Manual
+ * layout and accepted member-authored relationships are authoritative; model
+ * output is always represented separately as a provisional proposal.
+ *
+ * @generated from message sttattus.onyx.v1.SpatialCanvasSourceAnchor
+ */
+export class SpatialCanvasSourceAnchor extends Message<SpatialCanvasSourceAnchor> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string document_id = 2;
+   */
+  documentId = "";
+
+  /**
+   * @generated from field: string document_revision_id = 3;
+   */
+  documentRevisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 4;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string source_checksum = 5;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string quoted_text = 6;
+   */
+  quotedText = "";
+
+  /**
+   * @generated from field: string rights_status = 7;
+   */
+  rightsStatus = "";
+
+  /**
+   * @generated from field: bool is_stale = 8;
+   */
+  isStale = false;
+
+  /**
+   * @generated from field: string stale_reason = 9;
+   */
+  staleReason = "";
+
+  constructor(data?: PartialMessage<SpatialCanvasSourceAnchor>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasSourceAnchor";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "document_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "document_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "quoted_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "rights_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "is_stale", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "stale_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasSourceAnchor {
+    return new SpatialCanvasSourceAnchor().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasSourceAnchor {
+    return new SpatialCanvasSourceAnchor().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasSourceAnchor {
+    return new SpatialCanvasSourceAnchor().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasSourceAnchor | PlainMessage<SpatialCanvasSourceAnchor> | undefined, b: SpatialCanvasSourceAnchor | PlainMessage<SpatialCanvasSourceAnchor> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasSourceAnchor, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasTemplate
+ */
+export class SpatialCanvasTemplate extends Message<SpatialCanvasTemplate> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string code = 2;
+   */
+  code = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description = "";
+
+  /**
+   * @generated from field: int64 version = 5;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: repeated string node_kinds = 7;
+   */
+  nodeKinds: string[] = [];
+
+  /**
+   * @generated from field: repeated string edge_kinds = 8;
+   */
+  edgeKinds: string[] = [];
+
+  /**
+   * @generated from field: string layout_json = 9;
+   */
+  layoutJson = "";
+
+  /**
+   * @generated from field: bool is_builtin = 10;
+   */
+  isBuiltin = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp published_at = 11;
+   */
+  publishedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 12;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasTemplate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasTemplate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "node_kinds", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "edge_kinds", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "layout_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "is_builtin", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "published_at", kind: "message", T: Timestamp },
+    { no: 12, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasTemplate {
+    return new SpatialCanvasTemplate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasTemplate {
+    return new SpatialCanvasTemplate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasTemplate {
+    return new SpatialCanvasTemplate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasTemplate | PlainMessage<SpatialCanvasTemplate> | undefined, b: SpatialCanvasTemplate | PlainMessage<SpatialCanvasTemplate> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasTemplate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasWorkspace
+ */
+export class SpatialCanvasWorkspace extends Message<SpatialCanvasWorkspace> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * private | research_room
+   *
+   * @generated from field: string scope = 3;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string research_room_id = 4;
+   */
+  researchRoomId = "";
+
+  /**
+   * owner | editor | commenter | viewer
+   *
+   * @generated from field: string caller_role = 5;
+   */
+  callerRole = "";
+
+  /**
+   * @generated from field: int64 version = 6;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 canvas_count = 7;
+   */
+  canvasCount = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 8;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasWorkspace>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasWorkspace";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "research_room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "caller_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "canvas_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasWorkspace {
+    return new SpatialCanvasWorkspace().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasWorkspace {
+    return new SpatialCanvasWorkspace().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasWorkspace {
+    return new SpatialCanvasWorkspace().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasWorkspace | PlainMessage<SpatialCanvasWorkspace> | undefined, b: SpatialCanvasWorkspace | PlainMessage<SpatialCanvasWorkspace> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasWorkspace, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasSummary
+ */
+export class SpatialCanvasSummary extends Message<SpatialCanvasSummary> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string workspace_id = 2;
+   */
+  workspaceId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string template_code = 5;
+   */
+  templateCode = "";
+
+  /**
+   * @generated from field: int64 template_version = 6;
+   */
+  templateVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 current_revision = 8;
+   */
+  currentRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 node_count = 9;
+   */
+  nodeCount = 0;
+
+  /**
+   * @generated from field: int32 edge_count = 10;
+   */
+  edgeCount = 0;
+
+  /**
+   * @generated from field: int32 unresolved_conflict_count = 11;
+   */
+  unresolvedConflictCount = 0;
+
+  /**
+   * @generated from field: int32 open_comment_count = 12;
+   */
+  openCommentCount = 0;
+
+  /**
+   * @generated from field: string caller_role = 13;
+   */
+  callerRole = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasSummary>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasSummary";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "workspace_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "template_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "template_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "current_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "node_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "edge_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "unresolved_conflict_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "open_comment_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "caller_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasSummary {
+    return new SpatialCanvasSummary().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasSummary {
+    return new SpatialCanvasSummary().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasSummary {
+    return new SpatialCanvasSummary().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasSummary | PlainMessage<SpatialCanvasSummary> | undefined, b: SpatialCanvasSummary | PlainMessage<SpatialCanvasSummary> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasSummary, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasNode
+ */
+export class SpatialCanvasNode extends Message<SpatialCanvasNode> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string body = 5;
+   */
+  body = "";
+
+  /**
+   * @generated from field: double x = 6;
+   */
+  x = 0;
+
+  /**
+   * @generated from field: double y = 7;
+   */
+  y = 0;
+
+  /**
+   * @generated from field: double width = 8;
+   */
+  width = 0;
+
+  /**
+   * @generated from field: double height = 9;
+   */
+  height = 0;
+
+  /**
+   * @generated from field: int32 z_index = 10;
+   */
+  zIndex = 0;
+
+  /**
+   * @generated from field: string group_id = 11;
+   */
+  groupId = "";
+
+  /**
+   * @generated from field: string color = 12;
+   */
+  color = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasSourceAnchor source_anchor = 13;
+   */
+  sourceAnchor?: SpatialCanvasSourceAnchor;
+
+  /**
+   * @generated from field: string author_user_id = 14;
+   */
+  authorUserId = "";
+
+  /**
+   * @generated from field: int64 version = 15;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_deleted = 16;
+   */
+  isDeleted = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 17;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasNode>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasNode";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "x", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "width", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "height", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "z_index", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "source_anchor", kind: "message", T: SpatialCanvasSourceAnchor },
+    { no: 14, name: "author_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 16, name: "is_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasNode {
+    return new SpatialCanvasNode().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasNode {
+    return new SpatialCanvasNode().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasNode {
+    return new SpatialCanvasNode().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasNode | PlainMessage<SpatialCanvasNode> | undefined, b: SpatialCanvasNode | PlainMessage<SpatialCanvasNode> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasNode, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasEdge
+ */
+export class SpatialCanvasEdge extends Message<SpatialCanvasEdge> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string from_node_id = 3;
+   */
+  fromNodeId = "";
+
+  /**
+   * @generated from field: string to_node_id = 4;
+   */
+  toNodeId = "";
+
+  /**
+   * @generated from field: string relation_type = 5;
+   */
+  relationType = "";
+
+  /**
+   * @generated from field: string label = 6;
+   */
+  label = "";
+
+  /**
+   * @generated from field: string explanation = 7;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasSourceAnchor source_anchor = 8;
+   */
+  sourceAnchor?: SpatialCanvasSourceAnchor;
+
+  /**
+   * @generated from field: string author_user_id = 9;
+   */
+  authorUserId = "";
+
+  /**
+   * @generated from field: int64 version = 10;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: bool is_deleted = 11;
+   */
+  isDeleted = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 12;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasEdge>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasEdge";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "to_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "relation_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_anchor", kind: "message", T: SpatialCanvasSourceAnchor },
+    { no: 9, name: "author_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "is_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasEdge {
+    return new SpatialCanvasEdge().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasEdge {
+    return new SpatialCanvasEdge().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasEdge {
+    return new SpatialCanvasEdge().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasEdge | PlainMessage<SpatialCanvasEdge> | undefined, b: SpatialCanvasEdge | PlainMessage<SpatialCanvasEdge> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasEdge, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasLayoutRevision
+ */
+export class SpatialCanvasLayoutRevision extends Message<SpatialCanvasLayoutRevision> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: int64 revision_number = 3;
+   */
+  revisionNumber = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 base_revision_number = 4;
+   */
+  baseRevisionNumber = protoInt64.zero;
+
+  /**
+   * @generated from field: string summary = 5;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string created_by = 6;
+   */
+  createdBy = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasLayoutRevision>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasLayoutRevision";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_number", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "base_revision_number", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasLayoutRevision {
+    return new SpatialCanvasLayoutRevision().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasLayoutRevision {
+    return new SpatialCanvasLayoutRevision().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasLayoutRevision {
+    return new SpatialCanvasLayoutRevision().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasLayoutRevision | PlainMessage<SpatialCanvasLayoutRevision> | undefined, b: SpatialCanvasLayoutRevision | PlainMessage<SpatialCanvasLayoutRevision> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasLayoutRevision, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasConflict
+ */
+export class SpatialCanvasConflict extends Message<SpatialCanvasConflict> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string entity_type = 3;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 4;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string field_name = 5;
+   */
+  fieldName = "";
+
+  /**
+   * @generated from field: string local_value_json = 6;
+   */
+  localValueJson = "";
+
+  /**
+   * @generated from field: string remote_value_json = 7;
+   */
+  remoteValueJson = "";
+
+  /**
+   * @generated from field: string status = 8;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string resolution = 9;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: int64 detected_revision = 10;
+   */
+  detectedRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp detected_at = 11;
+   */
+  detectedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 12;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasConflict>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasConflict";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "local_value_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "remote_value_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "detected_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "detected_at", kind: "message", T: Timestamp },
+    { no: 12, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasConflict {
+    return new SpatialCanvasConflict().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasConflict {
+    return new SpatialCanvasConflict().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasConflict {
+    return new SpatialCanvasConflict().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasConflict | PlainMessage<SpatialCanvasConflict> | undefined, b: SpatialCanvasConflict | PlainMessage<SpatialCanvasConflict> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasConflict, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasSnapshot
+ */
+export class SpatialCanvasSnapshot extends Message<SpatialCanvasSnapshot> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: int64 layout_revision = 4;
+   */
+  layoutRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: string checksum = 5;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string created_by = 6;
+   */
+  createdBy = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasSnapshot>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasSnapshot";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "layout_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasSnapshot {
+    return new SpatialCanvasSnapshot().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasSnapshot {
+    return new SpatialCanvasSnapshot().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasSnapshot {
+    return new SpatialCanvasSnapshot().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasSnapshot | PlainMessage<SpatialCanvasSnapshot> | undefined, b: SpatialCanvasSnapshot | PlainMessage<SpatialCanvasSnapshot> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasSnapshot, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasComment
+ */
+export class SpatialCanvasComment extends Message<SpatialCanvasComment> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string entity_type = 3;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 4;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string body = 5;
+   */
+  body = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string author_user_id = 7;
+   */
+  authorUserId = "";
+
+  /**
+   * @generated from field: int64 version = 8;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 9;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 10;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasComment>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasComment";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "author_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "created_at", kind: "message", T: Timestamp },
+    { no: 10, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasComment {
+    return new SpatialCanvasComment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasComment {
+    return new SpatialCanvasComment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasComment {
+    return new SpatialCanvasComment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasComment | PlainMessage<SpatialCanvasComment> | undefined, b: SpatialCanvasComment | PlainMessage<SpatialCanvasComment> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasComment, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasProposal
+ */
+export class SpatialCanvasProposal extends Message<SpatialCanvasProposal> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string proposal_type = 3;
+   */
+  proposalType = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string rationale = 5;
+   */
+  rationale = "";
+
+  /**
+   * @generated from field: string payload_json = 6;
+   */
+  payloadJson = "";
+
+  /**
+   * @generated from field: string status = 7;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string model_key = 8;
+   */
+  modelKey = "";
+
+  /**
+   * @generated from field: string model_version = 9;
+   */
+  modelVersion = "";
+
+  /**
+   * @generated from field: string prompt_digest = 10;
+   */
+  promptDigest = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp decided_at = 12;
+   */
+  decidedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasProposal>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasProposal";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "proposal_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "payload_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "model_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "model_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "prompt_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "decided_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasProposal {
+    return new SpatialCanvasProposal().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasProposal {
+    return new SpatialCanvasProposal().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasProposal {
+    return new SpatialCanvasProposal().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasProposal | PlainMessage<SpatialCanvasProposal> | undefined, b: SpatialCanvasProposal | PlainMessage<SpatialCanvasProposal> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasProposal, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasExport
+ */
+export class SpatialCanvasExport extends Message<SpatialCanvasExport> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string canvas_id = 2;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string format = 3;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string artifact_url = 5;
+   */
+  artifactUrl = "";
+
+  /**
+   * @generated from field: string checksum = 6;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string manifest_json = 7;
+   */
+  manifestJson = "";
+
+  /**
+   * @generated from field: int64 layout_revision = 8;
+   */
+  layoutRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 citation_count = 9;
+   */
+  citationCount = 0;
+
+  /**
+   * @generated from field: int32 warning_count = 10;
+   */
+  warningCount = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 11;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasExport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasExport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "artifact_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "manifest_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "layout_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "warning_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasExport {
+    return new SpatialCanvasExport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasExport {
+    return new SpatialCanvasExport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasExport {
+    return new SpatialCanvasExport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasExport | PlainMessage<SpatialCanvasExport> | undefined, b: SpatialCanvasExport | PlainMessage<SpatialCanvasExport> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasExport, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasOperation
+ */
+export class SpatialCanvasOperation extends Message<SpatialCanvasOperation> {
+  /**
+   * @generated from field: string operation_id = 1;
+   */
+  operationId = "";
+
+  /**
+   * @generated from field: string replica_id = 2;
+   */
+  replicaId = "";
+
+  /**
+   * @generated from field: int64 replica_sequence = 3;
+   */
+  replicaSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 base_revision = 4;
+   */
+  baseRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: string operation_type = 5;
+   */
+  operationType = "";
+
+  /**
+   * @generated from field: string entity_type = 6;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 7;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string payload_json = 8;
+   */
+  payloadJson = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp occurred_at = 9;
+   */
+  occurredAt?: Timestamp;
+
+  constructor(data?: PartialMessage<SpatialCanvasOperation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasOperation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "operation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "replica_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "replica_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "base_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "operation_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "payload_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "occurred_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasOperation {
+    return new SpatialCanvasOperation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasOperation {
+    return new SpatialCanvasOperation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasOperation {
+    return new SpatialCanvasOperation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasOperation | PlainMessage<SpatialCanvasOperation> | undefined, b: SpatialCanvasOperation | PlainMessage<SpatialCanvasOperation> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasOperation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SpatialCanvasDetail
+ */
+export class SpatialCanvasDetail extends Message<SpatialCanvasDetail> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasSummary canvas = 1;
+   */
+  canvas?: SpatialCanvasSummary;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasNode nodes = 2;
+   */
+  nodes: SpatialCanvasNode[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasEdge edges = 3;
+   */
+  edges: SpatialCanvasEdge[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasConflict conflicts = 4;
+   */
+  conflicts: SpatialCanvasConflict[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasSnapshot snapshots = 5;
+   */
+  snapshots: SpatialCanvasSnapshot[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasComment comments = 6;
+   */
+  comments: SpatialCanvasComment[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasProposal proposals = 7;
+   */
+  proposals: SpatialCanvasProposal[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasLayoutRevision revisions = 8;
+   */
+  revisions: SpatialCanvasLayoutRevision[] = [];
+
+  /**
+   * @generated from field: double viewport_x = 9;
+   */
+  viewportX = 0;
+
+  /**
+   * @generated from field: double viewport_y = 10;
+   */
+  viewportY = 0;
+
+  /**
+   * @generated from field: double viewport_zoom = 11;
+   */
+  viewportZoom = 0;
+
+  constructor(data?: PartialMessage<SpatialCanvasDetail>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SpatialCanvasDetail";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas", kind: "message", T: SpatialCanvasSummary },
+    { no: 2, name: "nodes", kind: "message", T: SpatialCanvasNode, repeated: true },
+    { no: 3, name: "edges", kind: "message", T: SpatialCanvasEdge, repeated: true },
+    { no: 4, name: "conflicts", kind: "message", T: SpatialCanvasConflict, repeated: true },
+    { no: 5, name: "snapshots", kind: "message", T: SpatialCanvasSnapshot, repeated: true },
+    { no: 6, name: "comments", kind: "message", T: SpatialCanvasComment, repeated: true },
+    { no: 7, name: "proposals", kind: "message", T: SpatialCanvasProposal, repeated: true },
+    { no: 8, name: "revisions", kind: "message", T: SpatialCanvasLayoutRevision, repeated: true },
+    { no: 9, name: "viewport_x", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "viewport_y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "viewport_zoom", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpatialCanvasDetail {
+    return new SpatialCanvasDetail().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SpatialCanvasDetail {
+    return new SpatialCanvasDetail().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpatialCanvasDetail {
+    return new SpatialCanvasDetail().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SpatialCanvasDetail | PlainMessage<SpatialCanvasDetail> | undefined, b: SpatialCanvasDetail | PlainMessage<SpatialCanvasDetail> | undefined): boolean {
+    return proto3.util.equals(SpatialCanvasDetail, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
+ */
+export class GetSpatialCanvasDashboardRequest extends Message<GetSpatialCanvasDashboardRequest> {
+  constructor(data?: PartialMessage<GetSpatialCanvasDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasDashboardRequest {
+    return new GetSpatialCanvasDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasDashboardRequest {
+    return new GetSpatialCanvasDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasDashboardRequest {
+    return new GetSpatialCanvasDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasDashboardRequest | PlainMessage<GetSpatialCanvasDashboardRequest> | undefined, b: GetSpatialCanvasDashboardRequest | PlainMessage<GetSpatialCanvasDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
+ */
+export class GetSpatialCanvasDashboardResponse extends Message<GetSpatialCanvasDashboardResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasWorkspace workspaces = 1;
+   */
+  workspaces: SpatialCanvasWorkspace[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasSummary canvases = 2;
+   */
+  canvases: SpatialCanvasSummary[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasTemplate templates = 3;
+   */
+  templates: SpatialCanvasTemplate[] = [];
+
+  /**
+   * @generated from field: int32 unresolved_conflicts = 4;
+   */
+  unresolvedConflicts = 0;
+
+  /**
+   * @generated from field: int32 pending_proposals = 5;
+   */
+  pendingProposals = 0;
+
+  /**
+   * @generated from field: int32 open_comments = 6;
+   */
+  openComments = 0;
+
+  /**
+   * @generated from field: bool canvas_writes_enabled = 7;
+   */
+  canvasWritesEnabled = false;
+
+  /**
+   * @generated from field: bool ai_proposals_enabled = 8;
+   */
+  aiProposalsEnabled = false;
+
+  /**
+   * @generated from field: bool exports_enabled = 9;
+   */
+  exportsEnabled = false;
+
+  constructor(data?: PartialMessage<GetSpatialCanvasDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspaces", kind: "message", T: SpatialCanvasWorkspace, repeated: true },
+    { no: 2, name: "canvases", kind: "message", T: SpatialCanvasSummary, repeated: true },
+    { no: 3, name: "templates", kind: "message", T: SpatialCanvasTemplate, repeated: true },
+    { no: 4, name: "unresolved_conflicts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "pending_proposals", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "open_comments", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "canvas_writes_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "ai_proposals_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "exports_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasDashboardResponse {
+    return new GetSpatialCanvasDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasDashboardResponse {
+    return new GetSpatialCanvasDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasDashboardResponse {
+    return new GetSpatialCanvasDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasDashboardResponse | PlainMessage<GetSpatialCanvasDashboardResponse> | undefined, b: GetSpatialCanvasDashboardResponse | PlainMessage<GetSpatialCanvasDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
+ */
+export class ListSpatialCanvasTemplatesRequest extends Message<ListSpatialCanvasTemplatesRequest> {
+  /**
+   * @generated from field: bool include_retired = 1;
+   */
+  includeRetired = false;
+
+  constructor(data?: PartialMessage<ListSpatialCanvasTemplatesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "include_retired", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSpatialCanvasTemplatesRequest {
+    return new ListSpatialCanvasTemplatesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSpatialCanvasTemplatesRequest {
+    return new ListSpatialCanvasTemplatesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSpatialCanvasTemplatesRequest {
+    return new ListSpatialCanvasTemplatesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSpatialCanvasTemplatesRequest | PlainMessage<ListSpatialCanvasTemplatesRequest> | undefined, b: ListSpatialCanvasTemplatesRequest | PlainMessage<ListSpatialCanvasTemplatesRequest> | undefined): boolean {
+    return proto3.util.equals(ListSpatialCanvasTemplatesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
+ */
+export class ListSpatialCanvasTemplatesResponse extends Message<ListSpatialCanvasTemplatesResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasTemplate templates = 1;
+   */
+  templates: SpatialCanvasTemplate[] = [];
+
+  constructor(data?: PartialMessage<ListSpatialCanvasTemplatesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "templates", kind: "message", T: SpatialCanvasTemplate, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSpatialCanvasTemplatesResponse {
+    return new ListSpatialCanvasTemplatesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSpatialCanvasTemplatesResponse {
+    return new ListSpatialCanvasTemplatesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSpatialCanvasTemplatesResponse {
+    return new ListSpatialCanvasTemplatesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListSpatialCanvasTemplatesResponse | PlainMessage<ListSpatialCanvasTemplatesResponse> | undefined, b: ListSpatialCanvasTemplatesResponse | PlainMessage<ListSpatialCanvasTemplatesResponse> | undefined): boolean {
+    return proto3.util.equals(ListSpatialCanvasTemplatesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSpatialCanvasRequest
+ */
+export class CreateSpatialCanvasRequest extends Message<CreateSpatialCanvasRequest> {
+  /**
+   * @generated from field: string workspace_id = 1;
+   */
+  workspaceId = "";
+
+  /**
+   * @generated from field: string workspace_name = 2;
+   */
+  workspaceName = "";
+
+  /**
+   * @generated from field: string scope = 3;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string research_room_id = 4;
+   */
+  researchRoomId = "";
+
+  /**
+   * @generated from field: string title = 5;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 6;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string template_code = 7;
+   */
+  templateCode = "";
+
+  /**
+   * @generated from field: int64 template_version = 8;
+   */
+  templateVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 9;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateSpatialCanvasRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSpatialCanvasRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "workspace_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "research_room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "template_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "template_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpatialCanvasRequest {
+    return new CreateSpatialCanvasRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpatialCanvasRequest {
+    return new CreateSpatialCanvasRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpatialCanvasRequest {
+    return new CreateSpatialCanvasRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpatialCanvasRequest | PlainMessage<CreateSpatialCanvasRequest> | undefined, b: CreateSpatialCanvasRequest | PlainMessage<CreateSpatialCanvasRequest> | undefined): boolean {
+    return proto3.util.equals(CreateSpatialCanvasRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSpatialCanvasResponse
+ */
+export class CreateSpatialCanvasResponse extends Message<CreateSpatialCanvasResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasDetail detail = 1;
+   */
+  detail?: SpatialCanvasDetail;
+
+  constructor(data?: PartialMessage<CreateSpatialCanvasResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSpatialCanvasResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "detail", kind: "message", T: SpatialCanvasDetail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpatialCanvasResponse {
+    return new CreateSpatialCanvasResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpatialCanvasResponse {
+    return new CreateSpatialCanvasResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpatialCanvasResponse {
+    return new CreateSpatialCanvasResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpatialCanvasResponse | PlainMessage<CreateSpatialCanvasResponse> | undefined, b: CreateSpatialCanvasResponse | PlainMessage<CreateSpatialCanvasResponse> | undefined): boolean {
+    return proto3.util.equals(CreateSpatialCanvasResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasRequest
+ */
+export class GetSpatialCanvasRequest extends Message<GetSpatialCanvasRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: int64 since_revision = 2;
+   */
+  sinceRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: bool include_deleted = 3;
+   */
+  includeDeleted = false;
+
+  constructor(data?: PartialMessage<GetSpatialCanvasRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "since_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "include_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasRequest {
+    return new GetSpatialCanvasRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasRequest {
+    return new GetSpatialCanvasRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasRequest {
+    return new GetSpatialCanvasRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasRequest | PlainMessage<GetSpatialCanvasRequest> | undefined, b: GetSpatialCanvasRequest | PlainMessage<GetSpatialCanvasRequest> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasResponse
+ */
+export class GetSpatialCanvasResponse extends Message<GetSpatialCanvasResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasDetail detail = 1;
+   */
+  detail?: SpatialCanvasDetail;
+
+  constructor(data?: PartialMessage<GetSpatialCanvasResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "detail", kind: "message", T: SpatialCanvasDetail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasResponse {
+    return new GetSpatialCanvasResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasResponse {
+    return new GetSpatialCanvasResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasResponse {
+    return new GetSpatialCanvasResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasResponse | PlainMessage<GetSpatialCanvasResponse> | undefined, b: GetSpatialCanvasResponse | PlainMessage<GetSpatialCanvasResponse> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
+ */
+export class ApplySpatialCanvasOperationsRequest extends Message<ApplySpatialCanvasOperationsRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasOperation operations = 2;
+   */
+  operations: SpatialCanvasOperation[] = [];
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ApplySpatialCanvasOperationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "operations", kind: "message", T: SpatialCanvasOperation, repeated: true },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApplySpatialCanvasOperationsRequest {
+    return new ApplySpatialCanvasOperationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApplySpatialCanvasOperationsRequest {
+    return new ApplySpatialCanvasOperationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApplySpatialCanvasOperationsRequest {
+    return new ApplySpatialCanvasOperationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApplySpatialCanvasOperationsRequest | PlainMessage<ApplySpatialCanvasOperationsRequest> | undefined, b: ApplySpatialCanvasOperationsRequest | PlainMessage<ApplySpatialCanvasOperationsRequest> | undefined): boolean {
+    return proto3.util.equals(ApplySpatialCanvasOperationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
+ */
+export class ApplySpatialCanvasOperationsResponse extends Message<ApplySpatialCanvasOperationsResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasDetail detail = 1;
+   */
+  detail?: SpatialCanvasDetail;
+
+  /**
+   * @generated from field: repeated string applied_operation_ids = 2;
+   */
+  appliedOperationIds: string[] = [];
+
+  /**
+   * @generated from field: repeated string duplicate_operation_ids = 3;
+   */
+  duplicateOperationIds: string[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasConflict conflicts = 4;
+   */
+  conflicts: SpatialCanvasConflict[] = [];
+
+  constructor(data?: PartialMessage<ApplySpatialCanvasOperationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "detail", kind: "message", T: SpatialCanvasDetail },
+    { no: 2, name: "applied_operation_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "duplicate_operation_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "conflicts", kind: "message", T: SpatialCanvasConflict, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApplySpatialCanvasOperationsResponse {
+    return new ApplySpatialCanvasOperationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApplySpatialCanvasOperationsResponse {
+    return new ApplySpatialCanvasOperationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApplySpatialCanvasOperationsResponse {
+    return new ApplySpatialCanvasOperationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApplySpatialCanvasOperationsResponse | PlainMessage<ApplySpatialCanvasOperationsResponse> | undefined, b: ApplySpatialCanvasOperationsResponse | PlainMessage<ApplySpatialCanvasOperationsResponse> | undefined): boolean {
+    return proto3.util.equals(ApplySpatialCanvasOperationsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
+ */
+export class ResolveSpatialCanvasConflictRequest extends Message<ResolveSpatialCanvasConflictRequest> {
+  /**
+   * @generated from field: string conflict_id = 1;
+   */
+  conflictId = "";
+
+  /**
+   * keep_local | keep_remote | merge | dismiss
+   *
+   * @generated from field: string resolution = 2;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: string merged_value_json = 3;
+   */
+  mergedValueJson = "";
+
+  /**
+   * @generated from field: int64 expected_revision = 4;
+   */
+  expectedRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ResolveSpatialCanvasConflictRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "merged_value_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "expected_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveSpatialCanvasConflictRequest {
+    return new ResolveSpatialCanvasConflictRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveSpatialCanvasConflictRequest {
+    return new ResolveSpatialCanvasConflictRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveSpatialCanvasConflictRequest {
+    return new ResolveSpatialCanvasConflictRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveSpatialCanvasConflictRequest | PlainMessage<ResolveSpatialCanvasConflictRequest> | undefined, b: ResolveSpatialCanvasConflictRequest | PlainMessage<ResolveSpatialCanvasConflictRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveSpatialCanvasConflictRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
+ */
+export class ResolveSpatialCanvasConflictResponse extends Message<ResolveSpatialCanvasConflictResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasConflict conflict = 1;
+   */
+  conflict?: SpatialCanvasConflict;
+
+  constructor(data?: PartialMessage<ResolveSpatialCanvasConflictResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict", kind: "message", T: SpatialCanvasConflict },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveSpatialCanvasConflictResponse {
+    return new ResolveSpatialCanvasConflictResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveSpatialCanvasConflictResponse {
+    return new ResolveSpatialCanvasConflictResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveSpatialCanvasConflictResponse {
+    return new ResolveSpatialCanvasConflictResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveSpatialCanvasConflictResponse | PlainMessage<ResolveSpatialCanvasConflictResponse> | undefined, b: ResolveSpatialCanvasConflictResponse | PlainMessage<ResolveSpatialCanvasConflictResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveSpatialCanvasConflictResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
+ */
+export class CreateSpatialCanvasSnapshotRequest extends Message<CreateSpatialCanvasSnapshotRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateSpatialCanvasSnapshotRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpatialCanvasSnapshotRequest {
+    return new CreateSpatialCanvasSnapshotRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpatialCanvasSnapshotRequest {
+    return new CreateSpatialCanvasSnapshotRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpatialCanvasSnapshotRequest {
+    return new CreateSpatialCanvasSnapshotRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpatialCanvasSnapshotRequest | PlainMessage<CreateSpatialCanvasSnapshotRequest> | undefined, b: CreateSpatialCanvasSnapshotRequest | PlainMessage<CreateSpatialCanvasSnapshotRequest> | undefined): boolean {
+    return proto3.util.equals(CreateSpatialCanvasSnapshotRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
+ */
+export class CreateSpatialCanvasSnapshotResponse extends Message<CreateSpatialCanvasSnapshotResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasSnapshot snapshot = 1;
+   */
+  snapshot?: SpatialCanvasSnapshot;
+
+  constructor(data?: PartialMessage<CreateSpatialCanvasSnapshotResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "snapshot", kind: "message", T: SpatialCanvasSnapshot },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSpatialCanvasSnapshotResponse {
+    return new CreateSpatialCanvasSnapshotResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSpatialCanvasSnapshotResponse {
+    return new CreateSpatialCanvasSnapshotResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSpatialCanvasSnapshotResponse {
+    return new CreateSpatialCanvasSnapshotResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateSpatialCanvasSnapshotResponse | PlainMessage<CreateSpatialCanvasSnapshotResponse> | undefined, b: CreateSpatialCanvasSnapshotResponse | PlainMessage<CreateSpatialCanvasSnapshotResponse> | undefined): boolean {
+    return proto3.util.equals(CreateSpatialCanvasSnapshotResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
+ */
+export class RestoreSpatialCanvasSnapshotRequest extends Message<RestoreSpatialCanvasSnapshotRequest> {
+  /**
+   * @generated from field: string snapshot_id = 1;
+   */
+  snapshotId = "";
+
+  /**
+   * @generated from field: int64 expected_revision = 2;
+   */
+  expectedRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RestoreSpatialCanvasSnapshotRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "snapshot_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreSpatialCanvasSnapshotRequest {
+    return new RestoreSpatialCanvasSnapshotRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreSpatialCanvasSnapshotRequest {
+    return new RestoreSpatialCanvasSnapshotRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreSpatialCanvasSnapshotRequest {
+    return new RestoreSpatialCanvasSnapshotRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RestoreSpatialCanvasSnapshotRequest | PlainMessage<RestoreSpatialCanvasSnapshotRequest> | undefined, b: RestoreSpatialCanvasSnapshotRequest | PlainMessage<RestoreSpatialCanvasSnapshotRequest> | undefined): boolean {
+    return proto3.util.equals(RestoreSpatialCanvasSnapshotRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
+ */
+export class RestoreSpatialCanvasSnapshotResponse extends Message<RestoreSpatialCanvasSnapshotResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasDetail detail = 1;
+   */
+  detail?: SpatialCanvasDetail;
+
+  constructor(data?: PartialMessage<RestoreSpatialCanvasSnapshotResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "detail", kind: "message", T: SpatialCanvasDetail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreSpatialCanvasSnapshotResponse {
+    return new RestoreSpatialCanvasSnapshotResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreSpatialCanvasSnapshotResponse {
+    return new RestoreSpatialCanvasSnapshotResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreSpatialCanvasSnapshotResponse {
+    return new RestoreSpatialCanvasSnapshotResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RestoreSpatialCanvasSnapshotResponse | PlainMessage<RestoreSpatialCanvasSnapshotResponse> | undefined, b: RestoreSpatialCanvasSnapshotResponse | PlainMessage<RestoreSpatialCanvasSnapshotResponse> | undefined): boolean {
+    return proto3.util.equals(RestoreSpatialCanvasSnapshotResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
+ */
+export class UpsertSpatialCanvasCommentRequest extends Message<UpsertSpatialCanvasCommentRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string comment_id = 2;
+   */
+  commentId = "";
+
+  /**
+   * @generated from field: string entity_type = 3;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 4;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string body = 5;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int64 expected_version = 6;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertSpatialCanvasCommentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "comment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSpatialCanvasCommentRequest {
+    return new UpsertSpatialCanvasCommentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCommentRequest {
+    return new UpsertSpatialCanvasCommentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCommentRequest {
+    return new UpsertSpatialCanvasCommentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSpatialCanvasCommentRequest | PlainMessage<UpsertSpatialCanvasCommentRequest> | undefined, b: UpsertSpatialCanvasCommentRequest | PlainMessage<UpsertSpatialCanvasCommentRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertSpatialCanvasCommentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
+ */
+export class UpsertSpatialCanvasCommentResponse extends Message<UpsertSpatialCanvasCommentResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasComment comment = 1;
+   */
+  comment?: SpatialCanvasComment;
+
+  constructor(data?: PartialMessage<UpsertSpatialCanvasCommentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "comment", kind: "message", T: SpatialCanvasComment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSpatialCanvasCommentResponse {
+    return new UpsertSpatialCanvasCommentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCommentResponse {
+    return new UpsertSpatialCanvasCommentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCommentResponse {
+    return new UpsertSpatialCanvasCommentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSpatialCanvasCommentResponse | PlainMessage<UpsertSpatialCanvasCommentResponse> | undefined, b: UpsertSpatialCanvasCommentResponse | PlainMessage<UpsertSpatialCanvasCommentResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertSpatialCanvasCommentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
+ */
+export class SetSpatialCanvasCommentStateRequest extends Message<SetSpatialCanvasCommentStateRequest> {
+  /**
+   * @generated from field: string comment_id = 1;
+   */
+  commentId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 expected_version = 3;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetSpatialCanvasCommentStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "comment_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSpatialCanvasCommentStateRequest {
+    return new SetSpatialCanvasCommentStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSpatialCanvasCommentStateRequest {
+    return new SetSpatialCanvasCommentStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSpatialCanvasCommentStateRequest {
+    return new SetSpatialCanvasCommentStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSpatialCanvasCommentStateRequest | PlainMessage<SetSpatialCanvasCommentStateRequest> | undefined, b: SetSpatialCanvasCommentStateRequest | PlainMessage<SetSpatialCanvasCommentStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetSpatialCanvasCommentStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
+ */
+export class SetSpatialCanvasCommentStateResponse extends Message<SetSpatialCanvasCommentStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasComment comment = 1;
+   */
+  comment?: SpatialCanvasComment;
+
+  constructor(data?: PartialMessage<SetSpatialCanvasCommentStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "comment", kind: "message", T: SpatialCanvasComment },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSpatialCanvasCommentStateResponse {
+    return new SetSpatialCanvasCommentStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSpatialCanvasCommentStateResponse {
+    return new SetSpatialCanvasCommentStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSpatialCanvasCommentStateResponse {
+    return new SetSpatialCanvasCommentStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSpatialCanvasCommentStateResponse | PlainMessage<SetSpatialCanvasCommentStateResponse> | undefined, b: SetSpatialCanvasCommentStateResponse | PlainMessage<SetSpatialCanvasCommentStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetSpatialCanvasCommentStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
+ */
+export class GenerateSpatialCanvasProposalsRequest extends Message<GenerateSpatialCanvasProposalsRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: repeated string proposal_types = 2;
+   */
+  proposalTypes: string[] = [];
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<GenerateSpatialCanvasProposalsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "proposal_types", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateSpatialCanvasProposalsRequest {
+    return new GenerateSpatialCanvasProposalsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateSpatialCanvasProposalsRequest {
+    return new GenerateSpatialCanvasProposalsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateSpatialCanvasProposalsRequest {
+    return new GenerateSpatialCanvasProposalsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateSpatialCanvasProposalsRequest | PlainMessage<GenerateSpatialCanvasProposalsRequest> | undefined, b: GenerateSpatialCanvasProposalsRequest | PlainMessage<GenerateSpatialCanvasProposalsRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateSpatialCanvasProposalsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
+ */
+export class GenerateSpatialCanvasProposalsResponse extends Message<GenerateSpatialCanvasProposalsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.SpatialCanvasProposal proposals = 1;
+   */
+  proposals: SpatialCanvasProposal[] = [];
+
+  constructor(data?: PartialMessage<GenerateSpatialCanvasProposalsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proposals", kind: "message", T: SpatialCanvasProposal, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateSpatialCanvasProposalsResponse {
+    return new GenerateSpatialCanvasProposalsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateSpatialCanvasProposalsResponse {
+    return new GenerateSpatialCanvasProposalsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateSpatialCanvasProposalsResponse {
+    return new GenerateSpatialCanvasProposalsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateSpatialCanvasProposalsResponse | PlainMessage<GenerateSpatialCanvasProposalsResponse> | undefined, b: GenerateSpatialCanvasProposalsResponse | PlainMessage<GenerateSpatialCanvasProposalsResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateSpatialCanvasProposalsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
+ */
+export class SetSpatialCanvasProposalStateRequest extends Message<SetSpatialCanvasProposalStateRequest> {
+  /**
+   * @generated from field: string proposal_id = 1;
+   */
+  proposalId = "";
+
+  /**
+   * accepted | rejected
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 expected_canvas_revision = 3;
+   */
+  expectedCanvasRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetSpatialCanvasProposalStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proposal_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_canvas_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSpatialCanvasProposalStateRequest {
+    return new SetSpatialCanvasProposalStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSpatialCanvasProposalStateRequest {
+    return new SetSpatialCanvasProposalStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSpatialCanvasProposalStateRequest {
+    return new SetSpatialCanvasProposalStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSpatialCanvasProposalStateRequest | PlainMessage<SetSpatialCanvasProposalStateRequest> | undefined, b: SetSpatialCanvasProposalStateRequest | PlainMessage<SetSpatialCanvasProposalStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetSpatialCanvasProposalStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
+ */
+export class SetSpatialCanvasProposalStateResponse extends Message<SetSpatialCanvasProposalStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasProposal proposal = 1;
+   */
+  proposal?: SpatialCanvasProposal;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasDetail detail = 2;
+   */
+  detail?: SpatialCanvasDetail;
+
+  constructor(data?: PartialMessage<SetSpatialCanvasProposalStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proposal", kind: "message", T: SpatialCanvasProposal },
+    { no: 2, name: "detail", kind: "message", T: SpatialCanvasDetail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetSpatialCanvasProposalStateResponse {
+    return new SetSpatialCanvasProposalStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetSpatialCanvasProposalStateResponse {
+    return new SetSpatialCanvasProposalStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetSpatialCanvasProposalStateResponse {
+    return new SetSpatialCanvasProposalStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetSpatialCanvasProposalStateResponse | PlainMessage<SetSpatialCanvasProposalStateResponse> | undefined, b: SetSpatialCanvasProposalStateResponse | PlainMessage<SetSpatialCanvasProposalStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetSpatialCanvasProposalStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestSpatialCanvasExportRequest
+ */
+export class RequestSpatialCanvasExportRequest extends Message<RequestSpatialCanvasExportRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * svg | pdf | png | manifest
+   *
+   * @generated from field: string format = 2;
+   */
+  format = "";
+
+  /**
+   * @generated from field: int64 layout_revision = 3;
+   */
+  layoutRevision = protoInt64.zero;
+
+  /**
+   * @generated from field: bool include_comments = 4;
+   */
+  includeComments = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RequestSpatialCanvasExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestSpatialCanvasExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "layout_revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "include_comments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestSpatialCanvasExportRequest {
+    return new RequestSpatialCanvasExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestSpatialCanvasExportRequest {
+    return new RequestSpatialCanvasExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestSpatialCanvasExportRequest {
+    return new RequestSpatialCanvasExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestSpatialCanvasExportRequest | PlainMessage<RequestSpatialCanvasExportRequest> | undefined, b: RequestSpatialCanvasExportRequest | PlainMessage<RequestSpatialCanvasExportRequest> | undefined): boolean {
+    return proto3.util.equals(RequestSpatialCanvasExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestSpatialCanvasExportResponse
+ */
+export class RequestSpatialCanvasExportResponse extends Message<RequestSpatialCanvasExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasExport export = 1;
+   */
+  export?: SpatialCanvasExport;
+
+  constructor(data?: PartialMessage<RequestSpatialCanvasExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestSpatialCanvasExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: SpatialCanvasExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestSpatialCanvasExportResponse {
+    return new RequestSpatialCanvasExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestSpatialCanvasExportResponse {
+    return new RequestSpatialCanvasExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestSpatialCanvasExportResponse {
+    return new RequestSpatialCanvasExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestSpatialCanvasExportResponse | PlainMessage<RequestSpatialCanvasExportResponse> | undefined, b: RequestSpatialCanvasExportResponse | PlainMessage<RequestSpatialCanvasExportResponse> | undefined): boolean {
+    return proto3.util.equals(RequestSpatialCanvasExportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasExportRequest
+ */
+export class GetSpatialCanvasExportRequest extends Message<GetSpatialCanvasExportRequest> {
+  /**
+   * @generated from field: string export_id = 1;
+   */
+  exportId = "";
+
+  constructor(data?: PartialMessage<GetSpatialCanvasExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasExportRequest {
+    return new GetSpatialCanvasExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasExportRequest {
+    return new GetSpatialCanvasExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasExportRequest {
+    return new GetSpatialCanvasExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasExportRequest | PlainMessage<GetSpatialCanvasExportRequest> | undefined, b: GetSpatialCanvasExportRequest | PlainMessage<GetSpatialCanvasExportRequest> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetSpatialCanvasExportResponse
+ */
+export class GetSpatialCanvasExportResponse extends Message<GetSpatialCanvasExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.SpatialCanvasExport export = 1;
+   */
+  export?: SpatialCanvasExport;
+
+  constructor(data?: PartialMessage<GetSpatialCanvasExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetSpatialCanvasExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: SpatialCanvasExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSpatialCanvasExportResponse {
+    return new GetSpatialCanvasExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSpatialCanvasExportResponse {
+    return new GetSpatialCanvasExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSpatialCanvasExportResponse {
+    return new GetSpatialCanvasExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSpatialCanvasExportResponse | PlainMessage<GetSpatialCanvasExportResponse> | undefined, b: GetSpatialCanvasExportResponse | PlainMessage<GetSpatialCanvasExportResponse> | undefined): boolean {
+    return proto3.util.equals(GetSpatialCanvasExportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
+ */
+export class UpsertSpatialCanvasCollaboratorRequest extends Message<UpsertSpatialCanvasCollaboratorRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string user_email = 2;
+   */
+  userEmail = "";
+
+  /**
+   * @generated from field: string role = 3;
+   */
+  role = "";
+
+  /**
+   * invite | change_role | revoke
+   *
+   * @generated from field: string action = 4;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertSpatialCanvasCollaboratorRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSpatialCanvasCollaboratorRequest {
+    return new UpsertSpatialCanvasCollaboratorRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCollaboratorRequest {
+    return new UpsertSpatialCanvasCollaboratorRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCollaboratorRequest {
+    return new UpsertSpatialCanvasCollaboratorRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSpatialCanvasCollaboratorRequest | PlainMessage<UpsertSpatialCanvasCollaboratorRequest> | undefined, b: UpsertSpatialCanvasCollaboratorRequest | PlainMessage<UpsertSpatialCanvasCollaboratorRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertSpatialCanvasCollaboratorRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
+ */
+export class UpsertSpatialCanvasCollaboratorResponse extends Message<UpsertSpatialCanvasCollaboratorResponse> {
+  /**
+   * @generated from field: string collaborator_user_id = 1;
+   */
+  collaboratorUserId = "";
+
+  /**
+   * @generated from field: string role = 2;
+   */
+  role = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 workspace_version = 4;
+   */
+  workspaceVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UpsertSpatialCanvasCollaboratorResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "collaborator_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "workspace_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertSpatialCanvasCollaboratorResponse {
+    return new UpsertSpatialCanvasCollaboratorResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCollaboratorResponse {
+    return new UpsertSpatialCanvasCollaboratorResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertSpatialCanvasCollaboratorResponse {
+    return new UpsertSpatialCanvasCollaboratorResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertSpatialCanvasCollaboratorResponse | PlainMessage<UpsertSpatialCanvasCollaboratorResponse> | undefined, b: UpsertSpatialCanvasCollaboratorResponse | PlainMessage<UpsertSpatialCanvasCollaboratorResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertSpatialCanvasCollaboratorResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
+ */
+export class ReportSpatialCanvasAbuseRequest extends Message<ReportSpatialCanvasAbuseRequest> {
+  /**
+   * @generated from field: string canvas_id = 1;
+   */
+  canvasId = "";
+
+  /**
+   * @generated from field: string entity_type = 2;
+   */
+  entityType = "";
+
+  /**
+   * @generated from field: string entity_id = 3;
+   */
+  entityId = "";
+
+  /**
+   * @generated from field: string category = 4;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string statement = 5;
+   */
+  statement = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ReportSpatialCanvasAbuseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "canvas_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportSpatialCanvasAbuseRequest {
+    return new ReportSpatialCanvasAbuseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportSpatialCanvasAbuseRequest {
+    return new ReportSpatialCanvasAbuseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportSpatialCanvasAbuseRequest {
+    return new ReportSpatialCanvasAbuseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportSpatialCanvasAbuseRequest | PlainMessage<ReportSpatialCanvasAbuseRequest> | undefined, b: ReportSpatialCanvasAbuseRequest | PlainMessage<ReportSpatialCanvasAbuseRequest> | undefined): boolean {
+    return proto3.util.equals(ReportSpatialCanvasAbuseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
+ */
+export class ReportSpatialCanvasAbuseResponse extends Message<ReportSpatialCanvasAbuseResponse> {
+  /**
+   * @generated from field: string case_id = 1;
+   */
+  caseId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 3;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ReportSpatialCanvasAbuseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportSpatialCanvasAbuseResponse {
+    return new ReportSpatialCanvasAbuseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportSpatialCanvasAbuseResponse {
+    return new ReportSpatialCanvasAbuseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportSpatialCanvasAbuseResponse {
+    return new ReportSpatialCanvasAbuseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportSpatialCanvasAbuseResponse | PlainMessage<ReportSpatialCanvasAbuseResponse> | undefined, b: ReportSpatialCanvasAbuseResponse | PlainMessage<ReportSpatialCanvasAbuseResponse> | undefined): boolean {
+    return proto3.util.equals(ReportSpatialCanvasAbuseResponse, a, b);
+  }
+}
+

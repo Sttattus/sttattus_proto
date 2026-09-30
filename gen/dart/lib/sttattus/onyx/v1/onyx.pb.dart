@@ -56996,6 +56996,5108 @@ class SubmitIntegrationOperationsCaseResponse extends $pb.GeneratedMessage {
   OnyxIntegrationOperationsCase ensureOperationsCase() => $_ensure(0);
 }
 
+/// Choice 15 — a versioned, source-anchored spatial evidence canvas. Manual
+/// layout and accepted member-authored relationships are authoritative; model
+/// output is always represented separately as a provisional proposal.
+class SpatialCanvasSourceAnchor extends $pb.GeneratedMessage {
+  factory SpatialCanvasSourceAnchor({
+    $core.String? contentId,
+    $core.String? documentId,
+    $core.String? documentRevisionId,
+    $core.String? passageKey,
+    $core.String? sourceChecksum,
+    $core.String? quotedText,
+    $core.String? rightsStatus,
+    $core.bool? isStale,
+    $core.String? staleReason,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (documentId != null) result.documentId = documentId;
+    if (documentRevisionId != null)
+      result.documentRevisionId = documentRevisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (quotedText != null) result.quotedText = quotedText;
+    if (rightsStatus != null) result.rightsStatus = rightsStatus;
+    if (isStale != null) result.isStale = isStale;
+    if (staleReason != null) result.staleReason = staleReason;
+    return result;
+  }
+
+  SpatialCanvasSourceAnchor._();
+
+  factory SpatialCanvasSourceAnchor.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasSourceAnchor.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasSourceAnchor',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'documentId')
+    ..aOS(3, _omitFieldNames ? '' : 'documentRevisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(6, _omitFieldNames ? '' : 'quotedText')
+    ..aOS(7, _omitFieldNames ? '' : 'rightsStatus')
+    ..aOB(8, _omitFieldNames ? '' : 'isStale')
+    ..aOS(9, _omitFieldNames ? '' : 'staleReason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSourceAnchor clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSourceAnchor copyWith(
+          void Function(SpatialCanvasSourceAnchor) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasSourceAnchor))
+          as SpatialCanvasSourceAnchor;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSourceAnchor create() => SpatialCanvasSourceAnchor._();
+  @$core.override
+  SpatialCanvasSourceAnchor createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSourceAnchor getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasSourceAnchor>(create);
+  static SpatialCanvasSourceAnchor? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get documentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set documentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDocumentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocumentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get documentRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set documentRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDocumentRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDocumentRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get passageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set passageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceChecksum => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceChecksum($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceChecksum() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceChecksum() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get quotedText => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set quotedText($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuotedText() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuotedText() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get rightsStatus => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set rightsStatus($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRightsStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRightsStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get isStale => $_getBF(7);
+  @$pb.TagNumber(8)
+  set isStale($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIsStale() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIsStale() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get staleReason => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set staleReason($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStaleReason() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStaleReason() => $_clearField(9);
+}
+
+class SpatialCanvasTemplate extends $pb.GeneratedMessage {
+  factory SpatialCanvasTemplate({
+    $core.String? id,
+    $core.String? code,
+    $core.String? name,
+    $core.String? description,
+    $fixnum.Int64? version,
+    $core.String? status,
+    $core.Iterable<$core.String>? nodeKinds,
+    $core.Iterable<$core.String>? edgeKinds,
+    $core.String? layoutJson,
+    $core.bool? isBuiltin,
+    $1.Timestamp? publishedAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (code != null) result.code = code;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (version != null) result.version = version;
+    if (status != null) result.status = status;
+    if (nodeKinds != null) result.nodeKinds.addAll(nodeKinds);
+    if (edgeKinds != null) result.edgeKinds.addAll(edgeKinds);
+    if (layoutJson != null) result.layoutJson = layoutJson;
+    if (isBuiltin != null) result.isBuiltin = isBuiltin;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SpatialCanvasTemplate._();
+
+  factory SpatialCanvasTemplate.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasTemplate.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasTemplate',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'code')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aInt64(5, _omitFieldNames ? '' : 'version')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..pPS(7, _omitFieldNames ? '' : 'nodeKinds')
+    ..pPS(8, _omitFieldNames ? '' : 'edgeKinds')
+    ..aOS(9, _omitFieldNames ? '' : 'layoutJson')
+    ..aOB(10, _omitFieldNames ? '' : 'isBuiltin')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'publishedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasTemplate clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasTemplate copyWith(
+          void Function(SpatialCanvasTemplate) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasTemplate))
+          as SpatialCanvasTemplate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasTemplate create() => SpatialCanvasTemplate._();
+  @$core.override
+  SpatialCanvasTemplate createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasTemplate getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasTemplate>(create);
+  static SpatialCanvasTemplate? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get code => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set code($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get version => $_getI64(4);
+  @$pb.TagNumber(5)
+  set version($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get nodeKinds => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get edgeKinds => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get layoutJson => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set layoutJson($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasLayoutJson() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearLayoutJson() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get isBuiltin => $_getBF(9);
+  @$pb.TagNumber(10)
+  set isBuiltin($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIsBuiltin() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIsBuiltin() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get publishedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set publishedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPublishedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPublishedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensurePublishedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+}
+
+class SpatialCanvasWorkspace extends $pb.GeneratedMessage {
+  factory SpatialCanvasWorkspace({
+    $core.String? id,
+    $core.String? name,
+    $core.String? scope,
+    $core.String? researchRoomId,
+    $core.String? callerRole,
+    $fixnum.Int64? version,
+    $core.int? canvasCount,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (scope != null) result.scope = scope;
+    if (researchRoomId != null) result.researchRoomId = researchRoomId;
+    if (callerRole != null) result.callerRole = callerRole;
+    if (version != null) result.version = version;
+    if (canvasCount != null) result.canvasCount = canvasCount;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SpatialCanvasWorkspace._();
+
+  factory SpatialCanvasWorkspace.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasWorkspace.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasWorkspace',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'scope')
+    ..aOS(4, _omitFieldNames ? '' : 'researchRoomId')
+    ..aOS(5, _omitFieldNames ? '' : 'callerRole')
+    ..aInt64(6, _omitFieldNames ? '' : 'version')
+    ..aI(7, _omitFieldNames ? '' : 'canvasCount')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasWorkspace clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasWorkspace copyWith(
+          void Function(SpatialCanvasWorkspace) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasWorkspace))
+          as SpatialCanvasWorkspace;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasWorkspace create() => SpatialCanvasWorkspace._();
+  @$core.override
+  SpatialCanvasWorkspace createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasWorkspace getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasWorkspace>(create);
+  static SpatialCanvasWorkspace? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get researchRoomId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set researchRoomId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResearchRoomId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResearchRoomId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get callerRole => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set callerRole($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCallerRole() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCallerRole() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get version => $_getI64(5);
+  @$pb.TagNumber(6)
+  set version($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get canvasCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set canvasCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCanvasCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCanvasCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get updatedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set updatedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUpdatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdatedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(7);
+}
+
+class SpatialCanvasSummary extends $pb.GeneratedMessage {
+  factory SpatialCanvasSummary({
+    $core.String? id,
+    $core.String? workspaceId,
+    $core.String? title,
+    $core.String? description,
+    $core.String? templateCode,
+    $fixnum.Int64? templateVersion,
+    $core.String? status,
+    $fixnum.Int64? currentRevision,
+    $core.int? nodeCount,
+    $core.int? edgeCount,
+    $core.int? unresolvedConflictCount,
+    $core.int? openCommentCount,
+    $core.String? callerRole,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (workspaceId != null) result.workspaceId = workspaceId;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (templateCode != null) result.templateCode = templateCode;
+    if (templateVersion != null) result.templateVersion = templateVersion;
+    if (status != null) result.status = status;
+    if (currentRevision != null) result.currentRevision = currentRevision;
+    if (nodeCount != null) result.nodeCount = nodeCount;
+    if (edgeCount != null) result.edgeCount = edgeCount;
+    if (unresolvedConflictCount != null)
+      result.unresolvedConflictCount = unresolvedConflictCount;
+    if (openCommentCount != null) result.openCommentCount = openCommentCount;
+    if (callerRole != null) result.callerRole = callerRole;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SpatialCanvasSummary._();
+
+  factory SpatialCanvasSummary.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasSummary.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasSummary',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceId')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aOS(5, _omitFieldNames ? '' : 'templateCode')
+    ..aInt64(6, _omitFieldNames ? '' : 'templateVersion')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aInt64(8, _omitFieldNames ? '' : 'currentRevision')
+    ..aI(9, _omitFieldNames ? '' : 'nodeCount')
+    ..aI(10, _omitFieldNames ? '' : 'edgeCount')
+    ..aI(11, _omitFieldNames ? '' : 'unresolvedConflictCount')
+    ..aI(12, _omitFieldNames ? '' : 'openCommentCount')
+    ..aOS(13, _omitFieldNames ? '' : 'callerRole')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSummary clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSummary copyWith(void Function(SpatialCanvasSummary) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasSummary))
+          as SpatialCanvasSummary;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSummary create() => SpatialCanvasSummary._();
+  @$core.override
+  SpatialCanvasSummary createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSummary getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasSummary>(create);
+  static SpatialCanvasSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get templateCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set templateCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTemplateCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTemplateCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get templateVersion => $_getI64(5);
+  @$pb.TagNumber(6)
+  set templateVersion($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTemplateVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTemplateVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get currentRevision => $_getI64(7);
+  @$pb.TagNumber(8)
+  set currentRevision($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCurrentRevision() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCurrentRevision() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get nodeCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set nodeCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNodeCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNodeCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get edgeCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set edgeCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasEdgeCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEdgeCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get unresolvedConflictCount => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set unresolvedConflictCount($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUnresolvedConflictCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUnresolvedConflictCount() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get openCommentCount => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set openCommentCount($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasOpenCommentCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearOpenCommentCount() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get callerRole => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set callerRole($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCallerRole() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCallerRole() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+}
+
+class SpatialCanvasNode extends $pb.GeneratedMessage {
+  factory SpatialCanvasNode({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? kind,
+    $core.String? title,
+    $core.String? body,
+    $core.double? x,
+    $core.double? y,
+    $core.double? width,
+    $core.double? height,
+    $core.int? zIndex,
+    $core.String? groupId,
+    $core.String? color,
+    SpatialCanvasSourceAnchor? sourceAnchor,
+    $core.String? authorUserId,
+    $fixnum.Int64? version,
+    $core.bool? isDeleted,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (kind != null) result.kind = kind;
+    if (title != null) result.title = title;
+    if (body != null) result.body = body;
+    if (x != null) result.x = x;
+    if (y != null) result.y = y;
+    if (width != null) result.width = width;
+    if (height != null) result.height = height;
+    if (zIndex != null) result.zIndex = zIndex;
+    if (groupId != null) result.groupId = groupId;
+    if (color != null) result.color = color;
+    if (sourceAnchor != null) result.sourceAnchor = sourceAnchor;
+    if (authorUserId != null) result.authorUserId = authorUserId;
+    if (version != null) result.version = version;
+    if (isDeleted != null) result.isDeleted = isDeleted;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SpatialCanvasNode._();
+
+  factory SpatialCanvasNode.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasNode.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasNode',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..aD(6, _omitFieldNames ? '' : 'x')
+    ..aD(7, _omitFieldNames ? '' : 'y')
+    ..aD(8, _omitFieldNames ? '' : 'width')
+    ..aD(9, _omitFieldNames ? '' : 'height')
+    ..aI(10, _omitFieldNames ? '' : 'zIndex')
+    ..aOS(11, _omitFieldNames ? '' : 'groupId')
+    ..aOS(12, _omitFieldNames ? '' : 'color')
+    ..aOM<SpatialCanvasSourceAnchor>(13, _omitFieldNames ? '' : 'sourceAnchor',
+        subBuilder: SpatialCanvasSourceAnchor.create)
+    ..aOS(14, _omitFieldNames ? '' : 'authorUserId')
+    ..aInt64(15, _omitFieldNames ? '' : 'version')
+    ..aOB(16, _omitFieldNames ? '' : 'isDeleted')
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasNode clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasNode copyWith(void Function(SpatialCanvasNode) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasNode))
+          as SpatialCanvasNode;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasNode create() => SpatialCanvasNode._();
+  @$core.override
+  SpatialCanvasNode createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasNode getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasNode>(create);
+  static SpatialCanvasNode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get body => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set body($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get x => $_getN(5);
+  @$pb.TagNumber(6)
+  set x($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasX() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearX() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get y => $_getN(6);
+  @$pb.TagNumber(7)
+  set y($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasY() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearY() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get width => $_getN(7);
+  @$pb.TagNumber(8)
+  set width($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWidth() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWidth() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.double get height => $_getN(8);
+  @$pb.TagNumber(9)
+  set height($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasHeight() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHeight() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get zIndex => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set zIndex($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasZIndex() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearZIndex() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get groupId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set groupId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasGroupId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearGroupId() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get color => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set color($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasColor() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearColor() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  SpatialCanvasSourceAnchor get sourceAnchor => $_getN(12);
+  @$pb.TagNumber(13)
+  set sourceAnchor(SpatialCanvasSourceAnchor value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasSourceAnchor() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSourceAnchor() => $_clearField(13);
+  @$pb.TagNumber(13)
+  SpatialCanvasSourceAnchor ensureSourceAnchor() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $core.String get authorUserId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set authorUserId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasAuthorUserId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearAuthorUserId() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get version => $_getI64(14);
+  @$pb.TagNumber(15)
+  set version($fixnum.Int64 value) => $_setInt64(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasVersion() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearVersion() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.bool get isDeleted => $_getBF(15);
+  @$pb.TagNumber(16)
+  set isDeleted($core.bool value) => $_setBool(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasIsDeleted() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearIsDeleted() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get updatedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set updatedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasUpdatedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearUpdatedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(16);
+}
+
+class SpatialCanvasEdge extends $pb.GeneratedMessage {
+  factory SpatialCanvasEdge({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? fromNodeId,
+    $core.String? toNodeId,
+    $core.String? relationType,
+    $core.String? label,
+    $core.String? explanation,
+    SpatialCanvasSourceAnchor? sourceAnchor,
+    $core.String? authorUserId,
+    $fixnum.Int64? version,
+    $core.bool? isDeleted,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (fromNodeId != null) result.fromNodeId = fromNodeId;
+    if (toNodeId != null) result.toNodeId = toNodeId;
+    if (relationType != null) result.relationType = relationType;
+    if (label != null) result.label = label;
+    if (explanation != null) result.explanation = explanation;
+    if (sourceAnchor != null) result.sourceAnchor = sourceAnchor;
+    if (authorUserId != null) result.authorUserId = authorUserId;
+    if (version != null) result.version = version;
+    if (isDeleted != null) result.isDeleted = isDeleted;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SpatialCanvasEdge._();
+
+  factory SpatialCanvasEdge.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasEdge.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasEdge',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'fromNodeId')
+    ..aOS(4, _omitFieldNames ? '' : 'toNodeId')
+    ..aOS(5, _omitFieldNames ? '' : 'relationType')
+    ..aOS(6, _omitFieldNames ? '' : 'label')
+    ..aOS(7, _omitFieldNames ? '' : 'explanation')
+    ..aOM<SpatialCanvasSourceAnchor>(8, _omitFieldNames ? '' : 'sourceAnchor',
+        subBuilder: SpatialCanvasSourceAnchor.create)
+    ..aOS(9, _omitFieldNames ? '' : 'authorUserId')
+    ..aInt64(10, _omitFieldNames ? '' : 'version')
+    ..aOB(11, _omitFieldNames ? '' : 'isDeleted')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasEdge clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasEdge copyWith(void Function(SpatialCanvasEdge) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasEdge))
+          as SpatialCanvasEdge;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasEdge create() => SpatialCanvasEdge._();
+  @$core.override
+  SpatialCanvasEdge createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasEdge getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasEdge>(create);
+  static SpatialCanvasEdge? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get fromNodeId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set fromNodeId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFromNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFromNodeId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get toNodeId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set toNodeId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasToNodeId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearToNodeId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get relationType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set relationType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRelationType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRelationType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get label => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set label($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLabel() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLabel() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get explanation => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set explanation($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExplanation() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExplanation() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  SpatialCanvasSourceAnchor get sourceAnchor => $_getN(7);
+  @$pb.TagNumber(8)
+  set sourceAnchor(SpatialCanvasSourceAnchor value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceAnchor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceAnchor() => $_clearField(8);
+  @$pb.TagNumber(8)
+  SpatialCanvasSourceAnchor ensureSourceAnchor() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get authorUserId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set authorUserId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAuthorUserId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAuthorUserId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get version => $_getI64(9);
+  @$pb.TagNumber(10)
+  set version($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get isDeleted => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isDeleted($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsDeleted() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsDeleted() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+}
+
+class SpatialCanvasLayoutRevision extends $pb.GeneratedMessage {
+  factory SpatialCanvasLayoutRevision({
+    $core.String? id,
+    $core.String? canvasId,
+    $fixnum.Int64? revisionNumber,
+    $fixnum.Int64? baseRevisionNumber,
+    $core.String? summary,
+    $core.String? createdBy,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (revisionNumber != null) result.revisionNumber = revisionNumber;
+    if (baseRevisionNumber != null)
+      result.baseRevisionNumber = baseRevisionNumber;
+    if (summary != null) result.summary = summary;
+    if (createdBy != null) result.createdBy = createdBy;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  SpatialCanvasLayoutRevision._();
+
+  factory SpatialCanvasLayoutRevision.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasLayoutRevision.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasLayoutRevision',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aInt64(3, _omitFieldNames ? '' : 'revisionNumber')
+    ..aInt64(4, _omitFieldNames ? '' : 'baseRevisionNumber')
+    ..aOS(5, _omitFieldNames ? '' : 'summary')
+    ..aOS(6, _omitFieldNames ? '' : 'createdBy')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasLayoutRevision clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasLayoutRevision copyWith(
+          void Function(SpatialCanvasLayoutRevision) updates) =>
+      super.copyWith(
+              (message) => updates(message as SpatialCanvasLayoutRevision))
+          as SpatialCanvasLayoutRevision;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasLayoutRevision create() =>
+      SpatialCanvasLayoutRevision._();
+  @$core.override
+  SpatialCanvasLayoutRevision createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasLayoutRevision getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasLayoutRevision>(create);
+  static SpatialCanvasLayoutRevision? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get revisionNumber => $_getI64(2);
+  @$pb.TagNumber(3)
+  set revisionNumber($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionNumber() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionNumber() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get baseRevisionNumber => $_getI64(3);
+  @$pb.TagNumber(4)
+  set baseRevisionNumber($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBaseRevisionNumber() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBaseRevisionNumber() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get summary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set summary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdBy => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdBy($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedBy() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedBy() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get createdAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
+}
+
+class SpatialCanvasConflict extends $pb.GeneratedMessage {
+  factory SpatialCanvasConflict({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? fieldName,
+    $core.String? localValueJson,
+    $core.String? remoteValueJson,
+    $core.String? status,
+    $core.String? resolution,
+    $fixnum.Int64? detectedRevision,
+    $1.Timestamp? detectedAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (fieldName != null) result.fieldName = fieldName;
+    if (localValueJson != null) result.localValueJson = localValueJson;
+    if (remoteValueJson != null) result.remoteValueJson = remoteValueJson;
+    if (status != null) result.status = status;
+    if (resolution != null) result.resolution = resolution;
+    if (detectedRevision != null) result.detectedRevision = detectedRevision;
+    if (detectedAt != null) result.detectedAt = detectedAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  SpatialCanvasConflict._();
+
+  factory SpatialCanvasConflict.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasConflict.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasConflict',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'entityType')
+    ..aOS(4, _omitFieldNames ? '' : 'entityId')
+    ..aOS(5, _omitFieldNames ? '' : 'fieldName')
+    ..aOS(6, _omitFieldNames ? '' : 'localValueJson')
+    ..aOS(7, _omitFieldNames ? '' : 'remoteValueJson')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'resolution')
+    ..aInt64(10, _omitFieldNames ? '' : 'detectedRevision')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'detectedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasConflict clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasConflict copyWith(
+          void Function(SpatialCanvasConflict) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasConflict))
+          as SpatialCanvasConflict;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasConflict create() => SpatialCanvasConflict._();
+  @$core.override
+  SpatialCanvasConflict createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasConflict getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasConflict>(create);
+  static SpatialCanvasConflict? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entityType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entityType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntityType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntityType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get fieldName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set fieldName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFieldName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFieldName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get localValueJson => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set localValueJson($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLocalValueJson() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLocalValueJson() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get remoteValueJson => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set remoteValueJson($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRemoteValueJson() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRemoteValueJson() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get resolution => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set resolution($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasResolution() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearResolution() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get detectedRevision => $_getI64(9);
+  @$pb.TagNumber(10)
+  set detectedRevision($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDetectedRevision() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDetectedRevision() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get detectedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set detectedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDetectedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDetectedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureDetectedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get resolvedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set resolvedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasResolvedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearResolvedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureResolvedAt() => $_ensure(11);
+}
+
+class SpatialCanvasSnapshot extends $pb.GeneratedMessage {
+  factory SpatialCanvasSnapshot({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? name,
+    $fixnum.Int64? layoutRevision,
+    $core.String? checksum,
+    $core.String? createdBy,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (name != null) result.name = name;
+    if (layoutRevision != null) result.layoutRevision = layoutRevision;
+    if (checksum != null) result.checksum = checksum;
+    if (createdBy != null) result.createdBy = createdBy;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  SpatialCanvasSnapshot._();
+
+  factory SpatialCanvasSnapshot.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasSnapshot.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasSnapshot',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aInt64(4, _omitFieldNames ? '' : 'layoutRevision')
+    ..aOS(5, _omitFieldNames ? '' : 'checksum')
+    ..aOS(6, _omitFieldNames ? '' : 'createdBy')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSnapshot clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasSnapshot copyWith(
+          void Function(SpatialCanvasSnapshot) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasSnapshot))
+          as SpatialCanvasSnapshot;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSnapshot create() => SpatialCanvasSnapshot._();
+  @$core.override
+  SpatialCanvasSnapshot createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasSnapshot getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasSnapshot>(create);
+  static SpatialCanvasSnapshot? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get layoutRevision => $_getI64(3);
+  @$pb.TagNumber(4)
+  set layoutRevision($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLayoutRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLayoutRevision() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get checksum => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set checksum($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasChecksum() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChecksum() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdBy => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdBy($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedBy() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedBy() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get createdAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set createdAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureCreatedAt() => $_ensure(6);
+}
+
+class SpatialCanvasComment extends $pb.GeneratedMessage {
+  factory SpatialCanvasComment({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? body,
+    $core.String? status,
+    $core.String? authorUserId,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (body != null) result.body = body;
+    if (status != null) result.status = status;
+    if (authorUserId != null) result.authorUserId = authorUserId;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  SpatialCanvasComment._();
+
+  factory SpatialCanvasComment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasComment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasComment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'entityType')
+    ..aOS(4, _omitFieldNames ? '' : 'entityId')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'authorUserId')
+    ..aInt64(8, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasComment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasComment copyWith(void Function(SpatialCanvasComment) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasComment))
+          as SpatialCanvasComment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasComment create() => SpatialCanvasComment._();
+  @$core.override
+  SpatialCanvasComment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasComment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasComment>(create);
+  static SpatialCanvasComment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entityType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entityType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntityType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntityType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get body => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set body($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get authorUserId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set authorUserId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAuthorUserId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAuthorUserId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get version => $_getI64(7);
+  @$pb.TagNumber(8)
+  set version($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get createdAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set createdAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get resolvedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set resolvedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolvedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolvedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureResolvedAt() => $_ensure(9);
+}
+
+class SpatialCanvasProposal extends $pb.GeneratedMessage {
+  factory SpatialCanvasProposal({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? proposalType,
+    $core.String? title,
+    $core.String? rationale,
+    $core.String? payloadJson,
+    $core.String? status,
+    $core.String? modelKey,
+    $core.String? modelVersion,
+    $core.String? promptDigest,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? decidedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (proposalType != null) result.proposalType = proposalType;
+    if (title != null) result.title = title;
+    if (rationale != null) result.rationale = rationale;
+    if (payloadJson != null) result.payloadJson = payloadJson;
+    if (status != null) result.status = status;
+    if (modelKey != null) result.modelKey = modelKey;
+    if (modelVersion != null) result.modelVersion = modelVersion;
+    if (promptDigest != null) result.promptDigest = promptDigest;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (decidedAt != null) result.decidedAt = decidedAt;
+    return result;
+  }
+
+  SpatialCanvasProposal._();
+
+  factory SpatialCanvasProposal.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasProposal.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasProposal',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'proposalType')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'rationale')
+    ..aOS(6, _omitFieldNames ? '' : 'payloadJson')
+    ..aOS(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'modelKey')
+    ..aOS(9, _omitFieldNames ? '' : 'modelVersion')
+    ..aOS(10, _omitFieldNames ? '' : 'promptDigest')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'decidedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasProposal clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasProposal copyWith(
+          void Function(SpatialCanvasProposal) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasProposal))
+          as SpatialCanvasProposal;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasProposal create() => SpatialCanvasProposal._();
+  @$core.override
+  SpatialCanvasProposal createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasProposal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasProposal>(create);
+  static SpatialCanvasProposal? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get proposalType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set proposalType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProposalType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProposalType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get rationale => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set rationale($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRationale() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRationale() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get payloadJson => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set payloadJson($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPayloadJson() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPayloadJson() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get status => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set status($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get modelKey => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set modelKey($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasModelKey() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearModelKey() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get modelVersion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set modelVersion($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasModelVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearModelVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get promptDigest => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set promptDigest($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPromptDigest() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPromptDigest() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get decidedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set decidedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDecidedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDecidedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureDecidedAt() => $_ensure(11);
+}
+
+class SpatialCanvasExport extends $pb.GeneratedMessage {
+  factory SpatialCanvasExport({
+    $core.String? id,
+    $core.String? canvasId,
+    $core.String? format,
+    $core.String? status,
+    $core.String? artifactUrl,
+    $core.String? checksum,
+    $core.String? manifestJson,
+    $fixnum.Int64? layoutRevision,
+    $core.int? citationCount,
+    $core.int? warningCount,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (canvasId != null) result.canvasId = canvasId;
+    if (format != null) result.format = format;
+    if (status != null) result.status = status;
+    if (artifactUrl != null) result.artifactUrl = artifactUrl;
+    if (checksum != null) result.checksum = checksum;
+    if (manifestJson != null) result.manifestJson = manifestJson;
+    if (layoutRevision != null) result.layoutRevision = layoutRevision;
+    if (citationCount != null) result.citationCount = citationCount;
+    if (warningCount != null) result.warningCount = warningCount;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  SpatialCanvasExport._();
+
+  factory SpatialCanvasExport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasExport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasExport',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(3, _omitFieldNames ? '' : 'format')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'artifactUrl')
+    ..aOS(6, _omitFieldNames ? '' : 'checksum')
+    ..aOS(7, _omitFieldNames ? '' : 'manifestJson')
+    ..aInt64(8, _omitFieldNames ? '' : 'layoutRevision')
+    ..aI(9, _omitFieldNames ? '' : 'citationCount')
+    ..aI(10, _omitFieldNames ? '' : 'warningCount')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasExport clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasExport copyWith(void Function(SpatialCanvasExport) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasExport))
+          as SpatialCanvasExport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasExport create() => SpatialCanvasExport._();
+  @$core.override
+  SpatialCanvasExport createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasExport getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasExport>(create);
+  static SpatialCanvasExport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get canvasId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set canvasId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCanvasId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCanvasId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get format => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set format($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get artifactUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set artifactUrl($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasArtifactUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearArtifactUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get checksum => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set checksum($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasChecksum() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearChecksum() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get manifestJson => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set manifestJson($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasManifestJson() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearManifestJson() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get layoutRevision => $_getI64(7);
+  @$pb.TagNumber(8)
+  set layoutRevision($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLayoutRevision() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLayoutRevision() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get citationCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set citationCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCitationCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCitationCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get warningCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set warningCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasWarningCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearWarningCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get expiresAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set expiresAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasExpiresAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearExpiresAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureExpiresAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+}
+
+class SpatialCanvasOperation extends $pb.GeneratedMessage {
+  factory SpatialCanvasOperation({
+    $core.String? operationId,
+    $core.String? replicaId,
+    $fixnum.Int64? replicaSequence,
+    $fixnum.Int64? baseRevision,
+    $core.String? operationType,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? payloadJson,
+    $1.Timestamp? occurredAt,
+  }) {
+    final result = create();
+    if (operationId != null) result.operationId = operationId;
+    if (replicaId != null) result.replicaId = replicaId;
+    if (replicaSequence != null) result.replicaSequence = replicaSequence;
+    if (baseRevision != null) result.baseRevision = baseRevision;
+    if (operationType != null) result.operationType = operationType;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (payloadJson != null) result.payloadJson = payloadJson;
+    if (occurredAt != null) result.occurredAt = occurredAt;
+    return result;
+  }
+
+  SpatialCanvasOperation._();
+
+  factory SpatialCanvasOperation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasOperation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasOperation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'operationId')
+    ..aOS(2, _omitFieldNames ? '' : 'replicaId')
+    ..aInt64(3, _omitFieldNames ? '' : 'replicaSequence')
+    ..aInt64(4, _omitFieldNames ? '' : 'baseRevision')
+    ..aOS(5, _omitFieldNames ? '' : 'operationType')
+    ..aOS(6, _omitFieldNames ? '' : 'entityType')
+    ..aOS(7, _omitFieldNames ? '' : 'entityId')
+    ..aOS(8, _omitFieldNames ? '' : 'payloadJson')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'occurredAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasOperation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasOperation copyWith(
+          void Function(SpatialCanvasOperation) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasOperation))
+          as SpatialCanvasOperation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasOperation create() => SpatialCanvasOperation._();
+  @$core.override
+  SpatialCanvasOperation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasOperation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasOperation>(create);
+  static SpatialCanvasOperation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get operationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set operationId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOperationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperationId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get replicaId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set replicaId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplicaId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplicaId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get replicaSequence => $_getI64(2);
+  @$pb.TagNumber(3)
+  set replicaSequence($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReplicaSequence() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReplicaSequence() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get baseRevision => $_getI64(3);
+  @$pb.TagNumber(4)
+  set baseRevision($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBaseRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBaseRevision() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get operationType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set operationType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOperationType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOperationType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get entityType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set entityType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEntityType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEntityType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get entityId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set entityId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEntityId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEntityId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get payloadJson => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set payloadJson($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPayloadJson() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPayloadJson() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get occurredAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set occurredAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasOccurredAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOccurredAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureOccurredAt() => $_ensure(8);
+}
+
+class SpatialCanvasDetail extends $pb.GeneratedMessage {
+  factory SpatialCanvasDetail({
+    SpatialCanvasSummary? canvas,
+    $core.Iterable<SpatialCanvasNode>? nodes,
+    $core.Iterable<SpatialCanvasEdge>? edges,
+    $core.Iterable<SpatialCanvasConflict>? conflicts,
+    $core.Iterable<SpatialCanvasSnapshot>? snapshots,
+    $core.Iterable<SpatialCanvasComment>? comments,
+    $core.Iterable<SpatialCanvasProposal>? proposals,
+    $core.Iterable<SpatialCanvasLayoutRevision>? revisions,
+    $core.double? viewportX,
+    $core.double? viewportY,
+    $core.double? viewportZoom,
+  }) {
+    final result = create();
+    if (canvas != null) result.canvas = canvas;
+    if (nodes != null) result.nodes.addAll(nodes);
+    if (edges != null) result.edges.addAll(edges);
+    if (conflicts != null) result.conflicts.addAll(conflicts);
+    if (snapshots != null) result.snapshots.addAll(snapshots);
+    if (comments != null) result.comments.addAll(comments);
+    if (proposals != null) result.proposals.addAll(proposals);
+    if (revisions != null) result.revisions.addAll(revisions);
+    if (viewportX != null) result.viewportX = viewportX;
+    if (viewportY != null) result.viewportY = viewportY;
+    if (viewportZoom != null) result.viewportZoom = viewportZoom;
+    return result;
+  }
+
+  SpatialCanvasDetail._();
+
+  factory SpatialCanvasDetail.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SpatialCanvasDetail.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SpatialCanvasDetail',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasSummary>(1, _omitFieldNames ? '' : 'canvas',
+        subBuilder: SpatialCanvasSummary.create)
+    ..pPM<SpatialCanvasNode>(2, _omitFieldNames ? '' : 'nodes',
+        subBuilder: SpatialCanvasNode.create)
+    ..pPM<SpatialCanvasEdge>(3, _omitFieldNames ? '' : 'edges',
+        subBuilder: SpatialCanvasEdge.create)
+    ..pPM<SpatialCanvasConflict>(4, _omitFieldNames ? '' : 'conflicts',
+        subBuilder: SpatialCanvasConflict.create)
+    ..pPM<SpatialCanvasSnapshot>(5, _omitFieldNames ? '' : 'snapshots',
+        subBuilder: SpatialCanvasSnapshot.create)
+    ..pPM<SpatialCanvasComment>(6, _omitFieldNames ? '' : 'comments',
+        subBuilder: SpatialCanvasComment.create)
+    ..pPM<SpatialCanvasProposal>(7, _omitFieldNames ? '' : 'proposals',
+        subBuilder: SpatialCanvasProposal.create)
+    ..pPM<SpatialCanvasLayoutRevision>(8, _omitFieldNames ? '' : 'revisions',
+        subBuilder: SpatialCanvasLayoutRevision.create)
+    ..aD(9, _omitFieldNames ? '' : 'viewportX')
+    ..aD(10, _omitFieldNames ? '' : 'viewportY')
+    ..aD(11, _omitFieldNames ? '' : 'viewportZoom')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasDetail clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SpatialCanvasDetail copyWith(void Function(SpatialCanvasDetail) updates) =>
+      super.copyWith((message) => updates(message as SpatialCanvasDetail))
+          as SpatialCanvasDetail;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasDetail create() => SpatialCanvasDetail._();
+  @$core.override
+  SpatialCanvasDetail createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SpatialCanvasDetail getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SpatialCanvasDetail>(create);
+  static SpatialCanvasDetail? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasSummary get canvas => $_getN(0);
+  @$pb.TagNumber(1)
+  set canvas(SpatialCanvasSummary value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvas() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvas() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasSummary ensureCanvas() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<SpatialCanvasNode> get nodes => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<SpatialCanvasEdge> get edges => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<SpatialCanvasConflict> get conflicts => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<SpatialCanvasSnapshot> get snapshots => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $pb.PbList<SpatialCanvasComment> get comments => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<SpatialCanvasProposal> get proposals => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<SpatialCanvasLayoutRevision> get revisions => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.double get viewportX => $_getN(8);
+  @$pb.TagNumber(9)
+  set viewportX($core.double value) => $_setDouble(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasViewportX() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearViewportX() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.double get viewportY => $_getN(9);
+  @$pb.TagNumber(10)
+  set viewportY($core.double value) => $_setDouble(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasViewportY() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearViewportY() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get viewportZoom => $_getN(10);
+  @$pb.TagNumber(11)
+  set viewportZoom($core.double value) => $_setDouble(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasViewportZoom() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearViewportZoom() => $_clearField(11);
+}
+
+class GetSpatialCanvasDashboardRequest extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasDashboardRequest() => create();
+
+  GetSpatialCanvasDashboardRequest._();
+
+  factory GetSpatialCanvasDashboardRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasDashboardRequest copyWith(
+          void Function(GetSpatialCanvasDashboardRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetSpatialCanvasDashboardRequest))
+          as GetSpatialCanvasDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasDashboardRequest create() =>
+      GetSpatialCanvasDashboardRequest._();
+  @$core.override
+  GetSpatialCanvasDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasDashboardRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasDashboardRequest>(
+          create);
+  static GetSpatialCanvasDashboardRequest? _defaultInstance;
+}
+
+class GetSpatialCanvasDashboardResponse extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasDashboardResponse({
+    $core.Iterable<SpatialCanvasWorkspace>? workspaces,
+    $core.Iterable<SpatialCanvasSummary>? canvases,
+    $core.Iterable<SpatialCanvasTemplate>? templates,
+    $core.int? unresolvedConflicts,
+    $core.int? pendingProposals,
+    $core.int? openComments,
+    $core.bool? canvasWritesEnabled,
+    $core.bool? aiProposalsEnabled,
+    $core.bool? exportsEnabled,
+  }) {
+    final result = create();
+    if (workspaces != null) result.workspaces.addAll(workspaces);
+    if (canvases != null) result.canvases.addAll(canvases);
+    if (templates != null) result.templates.addAll(templates);
+    if (unresolvedConflicts != null)
+      result.unresolvedConflicts = unresolvedConflicts;
+    if (pendingProposals != null) result.pendingProposals = pendingProposals;
+    if (openComments != null) result.openComments = openComments;
+    if (canvasWritesEnabled != null)
+      result.canvasWritesEnabled = canvasWritesEnabled;
+    if (aiProposalsEnabled != null)
+      result.aiProposalsEnabled = aiProposalsEnabled;
+    if (exportsEnabled != null) result.exportsEnabled = exportsEnabled;
+    return result;
+  }
+
+  GetSpatialCanvasDashboardResponse._();
+
+  factory GetSpatialCanvasDashboardResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<SpatialCanvasWorkspace>(1, _omitFieldNames ? '' : 'workspaces',
+        subBuilder: SpatialCanvasWorkspace.create)
+    ..pPM<SpatialCanvasSummary>(2, _omitFieldNames ? '' : 'canvases',
+        subBuilder: SpatialCanvasSummary.create)
+    ..pPM<SpatialCanvasTemplate>(3, _omitFieldNames ? '' : 'templates',
+        subBuilder: SpatialCanvasTemplate.create)
+    ..aI(4, _omitFieldNames ? '' : 'unresolvedConflicts')
+    ..aI(5, _omitFieldNames ? '' : 'pendingProposals')
+    ..aI(6, _omitFieldNames ? '' : 'openComments')
+    ..aOB(7, _omitFieldNames ? '' : 'canvasWritesEnabled')
+    ..aOB(8, _omitFieldNames ? '' : 'aiProposalsEnabled')
+    ..aOB(9, _omitFieldNames ? '' : 'exportsEnabled')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasDashboardResponse copyWith(
+          void Function(GetSpatialCanvasDashboardResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetSpatialCanvasDashboardResponse))
+          as GetSpatialCanvasDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasDashboardResponse create() =>
+      GetSpatialCanvasDashboardResponse._();
+  @$core.override
+  GetSpatialCanvasDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasDashboardResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasDashboardResponse>(
+          create);
+  static GetSpatialCanvasDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SpatialCanvasWorkspace> get workspaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<SpatialCanvasSummary> get canvases => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<SpatialCanvasTemplate> get templates => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.int get unresolvedConflicts => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set unresolvedConflicts($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUnresolvedConflicts() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUnresolvedConflicts() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get pendingProposals => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set pendingProposals($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPendingProposals() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPendingProposals() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get openComments => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set openComments($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOpenComments() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOpenComments() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get canvasWritesEnabled => $_getBF(6);
+  @$pb.TagNumber(7)
+  set canvasWritesEnabled($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCanvasWritesEnabled() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCanvasWritesEnabled() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get aiProposalsEnabled => $_getBF(7);
+  @$pb.TagNumber(8)
+  set aiProposalsEnabled($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAiProposalsEnabled() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAiProposalsEnabled() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get exportsEnabled => $_getBF(8);
+  @$pb.TagNumber(9)
+  set exportsEnabled($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasExportsEnabled() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExportsEnabled() => $_clearField(9);
+}
+
+class ListSpatialCanvasTemplatesRequest extends $pb.GeneratedMessage {
+  factory ListSpatialCanvasTemplatesRequest({
+    $core.bool? includeRetired,
+  }) {
+    final result = create();
+    if (includeRetired != null) result.includeRetired = includeRetired;
+    return result;
+  }
+
+  ListSpatialCanvasTemplatesRequest._();
+
+  factory ListSpatialCanvasTemplatesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSpatialCanvasTemplatesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSpatialCanvasTemplatesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'includeRetired')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpatialCanvasTemplatesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpatialCanvasTemplatesRequest copyWith(
+          void Function(ListSpatialCanvasTemplatesRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListSpatialCanvasTemplatesRequest))
+          as ListSpatialCanvasTemplatesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSpatialCanvasTemplatesRequest create() =>
+      ListSpatialCanvasTemplatesRequest._();
+  @$core.override
+  ListSpatialCanvasTemplatesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSpatialCanvasTemplatesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSpatialCanvasTemplatesRequest>(
+          create);
+  static ListSpatialCanvasTemplatesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get includeRetired => $_getBF(0);
+  @$pb.TagNumber(1)
+  set includeRetired($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncludeRetired() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncludeRetired() => $_clearField(1);
+}
+
+class ListSpatialCanvasTemplatesResponse extends $pb.GeneratedMessage {
+  factory ListSpatialCanvasTemplatesResponse({
+    $core.Iterable<SpatialCanvasTemplate>? templates,
+  }) {
+    final result = create();
+    if (templates != null) result.templates.addAll(templates);
+    return result;
+  }
+
+  ListSpatialCanvasTemplatesResponse._();
+
+  factory ListSpatialCanvasTemplatesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSpatialCanvasTemplatesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSpatialCanvasTemplatesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<SpatialCanvasTemplate>(1, _omitFieldNames ? '' : 'templates',
+        subBuilder: SpatialCanvasTemplate.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpatialCanvasTemplatesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSpatialCanvasTemplatesResponse copyWith(
+          void Function(ListSpatialCanvasTemplatesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ListSpatialCanvasTemplatesResponse))
+          as ListSpatialCanvasTemplatesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSpatialCanvasTemplatesResponse create() =>
+      ListSpatialCanvasTemplatesResponse._();
+  @$core.override
+  ListSpatialCanvasTemplatesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSpatialCanvasTemplatesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSpatialCanvasTemplatesResponse>(
+          create);
+  static ListSpatialCanvasTemplatesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SpatialCanvasTemplate> get templates => $_getList(0);
+}
+
+class CreateSpatialCanvasRequest extends $pb.GeneratedMessage {
+  factory CreateSpatialCanvasRequest({
+    $core.String? workspaceId,
+    $core.String? workspaceName,
+    $core.String? scope,
+    $core.String? researchRoomId,
+    $core.String? title,
+    $core.String? description,
+    $core.String? templateCode,
+    $fixnum.Int64? templateVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (workspaceId != null) result.workspaceId = workspaceId;
+    if (workspaceName != null) result.workspaceName = workspaceName;
+    if (scope != null) result.scope = scope;
+    if (researchRoomId != null) result.researchRoomId = researchRoomId;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (templateCode != null) result.templateCode = templateCode;
+    if (templateVersion != null) result.templateVersion = templateVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateSpatialCanvasRequest._();
+
+  factory CreateSpatialCanvasRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateSpatialCanvasRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateSpatialCanvasRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workspaceId')
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceName')
+    ..aOS(3, _omitFieldNames ? '' : 'scope')
+    ..aOS(4, _omitFieldNames ? '' : 'researchRoomId')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..aOS(7, _omitFieldNames ? '' : 'templateCode')
+    ..aInt64(8, _omitFieldNames ? '' : 'templateVersion')
+    ..aOS(9, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasRequest copyWith(
+          void Function(CreateSpatialCanvasRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateSpatialCanvasRequest))
+          as CreateSpatialCanvasRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasRequest create() => CreateSpatialCanvasRequest._();
+  @$core.override
+  CreateSpatialCanvasRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateSpatialCanvasRequest>(create);
+  static CreateSpatialCanvasRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workspaceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workspaceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspaceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspaceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get researchRoomId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set researchRoomId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResearchRoomId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResearchRoomId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get templateCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set templateCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTemplateCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTemplateCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get templateVersion => $_getI64(7);
+  @$pb.TagNumber(8)
+  set templateVersion($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTemplateVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTemplateVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get clientMutationId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clientMutationId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasClientMutationId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClientMutationId() => $_clearField(9);
+}
+
+class CreateSpatialCanvasResponse extends $pb.GeneratedMessage {
+  factory CreateSpatialCanvasResponse({
+    SpatialCanvasDetail? detail,
+  }) {
+    final result = create();
+    if (detail != null) result.detail = detail;
+    return result;
+  }
+
+  CreateSpatialCanvasResponse._();
+
+  factory CreateSpatialCanvasResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateSpatialCanvasResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateSpatialCanvasResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasDetail>(1, _omitFieldNames ? '' : 'detail',
+        subBuilder: SpatialCanvasDetail.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasResponse copyWith(
+          void Function(CreateSpatialCanvasResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateSpatialCanvasResponse))
+          as CreateSpatialCanvasResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasResponse create() =>
+      CreateSpatialCanvasResponse._();
+  @$core.override
+  CreateSpatialCanvasResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateSpatialCanvasResponse>(create);
+  static CreateSpatialCanvasResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail get detail => $_getN(0);
+  @$pb.TagNumber(1)
+  set detail(SpatialCanvasDetail value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDetail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDetail() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail ensureDetail() => $_ensure(0);
+}
+
+class GetSpatialCanvasRequest extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasRequest({
+    $core.String? canvasId,
+    $fixnum.Int64? sinceRevision,
+    $core.bool? includeDeleted,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (sinceRevision != null) result.sinceRevision = sinceRevision;
+    if (includeDeleted != null) result.includeDeleted = includeDeleted;
+    return result;
+  }
+
+  GetSpatialCanvasRequest._();
+
+  factory GetSpatialCanvasRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aInt64(2, _omitFieldNames ? '' : 'sinceRevision')
+    ..aOB(3, _omitFieldNames ? '' : 'includeDeleted')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasRequest copyWith(
+          void Function(GetSpatialCanvasRequest) updates) =>
+      super.copyWith((message) => updates(message as GetSpatialCanvasRequest))
+          as GetSpatialCanvasRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasRequest create() => GetSpatialCanvasRequest._();
+  @$core.override
+  GetSpatialCanvasRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasRequest>(create);
+  static GetSpatialCanvasRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get sinceRevision => $_getI64(1);
+  @$pb.TagNumber(2)
+  set sinceRevision($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSinceRevision() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSinceRevision() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get includeDeleted => $_getBF(2);
+  @$pb.TagNumber(3)
+  set includeDeleted($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIncludeDeleted() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIncludeDeleted() => $_clearField(3);
+}
+
+class GetSpatialCanvasResponse extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasResponse({
+    SpatialCanvasDetail? detail,
+  }) {
+    final result = create();
+    if (detail != null) result.detail = detail;
+    return result;
+  }
+
+  GetSpatialCanvasResponse._();
+
+  factory GetSpatialCanvasResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasDetail>(1, _omitFieldNames ? '' : 'detail',
+        subBuilder: SpatialCanvasDetail.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasResponse copyWith(
+          void Function(GetSpatialCanvasResponse) updates) =>
+      super.copyWith((message) => updates(message as GetSpatialCanvasResponse))
+          as GetSpatialCanvasResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasResponse create() => GetSpatialCanvasResponse._();
+  @$core.override
+  GetSpatialCanvasResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasResponse>(create);
+  static GetSpatialCanvasResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail get detail => $_getN(0);
+  @$pb.TagNumber(1)
+  set detail(SpatialCanvasDetail value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDetail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDetail() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail ensureDetail() => $_ensure(0);
+}
+
+class ApplySpatialCanvasOperationsRequest extends $pb.GeneratedMessage {
+  factory ApplySpatialCanvasOperationsRequest({
+    $core.String? canvasId,
+    $core.Iterable<SpatialCanvasOperation>? operations,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (operations != null) result.operations.addAll(operations);
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ApplySpatialCanvasOperationsRequest._();
+
+  factory ApplySpatialCanvasOperationsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApplySpatialCanvasOperationsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApplySpatialCanvasOperationsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..pPM<SpatialCanvasOperation>(2, _omitFieldNames ? '' : 'operations',
+        subBuilder: SpatialCanvasOperation.create)
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApplySpatialCanvasOperationsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApplySpatialCanvasOperationsRequest copyWith(
+          void Function(ApplySpatialCanvasOperationsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApplySpatialCanvasOperationsRequest))
+          as ApplySpatialCanvasOperationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApplySpatialCanvasOperationsRequest create() =>
+      ApplySpatialCanvasOperationsRequest._();
+  @$core.override
+  ApplySpatialCanvasOperationsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApplySpatialCanvasOperationsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApplySpatialCanvasOperationsRequest>(create);
+  static ApplySpatialCanvasOperationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<SpatialCanvasOperation> get operations => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class ApplySpatialCanvasOperationsResponse extends $pb.GeneratedMessage {
+  factory ApplySpatialCanvasOperationsResponse({
+    SpatialCanvasDetail? detail,
+    $core.Iterable<$core.String>? appliedOperationIds,
+    $core.Iterable<$core.String>? duplicateOperationIds,
+    $core.Iterable<SpatialCanvasConflict>? conflicts,
+  }) {
+    final result = create();
+    if (detail != null) result.detail = detail;
+    if (appliedOperationIds != null)
+      result.appliedOperationIds.addAll(appliedOperationIds);
+    if (duplicateOperationIds != null)
+      result.duplicateOperationIds.addAll(duplicateOperationIds);
+    if (conflicts != null) result.conflicts.addAll(conflicts);
+    return result;
+  }
+
+  ApplySpatialCanvasOperationsResponse._();
+
+  factory ApplySpatialCanvasOperationsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApplySpatialCanvasOperationsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApplySpatialCanvasOperationsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasDetail>(1, _omitFieldNames ? '' : 'detail',
+        subBuilder: SpatialCanvasDetail.create)
+    ..pPS(2, _omitFieldNames ? '' : 'appliedOperationIds')
+    ..pPS(3, _omitFieldNames ? '' : 'duplicateOperationIds')
+    ..pPM<SpatialCanvasConflict>(4, _omitFieldNames ? '' : 'conflicts',
+        subBuilder: SpatialCanvasConflict.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApplySpatialCanvasOperationsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApplySpatialCanvasOperationsResponse copyWith(
+          void Function(ApplySpatialCanvasOperationsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApplySpatialCanvasOperationsResponse))
+          as ApplySpatialCanvasOperationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApplySpatialCanvasOperationsResponse create() =>
+      ApplySpatialCanvasOperationsResponse._();
+  @$core.override
+  ApplySpatialCanvasOperationsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApplySpatialCanvasOperationsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApplySpatialCanvasOperationsResponse>(create);
+  static ApplySpatialCanvasOperationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail get detail => $_getN(0);
+  @$pb.TagNumber(1)
+  set detail(SpatialCanvasDetail value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDetail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDetail() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail ensureDetail() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get appliedOperationIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get duplicateOperationIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<SpatialCanvasConflict> get conflicts => $_getList(3);
+}
+
+class ResolveSpatialCanvasConflictRequest extends $pb.GeneratedMessage {
+  factory ResolveSpatialCanvasConflictRequest({
+    $core.String? conflictId,
+    $core.String? resolution,
+    $core.String? mergedValueJson,
+    $fixnum.Int64? expectedRevision,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (conflictId != null) result.conflictId = conflictId;
+    if (resolution != null) result.resolution = resolution;
+    if (mergedValueJson != null) result.mergedValueJson = mergedValueJson;
+    if (expectedRevision != null) result.expectedRevision = expectedRevision;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ResolveSpatialCanvasConflictRequest._();
+
+  factory ResolveSpatialCanvasConflictRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveSpatialCanvasConflictRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveSpatialCanvasConflictRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'conflictId')
+    ..aOS(2, _omitFieldNames ? '' : 'resolution')
+    ..aOS(3, _omitFieldNames ? '' : 'mergedValueJson')
+    ..aInt64(4, _omitFieldNames ? '' : 'expectedRevision')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveSpatialCanvasConflictRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveSpatialCanvasConflictRequest copyWith(
+          void Function(ResolveSpatialCanvasConflictRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveSpatialCanvasConflictRequest))
+          as ResolveSpatialCanvasConflictRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveSpatialCanvasConflictRequest create() =>
+      ResolveSpatialCanvasConflictRequest._();
+  @$core.override
+  ResolveSpatialCanvasConflictRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveSpatialCanvasConflictRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ResolveSpatialCanvasConflictRequest>(create);
+  static ResolveSpatialCanvasConflictRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get conflictId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set conflictId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflictId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflictId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resolution => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resolution($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasResolution() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResolution() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get mergedValueJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set mergedValueJson($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMergedValueJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMergedValueJson() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get expectedRevision => $_getI64(3);
+  @$pb.TagNumber(4)
+  set expectedRevision($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExpectedRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpectedRevision() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class ResolveSpatialCanvasConflictResponse extends $pb.GeneratedMessage {
+  factory ResolveSpatialCanvasConflictResponse({
+    SpatialCanvasConflict? conflict,
+  }) {
+    final result = create();
+    if (conflict != null) result.conflict = conflict;
+    return result;
+  }
+
+  ResolveSpatialCanvasConflictResponse._();
+
+  factory ResolveSpatialCanvasConflictResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveSpatialCanvasConflictResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveSpatialCanvasConflictResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasConflict>(1, _omitFieldNames ? '' : 'conflict',
+        subBuilder: SpatialCanvasConflict.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveSpatialCanvasConflictResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveSpatialCanvasConflictResponse copyWith(
+          void Function(ResolveSpatialCanvasConflictResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveSpatialCanvasConflictResponse))
+          as ResolveSpatialCanvasConflictResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveSpatialCanvasConflictResponse create() =>
+      ResolveSpatialCanvasConflictResponse._();
+  @$core.override
+  ResolveSpatialCanvasConflictResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveSpatialCanvasConflictResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ResolveSpatialCanvasConflictResponse>(create);
+  static ResolveSpatialCanvasConflictResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasConflict get conflict => $_getN(0);
+  @$pb.TagNumber(1)
+  set conflict(SpatialCanvasConflict value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflict() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflict() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasConflict ensureConflict() => $_ensure(0);
+}
+
+class CreateSpatialCanvasSnapshotRequest extends $pb.GeneratedMessage {
+  factory CreateSpatialCanvasSnapshotRequest({
+    $core.String? canvasId,
+    $core.String? name,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (name != null) result.name = name;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateSpatialCanvasSnapshotRequest._();
+
+  factory CreateSpatialCanvasSnapshotRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateSpatialCanvasSnapshotRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateSpatialCanvasSnapshotRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasSnapshotRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasSnapshotRequest copyWith(
+          void Function(CreateSpatialCanvasSnapshotRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateSpatialCanvasSnapshotRequest))
+          as CreateSpatialCanvasSnapshotRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasSnapshotRequest create() =>
+      CreateSpatialCanvasSnapshotRequest._();
+  @$core.override
+  CreateSpatialCanvasSnapshotRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasSnapshotRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateSpatialCanvasSnapshotRequest>(
+          create);
+  static CreateSpatialCanvasSnapshotRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class CreateSpatialCanvasSnapshotResponse extends $pb.GeneratedMessage {
+  factory CreateSpatialCanvasSnapshotResponse({
+    SpatialCanvasSnapshot? snapshot,
+  }) {
+    final result = create();
+    if (snapshot != null) result.snapshot = snapshot;
+    return result;
+  }
+
+  CreateSpatialCanvasSnapshotResponse._();
+
+  factory CreateSpatialCanvasSnapshotResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateSpatialCanvasSnapshotResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateSpatialCanvasSnapshotResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasSnapshot>(1, _omitFieldNames ? '' : 'snapshot',
+        subBuilder: SpatialCanvasSnapshot.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasSnapshotResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateSpatialCanvasSnapshotResponse copyWith(
+          void Function(CreateSpatialCanvasSnapshotResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateSpatialCanvasSnapshotResponse))
+          as CreateSpatialCanvasSnapshotResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasSnapshotResponse create() =>
+      CreateSpatialCanvasSnapshotResponse._();
+  @$core.override
+  CreateSpatialCanvasSnapshotResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateSpatialCanvasSnapshotResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateSpatialCanvasSnapshotResponse>(create);
+  static CreateSpatialCanvasSnapshotResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasSnapshot get snapshot => $_getN(0);
+  @$pb.TagNumber(1)
+  set snapshot(SpatialCanvasSnapshot value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSnapshot() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSnapshot() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasSnapshot ensureSnapshot() => $_ensure(0);
+}
+
+class RestoreSpatialCanvasSnapshotRequest extends $pb.GeneratedMessage {
+  factory RestoreSpatialCanvasSnapshotRequest({
+    $core.String? snapshotId,
+    $fixnum.Int64? expectedRevision,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (snapshotId != null) result.snapshotId = snapshotId;
+    if (expectedRevision != null) result.expectedRevision = expectedRevision;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RestoreSpatialCanvasSnapshotRequest._();
+
+  factory RestoreSpatialCanvasSnapshotRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RestoreSpatialCanvasSnapshotRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RestoreSpatialCanvasSnapshotRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'snapshotId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedRevision')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RestoreSpatialCanvasSnapshotRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RestoreSpatialCanvasSnapshotRequest copyWith(
+          void Function(RestoreSpatialCanvasSnapshotRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RestoreSpatialCanvasSnapshotRequest))
+          as RestoreSpatialCanvasSnapshotRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RestoreSpatialCanvasSnapshotRequest create() =>
+      RestoreSpatialCanvasSnapshotRequest._();
+  @$core.override
+  RestoreSpatialCanvasSnapshotRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RestoreSpatialCanvasSnapshotRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RestoreSpatialCanvasSnapshotRequest>(create);
+  static RestoreSpatialCanvasSnapshotRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get snapshotId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set snapshotId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSnapshotId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSnapshotId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedRevision => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedRevision($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedRevision() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedRevision() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class RestoreSpatialCanvasSnapshotResponse extends $pb.GeneratedMessage {
+  factory RestoreSpatialCanvasSnapshotResponse({
+    SpatialCanvasDetail? detail,
+  }) {
+    final result = create();
+    if (detail != null) result.detail = detail;
+    return result;
+  }
+
+  RestoreSpatialCanvasSnapshotResponse._();
+
+  factory RestoreSpatialCanvasSnapshotResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RestoreSpatialCanvasSnapshotResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RestoreSpatialCanvasSnapshotResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasDetail>(1, _omitFieldNames ? '' : 'detail',
+        subBuilder: SpatialCanvasDetail.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RestoreSpatialCanvasSnapshotResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RestoreSpatialCanvasSnapshotResponse copyWith(
+          void Function(RestoreSpatialCanvasSnapshotResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RestoreSpatialCanvasSnapshotResponse))
+          as RestoreSpatialCanvasSnapshotResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RestoreSpatialCanvasSnapshotResponse create() =>
+      RestoreSpatialCanvasSnapshotResponse._();
+  @$core.override
+  RestoreSpatialCanvasSnapshotResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RestoreSpatialCanvasSnapshotResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RestoreSpatialCanvasSnapshotResponse>(create);
+  static RestoreSpatialCanvasSnapshotResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail get detail => $_getN(0);
+  @$pb.TagNumber(1)
+  set detail(SpatialCanvasDetail value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDetail() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDetail() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasDetail ensureDetail() => $_ensure(0);
+}
+
+class UpsertSpatialCanvasCommentRequest extends $pb.GeneratedMessage {
+  factory UpsertSpatialCanvasCommentRequest({
+    $core.String? canvasId,
+    $core.String? commentId,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? body,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (commentId != null) result.commentId = commentId;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (body != null) result.body = body;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertSpatialCanvasCommentRequest._();
+
+  factory UpsertSpatialCanvasCommentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSpatialCanvasCommentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSpatialCanvasCommentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(2, _omitFieldNames ? '' : 'commentId')
+    ..aOS(3, _omitFieldNames ? '' : 'entityType')
+    ..aOS(4, _omitFieldNames ? '' : 'entityId')
+    ..aOS(5, _omitFieldNames ? '' : 'body')
+    ..aInt64(6, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCommentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCommentRequest copyWith(
+          void Function(UpsertSpatialCanvasCommentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertSpatialCanvasCommentRequest))
+          as UpsertSpatialCanvasCommentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCommentRequest create() =>
+      UpsertSpatialCanvasCommentRequest._();
+  @$core.override
+  UpsertSpatialCanvasCommentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCommentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertSpatialCanvasCommentRequest>(
+          create);
+  static UpsertSpatialCanvasCommentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get commentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set commentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCommentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCommentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entityType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entityType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntityType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntityType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get body => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set body($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get expectedVersion => $_getI64(5);
+  @$pb.TagNumber(6)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExpectedVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExpectedVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class UpsertSpatialCanvasCommentResponse extends $pb.GeneratedMessage {
+  factory UpsertSpatialCanvasCommentResponse({
+    SpatialCanvasComment? comment,
+  }) {
+    final result = create();
+    if (comment != null) result.comment = comment;
+    return result;
+  }
+
+  UpsertSpatialCanvasCommentResponse._();
+
+  factory UpsertSpatialCanvasCommentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSpatialCanvasCommentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSpatialCanvasCommentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasComment>(1, _omitFieldNames ? '' : 'comment',
+        subBuilder: SpatialCanvasComment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCommentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCommentResponse copyWith(
+          void Function(UpsertSpatialCanvasCommentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertSpatialCanvasCommentResponse))
+          as UpsertSpatialCanvasCommentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCommentResponse create() =>
+      UpsertSpatialCanvasCommentResponse._();
+  @$core.override
+  UpsertSpatialCanvasCommentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCommentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertSpatialCanvasCommentResponse>(
+          create);
+  static UpsertSpatialCanvasCommentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasComment get comment => $_getN(0);
+  @$pb.TagNumber(1)
+  set comment(SpatialCanvasComment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasComment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasComment ensureComment() => $_ensure(0);
+}
+
+class SetSpatialCanvasCommentStateRequest extends $pb.GeneratedMessage {
+  factory SetSpatialCanvasCommentStateRequest({
+    $core.String? commentId,
+    $core.String? status,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (commentId != null) result.commentId = commentId;
+    if (status != null) result.status = status;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetSpatialCanvasCommentStateRequest._();
+
+  factory SetSpatialCanvasCommentStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetSpatialCanvasCommentStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetSpatialCanvasCommentStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'commentId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasCommentStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasCommentStateRequest copyWith(
+          void Function(SetSpatialCanvasCommentStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetSpatialCanvasCommentStateRequest))
+          as SetSpatialCanvasCommentStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasCommentStateRequest create() =>
+      SetSpatialCanvasCommentStateRequest._();
+  @$core.override
+  SetSpatialCanvasCommentStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasCommentStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetSpatialCanvasCommentStateRequest>(create);
+  static SetSpatialCanvasCommentStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get commentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set commentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedVersion => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedVersion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class SetSpatialCanvasCommentStateResponse extends $pb.GeneratedMessage {
+  factory SetSpatialCanvasCommentStateResponse({
+    SpatialCanvasComment? comment,
+  }) {
+    final result = create();
+    if (comment != null) result.comment = comment;
+    return result;
+  }
+
+  SetSpatialCanvasCommentStateResponse._();
+
+  factory SetSpatialCanvasCommentStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetSpatialCanvasCommentStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetSpatialCanvasCommentStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasComment>(1, _omitFieldNames ? '' : 'comment',
+        subBuilder: SpatialCanvasComment.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasCommentStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasCommentStateResponse copyWith(
+          void Function(SetSpatialCanvasCommentStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetSpatialCanvasCommentStateResponse))
+          as SetSpatialCanvasCommentStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasCommentStateResponse create() =>
+      SetSpatialCanvasCommentStateResponse._();
+  @$core.override
+  SetSpatialCanvasCommentStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasCommentStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetSpatialCanvasCommentStateResponse>(create);
+  static SetSpatialCanvasCommentStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasComment get comment => $_getN(0);
+  @$pb.TagNumber(1)
+  set comment(SpatialCanvasComment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasComment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasComment ensureComment() => $_ensure(0);
+}
+
+class GenerateSpatialCanvasProposalsRequest extends $pb.GeneratedMessage {
+  factory GenerateSpatialCanvasProposalsRequest({
+    $core.String? canvasId,
+    $core.Iterable<$core.String>? proposalTypes,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (proposalTypes != null) result.proposalTypes.addAll(proposalTypes);
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  GenerateSpatialCanvasProposalsRequest._();
+
+  factory GenerateSpatialCanvasProposalsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateSpatialCanvasProposalsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateSpatialCanvasProposalsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..pPS(2, _omitFieldNames ? '' : 'proposalTypes')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateSpatialCanvasProposalsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateSpatialCanvasProposalsRequest copyWith(
+          void Function(GenerateSpatialCanvasProposalsRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateSpatialCanvasProposalsRequest))
+          as GenerateSpatialCanvasProposalsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateSpatialCanvasProposalsRequest create() =>
+      GenerateSpatialCanvasProposalsRequest._();
+  @$core.override
+  GenerateSpatialCanvasProposalsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateSpatialCanvasProposalsRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateSpatialCanvasProposalsRequest>(create);
+  static GenerateSpatialCanvasProposalsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get proposalTypes => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class GenerateSpatialCanvasProposalsResponse extends $pb.GeneratedMessage {
+  factory GenerateSpatialCanvasProposalsResponse({
+    $core.Iterable<SpatialCanvasProposal>? proposals,
+  }) {
+    final result = create();
+    if (proposals != null) result.proposals.addAll(proposals);
+    return result;
+  }
+
+  GenerateSpatialCanvasProposalsResponse._();
+
+  factory GenerateSpatialCanvasProposalsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateSpatialCanvasProposalsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateSpatialCanvasProposalsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<SpatialCanvasProposal>(1, _omitFieldNames ? '' : 'proposals',
+        subBuilder: SpatialCanvasProposal.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateSpatialCanvasProposalsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateSpatialCanvasProposalsResponse copyWith(
+          void Function(GenerateSpatialCanvasProposalsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateSpatialCanvasProposalsResponse))
+          as GenerateSpatialCanvasProposalsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateSpatialCanvasProposalsResponse create() =>
+      GenerateSpatialCanvasProposalsResponse._();
+  @$core.override
+  GenerateSpatialCanvasProposalsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateSpatialCanvasProposalsResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateSpatialCanvasProposalsResponse>(create);
+  static GenerateSpatialCanvasProposalsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SpatialCanvasProposal> get proposals => $_getList(0);
+}
+
+class SetSpatialCanvasProposalStateRequest extends $pb.GeneratedMessage {
+  factory SetSpatialCanvasProposalStateRequest({
+    $core.String? proposalId,
+    $core.String? status,
+    $fixnum.Int64? expectedCanvasRevision,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (proposalId != null) result.proposalId = proposalId;
+    if (status != null) result.status = status;
+    if (expectedCanvasRevision != null)
+      result.expectedCanvasRevision = expectedCanvasRevision;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetSpatialCanvasProposalStateRequest._();
+
+  factory SetSpatialCanvasProposalStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetSpatialCanvasProposalStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetSpatialCanvasProposalStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'proposalId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aInt64(3, _omitFieldNames ? '' : 'expectedCanvasRevision')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasProposalStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasProposalStateRequest copyWith(
+          void Function(SetSpatialCanvasProposalStateRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetSpatialCanvasProposalStateRequest))
+          as SetSpatialCanvasProposalStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasProposalStateRequest create() =>
+      SetSpatialCanvasProposalStateRequest._();
+  @$core.override
+  SetSpatialCanvasProposalStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasProposalStateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetSpatialCanvasProposalStateRequest>(create);
+  static SetSpatialCanvasProposalStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get proposalId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set proposalId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProposalId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposalId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expectedCanvasRevision => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expectedCanvasRevision($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpectedCanvasRevision() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpectedCanvasRevision() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class SetSpatialCanvasProposalStateResponse extends $pb.GeneratedMessage {
+  factory SetSpatialCanvasProposalStateResponse({
+    SpatialCanvasProposal? proposal,
+    SpatialCanvasDetail? detail,
+  }) {
+    final result = create();
+    if (proposal != null) result.proposal = proposal;
+    if (detail != null) result.detail = detail;
+    return result;
+  }
+
+  SetSpatialCanvasProposalStateResponse._();
+
+  factory SetSpatialCanvasProposalStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetSpatialCanvasProposalStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetSpatialCanvasProposalStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasProposal>(1, _omitFieldNames ? '' : 'proposal',
+        subBuilder: SpatialCanvasProposal.create)
+    ..aOM<SpatialCanvasDetail>(2, _omitFieldNames ? '' : 'detail',
+        subBuilder: SpatialCanvasDetail.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasProposalStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetSpatialCanvasProposalStateResponse copyWith(
+          void Function(SetSpatialCanvasProposalStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SetSpatialCanvasProposalStateResponse))
+          as SetSpatialCanvasProposalStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasProposalStateResponse create() =>
+      SetSpatialCanvasProposalStateResponse._();
+  @$core.override
+  SetSpatialCanvasProposalStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetSpatialCanvasProposalStateResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SetSpatialCanvasProposalStateResponse>(create);
+  static SetSpatialCanvasProposalStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasProposal get proposal => $_getN(0);
+  @$pb.TagNumber(1)
+  set proposal(SpatialCanvasProposal value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProposal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposal() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasProposal ensureProposal() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SpatialCanvasDetail get detail => $_getN(1);
+  @$pb.TagNumber(2)
+  set detail(SpatialCanvasDetail value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDetail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDetail() => $_clearField(2);
+  @$pb.TagNumber(2)
+  SpatialCanvasDetail ensureDetail() => $_ensure(1);
+}
+
+class RequestSpatialCanvasExportRequest extends $pb.GeneratedMessage {
+  factory RequestSpatialCanvasExportRequest({
+    $core.String? canvasId,
+    $core.String? format,
+    $fixnum.Int64? layoutRevision,
+    $core.bool? includeComments,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (format != null) result.format = format;
+    if (layoutRevision != null) result.layoutRevision = layoutRevision;
+    if (includeComments != null) result.includeComments = includeComments;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RequestSpatialCanvasExportRequest._();
+
+  factory RequestSpatialCanvasExportRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestSpatialCanvasExportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestSpatialCanvasExportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(2, _omitFieldNames ? '' : 'format')
+    ..aInt64(3, _omitFieldNames ? '' : 'layoutRevision')
+    ..aOB(4, _omitFieldNames ? '' : 'includeComments')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestSpatialCanvasExportRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestSpatialCanvasExportRequest copyWith(
+          void Function(RequestSpatialCanvasExportRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestSpatialCanvasExportRequest))
+          as RequestSpatialCanvasExportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestSpatialCanvasExportRequest create() =>
+      RequestSpatialCanvasExportRequest._();
+  @$core.override
+  RequestSpatialCanvasExportRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestSpatialCanvasExportRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestSpatialCanvasExportRequest>(
+          create);
+  static RequestSpatialCanvasExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get format => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set format($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFormat() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFormat() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get layoutRevision => $_getI64(2);
+  @$pb.TagNumber(3)
+  set layoutRevision($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLayoutRevision() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLayoutRevision() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get includeComments => $_getBF(3);
+  @$pb.TagNumber(4)
+  set includeComments($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIncludeComments() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIncludeComments() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class RequestSpatialCanvasExportResponse extends $pb.GeneratedMessage {
+  factory RequestSpatialCanvasExportResponse({
+    SpatialCanvasExport? export,
+  }) {
+    final result = create();
+    if (export != null) result.export = export;
+    return result;
+  }
+
+  RequestSpatialCanvasExportResponse._();
+
+  factory RequestSpatialCanvasExportResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestSpatialCanvasExportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestSpatialCanvasExportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasExport>(1, _omitFieldNames ? '' : 'export',
+        subBuilder: SpatialCanvasExport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestSpatialCanvasExportResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestSpatialCanvasExportResponse copyWith(
+          void Function(RequestSpatialCanvasExportResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestSpatialCanvasExportResponse))
+          as RequestSpatialCanvasExportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestSpatialCanvasExportResponse create() =>
+      RequestSpatialCanvasExportResponse._();
+  @$core.override
+  RequestSpatialCanvasExportResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestSpatialCanvasExportResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestSpatialCanvasExportResponse>(
+          create);
+  static RequestSpatialCanvasExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasExport get export => $_getN(0);
+  @$pb.TagNumber(1)
+  set export(SpatialCanvasExport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasExport ensureExport() => $_ensure(0);
+}
+
+class GetSpatialCanvasExportRequest extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasExportRequest({
+    $core.String? exportId,
+  }) {
+    final result = create();
+    if (exportId != null) result.exportId = exportId;
+    return result;
+  }
+
+  GetSpatialCanvasExportRequest._();
+
+  factory GetSpatialCanvasExportRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasExportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasExportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'exportId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasExportRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasExportRequest copyWith(
+          void Function(GetSpatialCanvasExportRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetSpatialCanvasExportRequest))
+          as GetSpatialCanvasExportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasExportRequest create() =>
+      GetSpatialCanvasExportRequest._();
+  @$core.override
+  GetSpatialCanvasExportRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasExportRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasExportRequest>(create);
+  static GetSpatialCanvasExportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get exportId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set exportId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExportId() => $_clearField(1);
+}
+
+class GetSpatialCanvasExportResponse extends $pb.GeneratedMessage {
+  factory GetSpatialCanvasExportResponse({
+    SpatialCanvasExport? export,
+  }) {
+    final result = create();
+    if (export != null) result.export = export;
+    return result;
+  }
+
+  GetSpatialCanvasExportResponse._();
+
+  factory GetSpatialCanvasExportResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSpatialCanvasExportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSpatialCanvasExportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<SpatialCanvasExport>(1, _omitFieldNames ? '' : 'export',
+        subBuilder: SpatialCanvasExport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasExportResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSpatialCanvasExportResponse copyWith(
+          void Function(GetSpatialCanvasExportResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetSpatialCanvasExportResponse))
+          as GetSpatialCanvasExportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasExportResponse create() =>
+      GetSpatialCanvasExportResponse._();
+  @$core.override
+  GetSpatialCanvasExportResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSpatialCanvasExportResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSpatialCanvasExportResponse>(create);
+  static GetSpatialCanvasExportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SpatialCanvasExport get export => $_getN(0);
+  @$pb.TagNumber(1)
+  set export(SpatialCanvasExport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SpatialCanvasExport ensureExport() => $_ensure(0);
+}
+
+class UpsertSpatialCanvasCollaboratorRequest extends $pb.GeneratedMessage {
+  factory UpsertSpatialCanvasCollaboratorRequest({
+    $core.String? canvasId,
+    $core.String? userEmail,
+    $core.String? role,
+    $core.String? action,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (userEmail != null) result.userEmail = userEmail;
+    if (role != null) result.role = role;
+    if (action != null) result.action = action;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertSpatialCanvasCollaboratorRequest._();
+
+  factory UpsertSpatialCanvasCollaboratorRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSpatialCanvasCollaboratorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSpatialCanvasCollaboratorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(2, _omitFieldNames ? '' : 'userEmail')
+    ..aOS(3, _omitFieldNames ? '' : 'role')
+    ..aOS(4, _omitFieldNames ? '' : 'action')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCollaboratorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCollaboratorRequest copyWith(
+          void Function(UpsertSpatialCanvasCollaboratorRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertSpatialCanvasCollaboratorRequest))
+          as UpsertSpatialCanvasCollaboratorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCollaboratorRequest create() =>
+      UpsertSpatialCanvasCollaboratorRequest._();
+  @$core.override
+  UpsertSpatialCanvasCollaboratorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCollaboratorRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertSpatialCanvasCollaboratorRequest>(create);
+  static UpsertSpatialCanvasCollaboratorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userEmail => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userEmail($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserEmail() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get role => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set role($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRole() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get action => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set action($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAction() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAction() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class UpsertSpatialCanvasCollaboratorResponse extends $pb.GeneratedMessage {
+  factory UpsertSpatialCanvasCollaboratorResponse({
+    $core.String? collaboratorUserId,
+    $core.String? role,
+    $core.String? status,
+    $fixnum.Int64? workspaceVersion,
+  }) {
+    final result = create();
+    if (collaboratorUserId != null)
+      result.collaboratorUserId = collaboratorUserId;
+    if (role != null) result.role = role;
+    if (status != null) result.status = status;
+    if (workspaceVersion != null) result.workspaceVersion = workspaceVersion;
+    return result;
+  }
+
+  UpsertSpatialCanvasCollaboratorResponse._();
+
+  factory UpsertSpatialCanvasCollaboratorResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertSpatialCanvasCollaboratorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertSpatialCanvasCollaboratorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'collaboratorUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'role')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aInt64(4, _omitFieldNames ? '' : 'workspaceVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCollaboratorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertSpatialCanvasCollaboratorResponse copyWith(
+          void Function(UpsertSpatialCanvasCollaboratorResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertSpatialCanvasCollaboratorResponse))
+          as UpsertSpatialCanvasCollaboratorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCollaboratorResponse create() =>
+      UpsertSpatialCanvasCollaboratorResponse._();
+  @$core.override
+  UpsertSpatialCanvasCollaboratorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertSpatialCanvasCollaboratorResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertSpatialCanvasCollaboratorResponse>(create);
+  static UpsertSpatialCanvasCollaboratorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get collaboratorUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set collaboratorUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCollaboratorUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCollaboratorUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get role => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set role($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get workspaceVersion => $_getI64(3);
+  @$pb.TagNumber(4)
+  set workspaceVersion($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWorkspaceVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWorkspaceVersion() => $_clearField(4);
+}
+
+class ReportSpatialCanvasAbuseRequest extends $pb.GeneratedMessage {
+  factory ReportSpatialCanvasAbuseRequest({
+    $core.String? canvasId,
+    $core.String? entityType,
+    $core.String? entityId,
+    $core.String? category,
+    $core.String? statement,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (canvasId != null) result.canvasId = canvasId;
+    if (entityType != null) result.entityType = entityType;
+    if (entityId != null) result.entityId = entityId;
+    if (category != null) result.category = category;
+    if (statement != null) result.statement = statement;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ReportSpatialCanvasAbuseRequest._();
+
+  factory ReportSpatialCanvasAbuseRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportSpatialCanvasAbuseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportSpatialCanvasAbuseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'canvasId')
+    ..aOS(2, _omitFieldNames ? '' : 'entityType')
+    ..aOS(3, _omitFieldNames ? '' : 'entityId')
+    ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..aOS(5, _omitFieldNames ? '' : 'statement')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportSpatialCanvasAbuseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportSpatialCanvasAbuseRequest copyWith(
+          void Function(ReportSpatialCanvasAbuseRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportSpatialCanvasAbuseRequest))
+          as ReportSpatialCanvasAbuseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportSpatialCanvasAbuseRequest create() =>
+      ReportSpatialCanvasAbuseRequest._();
+  @$core.override
+  ReportSpatialCanvasAbuseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportSpatialCanvasAbuseRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportSpatialCanvasAbuseRequest>(
+          create);
+  static ReportSpatialCanvasAbuseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get canvasId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set canvasId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCanvasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCanvasId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entityId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entityId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntityId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntityId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get category => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set category($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get statement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set statement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatement() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class ReportSpatialCanvasAbuseResponse extends $pb.GeneratedMessage {
+  factory ReportSpatialCanvasAbuseResponse({
+    $core.String? caseId,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (caseId != null) result.caseId = caseId;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ReportSpatialCanvasAbuseResponse._();
+
+  factory ReportSpatialCanvasAbuseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportSpatialCanvasAbuseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportSpatialCanvasAbuseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportSpatialCanvasAbuseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportSpatialCanvasAbuseResponse copyWith(
+          void Function(ReportSpatialCanvasAbuseResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReportSpatialCanvasAbuseResponse))
+          as ReportSpatialCanvasAbuseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportSpatialCanvasAbuseResponse create() =>
+      ReportSpatialCanvasAbuseResponse._();
+  @$core.override
+  ReportSpatialCanvasAbuseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportSpatialCanvasAbuseResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportSpatialCanvasAbuseResponse>(
+          create);
+  static ReportSpatialCanvasAbuseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureCreatedAt() => $_ensure(2);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

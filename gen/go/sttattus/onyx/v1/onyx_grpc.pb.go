@@ -228,6 +228,22 @@ const (
 	OnyxService_ResolveIntegrationConflict_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ResolveIntegrationConflict"
 	OnyxService_DispatchIntegrationBridge_FullMethodName            = "/sttattus.onyx.v1.OnyxService/DispatchIntegrationBridge"
 	OnyxService_SubmitIntegrationOperationsCase_FullMethodName      = "/sttattus.onyx.v1.OnyxService/SubmitIntegrationOperationsCase"
+	OnyxService_GetSpatialCanvasDashboard_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetSpatialCanvasDashboard"
+	OnyxService_ListSpatialCanvasTemplates_FullMethodName           = "/sttattus.onyx.v1.OnyxService/ListSpatialCanvasTemplates"
+	OnyxService_CreateSpatialCanvas_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateSpatialCanvas"
+	OnyxService_GetSpatialCanvas_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetSpatialCanvas"
+	OnyxService_ApplySpatialCanvasOperations_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ApplySpatialCanvasOperations"
+	OnyxService_ResolveSpatialCanvasConflict_FullMethodName         = "/sttattus.onyx.v1.OnyxService/ResolveSpatialCanvasConflict"
+	OnyxService_CreateSpatialCanvasSnapshot_FullMethodName          = "/sttattus.onyx.v1.OnyxService/CreateSpatialCanvasSnapshot"
+	OnyxService_RestoreSpatialCanvasSnapshot_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RestoreSpatialCanvasSnapshot"
+	OnyxService_UpsertSpatialCanvasComment_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpsertSpatialCanvasComment"
+	OnyxService_SetSpatialCanvasCommentState_FullMethodName         = "/sttattus.onyx.v1.OnyxService/SetSpatialCanvasCommentState"
+	OnyxService_GenerateSpatialCanvasProposals_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GenerateSpatialCanvasProposals"
+	OnyxService_SetSpatialCanvasProposalState_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SetSpatialCanvasProposalState"
+	OnyxService_RequestSpatialCanvasExport_FullMethodName           = "/sttattus.onyx.v1.OnyxService/RequestSpatialCanvasExport"
+	OnyxService_GetSpatialCanvasExport_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetSpatialCanvasExport"
+	OnyxService_UpsertSpatialCanvasCollaborator_FullMethodName      = "/sttattus.onyx.v1.OnyxService/UpsertSpatialCanvasCollaborator"
+	OnyxService_ReportSpatialCanvasAbuse_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReportSpatialCanvasAbuse"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -481,6 +497,24 @@ type OnyxServiceClient interface {
 	ResolveIntegrationConflict(ctx context.Context, in *ResolveIntegrationConflictRequest, opts ...grpc.CallOption) (*ResolveIntegrationConflictResponse, error)
 	DispatchIntegrationBridge(ctx context.Context, in *DispatchIntegrationBridgeRequest, opts ...grpc.CallOption) (*DispatchIntegrationBridgeResponse, error)
 	SubmitIntegrationOperationsCase(ctx context.Context, in *SubmitIntegrationOperationsCaseRequest, opts ...grpc.CallOption) (*SubmitIntegrationOperationsCaseResponse, error)
+	// Choice 15 — source-anchored spatial evidence canvases. Operation batches
+	// are idempotent per replica and surface concurrent conflicts explicitly.
+	GetSpatialCanvasDashboard(ctx context.Context, in *GetSpatialCanvasDashboardRequest, opts ...grpc.CallOption) (*GetSpatialCanvasDashboardResponse, error)
+	ListSpatialCanvasTemplates(ctx context.Context, in *ListSpatialCanvasTemplatesRequest, opts ...grpc.CallOption) (*ListSpatialCanvasTemplatesResponse, error)
+	CreateSpatialCanvas(ctx context.Context, in *CreateSpatialCanvasRequest, opts ...grpc.CallOption) (*CreateSpatialCanvasResponse, error)
+	GetSpatialCanvas(ctx context.Context, in *GetSpatialCanvasRequest, opts ...grpc.CallOption) (*GetSpatialCanvasResponse, error)
+	ApplySpatialCanvasOperations(ctx context.Context, in *ApplySpatialCanvasOperationsRequest, opts ...grpc.CallOption) (*ApplySpatialCanvasOperationsResponse, error)
+	ResolveSpatialCanvasConflict(ctx context.Context, in *ResolveSpatialCanvasConflictRequest, opts ...grpc.CallOption) (*ResolveSpatialCanvasConflictResponse, error)
+	CreateSpatialCanvasSnapshot(ctx context.Context, in *CreateSpatialCanvasSnapshotRequest, opts ...grpc.CallOption) (*CreateSpatialCanvasSnapshotResponse, error)
+	RestoreSpatialCanvasSnapshot(ctx context.Context, in *RestoreSpatialCanvasSnapshotRequest, opts ...grpc.CallOption) (*RestoreSpatialCanvasSnapshotResponse, error)
+	UpsertSpatialCanvasComment(ctx context.Context, in *UpsertSpatialCanvasCommentRequest, opts ...grpc.CallOption) (*UpsertSpatialCanvasCommentResponse, error)
+	SetSpatialCanvasCommentState(ctx context.Context, in *SetSpatialCanvasCommentStateRequest, opts ...grpc.CallOption) (*SetSpatialCanvasCommentStateResponse, error)
+	GenerateSpatialCanvasProposals(ctx context.Context, in *GenerateSpatialCanvasProposalsRequest, opts ...grpc.CallOption) (*GenerateSpatialCanvasProposalsResponse, error)
+	SetSpatialCanvasProposalState(ctx context.Context, in *SetSpatialCanvasProposalStateRequest, opts ...grpc.CallOption) (*SetSpatialCanvasProposalStateResponse, error)
+	RequestSpatialCanvasExport(ctx context.Context, in *RequestSpatialCanvasExportRequest, opts ...grpc.CallOption) (*RequestSpatialCanvasExportResponse, error)
+	GetSpatialCanvasExport(ctx context.Context, in *GetSpatialCanvasExportRequest, opts ...grpc.CallOption) (*GetSpatialCanvasExportResponse, error)
+	UpsertSpatialCanvasCollaborator(ctx context.Context, in *UpsertSpatialCanvasCollaboratorRequest, opts ...grpc.CallOption) (*UpsertSpatialCanvasCollaboratorResponse, error)
+	ReportSpatialCanvasAbuse(ctx context.Context, in *ReportSpatialCanvasAbuseRequest, opts ...grpc.CallOption) (*ReportSpatialCanvasAbuseResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2581,6 +2615,166 @@ func (c *onyxServiceClient) SubmitIntegrationOperationsCase(ctx context.Context,
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetSpatialCanvasDashboard(ctx context.Context, in *GetSpatialCanvasDashboardRequest, opts ...grpc.CallOption) (*GetSpatialCanvasDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSpatialCanvasDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetSpatialCanvasDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListSpatialCanvasTemplates(ctx context.Context, in *ListSpatialCanvasTemplatesRequest, opts ...grpc.CallOption) (*ListSpatialCanvasTemplatesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListSpatialCanvasTemplatesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListSpatialCanvasTemplates_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateSpatialCanvas(ctx context.Context, in *CreateSpatialCanvasRequest, opts ...grpc.CallOption) (*CreateSpatialCanvasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateSpatialCanvasResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateSpatialCanvas_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetSpatialCanvas(ctx context.Context, in *GetSpatialCanvasRequest, opts ...grpc.CallOption) (*GetSpatialCanvasResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSpatialCanvasResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetSpatialCanvas_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ApplySpatialCanvasOperations(ctx context.Context, in *ApplySpatialCanvasOperationsRequest, opts ...grpc.CallOption) (*ApplySpatialCanvasOperationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApplySpatialCanvasOperationsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ApplySpatialCanvasOperations_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ResolveSpatialCanvasConflict(ctx context.Context, in *ResolveSpatialCanvasConflictRequest, opts ...grpc.CallOption) (*ResolveSpatialCanvasConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveSpatialCanvasConflictResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ResolveSpatialCanvasConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateSpatialCanvasSnapshot(ctx context.Context, in *CreateSpatialCanvasSnapshotRequest, opts ...grpc.CallOption) (*CreateSpatialCanvasSnapshotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateSpatialCanvasSnapshotResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateSpatialCanvasSnapshot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RestoreSpatialCanvasSnapshot(ctx context.Context, in *RestoreSpatialCanvasSnapshotRequest, opts ...grpc.CallOption) (*RestoreSpatialCanvasSnapshotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RestoreSpatialCanvasSnapshotResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RestoreSpatialCanvasSnapshot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertSpatialCanvasComment(ctx context.Context, in *UpsertSpatialCanvasCommentRequest, opts ...grpc.CallOption) (*UpsertSpatialCanvasCommentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSpatialCanvasCommentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertSpatialCanvasComment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetSpatialCanvasCommentState(ctx context.Context, in *SetSpatialCanvasCommentStateRequest, opts ...grpc.CallOption) (*SetSpatialCanvasCommentStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetSpatialCanvasCommentStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetSpatialCanvasCommentState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateSpatialCanvasProposals(ctx context.Context, in *GenerateSpatialCanvasProposalsRequest, opts ...grpc.CallOption) (*GenerateSpatialCanvasProposalsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateSpatialCanvasProposalsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateSpatialCanvasProposals_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetSpatialCanvasProposalState(ctx context.Context, in *SetSpatialCanvasProposalStateRequest, opts ...grpc.CallOption) (*SetSpatialCanvasProposalStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetSpatialCanvasProposalStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetSpatialCanvasProposalState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestSpatialCanvasExport(ctx context.Context, in *RequestSpatialCanvasExportRequest, opts ...grpc.CallOption) (*RequestSpatialCanvasExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestSpatialCanvasExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestSpatialCanvasExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetSpatialCanvasExport(ctx context.Context, in *GetSpatialCanvasExportRequest, opts ...grpc.CallOption) (*GetSpatialCanvasExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSpatialCanvasExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetSpatialCanvasExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertSpatialCanvasCollaborator(ctx context.Context, in *UpsertSpatialCanvasCollaboratorRequest, opts ...grpc.CallOption) (*UpsertSpatialCanvasCollaboratorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSpatialCanvasCollaboratorResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertSpatialCanvasCollaborator_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReportSpatialCanvasAbuse(ctx context.Context, in *ReportSpatialCanvasAbuseRequest, opts ...grpc.CallOption) (*ReportSpatialCanvasAbuseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportSpatialCanvasAbuseResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReportSpatialCanvasAbuse_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -2832,6 +3026,24 @@ type OnyxServiceServer interface {
 	ResolveIntegrationConflict(context.Context, *ResolveIntegrationConflictRequest) (*ResolveIntegrationConflictResponse, error)
 	DispatchIntegrationBridge(context.Context, *DispatchIntegrationBridgeRequest) (*DispatchIntegrationBridgeResponse, error)
 	SubmitIntegrationOperationsCase(context.Context, *SubmitIntegrationOperationsCaseRequest) (*SubmitIntegrationOperationsCaseResponse, error)
+	// Choice 15 — source-anchored spatial evidence canvases. Operation batches
+	// are idempotent per replica and surface concurrent conflicts explicitly.
+	GetSpatialCanvasDashboard(context.Context, *GetSpatialCanvasDashboardRequest) (*GetSpatialCanvasDashboardResponse, error)
+	ListSpatialCanvasTemplates(context.Context, *ListSpatialCanvasTemplatesRequest) (*ListSpatialCanvasTemplatesResponse, error)
+	CreateSpatialCanvas(context.Context, *CreateSpatialCanvasRequest) (*CreateSpatialCanvasResponse, error)
+	GetSpatialCanvas(context.Context, *GetSpatialCanvasRequest) (*GetSpatialCanvasResponse, error)
+	ApplySpatialCanvasOperations(context.Context, *ApplySpatialCanvasOperationsRequest) (*ApplySpatialCanvasOperationsResponse, error)
+	ResolveSpatialCanvasConflict(context.Context, *ResolveSpatialCanvasConflictRequest) (*ResolveSpatialCanvasConflictResponse, error)
+	CreateSpatialCanvasSnapshot(context.Context, *CreateSpatialCanvasSnapshotRequest) (*CreateSpatialCanvasSnapshotResponse, error)
+	RestoreSpatialCanvasSnapshot(context.Context, *RestoreSpatialCanvasSnapshotRequest) (*RestoreSpatialCanvasSnapshotResponse, error)
+	UpsertSpatialCanvasComment(context.Context, *UpsertSpatialCanvasCommentRequest) (*UpsertSpatialCanvasCommentResponse, error)
+	SetSpatialCanvasCommentState(context.Context, *SetSpatialCanvasCommentStateRequest) (*SetSpatialCanvasCommentStateResponse, error)
+	GenerateSpatialCanvasProposals(context.Context, *GenerateSpatialCanvasProposalsRequest) (*GenerateSpatialCanvasProposalsResponse, error)
+	SetSpatialCanvasProposalState(context.Context, *SetSpatialCanvasProposalStateRequest) (*SetSpatialCanvasProposalStateResponse, error)
+	RequestSpatialCanvasExport(context.Context, *RequestSpatialCanvasExportRequest) (*RequestSpatialCanvasExportResponse, error)
+	GetSpatialCanvasExport(context.Context, *GetSpatialCanvasExportRequest) (*GetSpatialCanvasExportResponse, error)
+	UpsertSpatialCanvasCollaborator(context.Context, *UpsertSpatialCanvasCollaboratorRequest) (*UpsertSpatialCanvasCollaboratorResponse, error)
+	ReportSpatialCanvasAbuse(context.Context, *ReportSpatialCanvasAbuseRequest) (*ReportSpatialCanvasAbuseResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3468,6 +3680,54 @@ func (UnimplementedOnyxServiceServer) DispatchIntegrationBridge(context.Context,
 }
 func (UnimplementedOnyxServiceServer) SubmitIntegrationOperationsCase(context.Context, *SubmitIntegrationOperationsCaseRequest) (*SubmitIntegrationOperationsCaseResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SubmitIntegrationOperationsCase not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetSpatialCanvasDashboard(context.Context, *GetSpatialCanvasDashboardRequest) (*GetSpatialCanvasDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSpatialCanvasDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListSpatialCanvasTemplates(context.Context, *ListSpatialCanvasTemplatesRequest) (*ListSpatialCanvasTemplatesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListSpatialCanvasTemplates not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateSpatialCanvas(context.Context, *CreateSpatialCanvasRequest) (*CreateSpatialCanvasResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateSpatialCanvas not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetSpatialCanvas(context.Context, *GetSpatialCanvasRequest) (*GetSpatialCanvasResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSpatialCanvas not implemented")
+}
+func (UnimplementedOnyxServiceServer) ApplySpatialCanvasOperations(context.Context, *ApplySpatialCanvasOperationsRequest) (*ApplySpatialCanvasOperationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApplySpatialCanvasOperations not implemented")
+}
+func (UnimplementedOnyxServiceServer) ResolveSpatialCanvasConflict(context.Context, *ResolveSpatialCanvasConflictRequest) (*ResolveSpatialCanvasConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveSpatialCanvasConflict not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateSpatialCanvasSnapshot(context.Context, *CreateSpatialCanvasSnapshotRequest) (*CreateSpatialCanvasSnapshotResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateSpatialCanvasSnapshot not implemented")
+}
+func (UnimplementedOnyxServiceServer) RestoreSpatialCanvasSnapshot(context.Context, *RestoreSpatialCanvasSnapshotRequest) (*RestoreSpatialCanvasSnapshotResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RestoreSpatialCanvasSnapshot not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertSpatialCanvasComment(context.Context, *UpsertSpatialCanvasCommentRequest) (*UpsertSpatialCanvasCommentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSpatialCanvasComment not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetSpatialCanvasCommentState(context.Context, *SetSpatialCanvasCommentStateRequest) (*SetSpatialCanvasCommentStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetSpatialCanvasCommentState not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateSpatialCanvasProposals(context.Context, *GenerateSpatialCanvasProposalsRequest) (*GenerateSpatialCanvasProposalsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateSpatialCanvasProposals not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetSpatialCanvasProposalState(context.Context, *SetSpatialCanvasProposalStateRequest) (*SetSpatialCanvasProposalStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetSpatialCanvasProposalState not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestSpatialCanvasExport(context.Context, *RequestSpatialCanvasExportRequest) (*RequestSpatialCanvasExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestSpatialCanvasExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetSpatialCanvasExport(context.Context, *GetSpatialCanvasExportRequest) (*GetSpatialCanvasExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSpatialCanvasExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertSpatialCanvasCollaborator(context.Context, *UpsertSpatialCanvasCollaboratorRequest) (*UpsertSpatialCanvasCollaboratorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSpatialCanvasCollaborator not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReportSpatialCanvasAbuse(context.Context, *ReportSpatialCanvasAbuseRequest) (*ReportSpatialCanvasAbuseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportSpatialCanvasAbuse not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -7252,6 +7512,294 @@ func _OnyxService_SubmitIntegrationOperationsCase_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetSpatialCanvasDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSpatialCanvasDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetSpatialCanvasDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetSpatialCanvasDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetSpatialCanvasDashboard(ctx, req.(*GetSpatialCanvasDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListSpatialCanvasTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSpatialCanvasTemplatesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListSpatialCanvasTemplates(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListSpatialCanvasTemplates_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListSpatialCanvasTemplates(ctx, req.(*ListSpatialCanvasTemplatesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateSpatialCanvas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSpatialCanvasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateSpatialCanvas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateSpatialCanvas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateSpatialCanvas(ctx, req.(*CreateSpatialCanvasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetSpatialCanvas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSpatialCanvasRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetSpatialCanvas(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetSpatialCanvas_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetSpatialCanvas(ctx, req.(*GetSpatialCanvasRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ApplySpatialCanvasOperations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApplySpatialCanvasOperationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ApplySpatialCanvasOperations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ApplySpatialCanvasOperations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ApplySpatialCanvasOperations(ctx, req.(*ApplySpatialCanvasOperationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ResolveSpatialCanvasConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveSpatialCanvasConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ResolveSpatialCanvasConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ResolveSpatialCanvasConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ResolveSpatialCanvasConflict(ctx, req.(*ResolveSpatialCanvasConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateSpatialCanvasSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSpatialCanvasSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateSpatialCanvasSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateSpatialCanvasSnapshot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateSpatialCanvasSnapshot(ctx, req.(*CreateSpatialCanvasSnapshotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RestoreSpatialCanvasSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RestoreSpatialCanvasSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RestoreSpatialCanvasSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RestoreSpatialCanvasSnapshot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RestoreSpatialCanvasSnapshot(ctx, req.(*RestoreSpatialCanvasSnapshotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertSpatialCanvasComment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSpatialCanvasCommentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertSpatialCanvasComment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertSpatialCanvasComment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertSpatialCanvasComment(ctx, req.(*UpsertSpatialCanvasCommentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetSpatialCanvasCommentState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSpatialCanvasCommentStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetSpatialCanvasCommentState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetSpatialCanvasCommentState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetSpatialCanvasCommentState(ctx, req.(*SetSpatialCanvasCommentStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateSpatialCanvasProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateSpatialCanvasProposalsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateSpatialCanvasProposals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateSpatialCanvasProposals_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateSpatialCanvasProposals(ctx, req.(*GenerateSpatialCanvasProposalsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetSpatialCanvasProposalState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSpatialCanvasProposalStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetSpatialCanvasProposalState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetSpatialCanvasProposalState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetSpatialCanvasProposalState(ctx, req.(*SetSpatialCanvasProposalStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestSpatialCanvasExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestSpatialCanvasExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestSpatialCanvasExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestSpatialCanvasExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestSpatialCanvasExport(ctx, req.(*RequestSpatialCanvasExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetSpatialCanvasExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSpatialCanvasExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetSpatialCanvasExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetSpatialCanvasExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetSpatialCanvasExport(ctx, req.(*GetSpatialCanvasExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertSpatialCanvasCollaborator_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSpatialCanvasCollaboratorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertSpatialCanvasCollaborator(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertSpatialCanvasCollaborator_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertSpatialCanvasCollaborator(ctx, req.(*UpsertSpatialCanvasCollaboratorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReportSpatialCanvasAbuse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportSpatialCanvasAbuseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReportSpatialCanvasAbuse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReportSpatialCanvasAbuse_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReportSpatialCanvasAbuse(ctx, req.(*ReportSpatialCanvasAbuseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -8094,6 +8642,70 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitIntegrationOperationsCase",
 			Handler:    _OnyxService_SubmitIntegrationOperationsCase_Handler,
+		},
+		{
+			MethodName: "GetSpatialCanvasDashboard",
+			Handler:    _OnyxService_GetSpatialCanvasDashboard_Handler,
+		},
+		{
+			MethodName: "ListSpatialCanvasTemplates",
+			Handler:    _OnyxService_ListSpatialCanvasTemplates_Handler,
+		},
+		{
+			MethodName: "CreateSpatialCanvas",
+			Handler:    _OnyxService_CreateSpatialCanvas_Handler,
+		},
+		{
+			MethodName: "GetSpatialCanvas",
+			Handler:    _OnyxService_GetSpatialCanvas_Handler,
+		},
+		{
+			MethodName: "ApplySpatialCanvasOperations",
+			Handler:    _OnyxService_ApplySpatialCanvasOperations_Handler,
+		},
+		{
+			MethodName: "ResolveSpatialCanvasConflict",
+			Handler:    _OnyxService_ResolveSpatialCanvasConflict_Handler,
+		},
+		{
+			MethodName: "CreateSpatialCanvasSnapshot",
+			Handler:    _OnyxService_CreateSpatialCanvasSnapshot_Handler,
+		},
+		{
+			MethodName: "RestoreSpatialCanvasSnapshot",
+			Handler:    _OnyxService_RestoreSpatialCanvasSnapshot_Handler,
+		},
+		{
+			MethodName: "UpsertSpatialCanvasComment",
+			Handler:    _OnyxService_UpsertSpatialCanvasComment_Handler,
+		},
+		{
+			MethodName: "SetSpatialCanvasCommentState",
+			Handler:    _OnyxService_SetSpatialCanvasCommentState_Handler,
+		},
+		{
+			MethodName: "GenerateSpatialCanvasProposals",
+			Handler:    _OnyxService_GenerateSpatialCanvasProposals_Handler,
+		},
+		{
+			MethodName: "SetSpatialCanvasProposalState",
+			Handler:    _OnyxService_SetSpatialCanvasProposalState_Handler,
+		},
+		{
+			MethodName: "RequestSpatialCanvasExport",
+			Handler:    _OnyxService_RequestSpatialCanvasExport_Handler,
+		},
+		{
+			MethodName: "GetSpatialCanvasExport",
+			Handler:    _OnyxService_GetSpatialCanvasExport_Handler,
+		},
+		{
+			MethodName: "UpsertSpatialCanvasCollaborator",
+			Handler:    _OnyxService_UpsertSpatialCanvasCollaborator_Handler,
+		},
+		{
+			MethodName: "ReportSpatialCanvasAbuse",
+			Handler:    _OnyxService_ReportSpatialCanvasAbuse_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1717,6 +1717,148 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Choice 15 — source-anchored spatial evidence canvases. Operation batches
+  /// are idempotent per replica and surface concurrent conflicts explicitly.
+  $grpc.ResponseFuture<$0.GetSpatialCanvasDashboardResponse>
+      getSpatialCanvasDashboard(
+    $0.GetSpatialCanvasDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSpatialCanvasDashboard, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListSpatialCanvasTemplatesResponse>
+      listSpatialCanvasTemplates(
+    $0.ListSpatialCanvasTemplatesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listSpatialCanvasTemplates, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateSpatialCanvasResponse> createSpatialCanvas(
+    $0.CreateSpatialCanvasRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createSpatialCanvas, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetSpatialCanvasResponse> getSpatialCanvas(
+    $0.GetSpatialCanvasRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSpatialCanvas, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApplySpatialCanvasOperationsResponse>
+      applySpatialCanvasOperations(
+    $0.ApplySpatialCanvasOperationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$applySpatialCanvasOperations, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveSpatialCanvasConflictResponse>
+      resolveSpatialCanvasConflict(
+    $0.ResolveSpatialCanvasConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveSpatialCanvasConflict, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateSpatialCanvasSnapshotResponse>
+      createSpatialCanvasSnapshot(
+    $0.CreateSpatialCanvasSnapshotRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createSpatialCanvasSnapshot, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RestoreSpatialCanvasSnapshotResponse>
+      restoreSpatialCanvasSnapshot(
+    $0.RestoreSpatialCanvasSnapshotRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$restoreSpatialCanvasSnapshot, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSpatialCanvasCommentResponse>
+      upsertSpatialCanvasComment(
+    $0.UpsertSpatialCanvasCommentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSpatialCanvasComment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetSpatialCanvasCommentStateResponse>
+      setSpatialCanvasCommentState(
+    $0.SetSpatialCanvasCommentStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setSpatialCanvasCommentState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateSpatialCanvasProposalsResponse>
+      generateSpatialCanvasProposals(
+    $0.GenerateSpatialCanvasProposalsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateSpatialCanvasProposals, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetSpatialCanvasProposalStateResponse>
+      setSpatialCanvasProposalState(
+    $0.SetSpatialCanvasProposalStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setSpatialCanvasProposalState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestSpatialCanvasExportResponse>
+      requestSpatialCanvasExport(
+    $0.RequestSpatialCanvasExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestSpatialCanvasExport, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetSpatialCanvasExportResponse>
+      getSpatialCanvasExport(
+    $0.GetSpatialCanvasExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSpatialCanvasExport, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSpatialCanvasCollaboratorResponse>
+      upsertSpatialCanvasCollaborator(
+    $0.UpsertSpatialCanvasCollaboratorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSpatialCanvasCollaborator, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportSpatialCanvasAbuseResponse>
+      reportSpatialCanvasAbuse(
+    $0.ReportSpatialCanvasAbuseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportSpatialCanvasAbuse, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -2857,6 +2999,100 @@ class OnyxServiceClient extends $grpc.Client {
       ($0.SubmitIntegrationOperationsCaseRequest value) =>
           value.writeToBuffer(),
       $0.SubmitIntegrationOperationsCaseResponse.fromBuffer);
+  static final _$getSpatialCanvasDashboard = $grpc.ClientMethod<
+          $0.GetSpatialCanvasDashboardRequest,
+          $0.GetSpatialCanvasDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetSpatialCanvasDashboard',
+      ($0.GetSpatialCanvasDashboardRequest value) => value.writeToBuffer(),
+      $0.GetSpatialCanvasDashboardResponse.fromBuffer);
+  static final _$listSpatialCanvasTemplates = $grpc.ClientMethod<
+          $0.ListSpatialCanvasTemplatesRequest,
+          $0.ListSpatialCanvasTemplatesResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListSpatialCanvasTemplates',
+      ($0.ListSpatialCanvasTemplatesRequest value) => value.writeToBuffer(),
+      $0.ListSpatialCanvasTemplatesResponse.fromBuffer);
+  static final _$createSpatialCanvas = $grpc.ClientMethod<
+          $0.CreateSpatialCanvasRequest, $0.CreateSpatialCanvasResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateSpatialCanvas',
+      ($0.CreateSpatialCanvasRequest value) => value.writeToBuffer(),
+      $0.CreateSpatialCanvasResponse.fromBuffer);
+  static final _$getSpatialCanvas = $grpc.ClientMethod<
+          $0.GetSpatialCanvasRequest, $0.GetSpatialCanvasResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetSpatialCanvas',
+      ($0.GetSpatialCanvasRequest value) => value.writeToBuffer(),
+      $0.GetSpatialCanvasResponse.fromBuffer);
+  static final _$applySpatialCanvasOperations = $grpc.ClientMethod<
+          $0.ApplySpatialCanvasOperationsRequest,
+          $0.ApplySpatialCanvasOperationsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ApplySpatialCanvasOperations',
+      ($0.ApplySpatialCanvasOperationsRequest value) => value.writeToBuffer(),
+      $0.ApplySpatialCanvasOperationsResponse.fromBuffer);
+  static final _$resolveSpatialCanvasConflict = $grpc.ClientMethod<
+          $0.ResolveSpatialCanvasConflictRequest,
+          $0.ResolveSpatialCanvasConflictResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveSpatialCanvasConflict',
+      ($0.ResolveSpatialCanvasConflictRequest value) => value.writeToBuffer(),
+      $0.ResolveSpatialCanvasConflictResponse.fromBuffer);
+  static final _$createSpatialCanvasSnapshot = $grpc.ClientMethod<
+          $0.CreateSpatialCanvasSnapshotRequest,
+          $0.CreateSpatialCanvasSnapshotResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateSpatialCanvasSnapshot',
+      ($0.CreateSpatialCanvasSnapshotRequest value) => value.writeToBuffer(),
+      $0.CreateSpatialCanvasSnapshotResponse.fromBuffer);
+  static final _$restoreSpatialCanvasSnapshot = $grpc.ClientMethod<
+          $0.RestoreSpatialCanvasSnapshotRequest,
+          $0.RestoreSpatialCanvasSnapshotResponse>(
+      '/sttattus.onyx.v1.OnyxService/RestoreSpatialCanvasSnapshot',
+      ($0.RestoreSpatialCanvasSnapshotRequest value) => value.writeToBuffer(),
+      $0.RestoreSpatialCanvasSnapshotResponse.fromBuffer);
+  static final _$upsertSpatialCanvasComment = $grpc.ClientMethod<
+          $0.UpsertSpatialCanvasCommentRequest,
+          $0.UpsertSpatialCanvasCommentResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertSpatialCanvasComment',
+      ($0.UpsertSpatialCanvasCommentRequest value) => value.writeToBuffer(),
+      $0.UpsertSpatialCanvasCommentResponse.fromBuffer);
+  static final _$setSpatialCanvasCommentState = $grpc.ClientMethod<
+          $0.SetSpatialCanvasCommentStateRequest,
+          $0.SetSpatialCanvasCommentStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetSpatialCanvasCommentState',
+      ($0.SetSpatialCanvasCommentStateRequest value) => value.writeToBuffer(),
+      $0.SetSpatialCanvasCommentStateResponse.fromBuffer);
+  static final _$generateSpatialCanvasProposals = $grpc.ClientMethod<
+          $0.GenerateSpatialCanvasProposalsRequest,
+          $0.GenerateSpatialCanvasProposalsResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateSpatialCanvasProposals',
+      ($0.GenerateSpatialCanvasProposalsRequest value) => value.writeToBuffer(),
+      $0.GenerateSpatialCanvasProposalsResponse.fromBuffer);
+  static final _$setSpatialCanvasProposalState = $grpc.ClientMethod<
+          $0.SetSpatialCanvasProposalStateRequest,
+          $0.SetSpatialCanvasProposalStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetSpatialCanvasProposalState',
+      ($0.SetSpatialCanvasProposalStateRequest value) => value.writeToBuffer(),
+      $0.SetSpatialCanvasProposalStateResponse.fromBuffer);
+  static final _$requestSpatialCanvasExport = $grpc.ClientMethod<
+          $0.RequestSpatialCanvasExportRequest,
+          $0.RequestSpatialCanvasExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestSpatialCanvasExport',
+      ($0.RequestSpatialCanvasExportRequest value) => value.writeToBuffer(),
+      $0.RequestSpatialCanvasExportResponse.fromBuffer);
+  static final _$getSpatialCanvasExport = $grpc.ClientMethod<
+          $0.GetSpatialCanvasExportRequest, $0.GetSpatialCanvasExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetSpatialCanvasExport',
+      ($0.GetSpatialCanvasExportRequest value) => value.writeToBuffer(),
+      $0.GetSpatialCanvasExportResponse.fromBuffer);
+  static final _$upsertSpatialCanvasCollaborator = $grpc.ClientMethod<
+          $0.UpsertSpatialCanvasCollaboratorRequest,
+          $0.UpsertSpatialCanvasCollaboratorResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertSpatialCanvasCollaborator',
+      ($0.UpsertSpatialCanvasCollaboratorRequest value) =>
+          value.writeToBuffer(),
+      $0.UpsertSpatialCanvasCollaboratorResponse.fromBuffer);
+  static final _$reportSpatialCanvasAbuse = $grpc.ClientMethod<
+          $0.ReportSpatialCanvasAbuseRequest,
+          $0.ReportSpatialCanvasAbuseResponse>(
+      '/sttattus.onyx.v1.OnyxService/ReportSpatialCanvasAbuse',
+      ($0.ReportSpatialCanvasAbuseRequest value) => value.writeToBuffer(),
+      $0.ReportSpatialCanvasAbuseResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -4779,6 +5015,161 @@ abstract class OnyxServiceBase extends $grpc.Service {
             $0.SubmitIntegrationOperationsCaseRequest.fromBuffer(value),
         ($0.SubmitIntegrationOperationsCaseResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSpatialCanvasDashboardRequest,
+            $0.GetSpatialCanvasDashboardResponse>(
+        'GetSpatialCanvasDashboard',
+        getSpatialCanvasDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSpatialCanvasDashboardRequest.fromBuffer(value),
+        ($0.GetSpatialCanvasDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListSpatialCanvasTemplatesRequest,
+            $0.ListSpatialCanvasTemplatesResponse>(
+        'ListSpatialCanvasTemplates',
+        listSpatialCanvasTemplates_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListSpatialCanvasTemplatesRequest.fromBuffer(value),
+        ($0.ListSpatialCanvasTemplatesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateSpatialCanvasRequest,
+            $0.CreateSpatialCanvasResponse>(
+        'CreateSpatialCanvas',
+        createSpatialCanvas_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateSpatialCanvasRequest.fromBuffer(value),
+        ($0.CreateSpatialCanvasResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSpatialCanvasRequest,
+            $0.GetSpatialCanvasResponse>(
+        'GetSpatialCanvas',
+        getSpatialCanvas_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSpatialCanvasRequest.fromBuffer(value),
+        ($0.GetSpatialCanvasResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApplySpatialCanvasOperationsRequest,
+            $0.ApplySpatialCanvasOperationsResponse>(
+        'ApplySpatialCanvasOperations',
+        applySpatialCanvasOperations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApplySpatialCanvasOperationsRequest.fromBuffer(value),
+        ($0.ApplySpatialCanvasOperationsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveSpatialCanvasConflictRequest,
+            $0.ResolveSpatialCanvasConflictResponse>(
+        'ResolveSpatialCanvasConflict',
+        resolveSpatialCanvasConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveSpatialCanvasConflictRequest.fromBuffer(value),
+        ($0.ResolveSpatialCanvasConflictResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateSpatialCanvasSnapshotRequest,
+            $0.CreateSpatialCanvasSnapshotResponse>(
+        'CreateSpatialCanvasSnapshot',
+        createSpatialCanvasSnapshot_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateSpatialCanvasSnapshotRequest.fromBuffer(value),
+        ($0.CreateSpatialCanvasSnapshotResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RestoreSpatialCanvasSnapshotRequest,
+            $0.RestoreSpatialCanvasSnapshotResponse>(
+        'RestoreSpatialCanvasSnapshot',
+        restoreSpatialCanvasSnapshot_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RestoreSpatialCanvasSnapshotRequest.fromBuffer(value),
+        ($0.RestoreSpatialCanvasSnapshotResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSpatialCanvasCommentRequest,
+            $0.UpsertSpatialCanvasCommentResponse>(
+        'UpsertSpatialCanvasComment',
+        upsertSpatialCanvasComment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSpatialCanvasCommentRequest.fromBuffer(value),
+        ($0.UpsertSpatialCanvasCommentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetSpatialCanvasCommentStateRequest,
+            $0.SetSpatialCanvasCommentStateResponse>(
+        'SetSpatialCanvasCommentState',
+        setSpatialCanvasCommentState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetSpatialCanvasCommentStateRequest.fromBuffer(value),
+        ($0.SetSpatialCanvasCommentStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateSpatialCanvasProposalsRequest,
+            $0.GenerateSpatialCanvasProposalsResponse>(
+        'GenerateSpatialCanvasProposals',
+        generateSpatialCanvasProposals_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateSpatialCanvasProposalsRequest.fromBuffer(value),
+        ($0.GenerateSpatialCanvasProposalsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetSpatialCanvasProposalStateRequest,
+            $0.SetSpatialCanvasProposalStateResponse>(
+        'SetSpatialCanvasProposalState',
+        setSpatialCanvasProposalState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetSpatialCanvasProposalStateRequest.fromBuffer(value),
+        ($0.SetSpatialCanvasProposalStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestSpatialCanvasExportRequest,
+            $0.RequestSpatialCanvasExportResponse>(
+        'RequestSpatialCanvasExport',
+        requestSpatialCanvasExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestSpatialCanvasExportRequest.fromBuffer(value),
+        ($0.RequestSpatialCanvasExportResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSpatialCanvasExportRequest,
+            $0.GetSpatialCanvasExportResponse>(
+        'GetSpatialCanvasExport',
+        getSpatialCanvasExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSpatialCanvasExportRequest.fromBuffer(value),
+        ($0.GetSpatialCanvasExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSpatialCanvasCollaboratorRequest,
+            $0.UpsertSpatialCanvasCollaboratorResponse>(
+        'UpsertSpatialCanvasCollaborator',
+        upsertSpatialCanvasCollaborator_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSpatialCanvasCollaboratorRequest.fromBuffer(value),
+        ($0.UpsertSpatialCanvasCollaboratorResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportSpatialCanvasAbuseRequest,
+            $0.ReportSpatialCanvasAbuseResponse>(
+        'ReportSpatialCanvasAbuse',
+        reportSpatialCanvasAbuse_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportSpatialCanvasAbuseRequest.fromBuffer(value),
+        ($0.ReportSpatialCanvasAbuseResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -6752,4 +7143,173 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.SubmitIntegrationOperationsCaseResponse>
       submitIntegrationOperationsCase($grpc.ServiceCall call,
           $0.SubmitIntegrationOperationsCaseRequest request);
+
+  $async.Future<$0.GetSpatialCanvasDashboardResponse>
+      getSpatialCanvasDashboard_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetSpatialCanvasDashboardRequest> $request) async {
+    return getSpatialCanvasDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetSpatialCanvasDashboardResponse> getSpatialCanvasDashboard(
+      $grpc.ServiceCall call, $0.GetSpatialCanvasDashboardRequest request);
+
+  $async.Future<$0.ListSpatialCanvasTemplatesResponse>
+      listSpatialCanvasTemplates_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListSpatialCanvasTemplatesRequest> $request) async {
+    return listSpatialCanvasTemplates($call, await $request);
+  }
+
+  $async.Future<$0.ListSpatialCanvasTemplatesResponse>
+      listSpatialCanvasTemplates(
+          $grpc.ServiceCall call, $0.ListSpatialCanvasTemplatesRequest request);
+
+  $async.Future<$0.CreateSpatialCanvasResponse> createSpatialCanvas_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateSpatialCanvasRequest> $request) async {
+    return createSpatialCanvas($call, await $request);
+  }
+
+  $async.Future<$0.CreateSpatialCanvasResponse> createSpatialCanvas(
+      $grpc.ServiceCall call, $0.CreateSpatialCanvasRequest request);
+
+  $async.Future<$0.GetSpatialCanvasResponse> getSpatialCanvas_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetSpatialCanvasRequest> $request) async {
+    return getSpatialCanvas($call, await $request);
+  }
+
+  $async.Future<$0.GetSpatialCanvasResponse> getSpatialCanvas(
+      $grpc.ServiceCall call, $0.GetSpatialCanvasRequest request);
+
+  $async.Future<$0.ApplySpatialCanvasOperationsResponse>
+      applySpatialCanvasOperations_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApplySpatialCanvasOperationsRequest>
+              $request) async {
+    return applySpatialCanvasOperations($call, await $request);
+  }
+
+  $async.Future<$0.ApplySpatialCanvasOperationsResponse>
+      applySpatialCanvasOperations($grpc.ServiceCall call,
+          $0.ApplySpatialCanvasOperationsRequest request);
+
+  $async.Future<$0.ResolveSpatialCanvasConflictResponse>
+      resolveSpatialCanvasConflict_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ResolveSpatialCanvasConflictRequest>
+              $request) async {
+    return resolveSpatialCanvasConflict($call, await $request);
+  }
+
+  $async.Future<$0.ResolveSpatialCanvasConflictResponse>
+      resolveSpatialCanvasConflict($grpc.ServiceCall call,
+          $0.ResolveSpatialCanvasConflictRequest request);
+
+  $async.Future<$0.CreateSpatialCanvasSnapshotResponse>
+      createSpatialCanvasSnapshot_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CreateSpatialCanvasSnapshotRequest> $request) async {
+    return createSpatialCanvasSnapshot($call, await $request);
+  }
+
+  $async.Future<$0.CreateSpatialCanvasSnapshotResponse>
+      createSpatialCanvasSnapshot($grpc.ServiceCall call,
+          $0.CreateSpatialCanvasSnapshotRequest request);
+
+  $async.Future<$0.RestoreSpatialCanvasSnapshotResponse>
+      restoreSpatialCanvasSnapshot_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RestoreSpatialCanvasSnapshotRequest>
+              $request) async {
+    return restoreSpatialCanvasSnapshot($call, await $request);
+  }
+
+  $async.Future<$0.RestoreSpatialCanvasSnapshotResponse>
+      restoreSpatialCanvasSnapshot($grpc.ServiceCall call,
+          $0.RestoreSpatialCanvasSnapshotRequest request);
+
+  $async.Future<$0.UpsertSpatialCanvasCommentResponse>
+      upsertSpatialCanvasComment_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertSpatialCanvasCommentRequest> $request) async {
+    return upsertSpatialCanvasComment($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSpatialCanvasCommentResponse>
+      upsertSpatialCanvasComment(
+          $grpc.ServiceCall call, $0.UpsertSpatialCanvasCommentRequest request);
+
+  $async.Future<$0.SetSpatialCanvasCommentStateResponse>
+      setSpatialCanvasCommentState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetSpatialCanvasCommentStateRequest>
+              $request) async {
+    return setSpatialCanvasCommentState($call, await $request);
+  }
+
+  $async.Future<$0.SetSpatialCanvasCommentStateResponse>
+      setSpatialCanvasCommentState($grpc.ServiceCall call,
+          $0.SetSpatialCanvasCommentStateRequest request);
+
+  $async.Future<$0.GenerateSpatialCanvasProposalsResponse>
+      generateSpatialCanvasProposals_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateSpatialCanvasProposalsRequest>
+              $request) async {
+    return generateSpatialCanvasProposals($call, await $request);
+  }
+
+  $async.Future<$0.GenerateSpatialCanvasProposalsResponse>
+      generateSpatialCanvasProposals($grpc.ServiceCall call,
+          $0.GenerateSpatialCanvasProposalsRequest request);
+
+  $async.Future<$0.SetSpatialCanvasProposalStateResponse>
+      setSpatialCanvasProposalState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SetSpatialCanvasProposalStateRequest>
+              $request) async {
+    return setSpatialCanvasProposalState($call, await $request);
+  }
+
+  $async.Future<$0.SetSpatialCanvasProposalStateResponse>
+      setSpatialCanvasProposalState($grpc.ServiceCall call,
+          $0.SetSpatialCanvasProposalStateRequest request);
+
+  $async.Future<$0.RequestSpatialCanvasExportResponse>
+      requestSpatialCanvasExport_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RequestSpatialCanvasExportRequest> $request) async {
+    return requestSpatialCanvasExport($call, await $request);
+  }
+
+  $async.Future<$0.RequestSpatialCanvasExportResponse>
+      requestSpatialCanvasExport(
+          $grpc.ServiceCall call, $0.RequestSpatialCanvasExportRequest request);
+
+  $async.Future<$0.GetSpatialCanvasExportResponse> getSpatialCanvasExport_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetSpatialCanvasExportRequest> $request) async {
+    return getSpatialCanvasExport($call, await $request);
+  }
+
+  $async.Future<$0.GetSpatialCanvasExportResponse> getSpatialCanvasExport(
+      $grpc.ServiceCall call, $0.GetSpatialCanvasExportRequest request);
+
+  $async.Future<$0.UpsertSpatialCanvasCollaboratorResponse>
+      upsertSpatialCanvasCollaborator_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertSpatialCanvasCollaboratorRequest>
+              $request) async {
+    return upsertSpatialCanvasCollaborator($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSpatialCanvasCollaboratorResponse>
+      upsertSpatialCanvasCollaborator($grpc.ServiceCall call,
+          $0.UpsertSpatialCanvasCollaboratorRequest request);
+
+  $async.Future<$0.ReportSpatialCanvasAbuseResponse>
+      reportSpatialCanvasAbuse_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ReportSpatialCanvasAbuseRequest> $request) async {
+    return reportSpatialCanvasAbuse($call, await $request);
+  }
+
+  $async.Future<$0.ReportSpatialCanvasAbuseResponse> reportSpatialCanvasAbuse(
+      $grpc.ServiceCall call, $0.ReportSpatialCanvasAbuseRequest request);
 }

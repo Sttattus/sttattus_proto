@@ -17218,3 +17218,1454 @@ final $typed_data.Uint8List submitIntegrationOperationsCaseResponseDescriptor =
         'CidTdWJtaXRJbnRlZ3JhdGlvbk9wZXJhdGlvbnNDYXNlUmVzcG9uc2USWAoPb3BlcmF0aW9uc1'
         '9jYXNlGAEgASgLMi8uc3R0YXR0dXMub255eC52MS5Pbnl4SW50ZWdyYXRpb25PcGVyYXRpb25z'
         'Q2FzZVIOb3BlcmF0aW9uc0Nhc2U=');
+
+@$core.Deprecated('Use spatialCanvasSourceAnchorDescriptor instead')
+const SpatialCanvasSourceAnchor$json = {
+  '1': 'SpatialCanvasSourceAnchor',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'document_id', '3': 2, '4': 1, '5': 9, '10': 'documentId'},
+    {
+      '1': 'document_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'documentRevisionId'
+    },
+    {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'source_checksum', '3': 5, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'quoted_text', '3': 6, '4': 1, '5': 9, '10': 'quotedText'},
+    {'1': 'rights_status', '3': 7, '4': 1, '5': 9, '10': 'rightsStatus'},
+    {'1': 'is_stale', '3': 8, '4': 1, '5': 8, '10': 'isStale'},
+    {'1': 'stale_reason', '3': 9, '4': 1, '5': 9, '10': 'staleReason'},
+  ],
+};
+
+/// Descriptor for `SpatialCanvasSourceAnchor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasSourceAnchorDescriptor = $convert.base64Decode(
+    'ChlTcGF0aWFsQ2FudmFzU291cmNlQW5jaG9yEh0KCmNvbnRlbnRfaWQYASABKAlSCWNvbnRlbn'
+    'RJZBIfCgtkb2N1bWVudF9pZBgCIAEoCVIKZG9jdW1lbnRJZBIwChRkb2N1bWVudF9yZXZpc2lv'
+    'bl9pZBgDIAEoCVISZG9jdW1lbnRSZXZpc2lvbklkEh8KC3Bhc3NhZ2Vfa2V5GAQgASgJUgpwYX'
+    'NzYWdlS2V5EicKD3NvdXJjZV9jaGVja3N1bRgFIAEoCVIOc291cmNlQ2hlY2tzdW0SHwoLcXVv'
+    'dGVkX3RleHQYBiABKAlSCnF1b3RlZFRleHQSIwoNcmlnaHRzX3N0YXR1cxgHIAEoCVIMcmlnaH'
+    'RzU3RhdHVzEhkKCGlzX3N0YWxlGAggASgIUgdpc1N0YWxlEiEKDHN0YWxlX3JlYXNvbhgJIAEo'
+    'CVILc3RhbGVSZWFzb24=');
+
+@$core.Deprecated('Use spatialCanvasTemplateDescriptor instead')
+const SpatialCanvasTemplate$json = {
+  '1': 'SpatialCanvasTemplate',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'code', '3': 2, '4': 1, '5': 9, '10': 'code'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'version', '3': 5, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'node_kinds', '3': 7, '4': 3, '5': 9, '10': 'nodeKinds'},
+    {'1': 'edge_kinds', '3': 8, '4': 3, '5': 9, '10': 'edgeKinds'},
+    {'1': 'layout_json', '3': 9, '4': 1, '5': 9, '10': 'layoutJson'},
+    {'1': 'is_builtin', '3': 10, '4': 1, '5': 8, '10': 'isBuiltin'},
+    {
+      '1': 'published_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'publishedAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasTemplate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasTemplateDescriptor = $convert.base64Decode(
+    'ChVTcGF0aWFsQ2FudmFzVGVtcGxhdGUSDgoCaWQYASABKAlSAmlkEhIKBGNvZGUYAiABKAlSBG'
+    'NvZGUSEgoEbmFtZRgDIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRp'
+    'b24SGAoHdmVyc2lvbhgFIAEoA1IHdmVyc2lvbhIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cxIdCg'
+    'pub2RlX2tpbmRzGAcgAygJUglub2RlS2luZHMSHQoKZWRnZV9raW5kcxgIIAMoCVIJZWRnZUtp'
+    'bmRzEh8KC2xheW91dF9qc29uGAkgASgJUgpsYXlvdXRKc29uEh0KCmlzX2J1aWx0aW4YCiABKA'
+    'hSCWlzQnVpbHRpbhI9CgxwdWJsaXNoZWRfYXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
+    'ZXN0YW1wUgtwdWJsaXNoZWRBdBI5Cgp1cGRhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use spatialCanvasWorkspaceDescriptor instead')
+const SpatialCanvasWorkspace$json = {
+  '1': 'SpatialCanvasWorkspace',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'scope', '3': 3, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'research_room_id', '3': 4, '4': 1, '5': 9, '10': 'researchRoomId'},
+    {'1': 'caller_role', '3': 5, '4': 1, '5': 9, '10': 'callerRole'},
+    {'1': 'version', '3': 6, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'canvas_count', '3': 7, '4': 1, '5': 5, '10': 'canvasCount'},
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasWorkspace`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasWorkspaceDescriptor = $convert.base64Decode(
+    'ChZTcGF0aWFsQ2FudmFzV29ya3NwYWNlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUg'
+    'RuYW1lEhQKBXNjb3BlGAMgASgJUgVzY29wZRIoChByZXNlYXJjaF9yb29tX2lkGAQgASgJUg5y'
+    'ZXNlYXJjaFJvb21JZBIfCgtjYWxsZXJfcm9sZRgFIAEoCVIKY2FsbGVyUm9sZRIYCgd2ZXJzaW'
+    '9uGAYgASgDUgd2ZXJzaW9uEiEKDGNhbnZhc19jb3VudBgHIAEoBVILY2FudmFzQ291bnQSOQoK'
+    'dXBkYXRlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA'
+    '==');
+
+@$core.Deprecated('Use spatialCanvasSummaryDescriptor instead')
+const SpatialCanvasSummary$json = {
+  '1': 'SpatialCanvasSummary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'workspace_id', '3': 2, '4': 1, '5': 9, '10': 'workspaceId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'template_code', '3': 5, '4': 1, '5': 9, '10': 'templateCode'},
+    {'1': 'template_version', '3': 6, '4': 1, '5': 3, '10': 'templateVersion'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'current_revision', '3': 8, '4': 1, '5': 3, '10': 'currentRevision'},
+    {'1': 'node_count', '3': 9, '4': 1, '5': 5, '10': 'nodeCount'},
+    {'1': 'edge_count', '3': 10, '4': 1, '5': 5, '10': 'edgeCount'},
+    {
+      '1': 'unresolved_conflict_count',
+      '3': 11,
+      '4': 1,
+      '5': 5,
+      '10': 'unresolvedConflictCount'
+    },
+    {
+      '1': 'open_comment_count',
+      '3': 12,
+      '4': 1,
+      '5': 5,
+      '10': 'openCommentCount'
+    },
+    {'1': 'caller_role', '3': 13, '4': 1, '5': 9, '10': 'callerRole'},
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasSummaryDescriptor = $convert.base64Decode(
+    'ChRTcGF0aWFsQ2FudmFzU3VtbWFyeRIOCgJpZBgBIAEoCVICaWQSIQoMd29ya3NwYWNlX2lkGA'
+    'IgASgJUgt3b3Jrc3BhY2VJZBIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24Y'
+    'BCABKAlSC2Rlc2NyaXB0aW9uEiMKDXRlbXBsYXRlX2NvZGUYBSABKAlSDHRlbXBsYXRlQ29kZR'
+    'IpChB0ZW1wbGF0ZV92ZXJzaW9uGAYgASgDUg90ZW1wbGF0ZVZlcnNpb24SFgoGc3RhdHVzGAcg'
+    'ASgJUgZzdGF0dXMSKQoQY3VycmVudF9yZXZpc2lvbhgIIAEoA1IPY3VycmVudFJldmlzaW9uEh'
+    '0KCm5vZGVfY291bnQYCSABKAVSCW5vZGVDb3VudBIdCgplZGdlX2NvdW50GAogASgFUgllZGdl'
+    'Q291bnQSOgoZdW5yZXNvbHZlZF9jb25mbGljdF9jb3VudBgLIAEoBVIXdW5yZXNvbHZlZENvbm'
+    'ZsaWN0Q291bnQSLAoSb3Blbl9jb21tZW50X2NvdW50GAwgASgFUhBvcGVuQ29tbWVudENvdW50'
+    'Eh8KC2NhbGxlcl9yb2xlGA0gASgJUgpjYWxsZXJSb2xlEjkKCnVwZGF0ZWRfYXQYDiABKAsyGi'
+    '5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use spatialCanvasNodeDescriptor instead')
+const SpatialCanvasNode$json = {
+  '1': 'SpatialCanvasNode',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'x', '3': 6, '4': 1, '5': 1, '10': 'x'},
+    {'1': 'y', '3': 7, '4': 1, '5': 1, '10': 'y'},
+    {'1': 'width', '3': 8, '4': 1, '5': 1, '10': 'width'},
+    {'1': 'height', '3': 9, '4': 1, '5': 1, '10': 'height'},
+    {'1': 'z_index', '3': 10, '4': 1, '5': 5, '10': 'zIndex'},
+    {'1': 'group_id', '3': 11, '4': 1, '5': 9, '10': 'groupId'},
+    {'1': 'color', '3': 12, '4': 1, '5': 9, '10': 'color'},
+    {
+      '1': 'source_anchor',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSourceAnchor',
+      '10': 'sourceAnchor'
+    },
+    {'1': 'author_user_id', '3': 14, '4': 1, '5': 9, '10': 'authorUserId'},
+    {'1': 'version', '3': 15, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'is_deleted', '3': 16, '4': 1, '5': 8, '10': 'isDeleted'},
+    {
+      '1': 'updated_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasNode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasNodeDescriptor = $convert.base64Decode(
+    'ChFTcGF0aWFsQ2FudmFzTm9kZRIOCgJpZBgBIAEoCVICaWQSGwoJY2FudmFzX2lkGAIgASgJUg'
+    'hjYW52YXNJZBISCgRraW5kGAMgASgJUgRraW5kEhQKBXRpdGxlGAQgASgJUgV0aXRsZRISCgRi'
+    'b2R5GAUgASgJUgRib2R5EgwKAXgYBiABKAFSAXgSDAoBeRgHIAEoAVIBeRIUCgV3aWR0aBgIIA'
+    'EoAVIFd2lkdGgSFgoGaGVpZ2h0GAkgASgBUgZoZWlnaHQSFwoHel9pbmRleBgKIAEoBVIGeklu'
+    'ZGV4EhkKCGdyb3VwX2lkGAsgASgJUgdncm91cElkEhQKBWNvbG9yGAwgASgJUgVjb2xvchJQCg'
+    '1zb3VyY2VfYW5jaG9yGA0gASgLMisuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzU291'
+    'cmNlQW5jaG9yUgxzb3VyY2VBbmNob3ISJAoOYXV0aG9yX3VzZXJfaWQYDiABKAlSDGF1dGhvcl'
+    'VzZXJJZBIYCgd2ZXJzaW9uGA8gASgDUgd2ZXJzaW9uEh0KCmlzX2RlbGV0ZWQYECABKAhSCWlz'
+    'RGVsZXRlZBI5Cgp1cGRhdGVkX2F0GBEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcF'
+    'IJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use spatialCanvasEdgeDescriptor instead')
+const SpatialCanvasEdge$json = {
+  '1': 'SpatialCanvasEdge',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'from_node_id', '3': 3, '4': 1, '5': 9, '10': 'fromNodeId'},
+    {'1': 'to_node_id', '3': 4, '4': 1, '5': 9, '10': 'toNodeId'},
+    {'1': 'relation_type', '3': 5, '4': 1, '5': 9, '10': 'relationType'},
+    {'1': 'label', '3': 6, '4': 1, '5': 9, '10': 'label'},
+    {'1': 'explanation', '3': 7, '4': 1, '5': 9, '10': 'explanation'},
+    {
+      '1': 'source_anchor',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSourceAnchor',
+      '10': 'sourceAnchor'
+    },
+    {'1': 'author_user_id', '3': 9, '4': 1, '5': 9, '10': 'authorUserId'},
+    {'1': 'version', '3': 10, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'is_deleted', '3': 11, '4': 1, '5': 8, '10': 'isDeleted'},
+    {
+      '1': 'updated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasEdge`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasEdgeDescriptor = $convert.base64Decode(
+    'ChFTcGF0aWFsQ2FudmFzRWRnZRIOCgJpZBgBIAEoCVICaWQSGwoJY2FudmFzX2lkGAIgASgJUg'
+    'hjYW52YXNJZBIgCgxmcm9tX25vZGVfaWQYAyABKAlSCmZyb21Ob2RlSWQSHAoKdG9fbm9kZV9p'
+    'ZBgEIAEoCVIIdG9Ob2RlSWQSIwoNcmVsYXRpb25fdHlwZRgFIAEoCVIMcmVsYXRpb25UeXBlEh'
+    'QKBWxhYmVsGAYgASgJUgVsYWJlbBIgCgtleHBsYW5hdGlvbhgHIAEoCVILZXhwbGFuYXRpb24S'
+    'UAoNc291cmNlX2FuY2hvchgIIAEoCzIrLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc1'
+    'NvdXJjZUFuY2hvclIMc291cmNlQW5jaG9yEiQKDmF1dGhvcl91c2VyX2lkGAkgASgJUgxhdXRo'
+    'b3JVc2VySWQSGAoHdmVyc2lvbhgKIAEoA1IHdmVyc2lvbhIdCgppc19kZWxldGVkGAsgASgIUg'
+    'lpc0RlbGV0ZWQSOQoKdXBkYXRlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use spatialCanvasLayoutRevisionDescriptor instead')
+const SpatialCanvasLayoutRevision$json = {
+  '1': 'SpatialCanvasLayoutRevision',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'revision_number', '3': 3, '4': 1, '5': 3, '10': 'revisionNumber'},
+    {
+      '1': 'base_revision_number',
+      '3': 4,
+      '4': 1,
+      '5': 3,
+      '10': 'baseRevisionNumber'
+    },
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'created_by', '3': 6, '4': 1, '5': 9, '10': 'createdBy'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasLayoutRevision`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasLayoutRevisionDescriptor = $convert.base64Decode(
+    'ChtTcGF0aWFsQ2FudmFzTGF5b3V0UmV2aXNpb24SDgoCaWQYASABKAlSAmlkEhsKCWNhbnZhc1'
+    '9pZBgCIAEoCVIIY2FudmFzSWQSJwoPcmV2aXNpb25fbnVtYmVyGAMgASgDUg5yZXZpc2lvbk51'
+    'bWJlchIwChRiYXNlX3JldmlzaW9uX251bWJlchgEIAEoA1ISYmFzZVJldmlzaW9uTnVtYmVyEh'
+    'gKB3N1bW1hcnkYBSABKAlSB3N1bW1hcnkSHQoKY3JlYXRlZF9ieRgGIAEoCVIJY3JlYXRlZEJ5'
+    'EjkKCmNyZWF0ZWRfYXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdG'
+    'VkQXQ=');
+
+@$core.Deprecated('Use spatialCanvasConflictDescriptor instead')
+const SpatialCanvasConflict$json = {
+  '1': 'SpatialCanvasConflict',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'entity_type', '3': 3, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 4, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'field_name', '3': 5, '4': 1, '5': 9, '10': 'fieldName'},
+    {'1': 'local_value_json', '3': 6, '4': 1, '5': 9, '10': 'localValueJson'},
+    {'1': 'remote_value_json', '3': 7, '4': 1, '5': 9, '10': 'remoteValueJson'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'resolution', '3': 9, '4': 1, '5': 9, '10': 'resolution'},
+    {
+      '1': 'detected_revision',
+      '3': 10,
+      '4': 1,
+      '5': 3,
+      '10': 'detectedRevision'
+    },
+    {
+      '1': 'detected_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'detectedAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasConflict`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasConflictDescriptor = $convert.base64Decode(
+    'ChVTcGF0aWFsQ2FudmFzQ29uZmxpY3QSDgoCaWQYASABKAlSAmlkEhsKCWNhbnZhc19pZBgCIA'
+    'EoCVIIY2FudmFzSWQSHwoLZW50aXR5X3R5cGUYAyABKAlSCmVudGl0eVR5cGUSGwoJZW50aXR5'
+    'X2lkGAQgASgJUghlbnRpdHlJZBIdCgpmaWVsZF9uYW1lGAUgASgJUglmaWVsZE5hbWUSKAoQbG'
+    '9jYWxfdmFsdWVfanNvbhgGIAEoCVIObG9jYWxWYWx1ZUpzb24SKgoRcmVtb3RlX3ZhbHVlX2pz'
+    'b24YByABKAlSD3JlbW90ZVZhbHVlSnNvbhIWCgZzdGF0dXMYCCABKAlSBnN0YXR1cxIeCgpyZX'
+    'NvbHV0aW9uGAkgASgJUgpyZXNvbHV0aW9uEisKEWRldGVjdGVkX3JldmlzaW9uGAogASgDUhBk'
+    'ZXRlY3RlZFJldmlzaW9uEjsKC2RldGVjdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIKZGV0ZWN0ZWRBdBI7CgtyZXNvbHZlZF9hdBgMIAEoCzIaLmdvb2dsZS5wcm90'
+    'b2J1Zi5UaW1lc3RhbXBSCnJlc29sdmVkQXQ=');
+
+@$core.Deprecated('Use spatialCanvasSnapshotDescriptor instead')
+const SpatialCanvasSnapshot$json = {
+  '1': 'SpatialCanvasSnapshot',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'layout_revision', '3': 4, '4': 1, '5': 3, '10': 'layoutRevision'},
+    {'1': 'checksum', '3': 5, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'created_by', '3': 6, '4': 1, '5': 9, '10': 'createdBy'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasSnapshot`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasSnapshotDescriptor = $convert.base64Decode(
+    'ChVTcGF0aWFsQ2FudmFzU25hcHNob3QSDgoCaWQYASABKAlSAmlkEhsKCWNhbnZhc19pZBgCIA'
+    'EoCVIIY2FudmFzSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRInCg9sYXlvdXRfcmV2aXNpb24YBCAB'
+    'KANSDmxheW91dFJldmlzaW9uEhoKCGNoZWNrc3VtGAUgASgJUghjaGVja3N1bRIdCgpjcmVhdG'
+    'VkX2J5GAYgASgJUgljcmVhdGVkQnkSOQoKY3JlYXRlZF9hdBgHIAEoCzIaLmdvb2dsZS5wcm90'
+    'b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use spatialCanvasCommentDescriptor instead')
+const SpatialCanvasComment$json = {
+  '1': 'SpatialCanvasComment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'entity_type', '3': 3, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 4, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'author_user_id', '3': 7, '4': 1, '5': 9, '10': 'authorUserId'},
+    {'1': 'version', '3': 8, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasComment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasCommentDescriptor = $convert.base64Decode(
+    'ChRTcGF0aWFsQ2FudmFzQ29tbWVudBIOCgJpZBgBIAEoCVICaWQSGwoJY2FudmFzX2lkGAIgAS'
+    'gJUghjYW52YXNJZBIfCgtlbnRpdHlfdHlwZRgDIAEoCVIKZW50aXR5VHlwZRIbCgllbnRpdHlf'
+    'aWQYBCABKAlSCGVudGl0eUlkEhIKBGJvZHkYBSABKAlSBGJvZHkSFgoGc3RhdHVzGAYgASgJUg'
+    'ZzdGF0dXMSJAoOYXV0aG9yX3VzZXJfaWQYByABKAlSDGF1dGhvclVzZXJJZBIYCgd2ZXJzaW9u'
+    'GAggASgDUgd2ZXJzaW9uEjkKCmNyZWF0ZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUgljcmVhdGVkQXQSOwoLcmVzb2x2ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9i'
+    'dWYuVGltZXN0YW1wUgpyZXNvbHZlZEF0');
+
+@$core.Deprecated('Use spatialCanvasProposalDescriptor instead')
+const SpatialCanvasProposal$json = {
+  '1': 'SpatialCanvasProposal',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'proposal_type', '3': 3, '4': 1, '5': 9, '10': 'proposalType'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'rationale', '3': 5, '4': 1, '5': 9, '10': 'rationale'},
+    {'1': 'payload_json', '3': 6, '4': 1, '5': 9, '10': 'payloadJson'},
+    {'1': 'status', '3': 7, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'model_key', '3': 8, '4': 1, '5': 9, '10': 'modelKey'},
+    {'1': 'model_version', '3': 9, '4': 1, '5': 9, '10': 'modelVersion'},
+    {'1': 'prompt_digest', '3': 10, '4': 1, '5': 9, '10': 'promptDigest'},
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'decided_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'decidedAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasProposalDescriptor = $convert.base64Decode(
+    'ChVTcGF0aWFsQ2FudmFzUHJvcG9zYWwSDgoCaWQYASABKAlSAmlkEhsKCWNhbnZhc19pZBgCIA'
+    'EoCVIIY2FudmFzSWQSIwoNcHJvcG9zYWxfdHlwZRgDIAEoCVIMcHJvcG9zYWxUeXBlEhQKBXRp'
+    'dGxlGAQgASgJUgV0aXRsZRIcCglyYXRpb25hbGUYBSABKAlSCXJhdGlvbmFsZRIhCgxwYXlsb2'
+    'FkX2pzb24YBiABKAlSC3BheWxvYWRKc29uEhYKBnN0YXR1cxgHIAEoCVIGc3RhdHVzEhsKCW1v'
+    'ZGVsX2tleRgIIAEoCVIIbW9kZWxLZXkSIwoNbW9kZWxfdmVyc2lvbhgJIAEoCVIMbW9kZWxWZX'
+    'JzaW9uEiMKDXByb21wdF9kaWdlc3QYCiABKAlSDHByb21wdERpZ2VzdBI5CgpjcmVhdGVkX2F0'
+    'GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCmRlY2lkZW'
+    'RfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglkZWNpZGVkQXQ=');
+
+@$core.Deprecated('Use spatialCanvasExportDescriptor instead')
+const SpatialCanvasExport$json = {
+  '1': 'SpatialCanvasExport',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'canvas_id', '3': 2, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'format', '3': 3, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'artifact_url', '3': 5, '4': 1, '5': 9, '10': 'artifactUrl'},
+    {'1': 'checksum', '3': 6, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'manifest_json', '3': 7, '4': 1, '5': 9, '10': 'manifestJson'},
+    {'1': 'layout_revision', '3': 8, '4': 1, '5': 3, '10': 'layoutRevision'},
+    {'1': 'citation_count', '3': 9, '4': 1, '5': 5, '10': 'citationCount'},
+    {'1': 'warning_count', '3': 10, '4': 1, '5': 5, '10': 'warningCount'},
+    {
+      '1': 'expires_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasExport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasExportDescriptor = $convert.base64Decode(
+    'ChNTcGF0aWFsQ2FudmFzRXhwb3J0Eg4KAmlkGAEgASgJUgJpZBIbCgljYW52YXNfaWQYAiABKA'
+    'lSCGNhbnZhc0lkEhYKBmZvcm1hdBgDIAEoCVIGZm9ybWF0EhYKBnN0YXR1cxgEIAEoCVIGc3Rh'
+    'dHVzEiEKDGFydGlmYWN0X3VybBgFIAEoCVILYXJ0aWZhY3RVcmwSGgoIY2hlY2tzdW0YBiABKA'
+    'lSCGNoZWNrc3VtEiMKDW1hbmlmZXN0X2pzb24YByABKAlSDG1hbmlmZXN0SnNvbhInCg9sYXlv'
+    'dXRfcmV2aXNpb24YCCABKANSDmxheW91dFJldmlzaW9uEiUKDmNpdGF0aW9uX2NvdW50GAkgAS'
+    'gFUg1jaXRhdGlvbkNvdW50EiMKDXdhcm5pbmdfY291bnQYCiABKAVSDHdhcm5pbmdDb3VudBI5'
+    'CgpleHBpcmVzX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0'
+    'F0EjkKCmNyZWF0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVh'
+    'dGVkQXQ=');
+
+@$core.Deprecated('Use spatialCanvasOperationDescriptor instead')
+const SpatialCanvasOperation$json = {
+  '1': 'SpatialCanvasOperation',
+  '2': [
+    {'1': 'operation_id', '3': 1, '4': 1, '5': 9, '10': 'operationId'},
+    {'1': 'replica_id', '3': 2, '4': 1, '5': 9, '10': 'replicaId'},
+    {'1': 'replica_sequence', '3': 3, '4': 1, '5': 3, '10': 'replicaSequence'},
+    {'1': 'base_revision', '3': 4, '4': 1, '5': 3, '10': 'baseRevision'},
+    {'1': 'operation_type', '3': 5, '4': 1, '5': 9, '10': 'operationType'},
+    {'1': 'entity_type', '3': 6, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 7, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'payload_json', '3': 8, '4': 1, '5': 9, '10': 'payloadJson'},
+    {
+      '1': 'occurred_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'occurredAt'
+    },
+  ],
+};
+
+/// Descriptor for `SpatialCanvasOperation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasOperationDescriptor = $convert.base64Decode(
+    'ChZTcGF0aWFsQ2FudmFzT3BlcmF0aW9uEiEKDG9wZXJhdGlvbl9pZBgBIAEoCVILb3BlcmF0aW'
+    '9uSWQSHQoKcmVwbGljYV9pZBgCIAEoCVIJcmVwbGljYUlkEikKEHJlcGxpY2Ffc2VxdWVuY2UY'
+    'AyABKANSD3JlcGxpY2FTZXF1ZW5jZRIjCg1iYXNlX3JldmlzaW9uGAQgASgDUgxiYXNlUmV2aX'
+    'Npb24SJQoOb3BlcmF0aW9uX3R5cGUYBSABKAlSDW9wZXJhdGlvblR5cGUSHwoLZW50aXR5X3R5'
+    'cGUYBiABKAlSCmVudGl0eVR5cGUSGwoJZW50aXR5X2lkGAcgASgJUghlbnRpdHlJZBIhCgxwYX'
+    'lsb2FkX2pzb24YCCABKAlSC3BheWxvYWRKc29uEjsKC29jY3VycmVkX2F0GAkgASgLMhouZ29v'
+    'Z2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKb2NjdXJyZWRBdA==');
+
+@$core.Deprecated('Use spatialCanvasDetailDescriptor instead')
+const SpatialCanvasDetail$json = {
+  '1': 'SpatialCanvasDetail',
+  '2': [
+    {
+      '1': 'canvas',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSummary',
+      '10': 'canvas'
+    },
+    {
+      '1': 'nodes',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasNode',
+      '10': 'nodes'
+    },
+    {
+      '1': 'edges',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasEdge',
+      '10': 'edges'
+    },
+    {
+      '1': 'conflicts',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasConflict',
+      '10': 'conflicts'
+    },
+    {
+      '1': 'snapshots',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSnapshot',
+      '10': 'snapshots'
+    },
+    {
+      '1': 'comments',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasComment',
+      '10': 'comments'
+    },
+    {
+      '1': 'proposals',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasProposal',
+      '10': 'proposals'
+    },
+    {
+      '1': 'revisions',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasLayoutRevision',
+      '10': 'revisions'
+    },
+    {'1': 'viewport_x', '3': 9, '4': 1, '5': 1, '10': 'viewportX'},
+    {'1': 'viewport_y', '3': 10, '4': 1, '5': 1, '10': 'viewportY'},
+    {'1': 'viewport_zoom', '3': 11, '4': 1, '5': 1, '10': 'viewportZoom'},
+  ],
+};
+
+/// Descriptor for `SpatialCanvasDetail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List spatialCanvasDetailDescriptor = $convert.base64Decode(
+    'ChNTcGF0aWFsQ2FudmFzRGV0YWlsEj4KBmNhbnZhcxgBIAEoCzImLnN0dGF0dHVzLm9ueXgudj'
+    'EuU3BhdGlhbENhbnZhc1N1bW1hcnlSBmNhbnZhcxI5CgVub2RlcxgCIAMoCzIjLnN0dGF0dHVz'
+    'Lm9ueXgudjEuU3BhdGlhbENhbnZhc05vZGVSBW5vZGVzEjkKBWVkZ2VzGAMgAygLMiMuc3R0YX'
+    'R0dXMub255eC52MS5TcGF0aWFsQ2FudmFzRWRnZVIFZWRnZXMSRQoJY29uZmxpY3RzGAQgAygL'
+    'Micuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzQ29uZmxpY3RSCWNvbmZsaWN0cxJFCg'
+    'lzbmFwc2hvdHMYBSADKAsyJy5zdHRhdHR1cy5vbnl4LnYxLlNwYXRpYWxDYW52YXNTbmFwc2hv'
+    'dFIJc25hcHNob3RzEkIKCGNvbW1lbnRzGAYgAygLMiYuc3R0YXR0dXMub255eC52MS5TcGF0aW'
+    'FsQ2FudmFzQ29tbWVudFIIY29tbWVudHMSRQoJcHJvcG9zYWxzGAcgAygLMicuc3R0YXR0dXMu'
+    'b255eC52MS5TcGF0aWFsQ2FudmFzUHJvcG9zYWxSCXByb3Bvc2FscxJLCglyZXZpc2lvbnMYCC'
+    'ADKAsyLS5zdHRhdHR1cy5vbnl4LnYxLlNwYXRpYWxDYW52YXNMYXlvdXRSZXZpc2lvblIJcmV2'
+    'aXNpb25zEh0KCnZpZXdwb3J0X3gYCSABKAFSCXZpZXdwb3J0WBIdCgp2aWV3cG9ydF95GAogAS'
+    'gBUgl2aWV3cG9ydFkSIwoNdmlld3BvcnRfem9vbRgLIAEoAVIMdmlld3BvcnRab29t');
+
+@$core.Deprecated('Use getSpatialCanvasDashboardRequestDescriptor instead')
+const GetSpatialCanvasDashboardRequest$json = {
+  '1': 'GetSpatialCanvasDashboardRequest',
+};
+
+/// Descriptor for `GetSpatialCanvasDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasDashboardRequestDescriptor =
+    $convert.base64Decode('CiBHZXRTcGF0aWFsQ2FudmFzRGFzaGJvYXJkUmVxdWVzdA==');
+
+@$core.Deprecated('Use getSpatialCanvasDashboardResponseDescriptor instead')
+const GetSpatialCanvasDashboardResponse$json = {
+  '1': 'GetSpatialCanvasDashboardResponse',
+  '2': [
+    {
+      '1': 'workspaces',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasWorkspace',
+      '10': 'workspaces'
+    },
+    {
+      '1': 'canvases',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSummary',
+      '10': 'canvases'
+    },
+    {
+      '1': 'templates',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasTemplate',
+      '10': 'templates'
+    },
+    {
+      '1': 'unresolved_conflicts',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'unresolvedConflicts'
+    },
+    {
+      '1': 'pending_proposals',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'pendingProposals'
+    },
+    {'1': 'open_comments', '3': 6, '4': 1, '5': 5, '10': 'openComments'},
+    {
+      '1': 'canvas_writes_enabled',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'canvasWritesEnabled'
+    },
+    {
+      '1': 'ai_proposals_enabled',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'aiProposalsEnabled'
+    },
+    {'1': 'exports_enabled', '3': 9, '4': 1, '5': 8, '10': 'exportsEnabled'},
+  ],
+};
+
+/// Descriptor for `GetSpatialCanvasDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasDashboardResponseDescriptor = $convert.base64Decode(
+    'CiFHZXRTcGF0aWFsQ2FudmFzRGFzaGJvYXJkUmVzcG9uc2USSAoKd29ya3NwYWNlcxgBIAMoCz'
+    'IoLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc1dvcmtzcGFjZVIKd29ya3NwYWNlcxJC'
+    'CghjYW52YXNlcxgCIAMoCzImLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc1N1bW1hcn'
+    'lSCGNhbnZhc2VzEkUKCXRlbXBsYXRlcxgDIAMoCzInLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlh'
+    'bENhbnZhc1RlbXBsYXRlUgl0ZW1wbGF0ZXMSMQoUdW5yZXNvbHZlZF9jb25mbGljdHMYBCABKA'
+    'VSE3VucmVzb2x2ZWRDb25mbGljdHMSKwoRcGVuZGluZ19wcm9wb3NhbHMYBSABKAVSEHBlbmRp'
+    'bmdQcm9wb3NhbHMSIwoNb3Blbl9jb21tZW50cxgGIAEoBVIMb3BlbkNvbW1lbnRzEjIKFWNhbn'
+    'Zhc193cml0ZXNfZW5hYmxlZBgHIAEoCFITY2FudmFzV3JpdGVzRW5hYmxlZBIwChRhaV9wcm9w'
+    'b3NhbHNfZW5hYmxlZBgIIAEoCFISYWlQcm9wb3NhbHNFbmFibGVkEicKD2V4cG9ydHNfZW5hYm'
+    'xlZBgJIAEoCFIOZXhwb3J0c0VuYWJsZWQ=');
+
+@$core.Deprecated('Use listSpatialCanvasTemplatesRequestDescriptor instead')
+const ListSpatialCanvasTemplatesRequest$json = {
+  '1': 'ListSpatialCanvasTemplatesRequest',
+  '2': [
+    {'1': 'include_retired', '3': 1, '4': 1, '5': 8, '10': 'includeRetired'},
+  ],
+};
+
+/// Descriptor for `ListSpatialCanvasTemplatesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSpatialCanvasTemplatesRequestDescriptor =
+    $convert.base64Decode(
+        'CiFMaXN0U3BhdGlhbENhbnZhc1RlbXBsYXRlc1JlcXVlc3QSJwoPaW5jbHVkZV9yZXRpcmVkGA'
+        'EgASgIUg5pbmNsdWRlUmV0aXJlZA==');
+
+@$core.Deprecated('Use listSpatialCanvasTemplatesResponseDescriptor instead')
+const ListSpatialCanvasTemplatesResponse$json = {
+  '1': 'ListSpatialCanvasTemplatesResponse',
+  '2': [
+    {
+      '1': 'templates',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasTemplate',
+      '10': 'templates'
+    },
+  ],
+};
+
+/// Descriptor for `ListSpatialCanvasTemplatesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSpatialCanvasTemplatesResponseDescriptor =
+    $convert.base64Decode(
+        'CiJMaXN0U3BhdGlhbENhbnZhc1RlbXBsYXRlc1Jlc3BvbnNlEkUKCXRlbXBsYXRlcxgBIAMoCz'
+        'InLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc1RlbXBsYXRlUgl0ZW1wbGF0ZXM=');
+
+@$core.Deprecated('Use createSpatialCanvasRequestDescriptor instead')
+const CreateSpatialCanvasRequest$json = {
+  '1': 'CreateSpatialCanvasRequest',
+  '2': [
+    {'1': 'workspace_id', '3': 1, '4': 1, '5': 9, '10': 'workspaceId'},
+    {'1': 'workspace_name', '3': 2, '4': 1, '5': 9, '10': 'workspaceName'},
+    {'1': 'scope', '3': 3, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'research_room_id', '3': 4, '4': 1, '5': 9, '10': 'researchRoomId'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'template_code', '3': 7, '4': 1, '5': 9, '10': 'templateCode'},
+    {'1': 'template_version', '3': 8, '4': 1, '5': 3, '10': 'templateVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateSpatialCanvasRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpatialCanvasRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVTcGF0aWFsQ2FudmFzUmVxdWVzdBIhCgx3b3Jrc3BhY2VfaWQYASABKAlSC3dvcm'
+    'tzcGFjZUlkEiUKDndvcmtzcGFjZV9uYW1lGAIgASgJUg13b3Jrc3BhY2VOYW1lEhQKBXNjb3Bl'
+    'GAMgASgJUgVzY29wZRIoChByZXNlYXJjaF9yb29tX2lkGAQgASgJUg5yZXNlYXJjaFJvb21JZB'
+    'IUCgV0aXRsZRgFIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24YBiABKAlSC2Rlc2NyaXB0aW9u'
+    'EiMKDXRlbXBsYXRlX2NvZGUYByABKAlSDHRlbXBsYXRlQ29kZRIpChB0ZW1wbGF0ZV92ZXJzaW'
+    '9uGAggASgDUg90ZW1wbGF0ZVZlcnNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAkgASgJUhBj'
+    'bGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use createSpatialCanvasResponseDescriptor instead')
+const CreateSpatialCanvasResponse$json = {
+  '1': 'CreateSpatialCanvasResponse',
+  '2': [
+    {
+      '1': 'detail',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasDetail',
+      '10': 'detail'
+    },
+  ],
+};
+
+/// Descriptor for `CreateSpatialCanvasResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpatialCanvasResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVTcGF0aWFsQ2FudmFzUmVzcG9uc2USPQoGZGV0YWlsGAEgASgLMiUuc3R0YXR0dX'
+        'Mub255eC52MS5TcGF0aWFsQ2FudmFzRGV0YWlsUgZkZXRhaWw=');
+
+@$core.Deprecated('Use getSpatialCanvasRequestDescriptor instead')
+const GetSpatialCanvasRequest$json = {
+  '1': 'GetSpatialCanvasRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'since_revision', '3': 2, '4': 1, '5': 3, '10': 'sinceRevision'},
+    {'1': 'include_deleted', '3': 3, '4': 1, '5': 8, '10': 'includeDeleted'},
+  ],
+};
+
+/// Descriptor for `GetSpatialCanvasRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRTcGF0aWFsQ2FudmFzUmVxdWVzdBIbCgljYW52YXNfaWQYASABKAlSCGNhbnZhc0lkEi'
+    'UKDnNpbmNlX3JldmlzaW9uGAIgASgDUg1zaW5jZVJldmlzaW9uEicKD2luY2x1ZGVfZGVsZXRl'
+    'ZBgDIAEoCFIOaW5jbHVkZURlbGV0ZWQ=');
+
+@$core.Deprecated('Use getSpatialCanvasResponseDescriptor instead')
+const GetSpatialCanvasResponse$json = {
+  '1': 'GetSpatialCanvasResponse',
+  '2': [
+    {
+      '1': 'detail',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasDetail',
+      '10': 'detail'
+    },
+  ],
+};
+
+/// Descriptor for `GetSpatialCanvasResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRTcGF0aWFsQ2FudmFzUmVzcG9uc2USPQoGZGV0YWlsGAEgASgLMiUuc3R0YXR0dXMub2'
+        '55eC52MS5TcGF0aWFsQ2FudmFzRGV0YWlsUgZkZXRhaWw=');
+
+@$core.Deprecated('Use applySpatialCanvasOperationsRequestDescriptor instead')
+const ApplySpatialCanvasOperationsRequest$json = {
+  '1': 'ApplySpatialCanvasOperationsRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {
+      '1': 'operations',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasOperation',
+      '10': 'operations'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ApplySpatialCanvasOperationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List applySpatialCanvasOperationsRequestDescriptor =
+    $convert.base64Decode(
+        'CiNBcHBseVNwYXRpYWxDYW52YXNPcGVyYXRpb25zUmVxdWVzdBIbCgljYW52YXNfaWQYASABKA'
+        'lSCGNhbnZhc0lkEkgKCm9wZXJhdGlvbnMYAiADKAsyKC5zdHRhdHR1cy5vbnl4LnYxLlNwYXRp'
+        'YWxDYW52YXNPcGVyYXRpb25SCm9wZXJhdGlvbnMSLAoSY2xpZW50X211dGF0aW9uX2lkGAMgAS'
+        'gJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use applySpatialCanvasOperationsResponseDescriptor instead')
+const ApplySpatialCanvasOperationsResponse$json = {
+  '1': 'ApplySpatialCanvasOperationsResponse',
+  '2': [
+    {
+      '1': 'detail',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasDetail',
+      '10': 'detail'
+    },
+    {
+      '1': 'applied_operation_ids',
+      '3': 2,
+      '4': 3,
+      '5': 9,
+      '10': 'appliedOperationIds'
+    },
+    {
+      '1': 'duplicate_operation_ids',
+      '3': 3,
+      '4': 3,
+      '5': 9,
+      '10': 'duplicateOperationIds'
+    },
+    {
+      '1': 'conflicts',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasConflict',
+      '10': 'conflicts'
+    },
+  ],
+};
+
+/// Descriptor for `ApplySpatialCanvasOperationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List applySpatialCanvasOperationsResponseDescriptor = $convert.base64Decode(
+    'CiRBcHBseVNwYXRpYWxDYW52YXNPcGVyYXRpb25zUmVzcG9uc2USPQoGZGV0YWlsGAEgASgLMi'
+    'Uuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzRGV0YWlsUgZkZXRhaWwSMgoVYXBwbGll'
+    'ZF9vcGVyYXRpb25faWRzGAIgAygJUhNhcHBsaWVkT3BlcmF0aW9uSWRzEjYKF2R1cGxpY2F0ZV'
+    '9vcGVyYXRpb25faWRzGAMgAygJUhVkdXBsaWNhdGVPcGVyYXRpb25JZHMSRQoJY29uZmxpY3Rz'
+    'GAQgAygLMicuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzQ29uZmxpY3RSCWNvbmZsaW'
+    'N0cw==');
+
+@$core.Deprecated('Use resolveSpatialCanvasConflictRequestDescriptor instead')
+const ResolveSpatialCanvasConflictRequest$json = {
+  '1': 'ResolveSpatialCanvasConflictRequest',
+  '2': [
+    {'1': 'conflict_id', '3': 1, '4': 1, '5': 9, '10': 'conflictId'},
+    {'1': 'resolution', '3': 2, '4': 1, '5': 9, '10': 'resolution'},
+    {'1': 'merged_value_json', '3': 3, '4': 1, '5': 9, '10': 'mergedValueJson'},
+    {
+      '1': 'expected_revision',
+      '3': 4,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedRevision'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveSpatialCanvasConflictRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveSpatialCanvasConflictRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXNvbHZlU3BhdGlhbENhbnZhc0NvbmZsaWN0UmVxdWVzdBIfCgtjb25mbGljdF9pZBgBIA'
+        'EoCVIKY29uZmxpY3RJZBIeCgpyZXNvbHV0aW9uGAIgASgJUgpyZXNvbHV0aW9uEioKEW1lcmdl'
+        'ZF92YWx1ZV9qc29uGAMgASgJUg9tZXJnZWRWYWx1ZUpzb24SKwoRZXhwZWN0ZWRfcmV2aXNpb2'
+        '4YBCABKANSEGV4cGVjdGVkUmV2aXNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGAUgASgJUhBj'
+        'bGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use resolveSpatialCanvasConflictResponseDescriptor instead')
+const ResolveSpatialCanvasConflictResponse$json = {
+  '1': 'ResolveSpatialCanvasConflictResponse',
+  '2': [
+    {
+      '1': 'conflict',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasConflict',
+      '10': 'conflict'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveSpatialCanvasConflictResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveSpatialCanvasConflictResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXNvbHZlU3BhdGlhbENhbnZhc0NvbmZsaWN0UmVzcG9uc2USQwoIY29uZmxpY3QYASABKA'
+        'syJy5zdHRhdHR1cy5vbnl4LnYxLlNwYXRpYWxDYW52YXNDb25mbGljdFIIY29uZmxpY3Q=');
+
+@$core.Deprecated('Use createSpatialCanvasSnapshotRequestDescriptor instead')
+const CreateSpatialCanvasSnapshotRequest$json = {
+  '1': 'CreateSpatialCanvasSnapshotRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateSpatialCanvasSnapshotRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpatialCanvasSnapshotRequestDescriptor =
+    $convert.base64Decode(
+        'CiJDcmVhdGVTcGF0aWFsQ2FudmFzU25hcHNob3RSZXF1ZXN0EhsKCWNhbnZhc19pZBgBIAEoCV'
+        'IIY2FudmFzSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIsChJjbGllbnRfbXV0YXRpb25faWQYAyAB'
+        'KAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use createSpatialCanvasSnapshotResponseDescriptor instead')
+const CreateSpatialCanvasSnapshotResponse$json = {
+  '1': 'CreateSpatialCanvasSnapshotResponse',
+  '2': [
+    {
+      '1': 'snapshot',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasSnapshot',
+      '10': 'snapshot'
+    },
+  ],
+};
+
+/// Descriptor for `CreateSpatialCanvasSnapshotResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSpatialCanvasSnapshotResponseDescriptor =
+    $convert.base64Decode(
+        'CiNDcmVhdGVTcGF0aWFsQ2FudmFzU25hcHNob3RSZXNwb25zZRJDCghzbmFwc2hvdBgBIAEoCz'
+        'InLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc1NuYXBzaG90UghzbmFwc2hvdA==');
+
+@$core.Deprecated('Use restoreSpatialCanvasSnapshotRequestDescriptor instead')
+const RestoreSpatialCanvasSnapshotRequest$json = {
+  '1': 'RestoreSpatialCanvasSnapshotRequest',
+  '2': [
+    {'1': 'snapshot_id', '3': 1, '4': 1, '5': 9, '10': 'snapshotId'},
+    {
+      '1': 'expected_revision',
+      '3': 2,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedRevision'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RestoreSpatialCanvasSnapshotRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List restoreSpatialCanvasSnapshotRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXN0b3JlU3BhdGlhbENhbnZhc1NuYXBzaG90UmVxdWVzdBIfCgtzbmFwc2hvdF9pZBgBIA'
+        'EoCVIKc25hcHNob3RJZBIrChFleHBlY3RlZF9yZXZpc2lvbhgCIAEoA1IQZXhwZWN0ZWRSZXZp'
+        'c2lvbhIsChJjbGllbnRfbXV0YXRpb25faWQYAyABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use restoreSpatialCanvasSnapshotResponseDescriptor instead')
+const RestoreSpatialCanvasSnapshotResponse$json = {
+  '1': 'RestoreSpatialCanvasSnapshotResponse',
+  '2': [
+    {
+      '1': 'detail',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasDetail',
+      '10': 'detail'
+    },
+  ],
+};
+
+/// Descriptor for `RestoreSpatialCanvasSnapshotResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List restoreSpatialCanvasSnapshotResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXN0b3JlU3BhdGlhbENhbnZhc1NuYXBzaG90UmVzcG9uc2USPQoGZGV0YWlsGAEgASgLMi'
+        'Uuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzRGV0YWlsUgZkZXRhaWw=');
+
+@$core.Deprecated('Use upsertSpatialCanvasCommentRequestDescriptor instead')
+const UpsertSpatialCanvasCommentRequest$json = {
+  '1': 'UpsertSpatialCanvasCommentRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'comment_id', '3': 2, '4': 1, '5': 9, '10': 'commentId'},
+    {'1': 'entity_type', '3': 3, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 4, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'body', '3': 5, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'expected_version', '3': 6, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertSpatialCanvasCommentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSpatialCanvasCommentRequestDescriptor = $convert.base64Decode(
+    'CiFVcHNlcnRTcGF0aWFsQ2FudmFzQ29tbWVudFJlcXVlc3QSGwoJY2FudmFzX2lkGAEgASgJUg'
+    'hjYW52YXNJZBIdCgpjb21tZW50X2lkGAIgASgJUgljb21tZW50SWQSHwoLZW50aXR5X3R5cGUY'
+    'AyABKAlSCmVudGl0eVR5cGUSGwoJZW50aXR5X2lkGAQgASgJUghlbnRpdHlJZBISCgRib2R5GA'
+    'UgASgJUgRib2R5EikKEGV4cGVjdGVkX3ZlcnNpb24YBiABKANSD2V4cGVjdGVkVmVyc2lvbhIs'
+    'ChJjbGllbnRfbXV0YXRpb25faWQYByABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use upsertSpatialCanvasCommentResponseDescriptor instead')
+const UpsertSpatialCanvasCommentResponse$json = {
+  '1': 'UpsertSpatialCanvasCommentResponse',
+  '2': [
+    {
+      '1': 'comment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasComment',
+      '10': 'comment'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertSpatialCanvasCommentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSpatialCanvasCommentResponseDescriptor =
+    $convert.base64Decode(
+        'CiJVcHNlcnRTcGF0aWFsQ2FudmFzQ29tbWVudFJlc3BvbnNlEkAKB2NvbW1lbnQYASABKAsyJi'
+        '5zdHRhdHR1cy5vbnl4LnYxLlNwYXRpYWxDYW52YXNDb21tZW50Ugdjb21tZW50');
+
+@$core.Deprecated('Use setSpatialCanvasCommentStateRequestDescriptor instead')
+const SetSpatialCanvasCommentStateRequest$json = {
+  '1': 'SetSpatialCanvasCommentStateRequest',
+  '2': [
+    {'1': 'comment_id', '3': 1, '4': 1, '5': 9, '10': 'commentId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'expected_version', '3': 3, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetSpatialCanvasCommentStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSpatialCanvasCommentStateRequestDescriptor =
+    $convert.base64Decode(
+        'CiNTZXRTcGF0aWFsQ2FudmFzQ29tbWVudFN0YXRlUmVxdWVzdBIdCgpjb21tZW50X2lkGAEgAS'
+        'gJUgljb21tZW50SWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXMSKQoQZXhwZWN0ZWRfdmVyc2lv'
+        'bhgDIAEoA1IPZXhwZWN0ZWRWZXJzaW9uEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2'
+        'xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use setSpatialCanvasCommentStateResponseDescriptor instead')
+const SetSpatialCanvasCommentStateResponse$json = {
+  '1': 'SetSpatialCanvasCommentStateResponse',
+  '2': [
+    {
+      '1': 'comment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasComment',
+      '10': 'comment'
+    },
+  ],
+};
+
+/// Descriptor for `SetSpatialCanvasCommentStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSpatialCanvasCommentStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiRTZXRTcGF0aWFsQ2FudmFzQ29tbWVudFN0YXRlUmVzcG9uc2USQAoHY29tbWVudBgBIAEoCz'
+        'ImLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc0NvbW1lbnRSB2NvbW1lbnQ=');
+
+@$core.Deprecated('Use generateSpatialCanvasProposalsRequestDescriptor instead')
+const GenerateSpatialCanvasProposalsRequest$json = {
+  '1': 'GenerateSpatialCanvasProposalsRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'proposal_types', '3': 2, '4': 3, '5': 9, '10': 'proposalTypes'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateSpatialCanvasProposalsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateSpatialCanvasProposalsRequestDescriptor =
+    $convert.base64Decode(
+        'CiVHZW5lcmF0ZVNwYXRpYWxDYW52YXNQcm9wb3NhbHNSZXF1ZXN0EhsKCWNhbnZhc19pZBgBIA'
+        'EoCVIIY2FudmFzSWQSJQoOcHJvcG9zYWxfdHlwZXMYAiADKAlSDXByb3Bvc2FsVHlwZXMSLAoS'
+        'Y2xpZW50X211dGF0aW9uX2lkGAMgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core
+    .Deprecated('Use generateSpatialCanvasProposalsResponseDescriptor instead')
+const GenerateSpatialCanvasProposalsResponse$json = {
+  '1': 'GenerateSpatialCanvasProposalsResponse',
+  '2': [
+    {
+      '1': 'proposals',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasProposal',
+      '10': 'proposals'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateSpatialCanvasProposalsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateSpatialCanvasProposalsResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZW5lcmF0ZVNwYXRpYWxDYW52YXNQcm9wb3NhbHNSZXNwb25zZRJFCglwcm9wb3NhbHMYAS'
+        'ADKAsyJy5zdHRhdHR1cy5vbnl4LnYxLlNwYXRpYWxDYW52YXNQcm9wb3NhbFIJcHJvcG9zYWxz');
+
+@$core.Deprecated('Use setSpatialCanvasProposalStateRequestDescriptor instead')
+const SetSpatialCanvasProposalStateRequest$json = {
+  '1': 'SetSpatialCanvasProposalStateRequest',
+  '2': [
+    {'1': 'proposal_id', '3': 1, '4': 1, '5': 9, '10': 'proposalId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'expected_canvas_revision',
+      '3': 3,
+      '4': 1,
+      '5': 3,
+      '10': 'expectedCanvasRevision'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetSpatialCanvasProposalStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSpatialCanvasProposalStateRequestDescriptor =
+    $convert.base64Decode(
+        'CiRTZXRTcGF0aWFsQ2FudmFzUHJvcG9zYWxTdGF0ZVJlcXVlc3QSHwoLcHJvcG9zYWxfaWQYAS'
+        'ABKAlSCnByb3Bvc2FsSWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXMSOAoYZXhwZWN0ZWRfY2Fu'
+        'dmFzX3JldmlzaW9uGAMgASgDUhZleHBlY3RlZENhbnZhc1JldmlzaW9uEiwKEmNsaWVudF9tdX'
+        'RhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use setSpatialCanvasProposalStateResponseDescriptor instead')
+const SetSpatialCanvasProposalStateResponse$json = {
+  '1': 'SetSpatialCanvasProposalStateResponse',
+  '2': [
+    {
+      '1': 'proposal',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasProposal',
+      '10': 'proposal'
+    },
+    {
+      '1': 'detail',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasDetail',
+      '10': 'detail'
+    },
+  ],
+};
+
+/// Descriptor for `SetSpatialCanvasProposalStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSpatialCanvasProposalStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTZXRTcGF0aWFsQ2FudmFzUHJvcG9zYWxTdGF0ZVJlc3BvbnNlEkMKCHByb3Bvc2FsGAEgAS'
+        'gLMicuc3R0YXR0dXMub255eC52MS5TcGF0aWFsQ2FudmFzUHJvcG9zYWxSCHByb3Bvc2FsEj0K'
+        'BmRldGFpbBgCIAEoCzIlLnN0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc0RldGFpbFIGZG'
+        'V0YWls');
+
+@$core.Deprecated('Use requestSpatialCanvasExportRequestDescriptor instead')
+const RequestSpatialCanvasExportRequest$json = {
+  '1': 'RequestSpatialCanvasExportRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'format', '3': 2, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'layout_revision', '3': 3, '4': 1, '5': 3, '10': 'layoutRevision'},
+    {'1': 'include_comments', '3': 4, '4': 1, '5': 8, '10': 'includeComments'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RequestSpatialCanvasExportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestSpatialCanvasExportRequestDescriptor =
+    $convert.base64Decode(
+        'CiFSZXF1ZXN0U3BhdGlhbENhbnZhc0V4cG9ydFJlcXVlc3QSGwoJY2FudmFzX2lkGAEgASgJUg'
+        'hjYW52YXNJZBIWCgZmb3JtYXQYAiABKAlSBmZvcm1hdBInCg9sYXlvdXRfcmV2aXNpb24YAyAB'
+        'KANSDmxheW91dFJldmlzaW9uEikKEGluY2x1ZGVfY29tbWVudHMYBCABKAhSD2luY2x1ZGVDb2'
+        '1tZW50cxIsChJjbGllbnRfbXV0YXRpb25faWQYBSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use requestSpatialCanvasExportResponseDescriptor instead')
+const RequestSpatialCanvasExportResponse$json = {
+  '1': 'RequestSpatialCanvasExportResponse',
+  '2': [
+    {
+      '1': 'export',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasExport',
+      '10': 'export'
+    },
+  ],
+};
+
+/// Descriptor for `RequestSpatialCanvasExportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestSpatialCanvasExportResponseDescriptor =
+    $convert.base64Decode(
+        'CiJSZXF1ZXN0U3BhdGlhbENhbnZhc0V4cG9ydFJlc3BvbnNlEj0KBmV4cG9ydBgBIAEoCzIlLn'
+        'N0dGF0dHVzLm9ueXgudjEuU3BhdGlhbENhbnZhc0V4cG9ydFIGZXhwb3J0');
+
+@$core.Deprecated('Use getSpatialCanvasExportRequestDescriptor instead')
+const GetSpatialCanvasExportRequest$json = {
+  '1': 'GetSpatialCanvasExportRequest',
+  '2': [
+    {'1': 'export_id', '3': 1, '4': 1, '5': 9, '10': 'exportId'},
+  ],
+};
+
+/// Descriptor for `GetSpatialCanvasExportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasExportRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1HZXRTcGF0aWFsQ2FudmFzRXhwb3J0UmVxdWVzdBIbCglleHBvcnRfaWQYASABKAlSCGV4cG'
+        '9ydElk');
+
+@$core.Deprecated('Use getSpatialCanvasExportResponseDescriptor instead')
+const GetSpatialCanvasExportResponse$json = {
+  '1': 'GetSpatialCanvasExportResponse',
+  '2': [
+    {
+      '1': 'export',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.SpatialCanvasExport',
+      '10': 'export'
+    },
+  ],
+};
+
+/// Descriptor for `GetSpatialCanvasExportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSpatialCanvasExportResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXRTcGF0aWFsQ2FudmFzRXhwb3J0UmVzcG9uc2USPQoGZXhwb3J0GAEgASgLMiUuc3R0YX'
+        'R0dXMub255eC52MS5TcGF0aWFsQ2FudmFzRXhwb3J0UgZleHBvcnQ=');
+
+@$core
+    .Deprecated('Use upsertSpatialCanvasCollaboratorRequestDescriptor instead')
+const UpsertSpatialCanvasCollaboratorRequest$json = {
+  '1': 'UpsertSpatialCanvasCollaboratorRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'user_email', '3': 2, '4': 1, '5': 9, '10': 'userEmail'},
+    {'1': 'role', '3': 3, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'action', '3': 4, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertSpatialCanvasCollaboratorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSpatialCanvasCollaboratorRequestDescriptor =
+    $convert.base64Decode(
+        'CiZVcHNlcnRTcGF0aWFsQ2FudmFzQ29sbGFib3JhdG9yUmVxdWVzdBIbCgljYW52YXNfaWQYAS'
+        'ABKAlSCGNhbnZhc0lkEh0KCnVzZXJfZW1haWwYAiABKAlSCXVzZXJFbWFpbBISCgRyb2xlGAMg'
+        'ASgJUgRyb2xlEhYKBmFjdGlvbhgEIAEoCVIGYWN0aW9uEiwKEmNsaWVudF9tdXRhdGlvbl9pZB'
+        'gFIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core
+    .Deprecated('Use upsertSpatialCanvasCollaboratorResponseDescriptor instead')
+const UpsertSpatialCanvasCollaboratorResponse$json = {
+  '1': 'UpsertSpatialCanvasCollaboratorResponse',
+  '2': [
+    {
+      '1': 'collaborator_user_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'collaboratorUserId'
+    },
+    {'1': 'role', '3': 2, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'workspace_version',
+      '3': 4,
+      '4': 1,
+      '5': 3,
+      '10': 'workspaceVersion'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertSpatialCanvasCollaboratorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertSpatialCanvasCollaboratorResponseDescriptor =
+    $convert.base64Decode(
+        'CidVcHNlcnRTcGF0aWFsQ2FudmFzQ29sbGFib3JhdG9yUmVzcG9uc2USMAoUY29sbGFib3JhdG'
+        '9yX3VzZXJfaWQYASABKAlSEmNvbGxhYm9yYXRvclVzZXJJZBISCgRyb2xlGAIgASgJUgRyb2xl'
+        'EhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEisKEXdvcmtzcGFjZV92ZXJzaW9uGAQgASgDUhB3b3'
+        'Jrc3BhY2VWZXJzaW9u');
+
+@$core.Deprecated('Use reportSpatialCanvasAbuseRequestDescriptor instead')
+const ReportSpatialCanvasAbuseRequest$json = {
+  '1': 'ReportSpatialCanvasAbuseRequest',
+  '2': [
+    {'1': 'canvas_id', '3': 1, '4': 1, '5': 9, '10': 'canvasId'},
+    {'1': 'entity_type', '3': 2, '4': 1, '5': 9, '10': 'entityType'},
+    {'1': 'entity_id', '3': 3, '4': 1, '5': 9, '10': 'entityId'},
+    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'statement', '3': 5, '4': 1, '5': 9, '10': 'statement'},
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ReportSpatialCanvasAbuseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportSpatialCanvasAbuseRequestDescriptor = $convert.base64Decode(
+    'Ch9SZXBvcnRTcGF0aWFsQ2FudmFzQWJ1c2VSZXF1ZXN0EhsKCWNhbnZhc19pZBgBIAEoCVIIY2'
+    'FudmFzSWQSHwoLZW50aXR5X3R5cGUYAiABKAlSCmVudGl0eVR5cGUSGwoJZW50aXR5X2lkGAMg'
+    'ASgJUghlbnRpdHlJZBIaCghjYXRlZ29yeRgEIAEoCVIIY2F0ZWdvcnkSHAoJc3RhdGVtZW50GA'
+    'UgASgJUglzdGF0ZW1lbnQSLAoSY2xpZW50X211dGF0aW9uX2lkGAYgASgJUhBjbGllbnRNdXRh'
+    'dGlvbklk');
+
+@$core.Deprecated('Use reportSpatialCanvasAbuseResponseDescriptor instead')
+const ReportSpatialCanvasAbuseResponse$json = {
+  '1': 'ReportSpatialCanvasAbuseResponse',
+  '2': [
+    {'1': 'case_id', '3': 1, '4': 1, '5': 9, '10': 'caseId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `ReportSpatialCanvasAbuseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportSpatialCanvasAbuseResponseDescriptor =
+    $convert.base64Decode(
+        'CiBSZXBvcnRTcGF0aWFsQ2FudmFzQWJ1c2VSZXNwb25zZRIXCgdjYXNlX2lkGAEgASgJUgZjYX'
+        'NlSWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXMSOQoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2ds'
+        'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');

@@ -4308,6 +4308,351 @@ message SubmitIntegrationOperationsCaseResponse {
   OnyxIntegrationOperationsCase operations_case = 1;
 }
 
+// Choice 15 — a versioned, source-anchored spatial evidence canvas. Manual
+// layout and accepted member-authored relationships are authoritative; model
+// output is always represented separately as a provisional proposal.
+message SpatialCanvasSourceAnchor {
+  string content_id = 1;
+  string document_id = 2;
+  string document_revision_id = 3;
+  string passage_key = 4;
+  string source_checksum = 5;
+  string quoted_text = 6;
+  string rights_status = 7;
+  bool is_stale = 8;
+  string stale_reason = 9;
+}
+
+message SpatialCanvasTemplate {
+  string id = 1;
+  string code = 2;
+  string name = 3;
+  string description = 4;
+  int64 version = 5;
+  string status = 6;
+  repeated string node_kinds = 7;
+  repeated string edge_kinds = 8;
+  string layout_json = 9;
+  bool is_builtin = 10;
+  google.protobuf.Timestamp published_at = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message SpatialCanvasWorkspace {
+  string id = 1;
+  string name = 2;
+  string scope = 3; // private | research_room
+  string research_room_id = 4;
+  string caller_role = 5; // owner | editor | commenter | viewer
+  int64 version = 6;
+  int32 canvas_count = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message SpatialCanvasSummary {
+  string id = 1;
+  string workspace_id = 2;
+  string title = 3;
+  string description = 4;
+  string template_code = 5;
+  int64 template_version = 6;
+  string status = 7;
+  int64 current_revision = 8;
+  int32 node_count = 9;
+  int32 edge_count = 10;
+  int32 unresolved_conflict_count = 11;
+  int32 open_comment_count = 12;
+  string caller_role = 13;
+  google.protobuf.Timestamp updated_at = 14;
+}
+
+message SpatialCanvasNode {
+  string id = 1;
+  string canvas_id = 2;
+  string kind = 3;
+  string title = 4;
+  string body = 5;
+  double x = 6;
+  double y = 7;
+  double width = 8;
+  double height = 9;
+  int32 z_index = 10;
+  string group_id = 11;
+  string color = 12;
+  SpatialCanvasSourceAnchor source_anchor = 13;
+  string author_user_id = 14;
+  int64 version = 15;
+  bool is_deleted = 16;
+  google.protobuf.Timestamp updated_at = 17;
+}
+
+message SpatialCanvasEdge {
+  string id = 1;
+  string canvas_id = 2;
+  string from_node_id = 3;
+  string to_node_id = 4;
+  string relation_type = 5;
+  string label = 6;
+  string explanation = 7;
+  SpatialCanvasSourceAnchor source_anchor = 8;
+  string author_user_id = 9;
+  int64 version = 10;
+  bool is_deleted = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message SpatialCanvasLayoutRevision {
+  string id = 1;
+  string canvas_id = 2;
+  int64 revision_number = 3;
+  int64 base_revision_number = 4;
+  string summary = 5;
+  string created_by = 6;
+  google.protobuf.Timestamp created_at = 7;
+}
+
+message SpatialCanvasConflict {
+  string id = 1;
+  string canvas_id = 2;
+  string entity_type = 3;
+  string entity_id = 4;
+  string field_name = 5;
+  string local_value_json = 6;
+  string remote_value_json = 7;
+  string status = 8;
+  string resolution = 9;
+  int64 detected_revision = 10;
+  google.protobuf.Timestamp detected_at = 11;
+  google.protobuf.Timestamp resolved_at = 12;
+}
+
+message SpatialCanvasSnapshot {
+  string id = 1;
+  string canvas_id = 2;
+  string name = 3;
+  int64 layout_revision = 4;
+  string checksum = 5;
+  string created_by = 6;
+  google.protobuf.Timestamp created_at = 7;
+}
+
+message SpatialCanvasComment {
+  string id = 1;
+  string canvas_id = 2;
+  string entity_type = 3;
+  string entity_id = 4;
+  string body = 5;
+  string status = 6;
+  string author_user_id = 7;
+  int64 version = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp resolved_at = 10;
+}
+
+message SpatialCanvasProposal {
+  string id = 1;
+  string canvas_id = 2;
+  string proposal_type = 3;
+  string title = 4;
+  string rationale = 5;
+  string payload_json = 6;
+  string status = 7;
+  string model_key = 8;
+  string model_version = 9;
+  string prompt_digest = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp decided_at = 12;
+}
+
+message SpatialCanvasExport {
+  string id = 1;
+  string canvas_id = 2;
+  string format = 3;
+  string status = 4;
+  string artifact_url = 5;
+  string checksum = 6;
+  string manifest_json = 7;
+  int64 layout_revision = 8;
+  int32 citation_count = 9;
+  int32 warning_count = 10;
+  google.protobuf.Timestamp expires_at = 11;
+  google.protobuf.Timestamp created_at = 12;
+}
+
+message SpatialCanvasOperation {
+  string operation_id = 1;
+  string replica_id = 2;
+  int64 replica_sequence = 3;
+  int64 base_revision = 4;
+  string operation_type = 5;
+  string entity_type = 6;
+  string entity_id = 7;
+  string payload_json = 8;
+  google.protobuf.Timestamp occurred_at = 9;
+}
+
+message SpatialCanvasDetail {
+  SpatialCanvasSummary canvas = 1;
+  repeated SpatialCanvasNode nodes = 2;
+  repeated SpatialCanvasEdge edges = 3;
+  repeated SpatialCanvasConflict conflicts = 4;
+  repeated SpatialCanvasSnapshot snapshots = 5;
+  repeated SpatialCanvasComment comments = 6;
+  repeated SpatialCanvasProposal proposals = 7;
+  repeated SpatialCanvasLayoutRevision revisions = 8;
+  double viewport_x = 9;
+  double viewport_y = 10;
+  double viewport_zoom = 11;
+}
+
+message GetSpatialCanvasDashboardRequest {}
+message GetSpatialCanvasDashboardResponse {
+  repeated SpatialCanvasWorkspace workspaces = 1;
+  repeated SpatialCanvasSummary canvases = 2;
+  repeated SpatialCanvasTemplate templates = 3;
+  int32 unresolved_conflicts = 4;
+  int32 pending_proposals = 5;
+  int32 open_comments = 6;
+  bool canvas_writes_enabled = 7;
+  bool ai_proposals_enabled = 8;
+  bool exports_enabled = 9;
+}
+
+message ListSpatialCanvasTemplatesRequest { bool include_retired = 1; }
+message ListSpatialCanvasTemplatesResponse { repeated SpatialCanvasTemplate templates = 1; }
+
+message CreateSpatialCanvasRequest {
+  string workspace_id = 1;
+  string workspace_name = 2;
+  string scope = 3;
+  string research_room_id = 4;
+  string title = 5;
+  string description = 6;
+  string template_code = 7;
+  int64 template_version = 8;
+  string client_mutation_id = 9;
+}
+message CreateSpatialCanvasResponse { SpatialCanvasDetail detail = 1; }
+
+message GetSpatialCanvasRequest {
+  string canvas_id = 1;
+  int64 since_revision = 2;
+  bool include_deleted = 3;
+}
+message GetSpatialCanvasResponse { SpatialCanvasDetail detail = 1; }
+
+message ApplySpatialCanvasOperationsRequest {
+  string canvas_id = 1;
+  repeated SpatialCanvasOperation operations = 2;
+  string client_mutation_id = 3;
+}
+message ApplySpatialCanvasOperationsResponse {
+  SpatialCanvasDetail detail = 1;
+  repeated string applied_operation_ids = 2;
+  repeated string duplicate_operation_ids = 3;
+  repeated SpatialCanvasConflict conflicts = 4;
+}
+
+message ResolveSpatialCanvasConflictRequest {
+  string conflict_id = 1;
+  string resolution = 2; // keep_local | keep_remote | merge | dismiss
+  string merged_value_json = 3;
+  int64 expected_revision = 4;
+  string client_mutation_id = 5;
+}
+message ResolveSpatialCanvasConflictResponse { SpatialCanvasConflict conflict = 1; }
+
+message CreateSpatialCanvasSnapshotRequest {
+  string canvas_id = 1;
+  string name = 2;
+  string client_mutation_id = 3;
+}
+message CreateSpatialCanvasSnapshotResponse { SpatialCanvasSnapshot snapshot = 1; }
+
+message RestoreSpatialCanvasSnapshotRequest {
+  string snapshot_id = 1;
+  int64 expected_revision = 2;
+  string client_mutation_id = 3;
+}
+message RestoreSpatialCanvasSnapshotResponse { SpatialCanvasDetail detail = 1; }
+
+message UpsertSpatialCanvasCommentRequest {
+  string canvas_id = 1;
+  string comment_id = 2;
+  string entity_type = 3;
+  string entity_id = 4;
+  string body = 5;
+  int64 expected_version = 6;
+  string client_mutation_id = 7;
+}
+message UpsertSpatialCanvasCommentResponse { SpatialCanvasComment comment = 1; }
+
+message SetSpatialCanvasCommentStateRequest {
+  string comment_id = 1;
+  string status = 2;
+  int64 expected_version = 3;
+  string client_mutation_id = 4;
+}
+message SetSpatialCanvasCommentStateResponse { SpatialCanvasComment comment = 1; }
+
+message GenerateSpatialCanvasProposalsRequest {
+  string canvas_id = 1;
+  repeated string proposal_types = 2;
+  string client_mutation_id = 3;
+}
+message GenerateSpatialCanvasProposalsResponse { repeated SpatialCanvasProposal proposals = 1; }
+
+message SetSpatialCanvasProposalStateRequest {
+  string proposal_id = 1;
+  string status = 2; // accepted | rejected
+  int64 expected_canvas_revision = 3;
+  string client_mutation_id = 4;
+}
+message SetSpatialCanvasProposalStateResponse {
+  SpatialCanvasProposal proposal = 1;
+  SpatialCanvasDetail detail = 2;
+}
+
+message RequestSpatialCanvasExportRequest {
+  string canvas_id = 1;
+  string format = 2; // svg | pdf | png | manifest
+  int64 layout_revision = 3;
+  bool include_comments = 4;
+  string client_mutation_id = 5;
+}
+message RequestSpatialCanvasExportResponse { SpatialCanvasExport export = 1; }
+
+message GetSpatialCanvasExportRequest { string export_id = 1; }
+message GetSpatialCanvasExportResponse { SpatialCanvasExport export = 1; }
+
+message UpsertSpatialCanvasCollaboratorRequest {
+  string canvas_id = 1;
+  string user_email = 2;
+  string role = 3;
+  string action = 4; // invite | change_role | revoke
+  string client_mutation_id = 5;
+}
+message UpsertSpatialCanvasCollaboratorResponse {
+  string collaborator_user_id = 1;
+  string role = 2;
+  string status = 3;
+  int64 workspace_version = 4;
+}
+
+message ReportSpatialCanvasAbuseRequest {
+  string canvas_id = 1;
+  string entity_type = 2;
+  string entity_id = 3;
+  string category = 4;
+  string statement = 5;
+  string client_mutation_id = 6;
+}
+message ReportSpatialCanvasAbuseResponse {
+  string case_id = 1;
+  string status = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -4583,4 +4928,23 @@ service OnyxService {
   rpc ResolveIntegrationConflict(ResolveIntegrationConflictRequest) returns (ResolveIntegrationConflictResponse);
   rpc DispatchIntegrationBridge(DispatchIntegrationBridgeRequest) returns (DispatchIntegrationBridgeResponse);
   rpc SubmitIntegrationOperationsCase(SubmitIntegrationOperationsCaseRequest) returns (SubmitIntegrationOperationsCaseResponse);
+
+  // Choice 15 — source-anchored spatial evidence canvases. Operation batches
+  // are idempotent per replica and surface concurrent conflicts explicitly.
+  rpc GetSpatialCanvasDashboard(GetSpatialCanvasDashboardRequest) returns (GetSpatialCanvasDashboardResponse);
+  rpc ListSpatialCanvasTemplates(ListSpatialCanvasTemplatesRequest) returns (ListSpatialCanvasTemplatesResponse);
+  rpc CreateSpatialCanvas(CreateSpatialCanvasRequest) returns (CreateSpatialCanvasResponse);
+  rpc GetSpatialCanvas(GetSpatialCanvasRequest) returns (GetSpatialCanvasResponse);
+  rpc ApplySpatialCanvasOperations(ApplySpatialCanvasOperationsRequest) returns (ApplySpatialCanvasOperationsResponse);
+  rpc ResolveSpatialCanvasConflict(ResolveSpatialCanvasConflictRequest) returns (ResolveSpatialCanvasConflictResponse);
+  rpc CreateSpatialCanvasSnapshot(CreateSpatialCanvasSnapshotRequest) returns (CreateSpatialCanvasSnapshotResponse);
+  rpc RestoreSpatialCanvasSnapshot(RestoreSpatialCanvasSnapshotRequest) returns (RestoreSpatialCanvasSnapshotResponse);
+  rpc UpsertSpatialCanvasComment(UpsertSpatialCanvasCommentRequest) returns (UpsertSpatialCanvasCommentResponse);
+  rpc SetSpatialCanvasCommentState(SetSpatialCanvasCommentStateRequest) returns (SetSpatialCanvasCommentStateResponse);
+  rpc GenerateSpatialCanvasProposals(GenerateSpatialCanvasProposalsRequest) returns (GenerateSpatialCanvasProposalsResponse);
+  rpc SetSpatialCanvasProposalState(SetSpatialCanvasProposalStateRequest) returns (SetSpatialCanvasProposalStateResponse);
+  rpc RequestSpatialCanvasExport(RequestSpatialCanvasExportRequest) returns (RequestSpatialCanvasExportResponse);
+  rpc GetSpatialCanvasExport(GetSpatialCanvasExportRequest) returns (GetSpatialCanvasExportResponse);
+  rpc UpsertSpatialCanvasCollaborator(UpsertSpatialCanvasCollaboratorRequest) returns (UpsertSpatialCanvasCollaboratorResponse);
+  rpc ReportSpatialCanvasAbuse(ReportSpatialCanvasAbuseRequest) returns (ReportSpatialCanvasAbuseResponse);
 }
