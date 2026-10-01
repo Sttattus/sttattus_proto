@@ -18673,3 +18673,1297 @@ final $typed_data.Uint8List reportSpatialCanvasAbuseResponseDescriptor =
         'CiBSZXBvcnRTcGF0aWFsQ2FudmFzQWJ1c2VSZXNwb25zZRIXCgdjYXNlX2lkGAEgASgJUgZjYX'
         'NlSWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXMSOQoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2ds'
         'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use recallSourceAnchorDescriptor instead')
+const RecallSourceAnchor$json = {
+  '1': 'RecallSourceAnchor',
+  '2': [
+    {'1': 'source_type', '3': 1, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'source_id', '3': 2, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'content_id', '3': 3, '4': 1, '5': 9, '10': 'contentId'},
+    {
+      '1': 'document_revision_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'documentRevisionId'
+    },
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'source_checksum', '3': 6, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'quoted_text', '3': 7, '4': 1, '5': 9, '10': 'quotedText'},
+    {'1': 'rights_status', '3': 8, '4': 1, '5': 9, '10': 'rightsStatus'},
+    {'1': 'is_stale', '3': 9, '4': 1, '5': 8, '10': 'isStale'},
+    {'1': 'is_withdrawn', '3': 10, '4': 1, '5': 8, '10': 'isWithdrawn'},
+    {'1': 'stale_reason', '3': 11, '4': 1, '5': 9, '10': 'staleReason'},
+    {
+      '1': 'correction_summary',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'correctionSummary'
+    },
+    {'1': 'replacement_text', '3': 13, '4': 1, '5': 9, '10': 'replacementText'},
+  ],
+};
+
+/// Descriptor for `RecallSourceAnchor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallSourceAnchorDescriptor = $convert.base64Decode(
+    'ChJSZWNhbGxTb3VyY2VBbmNob3ISHwoLc291cmNlX3R5cGUYASABKAlSCnNvdXJjZVR5cGUSGw'
+    'oJc291cmNlX2lkGAIgASgJUghzb3VyY2VJZBIdCgpjb250ZW50X2lkGAMgASgJUgljb250ZW50'
+    'SWQSMAoUZG9jdW1lbnRfcmV2aXNpb25faWQYBCABKAlSEmRvY3VtZW50UmV2aXNpb25JZBIfCg'
+    'twYXNzYWdlX2tleRgFIAEoCVIKcGFzc2FnZUtleRInCg9zb3VyY2VfY2hlY2tzdW0YBiABKAlS'
+    'DnNvdXJjZUNoZWNrc3VtEh8KC3F1b3RlZF90ZXh0GAcgASgJUgpxdW90ZWRUZXh0EiMKDXJpZ2'
+    'h0c19zdGF0dXMYCCABKAlSDHJpZ2h0c1N0YXR1cxIZCghpc19zdGFsZRgJIAEoCFIHaXNTdGFs'
+    'ZRIhCgxpc193aXRoZHJhd24YCiABKAhSC2lzV2l0aGRyYXduEiEKDHN0YWxlX3JlYXNvbhgLIA'
+    'EoCVILc3RhbGVSZWFzb24SLQoSY29ycmVjdGlvbl9zdW1tYXJ5GAwgASgJUhFjb3JyZWN0aW9u'
+    'U3VtbWFyeRIpChByZXBsYWNlbWVudF90ZXh0GA0gASgJUg9yZXBsYWNlbWVudFRleHQ=');
+
+@$core.Deprecated('Use recallDeckDescriptor instead')
+const RecallDeck$json = {
+  '1': 'RecallDeck',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'scope', '3': 4, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'caller_role', '3': 6, '4': 1, '5': 9, '10': 'callerRole'},
+    {'1': 'project_key', '3': 7, '4': 1, '5': 9, '10': 'projectKey'},
+    {'1': 'item_count', '3': 8, '4': 1, '5': 5, '10': 'itemCount'},
+    {'1': 'due_count', '3': 9, '4': 1, '5': 5, '10': 'dueCount'},
+    {'1': 'stale_count', '3': 10, '4': 1, '5': 5, '10': 'staleCount'},
+    {'1': 'version', '3': 11, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `RecallDeck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallDeckDescriptor = $convert.base64Decode(
+    'CgpSZWNhbGxEZWNrEg4KAmlkGAEgASgJUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSIAoLZG'
+    'VzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhQKBXNjb3BlGAQgASgJUgVzY29wZRIWCgZz'
+    'dGF0dXMYBSABKAlSBnN0YXR1cxIfCgtjYWxsZXJfcm9sZRgGIAEoCVIKY2FsbGVyUm9sZRIfCg'
+    'twcm9qZWN0X2tleRgHIAEoCVIKcHJvamVjdEtleRIdCgppdGVtX2NvdW50GAggASgFUglpdGVt'
+    'Q291bnQSGwoJZHVlX2NvdW50GAkgASgFUghkdWVDb3VudBIfCgtzdGFsZV9jb3VudBgKIAEoBV'
+    'IKc3RhbGVDb3VudBIYCgd2ZXJzaW9uGAsgASgDUgd2ZXJzaW9uEjkKCmNyZWF0ZWRfYXQYDCAB'
+    'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdB'
+    'gNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use recallPromptVariantDescriptor instead')
+const RecallPromptVariant$json = {
+  '1': 'RecallPromptVariant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'item_id', '3': 2, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'prompt', '3': 4, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'answer', '3': 5, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'explanation', '3': 6, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'choices', '3': 7, '4': 3, '5': 9, '10': 'choices'},
+    {'1': 'sequence', '3': 8, '4': 1, '5': 5, '10': 'sequence'},
+    {'1': 'is_generated', '3': 9, '4': 1, '5': 8, '10': 'isGenerated'},
+    {
+      '1': 'generator_version',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'generatorVersion'
+    },
+    {
+      '1': 'evaluator_version',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'evaluatorVersion'
+    },
+    {'1': 'grounding_status', '3': 12, '4': 1, '5': 9, '10': 'groundingStatus'},
+    {'1': 'version', '3': 13, '4': 1, '5': 3, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `RecallPromptVariant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallPromptVariantDescriptor = $convert.base64Decode(
+    'ChNSZWNhbGxQcm9tcHRWYXJpYW50Eg4KAmlkGAEgASgJUgJpZBIXCgdpdGVtX2lkGAIgASgJUg'
+    'ZpdGVtSWQSEgoEa2luZBgDIAEoCVIEa2luZBIWCgZwcm9tcHQYBCABKAlSBnByb21wdBIWCgZh'
+    'bnN3ZXIYBSABKAlSBmFuc3dlchIgCgtleHBsYW5hdGlvbhgGIAEoCVILZXhwbGFuYXRpb24SGA'
+    'oHY2hvaWNlcxgHIAMoCVIHY2hvaWNlcxIaCghzZXF1ZW5jZRgIIAEoBVIIc2VxdWVuY2USIQoM'
+    'aXNfZ2VuZXJhdGVkGAkgASgIUgtpc0dlbmVyYXRlZBIrChFnZW5lcmF0b3JfdmVyc2lvbhgKIA'
+    'EoCVIQZ2VuZXJhdG9yVmVyc2lvbhIrChFldmFsdWF0b3JfdmVyc2lvbhgLIAEoCVIQZXZhbHVh'
+    'dG9yVmVyc2lvbhIpChBncm91bmRpbmdfc3RhdHVzGAwgASgJUg9ncm91bmRpbmdTdGF0dXMSGA'
+    'oHdmVyc2lvbhgNIAEoA1IHdmVyc2lvbg==');
+
+@$core.Deprecated('Use recallScheduleDescriptor instead')
+const RecallSchedule$json = {
+  '1': 'RecallSchedule',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'policy_version', '3': 2, '4': 1, '5': 9, '10': 'policyVersion'},
+    {'1': 'state', '3': 3, '4': 1, '5': 9, '10': 'state'},
+    {
+      '1': 'due_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'dueAt'
+    },
+    {'1': 'interval_days', '3': 5, '4': 1, '5': 1, '10': 'intervalDays'},
+    {'1': 'stability', '3': 6, '4': 1, '5': 1, '10': 'stability'},
+    {'1': 'difficulty', '3': 7, '4': 1, '5': 1, '10': 'difficulty'},
+    {'1': 'interference', '3': 8, '4': 1, '5': 1, '10': 'interference'},
+    {'1': 'review_count', '3': 9, '4': 1, '5': 5, '10': 'reviewCount'},
+    {'1': 'lapse_count', '3': 10, '4': 1, '5': 5, '10': 'lapseCount'},
+    {'1': 'last_confidence', '3': 11, '4': 1, '5': 1, '10': 'lastConfidence'},
+    {'1': 'last_latency_ms', '3': 12, '4': 1, '5': 3, '10': 'lastLatencyMs'},
+    {
+      '1': 'last_reviewed_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastReviewedAt'
+    },
+    {'1': 'revision', '3': 14, '4': 1, '5': 3, '10': 'revision'},
+  ],
+};
+
+/// Descriptor for `RecallSchedule`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallScheduleDescriptor = $convert.base64Decode(
+    'Cg5SZWNhbGxTY2hlZHVsZRIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQSJQoOcG9saWN5X3Zlcn'
+    'Npb24YAiABKAlSDXBvbGljeVZlcnNpb24SFAoFc3RhdGUYAyABKAlSBXN0YXRlEjEKBmR1ZV9h'
+    'dBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBWR1ZUF0EiMKDWludGVydmFsX2'
+    'RheXMYBSABKAFSDGludGVydmFsRGF5cxIcCglzdGFiaWxpdHkYBiABKAFSCXN0YWJpbGl0eRIe'
+    'CgpkaWZmaWN1bHR5GAcgASgBUgpkaWZmaWN1bHR5EiIKDGludGVyZmVyZW5jZRgIIAEoAVIMaW'
+    '50ZXJmZXJlbmNlEiEKDHJldmlld19jb3VudBgJIAEoBVILcmV2aWV3Q291bnQSHwoLbGFwc2Vf'
+    'Y291bnQYCiABKAVSCmxhcHNlQ291bnQSJwoPbGFzdF9jb25maWRlbmNlGAsgASgBUg5sYXN0Q2'
+    '9uZmlkZW5jZRImCg9sYXN0X2xhdGVuY3lfbXMYDCABKANSDWxhc3RMYXRlbmN5TXMSRAoQbGFz'
+    'dF9yZXZpZXdlZF9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDmxhc3RSZX'
+    'ZpZXdlZEF0EhoKCHJldmlzaW9uGA4gASgDUghyZXZpc2lvbg==');
+
+@$core.Deprecated('Use memoryItemDescriptor instead')
+const MemoryItem$json = {
+  '1': 'MemoryItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'deck_id', '3': 2, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'owner_user_id', '3': 3, '4': 1, '5': 9, '10': 'ownerUserId'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'item_type', '3': 5, '4': 1, '5': 9, '10': 'itemType'},
+    {'1': 'prompt', '3': 6, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'answer', '3': 7, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'member_note', '3': 8, '4': 1, '5': 9, '10': 'memberNote'},
+    {'1': 'status', '3': 9, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'provenance', '3': 10, '4': 1, '5': 9, '10': 'provenance'},
+    {'1': 'importance', '3': 11, '4': 1, '5': 5, '10': 'importance'},
+    {'1': 'frequency_days', '3': 12, '4': 1, '5': 5, '10': 'frequencyDays'},
+    {
+      '1': 'member_edited_prompt',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'memberEditedPrompt'
+    },
+    {
+      '1': 'member_edited_answer',
+      '3': 14,
+      '4': 1,
+      '5': 8,
+      '10': 'memberEditedAnswer'
+    },
+    {
+      '1': 'member_edited_note',
+      '3': 15,
+      '4': 1,
+      '5': 8,
+      '10': 'memberEditedNote'
+    },
+    {
+      '1': 'source_anchor',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallSourceAnchor',
+      '10': 'sourceAnchor'
+    },
+    {
+      '1': 'prompt_variants',
+      '3': 17,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallPromptVariant',
+      '10': 'promptVariants'
+    },
+    {
+      '1': 'schedule',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallSchedule',
+      '10': 'schedule'
+    },
+    {'1': 'version', '3': 19, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `MemoryItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List memoryItemDescriptor = $convert.base64Decode(
+    'CgpNZW1vcnlJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgdkZWNrX2lkGAIgASgJUgZkZWNrSWQSIg'
+    'oNb3duZXJfdXNlcl9pZBgDIAEoCVILb3duZXJVc2VySWQSFAoFdGl0bGUYBCABKAlSBXRpdGxl'
+    'EhsKCWl0ZW1fdHlwZRgFIAEoCVIIaXRlbVR5cGUSFgoGcHJvbXB0GAYgASgJUgZwcm9tcHQSFg'
+    'oGYW5zd2VyGAcgASgJUgZhbnN3ZXISHwoLbWVtYmVyX25vdGUYCCABKAlSCm1lbWJlck5vdGUS'
+    'FgoGc3RhdHVzGAkgASgJUgZzdGF0dXMSHgoKcHJvdmVuYW5jZRgKIAEoCVIKcHJvdmVuYW5jZR'
+    'IeCgppbXBvcnRhbmNlGAsgASgFUgppbXBvcnRhbmNlEiUKDmZyZXF1ZW5jeV9kYXlzGAwgASgF'
+    'Ug1mcmVxdWVuY3lEYXlzEjAKFG1lbWJlcl9lZGl0ZWRfcHJvbXB0GA0gASgIUhJtZW1iZXJFZG'
+    'l0ZWRQcm9tcHQSMAoUbWVtYmVyX2VkaXRlZF9hbnN3ZXIYDiABKAhSEm1lbWJlckVkaXRlZEFu'
+    'c3dlchIsChJtZW1iZXJfZWRpdGVkX25vdGUYDyABKAhSEG1lbWJlckVkaXRlZE5vdGUSSQoNc2'
+    '91cmNlX2FuY2hvchgQIAEoCzIkLnN0dGF0dHVzLm9ueXgudjEuUmVjYWxsU291cmNlQW5jaG9y'
+    'Ugxzb3VyY2VBbmNob3ISTgoPcHJvbXB0X3ZhcmlhbnRzGBEgAygLMiUuc3R0YXR0dXMub255eC'
+    '52MS5SZWNhbGxQcm9tcHRWYXJpYW50Ug5wcm9tcHRWYXJpYW50cxI8CghzY2hlZHVsZRgSIAEo'
+    'CzIgLnN0dGF0dHVzLm9ueXgudjEuUmVjYWxsU2NoZWR1bGVSCHNjaGVkdWxlEhgKB3ZlcnNpb2'
+    '4YEyABKANSB3ZlcnNpb24SOQoKY3JlYXRlZF9hdBgUIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U'
+    'aW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GBUgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+
+@$core.Deprecated('Use recallReviewEventDescriptor instead')
+const RecallReviewEvent$json = {
+  '1': 'RecallReviewEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'client_event_id', '3': 2, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'item_id', '3': 3, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'prompt_variant_id', '3': 4, '4': 1, '5': 9, '10': 'promptVariantId'},
+    {'1': 'session_id', '3': 5, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'result', '3': 6, '4': 1, '5': 9, '10': 'result'},
+    {'1': 'confidence', '3': 7, '4': 1, '5': 5, '10': 'confidence'},
+    {'1': 'latency_ms', '3': 8, '4': 1, '5': 3, '10': 'latencyMs'},
+    {'1': 'answer_text', '3': 9, '4': 1, '5': 9, '10': 'answerText'},
+    {'1': 'reviewed_offline', '3': 10, '4': 1, '5': 8, '10': 'reviewedOffline'},
+    {'1': 'policy_version', '3': 11, '4': 1, '5': 9, '10': 'policyVersion'},
+    {
+      '1': 'reviewed_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'reviewedAt'
+    },
+    {
+      '1': 'received_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'receivedAt'
+    },
+  ],
+};
+
+/// Descriptor for `RecallReviewEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallReviewEventDescriptor = $convert.base64Decode(
+    'ChFSZWNhbGxSZXZpZXdFdmVudBIOCgJpZBgBIAEoCVICaWQSJgoPY2xpZW50X2V2ZW50X2lkGA'
+    'IgASgJUg1jbGllbnRFdmVudElkEhcKB2l0ZW1faWQYAyABKAlSBml0ZW1JZBIqChFwcm9tcHRf'
+    'dmFyaWFudF9pZBgEIAEoCVIPcHJvbXB0VmFyaWFudElkEh0KCnNlc3Npb25faWQYBSABKAlSCX'
+    'Nlc3Npb25JZBIWCgZyZXN1bHQYBiABKAlSBnJlc3VsdBIeCgpjb25maWRlbmNlGAcgASgFUgpj'
+    'b25maWRlbmNlEh0KCmxhdGVuY3lfbXMYCCABKANSCWxhdGVuY3lNcxIfCgthbnN3ZXJfdGV4dB'
+    'gJIAEoCVIKYW5zd2VyVGV4dBIpChByZXZpZXdlZF9vZmZsaW5lGAogASgIUg9yZXZpZXdlZE9m'
+    'ZmxpbmUSJQoOcG9saWN5X3ZlcnNpb24YCyABKAlSDXBvbGljeVZlcnNpb24SOwoLcmV2aWV3ZW'
+    'RfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpyZXZpZXdlZEF0EjsKC3Jl'
+    'Y2VpdmVkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVjZWl2ZWRBdA'
+    '==');
+
+@$core.Deprecated('Use recallSourceInvalidationDescriptor instead')
+const RecallSourceInvalidation$json = {
+  '1': 'RecallSourceInvalidation',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'item_id', '3': 2, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'correction_id', '3': 3, '4': 1, '5': 9, '10': 'correctionId'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'reason', '3': 5, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'old_anchor_json', '3': 6, '4': 1, '5': 9, '10': 'oldAnchorJson'},
+    {'1': 'correction_diff', '3': 7, '4': 1, '5': 9, '10': 'correctionDiff'},
+    {'1': 'resolution', '3': 8, '4': 1, '5': 9, '10': 'resolution'},
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+  ],
+};
+
+/// Descriptor for `RecallSourceInvalidation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallSourceInvalidationDescriptor = $convert.base64Decode(
+    'ChhSZWNhbGxTb3VyY2VJbnZhbGlkYXRpb24SDgoCaWQYASABKAlSAmlkEhcKB2l0ZW1faWQYAi'
+    'ABKAlSBml0ZW1JZBIjCg1jb3JyZWN0aW9uX2lkGAMgASgJUgxjb3JyZWN0aW9uSWQSFgoGc3Rh'
+    'dHVzGAQgASgJUgZzdGF0dXMSFgoGcmVhc29uGAUgASgJUgZyZWFzb24SJgoPb2xkX2FuY2hvcl'
+    '9qc29uGAYgASgJUg1vbGRBbmNob3JKc29uEicKD2NvcnJlY3Rpb25fZGlmZhgHIAEoCVIOY29y'
+    'cmVjdGlvbkRpZmYSHgoKcmVzb2x1dGlvbhgIIAEoCVIKcmVzb2x1dGlvbhI5CgpjcmVhdGVkX2'
+    'F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjsKC3Jlc29s'
+    'dmVkX2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVzb2x2ZWRBdA==');
+
+@$core.Deprecated('Use recallRetentionMeasureDescriptor instead')
+const RecallRetentionMeasure$json = {
+  '1': 'RecallRetentionMeasure',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'item_id', '3': 2, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'measure_type', '3': 3, '4': 1, '5': 9, '10': 'measureType'},
+    {'1': 'score', '3': 4, '4': 1, '5': 1, '10': 'score'},
+    {'1': 'delay_days', '3': 5, '4': 1, '5': 5, '10': 'delayDays'},
+    {
+      '1': 'linked_object_type',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'linkedObjectType'
+    },
+    {'1': 'linked_object_id', '3': 7, '4': 1, '5': 9, '10': 'linkedObjectId'},
+    {'1': 'evidence', '3': 8, '4': 1, '5': 9, '10': 'evidence'},
+    {
+      '1': 'measured_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'measuredAt'
+    },
+  ],
+};
+
+/// Descriptor for `RecallRetentionMeasure`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallRetentionMeasureDescriptor = $convert.base64Decode(
+    'ChZSZWNhbGxSZXRlbnRpb25NZWFzdXJlEg4KAmlkGAEgASgJUgJpZBIXCgdpdGVtX2lkGAIgAS'
+    'gJUgZpdGVtSWQSIQoMbWVhc3VyZV90eXBlGAMgASgJUgttZWFzdXJlVHlwZRIUCgVzY29yZRgE'
+    'IAEoAVIFc2NvcmUSHQoKZGVsYXlfZGF5cxgFIAEoBVIJZGVsYXlEYXlzEiwKEmxpbmtlZF9vYm'
+    'plY3RfdHlwZRgGIAEoCVIQbGlua2VkT2JqZWN0VHlwZRIoChBsaW5rZWRfb2JqZWN0X2lkGAcg'
+    'ASgJUg5saW5rZWRPYmplY3RJZBIaCghldmlkZW5jZRgIIAEoCVIIZXZpZGVuY2USOwoLbWVhc3'
+    'VyZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgptZWFzdXJlZEF0');
+
+@$core.Deprecated('Use recallPreferencesDescriptor instead')
+const RecallPreferences$json = {
+  '1': 'RecallPreferences',
+  '2': [
+    {'1': 'daily_minutes', '3': 1, '4': 1, '5': 5, '10': 'dailyMinutes'},
+    {
+      '1': 'default_frequency_days',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'defaultFrequencyDays'
+    },
+    {'1': 'vacation_mode', '3': 3, '4': 1, '5': 8, '10': 'vacationMode'},
+    {
+      '1': 'vacation_until',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'vacationUntil'
+    },
+    {
+      '1': 'reminders_enabled',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'remindersEnabled'
+    },
+    {'1': 'locale', '3': 6, '4': 1, '5': 9, '10': 'locale'},
+    {'1': 'feedback_style', '3': 7, '4': 1, '5': 9, '10': 'feedbackStyle'},
+  ],
+};
+
+/// Descriptor for `RecallPreferences`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recallPreferencesDescriptor = $convert.base64Decode(
+    'ChFSZWNhbGxQcmVmZXJlbmNlcxIjCg1kYWlseV9taW51dGVzGAEgASgFUgxkYWlseU1pbnV0ZX'
+    'MSNAoWZGVmYXVsdF9mcmVxdWVuY3lfZGF5cxgCIAEoBVIUZGVmYXVsdEZyZXF1ZW5jeURheXMS'
+    'IwoNdmFjYXRpb25fbW9kZRgDIAEoCFIMdmFjYXRpb25Nb2RlEkEKDnZhY2F0aW9uX3VudGlsGA'
+    'QgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFINdmFjYXRpb25VbnRpbBIrChFyZW1p'
+    'bmRlcnNfZW5hYmxlZBgFIAEoCFIQcmVtaW5kZXJzRW5hYmxlZBIWCgZsb2NhbGUYBiABKAlSBm'
+    'xvY2FsZRIlCg5mZWVkYmFja19zdHlsZRgHIAEoCVINZmVlZGJhY2tTdHlsZQ==');
+
+@$core.Deprecated('Use getRecallDashboardRequestDescriptor instead')
+const GetRecallDashboardRequest$json = {
+  '1': 'GetRecallDashboardRequest',
+};
+
+/// Descriptor for `GetRecallDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecallDashboardRequestDescriptor =
+    $convert.base64Decode('ChlHZXRSZWNhbGxEYXNoYm9hcmRSZXF1ZXN0');
+
+@$core.Deprecated('Use getRecallDashboardResponseDescriptor instead')
+const GetRecallDashboardResponse$json = {
+  '1': 'GetRecallDashboardResponse',
+  '2': [
+    {
+      '1': 'decks',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallDeck',
+      '10': 'decks'
+    },
+    {
+      '1': 'due_items',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'dueItems'
+    },
+    {
+      '1': 'invalidations',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallSourceInvalidation',
+      '10': 'invalidations'
+    },
+    {
+      '1': 'retention',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallRetentionMeasure',
+      '10': 'retention'
+    },
+    {
+      '1': 'preferences',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallPreferences',
+      '10': 'preferences'
+    },
+    {'1': 'runtime_status', '3': 6, '4': 1, '5': 9, '10': 'runtimeStatus'},
+    {'1': 'public_notice', '3': 7, '4': 1, '5': 9, '10': 'publicNotice'},
+    {
+      '1': 'scheduler_version',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'schedulerVersion'
+    },
+    {'1': 'due_count', '3': 9, '4': 1, '5': 5, '10': 'dueCount'},
+    {'1': 'new_count', '3': 10, '4': 1, '5': 5, '10': 'newCount'},
+    {'1': 'stale_count', '3': 11, '4': 1, '5': 5, '10': 'staleCount'},
+    {
+      '1': 'delayed_recall_count',
+      '3': 12,
+      '4': 1,
+      '5': 5,
+      '10': 'delayedRecallCount'
+    },
+  ],
+};
+
+/// Descriptor for `GetRecallDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecallDashboardResponseDescriptor = $convert.base64Decode(
+    'ChpHZXRSZWNhbGxEYXNoYm9hcmRSZXNwb25zZRIyCgVkZWNrcxgBIAMoCzIcLnN0dGF0dHVzLm'
+    '9ueXgudjEuUmVjYWxsRGVja1IFZGVja3MSOQoJZHVlX2l0ZW1zGAIgAygLMhwuc3R0YXR0dXMu'
+    'b255eC52MS5NZW1vcnlJdGVtUghkdWVJdGVtcxJQCg1pbnZhbGlkYXRpb25zGAMgAygLMiouc3'
+    'R0YXR0dXMub255eC52MS5SZWNhbGxTb3VyY2VJbnZhbGlkYXRpb25SDWludmFsaWRhdGlvbnMS'
+    'RgoJcmV0ZW50aW9uGAQgAygLMiguc3R0YXR0dXMub255eC52MS5SZWNhbGxSZXRlbnRpb25NZW'
+    'FzdXJlUglyZXRlbnRpb24SRQoLcHJlZmVyZW5jZXMYBSABKAsyIy5zdHRhdHR1cy5vbnl4LnYx'
+    'LlJlY2FsbFByZWZlcmVuY2VzUgtwcmVmZXJlbmNlcxIlCg5ydW50aW1lX3N0YXR1cxgGIAEoCV'
+    'INcnVudGltZVN0YXR1cxIjCg1wdWJsaWNfbm90aWNlGAcgASgJUgxwdWJsaWNOb3RpY2USKwoR'
+    'c2NoZWR1bGVyX3ZlcnNpb24YCCABKAlSEHNjaGVkdWxlclZlcnNpb24SGwoJZHVlX2NvdW50GA'
+    'kgASgFUghkdWVDb3VudBIbCgluZXdfY291bnQYCiABKAVSCG5ld0NvdW50Eh8KC3N0YWxlX2Nv'
+    'dW50GAsgASgFUgpzdGFsZUNvdW50EjAKFGRlbGF5ZWRfcmVjYWxsX2NvdW50GAwgASgFUhJkZW'
+    'xheWVkUmVjYWxsQ291bnQ=');
+
+@$core.Deprecated('Use listRecallDecksRequestDescriptor instead')
+const ListRecallDecksRequest$json = {
+  '1': 'ListRecallDecksRequest',
+  '2': [
+    {'1': 'include_archived', '3': 1, '4': 1, '5': 8, '10': 'includeArchived'},
+  ],
+};
+
+/// Descriptor for `ListRecallDecksRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRecallDecksRequestDescriptor =
+    $convert.base64Decode(
+        'ChZMaXN0UmVjYWxsRGVja3NSZXF1ZXN0EikKEGluY2x1ZGVfYXJjaGl2ZWQYASABKAhSD2luY2'
+        'x1ZGVBcmNoaXZlZA==');
+
+@$core.Deprecated('Use listRecallDecksResponseDescriptor instead')
+const ListRecallDecksResponse$json = {
+  '1': 'ListRecallDecksResponse',
+  '2': [
+    {
+      '1': 'decks',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallDeck',
+      '10': 'decks'
+    },
+  ],
+};
+
+/// Descriptor for `ListRecallDecksResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRecallDecksResponseDescriptor =
+    $convert.base64Decode(
+        'ChdMaXN0UmVjYWxsRGVja3NSZXNwb25zZRIyCgVkZWNrcxgBIAMoCzIcLnN0dGF0dHVzLm9ueX'
+        'gudjEuUmVjYWxsRGVja1IFZGVja3M=');
+
+@$core.Deprecated('Use listMemoryItemsRequestDescriptor instead')
+const ListMemoryItemsRequest$json = {
+  '1': 'ListMemoryItemsRequest',
+  '2': [
+    {'1': 'deck_id', '3': 1, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'statuses', '3': 2, '4': 3, '5': 9, '10': 'statuses'},
+    {'1': 'limit', '3': 3, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'cursor', '3': 4, '4': 1, '5': 9, '10': 'cursor'},
+  ],
+};
+
+/// Descriptor for `ListMemoryItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMemoryItemsRequestDescriptor = $convert.base64Decode(
+    'ChZMaXN0TWVtb3J5SXRlbXNSZXF1ZXN0EhcKB2RlY2tfaWQYASABKAlSBmRlY2tJZBIaCghzdG'
+    'F0dXNlcxgCIAMoCVIIc3RhdHVzZXMSFAoFbGltaXQYAyABKAVSBWxpbWl0EhYKBmN1cnNvchgE'
+    'IAEoCVIGY3Vyc29y');
+
+@$core.Deprecated('Use listMemoryItemsResponseDescriptor instead')
+const ListMemoryItemsResponse$json = {
+  '1': 'ListMemoryItemsResponse',
+  '2': [
+    {
+      '1': 'items',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'items'
+    },
+    {'1': 'next_cursor', '3': 2, '4': 1, '5': 9, '10': 'nextCursor'},
+  ],
+};
+
+/// Descriptor for `ListMemoryItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listMemoryItemsResponseDescriptor = $convert.base64Decode(
+    'ChdMaXN0TWVtb3J5SXRlbXNSZXNwb25zZRIyCgVpdGVtcxgBIAMoCzIcLnN0dGF0dHVzLm9ueX'
+    'gudjEuTWVtb3J5SXRlbVIFaXRlbXMSHwoLbmV4dF9jdXJzb3IYAiABKAlSCm5leHRDdXJzb3I=');
+
+@$core.Deprecated('Use upsertRecallDeckRequestDescriptor instead')
+const UpsertRecallDeckRequest$json = {
+  '1': 'UpsertRecallDeckRequest',
+  '2': [
+    {'1': 'deck_id', '3': 1, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'scope', '3': 4, '4': 1, '5': 9, '10': 'scope'},
+    {'1': 'project_key', '3': 5, '4': 1, '5': 9, '10': 'projectKey'},
+    {'1': 'expected_version', '3': 6, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertRecallDeckRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertRecallDeckRequestDescriptor = $convert.base64Decode(
+    'ChdVcHNlcnRSZWNhbGxEZWNrUmVxdWVzdBIXCgdkZWNrX2lkGAEgASgJUgZkZWNrSWQSFAoFdG'
+    'l0bGUYAiABKAlSBXRpdGxlEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIUCgVz'
+    'Y29wZRgEIAEoCVIFc2NvcGUSHwoLcHJvamVjdF9rZXkYBSABKAlSCnByb2plY3RLZXkSKQoQZX'
+    'hwZWN0ZWRfdmVyc2lvbhgGIAEoA1IPZXhwZWN0ZWRWZXJzaW9uEiwKEmNsaWVudF9tdXRhdGlv'
+    'bl9pZBgHIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use upsertRecallDeckResponseDescriptor instead')
+const UpsertRecallDeckResponse$json = {
+  '1': 'UpsertRecallDeckResponse',
+  '2': [
+    {
+      '1': 'deck',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallDeck',
+      '10': 'deck'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertRecallDeckResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertRecallDeckResponseDescriptor =
+    $convert.base64Decode(
+        'ChhVcHNlcnRSZWNhbGxEZWNrUmVzcG9uc2USMAoEZGVjaxgBIAEoCzIcLnN0dGF0dHVzLm9ueX'
+        'gudjEuUmVjYWxsRGVja1IEZGVjaw==');
+
+@$core.Deprecated('Use generateRecallItemsRequestDescriptor instead')
+const GenerateRecallItemsRequest$json = {
+  '1': 'GenerateRecallItemsRequest',
+  '2': [
+    {'1': 'deck_id', '3': 1, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'source_type', '3': 2, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'source_id', '3': 3, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'item_types', '3': 4, '4': 3, '5': 9, '10': 'itemTypes'},
+    {'1': 'member_focus', '3': 5, '4': 1, '5': 9, '10': 'memberFocus'},
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateRecallItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateRecallItemsRequestDescriptor = $convert.base64Decode(
+    'ChpHZW5lcmF0ZVJlY2FsbEl0ZW1zUmVxdWVzdBIXCgdkZWNrX2lkGAEgASgJUgZkZWNrSWQSHw'
+    'oLc291cmNlX3R5cGUYAiABKAlSCnNvdXJjZVR5cGUSGwoJc291cmNlX2lkGAMgASgJUghzb3Vy'
+    'Y2VJZBIdCgppdGVtX3R5cGVzGAQgAygJUglpdGVtVHlwZXMSIQoMbWVtYmVyX2ZvY3VzGAUgAS'
+    'gJUgttZW1iZXJGb2N1cxIsChJjbGllbnRfbXV0YXRpb25faWQYBiABKAlSEGNsaWVudE11dGF0'
+    'aW9uSWQ=');
+
+@$core.Deprecated('Use generateRecallItemsResponseDescriptor instead')
+const GenerateRecallItemsResponse$json = {
+  '1': 'GenerateRecallItemsResponse',
+  '2': [
+    {
+      '1': 'drafts',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'drafts'
+    },
+    {'1': 'generation_run_id', '3': 2, '4': 1, '5': 9, '10': 'generationRunId'},
+    {
+      '1': 'generator_version',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'generatorVersion'
+    },
+    {
+      '1': 'evaluator_version',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'evaluatorVersion'
+    },
+  ],
+};
+
+/// Descriptor for `GenerateRecallItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateRecallItemsResponseDescriptor = $convert.base64Decode(
+    'ChtHZW5lcmF0ZVJlY2FsbEl0ZW1zUmVzcG9uc2USNAoGZHJhZnRzGAEgAygLMhwuc3R0YXR0dX'
+    'Mub255eC52MS5NZW1vcnlJdGVtUgZkcmFmdHMSKgoRZ2VuZXJhdGlvbl9ydW5faWQYAiABKAlS'
+    'D2dlbmVyYXRpb25SdW5JZBIrChFnZW5lcmF0b3JfdmVyc2lvbhgDIAEoCVIQZ2VuZXJhdG9yVm'
+    'Vyc2lvbhIrChFldmFsdWF0b3JfdmVyc2lvbhgEIAEoCVIQZXZhbHVhdG9yVmVyc2lvbg==');
+
+@$core.Deprecated('Use upsertMemoryItemRequestDescriptor instead')
+const UpsertMemoryItemRequest$json = {
+  '1': 'UpsertMemoryItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'deck_id', '3': 2, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'item_type', '3': 4, '4': 1, '5': 9, '10': 'itemType'},
+    {'1': 'prompt', '3': 5, '4': 1, '5': 9, '10': 'prompt'},
+    {'1': 'answer', '3': 6, '4': 1, '5': 9, '10': 'answer'},
+    {'1': 'member_note', '3': 7, '4': 1, '5': 9, '10': 'memberNote'},
+    {'1': 'importance', '3': 8, '4': 1, '5': 5, '10': 'importance'},
+    {'1': 'frequency_days', '3': 9, '4': 1, '5': 5, '10': 'frequencyDays'},
+    {
+      '1': 'source_anchor',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallSourceAnchor',
+      '10': 'sourceAnchor'
+    },
+    {
+      '1': 'prompt_variants',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallPromptVariant',
+      '10': 'promptVariants'
+    },
+    {'1': 'expected_version', '3': 12, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertMemoryItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertMemoryItemRequestDescriptor = $convert.base64Decode(
+    'ChdVcHNlcnRNZW1vcnlJdGVtUmVxdWVzdBIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQSFwoHZG'
+    'Vja19pZBgCIAEoCVIGZGVja0lkEhQKBXRpdGxlGAMgASgJUgV0aXRsZRIbCglpdGVtX3R5cGUY'
+    'BCABKAlSCGl0ZW1UeXBlEhYKBnByb21wdBgFIAEoCVIGcHJvbXB0EhYKBmFuc3dlchgGIAEoCV'
+    'IGYW5zd2VyEh8KC21lbWJlcl9ub3RlGAcgASgJUgptZW1iZXJOb3RlEh4KCmltcG9ydGFuY2UY'
+    'CCABKAVSCmltcG9ydGFuY2USJQoOZnJlcXVlbmN5X2RheXMYCSABKAVSDWZyZXF1ZW5jeURheX'
+    'MSSQoNc291cmNlX2FuY2hvchgKIAEoCzIkLnN0dGF0dHVzLm9ueXgudjEuUmVjYWxsU291cmNl'
+    'QW5jaG9yUgxzb3VyY2VBbmNob3ISTgoPcHJvbXB0X3ZhcmlhbnRzGAsgAygLMiUuc3R0YXR0dX'
+    'Mub255eC52MS5SZWNhbGxQcm9tcHRWYXJpYW50Ug5wcm9tcHRWYXJpYW50cxIpChBleHBlY3Rl'
+    'ZF92ZXJzaW9uGAwgASgDUg9leHBlY3RlZFZlcnNpb24SLAoSY2xpZW50X211dGF0aW9uX2lkGA'
+    '0gASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use upsertMemoryItemResponseDescriptor instead')
+const UpsertMemoryItemResponse$json = {
+  '1': 'UpsertMemoryItemResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertMemoryItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertMemoryItemResponseDescriptor =
+    $convert.base64Decode(
+        'ChhVcHNlcnRNZW1vcnlJdGVtUmVzcG9uc2USMAoEaXRlbRgBIAEoCzIcLnN0dGF0dHVzLm9ueX'
+        'gudjEuTWVtb3J5SXRlbVIEaXRlbQ==');
+
+@$core.Deprecated('Use setMemoryItemStateRequestDescriptor instead')
+const SetMemoryItemStateRequest$json = {
+  '1': 'SetMemoryItemStateRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetMemoryItemStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMemoryItemStateRequestDescriptor = $convert.base64Decode(
+    'ChlTZXRNZW1vcnlJdGVtU3RhdGVSZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBIWCg'
+    'ZhY3Rpb24YAiABKAlSBmFjdGlvbhIWCgZyZWFzb24YAyABKAlSBnJlYXNvbhIsChJjbGllbnRf'
+    'bXV0YXRpb25faWQYBCABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setMemoryItemStateResponseDescriptor instead')
+const SetMemoryItemStateResponse$json = {
+  '1': 'SetMemoryItemStateResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `SetMemoryItemStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setMemoryItemStateResponseDescriptor =
+    $convert.base64Decode(
+        'ChpTZXRNZW1vcnlJdGVtU3RhdGVSZXNwb25zZRIwCgRpdGVtGAEgASgLMhwuc3R0YXR0dXMub2'
+        '55eC52MS5NZW1vcnlJdGVtUgRpdGVt');
+
+@$core.Deprecated('Use getRecallReviewQueueRequestDescriptor instead')
+const GetRecallReviewQueueRequest$json = {
+  '1': 'GetRecallReviewQueueRequest',
+  '2': [
+    {'1': 'session_type', '3': 1, '4': 1, '5': 9, '10': 'sessionType'},
+    {'1': 'deck_id', '3': 2, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'project_key', '3': 3, '4': 1, '5': 9, '10': 'projectKey'},
+    {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'client_session_id', '3': 5, '4': 1, '5': 9, '10': 'clientSessionId'},
+    {'1': 'include_new', '3': 6, '4': 1, '5': 8, '10': 'includeNew'},
+  ],
+};
+
+/// Descriptor for `GetRecallReviewQueueRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecallReviewQueueRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRSZWNhbGxSZXZpZXdRdWV1ZVJlcXVlc3QSIQoMc2Vzc2lvbl90eXBlGAEgASgJUgtzZX'
+    'NzaW9uVHlwZRIXCgdkZWNrX2lkGAIgASgJUgZkZWNrSWQSHwoLcHJvamVjdF9rZXkYAyABKAlS'
+    'CnByb2plY3RLZXkSFAoFbGltaXQYBCABKAVSBWxpbWl0EioKEWNsaWVudF9zZXNzaW9uX2lkGA'
+    'UgASgJUg9jbGllbnRTZXNzaW9uSWQSHwoLaW5jbHVkZV9uZXcYBiABKAhSCmluY2x1ZGVOZXc=');
+
+@$core.Deprecated('Use getRecallReviewQueueResponseDescriptor instead')
+const GetRecallReviewQueueResponse$json = {
+  '1': 'GetRecallReviewQueueResponse',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'session_type', '3': 2, '4': 1, '5': 9, '10': 'sessionType'},
+    {
+      '1': 'items',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'items'
+    },
+    {
+      '1': 'scheduler_version',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'schedulerVersion'
+    },
+    {'1': 'offline_allowed', '3': 5, '4': 1, '5': 8, '10': 'offlineAllowed'},
+    {
+      '1': 'generated_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'generatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `GetRecallReviewQueueResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getRecallReviewQueueResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRSZWNhbGxSZXZpZXdRdWV1ZVJlc3BvbnNlEh0KCnNlc3Npb25faWQYASABKAlSCXNlc3'
+    'Npb25JZBIhCgxzZXNzaW9uX3R5cGUYAiABKAlSC3Nlc3Npb25UeXBlEjIKBWl0ZW1zGAMgAygL'
+    'Mhwuc3R0YXR0dXMub255eC52MS5NZW1vcnlJdGVtUgVpdGVtcxIrChFzY2hlZHVsZXJfdmVyc2'
+    'lvbhgEIAEoCVIQc2NoZWR1bGVyVmVyc2lvbhInCg9vZmZsaW5lX2FsbG93ZWQYBSABKAhSDm9m'
+    'ZmxpbmVBbGxvd2VkEj0KDGdlbmVyYXRlZF9hdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBSC2dlbmVyYXRlZEF0');
+
+@$core.Deprecated('Use recordRecallReviewBatchRequestDescriptor instead')
+const RecordRecallReviewBatchRequest$json = {
+  '1': 'RecordRecallReviewBatchRequest',
+  '2': [
+    {
+      '1': 'events',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallReviewEvent',
+      '10': 'events'
+    },
+    {'1': 'replica_id', '3': 2, '4': 1, '5': 9, '10': 'replicaId'},
+    {'1': 'batch_id', '3': 3, '4': 1, '5': 9, '10': 'batchId'},
+  ],
+};
+
+/// Descriptor for `RecordRecallReviewBatchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordRecallReviewBatchRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5SZWNvcmRSZWNhbGxSZXZpZXdCYXRjaFJlcXVlc3QSOwoGZXZlbnRzGAEgAygLMiMuc3R0YX'
+        'R0dXMub255eC52MS5SZWNhbGxSZXZpZXdFdmVudFIGZXZlbnRzEh0KCnJlcGxpY2FfaWQYAiAB'
+        'KAlSCXJlcGxpY2FJZBIZCghiYXRjaF9pZBgDIAEoCVIHYmF0Y2hJZA==');
+
+@$core.Deprecated('Use recordRecallReviewBatchResponseDescriptor instead')
+const RecordRecallReviewBatchResponse$json = {
+  '1': 'RecordRecallReviewBatchResponse',
+  '2': [
+    {'1': 'accepted_count', '3': 1, '4': 1, '5': 5, '10': 'acceptedCount'},
+    {'1': 'duplicate_count', '3': 2, '4': 1, '5': 5, '10': 'duplicateCount'},
+    {
+      '1': 'revised_items',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'revisedItems'
+    },
+    {'1': 'receipt_id', '3': 4, '4': 1, '5': 9, '10': 'receiptId'},
+    {
+      '1': 'server_time',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'serverTime'
+    },
+  ],
+};
+
+/// Descriptor for `RecordRecallReviewBatchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordRecallReviewBatchResponseDescriptor = $convert.base64Decode(
+    'Ch9SZWNvcmRSZWNhbGxSZXZpZXdCYXRjaFJlc3BvbnNlEiUKDmFjY2VwdGVkX2NvdW50GAEgAS'
+    'gFUg1hY2NlcHRlZENvdW50EicKD2R1cGxpY2F0ZV9jb3VudBgCIAEoBVIOZHVwbGljYXRlQ291'
+    'bnQSQQoNcmV2aXNlZF9pdGVtcxgDIAMoCzIcLnN0dGF0dHVzLm9ueXgudjEuTWVtb3J5SXRlbV'
+    'IMcmV2aXNlZEl0ZW1zEh0KCnJlY2VpcHRfaWQYBCABKAlSCXJlY2VpcHRJZBI7CgtzZXJ2ZXJf'
+    'dGltZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnNlcnZlclRpbWU=');
+
+@$core.Deprecated('Use resolveRecallInvalidationRequestDescriptor instead')
+const ResolveRecallInvalidationRequest$json = {
+  '1': 'ResolveRecallInvalidationRequest',
+  '2': [
+    {'1': 'invalidation_id', '3': 1, '4': 1, '5': 9, '10': 'invalidationId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'replacement_revision_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementRevisionId'
+    },
+    {
+      '1': 'replacement_passage_key',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementPassageKey'
+    },
+    {
+      '1': 'replacement_checksum',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementChecksum'
+    },
+    {'1': 'member_note', '3': 6, '4': 1, '5': 9, '10': 'memberNote'},
+    {
+      '1': 'client_mutation_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveRecallInvalidationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveRecallInvalidationRequestDescriptor = $convert.base64Decode(
+    'CiBSZXNvbHZlUmVjYWxsSW52YWxpZGF0aW9uUmVxdWVzdBInCg9pbnZhbGlkYXRpb25faWQYAS'
+    'ABKAlSDmludmFsaWRhdGlvbklkEhYKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEjYKF3JlcGxhY2Vt'
+    'ZW50X3JldmlzaW9uX2lkGAMgASgJUhVyZXBsYWNlbWVudFJldmlzaW9uSWQSNgoXcmVwbGFjZW'
+    '1lbnRfcGFzc2FnZV9rZXkYBCABKAlSFXJlcGxhY2VtZW50UGFzc2FnZUtleRIxChRyZXBsYWNl'
+    'bWVudF9jaGVja3N1bRgFIAEoCVITcmVwbGFjZW1lbnRDaGVja3N1bRIfCgttZW1iZXJfbm90ZR'
+    'gGIAEoCVIKbWVtYmVyTm90ZRIsChJjbGllbnRfbXV0YXRpb25faWQYByABKAlSEGNsaWVudE11'
+    'dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use resolveRecallInvalidationResponseDescriptor instead')
+const ResolveRecallInvalidationResponse$json = {
+  '1': 'ResolveRecallInvalidationResponse',
+  '2': [
+    {
+      '1': 'invalidation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallSourceInvalidation',
+      '10': 'invalidation'
+    },
+    {
+      '1': 'item',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.MemoryItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `ResolveRecallInvalidationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolveRecallInvalidationResponseDescriptor =
+    $convert.base64Decode(
+        'CiFSZXNvbHZlUmVjYWxsSW52YWxpZGF0aW9uUmVzcG9uc2USTgoMaW52YWxpZGF0aW9uGAEgAS'
+        'gLMiouc3R0YXR0dXMub255eC52MS5SZWNhbGxTb3VyY2VJbnZhbGlkYXRpb25SDGludmFsaWRh'
+        'dGlvbhIwCgRpdGVtGAIgASgLMhwuc3R0YXR0dXMub255eC52MS5NZW1vcnlJdGVtUgRpdGVt');
+
+@$core.Deprecated('Use updateRecallPreferencesRequestDescriptor instead')
+const UpdateRecallPreferencesRequest$json = {
+  '1': 'UpdateRecallPreferencesRequest',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallPreferences',
+      '10': 'preferences'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateRecallPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateRecallPreferencesRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5VcGRhdGVSZWNhbGxQcmVmZXJlbmNlc1JlcXVlc3QSRQoLcHJlZmVyZW5jZXMYASABKAsyIy'
+        '5zdHRhdHR1cy5vbnl4LnYxLlJlY2FsbFByZWZlcmVuY2VzUgtwcmVmZXJlbmNlcxIsChJjbGll'
+        'bnRfbXV0YXRpb25faWQYAiABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use updateRecallPreferencesResponseDescriptor instead')
+const UpdateRecallPreferencesResponse$json = {
+  '1': 'UpdateRecallPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateRecallPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateRecallPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9VcGRhdGVSZWNhbGxQcmVmZXJlbmNlc1Jlc3BvbnNlEkUKC3ByZWZlcmVuY2VzGAEgASgLMi'
+        'Muc3R0YXR0dXMub255eC52MS5SZWNhbGxQcmVmZXJlbmNlc1ILcHJlZmVyZW5jZXM=');
+
+@$core.Deprecated('Use exportRecallDataRequestDescriptor instead')
+const ExportRecallDataRequest$json = {
+  '1': 'ExportRecallDataRequest',
+  '2': [
+    {'1': 'format', '3': 1, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'deck_id', '3': 2, '4': 1, '5': 9, '10': 'deckId'},
+    {
+      '1': 'include_review_history',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'includeReviewHistory'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ExportRecallDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportRecallDataRequestDescriptor = $convert.base64Decode(
+    'ChdFeHBvcnRSZWNhbGxEYXRhUmVxdWVzdBIWCgZmb3JtYXQYASABKAlSBmZvcm1hdBIXCgdkZW'
+    'NrX2lkGAIgASgJUgZkZWNrSWQSNAoWaW5jbHVkZV9yZXZpZXdfaGlzdG9yeRgDIAEoCFIUaW5j'
+    'bHVkZVJldmlld0hpc3RvcnkSLAoSY2xpZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdX'
+    'RhdGlvbklk');
+
+@$core.Deprecated('Use exportRecallDataResponseDescriptor instead')
+const ExportRecallDataResponse$json = {
+  '1': 'ExportRecallDataResponse',
+  '2': [
+    {'1': 'export_id', '3': 1, '4': 1, '5': 9, '10': 'exportId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'format', '3': 3, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'download_url', '3': 4, '4': 1, '5': 9, '10': 'downloadUrl'},
+    {'1': 'checksum', '3': 5, '4': 1, '5': 9, '10': 'checksum'},
+    {'1': 'lossiness_report', '3': 6, '4': 1, '5': 9, '10': 'lossinessReport'},
+    {'1': 'byte_size', '3': 7, '4': 1, '5': 3, '10': 'byteSize'},
+    {
+      '1': 'expires_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {'1': 'payload', '3': 9, '4': 1, '5': 9, '10': 'payload'},
+  ],
+};
+
+/// Descriptor for `ExportRecallDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportRecallDataResponseDescriptor = $convert.base64Decode(
+    'ChhFeHBvcnRSZWNhbGxEYXRhUmVzcG9uc2USGwoJZXhwb3J0X2lkGAEgASgJUghleHBvcnRJZB'
+    'IWCgZzdGF0dXMYAiABKAlSBnN0YXR1cxIWCgZmb3JtYXQYAyABKAlSBmZvcm1hdBIhCgxkb3du'
+    'bG9hZF91cmwYBCABKAlSC2Rvd25sb2FkVXJsEhoKCGNoZWNrc3VtGAUgASgJUghjaGVja3N1bR'
+    'IpChBsb3NzaW5lc3NfcmVwb3J0GAYgASgJUg9sb3NzaW5lc3NSZXBvcnQSGwoJYnl0ZV9zaXpl'
+    'GAcgASgDUghieXRlU2l6ZRI5CgpleHBpcmVzX2F0GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIJZXhwaXJlc0F0EhgKB3BheWxvYWQYCSABKAlSB3BheWxvYWQ=');
+
+@$core.Deprecated('Use importRecallDataRequestDescriptor instead')
+const ImportRecallDataRequest$json = {
+  '1': 'ImportRecallDataRequest',
+  '2': [
+    {'1': 'format', '3': 1, '4': 1, '5': 9, '10': 'format'},
+    {'1': 'deck_id', '3': 2, '4': 1, '5': 9, '10': 'deckId'},
+    {'1': 'payload', '3': 3, '4': 1, '5': 9, '10': 'payload'},
+    {'1': 'source_checksum', '3': 4, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ImportRecallDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List importRecallDataRequestDescriptor = $convert.base64Decode(
+    'ChdJbXBvcnRSZWNhbGxEYXRhUmVxdWVzdBIWCgZmb3JtYXQYASABKAlSBmZvcm1hdBIXCgdkZW'
+    'NrX2lkGAIgASgJUgZkZWNrSWQSGAoHcGF5bG9hZBgDIAEoCVIHcGF5bG9hZBInCg9zb3VyY2Vf'
+    'Y2hlY2tzdW0YBCABKAlSDnNvdXJjZUNoZWNrc3VtEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgFIA'
+    'EoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use importRecallDataResponseDescriptor instead')
+const ImportRecallDataResponse$json = {
+  '1': 'ImportRecallDataResponse',
+  '2': [
+    {'1': 'import_id', '3': 1, '4': 1, '5': 9, '10': 'importId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'imported_count', '3': 3, '4': 1, '5': 5, '10': 'importedCount'},
+    {'1': 'skipped_count', '3': 4, '4': 1, '5': 5, '10': 'skippedCount'},
+    {'1': 'lossiness_report', '3': 5, '4': 1, '5': 9, '10': 'lossinessReport'},
+  ],
+};
+
+/// Descriptor for `ImportRecallDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List importRecallDataResponseDescriptor = $convert.base64Decode(
+    'ChhJbXBvcnRSZWNhbGxEYXRhUmVzcG9uc2USGwoJaW1wb3J0X2lkGAEgASgJUghpbXBvcnRJZB'
+    'IWCgZzdGF0dXMYAiABKAlSBnN0YXR1cxIlCg5pbXBvcnRlZF9jb3VudBgDIAEoBVINaW1wb3J0'
+    'ZWRDb3VudBIjCg1za2lwcGVkX2NvdW50GAQgASgFUgxza2lwcGVkQ291bnQSKQoQbG9zc2luZX'
+    'NzX3JlcG9ydBgFIAEoCVIPbG9zc2luZXNzUmVwb3J0');
+
+@$core.Deprecated('Use reportRecallItemRequestDescriptor instead')
+const ReportRecallItemRequest$json = {
+  '1': 'ReportRecallItemRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'category', '3': 2, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'statement', '3': 3, '4': 1, '5': 9, '10': 'statement'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `ReportRecallItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportRecallItemRequestDescriptor = $convert.base64Decode(
+    'ChdSZXBvcnRSZWNhbGxJdGVtUmVxdWVzdBIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQSGgoIY2'
+    'F0ZWdvcnkYAiABKAlSCGNhdGVnb3J5EhwKCXN0YXRlbWVudBgDIAEoCVIJc3RhdGVtZW50EiwK'
+    'EmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use reportRecallItemResponseDescriptor instead')
+const ReportRecallItemResponse$json = {
+  '1': 'ReportRecallItemResponse',
+  '2': [
+    {'1': 'report_id', '3': 1, '4': 1, '5': 9, '10': 'reportId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `ReportRecallItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportRecallItemResponseDescriptor = $convert.base64Decode(
+    'ChhSZXBvcnRSZWNhbGxJdGVtUmVzcG9uc2USGwoJcmVwb3J0X2lkGAEgASgJUghyZXBvcnRJZB'
+    'IWCgZzdGF0dXMYAiABKAlSBnN0YXR1cxI5CgpjcmVhdGVkX2F0GAMgASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use recordRecallTransferRequestDescriptor instead')
+const RecordRecallTransferRequest$json = {
+  '1': 'RecordRecallTransferRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {
+      '1': 'linked_object_type',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'linkedObjectType'
+    },
+    {'1': 'linked_object_id', '3': 3, '4': 1, '5': 9, '10': 'linkedObjectId'},
+    {'1': 'evidence', '3': 4, '4': 1, '5': 9, '10': 'evidence'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RecordRecallTransferRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordRecallTransferRequestDescriptor = $convert.base64Decode(
+    'ChtSZWNvcmRSZWNhbGxUcmFuc2ZlclJlcXVlc3QSFwoHaXRlbV9pZBgBIAEoCVIGaXRlbUlkEi'
+    'wKEmxpbmtlZF9vYmplY3RfdHlwZRgCIAEoCVIQbGlua2VkT2JqZWN0VHlwZRIoChBsaW5rZWRf'
+    'b2JqZWN0X2lkGAMgASgJUg5saW5rZWRPYmplY3RJZBIaCghldmlkZW5jZRgEIAEoCVIIZXZpZG'
+    'VuY2USLAoSY2xpZW50X211dGF0aW9uX2lkGAUgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use recordRecallTransferResponseDescriptor instead')
+const RecordRecallTransferResponse$json = {
+  '1': 'RecordRecallTransferResponse',
+  '2': [
+    {
+      '1': 'measure',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.RecallRetentionMeasure',
+      '10': 'measure'
+    },
+  ],
+};
+
+/// Descriptor for `RecordRecallTransferResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordRecallTransferResponseDescriptor =
+    $convert.base64Decode(
+        'ChxSZWNvcmRSZWNhbGxUcmFuc2ZlclJlc3BvbnNlEkIKB21lYXN1cmUYASABKAsyKC5zdHRhdH'
+        'R1cy5vbnl4LnYxLlJlY2FsbFJldGVudGlvbk1lYXN1cmVSB21lYXN1cmU=');

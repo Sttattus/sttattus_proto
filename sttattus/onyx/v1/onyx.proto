@@ -4682,6 +4682,348 @@ message ReportSpatialCanvasAbuseResponse {
   google.protobuf.Timestamp created_at = 3;
 }
 
+// Choice 16 — Active Recall and Durable Knowledge. Recall records remain
+// member-owned. Generated factual text is anchored to immutable source
+// passages; append-only review events drive a versioned deterministic schedule.
+message RecallSourceAnchor {
+  string source_type = 1;
+  string source_id = 2;
+  string content_id = 3;
+  string document_revision_id = 4;
+  string passage_key = 5;
+  string source_checksum = 6;
+  string quoted_text = 7;
+  string rights_status = 8;
+  bool is_stale = 9;
+  bool is_withdrawn = 10;
+  string stale_reason = 11;
+  string correction_summary = 12;
+  string replacement_text = 13;
+}
+
+message RecallDeck {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string scope = 4;
+  string status = 5;
+  string caller_role = 6;
+  string project_key = 7;
+  int32 item_count = 8;
+  int32 due_count = 9;
+  int32 stale_count = 10;
+  int64 version = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message RecallPromptVariant {
+  string id = 1;
+  string item_id = 2;
+  string kind = 3;
+  string prompt = 4;
+  string answer = 5;
+  string explanation = 6;
+  repeated string choices = 7;
+  int32 sequence = 8;
+  bool is_generated = 9;
+  string generator_version = 10;
+  string evaluator_version = 11;
+  string grounding_status = 12;
+  int64 version = 13;
+}
+
+message RecallSchedule {
+  string item_id = 1;
+  string policy_version = 2;
+  string state = 3;
+  google.protobuf.Timestamp due_at = 4;
+  double interval_days = 5;
+  double stability = 6;
+  double difficulty = 7;
+  double interference = 8;
+  int32 review_count = 9;
+  int32 lapse_count = 10;
+  double last_confidence = 11;
+  int64 last_latency_ms = 12;
+  google.protobuf.Timestamp last_reviewed_at = 13;
+  int64 revision = 14;
+}
+
+message MemoryItem {
+  string id = 1;
+  string deck_id = 2;
+  string owner_user_id = 3;
+  string title = 4;
+  string item_type = 5;
+  string prompt = 6;
+  string answer = 7;
+  string member_note = 8;
+  string status = 9;
+  string provenance = 10;
+  int32 importance = 11;
+  int32 frequency_days = 12;
+  bool member_edited_prompt = 13;
+  bool member_edited_answer = 14;
+  bool member_edited_note = 15;
+  RecallSourceAnchor source_anchor = 16;
+  repeated RecallPromptVariant prompt_variants = 17;
+  RecallSchedule schedule = 18;
+  int64 version = 19;
+  google.protobuf.Timestamp created_at = 20;
+  google.protobuf.Timestamp updated_at = 21;
+}
+
+message RecallReviewEvent {
+  string id = 1;
+  string client_event_id = 2;
+  string item_id = 3;
+  string prompt_variant_id = 4;
+  string session_id = 5;
+  string result = 6;
+  int32 confidence = 7;
+  int64 latency_ms = 8;
+  string answer_text = 9;
+  bool reviewed_offline = 10;
+  string policy_version = 11;
+  google.protobuf.Timestamp reviewed_at = 12;
+  google.protobuf.Timestamp received_at = 13;
+}
+
+message RecallSourceInvalidation {
+  string id = 1;
+  string item_id = 2;
+  string correction_id = 3;
+  string status = 4;
+  string reason = 5;
+  string old_anchor_json = 6;
+  string correction_diff = 7;
+  string resolution = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp resolved_at = 10;
+}
+
+message RecallRetentionMeasure {
+  string id = 1;
+  string item_id = 2;
+  string measure_type = 3;
+  double score = 4;
+  int32 delay_days = 5;
+  string linked_object_type = 6;
+  string linked_object_id = 7;
+  string evidence = 8;
+  google.protobuf.Timestamp measured_at = 9;
+}
+
+message RecallPreferences {
+  int32 daily_minutes = 1;
+  int32 default_frequency_days = 2;
+  bool vacation_mode = 3;
+  google.protobuf.Timestamp vacation_until = 4;
+  bool reminders_enabled = 5;
+  string locale = 6;
+  string feedback_style = 7;
+}
+
+message GetRecallDashboardRequest {}
+message GetRecallDashboardResponse {
+  repeated RecallDeck decks = 1;
+  repeated MemoryItem due_items = 2;
+  repeated RecallSourceInvalidation invalidations = 3;
+  repeated RecallRetentionMeasure retention = 4;
+  RecallPreferences preferences = 5;
+  string runtime_status = 6;
+  string public_notice = 7;
+  string scheduler_version = 8;
+  int32 due_count = 9;
+  int32 new_count = 10;
+  int32 stale_count = 11;
+  int32 delayed_recall_count = 12;
+}
+
+message ListRecallDecksRequest {
+  bool include_archived = 1;
+}
+message ListRecallDecksResponse {
+  repeated RecallDeck decks = 1;
+}
+
+message ListMemoryItemsRequest {
+  string deck_id = 1;
+  repeated string statuses = 2;
+  int32 limit = 3;
+  string cursor = 4;
+}
+message ListMemoryItemsResponse {
+  repeated MemoryItem items = 1;
+  string next_cursor = 2;
+}
+
+message UpsertRecallDeckRequest {
+  string deck_id = 1;
+  string title = 2;
+  string description = 3;
+  string scope = 4;
+  string project_key = 5;
+  int64 expected_version = 6;
+  string client_mutation_id = 7;
+}
+message UpsertRecallDeckResponse {
+  RecallDeck deck = 1;
+}
+
+message GenerateRecallItemsRequest {
+  string deck_id = 1;
+  string source_type = 2;
+  string source_id = 3;
+  repeated string item_types = 4;
+  string member_focus = 5;
+  string client_mutation_id = 6;
+}
+message GenerateRecallItemsResponse {
+  repeated MemoryItem drafts = 1;
+  string generation_run_id = 2;
+  string generator_version = 3;
+  string evaluator_version = 4;
+}
+
+message UpsertMemoryItemRequest {
+  string item_id = 1;
+  string deck_id = 2;
+  string title = 3;
+  string item_type = 4;
+  string prompt = 5;
+  string answer = 6;
+  string member_note = 7;
+  int32 importance = 8;
+  int32 frequency_days = 9;
+  RecallSourceAnchor source_anchor = 10;
+  repeated RecallPromptVariant prompt_variants = 11;
+  int64 expected_version = 12;
+  string client_mutation_id = 13;
+}
+message UpsertMemoryItemResponse {
+  MemoryItem item = 1;
+}
+
+message SetMemoryItemStateRequest {
+  string item_id = 1;
+  string action = 2;
+  string reason = 3;
+  string client_mutation_id = 4;
+}
+message SetMemoryItemStateResponse {
+  MemoryItem item = 1;
+}
+
+message GetRecallReviewQueueRequest {
+  string session_type = 1;
+  string deck_id = 2;
+  string project_key = 3;
+  int32 limit = 4;
+  string client_session_id = 5;
+  bool include_new = 6;
+}
+message GetRecallReviewQueueResponse {
+  string session_id = 1;
+  string session_type = 2;
+  repeated MemoryItem items = 3;
+  string scheduler_version = 4;
+  bool offline_allowed = 5;
+  google.protobuf.Timestamp generated_at = 6;
+}
+
+message RecordRecallReviewBatchRequest {
+  repeated RecallReviewEvent events = 1;
+  string replica_id = 2;
+  string batch_id = 3;
+}
+message RecordRecallReviewBatchResponse {
+  int32 accepted_count = 1;
+  int32 duplicate_count = 2;
+  repeated MemoryItem revised_items = 3;
+  string receipt_id = 4;
+  google.protobuf.Timestamp server_time = 5;
+}
+
+message ResolveRecallInvalidationRequest {
+  string invalidation_id = 1;
+  string action = 2;
+  string replacement_revision_id = 3;
+  string replacement_passage_key = 4;
+  string replacement_checksum = 5;
+  string member_note = 6;
+  string client_mutation_id = 7;
+}
+message ResolveRecallInvalidationResponse {
+  RecallSourceInvalidation invalidation = 1;
+  MemoryItem item = 2;
+}
+
+message UpdateRecallPreferencesRequest {
+  RecallPreferences preferences = 1;
+  string client_mutation_id = 2;
+}
+message UpdateRecallPreferencesResponse {
+  RecallPreferences preferences = 1;
+}
+
+message ExportRecallDataRequest {
+  string format = 1;
+  string deck_id = 2;
+  bool include_review_history = 3;
+  string client_mutation_id = 4;
+}
+message ExportRecallDataResponse {
+  string export_id = 1;
+  string status = 2;
+  string format = 3;
+  string download_url = 4;
+  string checksum = 5;
+  string lossiness_report = 6;
+  int64 byte_size = 7;
+  google.protobuf.Timestamp expires_at = 8;
+  string payload = 9;
+}
+
+message ImportRecallDataRequest {
+  string format = 1;
+  string deck_id = 2;
+  string payload = 3;
+  string source_checksum = 4;
+  string client_mutation_id = 5;
+}
+message ImportRecallDataResponse {
+  string import_id = 1;
+  string status = 2;
+  int32 imported_count = 3;
+  int32 skipped_count = 4;
+  string lossiness_report = 5;
+}
+
+message ReportRecallItemRequest {
+  string item_id = 1;
+  string category = 2;
+  string statement = 3;
+  string client_mutation_id = 4;
+}
+message ReportRecallItemResponse {
+  string report_id = 1;
+  string status = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
+
+message RecordRecallTransferRequest {
+  string item_id = 1;
+  string linked_object_type = 2;
+  string linked_object_id = 3;
+  string evidence = 4;
+  string client_mutation_id = 5;
+}
+message RecordRecallTransferResponse {
+  RecallRetentionMeasure measure = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -4976,4 +5318,22 @@ service OnyxService {
   rpc GetSpatialCanvasExport(GetSpatialCanvasExportRequest) returns (GetSpatialCanvasExportResponse);
   rpc UpsertSpatialCanvasCollaborator(UpsertSpatialCanvasCollaboratorRequest) returns (UpsertSpatialCanvasCollaboratorResponse);
   rpc ReportSpatialCanvasAbuse(ReportSpatialCanvasAbuseRequest) returns (ReportSpatialCanvasAbuseResponse);
+
+  // Choice 16 — member-edited, exact-source active recall with versioned
+  // scheduling, offline-idempotent events and correction-safe invalidation.
+  rpc GetRecallDashboard(GetRecallDashboardRequest) returns (GetRecallDashboardResponse);
+  rpc ListRecallDecks(ListRecallDecksRequest) returns (ListRecallDecksResponse);
+  rpc ListMemoryItems(ListMemoryItemsRequest) returns (ListMemoryItemsResponse);
+  rpc UpsertRecallDeck(UpsertRecallDeckRequest) returns (UpsertRecallDeckResponse);
+  rpc GenerateRecallItems(GenerateRecallItemsRequest) returns (GenerateRecallItemsResponse);
+  rpc UpsertMemoryItem(UpsertMemoryItemRequest) returns (UpsertMemoryItemResponse);
+  rpc SetMemoryItemState(SetMemoryItemStateRequest) returns (SetMemoryItemStateResponse);
+  rpc GetRecallReviewQueue(GetRecallReviewQueueRequest) returns (GetRecallReviewQueueResponse);
+  rpc RecordRecallReviewBatch(RecordRecallReviewBatchRequest) returns (RecordRecallReviewBatchResponse);
+  rpc ResolveRecallInvalidation(ResolveRecallInvalidationRequest) returns (ResolveRecallInvalidationResponse);
+  rpc UpdateRecallPreferences(UpdateRecallPreferencesRequest) returns (UpdateRecallPreferencesResponse);
+  rpc ExportRecallData(ExportRecallDataRequest) returns (ExportRecallDataResponse);
+  rpc ImportRecallData(ImportRecallDataRequest) returns (ImportRecallDataResponse);
+  rpc ReportRecallItem(ReportRecallItemRequest) returns (ReportRecallItemResponse);
+  rpc RecordRecallTransfer(RecordRecallTransferRequest) returns (RecordRecallTransferResponse);
 }

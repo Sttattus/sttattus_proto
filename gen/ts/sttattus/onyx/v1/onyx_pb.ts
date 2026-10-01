@@ -37162,3 +37162,2644 @@ export class ReportSpatialCanvasAbuseResponse extends Message<ReportSpatialCanva
   }
 }
 
+/**
+ * Choice 16 — Active Recall and Durable Knowledge. Recall records remain
+ * member-owned. Generated factual text is anchored to immutable source
+ * passages; append-only review events drive a versioned deterministic schedule.
+ *
+ * @generated from message sttattus.onyx.v1.RecallSourceAnchor
+ */
+export class RecallSourceAnchor extends Message<RecallSourceAnchor> {
+  /**
+   * @generated from field: string source_type = 1;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 2;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string content_id = 3;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string document_revision_id = 4;
+   */
+  documentRevisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 5;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string source_checksum = 6;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string quoted_text = 7;
+   */
+  quotedText = "";
+
+  /**
+   * @generated from field: string rights_status = 8;
+   */
+  rightsStatus = "";
+
+  /**
+   * @generated from field: bool is_stale = 9;
+   */
+  isStale = false;
+
+  /**
+   * @generated from field: bool is_withdrawn = 10;
+   */
+  isWithdrawn = false;
+
+  /**
+   * @generated from field: string stale_reason = 11;
+   */
+  staleReason = "";
+
+  /**
+   * @generated from field: string correction_summary = 12;
+   */
+  correctionSummary = "";
+
+  /**
+   * @generated from field: string replacement_text = 13;
+   */
+  replacementText = "";
+
+  constructor(data?: PartialMessage<RecallSourceAnchor>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallSourceAnchor";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "document_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "quoted_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "rights_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "is_stale", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "is_withdrawn", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "stale_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "correction_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "replacement_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallSourceAnchor {
+    return new RecallSourceAnchor().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallSourceAnchor {
+    return new RecallSourceAnchor().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallSourceAnchor {
+    return new RecallSourceAnchor().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallSourceAnchor | PlainMessage<RecallSourceAnchor> | undefined, b: RecallSourceAnchor | PlainMessage<RecallSourceAnchor> | undefined): boolean {
+    return proto3.util.equals(RecallSourceAnchor, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallDeck
+ */
+export class RecallDeck extends Message<RecallDeck> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string scope = 4;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string caller_role = 6;
+   */
+  callerRole = "";
+
+  /**
+   * @generated from field: string project_key = 7;
+   */
+  projectKey = "";
+
+  /**
+   * @generated from field: int32 item_count = 8;
+   */
+  itemCount = 0;
+
+  /**
+   * @generated from field: int32 due_count = 9;
+   */
+  dueCount = 0;
+
+  /**
+   * @generated from field: int32 stale_count = 10;
+   */
+  staleCount = 0;
+
+  /**
+   * @generated from field: int64 version = 11;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 13;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RecallDeck>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallDeck";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "caller_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "project_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "item_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "due_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "stale_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+    { no: 13, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallDeck {
+    return new RecallDeck().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallDeck {
+    return new RecallDeck().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallDeck {
+    return new RecallDeck().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallDeck | PlainMessage<RecallDeck> | undefined, b: RecallDeck | PlainMessage<RecallDeck> | undefined): boolean {
+    return proto3.util.equals(RecallDeck, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallPromptVariant
+ */
+export class RecallPromptVariant extends Message<RecallPromptVariant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string item_id = 2;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string prompt = 4;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: string answer = 5;
+   */
+  answer = "";
+
+  /**
+   * @generated from field: string explanation = 6;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: repeated string choices = 7;
+   */
+  choices: string[] = [];
+
+  /**
+   * @generated from field: int32 sequence = 8;
+   */
+  sequence = 0;
+
+  /**
+   * @generated from field: bool is_generated = 9;
+   */
+  isGenerated = false;
+
+  /**
+   * @generated from field: string generator_version = 10;
+   */
+  generatorVersion = "";
+
+  /**
+   * @generated from field: string evaluator_version = 11;
+   */
+  evaluatorVersion = "";
+
+  /**
+   * @generated from field: string grounding_status = 12;
+   */
+  groundingStatus = "";
+
+  /**
+   * @generated from field: int64 version = 13;
+   */
+  version = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RecallPromptVariant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallPromptVariant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "choices", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "sequence", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "is_generated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "generator_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "evaluator_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "grounding_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallPromptVariant {
+    return new RecallPromptVariant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallPromptVariant {
+    return new RecallPromptVariant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallPromptVariant {
+    return new RecallPromptVariant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallPromptVariant | PlainMessage<RecallPromptVariant> | undefined, b: RecallPromptVariant | PlainMessage<RecallPromptVariant> | undefined): boolean {
+    return proto3.util.equals(RecallPromptVariant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallSchedule
+ */
+export class RecallSchedule extends Message<RecallSchedule> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string policy_version = 2;
+   */
+  policyVersion = "";
+
+  /**
+   * @generated from field: string state = 3;
+   */
+  state = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp due_at = 4;
+   */
+  dueAt?: Timestamp;
+
+  /**
+   * @generated from field: double interval_days = 5;
+   */
+  intervalDays = 0;
+
+  /**
+   * @generated from field: double stability = 6;
+   */
+  stability = 0;
+
+  /**
+   * @generated from field: double difficulty = 7;
+   */
+  difficulty = 0;
+
+  /**
+   * @generated from field: double interference = 8;
+   */
+  interference = 0;
+
+  /**
+   * @generated from field: int32 review_count = 9;
+   */
+  reviewCount = 0;
+
+  /**
+   * @generated from field: int32 lapse_count = 10;
+   */
+  lapseCount = 0;
+
+  /**
+   * @generated from field: double last_confidence = 11;
+   */
+  lastConfidence = 0;
+
+  /**
+   * @generated from field: int64 last_latency_ms = 12;
+   */
+  lastLatencyMs = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_reviewed_at = 13;
+   */
+  lastReviewedAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 revision = 14;
+   */
+  revision = protoInt64.zero;
+
+  constructor(data?: PartialMessage<RecallSchedule>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallSchedule";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "due_at", kind: "message", T: Timestamp },
+    { no: 5, name: "interval_days", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "stability", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "difficulty", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "interference", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "review_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "lapse_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "last_confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "last_latency_ms", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "last_reviewed_at", kind: "message", T: Timestamp },
+    { no: 14, name: "revision", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallSchedule {
+    return new RecallSchedule().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallSchedule {
+    return new RecallSchedule().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallSchedule {
+    return new RecallSchedule().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallSchedule | PlainMessage<RecallSchedule> | undefined, b: RecallSchedule | PlainMessage<RecallSchedule> | undefined): boolean {
+    return proto3.util.equals(RecallSchedule, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.MemoryItem
+ */
+export class MemoryItem extends Message<MemoryItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string deck_id = 2;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string owner_user_id = 3;
+   */
+  ownerUserId = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string item_type = 5;
+   */
+  itemType = "";
+
+  /**
+   * @generated from field: string prompt = 6;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: string answer = 7;
+   */
+  answer = "";
+
+  /**
+   * @generated from field: string member_note = 8;
+   */
+  memberNote = "";
+
+  /**
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string provenance = 10;
+   */
+  provenance = "";
+
+  /**
+   * @generated from field: int32 importance = 11;
+   */
+  importance = 0;
+
+  /**
+   * @generated from field: int32 frequency_days = 12;
+   */
+  frequencyDays = 0;
+
+  /**
+   * @generated from field: bool member_edited_prompt = 13;
+   */
+  memberEditedPrompt = false;
+
+  /**
+   * @generated from field: bool member_edited_answer = 14;
+   */
+  memberEditedAnswer = false;
+
+  /**
+   * @generated from field: bool member_edited_note = 15;
+   */
+  memberEditedNote = false;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallSourceAnchor source_anchor = 16;
+   */
+  sourceAnchor?: RecallSourceAnchor;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallPromptVariant prompt_variants = 17;
+   */
+  promptVariants: RecallPromptVariant[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallSchedule schedule = 18;
+   */
+  schedule?: RecallSchedule;
+
+  /**
+   * @generated from field: int64 version = 19;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 20;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 21;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<MemoryItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.MemoryItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "owner_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "item_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "member_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "provenance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "importance", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "frequency_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "member_edited_prompt", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "member_edited_answer", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 15, name: "member_edited_note", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "source_anchor", kind: "message", T: RecallSourceAnchor },
+    { no: 17, name: "prompt_variants", kind: "message", T: RecallPromptVariant, repeated: true },
+    { no: 18, name: "schedule", kind: "message", T: RecallSchedule },
+    { no: 19, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 20, name: "created_at", kind: "message", T: Timestamp },
+    { no: 21, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MemoryItem {
+    return new MemoryItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MemoryItem {
+    return new MemoryItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MemoryItem {
+    return new MemoryItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MemoryItem | PlainMessage<MemoryItem> | undefined, b: MemoryItem | PlainMessage<MemoryItem> | undefined): boolean {
+    return proto3.util.equals(MemoryItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallReviewEvent
+ */
+export class RecallReviewEvent extends Message<RecallReviewEvent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string client_event_id = 2;
+   */
+  clientEventId = "";
+
+  /**
+   * @generated from field: string item_id = 3;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string prompt_variant_id = 4;
+   */
+  promptVariantId = "";
+
+  /**
+   * @generated from field: string session_id = 5;
+   */
+  sessionId = "";
+
+  /**
+   * @generated from field: string result = 6;
+   */
+  result = "";
+
+  /**
+   * @generated from field: int32 confidence = 7;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: int64 latency_ms = 8;
+   */
+  latencyMs = protoInt64.zero;
+
+  /**
+   * @generated from field: string answer_text = 9;
+   */
+  answerText = "";
+
+  /**
+   * @generated from field: bool reviewed_offline = 10;
+   */
+  reviewedOffline = false;
+
+  /**
+   * @generated from field: string policy_version = 11;
+   */
+  policyVersion = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp reviewed_at = 12;
+   */
+  reviewedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp received_at = 13;
+   */
+  receivedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RecallReviewEvent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallReviewEvent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "prompt_variant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "result", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "confidence", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "latency_ms", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "answer_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "reviewed_offline", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "policy_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "reviewed_at", kind: "message", T: Timestamp },
+    { no: 13, name: "received_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallReviewEvent {
+    return new RecallReviewEvent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallReviewEvent {
+    return new RecallReviewEvent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallReviewEvent {
+    return new RecallReviewEvent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallReviewEvent | PlainMessage<RecallReviewEvent> | undefined, b: RecallReviewEvent | PlainMessage<RecallReviewEvent> | undefined): boolean {
+    return proto3.util.equals(RecallReviewEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallSourceInvalidation
+ */
+export class RecallSourceInvalidation extends Message<RecallSourceInvalidation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string item_id = 2;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string correction_id = 3;
+   */
+  correctionId = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string reason = 5;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string old_anchor_json = 6;
+   */
+  oldAnchorJson = "";
+
+  /**
+   * @generated from field: string correction_diff = 7;
+   */
+  correctionDiff = "";
+
+  /**
+   * @generated from field: string resolution = 8;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 9;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 10;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RecallSourceInvalidation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallSourceInvalidation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "correction_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "old_anchor_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "correction_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_at", kind: "message", T: Timestamp },
+    { no: 10, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallSourceInvalidation {
+    return new RecallSourceInvalidation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallSourceInvalidation {
+    return new RecallSourceInvalidation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallSourceInvalidation {
+    return new RecallSourceInvalidation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallSourceInvalidation | PlainMessage<RecallSourceInvalidation> | undefined, b: RecallSourceInvalidation | PlainMessage<RecallSourceInvalidation> | undefined): boolean {
+    return proto3.util.equals(RecallSourceInvalidation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallRetentionMeasure
+ */
+export class RecallRetentionMeasure extends Message<RecallRetentionMeasure> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string item_id = 2;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string measure_type = 3;
+   */
+  measureType = "";
+
+  /**
+   * @generated from field: double score = 4;
+   */
+  score = 0;
+
+  /**
+   * @generated from field: int32 delay_days = 5;
+   */
+  delayDays = 0;
+
+  /**
+   * @generated from field: string linked_object_type = 6;
+   */
+  linkedObjectType = "";
+
+  /**
+   * @generated from field: string linked_object_id = 7;
+   */
+  linkedObjectId = "";
+
+  /**
+   * @generated from field: string evidence = 8;
+   */
+  evidence = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp measured_at = 9;
+   */
+  measuredAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RecallRetentionMeasure>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallRetentionMeasure";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "measure_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "score", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "delay_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "linked_object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "linked_object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "measured_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallRetentionMeasure {
+    return new RecallRetentionMeasure().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallRetentionMeasure {
+    return new RecallRetentionMeasure().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallRetentionMeasure {
+    return new RecallRetentionMeasure().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallRetentionMeasure | PlainMessage<RecallRetentionMeasure> | undefined, b: RecallRetentionMeasure | PlainMessage<RecallRetentionMeasure> | undefined): boolean {
+    return proto3.util.equals(RecallRetentionMeasure, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecallPreferences
+ */
+export class RecallPreferences extends Message<RecallPreferences> {
+  /**
+   * @generated from field: int32 daily_minutes = 1;
+   */
+  dailyMinutes = 0;
+
+  /**
+   * @generated from field: int32 default_frequency_days = 2;
+   */
+  defaultFrequencyDays = 0;
+
+  /**
+   * @generated from field: bool vacation_mode = 3;
+   */
+  vacationMode = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp vacation_until = 4;
+   */
+  vacationUntil?: Timestamp;
+
+  /**
+   * @generated from field: bool reminders_enabled = 5;
+   */
+  remindersEnabled = false;
+
+  /**
+   * @generated from field: string locale = 6;
+   */
+  locale = "";
+
+  /**
+   * @generated from field: string feedback_style = 7;
+   */
+  feedbackStyle = "";
+
+  constructor(data?: PartialMessage<RecallPreferences>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecallPreferences";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "daily_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "default_frequency_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "vacation_mode", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "vacation_until", kind: "message", T: Timestamp },
+    { no: 5, name: "reminders_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "feedback_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecallPreferences {
+    return new RecallPreferences().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecallPreferences {
+    return new RecallPreferences().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecallPreferences {
+    return new RecallPreferences().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecallPreferences | PlainMessage<RecallPreferences> | undefined, b: RecallPreferences | PlainMessage<RecallPreferences> | undefined): boolean {
+    return proto3.util.equals(RecallPreferences, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetRecallDashboardRequest
+ */
+export class GetRecallDashboardRequest extends Message<GetRecallDashboardRequest> {
+  constructor(data?: PartialMessage<GetRecallDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetRecallDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRecallDashboardRequest {
+    return new GetRecallDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRecallDashboardRequest {
+    return new GetRecallDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRecallDashboardRequest {
+    return new GetRecallDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRecallDashboardRequest | PlainMessage<GetRecallDashboardRequest> | undefined, b: GetRecallDashboardRequest | PlainMessage<GetRecallDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetRecallDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetRecallDashboardResponse
+ */
+export class GetRecallDashboardResponse extends Message<GetRecallDashboardResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallDeck decks = 1;
+   */
+  decks: RecallDeck[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.MemoryItem due_items = 2;
+   */
+  dueItems: MemoryItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallSourceInvalidation invalidations = 3;
+   */
+  invalidations: RecallSourceInvalidation[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallRetentionMeasure retention = 4;
+   */
+  retention: RecallRetentionMeasure[] = [];
+
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallPreferences preferences = 5;
+   */
+  preferences?: RecallPreferences;
+
+  /**
+   * @generated from field: string runtime_status = 6;
+   */
+  runtimeStatus = "";
+
+  /**
+   * @generated from field: string public_notice = 7;
+   */
+  publicNotice = "";
+
+  /**
+   * @generated from field: string scheduler_version = 8;
+   */
+  schedulerVersion = "";
+
+  /**
+   * @generated from field: int32 due_count = 9;
+   */
+  dueCount = 0;
+
+  /**
+   * @generated from field: int32 new_count = 10;
+   */
+  newCount = 0;
+
+  /**
+   * @generated from field: int32 stale_count = 11;
+   */
+  staleCount = 0;
+
+  /**
+   * @generated from field: int32 delayed_recall_count = 12;
+   */
+  delayedRecallCount = 0;
+
+  constructor(data?: PartialMessage<GetRecallDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetRecallDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decks", kind: "message", T: RecallDeck, repeated: true },
+    { no: 2, name: "due_items", kind: "message", T: MemoryItem, repeated: true },
+    { no: 3, name: "invalidations", kind: "message", T: RecallSourceInvalidation, repeated: true },
+    { no: 4, name: "retention", kind: "message", T: RecallRetentionMeasure, repeated: true },
+    { no: 5, name: "preferences", kind: "message", T: RecallPreferences },
+    { no: 6, name: "runtime_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "scheduler_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "due_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "new_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "stale_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "delayed_recall_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRecallDashboardResponse {
+    return new GetRecallDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRecallDashboardResponse {
+    return new GetRecallDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRecallDashboardResponse {
+    return new GetRecallDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRecallDashboardResponse | PlainMessage<GetRecallDashboardResponse> | undefined, b: GetRecallDashboardResponse | PlainMessage<GetRecallDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetRecallDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListRecallDecksRequest
+ */
+export class ListRecallDecksRequest extends Message<ListRecallDecksRequest> {
+  /**
+   * @generated from field: bool include_archived = 1;
+   */
+  includeArchived = false;
+
+  constructor(data?: PartialMessage<ListRecallDecksRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListRecallDecksRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "include_archived", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRecallDecksRequest {
+    return new ListRecallDecksRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRecallDecksRequest {
+    return new ListRecallDecksRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRecallDecksRequest {
+    return new ListRecallDecksRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRecallDecksRequest | PlainMessage<ListRecallDecksRequest> | undefined, b: ListRecallDecksRequest | PlainMessage<ListRecallDecksRequest> | undefined): boolean {
+    return proto3.util.equals(ListRecallDecksRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListRecallDecksResponse
+ */
+export class ListRecallDecksResponse extends Message<ListRecallDecksResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallDeck decks = 1;
+   */
+  decks: RecallDeck[] = [];
+
+  constructor(data?: PartialMessage<ListRecallDecksResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListRecallDecksResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decks", kind: "message", T: RecallDeck, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRecallDecksResponse {
+    return new ListRecallDecksResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRecallDecksResponse {
+    return new ListRecallDecksResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRecallDecksResponse {
+    return new ListRecallDecksResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListRecallDecksResponse | PlainMessage<ListRecallDecksResponse> | undefined, b: ListRecallDecksResponse | PlainMessage<ListRecallDecksResponse> | undefined): boolean {
+    return proto3.util.equals(ListRecallDecksResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMemoryItemsRequest
+ */
+export class ListMemoryItemsRequest extends Message<ListMemoryItemsRequest> {
+  /**
+   * @generated from field: string deck_id = 1;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: repeated string statuses = 2;
+   */
+  statuses: string[] = [];
+
+  /**
+   * @generated from field: int32 limit = 3;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: string cursor = 4;
+   */
+  cursor = "";
+
+  constructor(data?: PartialMessage<ListMemoryItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMemoryItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "statuses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "cursor", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMemoryItemsRequest {
+    return new ListMemoryItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMemoryItemsRequest {
+    return new ListMemoryItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMemoryItemsRequest {
+    return new ListMemoryItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMemoryItemsRequest | PlainMessage<ListMemoryItemsRequest> | undefined, b: ListMemoryItemsRequest | PlainMessage<ListMemoryItemsRequest> | undefined): boolean {
+    return proto3.util.equals(ListMemoryItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListMemoryItemsResponse
+ */
+export class ListMemoryItemsResponse extends Message<ListMemoryItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.MemoryItem items = 1;
+   */
+  items: MemoryItem[] = [];
+
+  /**
+   * @generated from field: string next_cursor = 2;
+   */
+  nextCursor = "";
+
+  constructor(data?: PartialMessage<ListMemoryItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListMemoryItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "items", kind: "message", T: MemoryItem, repeated: true },
+    { no: 2, name: "next_cursor", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMemoryItemsResponse {
+    return new ListMemoryItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMemoryItemsResponse {
+    return new ListMemoryItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMemoryItemsResponse {
+    return new ListMemoryItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListMemoryItemsResponse | PlainMessage<ListMemoryItemsResponse> | undefined, b: ListMemoryItemsResponse | PlainMessage<ListMemoryItemsResponse> | undefined): boolean {
+    return proto3.util.equals(ListMemoryItemsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertRecallDeckRequest
+ */
+export class UpsertRecallDeckRequest extends Message<UpsertRecallDeckRequest> {
+  /**
+   * @generated from field: string deck_id = 1;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string scope = 4;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string project_key = 5;
+   */
+  projectKey = "";
+
+  /**
+   * @generated from field: int64 expected_version = 6;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertRecallDeckRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertRecallDeckRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "project_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertRecallDeckRequest {
+    return new UpsertRecallDeckRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertRecallDeckRequest {
+    return new UpsertRecallDeckRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertRecallDeckRequest {
+    return new UpsertRecallDeckRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertRecallDeckRequest | PlainMessage<UpsertRecallDeckRequest> | undefined, b: UpsertRecallDeckRequest | PlainMessage<UpsertRecallDeckRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertRecallDeckRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertRecallDeckResponse
+ */
+export class UpsertRecallDeckResponse extends Message<UpsertRecallDeckResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallDeck deck = 1;
+   */
+  deck?: RecallDeck;
+
+  constructor(data?: PartialMessage<UpsertRecallDeckResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertRecallDeckResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deck", kind: "message", T: RecallDeck },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertRecallDeckResponse {
+    return new UpsertRecallDeckResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertRecallDeckResponse {
+    return new UpsertRecallDeckResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertRecallDeckResponse {
+    return new UpsertRecallDeckResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertRecallDeckResponse | PlainMessage<UpsertRecallDeckResponse> | undefined, b: UpsertRecallDeckResponse | PlainMessage<UpsertRecallDeckResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertRecallDeckResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateRecallItemsRequest
+ */
+export class GenerateRecallItemsRequest extends Message<GenerateRecallItemsRequest> {
+  /**
+   * @generated from field: string deck_id = 1;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string source_type = 2;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 3;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: repeated string item_types = 4;
+   */
+  itemTypes: string[] = [];
+
+  /**
+   * @generated from field: string member_focus = 5;
+   */
+  memberFocus = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<GenerateRecallItemsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateRecallItemsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "item_types", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "member_focus", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateRecallItemsRequest {
+    return new GenerateRecallItemsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateRecallItemsRequest {
+    return new GenerateRecallItemsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateRecallItemsRequest {
+    return new GenerateRecallItemsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateRecallItemsRequest | PlainMessage<GenerateRecallItemsRequest> | undefined, b: GenerateRecallItemsRequest | PlainMessage<GenerateRecallItemsRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateRecallItemsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateRecallItemsResponse
+ */
+export class GenerateRecallItemsResponse extends Message<GenerateRecallItemsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.MemoryItem drafts = 1;
+   */
+  drafts: MemoryItem[] = [];
+
+  /**
+   * @generated from field: string generation_run_id = 2;
+   */
+  generationRunId = "";
+
+  /**
+   * @generated from field: string generator_version = 3;
+   */
+  generatorVersion = "";
+
+  /**
+   * @generated from field: string evaluator_version = 4;
+   */
+  evaluatorVersion = "";
+
+  constructor(data?: PartialMessage<GenerateRecallItemsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateRecallItemsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drafts", kind: "message", T: MemoryItem, repeated: true },
+    { no: 2, name: "generation_run_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "generator_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evaluator_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateRecallItemsResponse {
+    return new GenerateRecallItemsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateRecallItemsResponse {
+    return new GenerateRecallItemsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateRecallItemsResponse {
+    return new GenerateRecallItemsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateRecallItemsResponse | PlainMessage<GenerateRecallItemsResponse> | undefined, b: GenerateRecallItemsResponse | PlainMessage<GenerateRecallItemsResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateRecallItemsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertMemoryItemRequest
+ */
+export class UpsertMemoryItemRequest extends Message<UpsertMemoryItemRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string deck_id = 2;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string item_type = 4;
+   */
+  itemType = "";
+
+  /**
+   * @generated from field: string prompt = 5;
+   */
+  prompt = "";
+
+  /**
+   * @generated from field: string answer = 6;
+   */
+  answer = "";
+
+  /**
+   * @generated from field: string member_note = 7;
+   */
+  memberNote = "";
+
+  /**
+   * @generated from field: int32 importance = 8;
+   */
+  importance = 0;
+
+  /**
+   * @generated from field: int32 frequency_days = 9;
+   */
+  frequencyDays = 0;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallSourceAnchor source_anchor = 10;
+   */
+  sourceAnchor?: RecallSourceAnchor;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallPromptVariant prompt_variants = 11;
+   */
+  promptVariants: RecallPromptVariant[] = [];
+
+  /**
+   * @generated from field: int64 expected_version = 12;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 13;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertMemoryItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertMemoryItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "item_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "answer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "member_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "importance", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "frequency_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "source_anchor", kind: "message", T: RecallSourceAnchor },
+    { no: 11, name: "prompt_variants", kind: "message", T: RecallPromptVariant, repeated: true },
+    { no: 12, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertMemoryItemRequest {
+    return new UpsertMemoryItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertMemoryItemRequest {
+    return new UpsertMemoryItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertMemoryItemRequest {
+    return new UpsertMemoryItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertMemoryItemRequest | PlainMessage<UpsertMemoryItemRequest> | undefined, b: UpsertMemoryItemRequest | PlainMessage<UpsertMemoryItemRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertMemoryItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertMemoryItemResponse
+ */
+export class UpsertMemoryItemResponse extends Message<UpsertMemoryItemResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.MemoryItem item = 1;
+   */
+  item?: MemoryItem;
+
+  constructor(data?: PartialMessage<UpsertMemoryItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertMemoryItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: MemoryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertMemoryItemResponse {
+    return new UpsertMemoryItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertMemoryItemResponse {
+    return new UpsertMemoryItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertMemoryItemResponse {
+    return new UpsertMemoryItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertMemoryItemResponse | PlainMessage<UpsertMemoryItemResponse> | undefined, b: UpsertMemoryItemResponse | PlainMessage<UpsertMemoryItemResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertMemoryItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetMemoryItemStateRequest
+ */
+export class SetMemoryItemStateRequest extends Message<SetMemoryItemStateRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetMemoryItemStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetMemoryItemStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMemoryItemStateRequest {
+    return new SetMemoryItemStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMemoryItemStateRequest {
+    return new SetMemoryItemStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMemoryItemStateRequest {
+    return new SetMemoryItemStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetMemoryItemStateRequest | PlainMessage<SetMemoryItemStateRequest> | undefined, b: SetMemoryItemStateRequest | PlainMessage<SetMemoryItemStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetMemoryItemStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetMemoryItemStateResponse
+ */
+export class SetMemoryItemStateResponse extends Message<SetMemoryItemStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.MemoryItem item = 1;
+   */
+  item?: MemoryItem;
+
+  constructor(data?: PartialMessage<SetMemoryItemStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetMemoryItemStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "message", T: MemoryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMemoryItemStateResponse {
+    return new SetMemoryItemStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMemoryItemStateResponse {
+    return new SetMemoryItemStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMemoryItemStateResponse {
+    return new SetMemoryItemStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetMemoryItemStateResponse | PlainMessage<SetMemoryItemStateResponse> | undefined, b: SetMemoryItemStateResponse | PlainMessage<SetMemoryItemStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetMemoryItemStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetRecallReviewQueueRequest
+ */
+export class GetRecallReviewQueueRequest extends Message<GetRecallReviewQueueRequest> {
+  /**
+   * @generated from field: string session_type = 1;
+   */
+  sessionType = "";
+
+  /**
+   * @generated from field: string deck_id = 2;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string project_key = 3;
+   */
+  projectKey = "";
+
+  /**
+   * @generated from field: int32 limit = 4;
+   */
+  limit = 0;
+
+  /**
+   * @generated from field: string client_session_id = 5;
+   */
+  clientSessionId = "";
+
+  /**
+   * @generated from field: bool include_new = 6;
+   */
+  includeNew = false;
+
+  constructor(data?: PartialMessage<GetRecallReviewQueueRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetRecallReviewQueueRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "client_session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "include_new", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRecallReviewQueueRequest {
+    return new GetRecallReviewQueueRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRecallReviewQueueRequest {
+    return new GetRecallReviewQueueRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRecallReviewQueueRequest {
+    return new GetRecallReviewQueueRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRecallReviewQueueRequest | PlainMessage<GetRecallReviewQueueRequest> | undefined, b: GetRecallReviewQueueRequest | PlainMessage<GetRecallReviewQueueRequest> | undefined): boolean {
+    return proto3.util.equals(GetRecallReviewQueueRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetRecallReviewQueueResponse
+ */
+export class GetRecallReviewQueueResponse extends Message<GetRecallReviewQueueResponse> {
+  /**
+   * @generated from field: string session_id = 1;
+   */
+  sessionId = "";
+
+  /**
+   * @generated from field: string session_type = 2;
+   */
+  sessionType = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.MemoryItem items = 3;
+   */
+  items: MemoryItem[] = [];
+
+  /**
+   * @generated from field: string scheduler_version = 4;
+   */
+  schedulerVersion = "";
+
+  /**
+   * @generated from field: bool offline_allowed = 5;
+   */
+  offlineAllowed = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp generated_at = 6;
+   */
+  generatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<GetRecallReviewQueueResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetRecallReviewQueueResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "session_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "items", kind: "message", T: MemoryItem, repeated: true },
+    { no: 4, name: "scheduler_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "offline_allowed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "generated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRecallReviewQueueResponse {
+    return new GetRecallReviewQueueResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRecallReviewQueueResponse {
+    return new GetRecallReviewQueueResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRecallReviewQueueResponse {
+    return new GetRecallReviewQueueResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRecallReviewQueueResponse | PlainMessage<GetRecallReviewQueueResponse> | undefined, b: GetRecallReviewQueueResponse | PlainMessage<GetRecallReviewQueueResponse> | undefined): boolean {
+    return proto3.util.equals(GetRecallReviewQueueResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordRecallReviewBatchRequest
+ */
+export class RecordRecallReviewBatchRequest extends Message<RecordRecallReviewBatchRequest> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.RecallReviewEvent events = 1;
+   */
+  events: RecallReviewEvent[] = [];
+
+  /**
+   * @generated from field: string replica_id = 2;
+   */
+  replicaId = "";
+
+  /**
+   * @generated from field: string batch_id = 3;
+   */
+  batchId = "";
+
+  constructor(data?: PartialMessage<RecordRecallReviewBatchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordRecallReviewBatchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "events", kind: "message", T: RecallReviewEvent, repeated: true },
+    { no: 2, name: "replica_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "batch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRecallReviewBatchRequest {
+    return new RecordRecallReviewBatchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRecallReviewBatchRequest {
+    return new RecordRecallReviewBatchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRecallReviewBatchRequest {
+    return new RecordRecallReviewBatchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRecallReviewBatchRequest | PlainMessage<RecordRecallReviewBatchRequest> | undefined, b: RecordRecallReviewBatchRequest | PlainMessage<RecordRecallReviewBatchRequest> | undefined): boolean {
+    return proto3.util.equals(RecordRecallReviewBatchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordRecallReviewBatchResponse
+ */
+export class RecordRecallReviewBatchResponse extends Message<RecordRecallReviewBatchResponse> {
+  /**
+   * @generated from field: int32 accepted_count = 1;
+   */
+  acceptedCount = 0;
+
+  /**
+   * @generated from field: int32 duplicate_count = 2;
+   */
+  duplicateCount = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.MemoryItem revised_items = 3;
+   */
+  revisedItems: MemoryItem[] = [];
+
+  /**
+   * @generated from field: string receipt_id = 4;
+   */
+  receiptId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp server_time = 5;
+   */
+  serverTime?: Timestamp;
+
+  constructor(data?: PartialMessage<RecordRecallReviewBatchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordRecallReviewBatchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "accepted_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "duplicate_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "revised_items", kind: "message", T: MemoryItem, repeated: true },
+    { no: 4, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "server_time", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRecallReviewBatchResponse {
+    return new RecordRecallReviewBatchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRecallReviewBatchResponse {
+    return new RecordRecallReviewBatchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRecallReviewBatchResponse {
+    return new RecordRecallReviewBatchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRecallReviewBatchResponse | PlainMessage<RecordRecallReviewBatchResponse> | undefined, b: RecordRecallReviewBatchResponse | PlainMessage<RecordRecallReviewBatchResponse> | undefined): boolean {
+    return proto3.util.equals(RecordRecallReviewBatchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveRecallInvalidationRequest
+ */
+export class ResolveRecallInvalidationRequest extends Message<ResolveRecallInvalidationRequest> {
+  /**
+   * @generated from field: string invalidation_id = 1;
+   */
+  invalidationId = "";
+
+  /**
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string replacement_revision_id = 3;
+   */
+  replacementRevisionId = "";
+
+  /**
+   * @generated from field: string replacement_passage_key = 4;
+   */
+  replacementPassageKey = "";
+
+  /**
+   * @generated from field: string replacement_checksum = 5;
+   */
+  replacementChecksum = "";
+
+  /**
+   * @generated from field: string member_note = 6;
+   */
+  memberNote = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ResolveRecallInvalidationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveRecallInvalidationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "invalidation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "replacement_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "replacement_passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "replacement_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "member_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveRecallInvalidationRequest {
+    return new ResolveRecallInvalidationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveRecallInvalidationRequest {
+    return new ResolveRecallInvalidationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveRecallInvalidationRequest {
+    return new ResolveRecallInvalidationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveRecallInvalidationRequest | PlainMessage<ResolveRecallInvalidationRequest> | undefined, b: ResolveRecallInvalidationRequest | PlainMessage<ResolveRecallInvalidationRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveRecallInvalidationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveRecallInvalidationResponse
+ */
+export class ResolveRecallInvalidationResponse extends Message<ResolveRecallInvalidationResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallSourceInvalidation invalidation = 1;
+   */
+  invalidation?: RecallSourceInvalidation;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.MemoryItem item = 2;
+   */
+  item?: MemoryItem;
+
+  constructor(data?: PartialMessage<ResolveRecallInvalidationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveRecallInvalidationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "invalidation", kind: "message", T: RecallSourceInvalidation },
+    { no: 2, name: "item", kind: "message", T: MemoryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveRecallInvalidationResponse {
+    return new ResolveRecallInvalidationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveRecallInvalidationResponse {
+    return new ResolveRecallInvalidationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveRecallInvalidationResponse {
+    return new ResolveRecallInvalidationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveRecallInvalidationResponse | PlainMessage<ResolveRecallInvalidationResponse> | undefined, b: ResolveRecallInvalidationResponse | PlainMessage<ResolveRecallInvalidationResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveRecallInvalidationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateRecallPreferencesRequest
+ */
+export class UpdateRecallPreferencesRequest extends Message<UpdateRecallPreferencesRequest> {
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallPreferences preferences = 1;
+   */
+  preferences?: RecallPreferences;
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpdateRecallPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateRecallPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: RecallPreferences },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateRecallPreferencesRequest {
+    return new UpdateRecallPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateRecallPreferencesRequest {
+    return new UpdateRecallPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateRecallPreferencesRequest {
+    return new UpdateRecallPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateRecallPreferencesRequest | PlainMessage<UpdateRecallPreferencesRequest> | undefined, b: UpdateRecallPreferencesRequest | PlainMessage<UpdateRecallPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateRecallPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdateRecallPreferencesResponse
+ */
+export class UpdateRecallPreferencesResponse extends Message<UpdateRecallPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallPreferences preferences = 1;
+   */
+  preferences?: RecallPreferences;
+
+  constructor(data?: PartialMessage<UpdateRecallPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdateRecallPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: RecallPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateRecallPreferencesResponse {
+    return new UpdateRecallPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateRecallPreferencesResponse {
+    return new UpdateRecallPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateRecallPreferencesResponse {
+    return new UpdateRecallPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateRecallPreferencesResponse | PlainMessage<UpdateRecallPreferencesResponse> | undefined, b: UpdateRecallPreferencesResponse | PlainMessage<UpdateRecallPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateRecallPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportRecallDataRequest
+ */
+export class ExportRecallDataRequest extends Message<ExportRecallDataRequest> {
+  /**
+   * @generated from field: string format = 1;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string deck_id = 2;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: bool include_review_history = 3;
+   */
+  includeReviewHistory = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ExportRecallDataRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportRecallDataRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "include_review_history", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportRecallDataRequest {
+    return new ExportRecallDataRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportRecallDataRequest {
+    return new ExportRecallDataRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportRecallDataRequest {
+    return new ExportRecallDataRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportRecallDataRequest | PlainMessage<ExportRecallDataRequest> | undefined, b: ExportRecallDataRequest | PlainMessage<ExportRecallDataRequest> | undefined): boolean {
+    return proto3.util.equals(ExportRecallDataRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ExportRecallDataResponse
+ */
+export class ExportRecallDataResponse extends Message<ExportRecallDataResponse> {
+  /**
+   * @generated from field: string export_id = 1;
+   */
+  exportId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string format = 3;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string download_url = 4;
+   */
+  downloadUrl = "";
+
+  /**
+   * @generated from field: string checksum = 5;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: string lossiness_report = 6;
+   */
+  lossinessReport = "";
+
+  /**
+   * @generated from field: int64 byte_size = 7;
+   */
+  byteSize = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 8;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string payload = 9;
+   */
+  payload = "";
+
+  constructor(data?: PartialMessage<ExportRecallDataResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ExportRecallDataResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "lossiness_report", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "byte_size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 9, name: "payload", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportRecallDataResponse {
+    return new ExportRecallDataResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportRecallDataResponse {
+    return new ExportRecallDataResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportRecallDataResponse {
+    return new ExportRecallDataResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExportRecallDataResponse | PlainMessage<ExportRecallDataResponse> | undefined, b: ExportRecallDataResponse | PlainMessage<ExportRecallDataResponse> | undefined): boolean {
+    return proto3.util.equals(ExportRecallDataResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ImportRecallDataRequest
+ */
+export class ImportRecallDataRequest extends Message<ImportRecallDataRequest> {
+  /**
+   * @generated from field: string format = 1;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string deck_id = 2;
+   */
+  deckId = "";
+
+  /**
+   * @generated from field: string payload = 3;
+   */
+  payload = "";
+
+  /**
+   * @generated from field: string source_checksum = 4;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ImportRecallDataRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ImportRecallDataRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "deck_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "payload", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImportRecallDataRequest {
+    return new ImportRecallDataRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportRecallDataRequest {
+    return new ImportRecallDataRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImportRecallDataRequest {
+    return new ImportRecallDataRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ImportRecallDataRequest | PlainMessage<ImportRecallDataRequest> | undefined, b: ImportRecallDataRequest | PlainMessage<ImportRecallDataRequest> | undefined): boolean {
+    return proto3.util.equals(ImportRecallDataRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ImportRecallDataResponse
+ */
+export class ImportRecallDataResponse extends Message<ImportRecallDataResponse> {
+  /**
+   * @generated from field: string import_id = 1;
+   */
+  importId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 imported_count = 3;
+   */
+  importedCount = 0;
+
+  /**
+   * @generated from field: int32 skipped_count = 4;
+   */
+  skippedCount = 0;
+
+  /**
+   * @generated from field: string lossiness_report = 5;
+   */
+  lossinessReport = "";
+
+  constructor(data?: PartialMessage<ImportRecallDataResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ImportRecallDataResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "import_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "imported_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "skipped_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "lossiness_report", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImportRecallDataResponse {
+    return new ImportRecallDataResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImportRecallDataResponse {
+    return new ImportRecallDataResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImportRecallDataResponse {
+    return new ImportRecallDataResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ImportRecallDataResponse | PlainMessage<ImportRecallDataResponse> | undefined, b: ImportRecallDataResponse | PlainMessage<ImportRecallDataResponse> | undefined): boolean {
+    return proto3.util.equals(ImportRecallDataResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportRecallItemRequest
+ */
+export class ReportRecallItemRequest extends Message<ReportRecallItemRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string category = 2;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string statement = 3;
+   */
+  statement = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ReportRecallItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportRecallItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportRecallItemRequest {
+    return new ReportRecallItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportRecallItemRequest {
+    return new ReportRecallItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportRecallItemRequest {
+    return new ReportRecallItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportRecallItemRequest | PlainMessage<ReportRecallItemRequest> | undefined, b: ReportRecallItemRequest | PlainMessage<ReportRecallItemRequest> | undefined): boolean {
+    return proto3.util.equals(ReportRecallItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportRecallItemResponse
+ */
+export class ReportRecallItemResponse extends Message<ReportRecallItemResponse> {
+  /**
+   * @generated from field: string report_id = 1;
+   */
+  reportId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 3;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<ReportRecallItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportRecallItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "report_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportRecallItemResponse {
+    return new ReportRecallItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportRecallItemResponse {
+    return new ReportRecallItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportRecallItemResponse {
+    return new ReportRecallItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportRecallItemResponse | PlainMessage<ReportRecallItemResponse> | undefined, b: ReportRecallItemResponse | PlainMessage<ReportRecallItemResponse> | undefined): boolean {
+    return proto3.util.equals(ReportRecallItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordRecallTransferRequest
+ */
+export class RecordRecallTransferRequest extends Message<RecordRecallTransferRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string linked_object_type = 2;
+   */
+  linkedObjectType = "";
+
+  /**
+   * @generated from field: string linked_object_id = 3;
+   */
+  linkedObjectId = "";
+
+  /**
+   * @generated from field: string evidence = 4;
+   */
+  evidence = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RecordRecallTransferRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordRecallTransferRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "linked_object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "linked_object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRecallTransferRequest {
+    return new RecordRecallTransferRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRecallTransferRequest {
+    return new RecordRecallTransferRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRecallTransferRequest {
+    return new RecordRecallTransferRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRecallTransferRequest | PlainMessage<RecordRecallTransferRequest> | undefined, b: RecordRecallTransferRequest | PlainMessage<RecordRecallTransferRequest> | undefined): boolean {
+    return proto3.util.equals(RecordRecallTransferRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordRecallTransferResponse
+ */
+export class RecordRecallTransferResponse extends Message<RecordRecallTransferResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.RecallRetentionMeasure measure = 1;
+   */
+  measure?: RecallRetentionMeasure;
+
+  constructor(data?: PartialMessage<RecordRecallTransferResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordRecallTransferResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "measure", kind: "message", T: RecallRetentionMeasure },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRecallTransferResponse {
+    return new RecordRecallTransferResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRecallTransferResponse {
+    return new RecordRecallTransferResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRecallTransferResponse {
+    return new RecordRecallTransferResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRecallTransferResponse | PlainMessage<RecordRecallTransferResponse> | undefined, b: RecordRecallTransferResponse | PlainMessage<RecordRecallTransferResponse> | undefined): boolean {
+    return proto3.util.equals(RecordRecallTransferResponse, a, b);
+  }
+}
+

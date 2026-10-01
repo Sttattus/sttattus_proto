@@ -62135,6 +62135,4614 @@ class ReportSpatialCanvasAbuseResponse extends $pb.GeneratedMessage {
   $1.Timestamp ensureCreatedAt() => $_ensure(2);
 }
 
+/// Choice 16 — Active Recall and Durable Knowledge. Recall records remain
+/// member-owned. Generated factual text is anchored to immutable source
+/// passages; append-only review events drive a versioned deterministic schedule.
+class RecallSourceAnchor extends $pb.GeneratedMessage {
+  factory RecallSourceAnchor({
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.String? contentId,
+    $core.String? documentRevisionId,
+    $core.String? passageKey,
+    $core.String? sourceChecksum,
+    $core.String? quotedText,
+    $core.String? rightsStatus,
+    $core.bool? isStale,
+    $core.bool? isWithdrawn,
+    $core.String? staleReason,
+    $core.String? correctionSummary,
+    $core.String? replacementText,
+  }) {
+    final result = create();
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (contentId != null) result.contentId = contentId;
+    if (documentRevisionId != null)
+      result.documentRevisionId = documentRevisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (quotedText != null) result.quotedText = quotedText;
+    if (rightsStatus != null) result.rightsStatus = rightsStatus;
+    if (isStale != null) result.isStale = isStale;
+    if (isWithdrawn != null) result.isWithdrawn = isWithdrawn;
+    if (staleReason != null) result.staleReason = staleReason;
+    if (correctionSummary != null) result.correctionSummary = correctionSummary;
+    if (replacementText != null) result.replacementText = replacementText;
+    return result;
+  }
+
+  RecallSourceAnchor._();
+
+  factory RecallSourceAnchor.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallSourceAnchor.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallSourceAnchor',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(3, _omitFieldNames ? '' : 'contentId')
+    ..aOS(4, _omitFieldNames ? '' : 'documentRevisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(7, _omitFieldNames ? '' : 'quotedText')
+    ..aOS(8, _omitFieldNames ? '' : 'rightsStatus')
+    ..aOB(9, _omitFieldNames ? '' : 'isStale')
+    ..aOB(10, _omitFieldNames ? '' : 'isWithdrawn')
+    ..aOS(11, _omitFieldNames ? '' : 'staleReason')
+    ..aOS(12, _omitFieldNames ? '' : 'correctionSummary')
+    ..aOS(13, _omitFieldNames ? '' : 'replacementText')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSourceAnchor clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSourceAnchor copyWith(void Function(RecallSourceAnchor) updates) =>
+      super.copyWith((message) => updates(message as RecallSourceAnchor))
+          as RecallSourceAnchor;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallSourceAnchor create() => RecallSourceAnchor._();
+  @$core.override
+  RecallSourceAnchor createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallSourceAnchor getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallSourceAnchor>(create);
+  static RecallSourceAnchor? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceType($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceType() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get documentRevisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set documentRevisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDocumentRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDocumentRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceChecksum => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceChecksum($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceChecksum() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceChecksum() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get quotedText => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set quotedText($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuotedText() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuotedText() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get rightsStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set rightsStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRightsStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRightsStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get isStale => $_getBF(8);
+  @$pb.TagNumber(9)
+  set isStale($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIsStale() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIsStale() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get isWithdrawn => $_getBF(9);
+  @$pb.TagNumber(10)
+  set isWithdrawn($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasIsWithdrawn() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearIsWithdrawn() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get staleReason => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set staleReason($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStaleReason() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStaleReason() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get correctionSummary => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set correctionSummary($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCorrectionSummary() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCorrectionSummary() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get replacementText => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set replacementText($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasReplacementText() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearReplacementText() => $_clearField(13);
+}
+
+class RecallDeck extends $pb.GeneratedMessage {
+  factory RecallDeck({
+    $core.String? id,
+    $core.String? title,
+    $core.String? description,
+    $core.String? scope,
+    $core.String? status,
+    $core.String? callerRole,
+    $core.String? projectKey,
+    $core.int? itemCount,
+    $core.int? dueCount,
+    $core.int? staleCount,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (scope != null) result.scope = scope;
+    if (status != null) result.status = status;
+    if (callerRole != null) result.callerRole = callerRole;
+    if (projectKey != null) result.projectKey = projectKey;
+    if (itemCount != null) result.itemCount = itemCount;
+    if (dueCount != null) result.dueCount = dueCount;
+    if (staleCount != null) result.staleCount = staleCount;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  RecallDeck._();
+
+  factory RecallDeck.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallDeck.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallDeck',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'scope')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'callerRole')
+    ..aOS(7, _omitFieldNames ? '' : 'projectKey')
+    ..aI(8, _omitFieldNames ? '' : 'itemCount')
+    ..aI(9, _omitFieldNames ? '' : 'dueCount')
+    ..aI(10, _omitFieldNames ? '' : 'staleCount')
+    ..aInt64(11, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallDeck clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallDeck copyWith(void Function(RecallDeck) updates) =>
+      super.copyWith((message) => updates(message as RecallDeck)) as RecallDeck;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallDeck create() => RecallDeck._();
+  @$core.override
+  RecallDeck createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallDeck getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallDeck>(create);
+  static RecallDeck? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get scope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get callerRole => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set callerRole($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCallerRole() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCallerRole() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get projectKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set projectKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProjectKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProjectKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get itemCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set itemCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasItemCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearItemCount() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get dueCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set dueCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDueCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDueCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get staleCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set staleCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStaleCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStaleCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get version => $_getI64(10);
+  @$pb.TagNumber(11)
+  set version($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get updatedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set updatedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(12);
+}
+
+class RecallPromptVariant extends $pb.GeneratedMessage {
+  factory RecallPromptVariant({
+    $core.String? id,
+    $core.String? itemId,
+    $core.String? kind,
+    $core.String? prompt,
+    $core.String? answer,
+    $core.String? explanation,
+    $core.Iterable<$core.String>? choices,
+    $core.int? sequence,
+    $core.bool? isGenerated,
+    $core.String? generatorVersion,
+    $core.String? evaluatorVersion,
+    $core.String? groundingStatus,
+    $fixnum.Int64? version,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemId != null) result.itemId = itemId;
+    if (kind != null) result.kind = kind;
+    if (prompt != null) result.prompt = prompt;
+    if (answer != null) result.answer = answer;
+    if (explanation != null) result.explanation = explanation;
+    if (choices != null) result.choices.addAll(choices);
+    if (sequence != null) result.sequence = sequence;
+    if (isGenerated != null) result.isGenerated = isGenerated;
+    if (generatorVersion != null) result.generatorVersion = generatorVersion;
+    if (evaluatorVersion != null) result.evaluatorVersion = evaluatorVersion;
+    if (groundingStatus != null) result.groundingStatus = groundingStatus;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  RecallPromptVariant._();
+
+  factory RecallPromptVariant.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallPromptVariant.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallPromptVariant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemId')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aOS(4, _omitFieldNames ? '' : 'prompt')
+    ..aOS(5, _omitFieldNames ? '' : 'answer')
+    ..aOS(6, _omitFieldNames ? '' : 'explanation')
+    ..pPS(7, _omitFieldNames ? '' : 'choices')
+    ..aI(8, _omitFieldNames ? '' : 'sequence')
+    ..aOB(9, _omitFieldNames ? '' : 'isGenerated')
+    ..aOS(10, _omitFieldNames ? '' : 'generatorVersion')
+    ..aOS(11, _omitFieldNames ? '' : 'evaluatorVersion')
+    ..aOS(12, _omitFieldNames ? '' : 'groundingStatus')
+    ..aInt64(13, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallPromptVariant clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallPromptVariant copyWith(void Function(RecallPromptVariant) updates) =>
+      super.copyWith((message) => updates(message as RecallPromptVariant))
+          as RecallPromptVariant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallPromptVariant create() => RecallPromptVariant._();
+  @$core.override
+  RecallPromptVariant createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallPromptVariant getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallPromptVariant>(create);
+  static RecallPromptVariant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get prompt => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set prompt($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPrompt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPrompt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get answer => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set answer($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAnswer() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAnswer() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get explanation => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set explanation($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExplanation() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExplanation() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get choices => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.int get sequence => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set sequence($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSequence() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSequence() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get isGenerated => $_getBF(8);
+  @$pb.TagNumber(9)
+  set isGenerated($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIsGenerated() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIsGenerated() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get generatorVersion => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set generatorVersion($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasGeneratorVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearGeneratorVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get evaluatorVersion => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set evaluatorVersion($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEvaluatorVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEvaluatorVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get groundingStatus => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set groundingStatus($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasGroundingStatus() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearGroundingStatus() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $fixnum.Int64 get version => $_getI64(12);
+  @$pb.TagNumber(13)
+  set version($fixnum.Int64 value) => $_setInt64(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearVersion() => $_clearField(13);
+}
+
+class RecallSchedule extends $pb.GeneratedMessage {
+  factory RecallSchedule({
+    $core.String? itemId,
+    $core.String? policyVersion,
+    $core.String? state,
+    $1.Timestamp? dueAt,
+    $core.double? intervalDays,
+    $core.double? stability,
+    $core.double? difficulty,
+    $core.double? interference,
+    $core.int? reviewCount,
+    $core.int? lapseCount,
+    $core.double? lastConfidence,
+    $fixnum.Int64? lastLatencyMs,
+    $1.Timestamp? lastReviewedAt,
+    $fixnum.Int64? revision,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (state != null) result.state = state;
+    if (dueAt != null) result.dueAt = dueAt;
+    if (intervalDays != null) result.intervalDays = intervalDays;
+    if (stability != null) result.stability = stability;
+    if (difficulty != null) result.difficulty = difficulty;
+    if (interference != null) result.interference = interference;
+    if (reviewCount != null) result.reviewCount = reviewCount;
+    if (lapseCount != null) result.lapseCount = lapseCount;
+    if (lastConfidence != null) result.lastConfidence = lastConfidence;
+    if (lastLatencyMs != null) result.lastLatencyMs = lastLatencyMs;
+    if (lastReviewedAt != null) result.lastReviewedAt = lastReviewedAt;
+    if (revision != null) result.revision = revision;
+    return result;
+  }
+
+  RecallSchedule._();
+
+  factory RecallSchedule.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallSchedule.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallSchedule',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'policyVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'state')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'dueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aD(5, _omitFieldNames ? '' : 'intervalDays')
+    ..aD(6, _omitFieldNames ? '' : 'stability')
+    ..aD(7, _omitFieldNames ? '' : 'difficulty')
+    ..aD(8, _omitFieldNames ? '' : 'interference')
+    ..aI(9, _omitFieldNames ? '' : 'reviewCount')
+    ..aI(10, _omitFieldNames ? '' : 'lapseCount')
+    ..aD(11, _omitFieldNames ? '' : 'lastConfidence')
+    ..aInt64(12, _omitFieldNames ? '' : 'lastLatencyMs')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'lastReviewedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(14, _omitFieldNames ? '' : 'revision')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSchedule clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSchedule copyWith(void Function(RecallSchedule) updates) =>
+      super.copyWith((message) => updates(message as RecallSchedule))
+          as RecallSchedule;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallSchedule create() => RecallSchedule._();
+  @$core.override
+  RecallSchedule createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallSchedule getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallSchedule>(create);
+  static RecallSchedule? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get policyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set policyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get state => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set state($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get dueAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set dueAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDueAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDueAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureDueAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.double get intervalDays => $_getN(4);
+  @$pb.TagNumber(5)
+  set intervalDays($core.double value) => $_setDouble(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIntervalDays() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIntervalDays() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get stability => $_getN(5);
+  @$pb.TagNumber(6)
+  set stability($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStability() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStability() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.double get difficulty => $_getN(6);
+  @$pb.TagNumber(7)
+  set difficulty($core.double value) => $_setDouble(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDifficulty() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDifficulty() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get interference => $_getN(7);
+  @$pb.TagNumber(8)
+  set interference($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInterference() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInterference() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get reviewCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set reviewCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReviewCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReviewCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get lapseCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set lapseCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLapseCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLapseCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.double get lastConfidence => $_getN(10);
+  @$pb.TagNumber(11)
+  set lastConfidence($core.double value) => $_setDouble(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLastConfidence() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLastConfidence() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get lastLatencyMs => $_getI64(11);
+  @$pb.TagNumber(12)
+  set lastLatencyMs($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLastLatencyMs() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLastLatencyMs() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get lastReviewedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set lastReviewedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLastReviewedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLastReviewedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureLastReviewedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get revision => $_getI64(13);
+  @$pb.TagNumber(14)
+  set revision($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRevision() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRevision() => $_clearField(14);
+}
+
+class MemoryItem extends $pb.GeneratedMessage {
+  factory MemoryItem({
+    $core.String? id,
+    $core.String? deckId,
+    $core.String? ownerUserId,
+    $core.String? title,
+    $core.String? itemType,
+    $core.String? prompt,
+    $core.String? answer,
+    $core.String? memberNote,
+    $core.String? status,
+    $core.String? provenance,
+    $core.int? importance,
+    $core.int? frequencyDays,
+    $core.bool? memberEditedPrompt,
+    $core.bool? memberEditedAnswer,
+    $core.bool? memberEditedNote,
+    RecallSourceAnchor? sourceAnchor,
+    $core.Iterable<RecallPromptVariant>? promptVariants,
+    RecallSchedule? schedule,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (deckId != null) result.deckId = deckId;
+    if (ownerUserId != null) result.ownerUserId = ownerUserId;
+    if (title != null) result.title = title;
+    if (itemType != null) result.itemType = itemType;
+    if (prompt != null) result.prompt = prompt;
+    if (answer != null) result.answer = answer;
+    if (memberNote != null) result.memberNote = memberNote;
+    if (status != null) result.status = status;
+    if (provenance != null) result.provenance = provenance;
+    if (importance != null) result.importance = importance;
+    if (frequencyDays != null) result.frequencyDays = frequencyDays;
+    if (memberEditedPrompt != null)
+      result.memberEditedPrompt = memberEditedPrompt;
+    if (memberEditedAnswer != null)
+      result.memberEditedAnswer = memberEditedAnswer;
+    if (memberEditedNote != null) result.memberEditedNote = memberEditedNote;
+    if (sourceAnchor != null) result.sourceAnchor = sourceAnchor;
+    if (promptVariants != null) result.promptVariants.addAll(promptVariants);
+    if (schedule != null) result.schedule = schedule;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  MemoryItem._();
+
+  factory MemoryItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MemoryItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MemoryItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'deckId')
+    ..aOS(3, _omitFieldNames ? '' : 'ownerUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'itemType')
+    ..aOS(6, _omitFieldNames ? '' : 'prompt')
+    ..aOS(7, _omitFieldNames ? '' : 'answer')
+    ..aOS(8, _omitFieldNames ? '' : 'memberNote')
+    ..aOS(9, _omitFieldNames ? '' : 'status')
+    ..aOS(10, _omitFieldNames ? '' : 'provenance')
+    ..aI(11, _omitFieldNames ? '' : 'importance')
+    ..aI(12, _omitFieldNames ? '' : 'frequencyDays')
+    ..aOB(13, _omitFieldNames ? '' : 'memberEditedPrompt')
+    ..aOB(14, _omitFieldNames ? '' : 'memberEditedAnswer')
+    ..aOB(15, _omitFieldNames ? '' : 'memberEditedNote')
+    ..aOM<RecallSourceAnchor>(16, _omitFieldNames ? '' : 'sourceAnchor',
+        subBuilder: RecallSourceAnchor.create)
+    ..pPM<RecallPromptVariant>(17, _omitFieldNames ? '' : 'promptVariants',
+        subBuilder: RecallPromptVariant.create)
+    ..aOM<RecallSchedule>(18, _omitFieldNames ? '' : 'schedule',
+        subBuilder: RecallSchedule.create)
+    ..aInt64(19, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(21, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MemoryItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MemoryItem copyWith(void Function(MemoryItem) updates) =>
+      super.copyWith((message) => updates(message as MemoryItem)) as MemoryItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MemoryItem create() => MemoryItem._();
+  @$core.override
+  MemoryItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MemoryItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MemoryItem>(create);
+  static MemoryItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deckId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ownerUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ownerUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOwnerUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOwnerUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get itemType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set itemType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasItemType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearItemType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get prompt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set prompt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPrompt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPrompt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get answer => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set answer($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAnswer() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAnswer() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get memberNote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set memberNote($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberNote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get status => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set status($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get provenance => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set provenance($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasProvenance() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearProvenance() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get importance => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set importance($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasImportance() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearImportance() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get frequencyDays => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set frequencyDays($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasFrequencyDays() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearFrequencyDays() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get memberEditedPrompt => $_getBF(12);
+  @$pb.TagNumber(13)
+  set memberEditedPrompt($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasMemberEditedPrompt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearMemberEditedPrompt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.bool get memberEditedAnswer => $_getBF(13);
+  @$pb.TagNumber(14)
+  set memberEditedAnswer($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasMemberEditedAnswer() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearMemberEditedAnswer() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get memberEditedNote => $_getBF(14);
+  @$pb.TagNumber(15)
+  set memberEditedNote($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasMemberEditedNote() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearMemberEditedNote() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  RecallSourceAnchor get sourceAnchor => $_getN(15);
+  @$pb.TagNumber(16)
+  set sourceAnchor(RecallSourceAnchor value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasSourceAnchor() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSourceAnchor() => $_clearField(16);
+  @$pb.TagNumber(16)
+  RecallSourceAnchor ensureSourceAnchor() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $pb.PbList<RecallPromptVariant> get promptVariants => $_getList(16);
+
+  @$pb.TagNumber(18)
+  RecallSchedule get schedule => $_getN(17);
+  @$pb.TagNumber(18)
+  set schedule(RecallSchedule value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasSchedule() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearSchedule() => $_clearField(18);
+  @$pb.TagNumber(18)
+  RecallSchedule ensureSchedule() => $_ensure(17);
+
+  @$pb.TagNumber(19)
+  $fixnum.Int64 get version => $_getI64(18);
+  @$pb.TagNumber(19)
+  set version($fixnum.Int64 value) => $_setInt64(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasVersion() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearVersion() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get createdAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set createdAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasCreatedAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearCreatedAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensureCreatedAt() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $1.Timestamp get updatedAt => $_getN(20);
+  @$pb.TagNumber(21)
+  set updatedAt($1.Timestamp value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasUpdatedAt() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearUpdatedAt() => $_clearField(21);
+  @$pb.TagNumber(21)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(20);
+}
+
+class RecallReviewEvent extends $pb.GeneratedMessage {
+  factory RecallReviewEvent({
+    $core.String? id,
+    $core.String? clientEventId,
+    $core.String? itemId,
+    $core.String? promptVariantId,
+    $core.String? sessionId,
+    $core.String? result,
+    $core.int? confidence,
+    $fixnum.Int64? latencyMs,
+    $core.String? answerText,
+    $core.bool? reviewedOffline,
+    $core.String? policyVersion,
+    $1.Timestamp? reviewedAt,
+    $1.Timestamp? receivedAt,
+  }) {
+    final result$ = create();
+    if (id != null) result$.id = id;
+    if (clientEventId != null) result$.clientEventId = clientEventId;
+    if (itemId != null) result$.itemId = itemId;
+    if (promptVariantId != null) result$.promptVariantId = promptVariantId;
+    if (sessionId != null) result$.sessionId = sessionId;
+    if (result != null) result$.result = result;
+    if (confidence != null) result$.confidence = confidence;
+    if (latencyMs != null) result$.latencyMs = latencyMs;
+    if (answerText != null) result$.answerText = answerText;
+    if (reviewedOffline != null) result$.reviewedOffline = reviewedOffline;
+    if (policyVersion != null) result$.policyVersion = policyVersion;
+    if (reviewedAt != null) result$.reviewedAt = reviewedAt;
+    if (receivedAt != null) result$.receivedAt = receivedAt;
+    return result$;
+  }
+
+  RecallReviewEvent._();
+
+  factory RecallReviewEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallReviewEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallReviewEvent',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'clientEventId')
+    ..aOS(3, _omitFieldNames ? '' : 'itemId')
+    ..aOS(4, _omitFieldNames ? '' : 'promptVariantId')
+    ..aOS(5, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(6, _omitFieldNames ? '' : 'result')
+    ..aI(7, _omitFieldNames ? '' : 'confidence')
+    ..aInt64(8, _omitFieldNames ? '' : 'latencyMs')
+    ..aOS(9, _omitFieldNames ? '' : 'answerText')
+    ..aOB(10, _omitFieldNames ? '' : 'reviewedOffline')
+    ..aOS(11, _omitFieldNames ? '' : 'policyVersion')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'reviewedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'receivedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallReviewEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallReviewEvent copyWith(void Function(RecallReviewEvent) updates) =>
+      super.copyWith((message) => updates(message as RecallReviewEvent))
+          as RecallReviewEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallReviewEvent create() => RecallReviewEvent._();
+  @$core.override
+  RecallReviewEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallReviewEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallReviewEvent>(create);
+  static RecallReviewEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientEventId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientEventId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientEventId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientEventId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get itemId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set itemId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasItemId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearItemId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get promptVariantId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set promptVariantId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPromptVariantId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPromptVariantId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sessionId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sessionId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSessionId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSessionId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get result => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set result($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasResult() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResult() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get confidence => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set confidence($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConfidence() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfidence() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get latencyMs => $_getI64(7);
+  @$pb.TagNumber(8)
+  set latencyMs($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLatencyMs() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLatencyMs() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get answerText => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set answerText($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAnswerText() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAnswerText() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get reviewedOffline => $_getBF(9);
+  @$pb.TagNumber(10)
+  set reviewedOffline($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasReviewedOffline() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearReviewedOffline() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get policyVersion => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set policyVersion($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPolicyVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPolicyVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get reviewedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set reviewedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasReviewedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearReviewedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureReviewedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get receivedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set receivedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasReceivedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearReceivedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureReceivedAt() => $_ensure(12);
+}
+
+class RecallSourceInvalidation extends $pb.GeneratedMessage {
+  factory RecallSourceInvalidation({
+    $core.String? id,
+    $core.String? itemId,
+    $core.String? correctionId,
+    $core.String? status,
+    $core.String? reason,
+    $core.String? oldAnchorJson,
+    $core.String? correctionDiff,
+    $core.String? resolution,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemId != null) result.itemId = itemId;
+    if (correctionId != null) result.correctionId = correctionId;
+    if (status != null) result.status = status;
+    if (reason != null) result.reason = reason;
+    if (oldAnchorJson != null) result.oldAnchorJson = oldAnchorJson;
+    if (correctionDiff != null) result.correctionDiff = correctionDiff;
+    if (resolution != null) result.resolution = resolution;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  RecallSourceInvalidation._();
+
+  factory RecallSourceInvalidation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallSourceInvalidation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallSourceInvalidation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemId')
+    ..aOS(3, _omitFieldNames ? '' : 'correctionId')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'reason')
+    ..aOS(6, _omitFieldNames ? '' : 'oldAnchorJson')
+    ..aOS(7, _omitFieldNames ? '' : 'correctionDiff')
+    ..aOS(8, _omitFieldNames ? '' : 'resolution')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSourceInvalidation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallSourceInvalidation copyWith(
+          void Function(RecallSourceInvalidation) updates) =>
+      super.copyWith((message) => updates(message as RecallSourceInvalidation))
+          as RecallSourceInvalidation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallSourceInvalidation create() => RecallSourceInvalidation._();
+  @$core.override
+  RecallSourceInvalidation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallSourceInvalidation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallSourceInvalidation>(create);
+  static RecallSourceInvalidation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get correctionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set correctionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCorrectionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCorrectionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reason => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reason($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReason() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReason() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get oldAnchorJson => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set oldAnchorJson($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOldAnchorJson() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOldAnchorJson() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get correctionDiff => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set correctionDiff($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCorrectionDiff() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCorrectionDiff() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get resolution => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set resolution($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolution() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolution() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get createdAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set createdAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get resolvedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set resolvedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolvedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolvedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureResolvedAt() => $_ensure(9);
+}
+
+class RecallRetentionMeasure extends $pb.GeneratedMessage {
+  factory RecallRetentionMeasure({
+    $core.String? id,
+    $core.String? itemId,
+    $core.String? measureType,
+    $core.double? score,
+    $core.int? delayDays,
+    $core.String? linkedObjectType,
+    $core.String? linkedObjectId,
+    $core.String? evidence,
+    $1.Timestamp? measuredAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemId != null) result.itemId = itemId;
+    if (measureType != null) result.measureType = measureType;
+    if (score != null) result.score = score;
+    if (delayDays != null) result.delayDays = delayDays;
+    if (linkedObjectType != null) result.linkedObjectType = linkedObjectType;
+    if (linkedObjectId != null) result.linkedObjectId = linkedObjectId;
+    if (evidence != null) result.evidence = evidence;
+    if (measuredAt != null) result.measuredAt = measuredAt;
+    return result;
+  }
+
+  RecallRetentionMeasure._();
+
+  factory RecallRetentionMeasure.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallRetentionMeasure.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallRetentionMeasure',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemId')
+    ..aOS(3, _omitFieldNames ? '' : 'measureType')
+    ..aD(4, _omitFieldNames ? '' : 'score')
+    ..aI(5, _omitFieldNames ? '' : 'delayDays')
+    ..aOS(6, _omitFieldNames ? '' : 'linkedObjectType')
+    ..aOS(7, _omitFieldNames ? '' : 'linkedObjectId')
+    ..aOS(8, _omitFieldNames ? '' : 'evidence')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'measuredAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallRetentionMeasure clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallRetentionMeasure copyWith(
+          void Function(RecallRetentionMeasure) updates) =>
+      super.copyWith((message) => updates(message as RecallRetentionMeasure))
+          as RecallRetentionMeasure;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallRetentionMeasure create() => RecallRetentionMeasure._();
+  @$core.override
+  RecallRetentionMeasure createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallRetentionMeasure getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallRetentionMeasure>(create);
+  static RecallRetentionMeasure? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get measureType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set measureType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMeasureType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMeasureType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.double get score => $_getN(3);
+  @$pb.TagNumber(4)
+  set score($core.double value) => $_setDouble(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScore() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScore() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get delayDays => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set delayDays($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDelayDays() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDelayDays() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get linkedObjectType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set linkedObjectType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLinkedObjectType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLinkedObjectType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get linkedObjectId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set linkedObjectId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLinkedObjectId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLinkedObjectId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get evidence => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set evidence($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEvidence() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvidence() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get measuredAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set measuredAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMeasuredAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMeasuredAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureMeasuredAt() => $_ensure(8);
+}
+
+class RecallPreferences extends $pb.GeneratedMessage {
+  factory RecallPreferences({
+    $core.int? dailyMinutes,
+    $core.int? defaultFrequencyDays,
+    $core.bool? vacationMode,
+    $1.Timestamp? vacationUntil,
+    $core.bool? remindersEnabled,
+    $core.String? locale,
+    $core.String? feedbackStyle,
+  }) {
+    final result = create();
+    if (dailyMinutes != null) result.dailyMinutes = dailyMinutes;
+    if (defaultFrequencyDays != null)
+      result.defaultFrequencyDays = defaultFrequencyDays;
+    if (vacationMode != null) result.vacationMode = vacationMode;
+    if (vacationUntil != null) result.vacationUntil = vacationUntil;
+    if (remindersEnabled != null) result.remindersEnabled = remindersEnabled;
+    if (locale != null) result.locale = locale;
+    if (feedbackStyle != null) result.feedbackStyle = feedbackStyle;
+    return result;
+  }
+
+  RecallPreferences._();
+
+  factory RecallPreferences.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecallPreferences.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecallPreferences',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'dailyMinutes')
+    ..aI(2, _omitFieldNames ? '' : 'defaultFrequencyDays')
+    ..aOB(3, _omitFieldNames ? '' : 'vacationMode')
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'vacationUntil',
+        subBuilder: $1.Timestamp.create)
+    ..aOB(5, _omitFieldNames ? '' : 'remindersEnabled')
+    ..aOS(6, _omitFieldNames ? '' : 'locale')
+    ..aOS(7, _omitFieldNames ? '' : 'feedbackStyle')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallPreferences clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecallPreferences copyWith(void Function(RecallPreferences) updates) =>
+      super.copyWith((message) => updates(message as RecallPreferences))
+          as RecallPreferences;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecallPreferences create() => RecallPreferences._();
+  @$core.override
+  RecallPreferences createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecallPreferences getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecallPreferences>(create);
+  static RecallPreferences? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get dailyMinutes => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set dailyMinutes($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDailyMinutes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDailyMinutes() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get defaultFrequencyDays => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set defaultFrequencyDays($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDefaultFrequencyDays() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDefaultFrequencyDays() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get vacationMode => $_getBF(2);
+  @$pb.TagNumber(3)
+  set vacationMode($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVacationMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVacationMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get vacationUntil => $_getN(3);
+  @$pb.TagNumber(4)
+  set vacationUntil($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVacationUntil() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVacationUntil() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureVacationUntil() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.bool get remindersEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set remindersEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRemindersEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRemindersEnabled() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get locale => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set locale($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLocale() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLocale() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get feedbackStyle => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set feedbackStyle($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFeedbackStyle() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFeedbackStyle() => $_clearField(7);
+}
+
+class GetRecallDashboardRequest extends $pb.GeneratedMessage {
+  factory GetRecallDashboardRequest() => create();
+
+  GetRecallDashboardRequest._();
+
+  factory GetRecallDashboardRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRecallDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRecallDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallDashboardRequest copyWith(
+          void Function(GetRecallDashboardRequest) updates) =>
+      super.copyWith((message) => updates(message as GetRecallDashboardRequest))
+          as GetRecallDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRecallDashboardRequest create() => GetRecallDashboardRequest._();
+  @$core.override
+  GetRecallDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRecallDashboardRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRecallDashboardRequest>(create);
+  static GetRecallDashboardRequest? _defaultInstance;
+}
+
+class GetRecallDashboardResponse extends $pb.GeneratedMessage {
+  factory GetRecallDashboardResponse({
+    $core.Iterable<RecallDeck>? decks,
+    $core.Iterable<MemoryItem>? dueItems,
+    $core.Iterable<RecallSourceInvalidation>? invalidations,
+    $core.Iterable<RecallRetentionMeasure>? retention,
+    RecallPreferences? preferences,
+    $core.String? runtimeStatus,
+    $core.String? publicNotice,
+    $core.String? schedulerVersion,
+    $core.int? dueCount,
+    $core.int? newCount,
+    $core.int? staleCount,
+    $core.int? delayedRecallCount,
+  }) {
+    final result = create();
+    if (decks != null) result.decks.addAll(decks);
+    if (dueItems != null) result.dueItems.addAll(dueItems);
+    if (invalidations != null) result.invalidations.addAll(invalidations);
+    if (retention != null) result.retention.addAll(retention);
+    if (preferences != null) result.preferences = preferences;
+    if (runtimeStatus != null) result.runtimeStatus = runtimeStatus;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    if (schedulerVersion != null) result.schedulerVersion = schedulerVersion;
+    if (dueCount != null) result.dueCount = dueCount;
+    if (newCount != null) result.newCount = newCount;
+    if (staleCount != null) result.staleCount = staleCount;
+    if (delayedRecallCount != null)
+      result.delayedRecallCount = delayedRecallCount;
+    return result;
+  }
+
+  GetRecallDashboardResponse._();
+
+  factory GetRecallDashboardResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRecallDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRecallDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<RecallDeck>(1, _omitFieldNames ? '' : 'decks',
+        subBuilder: RecallDeck.create)
+    ..pPM<MemoryItem>(2, _omitFieldNames ? '' : 'dueItems',
+        subBuilder: MemoryItem.create)
+    ..pPM<RecallSourceInvalidation>(3, _omitFieldNames ? '' : 'invalidations',
+        subBuilder: RecallSourceInvalidation.create)
+    ..pPM<RecallRetentionMeasure>(4, _omitFieldNames ? '' : 'retention',
+        subBuilder: RecallRetentionMeasure.create)
+    ..aOM<RecallPreferences>(5, _omitFieldNames ? '' : 'preferences',
+        subBuilder: RecallPreferences.create)
+    ..aOS(6, _omitFieldNames ? '' : 'runtimeStatus')
+    ..aOS(7, _omitFieldNames ? '' : 'publicNotice')
+    ..aOS(8, _omitFieldNames ? '' : 'schedulerVersion')
+    ..aI(9, _omitFieldNames ? '' : 'dueCount')
+    ..aI(10, _omitFieldNames ? '' : 'newCount')
+    ..aI(11, _omitFieldNames ? '' : 'staleCount')
+    ..aI(12, _omitFieldNames ? '' : 'delayedRecallCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallDashboardResponse copyWith(
+          void Function(GetRecallDashboardResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetRecallDashboardResponse))
+          as GetRecallDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRecallDashboardResponse create() => GetRecallDashboardResponse._();
+  @$core.override
+  GetRecallDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRecallDashboardResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRecallDashboardResponse>(create);
+  static GetRecallDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RecallDeck> get decks => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<MemoryItem> get dueItems => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<RecallSourceInvalidation> get invalidations => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<RecallRetentionMeasure> get retention => $_getList(3);
+
+  @$pb.TagNumber(5)
+  RecallPreferences get preferences => $_getN(4);
+  @$pb.TagNumber(5)
+  set preferences(RecallPreferences value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPreferences() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPreferences() => $_clearField(5);
+  @$pb.TagNumber(5)
+  RecallPreferences ensurePreferences() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get runtimeStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set runtimeStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRuntimeStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRuntimeStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get publicNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set publicNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPublicNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPublicNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get schedulerVersion => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set schedulerVersion($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSchedulerVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSchedulerVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get dueCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set dueCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDueCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDueCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get newCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set newCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNewCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNewCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get staleCount => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set staleCount($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStaleCount() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStaleCount() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get delayedRecallCount => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set delayedRecallCount($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDelayedRecallCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDelayedRecallCount() => $_clearField(12);
+}
+
+class ListRecallDecksRequest extends $pb.GeneratedMessage {
+  factory ListRecallDecksRequest({
+    $core.bool? includeArchived,
+  }) {
+    final result = create();
+    if (includeArchived != null) result.includeArchived = includeArchived;
+    return result;
+  }
+
+  ListRecallDecksRequest._();
+
+  factory ListRecallDecksRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRecallDecksRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRecallDecksRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'includeArchived')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecallDecksRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecallDecksRequest copyWith(
+          void Function(ListRecallDecksRequest) updates) =>
+      super.copyWith((message) => updates(message as ListRecallDecksRequest))
+          as ListRecallDecksRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRecallDecksRequest create() => ListRecallDecksRequest._();
+  @$core.override
+  ListRecallDecksRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRecallDecksRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRecallDecksRequest>(create);
+  static ListRecallDecksRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get includeArchived => $_getBF(0);
+  @$pb.TagNumber(1)
+  set includeArchived($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncludeArchived() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncludeArchived() => $_clearField(1);
+}
+
+class ListRecallDecksResponse extends $pb.GeneratedMessage {
+  factory ListRecallDecksResponse({
+    $core.Iterable<RecallDeck>? decks,
+  }) {
+    final result = create();
+    if (decks != null) result.decks.addAll(decks);
+    return result;
+  }
+
+  ListRecallDecksResponse._();
+
+  factory ListRecallDecksResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListRecallDecksResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListRecallDecksResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<RecallDeck>(1, _omitFieldNames ? '' : 'decks',
+        subBuilder: RecallDeck.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecallDecksResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListRecallDecksResponse copyWith(
+          void Function(ListRecallDecksResponse) updates) =>
+      super.copyWith((message) => updates(message as ListRecallDecksResponse))
+          as ListRecallDecksResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRecallDecksResponse create() => ListRecallDecksResponse._();
+  @$core.override
+  ListRecallDecksResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListRecallDecksResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListRecallDecksResponse>(create);
+  static ListRecallDecksResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RecallDeck> get decks => $_getList(0);
+}
+
+class ListMemoryItemsRequest extends $pb.GeneratedMessage {
+  factory ListMemoryItemsRequest({
+    $core.String? deckId,
+    $core.Iterable<$core.String>? statuses,
+    $core.int? limit,
+    $core.String? cursor,
+  }) {
+    final result = create();
+    if (deckId != null) result.deckId = deckId;
+    if (statuses != null) result.statuses.addAll(statuses);
+    if (limit != null) result.limit = limit;
+    if (cursor != null) result.cursor = cursor;
+    return result;
+  }
+
+  ListMemoryItemsRequest._();
+
+  factory ListMemoryItemsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMemoryItemsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMemoryItemsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deckId')
+    ..pPS(2, _omitFieldNames ? '' : 'statuses')
+    ..aI(3, _omitFieldNames ? '' : 'limit')
+    ..aOS(4, _omitFieldNames ? '' : 'cursor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMemoryItemsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMemoryItemsRequest copyWith(
+          void Function(ListMemoryItemsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListMemoryItemsRequest))
+          as ListMemoryItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMemoryItemsRequest create() => ListMemoryItemsRequest._();
+  @$core.override
+  ListMemoryItemsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMemoryItemsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMemoryItemsRequest>(create);
+  static ListMemoryItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deckId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deckId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeckId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeckId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get statuses => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.int get limit => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set limit($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimit() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cursor => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cursor($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCursor() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCursor() => $_clearField(4);
+}
+
+class ListMemoryItemsResponse extends $pb.GeneratedMessage {
+  factory ListMemoryItemsResponse({
+    $core.Iterable<MemoryItem>? items,
+    $core.String? nextCursor,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (nextCursor != null) result.nextCursor = nextCursor;
+    return result;
+  }
+
+  ListMemoryItemsResponse._();
+
+  factory ListMemoryItemsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListMemoryItemsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListMemoryItemsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<MemoryItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: MemoryItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextCursor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMemoryItemsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListMemoryItemsResponse copyWith(
+          void Function(ListMemoryItemsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListMemoryItemsResponse))
+          as ListMemoryItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListMemoryItemsResponse create() => ListMemoryItemsResponse._();
+  @$core.override
+  ListMemoryItemsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListMemoryItemsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListMemoryItemsResponse>(create);
+  static ListMemoryItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MemoryItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextCursor => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextCursor($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNextCursor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextCursor() => $_clearField(2);
+}
+
+class UpsertRecallDeckRequest extends $pb.GeneratedMessage {
+  factory UpsertRecallDeckRequest({
+    $core.String? deckId,
+    $core.String? title,
+    $core.String? description,
+    $core.String? scope,
+    $core.String? projectKey,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (deckId != null) result.deckId = deckId;
+    if (title != null) result.title = title;
+    if (description != null) result.description = description;
+    if (scope != null) result.scope = scope;
+    if (projectKey != null) result.projectKey = projectKey;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertRecallDeckRequest._();
+
+  factory UpsertRecallDeckRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertRecallDeckRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertRecallDeckRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deckId')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'scope')
+    ..aOS(5, _omitFieldNames ? '' : 'projectKey')
+    ..aInt64(6, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertRecallDeckRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertRecallDeckRequest copyWith(
+          void Function(UpsertRecallDeckRequest) updates) =>
+      super.copyWith((message) => updates(message as UpsertRecallDeckRequest))
+          as UpsertRecallDeckRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertRecallDeckRequest create() => UpsertRecallDeckRequest._();
+  @$core.override
+  UpsertRecallDeckRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertRecallDeckRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertRecallDeckRequest>(create);
+  static UpsertRecallDeckRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deckId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deckId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeckId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeckId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get scope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get projectKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set projectKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProjectKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProjectKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get expectedVersion => $_getI64(5);
+  @$pb.TagNumber(6)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExpectedVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExpectedVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class UpsertRecallDeckResponse extends $pb.GeneratedMessage {
+  factory UpsertRecallDeckResponse({
+    RecallDeck? deck,
+  }) {
+    final result = create();
+    if (deck != null) result.deck = deck;
+    return result;
+  }
+
+  UpsertRecallDeckResponse._();
+
+  factory UpsertRecallDeckResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertRecallDeckResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertRecallDeckResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<RecallDeck>(1, _omitFieldNames ? '' : 'deck',
+        subBuilder: RecallDeck.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertRecallDeckResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertRecallDeckResponse copyWith(
+          void Function(UpsertRecallDeckResponse) updates) =>
+      super.copyWith((message) => updates(message as UpsertRecallDeckResponse))
+          as UpsertRecallDeckResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertRecallDeckResponse create() => UpsertRecallDeckResponse._();
+  @$core.override
+  UpsertRecallDeckResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertRecallDeckResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertRecallDeckResponse>(create);
+  static UpsertRecallDeckResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecallDeck get deck => $_getN(0);
+  @$pb.TagNumber(1)
+  set deck(RecallDeck value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeck() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeck() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecallDeck ensureDeck() => $_ensure(0);
+}
+
+class GenerateRecallItemsRequest extends $pb.GeneratedMessage {
+  factory GenerateRecallItemsRequest({
+    $core.String? deckId,
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.Iterable<$core.String>? itemTypes,
+    $core.String? memberFocus,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (deckId != null) result.deckId = deckId;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (itemTypes != null) result.itemTypes.addAll(itemTypes);
+    if (memberFocus != null) result.memberFocus = memberFocus;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  GenerateRecallItemsRequest._();
+
+  factory GenerateRecallItemsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateRecallItemsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateRecallItemsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deckId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceId')
+    ..pPS(4, _omitFieldNames ? '' : 'itemTypes')
+    ..aOS(5, _omitFieldNames ? '' : 'memberFocus')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateRecallItemsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateRecallItemsRequest copyWith(
+          void Function(GenerateRecallItemsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateRecallItemsRequest))
+          as GenerateRecallItemsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateRecallItemsRequest create() => GenerateRecallItemsRequest._();
+  @$core.override
+  GenerateRecallItemsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateRecallItemsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateRecallItemsRequest>(create);
+  static GenerateRecallItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deckId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deckId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeckId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeckId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get itemTypes => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get memberFocus => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberFocus($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberFocus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberFocus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class GenerateRecallItemsResponse extends $pb.GeneratedMessage {
+  factory GenerateRecallItemsResponse({
+    $core.Iterable<MemoryItem>? drafts,
+    $core.String? generationRunId,
+    $core.String? generatorVersion,
+    $core.String? evaluatorVersion,
+  }) {
+    final result = create();
+    if (drafts != null) result.drafts.addAll(drafts);
+    if (generationRunId != null) result.generationRunId = generationRunId;
+    if (generatorVersion != null) result.generatorVersion = generatorVersion;
+    if (evaluatorVersion != null) result.evaluatorVersion = evaluatorVersion;
+    return result;
+  }
+
+  GenerateRecallItemsResponse._();
+
+  factory GenerateRecallItemsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateRecallItemsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateRecallItemsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<MemoryItem>(1, _omitFieldNames ? '' : 'drafts',
+        subBuilder: MemoryItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'generationRunId')
+    ..aOS(3, _omitFieldNames ? '' : 'generatorVersion')
+    ..aOS(4, _omitFieldNames ? '' : 'evaluatorVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateRecallItemsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateRecallItemsResponse copyWith(
+          void Function(GenerateRecallItemsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GenerateRecallItemsResponse))
+          as GenerateRecallItemsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateRecallItemsResponse create() =>
+      GenerateRecallItemsResponse._();
+  @$core.override
+  GenerateRecallItemsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateRecallItemsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GenerateRecallItemsResponse>(create);
+  static GenerateRecallItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<MemoryItem> get drafts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get generationRunId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set generationRunId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGenerationRunId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGenerationRunId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get generatorVersion => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set generatorVersion($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGeneratorVersion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGeneratorVersion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evaluatorVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evaluatorVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvaluatorVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvaluatorVersion() => $_clearField(4);
+}
+
+class UpsertMemoryItemRequest extends $pb.GeneratedMessage {
+  factory UpsertMemoryItemRequest({
+    $core.String? itemId,
+    $core.String? deckId,
+    $core.String? title,
+    $core.String? itemType,
+    $core.String? prompt,
+    $core.String? answer,
+    $core.String? memberNote,
+    $core.int? importance,
+    $core.int? frequencyDays,
+    RecallSourceAnchor? sourceAnchor,
+    $core.Iterable<RecallPromptVariant>? promptVariants,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (deckId != null) result.deckId = deckId;
+    if (title != null) result.title = title;
+    if (itemType != null) result.itemType = itemType;
+    if (prompt != null) result.prompt = prompt;
+    if (answer != null) result.answer = answer;
+    if (memberNote != null) result.memberNote = memberNote;
+    if (importance != null) result.importance = importance;
+    if (frequencyDays != null) result.frequencyDays = frequencyDays;
+    if (sourceAnchor != null) result.sourceAnchor = sourceAnchor;
+    if (promptVariants != null) result.promptVariants.addAll(promptVariants);
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpsertMemoryItemRequest._();
+
+  factory UpsertMemoryItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertMemoryItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertMemoryItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'deckId')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'itemType')
+    ..aOS(5, _omitFieldNames ? '' : 'prompt')
+    ..aOS(6, _omitFieldNames ? '' : 'answer')
+    ..aOS(7, _omitFieldNames ? '' : 'memberNote')
+    ..aI(8, _omitFieldNames ? '' : 'importance')
+    ..aI(9, _omitFieldNames ? '' : 'frequencyDays')
+    ..aOM<RecallSourceAnchor>(10, _omitFieldNames ? '' : 'sourceAnchor',
+        subBuilder: RecallSourceAnchor.create)
+    ..pPM<RecallPromptVariant>(11, _omitFieldNames ? '' : 'promptVariants',
+        subBuilder: RecallPromptVariant.create)
+    ..aInt64(12, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(13, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMemoryItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMemoryItemRequest copyWith(
+          void Function(UpsertMemoryItemRequest) updates) =>
+      super.copyWith((message) => updates(message as UpsertMemoryItemRequest))
+          as UpsertMemoryItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertMemoryItemRequest create() => UpsertMemoryItemRequest._();
+  @$core.override
+  UpsertMemoryItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertMemoryItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertMemoryItemRequest>(create);
+  static UpsertMemoryItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deckId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get itemType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set itemType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasItemType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearItemType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get prompt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set prompt($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrompt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrompt() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get answer => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set answer($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAnswer() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAnswer() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get memberNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set memberNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMemberNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemberNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get importance => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set importance($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasImportance() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearImportance() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get frequencyDays => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set frequencyDays($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasFrequencyDays() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFrequencyDays() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  RecallSourceAnchor get sourceAnchor => $_getN(9);
+  @$pb.TagNumber(10)
+  set sourceAnchor(RecallSourceAnchor value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceAnchor() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceAnchor() => $_clearField(10);
+  @$pb.TagNumber(10)
+  RecallSourceAnchor ensureSourceAnchor() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<RecallPromptVariant> get promptVariants => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get expectedVersion => $_getI64(11);
+  @$pb.TagNumber(12)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExpectedVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpectedVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get clientMutationId => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set clientMutationId($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasClientMutationId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearClientMutationId() => $_clearField(13);
+}
+
+class UpsertMemoryItemResponse extends $pb.GeneratedMessage {
+  factory UpsertMemoryItemResponse({
+    MemoryItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpsertMemoryItemResponse._();
+
+  factory UpsertMemoryItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertMemoryItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertMemoryItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<MemoryItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: MemoryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMemoryItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertMemoryItemResponse copyWith(
+          void Function(UpsertMemoryItemResponse) updates) =>
+      super.copyWith((message) => updates(message as UpsertMemoryItemResponse))
+          as UpsertMemoryItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertMemoryItemResponse create() => UpsertMemoryItemResponse._();
+  @$core.override
+  UpsertMemoryItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertMemoryItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertMemoryItemResponse>(create);
+  static UpsertMemoryItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MemoryItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(MemoryItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MemoryItem ensureItem() => $_ensure(0);
+}
+
+class SetMemoryItemStateRequest extends $pb.GeneratedMessage {
+  factory SetMemoryItemStateRequest({
+    $core.String? itemId,
+    $core.String? action,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (action != null) result.action = action;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetMemoryItemStateRequest._();
+
+  factory SetMemoryItemStateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMemoryItemStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMemoryItemStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemoryItemStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemoryItemStateRequest copyWith(
+          void Function(SetMemoryItemStateRequest) updates) =>
+      super.copyWith((message) => updates(message as SetMemoryItemStateRequest))
+          as SetMemoryItemStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMemoryItemStateRequest create() => SetMemoryItemStateRequest._();
+  @$core.override
+  SetMemoryItemStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMemoryItemStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMemoryItemStateRequest>(create);
+  static SetMemoryItemStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class SetMemoryItemStateResponse extends $pb.GeneratedMessage {
+  factory SetMemoryItemStateResponse({
+    MemoryItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SetMemoryItemStateResponse._();
+
+  factory SetMemoryItemStateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetMemoryItemStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetMemoryItemStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<MemoryItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: MemoryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemoryItemStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetMemoryItemStateResponse copyWith(
+          void Function(SetMemoryItemStateResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetMemoryItemStateResponse))
+          as SetMemoryItemStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetMemoryItemStateResponse create() => SetMemoryItemStateResponse._();
+  @$core.override
+  SetMemoryItemStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetMemoryItemStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetMemoryItemStateResponse>(create);
+  static SetMemoryItemStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  MemoryItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(MemoryItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  MemoryItem ensureItem() => $_ensure(0);
+}
+
+class GetRecallReviewQueueRequest extends $pb.GeneratedMessage {
+  factory GetRecallReviewQueueRequest({
+    $core.String? sessionType,
+    $core.String? deckId,
+    $core.String? projectKey,
+    $core.int? limit,
+    $core.String? clientSessionId,
+    $core.bool? includeNew,
+  }) {
+    final result = create();
+    if (sessionType != null) result.sessionType = sessionType;
+    if (deckId != null) result.deckId = deckId;
+    if (projectKey != null) result.projectKey = projectKey;
+    if (limit != null) result.limit = limit;
+    if (clientSessionId != null) result.clientSessionId = clientSessionId;
+    if (includeNew != null) result.includeNew = includeNew;
+    return result;
+  }
+
+  GetRecallReviewQueueRequest._();
+
+  factory GetRecallReviewQueueRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRecallReviewQueueRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRecallReviewQueueRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionType')
+    ..aOS(2, _omitFieldNames ? '' : 'deckId')
+    ..aOS(3, _omitFieldNames ? '' : 'projectKey')
+    ..aI(4, _omitFieldNames ? '' : 'limit')
+    ..aOS(5, _omitFieldNames ? '' : 'clientSessionId')
+    ..aOB(6, _omitFieldNames ? '' : 'includeNew')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallReviewQueueRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallReviewQueueRequest copyWith(
+          void Function(GetRecallReviewQueueRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetRecallReviewQueueRequest))
+          as GetRecallReviewQueueRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRecallReviewQueueRequest create() =>
+      GetRecallReviewQueueRequest._();
+  @$core.override
+  GetRecallReviewQueueRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRecallReviewQueueRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRecallReviewQueueRequest>(create);
+  static GetRecallReviewQueueRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionType => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionType($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionType() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deckId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get projectKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set projectKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProjectKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProjectKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get limit => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set limit($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLimit() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLimit() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientSessionId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientSessionId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientSessionId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientSessionId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get includeNew => $_getBF(5);
+  @$pb.TagNumber(6)
+  set includeNew($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIncludeNew() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIncludeNew() => $_clearField(6);
+}
+
+class GetRecallReviewQueueResponse extends $pb.GeneratedMessage {
+  factory GetRecallReviewQueueResponse({
+    $core.String? sessionId,
+    $core.String? sessionType,
+    $core.Iterable<MemoryItem>? items,
+    $core.String? schedulerVersion,
+    $core.bool? offlineAllowed,
+    $1.Timestamp? generatedAt,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (sessionType != null) result.sessionType = sessionType;
+    if (items != null) result.items.addAll(items);
+    if (schedulerVersion != null) result.schedulerVersion = schedulerVersion;
+    if (offlineAllowed != null) result.offlineAllowed = offlineAllowed;
+    if (generatedAt != null) result.generatedAt = generatedAt;
+    return result;
+  }
+
+  GetRecallReviewQueueResponse._();
+
+  factory GetRecallReviewQueueResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetRecallReviewQueueResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetRecallReviewQueueResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(2, _omitFieldNames ? '' : 'sessionType')
+    ..pPM<MemoryItem>(3, _omitFieldNames ? '' : 'items',
+        subBuilder: MemoryItem.create)
+    ..aOS(4, _omitFieldNames ? '' : 'schedulerVersion')
+    ..aOB(5, _omitFieldNames ? '' : 'offlineAllowed')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'generatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallReviewQueueResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetRecallReviewQueueResponse copyWith(
+          void Function(GetRecallReviewQueueResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetRecallReviewQueueResponse))
+          as GetRecallReviewQueueResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetRecallReviewQueueResponse create() =>
+      GetRecallReviewQueueResponse._();
+  @$core.override
+  GetRecallReviewQueueResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetRecallReviewQueueResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetRecallReviewQueueResponse>(create);
+  static GetRecallReviewQueueResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sessionType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sessionType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSessionType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSessionType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<MemoryItem> get items => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get schedulerVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set schedulerVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSchedulerVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSchedulerVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get offlineAllowed => $_getBF(4);
+  @$pb.TagNumber(5)
+  set offlineAllowed($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOfflineAllowed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOfflineAllowed() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get generatedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set generatedAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGeneratedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGeneratedAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureGeneratedAt() => $_ensure(5);
+}
+
+class RecordRecallReviewBatchRequest extends $pb.GeneratedMessage {
+  factory RecordRecallReviewBatchRequest({
+    $core.Iterable<RecallReviewEvent>? events,
+    $core.String? replicaId,
+    $core.String? batchId,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    if (replicaId != null) result.replicaId = replicaId;
+    if (batchId != null) result.batchId = batchId;
+    return result;
+  }
+
+  RecordRecallReviewBatchRequest._();
+
+  factory RecordRecallReviewBatchRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordRecallReviewBatchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordRecallReviewBatchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<RecallReviewEvent>(1, _omitFieldNames ? '' : 'events',
+        subBuilder: RecallReviewEvent.create)
+    ..aOS(2, _omitFieldNames ? '' : 'replicaId')
+    ..aOS(3, _omitFieldNames ? '' : 'batchId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallReviewBatchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallReviewBatchRequest copyWith(
+          void Function(RecordRecallReviewBatchRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordRecallReviewBatchRequest))
+          as RecordRecallReviewBatchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallReviewBatchRequest create() =>
+      RecordRecallReviewBatchRequest._();
+  @$core.override
+  RecordRecallReviewBatchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallReviewBatchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordRecallReviewBatchRequest>(create);
+  static RecordRecallReviewBatchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<RecallReviewEvent> get events => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get replicaId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set replicaId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplicaId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplicaId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get batchId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set batchId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBatchId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBatchId() => $_clearField(3);
+}
+
+class RecordRecallReviewBatchResponse extends $pb.GeneratedMessage {
+  factory RecordRecallReviewBatchResponse({
+    $core.int? acceptedCount,
+    $core.int? duplicateCount,
+    $core.Iterable<MemoryItem>? revisedItems,
+    $core.String? receiptId,
+    $1.Timestamp? serverTime,
+  }) {
+    final result = create();
+    if (acceptedCount != null) result.acceptedCount = acceptedCount;
+    if (duplicateCount != null) result.duplicateCount = duplicateCount;
+    if (revisedItems != null) result.revisedItems.addAll(revisedItems);
+    if (receiptId != null) result.receiptId = receiptId;
+    if (serverTime != null) result.serverTime = serverTime;
+    return result;
+  }
+
+  RecordRecallReviewBatchResponse._();
+
+  factory RecordRecallReviewBatchResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordRecallReviewBatchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordRecallReviewBatchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'acceptedCount')
+    ..aI(2, _omitFieldNames ? '' : 'duplicateCount')
+    ..pPM<MemoryItem>(3, _omitFieldNames ? '' : 'revisedItems',
+        subBuilder: MemoryItem.create)
+    ..aOS(4, _omitFieldNames ? '' : 'receiptId')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'serverTime',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallReviewBatchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallReviewBatchResponse copyWith(
+          void Function(RecordRecallReviewBatchResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordRecallReviewBatchResponse))
+          as RecordRecallReviewBatchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallReviewBatchResponse create() =>
+      RecordRecallReviewBatchResponse._();
+  @$core.override
+  RecordRecallReviewBatchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallReviewBatchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordRecallReviewBatchResponse>(
+          create);
+  static RecordRecallReviewBatchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get acceptedCount => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set acceptedCount($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAcceptedCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAcceptedCount() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get duplicateCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set duplicateCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDuplicateCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDuplicateCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<MemoryItem> get revisedItems => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get receiptId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set receiptId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReceiptId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReceiptId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get serverTime => $_getN(4);
+  @$pb.TagNumber(5)
+  set serverTime($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasServerTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearServerTime() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureServerTime() => $_ensure(4);
+}
+
+class ResolveRecallInvalidationRequest extends $pb.GeneratedMessage {
+  factory ResolveRecallInvalidationRequest({
+    $core.String? invalidationId,
+    $core.String? action,
+    $core.String? replacementRevisionId,
+    $core.String? replacementPassageKey,
+    $core.String? replacementChecksum,
+    $core.String? memberNote,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (invalidationId != null) result.invalidationId = invalidationId;
+    if (action != null) result.action = action;
+    if (replacementRevisionId != null)
+      result.replacementRevisionId = replacementRevisionId;
+    if (replacementPassageKey != null)
+      result.replacementPassageKey = replacementPassageKey;
+    if (replacementChecksum != null)
+      result.replacementChecksum = replacementChecksum;
+    if (memberNote != null) result.memberNote = memberNote;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ResolveRecallInvalidationRequest._();
+
+  factory ResolveRecallInvalidationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveRecallInvalidationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveRecallInvalidationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'invalidationId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOS(3, _omitFieldNames ? '' : 'replacementRevisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'replacementPassageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'replacementChecksum')
+    ..aOS(6, _omitFieldNames ? '' : 'memberNote')
+    ..aOS(7, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveRecallInvalidationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveRecallInvalidationRequest copyWith(
+          void Function(ResolveRecallInvalidationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ResolveRecallInvalidationRequest))
+          as ResolveRecallInvalidationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveRecallInvalidationRequest create() =>
+      ResolveRecallInvalidationRequest._();
+  @$core.override
+  ResolveRecallInvalidationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveRecallInvalidationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveRecallInvalidationRequest>(
+          create);
+  static ResolveRecallInvalidationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get invalidationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set invalidationId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInvalidationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInvalidationId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get replacementRevisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set replacementRevisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReplacementRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReplacementRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get replacementPassageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set replacementPassageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReplacementPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReplacementPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get replacementChecksum => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set replacementChecksum($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReplacementChecksum() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReplacementChecksum() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get memberNote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set memberNote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMemberNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMemberNote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientMutationId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientMutationId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasClientMutationId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientMutationId() => $_clearField(7);
+}
+
+class ResolveRecallInvalidationResponse extends $pb.GeneratedMessage {
+  factory ResolveRecallInvalidationResponse({
+    RecallSourceInvalidation? invalidation,
+    MemoryItem? item,
+  }) {
+    final result = create();
+    if (invalidation != null) result.invalidation = invalidation;
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  ResolveRecallInvalidationResponse._();
+
+  factory ResolveRecallInvalidationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveRecallInvalidationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveRecallInvalidationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<RecallSourceInvalidation>(1, _omitFieldNames ? '' : 'invalidation',
+        subBuilder: RecallSourceInvalidation.create)
+    ..aOM<MemoryItem>(2, _omitFieldNames ? '' : 'item',
+        subBuilder: MemoryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveRecallInvalidationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveRecallInvalidationResponse copyWith(
+          void Function(ResolveRecallInvalidationResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveRecallInvalidationResponse))
+          as ResolveRecallInvalidationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveRecallInvalidationResponse create() =>
+      ResolveRecallInvalidationResponse._();
+  @$core.override
+  ResolveRecallInvalidationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveRecallInvalidationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveRecallInvalidationResponse>(
+          create);
+  static ResolveRecallInvalidationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecallSourceInvalidation get invalidation => $_getN(0);
+  @$pb.TagNumber(1)
+  set invalidation(RecallSourceInvalidation value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInvalidation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInvalidation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecallSourceInvalidation ensureInvalidation() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  MemoryItem get item => $_getN(1);
+  @$pb.TagNumber(2)
+  set item(MemoryItem value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItem() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItem() => $_clearField(2);
+  @$pb.TagNumber(2)
+  MemoryItem ensureItem() => $_ensure(1);
+}
+
+class UpdateRecallPreferencesRequest extends $pb.GeneratedMessage {
+  factory UpdateRecallPreferencesRequest({
+    RecallPreferences? preferences,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  UpdateRecallPreferencesRequest._();
+
+  factory UpdateRecallPreferencesRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateRecallPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateRecallPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<RecallPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: RecallPreferences.create)
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRecallPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRecallPreferencesRequest copyWith(
+          void Function(UpdateRecallPreferencesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateRecallPreferencesRequest))
+          as UpdateRecallPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRecallPreferencesRequest create() =>
+      UpdateRecallPreferencesRequest._();
+  @$core.override
+  UpdateRecallPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRecallPreferencesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateRecallPreferencesRequest>(create);
+  static UpdateRecallPreferencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecallPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(RecallPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecallPreferences ensurePreferences() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class UpdateRecallPreferencesResponse extends $pb.GeneratedMessage {
+  factory UpdateRecallPreferencesResponse({
+    RecallPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdateRecallPreferencesResponse._();
+
+  factory UpdateRecallPreferencesResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateRecallPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateRecallPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<RecallPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: RecallPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRecallPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRecallPreferencesResponse copyWith(
+          void Function(UpdateRecallPreferencesResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateRecallPreferencesResponse))
+          as UpdateRecallPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRecallPreferencesResponse create() =>
+      UpdateRecallPreferencesResponse._();
+  @$core.override
+  UpdateRecallPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRecallPreferencesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateRecallPreferencesResponse>(
+          create);
+  static UpdateRecallPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecallPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(RecallPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecallPreferences ensurePreferences() => $_ensure(0);
+}
+
+class ExportRecallDataRequest extends $pb.GeneratedMessage {
+  factory ExportRecallDataRequest({
+    $core.String? format,
+    $core.String? deckId,
+    $core.bool? includeReviewHistory,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (format != null) result.format = format;
+    if (deckId != null) result.deckId = deckId;
+    if (includeReviewHistory != null)
+      result.includeReviewHistory = includeReviewHistory;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ExportRecallDataRequest._();
+
+  factory ExportRecallDataRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportRecallDataRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportRecallDataRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'format')
+    ..aOS(2, _omitFieldNames ? '' : 'deckId')
+    ..aOB(3, _omitFieldNames ? '' : 'includeReviewHistory')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportRecallDataRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportRecallDataRequest copyWith(
+          void Function(ExportRecallDataRequest) updates) =>
+      super.copyWith((message) => updates(message as ExportRecallDataRequest))
+          as ExportRecallDataRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportRecallDataRequest create() => ExportRecallDataRequest._();
+  @$core.override
+  ExportRecallDataRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportRecallDataRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportRecallDataRequest>(create);
+  static ExportRecallDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get format => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set format($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFormat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFormat() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deckId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get includeReviewHistory => $_getBF(2);
+  @$pb.TagNumber(3)
+  set includeReviewHistory($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIncludeReviewHistory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIncludeReviewHistory() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class ExportRecallDataResponse extends $pb.GeneratedMessage {
+  factory ExportRecallDataResponse({
+    $core.String? exportId,
+    $core.String? status,
+    $core.String? format,
+    $core.String? downloadUrl,
+    $core.String? checksum,
+    $core.String? lossinessReport,
+    $fixnum.Int64? byteSize,
+    $1.Timestamp? expiresAt,
+    $core.String? payload,
+  }) {
+    final result = create();
+    if (exportId != null) result.exportId = exportId;
+    if (status != null) result.status = status;
+    if (format != null) result.format = format;
+    if (downloadUrl != null) result.downloadUrl = downloadUrl;
+    if (checksum != null) result.checksum = checksum;
+    if (lossinessReport != null) result.lossinessReport = lossinessReport;
+    if (byteSize != null) result.byteSize = byteSize;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (payload != null) result.payload = payload;
+    return result;
+  }
+
+  ExportRecallDataResponse._();
+
+  factory ExportRecallDataResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportRecallDataResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportRecallDataResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'exportId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'format')
+    ..aOS(4, _omitFieldNames ? '' : 'downloadUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'checksum')
+    ..aOS(6, _omitFieldNames ? '' : 'lossinessReport')
+    ..aInt64(7, _omitFieldNames ? '' : 'byteSize')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(9, _omitFieldNames ? '' : 'payload')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportRecallDataResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportRecallDataResponse copyWith(
+          void Function(ExportRecallDataResponse) updates) =>
+      super.copyWith((message) => updates(message as ExportRecallDataResponse))
+          as ExportRecallDataResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportRecallDataResponse create() => ExportRecallDataResponse._();
+  @$core.override
+  ExportRecallDataResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportRecallDataResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportRecallDataResponse>(create);
+  static ExportRecallDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get exportId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set exportId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExportId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get format => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set format($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFormat() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFormat() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get downloadUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set downloadUrl($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDownloadUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDownloadUrl() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get checksum => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set checksum($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasChecksum() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChecksum() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get lossinessReport => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set lossinessReport($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLossinessReport() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLossinessReport() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get byteSize => $_getI64(6);
+  @$pb.TagNumber(7)
+  set byteSize($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasByteSize() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearByteSize() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get expiresAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set expiresAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExpiresAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExpiresAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureExpiresAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $core.String get payload => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set payload($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPayload() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPayload() => $_clearField(9);
+}
+
+class ImportRecallDataRequest extends $pb.GeneratedMessage {
+  factory ImportRecallDataRequest({
+    $core.String? format,
+    $core.String? deckId,
+    $core.String? payload,
+    $core.String? sourceChecksum,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (format != null) result.format = format;
+    if (deckId != null) result.deckId = deckId;
+    if (payload != null) result.payload = payload;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ImportRecallDataRequest._();
+
+  factory ImportRecallDataRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImportRecallDataRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImportRecallDataRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'format')
+    ..aOS(2, _omitFieldNames ? '' : 'deckId')
+    ..aOS(3, _omitFieldNames ? '' : 'payload')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImportRecallDataRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImportRecallDataRequest copyWith(
+          void Function(ImportRecallDataRequest) updates) =>
+      super.copyWith((message) => updates(message as ImportRecallDataRequest))
+          as ImportRecallDataRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImportRecallDataRequest create() => ImportRecallDataRequest._();
+  @$core.override
+  ImportRecallDataRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImportRecallDataRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImportRecallDataRequest>(create);
+  static ImportRecallDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get format => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set format($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFormat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFormat() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deckId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deckId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeckId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeckId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get payload => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set payload($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPayload() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPayload() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceChecksum => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceChecksum($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceChecksum() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceChecksum() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class ImportRecallDataResponse extends $pb.GeneratedMessage {
+  factory ImportRecallDataResponse({
+    $core.String? importId,
+    $core.String? status,
+    $core.int? importedCount,
+    $core.int? skippedCount,
+    $core.String? lossinessReport,
+  }) {
+    final result = create();
+    if (importId != null) result.importId = importId;
+    if (status != null) result.status = status;
+    if (importedCount != null) result.importedCount = importedCount;
+    if (skippedCount != null) result.skippedCount = skippedCount;
+    if (lossinessReport != null) result.lossinessReport = lossinessReport;
+    return result;
+  }
+
+  ImportRecallDataResponse._();
+
+  factory ImportRecallDataResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImportRecallDataResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImportRecallDataResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'importId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aI(3, _omitFieldNames ? '' : 'importedCount')
+    ..aI(4, _omitFieldNames ? '' : 'skippedCount')
+    ..aOS(5, _omitFieldNames ? '' : 'lossinessReport')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImportRecallDataResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImportRecallDataResponse copyWith(
+          void Function(ImportRecallDataResponse) updates) =>
+      super.copyWith((message) => updates(message as ImportRecallDataResponse))
+          as ImportRecallDataResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImportRecallDataResponse create() => ImportRecallDataResponse._();
+  @$core.override
+  ImportRecallDataResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImportRecallDataResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImportRecallDataResponse>(create);
+  static ImportRecallDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get importId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set importId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasImportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearImportId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get importedCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set importedCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasImportedCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImportedCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get skippedCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set skippedCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSkippedCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSkippedCount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lossinessReport => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lossinessReport($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLossinessReport() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLossinessReport() => $_clearField(5);
+}
+
+class ReportRecallItemRequest extends $pb.GeneratedMessage {
+  factory ReportRecallItemRequest({
+    $core.String? itemId,
+    $core.String? category,
+    $core.String? statement,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (category != null) result.category = category;
+    if (statement != null) result.statement = statement;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  ReportRecallItemRequest._();
+
+  factory ReportRecallItemRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportRecallItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportRecallItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'category')
+    ..aOS(3, _omitFieldNames ? '' : 'statement')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportRecallItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportRecallItemRequest copyWith(
+          void Function(ReportRecallItemRequest) updates) =>
+      super.copyWith((message) => updates(message as ReportRecallItemRequest))
+          as ReportRecallItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportRecallItemRequest create() => ReportRecallItemRequest._();
+  @$core.override
+  ReportRecallItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportRecallItemRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportRecallItemRequest>(create);
+  static ReportRecallItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get category => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set category($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get statement => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set statement($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatement() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatement() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class ReportRecallItemResponse extends $pb.GeneratedMessage {
+  factory ReportRecallItemResponse({
+    $core.String? reportId,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (reportId != null) result.reportId = reportId;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ReportRecallItemResponse._();
+
+  factory ReportRecallItemResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportRecallItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportRecallItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'reportId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportRecallItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportRecallItemResponse copyWith(
+          void Function(ReportRecallItemResponse) updates) =>
+      super.copyWith((message) => updates(message as ReportRecallItemResponse))
+          as ReportRecallItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportRecallItemResponse create() => ReportRecallItemResponse._();
+  @$core.override
+  ReportRecallItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReportRecallItemResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReportRecallItemResponse>(create);
+  static ReportRecallItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get reportId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set reportId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReportId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureCreatedAt() => $_ensure(2);
+}
+
+class RecordRecallTransferRequest extends $pb.GeneratedMessage {
+  factory RecordRecallTransferRequest({
+    $core.String? itemId,
+    $core.String? linkedObjectType,
+    $core.String? linkedObjectId,
+    $core.String? evidence,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (linkedObjectType != null) result.linkedObjectType = linkedObjectType;
+    if (linkedObjectId != null) result.linkedObjectId = linkedObjectId;
+    if (evidence != null) result.evidence = evidence;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RecordRecallTransferRequest._();
+
+  factory RecordRecallTransferRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordRecallTransferRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordRecallTransferRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'linkedObjectType')
+    ..aOS(3, _omitFieldNames ? '' : 'linkedObjectId')
+    ..aOS(4, _omitFieldNames ? '' : 'evidence')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallTransferRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallTransferRequest copyWith(
+          void Function(RecordRecallTransferRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordRecallTransferRequest))
+          as RecordRecallTransferRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallTransferRequest create() =>
+      RecordRecallTransferRequest._();
+  @$core.override
+  RecordRecallTransferRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallTransferRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordRecallTransferRequest>(create);
+  static RecordRecallTransferRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get linkedObjectType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set linkedObjectType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLinkedObjectType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLinkedObjectType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get linkedObjectId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set linkedObjectId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLinkedObjectId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLinkedObjectId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class RecordRecallTransferResponse extends $pb.GeneratedMessage {
+  factory RecordRecallTransferResponse({
+    RecallRetentionMeasure? measure,
+  }) {
+    final result = create();
+    if (measure != null) result.measure = measure;
+    return result;
+  }
+
+  RecordRecallTransferResponse._();
+
+  factory RecordRecallTransferResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordRecallTransferResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordRecallTransferResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<RecallRetentionMeasure>(1, _omitFieldNames ? '' : 'measure',
+        subBuilder: RecallRetentionMeasure.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallTransferResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordRecallTransferResponse copyWith(
+          void Function(RecordRecallTransferResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordRecallTransferResponse))
+          as RecordRecallTransferResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallTransferResponse create() =>
+      RecordRecallTransferResponse._();
+  @$core.override
+  RecordRecallTransferResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordRecallTransferResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordRecallTransferResponse>(create);
+  static RecordRecallTransferResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  RecallRetentionMeasure get measure => $_getN(0);
+  @$pb.TagNumber(1)
+  set measure(RecallRetentionMeasure value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMeasure() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeasure() => $_clearField(1);
+  @$pb.TagNumber(1)
+  RecallRetentionMeasure ensureMeasure() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

@@ -1859,6 +1859,119 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Choice 16 — member-edited, exact-source active recall with versioned
+  /// scheduling, offline-idempotent events and correction-safe invalidation.
+  $grpc.ResponseFuture<$0.GetRecallDashboardResponse> getRecallDashboard(
+    $0.GetRecallDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getRecallDashboard, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListRecallDecksResponse> listRecallDecks(
+    $0.ListRecallDecksRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listRecallDecks, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMemoryItemsResponse> listMemoryItems(
+    $0.ListMemoryItemsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMemoryItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertRecallDeckResponse> upsertRecallDeck(
+    $0.UpsertRecallDeckRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertRecallDeck, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateRecallItemsResponse> generateRecallItems(
+    $0.GenerateRecallItemsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateRecallItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertMemoryItemResponse> upsertMemoryItem(
+    $0.UpsertMemoryItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertMemoryItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetMemoryItemStateResponse> setMemoryItemState(
+    $0.SetMemoryItemStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setMemoryItemState, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetRecallReviewQueueResponse> getRecallReviewQueue(
+    $0.GetRecallReviewQueueRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getRecallReviewQueue, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordRecallReviewBatchResponse>
+      recordRecallReviewBatch(
+    $0.RecordRecallReviewBatchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordRecallReviewBatch, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveRecallInvalidationResponse>
+      resolveRecallInvalidation(
+    $0.ResolveRecallInvalidationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveRecallInvalidation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateRecallPreferencesResponse>
+      updateRecallPreferences(
+    $0.UpdateRecallPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateRecallPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportRecallDataResponse> exportRecallData(
+    $0.ExportRecallDataRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportRecallData, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ImportRecallDataResponse> importRecallData(
+    $0.ImportRecallDataRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$importRecallData, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportRecallItemResponse> reportRecallItem(
+    $0.ReportRecallItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportRecallItem, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordRecallTransferResponse> recordRecallTransfer(
+    $0.RecordRecallTransferRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordRecallTransfer, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -3093,6 +3206,84 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ReportSpatialCanvasAbuse',
       ($0.ReportSpatialCanvasAbuseRequest value) => value.writeToBuffer(),
       $0.ReportSpatialCanvasAbuseResponse.fromBuffer);
+  static final _$getRecallDashboard = $grpc.ClientMethod<
+          $0.GetRecallDashboardRequest, $0.GetRecallDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetRecallDashboard',
+      ($0.GetRecallDashboardRequest value) => value.writeToBuffer(),
+      $0.GetRecallDashboardResponse.fromBuffer);
+  static final _$listRecallDecks =
+      $grpc.ClientMethod<$0.ListRecallDecksRequest, $0.ListRecallDecksResponse>(
+          '/sttattus.onyx.v1.OnyxService/ListRecallDecks',
+          ($0.ListRecallDecksRequest value) => value.writeToBuffer(),
+          $0.ListRecallDecksResponse.fromBuffer);
+  static final _$listMemoryItems =
+      $grpc.ClientMethod<$0.ListMemoryItemsRequest, $0.ListMemoryItemsResponse>(
+          '/sttattus.onyx.v1.OnyxService/ListMemoryItems',
+          ($0.ListMemoryItemsRequest value) => value.writeToBuffer(),
+          $0.ListMemoryItemsResponse.fromBuffer);
+  static final _$upsertRecallDeck = $grpc.ClientMethod<
+          $0.UpsertRecallDeckRequest, $0.UpsertRecallDeckResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertRecallDeck',
+      ($0.UpsertRecallDeckRequest value) => value.writeToBuffer(),
+      $0.UpsertRecallDeckResponse.fromBuffer);
+  static final _$generateRecallItems = $grpc.ClientMethod<
+          $0.GenerateRecallItemsRequest, $0.GenerateRecallItemsResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateRecallItems',
+      ($0.GenerateRecallItemsRequest value) => value.writeToBuffer(),
+      $0.GenerateRecallItemsResponse.fromBuffer);
+  static final _$upsertMemoryItem = $grpc.ClientMethod<
+          $0.UpsertMemoryItemRequest, $0.UpsertMemoryItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertMemoryItem',
+      ($0.UpsertMemoryItemRequest value) => value.writeToBuffer(),
+      $0.UpsertMemoryItemResponse.fromBuffer);
+  static final _$setMemoryItemState = $grpc.ClientMethod<
+          $0.SetMemoryItemStateRequest, $0.SetMemoryItemStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetMemoryItemState',
+      ($0.SetMemoryItemStateRequest value) => value.writeToBuffer(),
+      $0.SetMemoryItemStateResponse.fromBuffer);
+  static final _$getRecallReviewQueue = $grpc.ClientMethod<
+          $0.GetRecallReviewQueueRequest, $0.GetRecallReviewQueueResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetRecallReviewQueue',
+      ($0.GetRecallReviewQueueRequest value) => value.writeToBuffer(),
+      $0.GetRecallReviewQueueResponse.fromBuffer);
+  static final _$recordRecallReviewBatch = $grpc.ClientMethod<
+          $0.RecordRecallReviewBatchRequest,
+          $0.RecordRecallReviewBatchResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordRecallReviewBatch',
+      ($0.RecordRecallReviewBatchRequest value) => value.writeToBuffer(),
+      $0.RecordRecallReviewBatchResponse.fromBuffer);
+  static final _$resolveRecallInvalidation = $grpc.ClientMethod<
+          $0.ResolveRecallInvalidationRequest,
+          $0.ResolveRecallInvalidationResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveRecallInvalidation',
+      ($0.ResolveRecallInvalidationRequest value) => value.writeToBuffer(),
+      $0.ResolveRecallInvalidationResponse.fromBuffer);
+  static final _$updateRecallPreferences = $grpc.ClientMethod<
+          $0.UpdateRecallPreferencesRequest,
+          $0.UpdateRecallPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdateRecallPreferences',
+      ($0.UpdateRecallPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdateRecallPreferencesResponse.fromBuffer);
+  static final _$exportRecallData = $grpc.ClientMethod<
+          $0.ExportRecallDataRequest, $0.ExportRecallDataResponse>(
+      '/sttattus.onyx.v1.OnyxService/ExportRecallData',
+      ($0.ExportRecallDataRequest value) => value.writeToBuffer(),
+      $0.ExportRecallDataResponse.fromBuffer);
+  static final _$importRecallData = $grpc.ClientMethod<
+          $0.ImportRecallDataRequest, $0.ImportRecallDataResponse>(
+      '/sttattus.onyx.v1.OnyxService/ImportRecallData',
+      ($0.ImportRecallDataRequest value) => value.writeToBuffer(),
+      $0.ImportRecallDataResponse.fromBuffer);
+  static final _$reportRecallItem = $grpc.ClientMethod<
+          $0.ReportRecallItemRequest, $0.ReportRecallItemResponse>(
+      '/sttattus.onyx.v1.OnyxService/ReportRecallItem',
+      ($0.ReportRecallItemRequest value) => value.writeToBuffer(),
+      $0.ReportRecallItemResponse.fromBuffer);
+  static final _$recordRecallTransfer = $grpc.ClientMethod<
+          $0.RecordRecallTransferRequest, $0.RecordRecallTransferResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordRecallTransfer',
+      ($0.RecordRecallTransferRequest value) => value.writeToBuffer(),
+      $0.RecordRecallTransferResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -5170,6 +5361,141 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ReportSpatialCanvasAbuseRequest.fromBuffer(value),
         ($0.ReportSpatialCanvasAbuseResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRecallDashboardRequest,
+            $0.GetRecallDashboardResponse>(
+        'GetRecallDashboard',
+        getRecallDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetRecallDashboardRequest.fromBuffer(value),
+        ($0.GetRecallDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListRecallDecksRequest,
+            $0.ListRecallDecksResponse>(
+        'ListRecallDecks',
+        listRecallDecks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListRecallDecksRequest.fromBuffer(value),
+        ($0.ListRecallDecksResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMemoryItemsRequest,
+            $0.ListMemoryItemsResponse>(
+        'ListMemoryItems',
+        listMemoryItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMemoryItemsRequest.fromBuffer(value),
+        ($0.ListMemoryItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertRecallDeckRequest,
+            $0.UpsertRecallDeckResponse>(
+        'UpsertRecallDeck',
+        upsertRecallDeck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertRecallDeckRequest.fromBuffer(value),
+        ($0.UpsertRecallDeckResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateRecallItemsRequest,
+            $0.GenerateRecallItemsResponse>(
+        'GenerateRecallItems',
+        generateRecallItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateRecallItemsRequest.fromBuffer(value),
+        ($0.GenerateRecallItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertMemoryItemRequest,
+            $0.UpsertMemoryItemResponse>(
+        'UpsertMemoryItem',
+        upsertMemoryItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertMemoryItemRequest.fromBuffer(value),
+        ($0.UpsertMemoryItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetMemoryItemStateRequest,
+            $0.SetMemoryItemStateResponse>(
+        'SetMemoryItemState',
+        setMemoryItemState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetMemoryItemStateRequest.fromBuffer(value),
+        ($0.SetMemoryItemStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetRecallReviewQueueRequest,
+            $0.GetRecallReviewQueueResponse>(
+        'GetRecallReviewQueue',
+        getRecallReviewQueue_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetRecallReviewQueueRequest.fromBuffer(value),
+        ($0.GetRecallReviewQueueResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordRecallReviewBatchRequest,
+            $0.RecordRecallReviewBatchResponse>(
+        'RecordRecallReviewBatch',
+        recordRecallReviewBatch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordRecallReviewBatchRequest.fromBuffer(value),
+        ($0.RecordRecallReviewBatchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveRecallInvalidationRequest,
+            $0.ResolveRecallInvalidationResponse>(
+        'ResolveRecallInvalidation',
+        resolveRecallInvalidation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveRecallInvalidationRequest.fromBuffer(value),
+        ($0.ResolveRecallInvalidationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateRecallPreferencesRequest,
+            $0.UpdateRecallPreferencesResponse>(
+        'UpdateRecallPreferences',
+        updateRecallPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateRecallPreferencesRequest.fromBuffer(value),
+        ($0.UpdateRecallPreferencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportRecallDataRequest,
+            $0.ExportRecallDataResponse>(
+        'ExportRecallData',
+        exportRecallData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportRecallDataRequest.fromBuffer(value),
+        ($0.ExportRecallDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ImportRecallDataRequest,
+            $0.ImportRecallDataResponse>(
+        'ImportRecallData',
+        importRecallData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ImportRecallDataRequest.fromBuffer(value),
+        ($0.ImportRecallDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportRecallItemRequest,
+            $0.ReportRecallItemResponse>(
+        'ReportRecallItem',
+        reportRecallItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportRecallItemRequest.fromBuffer(value),
+        ($0.ReportRecallItemResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordRecallTransferRequest,
+            $0.RecordRecallTransferResponse>(
+        'RecordRecallTransfer',
+        recordRecallTransfer_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordRecallTransferRequest.fromBuffer(value),
+        ($0.RecordRecallTransferResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -7312,4 +7638,139 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.ReportSpatialCanvasAbuseResponse> reportSpatialCanvasAbuse(
       $grpc.ServiceCall call, $0.ReportSpatialCanvasAbuseRequest request);
+
+  $async.Future<$0.GetRecallDashboardResponse> getRecallDashboard_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetRecallDashboardRequest> $request) async {
+    return getRecallDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetRecallDashboardResponse> getRecallDashboard(
+      $grpc.ServiceCall call, $0.GetRecallDashboardRequest request);
+
+  $async.Future<$0.ListRecallDecksResponse> listRecallDecks_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListRecallDecksRequest> $request) async {
+    return listRecallDecks($call, await $request);
+  }
+
+  $async.Future<$0.ListRecallDecksResponse> listRecallDecks(
+      $grpc.ServiceCall call, $0.ListRecallDecksRequest request);
+
+  $async.Future<$0.ListMemoryItemsResponse> listMemoryItems_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMemoryItemsRequest> $request) async {
+    return listMemoryItems($call, await $request);
+  }
+
+  $async.Future<$0.ListMemoryItemsResponse> listMemoryItems(
+      $grpc.ServiceCall call, $0.ListMemoryItemsRequest request);
+
+  $async.Future<$0.UpsertRecallDeckResponse> upsertRecallDeck_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertRecallDeckRequest> $request) async {
+    return upsertRecallDeck($call, await $request);
+  }
+
+  $async.Future<$0.UpsertRecallDeckResponse> upsertRecallDeck(
+      $grpc.ServiceCall call, $0.UpsertRecallDeckRequest request);
+
+  $async.Future<$0.GenerateRecallItemsResponse> generateRecallItems_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GenerateRecallItemsRequest> $request) async {
+    return generateRecallItems($call, await $request);
+  }
+
+  $async.Future<$0.GenerateRecallItemsResponse> generateRecallItems(
+      $grpc.ServiceCall call, $0.GenerateRecallItemsRequest request);
+
+  $async.Future<$0.UpsertMemoryItemResponse> upsertMemoryItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertMemoryItemRequest> $request) async {
+    return upsertMemoryItem($call, await $request);
+  }
+
+  $async.Future<$0.UpsertMemoryItemResponse> upsertMemoryItem(
+      $grpc.ServiceCall call, $0.UpsertMemoryItemRequest request);
+
+  $async.Future<$0.SetMemoryItemStateResponse> setMemoryItemState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetMemoryItemStateRequest> $request) async {
+    return setMemoryItemState($call, await $request);
+  }
+
+  $async.Future<$0.SetMemoryItemStateResponse> setMemoryItemState(
+      $grpc.ServiceCall call, $0.SetMemoryItemStateRequest request);
+
+  $async.Future<$0.GetRecallReviewQueueResponse> getRecallReviewQueue_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetRecallReviewQueueRequest> $request) async {
+    return getRecallReviewQueue($call, await $request);
+  }
+
+  $async.Future<$0.GetRecallReviewQueueResponse> getRecallReviewQueue(
+      $grpc.ServiceCall call, $0.GetRecallReviewQueueRequest request);
+
+  $async.Future<$0.RecordRecallReviewBatchResponse> recordRecallReviewBatch_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordRecallReviewBatchRequest> $request) async {
+    return recordRecallReviewBatch($call, await $request);
+  }
+
+  $async.Future<$0.RecordRecallReviewBatchResponse> recordRecallReviewBatch(
+      $grpc.ServiceCall call, $0.RecordRecallReviewBatchRequest request);
+
+  $async.Future<$0.ResolveRecallInvalidationResponse>
+      resolveRecallInvalidation_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ResolveRecallInvalidationRequest> $request) async {
+    return resolveRecallInvalidation($call, await $request);
+  }
+
+  $async.Future<$0.ResolveRecallInvalidationResponse> resolveRecallInvalidation(
+      $grpc.ServiceCall call, $0.ResolveRecallInvalidationRequest request);
+
+  $async.Future<$0.UpdateRecallPreferencesResponse> updateRecallPreferences_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpdateRecallPreferencesRequest> $request) async {
+    return updateRecallPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdateRecallPreferencesResponse> updateRecallPreferences(
+      $grpc.ServiceCall call, $0.UpdateRecallPreferencesRequest request);
+
+  $async.Future<$0.ExportRecallDataResponse> exportRecallData_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ExportRecallDataRequest> $request) async {
+    return exportRecallData($call, await $request);
+  }
+
+  $async.Future<$0.ExportRecallDataResponse> exportRecallData(
+      $grpc.ServiceCall call, $0.ExportRecallDataRequest request);
+
+  $async.Future<$0.ImportRecallDataResponse> importRecallData_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ImportRecallDataRequest> $request) async {
+    return importRecallData($call, await $request);
+  }
+
+  $async.Future<$0.ImportRecallDataResponse> importRecallData(
+      $grpc.ServiceCall call, $0.ImportRecallDataRequest request);
+
+  $async.Future<$0.ReportRecallItemResponse> reportRecallItem_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportRecallItemRequest> $request) async {
+    return reportRecallItem($call, await $request);
+  }
+
+  $async.Future<$0.ReportRecallItemResponse> reportRecallItem(
+      $grpc.ServiceCall call, $0.ReportRecallItemRequest request);
+
+  $async.Future<$0.RecordRecallTransferResponse> recordRecallTransfer_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordRecallTransferRequest> $request) async {
+    return recordRecallTransfer($call, await $request);
+  }
+
+  $async.Future<$0.RecordRecallTransferResponse> recordRecallTransfer(
+      $grpc.ServiceCall call, $0.RecordRecallTransferRequest request);
 }

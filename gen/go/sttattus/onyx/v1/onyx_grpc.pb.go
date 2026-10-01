@@ -244,6 +244,21 @@ const (
 	OnyxService_GetSpatialCanvasExport_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetSpatialCanvasExport"
 	OnyxService_UpsertSpatialCanvasCollaborator_FullMethodName      = "/sttattus.onyx.v1.OnyxService/UpsertSpatialCanvasCollaborator"
 	OnyxService_ReportSpatialCanvasAbuse_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ReportSpatialCanvasAbuse"
+	OnyxService_GetRecallDashboard_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/GetRecallDashboard"
+	OnyxService_ListRecallDecks_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListRecallDecks"
+	OnyxService_ListMemoryItems_FullMethodName                      = "/sttattus.onyx.v1.OnyxService/ListMemoryItems"
+	OnyxService_UpsertRecallDeck_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertRecallDeck"
+	OnyxService_GenerateRecallItems_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/GenerateRecallItems"
+	OnyxService_UpsertMemoryItem_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertMemoryItem"
+	OnyxService_SetMemoryItemState_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/SetMemoryItemState"
+	OnyxService_GetRecallReviewQueue_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetRecallReviewQueue"
+	OnyxService_RecordRecallReviewBatch_FullMethodName              = "/sttattus.onyx.v1.OnyxService/RecordRecallReviewBatch"
+	OnyxService_ResolveRecallInvalidation_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ResolveRecallInvalidation"
+	OnyxService_UpdateRecallPreferences_FullMethodName              = "/sttattus.onyx.v1.OnyxService/UpdateRecallPreferences"
+	OnyxService_ExportRecallData_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ExportRecallData"
+	OnyxService_ImportRecallData_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ImportRecallData"
+	OnyxService_ReportRecallItem_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ReportRecallItem"
+	OnyxService_RecordRecallTransfer_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RecordRecallTransfer"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -515,6 +530,23 @@ type OnyxServiceClient interface {
 	GetSpatialCanvasExport(ctx context.Context, in *GetSpatialCanvasExportRequest, opts ...grpc.CallOption) (*GetSpatialCanvasExportResponse, error)
 	UpsertSpatialCanvasCollaborator(ctx context.Context, in *UpsertSpatialCanvasCollaboratorRequest, opts ...grpc.CallOption) (*UpsertSpatialCanvasCollaboratorResponse, error)
 	ReportSpatialCanvasAbuse(ctx context.Context, in *ReportSpatialCanvasAbuseRequest, opts ...grpc.CallOption) (*ReportSpatialCanvasAbuseResponse, error)
+	// Choice 16 — member-edited, exact-source active recall with versioned
+	// scheduling, offline-idempotent events and correction-safe invalidation.
+	GetRecallDashboard(ctx context.Context, in *GetRecallDashboardRequest, opts ...grpc.CallOption) (*GetRecallDashboardResponse, error)
+	ListRecallDecks(ctx context.Context, in *ListRecallDecksRequest, opts ...grpc.CallOption) (*ListRecallDecksResponse, error)
+	ListMemoryItems(ctx context.Context, in *ListMemoryItemsRequest, opts ...grpc.CallOption) (*ListMemoryItemsResponse, error)
+	UpsertRecallDeck(ctx context.Context, in *UpsertRecallDeckRequest, opts ...grpc.CallOption) (*UpsertRecallDeckResponse, error)
+	GenerateRecallItems(ctx context.Context, in *GenerateRecallItemsRequest, opts ...grpc.CallOption) (*GenerateRecallItemsResponse, error)
+	UpsertMemoryItem(ctx context.Context, in *UpsertMemoryItemRequest, opts ...grpc.CallOption) (*UpsertMemoryItemResponse, error)
+	SetMemoryItemState(ctx context.Context, in *SetMemoryItemStateRequest, opts ...grpc.CallOption) (*SetMemoryItemStateResponse, error)
+	GetRecallReviewQueue(ctx context.Context, in *GetRecallReviewQueueRequest, opts ...grpc.CallOption) (*GetRecallReviewQueueResponse, error)
+	RecordRecallReviewBatch(ctx context.Context, in *RecordRecallReviewBatchRequest, opts ...grpc.CallOption) (*RecordRecallReviewBatchResponse, error)
+	ResolveRecallInvalidation(ctx context.Context, in *ResolveRecallInvalidationRequest, opts ...grpc.CallOption) (*ResolveRecallInvalidationResponse, error)
+	UpdateRecallPreferences(ctx context.Context, in *UpdateRecallPreferencesRequest, opts ...grpc.CallOption) (*UpdateRecallPreferencesResponse, error)
+	ExportRecallData(ctx context.Context, in *ExportRecallDataRequest, opts ...grpc.CallOption) (*ExportRecallDataResponse, error)
+	ImportRecallData(ctx context.Context, in *ImportRecallDataRequest, opts ...grpc.CallOption) (*ImportRecallDataResponse, error)
+	ReportRecallItem(ctx context.Context, in *ReportRecallItemRequest, opts ...grpc.CallOption) (*ReportRecallItemResponse, error)
+	RecordRecallTransfer(ctx context.Context, in *RecordRecallTransferRequest, opts ...grpc.CallOption) (*RecordRecallTransferResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2775,6 +2807,156 @@ func (c *onyxServiceClient) ReportSpatialCanvasAbuse(ctx context.Context, in *Re
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetRecallDashboard(ctx context.Context, in *GetRecallDashboardRequest, opts ...grpc.CallOption) (*GetRecallDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRecallDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetRecallDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListRecallDecks(ctx context.Context, in *ListRecallDecksRequest, opts ...grpc.CallOption) (*ListRecallDecksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListRecallDecksResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListRecallDecks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListMemoryItems(ctx context.Context, in *ListMemoryItemsRequest, opts ...grpc.CallOption) (*ListMemoryItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMemoryItemsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListMemoryItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertRecallDeck(ctx context.Context, in *UpsertRecallDeckRequest, opts ...grpc.CallOption) (*UpsertRecallDeckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertRecallDeckResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertRecallDeck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateRecallItems(ctx context.Context, in *GenerateRecallItemsRequest, opts ...grpc.CallOption) (*GenerateRecallItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateRecallItemsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateRecallItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertMemoryItem(ctx context.Context, in *UpsertMemoryItemRequest, opts ...grpc.CallOption) (*UpsertMemoryItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertMemoryItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertMemoryItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetMemoryItemState(ctx context.Context, in *SetMemoryItemStateRequest, opts ...grpc.CallOption) (*SetMemoryItemStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetMemoryItemStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetMemoryItemState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetRecallReviewQueue(ctx context.Context, in *GetRecallReviewQueueRequest, opts ...grpc.CallOption) (*GetRecallReviewQueueResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRecallReviewQueueResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetRecallReviewQueue_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordRecallReviewBatch(ctx context.Context, in *RecordRecallReviewBatchRequest, opts ...grpc.CallOption) (*RecordRecallReviewBatchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordRecallReviewBatchResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordRecallReviewBatch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ResolveRecallInvalidation(ctx context.Context, in *ResolveRecallInvalidationRequest, opts ...grpc.CallOption) (*ResolveRecallInvalidationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveRecallInvalidationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ResolveRecallInvalidation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdateRecallPreferences(ctx context.Context, in *UpdateRecallPreferencesRequest, opts ...grpc.CallOption) (*UpdateRecallPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateRecallPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdateRecallPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ExportRecallData(ctx context.Context, in *ExportRecallDataRequest, opts ...grpc.CallOption) (*ExportRecallDataResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportRecallDataResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ExportRecallData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ImportRecallData(ctx context.Context, in *ImportRecallDataRequest, opts ...grpc.CallOption) (*ImportRecallDataResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ImportRecallDataResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ImportRecallData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReportRecallItem(ctx context.Context, in *ReportRecallItemRequest, opts ...grpc.CallOption) (*ReportRecallItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportRecallItemResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReportRecallItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordRecallTransfer(ctx context.Context, in *RecordRecallTransferRequest, opts ...grpc.CallOption) (*RecordRecallTransferResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordRecallTransferResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordRecallTransfer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -3044,6 +3226,23 @@ type OnyxServiceServer interface {
 	GetSpatialCanvasExport(context.Context, *GetSpatialCanvasExportRequest) (*GetSpatialCanvasExportResponse, error)
 	UpsertSpatialCanvasCollaborator(context.Context, *UpsertSpatialCanvasCollaboratorRequest) (*UpsertSpatialCanvasCollaboratorResponse, error)
 	ReportSpatialCanvasAbuse(context.Context, *ReportSpatialCanvasAbuseRequest) (*ReportSpatialCanvasAbuseResponse, error)
+	// Choice 16 — member-edited, exact-source active recall with versioned
+	// scheduling, offline-idempotent events and correction-safe invalidation.
+	GetRecallDashboard(context.Context, *GetRecallDashboardRequest) (*GetRecallDashboardResponse, error)
+	ListRecallDecks(context.Context, *ListRecallDecksRequest) (*ListRecallDecksResponse, error)
+	ListMemoryItems(context.Context, *ListMemoryItemsRequest) (*ListMemoryItemsResponse, error)
+	UpsertRecallDeck(context.Context, *UpsertRecallDeckRequest) (*UpsertRecallDeckResponse, error)
+	GenerateRecallItems(context.Context, *GenerateRecallItemsRequest) (*GenerateRecallItemsResponse, error)
+	UpsertMemoryItem(context.Context, *UpsertMemoryItemRequest) (*UpsertMemoryItemResponse, error)
+	SetMemoryItemState(context.Context, *SetMemoryItemStateRequest) (*SetMemoryItemStateResponse, error)
+	GetRecallReviewQueue(context.Context, *GetRecallReviewQueueRequest) (*GetRecallReviewQueueResponse, error)
+	RecordRecallReviewBatch(context.Context, *RecordRecallReviewBatchRequest) (*RecordRecallReviewBatchResponse, error)
+	ResolveRecallInvalidation(context.Context, *ResolveRecallInvalidationRequest) (*ResolveRecallInvalidationResponse, error)
+	UpdateRecallPreferences(context.Context, *UpdateRecallPreferencesRequest) (*UpdateRecallPreferencesResponse, error)
+	ExportRecallData(context.Context, *ExportRecallDataRequest) (*ExportRecallDataResponse, error)
+	ImportRecallData(context.Context, *ImportRecallDataRequest) (*ImportRecallDataResponse, error)
+	ReportRecallItem(context.Context, *ReportRecallItemRequest) (*ReportRecallItemResponse, error)
+	RecordRecallTransfer(context.Context, *RecordRecallTransferRequest) (*RecordRecallTransferResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3728,6 +3927,51 @@ func (UnimplementedOnyxServiceServer) UpsertSpatialCanvasCollaborator(context.Co
 }
 func (UnimplementedOnyxServiceServer) ReportSpatialCanvasAbuse(context.Context, *ReportSpatialCanvasAbuseRequest) (*ReportSpatialCanvasAbuseResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ReportSpatialCanvasAbuse not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetRecallDashboard(context.Context, *GetRecallDashboardRequest) (*GetRecallDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRecallDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListRecallDecks(context.Context, *ListRecallDecksRequest) (*ListRecallDecksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListRecallDecks not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListMemoryItems(context.Context, *ListMemoryItemsRequest) (*ListMemoryItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMemoryItems not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertRecallDeck(context.Context, *UpsertRecallDeckRequest) (*UpsertRecallDeckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertRecallDeck not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateRecallItems(context.Context, *GenerateRecallItemsRequest) (*GenerateRecallItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateRecallItems not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertMemoryItem(context.Context, *UpsertMemoryItemRequest) (*UpsertMemoryItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertMemoryItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetMemoryItemState(context.Context, *SetMemoryItemStateRequest) (*SetMemoryItemStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetMemoryItemState not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetRecallReviewQueue(context.Context, *GetRecallReviewQueueRequest) (*GetRecallReviewQueueResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRecallReviewQueue not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordRecallReviewBatch(context.Context, *RecordRecallReviewBatchRequest) (*RecordRecallReviewBatchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordRecallReviewBatch not implemented")
+}
+func (UnimplementedOnyxServiceServer) ResolveRecallInvalidation(context.Context, *ResolveRecallInvalidationRequest) (*ResolveRecallInvalidationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveRecallInvalidation not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdateRecallPreferences(context.Context, *UpdateRecallPreferencesRequest) (*UpdateRecallPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateRecallPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) ExportRecallData(context.Context, *ExportRecallDataRequest) (*ExportRecallDataResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportRecallData not implemented")
+}
+func (UnimplementedOnyxServiceServer) ImportRecallData(context.Context, *ImportRecallDataRequest) (*ImportRecallDataResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ImportRecallData not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReportRecallItem(context.Context, *ReportRecallItemRequest) (*ReportRecallItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportRecallItem not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordRecallTransfer(context.Context, *RecordRecallTransferRequest) (*RecordRecallTransferResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordRecallTransfer not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -7800,6 +8044,276 @@ func _OnyxService_ReportSpatialCanvasAbuse_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetRecallDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRecallDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetRecallDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetRecallDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetRecallDashboard(ctx, req.(*GetRecallDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListRecallDecks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRecallDecksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListRecallDecks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListRecallDecks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListRecallDecks(ctx, req.(*ListRecallDecksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListMemoryItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMemoryItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListMemoryItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListMemoryItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListMemoryItems(ctx, req.(*ListMemoryItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertRecallDeck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertRecallDeckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertRecallDeck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertRecallDeck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertRecallDeck(ctx, req.(*UpsertRecallDeckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateRecallItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateRecallItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateRecallItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateRecallItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateRecallItems(ctx, req.(*GenerateRecallItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertMemoryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertMemoryItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertMemoryItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertMemoryItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertMemoryItem(ctx, req.(*UpsertMemoryItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetMemoryItemState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetMemoryItemStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetMemoryItemState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetMemoryItemState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetMemoryItemState(ctx, req.(*SetMemoryItemStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetRecallReviewQueue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRecallReviewQueueRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetRecallReviewQueue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetRecallReviewQueue_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetRecallReviewQueue(ctx, req.(*GetRecallReviewQueueRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordRecallReviewBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordRecallReviewBatchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordRecallReviewBatch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordRecallReviewBatch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordRecallReviewBatch(ctx, req.(*RecordRecallReviewBatchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ResolveRecallInvalidation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveRecallInvalidationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ResolveRecallInvalidation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ResolveRecallInvalidation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ResolveRecallInvalidation(ctx, req.(*ResolveRecallInvalidationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdateRecallPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRecallPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdateRecallPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdateRecallPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdateRecallPreferences(ctx, req.(*UpdateRecallPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ExportRecallData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportRecallDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ExportRecallData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ExportRecallData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ExportRecallData(ctx, req.(*ExportRecallDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ImportRecallData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ImportRecallDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ImportRecallData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ImportRecallData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ImportRecallData(ctx, req.(*ImportRecallDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReportRecallItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportRecallItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReportRecallItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReportRecallItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReportRecallItem(ctx, req.(*ReportRecallItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordRecallTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordRecallTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordRecallTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordRecallTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordRecallTransfer(ctx, req.(*RecordRecallTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -8706,6 +9220,66 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ReportSpatialCanvasAbuse",
 			Handler:    _OnyxService_ReportSpatialCanvasAbuse_Handler,
+		},
+		{
+			MethodName: "GetRecallDashboard",
+			Handler:    _OnyxService_GetRecallDashboard_Handler,
+		},
+		{
+			MethodName: "ListRecallDecks",
+			Handler:    _OnyxService_ListRecallDecks_Handler,
+		},
+		{
+			MethodName: "ListMemoryItems",
+			Handler:    _OnyxService_ListMemoryItems_Handler,
+		},
+		{
+			MethodName: "UpsertRecallDeck",
+			Handler:    _OnyxService_UpsertRecallDeck_Handler,
+		},
+		{
+			MethodName: "GenerateRecallItems",
+			Handler:    _OnyxService_GenerateRecallItems_Handler,
+		},
+		{
+			MethodName: "UpsertMemoryItem",
+			Handler:    _OnyxService_UpsertMemoryItem_Handler,
+		},
+		{
+			MethodName: "SetMemoryItemState",
+			Handler:    _OnyxService_SetMemoryItemState_Handler,
+		},
+		{
+			MethodName: "GetRecallReviewQueue",
+			Handler:    _OnyxService_GetRecallReviewQueue_Handler,
+		},
+		{
+			MethodName: "RecordRecallReviewBatch",
+			Handler:    _OnyxService_RecordRecallReviewBatch_Handler,
+		},
+		{
+			MethodName: "ResolveRecallInvalidation",
+			Handler:    _OnyxService_ResolveRecallInvalidation_Handler,
+		},
+		{
+			MethodName: "UpdateRecallPreferences",
+			Handler:    _OnyxService_UpdateRecallPreferences_Handler,
+		},
+		{
+			MethodName: "ExportRecallData",
+			Handler:    _OnyxService_ExportRecallData_Handler,
+		},
+		{
+			MethodName: "ImportRecallData",
+			Handler:    _OnyxService_ImportRecallData_Handler,
+		},
+		{
+			MethodName: "ReportRecallItem",
+			Handler:    _OnyxService_ReportRecallItem_Handler,
+		},
+		{
+			MethodName: "RecordRecallTransfer",
+			Handler:    _OnyxService_RecordRecallTransfer_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
