@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AcknowledgePurgeRequest, AcknowledgePurgeResponse, AcknowledgeResearchRoomOfflinePurgeRequest, AcknowledgeResearchRoomOfflinePurgeResponse, AddNoteRequest, AddNoteResponse, AddResearchRoomItemRequest, AddResearchRoomItemResponse, ApplySpatialCanvasOperationsRequest, ApplySpatialCanvasOperationsResponse, AuthorizeIntegrationRequest, AuthorizeIntegrationResponse, CancelCreatorSubscriptionRequest, CancelCreatorSubscriptionResponse, ChangeResearchRoomMemberRequest, ChangeResearchRoomMemberResponse, ConfirmLivingArchiveReviewRequest, ConfirmLivingArchiveReviewResponse, ContestLivingArchiveReleaseRequest, ContestLivingArchiveReleaseResponse, CreateAudioOverviewRequest, CreateAudioOverviewResponse, CreateCommerceCaseRequest, CreateCommerceCaseResponse, CreateEvidenceBriefRequest, CreateEvidenceBriefResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateIntelligenceGraphMeetingBriefRequest, CreateIntelligenceGraphMeetingBriefResponse, CreateListeningBookmarkRequest, CreateListeningBookmarkResponse, CreateProfileRequest, CreateProfileResponse, CreateResearchRoomRequest, CreateResearchRoomResponse, CreateResearchRoomShareLinkRequest, CreateResearchRoomShareLinkResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSpatialCanvasRequest, CreateSpatialCanvasResponse, CreateSpatialCanvasSnapshotRequest, CreateSpatialCanvasSnapshotResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, CrossLanguageSearchRequest, CrossLanguageSearchResponse, DeleteAudioOverviewRequest, DeleteAudioOverviewResponse, DeleteListeningBookmarkRequest, DeleteListeningBookmarkResponse, DeleteLiveNoteRequest, DeleteLiveNoteResponse, DeleteLivingArchiveContactRequest, DeleteLivingArchiveContactResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, DeleteSavedQueryRequest, DeleteSavedQueryResponse, DeleteWatchlistRequest, DeleteWatchlistResponse, DispatchIntegrationBridgeRequest, DispatchIntegrationBridgeResponse, ExportPersonalIntelligenceGraphRequest, ExportPersonalIntelligenceGraphResponse, ExportReaderDataRequest, ExportReaderDataResponse, ExportRecallDataRequest, ExportRecallDataResponse, FileForensicAppealRequest, FileForensicAppealResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GenerateIntelligenceGraphSuggestionsRequest, GenerateIntelligenceGraphSuggestionsResponse, GenerateLiveCalendarPassRequest, GenerateLiveCalendarPassResponse, GenerateLivingArchiveEditionRequest, GenerateLivingArchiveEditionResponse, GenerateRecallItemsRequest, GenerateRecallItemsResponse, GenerateSpatialCanvasProposalsRequest, GenerateSpatialCanvasProposalsResponse, GetAlignedBlocksRequest, GetAlignedBlocksResponse, GetAnthologyRequest, GetAnthologyResponse, GetAudioOverviewRequest, GetAudioOverviewResponse, GetCaptionJobRequest, GetCaptionJobResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCreatorStudioRequest, GetCreatorStudioResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetDeviceGrantsRequest, GetDeviceGrantsResponse, GetEvidenceBriefRequest, GetEvidenceBriefResponse, GetEvidenceWorkspaceRequest, GetEvidenceWorkspaceResponse, GetForensicProtectionDashboardRequest, GetForensicProtectionDashboardResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetIntegrationArtifactRequest, GetIntegrationArtifactResponse, GetIntegrationDashboardRequest, GetIntegrationDashboardResponse, GetIntelligenceGraphMeetingBriefRequest, GetIntelligenceGraphMeetingBriefResponse, GetIntelligenceQueueRequest, GetIntelligenceQueueResponse, GetListeningPreferencesRequest, GetListeningPreferencesResponse, GetLiveEventRequest, GetLiveEventResponse, GetLiveReplayRequest, GetLiveReplayResponse, GetLiveSalonRequest, GetLiveSalonResponse, GetLivingArchiveDashboardRequest, GetLivingArchiveDashboardResponse, GetMultilingualAudioVideoRequest, GetMultilingualAudioVideoResponse, GetMultilingualExportRequest, GetMultilingualExportResponse, GetMultilingualOfflineManifestRequest, GetMultilingualOfflineManifestResponse, GetMultilingualPreferencesRequest, GetMultilingualPreferencesResponse, GetMyCommerceRequest, GetMyCommerceResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPersonalIntelligenceGraphRequest, GetPersonalIntelligenceGraphResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetPurgeReceiptRequest, GetPurgeReceiptResponse, GetRecallDashboardRequest, GetRecallDashboardResponse, GetRecallReviewQueueRequest, GetRecallReviewQueueResponse, GetResearchRoomOfflineManifestRequest, GetResearchRoomOfflineManifestResponse, GetResearchRoomRequest, GetResearchRoomResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetSpatialCanvasDashboardRequest, GetSpatialCanvasDashboardResponse, GetSpatialCanvasExportRequest, GetSpatialCanvasExportResponse, GetSpatialCanvasRequest, GetSpatialCanvasResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ImportRecallDataRequest, ImportRecallDataResponse, InviteLiveGuestRequest, InviteLiveGuestResponse, InviteResearchRoomMemberRequest, InviteResearchRoomMemberResponse, IssueForensicManifestRequest, IssueForensicManifestResponse, JoinLiveEventRequest, JoinLiveEventResponse, LeaveResearchRoomRequest, LeaveResearchRoomResponse, LinkLivingArchiveLegacyEscrowRequest, LinkLivingArchiveLegacyEscrowResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListAudioOverviewsRequest, ListAudioOverviewsResponse, ListContentEditionsRequest, ListContentEditionsResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListIntelligenceAlertsRequest, ListIntelligenceAlertsResponse, ListIntelligenceGraphMeetingBriefsRequest, ListIntelligenceGraphMeetingBriefsResponse, ListIntelligenceGraphResurfacingRequest, ListIntelligenceGraphResurfacingResponse, ListIntelligenceGraphSuggestionsRequest, ListIntelligenceGraphSuggestionsResponse, ListIntelligenceGraphTimelineRequest, ListIntelligenceGraphTimelineResponse, ListLanguageConfigsRequest, ListLanguageConfigsResponse, ListListeningBookmarksRequest, ListListeningBookmarksResponse, ListListeningPronunciationsRequest, ListListeningPronunciationsResponse, ListListeningQueueRequest, ListListeningQueueResponse, ListLiveActivityRequest, ListLiveActivityResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListLiveNotesRequest, ListLiveNotesResponse, ListMemoryItemsRequest, ListMemoryItemsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCreatorSubscriptionsDetailedRequest, ListMyCreatorSubscriptionsDetailedResponse, ListMyEvidenceBriefsRequest, ListMyEvidenceBriefsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListOfflineManifestItemsRequest, ListOfflineManifestItemsResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListRecallDecksRequest, ListRecallDecksResponse, ListResearchRoomAuditRequest, ListResearchRoomAuditResponse, ListResearchRoomGrantsRequest, ListResearchRoomGrantsResponse, ListResearchRoomOfflinePurgesRequest, ListResearchRoomOfflinePurgesResponse, ListResearchRoomShareLinksRequest, ListResearchRoomShareLinksResponse, ListResearchRoomsRequest, ListResearchRoomsResponse, ListSavedQueriesRequest, ListSavedQueriesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, ListSpatialCanvasTemplatesRequest, ListSpatialCanvasTemplatesResponse, ListTermbaseEntriesRequest, ListTermbaseEntriesResponse, ListWatchlistsRequest, ListWatchlistsResponse, MarkMyDeviceLostRequest, MarkMyDeviceLostResponse, MergeIntelligenceGraphNodesRequest, MergeIntelligenceGraphNodesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PostForensicAppealMessageRequest, PostForensicAppealMessageResponse, PostLiveMessageRequest, PostLiveMessageResponse, PostResearchRoomCommentRequest, PostResearchRoomCommentResponse, PreviewLivingArchivePolicyRequest, PreviewLivingArchivePolicyResponse, ReactLiveEventRequest, ReactLiveEventResponse, ReactToContentRequest, ReactToContentResponse, RebuildPersonalIntelligenceGraphRequest, RebuildPersonalIntelligenceGraphResponse, RecordIntelligenceFeedbackRequest, RecordIntelligenceFeedbackResponse, RecordIntelligenceSearchOutcomeRequest, RecordIntelligenceSearchOutcomeResponse, RecordOfflineEventRequest, RecordOfflineEventResponse, RecordProgressRequest, RecordProgressResponse, RecordRecallReviewBatchRequest, RecordRecallReviewBatchResponse, RecordRecallTransferRequest, RecordRecallTransferResponse, RecordResearchRoomApprovalRequest, RecordResearchRoomApprovalResponse, RedeemContentRequest, RedeemContentResponse, RefreshOfflineRenditionsRequest, RefreshOfflineRenditionsResponse, RefreshWatchlistRequest, RefreshWatchlistResponse, RegisterDeviceRequest, RegisterDeviceResponse, RemoveResearchRoomItemRequest, RemoveResearchRoomItemResponse, ReportRecallItemRequest, ReportRecallItemResponse, ReportResearchRoomAbuseRequest, ReportResearchRoomAbuseResponse, ReportSpatialCanvasAbuseRequest, ReportSpatialCanvasAbuseResponse, ReportTranslationIssueRequest, ReportTranslationIssueResponse, RequestMultilingualExportRequest, RequestMultilingualExportResponse, RequestResearchRoomExportRequest, RequestResearchRoomExportResponse, RequestSpatialCanvasExportRequest, RequestSpatialCanvasExportResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, ResolveIntegrationConflictRequest, ResolveIntegrationConflictResponse, ResolveRecallInvalidationRequest, ResolveRecallInvalidationResponse, ResolveResearchRoomShareLinkRequest, ResolveResearchRoomShareLinkResponse, ResolveSpatialCanvasConflictRequest, ResolveSpatialCanvasConflictResponse, RespondForensicCaseRequest, RespondForensicCaseResponse, RespondResearchRoomInviteRequest, RespondResearchRoomInviteResponse, RestoreSpatialCanvasSnapshotRequest, RestoreSpatialCanvasSnapshotResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeForensicManifestRequest, RevokeForensicManifestResponse, RevokeIntegrationGrantRequest, RevokeIntegrationGrantResponse, RevokeLivingArchivePolicyRequest, RevokeLivingArchivePolicyResponse, RevokeMyDeviceRequest, RevokeMyDeviceResponse, RevokeResearchRoomGrantRequest, RevokeResearchRoomGrantResponse, RevokeResearchRoomMemberRequest, RevokeResearchRoomMemberResponse, RevokeResearchRoomShareLinkRequest, RevokeResearchRoomShareLinkResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, RunIntegrationConnectorRequest, RunIntegrationConnectorResponse, SearchContentRequest, SearchContentResponse, SearchIntelligenceRequest, SearchIntelligenceResponse, SearchReaderRequest, SearchReaderResponse, SearchResearchRoomRequest, SearchResearchRoomResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetIntegrationConnectorStateRequest, SetIntegrationConnectorStateResponse, SetIntelligenceAlertStateRequest, SetIntelligenceAlertStateResponse, SetIntelligenceGraphEdgeStateRequest, SetIntelligenceGraphEdgeStateResponse, SetIntelligenceGraphNodeStateRequest, SetIntelligenceGraphNodeStateResponse, SetIntelligenceGraphResurfacingStateRequest, SetIntelligenceGraphResurfacingStateResponse, SetIntelligenceGraphSuggestionStateRequest, SetIntelligenceGraphSuggestionStateResponse, SetListeningQueueRequest, SetListeningQueueResponse, SetLiveHandRaiseRequest, SetLiveHandRaiseResponse, SetMemoryItemStateRequest, SetMemoryItemStateResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, SetResearchRoomThreadStatusRequest, SetResearchRoomThreadStatusResponse, SetSpatialCanvasCommentStateRequest, SetSpatialCanvasCommentStateResponse, SetSpatialCanvasProposalStateRequest, SetSpatialCanvasProposalStateResponse, SignCreatorContractRequest, SignCreatorContractResponse, SplitIntelligenceGraphNodeRequest, SplitIntelligenceGraphNodeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCreatorPitchRequest, SubmitCreatorPitchResponse, SubmitCreatorProjectRequest, SubmitCreatorProjectResponse, SubmitIntegrationOperationsCaseRequest, SubmitIntegrationOperationsCaseResponse, SubmitLivingArchivePolicyRequest, SubmitLivingArchivePolicyResponse, SubscribeRequest, SubscribeResponse, UpdateCreatorProjectRequest, UpdateCreatorProjectResponse, UpdateListeningPreferencesRequest, UpdateListeningPreferencesResponse, UpdateMultilingualPreferencesRequest, UpdateMultilingualPreferencesResponse, UpdateRecallPreferencesRequest, UpdateRecallPreferencesResponse, UpdateResearchRoomRequest, UpdateResearchRoomResponse, UpsertIntegrationConnectorRequest, UpsertIntegrationConnectorResponse, UpsertIntelligenceGraphEdgeRequest, UpsertIntelligenceGraphEdgeResponse, UpsertIntelligenceGraphNodeRequest, UpsertIntelligenceGraphNodeResponse, UpsertLiveNoteRequest, UpsertLiveNoteResponse, UpsertLiveReservationRequest, UpsertLiveReservationResponse, UpsertLivingArchiveContactRequest, UpsertLivingArchiveContactResponse, UpsertLivingArchivePolicyRequest, UpsertLivingArchivePolicyResponse, UpsertMemoryItemRequest, UpsertMemoryItemResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse, UpsertRecallDeckRequest, UpsertRecallDeckResponse, UpsertResearchRoomDecisionRequest, UpsertResearchRoomDecisionResponse, UpsertResearchRoomGrantRequest, UpsertResearchRoomGrantResponse, UpsertResearchRoomMeetingRequest, UpsertResearchRoomMeetingResponse, UpsertResearchRoomTaskRequest, UpsertResearchRoomTaskResponse, UpsertSavedQueryRequest, UpsertSavedQueryResponse, UpsertSpatialCanvasCollaboratorRequest, UpsertSpatialCanvasCollaboratorResponse, UpsertSpatialCanvasCommentRequest, UpsertSpatialCanvasCommentResponse, UpsertWatchlistRequest, UpsertWatchlistResponse, UpvoteLiveQuestionRequest, UpvoteLiveQuestionResponse, VoteLivePollRequest, VoteLivePollResponse, WithdrawForensicAppealRequest, WithdrawForensicAppealResponse } from "./onyx_pb.js";
+import { AcknowledgePurgeRequest, AcknowledgePurgeResponse, AcknowledgeResearchRoomOfflinePurgeRequest, AcknowledgeResearchRoomOfflinePurgeResponse, AddNoteRequest, AddNoteResponse, AddResearchRoomItemRequest, AddResearchRoomItemResponse, ApplySpatialCanvasOperationsRequest, ApplySpatialCanvasOperationsResponse, AuthorizeIntegrationRequest, AuthorizeIntegrationResponse, CancelCreatorSubscriptionRequest, CancelCreatorSubscriptionResponse, ChangeResearchRoomMemberRequest, ChangeResearchRoomMemberResponse, CompareDraftRevisionsRequest, CompareDraftRevisionsResponse, ConfirmLivingArchiveReviewRequest, ConfirmLivingArchiveReviewResponse, ContestLivingArchiveReleaseRequest, ContestLivingArchiveReleaseResponse, CreateAudioOverviewRequest, CreateAudioOverviewResponse, CreateCommerceCaseRequest, CreateCommerceCaseResponse, CreateDraftBranchRequest, CreateDraftBranchResponse, CreateDraftHandoffRequest, CreateDraftHandoffResponse, CreateDraftRequest, CreateDraftResponse, CreateDraftRevisionRequest, CreateDraftRevisionResponse, CreateEvidenceBriefRequest, CreateEvidenceBriefResponse, CreateIngestionItemRequest, CreateIngestionItemResponse, CreateIntelligenceGraphMeetingBriefRequest, CreateIntelligenceGraphMeetingBriefResponse, CreateListeningBookmarkRequest, CreateListeningBookmarkResponse, CreateProfileRequest, CreateProfileResponse, CreateResearchRoomRequest, CreateResearchRoomResponse, CreateResearchRoomShareLinkRequest, CreateResearchRoomShareLinkResponse, CreateShareLinkRequest, CreateShareLinkResponse, CreateSpatialCanvasRequest, CreateSpatialCanvasResponse, CreateSpatialCanvasSnapshotRequest, CreateSpatialCanvasSnapshotResponse, CreateSubscriptionCheckoutRequest, CreateSubscriptionCheckoutResponse, CrossLanguageSearchRequest, CrossLanguageSearchResponse, DeleteAudioOverviewRequest, DeleteAudioOverviewResponse, DeleteDraftBlockRequest, DeleteDraftBlockResponse, DeleteListeningBookmarkRequest, DeleteListeningBookmarkResponse, DeleteLiveNoteRequest, DeleteLiveNoteResponse, DeleteLivingArchiveContactRequest, DeleteLivingArchiveContactResponse, DeleteNoteRequest, DeleteNoteResponse, DeleteReaderAnnotationRequest, DeleteReaderAnnotationResponse, DeleteSavedQueryRequest, DeleteSavedQueryResponse, DeleteWatchlistRequest, DeleteWatchlistResponse, DispatchIntegrationBridgeRequest, DispatchIntegrationBridgeResponse, ExportPersonalIntelligenceGraphRequest, ExportPersonalIntelligenceGraphResponse, ExportReaderDataRequest, ExportReaderDataResponse, ExportRecallDataRequest, ExportRecallDataResponse, FileForensicAppealRequest, FileForensicAppealResponse, FollowCreatorRequest, FollowCreatorResponse, GenerateAnnualArchiveRequest, GenerateAnnualArchiveResponse, GenerateCaptionsRequest, GenerateCaptionsResponse, GenerateDraftSuggestionRequest, GenerateDraftSuggestionResponse, GenerateIntelligenceGraphSuggestionsRequest, GenerateIntelligenceGraphSuggestionsResponse, GenerateLiveCalendarPassRequest, GenerateLiveCalendarPassResponse, GenerateLivingArchiveEditionRequest, GenerateLivingArchiveEditionResponse, GenerateRecallItemsRequest, GenerateRecallItemsResponse, GenerateSpatialCanvasProposalsRequest, GenerateSpatialCanvasProposalsResponse, GetAlignedBlocksRequest, GetAlignedBlocksResponse, GetAnthologyRequest, GetAnthologyResponse, GetAudioOverviewRequest, GetAudioOverviewResponse, GetCaptionJobRequest, GetCaptionJobResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContentRequest, GetContentResponse, GetCreatorRequest, GetCreatorResponse, GetCreatorStudioRequest, GetCreatorStudioResponse, GetCrossPillarUnlocksRequest, GetCrossPillarUnlocksResponse, GetDeviceGrantsRequest, GetDeviceGrantsResponse, GetDraftExportRequest, GetDraftExportResponse, GetDraftingDashboardRequest, GetDraftingDashboardResponse, GetDraftRequest, GetDraftResponse, GetEvidenceBriefRequest, GetEvidenceBriefResponse, GetEvidenceWorkspaceRequest, GetEvidenceWorkspaceResponse, GetForensicProtectionDashboardRequest, GetForensicProtectionDashboardResponse, GetIngestionItemRequest, GetIngestionItemResponse, GetIntegrationArtifactRequest, GetIntegrationArtifactResponse, GetIntegrationDashboardRequest, GetIntegrationDashboardResponse, GetIntelligenceGraphMeetingBriefRequest, GetIntelligenceGraphMeetingBriefResponse, GetIntelligenceQueueRequest, GetIntelligenceQueueResponse, GetListeningPreferencesRequest, GetListeningPreferencesResponse, GetLiveEventRequest, GetLiveEventResponse, GetLiveReplayRequest, GetLiveReplayResponse, GetLiveSalonRequest, GetLiveSalonResponse, GetLivingArchiveDashboardRequest, GetLivingArchiveDashboardResponse, GetMultilingualAudioVideoRequest, GetMultilingualAudioVideoResponse, GetMultilingualExportRequest, GetMultilingualExportResponse, GetMultilingualOfflineManifestRequest, GetMultilingualOfflineManifestResponse, GetMultilingualPreferencesRequest, GetMultilingualPreferencesResponse, GetMyCommerceRequest, GetMyCommerceResponse, GetOfflineManifestRequest, GetOfflineManifestResponse, GetPersonalIntelligenceGraphRequest, GetPersonalIntelligenceGraphResponse, GetPosthumousArchiveRequest, GetPosthumousArchiveResponse, GetProfileRequest, GetProfileResponse, GetPurgeReceiptRequest, GetPurgeReceiptResponse, GetRecallDashboardRequest, GetRecallDashboardResponse, GetRecallReviewQueueRequest, GetRecallReviewQueueResponse, GetResearchRoomOfflineManifestRequest, GetResearchRoomOfflineManifestResponse, GetResearchRoomRequest, GetResearchRoomResponse, GetSeriesRequest, GetSeriesResponse, GetShelvesRequest, GetShelvesResponse, GetSpatialCanvasDashboardRequest, GetSpatialCanvasDashboardResponse, GetSpatialCanvasExportRequest, GetSpatialCanvasExportResponse, GetSpatialCanvasRequest, GetSpatialCanvasResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInOnyxRequest, GetYearInOnyxResponse, ImportRecallDataRequest, ImportRecallDataResponse, InviteLiveGuestRequest, InviteLiveGuestResponse, InviteResearchRoomMemberRequest, InviteResearchRoomMemberResponse, IssueForensicManifestRequest, IssueForensicManifestResponse, JoinLiveEventRequest, JoinLiveEventResponse, LeaveResearchRoomRequest, LeaveResearchRoomResponse, LinkLivingArchiveLegacyEscrowRequest, LinkLivingArchiveLegacyEscrowResponse, ListAnthologiesRequest, ListAnthologiesResponse, ListAudioOverviewsRequest, ListAudioOverviewsResponse, ListContentEditionsRequest, ListContentEditionsResponse, ListContentRequest, ListContentResponse, ListContinueRequest, ListContinueResponse, ListCreatorWorksRequest, ListCreatorWorksResponse, ListDraftsRequest, ListDraftsResponse, ListIntelligenceAlertsRequest, ListIntelligenceAlertsResponse, ListIntelligenceGraphMeetingBriefsRequest, ListIntelligenceGraphMeetingBriefsResponse, ListIntelligenceGraphResurfacingRequest, ListIntelligenceGraphResurfacingResponse, ListIntelligenceGraphSuggestionsRequest, ListIntelligenceGraphSuggestionsResponse, ListIntelligenceGraphTimelineRequest, ListIntelligenceGraphTimelineResponse, ListLanguageConfigsRequest, ListLanguageConfigsResponse, ListListeningBookmarksRequest, ListListeningBookmarksResponse, ListListeningPronunciationsRequest, ListListeningPronunciationsResponse, ListListeningQueueRequest, ListListeningQueueResponse, ListLiveActivityRequest, ListLiveActivityResponse, ListLiveEventsRequest, ListLiveEventsResponse, ListLiveNotesRequest, ListLiveNotesResponse, ListMemoryItemsRequest, ListMemoryItemsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCreatorSubscriptionsDetailedRequest, ListMyCreatorSubscriptionsDetailedResponse, ListMyEvidenceBriefsRequest, ListMyEvidenceBriefsResponse, ListMyFollowsRequest, ListMyFollowsResponse, ListMyIngestionItemsRequest, ListMyIngestionItemsResponse, ListMyNotesRequest, ListMyNotesResponse, ListMyReaderAnnotationsRequest, ListMyReaderAnnotationsResponse, ListMyShareLinksRequest, ListMyShareLinksResponse, ListMySubscriptionsRequest, ListMySubscriptionsResponse, ListMyUnlocksRequest, ListMyUnlocksResponse, ListOfflineManifestItemsRequest, ListOfflineManifestItemsResponse, ListReaderSyncChangesRequest, ListReaderSyncChangesResponse, ListRecallDecksRequest, ListRecallDecksResponse, ListResearchRoomAuditRequest, ListResearchRoomAuditResponse, ListResearchRoomGrantsRequest, ListResearchRoomGrantsResponse, ListResearchRoomOfflinePurgesRequest, ListResearchRoomOfflinePurgesResponse, ListResearchRoomShareLinksRequest, ListResearchRoomShareLinksResponse, ListResearchRoomsRequest, ListResearchRoomsResponse, ListSavedQueriesRequest, ListSavedQueriesResponse, ListSeriesRequest, ListSeriesResponse, ListShelfRequest, ListShelfResponse, ListSovereignWindowRequest, ListSovereignWindowResponse, ListSpatialCanvasTemplatesRequest, ListSpatialCanvasTemplatesResponse, ListTermbaseEntriesRequest, ListTermbaseEntriesResponse, ListWatchlistsRequest, ListWatchlistsResponse, MarkMyDeviceLostRequest, MarkMyDeviceLostResponse, MergeIntelligenceGraphNodesRequest, MergeIntelligenceGraphNodesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PostForensicAppealMessageRequest, PostForensicAppealMessageResponse, PostLiveMessageRequest, PostLiveMessageResponse, PostResearchRoomCommentRequest, PostResearchRoomCommentResponse, PreviewLivingArchivePolicyRequest, PreviewLivingArchivePolicyResponse, ReactLiveEventRequest, ReactLiveEventResponse, ReactToContentRequest, ReactToContentResponse, RebuildPersonalIntelligenceGraphRequest, RebuildPersonalIntelligenceGraphResponse, RecordIntelligenceFeedbackRequest, RecordIntelligenceFeedbackResponse, RecordIntelligenceSearchOutcomeRequest, RecordIntelligenceSearchOutcomeResponse, RecordOfflineEventRequest, RecordOfflineEventResponse, RecordProgressRequest, RecordProgressResponse, RecordRecallReviewBatchRequest, RecordRecallReviewBatchResponse, RecordRecallTransferRequest, RecordRecallTransferResponse, RecordResearchRoomApprovalRequest, RecordResearchRoomApprovalResponse, RedeemContentRequest, RedeemContentResponse, RefreshOfflineRenditionsRequest, RefreshOfflineRenditionsResponse, RefreshWatchlistRequest, RefreshWatchlistResponse, RegisterDeviceRequest, RegisterDeviceResponse, RemoveResearchRoomItemRequest, RemoveResearchRoomItemResponse, ReportDraftIncidentRequest, ReportDraftIncidentResponse, ReportRecallItemRequest, ReportRecallItemResponse, ReportResearchRoomAbuseRequest, ReportResearchRoomAbuseResponse, ReportSpatialCanvasAbuseRequest, ReportSpatialCanvasAbuseResponse, ReportTranslationIssueRequest, ReportTranslationIssueResponse, RequestDraftExportRequest, RequestDraftExportResponse, RequestMultilingualExportRequest, RequestMultilingualExportResponse, RequestResearchRoomExportRequest, RequestResearchRoomExportResponse, RequestSpatialCanvasExportRequest, RequestSpatialCanvasExportResponse, ResolveDraftConflictRequest, ResolveDraftConflictResponse, ResolveIngestionDuplicateRequest, ResolveIngestionDuplicateResponse, ResolveIntegrationConflictRequest, ResolveIntegrationConflictResponse, ResolveRecallInvalidationRequest, ResolveRecallInvalidationResponse, ResolveResearchRoomShareLinkRequest, ResolveResearchRoomShareLinkResponse, ResolveSpatialCanvasConflictRequest, ResolveSpatialCanvasConflictResponse, RespondForensicCaseRequest, RespondForensicCaseResponse, RespondResearchRoomInviteRequest, RespondResearchRoomInviteResponse, RestoreDraftRevisionRequest, RestoreDraftRevisionResponse, RestoreSpatialCanvasSnapshotRequest, RestoreSpatialCanvasSnapshotResponse, RetryIngestionItemRequest, RetryIngestionItemResponse, RevokeForensicManifestRequest, RevokeForensicManifestResponse, RevokeIntegrationGrantRequest, RevokeIntegrationGrantResponse, RevokeLivingArchivePolicyRequest, RevokeLivingArchivePolicyResponse, RevokeMyDeviceRequest, RevokeMyDeviceResponse, RevokeResearchRoomGrantRequest, RevokeResearchRoomGrantResponse, RevokeResearchRoomMemberRequest, RevokeResearchRoomMemberResponse, RevokeResearchRoomShareLinkRequest, RevokeResearchRoomShareLinkResponse, RevokeShareLinkRequest, RevokeShareLinkResponse, RsvpLiveEventRequest, RsvpLiveEventResponse, RunIntegrationConnectorRequest, RunIntegrationConnectorResponse, SearchContentRequest, SearchContentResponse, SearchIntelligenceRequest, SearchIntelligenceResponse, SearchReaderRequest, SearchReaderResponse, SearchResearchRoomRequest, SearchResearchRoomResponse, SetDraftSuggestionStateRequest, SetDraftSuggestionStateResponse, SetIngestionItemStateRequest, SetIngestionItemStateResponse, SetIntegrationConnectorStateRequest, SetIntegrationConnectorStateResponse, SetIntelligenceAlertStateRequest, SetIntelligenceAlertStateResponse, SetIntelligenceGraphEdgeStateRequest, SetIntelligenceGraphEdgeStateResponse, SetIntelligenceGraphNodeStateRequest, SetIntelligenceGraphNodeStateResponse, SetIntelligenceGraphResurfacingStateRequest, SetIntelligenceGraphResurfacingStateResponse, SetIntelligenceGraphSuggestionStateRequest, SetIntelligenceGraphSuggestionStateResponse, SetListeningQueueRequest, SetListeningQueueResponse, SetLiveHandRaiseRequest, SetLiveHandRaiseResponse, SetMemoryItemStateRequest, SetMemoryItemStateResponse, SetPosthumousArchiveRequest, SetPosthumousArchiveResponse, SetResearchRoomThreadStatusRequest, SetResearchRoomThreadStatusResponse, SetSpatialCanvasCommentStateRequest, SetSpatialCanvasCommentStateResponse, SetSpatialCanvasProposalStateRequest, SetSpatialCanvasProposalStateResponse, SignCreatorContractRequest, SignCreatorContractResponse, SplitIntelligenceGraphNodeRequest, SplitIntelligenceGraphNodeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCreatorPitchRequest, SubmitCreatorPitchResponse, SubmitCreatorProjectRequest, SubmitCreatorProjectResponse, SubmitIntegrationOperationsCaseRequest, SubmitIntegrationOperationsCaseResponse, SubmitLivingArchivePolicyRequest, SubmitLivingArchivePolicyResponse, SubscribeRequest, SubscribeResponse, UpdateCreatorProjectRequest, UpdateCreatorProjectResponse, UpdateListeningPreferencesRequest, UpdateListeningPreferencesResponse, UpdateMultilingualPreferencesRequest, UpdateMultilingualPreferencesResponse, UpdateRecallPreferencesRequest, UpdateRecallPreferencesResponse, UpdateResearchRoomRequest, UpdateResearchRoomResponse, UpsertDraftBlockRequest, UpsertDraftBlockResponse, UpsertDraftCitationRequest, UpsertDraftCitationResponse, UpsertIntegrationConnectorRequest, UpsertIntegrationConnectorResponse, UpsertIntelligenceGraphEdgeRequest, UpsertIntelligenceGraphEdgeResponse, UpsertIntelligenceGraphNodeRequest, UpsertIntelligenceGraphNodeResponse, UpsertLiveNoteRequest, UpsertLiveNoteResponse, UpsertLiveReservationRequest, UpsertLiveReservationResponse, UpsertLivingArchiveContactRequest, UpsertLivingArchiveContactResponse, UpsertLivingArchivePolicyRequest, UpsertLivingArchivePolicyResponse, UpsertMemoryItemRequest, UpsertMemoryItemResponse, UpsertReaderAnnotationRequest, UpsertReaderAnnotationResponse, UpsertRecallDeckRequest, UpsertRecallDeckResponse, UpsertResearchRoomDecisionRequest, UpsertResearchRoomDecisionResponse, UpsertResearchRoomGrantRequest, UpsertResearchRoomGrantResponse, UpsertResearchRoomMeetingRequest, UpsertResearchRoomMeetingResponse, UpsertResearchRoomTaskRequest, UpsertResearchRoomTaskResponse, UpsertSavedQueryRequest, UpsertSavedQueryResponse, UpsertSpatialCanvasCollaboratorRequest, UpsertSpatialCanvasCollaboratorResponse, UpsertSpatialCanvasCommentRequest, UpsertSpatialCanvasCommentResponse, UpsertWatchlistRequest, UpsertWatchlistResponse, UpvoteLiveQuestionRequest, UpvoteLiveQuestionResponse, VerifyDraftRequest, VerifyDraftResponse, VoteLivePollRequest, VoteLivePollResponse, WithdrawForensicAppealRequest, WithdrawForensicAppealResponse } from "./onyx_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -2243,6 +2243,181 @@ export const OnyxService = {
       name: "RecordRecallTransfer",
       I: RecordRecallTransferRequest,
       O: RecordRecallTransferResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 17 — private cited drafting with structural block origins,
+     * exact-source citations, immutable revisions, offline-idempotent editing,
+     * reviewable grounded suggestions and rights-aware portable exports.
+     *
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetDraftingDashboard
+     */
+    getDraftingDashboard: {
+      name: "GetDraftingDashboard",
+      I: GetDraftingDashboardRequest,
+      O: GetDraftingDashboardResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ListDrafts
+     */
+    listDrafts: {
+      name: "ListDrafts",
+      I: ListDraftsRequest,
+      O: ListDraftsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetDraft
+     */
+    getDraft: {
+      name: "GetDraft",
+      I: GetDraftRequest,
+      O: GetDraftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateDraft
+     */
+    createDraft: {
+      name: "CreateDraft",
+      I: CreateDraftRequest,
+      O: CreateDraftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.UpsertDraftBlock
+     */
+    upsertDraftBlock: {
+      name: "UpsertDraftBlock",
+      I: UpsertDraftBlockRequest,
+      O: UpsertDraftBlockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.DeleteDraftBlock
+     */
+    deleteDraftBlock: {
+      name: "DeleteDraftBlock",
+      I: DeleteDraftBlockRequest,
+      O: DeleteDraftBlockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.UpsertDraftCitation
+     */
+    upsertDraftCitation: {
+      name: "UpsertDraftCitation",
+      I: UpsertDraftCitationRequest,
+      O: UpsertDraftCitationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.VerifyDraft
+     */
+    verifyDraft: {
+      name: "VerifyDraft",
+      I: VerifyDraftRequest,
+      O: VerifyDraftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateDraftRevision
+     */
+    createDraftRevision: {
+      name: "CreateDraftRevision",
+      I: CreateDraftRevisionRequest,
+      O: CreateDraftRevisionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateDraftBranch
+     */
+    createDraftBranch: {
+      name: "CreateDraftBranch",
+      I: CreateDraftBranchRequest,
+      O: CreateDraftBranchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RestoreDraftRevision
+     */
+    restoreDraftRevision: {
+      name: "RestoreDraftRevision",
+      I: RestoreDraftRevisionRequest,
+      O: RestoreDraftRevisionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CompareDraftRevisions
+     */
+    compareDraftRevisions: {
+      name: "CompareDraftRevisions",
+      I: CompareDraftRevisionsRequest,
+      O: CompareDraftRevisionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion
+     */
+    generateDraftSuggestion: {
+      name: "GenerateDraftSuggestion",
+      I: GenerateDraftSuggestionRequest,
+      O: GenerateDraftSuggestionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.SetDraftSuggestionState
+     */
+    setDraftSuggestionState: {
+      name: "SetDraftSuggestionState",
+      I: SetDraftSuggestionStateRequest,
+      O: SetDraftSuggestionStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ResolveDraftConflict
+     */
+    resolveDraftConflict: {
+      name: "ResolveDraftConflict",
+      I: ResolveDraftConflictRequest,
+      O: ResolveDraftConflictResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.RequestDraftExport
+     */
+    requestDraftExport: {
+      name: "RequestDraftExport",
+      I: RequestDraftExportRequest,
+      O: RequestDraftExportResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.GetDraftExport
+     */
+    getDraftExport: {
+      name: "GetDraftExport",
+      I: GetDraftExportRequest,
+      O: GetDraftExportResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.CreateDraftHandoff
+     */
+    createDraftHandoff: {
+      name: "CreateDraftHandoff",
+      I: CreateDraftHandoffRequest,
+      O: CreateDraftHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.onyx.v1.OnyxService.ReportDraftIncident
+     */
+    reportDraftIncident: {
+      name: "ReportDraftIncident",
+      I: ReportDraftIncidentRequest,
+      O: ReportDraftIncidentResponse,
       kind: MethodKind.Unary,
     },
   }

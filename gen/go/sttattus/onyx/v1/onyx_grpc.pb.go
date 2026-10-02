@@ -259,6 +259,25 @@ const (
 	OnyxService_ImportRecallData_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ImportRecallData"
 	OnyxService_ReportRecallItem_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/ReportRecallItem"
 	OnyxService_RecordRecallTransfer_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RecordRecallTransfer"
+	OnyxService_GetDraftingDashboard_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetDraftingDashboard"
+	OnyxService_ListDrafts_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/ListDrafts"
+	OnyxService_GetDraft_FullMethodName                             = "/sttattus.onyx.v1.OnyxService/GetDraft"
+	OnyxService_CreateDraft_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/CreateDraft"
+	OnyxService_UpsertDraftBlock_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertDraftBlock"
+	OnyxService_DeleteDraftBlock_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteDraftBlock"
+	OnyxService_UpsertDraftCitation_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/UpsertDraftCitation"
+	OnyxService_VerifyDraft_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/VerifyDraft"
+	OnyxService_CreateDraftRevision_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateDraftRevision"
+	OnyxService_CreateDraftBranch_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/CreateDraftBranch"
+	OnyxService_RestoreDraftRevision_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RestoreDraftRevision"
+	OnyxService_CompareDraftRevisions_FullMethodName                = "/sttattus.onyx.v1.OnyxService/CompareDraftRevisions"
+	OnyxService_GenerateDraftSuggestion_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GenerateDraftSuggestion"
+	OnyxService_SetDraftSuggestionState_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SetDraftSuggestionState"
+	OnyxService_ResolveDraftConflict_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ResolveDraftConflict"
+	OnyxService_RequestDraftExport_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/RequestDraftExport"
+	OnyxService_GetDraftExport_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/GetDraftExport"
+	OnyxService_CreateDraftHandoff_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/CreateDraftHandoff"
+	OnyxService_ReportDraftIncident_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/ReportDraftIncident"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -547,6 +566,28 @@ type OnyxServiceClient interface {
 	ImportRecallData(ctx context.Context, in *ImportRecallDataRequest, opts ...grpc.CallOption) (*ImportRecallDataResponse, error)
 	ReportRecallItem(ctx context.Context, in *ReportRecallItemRequest, opts ...grpc.CallOption) (*ReportRecallItemResponse, error)
 	RecordRecallTransfer(ctx context.Context, in *RecordRecallTransferRequest, opts ...grpc.CallOption) (*RecordRecallTransferResponse, error)
+	// Choice 17 — private cited drafting with structural block origins,
+	// exact-source citations, immutable revisions, offline-idempotent editing,
+	// reviewable grounded suggestions and rights-aware portable exports.
+	GetDraftingDashboard(ctx context.Context, in *GetDraftingDashboardRequest, opts ...grpc.CallOption) (*GetDraftingDashboardResponse, error)
+	ListDrafts(ctx context.Context, in *ListDraftsRequest, opts ...grpc.CallOption) (*ListDraftsResponse, error)
+	GetDraft(ctx context.Context, in *GetDraftRequest, opts ...grpc.CallOption) (*GetDraftResponse, error)
+	CreateDraft(ctx context.Context, in *CreateDraftRequest, opts ...grpc.CallOption) (*CreateDraftResponse, error)
+	UpsertDraftBlock(ctx context.Context, in *UpsertDraftBlockRequest, opts ...grpc.CallOption) (*UpsertDraftBlockResponse, error)
+	DeleteDraftBlock(ctx context.Context, in *DeleteDraftBlockRequest, opts ...grpc.CallOption) (*DeleteDraftBlockResponse, error)
+	UpsertDraftCitation(ctx context.Context, in *UpsertDraftCitationRequest, opts ...grpc.CallOption) (*UpsertDraftCitationResponse, error)
+	VerifyDraft(ctx context.Context, in *VerifyDraftRequest, opts ...grpc.CallOption) (*VerifyDraftResponse, error)
+	CreateDraftRevision(ctx context.Context, in *CreateDraftRevisionRequest, opts ...grpc.CallOption) (*CreateDraftRevisionResponse, error)
+	CreateDraftBranch(ctx context.Context, in *CreateDraftBranchRequest, opts ...grpc.CallOption) (*CreateDraftBranchResponse, error)
+	RestoreDraftRevision(ctx context.Context, in *RestoreDraftRevisionRequest, opts ...grpc.CallOption) (*RestoreDraftRevisionResponse, error)
+	CompareDraftRevisions(ctx context.Context, in *CompareDraftRevisionsRequest, opts ...grpc.CallOption) (*CompareDraftRevisionsResponse, error)
+	GenerateDraftSuggestion(ctx context.Context, in *GenerateDraftSuggestionRequest, opts ...grpc.CallOption) (*GenerateDraftSuggestionResponse, error)
+	SetDraftSuggestionState(ctx context.Context, in *SetDraftSuggestionStateRequest, opts ...grpc.CallOption) (*SetDraftSuggestionStateResponse, error)
+	ResolveDraftConflict(ctx context.Context, in *ResolveDraftConflictRequest, opts ...grpc.CallOption) (*ResolveDraftConflictResponse, error)
+	RequestDraftExport(ctx context.Context, in *RequestDraftExportRequest, opts ...grpc.CallOption) (*RequestDraftExportResponse, error)
+	GetDraftExport(ctx context.Context, in *GetDraftExportRequest, opts ...grpc.CallOption) (*GetDraftExportResponse, error)
+	CreateDraftHandoff(ctx context.Context, in *CreateDraftHandoffRequest, opts ...grpc.CallOption) (*CreateDraftHandoffResponse, error)
+	ReportDraftIncident(ctx context.Context, in *ReportDraftIncidentRequest, opts ...grpc.CallOption) (*ReportDraftIncidentResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -2957,6 +2998,196 @@ func (c *onyxServiceClient) RecordRecallTransfer(ctx context.Context, in *Record
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetDraftingDashboard(ctx context.Context, in *GetDraftingDashboardRequest, opts ...grpc.CallOption) (*GetDraftingDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDraftingDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDraftingDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ListDrafts(ctx context.Context, in *ListDraftsRequest, opts ...grpc.CallOption) (*ListDraftsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDraftsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListDrafts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetDraft(ctx context.Context, in *GetDraftRequest, opts ...grpc.CallOption) (*GetDraftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDraftResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDraft_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateDraft(ctx context.Context, in *CreateDraftRequest, opts ...grpc.CallOption) (*CreateDraftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDraftResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateDraft_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertDraftBlock(ctx context.Context, in *UpsertDraftBlockRequest, opts ...grpc.CallOption) (*UpsertDraftBlockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertDraftBlockResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertDraftBlock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) DeleteDraftBlock(ctx context.Context, in *DeleteDraftBlockRequest, opts ...grpc.CallOption) (*DeleteDraftBlockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteDraftBlockResponse)
+	err := c.cc.Invoke(ctx, OnyxService_DeleteDraftBlock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpsertDraftCitation(ctx context.Context, in *UpsertDraftCitationRequest, opts ...grpc.CallOption) (*UpsertDraftCitationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertDraftCitationResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpsertDraftCitation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) VerifyDraft(ctx context.Context, in *VerifyDraftRequest, opts ...grpc.CallOption) (*VerifyDraftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyDraftResponse)
+	err := c.cc.Invoke(ctx, OnyxService_VerifyDraft_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateDraftRevision(ctx context.Context, in *CreateDraftRevisionRequest, opts ...grpc.CallOption) (*CreateDraftRevisionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDraftRevisionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateDraftRevision_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateDraftBranch(ctx context.Context, in *CreateDraftBranchRequest, opts ...grpc.CallOption) (*CreateDraftBranchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDraftBranchResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateDraftBranch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RestoreDraftRevision(ctx context.Context, in *RestoreDraftRevisionRequest, opts ...grpc.CallOption) (*RestoreDraftRevisionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RestoreDraftRevisionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RestoreDraftRevision_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CompareDraftRevisions(ctx context.Context, in *CompareDraftRevisionsRequest, opts ...grpc.CallOption) (*CompareDraftRevisionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompareDraftRevisionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CompareDraftRevisions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GenerateDraftSuggestion(ctx context.Context, in *GenerateDraftSuggestionRequest, opts ...grpc.CallOption) (*GenerateDraftSuggestionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateDraftSuggestionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GenerateDraftSuggestion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetDraftSuggestionState(ctx context.Context, in *SetDraftSuggestionStateRequest, opts ...grpc.CallOption) (*SetDraftSuggestionStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetDraftSuggestionStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetDraftSuggestionState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ResolveDraftConflict(ctx context.Context, in *ResolveDraftConflictRequest, opts ...grpc.CallOption) (*ResolveDraftConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveDraftConflictResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ResolveDraftConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestDraftExport(ctx context.Context, in *RequestDraftExportRequest, opts ...grpc.CallOption) (*RequestDraftExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestDraftExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestDraftExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetDraftExport(ctx context.Context, in *GetDraftExportRequest, opts ...grpc.CallOption) (*GetDraftExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDraftExportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDraftExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CreateDraftHandoff(ctx context.Context, in *CreateDraftHandoffRequest, opts ...grpc.CallOption) (*CreateDraftHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateDraftHandoffResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CreateDraftHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) ReportDraftIncident(ctx context.Context, in *ReportDraftIncidentRequest, opts ...grpc.CallOption) (*ReportDraftIncidentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportDraftIncidentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ReportDraftIncident_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -3243,6 +3474,28 @@ type OnyxServiceServer interface {
 	ImportRecallData(context.Context, *ImportRecallDataRequest) (*ImportRecallDataResponse, error)
 	ReportRecallItem(context.Context, *ReportRecallItemRequest) (*ReportRecallItemResponse, error)
 	RecordRecallTransfer(context.Context, *RecordRecallTransferRequest) (*RecordRecallTransferResponse, error)
+	// Choice 17 — private cited drafting with structural block origins,
+	// exact-source citations, immutable revisions, offline-idempotent editing,
+	// reviewable grounded suggestions and rights-aware portable exports.
+	GetDraftingDashboard(context.Context, *GetDraftingDashboardRequest) (*GetDraftingDashboardResponse, error)
+	ListDrafts(context.Context, *ListDraftsRequest) (*ListDraftsResponse, error)
+	GetDraft(context.Context, *GetDraftRequest) (*GetDraftResponse, error)
+	CreateDraft(context.Context, *CreateDraftRequest) (*CreateDraftResponse, error)
+	UpsertDraftBlock(context.Context, *UpsertDraftBlockRequest) (*UpsertDraftBlockResponse, error)
+	DeleteDraftBlock(context.Context, *DeleteDraftBlockRequest) (*DeleteDraftBlockResponse, error)
+	UpsertDraftCitation(context.Context, *UpsertDraftCitationRequest) (*UpsertDraftCitationResponse, error)
+	VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error)
+	CreateDraftRevision(context.Context, *CreateDraftRevisionRequest) (*CreateDraftRevisionResponse, error)
+	CreateDraftBranch(context.Context, *CreateDraftBranchRequest) (*CreateDraftBranchResponse, error)
+	RestoreDraftRevision(context.Context, *RestoreDraftRevisionRequest) (*RestoreDraftRevisionResponse, error)
+	CompareDraftRevisions(context.Context, *CompareDraftRevisionsRequest) (*CompareDraftRevisionsResponse, error)
+	GenerateDraftSuggestion(context.Context, *GenerateDraftSuggestionRequest) (*GenerateDraftSuggestionResponse, error)
+	SetDraftSuggestionState(context.Context, *SetDraftSuggestionStateRequest) (*SetDraftSuggestionStateResponse, error)
+	ResolveDraftConflict(context.Context, *ResolveDraftConflictRequest) (*ResolveDraftConflictResponse, error)
+	RequestDraftExport(context.Context, *RequestDraftExportRequest) (*RequestDraftExportResponse, error)
+	GetDraftExport(context.Context, *GetDraftExportRequest) (*GetDraftExportResponse, error)
+	CreateDraftHandoff(context.Context, *CreateDraftHandoffRequest) (*CreateDraftHandoffResponse, error)
+	ReportDraftIncident(context.Context, *ReportDraftIncidentRequest) (*ReportDraftIncidentResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -3972,6 +4225,63 @@ func (UnimplementedOnyxServiceServer) ReportRecallItem(context.Context, *ReportR
 }
 func (UnimplementedOnyxServiceServer) RecordRecallTransfer(context.Context, *RecordRecallTransferRequest) (*RecordRecallTransferResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RecordRecallTransfer not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDraftingDashboard(context.Context, *GetDraftingDashboardRequest) (*GetDraftingDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDraftingDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) ListDrafts(context.Context, *ListDraftsRequest) (*ListDraftsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDrafts not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDraft(context.Context, *GetDraftRequest) (*GetDraftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDraft not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateDraft(context.Context, *CreateDraftRequest) (*CreateDraftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDraft not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertDraftBlock(context.Context, *UpsertDraftBlockRequest) (*UpsertDraftBlockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertDraftBlock not implemented")
+}
+func (UnimplementedOnyxServiceServer) DeleteDraftBlock(context.Context, *DeleteDraftBlockRequest) (*DeleteDraftBlockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteDraftBlock not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpsertDraftCitation(context.Context, *UpsertDraftCitationRequest) (*UpsertDraftCitationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertDraftCitation not implemented")
+}
+func (UnimplementedOnyxServiceServer) VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyDraft not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateDraftRevision(context.Context, *CreateDraftRevisionRequest) (*CreateDraftRevisionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDraftRevision not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateDraftBranch(context.Context, *CreateDraftBranchRequest) (*CreateDraftBranchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDraftBranch not implemented")
+}
+func (UnimplementedOnyxServiceServer) RestoreDraftRevision(context.Context, *RestoreDraftRevisionRequest) (*RestoreDraftRevisionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RestoreDraftRevision not implemented")
+}
+func (UnimplementedOnyxServiceServer) CompareDraftRevisions(context.Context, *CompareDraftRevisionsRequest) (*CompareDraftRevisionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompareDraftRevisions not implemented")
+}
+func (UnimplementedOnyxServiceServer) GenerateDraftSuggestion(context.Context, *GenerateDraftSuggestionRequest) (*GenerateDraftSuggestionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateDraftSuggestion not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetDraftSuggestionState(context.Context, *SetDraftSuggestionStateRequest) (*SetDraftSuggestionStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetDraftSuggestionState not implemented")
+}
+func (UnimplementedOnyxServiceServer) ResolveDraftConflict(context.Context, *ResolveDraftConflictRequest) (*ResolveDraftConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveDraftConflict not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestDraftExport(context.Context, *RequestDraftExportRequest) (*RequestDraftExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestDraftExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDraftExport(context.Context, *GetDraftExportRequest) (*GetDraftExportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDraftExport not implemented")
+}
+func (UnimplementedOnyxServiceServer) CreateDraftHandoff(context.Context, *CreateDraftHandoffRequest) (*CreateDraftHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateDraftHandoff not implemented")
+}
+func (UnimplementedOnyxServiceServer) ReportDraftIncident(context.Context, *ReportDraftIncidentRequest) (*ReportDraftIncidentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportDraftIncident not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -8314,6 +8624,348 @@ func _OnyxService_RecordRecallTransfer_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetDraftingDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDraftingDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDraftingDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDraftingDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDraftingDashboard(ctx, req.(*GetDraftingDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ListDrafts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDraftsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListDrafts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListDrafts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListDrafts(ctx, req.(*ListDraftsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDraftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDraft(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDraft_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDraft(ctx, req.(*GetDraftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDraftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateDraft(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateDraft_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateDraft(ctx, req.(*CreateDraftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertDraftBlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertDraftBlockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertDraftBlock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertDraftBlock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertDraftBlock(ctx, req.(*UpsertDraftBlockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_DeleteDraftBlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteDraftBlockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).DeleteDraftBlock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_DeleteDraftBlock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).DeleteDraftBlock(ctx, req.(*DeleteDraftBlockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpsertDraftCitation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertDraftCitationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpsertDraftCitation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpsertDraftCitation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpsertDraftCitation(ctx, req.(*UpsertDraftCitationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_VerifyDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyDraftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).VerifyDraft(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_VerifyDraft_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).VerifyDraft(ctx, req.(*VerifyDraftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateDraftRevision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDraftRevisionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateDraftRevision(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateDraftRevision_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateDraftRevision(ctx, req.(*CreateDraftRevisionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateDraftBranch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDraftBranchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateDraftBranch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateDraftBranch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateDraftBranch(ctx, req.(*CreateDraftBranchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RestoreDraftRevision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RestoreDraftRevisionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RestoreDraftRevision(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RestoreDraftRevision_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RestoreDraftRevision(ctx, req.(*RestoreDraftRevisionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CompareDraftRevisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareDraftRevisionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CompareDraftRevisions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CompareDraftRevisions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CompareDraftRevisions(ctx, req.(*CompareDraftRevisionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GenerateDraftSuggestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateDraftSuggestionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GenerateDraftSuggestion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GenerateDraftSuggestion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GenerateDraftSuggestion(ctx, req.(*GenerateDraftSuggestionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetDraftSuggestionState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetDraftSuggestionStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetDraftSuggestionState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetDraftSuggestionState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetDraftSuggestionState(ctx, req.(*SetDraftSuggestionStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ResolveDraftConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveDraftConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ResolveDraftConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ResolveDraftConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ResolveDraftConflict(ctx, req.(*ResolveDraftConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestDraftExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestDraftExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestDraftExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestDraftExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestDraftExport(ctx, req.(*RequestDraftExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetDraftExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDraftExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDraftExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDraftExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDraftExport(ctx, req.(*GetDraftExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CreateDraftHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDraftHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CreateDraftHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CreateDraftHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CreateDraftHandoff(ctx, req.(*CreateDraftHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_ReportDraftIncident_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportDraftIncidentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ReportDraftIncident(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ReportDraftIncident_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ReportDraftIncident(ctx, req.(*ReportDraftIncidentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -9280,6 +9932,82 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RecordRecallTransfer",
 			Handler:    _OnyxService_RecordRecallTransfer_Handler,
+		},
+		{
+			MethodName: "GetDraftingDashboard",
+			Handler:    _OnyxService_GetDraftingDashboard_Handler,
+		},
+		{
+			MethodName: "ListDrafts",
+			Handler:    _OnyxService_ListDrafts_Handler,
+		},
+		{
+			MethodName: "GetDraft",
+			Handler:    _OnyxService_GetDraft_Handler,
+		},
+		{
+			MethodName: "CreateDraft",
+			Handler:    _OnyxService_CreateDraft_Handler,
+		},
+		{
+			MethodName: "UpsertDraftBlock",
+			Handler:    _OnyxService_UpsertDraftBlock_Handler,
+		},
+		{
+			MethodName: "DeleteDraftBlock",
+			Handler:    _OnyxService_DeleteDraftBlock_Handler,
+		},
+		{
+			MethodName: "UpsertDraftCitation",
+			Handler:    _OnyxService_UpsertDraftCitation_Handler,
+		},
+		{
+			MethodName: "VerifyDraft",
+			Handler:    _OnyxService_VerifyDraft_Handler,
+		},
+		{
+			MethodName: "CreateDraftRevision",
+			Handler:    _OnyxService_CreateDraftRevision_Handler,
+		},
+		{
+			MethodName: "CreateDraftBranch",
+			Handler:    _OnyxService_CreateDraftBranch_Handler,
+		},
+		{
+			MethodName: "RestoreDraftRevision",
+			Handler:    _OnyxService_RestoreDraftRevision_Handler,
+		},
+		{
+			MethodName: "CompareDraftRevisions",
+			Handler:    _OnyxService_CompareDraftRevisions_Handler,
+		},
+		{
+			MethodName: "GenerateDraftSuggestion",
+			Handler:    _OnyxService_GenerateDraftSuggestion_Handler,
+		},
+		{
+			MethodName: "SetDraftSuggestionState",
+			Handler:    _OnyxService_SetDraftSuggestionState_Handler,
+		},
+		{
+			MethodName: "ResolveDraftConflict",
+			Handler:    _OnyxService_ResolveDraftConflict_Handler,
+		},
+		{
+			MethodName: "RequestDraftExport",
+			Handler:    _OnyxService_RequestDraftExport_Handler,
+		},
+		{
+			MethodName: "GetDraftExport",
+			Handler:    _OnyxService_GetDraftExport_Handler,
+		},
+		{
+			MethodName: "CreateDraftHandoff",
+			Handler:    _OnyxService_CreateDraftHandoff_Handler,
+		},
+		{
+			MethodName: "ReportDraftIncident",
+			Handler:    _OnyxService_ReportDraftIncident_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -1972,6 +1972,146 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$recordRecallTransfer, request, options: options);
   }
 
+  /// Choice 17 — private cited drafting with structural block origins,
+  /// exact-source citations, immutable revisions, offline-idempotent editing,
+  /// reviewable grounded suggestions and rights-aware portable exports.
+  $grpc.ResponseFuture<$0.GetDraftingDashboardResponse> getDraftingDashboard(
+    $0.GetDraftingDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftingDashboard, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListDraftsResponse> listDrafts(
+    $0.ListDraftsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listDrafts, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetDraftResponse> getDraft(
+    $0.GetDraftRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraft, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftResponse> createDraft(
+    $0.CreateDraftRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraft, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertDraftBlockResponse> upsertDraftBlock(
+    $0.UpsertDraftBlockRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertDraftBlock, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteDraftBlockResponse> deleteDraftBlock(
+    $0.DeleteDraftBlockRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteDraftBlock, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertDraftCitationResponse> upsertDraftCitation(
+    $0.UpsertDraftCitationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertDraftCitation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyDraftResponse> verifyDraft(
+    $0.VerifyDraftRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyDraft, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftRevisionResponse> createDraftRevision(
+    $0.CreateDraftRevisionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraftRevision, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftBranchResponse> createDraftBranch(
+    $0.CreateDraftBranchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraftBranch, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RestoreDraftRevisionResponse> restoreDraftRevision(
+    $0.RestoreDraftRevisionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$restoreDraftRevision, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompareDraftRevisionsResponse> compareDraftRevisions(
+    $0.CompareDraftRevisionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$compareDraftRevisions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateDraftSuggestionResponse>
+      generateDraftSuggestion(
+    $0.GenerateDraftSuggestionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateDraftSuggestion, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetDraftSuggestionStateResponse>
+      setDraftSuggestionState(
+    $0.SetDraftSuggestionStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setDraftSuggestionState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveDraftConflictResponse> resolveDraftConflict(
+    $0.ResolveDraftConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveDraftConflict, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestDraftExportResponse> requestDraftExport(
+    $0.RequestDraftExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestDraftExport, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetDraftExportResponse> getDraftExport(
+    $0.GetDraftExportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftExport, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftHandoffResponse> createDraftHandoff(
+    $0.CreateDraftHandoffRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraftHandoff, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportDraftIncidentResponse> reportDraftIncident(
+    $0.ReportDraftIncidentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportDraftIncident, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -3284,6 +3424,103 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/RecordRecallTransfer',
       ($0.RecordRecallTransferRequest value) => value.writeToBuffer(),
       $0.RecordRecallTransferResponse.fromBuffer);
+  static final _$getDraftingDashboard = $grpc.ClientMethod<
+          $0.GetDraftingDashboardRequest, $0.GetDraftingDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetDraftingDashboard',
+      ($0.GetDraftingDashboardRequest value) => value.writeToBuffer(),
+      $0.GetDraftingDashboardResponse.fromBuffer);
+  static final _$listDrafts =
+      $grpc.ClientMethod<$0.ListDraftsRequest, $0.ListDraftsResponse>(
+          '/sttattus.onyx.v1.OnyxService/ListDrafts',
+          ($0.ListDraftsRequest value) => value.writeToBuffer(),
+          $0.ListDraftsResponse.fromBuffer);
+  static final _$getDraft =
+      $grpc.ClientMethod<$0.GetDraftRequest, $0.GetDraftResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetDraft',
+          ($0.GetDraftRequest value) => value.writeToBuffer(),
+          $0.GetDraftResponse.fromBuffer);
+  static final _$createDraft =
+      $grpc.ClientMethod<$0.CreateDraftRequest, $0.CreateDraftResponse>(
+          '/sttattus.onyx.v1.OnyxService/CreateDraft',
+          ($0.CreateDraftRequest value) => value.writeToBuffer(),
+          $0.CreateDraftResponse.fromBuffer);
+  static final _$upsertDraftBlock = $grpc.ClientMethod<
+          $0.UpsertDraftBlockRequest, $0.UpsertDraftBlockResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertDraftBlock',
+      ($0.UpsertDraftBlockRequest value) => value.writeToBuffer(),
+      $0.UpsertDraftBlockResponse.fromBuffer);
+  static final _$deleteDraftBlock = $grpc.ClientMethod<
+          $0.DeleteDraftBlockRequest, $0.DeleteDraftBlockResponse>(
+      '/sttattus.onyx.v1.OnyxService/DeleteDraftBlock',
+      ($0.DeleteDraftBlockRequest value) => value.writeToBuffer(),
+      $0.DeleteDraftBlockResponse.fromBuffer);
+  static final _$upsertDraftCitation = $grpc.ClientMethod<
+          $0.UpsertDraftCitationRequest, $0.UpsertDraftCitationResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpsertDraftCitation',
+      ($0.UpsertDraftCitationRequest value) => value.writeToBuffer(),
+      $0.UpsertDraftCitationResponse.fromBuffer);
+  static final _$verifyDraft =
+      $grpc.ClientMethod<$0.VerifyDraftRequest, $0.VerifyDraftResponse>(
+          '/sttattus.onyx.v1.OnyxService/VerifyDraft',
+          ($0.VerifyDraftRequest value) => value.writeToBuffer(),
+          $0.VerifyDraftResponse.fromBuffer);
+  static final _$createDraftRevision = $grpc.ClientMethod<
+          $0.CreateDraftRevisionRequest, $0.CreateDraftRevisionResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateDraftRevision',
+      ($0.CreateDraftRevisionRequest value) => value.writeToBuffer(),
+      $0.CreateDraftRevisionResponse.fromBuffer);
+  static final _$createDraftBranch = $grpc.ClientMethod<
+          $0.CreateDraftBranchRequest, $0.CreateDraftBranchResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateDraftBranch',
+      ($0.CreateDraftBranchRequest value) => value.writeToBuffer(),
+      $0.CreateDraftBranchResponse.fromBuffer);
+  static final _$restoreDraftRevision = $grpc.ClientMethod<
+          $0.RestoreDraftRevisionRequest, $0.RestoreDraftRevisionResponse>(
+      '/sttattus.onyx.v1.OnyxService/RestoreDraftRevision',
+      ($0.RestoreDraftRevisionRequest value) => value.writeToBuffer(),
+      $0.RestoreDraftRevisionResponse.fromBuffer);
+  static final _$compareDraftRevisions = $grpc.ClientMethod<
+          $0.CompareDraftRevisionsRequest, $0.CompareDraftRevisionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/CompareDraftRevisions',
+      ($0.CompareDraftRevisionsRequest value) => value.writeToBuffer(),
+      $0.CompareDraftRevisionsResponse.fromBuffer);
+  static final _$generateDraftSuggestion = $grpc.ClientMethod<
+          $0.GenerateDraftSuggestionRequest,
+          $0.GenerateDraftSuggestionResponse>(
+      '/sttattus.onyx.v1.OnyxService/GenerateDraftSuggestion',
+      ($0.GenerateDraftSuggestionRequest value) => value.writeToBuffer(),
+      $0.GenerateDraftSuggestionResponse.fromBuffer);
+  static final _$setDraftSuggestionState = $grpc.ClientMethod<
+          $0.SetDraftSuggestionStateRequest,
+          $0.SetDraftSuggestionStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetDraftSuggestionState',
+      ($0.SetDraftSuggestionStateRequest value) => value.writeToBuffer(),
+      $0.SetDraftSuggestionStateResponse.fromBuffer);
+  static final _$resolveDraftConflict = $grpc.ClientMethod<
+          $0.ResolveDraftConflictRequest, $0.ResolveDraftConflictResponse>(
+      '/sttattus.onyx.v1.OnyxService/ResolveDraftConflict',
+      ($0.ResolveDraftConflictRequest value) => value.writeToBuffer(),
+      $0.ResolveDraftConflictResponse.fromBuffer);
+  static final _$requestDraftExport = $grpc.ClientMethod<
+          $0.RequestDraftExportRequest, $0.RequestDraftExportResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestDraftExport',
+      ($0.RequestDraftExportRequest value) => value.writeToBuffer(),
+      $0.RequestDraftExportResponse.fromBuffer);
+  static final _$getDraftExport =
+      $grpc.ClientMethod<$0.GetDraftExportRequest, $0.GetDraftExportResponse>(
+          '/sttattus.onyx.v1.OnyxService/GetDraftExport',
+          ($0.GetDraftExportRequest value) => value.writeToBuffer(),
+          $0.GetDraftExportResponse.fromBuffer);
+  static final _$createDraftHandoff = $grpc.ClientMethod<
+          $0.CreateDraftHandoffRequest, $0.CreateDraftHandoffResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateDraftHandoff',
+      ($0.CreateDraftHandoffRequest value) => value.writeToBuffer(),
+      $0.CreateDraftHandoffResponse.fromBuffer);
+  static final _$reportDraftIncident = $grpc.ClientMethod<
+          $0.ReportDraftIncidentRequest, $0.ReportDraftIncidentResponse>(
+      '/sttattus.onyx.v1.OnyxService/ReportDraftIncident',
+      ($0.ReportDraftIncidentRequest value) => value.writeToBuffer(),
+      $0.ReportDraftIncidentResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -5496,6 +5733,173 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RecordRecallTransferRequest.fromBuffer(value),
         ($0.RecordRecallTransferResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftingDashboardRequest,
+            $0.GetDraftingDashboardResponse>(
+        'GetDraftingDashboard',
+        getDraftingDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftingDashboardRequest.fromBuffer(value),
+        ($0.GetDraftingDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDraftsRequest, $0.ListDraftsResponse>(
+        'ListDrafts',
+        listDrafts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ListDraftsRequest.fromBuffer(value),
+        ($0.ListDraftsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftRequest, $0.GetDraftResponse>(
+        'GetDraft',
+        getDraft_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDraftRequest.fromBuffer(value),
+        ($0.GetDraftResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.CreateDraftRequest, $0.CreateDraftResponse>(
+            'CreateDraft',
+            createDraft_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.CreateDraftRequest.fromBuffer(value),
+            ($0.CreateDraftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertDraftBlockRequest,
+            $0.UpsertDraftBlockResponse>(
+        'UpsertDraftBlock',
+        upsertDraftBlock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertDraftBlockRequest.fromBuffer(value),
+        ($0.UpsertDraftBlockResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteDraftBlockRequest,
+            $0.DeleteDraftBlockResponse>(
+        'DeleteDraftBlock',
+        deleteDraftBlock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteDraftBlockRequest.fromBuffer(value),
+        ($0.DeleteDraftBlockResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertDraftCitationRequest,
+            $0.UpsertDraftCitationResponse>(
+        'UpsertDraftCitation',
+        upsertDraftCitation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertDraftCitationRequest.fromBuffer(value),
+        ($0.UpsertDraftCitationResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.VerifyDraftRequest, $0.VerifyDraftResponse>(
+            'VerifyDraft',
+            verifyDraft_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.VerifyDraftRequest.fromBuffer(value),
+            ($0.VerifyDraftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDraftRevisionRequest,
+            $0.CreateDraftRevisionResponse>(
+        'CreateDraftRevision',
+        createDraftRevision_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateDraftRevisionRequest.fromBuffer(value),
+        ($0.CreateDraftRevisionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDraftBranchRequest,
+            $0.CreateDraftBranchResponse>(
+        'CreateDraftBranch',
+        createDraftBranch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateDraftBranchRequest.fromBuffer(value),
+        ($0.CreateDraftBranchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RestoreDraftRevisionRequest,
+            $0.RestoreDraftRevisionResponse>(
+        'RestoreDraftRevision',
+        restoreDraftRevision_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RestoreDraftRevisionRequest.fromBuffer(value),
+        ($0.RestoreDraftRevisionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompareDraftRevisionsRequest,
+            $0.CompareDraftRevisionsResponse>(
+        'CompareDraftRevisions',
+        compareDraftRevisions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompareDraftRevisionsRequest.fromBuffer(value),
+        ($0.CompareDraftRevisionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateDraftSuggestionRequest,
+            $0.GenerateDraftSuggestionResponse>(
+        'GenerateDraftSuggestion',
+        generateDraftSuggestion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateDraftSuggestionRequest.fromBuffer(value),
+        ($0.GenerateDraftSuggestionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetDraftSuggestionStateRequest,
+            $0.SetDraftSuggestionStateResponse>(
+        'SetDraftSuggestionState',
+        setDraftSuggestionState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetDraftSuggestionStateRequest.fromBuffer(value),
+        ($0.SetDraftSuggestionStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveDraftConflictRequest,
+            $0.ResolveDraftConflictResponse>(
+        'ResolveDraftConflict',
+        resolveDraftConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveDraftConflictRequest.fromBuffer(value),
+        ($0.ResolveDraftConflictResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestDraftExportRequest,
+            $0.RequestDraftExportResponse>(
+        'RequestDraftExport',
+        requestDraftExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestDraftExportRequest.fromBuffer(value),
+        ($0.RequestDraftExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftExportRequest,
+            $0.GetDraftExportResponse>(
+        'GetDraftExport',
+        getDraftExport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftExportRequest.fromBuffer(value),
+        ($0.GetDraftExportResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDraftHandoffRequest,
+            $0.CreateDraftHandoffResponse>(
+        'CreateDraftHandoff',
+        createDraftHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateDraftHandoffRequest.fromBuffer(value),
+        ($0.CreateDraftHandoffResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportDraftIncidentRequest,
+            $0.ReportDraftIncidentResponse>(
+        'ReportDraftIncident',
+        reportDraftIncident_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportDraftIncidentRequest.fromBuffer(value),
+        ($0.ReportDraftIncidentResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -7773,4 +8177,171 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.RecordRecallTransferResponse> recordRecallTransfer(
       $grpc.ServiceCall call, $0.RecordRecallTransferRequest request);
+
+  $async.Future<$0.GetDraftingDashboardResponse> getDraftingDashboard_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftingDashboardRequest> $request) async {
+    return getDraftingDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftingDashboardResponse> getDraftingDashboard(
+      $grpc.ServiceCall call, $0.GetDraftingDashboardRequest request);
+
+  $async.Future<$0.ListDraftsResponse> listDrafts_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.ListDraftsRequest> $request) async {
+    return listDrafts($call, await $request);
+  }
+
+  $async.Future<$0.ListDraftsResponse> listDrafts(
+      $grpc.ServiceCall call, $0.ListDraftsRequest request);
+
+  $async.Future<$0.GetDraftResponse> getDraft_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftRequest> $request) async {
+    return getDraft($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftResponse> getDraft(
+      $grpc.ServiceCall call, $0.GetDraftRequest request);
+
+  $async.Future<$0.CreateDraftResponse> createDraft_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftRequest> $request) async {
+    return createDraft($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftResponse> createDraft(
+      $grpc.ServiceCall call, $0.CreateDraftRequest request);
+
+  $async.Future<$0.UpsertDraftBlockResponse> upsertDraftBlock_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertDraftBlockRequest> $request) async {
+    return upsertDraftBlock($call, await $request);
+  }
+
+  $async.Future<$0.UpsertDraftBlockResponse> upsertDraftBlock(
+      $grpc.ServiceCall call, $0.UpsertDraftBlockRequest request);
+
+  $async.Future<$0.DeleteDraftBlockResponse> deleteDraftBlock_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteDraftBlockRequest> $request) async {
+    return deleteDraftBlock($call, await $request);
+  }
+
+  $async.Future<$0.DeleteDraftBlockResponse> deleteDraftBlock(
+      $grpc.ServiceCall call, $0.DeleteDraftBlockRequest request);
+
+  $async.Future<$0.UpsertDraftCitationResponse> upsertDraftCitation_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertDraftCitationRequest> $request) async {
+    return upsertDraftCitation($call, await $request);
+  }
+
+  $async.Future<$0.UpsertDraftCitationResponse> upsertDraftCitation(
+      $grpc.ServiceCall call, $0.UpsertDraftCitationRequest request);
+
+  $async.Future<$0.VerifyDraftResponse> verifyDraft_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.VerifyDraftRequest> $request) async {
+    return verifyDraft($call, await $request);
+  }
+
+  $async.Future<$0.VerifyDraftResponse> verifyDraft(
+      $grpc.ServiceCall call, $0.VerifyDraftRequest request);
+
+  $async.Future<$0.CreateDraftRevisionResponse> createDraftRevision_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftRevisionRequest> $request) async {
+    return createDraftRevision($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftRevisionResponse> createDraftRevision(
+      $grpc.ServiceCall call, $0.CreateDraftRevisionRequest request);
+
+  $async.Future<$0.CreateDraftBranchResponse> createDraftBranch_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftBranchRequest> $request) async {
+    return createDraftBranch($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftBranchResponse> createDraftBranch(
+      $grpc.ServiceCall call, $0.CreateDraftBranchRequest request);
+
+  $async.Future<$0.RestoreDraftRevisionResponse> restoreDraftRevision_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RestoreDraftRevisionRequest> $request) async {
+    return restoreDraftRevision($call, await $request);
+  }
+
+  $async.Future<$0.RestoreDraftRevisionResponse> restoreDraftRevision(
+      $grpc.ServiceCall call, $0.RestoreDraftRevisionRequest request);
+
+  $async.Future<$0.CompareDraftRevisionsResponse> compareDraftRevisions_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CompareDraftRevisionsRequest> $request) async {
+    return compareDraftRevisions($call, await $request);
+  }
+
+  $async.Future<$0.CompareDraftRevisionsResponse> compareDraftRevisions(
+      $grpc.ServiceCall call, $0.CompareDraftRevisionsRequest request);
+
+  $async.Future<$0.GenerateDraftSuggestionResponse> generateDraftSuggestion_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GenerateDraftSuggestionRequest> $request) async {
+    return generateDraftSuggestion($call, await $request);
+  }
+
+  $async.Future<$0.GenerateDraftSuggestionResponse> generateDraftSuggestion(
+      $grpc.ServiceCall call, $0.GenerateDraftSuggestionRequest request);
+
+  $async.Future<$0.SetDraftSuggestionStateResponse> setDraftSuggestionState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetDraftSuggestionStateRequest> $request) async {
+    return setDraftSuggestionState($call, await $request);
+  }
+
+  $async.Future<$0.SetDraftSuggestionStateResponse> setDraftSuggestionState(
+      $grpc.ServiceCall call, $0.SetDraftSuggestionStateRequest request);
+
+  $async.Future<$0.ResolveDraftConflictResponse> resolveDraftConflict_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ResolveDraftConflictRequest> $request) async {
+    return resolveDraftConflict($call, await $request);
+  }
+
+  $async.Future<$0.ResolveDraftConflictResponse> resolveDraftConflict(
+      $grpc.ServiceCall call, $0.ResolveDraftConflictRequest request);
+
+  $async.Future<$0.RequestDraftExportResponse> requestDraftExport_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RequestDraftExportRequest> $request) async {
+    return requestDraftExport($call, await $request);
+  }
+
+  $async.Future<$0.RequestDraftExportResponse> requestDraftExport(
+      $grpc.ServiceCall call, $0.RequestDraftExportRequest request);
+
+  $async.Future<$0.GetDraftExportResponse> getDraftExport_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftExportRequest> $request) async {
+    return getDraftExport($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftExportResponse> getDraftExport(
+      $grpc.ServiceCall call, $0.GetDraftExportRequest request);
+
+  $async.Future<$0.CreateDraftHandoffResponse> createDraftHandoff_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftHandoffRequest> $request) async {
+    return createDraftHandoff($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftHandoffResponse> createDraftHandoff(
+      $grpc.ServiceCall call, $0.CreateDraftHandoffRequest request);
+
+  $async.Future<$0.ReportDraftIncidentResponse> reportDraftIncident_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ReportDraftIncidentRequest> $request) async {
+    return reportDraftIncident($call, await $request);
+  }
+
+  $async.Future<$0.ReportDraftIncidentResponse> reportDraftIncident(
+      $grpc.ServiceCall call, $0.ReportDraftIncidentRequest request);
 }

@@ -39803,3 +39803,3553 @@ export class RecordRecallTransferResponse extends Message<RecordRecallTransferRe
   }
 }
 
+/**
+ * @generated from message sttattus.onyx.v1.DraftTemplate
+ */
+export class DraftTemplate extends Message<DraftTemplate> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: int32 version = 2;
+   */
+  version = 0;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string document_type = 4;
+   */
+  documentType = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  /**
+   * @generated from field: repeated string default_block_types = 6;
+   */
+  defaultBlockTypes: string[] = [];
+
+  /**
+   * @generated from field: string style_code = 7;
+   */
+  styleCode = "";
+
+  /**
+   * @generated from field: int32 style_version = 8;
+   */
+  styleVersion = 0;
+
+  /**
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<DraftTemplate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftTemplate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "document_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "default_block_types", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "style_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "style_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftTemplate {
+    return new DraftTemplate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftTemplate {
+    return new DraftTemplate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftTemplate {
+    return new DraftTemplate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftTemplate | PlainMessage<DraftTemplate> | undefined, b: DraftTemplate | PlainMessage<DraftTemplate> | undefined): boolean {
+    return proto3.util.equals(DraftTemplate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftStyle
+ */
+export class DraftStyle extends Message<DraftStyle> {
+  /**
+   * @generated from field: string code = 1;
+   */
+  code = "";
+
+  /**
+   * @generated from field: int32 version = 2;
+   */
+  version = 0;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string citation_style = 4;
+   */
+  citationStyle = "";
+
+  /**
+   * @generated from field: string note_style = 5;
+   */
+  noteStyle = "";
+
+  /**
+   * @generated from field: string bibliography_title = 6;
+   */
+  bibliographyTitle = "";
+
+  /**
+   * @generated from field: string locale = 7;
+   */
+  locale = "";
+
+  /**
+   * @generated from field: string status = 8;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<DraftStyle>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftStyle";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "citation_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "note_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "bibliography_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftStyle {
+    return new DraftStyle().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftStyle {
+    return new DraftStyle().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftStyle {
+    return new DraftStyle().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftStyle | PlainMessage<DraftStyle> | undefined, b: DraftStyle | PlainMessage<DraftStyle> | undefined): boolean {
+    return proto3.util.equals(DraftStyle, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftCitation
+ */
+export class DraftCitation extends Message<DraftCitation> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 3;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string source_type = 4;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 5;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string content_id = 6;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 7;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 8;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string source_checksum = 9;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string quote = 10;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string locator = 11;
+   */
+  locator = "";
+
+  /**
+   * @generated from field: string intent = 12;
+   */
+  intent = "";
+
+  /**
+   * @generated from field: string rights_status = 13;
+   */
+  rightsStatus = "";
+
+  /**
+   * @generated from field: string source_state = 14;
+   */
+  sourceState = "";
+
+  /**
+   * @generated from field: string verification_status = 15;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: string verification_message = 16;
+   */
+  verificationMessage = "";
+
+  /**
+   * @generated from field: int32 ordinal = 17;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp verified_at = 18;
+   */
+  verifiedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftCitation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftCitation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "locator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "intent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "rights_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "source_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "verification_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 18, name: "verified_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftCitation {
+    return new DraftCitation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftCitation {
+    return new DraftCitation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftCitation {
+    return new DraftCitation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftCitation | PlainMessage<DraftCitation> | undefined, b: DraftCitation | PlainMessage<DraftCitation> | undefined): boolean {
+    return proto3.util.equals(DraftCitation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftBlock
+ */
+export class DraftBlock extends Message<DraftBlock> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string parent_block_id = 3;
+   */
+  parentBlockId = "";
+
+  /**
+   * @generated from field: string block_type = 4;
+   */
+  blockType = "";
+
+  /**
+   * @generated from field: string origin = 5;
+   */
+  origin = "";
+
+  /**
+   * @generated from field: string body = 6;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int32 sort_order = 7;
+   */
+  sortOrder = 0;
+
+  /**
+   * @generated from field: int32 level = 8;
+   */
+  level = 0;
+
+  /**
+   * @generated from field: string claim_status = 9;
+   */
+  claimStatus = "";
+
+  /**
+   * @generated from field: string source_object_type = 10;
+   */
+  sourceObjectType = "";
+
+  /**
+   * @generated from field: string source_object_id = 11;
+   */
+  sourceObjectId = "";
+
+  /**
+   * @generated from field: string suggestion_id = 12;
+   */
+  suggestionId = "";
+
+  /**
+   * @generated from field: bool member_edited = 13;
+   */
+  memberEdited = false;
+
+  /**
+   * @generated from field: int64 version = 14;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftCitation citations = 15;
+   */
+  citations: DraftCitation[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 16;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 17;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftBlock>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftBlock";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "parent_block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "block_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "level", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "claim_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "source_object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "source_object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "suggestion_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "member_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "citations", kind: "message", T: DraftCitation, repeated: true },
+    { no: 16, name: "created_at", kind: "message", T: Timestamp },
+    { no: 17, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftBlock {
+    return new DraftBlock().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftBlock {
+    return new DraftBlock().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftBlock {
+    return new DraftBlock().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftBlock | PlainMessage<DraftBlock> | undefined, b: DraftBlock | PlainMessage<DraftBlock> | undefined): boolean {
+    return proto3.util.equals(DraftBlock, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftRevision
+ */
+export class DraftRevision extends Message<DraftRevision> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: int64 revision_number = 3;
+   */
+  revisionNumber = protoInt64.zero;
+
+  /**
+   * @generated from field: string branch_id = 4;
+   */
+  branchId = "";
+
+  /**
+   * @generated from field: string parent_revision_id = 5;
+   */
+  parentRevisionId = "";
+
+  /**
+   * @generated from field: string title = 6;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string reason = 7;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string snapshot_checksum = 8;
+   */
+  snapshotChecksum = "";
+
+  /**
+   * @generated from field: int32 block_count = 9;
+   */
+  blockCount = 0;
+
+  /**
+   * @generated from field: int32 citation_count = 10;
+   */
+  citationCount = 0;
+
+  /**
+   * @generated from field: int32 word_count = 11;
+   */
+  wordCount = 0;
+
+  /**
+   * @generated from field: string created_by = 12;
+   */
+  createdBy = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftRevision>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftRevision";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_number", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "parent_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "snapshot_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "word_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftRevision {
+    return new DraftRevision().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftRevision {
+    return new DraftRevision().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftRevision {
+    return new DraftRevision().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftRevision | PlainMessage<DraftRevision> | undefined, b: DraftRevision | PlainMessage<DraftRevision> | undefined): boolean {
+    return proto3.util.equals(DraftRevision, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftBlockChange
+ */
+export class DraftBlockChange extends Message<DraftBlockChange> {
+  /**
+   * @generated from field: string block_id = 1;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string change_type = 2;
+   */
+  changeType = "";
+
+  /**
+   * @generated from field: string block_type = 3;
+   */
+  blockType = "";
+
+  /**
+   * @generated from field: string before_body = 4;
+   */
+  beforeBody = "";
+
+  /**
+   * @generated from field: string after_body = 5;
+   */
+  afterBody = "";
+
+  /**
+   * @generated from field: string before_origin = 6;
+   */
+  beforeOrigin = "";
+
+  /**
+   * @generated from field: string after_origin = 7;
+   */
+  afterOrigin = "";
+
+  /**
+   * @generated from field: int32 before_citation_count = 8;
+   */
+  beforeCitationCount = 0;
+
+  /**
+   * @generated from field: int32 after_citation_count = 9;
+   */
+  afterCitationCount = 0;
+
+  constructor(data?: PartialMessage<DraftBlockChange>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftBlockChange";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "change_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "block_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "before_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "after_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "before_origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "after_origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "before_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "after_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftBlockChange {
+    return new DraftBlockChange().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftBlockChange {
+    return new DraftBlockChange().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftBlockChange {
+    return new DraftBlockChange().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftBlockChange | PlainMessage<DraftBlockChange> | undefined, b: DraftBlockChange | PlainMessage<DraftBlockChange> | undefined): boolean {
+    return proto3.util.equals(DraftBlockChange, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftRevisionComparison
+ */
+export class DraftRevisionComparison extends Message<DraftRevisionComparison> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision from_revision = 1;
+   */
+  fromRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision to_revision = 2;
+   */
+  toRevision?: DraftRevision;
+
+  /**
+   * @generated from field: int32 added_block_count = 3;
+   */
+  addedBlockCount = 0;
+
+  /**
+   * @generated from field: int32 removed_block_count = 4;
+   */
+  removedBlockCount = 0;
+
+  /**
+   * @generated from field: int32 modified_block_count = 5;
+   */
+  modifiedBlockCount = 0;
+
+  /**
+   * @generated from field: int32 unchanged_block_count = 6;
+   */
+  unchangedBlockCount = 0;
+
+  /**
+   * @generated from field: int32 word_count_delta = 7;
+   */
+  wordCountDelta = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftBlockChange changes = 8;
+   */
+  changes: DraftBlockChange[] = [];
+
+  constructor(data?: PartialMessage<DraftRevisionComparison>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftRevisionComparison";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "from_revision", kind: "message", T: DraftRevision },
+    { no: 2, name: "to_revision", kind: "message", T: DraftRevision },
+    { no: 3, name: "added_block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "removed_block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "modified_block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "unchanged_block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "word_count_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "changes", kind: "message", T: DraftBlockChange, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftRevisionComparison {
+    return new DraftRevisionComparison().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftRevisionComparison {
+    return new DraftRevisionComparison().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftRevisionComparison {
+    return new DraftRevisionComparison().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftRevisionComparison | PlainMessage<DraftRevisionComparison> | undefined, b: DraftRevisionComparison | PlainMessage<DraftRevisionComparison> | undefined): boolean {
+    return proto3.util.equals(DraftRevisionComparison, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftBranch
+ */
+export class DraftBranch extends Message<DraftBranch> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string base_revision_id = 5;
+   */
+  baseRevisionId = "";
+
+  /**
+   * @generated from field: string head_revision_id = 6;
+   */
+  headRevisionId = "";
+
+  /**
+   * @generated from field: int64 version = 7;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 8;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 9;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftBranch>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftBranch";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "base_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "head_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "created_at", kind: "message", T: Timestamp },
+    { no: 9, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftBranch {
+    return new DraftBranch().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftBranch {
+    return new DraftBranch().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftBranch {
+    return new DraftBranch().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftBranch | PlainMessage<DraftBranch> | undefined, b: DraftBranch | PlainMessage<DraftBranch> | undefined): boolean {
+    return proto3.util.equals(DraftBranch, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftSuggestion
+ */
+export class DraftSuggestion extends Message<DraftSuggestion> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 3;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string kind = 4;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string input_text = 6;
+   */
+  inputText = "";
+
+  /**
+   * @generated from field: string proposed_text = 7;
+   */
+  proposedText = "";
+
+  /**
+   * @generated from field: string rationale = 8;
+   */
+  rationale = "";
+
+  /**
+   * @generated from field: repeated string evidence_citation_ids = 9;
+   */
+  evidenceCitationIds: string[] = [];
+
+  /**
+   * @generated from field: string model_key = 10;
+   */
+  modelKey = "";
+
+  /**
+   * @generated from field: string prompt_key = 11;
+   */
+  promptKey = "";
+
+  /**
+   * @generated from field: int32 prompt_version = 12;
+   */
+  promptVersion = 0;
+
+  /**
+   * @generated from field: bool strict_grounded = 13;
+   */
+  strictGrounded = false;
+
+  /**
+   * @generated from field: string grounding_status = 14;
+   */
+  groundingStatus = "";
+
+  /**
+   * @generated from field: string refusal_reason = 15;
+   */
+  refusalReason = "";
+
+  /**
+   * @generated from field: string disposition_note = 16;
+   */
+  dispositionNote = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 17;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp reviewed_at = 18;
+   */
+  reviewedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftSuggestion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftSuggestion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "input_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "proposed_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "evidence_citation_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "model_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "prompt_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "prompt_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "strict_grounded", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "grounding_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "refusal_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "disposition_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "created_at", kind: "message", T: Timestamp },
+    { no: 18, name: "reviewed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftSuggestion {
+    return new DraftSuggestion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftSuggestion {
+    return new DraftSuggestion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftSuggestion {
+    return new DraftSuggestion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftSuggestion | PlainMessage<DraftSuggestion> | undefined, b: DraftSuggestion | PlainMessage<DraftSuggestion> | undefined): boolean {
+    return proto3.util.equals(DraftSuggestion, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftConflict
+ */
+export class DraftConflict extends Message<DraftConflict> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 3;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string local_body = 5;
+   */
+  localBody = "";
+
+  /**
+   * @generated from field: string server_body = 6;
+   */
+  serverBody = "";
+
+  /**
+   * @generated from field: string merged_body = 7;
+   */
+  mergedBody = "";
+
+  /**
+   * @generated from field: string local_replica_id = 8;
+   */
+  localReplicaId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 9;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 actual_version = 10;
+   */
+  actualVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp resolved_at = 12;
+   */
+  resolvedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftConflict>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftConflict";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "local_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "server_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "merged_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "local_replica_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "actual_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "resolved_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftConflict {
+    return new DraftConflict().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftConflict {
+    return new DraftConflict().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftConflict {
+    return new DraftConflict().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftConflict | PlainMessage<DraftConflict> | undefined, b: DraftConflict | PlainMessage<DraftConflict> | undefined): boolean {
+    return proto3.util.equals(DraftConflict, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftExport
+ */
+export class DraftExport extends Message<DraftExport> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string format = 4;
+   */
+  format = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string filename = 6;
+   */
+  filename = "";
+
+  /**
+   * @generated from field: string mime_type = 7;
+   */
+  mimeType = "";
+
+  /**
+   * @generated from field: string download_url = 8;
+   */
+  downloadUrl = "";
+
+  /**
+   * @generated from field: string checksum = 9;
+   */
+  checksum = "";
+
+  /**
+   * @generated from field: int64 byte_size = 10;
+   */
+  byteSize = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 citation_count = 11;
+   */
+  citationCount = 0;
+
+  /**
+   * @generated from field: int32 bibliography_count = 12;
+   */
+  bibliographyCount = 0;
+
+  /**
+   * @generated from field: repeated string warnings = 13;
+   */
+  warnings: string[] = [];
+
+  /**
+   * @generated from field: string rights_status = 14;
+   */
+  rightsStatus = "";
+
+  /**
+   * @generated from field: string dlp_status = 15;
+   */
+  dlpStatus = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 16;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 17;
+   */
+  expiresAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftExport>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftExport";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "mime_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "byte_size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "bibliography_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "warnings", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "rights_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "dlp_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "created_at", kind: "message", T: Timestamp },
+    { no: 17, name: "expires_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftExport {
+    return new DraftExport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftExport {
+    return new DraftExport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftExport {
+    return new DraftExport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftExport | PlainMessage<DraftExport> | undefined, b: DraftExport | PlainMessage<DraftExport> | undefined): boolean {
+    return proto3.util.equals(DraftExport, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftHandoff
+ */
+export class DraftHandoff extends Message<DraftHandoff> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string destination_type = 4;
+   */
+  destinationType = "";
+
+  /**
+   * @generated from field: string destination_id = 5;
+   */
+  destinationId = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string note = 7;
+   */
+  note = "";
+
+  /**
+   * @generated from field: string manifest_checksum = 8;
+   */
+  manifestChecksum = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 9;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 10;
+   */
+  revokedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftHandoff>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftHandoff";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "destination_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "destination_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "manifest_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_at", kind: "message", T: Timestamp },
+    { no: 10, name: "revoked_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftHandoff {
+    return new DraftHandoff().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftHandoff {
+    return new DraftHandoff().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftHandoff {
+    return new DraftHandoff().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftHandoff | PlainMessage<DraftHandoff> | undefined, b: DraftHandoff | PlainMessage<DraftHandoff> | undefined): boolean {
+    return proto3.util.equals(DraftHandoff, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftDocument
+ */
+export class DraftDocument extends Message<DraftDocument> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string owner_user_id = 2;
+   */
+  ownerUserId = "";
+
+  /**
+   * @generated from field: string room_id = 3;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string document_type = 5;
+   */
+  documentType = "";
+
+  /**
+   * @generated from field: string description = 6;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string language_code = 7;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string scope = 8;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string status = 9;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string template_code = 10;
+   */
+  templateCode = "";
+
+  /**
+   * @generated from field: int32 template_version = 11;
+   */
+  templateVersion = 0;
+
+  /**
+   * @generated from field: string style_code = 12;
+   */
+  styleCode = "";
+
+  /**
+   * @generated from field: int32 style_version = 13;
+   */
+  styleVersion = 0;
+
+  /**
+   * @generated from field: string citation_style = 14;
+   */
+  citationStyle = "";
+
+  /**
+   * @generated from field: string note_style = 15;
+   */
+  noteStyle = "";
+
+  /**
+   * @generated from field: bool strict_grounded = 16;
+   */
+  strictGrounded = false;
+
+  /**
+   * @generated from field: string sensitivity = 17;
+   */
+  sensitivity = "";
+
+  /**
+   * @generated from field: string active_branch_id = 18;
+   */
+  activeBranchId = "";
+
+  /**
+   * @generated from field: string current_revision_id = 19;
+   */
+  currentRevisionId = "";
+
+  /**
+   * @generated from field: int64 version = 20;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 word_count = 21;
+   */
+  wordCount = 0;
+
+  /**
+   * @generated from field: int32 supported_claim_count = 22;
+   */
+  supportedClaimCount = 0;
+
+  /**
+   * @generated from field: int32 unsupported_claim_count = 23;
+   */
+  unsupportedClaimCount = 0;
+
+  /**
+   * @generated from field: int32 stale_citation_count = 24;
+   */
+  staleCitationCount = 0;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftBlock blocks = 25;
+   */
+  blocks: DraftBlock[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftRevision revisions = 26;
+   */
+  revisions: DraftRevision[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftBranch branches = 27;
+   */
+  branches: DraftBranch[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftSuggestion suggestions = 28;
+   */
+  suggestions: DraftSuggestion[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftConflict conflicts = 29;
+   */
+  conflicts: DraftConflict[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftExport exports = 30;
+   */
+  exports: DraftExport[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftHandoff handoffs = 31;
+   */
+  handoffs: DraftHandoff[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 32;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 33;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<DraftDocument>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftDocument";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "owner_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "document_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "template_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "style_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "style_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "citation_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "note_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "strict_grounded", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "sensitivity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "active_branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "current_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 21, name: "word_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 22, name: "supported_claim_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 23, name: "unsupported_claim_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "stale_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "blocks", kind: "message", T: DraftBlock, repeated: true },
+    { no: 26, name: "revisions", kind: "message", T: DraftRevision, repeated: true },
+    { no: 27, name: "branches", kind: "message", T: DraftBranch, repeated: true },
+    { no: 28, name: "suggestions", kind: "message", T: DraftSuggestion, repeated: true },
+    { no: 29, name: "conflicts", kind: "message", T: DraftConflict, repeated: true },
+    { no: 30, name: "exports", kind: "message", T: DraftExport, repeated: true },
+    { no: 31, name: "handoffs", kind: "message", T: DraftHandoff, repeated: true },
+    { no: 32, name: "created_at", kind: "message", T: Timestamp },
+    { no: 33, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftDocument {
+    return new DraftDocument().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftDocument {
+    return new DraftDocument().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftDocument {
+    return new DraftDocument().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftDocument | PlainMessage<DraftDocument> | undefined, b: DraftDocument | PlainMessage<DraftDocument> | undefined): boolean {
+    return proto3.util.equals(DraftDocument, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftingDashboard
+ */
+export class DraftingDashboard extends Message<DraftingDashboard> {
+  /**
+   * @generated from field: string runtime_status = 1;
+   */
+  runtimeStatus = "";
+
+  /**
+   * @generated from field: bool writes_enabled = 2;
+   */
+  writesEnabled = false;
+
+  /**
+   * @generated from field: bool ai_enabled = 3;
+   */
+  aiEnabled = false;
+
+  /**
+   * @generated from field: bool exports_enabled = 4;
+   */
+  exportsEnabled = false;
+
+  /**
+   * @generated from field: bool handoff_enabled = 5;
+   */
+  handoffEnabled = false;
+
+  /**
+   * @generated from field: string public_notice = 6;
+   */
+  publicNotice = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftTemplate templates = 7;
+   */
+  templates: DraftTemplate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftStyle styles = 8;
+   */
+  styles: DraftStyle[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftDocument drafts = 9;
+   */
+  drafts: DraftDocument[] = [];
+
+  /**
+   * @generated from field: int32 active_draft_count = 10;
+   */
+  activeDraftCount = 0;
+
+  /**
+   * @generated from field: int32 unsupported_claim_count = 11;
+   */
+  unsupportedClaimCount = 0;
+
+  /**
+   * @generated from field: int32 stale_citation_count = 12;
+   */
+  staleCitationCount = 0;
+
+  /**
+   * @generated from field: int32 open_conflict_count = 13;
+   */
+  openConflictCount = 0;
+
+  /**
+   * @generated from field: int32 pending_suggestion_count = 14;
+   */
+  pendingSuggestionCount = 0;
+
+  constructor(data?: PartialMessage<DraftingDashboard>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftingDashboard";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runtime_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "writes_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "ai_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "exports_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "handoff_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "templates", kind: "message", T: DraftTemplate, repeated: true },
+    { no: 8, name: "styles", kind: "message", T: DraftStyle, repeated: true },
+    { no: 9, name: "drafts", kind: "message", T: DraftDocument, repeated: true },
+    { no: 10, name: "active_draft_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "unsupported_claim_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "stale_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "open_conflict_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "pending_suggestion_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftingDashboard {
+    return new DraftingDashboard().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftingDashboard {
+    return new DraftingDashboard().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftingDashboard {
+    return new DraftingDashboard().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftingDashboard | PlainMessage<DraftingDashboard> | undefined, b: DraftingDashboard | PlainMessage<DraftingDashboard> | undefined): boolean {
+    return proto3.util.equals(DraftingDashboard, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftingDashboardRequest
+ */
+export class GetDraftingDashboardRequest extends Message<GetDraftingDashboardRequest> {
+  constructor(data?: PartialMessage<GetDraftingDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftingDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftingDashboardRequest {
+    return new GetDraftingDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftingDashboardRequest {
+    return new GetDraftingDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftingDashboardRequest {
+    return new GetDraftingDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftingDashboardRequest | PlainMessage<GetDraftingDashboardRequest> | undefined, b: GetDraftingDashboardRequest | PlainMessage<GetDraftingDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetDraftingDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftingDashboardResponse
+ */
+export class GetDraftingDashboardResponse extends Message<GetDraftingDashboardResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftingDashboard dashboard = 1;
+   */
+  dashboard?: DraftingDashboard;
+
+  constructor(data?: PartialMessage<GetDraftingDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftingDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "dashboard", kind: "message", T: DraftingDashboard },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftingDashboardResponse {
+    return new GetDraftingDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftingDashboardResponse {
+    return new GetDraftingDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftingDashboardResponse {
+    return new GetDraftingDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftingDashboardResponse | PlainMessage<GetDraftingDashboardResponse> | undefined, b: GetDraftingDashboardResponse | PlainMessage<GetDraftingDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetDraftingDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListDraftsRequest
+ */
+export class ListDraftsRequest extends Message<ListDraftsRequest> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<ListDraftsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListDraftsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDraftsRequest {
+    return new ListDraftsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDraftsRequest {
+    return new ListDraftsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDraftsRequest {
+    return new ListDraftsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDraftsRequest | PlainMessage<ListDraftsRequest> | undefined, b: ListDraftsRequest | PlainMessage<ListDraftsRequest> | undefined): boolean {
+    return proto3.util.equals(ListDraftsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListDraftsResponse
+ */
+export class ListDraftsResponse extends Message<ListDraftsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftDocument drafts = 1;
+   */
+  drafts: DraftDocument[] = [];
+
+  constructor(data?: PartialMessage<ListDraftsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListDraftsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drafts", kind: "message", T: DraftDocument, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDraftsResponse {
+    return new ListDraftsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDraftsResponse {
+    return new ListDraftsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDraftsResponse {
+    return new ListDraftsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDraftsResponse | PlainMessage<ListDraftsResponse> | undefined, b: ListDraftsResponse | PlainMessage<ListDraftsResponse> | undefined): boolean {
+    return proto3.util.equals(ListDraftsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftRequest
+ */
+export class GetDraftRequest extends Message<GetDraftRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  constructor(data?: PartialMessage<GetDraftRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftRequest {
+    return new GetDraftRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftRequest {
+    return new GetDraftRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftRequest {
+    return new GetDraftRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftRequest | PlainMessage<GetDraftRequest> | undefined, b: GetDraftRequest | PlainMessage<GetDraftRequest> | undefined): boolean {
+    return proto3.util.equals(GetDraftRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftResponse
+ */
+export class GetDraftResponse extends Message<GetDraftResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftDocument draft = 1;
+   */
+  draft?: DraftDocument;
+
+  constructor(data?: PartialMessage<GetDraftResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft", kind: "message", T: DraftDocument },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftResponse {
+    return new GetDraftResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftResponse {
+    return new GetDraftResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftResponse {
+    return new GetDraftResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftResponse | PlainMessage<GetDraftResponse> | undefined, b: GetDraftResponse | PlainMessage<GetDraftResponse> | undefined): boolean {
+    return proto3.util.equals(GetDraftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftRequest
+ */
+export class CreateDraftRequest extends Message<CreateDraftRequest> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string document_type = 2;
+   */
+  documentType = "";
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description = "";
+
+  /**
+   * @generated from field: string language_code = 4;
+   */
+  languageCode = "";
+
+  /**
+   * @generated from field: string scope = 5;
+   */
+  scope = "";
+
+  /**
+   * @generated from field: string room_id = 6;
+   */
+  roomId = "";
+
+  /**
+   * @generated from field: string template_code = 7;
+   */
+  templateCode = "";
+
+  /**
+   * @generated from field: int32 template_version = 8;
+   */
+  templateVersion = 0;
+
+  /**
+   * @generated from field: string style_code = 9;
+   */
+  styleCode = "";
+
+  /**
+   * @generated from field: int32 style_version = 10;
+   */
+  styleVersion = 0;
+
+  /**
+   * @generated from field: bool strict_grounded = 11;
+   */
+  strictGrounded = false;
+
+  /**
+   * @generated from field: string sensitivity = 12;
+   */
+  sensitivity = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 13;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateDraftRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "document_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "language_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "template_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "template_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "style_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "style_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "strict_grounded", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "sensitivity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftRequest {
+    return new CreateDraftRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftRequest {
+    return new CreateDraftRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftRequest {
+    return new CreateDraftRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftRequest | PlainMessage<CreateDraftRequest> | undefined, b: CreateDraftRequest | PlainMessage<CreateDraftRequest> | undefined): boolean {
+    return proto3.util.equals(CreateDraftRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftResponse
+ */
+export class CreateDraftResponse extends Message<CreateDraftResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftDocument draft = 1;
+   */
+  draft?: DraftDocument;
+
+  constructor(data?: PartialMessage<CreateDraftResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft", kind: "message", T: DraftDocument },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftResponse {
+    return new CreateDraftResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftResponse {
+    return new CreateDraftResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftResponse {
+    return new CreateDraftResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftResponse | PlainMessage<CreateDraftResponse> | undefined, b: CreateDraftResponse | PlainMessage<CreateDraftResponse> | undefined): boolean {
+    return proto3.util.equals(CreateDraftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertDraftBlockRequest
+ */
+export class UpsertDraftBlockRequest extends Message<UpsertDraftBlockRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 2;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string parent_block_id = 3;
+   */
+  parentBlockId = "";
+
+  /**
+   * @generated from field: string block_type = 4;
+   */
+  blockType = "";
+
+  /**
+   * @generated from field: string origin = 5;
+   */
+  origin = "";
+
+  /**
+   * @generated from field: string body = 6;
+   */
+  body = "";
+
+  /**
+   * @generated from field: int32 sort_order = 7;
+   */
+  sortOrder = 0;
+
+  /**
+   * @generated from field: int32 level = 8;
+   */
+  level = 0;
+
+  /**
+   * @generated from field: string claim_status = 9;
+   */
+  claimStatus = "";
+
+  /**
+   * @generated from field: string source_object_type = 10;
+   */
+  sourceObjectType = "";
+
+  /**
+   * @generated from field: string source_object_id = 11;
+   */
+  sourceObjectId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 12;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string replica_id = 13;
+   */
+  replicaId = "";
+
+  /**
+   * @generated from field: int64 replica_sequence = 14;
+   */
+  replicaSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 15;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertDraftBlockRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertDraftBlockRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "parent_block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "block_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "level", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "claim_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "source_object_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "source_object_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "replica_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "replica_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertDraftBlockRequest {
+    return new UpsertDraftBlockRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertDraftBlockRequest {
+    return new UpsertDraftBlockRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertDraftBlockRequest {
+    return new UpsertDraftBlockRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertDraftBlockRequest | PlainMessage<UpsertDraftBlockRequest> | undefined, b: UpsertDraftBlockRequest | PlainMessage<UpsertDraftBlockRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertDraftBlockRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertDraftBlockResponse
+ */
+export class UpsertDraftBlockResponse extends Message<UpsertDraftBlockResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBlock block = 1;
+   */
+  block?: DraftBlock;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftConflict conflict = 2;
+   */
+  conflict?: DraftConflict;
+
+  /**
+   * @generated from field: bool replayed = 3;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<UpsertDraftBlockResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertDraftBlockResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "block", kind: "message", T: DraftBlock },
+    { no: 2, name: "conflict", kind: "message", T: DraftConflict },
+    { no: 3, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertDraftBlockResponse {
+    return new UpsertDraftBlockResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertDraftBlockResponse {
+    return new UpsertDraftBlockResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertDraftBlockResponse {
+    return new UpsertDraftBlockResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertDraftBlockResponse | PlainMessage<UpsertDraftBlockResponse> | undefined, b: UpsertDraftBlockResponse | PlainMessage<UpsertDraftBlockResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertDraftBlockResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteDraftBlockRequest
+ */
+export class DeleteDraftBlockRequest extends Message<DeleteDraftBlockRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 2;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 3;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string replica_id = 4;
+   */
+  replicaId = "";
+
+  /**
+   * @generated from field: int64 replica_sequence = 5;
+   */
+  replicaSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<DeleteDraftBlockRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteDraftBlockRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "replica_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "replica_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDraftBlockRequest {
+    return new DeleteDraftBlockRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDraftBlockRequest {
+    return new DeleteDraftBlockRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDraftBlockRequest {
+    return new DeleteDraftBlockRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteDraftBlockRequest | PlainMessage<DeleteDraftBlockRequest> | undefined, b: DeleteDraftBlockRequest | PlainMessage<DeleteDraftBlockRequest> | undefined): boolean {
+    return proto3.util.equals(DeleteDraftBlockRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DeleteDraftBlockResponse
+ */
+export class DeleteDraftBlockResponse extends Message<DeleteDraftBlockResponse> {
+  /**
+   * @generated from field: bool deleted = 1;
+   */
+  deleted = false;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<DeleteDraftBlockResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DeleteDraftBlockResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDraftBlockResponse {
+    return new DeleteDraftBlockResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDraftBlockResponse {
+    return new DeleteDraftBlockResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDraftBlockResponse {
+    return new DeleteDraftBlockResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DeleteDraftBlockResponse | PlainMessage<DeleteDraftBlockResponse> | undefined, b: DeleteDraftBlockResponse | PlainMessage<DeleteDraftBlockResponse> | undefined): boolean {
+    return proto3.util.equals(DeleteDraftBlockResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertDraftCitationRequest
+ */
+export class UpsertDraftCitationRequest extends Message<UpsertDraftCitationRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 2;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string citation_id = 3;
+   */
+  citationId = "";
+
+  /**
+   * @generated from field: string source_type = 4;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 5;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string content_id = 6;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 7;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 8;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string source_checksum = 9;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string quote = 10;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string locator = 11;
+   */
+  locator = "";
+
+  /**
+   * @generated from field: string intent = 12;
+   */
+  intent = "";
+
+  /**
+   * @generated from field: int32 ordinal = 13;
+   */
+  ordinal = 0;
+
+  /**
+   * @generated from field: string client_mutation_id = 14;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<UpsertDraftCitationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertDraftCitationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "citation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "locator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "intent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertDraftCitationRequest {
+    return new UpsertDraftCitationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertDraftCitationRequest {
+    return new UpsertDraftCitationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertDraftCitationRequest {
+    return new UpsertDraftCitationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertDraftCitationRequest | PlainMessage<UpsertDraftCitationRequest> | undefined, b: UpsertDraftCitationRequest | PlainMessage<UpsertDraftCitationRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertDraftCitationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpsertDraftCitationResponse
+ */
+export class UpsertDraftCitationResponse extends Message<UpsertDraftCitationResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftCitation citation = 1;
+   */
+  citation?: DraftCitation;
+
+  constructor(data?: PartialMessage<UpsertDraftCitationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpsertDraftCitationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "citation", kind: "message", T: DraftCitation },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertDraftCitationResponse {
+    return new UpsertDraftCitationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertDraftCitationResponse {
+    return new UpsertDraftCitationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertDraftCitationResponse {
+    return new UpsertDraftCitationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertDraftCitationResponse | PlainMessage<UpsertDraftCitationResponse> | undefined, b: UpsertDraftCitationResponse | PlainMessage<UpsertDraftCitationResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertDraftCitationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.VerifyDraftRequest
+ */
+export class VerifyDraftRequest extends Message<VerifyDraftRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  constructor(data?: PartialMessage<VerifyDraftRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.VerifyDraftRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyDraftRequest {
+    return new VerifyDraftRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyDraftRequest {
+    return new VerifyDraftRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyDraftRequest {
+    return new VerifyDraftRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyDraftRequest | PlainMessage<VerifyDraftRequest> | undefined, b: VerifyDraftRequest | PlainMessage<VerifyDraftRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyDraftRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.VerifyDraftResponse
+ */
+export class VerifyDraftResponse extends Message<VerifyDraftResponse> {
+  /**
+   * @generated from field: int32 supported_claim_count = 1;
+   */
+  supportedClaimCount = 0;
+
+  /**
+   * @generated from field: int32 unsupported_claim_count = 2;
+   */
+  unsupportedClaimCount = 0;
+
+  /**
+   * @generated from field: int32 stale_citation_count = 3;
+   */
+  staleCitationCount = 0;
+
+  /**
+   * @generated from field: repeated string warnings = 4;
+   */
+  warnings: string[] = [];
+
+  /**
+   * @generated from field: string verification_checksum = 5;
+   */
+  verificationChecksum = "";
+
+  constructor(data?: PartialMessage<VerifyDraftResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.VerifyDraftResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "supported_claim_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "unsupported_claim_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "stale_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "warnings", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "verification_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyDraftResponse {
+    return new VerifyDraftResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyDraftResponse {
+    return new VerifyDraftResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyDraftResponse {
+    return new VerifyDraftResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyDraftResponse | PlainMessage<VerifyDraftResponse> | undefined, b: VerifyDraftResponse | PlainMessage<VerifyDraftResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyDraftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftRevisionRequest
+ */
+export class CreateDraftRevisionRequest extends Message<CreateDraftRevisionRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string branch_id = 2;
+   */
+  branchId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string reason = 4;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateDraftRevisionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftRevisionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftRevisionRequest {
+    return new CreateDraftRevisionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftRevisionRequest {
+    return new CreateDraftRevisionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftRevisionRequest {
+    return new CreateDraftRevisionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftRevisionRequest | PlainMessage<CreateDraftRevisionRequest> | undefined, b: CreateDraftRevisionRequest | PlainMessage<CreateDraftRevisionRequest> | undefined): boolean {
+    return proto3.util.equals(CreateDraftRevisionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftRevisionResponse
+ */
+export class CreateDraftRevisionResponse extends Message<CreateDraftRevisionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision revision = 1;
+   */
+  revision?: DraftRevision;
+
+  constructor(data?: PartialMessage<CreateDraftRevisionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftRevisionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "revision", kind: "message", T: DraftRevision },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftRevisionResponse {
+    return new CreateDraftRevisionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftRevisionResponse {
+    return new CreateDraftRevisionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftRevisionResponse {
+    return new CreateDraftRevisionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftRevisionResponse | PlainMessage<CreateDraftRevisionResponse> | undefined, b: CreateDraftRevisionResponse | PlainMessage<CreateDraftRevisionResponse> | undefined): boolean {
+    return proto3.util.equals(CreateDraftRevisionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftBranchRequest
+ */
+export class CreateDraftBranchRequest extends Message<CreateDraftBranchRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string from_revision_id = 3;
+   */
+  fromRevisionId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateDraftBranchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftBranchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftBranchRequest {
+    return new CreateDraftBranchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftBranchRequest {
+    return new CreateDraftBranchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftBranchRequest {
+    return new CreateDraftBranchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftBranchRequest | PlainMessage<CreateDraftBranchRequest> | undefined, b: CreateDraftBranchRequest | PlainMessage<CreateDraftBranchRequest> | undefined): boolean {
+    return proto3.util.equals(CreateDraftBranchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftBranchResponse
+ */
+export class CreateDraftBranchResponse extends Message<CreateDraftBranchResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBranch branch = 1;
+   */
+  branch?: DraftBranch;
+
+  constructor(data?: PartialMessage<CreateDraftBranchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftBranchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "branch", kind: "message", T: DraftBranch },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftBranchResponse {
+    return new CreateDraftBranchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftBranchResponse {
+    return new CreateDraftBranchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftBranchResponse {
+    return new CreateDraftBranchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftBranchResponse | PlainMessage<CreateDraftBranchResponse> | undefined, b: CreateDraftBranchResponse | PlainMessage<CreateDraftBranchResponse> | undefined): boolean {
+    return proto3.util.equals(CreateDraftBranchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RestoreDraftRevisionRequest
+ */
+export class RestoreDraftRevisionRequest extends Message<RestoreDraftRevisionRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string branch_id = 3;
+   */
+  branchId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RestoreDraftRevisionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RestoreDraftRevisionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreDraftRevisionRequest {
+    return new RestoreDraftRevisionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreDraftRevisionRequest {
+    return new RestoreDraftRevisionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreDraftRevisionRequest {
+    return new RestoreDraftRevisionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RestoreDraftRevisionRequest | PlainMessage<RestoreDraftRevisionRequest> | undefined, b: RestoreDraftRevisionRequest | PlainMessage<RestoreDraftRevisionRequest> | undefined): boolean {
+    return proto3.util.equals(RestoreDraftRevisionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RestoreDraftRevisionResponse
+ */
+export class RestoreDraftRevisionResponse extends Message<RestoreDraftRevisionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision revision = 1;
+   */
+  revision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftDocument draft = 2;
+   */
+  draft?: DraftDocument;
+
+  constructor(data?: PartialMessage<RestoreDraftRevisionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RestoreDraftRevisionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "revision", kind: "message", T: DraftRevision },
+    { no: 2, name: "draft", kind: "message", T: DraftDocument },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreDraftRevisionResponse {
+    return new RestoreDraftRevisionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreDraftRevisionResponse {
+    return new RestoreDraftRevisionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreDraftRevisionResponse {
+    return new RestoreDraftRevisionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RestoreDraftRevisionResponse | PlainMessage<RestoreDraftRevisionResponse> | undefined, b: RestoreDraftRevisionResponse | PlainMessage<RestoreDraftRevisionResponse> | undefined): boolean {
+    return proto3.util.equals(RestoreDraftRevisionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CompareDraftRevisionsRequest
+ */
+export class CompareDraftRevisionsRequest extends Message<CompareDraftRevisionsRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string from_revision_id = 2;
+   */
+  fromRevisionId = "";
+
+  /**
+   * @generated from field: string to_revision_id = 3;
+   */
+  toRevisionId = "";
+
+  constructor(data?: PartialMessage<CompareDraftRevisionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CompareDraftRevisionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "from_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "to_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompareDraftRevisionsRequest {
+    return new CompareDraftRevisionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompareDraftRevisionsRequest {
+    return new CompareDraftRevisionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompareDraftRevisionsRequest {
+    return new CompareDraftRevisionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompareDraftRevisionsRequest | PlainMessage<CompareDraftRevisionsRequest> | undefined, b: CompareDraftRevisionsRequest | PlainMessage<CompareDraftRevisionsRequest> | undefined): boolean {
+    return proto3.util.equals(CompareDraftRevisionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CompareDraftRevisionsResponse
+ */
+export class CompareDraftRevisionsResponse extends Message<CompareDraftRevisionsResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevisionComparison comparison = 1;
+   */
+  comparison?: DraftRevisionComparison;
+
+  constructor(data?: PartialMessage<CompareDraftRevisionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CompareDraftRevisionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "comparison", kind: "message", T: DraftRevisionComparison },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompareDraftRevisionsResponse {
+    return new CompareDraftRevisionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompareDraftRevisionsResponse {
+    return new CompareDraftRevisionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompareDraftRevisionsResponse {
+    return new CompareDraftRevisionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompareDraftRevisionsResponse | PlainMessage<CompareDraftRevisionsResponse> | undefined, b: CompareDraftRevisionsResponse | PlainMessage<CompareDraftRevisionsResponse> | undefined): boolean {
+    return proto3.util.equals(CompareDraftRevisionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateDraftSuggestionRequest
+ */
+export class GenerateDraftSuggestionRequest extends Message<GenerateDraftSuggestionRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string block_id = 2;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string kind = 3;
+   */
+  kind = "";
+
+  /**
+   * @generated from field: repeated string evidence_citation_ids = 4;
+   */
+  evidenceCitationIds: string[] = [];
+
+  /**
+   * @generated from field: string instruction = 5;
+   */
+  instruction = "";
+
+  /**
+   * @generated from field: bool strict_grounded = 6;
+   */
+  strictGrounded = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 7;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<GenerateDraftSuggestionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateDraftSuggestionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_citation_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "instruction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "strict_grounded", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateDraftSuggestionRequest {
+    return new GenerateDraftSuggestionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateDraftSuggestionRequest {
+    return new GenerateDraftSuggestionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateDraftSuggestionRequest {
+    return new GenerateDraftSuggestionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateDraftSuggestionRequest | PlainMessage<GenerateDraftSuggestionRequest> | undefined, b: GenerateDraftSuggestionRequest | PlainMessage<GenerateDraftSuggestionRequest> | undefined): boolean {
+    return proto3.util.equals(GenerateDraftSuggestionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GenerateDraftSuggestionResponse
+ */
+export class GenerateDraftSuggestionResponse extends Message<GenerateDraftSuggestionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftSuggestion suggestion = 1;
+   */
+  suggestion?: DraftSuggestion;
+
+  constructor(data?: PartialMessage<GenerateDraftSuggestionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GenerateDraftSuggestionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "suggestion", kind: "message", T: DraftSuggestion },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateDraftSuggestionResponse {
+    return new GenerateDraftSuggestionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateDraftSuggestionResponse {
+    return new GenerateDraftSuggestionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateDraftSuggestionResponse {
+    return new GenerateDraftSuggestionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GenerateDraftSuggestionResponse | PlainMessage<GenerateDraftSuggestionResponse> | undefined, b: GenerateDraftSuggestionResponse | PlainMessage<GenerateDraftSuggestionResponse> | undefined): boolean {
+    return proto3.util.equals(GenerateDraftSuggestionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetDraftSuggestionStateRequest
+ */
+export class SetDraftSuggestionStateRequest extends Message<SetDraftSuggestionStateRequest> {
+  /**
+   * @generated from field: string suggestion_id = 1;
+   */
+  suggestionId = "";
+
+  /**
+   * @generated from field: string state = 2;
+   */
+  state = "";
+
+  /**
+   * @generated from field: string disposition_note = 3;
+   */
+  dispositionNote = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetDraftSuggestionStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetDraftSuggestionStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "suggestion_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "disposition_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDraftSuggestionStateRequest {
+    return new SetDraftSuggestionStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDraftSuggestionStateRequest {
+    return new SetDraftSuggestionStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDraftSuggestionStateRequest {
+    return new SetDraftSuggestionStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetDraftSuggestionStateRequest | PlainMessage<SetDraftSuggestionStateRequest> | undefined, b: SetDraftSuggestionStateRequest | PlainMessage<SetDraftSuggestionStateRequest> | undefined): boolean {
+    return proto3.util.equals(SetDraftSuggestionStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetDraftSuggestionStateResponse
+ */
+export class SetDraftSuggestionStateResponse extends Message<SetDraftSuggestionStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftSuggestion suggestion = 1;
+   */
+  suggestion?: DraftSuggestion;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBlock block = 2;
+   */
+  block?: DraftBlock;
+
+  constructor(data?: PartialMessage<SetDraftSuggestionStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetDraftSuggestionStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "suggestion", kind: "message", T: DraftSuggestion },
+    { no: 2, name: "block", kind: "message", T: DraftBlock },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDraftSuggestionStateResponse {
+    return new SetDraftSuggestionStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDraftSuggestionStateResponse {
+    return new SetDraftSuggestionStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDraftSuggestionStateResponse {
+    return new SetDraftSuggestionStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetDraftSuggestionStateResponse | PlainMessage<SetDraftSuggestionStateResponse> | undefined, b: SetDraftSuggestionStateResponse | PlainMessage<SetDraftSuggestionStateResponse> | undefined): boolean {
+    return proto3.util.equals(SetDraftSuggestionStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveDraftConflictRequest
+ */
+export class ResolveDraftConflictRequest extends Message<ResolveDraftConflictRequest> {
+  /**
+   * @generated from field: string conflict_id = 1;
+   */
+  conflictId = "";
+
+  /**
+   * @generated from field: string resolution = 2;
+   */
+  resolution = "";
+
+  /**
+   * @generated from field: string merged_body = 3;
+   */
+  mergedBody = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ResolveDraftConflictRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveDraftConflictRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resolution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "merged_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveDraftConflictRequest {
+    return new ResolveDraftConflictRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveDraftConflictRequest {
+    return new ResolveDraftConflictRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveDraftConflictRequest {
+    return new ResolveDraftConflictRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveDraftConflictRequest | PlainMessage<ResolveDraftConflictRequest> | undefined, b: ResolveDraftConflictRequest | PlainMessage<ResolveDraftConflictRequest> | undefined): boolean {
+    return proto3.util.equals(ResolveDraftConflictRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ResolveDraftConflictResponse
+ */
+export class ResolveDraftConflictResponse extends Message<ResolveDraftConflictResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftConflict conflict = 1;
+   */
+  conflict?: DraftConflict;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBlock block = 2;
+   */
+  block?: DraftBlock;
+
+  constructor(data?: PartialMessage<ResolveDraftConflictResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ResolveDraftConflictResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "conflict", kind: "message", T: DraftConflict },
+    { no: 2, name: "block", kind: "message", T: DraftBlock },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResolveDraftConflictResponse {
+    return new ResolveDraftConflictResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResolveDraftConflictResponse {
+    return new ResolveDraftConflictResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResolveDraftConflictResponse {
+    return new ResolveDraftConflictResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ResolveDraftConflictResponse | PlainMessage<ResolveDraftConflictResponse> | undefined, b: ResolveDraftConflictResponse | PlainMessage<ResolveDraftConflictResponse> | undefined): boolean {
+    return proto3.util.equals(ResolveDraftConflictResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestDraftExportRequest
+ */
+export class RequestDraftExportRequest extends Message<RequestDraftExportRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string format = 3;
+   */
+  format = "";
+
+  /**
+   * @generated from field: bool include_origin_disclosure = 4;
+   */
+  includeOriginDisclosure = false;
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RequestDraftExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestDraftExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "include_origin_disclosure", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestDraftExportRequest {
+    return new RequestDraftExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestDraftExportRequest {
+    return new RequestDraftExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestDraftExportRequest {
+    return new RequestDraftExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestDraftExportRequest | PlainMessage<RequestDraftExportRequest> | undefined, b: RequestDraftExportRequest | PlainMessage<RequestDraftExportRequest> | undefined): boolean {
+    return proto3.util.equals(RequestDraftExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestDraftExportResponse
+ */
+export class RequestDraftExportResponse extends Message<RequestDraftExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftExport export = 1;
+   */
+  export?: DraftExport;
+
+  constructor(data?: PartialMessage<RequestDraftExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestDraftExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: DraftExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestDraftExportResponse {
+    return new RequestDraftExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestDraftExportResponse {
+    return new RequestDraftExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestDraftExportResponse {
+    return new RequestDraftExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestDraftExportResponse | PlainMessage<RequestDraftExportResponse> | undefined, b: RequestDraftExportResponse | PlainMessage<RequestDraftExportResponse> | undefined): boolean {
+    return proto3.util.equals(RequestDraftExportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftExportRequest
+ */
+export class GetDraftExportRequest extends Message<GetDraftExportRequest> {
+  /**
+   * @generated from field: string export_id = 1;
+   */
+  exportId = "";
+
+  constructor(data?: PartialMessage<GetDraftExportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftExportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftExportRequest {
+    return new GetDraftExportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftExportRequest {
+    return new GetDraftExportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftExportRequest {
+    return new GetDraftExportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftExportRequest | PlainMessage<GetDraftExportRequest> | undefined, b: GetDraftExportRequest | PlainMessage<GetDraftExportRequest> | undefined): boolean {
+    return proto3.util.equals(GetDraftExportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftExportResponse
+ */
+export class GetDraftExportResponse extends Message<GetDraftExportResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftExport export = 1;
+   */
+  export?: DraftExport;
+
+  constructor(data?: PartialMessage<GetDraftExportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftExportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "export", kind: "message", T: DraftExport },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftExportResponse {
+    return new GetDraftExportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftExportResponse {
+    return new GetDraftExportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftExportResponse {
+    return new GetDraftExportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftExportResponse | PlainMessage<GetDraftExportResponse> | undefined, b: GetDraftExportResponse | PlainMessage<GetDraftExportResponse> | undefined): boolean {
+    return proto3.util.equals(GetDraftExportResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftHandoffRequest
+ */
+export class CreateDraftHandoffRequest extends Message<CreateDraftHandoffRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string destination_type = 3;
+   */
+  destinationType = "";
+
+  /**
+   * @generated from field: string destination_id = 4;
+   */
+  destinationId = "";
+
+  /**
+   * @generated from field: string note = 5;
+   */
+  note = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<CreateDraftHandoffRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftHandoffRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "destination_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "destination_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftHandoffRequest {
+    return new CreateDraftHandoffRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftHandoffRequest {
+    return new CreateDraftHandoffRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftHandoffRequest {
+    return new CreateDraftHandoffRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftHandoffRequest | PlainMessage<CreateDraftHandoffRequest> | undefined, b: CreateDraftHandoffRequest | PlainMessage<CreateDraftHandoffRequest> | undefined): boolean {
+    return proto3.util.equals(CreateDraftHandoffRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CreateDraftHandoffResponse
+ */
+export class CreateDraftHandoffResponse extends Message<CreateDraftHandoffResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftHandoff handoff = 1;
+   */
+  handoff?: DraftHandoff;
+
+  constructor(data?: PartialMessage<CreateDraftHandoffResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CreateDraftHandoffResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "handoff", kind: "message", T: DraftHandoff },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDraftHandoffResponse {
+    return new CreateDraftHandoffResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDraftHandoffResponse {
+    return new CreateDraftHandoffResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftHandoffResponse {
+    return new CreateDraftHandoffResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateDraftHandoffResponse | PlainMessage<CreateDraftHandoffResponse> | undefined, b: CreateDraftHandoffResponse | PlainMessage<CreateDraftHandoffResponse> | undefined): boolean {
+    return proto3.util.equals(CreateDraftHandoffResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportDraftIncidentRequest
+ */
+export class ReportDraftIncidentRequest extends Message<ReportDraftIncidentRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string category = 2;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string statement = 3;
+   */
+  statement = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<ReportDraftIncidentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportDraftIncidentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportDraftIncidentRequest {
+    return new ReportDraftIncidentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportDraftIncidentRequest {
+    return new ReportDraftIncidentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportDraftIncidentRequest {
+    return new ReportDraftIncidentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportDraftIncidentRequest | PlainMessage<ReportDraftIncidentRequest> | undefined, b: ReportDraftIncidentRequest | PlainMessage<ReportDraftIncidentRequest> | undefined): boolean {
+    return proto3.util.equals(ReportDraftIncidentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ReportDraftIncidentResponse
+ */
+export class ReportDraftIncidentResponse extends Message<ReportDraftIncidentResponse> {
+  /**
+   * @generated from field: string incident_id = 1;
+   */
+  incidentId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<ReportDraftIncidentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ReportDraftIncidentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "incident_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportDraftIncidentResponse {
+    return new ReportDraftIncidentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportDraftIncidentResponse {
+    return new ReportDraftIncidentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportDraftIncidentResponse {
+    return new ReportDraftIncidentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportDraftIncidentResponse | PlainMessage<ReportDraftIncidentResponse> | undefined, b: ReportDraftIncidentResponse | PlainMessage<ReportDraftIncidentResponse> | undefined): boolean {
+    return proto3.util.equals(ReportDraftIncidentResponse, a, b);
+  }
+}
+

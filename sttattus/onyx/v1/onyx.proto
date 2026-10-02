@@ -5024,6 +5024,417 @@ message RecordRecallTransferResponse {
   RecallRetentionMeasure measure = 1;
 }
 
+// === Choice 17 — personal synthesis and cited drafting desk ===
+
+message DraftTemplate {
+  string code = 1;
+  int32 version = 2;
+  string name = 3;
+  string document_type = 4;
+  string description = 5;
+  repeated string default_block_types = 6;
+  string style_code = 7;
+  int32 style_version = 8;
+  string status = 9;
+}
+
+message DraftStyle {
+  string code = 1;
+  int32 version = 2;
+  string name = 3;
+  string citation_style = 4;
+  string note_style = 5;
+  string bibliography_title = 6;
+  string locale = 7;
+  string status = 8;
+}
+
+message DraftCitation {
+  string id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string source_type = 4;
+  string source_id = 5;
+  string content_id = 6;
+  string revision_id = 7;
+  string passage_key = 8;
+  string source_checksum = 9;
+  string quote = 10;
+  string locator = 11;
+  string intent = 12;
+  string rights_status = 13;
+  string source_state = 14;
+  string verification_status = 15;
+  string verification_message = 16;
+  int32 ordinal = 17;
+  google.protobuf.Timestamp verified_at = 18;
+}
+
+message DraftBlock {
+  string id = 1;
+  string draft_id = 2;
+  string parent_block_id = 3;
+  string block_type = 4;
+  string origin = 5;
+  string body = 6;
+  int32 sort_order = 7;
+  int32 level = 8;
+  string claim_status = 9;
+  string source_object_type = 10;
+  string source_object_id = 11;
+  string suggestion_id = 12;
+  bool member_edited = 13;
+  int64 version = 14;
+  repeated DraftCitation citations = 15;
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp updated_at = 17;
+}
+
+message DraftRevision {
+  string id = 1;
+  string draft_id = 2;
+  int64 revision_number = 3;
+  string branch_id = 4;
+  string parent_revision_id = 5;
+  string title = 6;
+  string reason = 7;
+  string snapshot_checksum = 8;
+  int32 block_count = 9;
+  int32 citation_count = 10;
+  int32 word_count = 11;
+  string created_by = 12;
+  google.protobuf.Timestamp created_at = 13;
+}
+
+message DraftBlockChange {
+  string block_id = 1;
+  string change_type = 2;
+  string block_type = 3;
+  string before_body = 4;
+  string after_body = 5;
+  string before_origin = 6;
+  string after_origin = 7;
+  int32 before_citation_count = 8;
+  int32 after_citation_count = 9;
+}
+
+message DraftRevisionComparison {
+  DraftRevision from_revision = 1;
+  DraftRevision to_revision = 2;
+  int32 added_block_count = 3;
+  int32 removed_block_count = 4;
+  int32 modified_block_count = 5;
+  int32 unchanged_block_count = 6;
+  int32 word_count_delta = 7;
+  repeated DraftBlockChange changes = 8;
+}
+
+message DraftBranch {
+  string id = 1;
+  string draft_id = 2;
+  string name = 3;
+  string status = 4;
+  string base_revision_id = 5;
+  string head_revision_id = 6;
+  int64 version = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+message DraftSuggestion {
+  string id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string kind = 4;
+  string status = 5;
+  string input_text = 6;
+  string proposed_text = 7;
+  string rationale = 8;
+  repeated string evidence_citation_ids = 9;
+  string model_key = 10;
+  string prompt_key = 11;
+  int32 prompt_version = 12;
+  bool strict_grounded = 13;
+  string grounding_status = 14;
+  string refusal_reason = 15;
+  string disposition_note = 16;
+  google.protobuf.Timestamp created_at = 17;
+  google.protobuf.Timestamp reviewed_at = 18;
+}
+
+message DraftConflict {
+  string id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string status = 4;
+  string local_body = 5;
+  string server_body = 6;
+  string merged_body = 7;
+  string local_replica_id = 8;
+  int64 expected_version = 9;
+  int64 actual_version = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp resolved_at = 12;
+}
+
+message DraftExport {
+  string id = 1;
+  string draft_id = 2;
+  string revision_id = 3;
+  string format = 4;
+  string status = 5;
+  string filename = 6;
+  string mime_type = 7;
+  string download_url = 8;
+  string checksum = 9;
+  int64 byte_size = 10;
+  int32 citation_count = 11;
+  int32 bibliography_count = 12;
+  repeated string warnings = 13;
+  string rights_status = 14;
+  string dlp_status = 15;
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp expires_at = 17;
+}
+
+message DraftHandoff {
+  string id = 1;
+  string draft_id = 2;
+  string revision_id = 3;
+  string destination_type = 4;
+  string destination_id = 5;
+  string status = 6;
+  string note = 7;
+  string manifest_checksum = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp revoked_at = 10;
+}
+
+message DraftDocument {
+  string id = 1;
+  string owner_user_id = 2;
+  string room_id = 3;
+  string title = 4;
+  string document_type = 5;
+  string description = 6;
+  string language_code = 7;
+  string scope = 8;
+  string status = 9;
+  string template_code = 10;
+  int32 template_version = 11;
+  string style_code = 12;
+  int32 style_version = 13;
+  string citation_style = 14;
+  string note_style = 15;
+  bool strict_grounded = 16;
+  string sensitivity = 17;
+  string active_branch_id = 18;
+  string current_revision_id = 19;
+  int64 version = 20;
+  int32 word_count = 21;
+  int32 supported_claim_count = 22;
+  int32 unsupported_claim_count = 23;
+  int32 stale_citation_count = 24;
+  repeated DraftBlock blocks = 25;
+  repeated DraftRevision revisions = 26;
+  repeated DraftBranch branches = 27;
+  repeated DraftSuggestion suggestions = 28;
+  repeated DraftConflict conflicts = 29;
+  repeated DraftExport exports = 30;
+  repeated DraftHandoff handoffs = 31;
+  google.protobuf.Timestamp created_at = 32;
+  google.protobuf.Timestamp updated_at = 33;
+}
+
+message DraftingDashboard {
+  string runtime_status = 1;
+  bool writes_enabled = 2;
+  bool ai_enabled = 3;
+  bool exports_enabled = 4;
+  bool handoff_enabled = 5;
+  string public_notice = 6;
+  repeated DraftTemplate templates = 7;
+  repeated DraftStyle styles = 8;
+  repeated DraftDocument drafts = 9;
+  int32 active_draft_count = 10;
+  int32 unsupported_claim_count = 11;
+  int32 stale_citation_count = 12;
+  int32 open_conflict_count = 13;
+  int32 pending_suggestion_count = 14;
+}
+
+message GetDraftingDashboardRequest {}
+message GetDraftingDashboardResponse { DraftingDashboard dashboard = 1; }
+message ListDraftsRequest { string status = 1; }
+message ListDraftsResponse { repeated DraftDocument drafts = 1; }
+message GetDraftRequest { string draft_id = 1; }
+message GetDraftResponse { DraftDocument draft = 1; }
+
+message CreateDraftRequest {
+  string title = 1;
+  string document_type = 2;
+  string description = 3;
+  string language_code = 4;
+  string scope = 5;
+  string room_id = 6;
+  string template_code = 7;
+  int32 template_version = 8;
+  string style_code = 9;
+  int32 style_version = 10;
+  bool strict_grounded = 11;
+  string sensitivity = 12;
+  string client_mutation_id = 13;
+}
+message CreateDraftResponse { DraftDocument draft = 1; }
+
+message UpsertDraftBlockRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  string parent_block_id = 3;
+  string block_type = 4;
+  string origin = 5;
+  string body = 6;
+  int32 sort_order = 7;
+  int32 level = 8;
+  string claim_status = 9;
+  string source_object_type = 10;
+  string source_object_id = 11;
+  int64 expected_version = 12;
+  string replica_id = 13;
+  int64 replica_sequence = 14;
+  string client_mutation_id = 15;
+}
+message UpsertDraftBlockResponse {
+  DraftBlock block = 1;
+  DraftConflict conflict = 2;
+  bool replayed = 3;
+}
+
+message DeleteDraftBlockRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  int64 expected_version = 3;
+  string replica_id = 4;
+  int64 replica_sequence = 5;
+  string client_mutation_id = 6;
+}
+message DeleteDraftBlockResponse { bool deleted = 1; bool replayed = 2; }
+
+message UpsertDraftCitationRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  string citation_id = 3;
+  string source_type = 4;
+  string source_id = 5;
+  string content_id = 6;
+  string revision_id = 7;
+  string passage_key = 8;
+  string source_checksum = 9;
+  string quote = 10;
+  string locator = 11;
+  string intent = 12;
+  int32 ordinal = 13;
+  string client_mutation_id = 14;
+}
+message UpsertDraftCitationResponse { DraftCitation citation = 1; }
+
+message VerifyDraftRequest { string draft_id = 1; }
+message VerifyDraftResponse {
+  int32 supported_claim_count = 1;
+  int32 unsupported_claim_count = 2;
+  int32 stale_citation_count = 3;
+  repeated string warnings = 4;
+  string verification_checksum = 5;
+}
+
+message CreateDraftRevisionRequest {
+  string draft_id = 1;
+  string branch_id = 2;
+  string title = 3;
+  string reason = 4;
+  string client_mutation_id = 5;
+}
+message CreateDraftRevisionResponse { DraftRevision revision = 1; }
+
+message CreateDraftBranchRequest {
+  string draft_id = 1;
+  string name = 2;
+  string from_revision_id = 3;
+  string client_mutation_id = 4;
+}
+message CreateDraftBranchResponse { DraftBranch branch = 1; }
+
+message RestoreDraftRevisionRequest {
+  string draft_id = 1;
+  string revision_id = 2;
+  string branch_id = 3;
+  string client_mutation_id = 4;
+}
+message RestoreDraftRevisionResponse { DraftRevision revision = 1; DraftDocument draft = 2; }
+
+message CompareDraftRevisionsRequest {
+  string draft_id = 1;
+  string from_revision_id = 2;
+  string to_revision_id = 3;
+}
+message CompareDraftRevisionsResponse { DraftRevisionComparison comparison = 1; }
+
+message GenerateDraftSuggestionRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  string kind = 3;
+  repeated string evidence_citation_ids = 4;
+  string instruction = 5;
+  bool strict_grounded = 6;
+  string client_mutation_id = 7;
+}
+message GenerateDraftSuggestionResponse { DraftSuggestion suggestion = 1; }
+
+message SetDraftSuggestionStateRequest {
+  string suggestion_id = 1;
+  string state = 2;
+  string disposition_note = 3;
+  string client_mutation_id = 4;
+}
+message SetDraftSuggestionStateResponse { DraftSuggestion suggestion = 1; DraftBlock block = 2; }
+
+message ResolveDraftConflictRequest {
+  string conflict_id = 1;
+  string resolution = 2;
+  string merged_body = 3;
+  string client_mutation_id = 4;
+}
+message ResolveDraftConflictResponse { DraftConflict conflict = 1; DraftBlock block = 2; }
+
+message RequestDraftExportRequest {
+  string draft_id = 1;
+  string revision_id = 2;
+  string format = 3;
+  bool include_origin_disclosure = 4;
+  string client_mutation_id = 5;
+}
+message RequestDraftExportResponse { DraftExport export = 1; }
+message GetDraftExportRequest { string export_id = 1; }
+message GetDraftExportResponse { DraftExport export = 1; }
+
+message CreateDraftHandoffRequest {
+  string draft_id = 1;
+  string revision_id = 2;
+  string destination_type = 3;
+  string destination_id = 4;
+  string note = 5;
+  string client_mutation_id = 6;
+}
+message CreateDraftHandoffResponse { DraftHandoff handoff = 1; }
+
+message ReportDraftIncidentRequest {
+  string draft_id = 1;
+  string category = 2;
+  string statement = 3;
+  string client_mutation_id = 4;
+}
+message ReportDraftIncidentResponse { string incident_id = 1; string status = 2; }
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -5336,4 +5747,27 @@ service OnyxService {
   rpc ImportRecallData(ImportRecallDataRequest) returns (ImportRecallDataResponse);
   rpc ReportRecallItem(ReportRecallItemRequest) returns (ReportRecallItemResponse);
   rpc RecordRecallTransfer(RecordRecallTransferRequest) returns (RecordRecallTransferResponse);
+
+  // Choice 17 — private cited drafting with structural block origins,
+  // exact-source citations, immutable revisions, offline-idempotent editing,
+  // reviewable grounded suggestions and rights-aware portable exports.
+  rpc GetDraftingDashboard(GetDraftingDashboardRequest) returns (GetDraftingDashboardResponse);
+  rpc ListDrafts(ListDraftsRequest) returns (ListDraftsResponse);
+  rpc GetDraft(GetDraftRequest) returns (GetDraftResponse);
+  rpc CreateDraft(CreateDraftRequest) returns (CreateDraftResponse);
+  rpc UpsertDraftBlock(UpsertDraftBlockRequest) returns (UpsertDraftBlockResponse);
+  rpc DeleteDraftBlock(DeleteDraftBlockRequest) returns (DeleteDraftBlockResponse);
+  rpc UpsertDraftCitation(UpsertDraftCitationRequest) returns (UpsertDraftCitationResponse);
+  rpc VerifyDraft(VerifyDraftRequest) returns (VerifyDraftResponse);
+  rpc CreateDraftRevision(CreateDraftRevisionRequest) returns (CreateDraftRevisionResponse);
+  rpc CreateDraftBranch(CreateDraftBranchRequest) returns (CreateDraftBranchResponse);
+  rpc RestoreDraftRevision(RestoreDraftRevisionRequest) returns (RestoreDraftRevisionResponse);
+  rpc CompareDraftRevisions(CompareDraftRevisionsRequest) returns (CompareDraftRevisionsResponse);
+  rpc GenerateDraftSuggestion(GenerateDraftSuggestionRequest) returns (GenerateDraftSuggestionResponse);
+  rpc SetDraftSuggestionState(SetDraftSuggestionStateRequest) returns (SetDraftSuggestionStateResponse);
+  rpc ResolveDraftConflict(ResolveDraftConflictRequest) returns (ResolveDraftConflictResponse);
+  rpc RequestDraftExport(RequestDraftExportRequest) returns (RequestDraftExportResponse);
+  rpc GetDraftExport(GetDraftExportRequest) returns (GetDraftExportResponse);
+  rpc CreateDraftHandoff(CreateDraftHandoffRequest) returns (CreateDraftHandoffResponse);
+  rpc ReportDraftIncident(ReportDraftIncidentRequest) returns (ReportDraftIncidentResponse);
 }
