@@ -5347,6 +5347,83 @@ message VerifyDraftResponse {
   string verification_checksum = 5;
 }
 
+// Choice 18 — member-owned citation intelligence. These responses are
+// deliberately member-scoped: they may include decrypted claim text and
+// immutable source passages, so the metadata-only Admin surface must never
+// proxy or persist them.
+message DraftEvidencePreview {
+  string citation_id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string source_type = 4;
+  string source_id = 5;
+  string content_id = 6;
+  string revision_id = 7;
+  int32 revision_number = 8;
+  string passage_key = 9;
+  string source_title = 10;
+  string source_creator = 11;
+  string source_kind = 12;
+  string passage_text = 13;
+  string quote = 14;
+  string locator = 15;
+  string source_checksum = 16;
+  string source_state = 17;
+  string rights_status = 18;
+  string verification_status = 19;
+  string verification_message = 20;
+  string intent = 21;
+  int32 quote_word_count = 22;
+  int32 quote_limit_words = 23;
+  bool quote_limit_exceeded = 24;
+  bool immutable = 25;
+}
+
+message DraftClaimDiagnostic {
+  string block_id = 1;
+  string claim_status = 2;
+  string diagnostic_code = 3;
+  string message = 4;
+  int32 citation_count = 5;
+  int32 verified_citation_count = 6;
+  repeated string citation_ids = 7;
+}
+
+message DraftEvidenceReview {
+  string draft_id = 1;
+  repeated DraftClaimDiagnostic claims = 2;
+  repeated DraftEvidencePreview citations = 3;
+  int32 supported_claim_count = 4;
+  int32 unsupported_claim_count = 5;
+  int32 stale_citation_count = 6;
+  int32 warning_count = 7;
+  repeated string warnings = 8;
+  string review_checksum = 9;
+  int32 quote_limit_words = 10;
+}
+
+message GetDraftEvidenceReviewRequest {
+  string draft_id = 1;
+  bool include_passages = 2;
+}
+message GetDraftEvidenceReviewResponse { DraftEvidenceReview review = 1; }
+
+message CompareDraftEvidenceRequest {
+  string draft_id = 1;
+  string left_citation_id = 2;
+  string right_citation_id = 3;
+}
+message DraftEvidenceComparison {
+  DraftEvidencePreview left = 1;
+  DraftEvidencePreview right = 2;
+  string relationship = 3; // same_passage | same_revision | same_content | different_sources
+  bool same_content = 4;
+  bool same_revision = 5;
+  bool same_passage = 6;
+  repeated string warnings = 7;
+}
+message CompareDraftEvidenceResponse { DraftEvidenceComparison comparison = 1; }
+
 message CreateDraftRevisionRequest {
   string draft_id = 1;
   string branch_id = 2;
@@ -5759,6 +5836,8 @@ service OnyxService {
   rpc DeleteDraftBlock(DeleteDraftBlockRequest) returns (DeleteDraftBlockResponse);
   rpc UpsertDraftCitation(UpsertDraftCitationRequest) returns (UpsertDraftCitationResponse);
   rpc VerifyDraft(VerifyDraftRequest) returns (VerifyDraftResponse);
+  rpc GetDraftEvidenceReview(GetDraftEvidenceReviewRequest) returns (GetDraftEvidenceReviewResponse);
+  rpc CompareDraftEvidence(CompareDraftEvidenceRequest) returns (CompareDraftEvidenceResponse);
   rpc CreateDraftRevision(CreateDraftRevisionRequest) returns (CreateDraftRevisionResponse);
   rpc CreateDraftBranch(CreateDraftBranchRequest) returns (CreateDraftBranchResponse);
   rpc RestoreDraftRevision(RestoreDraftRevisionRequest) returns (RestoreDraftRevisionResponse);

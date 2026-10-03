@@ -71176,6 +71176,1030 @@ class VerifyDraftResponse extends $pb.GeneratedMessage {
   void clearVerificationChecksum() => $_clearField(5);
 }
 
+/// Choice 18 — member-owned citation intelligence. These responses are
+/// deliberately member-scoped: they may include decrypted claim text and
+/// immutable source passages, so the metadata-only Admin surface must never
+/// proxy or persist them.
+class DraftEvidencePreview extends $pb.GeneratedMessage {
+  factory DraftEvidencePreview({
+    $core.String? citationId,
+    $core.String? draftId,
+    $core.String? blockId,
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.int? revisionNumber,
+    $core.String? passageKey,
+    $core.String? sourceTitle,
+    $core.String? sourceCreator,
+    $core.String? sourceKind,
+    $core.String? passageText,
+    $core.String? quote,
+    $core.String? locator,
+    $core.String? sourceChecksum,
+    $core.String? sourceState,
+    $core.String? rightsStatus,
+    $core.String? verificationStatus,
+    $core.String? verificationMessage,
+    $core.String? intent,
+    $core.int? quoteWordCount,
+    $core.int? quoteLimitWords,
+    $core.bool? quoteLimitExceeded,
+    $core.bool? immutable,
+  }) {
+    final result = create();
+    if (citationId != null) result.citationId = citationId;
+    if (draftId != null) result.draftId = draftId;
+    if (blockId != null) result.blockId = blockId;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (revisionNumber != null) result.revisionNumber = revisionNumber;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (sourceTitle != null) result.sourceTitle = sourceTitle;
+    if (sourceCreator != null) result.sourceCreator = sourceCreator;
+    if (sourceKind != null) result.sourceKind = sourceKind;
+    if (passageText != null) result.passageText = passageText;
+    if (quote != null) result.quote = quote;
+    if (locator != null) result.locator = locator;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (sourceState != null) result.sourceState = sourceState;
+    if (rightsStatus != null) result.rightsStatus = rightsStatus;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    if (verificationMessage != null)
+      result.verificationMessage = verificationMessage;
+    if (intent != null) result.intent = intent;
+    if (quoteWordCount != null) result.quoteWordCount = quoteWordCount;
+    if (quoteLimitWords != null) result.quoteLimitWords = quoteLimitWords;
+    if (quoteLimitExceeded != null)
+      result.quoteLimitExceeded = quoteLimitExceeded;
+    if (immutable != null) result.immutable = immutable;
+    return result;
+  }
+
+  DraftEvidencePreview._();
+
+  factory DraftEvidencePreview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftEvidencePreview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftEvidencePreview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'citationId')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'blockId')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(6, _omitFieldNames ? '' : 'contentId')
+    ..aOS(7, _omitFieldNames ? '' : 'revisionId')
+    ..aI(8, _omitFieldNames ? '' : 'revisionNumber')
+    ..aOS(9, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(10, _omitFieldNames ? '' : 'sourceTitle')
+    ..aOS(11, _omitFieldNames ? '' : 'sourceCreator')
+    ..aOS(12, _omitFieldNames ? '' : 'sourceKind')
+    ..aOS(13, _omitFieldNames ? '' : 'passageText')
+    ..aOS(14, _omitFieldNames ? '' : 'quote')
+    ..aOS(15, _omitFieldNames ? '' : 'locator')
+    ..aOS(16, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(17, _omitFieldNames ? '' : 'sourceState')
+    ..aOS(18, _omitFieldNames ? '' : 'rightsStatus')
+    ..aOS(19, _omitFieldNames ? '' : 'verificationStatus')
+    ..aOS(20, _omitFieldNames ? '' : 'verificationMessage')
+    ..aOS(21, _omitFieldNames ? '' : 'intent')
+    ..aI(22, _omitFieldNames ? '' : 'quoteWordCount')
+    ..aI(23, _omitFieldNames ? '' : 'quoteLimitWords')
+    ..aOB(24, _omitFieldNames ? '' : 'quoteLimitExceeded')
+    ..aOB(25, _omitFieldNames ? '' : 'immutable')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidencePreview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidencePreview copyWith(void Function(DraftEvidencePreview) updates) =>
+      super.copyWith((message) => updates(message as DraftEvidencePreview))
+          as DraftEvidencePreview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidencePreview create() => DraftEvidencePreview._();
+  @$core.override
+  DraftEvidencePreview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidencePreview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftEvidencePreview>(create);
+  static DraftEvidencePreview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get citationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set citationId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCitationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCitationId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get blockId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set blockId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBlockId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlockId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get contentId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set contentId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasContentId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearContentId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get revisionId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set revisionId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRevisionId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRevisionId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get revisionNumber => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set revisionNumber($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRevisionNumber() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRevisionNumber() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get passageKey => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set passageKey($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPassageKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPassageKey() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get sourceTitle => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set sourceTitle($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSourceTitle() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSourceTitle() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get sourceCreator => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set sourceCreator($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSourceCreator() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSourceCreator() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get sourceKind => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set sourceKind($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSourceKind() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSourceKind() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get passageText => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set passageText($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPassageText() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPassageText() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get quote => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set quote($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasQuote() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearQuote() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get locator => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set locator($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasLocator() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLocator() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get sourceChecksum => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set sourceChecksum($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasSourceChecksum() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearSourceChecksum() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get sourceState => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set sourceState($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasSourceState() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearSourceState() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get rightsStatus => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set rightsStatus($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasRightsStatus() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearRightsStatus() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get verificationStatus => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set verificationStatus($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasVerificationStatus() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearVerificationStatus() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get verificationMessage => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set verificationMessage($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasVerificationMessage() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearVerificationMessage() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get intent => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set intent($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasIntent() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearIntent() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.int get quoteWordCount => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set quoteWordCount($core.int value) => $_setSignedInt32(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasQuoteWordCount() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearQuoteWordCount() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get quoteLimitWords => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set quoteLimitWords($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasQuoteLimitWords() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearQuoteLimitWords() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.bool get quoteLimitExceeded => $_getBF(23);
+  @$pb.TagNumber(24)
+  set quoteLimitExceeded($core.bool value) => $_setBool(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasQuoteLimitExceeded() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearQuoteLimitExceeded() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.bool get immutable => $_getBF(24);
+  @$pb.TagNumber(25)
+  set immutable($core.bool value) => $_setBool(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasImmutable() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearImmutable() => $_clearField(25);
+}
+
+class DraftClaimDiagnostic extends $pb.GeneratedMessage {
+  factory DraftClaimDiagnostic({
+    $core.String? blockId,
+    $core.String? claimStatus,
+    $core.String? diagnosticCode,
+    $core.String? message,
+    $core.int? citationCount,
+    $core.int? verifiedCitationCount,
+    $core.Iterable<$core.String>? citationIds,
+  }) {
+    final result = create();
+    if (blockId != null) result.blockId = blockId;
+    if (claimStatus != null) result.claimStatus = claimStatus;
+    if (diagnosticCode != null) result.diagnosticCode = diagnosticCode;
+    if (message != null) result.message = message;
+    if (citationCount != null) result.citationCount = citationCount;
+    if (verifiedCitationCount != null)
+      result.verifiedCitationCount = verifiedCitationCount;
+    if (citationIds != null) result.citationIds.addAll(citationIds);
+    return result;
+  }
+
+  DraftClaimDiagnostic._();
+
+  factory DraftClaimDiagnostic.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftClaimDiagnostic.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftClaimDiagnostic',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'blockId')
+    ..aOS(2, _omitFieldNames ? '' : 'claimStatus')
+    ..aOS(3, _omitFieldNames ? '' : 'diagnosticCode')
+    ..aOS(4, _omitFieldNames ? '' : 'message')
+    ..aI(5, _omitFieldNames ? '' : 'citationCount')
+    ..aI(6, _omitFieldNames ? '' : 'verifiedCitationCount')
+    ..pPS(7, _omitFieldNames ? '' : 'citationIds')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftClaimDiagnostic clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftClaimDiagnostic copyWith(void Function(DraftClaimDiagnostic) updates) =>
+      super.copyWith((message) => updates(message as DraftClaimDiagnostic))
+          as DraftClaimDiagnostic;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftClaimDiagnostic create() => DraftClaimDiagnostic._();
+  @$core.override
+  DraftClaimDiagnostic createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftClaimDiagnostic getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftClaimDiagnostic>(create);
+  static DraftClaimDiagnostic? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blockId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blockId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlockId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get claimStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set claimStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClaimStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClaimStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get diagnosticCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set diagnosticCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDiagnosticCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDiagnosticCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get message => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set message($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMessage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMessage() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get citationCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set citationCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCitationCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCitationCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get verifiedCitationCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set verifiedCitationCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVerifiedCitationCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVerifiedCitationCount() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get citationIds => $_getList(6);
+}
+
+class DraftEvidenceReview extends $pb.GeneratedMessage {
+  factory DraftEvidenceReview({
+    $core.String? draftId,
+    $core.Iterable<DraftClaimDiagnostic>? claims,
+    $core.Iterable<DraftEvidencePreview>? citations,
+    $core.int? supportedClaimCount,
+    $core.int? unsupportedClaimCount,
+    $core.int? staleCitationCount,
+    $core.int? warningCount,
+    $core.Iterable<$core.String>? warnings,
+    $core.String? reviewChecksum,
+    $core.int? quoteLimitWords,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (claims != null) result.claims.addAll(claims);
+    if (citations != null) result.citations.addAll(citations);
+    if (supportedClaimCount != null)
+      result.supportedClaimCount = supportedClaimCount;
+    if (unsupportedClaimCount != null)
+      result.unsupportedClaimCount = unsupportedClaimCount;
+    if (staleCitationCount != null)
+      result.staleCitationCount = staleCitationCount;
+    if (warningCount != null) result.warningCount = warningCount;
+    if (warnings != null) result.warnings.addAll(warnings);
+    if (reviewChecksum != null) result.reviewChecksum = reviewChecksum;
+    if (quoteLimitWords != null) result.quoteLimitWords = quoteLimitWords;
+    return result;
+  }
+
+  DraftEvidenceReview._();
+
+  factory DraftEvidenceReview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftEvidenceReview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftEvidenceReview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..pPM<DraftClaimDiagnostic>(2, _omitFieldNames ? '' : 'claims',
+        subBuilder: DraftClaimDiagnostic.create)
+    ..pPM<DraftEvidencePreview>(3, _omitFieldNames ? '' : 'citations',
+        subBuilder: DraftEvidencePreview.create)
+    ..aI(4, _omitFieldNames ? '' : 'supportedClaimCount')
+    ..aI(5, _omitFieldNames ? '' : 'unsupportedClaimCount')
+    ..aI(6, _omitFieldNames ? '' : 'staleCitationCount')
+    ..aI(7, _omitFieldNames ? '' : 'warningCount')
+    ..pPS(8, _omitFieldNames ? '' : 'warnings')
+    ..aOS(9, _omitFieldNames ? '' : 'reviewChecksum')
+    ..aI(10, _omitFieldNames ? '' : 'quoteLimitWords')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidenceReview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidenceReview copyWith(void Function(DraftEvidenceReview) updates) =>
+      super.copyWith((message) => updates(message as DraftEvidenceReview))
+          as DraftEvidenceReview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidenceReview create() => DraftEvidenceReview._();
+  @$core.override
+  DraftEvidenceReview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidenceReview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftEvidenceReview>(create);
+  static DraftEvidenceReview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<DraftClaimDiagnostic> get claims => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<DraftEvidencePreview> get citations => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.int get supportedClaimCount => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set supportedClaimCount($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSupportedClaimCount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSupportedClaimCount() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get unsupportedClaimCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set unsupportedClaimCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUnsupportedClaimCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUnsupportedClaimCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get staleCitationCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set staleCitationCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStaleCitationCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStaleCitationCount() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get warningCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set warningCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWarningCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWarningCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get warnings => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get reviewChecksum => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set reviewChecksum($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReviewChecksum() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReviewChecksum() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get quoteLimitWords => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set quoteLimitWords($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasQuoteLimitWords() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearQuoteLimitWords() => $_clearField(10);
+}
+
+class GetDraftEvidenceReviewRequest extends $pb.GeneratedMessage {
+  factory GetDraftEvidenceReviewRequest({
+    $core.String? draftId,
+    $core.bool? includePassages,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (includePassages != null) result.includePassages = includePassages;
+    return result;
+  }
+
+  GetDraftEvidenceReviewRequest._();
+
+  factory GetDraftEvidenceReviewRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftEvidenceReviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftEvidenceReviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOB(2, _omitFieldNames ? '' : 'includePassages')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftEvidenceReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftEvidenceReviewRequest copyWith(
+          void Function(GetDraftEvidenceReviewRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftEvidenceReviewRequest))
+          as GetDraftEvidenceReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftEvidenceReviewRequest create() =>
+      GetDraftEvidenceReviewRequest._();
+  @$core.override
+  GetDraftEvidenceReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftEvidenceReviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftEvidenceReviewRequest>(create);
+  static GetDraftEvidenceReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includePassages => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includePassages($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludePassages() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludePassages() => $_clearField(2);
+}
+
+class GetDraftEvidenceReviewResponse extends $pb.GeneratedMessage {
+  factory GetDraftEvidenceReviewResponse({
+    DraftEvidenceReview? review,
+  }) {
+    final result = create();
+    if (review != null) result.review = review;
+    return result;
+  }
+
+  GetDraftEvidenceReviewResponse._();
+
+  factory GetDraftEvidenceReviewResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftEvidenceReviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftEvidenceReviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftEvidenceReview>(1, _omitFieldNames ? '' : 'review',
+        subBuilder: DraftEvidenceReview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftEvidenceReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftEvidenceReviewResponse copyWith(
+          void Function(GetDraftEvidenceReviewResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftEvidenceReviewResponse))
+          as GetDraftEvidenceReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftEvidenceReviewResponse create() =>
+      GetDraftEvidenceReviewResponse._();
+  @$core.override
+  GetDraftEvidenceReviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftEvidenceReviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftEvidenceReviewResponse>(create);
+  static GetDraftEvidenceReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftEvidenceReview get review => $_getN(0);
+  @$pb.TagNumber(1)
+  set review(DraftEvidenceReview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftEvidenceReview ensureReview() => $_ensure(0);
+}
+
+class CompareDraftEvidenceRequest extends $pb.GeneratedMessage {
+  factory CompareDraftEvidenceRequest({
+    $core.String? draftId,
+    $core.String? leftCitationId,
+    $core.String? rightCitationId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (leftCitationId != null) result.leftCitationId = leftCitationId;
+    if (rightCitationId != null) result.rightCitationId = rightCitationId;
+    return result;
+  }
+
+  CompareDraftEvidenceRequest._();
+
+  factory CompareDraftEvidenceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompareDraftEvidenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompareDraftEvidenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'leftCitationId')
+    ..aOS(3, _omitFieldNames ? '' : 'rightCitationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareDraftEvidenceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareDraftEvidenceRequest copyWith(
+          void Function(CompareDraftEvidenceRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CompareDraftEvidenceRequest))
+          as CompareDraftEvidenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompareDraftEvidenceRequest create() =>
+      CompareDraftEvidenceRequest._();
+  @$core.override
+  CompareDraftEvidenceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompareDraftEvidenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CompareDraftEvidenceRequest>(create);
+  static CompareDraftEvidenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get leftCitationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set leftCitationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLeftCitationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLeftCitationId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rightCitationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rightCitationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRightCitationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRightCitationId() => $_clearField(3);
+}
+
+class DraftEvidenceComparison extends $pb.GeneratedMessage {
+  factory DraftEvidenceComparison({
+    DraftEvidencePreview? left,
+    DraftEvidencePreview? right,
+    $core.String? relationship,
+    $core.bool? sameContent,
+    $core.bool? sameRevision,
+    $core.bool? samePassage,
+    $core.Iterable<$core.String>? warnings,
+  }) {
+    final result = create();
+    if (left != null) result.left = left;
+    if (right != null) result.right = right;
+    if (relationship != null) result.relationship = relationship;
+    if (sameContent != null) result.sameContent = sameContent;
+    if (sameRevision != null) result.sameRevision = sameRevision;
+    if (samePassage != null) result.samePassage = samePassage;
+    if (warnings != null) result.warnings.addAll(warnings);
+    return result;
+  }
+
+  DraftEvidenceComparison._();
+
+  factory DraftEvidenceComparison.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftEvidenceComparison.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftEvidenceComparison',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftEvidencePreview>(1, _omitFieldNames ? '' : 'left',
+        subBuilder: DraftEvidencePreview.create)
+    ..aOM<DraftEvidencePreview>(2, _omitFieldNames ? '' : 'right',
+        subBuilder: DraftEvidencePreview.create)
+    ..aOS(3, _omitFieldNames ? '' : 'relationship')
+    ..aOB(4, _omitFieldNames ? '' : 'sameContent')
+    ..aOB(5, _omitFieldNames ? '' : 'sameRevision')
+    ..aOB(6, _omitFieldNames ? '' : 'samePassage')
+    ..pPS(7, _omitFieldNames ? '' : 'warnings')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidenceComparison clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftEvidenceComparison copyWith(
+          void Function(DraftEvidenceComparison) updates) =>
+      super.copyWith((message) => updates(message as DraftEvidenceComparison))
+          as DraftEvidenceComparison;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidenceComparison create() => DraftEvidenceComparison._();
+  @$core.override
+  DraftEvidenceComparison createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftEvidenceComparison getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftEvidenceComparison>(create);
+  static DraftEvidenceComparison? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftEvidencePreview get left => $_getN(0);
+  @$pb.TagNumber(1)
+  set left(DraftEvidencePreview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLeft() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLeft() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftEvidencePreview ensureLeft() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  DraftEvidencePreview get right => $_getN(1);
+  @$pb.TagNumber(2)
+  set right(DraftEvidencePreview value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRight() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRight() => $_clearField(2);
+  @$pb.TagNumber(2)
+  DraftEvidencePreview ensureRight() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get relationship => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set relationship($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRelationship() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRelationship() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get sameContent => $_getBF(3);
+  @$pb.TagNumber(4)
+  set sameContent($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSameContent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSameContent() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get sameRevision => $_getBF(4);
+  @$pb.TagNumber(5)
+  set sameRevision($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSameRevision() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSameRevision() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get samePassage => $_getBF(5);
+  @$pb.TagNumber(6)
+  set samePassage($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSamePassage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSamePassage() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get warnings => $_getList(6);
+}
+
+class CompareDraftEvidenceResponse extends $pb.GeneratedMessage {
+  factory CompareDraftEvidenceResponse({
+    DraftEvidenceComparison? comparison,
+  }) {
+    final result = create();
+    if (comparison != null) result.comparison = comparison;
+    return result;
+  }
+
+  CompareDraftEvidenceResponse._();
+
+  factory CompareDraftEvidenceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompareDraftEvidenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompareDraftEvidenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftEvidenceComparison>(1, _omitFieldNames ? '' : 'comparison',
+        subBuilder: DraftEvidenceComparison.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareDraftEvidenceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareDraftEvidenceResponse copyWith(
+          void Function(CompareDraftEvidenceResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CompareDraftEvidenceResponse))
+          as CompareDraftEvidenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompareDraftEvidenceResponse create() =>
+      CompareDraftEvidenceResponse._();
+  @$core.override
+  CompareDraftEvidenceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompareDraftEvidenceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CompareDraftEvidenceResponse>(create);
+  static CompareDraftEvidenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftEvidenceComparison get comparison => $_getN(0);
+  @$pb.TagNumber(1)
+  set comparison(DraftEvidenceComparison value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasComparison() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComparison() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftEvidenceComparison ensureComparison() => $_ensure(0);
+}
+
 class CreateDraftRevisionRequest extends $pb.GeneratedMessage {
   factory CreateDraftRevisionRequest({
     $core.String? draftId,

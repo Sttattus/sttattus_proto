@@ -2031,6 +2031,22 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$verifyDraft, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetDraftEvidenceReviewResponse>
+      getDraftEvidenceReview(
+    $0.GetDraftEvidenceReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftEvidenceReview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompareDraftEvidenceResponse> compareDraftEvidence(
+    $0.CompareDraftEvidenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$compareDraftEvidence, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.CreateDraftRevisionResponse> createDraftRevision(
     $0.CreateDraftRevisionRequest request, {
     $grpc.CallOptions? options,
@@ -3464,6 +3480,16 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/VerifyDraft',
           ($0.VerifyDraftRequest value) => value.writeToBuffer(),
           $0.VerifyDraftResponse.fromBuffer);
+  static final _$getDraftEvidenceReview = $grpc.ClientMethod<
+          $0.GetDraftEvidenceReviewRequest, $0.GetDraftEvidenceReviewResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetDraftEvidenceReview',
+      ($0.GetDraftEvidenceReviewRequest value) => value.writeToBuffer(),
+      $0.GetDraftEvidenceReviewResponse.fromBuffer);
+  static final _$compareDraftEvidence = $grpc.ClientMethod<
+          $0.CompareDraftEvidenceRequest, $0.CompareDraftEvidenceResponse>(
+      '/sttattus.onyx.v1.OnyxService/CompareDraftEvidence',
+      ($0.CompareDraftEvidenceRequest value) => value.writeToBuffer(),
+      $0.CompareDraftEvidenceResponse.fromBuffer);
   static final _$createDraftRevision = $grpc.ClientMethod<
           $0.CreateDraftRevisionRequest, $0.CreateDraftRevisionResponse>(
       '/sttattus.onyx.v1.OnyxService/CreateDraftRevision',
@@ -5801,6 +5827,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.VerifyDraftRequest.fromBuffer(value),
             ($0.VerifyDraftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftEvidenceReviewRequest,
+            $0.GetDraftEvidenceReviewResponse>(
+        'GetDraftEvidenceReview',
+        getDraftEvidenceReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftEvidenceReviewRequest.fromBuffer(value),
+        ($0.GetDraftEvidenceReviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompareDraftEvidenceRequest,
+            $0.CompareDraftEvidenceResponse>(
+        'CompareDraftEvidence',
+        compareDraftEvidence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompareDraftEvidenceRequest.fromBuffer(value),
+        ($0.CompareDraftEvidenceResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CreateDraftRevisionRequest,
             $0.CreateDraftRevisionResponse>(
         'CreateDraftRevision',
@@ -8245,6 +8289,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.VerifyDraftResponse> verifyDraft(
       $grpc.ServiceCall call, $0.VerifyDraftRequest request);
+
+  $async.Future<$0.GetDraftEvidenceReviewResponse> getDraftEvidenceReview_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftEvidenceReviewRequest> $request) async {
+    return getDraftEvidenceReview($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftEvidenceReviewResponse> getDraftEvidenceReview(
+      $grpc.ServiceCall call, $0.GetDraftEvidenceReviewRequest request);
+
+  $async.Future<$0.CompareDraftEvidenceResponse> compareDraftEvidence_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CompareDraftEvidenceRequest> $request) async {
+    return compareDraftEvidence($call, await $request);
+  }
+
+  $async.Future<$0.CompareDraftEvidenceResponse> compareDraftEvidence(
+      $grpc.ServiceCall call, $0.CompareDraftEvidenceRequest request);
 
   $async.Future<$0.CreateDraftRevisionResponse> createDraftRevision_Pre(
       $grpc.ServiceCall $call,

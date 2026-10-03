@@ -267,6 +267,8 @@ const (
 	OnyxService_DeleteDraftBlock_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteDraftBlock"
 	OnyxService_UpsertDraftCitation_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/UpsertDraftCitation"
 	OnyxService_VerifyDraft_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/VerifyDraft"
+	OnyxService_GetDraftEvidenceReview_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetDraftEvidenceReview"
+	OnyxService_CompareDraftEvidence_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CompareDraftEvidence"
 	OnyxService_CreateDraftRevision_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateDraftRevision"
 	OnyxService_CreateDraftBranch_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/CreateDraftBranch"
 	OnyxService_RestoreDraftRevision_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RestoreDraftRevision"
@@ -577,6 +579,8 @@ type OnyxServiceClient interface {
 	DeleteDraftBlock(ctx context.Context, in *DeleteDraftBlockRequest, opts ...grpc.CallOption) (*DeleteDraftBlockResponse, error)
 	UpsertDraftCitation(ctx context.Context, in *UpsertDraftCitationRequest, opts ...grpc.CallOption) (*UpsertDraftCitationResponse, error)
 	VerifyDraft(ctx context.Context, in *VerifyDraftRequest, opts ...grpc.CallOption) (*VerifyDraftResponse, error)
+	GetDraftEvidenceReview(ctx context.Context, in *GetDraftEvidenceReviewRequest, opts ...grpc.CallOption) (*GetDraftEvidenceReviewResponse, error)
+	CompareDraftEvidence(ctx context.Context, in *CompareDraftEvidenceRequest, opts ...grpc.CallOption) (*CompareDraftEvidenceResponse, error)
 	CreateDraftRevision(ctx context.Context, in *CreateDraftRevisionRequest, opts ...grpc.CallOption) (*CreateDraftRevisionResponse, error)
 	CreateDraftBranch(ctx context.Context, in *CreateDraftBranchRequest, opts ...grpc.CallOption) (*CreateDraftBranchResponse, error)
 	RestoreDraftRevision(ctx context.Context, in *RestoreDraftRevisionRequest, opts ...grpc.CallOption) (*RestoreDraftRevisionResponse, error)
@@ -3078,6 +3082,26 @@ func (c *onyxServiceClient) VerifyDraft(ctx context.Context, in *VerifyDraftRequ
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetDraftEvidenceReview(ctx context.Context, in *GetDraftEvidenceReviewRequest, opts ...grpc.CallOption) (*GetDraftEvidenceReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDraftEvidenceReviewResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDraftEvidenceReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CompareDraftEvidence(ctx context.Context, in *CompareDraftEvidenceRequest, opts ...grpc.CallOption) (*CompareDraftEvidenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompareDraftEvidenceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CompareDraftEvidence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) CreateDraftRevision(ctx context.Context, in *CreateDraftRevisionRequest, opts ...grpc.CallOption) (*CreateDraftRevisionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateDraftRevisionResponse)
@@ -3485,6 +3509,8 @@ type OnyxServiceServer interface {
 	DeleteDraftBlock(context.Context, *DeleteDraftBlockRequest) (*DeleteDraftBlockResponse, error)
 	UpsertDraftCitation(context.Context, *UpsertDraftCitationRequest) (*UpsertDraftCitationResponse, error)
 	VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error)
+	GetDraftEvidenceReview(context.Context, *GetDraftEvidenceReviewRequest) (*GetDraftEvidenceReviewResponse, error)
+	CompareDraftEvidence(context.Context, *CompareDraftEvidenceRequest) (*CompareDraftEvidenceResponse, error)
 	CreateDraftRevision(context.Context, *CreateDraftRevisionRequest) (*CreateDraftRevisionResponse, error)
 	CreateDraftBranch(context.Context, *CreateDraftBranchRequest) (*CreateDraftBranchResponse, error)
 	RestoreDraftRevision(context.Context, *RestoreDraftRevisionRequest) (*RestoreDraftRevisionResponse, error)
@@ -4249,6 +4275,12 @@ func (UnimplementedOnyxServiceServer) UpsertDraftCitation(context.Context, *Upse
 }
 func (UnimplementedOnyxServiceServer) VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method VerifyDraft not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDraftEvidenceReview(context.Context, *GetDraftEvidenceReviewRequest) (*GetDraftEvidenceReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDraftEvidenceReview not implemented")
+}
+func (UnimplementedOnyxServiceServer) CompareDraftEvidence(context.Context, *CompareDraftEvidenceRequest) (*CompareDraftEvidenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompareDraftEvidence not implemented")
 }
 func (UnimplementedOnyxServiceServer) CreateDraftRevision(context.Context, *CreateDraftRevisionRequest) (*CreateDraftRevisionResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateDraftRevision not implemented")
@@ -8768,6 +8800,42 @@ func _OnyxService_VerifyDraft_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetDraftEvidenceReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDraftEvidenceReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDraftEvidenceReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDraftEvidenceReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDraftEvidenceReview(ctx, req.(*GetDraftEvidenceReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CompareDraftEvidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareDraftEvidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CompareDraftEvidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CompareDraftEvidence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CompareDraftEvidence(ctx, req.(*CompareDraftEvidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_CreateDraftRevision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDraftRevisionRequest)
 	if err := dec(in); err != nil {
@@ -9964,6 +10032,14 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "VerifyDraft",
 			Handler:    _OnyxService_VerifyDraft_Handler,
+		},
+		{
+			MethodName: "GetDraftEvidenceReview",
+			Handler:    _OnyxService_GetDraftEvidenceReview_Handler,
+		},
+		{
+			MethodName: "CompareDraftEvidence",
+			Handler:    _OnyxService_CompareDraftEvidence_Handler,
 		},
 		{
 			MethodName: "CreateDraftRevision",

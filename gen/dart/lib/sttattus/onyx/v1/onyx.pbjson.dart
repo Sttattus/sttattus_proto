@@ -21190,6 +21190,289 @@ final $typed_data.Uint8List verifyDraftResponseDescriptor = $convert.base64Decod
     'NpdGF0aW9uQ291bnQSGgoId2FybmluZ3MYBCADKAlSCHdhcm5pbmdzEjMKFXZlcmlmaWNhdGlv'
     'bl9jaGVja3N1bRgFIAEoCVIUdmVyaWZpY2F0aW9uQ2hlY2tzdW0=');
 
+@$core.Deprecated('Use draftEvidencePreviewDescriptor instead')
+const DraftEvidencePreview$json = {
+  '1': 'DraftEvidencePreview',
+  '2': [
+    {'1': 'citation_id', '3': 1, '4': 1, '5': 9, '10': 'citationId'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'block_id', '3': 3, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'source_type', '3': 4, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'source_id', '3': 5, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'content_id', '3': 6, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 7, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'revision_number', '3': 8, '4': 1, '5': 5, '10': 'revisionNumber'},
+    {'1': 'passage_key', '3': 9, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'source_title', '3': 10, '4': 1, '5': 9, '10': 'sourceTitle'},
+    {'1': 'source_creator', '3': 11, '4': 1, '5': 9, '10': 'sourceCreator'},
+    {'1': 'source_kind', '3': 12, '4': 1, '5': 9, '10': 'sourceKind'},
+    {'1': 'passage_text', '3': 13, '4': 1, '5': 9, '10': 'passageText'},
+    {'1': 'quote', '3': 14, '4': 1, '5': 9, '10': 'quote'},
+    {'1': 'locator', '3': 15, '4': 1, '5': 9, '10': 'locator'},
+    {'1': 'source_checksum', '3': 16, '4': 1, '5': 9, '10': 'sourceChecksum'},
+    {'1': 'source_state', '3': 17, '4': 1, '5': 9, '10': 'sourceState'},
+    {'1': 'rights_status', '3': 18, '4': 1, '5': 9, '10': 'rightsStatus'},
+    {
+      '1': 'verification_status',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {
+      '1': 'verification_message',
+      '3': 20,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationMessage'
+    },
+    {'1': 'intent', '3': 21, '4': 1, '5': 9, '10': 'intent'},
+    {'1': 'quote_word_count', '3': 22, '4': 1, '5': 5, '10': 'quoteWordCount'},
+    {
+      '1': 'quote_limit_words',
+      '3': 23,
+      '4': 1,
+      '5': 5,
+      '10': 'quoteLimitWords'
+    },
+    {
+      '1': 'quote_limit_exceeded',
+      '3': 24,
+      '4': 1,
+      '5': 8,
+      '10': 'quoteLimitExceeded'
+    },
+    {'1': 'immutable', '3': 25, '4': 1, '5': 8, '10': 'immutable'},
+  ],
+};
+
+/// Descriptor for `DraftEvidencePreview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftEvidencePreviewDescriptor = $convert.base64Decode(
+    'ChREcmFmdEV2aWRlbmNlUHJldmlldxIfCgtjaXRhdGlvbl9pZBgBIAEoCVIKY2l0YXRpb25JZB'
+    'IZCghkcmFmdF9pZBgCIAEoCVIHZHJhZnRJZBIZCghibG9ja19pZBgDIAEoCVIHYmxvY2tJZBIf'
+    'Cgtzb3VyY2VfdHlwZRgEIAEoCVIKc291cmNlVHlwZRIbCglzb3VyY2VfaWQYBSABKAlSCHNvdX'
+    'JjZUlkEh0KCmNvbnRlbnRfaWQYBiABKAlSCWNvbnRlbnRJZBIfCgtyZXZpc2lvbl9pZBgHIAEo'
+    'CVIKcmV2aXNpb25JZBInCg9yZXZpc2lvbl9udW1iZXIYCCABKAVSDnJldmlzaW9uTnVtYmVyEh'
+    '8KC3Bhc3NhZ2Vfa2V5GAkgASgJUgpwYXNzYWdlS2V5EiEKDHNvdXJjZV90aXRsZRgKIAEoCVIL'
+    'c291cmNlVGl0bGUSJQoOc291cmNlX2NyZWF0b3IYCyABKAlSDXNvdXJjZUNyZWF0b3ISHwoLc2'
+    '91cmNlX2tpbmQYDCABKAlSCnNvdXJjZUtpbmQSIQoMcGFzc2FnZV90ZXh0GA0gASgJUgtwYXNz'
+    'YWdlVGV4dBIUCgVxdW90ZRgOIAEoCVIFcXVvdGUSGAoHbG9jYXRvchgPIAEoCVIHbG9jYXRvch'
+    'InCg9zb3VyY2VfY2hlY2tzdW0YECABKAlSDnNvdXJjZUNoZWNrc3VtEiEKDHNvdXJjZV9zdGF0'
+    'ZRgRIAEoCVILc291cmNlU3RhdGUSIwoNcmlnaHRzX3N0YXR1cxgSIAEoCVIMcmlnaHRzU3RhdH'
+    'VzEi8KE3ZlcmlmaWNhdGlvbl9zdGF0dXMYEyABKAlSEnZlcmlmaWNhdGlvblN0YXR1cxIxChR2'
+    'ZXJpZmljYXRpb25fbWVzc2FnZRgUIAEoCVITdmVyaWZpY2F0aW9uTWVzc2FnZRIWCgZpbnRlbn'
+    'QYFSABKAlSBmludGVudBIoChBxdW90ZV93b3JkX2NvdW50GBYgASgFUg5xdW90ZVdvcmRDb3Vu'
+    'dBIqChFxdW90ZV9saW1pdF93b3JkcxgXIAEoBVIPcXVvdGVMaW1pdFdvcmRzEjAKFHF1b3RlX2'
+    'xpbWl0X2V4Y2VlZGVkGBggASgIUhJxdW90ZUxpbWl0RXhjZWVkZWQSHAoJaW1tdXRhYmxlGBkg'
+    'ASgIUglpbW11dGFibGU=');
+
+@$core.Deprecated('Use draftClaimDiagnosticDescriptor instead')
+const DraftClaimDiagnostic$json = {
+  '1': 'DraftClaimDiagnostic',
+  '2': [
+    {'1': 'block_id', '3': 1, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'claim_status', '3': 2, '4': 1, '5': 9, '10': 'claimStatus'},
+    {'1': 'diagnostic_code', '3': 3, '4': 1, '5': 9, '10': 'diagnosticCode'},
+    {'1': 'message', '3': 4, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'citation_count', '3': 5, '4': 1, '5': 5, '10': 'citationCount'},
+    {
+      '1': 'verified_citation_count',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'verifiedCitationCount'
+    },
+    {'1': 'citation_ids', '3': 7, '4': 3, '5': 9, '10': 'citationIds'},
+  ],
+};
+
+/// Descriptor for `DraftClaimDiagnostic`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftClaimDiagnosticDescriptor = $convert.base64Decode(
+    'ChREcmFmdENsYWltRGlhZ25vc3RpYxIZCghibG9ja19pZBgBIAEoCVIHYmxvY2tJZBIhCgxjbG'
+    'FpbV9zdGF0dXMYAiABKAlSC2NsYWltU3RhdHVzEicKD2RpYWdub3N0aWNfY29kZRgDIAEoCVIO'
+    'ZGlhZ25vc3RpY0NvZGUSGAoHbWVzc2FnZRgEIAEoCVIHbWVzc2FnZRIlCg5jaXRhdGlvbl9jb3'
+    'VudBgFIAEoBVINY2l0YXRpb25Db3VudBI2Chd2ZXJpZmllZF9jaXRhdGlvbl9jb3VudBgGIAEo'
+    'BVIVdmVyaWZpZWRDaXRhdGlvbkNvdW50EiEKDGNpdGF0aW9uX2lkcxgHIAMoCVILY2l0YXRpb2'
+    '5JZHM=');
+
+@$core.Deprecated('Use draftEvidenceReviewDescriptor instead')
+const DraftEvidenceReview$json = {
+  '1': 'DraftEvidenceReview',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {
+      '1': 'claims',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftClaimDiagnostic',
+      '10': 'claims'
+    },
+    {
+      '1': 'citations',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftEvidencePreview',
+      '10': 'citations'
+    },
+    {
+      '1': 'supported_claim_count',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'supportedClaimCount'
+    },
+    {
+      '1': 'unsupported_claim_count',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'unsupportedClaimCount'
+    },
+    {
+      '1': 'stale_citation_count',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'staleCitationCount'
+    },
+    {'1': 'warning_count', '3': 7, '4': 1, '5': 5, '10': 'warningCount'},
+    {'1': 'warnings', '3': 8, '4': 3, '5': 9, '10': 'warnings'},
+    {'1': 'review_checksum', '3': 9, '4': 1, '5': 9, '10': 'reviewChecksum'},
+    {
+      '1': 'quote_limit_words',
+      '3': 10,
+      '4': 1,
+      '5': 5,
+      '10': 'quoteLimitWords'
+    },
+  ],
+};
+
+/// Descriptor for `DraftEvidenceReview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftEvidenceReviewDescriptor = $convert.base64Decode(
+    'ChNEcmFmdEV2aWRlbmNlUmV2aWV3EhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdElkEj4KBmNsYW'
+    'ltcxgCIAMoCzImLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRDbGFpbURpYWdub3N0aWNSBmNsYWlt'
+    'cxJECgljaXRhdGlvbnMYAyADKAsyJi5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0RXZpZGVuY2VQcm'
+    'V2aWV3UgljaXRhdGlvbnMSMgoVc3VwcG9ydGVkX2NsYWltX2NvdW50GAQgASgFUhNzdXBwb3J0'
+    'ZWRDbGFpbUNvdW50EjYKF3Vuc3VwcG9ydGVkX2NsYWltX2NvdW50GAUgASgFUhV1bnN1cHBvcn'
+    'RlZENsYWltQ291bnQSMAoUc3RhbGVfY2l0YXRpb25fY291bnQYBiABKAVSEnN0YWxlQ2l0YXRp'
+    'b25Db3VudBIjCg13YXJuaW5nX2NvdW50GAcgASgFUgx3YXJuaW5nQ291bnQSGgoId2FybmluZ3'
+    'MYCCADKAlSCHdhcm5pbmdzEicKD3Jldmlld19jaGVja3N1bRgJIAEoCVIOcmV2aWV3Q2hlY2tz'
+    'dW0SKgoRcXVvdGVfbGltaXRfd29yZHMYCiABKAVSD3F1b3RlTGltaXRXb3Jkcw==');
+
+@$core.Deprecated('Use getDraftEvidenceReviewRequestDescriptor instead')
+const GetDraftEvidenceReviewRequest$json = {
+  '1': 'GetDraftEvidenceReviewRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'include_passages', '3': 2, '4': 1, '5': 8, '10': 'includePassages'},
+  ],
+};
+
+/// Descriptor for `GetDraftEvidenceReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftEvidenceReviewRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1HZXREcmFmdEV2aWRlbmNlUmV2aWV3UmVxdWVzdBIZCghkcmFmdF9pZBgBIAEoCVIHZHJhZn'
+        'RJZBIpChBpbmNsdWRlX3Bhc3NhZ2VzGAIgASgIUg9pbmNsdWRlUGFzc2FnZXM=');
+
+@$core.Deprecated('Use getDraftEvidenceReviewResponseDescriptor instead')
+const GetDraftEvidenceReviewResponse$json = {
+  '1': 'GetDraftEvidenceReviewResponse',
+  '2': [
+    {
+      '1': 'review',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftEvidenceReview',
+      '10': 'review'
+    },
+  ],
+};
+
+/// Descriptor for `GetDraftEvidenceReviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftEvidenceReviewResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXREcmFmdEV2aWRlbmNlUmV2aWV3UmVzcG9uc2USPQoGcmV2aWV3GAEgASgLMiUuc3R0YX'
+        'R0dXMub255eC52MS5EcmFmdEV2aWRlbmNlUmV2aWV3UgZyZXZpZXc=');
+
+@$core.Deprecated('Use compareDraftEvidenceRequestDescriptor instead')
+const CompareDraftEvidenceRequest$json = {
+  '1': 'CompareDraftEvidenceRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'left_citation_id', '3': 2, '4': 1, '5': 9, '10': 'leftCitationId'},
+    {'1': 'right_citation_id', '3': 3, '4': 1, '5': 9, '10': 'rightCitationId'},
+  ],
+};
+
+/// Descriptor for `CompareDraftEvidenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compareDraftEvidenceRequestDescriptor =
+    $convert.base64Decode(
+        'ChtDb21wYXJlRHJhZnRFdmlkZW5jZVJlcXVlc3QSGQoIZHJhZnRfaWQYASABKAlSB2RyYWZ0SW'
+        'QSKAoQbGVmdF9jaXRhdGlvbl9pZBgCIAEoCVIObGVmdENpdGF0aW9uSWQSKgoRcmlnaHRfY2l0'
+        'YXRpb25faWQYAyABKAlSD3JpZ2h0Q2l0YXRpb25JZA==');
+
+@$core.Deprecated('Use draftEvidenceComparisonDescriptor instead')
+const DraftEvidenceComparison$json = {
+  '1': 'DraftEvidenceComparison',
+  '2': [
+    {
+      '1': 'left',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftEvidencePreview',
+      '10': 'left'
+    },
+    {
+      '1': 'right',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftEvidencePreview',
+      '10': 'right'
+    },
+    {'1': 'relationship', '3': 3, '4': 1, '5': 9, '10': 'relationship'},
+    {'1': 'same_content', '3': 4, '4': 1, '5': 8, '10': 'sameContent'},
+    {'1': 'same_revision', '3': 5, '4': 1, '5': 8, '10': 'sameRevision'},
+    {'1': 'same_passage', '3': 6, '4': 1, '5': 8, '10': 'samePassage'},
+    {'1': 'warnings', '3': 7, '4': 3, '5': 9, '10': 'warnings'},
+  ],
+};
+
+/// Descriptor for `DraftEvidenceComparison`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftEvidenceComparisonDescriptor = $convert.base64Decode(
+    'ChdEcmFmdEV2aWRlbmNlQ29tcGFyaXNvbhI6CgRsZWZ0GAEgASgLMiYuc3R0YXR0dXMub255eC'
+    '52MS5EcmFmdEV2aWRlbmNlUHJldmlld1IEbGVmdBI8CgVyaWdodBgCIAEoCzImLnN0dGF0dHVz'
+    'Lm9ueXgudjEuRHJhZnRFdmlkZW5jZVByZXZpZXdSBXJpZ2h0EiIKDHJlbGF0aW9uc2hpcBgDIA'
+    'EoCVIMcmVsYXRpb25zaGlwEiEKDHNhbWVfY29udGVudBgEIAEoCFILc2FtZUNvbnRlbnQSIwoN'
+    'c2FtZV9yZXZpc2lvbhgFIAEoCFIMc2FtZVJldmlzaW9uEiEKDHNhbWVfcGFzc2FnZRgGIAEoCF'
+    'ILc2FtZVBhc3NhZ2USGgoId2FybmluZ3MYByADKAlSCHdhcm5pbmdz');
+
+@$core.Deprecated('Use compareDraftEvidenceResponseDescriptor instead')
+const CompareDraftEvidenceResponse$json = {
+  '1': 'CompareDraftEvidenceResponse',
+  '2': [
+    {
+      '1': 'comparison',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftEvidenceComparison',
+      '10': 'comparison'
+    },
+  ],
+};
+
+/// Descriptor for `CompareDraftEvidenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compareDraftEvidenceResponseDescriptor =
+    $convert.base64Decode(
+        'ChxDb21wYXJlRHJhZnRFdmlkZW5jZVJlc3BvbnNlEkkKCmNvbXBhcmlzb24YASABKAsyKS5zdH'
+        'RhdHR1cy5vbnl4LnYxLkRyYWZ0RXZpZGVuY2VDb21wYXJpc29uUgpjb21wYXJpc29u');
+
 @$core.Deprecated('Use createDraftRevisionRequestDescriptor instead')
 const CreateDraftRevisionRequest$json = {
   '1': 'CreateDraftRevisionRequest',
