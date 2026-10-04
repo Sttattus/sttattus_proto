@@ -161,6 +161,12 @@ message Match {
   // Whether the viewer wrote the newest message, so the next word is the other
   // person's. False when nobody has written yet.
   bool last_message_mine = 6;
+  // Atlas Choice 6: what the newest message is — text | question | closing |
+  // call — so a list can say "sent a question" or "missed call" instead of
+  // taking an empty preview for an attachment. Empty when nobody has written.
+  string last_message_kind = 7;
+  // For a call: ended | missed | declined | ringing | live.
+  string last_message_call_status = 8;
 }
 
 message Message {

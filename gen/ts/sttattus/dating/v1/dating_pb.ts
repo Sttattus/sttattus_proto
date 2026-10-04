@@ -770,6 +770,22 @@ export class Match extends Message$1<Match> {
    */
   lastMessageMine = false;
 
+  /**
+   * Atlas Choice 6: what the newest message is — text | question | closing |
+   * call — so a list can say "sent a question" or "missed call" instead of
+   * taking an empty preview for an attachment. Empty when nobody has written.
+   *
+   * @generated from field: string last_message_kind = 7;
+   */
+  lastMessageKind = "";
+
+  /**
+   * For a call: ended | missed | declined | ringing | live.
+   *
+   * @generated from field: string last_message_call_status = 8;
+   */
+  lastMessageCallStatus = "";
+
   constructor(data?: PartialMessage<Match>) {
     super();
     proto3.util.initPartial(data, this);
@@ -784,6 +800,8 @@ export class Match extends Message$1<Match> {
     { no: 4, name: "last_message_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "last_message_preview", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "last_message_mine", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "last_message_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "last_message_call_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Match {

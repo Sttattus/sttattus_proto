@@ -918,8 +918,14 @@ type Match struct {
 	// Whether the viewer wrote the newest message, so the next word is the other
 	// person's. False when nobody has written yet.
 	LastMessageMine bool `protobuf:"varint,6,opt,name=last_message_mine,json=lastMessageMine,proto3" json:"last_message_mine,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	// Atlas Choice 6: what the newest message is — text | question | closing |
+	// call — so a list can say "sent a question" or "missed call" instead of
+	// taking an empty preview for an attachment. Empty when nobody has written.
+	LastMessageKind string `protobuf:"bytes,7,opt,name=last_message_kind,json=lastMessageKind,proto3" json:"last_message_kind,omitempty"`
+	// For a call: ended | missed | declined | ringing | live.
+	LastMessageCallStatus string `protobuf:"bytes,8,opt,name=last_message_call_status,json=lastMessageCallStatus,proto3" json:"last_message_call_status,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *Match) Reset() {
@@ -992,6 +998,20 @@ func (x *Match) GetLastMessageMine() bool {
 		return x.LastMessageMine
 	}
 	return false
+}
+
+func (x *Match) GetLastMessageKind() string {
+	if x != nil {
+		return x.LastMessageKind
+	}
+	return ""
+}
+
+func (x *Match) GetLastMessageCallStatus() string {
+	if x != nil {
+		return x.LastMessageCallStatus
+	}
+	return ""
 }
 
 type Message struct {
@@ -10833,7 +10853,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"TravelNote\x12\x1d\n" +
 	"\n" +
 	"place_name\x18\x01 \x01(\tR\tplaceName\x12\x14\n" +
-	"\x05until\x18\x02 \x01(\x03R\x05until\"\xf5\x01\n" +
+	"\x05until\x18\x02 \x01(\x03R\x05until\"\xda\x02\n" +
 	"\x05Match\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x127\n" +
 	"\x05other\x18\x02 \x01(\v2!.sttattus.dating.v1.DatingProfileR\x05other\x12\x1d\n" +
@@ -10841,7 +10861,9 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"created_at\x18\x03 \x01(\x03R\tcreatedAt\x12&\n" +
 	"\x0flast_message_at\x18\x04 \x01(\x03R\rlastMessageAt\x120\n" +
 	"\x14last_message_preview\x18\x05 \x01(\tR\x12lastMessagePreview\x12*\n" +
-	"\x11last_message_mine\x18\x06 \x01(\bR\x0flastMessageMine\"\xe1\x02\n" +
+	"\x11last_message_mine\x18\x06 \x01(\bR\x0flastMessageMine\x12*\n" +
+	"\x11last_message_kind\x18\a \x01(\tR\x0flastMessageKind\x127\n" +
+	"\x18last_message_call_status\x18\b \x01(\tR\x15lastMessageCallStatus\"\xe1\x02\n" +
 	"\aMessage\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x01(\tR\amatchId\x12\x1b\n" +

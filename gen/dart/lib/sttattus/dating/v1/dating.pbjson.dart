@@ -386,6 +386,14 @@ const Match$json = {
       '10': 'lastMessagePreview'
     },
     {'1': 'last_message_mine', '3': 6, '4': 1, '5': 8, '10': 'lastMessageMine'},
+    {'1': 'last_message_kind', '3': 7, '4': 1, '5': 9, '10': 'lastMessageKind'},
+    {
+      '1': 'last_message_call_status',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'lastMessageCallStatus'
+    },
   ],
 };
 
@@ -395,7 +403,9 @@ final $typed_data.Uint8List matchDescriptor = $convert.base64Decode(
     'cudjEuRGF0aW5nUHJvZmlsZVIFb3RoZXISHQoKY3JlYXRlZF9hdBgDIAEoA1IJY3JlYXRlZEF0'
     'EiYKD2xhc3RfbWVzc2FnZV9hdBgEIAEoA1INbGFzdE1lc3NhZ2VBdBIwChRsYXN0X21lc3NhZ2'
     'VfcHJldmlldxgFIAEoCVISbGFzdE1lc3NhZ2VQcmV2aWV3EioKEWxhc3RfbWVzc2FnZV9taW5l'
-    'GAYgASgIUg9sYXN0TWVzc2FnZU1pbmU=');
+    'GAYgASgIUg9sYXN0TWVzc2FnZU1pbmUSKgoRbGFzdF9tZXNzYWdlX2tpbmQYByABKAlSD2xhc3'
+    'RNZXNzYWdlS2luZBI3ChhsYXN0X21lc3NhZ2VfY2FsbF9zdGF0dXMYCCABKAlSFWxhc3RNZXNz'
+    'YWdlQ2FsbFN0YXR1cw==');
 
 @$core.Deprecated('Use messageDescriptor instead')
 const Message$json = {

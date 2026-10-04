@@ -1089,6 +1089,8 @@ class Match extends $pb.GeneratedMessage {
     $fixnum.Int64? lastMessageAt,
     $core.String? lastMessagePreview,
     $core.bool? lastMessageMine,
+    $core.String? lastMessageKind,
+    $core.String? lastMessageCallStatus,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1098,6 +1100,9 @@ class Match extends $pb.GeneratedMessage {
     if (lastMessagePreview != null)
       result.lastMessagePreview = lastMessagePreview;
     if (lastMessageMine != null) result.lastMessageMine = lastMessageMine;
+    if (lastMessageKind != null) result.lastMessageKind = lastMessageKind;
+    if (lastMessageCallStatus != null)
+      result.lastMessageCallStatus = lastMessageCallStatus;
     return result;
   }
 
@@ -1122,6 +1127,8 @@ class Match extends $pb.GeneratedMessage {
     ..aInt64(4, _omitFieldNames ? '' : 'lastMessageAt')
     ..aOS(5, _omitFieldNames ? '' : 'lastMessagePreview')
     ..aOB(6, _omitFieldNames ? '' : 'lastMessageMine')
+    ..aOS(7, _omitFieldNames ? '' : 'lastMessageKind')
+    ..aOS(8, _omitFieldNames ? '' : 'lastMessageCallStatus')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1202,6 +1209,28 @@ class Match extends $pb.GeneratedMessage {
   $core.bool hasLastMessageMine() => $_has(5);
   @$pb.TagNumber(6)
   void clearLastMessageMine() => $_clearField(6);
+
+  /// Atlas Choice 6: what the newest message is — text | question | closing |
+  /// call — so a list can say "sent a question" or "missed call" instead of
+  /// taking an empty preview for an attachment. Empty when nobody has written.
+  @$pb.TagNumber(7)
+  $core.String get lastMessageKind => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set lastMessageKind($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastMessageKind() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastMessageKind() => $_clearField(7);
+
+  /// For a call: ended | missed | declined | ringing | live.
+  @$pb.TagNumber(8)
+  $core.String get lastMessageCallStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set lastMessageCallStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLastMessageCallStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastMessageCallStatus() => $_clearField(8);
 }
 
 class Message extends $pb.GeneratedMessage {
