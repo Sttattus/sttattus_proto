@@ -1362,6 +1362,7 @@ const ReportUserRequest$json = {
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'match_id', '3': 4, '4': 1, '5': 9, '10': 'matchId'},
     {'1': 'message_ids', '3': 5, '4': 3, '5': 9, '10': 'messageIds'},
+    {'1': 'shared_date_id', '3': 6, '4': 1, '5': 9, '10': 'sharedDateId'},
   ],
 };
 
@@ -1370,7 +1371,7 @@ final $typed_data.Uint8List reportUserRequestDescriptor = $convert.base64Decode(
     'ChFSZXBvcnRVc2VyUmVxdWVzdBIfCgtyZXBvcnRlZF9pZBgBIAEoCVIKcmVwb3J0ZWRJZBIaCg'
     'hjYXRlZ29yeRgCIAEoCVIIY2F0ZWdvcnkSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0'
     'aW9uEhkKCG1hdGNoX2lkGAQgASgJUgdtYXRjaElkEh8KC21lc3NhZ2VfaWRzGAUgAygJUgptZX'
-    'NzYWdlSWRz');
+    'NzYWdlSWRzEiQKDnNoYXJlZF9kYXRlX2lkGAYgASgJUgxzaGFyZWREYXRlSWQ=');
 
 @$core.Deprecated('Use reportUserResponseDescriptor instead')
 const ReportUserResponse$json = {

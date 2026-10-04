@@ -1,0 +1,333 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/dating/v1/dating.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// Atlas Choice 7 — safe date lifecycle. Trusted contacts who have accepted,
+// an optional shared date with check-ins, a missed check-in that goes where
+// the member chose, alerts whose delivery is reported as it happened, and the
+// Sttattus safety team only where Admin has switched coverage on. Nothing here
+// contacts emergency services, and location leaves the phone only when the
+// member chooses.
+
+// A person the member trusts, reached on WhatsApp once they accept.
+message TrustedContact {
+  string id = 1;
+  string name = 2;
+  string phone_e164 = 3;
+  // Why the member chose them, in the member's words; shown to the contact.
+  string purpose = 4;
+  // invited | accepted | declined | stopped | expired
+  string status = 5;
+  int64 invited_at = 6;
+  int64 accepted_at = 7;
+  // When it lapses; 0 while it lasts until the member removes them.
+  int64 expires_at = 8;
+  // The invitation's delivery: not_sent | sent | delivered | read | failed
+  string invite_delivery = 9;
+}
+
+message ListTrustedContactsRequest {}
+message ListTrustedContactsResponse {
+  repeated TrustedContact contacts = 1;
+}
+
+message AddTrustedContactRequest {
+  string name = 1;
+  string phone_e164 = 2;
+  string purpose = 3;
+  // 30 | 90 | 365, or 0 for until the member removes them.
+  int32 days = 4;
+}
+message AddTrustedContactResponse {
+  TrustedContact contact = 1;
+}
+
+message ResendInviteRequest {
+  string contact_id = 1;
+}
+message ResendInviteResponse {
+  TrustedContact contact = 1;
+}
+
+// Removes a contact silently: they are not told.
+message RemoveTrustedContactRequest {
+  string contact_id = 1;
+}
+message RemoveTrustedContactResponse {}
+
+// When the safety team works: always, or these weekly windows (the
+// coverage's own time zone; minutes after midnight).
+message StaffedWindow {
+  // 1 = Monday … 7 = Sunday
+  int32 weekday = 1;
+  int32 start_minute = 2;
+  int32 end_minute = 3;
+}
+
+// A reviewed resource for the member's country.
+message SafetyResource {
+  string name = 1;
+  // emergency | helpline | support | other
+  string kind = 2;
+  string phone = 3;
+  string url = 4;
+  string note = 5;
+}
+
+// What help exists where the member is.
+message SafetyHere {
+  string country_code = 1;
+  // The Sttattus safety team can be chosen here at all.
+  bool staffed = 2;
+  // …and is working right now.
+  bool staffed_now = 3;
+  bool always_on = 4;
+  repeated StaffedWindow windows = 5;
+  string time_zone = 6;
+  // Minutes the team has to pick an alert up before the member is told
+  // nobody has.
+  int32 ack_minutes = 7;
+  string emergency_number = 8;
+  repeated SafetyResource resources = 9;
+  int64 reviewed_at = 10;
+}
+
+message GetSafetyHereRequest {}
+message GetSafetyHereResponse {
+  SafetyHere here = 1;
+}
+
+message DateEvent {
+  string id = 1;
+  // shared | on_my_way | arrived | check_in | extended | leaving | home |
+  // missed | prompted | alerted | location | safe | false_alarm | cancelled |
+  // expired | contact_has_it | staff_ack | staff_resolved | call_me
+  string kind = 2;
+  int64 at = 3;
+  bool has_location = 4;
+  string note = 5;
+}
+
+// One message to one trusted contact, as WhatsApp reported it.
+message SafetyDelivery {
+  string contact_id = 1;
+  string contact_name = 2;
+  // invite | update | alert | safe | call_me
+  string kind = 3;
+  // not_sent | sent | delivered | read | failed
+  string status = 4;
+  int64 at = 5;
+  // The contact pressed "I've got this" on their page.
+  bool contact_has_it = 6;
+}
+
+// The safety team's side of an alert or a missed check-in.
+message StaffCase {
+  string id = 1;
+  // waiting | acknowledged | resolved | unanswered
+  string status = 2;
+  // The responder's first name, once someone has it.
+  string responder = 3;
+  int64 opened_at = 4;
+  int64 acknowledged_at = 5;
+  // When "waiting" turns into "unanswered" for the member.
+  int64 answer_by = 6;
+  // A message from the team after the alert (aftercare).
+  string aftercare = 7;
+}
+
+message SharedDate {
+  string id = 1;
+  string match_id = 2;
+  string with_name = 3;
+  string place_name = 4;
+  string place_address = 5;
+  string reservation_id = 6;
+  string venue_phone = 7;
+  int64 starts_at = 8;
+  int64 ends_at = 9;
+  // walking | public_transport | taxi | own_car | other
+  string transport = 10;
+  // Minutes between check-ins; 0 = only arrived and home.
+  int32 check_in_minutes = 11;
+  int32 grace_minutes = 12;
+  // me | contacts | staff
+  string on_miss = 13;
+  bool share_location_on_miss = 14;
+  // Contacts are told of routine changes too, not only misses and alerts.
+  bool routine_updates = 15;
+  repeated string contact_ids = 16;
+  // planned | on_my_way | arrived | leaving | home | missed | alerted |
+  // resolved | cancelled | expired
+  string state = 17;
+  int64 next_check_in_at = 18;
+  int64 extended_until = 19;
+  repeated DateEvent events = 20;
+  repeated SafetyDelivery deliveries = 21;
+  StaffCase staff = 22;
+  int64 created_at = 23;
+}
+
+message ShareDateRequest {
+  SharedDate date = 1;
+}
+message ShareDateResponse {
+  SharedDate date = 1;
+}
+
+message ListMySharedDatesRequest {}
+message ListMySharedDatesResponse {
+  repeated SharedDate dates = 1;
+}
+
+message GetSharedDateRequest {
+  string id = 1;
+}
+message GetSharedDateResponse {
+  SharedDate date = 1;
+}
+
+// on_my_way | arrived | leaving | home | cancelled
+message UpdateDateRequest {
+  string id = 1;
+  string state = 2;
+  // Optional, only when the member chose to share where they are.
+  bool has_location = 3;
+  double latitude = 4;
+  double longitude = 5;
+}
+message UpdateDateResponse {
+  SharedDate date = 1;
+}
+
+// "I'm OK": resets the next check-in.
+message CheckInRequest {
+  string id = 1;
+}
+message CheckInResponse {
+  SharedDate date = 1;
+}
+
+message ExtendDateRequest {
+  string id = 1;
+  // 30 | 60 | 120
+  int32 minutes = 2;
+}
+message ExtendDateResponse {
+  SharedDate date = 1;
+}
+
+message ShareLocationNowRequest {
+  string id = 1;
+  double latitude = 2;
+  double longitude = 3;
+}
+message ShareLocationNowResponse {
+  SharedDate date = 1;
+}
+
+// Stops a miss or an alert and tells everyone who was told.
+message ImSafeRequest {
+  string id = 1;
+  bool false_alarm = 2;
+}
+message ImSafeResponse {
+  SharedDate date = 1;
+}
+
+// Asks one accepted contact to call the member now (one message).
+message AskContactToCallRequest {
+  string id = 1;
+  string contact_id = 2;
+}
+message AskContactToCallResponse {
+  SafetyDelivery delivery = 1;
+}
+
+message DateEvidence {
+  string id = 1;
+  string note = 2;
+  string media_asset_id = 3;
+  int64 created_at = 4;
+}
+
+message AddDateEvidenceRequest {
+  string date_id = 1;
+  string note = 2;
+  string media_asset_id = 3;
+}
+message AddDateEvidenceResponse {
+  DateEvidence evidence = 1;
+}
+
+message ListDateEvidenceRequest {
+  string date_id = 1;
+}
+message ListDateEvidenceResponse {
+  repeated DateEvidence evidence = 1;
+}
+
+// An alert raised now: to the member's accepted contacts (the active date's
+// chosen ones when there is one) and to the safety team where it is on.
+message RaiseAlertRequest {
+  bool has_location = 1;
+  double latitude = 2;
+  double longitude = 3;
+  string note = 4;
+}
+
+message AlertStatus {
+  PanicAlert alert = 1;
+  repeated SafetyDelivery deliveries = 2;
+  StaffCase staff = 3;
+  string shared_date_id = 4;
+  // Accepted contacts the member has; 0 means nobody could be told.
+  int32 accepted_contacts = 5;
+}
+
+message RaiseAlertResponse {
+  AlertStatus status = 1;
+}
+
+message GetAlertRequest {
+  string alert_id = 1;
+}
+message GetAlertResponse {
+  AlertStatus status = 1;
+}
+
+message ResolveAlertRequest {
+  string alert_id = 1;
+  bool false_alarm = 2;
+}
+message ResolveAlertResponse {
+  AlertStatus status = 1;
+}
+
+service AtlasDateSafetyService {
+  rpc ListTrustedContacts(ListTrustedContactsRequest) returns (ListTrustedContactsResponse);
+  rpc AddTrustedContact(AddTrustedContactRequest) returns (AddTrustedContactResponse);
+  rpc ResendInvite(ResendInviteRequest) returns (ResendInviteResponse);
+  rpc RemoveTrustedContact(RemoveTrustedContactRequest) returns (RemoveTrustedContactResponse);
+  rpc GetSafetyHere(GetSafetyHereRequest) returns (GetSafetyHereResponse);
+
+  rpc ShareDate(ShareDateRequest) returns (ShareDateResponse);
+  rpc ListMySharedDates(ListMySharedDatesRequest) returns (ListMySharedDatesResponse);
+  rpc GetSharedDate(GetSharedDateRequest) returns (GetSharedDateResponse);
+  rpc UpdateDate(UpdateDateRequest) returns (UpdateDateResponse);
+  rpc CheckIn(CheckInRequest) returns (CheckInResponse);
+  rpc ExtendDate(ExtendDateRequest) returns (ExtendDateResponse);
+  rpc ShareLocationNow(ShareLocationNowRequest) returns (ShareLocationNowResponse);
+  rpc ImSafe(ImSafeRequest) returns (ImSafeResponse);
+  rpc AskContactToCall(AskContactToCallRequest) returns (AskContactToCallResponse);
+  rpc AddDateEvidence(AddDateEvidenceRequest) returns (AddDateEvidenceResponse);
+  rpc ListDateEvidence(ListDateEvidenceRequest) returns (ListDateEvidenceResponse);
+
+  rpc RaiseAlert(RaiseAlertRequest) returns (RaiseAlertResponse);
+  rpc GetAlert(GetAlertRequest) returns (GetAlertResponse);
+  rpc ResolveAlert(ResolveAlertRequest) returns (ResolveAlertResponse);
+}

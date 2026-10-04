@@ -3899,8 +3899,11 @@ type ReportUserRequest struct {
 	Description string `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	// Atlas Choice 6: the conversation the report is about and up to 20 of its
 	// messages, preserved as evidence when the report is filed.
-	MatchId       string   `protobuf:"bytes,4,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"`
-	MessageIds    []string `protobuf:"bytes,5,rep,name=message_ids,json=messageIds,proto3" json:"message_ids,omitempty"`
+	MatchId    string   `protobuf:"bytes,4,opt,name=match_id,json=matchId,proto3" json:"match_id,omitempty"`
+	MessageIds []string `protobuf:"bytes,5,rep,name=message_ids,json=messageIds,proto3" json:"message_ids,omitempty"`
+	// Atlas Choice 7: a shared date whose evidence (notes, photos, events) the
+	// report keeps; it must be the reporter's own date with this member.
+	SharedDateId  string `protobuf:"bytes,6,opt,name=shared_date_id,json=sharedDateId,proto3" json:"shared_date_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3968,6 +3971,13 @@ func (x *ReportUserRequest) GetMessageIds() []string {
 		return x.MessageIds
 	}
 	return nil
+}
+
+func (x *ReportUserRequest) GetSharedDateId() string {
+	if x != nil {
+		return x.SharedDateId
+	}
+	return ""
 }
 
 type ReportUserResponse struct {
@@ -11061,7 +11071,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"decided_at\x18\a \x01(\x03R\tdecidedAt\"\x16\n" +
 	"\x14ListMyReportsRequest\"Q\n" +
 	"\x15ListMyReportsResponse\x128\n" +
-	"\areports\x18\x01 \x03(\v2\x1e.sttattus.dating.v1.UserReportR\areports\"\xae\x01\n" +
+	"\areports\x18\x01 \x03(\v2\x1e.sttattus.dating.v1.UserReportR\areports\"\xd4\x01\n" +
 	"\x11ReportUserRequest\x12\x1f\n" +
 	"\vreported_id\x18\x01 \x01(\tR\n" +
 	"reportedId\x12\x1a\n" +
@@ -11069,7 +11079,8 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x19\n" +
 	"\bmatch_id\x18\x04 \x01(\tR\amatchId\x12\x1f\n" +
 	"\vmessage_ids\x18\x05 \x03(\tR\n" +
-	"messageIds\"L\n" +
+	"messageIds\x12$\n" +
+	"\x0eshared_date_id\x18\x06 \x01(\tR\fsharedDateId\"L\n" +
 	"\x12ReportUserResponse\x126\n" +
 	"\x06report\x18\x01 \x01(\v2\x1e.sttattus.dating.v1.UserReportR\x06report\"\xf2\x01\n" +
 	"\n" +

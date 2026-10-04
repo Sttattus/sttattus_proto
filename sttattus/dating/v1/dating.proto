@@ -476,6 +476,9 @@ message ReportUserRequest {
   // messages, preserved as evidence when the report is filed.
   string match_id = 4;
   repeated string message_ids = 5;
+  // Atlas Choice 7: a shared date whose evidence (notes, photos, events) the
+  // report keeps; it must be the reporter's own date with this member.
+  string shared_date_id = 6;
 }
 message ReportUserResponse {
   UserReport report = 1;

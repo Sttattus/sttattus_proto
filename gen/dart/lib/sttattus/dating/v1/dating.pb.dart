@@ -4967,6 +4967,7 @@ class ReportUserRequest extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? matchId,
     $core.Iterable<$core.String>? messageIds,
+    $core.String? sharedDateId,
   }) {
     final result = create();
     if (reportedId != null) result.reportedId = reportedId;
@@ -4974,6 +4975,7 @@ class ReportUserRequest extends $pb.GeneratedMessage {
     if (description != null) result.description = description;
     if (matchId != null) result.matchId = matchId;
     if (messageIds != null) result.messageIds.addAll(messageIds);
+    if (sharedDateId != null) result.sharedDateId = sharedDateId;
     return result;
   }
 
@@ -4996,6 +4998,7 @@ class ReportUserRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'matchId')
     ..pPS(5, _omitFieldNames ? '' : 'messageIds')
+    ..aOS(6, _omitFieldNames ? '' : 'sharedDateId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5061,6 +5064,17 @@ class ReportUserRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $pb.PbList<$core.String> get messageIds => $_getList(4);
+
+  /// Atlas Choice 7: a shared date whose evidence (notes, photos, events) the
+  /// report keeps; it must be the reporter's own date with this member.
+  @$pb.TagNumber(6)
+  $core.String get sharedDateId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sharedDateId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSharedDateId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSharedDateId() => $_clearField(6);
 }
 
 class ReportUserResponse extends $pb.GeneratedMessage {

@@ -3273,6 +3273,14 @@ export class ReportUserRequest extends Message$1<ReportUserRequest> {
    */
   messageIds: string[] = [];
 
+  /**
+   * Atlas Choice 7: a shared date whose evidence (notes, photos, events) the
+   * report keeps; it must be the reporter's own date with this member.
+   *
+   * @generated from field: string shared_date_id = 6;
+   */
+  sharedDateId = "";
+
   constructor(data?: PartialMessage<ReportUserRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3286,6 +3294,7 @@ export class ReportUserRequest extends Message$1<ReportUserRequest> {
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "match_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "message_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "shared_date_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportUserRequest {
